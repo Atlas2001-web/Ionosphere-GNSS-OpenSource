@@ -95,3 +95,13 @@
 - 未 git push
 
 当前总条目：**422**（gnss-datasets=51）
+
+## 例行检索合并（2026-09-14 例行：GNSS开源目录持续补全）
+
+- 稿件：`research/routine_finds_20260914.json`（9 条核验候选）
+- 本轮净增 **9**：MADOCALIB, CLASLIB, MALIB, APAS-TR, HASlib, GHASP-HAS-decoding, gnss-ppp-matlab-toolbox, Essential-GNSS, GNSSommelier
+- 跳过：[]
+- 重点：QZSS MADOCALIB/CLASLIB/MALIB、芬兰 HASlib、APAS-TR、EarthScope GNSSommelier、Essential GNSS（SourceForge）等
+- 当前总条目：**431**
+- 来源统计：official=109, academic_lab=89, personal_community=233
+

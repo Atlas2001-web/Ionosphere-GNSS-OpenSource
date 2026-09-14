@@ -1,5 +1,5 @@
 # GNSS 数据与格式 / GNSS Data I/O
-> 共 **72** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **75** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
@@ -42,6 +42,29 @@
 语言：Java · 许可：Apache-2.0 · 星标约：841 · 宿主：github
 
 Android 原始 GNSS 测量日志与桌面可视化分析工具，智能手机高精度研究几乎必用。Logger 官方维护状态有变化，常与 GPSTest 日志互通。不是全星座科研 PPP 引擎。
+
+## Galileo HAS
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [HASlib](https://github.com/nlsfi/HASlib) | 芬兰国家土地测量局开源 Galileo HAS 解码库（SBF/BINEX→SSR） | Python | 65 | 🏷️ 官方 · 核心 |
+| [GHASP-HAS-decoding](https://github.com/borioda/HAS-decoding) | Galileo HAS 解析器 GHASP：E6B 二进制流转 CSV 轨道钟差等改正 | Python | 20 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [GHASP-HAS-decoding](https://github.com/borioda/HAS-decoding)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：see upstream README · 星标约：20 · 宿主：github
+
+社区 Python 工具将接收机记录的 E6B/HAS 相关二进制流转为四类 CSV 改正，便于科研语言加载与 PPP 试验。面向解析与分析而非完整定位引擎。更新节奏与许可条款以仓库为准；生产接入可对照官方 HASlib 或嵌入式 HASPPP。
+
+#### [HASlib](https://github.com/nlsfi/HASlib)  
+*🏷️ 官方 · 核心*
+
+语言：Python · 许可：EUPL-1.2 · 星标约：65 · 宿主：github
+
+NLS/FGI（nlsfi）维护的 Galileo High Accuracy Service 解码库，支持从 Septentrio SBF、BINEX 等输入提取 HAS 改正并输出 IGS/RTCM SSR 等格式，提供库与 CLI。适合把免费 E6-B HAS 改正接入自研 PPP。许可 EUPL-1.2；注意与 RTKLIB 系 HASPPP/MRTKLIB 的能力重叠，按输入格式选型。
 
 ## Hatanaka/CRX
 
@@ -89,6 +112,21 @@ GSI 的 RNXCMP（RNX2CRX/CRX2RNX）将 RINEX 2/3/4 观测与 CompactRINEX 互转
 语言：text · 许可：GSI Website Terms (cite Hatanaka 2008) · 星标约：— · 宿主：official_site
 
 GSI 公布的 RNXCMP 许可文本，基于地理院网站条款并要求修改再分发时引用 Hatanaka 2008 文献。打包分发 CompactRINEX 工具或写入衍生软件前应阅读本文件。功能实现与二进制仍以 crx2rnx 主下载页的官方源码包为准。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
+
+## IGS产品下载
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [GNSSommelier](https://github.com/EarthScope/GNSSommelier) | EarthScope 的 IGS 产品发现与下载平台（多分析中心 SP3/CLK/BIAS 等） | Python | 14 | 🏷️ 官方 |
+
+### 详细说明
+
+#### [GNSSommelier](https://github.com/EarthScope/GNSSommelier)  
+*🏷️ 官方*
+
+语言：Python · 许可：Apache-2.0 · 星标约：14 · 宿主：github
+
+EarthScope 开源的 GNSS 产品联邦工具，按日期与任务在十余个 IGS 分析中心间解析依赖并下载解压 SP3/CLK/BIAS/ERP/IONEX/ATX 等，附 CLI 与可选 PRIDE-PPPAR 流水线封装。解决 PPP 辅助产品分散与命名差异。需网络可达各 AC；与已收录的 EarthScope gnsstools（格式/流）互补。
 
 ## RINEX/SP3
 

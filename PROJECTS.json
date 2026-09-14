@@ -5,12 +5,12 @@
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
   "generated": "2026-09-14",
-  "project_count": 422,
+  "project_count": 431,
   "counts_by_category": {
     "ionosphere": 78,
     "troposphere": 14,
-    "gnss-data": 72,
-    "gnss-positioning": 58,
+    "gnss-data": 75,
+    "gnss-positioning": 64,
     "orbit-clock": 9,
     "navigation-ins": 48,
     "gnss-sdr": 55,
@@ -2205,6 +2205,26 @@
       "host": "official_site"
     },
     {
+      "name": "GHASP-HAS-decoding",
+      "url": "https://github.com/borioda/HAS-decoding",
+      "desc_zh": "Galileo HAS 解析器 GHASP：E6B 二进制流转 CSV 轨道钟差等改正",
+      "analysis_zh": "社区 Python 工具将接收机记录的 E6B/HAS 相关二进制流转为四类 CSV 改正，便于科研语言加载与 PPP 试验。面向解析与分析而非完整定位引擎。更新节奏与许可条款以仓库为准；生产接入可对照官方 HASlib 或嵌入式 HASPPP。",
+      "language": "Python",
+      "license": "see upstream README",
+      "category": "gnss-data",
+      "subcategory": "Galileo HAS",
+      "markers": [
+        "routine-2026-09-14"
+      ],
+      "stars_approx": 20,
+      "source": "routine-web-search-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "Galileo HAS 解析器 GHASP：E6B 二进制流转 CSV 轨道钟差等改正"
+    },
+    {
       "name": "gLAB",
       "url": "https://github.com/valgur/gLAB",
       "desc_zh": "gLAB（UPC/ESA）非官方 Git 镜像——请优先用官方下载页",
@@ -2333,6 +2353,26 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "RINEX 相关读写/处理组件"
+    },
+    {
+      "name": "GNSSommelier",
+      "url": "https://github.com/EarthScope/GNSSommelier",
+      "desc_zh": "EarthScope 的 IGS 产品发现与下载平台（多分析中心 SP3/CLK/BIAS 等）",
+      "analysis_zh": "EarthScope 开源的 GNSS 产品联邦工具，按日期与任务在十余个 IGS 分析中心间解析依赖并下载解压 SP3/CLK/BIAS/ERP/IONEX/ATX 等，附 CLI 与可选 PRIDE-PPPAR 流水线封装。解决 PPP 辅助产品分散与命名差异。需网络可达各 AC；与已收录的 EarthScope gnsstools（格式/流）互补。",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "category": "gnss-data",
+      "subcategory": "IGS产品下载",
+      "markers": [
+        "routine-2026-09-14"
+      ],
+      "stars_approx": 14,
+      "source": "routine-web-search-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "official",
+      "one_liner_zh": "EarthScope 的 IGS 产品发现与下载平台（多分析中心 SP3/CLK/BIAS 等）"
     },
     {
       "name": "gnsspy",
@@ -2501,6 +2541,27 @@
       "host": "github",
       "provenance": "academic_lab",
       "one_liner_zh": "面向 GNSS 的开源数据流客户端库"
+    },
+    {
+      "name": "HASlib",
+      "url": "https://github.com/nlsfi/HASlib",
+      "desc_zh": "芬兰国家土地测量局开源 Galileo HAS 解码库（SBF/BINEX→SSR）",
+      "analysis_zh": "NLS/FGI（nlsfi）维护的 Galileo High Accuracy Service 解码库，支持从 Septentrio SBF、BINEX 等输入提取 HAS 改正并输出 IGS/RTCM SSR 等格式，提供库与 CLI。适合把免费 E6-B HAS 改正接入自研 PPP。许可 EUPL-1.2；注意与 RTKLIB 系 HASPPP/MRTKLIB 的能力重叠，按输入格式选型。",
+      "language": "Python",
+      "license": "EUPL-1.2",
+      "category": "gnss-data",
+      "subcategory": "Galileo HAS",
+      "markers": [
+        "core",
+        "routine-2026-09-14"
+      ],
+      "stars_approx": 65,
+      "source": "routine-web-search-2026-09-14",
+      "featured": true,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "official",
+      "one_liner_zh": "芬兰国家土地测量局开源 Galileo HAS 解码库（SBF/BINEX→SSR）"
     },
     {
       "name": "hatanaka",
@@ -3093,6 +3154,26 @@
       "host": "official_site"
     },
     {
+      "name": "APAS-TR",
+      "url": "https://github.com/Birinci-S/APAS_TR",
+      "desc_zh": "土耳其高校 MATLAB 多星座 PPP：强电离层下用 ROTI 阈值周跳门限",
+      "analysis_zh": "Automatic PPP Analysis Software-Türkiye（APAS-TR）处理 GPS/GLONASS/Galileo/BDS/QZSS，提供统计图与分析选项。论文强调地磁暴期用 ROTI 自适应门限降低周跳误判，并在 IGS MGEX 测站上验证多星座收敛。适合教学与电离层扰动场景的 PPP 方法复现；需 MATLAB 环境，非实时引擎。",
+      "language": "MATLAB",
+      "license": "GPL-3.0",
+      "category": "gnss-positioning",
+      "subcategory": "多星座PPP",
+      "markers": [
+        "routine-2026-09-14"
+      ],
+      "stars_approx": 19,
+      "source": "routine-web-search-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "土耳其高校 MATLAB 多星座 PPP：强电离层下用 ROTI 阈值周跳门限"
+    },
+    {
       "name": "B2bLIB",
       "url": "https://github.com/GCCLib/B2bLIB",
       "desc_zh": "北斗 PPP-B2b 服务研究用的 C/C++ 库",
@@ -3113,6 +3194,27 @@
       "one_liner_zh": "北斗 PPP-B2b 服务研究用的 C/C++ 库"
     },
     {
+      "name": "CLASLIB",
+      "url": "https://github.com/QZSS-Strategy-Office/claslib",
+      "desc_zh": "日本内阁府 QZSS 官方 CLAS 厘米级增强测试库（Compact SSR/PPP-RTK）",
+      "analysis_zh": "CLAS 测试库解码 Compact SSR（RTCM MT4073），提供 SSR2OSR、SSR2OBS 与事后 RNX2RTKP 等 PPP-RTK/VRS 工具链。源自 RTKLIB 与 GSILIB，由准天顶卫星系统战略室维护。适合日本境内厘米级增强服务研究与消息转换；部署前须阅读各版本内容差异与官方可靠性免责。",
+      "language": "C",
+      "license": "see upstream (derived RTKLIB/GSILIB)",
+      "category": "gnss-positioning",
+      "subcategory": "QZSS CLAS PPP-RTK",
+      "markers": [
+        "core",
+        "routine-2026-09-14"
+      ],
+      "stars_approx": 56,
+      "source": "routine-web-search-2026-09-14",
+      "featured": true,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "official",
+      "one_liner_zh": "日本内阁府 QZSS 官方 CLAS 厘米级增强测试库（Compact SSR/PPP-RTK）"
+    },
+    {
       "name": "CSSR-tool",
       "url": "https://github.com/MayHarryWang/CSSR-tool",
       "desc_zh": "多源协同 CSSR-PPP 改正数预处理工具",
@@ -3129,6 +3231,26 @@
       "host": "github",
       "provenance": "academic_lab",
       "one_liner_zh": "多源协同 CSSR-PPP 改正数预处理工具"
+    },
+    {
+      "name": "Essential-GNSS",
+      "url": "https://sourceforge.net/projects/gnsstk/",
+      "desc_zh": "SourceForge Essential GNSS：轻量 C 库与事后 LSQ/EKF/RTK 处理（非 GPSTk）",
+      "analysis_zh": "Glenn MacGougan 等维护的 Essential GNSS Project，提供 RINEX 2.x 解码、YUMA/SEM、NovAtel OEM4 以及 LSQ/EKF/RTK 事后处理示例，许可证偏宽松 BSD 风格。与 Texas SGL 的 GPSTk/gnsstk 同名不同源，勿混淆。代码偏经典教学/嵌入，现代多星座 RINEX3+/PPP 请优先用更新栈。",
+      "language": "C",
+      "license": "BSD-style",
+      "category": "gnss-positioning",
+      "subcategory": "经典定位库",
+      "markers": [
+        "routine-2026-09-14"
+      ],
+      "stars_approx": null,
+      "source": "routine-web-search-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "sourceforge",
+      "provenance": "personal_community",
+      "one_liner_zh": "SourceForge Essential GNSS：轻量 C 库与事后 LSQ/EKF/RTK 处理（非 GPSTk）"
     },
     {
       "name": "GAMP_PPPH",
@@ -3261,6 +3383,26 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "基于 RTKLIB 的 SPP 算法优化探索"
+    },
+    {
+      "name": "gnss-ppp-matlab-toolbox",
+      "url": "https://github.com/hvandermarel/gnss-ppp-matlab-toolbox",
+      "desc_zh": "代尔夫特理工 MATLAB 工具：合并 NRCan CSRS-PPP 多日解并做统计检验",
+      "analysis_zh": "Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-PPP 汇总/位置文件，把单日静力解合成为多日估计并做粗差与质量图形分析，另可读运动学位置、钟差与 ZTD。适合测站坐标与 GNSS 战役质控；本身不做观测级 PPP，依赖 NRCan 在线解与配套 crsutil 工具箱。",
+      "language": "MATLAB",
+      "license": "Apache-2.0",
+      "category": "gnss-positioning",
+      "subcategory": "PPP后处理工具",
+      "markers": [
+        "routine-2026-09-14"
+      ],
+      "stars_approx": 4,
+      "source": "routine-web-search-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "代尔夫特理工 MATLAB 工具：合并 NRCan CSRS-PPP 多日解并做统计检验"
     },
     {
       "name": "gnss-rtk",
@@ -3564,6 +3706,47 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "现代 C++20 GNSS 工具包（SPP/RTK/PPP/CLAS）"
+    },
+    {
+      "name": "MADOCALIB",
+      "url": "https://github.com/QZSS-Strategy-Office/madocalib",
+      "desc_zh": "日本内阁府 QZSS 官方 MADOCA-PPP 测试库（事后 PPP 参考实现）",
+      "analysis_zh": "内阁府准天顶卫星系统战略室发布的 MADOCA-PPP 参考实现，源自 RTKLIB，面向多 GNSS 精密轨道钟差增强的 PPP/PPP-AR 与电离层改正试验。官方页与 GitHub 同步提供手册、样例与可选 Python GUI 前端。适合对接 QZSS MADOCA 服务做用户端算法验证；实时流处理与生产可靠性声明需对照官方免责与版本说明。",
+      "language": "C",
+      "license": "BSD-2-Clause (+ additional clauses)",
+      "category": "gnss-positioning",
+      "subcategory": "QZSS MADOCA-PPP",
+      "markers": [
+        "core",
+        "routine-2026-09-14"
+      ],
+      "stars_approx": 59,
+      "source": "routine-web-search-2026-09-14",
+      "featured": true,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "official",
+      "one_liner_zh": "日本内阁府 QZSS 官方 MADOCA-PPP 测试库（事后 PPP 参考实现）"
+    },
+    {
+      "name": "MALIB",
+      "url": "https://github.com/JAXA-SNU/MALIB",
+      "desc_zh": "JAXA/SNU 的 MADOCA-PPP 库：支持 L6E 的实时/事后 PPP（RTKLIB 衍生）",
+      "analysis_zh": "日本宇宙航空研究开发机构与合作方发布的 MADOCA-PPP 专用程序包，在 RTKLIB 基础上强化 L6E 改正与 rtkrcv/rnx2rtkp 流程，并附带开空测试数据。面向实时与事后 MADOCA 定位试验。与内阁府 MADOCALIB/CLASLIB 互补；上游标注为 RTKLIB fork，选用时注意许可证与版本对应关系。",
+      "language": "C",
+      "license": "see upstream (RTKLIB-derived)",
+      "category": "gnss-positioning",
+      "subcategory": "QZSS MADOCA-PPP",
+      "markers": [
+        "routine-2026-09-14"
+      ],
+      "stars_approx": 77,
+      "source": "routine-web-search-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "official",
+      "one_liner_zh": "JAXA/SNU 的 MADOCA-PPP 库：支持 L6E 的实时/事后 PPP（RTKLIB 衍生）"
     },
     {
       "name": "MatRTKLIB",
@@ -7973,8 +8156,8 @@
     }
   ],
   "provenance_counts": {
-    "official": 104,
-    "academic_lab": 87,
-    "personal_community": 231
+    "official": 109,
+    "academic_lab": 89,
+    "personal_community": 233
   }
 }

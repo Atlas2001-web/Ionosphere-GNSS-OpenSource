@@ -247,3 +247,12 @@
 - skipped: 42
 - catalog total: 351
 - provenance: {'personal_community': 226, 'official': 44, 'academic_lab': 81}
+
+
+## Routine expansion 2026-09-14
+
+- routine_finds: 9
+- merged new: 9
+- skipped: []
+- total: 431
+- provenance: {'personal_community': 233, 'official': 109, 'academic_lab': 89}

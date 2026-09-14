@@ -1,5 +1,5 @@
 # 精密定位 / Precise Positioning
-> 共 **58** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **64** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
@@ -223,6 +223,21 @@ rtk-rs/nav-solutions 系精密定位解算，与 rinex 库同一生态，AGPL。
 
 基于 RTKLIB 改造的北斗 PPP-B2b 解码与定位工具包，填补开源社区在 B2b 实操链路上的缺口。适合对照 ICD 评估收敛、精度与可用性。可与 floating0516/RTPPP_B2b、GCCLib/B2bLIB、NavDecoder 并列试验；注意电文版本、接收机原始流格式与许可声明是否满足你的使用场景。
 
+## PPP后处理工具
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [gnss-ppp-matlab-toolbox](https://github.com/hvandermarel/gnss-ppp-matlab-toolbox) | 代尔夫特理工 MATLAB 工具：合并 NRCan CSRS-PPP 多日解并做统计检验 | MATLAB | 4 | 🏷️ 高校实验室 |
+
+### 详细说明
+
+#### [gnss-ppp-matlab-toolbox](https://github.com/hvandermarel/gnss-ppp-matlab-toolbox)  
+*🏷️ 高校实验室*
+
+语言：MATLAB · 许可：Apache-2.0 · 星标约：4 · 宿主：github
+
+Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-PPP 汇总/位置文件，把单日静力解合成为多日估计并做粗差与质量图形分析，另可读运动学位置、钟差与 ZTD。适合测站坐标与 GNSS 战役质控；本身不做观测级 PPP，依赖 NRCan 在线解与配套 crsutil 工具箱。
+
 ## PPP套件
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
@@ -282,6 +297,44 @@ Geoscience Australia 对开源 GNSS 分析中心软件 Ginan 的官方说明，�
 语言：C++ · 许可：GPL-3.0 · 星标约：279 · 宿主：github
 
 GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同源风格。适合跟进武大 GREAT 公开算法。文档/用例完整度因版本而异；与 PRIDE 定位分工不同（更偏导航软件栈）。
+
+## QZSS CLAS PPP-RTK
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [CLASLIB](https://github.com/QZSS-Strategy-Office/claslib) | 日本内阁府 QZSS 官方 CLAS 厘米级增强测试库（Compact SSR/PPP-RTK） | C | 56 | 🏷️ 官方 · 核心 |
+
+### 详细说明
+
+#### [CLASLIB](https://github.com/QZSS-Strategy-Office/claslib)  
+*🏷️ 官方 · 核心*
+
+语言：C · 许可：see upstream (derived RTKLIB/GSILIB) · 星标约：56 · 宿主：github
+
+CLAS 测试库解码 Compact SSR（RTCM MT4073），提供 SSR2OSR、SSR2OBS 与事后 RNX2RTKP 等 PPP-RTK/VRS 工具链。源自 RTKLIB 与 GSILIB，由准天顶卫星系统战略室维护。适合日本境内厘米级增强服务研究与消息转换；部署前须阅读各版本内容差异与官方可靠性免责。
+
+## QZSS MADOCA-PPP
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [MALIB](https://github.com/JAXA-SNU/MALIB) | JAXA/SNU 的 MADOCA-PPP 库：支持 L6E 的实时/事后 PPP（RTKLIB 衍生） | C | 77 | 🏷️ 官方 |
+| [MADOCALIB](https://github.com/QZSS-Strategy-Office/madocalib) | 日本内阁府 QZSS 官方 MADOCA-PPP 测试库（事后 PPP 参考实现） | C | 59 | 🏷️ 官方 · 核心 |
+
+### 详细说明
+
+#### [MADOCALIB](https://github.com/QZSS-Strategy-Office/madocalib)  
+*🏷️ 官方 · 核心*
+
+语言：C · 许可：BSD-2-Clause (+ additional clauses) · 星标约：59 · 宿主：github
+
+内阁府准天顶卫星系统战略室发布的 MADOCA-PPP 参考实现，源自 RTKLIB，面向多 GNSS 精密轨道钟差增强的 PPP/PPP-AR 与电离层改正试验。官方页与 GitHub 同步提供手册、样例与可选 Python GUI 前端。适合对接 QZSS MADOCA 服务做用户端算法验证；实时流处理与生产可靠性声明需对照官方免责与版本说明。
+
+#### [MALIB](https://github.com/JAXA-SNU/MALIB)  
+*🏷️ 官方*
+
+语言：C · 许可：see upstream (RTKLIB-derived) · 星标约：77 · 宿主：github
+
+日本宇宙航空研究开发机构与合作方发布的 MADOCA-PPP 专用程序包，在 RTKLIB 基础上强化 L6E 改正与 rtkrcv/rnx2rtkp 流程，并附带开空测试数据。面向实时与事后 MADOCA 定位试验。与内阁府 MADOCALIB/CLASLIB 互补；上游标注为 RTKLIB fork，选用时注意许可证与版本对应关系。
 
 ## RTK
 
@@ -537,6 +590,21 @@ Python 下处理/绘制基于 RINEX 的 GPS 与 Galileo 数据，教学演示友
 
 一个核心提供 SPP/RTK/PPP、SGP4/会合等与 RINEX/RTCM/SP3/NTRIP 解析，并带多语言绑定。适合想要「单依赖多协议」的新项目。相对经典库验证样本仍在积累，关键应用需交叉比对 RTKLIB/IGS。
 
+## 多星座PPP
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [APAS-TR](https://github.com/Birinci-S/APAS_TR) | 土耳其高校 MATLAB 多星座 PPP：强电离层下用 ROTI 阈值周跳门限 | MATLAB | 19 | 🏷️ 高校实验室 |
+
+### 详细说明
+
+#### [APAS-TR](https://github.com/Birinci-S/APAS_TR)  
+*🏷️ 高校实验室*
+
+语言：MATLAB · 许可：GPL-3.0 · 星标约：19 · 宿主：github
+
+Automatic PPP Analysis Software-Türkiye（APAS-TR）处理 GPS/GLONASS/Galileo/BDS/QZSS，提供统计图与分析选项。论文强调地磁暴期用 ROTI 自适应门限降低周跳误判，并在 IGS MGEX 测站上验证多星座收敛。适合教学与电离层扰动场景的 PPP 方法复现；需 MATLAB 环境，非实时引擎。
+
 ## 大地测量/GNSS
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
@@ -635,6 +703,21 @@ goGPS 的 Java 实现，便于嵌进 JVM 应用。功能气质同 MATLAB 版但�
 语言：MATLAB · 许可：— · 星标约：327 · 宿主：github
 
 长期发展的 MATLAB GNSS 处理包，相对定位与低成本设备场景见长，教科研友好。适合实验室快速改算法。部署与授权不如 C/C++ 开源引擎；Java 版见 goGPS_Java。
+
+## 经典定位库
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [Essential-GNSS](https://sourceforge.net/projects/gnsstk/) | SourceForge Essential GNSS：轻量 C 库与事后 LSQ/EKF/RTK 处理（非 GPSTk） | C | — | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [Essential-GNSS](https://sourceforge.net/projects/gnsstk/)  
+*🏷️ 个人社区*
+
+语言：C · 许可：BSD-style · 星标约：— · 宿主：sourceforge
+
+Glenn MacGougan 等维护的 Essential GNSS Project，提供 RINEX 2.x 解码、YUMA/SEM、NovAtel OEM4 以及 LSQ/EKF/RTK 事后处理示例，许可证偏宽松 BSD 风格。与 Texas SGL 的 GPSTk/gnsstk 同名不同源，勿混淆。代码偏经典教学/嵌入，现代多星座 RINEX3+/PPP 请优先用更新栈。
 
 ## 解析/分析
 

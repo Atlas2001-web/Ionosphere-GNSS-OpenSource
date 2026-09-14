@@ -49,14 +49,14 @@
 RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
 - 列表文件：[`lists/03-gnss-data.md`](../lists/03-gnss-data.md)
-- 当前条目数：**72**
+- 当前条目数：**75**
 
 ## `gnss-positioning` — 精密定位
 
 SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
 - 列表文件：[`lists/04-gnss-positioning.md`](../lists/04-gnss-positioning.md)
-- 当前条目数：**58**
+- 当前条目数：**64**
 
 ## `orbit-clock` — 轨道与钟差
 
