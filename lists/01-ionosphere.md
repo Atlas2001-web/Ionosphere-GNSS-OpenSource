@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> 共 **78** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **81** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -738,3 +738,35 @@ Open-Access System for Ionospheric Studies：从 GNSS 观测算 ROTI、ΔTEC、S
 语言：Shell · 许可：MIT · 星标约：8 · 宿主：github
 
 探索用机器学习刻画或预测电离层闪烁相关现象的研究型仓库，偏数据驱动实验原型。适合空间天气与机器学习交叉课题入门。闪烁事件稀缺、标签噪声与跨站点泛化是主要风险；报告结果时应保留 S4、σφ、ROTI 等物理基线对照，避免只展示神经网络分数而缺少可解释性。
+
+## 相似项目补录
+
+| 项目 | 一句话 | ★ | 标记 |
+|---|---|---:|---|
+| [BiScEF](https://github.com/kartverket/BiScEF) | 闪烁数据二进制交换格式实现 | 2 | 🏷️ 官方 |
+| [ismr_downloader](https://github.com/GEGE-UNESP/ismr_downloader) | ISMR 闪烁监测数据下载器 | 1 | 🏷️ 高校实验室 |
+| [scintkit](https://github.com/qwsae10/scintkit) | ScintPi/GNSS 闪烁简易工具 | 1 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [BiScEF](https://github.com/kartverket/BiScEF)
+*🏷️ 官方*
+
+语言：Python · 许可：MIT
+
+挪威制图局等推动的闪烁数据二进制交换格式（BiScEF）相关实现，方便闪烁监测接收机数据互通。做多源闪烁融合时应关注格式版本。通用 TEC/ROTI 计算仍用 IonoMoni/OASIS 等。
+
+#### [ismr_downloader](https://github.com/GEGE-UNESP/ismr_downloader)
+*🏷️ 高校实验室*
+
+语言：Python · 许可：MIT
+
+从 ISMR Query Tool API 拉取 GNSS/ISMR 闪烁监测数据的命令行下载器。适合批量建闪烁样本库。依赖上游 API 可用性与账号策略；本地下载后需自行做质控。
+
+#### [scintkit](https://github.com/qwsae10/scintkit)
+*🏷️ 个人社区*
+
+语言：Jupyter Notebook · 许可：—
+
+面向 ScintPi 与 GNSS 闪烁数据的简单处理小工具集，适合教学与快速看图。功能边界窄，论文级闪烁指数与多站网分析需接更完整工具。
+

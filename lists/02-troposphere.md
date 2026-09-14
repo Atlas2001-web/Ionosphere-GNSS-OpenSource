@@ -1,5 +1,5 @@
 # 对流层 / Troposphere
-> 共 **14** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **22** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
@@ -172,3 +172,75 @@ ICAMS 用全球大气模式做 InSAR 对流层改正，并考虑空间随机特�
 语言：— · 许可：— · 星标约：3 · 宿主：github
 
 UNB 系列中性大气经验模型，无实测气象时给天顶延迟粗值。适合教学与低精度先验。精度不及 VMF+数值天气模式；精密 PPP 优先 VMF3/GPT3。
+
+## 相似项目补录
+
+| 项目 | 一句话 | ★ | 标记 |
+|---|---|---:|---|
+| [mphw](https://github.com/ufrgs-gnss-lab/mphw) | 低成本 GNSS-IR/反射测量开源硬件 | 25 | 🏷️ 高校实验室 |
+| [GNSSR_MERRByS_Python](https://github.com/pjalesSSTL/GNSSR_MERRByS_Python) | TechDemoSat-1 星载 GNSS-R Python 示例 | 19 | 🏷️ 高校实验室 |
+| [GNSS-REFLECTOMETRY-PROCESSING](https://github.com/oriolcervello/GNSS-REFLECTOMETRY-PROCESSING) | GPU 加速 GNSS-R 处理 | 17 | 🏷️ 个人社区 |
+| [gnssr4river](https://github.com/lroineau/gnssr4river) | 面向河流水文的 GNSS-R Python 工具箱 | 8 | 🏷️ 个人社区 |
+| [GNSS_RR](https://github.com/lasteine/GNSS_RR) | 雪面 GNSS 反射/折射连续估计 | 7 | 🏷️ 高校实验室 |
+| [NearRealTimeGNSSIR](https://github.com/cemalialtuntas/NearRealTimeGNSSIR) | 近实时 GNSS-IR 软件原型 | 5 | 🏷️ 个人社区 |
+| [gpssnrpy](https://github.com/kristinemlarson/gpssnrpy) | RINEX SNR 提取与高度角工具 | 6 | 🏷️ 高校实验室 |
+| [DDM-Former](https://github.com/daixinzhao/DDM-Former) | GNSS-R DDM 海面风速 Transformer 模型 | 10 | 🏷️ 高校实验室 |
+
+### 详细说明
+
+#### [mphw](https://github.com/ufrgs-gnss-lab/mphw)
+*🏷️ 高校实验室*
+
+语言：MATLAB · 许可：NOASSERTION
+
+开源低成本 GNSS-IR/反射测量硬件方案（MPHW），配合 SNR 反射测高。适合教学站与原型站网，降低进入 GNSS-R 的硬件门槛。精度受天线与场地多路径制约，科研级水位/雪深仍常对照 gnssrefl + 大地型天线。
+
+#### [GNSSR_MERRByS_Python](https://github.com/pjalesSSTL/GNSSR_MERRByS_Python)
+*🏷️ 高校实验室*
+
+语言：Jupyter Notebook · 许可：—
+
+Surrey TechDemoSat-1（MERRByS）星载 GNSS-R 的 Python/Jupyter 示例，演示空间反射数据读取与初步处理。适合星载 GNSS-R 入门。地基 GNSS-IR 请用 gnssrefl；两者几何与校正链不同。
+
+#### [GNSS-REFLECTOMETRY-PROCESSING](https://github.com/oriolcervello/GNSS-REFLECTOMETRY-PROCESSING)
+*🏷️ 个人社区*
+
+语言：Cuda · 许可：GPL-3.0
+
+面向 GNSS 反射测量的 GPU/CUDA 处理实验代码，适合做吞吐或算法加速试验。硬件与驱动依赖重；业务流水线需自行封装 I/O 与质控。
+
+#### [gnssr4river](https://github.com/lroineau/gnssr4river)
+*🏷️ 个人社区*
+
+语言：Python · 许可：—
+
+开源 Python GNSS-R/IR 工具箱，偏向河流/水位等水文应用场景。适合把反射测高接到水文监测脚本。功能覆盖面小于 gnssrefl 全家桶，复杂站点仍建议用主流工具交叉检验。
+
+#### [GNSS_RR](https://github.com/lasteine/GNSS_RR)
+*🏷️ 高校实验室*
+
+语言：Python · 许可：CC0-1.0
+
+联合反射/折射（GNSS-RR）连续估计雪/粒雪累积、表面质量与密度的方法代码，面向冰冻圈监测。场景专一；通用水位 GNSS-IR 不是其主场。
+
+#### [NearRealTimeGNSSIR](https://github.com/cemalialtuntas/NearRealTimeGNSSIR)
+*🏷️ 个人社区*
+
+语言：HTML · 许可：GPL-3.0
+
+朝近实时 GNSS-IR 流水线努力的实现，目标从 SNR 提取水位/雪深/土壤湿度等环境参数。适合做自动化监测原型。工程完整度与多星座支持需实测，稳定产线可对照 gnssrefl。
+
+#### [gpssnrpy](https://github.com/kristinemlarson/gpssnrpy)
+*🏷️ 高校实验室*
+
+语言：Python · 许可：GPL-3.0
+
+从 GPS RINEX 提取 SNR，并结合导航电文算高度角/方位角，还带下载辅助。常作为 GNSS-IR 前处理积木，与 gnssrefl 生态 complementary。
+
+#### [DDM-Former](https://github.com/daixinzhao/DDM-Former)
+*🏷️ 高校实验室*
+
+语言：Python · 许可：Apache-2.0
+
+用 Transformer 从 GNSS-R DDM 估全球海面风速的研究代码（DDM-Former）。适合遥感/机器学习交叉读者。不是地基 GNSS-IR 工具，输入输出与传统 SNR 干涉测高不同。
+

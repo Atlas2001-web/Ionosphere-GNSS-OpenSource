@@ -1,5 +1,5 @@
 # 精密定位 / Precise Positioning
-> 共 **64** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **68** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
@@ -733,3 +733,43 @@ Glenn MacGougan 等维护的 Essential GNSS Project，提供 RINEX 2.x 解码、
 语言：Python · 许可：MIT · 星标约：266 · 宿主：github
 
 模块化解析 Android/原始测量与状态估计结果，可视化强，适合智能手机定位与算法课。不是传统测地 PPP 产品线；与 gps-measurement-tools 数据衔接好。
+
+## 相似项目补录
+
+| 项目 | 一句话 | ★ | 标记 |
+|---|---|---:|---|
+| [Easy4B2b](https://github.com/alxanderjiang/Easy4B2b) | Python 易移植 PPP-B2b 工具箱 | 0 | 🏷️ 个人社区 |
+| [RTKNAVI-BH](https://github.com/cigit001/RTKNAVI-BH) | RTKNAVI 扩展：实时 PPP-B2b + HAS | 0 | 🏷️ 个人社区 |
+| [HASlibTestSuite](https://github.com/nlsfi/HASlibTestSuite) | 官方 HASlib 测试套件 | 0 | 🏷️ 官方 |
+| [HASlib.jl](https://github.com/feanor12/HASlib.jl) | HASlib 的 Julia 包装 | 0 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [Easy4B2b](https://github.com/alxanderjiang/Easy4B2b)
+*🏷️ 个人社区*
+
+语言：Jupyter Notebook · 许可：—
+
+面向北斗 PPP-B2b 的 Python 工具箱，强调易移植与试验。适合快速摸电文与改正字段，不先上 C++ 工程。性能与完备性通常弱于 B2bLIB/RTKLIB-B2b；产线应用建议交叉验证 C/C++ 实现。
+
+#### [RTKNAVI-BH](https://github.com/cigit001/RTKNAVI-BH)
+*🏷️ 个人社区*
+
+语言：— · 许可：NOASSERTION
+
+在 RTKNAVI 上扩展，尝试同时吃 PPP-B2b 与 Galileo HAS 改正做实时 PPP。适合桌面端联调双系统改正源。仓库较新、文档与稳定性需自测；复杂场景仍建议对照官方测试库与 demo5/RTKLIB 分支。
+
+#### [HASlibTestSuite](https://github.com/nlsfi/HASlibTestSuite)
+*🏷️ 官方*
+
+语言：— · 许可：—
+
+配套官方 HASlib 的测试套件，用于回归解码正确性。集成 HAS 前应用它核对版本兼容。
+
+#### [HASlib.jl](https://github.com/feanor12/HASlib.jl)
+*🏷️ 个人社区*
+
+语言：Julia · 许可：MIT
+
+把 HASlib 思路接到 Julia 的社区包装，方便 Julia 用户试验 Galileo HAS。维护与功能覆盖可能落后官方 C 库，关键路径建议仍对照 nlsfi/HASlib。
+
