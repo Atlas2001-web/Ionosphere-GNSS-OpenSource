@@ -1,5 +1,5 @@
 # 软件接收机与信号 / GNSS-SDR
-> 共 **51** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **53** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。
 
@@ -246,7 +246,9 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 | [SignalSim](https://github.com/globsky/SignalSim) | 多阶段 GNSS 信号与数据仿真器 | C++ | 208 |  |
 | [gps-sdr-sim-assistant](https://github.com/frank-pian/gps-sdr-sim-assistant) | gps-sdr-sim 的图形化助手工具 | JavaScript | 63 |  |
 | [galileo-sdr-sim](https://github.com/harshadms/galileo-sdr-sim) | Galileo E1B/C 信号生成器 | C++ | 62 |  |
+| [BeiDou_B1C](https://github.com/lnexenl/BeiDou_B1C) | 北斗 B1C 信号生成与捕获（MATLAB） | MATLAB | 38 |  |
 | [gnss-RX](https://github.com/HeryMwenegoha/gnss-RX) | GNSS 观测量仿真器（MATLAB） | MATLAB | 32 |  |
+| [gnss-signal-simulator-rs](https://github.com/danusha2345/gnss-signal-simulator-rs) | Rust 多星座 GNSS 信号仿真器（含 GPS L1/L5 等） | Rust | 30 |  |
 | [GPSGALSSS](https://github.com/domonforyou/GPS_GAL_SSS) | GPS/Galileo 卫星信号模拟器（关联 RTKLIB） | C++ | 29 |  |
 | [beidou-sdr-sim](https://github.com/yangfan852219770/beidou-sdr-sim) | 北斗 GEO（PRN1–5）信号仿真与 LimeSDR 发射 | C | 27 |  |
 | [esp2822NMEAsim](https://github.com/michalpelka/esp2822_NMEA_sim) | 廉价 MCU 模拟 PPS 与 NMEA 同步信号 | C++ | 7 |  |
@@ -286,11 +288,23 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 
 专门生成 Galileo E1B/C，补齐 gps-sdr-sim 偏 GPS 的空白。适合 Galileo 基带试验。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
 
+#### [BeiDou_B1C](https://github.com/lnexenl/BeiDou_B1C)
+
+语言：MATLAB · 许可：MIT · 星标约：38
+
+用 MATLAB 生成并捕获北斗 B1C 相关信号，服务新信号体制与捕获跟踪算法验证。适合 GNSS-SDR/信号课程实验。不是完整多星座软件接收机；与 SoftGNSS、gnss-sdr、gps-sdr-sim 组合时，要统一采样率、中频与前端滤波模型再比捕获灵敏度。
+
 #### [gnss-RX](https://github.com/HeryMwenegoha/gnss-RX)
 
 语言：MATLAB · 星标约：32
 
 MATLAB GNSS 测量仿真器，按场景生成伪距等观测，便于定位滤波、完好性算法联调与课堂教学。适合尚无真实接收机数据时的软件试验。输出是仿真观测量，不是从 IQ 解调的 SDR 链路；需要射频/基带级信号请改用 gps-sdr-sim 或 SoftGNSS 类工具。仿真噪声与真实多路径统计仍有差距，外场前要再标定。
+
+#### [gnss-signal-simulator-rs](https://github.com/danusha2345/gnss-signal-simulator-rs)
+
+语言：Rust · 星标约：30
+
+用 Rust 实现的多星座 GNSS 信号仿真，覆盖 GPS L1/L5 等常见频点，服务接收机算法与 SDR 试验。适合看重内存安全与可嵌入工具链的开发者。相对 gps-sdr-sim、gnss-sdr 仿真生态仍较新；载波相位一致性与接收机动态轨迹模型需用已知算例校验。
 
 #### [GPSGALSSS](https://github.com/domonforyou/GPS_GAL_SSS)
 

@@ -1,5 +1,5 @@
 # 移动与嵌入式应用 / Mobile Apps
-> 共 **10** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **11** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** 手机/嵌入式上的 GNSS 测试、原始测量记录与简易定位。
 
@@ -61,6 +61,7 @@ Go 实现的跨平台 GNSS 工具，强调 PPS/PTP/NTP 授时、RINEX/RTCM 与�
 | [GPSLogger](https://github.com/BasicAirData/GPSLogger) | Android 开源 GPS 轨迹记录器 | Java | 504 |  |
 | [bluetooth_gnss](https://github.com/ykasidit/bluetooth_gnss) | Android 蓝牙外接 GNSS/RTK 与 NTRIP 应用 | Java | 123 |  |
 | [GNSS_Compare](https://github.com/TheGalfins/GNSS_Compare) | 安卓端用原始测量做定位的框架 | Java | 73 |  |
+| [PRIDE-GeoDataLogger](https://github.com/PrideLab/PRIDE-GeoDataLogger) | PRIDE 团队手机多频 GNSS 与 IMU 采集工具 | — | 22 |  |
 
 ### 详细说明
 
@@ -88,3 +89,9 @@ Go 实现的跨平台 GNSS 工具，强调 PPS/PTP/NTP 授时、RINEX/RTCM 与�
 语言：Java · 许可：Apache-2.0 · 星标约：73
 
 在手机上从原始测量解算位置，支持 GPS/Galileo 等，便于算法上机。维护节奏一般；采数仍常用 GPSTest。
+
+#### [PRIDE-GeoDataLogger](https://github.com/PrideLab/PRIDE-GeoDataLogger)
+
+语言：— · 星标约：22
+
+PRIDE 团队面向智能手机的多频 GNSS 与 IMU 采集工具，便于把手机原始测量送入后续 PPP 或科学研究流程。适合手机大地测量、城市峡谷与行人导航试验。手机天线相位中心与占空比限制明显；采集前应规划时间同步、姿态记录与导出格式，以便对接 PRIDE-PPPAR 或自研脚本。

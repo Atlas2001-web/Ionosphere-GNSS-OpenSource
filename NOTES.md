@@ -55,3 +55,11 @@
 - 当前条目：**255**
 - 分类计数：{'ionosphere': 49, 'troposphere': 13, 'gnss-data': 44, 'gnss-positioning': 36, 'orbit-clock': 3, 'navigation-ins': 38, 'gnss-sdr': 51, 'mobile-apps': 10, 'tools-learning': 11}
 - 详见 `research/new_finds.json`
+
+## 二次穷尽检索合并（2026-09-14）
+
+- 自 `research/more_finds.json` 合并新增 **54** 条（武大 GREAT/i2Nav、B2b/HAS、闪烁、质检、NTRIP 等）
+- 当前条目：**309**
+- 分类计数：{'ionosphere': 52, 'troposphere': 13, 'gnss-data': 56, 'gnss-positioning': 55, 'orbit-clock': 6, 'navigation-ins': 48, 'gnss-sdr': 53, 'mobile-apps': 11, 'tools-learning': 15}
+- 检索日志：`research/search_log.md`
+- 未改写既有 analysis；`new_finds.json` 保留前次合并结果

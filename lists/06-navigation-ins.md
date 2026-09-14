@@ -1,5 +1,5 @@
 # 导航 / GNSS-INS / Navigation & INS
-> 共 **38** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **48** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 
@@ -11,6 +11,8 @@
 | [VINS-GPS-Wheel](https://github.com/Wallong/VINS-GPS-Wheel) | VINS-Mono 融合轮速计与 GNSS（自动驾驶） | C++ | 280 |  |
 | [RTK-Visual-Inertial-Navigation](https://github.com/xiaohong-huang/RTK-Visual-Inertial-Navigation) | 滑窗滤波框架下的 RTK 视觉惯性导航 | C++ | 136 |  |
 | [carvig](https://github.com/Erensu/carvig) | 车载 INS/GNSS/视觉组合导航（C） | C | 120 |  |
+| [salsa](https://github.com/yxw027/salsa) | GNSS+视觉+惯性状态估计相关实现 | C++ | 14 |  |
+| [GVINS](https://github.com/zhangwhu/GVINS) | PPP-RTK/INS/视觉组合导航（勿与 HKUST GVINS 混淆） | C++ | 12 |  |
 
 ### 详细说明
 
@@ -38,6 +40,18 @@
 语言：C · 星标约：120
 
 面向车辆定位的 INS/GNSS/视觉一体化导航实现（C），把惯导、卫星与视觉观测纳入同一解算框架，服务自动驾驶或车载定位验证。适合做多传感器室外定位的工程与研究生。纯 GNSS 的 RTK/PPP 引擎深度不如 RTKLIB/PRIDE；本库价值在融合架构，文档与外场标定成本需自行评估。传感器外参与时间同步质量会直接限制融合精度。
+
+#### [salsa](https://github.com/yxw027/salsa)
+
+语言：C++ · 星标约：14
+
+融合 GNSS、视觉与惯性的状态估计原型，用于机器人室外全局定位并抑制纯视觉惯性漂移。适合多传感器融合架构与外参标定实验。传感器时间同步与标定成本较高；纯测地精密定位不如专用 PPP/RTK 引擎，本仓库价值在融合框架设计而非载波相位解算深度。
+
+#### [GVINS](https://github.com/zhangwhu/GVINS)
+
+语言：C++ · 星标约：12
+
+在 PPP-RTK/INS 基础上再融合视觉观测，面向复杂遮挡环境的连续定位。适合多传感器融合与自动驾驶定位课题。务必注意：与 HKUST-Aerial-Robotics/GVINS 是不同项目，论文、数据集与作者均不相同；引用与复现前核对仓库说明，避免文献与代码串台。
 
 
 ## 多传感器融合
@@ -102,7 +116,13 @@ MATLAB 实现：以 GPS、里程计与电子罗盘为观测，用扩展卡尔曼
 | [ignav](https://github.com/Erensu/ignav) | INS 与 GNSS 组合导航实现 | C | 472 | ★ Star |
 | [GINav](https://github.com/kaichen686/GINav) | MATLAB GNSS 与 GNSS/INS 组合算法 | MATLAB | 309 | ★ Star · 核心 |
 | [Loose-GNSS-IMU](https://github.com/aaronboda24/Loose-GNSS-IMU) | GNSS 与 IMU 的松组合卡尔曼实现 | C++ | 187 |  |
+| [KF-GINS-Matlab](https://github.com/i2Nav-WHU/KF-GINS-Matlab) | KF-GINS 的 MATLAB 版：EKF 松/紧组合 GNSS/INS | MATLAB | 137 | 核心 |
+| [GIOW-release](https://github.com/i2Nav-WHU/GIOW-release) | 全轮角/里程计辅助的 GNSS/INS/ODO 组合导航算法发布版 | C++ | 75 | 核心 |
+| [Wheel-GINS](https://github.com/i2Nav-WHU/Wheel-GINS) | 轮式惯导与 GNSS 组合的导航系统（IEEE TITS 相关） | C++ | 47 |  |
+| [GNSS_IMU](https://github.com/rtklibexplorer/GNSS_IMU) | rtklibexplorer 系松组合 GNSS/IMU 的 Python 实现 | Python | 35 |  |
+| [GINS](https://github.com/zhangwhu/GINS) | PPP-RTK 与惯导组合的 GINS 实现（武大相关） | C | 21 |  |
 | [ImuGpsGuiding](https://github.com/JackJu-HIT/ImuGpsGuiding) | ROS 框架下 IMU+GPS 点到点导引示例 | C++ | 20 |  |
+| [KF-GINS-Py](https://github.com/salmoshu/KF-GINS-Py) | KF-GINS 思路的 Python 移植，便于读 EKF 组合导航 | Python | 13 |  |
 | [Smart-UAV-Return-GNSS-Station](https://github.com/citec-spbu/Smart-UAV-Return-GNSS-Station) | GNSS/链路丢失时无人机智能返航相关代码 | C | 3 |  |
 
 ### 详细说明
@@ -154,11 +174,49 @@ MATLAB 实现 GNSS 及松/紧组合常用算法，改方程方便。适合研究
 
 经典松组合示例：用 GNSS 位置/速度更新 IMU 捷联推算，代码结构直白，便于第一次跑通组合导航闭环。适合课程实验、噪声调参与坐标系对齐练习。没有紧组合伪距观测与视觉约束；进阶可转向 TightlyCoupledINSGNSS、imu_x_fusion 或 OB_GINS，工业车载还需考虑杆臂与时间同步。
 
+#### [KF-GINS-Matlab](https://github.com/i2Nav-WHU/KF-GINS-Matlab)  
+*核心*
+
+语言：MATLAB · 许可：GPL-3.0 · 星标约：137
+
+与 C++ 版 KF-GINS 对应的 MATLAB 实现，状态、观测与噪声调参过程更直观，便于课堂推导误差状态卡尔曼滤波。适合组合导航课程与算法复现。实时性能、ROS 集成与工程稳健性不如 C++ 原版；外场长航时建议回到 KF-GINS 或 OB_GINS，并把 IMU Allan 方差标定与杆臂参数补全。
+
+#### [GIOW-release](https://github.com/i2Nav-WHU/GIOW-release)  
+*核心*
+
+语言：C++ · 星标约：75
+
+将轮速/轮角与 GNSS、INS 一并估计，面向地面车辆在遮挡路段仍保持连续定位的需求。适合自动驾驶底盘导航与园区车辆试验。传感器时间同步、轮速标度因数与轮胎滑移会显著影响结果；城市峡谷 GNSS 中断时，系统上限取决于惯导质量与里程计约束是否可信。
+
+#### [Wheel-GINS](https://github.com/i2Nav-WHU/Wheel-GINS)
+
+语言：C++ · 许可：GPL-3.0 · 星标约：47
+
+围绕轮式/轮上 IMU 与 GNSS 融合的导航实现，配套 IEEE TITS 等论文场景，强调非中心安装惯性器件的运动约束。适合研究车载特殊安装与轮式里程约束。与经典车体中心松组合假设不同，杠杆臂与运动学模型必须按论文设置；纯测地 PPP/RTK 请另接专用引擎。
+
+#### [GNSS_IMU](https://github.com/rtklibexplorer/GNSS_IMU)
+
+语言：Python · 许可：BSD-3-Clause · 星标约：35
+
+rtklibexplorer 社区风格的松组合 GNSS/IMU Python 实现，便于配合 demo5 博客理解传感器融合步骤。适合入门松组合与噪声调参。不是高阶紧组合，也不含视觉/激光；外场应用前按设备重做 Allan 方差与杆臂标定，复杂场景请改用 KF-GINS 或 OB_GINS。
+
+#### [GINS](https://github.com/zhangwhu/GINS)
+
+语言：C · 星标约：21
+
+将 PPP-RTK 改正与惯导结合的 GINS 实现，追求遮挡环境下仍较连续的高精度导航解。适合阅读 PPP-RTK/INS 相关论文时对照工程结构。公开文档与示例数据完整度一般；与 HKUST GVINS、i2Nav KF-GINS 名称接近但路线不同，选用前核对作者与传感器组合。
+
 #### [ImuGpsGuiding](https://github.com/JackJu-HIT/ImuGpsGuiding)
 
 语言：C++ · 星标约：20
 
 基于 ROS，融合 IMU 与 GPS，实现从指定起点到终点的导引示例，偏机器人室外导航入门。适合实验室演示与课程项目。状态估计与工程完整度有限；高精度车载/航空组合导航请对照 NaveGo、KF-GINS、OB_GINS 等更完整工具箱。ROS 发行版与消息类型需与仓库分支匹配。室外实测前先在仿真或录包数据上验证。
+
+#### [KF-GINS-Py](https://github.com/salmoshu/KF-GINS-Py)
+
+语言：Python · 许可：GPL-3.0 · 星标约：13
+
+把 KF-GINS 类 EKF 松组合思路落到 Python，便于逐步打印状态与协方差、快速改状态维与观测模型。适合教学与算法原型。数值性能与长航时稳健性不如 C++ 原版；外场应用请回归 KF-GINS/OB_GINS，并严格完成 IMU 噪声标定与杆臂测量后再谈精度。
 
 #### [Smart-UAV-Return-GNSS-Station](https://github.com/citec-spbu/Smart-UAV-Return-GNSS-Station)
 
@@ -356,9 +414,24 @@ MATLAB 实现伪距、伪距率与 INS 的紧组合，并支持双天线测向�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [GraphRTK-INS](https://github.com/GREAT-WHU/GraphRTK-INS) | 武大 GREAT 因子图模块：RTK 与惯导紧组合 | C++ | 83 | 核心 |
+| [GREAT-PIFGO](https://github.com/GREAT-WHU/GREAT-PIFGO) | GREAT 软件中的因子图优化模块（PIFGO） | C++ | 18 |  |
 | [tightly-coupled-gnss-imu-fgo](https://github.com/inuex35/tightly-coupled-gnss-imu-fgo) | GTSAM 上 RTK+IMU 紧组合（LAMBDA/预积分） | Python | 17 |  |
 
 ### 详细说明
+
+#### [GraphRTK-INS](https://github.com/GREAT-WHU/GraphRTK-INS)  
+*核心*
+
+语言：C++ · 星标约：83
+
+GREAT 软件栈中的因子图优化组件，把 RTK 载波相位观测与惯导预积分等约束放进同一图优化框架，面向连续高精度导航。适合跟进武大公开组合导航算法与论文复现。依赖、编译选项与样例数据随仓库版本变化；与 GREAT-MSF、KF-GINS、OB_GINS 对照时重点看因子设计、鲁棒核与边缘化策略，而不只比轨迹图观感。
+
+#### [GREAT-PIFGO](https://github.com/GREAT-WHU/GREAT-PIFGO)
+
+语言：C++ · 星标约：18
+
+GREAT 体系内的因子图优化实现，面向精密定位与组合导航相关因子组织，便于对照论文中的图优化表述。适合已经在读 GREAT-PVT/MSF 的用户深入源码。与 GraphRTK-INS、GREAT-MSF 概念有重叠，选用前仔细阅读 README 的适用场景、输入观测类型与样例数据，避免重复造轮子。
 
 #### [tightly-coupled-gnss-imu-fgo](https://github.com/inuex35/tightly-coupled-gnss-imu-fgo)
 

@@ -1,5 +1,5 @@
 # 精密定位 / Precise Positioning
-> 共 **36** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **55** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
@@ -10,6 +10,8 @@
 | [rtkbase](https://github.com/Stefal/rtkbase) | 树莓派等 SBC 上自建 GNSS 基准站与 Web 管理 | Python | 769 | 核心 |
 | [rtklib-py](https://github.com/rtklibexplorer/rtklib-py) | 基于 demo5 的 RTKLIB Python 实现（侧重 PPK） | Python | 244 |  |
 | [OpenRTK](https://github.com/AndreasArendt/OpenRTK) | 开源精密 GNSS/RTK 软件 | C++ | 23 |  |
+| [HPRTK](https://github.com/yxw027/HPRTK) | 高精度实时定位相关工程（HPRTK） | C++ | 17 |  |
+| [RTK](https://github.com/GYH-WHU/RTK) | GPS/BDS 双系统 RTK（浮点/固定）C++ 教学系统 | C++ | 11 |  |
 | [GNSSRTK](https://github.com/SupakunZ/GNSS_RTK) | AGV 用 GNSS-RTK 路径规划与车载显示（Python） | Python | 3 |  |
 
 ### 详细说明
@@ -32,6 +34,18 @@
 语言：C++ · 许可：MIT · 星标约：23
 
 小型开源 RTK/精密 GNSS 实现，MIT 许可友好。适合嵌入式或教学裁剪。成熟度与社区小于 RTKLIB。
+
+#### [HPRTK](https://github.com/yxw027/HPRTK)
+
+语言：C++ · 星标约：17
+
+围绕高精度实时定位组织的 C++ 工程，可作为网络 RTK 与实时改正链路的结构参考。适合阅读数据流调度、改正数接入与解算线程划分方式。文档完整度与持续维护情况一般；关键精度与固定率请用标准基线网评估，并与 RTKLIB 或商业引擎交叉验证后再写进论文指标。
+
+#### [RTK](https://github.com/GYH-WHU/RTK)
+
+语言：C++ · 星标约：11
+
+实现 GPS/BDS 双系统相对定位，覆盖单点、RTK 浮点解到固定解的基本流程，代码面向教学。适合课堂复现双差观测与模糊度固定。基线长度适应性、周跳探测与多路径抑制相对简化；与 RTKLIB、GraphGNSSLib 对照可读差异，不宜直接当作生产级 RTK 引擎。
 
 #### [GNSSRTK](https://github.com/SupakunZ/GNSS_RTK)
 
@@ -85,6 +99,7 @@ Takasu 的 RTKLIB 是开源 RTK/PPP 事实标准之一，窗口工具与嵌入�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [PRIDE-PPPAR](https://github.com/PrideLab/PRIDE-PPPAR) | 武汉大学 PRIDELab 多星座 PPP 模糊度固定 | C | 415 | ★ Star · 核心 |
+| [PPP_AR](https://github.com/heiwa0519/PPP_AR) | 多星座 PPP 模糊度固定（PPP-AR）相关实现 | C | 40 |  |
 
 ### 详细说明
 
@@ -95,12 +110,22 @@ Takasu 的 RTKLIB 是开源 RTK/PPP 事实标准之一，窗口工具与嵌入�
 
 面向多 GNSS 的 PPP-AR 开源软件，科研引用多，模糊度固定与产品接口成熟。适合高精度事后 PPP、地壳形变、气象 ZTD。实时 PPP-RTK 与图形界面非重点；学习曲线陡于 RTKLIB。
 
+#### [PPP_AR](https://github.com/heiwa0519/PPP_AR)
+
+语言：C · 星标约：40
+
+围绕多星座 PPP 模糊度固定（PPP-AR）组织的实现，便于对照教材中的宽巷/窄巷与产品依赖关系。适合学习 PPP-AR 流程。工程化程度、实时性与 OSB/UPD 产品格式支持参差不齐；严肃精度评估请交叉验证 PRIDE-PPPAR、Ginan 或 MRTKLIB。
+
 
 ## PPP/改正数
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [ginan](https://github.com/GeoscienceAustralia/ginan) | Geoscience Australia 精密定位与改正数工具包 | C++ | 343 | 核心 |
+| [RTKLIB-B2b](https://github.com/UCAS-Liuchunbo/RTKLIB-B2b) | 基于 RTKLIB 的北斗 PPP-B2b 解码与定位工具包 | C | 74 | 核心 |
+| [NavDecoder](https://github.com/NavSesne/NavDecoder) | 解码 PPP-B2b 与 Galileo HAS 并做校验的工具 | Python | 37 | 核心 |
+| [B2bLIB](https://github.com/GCCLib/B2bLIB) | 北斗 PPP-B2b 服务研究用的 C/C++ 库 | C | 26 | 核心 |
+| [CSSR-tool](https://github.com/MayHarryWang/CSSR-tool) | 多源协同 CSSR-PPP 改正数预处理工具 | C | 7 |  |
 
 ### 详细说明
 
@@ -110,6 +135,33 @@ Takasu 的 RTKLIB 是开源 RTK/PPP 事实标准之一，窗口工具与嵌入�
 语言：C++ · 星标约：343
 
 澳大利亚定位项目开源工具包，支撑精密定位与改正数生成，工程化程度高。适合要看现代化 C++ 精密定位与服务化架构的人。编译依赖重；完全复现运营服务还需数据与配置。
+
+#### [RTKLIB-B2b](https://github.com/UCAS-Liuchunbo/RTKLIB-B2b)  
+*核心*
+
+语言：C · 星标约：74
+
+基于 RTKLIB 改造的北斗 PPP-B2b 解码与定位工具包，填补开源社区在 B2b 实操链路上的缺口。适合对照 ICD 评估收敛、精度与可用性。可与 floating0516/RTPPP_B2b、GCCLib/B2bLIB、NavDecoder 并列试验；注意电文版本、接收机原始流格式与许可声明是否满足你的使用场景。
+
+#### [NavDecoder](https://github.com/NavSesne/NavDecoder)  
+*核心*
+
+语言：Python · 星标约：37
+
+同时解码北斗 PPP-B2b 与 Galileo HAS 精密改正并做校验，方便多星座增强产品对比与电文一致性检查。适合 SSR/HAS 电文层研究与教学演示。仓库名拼写特殊但不影响克隆；完整 PPP 解算需另接引擎，本库主责改正数解析。版本升级后应用官方样例回归。
+
+#### [B2bLIB](https://github.com/GCCLib/B2bLIB)  
+*核心*
+
+语言：C · 星标约：26
+
+为北斗 PPP-B2b 服务研究提供的 C/C++ 库，降低从广播电文到改正应用试验的门槛。适合高校北斗 PPP 课题与 ICD 对照。可与 UCAS RTKLIB-B2b、floating0516/RTPPP_B2b、NavDecoder 互补；电文版本升级后需回归，许可未标明时商用应先联系作者。
+
+#### [CSSR-tool](https://github.com/MayHarryWang/CSSR-tool)
+
+语言：C · 许可：GPL-3.0 · 星标约：7
+
+面向多源协同 CSSR-PPP 的改正数预处理工具，把区域增强类电文整理成后续引擎可用的形式。适合 PPP-RTK/CSSR 试验的数据准备环节。本身不完成完整定位；电文版本、星座与测站网格定义要按样例核验，再接到 MRTKLIB 或自研解算器。
 
 
 ## 相对定位/PPP
@@ -188,6 +240,10 @@ GRAZ 等地学机构风格的工具包，覆盖重力场恢复与 GNSS 处理，
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [libgnss++](https://github.com/rsasaki0109/gnssplusplus-library) | 现代 C++20 GNSS 工具包（SPP/RTK/PPP/CLAS） | C++ | 189 |  |
+| [SatellitePosition](https://github.com/LStudioLoren/SatellitePosition) | Python 实现卫星单点定位与 RTK 相对定位的学习项目 | Python | 62 |  |
+| [MobileGNSS-SPP](https://github.com/salmoshu/MobileGNSS-SPP) | 面向智能手机的 EKF 单点定位优化实现 | C | 41 |  |
+| [GNSS-Explorer](https://github.com/brucezhcw/GNSS-Explorer) | 基于 RTKLIB 的 SPP 算法优化探索 | C | 21 |  |
+| [SPP_SPV](https://github.com/GYH-WHU/SPP_SPV) | 武大相关 GPS/BDS 单点定位与测速（C++/MATLAB）教学实现 | C++ | 7 |  |
 
 ### 详细说明
 
@@ -196,6 +252,30 @@ GRAZ 等地学机构风格的工具包，覆盖重力场恢复与 GNSS 处理，
 语言：C++ · 许可：MIT · 星标约：189
 
 C++20 风格的 SPP/RTK/PPP/CLAS 工具包，含 Python 绑定、Docker、ROS2 支持。适合新架构嵌入式/机器人项目。测地学事后高精度产品力需与 PRIDE 等对比评估。
+
+#### [SatellitePosition](https://github.com/LStudioLoren/SatellitePosition)
+
+语言：Python · 星标约：62
+
+用 Python 从零实现卫星单点定位与 RTK 相对定位的学习项目，注释与结构偏教学向。适合编程课、导航算法入门与作业模板。数值稳健性、周跳探测与多路径处理不及成熟库；学完概念后应用 RTKLIB 或 goGPS 做精度与固定率对照，避免把作业代码当生产引擎。
+
+#### [MobileGNSS-SPP](https://github.com/salmoshu/MobileGNSS-SPP)
+
+语言：C · 许可：MIT · 星标约：41
+
+针对智能手机 GNSS 原始测量设计的 EKF 单点定位实现，意在改善消费级轨迹连续性与噪声表现。适合手机导航算法原型与课程项目。精度达不到载波相位 RTK/PPP；天线相位中心、占空比与多路径仍在，可与 android_rinex、PRIDE-GeoDataLogger 采集链衔接做进一步研究。
+
+#### [GNSS-Explorer](https://github.com/brucezhcw/GNSS-Explorer)
+
+语言：C · 星标约：21
+
+在 RTKLIB 框架上探索 SPP 算法改进，例如加权模型、粗差探测或选星策略的小改动试验场。适合对照默认配置做消融实验与课程报告。不是独立大型定位套件；若计划回馈社区分支，需注意许可证、代码风格与完整回归测试，避免只报告单一场景上的收益。
+
+#### [SPP_SPV](https://github.com/GYH-WHU/SPP_SPV)
+
+语言：C++ · 星标约：7
+
+基于 C++/MATLAB 的 GPS+BDS 单点定位与测速教学系统，可解码 NovAtel 等接收机输出后完成基本解算。适合本科/研究生课程设计。精度、完备性监测与粗差处理不及 RTKLIB 或商用引擎；科研对比应统一星历钟差产品与误差模型后再引用数值结论。
 
 
 ## PPP
@@ -206,8 +286,10 @@ C++20 风格的 SPP/RTK/PPP/CLAS 工具包，含 Python 绑定、Docker、ROS2 �
 | [GAMP_PPPH](https://github.com/zhufengGNSS/GAMP_PPPH) | 多星座 PPP 源码（GAMP 相关整理） | — | 78 | ★ Star |
 | [GPSPACE](https://github.com/CGS-GIS/GPSPACE) | 加拿大 NRCan GPSPACE PPP Fortran 程序 | Fortran | 58 |  |
 | [PPPLib](https://github.com/yxw027/PPPLib) | 精密单点定位库 PPPLib | — | 49 |  |
+| [PPP](https://github.com/XiaoGongWei/PPP) | 静态 PPP 相关 C++ 实现（MG-APP 作者相关） | C++ | 23 |  |
 | [PPPH-UAV](https://github.com/BerkayBahadur/PPPH-UAV) | 面向无人机摄影测量的 GNSS PPP 处理（MATLAB） | MATLAB | 14 |  |
 | [RTPPP_B2b](https://github.com/floating0516/RTPPP_B2b) | 北斗 PPP-B2b 改正数解码与实时 PPP 接口 | C | 10 | 核心 |
+| [ppp_rtklib](https://github.com/mulin33/ppp_rtklib) | 从 RTKLIB 抽出的独立 PPP 模块，便于精读源码 | C | 4 |  |
 
 ### 详细说明
 
@@ -237,6 +319,12 @@ NRCan 公开的 PPP Fortran 代码，历史与官方 CSRS-PPP 服务同源脉络
 
 开源 PPP 库，便于阅读 PPP 状态估计与资源管理结构。适合课程设计与二次开发起点。社区体量小于 PRIDE/RTKLIB；功能完整性以实测为准。
 
+#### [PPP](https://github.com/XiaoGongWei/PPP)
+
+语言：C++ · 许可：GPL-3.0 · 星标约：23
+
+偏静态精密单点定位流程的 C++ 练习/研究代码，作者与 MG-APP 系列相关，便于对照阅读观测方程与参数估计骨架。适合理解 PPP 基本流程。工程完整度、多星座产品与模糊度固定支持有限；生产级 PPP-AR 请优先使用 PRIDE-PPPAR、Ginan 或 MRTKLIB 等更完整套件。
+
 #### [PPPH-UAV](https://github.com/BerkayBahadur/PPPH-UAV)
 
 语言：MATLAB · 星标约：14
@@ -249,6 +337,12 @@ NRCan 公开的 PPP Fortran 代码，历史与官方 CSRS-PPP 服务同源脉络
 语言：C · 星标约：10
 
 解码北斗 PPP-B2b 广播的精密轨道钟差改正，带流解析、缓冲与完整性检查，便于接入实时 PPP 流水线。做 BDS-3 短报文 PPP 或接收机原型时应优先阅读。仓库体量小、许可未标明，工程化与多系统融合仍需自补；可与 PRIDE、Ginan、RTKLIB 实时分支对照改正数接口设计。区域服务范围与信号可见性会直接影响改正可用性。
+
+#### [ppp_rtklib](https://github.com/mulin33/ppp_rtklib)
+
+语言：C · 星标约：4
+
+从 RTKLIB 源码中抽出 PPP 相关模块做成更小阅读单元，降低在庞大工程里迷路的成本，方便精读观测模型与参数估计。适合源码课与自学。功能范围取决于抽取边界，不保证与完整 RTKLIB 行为一致；修改后应回到官方工程跑回归再谈精度对比。
 
 
 ## 因子图
@@ -307,9 +401,18 @@ C++ 开源定位软件，中文导航学习社区常见推荐。适合跟 Naviga
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [pyrtklib](https://github.com/IPNL-POLYU/pyrtklib) | 港理工 IPNL 的 RTKLIB Python 绑定，可直接在脚本里调用核心解算 | C | 182 | 核心 |
 | [MatRTKLIB](https://github.com/taroz/MatRTKLIB) | RTKLIB 的 MATLAB 封装与分析辅助 | MATLAB | 99 |  |
+| [pyrtklib_demo5](https://github.com/IPNL-POLYU/pyrtklib_demo5) | 基于 rtklibexplorer demo5 分支的 pyrtklib 变体 | C | 13 |  |
 
 ### 详细说明
+
+#### [pyrtklib](https://github.com/IPNL-POLYU/pyrtklib)  
+*核心*
+
+语言：C · 许可：MIT · 星标约：182
+
+港理工 IPNL 将 RTKLIB C 核心封装为 Python 扩展，便于在科研脚本里直接调用 PPK/RTK/PPP 而不反复改 C 工程。适合算法对比、批量后处理与教学演示。接口覆盖取决于绑定版本；实时流与新信号支持需对照所选 RTKLIB 分支。与 rtklib-py（纯 Python 重写）不同，本库强调调用原生 C 性能。
 
 #### [MatRTKLIB](https://github.com/taroz/MatRTKLIB)
 
@@ -317,12 +420,19 @@ C++ 开源定位软件，中文导航学习社区常见推荐。适合跟 Naviga
 
 在 MATLAB 里调用 RTKLIB 并补齐科研常用分析步骤，降低「C 程序+画图」切换成本。适合已有 RTKLIB 经验的科研人员。性能关键路径仍在 RTKLIB 侧。
 
+#### [pyrtklib_demo5](https://github.com/IPNL-POLYU/pyrtklib_demo5)
+
+语言：C · 许可：MIT · 星标约：13
+
+在 pyrtklib 思路上对接 rtklibexplorer/demo5 补丁树，更贴近低成本接收机与社区常用改进。适合已经跟随 demo5 博客流程的用户迁移到 Python 批处理。维护节奏可能与主 pyrtklib 分叉；投产前用同一观测数据交叉比对官方 RTKLIB、demo5 命令行与本绑定输出。
+
 
 ## 多GNSS定位
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [MG_APP](https://github.com/XiaoGongWei/MG_APP) | MG-APP 多 GNSS 精密定位应用（论文配套） | C++ | 98 |  |
+| [QuadSPP](https://github.com/hdkarimi/QuadSPP) | 多星座标准单点定位（SPP）实现 | C | 14 |  |
 
 ### 详细说明
 
@@ -331,6 +441,12 @@ C++ 开源定位软件，中文导航学习社区常见推荐。适合跟 Naviga
 语言：C++ · 星标约：98
 
 与 GPS Solutions 论文配套的多 GNSS 定位软件，便于对照文章复现。适合学术复现。工程支持与持续更新取决于作者精力。
+
+#### [QuadSPP](https://github.com/hdkarimi/QuadSPP)
+
+语言：C · 许可：MIT · 星标约：14
+
+多星座标准单点定位（SPP）实现，代码结构相对直接，便于核对广播星历、钟差与几何距离等基本模型。适合 SPP 基线实验与教学作业。不含模糊度固定与精密产品深度；进入 PPP/RTK 请换专用库，本仓库用来验证伪距定位链路与粗差剔除策略即可。
 
 
 ## 城市峡谷
@@ -420,15 +536,37 @@ Python 下处理/绘制基于 RINEX 的 GPS 与 Galileo 数据，教学演示友
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [MRTKLIB](https://github.com/h-shiono/MRTKLIB) | 面向 PPP/PPP-AR/PPP-RTK（CLAS/MADOCA）的现代 GNSS 定位库 | C | 78 | 核心 |
 | [pygnsslab](https://github.com/PyGnssLab/pygnsslab) | Python 模块化 RINEX/PPP/PPP-AR 与实时流 | Python | 34 |  |
+| [Urban-RTKLIB](https://github.com/MayHarryWang/Urban-RTKLIB) | 面向城市导航的 RTKLIB 改版，侧重 PPP/PPP-RTK | C | 25 |  |
+| [mrtklib-docker-ui](https://github.com/h-shiono/mrtklib-docker-ui) | MRTKLIB 的 Docker/Web 界面，方便后处理与实时演示 | TypeScript | 10 |  |
 
 ### 详细说明
+
+#### [MRTKLIB](https://github.com/h-shiono/MRTKLIB)  
+*核心*
+
+语言：C · 星标约：78
+
+面向 PPP、PPP-AR 与 PPP-RTK（含 CLAS/MADOCA 等区域增强）的现代定位库，比经典 RTKLIB 默认树更贴近亚太 PPP-RTK 场景。适合评估 SSR/CSSR 改正接入与模糊度固定。文档与样例需要时间消化；与 PRIDE、Ginan、Urban-RTKLIB 对照时重点看改正数接口、收敛时间与固定率。上游许可请仔细阅读。
 
 #### [pygnsslab](https://github.com/PyGnssLab/pygnsslab)
 
 语言：Python · 许可：MIT · 星标约：34
 
 纯 Python 方向的模块化工具，含 RINEX、PPP/PPP-AR 与实时流支持，降低 C++ 编译门槛。适合原型与教学。极致性能与完备产品化仍不及 PRIDE/Ginan。
+
+#### [Urban-RTKLIB](https://github.com/MayHarryWang/Urban-RTKLIB)
+
+语言：C · 星标约：25
+
+基于 RTKLIB 改造、面向城市峡谷导航的版本，更强调 PPP/PPP-RTK 在遮挡环境下的可用性。适合低成本城市精密定位试验。具体改动需对照上游 diff 与配置文件；与 MRTKLIB、rtklibexplorer 并列评估时，重点看遮挡建模、改正数接口与固定率统计。
+
+#### [mrtklib-docker-ui](https://github.com/h-shiono/mrtklib-docker-ui)
+
+语言：TypeScript · 许可：MIT · 星标约：10
+
+给 MRTKLIB 套一层容器与网页操作，降低命令行门槛，便于课堂或外场演示 PPP/PPP-RTK。适合快速试 CLAS/MADOCA 相关配置与看星空图类状态。解算能力完全取决于背后的 MRTKLIB 版本与改正源；复杂工程参数仍建议回到命令行复现，并把容器镜像 tag 钉死以免漂移。
 
 
 ## 多功能引擎
