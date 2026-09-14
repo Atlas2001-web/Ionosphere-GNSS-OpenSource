@@ -1,62 +1,50 @@
 # NOTES — 编纂与核验说明
 
 生成日期：2026-09-14  
-目标仓库名：`Ionosphere-GNSS-OpenSource`
+条目数：**207**
 
-## 数据来源优先级
+## 来源
 
-1. **用户自有**：Atlas2001-web/SH-GIM（旗舰）
-2. **用户 Fork**：PyTECGg、georinex
-3. **用户 GitHub Stars**（电离层 / GNSS / 导航三类）作为主种子
-4. **社区知名项目**补充：Ginan、raPPPid、rtklibexplorer、gici-open、PyIRI、iri2016/2020、gnss-tec、tec-suite、NeQuick、GNSSNexus/rinex、pyins、GREAT-MSF、GPSPACE、gnssrefl、闪烁仿真器等
+1. 既有 PROJECTS.json（55，电离层较完整）
+2. research/seed_urls.json（282：awesome-gnss + Navigation-Learning）
+3. 人工核验：GitHub API / 官方站点（VMF、RNXCMP、BNC、Anubis、EGNOS Toolkit）
+4. 维护者 stars / forks（SH-GIM、PyTECGg、georinex）
 
-## 核验方法
+## 过滤
 
-- 早期批次：GitHub REST API `GET /repos/{owner}/{repo}`（获取 language / license / stars）
-- 全量批次：对 `https://github.com/{owner}/{repo}` 做 HTTP HEAD，要求 **200**
-- API 触发 403 限流后，不以“搜不到”为由删除已 HEAD 通过的星标项目
-- **不收录**：虚构 URL、未确认存在的仓库、私有库（SH-GIM-proprietary）
+- 不收录私有库与虚构 URL
+- Navigation-Learning 中与 GNSS/PNT 无关的纯 SLAM/深度学习列表已过滤
+- Fork 去重为上游 canonical URL，fork 关系写入 markers
 
-## 刻意省略
-
-- `SH-GIM-proprietary`：私有，不在公开 README / lists 中出现
-- 未找到稳定公开源码镜像的专有工具（如部分商业 PPP 服务前端）
-- teqc（已 EOL，官方分发不在 GitHub；未强行编造镜像）
-- 官方 BNC：主要在 BKG SVN/FTP（`software.rtcm-ntrip.org`）；社区镜像存在但非唯一权威，本期未强制列入主表
-
-## 分类计数（当前）
+## 分类计数
 
 | category | count |
 |---|---:|
-| ionosphere | 29 |
-| gnss-data | 6 |
-| gnss-positioning | 10 |
-| navigation-ins | 7 |
-| tools-learning | 3 |
-| **total** | **55** |
+| ionosphere | 37 |
+| troposphere | 15 |
+| gnss-data | 30 |
+| gnss-positioning | 51 |
+| orbit-clock | 2 |
+| navigation-ins | 16 |
+| gnss-sdr | 45 |
+| mobile-apps | 4 |
+| tools-learning | 10 |
+| **total** | **210** |
 
-## 用户关系计数
+## 稀疏领域
 
-- owned: 1（SH-GIM）
-- forked: 2（PyTECGg, georinex）
-- starred: 多数星标种子已纳入
-- none: 社区补充项
+对流层独立 GitHub 项目偏少（标准码在 TU Wien）；轨道/钟差/DCB 多集成于大型套件，故不硬凑数量。
 
-## 后续可增强（未阻塞本期交付）
+## 质量修订（2026-09-14）
 
-- 用未限流的 API token 回填全部 `language` / `license` / `stars`
-- 增加 ANTEX/RTCM 专用读写库专题
-- 增加 CSRS-PPP 在线服务说明（非源码）与 GPSPACE 编译笔记
-- 可视化类可补充更多绘图/QC 工具（Anubis 官方页等非 GitHub 源）
+- 重写 Navigation-Learning 模板分析 **59** 条；删除 404/非 GNSS **3** 条（CSolgaard/GNSS-IR、iliasam/gps_rf_frontend_sim、aipixel/GPS-Gaussian）
+- 纠正 SupakunZ/GNSS_RTK → `gnss-positioning`；若干 SDR/INS 条目归入 `gnss-sdr` / `navigation-ins`
+- 剔除全文复制粘贴的 README对照 / IGS交叉检查 结尾套话
+- 当前条目：**207**
 
-## 文件清单
+## 质量修订（2026-09-14）
 
-```
-/workspace/ionosphere-gnss-catalog/
-├── README.md
-├── PROJECTS.json
-├── NOTES.md
-├── CONTRIBUTING.md
-├── docs/categories.md
-└── lists/01–05-*.md
-```
+- 重写 Navigation-Learning 模板分析 **59** 条；删除 404/非 GNSS **3** 条（CSolgaard/GNSS-IR、iliasam/gps_rf_frontend_sim、aipixel/GPS-Gaussian）
+- 纠正 SupakunZ/GNSS_RTK → `gnss-positioning`；误放的 SDR/INS 条目分别归入 `gnss-sdr` / `navigation-ins`
+- 剔除全文复制粘贴的 README对照 / IGS交叉检查 结尾套话
+- 当前条目：**207**

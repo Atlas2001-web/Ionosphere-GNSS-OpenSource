@@ -1,38 +1,90 @@
-# 分类说明 / Category Guide
+# 分类说明（写给初学者）
 
-本索引按主题分为五大类，便于从「电离层科学 → GNSS 数据 → 精密定位 → 组合导航 → 工具学习」串联工作流。
+本索引按「你要解决什么问题」划分，而不是按编程语言。下面用白话说明每一类在 GNSS 工作流里的位置。
 
-## 1. 电离层 / Ionosphere (`lists/01-ionosphere.md`)
+```
+数据下载/格式(RINEX,RTCM) ──► 质量检查
+         │
+         ├─► 电离层 TEC/GIM / 闪烁指标
+         ├─► 对流层 ZTD/PWV / VMF
+         └─► 精密定位 RTK/PPP ──► 轨道钟差产品
+                    │
+                    └─► GNSS/INS / 视觉组合导航
 
-- **GIM / 球谐映射**：全球电离层图、球谐系数解算
-- **TEC 估计**：STEC/VTEC 重建、IPP、校准
-- **IRI / NeQuick**：经验/半经验电离层模型
-- **闪烁 / 扰动监测**：ROTI、AATR、闪烁仿真
-- **电离层层析**：几何矩阵、层析成像相关
-- **IONEX**：标准电离层交换格式读写
+另线：GNSS-SDR（从无线电采样到伪距/相位）；手机 App（原始测量采集）
+```
 
-## 2. GNSS 数据与格式 (`lists/02-gnss-data.md`)
 
-RINEX、SP3、时钟、ANTEX、RTCM 等读写与质量检查；数据下载与通用库。
+## `ionosphere` — 电离层
 
-## 3. GNSS 精密定位 (`lists/03-gnss-positioning.md`)
+研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
-RTK、PPP、PPP-AR、网平差、精密轨道/钟差（POD）等。
+- 列表文件：[`lists/01-ionosphere.md`](../lists/01-ionosphere.md)
+- 当前条目数：**37**
 
-## 4. 导航 / INS (`lists/04-navigation-ins.md`)
+## `troposphere` — 对流层
 
-IMU 捷联、GNSS/INS 松紧耦合、多传感器融合、移动端测试。
+中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
-## 5. 可视化与教育 (`lists/05-tools-learning.md`)
+- 列表文件：[`lists/02-troposphere.md`](../lists/02-troposphere.md)
+- 当前条目数：**13**
 
-反射测量、仿真器、学习仓库等。
+## `gnss-data` — GNSS 数据与格式
+
+RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
+
+- 列表文件：[`lists/03-gnss-data.md`](../lists/03-gnss-data.md)
+- 当前条目数：**31**
+
+## `gnss-positioning` — 精密定位
+
+SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
+
+- 列表文件：[`lists/04-gnss-positioning.md`](../lists/04-gnss-positioning.md)
+- 当前条目数：**30**
+
+## `orbit-clock` — 轨道与钟差
+
+精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。
+
+- 列表文件：[`lists/05-orbit-clock.md`](../lists/05-orbit-clock.md)
+- 当前条目数：**2**
+
+## `navigation-ins` — 导航 / GNSS-INS
+
+GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
+
+- 列表文件：[`lists/06-navigation-ins.md`](../lists/06-navigation-ins.md)
+- 当前条目数：**27**
+
+## `gnss-sdr` — 软件接收机与信号
+
+从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。
+
+- 列表文件：[`lists/07-gnss-sdr.md`](../lists/07-gnss-sdr.md)
+- 当前条目数：**48**
+
+## `mobile-apps` — 移动与嵌入式应用
+
+手机/嵌入式上的 GNSS 测试、原始测量记录与简易定位。
+
+- 列表文件：[`lists/08-mobile-apps.md`](../lists/08-mobile-apps.md)
+- 当前条目数：**8**
+
+## `tools-learning` — 学习资源与工具
+
+awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
+
+- 列表文件：[`lists/09-tools-learning.md`](../lists/09-tools-learning.md)
+- 当前条目数：**11**
 
 ## 与用户仓库的关系标记
 
 | 标记 | 含义 |
 |---|---|
-| 🚩 自有 | Atlas2001-web 原创公开仓库（如 SH-GIM） |
-| 🔀 已 Fork | 用户已 fork 的上游项目 |
-| ★ 已星标 | 出现在用户 GitHub stars 中的精选种子 |
+| 🚩 自有 / owned | Atlas2001-web 原创公开仓库（旗舰：SH-GIM） |
+| 🔀 Fork / fork | 维护者已 fork，表中仍列**上游** URL |
+| ★ Star / starred | 出现在维护者 GitHub stars 中的种子 |
+| 核心 / core | 本目录推荐优先阅读的代表性项目 |
 
-> 私有仓库（如 SH-GIM-proprietary）**不会**出现在公开索引中。
+> 私有仓库（如 `SH-GIM-proprietary`）**不会**出现在公开索引中。

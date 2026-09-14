@@ -1,0 +1,1694 @@
+[
+  {
+    "name": "BDS-3-B1C-B2a-SDR-receiver",
+    "url": "https://github.com/lyf8118/BDS-3-B1C-B2a-SDR-receiver",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "carvig",
+    "url": "https://github.com/Erensu/carvig",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "FAST",
+    "url": "https://github.com/ChangChuntao/FAST",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "GICI-LIB",
+    "url": "https://github.com/chichengcn/gici-open",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "gnatss",
+    "url": "https://github.com/seafloor-geodesy/gnatss",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "gnss-RX",
+    "url": "https://github.com/HeryMwenegoha/gnss-RX",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "gnss2tws-green",
+    "url": "https://github.com/jzshhh/gnss2tws_green",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "GNSSClock",
+    "url": "https://github.com/stevemarple/GNSS_Clock",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "gnsssdrgui",
+    "url": "https://github.com/UHaider/gnss_sdr_gui",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "GNSSSDRHACKRF",
+    "url": "https://github.com/jdesbonnet/GNSS_SDR_HACKRF",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "GNSSTimeServer",
+    "url": "https://github.com/Montecri/GNSSTimeServer",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "GPS-Gaussian",
+    "url": "https://github.com/aipixel/GPS-Gaussian",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "GPSMilemeterIMUEKFLocation",
+    "url": "https://github.com/gilbertz/GPS_Milemeter_IMU_EKFLocation",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "GVINS",
+    "url": "https://github.com/HKUST-Aerial-Robotics/GVINS",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "ICGVINS",
+    "url": "https://github.com/i2Nav-WHU/IC-GVINS",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "ImuGpsGuiding",
+    "url": "https://github.com/JackJu-HIT/ImuGpsGuiding",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "imugpslocalization",
+    "url": "https://github.com/ydsf16/imu_gps_localization",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "IndirectEKFIMUGPS",
+    "url": "https://github.com/hgpvision/Indirect_EKF_IMU_GPS",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "KalmanFilters.jl",
+    "url": "https://github.com/JuliaGNSS/KalmanFilters.jl",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "KGP-IAEKF-IGGIII",
+    "url": "https://github.com/chi-qhsun/KGP-IAEKF-IGGIII",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "msckfvioGPS",
+    "url": "https://github.com/loveforeverLi/msckf_vio_GPS",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "NaveGo",
+    "url": "https://github.com/rodralez/NaveGo",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "nmea-msgs",
+    "url": "https://github.com/ros-drivers/nmea_msgs",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "Pypredict",
+    "url": "https://github.com/spel-uchile/Pypredict",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "raw-gnss-fusion",
+    "url": "https://github.com/JonasBchrt/raw-gnss-fusion",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "rvizsatellite",
+    "url": "https://github.com/nobleo/rviz_satellite",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "SatellitePosition",
+    "url": "https://github.com/LStudioLoren/SatellitePosition",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "Smart-UAV-Return-GNSS-Station",
+    "url": "https://github.com/citec-spbu/Smart-UAV-Return-GNSS-Station",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "STM32-GNSS",
+    "url": "https://github.com/SimpleMethod/STM32-GNSS",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "STM32Primer2-GNSS-Tracker",
+    "url": "https://github.com/nemuisan/STM32Primer2_GNSS_Tracker",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "syncgpslidarimucam",
+    "url": "https://github.com/nkliuhui/sync_gps_lidar_imu_cam",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "utm",
+    "url": "https://github.com/sfegan/utm",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "VINS-GPS-Wheel",
+    "url": "https://github.com/Wallong/VINS-GPS-Wheel",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-navigation"
+  },
+  {
+    "name": "GNSS-IR",
+    "url": "https://github.com/CSolgaard/GNSS-IR",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-reflectometry"
+  },
+  {
+    "name": "GNSS-Multipath-Analysis-Software",
+    "url": "https://github.com/paarnes/GNSS_Multipath_Analysis_Software",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-reflectometry"
+  },
+  {
+    "name": "gnss-multipath-detector",
+    "url": "https://github.com/EvgeniiMunin/gnss-multipath-detector",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-reflectometry"
+  },
+  {
+    "name": "gnssIR-matlab-v3",
+    "url": "https://github.com/kristinemlarson/gnssIR_matlab_v3",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-reflectometry"
+  },
+  {
+    "name": "gnssIR-python",
+    "url": "https://github.com/kristinemlarson/gnssIR_python",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-reflectometry"
+  },
+  {
+    "name": "gnssr-synth",
+    "url": "https://github.com/purnelldj/gnssr_synth",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-reflectometry"
+  },
+  {
+    "name": "gnssrefl",
+    "url": "https://github.com/kristinemlarson/gnssrefl",
+    "source": "awesome-gnss",
+    "guessed_category": "gnss-reflectometry"
+  },
+  {
+    "name": "gnssrlowcost",
+    "url": "https://github.com/purnelldj/gnssr_lowcost",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-reflectometry"
+  },
+  {
+    "name": "GNSSRMERRByS",
+    "url": "https://github.com/pjalesSSTL/GNSSR_MERRByS",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-reflectometry"
+  },
+  {
+    "name": "GNSSRTK",
+    "url": "https://github.com/SupakunZ/GNSS_RTK",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-reflectometry"
+  },
+  {
+    "name": "Analog-GPS-data-receiver",
+    "url": "https://github.com/leaningktower/Analog-GPS-data-receiver",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "B1C-Signals-Simulation",
+    "url": "https://github.com/pandaclover/B1C_Signals_Simulation",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "BD3FPGA",
+    "url": "https://github.com/whc2uestc/BD3_FPGA",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "BDSSDR",
+    "url": "https://github.com/nkyang/BDS_SDR",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "BeagleSDRGPS",
+    "url": "https://github.com/jks-prv/Beagle_SDR_GPS",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "beidou-sdr-sim",
+    "url": "https://github.com/yangfan852219770/beidou-sdr-sim",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "CU-SDR-Collection",
+    "url": "https://github.com/gnsscusdr/CU-SDR-Collection",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "esp2822NMEAsim",
+    "url": "https://github.com/michalpelka/esp2822_NMEA_sim",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "ESP32-SDR-GPS",
+    "url": "https://github.com/iliasam/ESP32_SDR_GPS",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "Fast-GNSS-ReceiverMATLAB",
+    "url": "https://github.com/JohnBagshaw/Fast_GNSS_ReceiverMATLAB",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "FGI-GSRx",
+    "url": "https://github.com/nlsfi/FGI-GSRx",
+    "source": "awesome-gnss",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "FlyCat-SDR-GPS",
+    "url": "https://github.com/flydog-sdr/FlyCat_SDR_GPS",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "FlyDog-SDR-GPS",
+    "url": "https://github.com/flydog-sdr/FlyDog_SDR_GPS",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "FullStackGPSReceiver",
+    "url": "https://github.com/hamsternz/Full_Stack_GPS_Receiver",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "galileo-sdr-sim",
+    "url": "https://github.com/harshadms/galileo-sdr-sim",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "gnss-baseband",
+    "url": "https://github.com/j-core/gnss-baseband",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "GNSS-DSP-tools",
+    "url": "https://github.com/pmonta/GNSS-DSP-tools",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "GNSS-GPS-SDR",
+    "url": "https://github.com/JiaoXianjun/GNSS-GPS-SDR",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "GNSS-matlab",
+    "url": "https://github.com/danipascual/GNSS-matlab",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "GNSS-Metadata-Standard",
+    "url": "https://github.com/IonMetadataWorkingGroup/GNSS-Metadata-Standard",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "gnss-rcv",
+    "url": "https://github.com/mx4/gnss-rcv",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "GNSS-SDR",
+    "url": "https://github.com/gnss-sdr/gnss-sdr",
+    "source": "awesome-gnss",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "gnss-sdr-1pps",
+    "url": "https://github.com/oscimp/gnss-sdr-1pps",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "gnss-sdr-monitor",
+    "url": "https://github.com/acebrianjuan/gnss-sdr-monitor",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "gnss-sdr-rs",
+    "url": "https://github.com/kewei/gnss-sdr-rs",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "GNSS-SDRLIB",
+    "url": "https://github.com/taroz/GNSS-SDRLIB",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "GNSS-VHDL",
+    "url": "https://github.com/danipascual/GNSS-VHDL",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "GNSSFirehose",
+    "url": "https://github.com/pmonta/GNSS_Firehose",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "gps",
+    "url": "https://github.com/psas/gps",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "gps-qzss-sdr-sim",
+    "url": "https://github.com/iGNSS/gps-qzss-sdr-sim",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "gps-rf-frontend-sim",
+    "url": "https://github.com/iliasam/gps_rf_frontend_sim",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "gps-sdr",
+    "url": "https://github.com/gps-sdr/gps-sdr",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "gps-sdr-sim",
+    "url": "https://github.com/osqzss/gps-sdr-sim",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "gps-sdr-sim-assistant",
+    "url": "https://github.com/frank-pian/gps-sdr-sim-assistant",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "gps-sdr-simulink",
+    "url": "https://github.com/dmiralles2009/gps-sdr-simulink",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "GPSGALSSS",
+    "url": "https://github.com/domonforyou/GPS_GAL_SSS",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "GPSL1-DPEmodule",
+    "url": "https://github.com/Sergio-Vicenzo/GPSL1-DPEmodule",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "GPSMAXIM2769b-",
+    "url": "https://github.com/vaidhyamookiah/GPSMAXIM2769b-",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "GPUAcceleratedTracking",
+    "url": "https://github.com/coezmaden/GPUAcceleratedTracking",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "gr-gnMAX2769",
+    "url": "https://github.com/wkazubski/gr-gnMAX2769",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "greta-oto",
+    "url": "https://github.com/globsky/greta-oto",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "gypsum",
+    "url": "https://github.com/codyd51/gypsum",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "hardsydr",
+    "url": "https://github.com/aproposorg/hard_sydr",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "hardware",
+    "url": "https://github.com/oresat/oresat-gps-hardware",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "MAX2769FT2232H",
+    "url": "https://github.com/WKyleGilbertson/MAX2769FT2232H",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "meta-gnss-sdr",
+    "url": "https://github.com/carlesfernandez/meta-gnss-sdr",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "Microsat-gps-sim",
+    "url": "https://github.com/niklasknoell/Microsat-gps-sim",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "multi-channel-gnss",
+    "url": "https://github.com/dasdboot/multi-channel-gnss",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "multi-sdr-gps-sim",
+    "url": "https://github.com/Mictronics/multi-sdr-gps-sim",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "NavLab-DPE-SDR",
+    "url": "https://github.com/Stanford-NavLab/NavLab-DPE-SDR",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "nut2nt",
+    "url": "https://github.com/amungo/nut2nt",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "oresat-gps-software",
+    "url": "https://github.com/oresat/oresat-gps-software",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "pluto-gps-sim",
+    "url": "https://github.com/Mictronics/pluto-gps-sim",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "PocketSDR",
+    "url": "https://github.com/tomojitakasu/PocketSDR",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "SatDump",
+    "url": "https://github.com/SatDump/SatDump",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "sdr-beamforming",
+    "url": "https://github.com/ADolbyB/sdr-beamforming",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "SDR-GB-SAR",
+    "url": "https://github.com/jmfriedt/SDR-GB-SAR",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "SDR-GPS-SPOOF",
+    "url": "https://github.com/B44D3R/SDR-GPS-SPOOF",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "SignalSim",
+    "url": "https://github.com/globsky/SignalSim",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "snapshot-gnss-algorithms",
+    "url": "https://github.com/JonasBchrt/snapshot-gnss-algorithms",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "SoftGNSS",
+    "url": "https://github.com/kristianpaul/SoftGNSS",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "SoftGNSS-python",
+    "url": "https://github.com/perrysou/SoftGNSS-python",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "STM32F4-SDR-GPS",
+    "url": "https://github.com/iliasam/STM32F4_SDR_GPS",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "sydr",
+    "url": "https://github.com/aproposorg/sydr",
+    "source": "navigation-learning",
+    "guessed_category": "gnss-sdr"
+  },
+  {
+    "name": "eagleye",
+    "url": "https://github.com/MapIV/eagleye",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "ESEKF-IMU-GNSS-Lidar",
+    "url": "https://github.com/NekSfyris/ESEKF_IMU_GNSS_Lidar",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "GINAV",
+    "url": "https://github.com/kaichen686/GINav",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "GINav_v2.0-test",
+    "url": "https://github.com/kaichen686/GINav_v2.0-test",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "GINS-Navi",
+    "url": "https://github.com/lewis5499/GINS-Navi",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "GIOW-release",
+    "url": "https://github.com/i2Nav-WHU/GIOW-release",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "GNSS-INS",
+    "url": "https://github.com/hitleeleo/GNSS-INS",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "gnss-ins-sim",
+    "url": "https://github.com/Aceinna/gnss-ins-sim",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "gnss-ins-zupt",
+    "url": "https://github.com/wvu-navLab/gnss-ins-zupt",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "gnss-sensor-fusion",
+    "url": "https://github.com/betaBison/gnss-sensor-fusion",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "GNSSINSIntegrationsComparisons",
+    "url": "https://github.com/ZhengdaoLI0602/GNSS_INS_Integrations_Comparisons",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "gpsimufusion",
+    "url": "https://github.com/Shelfcol/gps_imu_fusion",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "GPSIMUKalmanFilter",
+    "url": "https://github.com/karanchawla/GPS_IMU_Kalman_Filter",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "IBGEKFTC",
+    "url": "https://github.com/Dennissy23/IBG_EKF_TC",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "IGNAV",
+    "url": "https://github.com/Erensu/ignav",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "imugnsseskf",
+    "url": "https://github.com/zouyajing/imu_gnss_eskf",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "INSTINCT",
+    "url": "https://github.com/UniStuttgart-INS/INSTINCT",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "integrated-navigation",
+    "url": "https://github.com/XDDz123/integrated-navigation",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "InvariantEKFGNSSIMU",
+    "url": "https://github.com/mfkiwl/InvariantEKF_GNSS_IMU",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "iXRGNSS-IMUTightlyCouplingProgram",
+    "url": "https://github.com/kakusang2020/iXR_GNSS-IMU_TightlyCouplingProgram",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "KalmanFilterVehicleGNSSINS",
+    "url": "https://github.com/alirezaahmadi/KalmanFilter-Vehicle-GNSS-INS",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "KF-GINS",
+    "url": "https://github.com/i2Nav-WHU/KF-GINS",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "KF-GINS-ECEF",
+    "url": "https://github.com/akui1321/KF-GINS-ECEF",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "KFGINSGUI",
+    "url": "https://github.com/Wang-Jie-Lucid-Sheep/KF_GINS_GUI",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "Machine-Learning-GNSS-IMU-Integration",
+    "url": "https://github.com/Akpozi/Machine_Learning_GNSS_IMU_Integration",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "navfusion",
+    "url": "https://github.com/nvpadron/navfusion",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "OB-GINS",
+    "url": "https://github.com/i2Nav-WHU/OB_GINS",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "PSINS-Develop-Group",
+    "url": "https://github.com/Cattle521/PSINS-Develop-Group",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "PSINS-ROS",
+    "url": "https://github.com/BohemianRhapsodyz/PSINS-ROS",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "PSINSFIMU",
+    "url": "https://github.com/georgenwpu/PSINS_FIMU",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "RGIOE",
+    "url": "https://github.com/rebeater2/RGIOE",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "Smartphone-IMU-GPS",
+    "url": "https://github.com/alexschultze/Smartphone_IMU_GPS",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "TDL-GNSS",
+    "url": "https://github.com/ebhrz/TDL-GNSS",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "TGINS",
+    "url": "https://github.com/heiwa0519/TGINS",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "tightly-coupled-gnss-imu-fgo",
+    "url": "https://github.com/inuex35/tightly-coupled-gnss-imu-fgo",
+    "source": "awesome-gnss",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "TightlyCoupledINSGNSS",
+    "url": "https://github.com/benzenemo/TightlyCoupledINSGNSS",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "UrbanRTK-INS-OutlierOpt",
+    "url": "https://github.com/Azurehappen/UrbanRTK-INS-OutlierOpt",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "Wheel-INS",
+    "url": "https://github.com/i2Nav-WHU/Wheel-INS",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "ZCJ-GNSSINS-DeepIntegration",
+    "url": "https://github.com/kongtian-SiBu/ZCJ_GNSSINS_DeepIntegration",
+    "source": "navigation-learning",
+    "guessed_category": "ins-gnss"
+  },
+  {
+    "name": "gnss-tec",
+    "url": "https://github.com/gnss-lab/gnss-tec",
+    "source": "navigation-learning",
+    "guessed_category": "ionosphere"
+  },
+  {
+    "name": "GREAT-IFCB",
+    "url": "https://github.com/GREAT-WHU/GREAT-IFCB",
+    "source": "navigation-learning",
+    "guessed_category": "ionosphere"
+  },
+  {
+    "name": "GNSS_Compare",
+    "url": "https://github.com/TheGalfins/GNSS_Compare",
+    "source": "awesome-gnss",
+    "guessed_category": "mobile-app"
+  },
+  {
+    "name": "GPS Measurement Tools",
+    "url": "https://github.com/google/gps-measurement-tools",
+    "source": "awesome-gnss",
+    "guessed_category": "mobile-app"
+  },
+  {
+    "name": "GPSLogger",
+    "url": "https://github.com/BasicAirData/GPSLogger",
+    "source": "awesome-gnss",
+    "guessed_category": "mobile-app"
+  },
+  {
+    "name": "GPSTest",
+    "url": "https://github.com/barbeau/gpstest",
+    "source": "awesome-gnss",
+    "guessed_category": "mobile-app"
+  },
+  {
+    "name": "iOS-Open-GPX-Tracker",
+    "url": "https://github.com/merlos/iOS-Open-GPX-Tracker",
+    "source": "awesome-gnss",
+    "guessed_category": "mobile-app"
+  },
+  {
+    "name": "Look4Sat",
+    "url": "https://github.com/rt-bishop/Look4Sat",
+    "source": "navigation-learning",
+    "guessed_category": "mobile-app"
+  },
+  {
+    "name": "Overland-iOS",
+    "url": "https://github.com/aaronpk/Overland-iOS",
+    "source": "awesome-gnss",
+    "guessed_category": "mobile-app"
+  },
+  {
+    "name": "react-native-gnss-status-checker",
+    "url": "https://github.com/vijayanandof/react-native-gnss-status-checker",
+    "source": "awesome-gnss",
+    "guessed_category": "mobile-app"
+  },
+  {
+    "name": "satstat",
+    "url": "https://gitlab.com/mvglasow/satstat",
+    "source": "awesome-gnss",
+    "guessed_category": "mobile-app"
+  },
+  {
+    "name": "CasterProject",
+    "url": "https://github.com/KOROyo123/Caster_Project",
+    "source": "navigation-learning",
+    "guessed_category": "ntrip-streaming"
+  },
+  {
+    "name": "cors",
+    "url": "https://github.com/Erensu/cors",
+    "source": "navigation-learning",
+    "guessed_category": "ntrip-streaming"
+  },
+  {
+    "name": "ntrip",
+    "url": "https://github.com/sevensx/ntrip",
+    "source": "navigation-learning",
+    "guessed_category": "ntrip-streaming"
+  },
+  {
+    "name": "ntripstreams",
+    "url": "https://github.com/stenseng/ntripstreams",
+    "source": "awesome-gnss",
+    "guessed_category": "ntrip-streaming"
+  },
+  {
+    "name": "rtcm",
+    "url": "https://github.com/Node-NTRIP/rtcm",
+    "source": "navigation-learning",
+    "guessed_category": "ntrip-streaming"
+  },
+  {
+    "name": "VrsCaster",
+    "url": "https://github.com/DoubleString/VrsCaster",
+    "source": "navigation-learning",
+    "guessed_category": "ntrip-streaming"
+  },
+  {
+    "name": "AgOpenGPS",
+    "url": "https://github.com/farmerbriantee/AgOpenGPS",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "bluetoothgnss",
+    "url": "https://github.com/ykasidit/bluetooth_gnss",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "centipede",
+    "url": "https://github.com/CentipedeRTK/centipede",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "CGGTTS",
+    "url": "https://github.com/gwbres/cggtts",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "CSSRLib",
+    "url": "https://github.com/hirokawa/cssrlib",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "deepgnss",
+    "url": "https://github.com/Stanford-NavLab/deep_gnss",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "earth-gravitational-model",
+    "url": "https://github.com/barbeau/earth-gravitational-model",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "ESP32-GPS",
+    "url": "https://github.com/mrichar1/esp32-gps",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "FCB-FILES",
+    "url": "https://github.com/FCB-SGG/FCB-FILES",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "FE-GUT",
+    "url": "https://github.com/zhaoqj23/FE-GUT",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "FiPPP",
+    "url": "https://github.com/HuChao-gnss/FiPPP",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "flipperzero-gps",
+    "url": "https://github.com/ezod/flipperzero-gps",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "FusionCore",
+    "url": "https://github.com/manankharwar/fusioncore",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "galileo-osnma",
+    "url": "https://github.com/daniestevez/galileo-osnma",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "GAMPII-GOOD",
+    "url": "https://github.com/zhouforme0318/GAMPII-GOOD",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "GARNO",
+    "url": "https://github.com/geoios/GARNO",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "ge-drive-visualizer",
+    "url": "https://github.com/taroz/ge-drive-visualizer",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "ge-gnss-visibility",
+    "url": "https://github.com/taroz/ge-gnss-visibility",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "geodesymodeling",
+    "url": "https://github.com/kmaterna/geodesy_modeling",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "geodeticutils",
+    "url": "https://github.com/ethz-asl/geodetic_utils",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "georb",
+    "url": "https://github.com/Thomas-Loudis/georb",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "Ginan",
+    "url": "https://github.com/GeoscienceAustralia/ginan",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "giulioscattolin/google-gnss-logger",
+    "url": "https://github.com/giulioscattolin/google-gnss-logger",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "gLAB",
+    "url": "https://github.com/valgur/gLAB?tab=readme-ov-file",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "GNSS - Rust",
+    "url": "https://github.com/rtk-rs/gnss-rs",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "gnss-attitude",
+    "url": "https://github.com/low-earth-orbit/gnss-attitude",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "gnss-compass-ros",
+    "url": "https://github.com/MapIV/gnss_compass_ros",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "gnss-downloader",
+    "url": "https://github.com/Mereithhh/gnss-downloader",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "gnss-odometry",
+    "url": "https://github.com/mgoar/gnss-odometry",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "GNSS-Radar",
+    "url": "https://github.com/taroz/GNSS-Radar",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "GNSS-Shadowing",
+    "url": "https://github.com/xaedes/GNSS-Shadowing",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "GNSS-TimeSeries-Viewers",
+    "url": "https://github.com/kmaterna/GNSS_TimeSeries_Viewers",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "GNSSAMS",
+    "url": "https://github.com/GanAHE/GNSSAMS",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "gnsscomm",
+    "url": "https://github.com/HKUST-Aerial-Robotics/gnss_comm",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "gnssgo",
+    "url": "https://github.com/FengXuebin/gnssgo",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "gnssgpu",
+    "url": "https://github.com/rsasaki0109/gnss_gpu",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "gnsslibpy",
+    "url": "https://github.com/Stanford-NavLab/gnss_lib_py",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "gnsspy",
+    "url": "https://github.com/GNSSpy-Project/gnsspy",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "gnssSNR",
+    "url": "https://github.com/kristinemlarson/gnssSNR",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "gnsstk",
+    "url": "https://github.com/SGL-UT/gnsstk",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "gnsstk-apps",
+    "url": "https://github.com/SGL-UT/gnsstk-apps",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "GNSSTool",
+    "url": "https://github.com/quectel-open-source/GNSSTool",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "goGPSJava",
+    "url": "https://github.com/goGPS-Project/goGPS_Java",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "goGPSMATLAB",
+    "url": "https://github.com/goGPS-Project/goGPS_MATLAB",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "GORS",
+    "url": "https://github.com/lengyanyanjing/GORS",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "GPS-RTKLIB-ARM-F407VG",
+    "url": "https://github.com/ngochieu642/GPS-RTKLIB-ARM-F407VG",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "gpsamcl",
+    "url": "https://github.com/midemig/gps_amcl",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "GPSPACE",
+    "url": "https://github.com/CGS-GIS/GPSPACE",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "gpspvt",
+    "url": "https://github.com/fenrir-naru/gps_pvt",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "GPSTk",
+    "url": "https://github.com/SGL-UT/GPSTk",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "GraphGNSSLib",
+    "url": "https://github.com/weisongwen/GraphGNSSLib",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "GREAT-PVT",
+    "url": "https://github.com/GREAT-WHU/GREAT-PVT",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "groops",
+    "url": "https://github.com/groops-devs/groops",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "gstream",
+    "url": "https://github.com/Jin-Whu/gstream",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "gtsamgnss",
+    "url": "https://github.com/taroz/gtsam_gnss",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "HASlib",
+    "url": "https://github.com/nlsfi/HASlib",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "HASPPP",
+    "url": "https://github.com/ZhangRunzhi20/HASPPP",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "hypatia",
+    "url": "https://github.com/snkas/hypatia",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "iSniff-GPS",
+    "url": "https://github.com/hubert3/iSniff-GPS",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "Kshana",
+    "url": "https://github.com/AshfordeOU/kshana",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "laika",
+    "url": "https://github.com/commaai/laika",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "learningrtklib",
+    "url": "https://github.com/LiZhengXiao99/learning_rtklib",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "LEOGPS",
+    "url": "https://github.com/sammmlow/LEOGPS",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "libegnos",
+    "url": "https://sourceforge.net/projects/libegnos",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "libgnss++",
+    "url": "https://github.com/rsasaki0109/gnssplusplus-library",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "LilyGo-LoRa-Series",
+    "url": "https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "madocalib",
+    "url": "https://github.com/QZSS-Strategy-Office/madocalib",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "MALIB",
+    "url": "https://github.com/JAXA-SNU/MALIB",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "MatRTKLIB",
+    "url": "https://github.com/taroz/MatRTKLIB",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "MGAPP",
+    "url": "https://github.com/XiaoGongWei/MG_APP",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "mphw",
+    "url": "https://github.com/fgnievinski/mphw",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "NavCodeMonitor",
+    "url": "https://github.com/weisongwen/NavCodeMonitor",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "NavDecoder",
+    "url": "https://github.com/NavSesne/NavDecoder",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "NetDiff",
+    "url": "https://github.com/YizeZhang/Net_Diff",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "novatel-gps-driver",
+    "url": "https://github.com/swri-robotics/novatel_gps_driver",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "ogrp",
+    "url": "https://github.com/Fraunhofer-IIS/ogrp",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "OpenRTK",
+    "url": "https://github.com/AndreasArendt/OpenRTK",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "OSNMA",
+    "url": "https://github.com/Algafix/OSNMA",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "PNT-Integrity",
+    "url": "https://github.com/cisagov/PNT-Integrity",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "polaris",
+    "url": "https://github.com/PointOneNav/polaris",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "POSGO",
+    "url": "https://github.com/lizhengnss/POSGO",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "PPP-BayesTree",
+    "url": "https://github.com/wvu-navLab/PPP-BayesTree",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "ppp-tools",
+    "url": "https://github.com/aewallin/ppp-tools",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "Pride-PPPAR",
+    "url": "https://github.com/PrideLab/PRIDE-PPPAR",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "prx",
+    "url": "https://github.com/jtec/prx",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "pygnsslab",
+    "url": "https://github.com/PyGnssLab/pygnsslab",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "pygnssutils",
+    "url": "https://github.com/semuconsulting/pygnssutils",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "PyGPSClient",
+    "url": "https://github.com/semuconsulting/PyGPSClient",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "pynex",
+    "url": "https://github.com/swift-nav/pynex",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "pyrtklib",
+    "url": "https://github.com/IPNL-POLYU/pyrtklib",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "QGOPDD",
+    "url": "https://github.com/yhw605/QGOPDD",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "raPPPid",
+    "url": "https://github.com/TUW-VieVS/raPPPid",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "RobustGNSS",
+    "url": "https://github.com/wvu-navLab/RobustGNSS",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "ROS-GPS",
+    "url": "https://github.com/sigmaai/ROS-GPS",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "rt-clk-service",
+    "url": "https://github.com/DoubleString/rt-clk-service",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "RTK - Rust",
+    "url": "https://github.com/rtk-rs/gnss-rtk",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "RTK-Visual-Inertial-Navigation",
+    "url": "https://github.com/xiaohong-huang/RTK-Visual-Inertial-Navigation",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "rtkbase",
+    "url": "https://github.com/Stefal/rtkbase",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "RTKinGSS",
+    "url": "https://github.com/shaolinbit/RTKinGSS",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "RTKLIB",
+    "url": "https://github.com/tomojitakasu/RTKLIB",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "RTKLIB-Demo5",
+    "url": "https://github.com/rtklibexplorer/RTKLIB",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "rtklib-py",
+    "url": "https://github.com/rtklibexplorer/rtklib-py",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "rtklibrosbridge",
+    "url": "https://github.com/MapIV/rtklib_ros_bridge",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "rtkrcvros",
+    "url": "https://github.com/ajbfinesc/rtkrcv_ros",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "satellite-position-calculation-mapping",
+    "url": "https://github.com/egemengulpinar/satellite-position-calculation-mapping",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "sidereon",
+    "url": "https://github.com/neilberkman/sidereon",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "sse-denoising-gnss",
+    "url": "https://github.com/gcostantino/sse-denoising-gnss",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "Taroz-gsdc2023",
+    "url": "https://github.com/taroz/gsdc2023",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "TinkerRTKWiFiNetwork",
+    "url": "https://github.com/Tinkerbug-Robotics/TinkerRTKWiFiNetwork",
+    "source": "awesome-gnss",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "TouchRTKStation",
+    "url": "https://github.com/taroz/TouchRTKStation",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "TSAnalyzer",
+    "url": "https://github.com/wudingcheng/TSAnalyzer",
+    "source": "navigation-learning",
+    "guessed_category": "positioning"
+  },
+  {
+    "name": "android_rinex",
+    "url": "https://github.com/rokubun/android_rinex",
+    "source": "awesome-gnss",
+    "guessed_category": "rinex-qc"
+  },
+  {
+    "name": "BUAA-RINEX-Convertor",
+    "url": "https://github.com/Jia-le-wang/BUAA-RINEX-Convertor",
+    "source": "awesome-gnss",
+    "guessed_category": "rinex-qc"
+  },
+  {
+    "name": "georinex",
+    "url": "https://github.com/geospace-code/georinex",
+    "source": "navigation-learning",
+    "guessed_category": "rinex-qc"
+  },
+  {
+    "name": "GeoRust - RINEX",
+    "url": "https://github.com/georust/rinex",
+    "source": "awesome-gnss",
+    "guessed_category": "rinex-qc"
+  },
+  {
+    "name": "GNSSDataQC",
+    "url": "https://github.com/GNSS-FUN/GNSSDataQC",
+    "source": "navigation-learning",
+    "guessed_category": "rinex-qc"
+  },
+  {
+    "name": "RNXQCE",
+    "url": "https://github.com/cuizilu/RNXQCE",
+    "source": "navigation-learning",
+    "guessed_category": "rinex-qc"
+  },
+  {
+    "name": "hgpt_model",
+    "url": "https://github.com/pjmateus/hgpt_model",
+    "source": "navigation-learning",
+    "guessed_category": "troposphere"
+  },
+  {
+    "name": "PW-from-GPS",
+    "url": "https://github.com/ZiskinZiv/PW_from_GPS",
+    "source": "navigation-learning",
+    "guessed_category": "troposphere"
+  }
+]

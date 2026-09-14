@@ -1,0 +1,1469 @@
+{
+  "meta": {
+    "Atlas2001-web/SH-GIM": {
+      "archived": false,
+      "desc": "MATLAB source code for spherical-harmonic global ionospheric mapping.",
+      "full_name": "Atlas2001-web/SH-GIM",
+      "html_url": "https://github.com/Atlas2001-web/SH-GIM",
+      "lang": "MATLAB",
+      "license": "MIT",
+      "stars": 104
+    },
+    "PadArt/mosgim2": {
+      "archived": false,
+      "desc": "Global Ionospheric Mapping with GNSS",
+      "full_name": "PadArt/mosgim2",
+      "html_url": "https://github.com/PadArt/mosgim2",
+      "lang": "Python",
+      "license": "MIT",
+      "stars": 17
+    },
+    "gnss-lab/mosgim": {
+      "archived": false,
+      "desc": "GIM producing technique, author: Artem Padokhin.",
+      "full_name": "gnss-lab/mosgim",
+      "html_url": "https://github.com/gnss-lab/mosgim",
+      "lang": "Python",
+      "license": "MIT",
+      "stars": 6
+    },
+    "zcytju/M_GIM": {
+      "archived": false,
+      "desc": "Multi-system global and regional ionospheric modeling software",
+      "full_name": "zcytju/M_GIM",
+      "html_url": "https://github.com/zcytju/M_GIM",
+      "lang": "MATLAB",
+      "license": null,
+      "stars": 23
+    },
+    "gurkanguldas/GNSS.IonosphereMaps": {
+      "archived": false,
+      "desc": "Generating global ionosphere maps with deep learning algorithms.",
+      "full_name": "gurkanguldas/GNSS.IonosphereMaps",
+      "html_url": "https://github.com/gurkanguldas/GNSS.IonosphereMaps",
+      "lang": "Java",
+      "license": "Apache-2.0",
+      "stars": 11
+    },
+    "Hollweg/INPE-TEC-Maps-IONEX": {
+      "archived": false,
+      "desc": "Python algorithms created to generate IONEX files and TEC Maps based on Ionospheric Prediction System files.",
+      "full_name": "Hollweg/INPE-TEC-Maps-IONEX",
+      "html_url": "https://github.com/Hollweg/INPE-TEC-Maps-IONEX",
+      "lang": "Python",
+      "license": null,
+      "stars": 15
+    },
+    "1acheng/INX_Editor": {
+      "archived": false,
+      "desc": "\u517c\u5bb9\u4e09\u5927\u64cd\u4f5c\u7cfb\u7edf\u7684IONEX\u683c\u5f0f\u7535\u79bb\u5c42\u6570\u636e\u7f16\u8f91\u8f6f\u4ef6\u3002",
+      "full_name": "1acheng/INX_Editor",
+      "html_url": "https://github.com/1acheng/INX_Editor",
+      "lang": null,
+      "license": "GPL-3.0",
+      "stars": 16
+    },
+    "viventriglia/PyTECGg": {
+      "archived": false,
+      "desc": "Total Electron Content (TEC) reconstruction with GNSS data \u2013 a Python package with a Rust core",
+      "full_name": "viventriglia/PyTECGg",
+      "html_url": "https://github.com/viventriglia/PyTECGg",
+      "lang": "Python",
+      "license": "GPL-3.0",
+      "stars": 29
+    },
+    "gnss-lab/gnss-tec": {
+      "archived": false,
+      "desc": "Total electron content reconstruction using GNSS data",
+      "full_name": "gnss-lab/gnss-tec",
+      "html_url": "https://github.com/gnss-lab/gnss-tec",
+      "lang": "Python",
+      "license": "MIT",
+      "stars": 54
+    },
+    "gnss-lab/tec-suite": {
+      "archived": false,
+      "desc": "Total electron content reconstruction",
+      "full_name": "gnss-lab/tec-suite",
+      "html_url": "https://github.com/gnss-lab/tec-suite",
+      "lang": "Python",
+      "license": "GPL-3.0",
+      "stars": 23
+    },
+    "mfkiwl/vtec": {
+      "archived": false,
+      "desc": "VTEC\uff08Vertical Total Electron Content\uff09\u662f\u4e00\u4e2a\u57fa\u4e8e\u5730\u57faGNSS\u89c2\u6d4b\u6570\u636e\u4f30\u8ba1\u5168\u7403\u7535\u79bb\u5c42\u5782\u76f4\u7535\u5b50\u603b\u91cf\u7684\u7cfb\u7edf\u3002\u8be5\u7cfb\u7edf\u5229\u7528\u591aGNSS\u7cfb\u7edf\uff08GPS\u3001GLONASS\u3001Galileo\u3001BeiDou\u7b49\uff09\u7684\u53cc\u9891\u89c2\u6d4b\u6570\u636e\uff0c\u8ba1\u7b97\u7535\u79bb\u5c42\u659c\u5411\u7535\u5b50\u603b\u91cf\uff08STEC\uff09\uff0c\u7136\u540e\u8f6c\u6362\u4e3a\u5782\u76f4\u7535\u5b50\u603b\u91cf\uff08VTEC\uff09\uff0c\u6700\u7ec8\u5229\u7528\u7403\u8c10\u51fd\u6570\u5efa\u7acb\u5168\u7403\u7535\u79bb\u5c42\u6a21\u578b\u3002",
+      "full_name": "mfkiwl/vtec",
+      "html_url": "https://github.com/mfkiwl/vtec",
+      "lang": null,
+      "license": "MIT",
+      "stars": 38
+    },
+    "Chenjiajun01/Get_IPP": {
+      "archived": false,
+      "desc": "Calculate ionosphere pierce point",
+      "full_name": "Chenjiajun01/Get_IPP",
+      "html_url": "https://github.com/Chenjiajun01/Get_IPP",
+      "lang": "C++",
+      "license": null,
+      "stars": 4
+    },
+    "mauriciodev/tec_forecast": {
+      "archived": false,
+      "desc": "Keras/Tensorflow2 implementation o many deep learning models for TEC forecast on global ionosphere maps.. ",
+      "full_name": "mauriciodev/tec_forecast",
+      "html_url": "https://github.com/mauriciodev/tec_forecast",
+      "lang": "Jupyter Notebook",
+      "license": "MIT",
+      "stars": 31
+    },
+    "victoriyaforsythe/PyIRI": {
+      "archived": false,
+      "desc": "Python implementation of the International Reference Ionosphere (IRI) that evaluates ionospheric parameters and electron density on the entire given global grid and for the entire day simultaneously. ",
+      "full_name": "victoriyaforsythe/PyIRI",
+      "html_url": "https://github.com/victoriyaforsythe/PyIRI",
+      "lang": "Python",
+      "license": "MIT",
+      "stars": 48
+    },
+    "space-physics/iri2016": {
+      "archived": false,
+      "desc": "International Reference Ionosphere 2016 from Python and Matlab",
+      "full_name": "space-physics/iri2016",
+      "html_url": "https://github.com/space-physics/iri2016",
+      "lang": "Fortran",
+      "license": "MIT",
+      "stars": 85
+    },
+    "space-physics/iri2020": {
+      "archived": false,
+      "desc": "IRI2020 ionosphere climate model from Python",
+      "full_name": "space-physics/iri2020",
+      "html_url": "https://github.com/space-physics/iri2020",
+      "lang": "Fortran",
+      "license": "MIT",
+      "stars": 25
+    },
+    "ohm1122/IRI2020_parameters": {
+      "archived": false,
+      "desc": "Calculation and Visualization of Ionospheric Characteristic Parameters Based on the IRI2020 Model",
+      "full_name": "ohm1122/IRI2020_parameters",
+      "html_url": "https://github.com/ohm1122/IRI2020_parameters",
+      "lang": "MATLAB",
+      "license": "BSD-2-Clause",
+      "stars": 9
+    },
+    "tpl2go/NequickG": {
+      "archived": false,
+      "desc": "Python Implementation of European Space Agency's Galileo Ionospheric Model",
+      "full_name": "tpl2go/NequickG",
+      "html_url": "https://github.com/tpl2go/NequickG",
+      "lang": "Python",
+      "license": null,
+      "stars": 45
+    },
+    "mgfernan/NeQuickJRC": {
+      "archived": false,
+      "desc": "JRC NeQuickG Implementation. This is not the original development by JRC, just a repo to host it with a couple of minor changes to compile under ANSI C.",
+      "full_name": "mgfernan/NeQuickJRC",
+      "html_url": "https://github.com/mgfernan/NeQuickJRC",
+      "lang": "C",
+      "license": null,
+      "stars": 4
+    },
+    "rumkex/IonTools": {
+      "archived": false,
+      "desc": "tomographic reconstruction software written in C++, primarily for ionospheric data",
+      "full_name": "rumkex/IonTools",
+      "html_url": "https://github.com/rumkex/IonTools",
+      "lang": "C++",
+      "license": "NOASSERTION",
+      "stars": 4
+    },
+    "ohm1122/IonKit-NH": {
+      "archived": false,
+      "desc": "a MATLAB-based toolkit for ionospheric detection of natural hazard",
+      "full_name": "ohm1122/IonKit-NH",
+      "html_url": "https://github.com/ohm1122/IonKit-NH",
+      "lang": null,
+      "license": "GPL-3.0",
+      "stars": 1
+    },
+    "tanggdut/IonKit-NH": {
+      "archived": false,
+      "desc": "a MATLAB-based toolkit for ionospheric detection of natural hazard",
+      "full_name": "tanggdut/IonKit-NH",
+      "html_url": "https://github.com/tanggdut/IonKit-NH",
+      "lang": null,
+      "license": "GPL-3.0",
+      "stars": 24
+    },
+    "ohm1122/OASIS": {
+      "archived": false,
+      "desc": "Open-Access System for Ionospheric Studies",
+      "full_name": "ohm1122/OASIS",
+      "html_url": "https://github.com/ohm1122/OASIS",
+      "lang": null,
+      "license": "NOASSERTION",
+      "stars": 1
+    },
+    "giorgiopicanco/OASIS": {
+      "archived": false,
+      "desc": "Open-Access System for Ionospheric Studies",
+      "full_name": "giorgiopicanco/OASIS",
+      "html_url": "https://github.com/giorgiopicanco/OASIS",
+      "lang": "Python",
+      "license": "NOASSERTION",
+      "stars": 16
+    },
+    "qiliu2025/IonoMoni": {
+      "archived": false,
+      "desc": "IonoMoni enables processing of observation data from GPS, BDS, GALILEO, and GLONASS to compute the Rate of TEC Index (ROTI), Along Arc TEC Rate (AATR), and to extract both Slant Total Electron Content (STEC) and Vertical Total Electron Content (VTEC) ",
+      "full_name": "qiliu2025/IonoMoni",
+      "html_url": "https://github.com/qiliu2025/IonoMoni",
+      "lang": "C++",
+      "license": null,
+      "stars": 37
+    },
+    "ljlamarche/gnssutils": {
+      "archived": false,
+      "desc": "Basic tool and utility for working with ionospheric scintillation data collected from ground-based GNSS receivers",
+      "full_name": "ljlamarche/gnssutils",
+      "html_url": "https://github.com/ljlamarche/gnssutils",
+      "lang": "Python",
+      "license": "GPL-3.0",
+      "stars": 3
+    },
+    "cu-sense-lab/gnss-scintillation-simulator": {
+      "archived": false,
+      "desc": "A project for simulating ionosphere phase and amplitude scintillation in the GNSS band for scientific and engineering applications.",
+      "full_name": "cu-sense-lab/gnss-scintillation-simulator",
+      "html_url": "https://github.com/cu-sense-lab/gnss-scintillation-simulator",
+      "lang": "MATLAB",
+      "license": null,
+      "stars": 25
+    },
+    "yujieqing/Geometric-Matrix-For-Ionospheric-Tomogrphy": {
+      "archived": false,
+      "desc": "Geometric Matrix Computation For Voxel-based Ionospheric Tomography",
+      "full_name": "yujieqing/Geometric-Matrix-For-Ionospheric-Tomogrphy",
+      "html_url": "https://github.com/yujieqing/Geometric-Matrix-For-Ionospheric-Tomogrphy",
+      "lang": "C++",
+      "license": "GPL-3.0",
+      "stars": 9
+    },
+    "FearlessWu/WA_ion_model_PPP": {
+      "archived": false,
+      "desc": "wide area ionospheric model for real-time PPP",
+      "full_name": "FearlessWu/WA_ion_model_PPP",
+      "html_url": "https://github.com/FearlessWu/WA_ion_model_PPP",
+      "lang": "C++",
+      "license": null,
+      "stars": 8
+    },
+    "geospace-code/georinex": {
+      "archived": false,
+      "desc": "Python RINEX 2 / 3 NAV / OBS / sp3 reader & batch convert to HDF5 with C-like speed",
+      "full_name": "geospace-code/georinex",
+      "html_url": "https://github.com/geospace-code/georinex",
+      "lang": "Python",
+      "license": "MIT",
+      "stars": 269
+    },
+    "GNSSpy-Project/gnsspy": {
+      "archived": false,
+      "desc": "Python Toolkit for GNSS Data",
+      "full_name": "GNSSpy-Project/gnsspy",
+      "html_url": "https://github.com/GNSSpy-Project/gnsspy",
+      "lang": "Python",
+      "license": "MIT",
+      "stars": 209
+    },
+    "GNSSNexus/rinex": {
+      "archived": false,
+      "desc": "RINEX and GNSS data processing :artificial_satellite:",
+      "full_name": "GNSSNexus/rinex",
+      "html_url": "https://github.com/GNSSNexus/rinex",
+      "lang": null,
+      "license": "Apache-2.0",
+      "stars": 0
+    },
+    "ChangChuntao/FAST": {
+      "archived": false,
+      "desc": "FAST is a GNSS Data Download and Processing software developed in Python. The software adopts a modular architecture, consisting of four main components: data download, quality analysis, SPP, and station selection",
+      "full_name": "ChangChuntao/FAST",
+      "html_url": "https://github.com/ChangChuntao/FAST",
+      "lang": "Python",
+      "license": "GPL-3.0",
+      "stars": 206
+    },
+    "valgur/gLAB": {
+      "archived": false,
+      "desc": "An unofficial mirror of the GNSS-Lab Tool (gLAB) suite",
+      "full_name": "valgur/gLAB",
+      "html_url": "https://github.com/valgur/gLAB",
+      "lang": "C",
+      "license": "NOASSERTION",
+      "stars": 22
+    },
+    "SGL-UT/gnsstk": {
+      "archived": false,
+      "desc": "The goal of the gnsstk project is to provide an open source library to the satellite navigation community--to free researchers to focus on research, not lower level coding. ",
+      "full_name": "SGL-UT/gnsstk",
+      "html_url": "https://github.com/SGL-UT/gnsstk",
+      "lang": "C++",
+      "license": "NOASSERTION",
+      "stars": 183
+    },
+    "tomojitakasu/RTKLIB": {
+      "archived": false,
+      "desc": "",
+      "full_name": "tomojitakasu/RTKLIB",
+      "html_url": "https://github.com/tomojitakasu/RTKLIB",
+      "lang": "C",
+      "license": null,
+      "stars": 3128
+    },
+    "rtklibexplorer/RTKLIB": {
+      "archived": false,
+      "desc": "A version of RTKLIB optimized for low cost GNSS receivers, especially u-blox receivers.  It is based on RTKLIB 2.4.3.  This software is provided \u201cAS IS\u201d without any warranties of any kind so please be careful, especially if using it in any kind of real-time application.  Click on the \"Releases\" label below to see the latest Windows pre-release.",
+      "full_name": "rtklibexplorer/RTKLIB",
+      "html_url": "https://github.com/rtklibexplorer/RTKLIB",
+      "lang": "C",
+      "license": "NOASSERTION",
+      "stars": 971
+    },
+    "PrideLab/PRIDE-PPPAR": {
+      "archived": false,
+      "desc": "An open\u2011source software for Multi-GNSS PPP ambiguity resolution",
+      "full_name": "PrideLab/PRIDE-PPPAR",
+      "html_url": "https://github.com/PrideLab/PRIDE-PPPAR",
+      "lang": "C",
+      "license": "GPL-3.0",
+      "stars": 415
+    },
+    "GeoscienceAustralia/ginan": {
+      "archived": false,
+      "desc": "The Australian Government, through Positioning Australia (part of Geoscience Australia), is funding the design, development and operational service of a Global Navigation Satellite System (GNSS) position correction system - the Ginan service and toolkit. The application of the Ginan correction service by a GNSS device has the potential to increase positioning accuracy from meters to centimetres across Australia. The suite of software systems in this repository (the Ginan toolkit) will be used to create the service. It is available now under an open source licence. Ginan will give individuals and organisations no-cost access to the Ginan software and service as a public good.",
+      "full_name": "GeoscienceAustralia/ginan",
+      "html_url": "https://github.com/GeoscienceAustralia/ginan",
+      "lang": "C++",
+      "license": "NOASSERTION",
+      "stars": 343
+    },
+    "goGPS-Project/goGPS_MATLAB": {
+      "archived": false,
+      "desc": "goGPS MATLAB is an advanced GNSS observation processing software.",
+      "full_name": "goGPS-Project/goGPS_MATLAB",
+      "html_url": "https://github.com/goGPS-Project/goGPS_MATLAB",
+      "lang": "MATLAB",
+      "license": null,
+      "stars": 327
+    },
+    "GREAT-WHU/GREAT-PVT": {
+      "archived": false,
+      "desc": "GREAT-PVT: Precision Positioning and Navigation Software by Wuhan University GREAT Group",
+      "full_name": "GREAT-WHU/GREAT-PVT",
+      "html_url": "https://github.com/GREAT-WHU/GREAT-PVT",
+      "lang": "C++",
+      "license": "GPL-3.0",
+      "stars": 279
+    },
+    "TUW-VieVS/raPPPid": {
+      "archived": false,
+      "desc": "The Precise Point Positioning (PPP) module of the Vienna VLBI and Satellite Software (VieVS PPP): raPPPid",
+      "full_name": "TUW-VieVS/raPPPid",
+      "html_url": "https://github.com/TUW-VieVS/raPPPid",
+      "lang": "MATLAB",
+      "license": "GPL-3.0",
+      "stars": 149
+    },
+    "zhufengGNSS/GAMP_PPPH": {
+      "archived": false,
+      "desc": "two Precise Point Positioning source Code for Multi-GNSS",
+      "full_name": "zhufengGNSS/GAMP_PPPH",
+      "html_url": "https://github.com/zhufengGNSS/GAMP_PPPH",
+      "lang": "Grammatical Framework",
+      "license": null,
+      "stars": 78
+    },
+    "groops-devs/groops": {
+      "archived": false,
+      "desc": "A software toolkit for gravity field recovery and GNSS processing",
+      "full_name": "groops-devs/groops",
+      "html_url": "https://github.com/groops-devs/groops",
+      "lang": "C++",
+      "license": "GPL-3.0",
+      "stars": 244
+    },
+    "CGS-GIS/GPSPACE": {
+      "archived": true,
+      "desc": "NRCan-CGS GPSPACE software / Logiciel GPSPACE de LGC-RNCan",
+      "full_name": "CGS-GIS/GPSPACE",
+      "html_url": "https://github.com/CGS-GIS/GPSPACE",
+      "lang": "Fortran",
+      "license": "NOASSERTION",
+      "stars": 58
+    },
+    "i2Nav-WHU/OB_GINS": {
+      "archived": false,
+      "desc": "An Optimization-Based GNSS/INS Integrated Navigation System",
+      "full_name": "i2Nav-WHU/OB_GINS",
+      "html_url": "https://github.com/i2Nav-WHU/OB_GINS",
+      "lang": "C++",
+      "license": "GPL-3.0",
+      "stars": 647
+    },
+    "kaichen686/GINav": {
+      "archived": false,
+      "desc": "GNSS and GNSS/INS integration algorithms",
+      "full_name": "kaichen686/GINav",
+      "html_url": "https://github.com/kaichen686/GINav",
+      "lang": "MATLAB",
+      "license": "BSD-2-Clause",
+      "stars": 309
+    },
+    "Erensu/ignav": {
+      "archived": false,
+      "desc": "integrated navigation for ins and gnss",
+      "full_name": "Erensu/ignav",
+      "html_url": "https://github.com/Erensu/ignav",
+      "lang": "C",
+      "license": null,
+      "stars": 472
+    },
+    "chichengcn/gici-open": {
+      "archived": false,
+      "desc": "GNSS/INS/Camera Integrated Navigation Library",
+      "full_name": "chichengcn/gici-open",
+      "html_url": "https://github.com/chichengcn/gici-open",
+      "lang": "C++",
+      "license": "GPL-3.0",
+      "stars": 667
+    },
+    "GREAT-WHU/GREAT-MSF": {
+      "archived": false,
+      "desc": "GREAT-MSF 1.0: Advanced GNSS/INS fusion system supporting PPP/RTK, multi-GNSS, wheel odometry, motion constraints, custom IMU, fast initialization, and visualization. Future releases will integrate LiDAR, cameras, HD maps and UWB.",
+      "full_name": "GREAT-WHU/GREAT-MSF",
+      "html_url": "https://github.com/GREAT-WHU/GREAT-MSF",
+      "lang": "C++",
+      "license": "GPL-3.0",
+      "stars": 150
+    },
+    "nmayorov/pyins": {
+      "archived": false,
+      "desc": "A Python package for Inertial Navigation Systems modeling and analysis",
+      "full_name": "nmayorov/pyins",
+      "html_url": "https://github.com/nmayorov/pyins",
+      "lang": "Python",
+      "license": "MIT",
+      "stars": 107
+    },
+    "barbeau/gpstest": {
+      "archived": false,
+      "desc": "The #1 open-source Android GNSS/GPS test program",
+      "full_name": "barbeau/gpstest",
+      "html_url": "https://github.com/barbeau/gpstest",
+      "lang": "Kotlin",
+      "license": "Apache-2.0",
+      "stars": 2402
+    },
+    "kristinemlarson/gnssrefl": {
+      "archived": false,
+      "desc": "GNSS Interferometric Reflectometry Software (GNSS-IR) in python",
+      "full_name": "kristinemlarson/gnssrefl",
+      "html_url": "https://github.com/kristinemlarson/gnssrefl",
+      "lang": "Python",
+      "license": "GPL-3.0",
+      "stars": 217
+    },
+    "LiZhengXiao99/Navigation-Learning": {
+      "archived": false,
+      "desc": "\u6211\u7684\u5bfc\u822a\u7b97\u6cd5\u5b66\u4e60\u7b14\u8bb0\uff0c\u5185\u5bb9\u6db5\u76d6\u5bfc\u822a\u5b9a\u4f4d\u5f00\u6e90\u7a0b\u5e8f\u7684\u6e90\u7801\u89e3\u8bfb\u3001\u5f00\u6e90\u9879\u76ee\u68b3\u7406\u3001\u4e66\u7c4d\u8bb2\u4e49\u3001\u535a\u5ba2\u7ffb\u8bd1\u3001\u6559\u7a0b\u8bb2\u5ea7\u63a8\u8350\uff1b\u6240\u6709\u5185\u5bb9\u90fd\u53ef\u4ee5\u968f\u610f\u8f6c\u8f7d\uff0c\u539f\u59cb\u6587\u4ef6\u90fd\u653e\u5728\u8fd9\u91cc\u4e86\uff0c\u5927\u5bb6\u53ef\u4ee5\u5728\u6211\u7684\u57fa\u7840\u4e0a\u6574\u7406\u51fa\u81ea\u5df1\u7684\u4e00\u4e9b\u6587\u6863\u3002\uff08Tips\uff1a\u2460\u4e3b\u8981\u662f\u5199\u7ed9\u521d\u5b66\u8005\uff0c\u5df2\u7ecf\u6709\u57fa\u7840\u7684\u540c\u5b66\u5e94\u8be5\u591a\u770b\u8bba\u6587\u548c\u4ee3\u7801\uff0c\u770b\u6211\u7684\u7b14\u8bb0\u5b66\u4e0d\u5230\u5565\uff1b\u2461\u4ed3\u5e93\u6301\u7eed\u66f4\u65b0\u4e2d\uff0c\u4e0d\u5efa\u8bae fork\uff09",
+      "full_name": "LiZhengXiao99/Navigation-Learning",
+      "html_url": "https://github.com/LiZhengXiao99/Navigation-Learning",
+      "lang": null,
+      "license": null,
+      "stars": 2417
+    },
+    "osqzss/gps-sdr-sim": {
+      "archived": true,
+      "desc": "Software-Defined GPS Signal Simulator",
+      "full_name": "osqzss/gps-sdr-sim",
+      "html_url": "https://github.com/osqzss/gps-sdr-sim",
+      "lang": "C",
+      "license": "MIT",
+      "stars": 3466
+    },
+    "zohrehadavi/STD_SWD_Calc": {
+      "archived": false,
+      "desc": "Python package for creating GNSS STD/SWD as well as modelled (GPT/VMF) ZTD",
+      "full_name": "zohrehadavi/STD_SWD_Calc",
+      "html_url": "https://github.com/zohrehadavi/STD_SWD_Calc",
+      "lang": "Python",
+      "license": "GPL-3.0",
+      "stars": 10
+    },
+    "ohm1122/UNB3m": {
+      "archived": false,
+      "desc": "UNB3m is a neutral atmosphere delay model, developed at UNB",
+      "full_name": "ohm1122/UNB3m",
+      "html_url": "https://github.com/ohm1122/UNB3m",
+      "lang": null,
+      "license": null,
+      "stars": 3
+    },
+    "tianruivpn1001/C-project-for-solving-tropospheric-delay-using-GGOS-tropospheric-products": {
+      "archived": false,
+      "desc": "\u9879\u76ee\u4f5c\u8005\uff1a\u7530\u777f \u672c\u79d1\u6bd5\u4e1a\u4e8e\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66\uff0c\u73b0\u5728\u8bfb\u7814\uff0cGNSS\u9886\u57df\u5165\u95e8\u4e24\u5e74\u3002  \u8bf7\u6ce8\u610f\uff01  \u8be5\u9879\u76ee\u539f\u59cb\u8def\u5f84\u4e3a\uff1aE:\\Thesis\\RTKLIB_Workspace\\WorkSpace\\For_Thesis\\For_Thesis  \u9879\u76ee\u540d\u79f0\u4e3aFor_Thesis(\u5373\u4e0a\u4f20\u7684\u6587\u4ef6\u5939\u4e2d\u5305\u542b\u7684\u5185\u5bb9)  \u5728\u7b14\u8005Win10\u7cfb\u7edf\u3001VS2017\u4e0a\u6210\u529f\u8fd0\u884c\uff0c\u4eb2\u6d4b\u53ef\u7528\uff01\uff01\uff01  \u8bf7\u52a1\u5fc5\u4ed4\u7ec6\u9605\u8bfb\u6b64\u6587\u4ef6\uff01\uff01\uff01   ==============\u7a0b\u5e8f\u4e3b\u8981\u529f\u80fd==============   \u672c\u7a0b\u5e8f\u7684\u4e3b\u8981\u529f\u80fd\u662f\u57fa\u4e8eGGOS\u5bf9\u6d41\u5c42\u4ea7\u54c1\u8fdb\u884c\u5bf9\u6d41\u5c42\u5ef6\u8fdf\u89e3\u7b97\uff0c\u8fd8\u53ef\u7528\u4e8ertklib\u5f00\u6e90\u9879\u76ee\u7684\u4e8c\u6b21\u5f00\u53d1\u53ca\u6539\u8fdb\u3002 \u603b\u4e4b\uff0c\u8be5\u7a0b\u5e8f\u7684\u76ee\u7684\u662f\u65b9\u4fbf\u5176\u4ed6\u4f7f\u7528rtklib\u5f00\u6e90\u9879\u76ee\u7684GNSS\u7814\u7a76\u8005\uff0c\u63d0\u9ad8\u5176\u79d1\u7814\u6548\u7387\u3002   ==============\u7a0b\u5e8f\u57fa\u672c\u4fe1\u606f==============   \u672c\u7a0b\u5e8f\u57fa\u4e8ertklib2.4.3 b33\u7248\u672c\u8fdb\u884c\u4e8c\u6b21\u5f00\u53d1\uff0c\u91c7\u7528C\u8bed\u8a00\u7f16\u5199\uff0c\u5e76\u5728Win10\u3001Visual Studio 2017\u5e73\u53f0\u4e0a\u5b8c\u6210\u5f00\u53d1\u53ca\u8c03\u8bd5\uff0c\u9879\u76ee\u8def\u5f84\u4e3a\uff1a \u202aE:\\Thesis\\RTKLIB_Workspace\\WorkSpace\\For_Thesis\\For_Thesis \u76f8\u6bd4\u4e8e\u539f\u9879\u76ee\uff0c\u4e3b\u8981\u6539\u52a8\u70b9\u4e3a\uff1a   1.\u589e\u52a0\u4e86Demo_Tropo.c\u6587\u4ef6\uff08\u6700\u4e3b\u8981\u7684\u6539\u8fdb\uff09\u3002   2.\u589e\u52a0\u4e86\u6d4b\u8bd5\u7528\u7684main.cpp\u6587\u4ef6\uff0c\u4f5c\u4e3a\u7a0b\u5e8f\u5165\u53e3\uff0c\u5e94\u6ce8\u610f\uff01\u4e3b\u7a0b\u5e8f\u6587\u4ef6\u5fc5\u987b\u4e3acpp\u6587\u4ef6\uff0c\u4e0d\u80fd\u4f7f\u7528c\u6587\u4ef6\u3002   3.\u5728rtklib.h \u6587\u4ef6\u4e2d\u589e\u52a0\u4e86\u90e8\u5206\u51fd\u6570\u7684\u58f0\u660e\u3002   4.\u5728Windows\u7cfb\u7edf\u4e0b\uff0c\u91c7\u7528VS2017\u7f16\u8bd1rtklib\u9879\u76ee\u4f1a\u9047\u5230\u5404\u79cd\u95ee\u9898\u3002\u5bf9\u6b64\uff0c\u5bf9\u539f\u9879\u76ee\u8fdb\u884c\u4e86\u5fc5\u8981\u7684\u6539\u52a8\uff0c \u5982\u589e\u52a0\u4e86unistd.h\u6587\u4ef6\u3001\u53bb\u6389main\u51fd\u6570\u7684rnx2rtkp.c\u6587\u4ef6\u7b49\uff0c\u5177\u4f53\u7f16\u8bd1\u65b9\u6cd5\u8be6\u89c1\u540e\u6587\u3002   5.\u589e\u52a0\u4e86\u6570\u636e\u6587\u4ef6orography_ell.txt\u7b49\uff0c\u5e94\u6ce8\u610f\uff01\u6570\u636e\u6587\u4ef6\u5fc5\u987b\u653e\u5728\u9879\u76ee\u76ee\u5f55\u5185\uff0c\u56e0\u4e3a\u4e3b\u7a0b\u5e8f\u4e2d\u4f7f\u7528\u7684\u662f\u76f8\u5bf9\u8def\u5f84\u3002   ==============Windows\u4e0b\u91c7\u7528Visual Studio IDE\u7684\u9879\u76ee\u7f16\u8bd1\u65b9\u6cd5==============   Windows\u4e0b\u5e38\u7528\u7684C/C++ IDE\u5373Visual Studio\uff0c\u529f\u80fd\u4e30\u5bcc\u5168\u9762\uff0c\u9002\u5408GNSS\u7814\u7a76\u8005\u4f7f\u7528\u3002 \u5f53\u7136\uff0c\u5bf9\u8ba1\u7b97\u673a\u6bd4\u8f83\u7cbe\u901a\u7684\u7814\u7a76\u8005\u53ef\u4ee5\u91c7\u7528linux\u7cfb\u7edf\uff0c\u4e0d\u4f7f\u7528IDE\uff0c\u91c7\u7528cmake\u7b49\u5de5\u5177\u8fdb\u884c\u7f16\u8bd1\u3002\u4e8b\u5b9e\u4e0a\uff0c\u8fd9\u6837\u505a\u66f4\u9002\u5408rtklib\u7684\u4e8c\u6b21\u5f00\u53d1\u3002 \u7136\u800c\uff0c\u5bf9\u4e8e\u521a\u63a5\u89e6GNSS\u9886\u57df\u7684\u7855/\u535a\u7814\u7a76\u751f\u800c\u8a00\uff0c\u5b66\u4e60linux\u7cfb\u7edf\u53cacmake\u7b49\u7f16\u8bd1\u5de5\u5177\uff0c\u65e0\u7591\u4f1a\u5927\u5927\u62c9\u957f\u5b66\u4e60\u5468\u671f\uff0c \u803d\u8bef\u5b9d\u8d35\u7684\u79d1\u7814\u65f6\u95f4\uff0c\u964d\u4f4e\u79d1\u7814\u6548\u7387\u3002\u5bf9\u6b64\uff0c\u7b14\u8005\u6df1\u6709\u4f53\u4f1a\uff01\u56e0\u6b64\uff0c\u7b14\u8005\u575a\u6301\u5728windows\u7cfb\u7edf\u4e0b\u7528Visual Studio IDE\u5f00\u53d1\u6b64\u9879\u76ee\uff0c \u9047\u5230\u7684\u7f16\u8bd1\u95ee\u9898\u5f88\u591a\uff0c\u53ef\u53c2\u8003\u5982\u4e0b\u535a\u5ba2\u89e3\u51b3\uff1a   https://blog.csdn.net/wuwuku123/article/details/100030177   https://blog.csdn.net/sd28you28/article/details/82911273   https://blog.csdn.net/zhangtao_heu/article/details/79536427   https://blog.csdn.net/qq_35363018/article/details/101317869   https://blog.csdn.net/baixia3551/article/details/101085788?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase https://blog.csdn.net/WalterBrien/article/details/80754215   \u6b64\u5916\uff0c\u7b14\u8005\u5728\u7f16\u8bd1\u8fc7\u7a0b\u4e2d\u8fd8\u9047\u5230\u4e00\u4e9b\u6ca1\u6709\u89e3\u51b3\u7684\u95ee\u9898\uff0c\u5728\u6b64\u603b\u7ed3\u53d1\u5e03\u4ee5\u98e8\u8bfb\u8005\uff1a   \u8981\u901a\u8fc7Project\u2014\u2014Manage NuGet Packages\u6dfb\u52a0pthread\u3001dirent\u7b49   \u4e00\u5b9a\u8bb0\u5f97\u5207\u6362\u4e3a64\u4f4d \u6ce8\u610f\u9884\u7f16\u8bd1\u5668\u6dfb\u52a0\u7684\u662fWIN32\u800c\u975eWin32\uff01\uff01\uff01   \u9884\u7f16\u8bd1\u5668\u4e2d\u8bb0\u5f97\u6dfb\u52a0   WIN32   _DEBUG _CONSOLE   _CRT_SECURE_NO_WARNINGS   _WINSOCK_DEPRECATED_NO_WARNINGS   ENAGLO   DLL   \u4e3b\u7a0b\u5e8f\u5fc5\u987b\u662f.cpp\u6587\u4ef6\uff01\uff01\uff01   \u8bb0\u5f97\u6dfb\u52a0unistd.h\u6587\u4ef6 \u7ecf\u4e0a\u8ff0\u64cd\u4f5c\u540e\u4ecd\u51fa\u73b0\uff1a   unresolved external symbol showmsg\u7b49\u9519\u8bef   \u7ecf\u6d4b\u8bd5\uff0c\u53d1\u73b0\u4e0b\u8ff0\u65b9\u6cd5\u53ef\u884c\uff1a \u5c06RTKLIB-rtklib_2.4.3\\app\\rnx2rtkp\u6587\u4ef6\u5939\u4e0b\u7684rnx2rtkp.c\u6587\u4ef6\u653e\u5230\u9879\u76ee\u7684src\u6587\u4ef6\u5939\u4e0b\u5e76\u52a0\u5165\u5230\u5de5\u7a0b\uff0c\u5e76\u53bb\u6389\u5176\u4e2d\u7684\u4e3b\u7a0b\u5e8f\uff08\u4e5f\u53ef\u4ee5\u628a\u8fd9\u4e2a\u5f53\u505a\u4e3b\u7a0b\u5e8f\uff09\u3002   ==============\u6570\u636e\u6e90==============   \u6240\u7528\u6570\u636e\u5747\u53ef\u5728\u7f51\u7ad9https://vmf.geo.tuwien.ac.at/\u4e0a\u4e0b\u8f7d\u3002 \u5e94\u6ce8\u610f\uff01VMFG_FC\u4ea7\u54c1\u5fc5\u987b\u6ce8\u518c\u8d26\u6237\u540e\u624d\u80fd\u83b7\u53d6\uff0c\u6ce8\u518c\u65b9\u6cd5\u5373\u901a\u8fc7\u82f1\u6587\u90ae\u4ef6\u5411\u76f8\u5173\u7ba1\u7406\u4eba\u5458\u63d0\u51fa\u7533\u8bf7\uff0c\u7ba1\u7406\u4eba\u5458\u4f1a\u901a\u8fc7\u90ae\u4ef6\u63d0\u4f9b\u7ed9\u4f60\u4e00\u4e2a\u8d26\u6237\u3002 ==============\u5f00\u53d1\u53c2\u8003==============   \u53c2\u8003\u4e86\u5b98\u65b9\u7684matlab\u7a0b\u5e8fvmf1_grid.m\u53cavmf1_ht.m   \u53c2\u8003\u4e86\u5982\u4e0b\u6587\u732e\uff1a   \u300aGGOS\u5bf9\u6d41\u5c42\u5ef6\u8fdf\u4ea7\u54c1\u7cbe\u5ea6\u5206\u6790\u53ca\u5728PPP\u4e2d\u7684\u5e94\u7528\u300b   \u300a\u4e0d\u540c\u5168\u7403\u5bf9\u6d41\u5c42\u5929\u9876\u5ef6\u8fdf\u4ea7\u54c1\u5728\u4e2d\u56fd\u533a\u57df\u7684\u6bd4\u8f83\u300b   \u300aTroposphere mapping functions for GPS and VLBI from ECMWF operational analysis data\u300b   \u300aImplementation and testing of the gridded Vienna Mapping Function 1 (VMF1)\u300b   \u300aGeneration and Assessment of VMF1-Type Grids Using North-American Numerical Weather Models\u300b   \u300aDiscussion and recommendations about the height correction for a priori zenith hydrostatic delays derived from ECMWF data\u300b   \u8fd8\u6709\u4e00\u4e9b\u5b98\u65b9\u7f51\u7ad9\u4e0a\u63d0\u4f9b\u7684\u8d44\u6599\uff08\u8bf7\u53c2\u89c1\u5b98\u7f51\uff09   ==============\u5173\u4e8e\u7a0b\u5e8f\u7ed3\u679c\u7684\u4e00\u70b9\u8ba8\u8bba==============   \u7ecf\u6d4b\u8bd5\uff0c\u672c\u9879\u76ee\u8fd0\u884c\u7ed3\u679c\u4e0e\u5b98\u65b9matlab\u7a0b\u5e8f\u6709\u4e00\u5b9a\u51fa\u5165\uff0c\u5dee\u8ddd\u5728\u5398\u7c73\u7ea7\u3002 \u7ecf\u68c0\u67e5\uff0c\u7b14\u8005\u81ea\u8ba4\u4e3a\u8fd9\u5e76\u975e\u662f\u7f16\u7a0b\u7684\u95ee\u9898\uff0c\u800c\u662f\u5fc5\u7136\u5b58\u5728\u7684\u6570\u503c\u8ba1\u7b97\u8bef\u5dee\uff0c\u56e0\u4e3aC\u7a0b\u5e8f\u4e0ematlab\u7a0b\u5e8f\u7684\u6570\u503c\u7cbe\u5ea6\u4e0d\u540c\u3002 \u7b14\u8005\u6d4b\u8bd5\u7684\u7ed3\u679c\u662f\u672c\u7a0b\u5e8f\u66f4\u63a5\u8fd1IGS\u53d1\u5e03\u7684\u5929\u9876\u5bf9\u6d41\u5c42\u5ef6\u8fdf\u6570\u636e\u3002 \u4e5f\u53ef\u91c7\u7528C\u4e0ematlab\u8054\u5408\u7f16\u7a0b\u5e94\u7528GGOS\u4ea7\u54c1\uff0c\u4f46\u8fd0\u884c\u8f83\u6162\uff0c\u4e14\u79fb\u690d\u6027\u4e0d\u597d\u3002 \u5982\u6709\u53d1\u73b0\u7a0b\u5e8f\u4e2d\u95ee\u9898\u7684\uff0c\u6b22\u8fce\u5728GitHub\u5e93\u4e0a\u53ca\u65f6\u53d1\u5e03\u65b0\u7248\u672c\u3002   ==============\u91cd\u8981\u58f0\u660e==============   \u9274\u4e8e\u7b14\u8005\u5165\u95e8\u4e0d\u4e45\uff0c\u6c34\u5e73\u6709\u9650\uff0c\u6709\u6240\u758f\u6f0f\u5728\u6240\u96be\u514d\u3002 \u8be5\u9879\u76ee\u4ec5\u4f9b\u7814\u7a76\u8005\u53c2\u8003\uff0c\u5e76\u975eTU Wien\u53d1\u5e03\u7684\u5b98\u65b9\u4ee3\u7801\uff0c\u53ef\u80fd\u5b58\u5728\u7b14\u8005\u5c1a\u672a\u53d1\u73b0\u7684\u672a\u77e5\u9519\u8bef\u3002 \u5982\u5404\u4f4d\u7814\u7a76\u8005\u53d1\u73b0\u95ee\u9898\uff0c\u6b22\u8fce\u5728GitHub\u4e0a\u53d1\u5e03\u4fee\u6b63\u7248\u672c\u3002\u975e\u5e38\u6b22\u8fce\u5404\u4f4d\u7814\u7a76\u8005\u5bf9\u672c\u9879\u76ee\u67e5\u6f0f\u8865\u7f3a\uff0c\u7cfb\u7edf\u6d4b\u8bd5\uff01 \u5728\u8be5\u9879\u76ee\u5c1a\u672a\u6210\u719f\u4e4b\u524d\uff0c\u5efa\u8bae\u5404\u4f4d\u7814\u7a76\u8005\u5ba1\u614e\u5730\u8003\u8651\u5728\u79d1\u7814\u4e2d\u5230\u5e95\u662f\u5e94\u7528\u672c\u9879\u76ee\uff0c\u8fd8\u662f\u4f7f\u7528C\u4e0ematlab\u8054\u5408\u7f16\u7a0b\uff0c\u540e\u8005\u867d\u6162\uff0c\u4f46\u6bd5\u7adf\u662f\u5b98\u65b9\u53cd\u590d\u9a8c\u8bc1\u8fc7\u7684matlab\u4ee3\u7801\u3002 \u5f53\u7136\uff0c\u8be5\u9879\u76ee\u6ce8\u91ca\u8be6\u5c3d\uff0c\u53c2\u8003\u4ef7\u503c\u8f83\u9ad8\uff0c\u53ef\u4f5c\u4e3a\u5b66\u4e60GGOS\u4ea7\u54c1\u5e94\u7528\u7684\u91cd\u8981\u53c2\u8003\uff01 \u5728\u6b64\u5f00\u6e90\u53d1\u5e03\uff0c\u6743\u4f5c\u629b\u7816\u5f15\u7389\uff0c\u671f\u5180\u5404\u4f4d\u7814\u7a76\u8005\u5bf9\u5176\u8fdb\u4e00\u6b65\u6539\u8fdb\u4e0e\u5b8c\u5584\uff01",
+      "full_name": "tianruivpn1001/C-project-for-solving-tropospheric-delay-using-GGOS-tropospheric-products",
+      "html_url": "https://github.com/tianruivpn1001/C-project-for-solving-tropospheric-delay-using-GGOS-tropospheric-products",
+      "lang": "C",
+      "license": null,
+      "stars": 43
+    },
+    "ZiskinZiv/PW_from_GPS": {
+      "archived": false,
+      "desc": "GPS derived Precipitable Water Vapor (PWV) analysis tools with ML application: Flash Flood prediction in the Eastern Mediterranean area.",
+      "full_name": "ZiskinZiv/PW_from_GPS",
+      "html_url": "https://github.com/ZiskinZiv/PW_from_GPS",
+      "lang": "Python",
+      "license": "MIT",
+      "stars": 22
+    },
+    "insarlab/PyAPS": {
+      "archived": false,
+      "desc": "Python-based Atmospheric Phase Screen",
+      "full_name": "insarlab/PyAPS",
+      "html_url": "https://github.com/insarlab/PyAPS",
+      "lang": "Python",
+      "license": "GPL-3.0",
+      "stars": 86
+    },
+    "ymcmrs/ICAMS": {
+      "archived": false,
+      "desc": "Python based toolbox for InSAR troposphere Correction using global Atmospheric Models that considers the spatial Stochastic properties of the troposphere (ICAMS). ",
+      "full_name": "ymcmrs/ICAMS",
+      "html_url": "https://github.com/ymcmrs/ICAMS",
+      "lang": "Python",
+      "license": null,
+      "stars": 44
+    },
+    "weisongwen/GraphGNSSLib": {
+      "archived": false,
+      "desc": "An Open-source Package for GNSS Positioning and Real-time Kinematic Using Factor Graph Optimization",
+      "full_name": "weisongwen/GraphGNSSLib",
+      "html_url": "https://github.com/weisongwen/GraphGNSSLib",
+      "lang": "C",
+      "license": null,
+      "stars": 628
+    },
+    "XiaoGongWei/MG_APP": {
+      "archived": false,
+      "desc": " MG-APP (https://link.springer.com/article/10.1007/s10291-020-00976-1); ",
+      "full_name": "XiaoGongWei/MG_APP",
+      "html_url": "https://github.com/XiaoGongWei/MG_APP",
+      "lang": "C++",
+      "license": null,
+      "stars": 98
+    },
+    "yxw027/PPPLib": {
+      "archived": false,
+      "desc": "Precise Point Positioning Library",
+      "full_name": "yxw027/PPPLib",
+      "html_url": "https://github.com/yxw027/PPPLib",
+      "lang": null,
+      "license": null,
+      "stars": 49
+    },
+    "lizhengnss/POSGO": {
+      "archived": false,
+      "desc": "",
+      "full_name": "lizhengnss/POSGO",
+      "html_url": "https://github.com/lizhengnss/POSGO",
+      "lang": "C++",
+      "license": "GPL-3.0",
+      "stars": 116
+    },
+    "goGPS-Project/goGPS_Java": {
+      "archived": false,
+      "desc": "goGPS Java is a GNSS observation processing library.",
+      "full_name": "goGPS-Project/goGPS_Java",
+      "html_url": "https://github.com/goGPS-Project/goGPS_Java",
+      "lang": "Java",
+      "license": null,
+      "stars": 66
+    },
+    "nlsfi/FGI-GSRx": {
+      "archived": false,
+      "desc": "FGI-GSRx Open Source multi-GNSS software receiver",
+      "full_name": "nlsfi/FGI-GSRx",
+      "html_url": "https://github.com/nlsfi/FGI-GSRx",
+      "lang": "MATLAB",
+      "license": "GPL-3.0",
+      "stars": 192
+    },
+    "taroz/MatRTKLIB": {
+      "archived": false,
+      "desc": "MATLAB wrapper for RTKLIB",
+      "full_name": "taroz/MatRTKLIB",
+      "html_url": "https://github.com/taroz/MatRTKLIB",
+      "lang": "MATLAB",
+      "license": "MIT",
+      "stars": 99
+    },
+    "taroz/gtsam_gnss": {
+      "archived": false,
+      "desc": "Factor graph optimization library for GNSS positining",
+      "full_name": "taroz/gtsam_gnss",
+      "html_url": "https://github.com/taroz/gtsam_gnss",
+      "lang": "C++",
+      "license": "MIT",
+      "stars": 136
+    },
+    "PyGnssLab/pygnsslab": {
+      "archived": false,
+      "desc": "Open-source Python-based GNSS software.",
+      "full_name": "PyGnssLab/pygnsslab",
+      "html_url": "https://github.com/PyGnssLab/pygnsslab",
+      "lang": "Python",
+      "license": "MIT",
+      "stars": 34
+    },
+    "nav-solutions/gnss-rtk": {
+      "archived": false,
+      "desc": "Precise Point Positioning (PPP) and Real Time Kinematics (RTK) solvers",
+      "full_name": "nav-solutions/gnss-rtk",
+      "html_url": "https://github.com/nav-solutions/gnss-rtk",
+      "lang": "Rust",
+      "license": "AGPL-3.0",
+      "stars": 79
+    },
+    "neilberkman/sidereon": {
+      "archived": false,
+      "desc": "GNSS positioning (SPP/RTK/PPP/DGNSS) and astrodynamics (SGP4, SPK ephemerides, conjunctions) in Rust, with TLE/OMM/RINEX/SP3/RTCM parsing.",
+      "full_name": "neilberkman/sidereon",
+      "html_url": "https://github.com/neilberkman/sidereon",
+      "lang": "Rust",
+      "license": "MIT",
+      "stars": 18
+    },
+    "rsasaki0109/gnssplusplus-library": {
+      "archived": false,
+      "desc": "Modern C++ GNSS/RTK/PPP/CLAS toolkit.",
+      "full_name": "rsasaki0109/gnssplusplus-library",
+      "html_url": "https://github.com/rsasaki0109/gnssplusplus-library",
+      "lang": "C++",
+      "license": "MIT",
+      "stars": 189
+    },
+    "AndreasArendt/OpenRTK": {
+      "archived": false,
+      "desc": "Open Source precise GNSS Software",
+      "full_name": "AndreasArendt/OpenRTK",
+      "html_url": "https://github.com/AndreasArendt/OpenRTK",
+      "lang": "C++",
+      "license": "MIT",
+      "stars": 23
+    },
+    "ZhangRunzhi20/HASPPP": {
+      "archived": false,
+      "desc": "HASPPP (Galileo High Accuracy Service Precise Point Positioning): an open-source Galileo HAS embeddable RTKLIB decoding  package",
+      "full_name": "ZhangRunzhi20/HASPPP",
+      "html_url": "https://github.com/ZhangRunzhi20/HASPPP",
+      "lang": "C++",
+      "license": "GPL-3.0",
+      "stars": 44
+    },
+    "HuChao-gnss/FiPPP": {
+      "archived": false,
+      "desc": "\u5355\u9891\u81f3\u4e94\u9891\u7cbe\u5bc6\u5355\u70b9\u5b9a\u4f4d\u8f6f\u4ef6",
+      "full_name": "HuChao-gnss/FiPPP",
+      "html_url": "https://github.com/HuChao-gnss/FiPPP",
+      "lang": null,
+      "license": null,
+      "stars": 8
+    },
+    "aewallin/ppp-tools": {
+      "archived": false,
+      "desc": "Scripts for GPS-Precise Point Positioning based on RINEX files",
+      "full_name": "aewallin/ppp-tools",
+      "html_url": "https://github.com/aewallin/ppp-tools",
+      "lang": "Python",
+      "license": "GPL-2.0",
+      "stars": 121
+    },
+    "alainmuls/pyRTKLib": {
+      "archived": false,
+      "desc": "Processing / plotting of RINEX based GPS & Galileo data",
+      "full_name": "alainmuls/pyRTKLib",
+      "html_url": "https://github.com/alainmuls/pyRTKLib",
+      "lang": "Python",
+      "license": null,
+      "stars": 50
+    },
+    "gnss-sdr/gnss-sdr": {
+      "archived": false,
+      "desc": "GNSS-SDR, an open-source software-defined GNSS receiver",
+      "full_name": "gnss-sdr/gnss-sdr",
+      "html_url": "https://github.com/gnss-sdr/gnss-sdr",
+      "lang": "C++",
+      "license": "GPL-3.0",
+      "stars": 2234
+    },
+    "nav-solutions/rinex": {
+      "archived": false,
+      "desc": "RINEX parsing, analysis, production, including many SERDES operations",
+      "full_name": "nav-solutions/rinex",
+      "html_url": "https://github.com/nav-solutions/rinex",
+      "lang": "Rust",
+      "license": "MPL-2.0",
+      "stars": 126
+    },
+    "SGL-UT/GPSTk": {
+      "archived": true,
+      "desc": "ATTENTION: This repository has been moved and is for archival purposes only. GPSTk toolkit has been renamed to GNSSTK and has been split into two new separate repositories. GNSSTK now only contains libraries while the other repository GNSSTK-APPS contains only applications. The rename and split into libraries and applications started with version v12.0.0 on September 2021.  GPSTk --> GNSSTK at https://gitlab.com/sgl-ut/gnsstk --> GNSSTK-APPS at https://gitlab.com/sgl-ut/gnsstk-apps",
+      "full_name": "SGL-UT/GPSTk",
+      "html_url": "https://github.com/SGL-UT/GPSTk",
+      "lang": "C++",
+      "license": "NOASSERTION",
+      "stars": 360
+    },
+    "SGL-UT/gnsstk-apps": {
+      "archived": false,
+      "desc": "The goal of the gnsstk-apps project is to provide an open source suite of applications to the satellite navigation community--to free researchers to focus on research, not lower level coding.",
+      "full_name": "SGL-UT/gnsstk-apps",
+      "html_url": "https://github.com/SGL-UT/gnsstk-apps",
+      "lang": "PostScript",
+      "license": "NOASSERTION",
+      "stars": 68
+    },
+    "rokubun/android_rinex": {
+      "archived": false,
+      "desc": "This repository contains a python script that converts logs from Google's GNSS measurement tools to RINEX",
+      "full_name": "rokubun/android_rinex",
+      "html_url": "https://github.com/rokubun/android_rinex",
+      "lang": "Python",
+      "license": "BSD-2-Clause",
+      "stars": 104
+    },
+    "jtec/prx": {
+      "archived": false,
+      "desc": "",
+      "full_name": "jtec/prx",
+      "html_url": "https://github.com/jtec/prx",
+      "lang": "Python",
+      "license": "MIT",
+      "stars": 23
+    },
+    "google/gps-measurement-tools": {
+      "archived": false,
+      "desc": "",
+      "full_name": "google/gps-measurement-tools",
+      "html_url": "https://github.com/google/gps-measurement-tools",
+      "lang": "Java",
+      "license": "Apache-2.0",
+      "stars": 841
+    },
+    "Stanford-NavLab/gnss_lib_py": {
+      "archived": false,
+      "desc": "Modular Python tool for parsing, analyzing, and visualizing Global Navigation Satellite Systems (GNSS) data and state estimates",
+      "full_name": "Stanford-NavLab/gnss_lib_py",
+      "html_url": "https://github.com/Stanford-NavLab/gnss_lib_py",
+      "lang": "Python",
+      "license": "MIT",
+      "stars": 266
+    },
+    "valgur/hatanaka": {
+      "archived": false,
+      "desc": "Python-based compression / decompression of RINEX files",
+      "full_name": "valgur/hatanaka",
+      "html_url": "https://github.com/valgur/hatanaka",
+      "lang": "C",
+      "license": "NOASSERTION",
+      "stars": 26
+    },
+    "nav-solutions/crx2rnx": {
+      "archived": false,
+      "desc": "CRX2RNX File Decompression command line utility",
+      "full_name": "nav-solutions/crx2rnx",
+      "html_url": "https://github.com/nav-solutions/crx2rnx",
+      "lang": "Rust",
+      "license": "MPL-2.0",
+      "stars": 8
+    },
+    "stenseng/ntripstreams": {
+      "archived": false,
+      "desc": "NtripStreams provide communication methods for the NTRIP protocol.",
+      "full_name": "stenseng/ntripstreams",
+      "html_url": "https://github.com/stenseng/ntripstreams",
+      "lang": "Python",
+      "license": "MIT",
+      "stars": 16
+    },
+    "Node-NTRIP/rtcm": {
+      "archived": false,
+      "desc": "Decoder/encoder for all RTCM 3 message types up to RTCM 3.3 Amendment 1 (c10403.3).",
+      "full_name": "Node-NTRIP/rtcm",
+      "html_url": "https://github.com/Node-NTRIP/rtcm",
+      "lang": "TypeScript",
+      "license": "GPL-3.0",
+      "stars": 48
+    },
+    "Jia-le-wang/BUAA-RINEX-Convertor": {
+      "archived": false,
+      "desc": " Convert from Google gnsslogger to standard RINEX 3.04 observation files for Android smartphones",
+      "full_name": "Jia-le-wang/BUAA-RINEX-Convertor",
+      "html_url": "https://github.com/Jia-le-wang/BUAA-RINEX-Convertor",
+      "lang": "C++",
+      "license": null,
+      "stars": 20
+    },
+    "gregstarr/PyGPS": {
+      "archived": false,
+      "desc": "GPS toolbox: read rinex, make h5, calculate TEC, position of satellites, receiver bias, satellite bias, etc.",
+      "full_name": "gregstarr/PyGPS",
+      "html_url": "https://github.com/gregstarr/PyGPS",
+      "lang": "Python",
+      "license": "AGPL-3.0",
+      "stars": 47
+    },
+    "arthurdjn/gnsstools": {
+      "archived": false,
+      "desc": "Python tools to read and process RINEX, SP3 etc. files, for GNSS management and orbit corrections.",
+      "full_name": "arthurdjn/gnsstools",
+      "html_url": "https://github.com/arthurdjn/gnsstools",
+      "lang": "Python",
+      "license": "MIT",
+      "stars": 39
+    },
+    "aaronboda24/RinexReader": {
+      "archived": false,
+      "desc": "RINEX File Reader - Supports v2.x (GPS) and v3.x (GPS, GLONASS, GALILEO)",
+      "full_name": "aaronboda24/RinexReader",
+      "html_url": "https://github.com/aaronboda24/RinexReader",
+      "lang": "C++",
+      "license": "MIT",
+      "stars": 38
+    },
+    "demiangomez/geode": {
+      "archived": false,
+      "desc": "A comprehensive Python framework for automated GNSS data processing, analysis, and management",
+      "full_name": "demiangomez/geode",
+      "html_url": "https://github.com/demiangomez/geode",
+      "lang": "Python",
+      "license": "BSD-3-Clause",
+      "stars": 61
+    },
+    "IonMetadataWorkingGroup/GNSS-Metadata-Standard": {
+      "archived": false,
+      "desc": "GNSS Sofware Defined Receiver Metadata Standard",
+      "full_name": "IonMetadataWorkingGroup/GNSS-Metadata-Standard",
+      "html_url": "https://github.com/IonMetadataWorkingGroup/GNSS-Metadata-Standard",
+      "lang": "C++",
+      "license": "LGPL-3.0",
+      "stars": 59
+    },
+    "paarnes/GNSS_Multipath_Analysis_Software": {
+      "archived": false,
+      "desc": "Python software for multipath analysis of GNSS observations",
+      "full_name": "paarnes/GNSS_Multipath_Analysis_Software",
+      "html_url": "https://github.com/paarnes/GNSS_Multipath_Analysis_Software",
+      "lang": "Python",
+      "license": "MIT",
+      "stars": 141
+    },
+    "GCCLib/MAPS": {
+      "archived": false,
+      "desc": " To analyze and process the multipath, an open-sourced software for GNSS multipath analysis and processing (MAPS) is introduced and developed based on MATLAB 2021a. The MAPS includes two core modules, namely, multipath analysis module and multipath processing module. ",
+      "full_name": "GCCLib/MAPS",
+      "html_url": "https://github.com/GCCLib/MAPS",
+      "lang": "MATLAB",
+      "license": null,
+      "stars": 35
+    },
+    "embrace-inpe/cycle-slip-correction": {
+      "archived": false,
+      "desc": "Python command-line application for analysis and correction of cycle-slips, often in GNSS data (rinex).",
+      "full_name": "embrace-inpe/cycle-slip-correction",
+      "html_url": "https://github.com/embrace-inpe/cycle-slip-correction",
+      "lang": "Python",
+      "license": "MIT",
+      "stars": 14
+    },
+    "EvgeniiMunin/gnss-multipath-detector": {
+      "archived": false,
+      "desc": "Model to predict the multipath anomaly in GPS L1 C/A signals",
+      "full_name": "EvgeniiMunin/gnss-multipath-detector",
+      "html_url": "https://github.com/EvgeniiMunin/gnss-multipath-detector",
+      "lang": "Jupyter Notebook",
+      "license": null,
+      "stars": 28
+    },
+    "heiwa0519/TGINS": {
+      "archived": false,
+      "desc": "Tight coupled GNSS/INS system",
+      "full_name": "heiwa0519/TGINS",
+      "html_url": "https://github.com/heiwa0519/TGINS",
+      "lang": "C++",
+      "license": null,
+      "stars": 90
+    },
+    "i2Nav-WHU/KF-GINS": {
+      "archived": false,
+      "desc": "An EKF-Based GNSS/INS Integrated Navigation System",
+      "full_name": "i2Nav-WHU/KF-GINS",
+      "html_url": "https://github.com/i2Nav-WHU/KF-GINS",
+      "lang": "C++",
+      "license": "GPL-3.0",
+      "stars": 1194
+    },
+    "i2Nav-WHU/IC-GVINS": {
+      "archived": false,
+      "desc": "A Robust, Real-time, INS-Centric GNSS-Visual-Inertial Navigation System",
+      "full_name": "i2Nav-WHU/IC-GVINS",
+      "html_url": "https://github.com/i2Nav-WHU/IC-GVINS",
+      "lang": "C++",
+      "license": "GPL-3.0",
+      "stars": 690
+    },
+    "HKUST-Aerial-Robotics/GVINS": {
+      "archived": false,
+      "desc": "Tightly coupled GNSS-Visual-Inertial system for locally smooth and globally consistent state estimation in complex environment.",
+      "full_name": "HKUST-Aerial-Robotics/GVINS",
+      "html_url": "https://github.com/HKUST-Aerial-Robotics/GVINS",
+      "lang": "C++",
+      "license": "GPL-3.0",
+      "stars": 1160
+    },
+    "MapIV/eagleye": {
+      "archived": false,
+      "desc": "Precise localization based on GNSS and IMU.",
+      "full_name": "MapIV/eagleye",
+      "html_url": "https://github.com/MapIV/eagleye",
+      "lang": "C++",
+      "license": "BSD-3-Clause",
+      "stars": 775
+    },
+    "Aceinna/gnss-ins-sim": {
+      "archived": false,
+      "desc": "Open-source GNSS + inertial navigation, sensor fusion simulator.  Motion trajectory generator, sensor models, and navigation ",
+      "full_name": "Aceinna/gnss-ins-sim",
+      "html_url": "https://github.com/Aceinna/gnss-ins-sim",
+      "lang": "Python",
+      "license": "MIT",
+      "stars": 1487
+    },
+    "inuex35/tightly-coupled-gnss-imu-fgo": {
+      "archived": false,
+      "desc": "Tightly-coupled IMU + GNSS RTK on GTSAM factor graphs",
+      "full_name": "inuex35/tightly-coupled-gnss-imu-fgo",
+      "html_url": "https://github.com/inuex35/tightly-coupled-gnss-imu-fgo",
+      "lang": "Python",
+      "license": "BSD-3-Clause",
+      "stars": 17
+    },
+    "UniStuttgart-INS/INSTINCT": {
+      "archived": false,
+      "desc": "INS Toolkit for Integrated Navigation Concepts and Training",
+      "full_name": "UniStuttgart-INS/INSTINCT",
+      "html_url": "https://github.com/UniStuttgart-INS/INSTINCT",
+      "lang": "C++",
+      "license": "MPL-2.0",
+      "stars": 65
+    },
+    "TMBOC/SoftGNSS": {
+      "archived": false,
+      "desc": "Current working ver. of SoftGNSS v3.0 for GN3sV2, GN3sV3, NT1065EVK, and NUT4NT samplers. All known updates included. Navigation module updated.",
+      "full_name": "TMBOC/SoftGNSS",
+      "html_url": "https://github.com/TMBOC/SoftGNSS",
+      "lang": "MATLAB",
+      "license": "GPL-2.0",
+      "stars": 90
+    },
+    "Mictronics/multi-sdr-gps-sim": {
+      "archived": false,
+      "desc": "multi-sdr-gps-sim generates a IQ data stream on-the-fly to simulate a  GPS L1 baseband signal using a SDR platform like HackRF or ADLAM-Pluto.",
+      "full_name": "Mictronics/multi-sdr-gps-sim",
+      "html_url": "https://github.com/Mictronics/multi-sdr-gps-sim",
+      "lang": "C",
+      "license": "MIT",
+      "stars": 264
+    },
+    "globsky/SignalSim": {
+      "archived": false,
+      "desc": "A multi-stage GNSS signal and data simulator",
+      "full_name": "globsky/SignalSim",
+      "html_url": "https://github.com/globsky/SignalSim",
+      "lang": "C++",
+      "license": null,
+      "stars": 208
+    },
+    "hamsternz/Full_Stack_GPS_Receiver": {
+      "archived": false,
+      "desc": "A Software GPS decoder, going from raw 1-bit ADC samples to position fix",
+      "full_name": "hamsternz/Full_Stack_GPS_Receiver",
+      "html_url": "https://github.com/hamsternz/Full_Stack_GPS_Receiver",
+      "lang": "C",
+      "license": "MIT",
+      "stars": 168
+    },
+    "harshadms/galileo-sdr-sim": {
+      "archived": false,
+      "desc": "Galileo E1B/C Signal Generator",
+      "full_name": "harshadms/galileo-sdr-sim",
+      "html_url": "https://github.com/harshadms/galileo-sdr-sim",
+      "lang": "C++",
+      "license": null,
+      "stars": 62
+    },
+    "danipascual/GNSS-matlab": {
+      "archived": false,
+      "desc": "Matlab codes to generate GNSS PRNs, secondary codes, dataless signals and spectra. Includes real data captures and a theory summary. GPS (L1CA, L2C, L5), Gaileo (E1OS, E5), BeiDou-2 (B1I)",
+      "full_name": "danipascual/GNSS-matlab",
+      "html_url": "https://github.com/danipascual/GNSS-matlab",
+      "lang": "MATLAB",
+      "license": "NOASSERTION",
+      "stars": 257
+    },
+    "acebrianjuan/gnss-sdr-monitor": {
+      "archived": false,
+      "desc": "A graphical user interface to monitor the GNSS-SDR status in real time",
+      "full_name": "acebrianjuan/gnss-sdr-monitor",
+      "html_url": "https://github.com/acebrianjuan/gnss-sdr-monitor",
+      "lang": "C++",
+      "license": "GPL-3.0",
+      "stars": 114
+    },
+    "sammmlow/LEOGPS": {
+      "archived": false,
+      "desc": ":earth_asia: :satellite: :earth_asia: :satellite: LEOGPS - Satellite Navigation with GPS on Python!",
+      "full_name": "sammmlow/LEOGPS",
+      "html_url": "https://github.com/sammmlow/LEOGPS",
+      "lang": "Python",
+      "license": "MIT",
+      "stars": 88
+    },
+    "Algafix/OSNMA": {
+      "archived": false,
+      "desc": "A python implementation of the Galileo OSNMA protocol.",
+      "full_name": "Algafix/OSNMA",
+      "html_url": "https://github.com/Algafix/OSNMA",
+      "lang": "Python",
+      "license": "EUPL-1.2",
+      "stars": 52
+    },
+    "taroz/ge-gnss-visibility": {
+      "archived": false,
+      "desc": "GNSS satellite visibility simulation from Google Earth",
+      "full_name": "taroz/ge-gnss-visibility",
+      "html_url": "https://github.com/taroz/ge-gnss-visibility",
+      "lang": "MATLAB",
+      "license": "MIT",
+      "stars": 137
+    },
+    "barbeau/awesome-gnss": {
+      "archived": false,
+      "desc": "Community list of open-source GNSS software and resources :satellite:",
+      "full_name": "barbeau/awesome-gnss",
+      "html_url": "https://github.com/barbeau/awesome-gnss",
+      "lang": null,
+      "license": "Apache-2.0",
+      "stars": 599
+    },
+    "libing64/learning_rtklib": {
+      "archived": false,
+      "desc": "",
+      "full_name": "libing64/learning_rtklib",
+      "html_url": "https://github.com/libing64/learning_rtklib",
+      "lang": "OpenEdge ABL",
+      "license": null,
+      "stars": 163
+    },
+    "BasicAirData/GPSLogger": {
+      "archived": false,
+      "desc": "A GPS logger for Android mobile devices",
+      "full_name": "BasicAirData/GPSLogger",
+      "html_url": "https://github.com/BasicAirData/GPSLogger",
+      "lang": "Java",
+      "license": "GPL-3.0",
+      "stars": 504
+    },
+    "TheGalfins/GNSS_Compare": {
+      "archived": false,
+      "desc": "A novel framework for processing raw GNSS measurements on an Android smartphone",
+      "full_name": "TheGalfins/GNSS_Compare",
+      "html_url": "https://github.com/TheGalfins/GNSS_Compare",
+      "lang": "Java",
+      "license": "Apache-2.0",
+      "stars": 73
+    },
+    "IPNL-POLYU/UrbanNavDataset": {
+      "archived": false,
+      "desc": "UrbanNav:An Open-sourced Multisensory Dataset for Benchmarking Positioning Algorithms Designed for Urban Areas",
+      "full_name": "IPNL-POLYU/UrbanNavDataset",
+      "html_url": "https://github.com/IPNL-POLYU/UrbanNavDataset",
+      "lang": "Python",
+      "license": null,
+      "stars": 606
+    },
+    "Mereithhh/gnss-downloader": {
+      "archived": false,
+      "desc": "a gui tool based on PyQt5 for downloading gnss data from nasa's or whu's ftp automanticly... ",
+      "full_name": "Mereithhh/gnss-downloader",
+      "html_url": "https://github.com/Mereithhh/gnss-downloader",
+      "lang": "Python",
+      "license": null,
+      "stars": 23
+    },
+    "LECUT/GDDS": {
+      "archived": false,
+      "desc": "GDDS is a Python-based software for GNSS data download. It includes six main function modules: Global IGS data, Post-Processing Product, Regional CORS data, Time Series Product, Custom Download, and Data Decompression.",
+      "full_name": "LECUT/GDDS",
+      "html_url": "https://github.com/LECUT/GDDS",
+      "lang": "Python",
+      "license": null,
+      "stars": 13
+    },
+    "barbeau/earth-gravitational-model": {
+      "archived": false,
+      "desc": "A lightweight port of the GeoTools EarthGravitationalModel (http://docs.geotools.org/latest/javadocs/org/geotools/referencing/operation/transform/EarthGravitationalModel.html).",
+      "full_name": "barbeau/earth-gravitational-model",
+      "html_url": "https://github.com/barbeau/earth-gravitational-model",
+      "lang": "Java",
+      "license": "LGPL-2.1",
+      "stars": 18
+    },
+    "borglab/gtsam": {
+      "archived": false,
+      "desc": "GTSAM is a library of C++ classes that implement smoothing and mapping (SAM) in robotics and vision, using factor graphs and Bayes networks as the underlying computing paradigm rather than sparse matrices.",
+      "full_name": "borglab/gtsam",
+      "html_url": "https://github.com/borglab/gtsam",
+      "lang": "Jupyter Notebook",
+      "license": "NOASSERTION",
+      "stars": 3680
+    },
+    "twillis449/ALBUS_ionosphere": {
+      "archived": false,
+      "desc": "software to determine ionosphere TEC and RM from GPS receiver data",
+      "full_name": "twillis449/ALBUS_ionosphere",
+      "html_url": "https://github.com/twillis449/ALBUS_ionosphere",
+      "lang": "Python",
+      "license": "NOASSERTION",
+      "stars": 26
+    },
+    "eureka-0/pygnss-tec": {
+      "archived": false,
+      "desc": "A Python package for GNSS RINEX file reading and total electron content (TEC) calculation with Rust-accelerated performance.",
+      "full_name": "eureka-0/pygnss-tec",
+      "html_url": "https://github.com/eureka-0/pygnss-tec",
+      "lang": "Python",
+      "license": "MIT",
+      "stars": 16
+    },
+    "ICCT-ML-in-geodesy/Ionospheric-VTEC-Forecasting": {
+      "archived": false,
+      "desc": "Example of using machine learning for forecasting Vertical Total Electron Content (VTEC) in the ionosphere",
+      "full_name": "ICCT-ML-in-geodesy/Ionospheric-VTEC-Forecasting",
+      "html_url": "https://github.com/ICCT-ML-in-geodesy/Ionospheric-VTEC-Forecasting",
+      "lang": "Jupyter Notebook",
+      "license": "Apache-2.0",
+      "stars": 9
+    },
+    "leeliangchao/ED-AttConvLSTM": {
+      "archived": false,
+      "desc": "An Ionospheric TEC Map Prediction Model",
+      "full_name": "leeliangchao/ED-AttConvLSTM",
+      "html_url": "https://github.com/leeliangchao/ED-AttConvLSTM",
+      "lang": "Jupyter Notebook",
+      "license": null,
+      "stars": 10
+    },
+    "cssrg-kmitl/TEC-calculation-MATLAB": {
+      "archived": false,
+      "desc": "The Total Electron Content(TEC) calculation on MATLAB from RINEX 2.11: Calculate TEC based on dual-frequency receiver (GPS)",
+      "full_name": "cssrg-kmitl/TEC-calculation-MATLAB",
+      "html_url": "https://github.com/cssrg-kmitl/TEC-calculation-MATLAB",
+      "lang": "MATLAB",
+      "license": null,
+      "stars": 33
+    },
+    "cssrg-kmitl/TEC_gradient_computation": {
+      "archived": false,
+      "desc": "Ionospheric delay gradient estimation (grad) from RINEX 2.11  based on single and dual-frequency approach (GPS)  Original by Jirapoom budtho First version",
+      "full_name": "cssrg-kmitl/TEC_gradient_computation",
+      "html_url": "https://github.com/cssrg-kmitl/TEC_gradient_computation",
+      "lang": "MATLAB",
+      "license": null,
+      "stars": 6
+    },
+    "DoubleString/rt-clk-service": {
+      "archived": false,
+      "desc": "Real-time GNSS clock/orbit UPD/IFPB service",
+      "full_name": "DoubleString/rt-clk-service",
+      "html_url": "https://github.com/DoubleString/rt-clk-service",
+      "lang": "C++",
+      "license": null,
+      "stars": 12
+    },
+    "rsasaki0109/gnss_gpu": {
+      "archived": false,
+      "desc": "GPU particle-filter GNSS positioning for the urban canyon: ray-traced NLOS rejection & FGO",
+      "full_name": "rsasaki0109/gnss_gpu",
+      "html_url": "https://github.com/rsasaki0109/gnss_gpu",
+      "lang": "Python",
+      "license": "Apache-2.0",
+      "stars": 83
+    },
+    "JonasBchrt/raw-gnss-fusion": {
+      "archived": false,
+      "desc": "Code, data, and results for fusing raw GNSS data with other sensing modalities",
+      "full_name": "JonasBchrt/raw-gnss-fusion",
+      "html_url": "https://github.com/JonasBchrt/raw-gnss-fusion",
+      "lang": "HTML",
+      "license": "LGPL-3.0",
+      "stars": 160
+    },
+    "fenrir-naru/gps_pvt": {
+      "archived": false,
+      "desc": "Ruby GNSS PVT (position, velocity and time) solver",
+      "full_name": "fenrir-naru/gps_pvt",
+      "html_url": "https://github.com/fenrir-naru/gps_pvt",
+      "lang": "C++",
+      "license": "NOASSERTION",
+      "stars": 6
+    },
+    "nav-solutions/cggtts": {
+      "archived": false,
+      "desc": "CGGTTS for remote clock comparison :satellite:  :artificial_satellite:",
+      "full_name": "nav-solutions/cggtts",
+      "html_url": "https://github.com/nav-solutions/cggtts",
+      "lang": "Rust",
+      "license": "MPL-2.0",
+      "stars": 18
+    },
+    "Sergio-Vicenzo/GPSL1-DPEmodule": {
+      "archived": false,
+      "desc": "Open-source GNSS Direct Position Estimation Plug-in Module for MATLAB-based Two-step Positioning Software Defined Receivers",
+      "full_name": "Sergio-Vicenzo/GPSL1-DPEmodule",
+      "html_url": "https://github.com/Sergio-Vicenzo/GPSL1-DPEmodule",
+      "lang": "MATLAB",
+      "license": "GPL-2.0",
+      "stars": 33
+    },
+    "JohnBagshaw/Fast_GNSS_ReceiverMATLAB": {
+      "archived": false,
+      "desc": "A fast and highly sensitive GNSS receiver with a significant capability of detecting very weak GNSS signals (reflected signals) [MATLAB version]",
+      "full_name": "JohnBagshaw/Fast_GNSS_ReceiverMATLAB",
+      "html_url": "https://github.com/JohnBagshaw/Fast_GNSS_ReceiverMATLAB",
+      "lang": "MATLAB",
+      "license": "MIT",
+      "stars": 26
+    },
+    "ashfordeOU/kshana": {
+      "archived": false,
+      "desc": "Open, validated, reproducible PNT-resilience simulator spanning the full positioning, navigation & timing stack \u2014 orbit, clocks, INS, GNSS, integrity, resilience, lunar/cislunar & deep-space nav \u2014 plus quantum-vs-classical models. Runs as a Rust lib/CLI, Python, in-browser (WASM), an MCP server / Claude Code plugin, and a JetBrains plugin.",
+      "full_name": "ashfordeOU/kshana",
+      "html_url": "https://github.com/ashfordeOU/kshana",
+      "lang": "Rust",
+      "license": "AGPL-3.0",
+      "stars": 6
+    },
+    "mrichar1/esp32-gps": {
+      "archived": false,
+      "desc": "ESP32 GPS Controller, with support for USB Serial, Bluetooth, RTK Corrections, NTRIP Caster/Server/Client and ESP-Now forwarding.",
+      "full_name": "mrichar1/esp32-gps",
+      "html_url": "https://github.com/mrichar1/esp32-gps",
+      "lang": "Python",
+      "license": null,
+      "stars": 23
+    },
+    "PointOneNav/polaris": {
+      "archived": false,
+      "desc": "Software for communicating with Point One Navigation's RTK Network Service",
+      "full_name": "PointOneNav/polaris",
+      "html_url": "https://github.com/PointOneNav/polaris",
+      "lang": "Starlark",
+      "license": "MIT",
+      "stars": 33
+    }
+  },
+  "fails": [],
+  "official": [
+    {
+      "name": "TU Wien VMF/GPT codes",
+      "url": "https://vmf.geo.tuwien.ac.at/codes/",
+      "category": "troposphere",
+      "subcategory": "VMF / GPT mapping"
+    },
+    {
+      "name": "RNXCMP (Hatanaka)",
+      "url": "https://terras.gsi.go.jp/ja/crx2rnx.html",
+      "category": "gnss-data",
+      "subcategory": "Hatanaka / CRX"
+    },
+    {
+      "name": "Anubis",
+      "url": "https://gnutsoftware.com/software/anubis",
+      "category": "ambiguity-qc",
+      "subcategory": "quality control"
+    },
+    {
+      "name": "BKG Ntrip Client (BNC)",
+      "url": "https://igs.bkg.bund.de/ntrip/bnc",
+      "category": "gnss-data",
+      "subcategory": "RTCM / NTRIP"
+    },
+    {
+      "name": "EGNOS Toolkit",
+      "url": "https://sourceforge.net/projects/libegnos/",
+      "category": "sbas",
+      "subcategory": "EGNOS / SBAS"
+    }
+  ],
+  "all_urls": [
+    "https://github.com/Atlas2001-web/SH-GIM",
+    "https://github.com/PadArt/mosgim2",
+    "https://github.com/gnss-lab/mosgim",
+    "https://github.com/zcytju/M_GIM",
+    "https://github.com/gurkanguldas/GNSS.IonosphereMaps",
+    "https://github.com/Hollweg/INPE-TEC-Maps-IONEX",
+    "https://github.com/1acheng/INX_Editor",
+    "https://github.com/viventriglia/PyTECGg",
+    "https://github.com/gnss-lab/gnss-tec",
+    "https://github.com/gnss-lab/tec-suite",
+    "https://github.com/mfkiwl/vtec",
+    "https://github.com/Chenjiajun01/Get_IPP",
+    "https://github.com/mauriciodev/tec_forecast",
+    "https://github.com/victoriyaforsythe/PyIRI",
+    "https://github.com/space-physics/iri2016",
+    "https://github.com/space-physics/iri2020",
+    "https://github.com/ohm1122/IRI2020_parameters",
+    "https://github.com/tpl2go/NequickG",
+    "https://github.com/mgfernan/NeQuickJRC",
+    "https://github.com/rumkex/IonTools",
+    "https://github.com/ohm1122/IonKit-NH",
+    "https://github.com/tanggdut/IonKit-NH",
+    "https://github.com/ohm1122/OASIS",
+    "https://github.com/giorgiopicanco/OASIS",
+    "https://github.com/qiliu2025/IonoMoni",
+    "https://github.com/ljlamarche/gnssutils",
+    "https://github.com/cu-sense-lab/gnss-scintillation-simulator",
+    "https://github.com/yujieqing/Geometric-Matrix-For-Ionospheric-Tomogrphy",
+    "https://github.com/FearlessWu/WA_ion_model_PPP",
+    "https://github.com/geospace-code/georinex",
+    "https://github.com/GNSSpy-Project/gnsspy",
+    "https://github.com/GNSSNexus/rinex",
+    "https://github.com/ChangChuntao/FAST",
+    "https://github.com/valgur/gLAB",
+    "https://github.com/SGL-UT/gnsstk",
+    "https://github.com/tomojitakasu/RTKLIB",
+    "https://github.com/rtklibexplorer/RTKLIB",
+    "https://github.com/PrideLab/PRIDE-PPPAR",
+    "https://github.com/GeoscienceAustralia/ginan",
+    "https://github.com/goGPS-Project/goGPS_MATLAB",
+    "https://github.com/GREAT-WHU/GREAT-PVT",
+    "https://github.com/TUW-VieVS/raPPPid",
+    "https://github.com/zhufengGNSS/GAMP_PPPH",
+    "https://github.com/groops-devs/groops",
+    "https://github.com/CGS-GIS/GPSPACE",
+    "https://github.com/i2Nav-WHU/OB_GINS",
+    "https://github.com/kaichen686/GINav",
+    "https://github.com/Erensu/ignav",
+    "https://github.com/chichengcn/gici-open",
+    "https://github.com/GREAT-WHU/GREAT-MSF",
+    "https://github.com/nmayorov/pyins",
+    "https://github.com/barbeau/gpstest",
+    "https://github.com/kristinemlarson/gnssrefl",
+    "https://github.com/LiZhengXiao99/Navigation-Learning",
+    "https://github.com/osqzss/gps-sdr-sim",
+    "https://github.com/zohrehadavi/STD_SWD_Calc",
+    "https://github.com/ohm1122/UNB3m",
+    "https://github.com/tianruivpn1001/C-project-for-solving-tropospheric-delay-using-GGOS-tropospheric-products",
+    "https://github.com/ZiskinZiv/PW_from_GPS",
+    "https://github.com/insarlab/PyAPS",
+    "https://github.com/ymcmrs/ICAMS",
+    "https://github.com/weisongwen/GraphGNSSLib",
+    "https://github.com/XiaoGongWei/MG_APP",
+    "https://github.com/yxw027/PPPLib",
+    "https://github.com/lizhengnss/POSGO",
+    "https://github.com/goGPS-Project/goGPS_Java",
+    "https://github.com/nlsfi/FGI-GSRx",
+    "https://github.com/taroz/MatRTKLIB",
+    "https://github.com/taroz/gtsam_gnss",
+    "https://github.com/PyGnssLab/pygnsslab",
+    "https://github.com/nav-solutions/gnss-rtk",
+    "https://github.com/neilberkman/sidereon",
+    "https://github.com/rsasaki0109/gnssplusplus-library",
+    "https://github.com/AndreasArendt/OpenRTK",
+    "https://github.com/ZhangRunzhi20/HASPPP",
+    "https://github.com/HuChao-gnss/FiPPP",
+    "https://github.com/aewallin/ppp-tools",
+    "https://github.com/alainmuls/pyRTKLib",
+    "https://github.com/gnss-sdr/gnss-sdr",
+    "https://github.com/nav-solutions/rinex",
+    "https://github.com/SGL-UT/GPSTk",
+    "https://github.com/SGL-UT/gnsstk-apps",
+    "https://github.com/rokubun/android_rinex",
+    "https://github.com/jtec/prx",
+    "https://github.com/google/gps-measurement-tools",
+    "https://github.com/Stanford-NavLab/gnss_lib_py",
+    "https://github.com/valgur/hatanaka",
+    "https://github.com/nav-solutions/crx2rnx",
+    "https://github.com/stenseng/ntripstreams",
+    "https://github.com/Node-NTRIP/rtcm",
+    "https://github.com/Jia-le-wang/BUAA-RINEX-Convertor",
+    "https://github.com/gregstarr/PyGPS",
+    "https://github.com/arthurdjn/gnsstools",
+    "https://github.com/aaronboda24/RinexReader",
+    "https://github.com/demiangomez/geode",
+    "https://github.com/IonMetadataWorkingGroup/GNSS-Metadata-Standard",
+    "https://github.com/paarnes/GNSS_Multipath_Analysis_Software",
+    "https://github.com/GCCLib/MAPS",
+    "https://github.com/embrace-inpe/cycle-slip-correction",
+    "https://github.com/EvgeniiMunin/gnss-multipath-detector",
+    "https://github.com/heiwa0519/TGINS",
+    "https://github.com/i2Nav-WHU/KF-GINS",
+    "https://github.com/i2Nav-WHU/IC-GVINS",
+    "https://github.com/HKUST-Aerial-Robotics/GVINS",
+    "https://github.com/MapIV/eagleye",
+    "https://github.com/Aceinna/gnss-ins-sim",
+    "https://github.com/inuex35/tightly-coupled-gnss-imu-fgo",
+    "https://github.com/UniStuttgart-INS/INSTINCT",
+    "https://github.com/TMBOC/SoftGNSS",
+    "https://github.com/Mictronics/multi-sdr-gps-sim",
+    "https://github.com/globsky/SignalSim",
+    "https://github.com/hamsternz/Full_Stack_GPS_Receiver",
+    "https://github.com/harshadms/galileo-sdr-sim",
+    "https://github.com/danipascual/GNSS-matlab",
+    "https://github.com/acebrianjuan/gnss-sdr-monitor",
+    "https://github.com/sammmlow/LEOGPS",
+    "https://github.com/Algafix/OSNMA",
+    "https://github.com/taroz/ge-gnss-visibility",
+    "https://github.com/barbeau/awesome-gnss",
+    "https://github.com/libing64/learning_rtklib",
+    "https://github.com/BasicAirData/GPSLogger",
+    "https://github.com/TheGalfins/GNSS_Compare",
+    "https://github.com/IPNL-POLYU/UrbanNavDataset",
+    "https://github.com/Mereithhh/gnss-downloader",
+    "https://github.com/LECUT/GDDS",
+    "https://github.com/barbeau/earth-gravitational-model",
+    "https://github.com/borglab/gtsam",
+    "https://github.com/twillis449/ALBUS_ionosphere",
+    "https://github.com/eureka-0/pygnss-tec",
+    "https://github.com/ICCT-ML-in-geodesy/Ionospheric-VTEC-Forecasting",
+    "https://github.com/leeliangchao/ED-AttConvLSTM",
+    "https://github.com/cssrg-kmitl/TEC-calculation-MATLAB",
+    "https://github.com/cssrg-kmitl/TEC_gradient_computation",
+    "https://github.com/DoubleString/rt-clk-service",
+    "https://github.com/rsasaki0109/gnss_gpu",
+    "https://github.com/JonasBchrt/raw-gnss-fusion",
+    "https://github.com/fenrir-naru/gps_pvt",
+    "https://github.com/nav-solutions/cggtts",
+    "https://github.com/Sergio-Vicenzo/GPSL1-DPEmodule",
+    "https://github.com/JohnBagshaw/Fast_GNSS_ReceiverMATLAB",
+    "https://github.com/ashfordeOU/kshana",
+    "https://github.com/mrichar1/esp32-gps",
+    "https://github.com/PointOneNav/polaris"
+  ]
+}
