@@ -7,7 +7,7 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [SH-GIM](https://github.com/Atlas2001-web/SH-GIM) | 球谐展开全球电离层图（GIM）MATLAB 实现 | MATLAB | 104 | 🚩 自有 · 核心 |
+| [SH-GIM](https://github.com/Atlas2001-web/SH-GIM) | 维护者自有 GIM 实现（不展开） | MATLAB | 104 | 🚩 自有 |
 | [mosgim2](https://github.com/PadArt/mosgim2) | 相位差法构建 GNSS 全球电离层图 | Python | 17 | ★ Star |
 | [mosgim](https://github.com/gnss-lab/mosgim) | Padokhin 早期 MosGIM GIM 技术实现 | Python | 6 |  |
 | [m_gim](https://github.com/PANXIONG-CN/m_gim) | MATLAB 侧 GIM 相关脚本 | MATLAB | 1 | ★ Star |
@@ -16,12 +16,8 @@
 
 ### 详细说明
 
-#### [SH-GIM](https://github.com/Atlas2001-web/SH-GIM)  
-*🚩 自有 · 核心*
+> 维护者自有仓库（SH-GIM）只在上表留链接，详细说明只写他人项目。
 
-语言：MATLAB · 许可：MIT · 星标约：104
-
-用球谐系数把 GNSS 斜路径 TEC 拟合成全球电离层图，输出可与 IONEX/IGS GIM 对照。适合做 GIM 方法复现、球谐阶次试验和教学演示。代码体量集中、依赖 MATLAB，规模化批处理与多星座 DCB 自洽估计仍需自补；与 MosGIM2、PRIDE 电离层产品等并列阅读时，重点看球谐约束与穿刺点建模差异。
 
 #### [mosgim2](https://github.com/PadArt/mosgim2)  
 *★ Star*

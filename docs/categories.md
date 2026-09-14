@@ -82,7 +82,7 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 
 | 标记 | 含义 |
 |---|---|
-| 🚩 自有 / owned | Atlas2001-web 原创公开仓库（旗舰：SH-GIM） |
+| 🚩 自有 / owned | 维护者自有公开仓库（仅链接，不写详细介绍） |
 | 🔀 Fork / fork | 维护者已 fork，表中仍列**上游** URL |
 | ★ Star / starred | 出现在维护者 GitHub stars 中的种子 |
 | 核心 / core | 本目录推荐优先阅读的代表性项目 |

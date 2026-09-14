@@ -11,19 +11,6 @@ Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation
 
 ---
 
-## 亮点：自有项目 SH-GIM
-
-| | |
-|---|---|
-| **项目** | [Atlas2001-web/SH-GIM](https://github.com/Atlas2001-web/SH-GIM) |
-| **一句话** | 基于球谐展开的全球电离层映射（GIM）MATLAB 源码 |
-| **语言 / 许可** | MATLAB · MIT |
-| **定位** | 本索引「电离层 / GIM」类别下的**旗舰自有项目** |
-
-从事 GIM / TEC 球谐建模时，建议优先阅读 SH-GIM，并对照 MosGIM2、PyTECGg、gnss-tec、tec-suite 与 IONEX 工具。
-
----
-
 ## 如何使用
 
 1. 先读 [分类说明](./docs/categories.md)，弄清自己处在数据→改正→定位→组合导航的哪一段  
@@ -35,7 +22,7 @@ Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation
 
 | 标记 | 含义 |
 |:---:|---|
-| 🚩 | Atlas2001-web 自有公开仓库 |
+| 🚩 | 维护者自有公开仓库（仅收录链接，不写详细介绍） |
 | 🔀 | 维护者已 fork（表中列上游；fork 地址见项目页） |
 | ★ | 维护者 GitHub 星标种子 |
 | 核心 | 建议优先阅读 |
@@ -67,7 +54,6 @@ Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation
 
 | 项目 | 简介 | 标记 |
 |---|---|---|
-| [SH-GIM](https://github.com/Atlas2001-web/SH-GIM) | 球谐展开全球电离层图（GIM）MATLAB 实现 | 🚩 自有 · 核心 |
 | [gnss-tec](https://github.com/gnss-lab/gnss-tec) | 由 RINEX 载波/伪距重建斜路径 TEC | 核心 |
 | [PyIRI](https://github.com/victoriyaforsythe/PyIRI) | 国际参考电离层 IRI 的纯 Python 实现 | 核心 |
 | [NequickG](https://github.com/tpl2go/NequickG) | Galileo NeQuick-G 电离层模型 Python 实现 | 核心 |
@@ -201,12 +187,13 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 
 ---
 
-## 与 Atlas2001-web 的关系
+## 关于维护者相关仓库
 
-- 🚩 **[SH-GIM](https://github.com/Atlas2001-web/SH-GIM)**：自有旗舰（GIM）
-- 🔀 Fork：[PyTECGg](https://github.com/viventriglia/PyTECGg) → [Atlas2001-web/PyTECGg](https://github.com/Atlas2001-web/PyTECGg)；[georinex](https://github.com/geospace-code/georinex) → [Atlas2001-web/georinex](https://github.com/Atlas2001-web/georinex)
-- ★ 大量电离层/GNSS 星标已作为种子纳入
-- 私有 `SH-GIM-proprietary` **不收录**
+本索引**重点介绍社区/他人开源软件**。维护者自有仓库仅作分类收录、不写详细分析：
+
+- 🚩 [SH-GIM](https://github.com/Atlas2001-web/SH-GIM)（自有，详见其 README）
+- 🔀 已 fork 上游：[PyTECGg](https://github.com/viventriglia/PyTECGg)、[georinex](https://github.com/geospace-code/georinex)（详细说明写上游）
+- 私有仓库不收录
 
 ## 仓库结构
 
