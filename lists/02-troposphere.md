@@ -19,38 +19,6 @@
 GNSS 干涉反射测量（GNSS-IR）主流开源工具，用反射信号估水位、土壤湿度、雪深等，也常与近地表环境/湿延迟研究相关。文档与 Docker 支持较好。定位解算不是目标；要 ZTD/PWV 主产品仍用 PPP+气象流程。
 
 
-## ZTD/ZWD/VMF
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [STD_SWD_Calc](https://github.com/zohrehadavi/STD_SWD_Calc) | 由 GPT/VMF 等计算 GNSS STD/SWD 与模型 ZTD | Python | 10 | 核心 |
-
-### 详细说明
-
-#### [STD_SWD_Calc](https://github.com/zohrehadavi/STD_SWD_Calc)  
-*核心*
-
-语言：Python · 许可：GPL-3.0 · 星标约：10
-
-Python 包生成斜路径干/湿延迟（STD/SWD）以及基于 GPT/VMF 的模型 ZTD，直接对接维也纳映射函数生态。适合 GNSS 气象、PPP 先验对流层、与实测 ZTD 对比。站点元数据与 VMF 格网下载要自己准备；业务化连续运行需另写调度。
-
-
-## VMF/GPT官方代码
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [TU-Wien-VMF-GPT-codes](https://vmf.geo.tuwien.ac.at/codes) | TU Wien 官方 VMF1/VMF3/GPT 开源代码与格网 | Fortran/MATLAB/C++ | — | 核心 |
-
-### 详细说明
-
-#### [TU-Wien-VMF-GPT-codes](https://vmf.geo.tuwien.ac.at/codes)  
-*核心*
-
-语言：Fortran/MATLAB/C++
-
-维也纳工大官方发布的 VMF1/VMF3、GPT/GPT2w/GPT3、GMF 等源码与格网，是对流层映射与气象先验的事实标准入口。GNSS PPP/VLBI/气象反演几乎都会间接用到。托管在官网而非 GitHub；VMF 预报产品常需注册。配套可用 STD_SWD_Calc 或 RTKLIB/PRIDE 内嵌实现。
-
-
 ## 大气延迟/InSAR
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
@@ -86,6 +54,53 @@ ICAMS 用全球大气模式做 InSAR 对流层改正，并考虑空间随机特�
 语言：C · 星标约：43
 
 在 RTKLIB 二次开发中接入 GGOS/VMF 格网做对流层延迟，带较详细中文编译笔记。适合 Windows/VS 环境下改 RTKLIB 学 VMF。作者亦说明与官方 MATLAB 参考存在数值差，科研前应用官方码交叉验证。
+
+
+## GNSS气象/PWV
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [PW_from_GPS](https://github.com/ZiskinZiv/PW_from_GPS) | GPS 可降水量（PWV）分析与 ML 应用工具 | Python | 22 |  |
+
+### 详细说明
+
+#### [PW_from_GPS](https://github.com/ZiskinZiv/PW_from_GPS)
+
+语言：Python · 许可：MIT · 星标约：22
+
+从 GPS 相关产品做可降水量分析，并带机器学习应用示例。适合 GNSS 气象入门与区域 PWV 研究。从原始 RINEX 到 ZWD 的完整 PPP 链需另接 PRIDE/Ginan 等。
+
+
+## ZTD/ZWD/VMF
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [STD_SWD_Calc](https://github.com/zohrehadavi/STD_SWD_Calc) | 由 GPT/VMF 等计算 GNSS STD/SWD 与模型 ZTD | Python | 10 | 核心 |
+
+### 详细说明
+
+#### [STD_SWD_Calc](https://github.com/zohrehadavi/STD_SWD_Calc)  
+*核心*
+
+语言：Python · 许可：GPL-3.0 · 星标约：10
+
+Python 包生成斜路径干/湿延迟（STD/SWD）以及基于 GPT/VMF 的模型 ZTD，直接对接维也纳映射函数生态。适合 GNSS 气象、PPP 先验对流层、与实测 ZTD 对比。站点元数据与 VMF 格网下载要自己准备；业务化连续运行需另写调度。
+
+
+## 经验模型
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [UNB3m](https://github.com/ohm1122/UNB3m) | UNB3m 中性大气延迟模型 | — | 3 | ★ Star |
+
+### 详细说明
+
+#### [UNB3m](https://github.com/ohm1122/UNB3m)  
+*★ Star*
+
+语言：— · 星标约：3
+
+UNB 系列中性大气经验模型，无实测气象时给天顶延迟粗值。适合教学与低精度先验。精度不及 VMF+数值天气模式；精密 PPP 优先 VMF3/GPT3。
 
 
 ## 反射测量
@@ -131,32 +146,17 @@ Larson 实验室较早的 GNSS-IR Python 脚本集，从 GNSS 观测提取 SNR �
 MATLAB 工具：获取并分析 GNSS-R 水位观测，同时可生成合成 SNR，便于方法试验、误差传播与教学演示。面向反射测高与水文监测研究者。侧重水位场景与合成数据，不是覆盖雪深/土壤湿度的完整 GNSS-IR 套件；低成本接收机路线可并读同作者 gnssr_lowcost，产线级处理仍常回 gnssrefl。
 
 
-## GNSS气象/PWV
+## VMF/GPT官方代码
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [PW_from_GPS](https://github.com/ZiskinZiv/PW_from_GPS) | GPS 可降水量（PWV）分析与 ML 应用工具 | Python | 22 |  |
+| [TU-Wien-VMF-GPT-codes](https://vmf.geo.tuwien.ac.at/codes) | TU Wien 官方 VMF1/VMF3/GPT 开源代码与格网 | Fortran/MATLAB/C++ | — | 核心 |
 
 ### 详细说明
 
-#### [PW_from_GPS](https://github.com/ZiskinZiv/PW_from_GPS)
+#### [TU-Wien-VMF-GPT-codes](https://vmf.geo.tuwien.ac.at/codes)  
+*核心*
 
-语言：Python · 许可：MIT · 星标约：22
+语言：Fortran/MATLAB/C++
 
-从 GPS 相关产品做可降水量分析，并带机器学习应用示例。适合 GNSS 气象入门与区域 PWV 研究。从原始 RINEX 到 ZWD 的完整 PPP 链需另接 PRIDE/Ginan 等。
-
-
-## 经验模型
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [UNB3m](https://github.com/ohm1122/UNB3m) | UNB3m 中性大气延迟模型 | — | 3 | ★ Star |
-
-### 详细说明
-
-#### [UNB3m](https://github.com/ohm1122/UNB3m)  
-*★ Star*
-
-星标约：3
-
-UNB 系列中性大气经验模型，无实测气象时给天顶延迟粗值。适合教学与低精度先验。精度不及 VMF+数值天气模式；精密 PPP 优先 VMF3/GPT3。
+维也纳工大官方发布的 VMF1/VMF3、GPT/GPT2w/GPT3、GMF 等源码与格网，是对流层映射与气象先验的事实标准入口。GNSS PPP/VLBI/气象反演几乎都会间接用到。托管在官网而非 GitHub；VMF 预报产品常需注册。配套可用 STD_SWD_Calc 或 RTKLIB/PRIDE 内嵌实现。

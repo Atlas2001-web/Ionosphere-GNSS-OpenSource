@@ -1,7 +1,44 @@
 # 精密定位 / Precise Positioning
-> 共 **30** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **36** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
+
+## RTK
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [rtkbase](https://github.com/Stefal/rtkbase) | 树莓派等 SBC 上自建 GNSS 基准站与 Web 管理 | Python | 769 | 核心 |
+| [rtklib-py](https://github.com/rtklibexplorer/rtklib-py) | 基于 demo5 的 RTKLIB Python 实现（侧重 PPK） | Python | 244 |  |
+| [OpenRTK](https://github.com/AndreasArendt/OpenRTK) | 开源精密 GNSS/RTK 软件 | C++ | 23 |  |
+| [GNSSRTK](https://github.com/SupakunZ/GNSS_RTK) | AGV 用 GNSS-RTK 路径规划与车载显示（Python） | Python | 3 |  |
+
+### 详细说明
+
+#### [rtkbase](https://github.com/Stefal/rtkbase)  
+*核心*
+
+语言：Python · 许可：AGPL-3.0 · 星标约：769
+
+把 u-blox、Septentrio 等接收机、RTKLIB str2str、NTRIP 与 Web GUI 捆成可部署的基准站方案，适合野外站、农场与 DIY CORS。运维人员与低成本 RTK 爱好者最常用。精度与完好性取决于接收机、天线与网络质量，不是测地级网平差软件；与 BNC、商业 caster 相比更偏单站自建与易用性。
+
+#### [rtklib-py](https://github.com/rtklibexplorer/rtklib-py)
+
+语言：Python · 许可：MIT · 星标约：244
+
+把 rtklibexplorer/demo5 思路迁到 Python，当前以事后 PPK 为主，便于阅读算法与改实验脚本。适合不想编译 C 版、又要贴近 RTKLIB 流程的人。实时 RTK、完整 GUI 与全部信号支持仍以 C 版 RTKLIB/explorer 为准；与 laika 相比更贴近经典差分定位公式，和 goGPS_MATLAB 可对照语言栈。
+
+#### [OpenRTK](https://github.com/AndreasArendt/OpenRTK)
+
+语言：C++ · 许可：MIT · 星标约：23
+
+小型开源 RTK/精密 GNSS 实现，MIT 许可友好。适合嵌入式或教学裁剪。成熟度与社区小于 RTKLIB。
+
+#### [GNSSRTK](https://github.com/SupakunZ/GNSS_RTK)
+
+语言：Python · 星标约：3
+
+面向自动导引车（AGV）的 GNSS-RTK 应用：读取 SimpleRTK 等板卡数据，生成高精度行驶路径、地图标绘、到目标点距离，并设计车载显示界面。适合室外 AGV/机器人导引原型。归类为精密定位而非对流层或 GNSS-IR；RTK 解算深度不及 RTKLIB，强项在路径业务与人机界面集成。改正数链路与板卡配置需按 ArduSimple 等厂商文档准备。
+
 
 ## RTK/PPP
 
@@ -146,44 +183,6 @@ GRAZ 等地学机构风格的工具包，覆盖重力场恢复与 GNSS 处理，
 海床大地测量社区维护的 GNSS-Acoustic（GNSS-A）软件：海面 GNSS 与水声测距联合约束海底换能器/点位，用于海底形变与板块边界监测。面向海洋大地测量课题组。不是陆地 RTK/PPP；依赖船舶、声学与时间同步链路，作业与数据成本远高于陆基站网。社区仓库，版本接口以上游发布说明为准。
 
 
-## PPP
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [raPPPid](https://github.com/TUW-VieVS/raPPPid) | 维也纳 VieVS 的 PPP 模块 raPPPid | MATLAB | 149 | 核心 |
-| [GAMP_PPPH](https://github.com/zhufengGNSS/GAMP_PPPH) | 多星座 PPP 源码（GAMP 相关整理） | — | 78 | ★ Star |
-| [GPSPACE](https://github.com/CGS-GIS/GPSPACE) | 加拿大 NRCan GPSPACE PPP Fortran 程序 | Fortran | 58 |  |
-| [PPPLib](https://github.com/yxw027/PPPLib) | 精密单点定位库 PPPLib | — | 49 |  |
-
-### 详细说明
-
-#### [raPPPid](https://github.com/TUW-VieVS/raPPPid)  
-*核心*
-
-语言：MATLAB · 许可：GPL-3.0 · 星标约：149
-
-VieVS 体系下的精密单点定位模块，MATLAB 实现，适合与 VLBI/大地测量流程结合的课题组。非实时引擎；工业 RTK 请看 RTKLIB/商业机。
-
-#### [GAMP_PPPH](https://github.com/zhufengGNSS/GAMP_PPPH)  
-*★ Star*
-
-星标约：78
-
-整理/公开的多星座 PPP 相关源码，常被中文社区当作 GAMP 学习材料。适合对照教材读流程。官方维护关系与许可需自行核实，慎直接用于生产。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
-
-#### [GPSPACE](https://github.com/CGS-GIS/GPSPACE)
-
-语言：Fortran · 星标约：58
-
-NRCan 公开的 PPP Fortran 代码，历史与官方 CSRS-PPP 服务同源脉络。适合研究官方级 PPP 模型细节。编译与依赖偏传统；日常用户更多用在线 CSRS-PPP。
-
-#### [PPPLib](https://github.com/yxw027/PPPLib)
-
-星标约：49
-
-开源 PPP 库，便于阅读 PPP 状态估计与资源管理结构。适合课程设计与二次开发起点。社区体量小于 PRIDE/RTKLIB；功能完整性以实测为准。
-
-
 ## SPP/RTK/PPP
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
@@ -197,6 +196,59 @@ NRCan 公开的 PPP Fortran 代码，历史与官方 CSRS-PPP 服务同源脉络
 语言：C++ · 许可：MIT · 星标约：189
 
 C++20 风格的 SPP/RTK/PPP/CLAS 工具包，含 Python 绑定、Docker、ROS2 支持。适合新架构嵌入式/机器人项目。测地学事后高精度产品力需与 PRIDE 等对比评估。
+
+
+## PPP
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [raPPPid](https://github.com/TUW-VieVS/raPPPid) | 维也纳 VieVS 的 PPP 模块 raPPPid | MATLAB | 149 | 核心 |
+| [GAMP_PPPH](https://github.com/zhufengGNSS/GAMP_PPPH) | 多星座 PPP 源码（GAMP 相关整理） | — | 78 | ★ Star |
+| [GPSPACE](https://github.com/CGS-GIS/GPSPACE) | 加拿大 NRCan GPSPACE PPP Fortran 程序 | Fortran | 58 |  |
+| [PPPLib](https://github.com/yxw027/PPPLib) | 精密单点定位库 PPPLib | — | 49 |  |
+| [PPPH-UAV](https://github.com/BerkayBahadur/PPPH-UAV) | 面向无人机摄影测量的 GNSS PPP 处理（MATLAB） | MATLAB | 14 |  |
+| [RTPPP_B2b](https://github.com/floating0516/RTPPP_B2b) | 北斗 PPP-B2b 改正数解码与实时 PPP 接口 | C | 10 | 核心 |
+
+### 详细说明
+
+#### [raPPPid](https://github.com/TUW-VieVS/raPPPid)  
+*核心*
+
+语言：MATLAB · 许可：GPL-3.0 · 星标约：149
+
+VieVS 体系下的精密单点定位模块，MATLAB 实现，适合与 VLBI/大地测量流程结合的课题组。非实时引擎；工业 RTK 请看 RTKLIB/商业机。
+
+#### [GAMP_PPPH](https://github.com/zhufengGNSS/GAMP_PPPH)  
+*★ Star*
+
+语言：— · 星标约：78
+
+整理/公开的多星座 PPP 相关源码，常被中文社区当作 GAMP 学习材料。适合对照教材读流程。官方维护关系与许可需自行核实，慎直接用于生产。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
+
+#### [GPSPACE](https://github.com/CGS-GIS/GPSPACE)
+
+语言：Fortran · 星标约：58
+
+NRCan 公开的 PPP Fortran 代码，历史与官方 CSRS-PPP 服务同源脉络。适合研究官方级 PPP 模型细节。编译与依赖偏传统；日常用户更多用在线 CSRS-PPP。
+
+#### [PPPLib](https://github.com/yxw027/PPPLib)
+
+语言：— · 星标约：49
+
+开源 PPP 库，便于阅读 PPP 状态估计与资源管理结构。适合课程设计与二次开发起点。社区体量小于 PRIDE/RTKLIB；功能完整性以实测为准。
+
+#### [PPPH-UAV](https://github.com/BerkayBahadur/PPPH-UAV)
+
+语言：MATLAB · 星标约：14
+
+在 PPPH 思路上处理无人机原始 GNSS，服务摄影测量轨迹与产品生成，MATLAB 实现便于改流程与出图。做 UAV 测图轨迹增强、POS 辅助时可作参考。通用多星座 PPP-AR、模糊度固定与实时能力不如 PRIDE、Ginan；许可未显著标明，使用与再分发前请阅读仓库说明。影像时间戳与 GNSS 历元对齐是摄影测量成败关键。
+
+#### [RTPPP_B2b](https://github.com/floating0516/RTPPP_B2b)  
+*核心*
+
+语言：C · 星标约：10
+
+解码北斗 PPP-B2b 广播的精密轨道钟差改正，带流解析、缓冲与完整性检查，便于接入实时 PPP 流水线。做 BDS-3 短报文 PPP 或接收机原型时应优先阅读。仓库体量小、许可未标明，工程化与多系统融合仍需自补；可与 PRIDE、Ginan、RTKLIB 实时分支对照改正数接口设计。区域服务范围与信号可见性会直接影响改正可用性。
 
 
 ## 因子图
@@ -233,9 +285,16 @@ C++20 风格的 SPP/RTK/PPP/CLAS 工具包，含 Python 绑定、Docker、ROS2 �
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [Net_Diff](https://github.com/YizeZhang/Net_Diff) | GNSS 数据下载、定位解算与结果分析套件 | HTML | 178 |  |
 | [POSGO](https://github.com/lizhengnss/POSGO) | 开源 GNSS 定位软件 POSGO | C++ | 116 |  |
 
 ### 详细说明
+
+#### [Net_Diff](https://github.com/YizeZhang/Net_Diff)
+
+语言：HTML · 星标约：178
+
+张一泽等维护的综合工具，覆盖 GNSS 产品下载、多种定位模式与结果分析，中文资料与用户基础较好。适合教学演示、课程设计与中小规模科研试验。相对 PRIDE-PPPAR、Ginan 等，源码开放形态与工程依赖需按仓库说明核对；大规模业务化 PPP-AR 仍建议对照专用精密引擎。版本更新后注意示例配置与产品路径是否仍兼容。
 
 #### [POSGO](https://github.com/lizhengnss/POSGO)
 
@@ -293,9 +352,17 @@ C++ 开源定位软件，中文导航学习社区常见推荐。适合跟 Naviga
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [laika](https://github.com/commaai/laika) | comma.ai 的轻量 Python GNSS 处理库 | Python | 723 | 核心 |
 | [gnss-rtk](https://github.com/nav-solutions/gnss-rtk) | Rust 实现的 PPP/RTK 解算器 | Rust | 79 |  |
 
 ### 详细说明
+
+#### [laika](https://github.com/commaai/laika)  
+*核心*
+
+语言：Python · 许可：MIT · 星标约：723
+
+面向自动驾驶与研究的精简 GNSS 库，可下载星历与改正、做伪距定位并与 RTKLIB 风格流程对接，Python 接口干净。适合想快速验证定位链路、而不愿先啃完整测地软件栈的工程师与学生。功能覆盖远小于 PRIDE、Ginan、RTKLIB，模糊度固定与多频多星座产品化能力弱；和 rtklib-py、goGPS 对照时，优势在轻量与可嵌入脚本。
 
 #### [gnss-rtk](https://github.com/nav-solutions/gnss-rtk)
 
@@ -362,28 +429,6 @@ Python 下处理/绘制基于 RINEX 的 GPS 与 Galileo 数据，教学演示友
 语言：Python · 许可：MIT · 星标约：34
 
 纯 Python 方向的模块化工具，含 RINEX、PPP/PPP-AR 与实时流支持，降低 C++ 编译门槛。适合原型与教学。极致性能与完备产品化仍不及 PRIDE/Ginan。
-
-
-## RTK
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [OpenRTK](https://github.com/AndreasArendt/OpenRTK) | 开源精密 GNSS/RTK 软件 | C++ | 23 |  |
-| [GNSSRTK](https://github.com/SupakunZ/GNSS_RTK) | AGV 用 GNSS-RTK 路径规划与车载显示（Python） | Python | 3 |  |
-
-### 详细说明
-
-#### [OpenRTK](https://github.com/AndreasArendt/OpenRTK)
-
-语言：C++ · 许可：MIT · 星标约：23
-
-小型开源 RTK/精密 GNSS 实现，MIT 许可友好。适合嵌入式或教学裁剪。成熟度与社区小于 RTKLIB。
-
-#### [GNSSRTK](https://github.com/SupakunZ/GNSS_RTK)
-
-语言：Python · 星标约：3
-
-面向自动导引车（AGV）的 GNSS-RTK 应用：读取 SimpleRTK 等板卡数据，生成高精度行驶路径、地图标绘、到目标点距离，并设计车载显示界面。适合室外 AGV/机器人导引原型。归类为精密定位而非对流层或 GNSS-IR；RTK 解算深度不及 RTKLIB，强项在路径业务与人机界面集成。改正数链路与板卡配置需按 ArduSimple 等厂商文档准备。
 
 
 ## 多功能引擎

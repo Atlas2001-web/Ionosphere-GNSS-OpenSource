@@ -1,0 +1,635 @@
+[
+  {
+    "description": "Simple Python GNSS processing library",
+    "full_name": "commaai/laika",
+    "language": "Python",
+    "license": "MIT",
+    "stars": 723,
+    "topics": [
+      "glonass",
+      "gnss",
+      "gps",
+      "hacktoberfest",
+      "rtklib"
+    ],
+    "url": "https://github.com/commaai/laika"
+  },
+  {
+    "description": "Your own GNSS base station for RTK localization with a Web GUI",
+    "full_name": "Stefal/rtkbase",
+    "language": "Python",
+    "license": "AGPL-3.0",
+    "stars": 769,
+    "topics": [
+      "base",
+      "caster",
+      "f9p",
+      "frontend",
+      "gnss",
+      "gui",
+      "mosaic-x5",
+      "ntrip",
+      "orange-pi-zero",
+      "raspberry-pi",
+      "rtk",
+      "rtklib",
+      "sbc",
+      "septentrio",
+      "single-board-computers",
+      "str2str",
+      "u-blox",
+      "web"
+    ],
+    "url": "https://github.com/Stefal/rtkbase"
+  },
+  {
+    "description": "Python Graphical GPS Client Application supporting NMEA, UBX, SBF, UNI, QGC, RTCM3, NTRIP & SPARTN Protocols",
+    "full_name": "semuconsulting/PyGPSClient",
+    "language": "Python",
+    "license": "BSD-3-Clause",
+    "stars": 839,
+    "topics": [
+      "dgps",
+      "gnss",
+      "gnsstoolkit",
+      "gps",
+      "gps-data",
+      "gps-location",
+      "nmea",
+      "ntrip",
+      "ntripcaster",
+      "ntripclient",
+      "quectel",
+      "rtcm3",
+      "rtk",
+      "sbf",
+      "spartn",
+      "u-blox",
+      "ubx",
+      "ubx-gps-library",
+      "ubx-protocols",
+      "unicore"
+    ],
+    "url": "https://github.com/semuconsulting/PyGPSClient"
+  },
+  {
+    "description": "Python library for parsing and generating UBX GPS/GNSS protocol messages.",
+    "full_name": "semuconsulting/pyubx2",
+    "language": "Python",
+    "license": "BSD-3-Clause",
+    "stars": 254,
+    "topics": [
+      "gnss",
+      "gps",
+      "gps-library",
+      "nmea",
+      "rtcm3",
+      "u-blox",
+      "ubx",
+      "ubx-gps-library",
+      "ubx-messages",
+      "ubx-parser",
+      "ubx-protocol"
+    ],
+    "url": "https://github.com/semuconsulting/pyubx2"
+  },
+  {
+    "description": "Python GNSS CLI utility library for reading, parsing and broadcasting NMEA, UBX, SBF, QGC, RTCM3, NTRIP and SPARTN protocols",
+    "full_name": "semuconsulting/pygnssutils",
+    "language": "Python",
+    "license": "BSD-3-Clause",
+    "stars": 143,
+    "topics": [
+      "dgps",
+      "gnss",
+      "gnsstoolkit",
+      "nmea",
+      "nmea0183",
+      "ntrip",
+      "ntripcaster",
+      "qgc",
+      "rtcm",
+      "rtcm3",
+      "rtk",
+      "sbf",
+      "spartn",
+      "ubx"
+    ],
+    "url": "https://github.com/semuconsulting/pygnssutils"
+  },
+  {
+    "description": "Python library for parsing RTCM 3 protocol messages. ",
+    "full_name": "semuconsulting/pyrtcm",
+    "language": "Python",
+    "license": "BSD-3-Clause",
+    "stars": 115,
+    "topics": [
+      "gnss",
+      "gps",
+      "ntrip",
+      "rtcm",
+      "rtcm3"
+    ],
+    "url": "https://github.com/semuconsulting/pyrtcm"
+  },
+  {
+    "description": "Multi-Sensor Fusion (GNSS, IMU, Camera) 多源多传感器融合定位 GPS/INS组合导航  PPP/INS紧组合",
+    "full_name": "2013fangwentao/Multi_Sensor_Fusion",
+    "language": "C++",
+    "license": "GPL-3.0",
+    "stars": 940,
+    "topics": [
+      "camera",
+      "fusion",
+      "gnss",
+      "gps",
+      "imu",
+      "multi-sensor",
+      "navigation",
+      "ppp",
+      "vio",
+      "vision"
+    ],
+    "url": "https://github.com/2013fangwentao/Multi_Sensor_Fusion"
+  },
+  {
+    "description": "IMU + X(GNSS, 6DoF Odom) Loosely-Coupled Fusion Localization based on ESKF, IEKF, UKF(UKF/SPKF, JUKF, SVD-UKF) and MAP",
+    "full_name": "cggos/imu_x_fusion",
+    "language": "C++",
+    "license": "GPL-3.0",
+    "stars": 1126,
+    "topics": [
+      "ekf-localization",
+      "eskf",
+      "gnss",
+      "imu-sensor",
+      "nonlinear-least-squares",
+      "sensor-fusion",
+      "slam",
+      "ukf-localization",
+      "visual-inertial-odometry"
+    ],
+    "url": "https://github.com/cggos/imu_x_fusion"
+  },
+  {
+    "description": "GLIO: Tightly-Coupled GNSS/LiDAR/IMU Integration for Continuous and Drift-free State Estimation",
+    "full_name": "XikunLiu-huskit/GLIO",
+    "language": "C",
+    "license": null,
+    "stars": 438,
+    "topics": [
+      "gnss",
+      "lidar",
+      "lio",
+      "localization",
+      "positioning",
+      "sensor-fusion",
+      "slam",
+      "urban"
+    ],
+    "url": "https://github.com/XikunLiu-huskit/GLIO"
+  },
+  {
+    "description": "A robust sensor fusion library for online localization.",
+    "full_name": "TUC-ProAut/libRSF",
+    "language": "C++",
+    "license": "GPL-3.0",
+    "stars": 337,
+    "topics": [
+      "estimation-algorithm",
+      "gnss",
+      "localization",
+      "ranging",
+      "robotics",
+      "sensorfusion"
+    ],
+    "url": "https://github.com/TUC-ProAut/libRSF"
+  },
+  {
+    "description": "Python implementation of RTKLIB.  Based on demo5 version.  Currently only supports PPK solutions",
+    "full_name": "rtklibexplorer/rtklib-py",
+    "language": "Python",
+    "license": "MIT",
+    "stars": 244,
+    "topics": [
+      "gnss",
+      "python",
+      "rtklib",
+      "rtklibexplorer"
+    ],
+    "url": "https://github.com/rtklibexplorer/rtklib-py"
+  },
+  {
+    "description": "Basic definitions and utility functions for GNSS raw measurement processing",
+    "full_name": "HKUST-Aerial-Robotics/gnss_comm",
+    "language": "C++",
+    "license": "GPL-3.0",
+    "stars": 164,
+    "topics": [
+      "gnss",
+      "ros"
+    ],
+    "url": "https://github.com/HKUST-Aerial-Robotics/gnss_comm"
+  },
+  {
+    "description": "A driver for u-blox receiver (ZED-F9P) with ros support",
+    "full_name": "HKUST-Aerial-Robotics/ublox_driver",
+    "language": "C++",
+    "license": "GPL-3.0",
+    "stars": 159,
+    "topics": [
+      "gnss",
+      "gnss-receiver",
+      "ros",
+      "rtk",
+      "ublox"
+    ],
+    "url": "https://github.com/HKUST-Aerial-Robotics/ublox_driver"
+  },
+  {
+    "description": "INS/GNSS紧组合程序，使用伪距、伪距率、INS测量，支持双天线测向数据。",
+    "full_name": "benzenemo/TightlyCoupledINSGNSS",
+    "language": "MATLAB",
+    "license": "BSD-2-Clause",
+    "stars": 291,
+    "topics": [
+      "gnss",
+      "ins",
+      "tightlycoupled"
+    ],
+    "url": "https://github.com/benzenemo/TightlyCoupledINSGNSS"
+  },
+  {
+    "description": "Loosely coupled integration of GNSS and IMU",
+    "full_name": "aaronboda24/Loose-GNSS-IMU",
+    "language": "C++",
+    "license": "MIT",
+    "stars": 187,
+    "topics": [
+      "gnss",
+      "gps",
+      "imu",
+      "inertial-navigation-systems",
+      "kalman-filter",
+      "loosely-coupled",
+      "sensor-fusion"
+    ],
+    "url": "https://github.com/aaronboda24/Loose-GNSS-IMU"
+  },
+  {
+    "description": "Python module to read IONEX files.",
+    "full_name": "gnss-lab/ionex",
+    "language": "Python",
+    "license": "MIT",
+    "stars": 12,
+    "topics": [],
+    "url": "https://github.com/gnss-lab/ionex"
+  },
+  {
+    "description": "IONEX (Ionosphere Maps) parsing and processing",
+    "full_name": "nav-solutions/ionex",
+    "language": "Rust",
+    "license": "MPL-2.0",
+    "stars": 7,
+    "topics": [
+      "geodesy",
+      "geospatial",
+      "gnss"
+    ],
+    "url": "https://github.com/nav-solutions/ionex"
+  },
+  {
+    "description": "A C++ library that decodes BeiDou PPP‑B2b broadcasts and exposes precise orbit/clock corrections for real-time precise point positioning. Includes stream parsing, buffering, integrity checks, and utilities for seamless integration into GNSS processing pipelines.",
+    "full_name": "floating0516/RTPPP_B2b",
+    "language": "C",
+    "license": null,
+    "stars": 10,
+    "topics": [],
+    "url": "https://github.com/floating0516/RTPPP_B2b"
+  },
+  {
+    "description": "Ntrip Version 2.0 Command Line Client",
+    "full_name": "nunojpg/ntripclient",
+    "language": "C",
+    "license": null,
+    "stars": 129,
+    "topics": [],
+    "url": "https://github.com/nunojpg/ntripclient"
+  },
+  {
+    "description": "GNSS software receiver written in python",
+    "full_name": "kirienko/pylgrim",
+    "language": "Python",
+    "license": "GPL-3.0",
+    "stars": 21,
+    "topics": [
+      "glonass",
+      "gnss",
+      "gps",
+      "ionex",
+      "python",
+      "rinex",
+      "vmf1"
+    ],
+    "url": "https://github.com/kirienko/pylgrim"
+  },
+  {
+    "description": "GRID: a mature, flexible, and capable GNSS/GPS SDR (software-defined receiver)",
+    "full_name": "mmurrian/GRID",
+    "language": null,
+    "license": null,
+    "stars": 4,
+    "topics": [
+      "gnss",
+      "gnss-receiver",
+      "gnss-sdr",
+      "gps",
+      "sdr",
+      "software-defined-radio"
+    ],
+    "url": "https://github.com/mmurrian/GRID"
+  },
+  {
+    "description": "A software-defined GNSS receiver toolkit",
+    "full_name": "perrysou/SoftGNSS-python",
+    "language": "Python",
+    "license": null,
+    "stars": 44,
+    "topics": [
+      "gnss",
+      "gnss-sdr",
+      "gps",
+      "sdr",
+      "software-defined-radio"
+    ],
+    "url": "https://github.com/perrysou/SoftGNSS-python"
+  },
+  {
+    "description": "TEC, foF2, and DST Index plotting",
+    "full_name": "arwildo/ionosphere-plotting",
+    "language": "Python",
+    "license": null,
+    "stars": 7,
+    "topics": [
+      "fof2",
+      "ionosphere",
+      "median",
+      "plot-graph",
+      "plotting-in-python",
+      "subplot",
+      "subplots",
+      "tec"
+    ],
+    "url": "https://github.com/arwildo/ionosphere-plotting"
+  },
+  {
+    "description": "RTCM VTEC messages to IONEX format converter. ",
+    "full_name": "d-roma/rtcm2ionex",
+    "language": "Python",
+    "license": "GPL-3.0",
+    "stars": 3,
+    "topics": [],
+    "url": "https://github.com/d-roma/rtcm2ionex"
+  },
+  {
+    "description": "Algorithms for segment matrix computation in voxel-based ionosphere tomography inversion",
+    "full_name": "yujieqing/SegmentsComputation",
+    "language": "C++",
+    "license": null,
+    "stars": 0,
+    "topics": [],
+    "url": "https://github.com/yujieqing/SegmentsComputation"
+  },
+  {
+    "description": "A method used sliding window filter frame work for RTK-Visual-Inertial-Navigation",
+    "full_name": "xiaohong-huang/RTK-Visual-Inertial-Navigation",
+    "language": "C++",
+    "license": "GPL-3.0",
+    "stars": 136,
+    "topics": [
+      "dgnss",
+      "gnss",
+      "rtk",
+      "sensor-fusion",
+      "slam",
+      "state-estimation",
+      "vio"
+    ],
+    "url": "https://github.com/xiaohong-huang/RTK-Visual-Inertial-Navigation"
+  },
+  {
+    "description": "基于的matlab导航科学计算库",
+    "full_name": "yandld/nav_matlab",
+    "language": "MATLAB",
+    "license": null,
+    "stars": 276,
+    "topics": [
+      "gnss",
+      "matlab",
+      "uwb-imu"
+    ],
+    "url": "https://github.com/yandld/nav_matlab"
+  },
+  {
+    "description": "Use a GPS receiver on Linux, macOS, Windows: precision timing, positioning and GUI for evaluation/configuration",
+    "full_name": "jclark/satpulse",
+    "language": "Go",
+    "license": "MIT",
+    "stars": 63,
+    "topics": [
+      "chrony",
+      "gnss",
+      "go",
+      "gps",
+      "linuxptp",
+      "ntp",
+      "ntp-server",
+      "ntrip",
+      "pps",
+      "ptp",
+      "ptp-grandmaster",
+      "raspberry-pi",
+      "raspberry-pi-cm4",
+      "raspberry-pi-cm5",
+      "rinex",
+      "rtcm",
+      "rtk",
+      "septentrio",
+      "ublox",
+      "unicore"
+    ],
+    "url": "https://github.com/jclark/satpulse"
+  },
+  {
+    "description": "Draw Ion map from ionex file.",
+    "full_name": "Jin-Whu/IonMap",
+    "language": "Python",
+    "license": null,
+    "stars": 4,
+    "topics": [],
+    "url": "https://github.com/Jin-Whu/IonMap"
+  },
+  {
+    "description": "batch for download IONEX (GIM) data",
+    "full_name": "ohm1122/ionex-downloader",
+    "language": null,
+    "license": null,
+    "stars": 1,
+    "topics": [],
+    "url": "https://github.com/ohm1122/ionex-downloader"
+  },
+  {
+    "description": "python wrapper for ITUR Nequick 2",
+    "full_name": "tpl2go/Nequick-ITUR",
+    "language": "Fortran",
+    "license": null,
+    "stars": 4,
+    "topics": [],
+    "url": "https://github.com/tpl2go/Nequick-ITUR"
+  },
+  {
+    "description": "Ionospheric tomography for radio astronomy using ray tracing, and radio observation simulation",
+    "full_name": "Joshuaalbert/IonoTomo",
+    "language": "Jupyter Notebook",
+    "license": "Apache-2.0",
+    "stars": 11,
+    "topics": [],
+    "url": "https://github.com/Joshuaalbert/IonoTomo"
+  },
+  {
+    "description": "Read different type of GNSS files using Matlab.",
+    "full_name": "dzd9798/READ_GNSS",
+    "language": "MATLAB",
+    "license": null,
+    "stars": 10,
+    "topics": [
+      "gnss",
+      "ionex",
+      "rinex"
+    ],
+    "url": "https://github.com/dzd9798/READ_GNSS"
+  },
+  {
+    "description": "🌍 IONEX data (files) visualization graduate work ☑️ Electron ☑️ React",
+    "full_name": "matador96/ionex-analyzer",
+    "language": "JavaScript",
+    "license": null,
+    "stars": 0,
+    "topics": [
+      "geo",
+      "ionex"
+    ],
+    "url": "https://github.com/matador96/ionex-analyzer"
+  },
+  {
+    "description": "CORS系统中继重分发程序",
+    "full_name": "tisyang/cors-relay",
+    "language": "C",
+    "license": "BSD-3-Clause",
+    "stars": 49,
+    "topics": [
+      "cors",
+      "libev",
+      "ntrip",
+      "ntripcaster",
+      "qxwz",
+      "rtklib"
+    ],
+    "url": "https://github.com/tisyang/cors-relay"
+  },
+  {
+    "description": "Bluetooth GNSS app on Google Play Store",
+    "full_name": "ykasidit/bluetooth_gnss",
+    "language": "Java",
+    "license": "GPL-2.0",
+    "stars": 123,
+    "topics": [
+      "android",
+      "bluetooth",
+      "gnss",
+      "ntrip",
+      "rtk"
+    ],
+    "url": "https://github.com/ykasidit/bluetooth_gnss"
+  },
+  {
+    "description": "NTRIP Client and Server",
+    "full_name": "go-gnss/ntrip",
+    "language": "Go",
+    "license": "Apache-2.0",
+    "stars": 62,
+    "topics": [
+      "gnss",
+      "ntrip"
+    ],
+    "url": "https://github.com/go-gnss/ntrip"
+  },
+  {
+    "description": "Simple ntrip caster/client/server example programs, using the NTRIP2.0 protocol",
+    "full_name": "ybzwyrcld/ntrip",
+    "language": "C++",
+    "license": "MIT",
+    "stars": 177,
+    "topics": [
+      "ntrip"
+    ],
+    "url": "https://github.com/ybzwyrcld/ntrip"
+  },
+  {
+    "description": "Python codes based on Jupyter Notebook is used to process CDAAC COSMIC netcdf files, for Research on TEC.",
+    "full_name": "haoINvinCbou/CDAAC_COSMIC-TEC_Data-Research",
+    "language": "Jupyter Notebook",
+    "license": null,
+    "stars": 2,
+    "topics": [
+      "cdaac",
+      "cosmic",
+      "occultation",
+      "python",
+      "tec"
+    ],
+    "url": "https://github.com/haoINvinCbou/CDAAC_COSMIC-TEC_Data-Research"
+  },
+  {
+    "description": "Code for simulating multi-GNSS Inter-Satellite Link-assisted ionospheric tomography.",
+    "full_name": "suixin11suoyu/synthetic_ionospheric_tomography_isl",
+    "language": null,
+    "license": null,
+    "stars": 2,
+    "topics": [],
+    "url": "https://github.com/suixin11suoyu/synthetic_ionospheric_tomography_isl"
+  },
+  {
+    "description": "A dataset containing synchronized visual, inertial and GNSS raw measurements.",
+    "full_name": "HKUST-Aerial-Robotics/GVINS-Dataset",
+    "language": "C++",
+    "license": "NOASSERTION",
+    "stars": 262,
+    "topics": [
+      "dataset",
+      "gnss",
+      "gnsstoolkit",
+      "imu",
+      "stereo-camera"
+    ],
+    "url": "https://github.com/HKUST-Aerial-Robotics/GVINS-Dataset"
+  },
+  {
+    "description": "Real-time converter from NTRIP streamed RTCM3 data to RINEX",
+    "full_name": "nunojpg/rtcm3torinex",
+    "language": "C",
+    "license": null,
+    "stars": 65,
+    "topics": [],
+    "url": "https://github.com/nunojpg/rtcm3torinex"
+  },
+  {
+    "description": "Ntrip Version 2.0 Command Line Server",
+    "full_name": "nunojpg/ntripserver",
+    "language": "C",
+    "license": null,
+    "stars": 74,
+    "topics": [],
+    "url": "https://github.com/nunojpg/ntripserver"
+  }
+]

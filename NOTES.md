@@ -48,3 +48,10 @@
 - 纠正 SupakunZ/GNSS_RTK → `gnss-positioning`；误放的 SDR/INS 条目分别归入 `gnss-sdr` / `navigation-ins`
 - 剔除全文复制粘贴的 README对照 / IGS交叉检查 结尾套话
 - 当前条目：**207**
+
+## 增量合并（2026-09-14）
+
+- 自 `research/missing_meta.json` 与补充 gh 检索合并新增 **48** 条
+- 当前条目：**255**
+- 分类计数：{'ionosphere': 49, 'troposphere': 13, 'gnss-data': 44, 'gnss-positioning': 36, 'orbit-clock': 3, 'navigation-ins': 38, 'gnss-sdr': 51, 'mobile-apps': 10, 'tools-learning': 11}
+- 详见 `research/new_finds.json`

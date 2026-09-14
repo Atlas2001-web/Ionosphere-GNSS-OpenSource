@@ -3,45 +3,6 @@
 
 **这类做什么？** awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
-## 课程笔记
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning) | 导航定位开源项目解读与学习笔记（中文） | — | 2417 | ★ Star · 核心 |
-| [learning_rtklib](https://github.com/libing64/learning_rtklib) | RTKLIB 学习相关材料 | — | 163 |  |
-
-### 详细说明
-
-#### [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning)  
-*★ Star · 核心*
-
-星标约：2417
-
-系统整理 RTKLIB/GAMP/GREAT/Ginan/GINav/GICI 等源码阅读笔记与开源清单，中文学习路径非常完整。适合入门导航软件。笔记非上游文档，实现细节以各项目为准。
-
-#### [learning_rtklib](https://github.com/libing64/learning_rtklib)
-
-星标约：163
-
-围绕 RTKLIB 的学习材料/笔记向仓库，降低读 C 代码的门槛。与 Navigation-Learning 互补。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
-
-
-## 资源列表
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [awesome-gnss](https://github.com/barbeau/awesome-gnss) | 开源 GNSS 软件与资源社区列表 | — | 599 | 核心 |
-
-### 详细说明
-
-#### [awesome-gnss](https://github.com/barbeau/awesome-gnss)  
-*核心*
-
-许可：Apache-2.0 · 星标约：599
-
-Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献入口，本目录大量种子来源之一。适合定期浏览查新。本身不含算法实现。
-
-
 ## 数据集
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
@@ -62,6 +23,45 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 语言：MATLAB · 星标约：33
 
 开源 MATLAB 工具 GNSS2TWS：利用 GNSS 测站日尺度垂直位移，经格林函数等方法推断陆地水储量（TWS）变化，服务水文大地测量。适合已有精密坐标时间序列、做气候水文交叉的研究者。不是导航定位解算器；空间平滑、负载模型与参考框架假设必须按配套论文核对。输入坐标序列质量决定反演可信度。站点分布稀疏时，反演空间分辨率会明显下降。
+
+
+## 课程笔记
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning) | 导航定位开源项目解读与学习笔记（中文） | — | 2417 | ★ Star · 核心 |
+| [learning_rtklib](https://github.com/libing64/learning_rtklib) | RTKLIB 学习相关材料 | — | 163 |  |
+
+### 详细说明
+
+#### [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning)  
+*★ Star · 核心*
+
+语言：— · 星标约：2417
+
+系统整理 RTKLIB/GAMP/GREAT/Ginan/GINav/GICI 等源码阅读笔记与开源清单，中文学习路径非常完整。适合入门导航软件。笔记非上游文档，实现细节以各项目为准。
+
+#### [learning_rtklib](https://github.com/libing64/learning_rtklib)
+
+语言：— · 星标约：163
+
+围绕 RTKLIB 的学习材料/笔记向仓库，降低读 C 代码的门槛。与 Navigation-Learning 互补。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
+
+
+## 资源列表
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [awesome-gnss](https://github.com/barbeau/awesome-gnss) | 开源 GNSS 软件与资源社区列表 | — | 599 | 核心 |
+
+### 详细说明
+
+#### [awesome-gnss](https://github.com/barbeau/awesome-gnss)  
+*核心*
+
+语言：— · 许可：Apache-2.0 · 星标约：599
+
+Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献入口，本目录大量种子来源之一。适合定期浏览查新。本身不含算法实现。
 
 
 ## 可视化
@@ -104,7 +104,7 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 
 #### [polaris](https://github.com/PointOneNav/polaris)
 
-许可：MIT · 星标约：33
+语言：— · 许可：MIT · 星标约：33
 
 与 Point One 的 RTK 网络服务通信的开源客户端侧代码，便于接云端改正。服务本身非开源；适合对接其生态。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
 
@@ -148,5 +148,7 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 ### 详细说明
 
 #### [EGNOS-Toolkit](https://sourceforge.net/projects/libegnos)
+
+语言：—
 
 面向 EGNOS 等 SBAS 的开源工具集，Linux 下可做增强信号相关试验。托管在 SourceForge；现代多星座 SBAS 研究还需补充新资料。
