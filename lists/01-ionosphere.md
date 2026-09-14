@@ -24,7 +24,7 @@
 
 语言：Python · 许可：MIT · 星标约：17
 
-MosGIM 系第二代实现，侧重相位差思路从 GNSS 观测建 GIM，Python 栈便于接到现有数据流水线。适合研究组快速试算区域/全球 TEC 图。文档与工程化程度不如商业或大机构产品；球谐/网格参数需自行调，和 SH-GIM、gnss-tec 搭配可做方法对比。
+MosGIM 系第二代实现，侧重相位差思路从 GNSS 观测建 GIM，Python 栈便于接到现有数据流水线。适合研究组快速试算区域/全球 TEC 图。文档与工程化程度不如商业或大机构产品；球谐/网格参数需自行调，可与 gnss-tec、同类 GIM 工具做方法对比。
 
 #### [mosgim](https://github.com/gnss-lab/mosgim)
 
@@ -44,14 +44,14 @@ MosGIM 早期公开版本，便于追溯相位差 GIM 的原始流程。适合�
 
 语言：—
 
-侧重从 GNSS 观测生成与处理电离层图，适合做图件可视化或区域 TEC 展示。工程完整度与多星座支持需实测；若目标是可发表级全球 GIM，应同时参考 SH-GIM/MosGIM2 与 IGS 产品规范。
+侧重从 GNSS 观测生成与处理电离层图，适合做图件可视化或区域 TEC 展示。工程完整度与多星座支持需实测；若目标是可发表级全球 GIM，应同时参考 MosGIM2 与 IGS 产品规范。
 
 #### [M_GIM](https://github.com/zcytju/M_GIM)  
 *★ Star*
 
 语言：—
 
-面向 GIM 建模的 MATLAB 侧工具集合，适合已有 MATLAB 电离层工作流的人快速试用。公开说明偏少，需自行核验输入输出格式是否符合 IONEX/球谐习惯；可与 SH-GIM、M_GIM 变体对照使用。
+面向 GIM 建模的 MATLAB 侧工具集合，适合已有 MATLAB 电离层工作流的人快速试用。公开说明偏少，需自行核验输入输出格式是否符合 IONEX/球谐习惯；可与 M_GIM 等变体对照使用。
 
 
 ## IRI/NeQuick
@@ -313,13 +313,13 @@ gnss-lab 出品的轻量 IONEX 读入模块，把网格 TEC 图载入 Python 便
 
 语言：Rust · 许可：MPL-2.0 · 星标约：7
 
-GeoRust/nav-solutions 生态下的 IONEX 库，强调类型安全与可嵌入 rinex-cli 一类工具链，适合已在 Rust GNSS 栈中处理格网电离层改正的人。Python 科研脚本更常直接用 gnss-lab/ionex；两者互补而非替代完整 GIM 建模，写图与球谐仍看 SH-GIM/MosGIM2。
+GeoRust/nav-solutions 生态下的 IONEX 库，强调类型安全与可嵌入 rinex-cli 一类工具链，适合已在 Rust GNSS 栈中处理格网电离层改正的人。Python 科研脚本更常直接用 gnss-lab/ionex；两者互补而非替代完整 GIM 建模，写图与球谐仍看 MosGIM2 等 GIM 工具。
 
 #### [IonMap](https://github.com/Jin-Whu/IonMap)
 
 语言：Python · 星标约：4
 
-读取 IONEX 并绘制电离层 TEC 地图，适合论文插图、课程展示全球或区域 VTEC 分布。功能集中在可视化，不估计 STEC、不做球谐或层析建模；与 gnss-lab/ionex、ionosphere-plotting、SH-GIM 输出对照使用更完整，批处理画图时可脚本化调用。色标与投影选择会影响观感，分析结论仍看数值产品。
+读取 IONEX 并绘制电离层 TEC 地图，适合论文插图、课程展示全球或区域 VTEC 分布。功能集中在可视化，不估计 STEC、不做球谐或层析建模；与 gnss-lab/ionex、ionosphere-plotting 等输出对照使用更完整，批处理画图时可脚本化调用。色标与投影选择会影响观感，分析结论仍看数值产品。
 
 #### [rtcm2ionex](https://github.com/d-roma/rtcm2ionex)
 
@@ -403,7 +403,7 @@ GeoRust/nav-solutions 生态下的 IONEX 库，强调类型安全与可嵌入 ri
 
 语言：Python · 星标约：7
 
-面向 TEC、foF2、DST 等指数与时间序列的 Python 绑图工具，适合快速出教学图或报告插图。研究级 GIM/STEC 重建请用 gnss-tec、MosGIM2、SH-GIM；本仓库偏可视化与展示，数据获取与许可需自备，不宜单独支撑反演论文。输入数据格式需按脚本说明自行对齐时间与单位。选用前请用自有数据做交叉验证。
+面向 TEC、foF2、DST 等指数与时间序列的 Python 绑图工具，适合快速出教学图或报告插图。研究级 GIM/STEC 重建请用 gnss-tec、MosGIM2 等；本仓库偏可视化与展示，数据获取与许可需自备，不宜单独支撑反演论文。输入数据格式需按脚本说明自行对齐时间与单位。选用前请用自有数据做交叉验证。
 
 #### [ionex-downloader](https://github.com/ohm1122/ionex-downloader)
 
