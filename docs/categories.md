@@ -3,7 +3,7 @@
 本索引按「你要解决什么问题」划分，而不是按编程语言。下面用白话说明每一类在 GNSS 工作流里的位置。
 
 ```
-数据下载/格式(RINEX,RTCM) ──► 质量检查
+数据门户(RINEX/SP3/IONEX/CORS) ──► 格式工具/质检
          │
          ├─► 电离层 TEC/GIM / 闪烁指标
          ├─► 对流层 ZTD/PWV / VMF
@@ -26,6 +26,8 @@
 
 另有 `host` 字段标明托管位置：`github` / `gitlab` / `sourceforge` / `official_site` / `other`。
 
+数据源类（`gnss-datasets`）另有 `registration` 字段，说明见 [`data-access.md`](./data-access.md)。
+
 > 同一上游若存在 GitHub 镜像，目录优先保留**官方站点** URL，并在分析中注明镜像。
 
 ## `ionosphere` — 电离层
@@ -33,7 +35,7 @@
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
 - 列表文件：[`lists/01-ionosphere.md`](../lists/01-ionosphere.md)
-- 当前条目数：**58**
+- 当前条目数：**78**
 
 ## `troposphere` — 对流层
 
@@ -90,6 +92,13 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 
 - 列表文件：[`lists/09-tools-learning.md`](../lists/09-tools-learning.md)
 - 当前条目数：**26**
+
+## `gnss-datasets` — GNSS 数据源
+
+已核验的 GNSS 相关数据门户与产品库：RINEX 观测/导航、SP3/CLK、IONEX/GIM、对流层格网、偏差产品、实时流、CORS 区域网、掩星与空间天气等。侧重「去哪里拿数据」，不是软件工具。
+
+- 列表文件：[`lists/10-gnss-datasets.md`](../lists/10-gnss-datasets.md)
+- 当前条目数：**51**
 
 ## 与用户仓库的关系标记
 

@@ -55,11 +55,11 @@ GFZ 发布的 Software for Precise Orbit and Clock Combination，用方差分量
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GREAT-IFCB](https://github.com/GREAT-WHU/GREAT-IFCB) | 多 GNSS 频间钟差（IFCB）估计开源软件 | C++ | 15 | 🏷️ 高校实验室 |
-| [GREAT-PCE](https://github.com/GREAT-WHU/GREAT-PCE) | 武大 GREAT 团队精密卫星钟差估计软件 | C++ | 9 | 🏷️ 高校实验室 · 核心 |
 | [GREAT-UPD](https://github.com/GREAT-WHU/GREAT-UPD) | 武大 GREAT 开源多星座 UPD（未校准相位延迟）估计软件 | C++ | 19 | 🏷️ 高校实验室 · 核心 |
 | [GREAT_PODFLT](https://github.com/GREAT-WHU/GREAT_PODFLT) | GREAT 多星座实时滤波精密定轨（POD）模块 | C++ | 17 | 🏷️ 高校实验室 · 核心 |
+| [GREAT-IFCB](https://github.com/GREAT-WHU/GREAT-IFCB) | 多 GNSS 频间钟差（IFCB）估计开源软件 | C++ | 15 | 🏷️ 高校实验室 |
 | [rt-clk-service](https://github.com/DoubleString/rt-clk-service) | 实时 GNSS 钟差/轨道/UPD/IFPB 服务相关 | C++ | 12 | 🏷️ 个人社区 |
+| [GREAT-PCE](https://github.com/GREAT-WHU/GREAT-PCE) | 武大 GREAT 团队精密卫星钟差估计软件 | C++ | 9 | 🏷️ 高校实验室 · 核心 |
 
 ### 详细说明
 

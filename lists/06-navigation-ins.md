@@ -9,21 +9,21 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GINav](https://github.com/kaichen686/GINav) | MATLAB GNSS 与 GNSS/INS 组合算法 | MATLAB | 309 | 🏷️ 个人社区 · ★ Star · 核心 |
-| [GINS](https://github.com/zhangwhu/GINS) | PPP-RTK 与惯导组合的 GINS 实现（武大相关） | C | 21 | 🏷️ 高校实验室 |
-| [GIOW-release](https://github.com/i2Nav-WHU/GIOW-release) | 全轮角/里程计辅助的 GNSS/INS/ODO 组合导航算法发布版 | C++ | 75 | 🏷️ 高校实验室 · 核心 |
-| [GNSS_IMU](https://github.com/rtklibexplorer/GNSS_IMU) | rtklibexplorer 系松组合 GNSS/IMU 的 Python 实现 | Python | 35 | 🏷️ 个人社区 |
-| [ignav](https://github.com/Erensu/ignav) | INS 与 GNSS 组合导航实现 | C | 472 | 🏷️ 个人社区 · ★ Star |
-| [imu_x_fusion](https://github.com/cggos/imu_x_fusion) | 基于 ESKF/IEKF/UKF 的 IMU+GNSS/里程计松组合 | C++ | 1126 | 🏷️ 个人社区 · 核心 |
-| [ImuGpsGuiding](https://github.com/JackJu-HIT/ImuGpsGuiding) | ROS 框架下 IMU+GPS 点到点导引示例 | C++ | 20 | 🏷️ 个人社区 |
-| [imugpslocalization](https://github.com/ydsf16/imu_gps_localization) | 误差状态卡尔曼滤波融合 IMU 与 GPS（C++） | C++ | 734 | 🏷️ 个人社区 |
 | [KF-GINS](https://github.com/i2Nav-WHU/KF-GINS) | 基于 EKF 的 GNSS/INS 组合导航 | C++ | 1194 | 🏷️ 高校实验室 · 核心 |
-| [KF-GINS-Matlab](https://github.com/i2Nav-WHU/KF-GINS-Matlab) | KF-GINS 的 MATLAB 版：EKF 松/紧组合 GNSS/INS | MATLAB | 137 | 🏷️ 高校实验室 · 核心 |
-| [KF-GINS-Py](https://github.com/salmoshu/KF-GINS-Py) | KF-GINS 思路的 Python 移植，便于读 EKF 组合导航 | Python | 13 | 🏷️ 高校实验室 |
-| [Loose-GNSS-IMU](https://github.com/aaronboda24/Loose-GNSS-IMU) | GNSS 与 IMU 的松组合卡尔曼实现 | C++ | 187 | 🏷️ 个人社区 |
+| [imu_x_fusion](https://github.com/cggos/imu_x_fusion) | 基于 ESKF/IEKF/UKF 的 IMU+GNSS/里程计松组合 | C++ | 1126 | 🏷️ 个人社区 · 核心 |
+| [imugpslocalization](https://github.com/ydsf16/imu_gps_localization) | 误差状态卡尔曼滤波融合 IMU 与 GPS（C++） | C++ | 734 | 🏷️ 个人社区 |
 | [OB_GINS](https://github.com/i2Nav-WHU/OB_GINS) | 基于优化的 GNSS/INS 组合导航 | C++ | 647 | 🏷️ 高校实验室 · ★ Star · 核心 |
-| [Smart-UAV-Return-GNSS-Station](https://github.com/citec-spbu/Smart-UAV-Return-GNSS-Station) | GNSS/链路丢失时无人机智能返航相关代码 | C | 3 | 🏷️ 个人社区 |
+| [ignav](https://github.com/Erensu/ignav) | INS 与 GNSS 组合导航实现 | C | 472 | 🏷️ 个人社区 · ★ Star |
+| [GINav](https://github.com/kaichen686/GINav) | MATLAB GNSS 与 GNSS/INS 组合算法 | MATLAB | 309 | 🏷️ 个人社区 · ★ Star · 核心 |
+| [Loose-GNSS-IMU](https://github.com/aaronboda24/Loose-GNSS-IMU) | GNSS 与 IMU 的松组合卡尔曼实现 | C++ | 187 | 🏷️ 个人社区 |
+| [KF-GINS-Matlab](https://github.com/i2Nav-WHU/KF-GINS-Matlab) | KF-GINS 的 MATLAB 版：EKF 松/紧组合 GNSS/INS | MATLAB | 137 | 🏷️ 高校实验室 · 核心 |
+| [GIOW-release](https://github.com/i2Nav-WHU/GIOW-release) | 全轮角/里程计辅助的 GNSS/INS/ODO 组合导航算法发布版 | C++ | 75 | 🏷️ 高校实验室 · 核心 |
 | [Wheel-GINS](https://github.com/i2Nav-WHU/Wheel-GINS) | 轮式惯导与 GNSS 组合的导航系统（IEEE TITS 相关） | C++ | 47 | 🏷️ 高校实验室 |
+| [GNSS_IMU](https://github.com/rtklibexplorer/GNSS_IMU) | rtklibexplorer 系松组合 GNSS/IMU 的 Python 实现 | Python | 35 | 🏷️ 个人社区 |
+| [GINS](https://github.com/zhangwhu/GINS) | PPP-RTK 与惯导组合的 GINS 实现（武大相关） | C | 21 | 🏷️ 高校实验室 |
+| [ImuGpsGuiding](https://github.com/JackJu-HIT/ImuGpsGuiding) | ROS 框架下 IMU+GPS 点到点导引示例 | C++ | 20 | 🏷️ 个人社区 |
+| [KF-GINS-Py](https://github.com/salmoshu/KF-GINS-Py) | KF-GINS 思路的 Python 移植，便于读 EKF 组合导航 | Python | 13 | 🏷️ 高校实验室 |
+| [Smart-UAV-Return-GNSS-Station](https://github.com/citec-spbu/Smart-UAV-Return-GNSS-Station) | GNSS/链路丢失时无人机智能返航相关代码 | C | 3 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -136,12 +136,12 @@ C 语言组合导航实现，轻量、易嵌入。适合固件向开发者。功
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [carvig](https://github.com/Erensu/carvig) | 车载 INS/GNSS/视觉组合导航（C） | C | 120 | 🏷️ 个人社区 |
 | [gici-open](https://github.com/chichengcn/gici-open) | GNSS/INS/相机紧组合开源库 GICI | C++ | 667 | 🏷️ 个人社区 · 核心 |
-| [GVINS](https://github.com/zhangwhu/GVINS) | PPP-RTK/INS/视觉组合导航（勿与 HKUST GVINS 混淆） | C++ | 12 | 🏷️ 高校实验室 |
-| [RTK-Visual-Inertial-Navigation](https://github.com/xiaohong-huang/RTK-Visual-Inertial-Navigation) | 滑窗滤波框架下的 RTK 视觉惯性导航 | C++ | 136 | 🏷️ 个人社区 |
-| [salsa](https://github.com/yxw027/salsa) | GNSS+视觉+惯性状态估计相关实现 | C++ | 14 | 🏷️ 高校实验室 |
 | [VINS-GPS-Wheel](https://github.com/Wallong/VINS-GPS-Wheel) | VINS-Mono 融合轮速计与 GNSS（自动驾驶） | C++ | 280 | 🏷️ 个人社区 |
+| [RTK-Visual-Inertial-Navigation](https://github.com/xiaohong-huang/RTK-Visual-Inertial-Navigation) | 滑窗滤波框架下的 RTK 视觉惯性导航 | C++ | 136 | 🏷️ 个人社区 |
+| [carvig](https://github.com/Erensu/carvig) | 车载 INS/GNSS/视觉组合导航（C） | C | 120 | 🏷️ 个人社区 |
+| [salsa](https://github.com/yxw027/salsa) | GNSS+视觉+惯性状态估计相关实现 | C++ | 14 | 🏷️ 高校实验室 |
+| [GVINS](https://github.com/zhangwhu/GVINS) | PPP-RTK/INS/视觉组合导航（勿与 HKUST GVINS 混淆） | C++ | 12 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -191,11 +191,11 @@ C 语言组合导航实现，轻量、易嵌入。适合固件向开发者。功
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnss_comm](https://github.com/HKUST-Aerial-Robotics/gnss_comm) | GNSS 原始测量处理的 ROS 基础定义与工具 | C++ | 164 | 🏷️ 高校实验室 |
 | [GVINS](https://github.com/HKUST-Aerial-Robotics/GVINS) | 紧耦合 GNSS-视觉-惯性系统 | C++ | 1160 | 🏷️ 高校实验室 |
 | [IC-GVINS](https://github.com/i2Nav-WHU/IC-GVINS) | INS 中心的稳健实时 GNSS-视觉-惯性导航 | C++ | 690 | 🏷️ 高校实验室 |
-| [msckfvioGPS](https://github.com/loveforeverLi/msckf_vio_GPS) | MSCKF 视觉惯性里程计与 GPS 融合 | C++ | 31 | 🏷️ 个人社区 |
+| [gnss_comm](https://github.com/HKUST-Aerial-Robotics/gnss_comm) | GNSS 原始测量处理的 ROS 基础定义与工具 | C++ | 164 | 🏷️ 高校实验室 |
 | [ublox_driver](https://github.com/HKUST-Aerial-Robotics/ublox_driver) | 面向 ZED-F9P 的 ROS u-blox 驱动 | C++ | 159 | 🏷️ 高校实验室 |
+| [msckfvioGPS](https://github.com/loveforeverLi/msckf_vio_GPS) | MSCKF 视觉惯性里程计与 GPS 融合 | C++ | 31 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -238,10 +238,10 @@ C 语言组合导航实现，轻量、易嵌入。适合固件向开发者。功
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [NaveGo](https://github.com/rodralez/NaveGo) | NaveGo：组合导航与惯导分析 MATLAB/Octave 工具箱 | MATLAB | 640 | 🏷️ 个人社区 |
+| [nav_matlab](https://github.com/yandld/nav_matlab) | MATLAB 导航科学计算与组合导航例程 | MATLAB | 276 | 🏷️ 个人社区 |
 | [INSTINCT](https://github.com/UniStuttgart-INS/INSTINCT) | 组合导航概念与训练用 INS 工具包 | C++ | 65 | 🏷️ 个人社区 |
 | [KalmanFilters.jl](https://github.com/JuliaGNSS/KalmanFilters.jl) | Julia 卡尔曼滤波库（KF/UKF/AUKF 及方根型） | Julia | 55 | 🏷️ 个人社区 |
-| [nav_matlab](https://github.com/yandld/nav_matlab) | MATLAB 导航科学计算与组合导航例程 | MATLAB | 276 | 🏷️ 个人社区 |
-| [NaveGo](https://github.com/rodralez/NaveGo) | NaveGo：组合导航与惯导分析 MATLAB/Octave 工具箱 | MATLAB | 640 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -376,12 +376,12 @@ GREAT 体系内的因子图优化实现，面向精密定位与组合导航相�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GLIO](https://github.com/XikunLiu-huskit/GLIO) | GNSS/LiDAR/IMU 紧耦合连续定位 | C | 438 | 🏷️ 个人社区 |
-| [GPSMilemeterIMUEKFLocation](https://github.com/gilbertz/GPS_Milemeter_IMU_EKFLocation) | GPS+里程计+罗盘 EKF 融合定位（MATLAB） | MATLAB | 89 | 🏷️ 个人社区 |
-| [GREAT-MSF](https://github.com/GREAT-WHU/GREAT-MSF) | GREAT 多传感器融合（PPP/RTK+INS 等） | C++ | 150 | 🏷️ 高校实验室 |
-| [libRSF](https://github.com/TUC-ProAut/libRSF) | 面向在线定位的鲁棒传感器融合库 | C++ | 337 | 🏷️ 个人社区 |
 | [Multi_Sensor_Fusion](https://github.com/2013fangwentao/Multi_Sensor_Fusion) | GNSS/IMU/视觉等多源融合与 PPP/INS 紧组合 | C++ | 940 | 🏷️ 个人社区 · 核心 |
+| [GLIO](https://github.com/XikunLiu-huskit/GLIO) | GNSS/LiDAR/IMU 紧耦合连续定位 | C | 438 | 🏷️ 个人社区 |
+| [libRSF](https://github.com/TUC-ProAut/libRSF) | 面向在线定位的鲁棒传感器融合库 | C++ | 337 | 🏷️ 个人社区 |
 | [syncgpslidarimucam](https://github.com/nkliuhui/sync_gps_lidar_imu_cam) | 激光雷达-IMU-相机-GPS 硬件时间同步方案 | C++ | 252 | 🏷️ 个人社区 |
+| [GREAT-MSF](https://github.com/GREAT-WHU/GREAT-MSF) | GREAT 多传感器融合（PPP/RTK+INS 等） | C++ | 150 | 🏷️ 高校实验室 |
+| [GPSMilemeterIMUEKFLocation](https://github.com/gilbertz/GPS_Milemeter_IMU_EKFLocation) | GPS+里程计+罗盘 EKF 融合定位（MATLAB） | MATLAB | 89 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -446,8 +446,8 @@ GREAT 组多传感器融合系统，支持 PPP/RTK 与 INS 等组合。适合已
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [TGINS](https://github.com/heiwa0519/TGINS) | 紧耦合 GNSS/INS 系统 | C++ | 90 | 🏷️ 个人社区 |
 | [TightlyCoupledINSGNSS](https://github.com/benzenemo/TightlyCoupledINSGNSS) | 伪距/伪距率与双天线测向的 INS/GNSS 紧组合（MATLAB） | MATLAB | 291 | 🏷️ 个人社区 |
+| [TGINS](https://github.com/heiwa0519/TGINS) | 紧耦合 GNSS/INS 系统 | C++ | 90 | 🏷️ 个人社区 |
 
 ### 详细说明
 

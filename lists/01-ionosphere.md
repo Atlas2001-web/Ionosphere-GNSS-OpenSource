@@ -9,12 +9,12 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GNSS.IonosphereMaps](https://github.com/gurkanguldas/GNSS.IonosphereMaps) | GNSS 电离层图生成与处理 | — | — | 🏷️ 个人社区 · ★ Star |
-| [m_gim](https://github.com/PANXIONG-CN/m_gim) | MATLAB 侧 GIM 相关脚本 | MATLAB | 1 | 🏷️ 个人社区 · ★ Star |
-| [M_GIM](https://github.com/zcytju/M_GIM) | 电离层 GIM 相关 MATLAB/工具实现 | — | — | 🏷️ 个人社区 · ★ Star |
-| [mosgim](https://github.com/gnss-lab/mosgim) | Padokhin 早期 MosGIM GIM 技术实现 | Python | 6 | 🏷️ 高校实验室 |
-| [mosgim2](https://github.com/PadArt/mosgim2) | 相位差法构建 GNSS 全球电离层图 | Python | 17 | 🏷️ 个人社区 · ★ Star |
 | [SH-GIM](https://github.com/Atlas2001-web/SH-GIM) | 球谐展开全球电离层图（GIM）MATLAB 实现（维护者自有，此处不展开） | MATLAB | 104 | 🏷️ 个人社区 · 🚩 |
+| [mosgim2](https://github.com/PadArt/mosgim2) | 相位差法构建 GNSS 全球电离层图 | Python | 17 | 🏷️ 个人社区 · ★ Star |
+| [mosgim](https://github.com/gnss-lab/mosgim) | Padokhin 早期 MosGIM GIM 技术实现 | Python | 6 | 🏷️ 高校实验室 |
+| [m_gim](https://github.com/PANXIONG-CN/m_gim) | MATLAB 侧 GIM 相关脚本 | MATLAB | 1 | 🏷️ 个人社区 · ★ Star |
+| [GNSS.IonosphereMaps](https://github.com/gurkanguldas/GNSS.IonosphereMaps) | GNSS 电离层图生成与处理 | — | — | 🏷️ 个人社区 · ★ Star |
+| [M_GIM](https://github.com/zcytju/M_GIM) | 电离层 GIM 相关 MATLAB/工具实现 | — | — | 🏷️ 个人社区 · ★ Star |
 
 ### 详细说明
 
@@ -62,16 +62,16 @@ MosGIM 系第二代实现，侧重相位差思路从 GNSS 观测建 GIM，Python
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [INPE-TEC-Maps-IONEX](https://github.com/Hollweg/INPE-TEC-Maps-IONEX) | INPE TEC 图与 IONEX 生成工具 | Python | 15 | 🏷️ 个人社区 · ★ Star |
 | [INX_Editor](https://github.com/1acheng/INX_Editor) | 跨平台 IONEX 文件编辑工具 | — | 16 | 🏷️ 个人社区 · ★ Star |
+| [INPE-TEC-Maps-IONEX](https://github.com/Hollweg/INPE-TEC-Maps-IONEX) | INPE TEC 图与 IONEX 生成工具 | Python | 15 | 🏷️ 个人社区 · ★ Star |
 | [ionex](https://github.com/gnss-lab/ionex) | Python 读取 IONEX 电离层图文件 | Python | 12 | 🏷️ 高校实验室 · 核心 |
-| [ionex-analyzer](https://github.com/matador96/ionex-analyzer) | Electron/React 的 IONEX 可视化毕业作品 | JavaScript | 0 | 🏷️ 个人社区 |
 | [ionex-rs](https://github.com/nav-solutions/ionex) | Rust 实现的 IONEX 解析与处理 | Rust | 7 | 🏷️ 个人社区 · 核心 |
+| [IonMap](https://github.com/Jin-Whu/IonMap) | 由 IONEX 绘制电离层 TEC 地图 | Python | 4 | 🏷️ 高校实验室 |
+| [rtcm2ionex](https://github.com/d-roma/rtcm2ionex) | 将 RTCM VTEC 消息转为 IONEX | Python | 3 | 🏷️ 个人社区 |
 | [ionex_formatter](https://github.com/gnss-lab/ionex_formatter) | gnss-lab IONEX 写出/格式化模块（与 ionex 读取库配套） | Python | 2 | 🏷️ 高校实验室 |
 | [ionex_reader](https://github.com/bbrawar/ionex_reader) | IONEX→xarray 读取与可视化（支持 JPL/CODE/ESA 等产品） | Python | 2 | 🏷️ 个人社区 |
-| [IonMap](https://github.com/Jin-Whu/IonMap) | 由 IONEX 绘制电离层 TEC 地图 | Python | 4 | 🏷️ 高校实验室 |
 | [mgfernan-pygnss](https://github.com/mgfernan/pygnss) | Python GNSS 工具集：IONEX/GIM、Hatanaka、与 NeQuick 对比 CLI | Python | 2 | 🏷️ 个人社区 |
-| [rtcm2ionex](https://github.com/d-roma/rtcm2ionex) | 将 RTCM VTEC 消息转为 IONEX | Python | 3 | 🏷️ 个人社区 |
+| [ionex-analyzer](https://github.com/matador96/ionex-analyzer) | Electron/React 的 IONEX 可视化毕业作品 | JavaScript | 0 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -150,12 +150,12 @@ GeoRust/nav-solutions 生态下的 IONEX 库，强调类型安全与可嵌入 ri
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [iri2016](https://github.com/space-physics/iri2016) | IRI-2016 的 Python/MATLAB 接口 | Fortran | 85 | 🏷️ 高校实验室 |
-| [iri2020](https://github.com/space-physics/iri2020) | IRI-2020 气候模型封装 | Fortran | 25 | 🏷️ 高校实验室 |
-| [IRI2020_parameters](https://github.com/ohm1122/IRI2020_parameters) | IRI2020 参数相关资源 | — | — | 🏷️ 个人社区 · ★ Star |
-| [Nequick-ITUR](https://github.com/tpl2go/Nequick-ITUR) | ITU-R NeQuick 2 的 Python 封装 | Fortran | 4 | 🏷️ 个人社区 |
-| [NequickG](https://github.com/tpl2go/NequickG) | Galileo NeQuick-G 电离层模型 Python 实现 | Python | 45 | 🏷️ 个人社区 · 核心 |
-| [NeQuickJRC](https://github.com/mgfernan/NeQuickJRC) | JRC NeQuickG C 实现镜像/整理 | C | 4 | 🏷️ 个人社区 |
 | [PyIRI](https://github.com/victoriyaforsythe/PyIRI) | 国际参考电离层 IRI 的纯 Python 实现 | Python | 48 | 🏷️ 高校实验室 · 核心 |
+| [NequickG](https://github.com/tpl2go/NequickG) | Galileo NeQuick-G 电离层模型 Python 实现 | Python | 45 | 🏷️ 个人社区 · 核心 |
+| [iri2020](https://github.com/space-physics/iri2020) | IRI-2020 气候模型封装 | Fortran | 25 | 🏷️ 高校实验室 |
+| [Nequick-ITUR](https://github.com/tpl2go/Nequick-ITUR) | ITU-R NeQuick 2 的 Python 封装 | Fortran | 4 | 🏷️ 个人社区 |
+| [NeQuickJRC](https://github.com/mgfernan/NeQuickJRC) | JRC NeQuickG C 实现镜像/整理 | C | 4 | 🏷️ 个人社区 |
+| [IRI2020_parameters](https://github.com/ohm1122/IRI2020_parameters) | IRI2020 参数相关资源 | — | — | 🏷️ 个人社区 · ★ Star |
 
 ### 详细说明
 
@@ -235,6 +235,10 @@ irimodel.org 上 IRI-2020 的文件目录，可直接获取 00_iri.zip/tar、许
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [pyglow](https://github.com/timduly4/pyglow) | Python 上层大气气候态库，包装 IRI-2012/2016 等（irimodel 官网推荐） | Python/Fortran | 117 | 🏷️ 个人社区 · 核心 |
+| [pyIRI2016](https://github.com/rilma/pyIRI2016) | IRI-2016 Fortran 的 f2py 包装（pyiri2016，与 space-physics/iri2016 不同仓） | Python/Fortran | 21 | 🏷️ 个人社区 |
+| [PyIRTAM](https://github.com/victoriyaforsythe/PyIRTAM) | IRTAM 系数下载与全球网格电子密度重建（纯 Python，对接 PyIRI） | Python | 4 | 🏷️ 高校实验室 · 核心 |
+| [iricore](https://github.com/MIST-Experiment/iricore) | ctypes 包装 IRI-2016/2020，可算 VTEC/STEC 并更新指数文件 | Python/Fortran | 2 | 🏷️ 个人社区 |
 | [CCMC-IRI-online](https://ccmc.gsfc.nasa.gov/models/IRI~2020/) | NASA CCMC 在线运行与说明页（IRI-2020） | — | — | 🏷️ 官方 |
 | [GAMBIT-Database-Reader-Java](https://giro.uml.edu/GAMBIT/GambitReader_Java_V0.1.zip) | 官方示例：GAMBIT 数据库 Java 读入/解包（拉 IRTAM 系数） | Java | — | 🏷️ 官方 |
 | [IRI-2001-package](https://irimodel.org/IRI-2001/) | IRI-2001 官方 Fortran 历史版本源码目录 | Fortran | — | 🏷️ 官方 |
@@ -245,11 +249,7 @@ irimodel.org 上 IRI-2020 的文件目录，可直接获取 00_iri.zip/tar、许
 | [IRI-COMMON-FILES](https://irimodel.org/COMMON_FILES/) | 各版 IRI 共用的系数/公共文件目录（官网明确要求另下） | Fortran | — | 🏷️ 官方 · 核心 |
 | [IRI-indices](https://irimodel.org/indices/) | IRI 运行所需太阳/地磁指数文件发布页 | — | — | 🏷️ 官方 |
 | [IRI-MATLAB-FileExchange](https://www.mathworks.com/matlabcentral/fileexchange/34863-international-reference-ionosphere-iri-model) | irimodel.org 官方指向的 IRI MATLAB 封装（File Exchange，含 2012/2016） | MATLAB | — | 🏷️ 官方 · 核心 |
-| [iricore](https://github.com/MIST-Experiment/iricore) | ctypes 包装 IRI-2016/2020，可算 VTEC/STEC 并更新指数文件 | Python/Fortran | 2 | 🏷️ 个人社区 |
 | [IRTAM-Coefficient-Reader-Fortran](https://giro.uml.edu/GAMBIT/IrtamReader_Fortran_V1.0.zip) | 官方示例：IRTAM 系数 Fortran 读入器（对接 IRI 同化） | Fortran | — | 🏷️ 官方 |
-| [pyglow](https://github.com/timduly4/pyglow) | Python 上层大气气候态库，包装 IRI-2012/2016 等（irimodel 官网推荐） | Python/Fortran | 117 | 🏷️ 个人社区 · 核心 |
-| [pyIRI2016](https://github.com/rilma/pyIRI2016) | IRI-2016 Fortran 的 f2py 包装（pyiri2016，与 space-physics/iri2016 不同仓） | Python/Fortran | 21 | 🏷️ 个人社区 |
-| [PyIRTAM](https://github.com/victoriyaforsythe/PyIRTAM) | IRTAM 系数下载与全球网格电子密度重建（纯 Python，对接 PyIRI） | Python | 4 | 🏷️ 高校实验室 · 核心 |
 
 ### 详细说明
 
@@ -400,16 +400,16 @@ ESA 软件资源库中的 NeQuick G 条目，说明该实现按 Galileo 单频�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [ALBUS_ionosphere](https://github.com/twillis449/ALBUS_ionosphere) | 由 GPS 数据估计电离层 TEC 与旋转量 RM | Python | 26 | 🏷️ 个人社区 |
-| [CDAAC_COSMIC-TEC_Data-Research](https://github.com/haoINvinCbou/CDAAC_COSMIC-TEC_Data-Research) | 处理 CDAAC COSMIC 掩星 NetCDF 做 TEC 研究 | Jupyter Notebook | 2 | 🏷️ 个人社区 |
 | [gnss-tec](https://github.com/gnss-lab/gnss-tec) | 由 RINEX 载波/伪距重建斜路径 TEC | Python | 54 | 🏷️ 高校实验室 · 核心 |
-| [pygnss-tec](https://github.com/eureka-0/pygnss-tec) | RINEX 读取与 TEC 计算（Rust 加速） | Python | 16 | 🏷️ 个人社区 |
 | [PyGPS](https://github.com/gregstarr/PyGPS) | 读 RINEX、算 TEC/卫星位置与偏差的工具箱 | Python | 47 | 🏷️ 个人社区 |
-| [PyTECGg](https://github.com/viventriglia/PyTECGg) | 多星座 GNSS TEC 重建与校准（Python+Rust） | Python | 29 | 🏷️ 个人社区 · 🔀 Fork · ★ Star · 核心 |
 | [TEC-calculation-MATLAB](https://github.com/cssrg-kmitl/TEC-calculation-MATLAB) | MATLAB 双频 RINEX 2.11 TEC 计算 | MATLAB | 33 | 🏷️ 高校实验室 |
-| [tec-example](https://github.com/embrace-inpe/tec-example) | INPE Embrace 相关的 TEC 处理示例 | Python | 3 | 🏷️ 官方 |
+| [PyTECGg](https://github.com/viventriglia/PyTECGg) | 多星座 GNSS TEC 重建与校准（Python+Rust） | Python | 29 | 🏷️ 个人社区 · 🔀 Fork · ★ Star · 核心 |
+| [ALBUS_ionosphere](https://github.com/twillis449/ALBUS_ionosphere) | 由 GPS 数据估计电离层 TEC 与旋转量 RM | Python | 26 | 🏷️ 个人社区 |
 | [tec-suite](https://github.com/gnss-lab/tec-suite) | SIMuRG 团队 TEC 重建套件 | Python | 23 | 🏷️ 高校实验室 |
+| [pygnss-tec](https://github.com/eureka-0/pygnss-tec) | RINEX 读取与 TEC 计算（Rust 加速） | Python | 16 | 🏷️ 个人社区 |
 | [TEC_gradient_computation](https://github.com/cssrg-kmitl/TEC_gradient_computation) | 单/双频方法估计电离层延迟梯度 | MATLAB | 6 | 🏷️ 高校实验室 |
+| [tec-example](https://github.com/embrace-inpe/tec-example) | INPE Embrace 相关的 TEC 处理示例 | Python | 3 | 🏷️ 官方 |
+| [CDAAC_COSMIC-TEC_Data-Research](https://github.com/haoINvinCbou/CDAAC_COSMIC-TEC_Data-Research) | 处理 CDAAC COSMIC 掩星 NetCDF 做 TEC 研究 | Jupyter Notebook | 2 | 🏷️ 个人社区 |
 | [vtec](https://github.com/mfkiwl/vtec) | 垂直 TEC（VTEC）计算相关工具 | — | — | 🏷️ 个人社区 · ★ Star |
 
 ### 详细说明
@@ -495,9 +495,9 @@ INPE Embrace 相关的 TEC 处理示例脚本，降低接触其数据产品与�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [tec_forecast](https://github.com/mauriciodev/tec_forecast) | 基于深度学习的全球 TEC 图预报示例 | Jupyter Notebook | 31 | 🏷️ 个人社区 · ★ Star |
 | [ED-AttConvLSTM](https://github.com/leeliangchao/ED-AttConvLSTM) | 注意力 ConvLSTM 的 TEC 图预报模型 | Jupyter Notebook | 10 | 🏷️ 个人社区 |
 | [Ionospheric-VTEC-Forecasting](https://github.com/ICCT-ML-in-geodesy/Ionospheric-VTEC-Forecasting) | 机器学习预报垂直 TEC 的示例项目 | Jupyter Notebook | 9 | 🏷️ 个人社区 · ★ Star |
-| [tec_forecast](https://github.com/mauriciodev/tec_forecast) | 基于深度学习的全球 TEC 图预报示例 | Jupyter Notebook | 31 | 🏷️ 个人社区 · ★ Star |
 
 ### 详细说明
 
@@ -541,10 +541,10 @@ INPE Embrace 相关的 TEC 处理示例脚本，降低接触其数据产品与�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Geometric-Matrix-For-Ionospheric-Tomogrphy](https://github.com/yujieqing/Geometric-Matrix-For-Ionospheric-Tomogrphy) | 电离层层析几何矩阵相关代码 | — | — | 🏷️ 个人社区 · ★ Star |
 | [IonoTomo](https://github.com/Joshuaalbert/IonoTomo) | 射电天文射线追踪与电离层层析仿真 | Jupyter Notebook | 11 | 🏷️ 个人社区 |
-| [SegmentsComputation](https://github.com/yujieqing/SegmentsComputation) | 体素电离层层析中的射线段矩阵计算 | C++ | 0 | 🏷️ 个人社区 |
 | [synthetic_ionospheric_tomography_isl](https://github.com/suixin11suoyu/synthetic_ionospheric_tomography_isl) | 多 GNSS 星间链路辅助电离层层析仿真 | — | 2 | 🏷️ 个人社区 |
+| [Geometric-Matrix-For-Ionospheric-Tomogrphy](https://github.com/yujieqing/Geometric-Matrix-For-Ionospheric-Tomogrphy) | 电离层层析几何矩阵相关代码 | — | — | 🏷️ 个人社区 · ★ Star |
+| [SegmentsComputation](https://github.com/yujieqing/SegmentsComputation) | 体素电离层层析中的射线段矩阵计算 | C++ | 0 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -610,10 +610,10 @@ UML 维护的 GIRO 门户，通向测高仪数据与 IRTAM 等实时同化产品
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [ionosphere-plotting](https://github.com/arwildo/ionosphere-plotting) | TEC、foF2 与 DST 等指数的绘图脚本 | Python | 7 | 🏷️ 个人社区 |
 | [ionex-downloader](https://github.com/ohm1122/ionex-downloader) | 批量下载 IONEX/GIM 产品的脚本 | — | 1 | 🏷️ 个人社区 |
 | [IonKit-NH](https://github.com/ohm1122/IonKit-NH) | IonKit-NH 电离层工具包 | — | — | 🏷️ 个人社区 · ★ Star |
 | [IonKit-NH-tanggdut](https://github.com/tanggdut/IonKit-NH) | IonKit-NH 相关衍生/整理 | — | — | 🏷️ 个人社区 · ★ Star |
-| [ionosphere-plotting](https://github.com/arwildo/ionosphere-plotting) | TEC、foF2 与 DST 等指数的绘图脚本 | Python | 7 | 🏷️ 个人社区 |
 | [IonTools](https://github.com/rumkex/IonTools) | 电离层分析工具集 | — | — | 🏷️ 个人社区 · ★ Star |
 | [SAO-Explorer](https://ulcar.uml.edu/SAO-X/) | GIRO/Digisonde 测高仪缩放与 DIDBase 访问工具（免费二进制） | Java | — | 🏷️ 官方 |
 
@@ -680,13 +680,13 @@ IonKit-NH 的衍生整理版，可能含路径或示例改动。合并进产线�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnss-scintillation-simulator](https://github.com/cu-sense-lab/gnss-scintillation-simulator) | GNSS 频段相位/幅度闪烁仿真 | MATLAB | 25 | 🏷️ 个人社区 |
-| [gnssutils](https://github.com/ljlamarche/gnssutils) | 地基 GNSS 闪烁数据处理工具 | Python | 3 | 🏷️ 个人社区 · ★ Star |
 | [IonoMoni](https://github.com/qiliu2025/IonoMoni) | 多星座 ROTI/AATR/STEC/VTEC 监测 | C++ | 37 | 🏷️ 个人社区 · ★ Star |
-| [Ionospheric-Scintillation-Maps-and-PDOP](https://github.com/AlexandraKoulouri/Ionospheric-Scintillation-Maps-and-PDOP) | 电离层闪烁成像及其对 PDOP 影响的研究代码 | MATLAB | 5 | 🏷️ 个人社区 |
+| [gnss-scintillation-simulator](https://github.com/cu-sense-lab/gnss-scintillation-simulator) | GNSS 频段相位/幅度闪烁仿真 | MATLAB | 25 | 🏷️ 个人社区 |
 | [OASIS](https://github.com/giorgiopicanco/OASIS) | 从 RINEX 计算 ROTI/ΔTEC/SIDX 等扰动指标 | Python | 16 | 🏷️ 个人社区 · 核心 |
-| [OASIS-ohm1122](https://github.com/ohm1122/OASIS) | OASIS 用户星标副本/相关仓库 | — | — | 🏷️ 个人社区 · ★ Star |
 | [scintill-ai](https://github.com/viventriglia/scintill-ai) | 用机器学习做电离层闪烁相关分析的研究项目 | Shell | 8 | 🏷️ 个人社区 |
+| [Ionospheric-Scintillation-Maps-and-PDOP](https://github.com/AlexandraKoulouri/Ionospheric-Scintillation-Maps-and-PDOP) | 电离层闪烁成像及其对 PDOP 影响的研究代码 | MATLAB | 5 | 🏷️ 个人社区 |
+| [gnssutils](https://github.com/ljlamarche/gnssutils) | 地基 GNSS 闪烁数据处理工具 | Python | 3 | 🏷️ 个人社区 · ★ Star |
+| [OASIS-ohm1122](https://github.com/ohm1122/OASIS) | OASIS 用户星标副本/相关仓库 | — | — | 🏷️ 个人社区 · ★ Star |
 
 ### 详细说明
 

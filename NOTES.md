@@ -86,3 +86,12 @@
 - 当前总条目：**371**；电离层：**78**
 - **未 git push**
 
+## GNSS 数据源类扩充（2026-09-14）
+
+- 新增类别 `gnss-datasets` → `lists/10-gnss-datasets.md`
+- 写入 `research/data_portals.json`，本轮合并新增 **51**
+- 说明文档：`docs/data-access.md`（Earthdata/CDDIS、IGS 目录、注册徽章）
+- 注册方式统计：{'open': 41, 'form_register': 9, 'email_register': 1}
+- 未 git push
+
+当前总条目：**422**（gnss-datasets=51）

@@ -1,9 +1,9 @@
 # Ionosphere-GNSS-OpenSource
 
-**电离层 · 对流层 · GNSS · 导航（PNT）开源软件精选索引**  
-Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation
+**电离层 · 对流层 · GNSS · 导航（PNT）开源软件与数据源精选索引**  
+Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation / Data portals
 
-[![Projects](https://img.shields.io/badge/verified%20projects-371-blue.svg)](./PROJECTS.json)
+[![Projects](https://img.shields.io/badge/verified%20projects-422-blue.svg)](./PROJECTS.json)
 [![License: CC0](https://img.shields.io/badge/catalog%20license-CC0--1.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
 > **这是链接索引（curated index），不是代码大合集。**  
@@ -15,8 +15,9 @@ Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation
 
 1. 先读 [分类说明](./docs/categories.md)，弄清自己处在数据→改正→定位→组合导航的哪一段  
 2. 打开下方对应的 `lists/*.md`，里面有**表格 + 每条项目的详细中文分析**  
-3. 机器可读清单：[`PROJECTS.json`](./PROJECTS.json) · Web 扩充稿：[`research/web_finds.json`](./research/web_finds.json)  
-4. 克隆上游，不要把第三方源码拷进本仓库
+3. 数据门户登录与 IGS 目录说明：[docs/data-access.md](./docs/data-access.md)  
+4. 机器可读清单：[`PROJECTS.json`](./PROJECTS.json) · 数据源稿：[`research/data_portals.json`](./research/data_portals.json)  
+5. 克隆上游，不要把第三方源码拷进本仓库
 
 ### 标记
 
@@ -30,7 +31,7 @@ Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation
 | ★ | 维护者 GitHub 星标种子 |
 | 核心 | 建议优先阅读 |
 
-来源统计：官方 **57** · 高校实验室 **83** · 个人社区 **231**
+来源统计：官方 **104** · 高校实验室 **87** · 个人社区 **231**
 
 ---
 
@@ -47,7 +48,8 @@ Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation
 | **软件接收机与信号** `gnss-sdr` | 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。 | [07-gnss-sdr.md](./lists/07-gnss-sdr.md) | 55 |
 | **移动与嵌入式应用** `mobile-apps` | 手机/嵌入式上的 GNSS 测试、原始测量记录与简易定位。 | [08-mobile-apps.md](./lists/08-mobile-apps.md) | 11 |
 | **学习资源与工具** `tools-learning` | awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。 | [09-tools-learning.md](./lists/09-tools-learning.md) | 26 |
-| **合计** | | [`PROJECTS.json`](./PROJECTS.json) | **371** |
+| **GNSS 数据源** `gnss-datasets` | 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。 | [10-gnss-datasets.md](./lists/10-gnss-datasets.md) | 51 |
+| **合计** | | [`PROJECTS.json`](./PROJECTS.json) | **422** |
 
 ---
 
@@ -65,10 +67,10 @@ Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation
 | [gnss-tec](https://github.com/gnss-lab/gnss-tec) | 由 RINEX 载波/伪距重建斜路径 TEC | 🏷️ 高校实验室 · 核心 |
 | [ionex](https://github.com/gnss-lab/ionex) | Python 读取 IONEX 电离层图文件 | 🏷️ 高校实验室 · 核心 |
 | [ionex-rs](https://github.com/nav-solutions/ionex) | Rust 实现的 IONEX 解析与处理 | 🏷️ 个人社区 · 核心 |
+| [IRI-2026-package](https://irimodel.org/IRI-2026/) | IRI-2026 官方 Fortran 最新源码包目录 | 🏷️ 官方 · 核心 |
+| [IRI-COMMON-FILES](https://irimodel.org/COMMON_FILES/) | 各版 IRI 共用的系数/公共文件目录（官网明确要求另下） | 🏷️ 官方 · 核心 |
 | [IRI-Fortran](https://irimodel.org/) | COSPAR/URSI 官方 IRI 经验电离层模型 Fortran 源码与系数包 | 🏷️ 官方 · 核心 |
-| [NequickG](https://github.com/tpl2go/NequickG) | Galileo NeQuick-G 电离层模型 Python 实现 | 🏷️ 个人社区 · 核心 |
-| [OASIS](https://github.com/giorgiopicanco/OASIS) | 从 RINEX 计算 ROTI/ΔTEC/SIDX 等扰动指标 | 🏷️ 个人社区 · 核心 |
-| [PyIRI](https://github.com/victoriyaforsythe/PyIRI) | 国际参考电离层 IRI 的纯 Python 实现 | 🏷️ 高校实验室 · 核心 |
+| [IRI-MATLAB-FileExchange](https://www.mathworks.com/matlabcentral/fileexchange/34863-international-reference-ionosphere-iri-model) | irimodel.org 官方指向的 IRI MATLAB 封装（File Exchange，含 2012/2016） | 🏷️ 官方 · 核心 |
 
 ## 对流层 / Troposphere
 
@@ -180,8 +182,27 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 | [awesome-gnss](https://github.com/barbeau/awesome-gnss) | 开源 GNSS 软件与资源社区列表 | 🏷️ 个人社区 · 核心 |
 | [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning) | 导航定位开源项目解读与学习笔记（中文） | 🏷️ 个人社区 · ★ Star · 核心 |
 
+## GNSS 数据源 / GNSS Data Sources
+
+已核验的 GNSS 相关数据门户与产品库：RINEX 观测/导航、SP3/CLK、IONEX/GIM、对流层格网、偏差产品、实时流、CORS 区域网、掩星与空间天气等。侧重「去哪里拿数据」，不是软件工具。
+
+完整列表与逐项分析 → [10-gnss-datasets.md](./lists/10-gnss-datasets.md)
+
+获取门槛说明 → [docs/data-access.md](./docs/data-access.md)
+
+| 项目 | 简介 | 标记 |
+|---|---|---|
+| [BKG-IGS-Data-Center](https://igs.bkg.bund.de/) | BKG IGS 数据中心：欧洲侧 GNSS 数据与 NTRIP 入口 | 🏷️ 官方 · 核心 |
+| [CAS-BDsmart-Iono-Products](https://data.bdsmart.cn/pub/product/iono/ionex/) | 中科院 CAS 电离层 IONEX 产品（data.bdsmart.cn） | 🏷️ 官方 · 核心 |
+| [CDDIS-GNSS-Archive](https://cddis.nasa.gov/archive/gnss/) | NASA CDDIS：IGS 全球 GNSS 观测与产品主归档之一 | 🏷️ 官方 · 核心 |
+| [CDDIS-IONEX](https://cddis.nasa.gov/archive/gnss/products/ionex/) | CDDIS IONEX 目录：IGS 及各分析中心全球电离层图 | 🏷️ 官方 · 核心 |
+| [CODE-AIUB-Analysis-Center](https://www.aiub.unibe.ch/research/code___analysis_center/index_eng.html) | CODE/AIUB 分析中心主页：精密轨道钟差与电离层等产品介绍 | 🏷️ 官方 · 核心 |
+| [COSMIC-CDAAC](https://cdaac-www.cosmic.ucar.edu/) | COSMIC CDAAC：GNSS 无线电掩星大气/电离层产品 | 🏷️ 官方 · 核心 |
+| [EarthScope-GAGE-GNSS-Archive](https://gage-data.earthscope.org/archive/gnss) | EarthScope GAGE GNSS 归档：北美及合作站观测数据 | 🏷️ 官方 · 核心 |
+| [ESA-GSSC](https://gssc.esa.int/) | ESA GNSS Science Support Centre：科学数据与产品门户 | 🏷️ 官方 · 核心 |
+
 ---
 
 ## 许可与免责
 
-本目录文本采用 [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)。各上游项目保留其原许可证；闭源免费工具在条目中标注 `proprietary-freeware`。
+本目录文本采用 [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)。各上游项目保留其原许可证；闭源免费工具在条目中标注 `proprietary-freeware`；数据门户请遵守各站点使用条款与引用要求。

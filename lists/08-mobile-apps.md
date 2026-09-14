@@ -9,10 +9,10 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [GPSTest](https://github.com/barbeau/gpstest) | 开源 Android GNSS 测试与原始测量记录 | Kotlin | 2402 | 🏷️ 个人社区 · ★ Star · 核心 |
+| [GPSLogger](https://github.com/BasicAirData/GPSLogger) | Android 开源 GPS 轨迹记录器 | Java | 504 | 🏷️ 个人社区 |
 | [bluetooth_gnss](https://github.com/ykasidit/bluetooth_gnss) | Android 蓝牙外接 GNSS/RTK 与 NTRIP 应用 | Java | 123 | 🏷️ 个人社区 |
 | [GNSS_Compare](https://github.com/TheGalfins/GNSS_Compare) | 安卓端用原始测量做定位的框架 | Java | 73 | 🏷️ 个人社区 |
-| [GPSLogger](https://github.com/BasicAirData/GPSLogger) | Android 开源 GPS 轨迹记录器 | Java | 504 | 🏷️ 个人社区 |
-| [GPSTest](https://github.com/barbeau/gpstest) | 开源 Android GNSS 测试与原始测量记录 | Kotlin | 2402 | 🏷️ 个人社区 · ★ Star · 核心 |
 | [PRIDE-GeoDataLogger](https://github.com/PrideLab/PRIDE-GeoDataLogger) | PRIDE 团队手机多频 GNSS 与 IMU 采集工具 | — | 22 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -56,12 +56,12 @@ PRIDE 团队面向智能手机的多频 GNSS 与 IMU 采集工具，便于把手
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [GNSSTimeServer](https://github.com/Montecri/GNSSTimeServer) | ESP8266/ESP32 的 GNSS 授时 NTP/PTP 服务器 | C | 232 | 🏷️ 个人社区 |
+| [STM32-GNSS](https://github.com/SimpleMethod/STM32-GNSS) | STM32 u-blox GNSS 库（UBX，含 DMA） | C | 89 | 🏷️ 个人社区 |
+| [satpulse](https://github.com/jclark/satpulse) | 跨平台 GNSS 授时、定位与接收机配置 GUI | Go | 63 | 🏷️ 个人社区 |
+| [STM32Primer2-GNSS-Tracker](https://github.com/nemuisan/STM32Primer2_GNSS_Tracker) | STM32 Primer2 平台的 GNSS 轨迹记录器 | C | 31 | 🏷️ 个人社区 |
 | [esp32-gps](https://github.com/mrichar1/esp32-gps) | ESP32 GPS 控制：串口/蓝牙/RTK/NTRIP | Python | 23 | 🏷️ 个人社区 |
 | [GNSSClock](https://github.com/stevemarple/GNSS_Clock) | 基于 GNSS NMEA/PPS 的 Arduino 时钟 | C++ | 2 | 🏷️ 个人社区 |
-| [GNSSTimeServer](https://github.com/Montecri/GNSSTimeServer) | ESP8266/ESP32 的 GNSS 授时 NTP/PTP 服务器 | C | 232 | 🏷️ 个人社区 |
-| [satpulse](https://github.com/jclark/satpulse) | 跨平台 GNSS 授时、定位与接收机配置 GUI | Go | 63 | 🏷️ 个人社区 |
-| [STM32-GNSS](https://github.com/SimpleMethod/STM32-GNSS) | STM32 u-blox GNSS 库（UBX，含 DMA） | C | 89 | 🏷️ 个人社区 |
-| [STM32Primer2-GNSS-Tracker](https://github.com/nemuisan/STM32Primer2_GNSS_Tracker) | STM32 Primer2 平台的 GNSS 轨迹记录器 | C | 31 | 🏷️ 个人社区 |
 
 ### 详细说明
 

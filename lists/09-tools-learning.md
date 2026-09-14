@@ -54,8 +54,8 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [EasyGNSS](https://github.com/whigg/EasyGNSS) | 面向低成本 GNSS 的图形界面辅助工具 | Python | 4 | 🏷️ 高校实验室 |
 | [ge-gnss-visibility](https://github.com/taroz/ge-gnss-visibility) | Google Earth 鱼眼可见性分析 | MATLAB | 137 | 🏷️ 个人社区 |
+| [EasyGNSS](https://github.com/whigg/EasyGNSS) | 面向低成本 GNSS 的图形界面辅助工具 | Python | 4 | 🏷️ 高校实验室 |
 | [GPS-Velocity-Viewer](https://www.unavco.org/software/visualization/GPS-Velocity-Viewer/GPS-Velocity-Viewer.html) | UNAVCO GPS 速度场在线可视化查看器 | web | — | 🏷️ 官方 |
 
 ### 详细说明
@@ -145,9 +145,9 @@ NOAA 垂直基准转换软件与服务，连接椭球高、大地水准面与潮
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [UrbanNavDataset](https://github.com/IPNL-POLYU/UrbanNavDataset) | 亚洲城市峡谷多传感器定位数据集 | Python | 606 | 🏷️ 高校实验室 |
 | [awesome-gins-datasets](https://github.com/i2Nav-WHU/awesome-gins-datasets) | 武大 i2Nav 整理的车载 GNSS/INS 融合公开数据集列表 | — | 280 | 🏷️ 高校实验室 · 核心 |
 | [gnss2tws-green](https://github.com/jzshhh/gnss2tws_green) | 由 GNSS 垂直位移反演陆地水储量 GNSS2TWS | MATLAB | 33 | 🏷️ 个人社区 |
-| [UrbanNavDataset](https://github.com/IPNL-POLYU/UrbanNavDataset) | 亚洲城市峡谷多传感器定位数据集 | Python | 606 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -237,8 +237,8 @@ GAGE/EarthScope 软件总入口，分数据处理、数据管理、可视化与�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [learning_rtklib](https://github.com/libing64/learning_rtklib) | RTKLIB 学习相关材料 | — | 163 | 🏷️ 个人社区 |
 | [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning) | 导航定位开源项目解读与学习笔记（中文） | — | 2417 | 🏷️ 个人社区 · ★ Star · 核心 |
+| [learning_rtklib](https://github.com/libing64/learning_rtklib) | RTKLIB 学习相关材料 | — | 163 | 🏷️ 个人社区 |
 | [RTKLIB-Manual-CN](https://github.com/salmoshu/RTKLIB-Manual-CN) | RTKLIB 中文手册解读与源码解析笔记 | — | 54 | 🏷️ 高校实验室 |
 
 ### 详细说明
