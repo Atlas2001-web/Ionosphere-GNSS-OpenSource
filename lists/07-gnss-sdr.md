@@ -9,19 +9,19 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gps-sdr-sim](https://github.com/osqzss/gps-sdr-sim) | GPS L1 基带信号仿真（SDR 回放） | C | 3466 | 🏷️ 个人社区 · 核心 |
-| [multi-sdr-gps-sim](https://github.com/Mictronics/multi-sdr-gps-sim) | 多 SDR 平台的 GPS L1 实时 IQ 仿真 | C | 264 | 🏷️ 个人社区 |
-| [SignalSim](https://github.com/globsky/SignalSim) | 多阶段 GNSS 信号与数据仿真器 | C++ | 208 | 🏷️ 个人社区 |
-| [gps-sdr-sim-assistant](https://github.com/frank-pian/gps-sdr-sim-assistant) | gps-sdr-sim 的图形化助手工具 | JavaScript | 63 | 🏷️ 个人社区 |
-| [galileo-sdr-sim](https://github.com/harshadms/galileo-sdr-sim) | Galileo E1B/C 信号生成器 | C++ | 62 | 🏷️ 个人社区 |
+| [beidou-sdr-sim](https://github.com/yangfan852219770/beidou-sdr-sim) | 北斗 GEO（PRN1–5）信号仿真与 LimeSDR 发射 | C | 27 | 🏷️ 个人社区 |
 | [BeiDou_B1C](https://github.com/lnexenl/BeiDou_B1C) | 北斗 B1C 信号生成与捕获（MATLAB） | MATLAB | 38 | 🏷️ 个人社区 |
+| [esp2822NMEAsim](https://github.com/michalpelka/esp2822_NMEA_sim) | 廉价 MCU 模拟 PPS 与 NMEA 同步信号 | C++ | 7 | 🏷️ 个人社区 |
+| [galileo-sdr-sim](https://github.com/harshadms/galileo-sdr-sim) | Galileo E1B/C 信号生成器 | C++ | 62 | 🏷️ 个人社区 |
 | [gnss-RX](https://github.com/HeryMwenegoha/gnss-RX) | GNSS 观测量仿真器（MATLAB） | MATLAB | 32 | 🏷️ 个人社区 |
 | [gnss-signal-simulator-rs](https://github.com/danusha2345/gnss-signal-simulator-rs) | Rust 多星座 GNSS 信号仿真器（含 GPS L1/L5 等） | Rust | 30 | 🏷️ 个人社区 |
-| [GPSGALSSS](https://github.com/domonforyou/GPS_GAL_SSS) | GPS/Galileo 卫星信号模拟器（关联 RTKLIB） | C++ | 29 | 🏷️ 个人社区 |
-| [beidou-sdr-sim](https://github.com/yangfan852219770/beidou-sdr-sim) | 北斗 GEO（PRN1–5）信号仿真与 LimeSDR 发射 | C | 27 | 🏷️ 个人社区 |
-| [esp2822NMEAsim](https://github.com/michalpelka/esp2822_NMEA_sim) | 廉价 MCU 模拟 PPS 与 NMEA 同步信号 | C++ | 7 | 🏷️ 个人社区 |
-| [Microsat-gps-sim](https://github.com/niklasknoell/Microsat-gps-sim) | 微纳卫星工程向 GNSS 仿真工具（Python） | Python | 4 | 🏷️ 个人社区 |
 | [gps-qzss-sdr-sim](https://github.com/iGNSS/gps-qzss-sdr-sim) | 软件定义 GPS/QZSS 信号仿真器 | — | 1 | 🏷️ 个人社区 |
+| [gps-sdr-sim](https://github.com/osqzss/gps-sdr-sim) | GPS L1 基带信号仿真（SDR 回放） | C | 3466 | 🏷️ 个人社区 · 核心 |
+| [gps-sdr-sim-assistant](https://github.com/frank-pian/gps-sdr-sim-assistant) | gps-sdr-sim 的图形化助手工具 | JavaScript | 63 | 🏷️ 个人社区 |
+| [GPSGALSSS](https://github.com/domonforyou/GPS_GAL_SSS) | GPS/Galileo 卫星信号模拟器（关联 RTKLIB） | C++ | 29 | 🏷️ 个人社区 |
+| [Microsat-gps-sim](https://github.com/niklasknoell/Microsat-gps-sim) | 微纳卫星工程向 GNSS 仿真工具（Python） | Python | 4 | 🏷️ 个人社区 |
+| [multi-sdr-gps-sim](https://github.com/Mictronics/multi-sdr-gps-sim) | 多 SDR 平台的 GPS L1 实时 IQ 仿真 | C | 264 | 🏷️ 个人社区 |
+| [SignalSim](https://github.com/globsky/SignalSim) | 多阶段 GNSS 信号与数据仿真器 | C++ | 208 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -166,8 +166,8 @@ CU Boulder RF & SatNav 实验室维护的 SoftGNSS/教材配套页面，介绍 B
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [LEOGPS](https://github.com/sammmlow/LEOGPS) | Python 星载 GPS/相对导航工具 | Python | 88 | 🏷️ 个人社区 |
 | [hardware](https://github.com/oresat/oresat-gps-hardware) | OreSat 立方星 SDR GPS 接收硬件设计 | — | 33 | 🏷️ 高校实验室 |
+| [LEOGPS](https://github.com/sammmlow/LEOGPS) | Python 星载 GPS/相对导航工具 | Python | 88 | 🏷️ 个人社区 |
 | [oresat-gps-software](https://github.com/oresat/oresat-gps-software) | OreSat 立方星 GPS 接收机软件 | Python | 22 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -212,8 +212,8 @@ OreSat 项目 GPS 接收机软件部分，与 oresat-gps-hardware 配套，覆�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [NavLab-DPE-SDR](https://github.com/Stanford-NavLab/NavLab-DPE-SDR) | 斯坦福 NavLab 直接位置估计 GPS SDR（CUDA/PyGNSS） | Cuda | 46 | 🏷️ 高校实验室 |
 | [GPSL1-DPEmodule](https://github.com/Sergio-Vicenzo/GPSL1-DPEmodule) | GPS L1 直接位置估计（DPE）MATLAB 插件 | MATLAB | 33 | 🏷️ 个人社区 |
+| [NavLab-DPE-SDR](https://github.com/Stanford-NavLab/NavLab-DPE-SDR) | 斯坦福 NavLab 直接位置估计 GPS SDR（CUDA/PyGNSS） | Cuda | 46 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -235,38 +235,38 @@ OreSat 项目 GPS 接收机软件部分，与 oresat-gps-hardware 配套，覆�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnss-sdr](https://github.com/gnss-sdr/gnss-sdr) | 开源 GNSS 软件定义接收机 | C++ | 2234 | 🏷️ 高校实验室 · 核心 |
-| [GNSS-SDRLIB](https://github.com/taroz/GNSS-SDRLIB) | 开源 GNSS 软件无线电库 GNSS-SDRLIB | C | 536 | 🏷️ 个人社区 |
-| [BeagleSDRGPS](https://github.com/jks-prv/Beagle_SDR_GPS) | KiwiSDR：BeagleBone 短波 SDR 与软件 GPS（已归档） | C++ | 521 | 🏷️ 个人社区 |
-| [FGI-GSRx](https://github.com/nlsfi/FGI-GSRx) | 芬兰 FGI 多星座 MATLAB 软件接收机 | MATLAB | 192 | 🏷️ 官方 · 核心 |
-| [Full_Stack_GPS_Receiver](https://github.com/hamsternz/Full_Stack_GPS_Receiver) | 从 1-bit 采样到定位的完整 GPS 软件接收机 | C | 168 | 🏷️ 个人社区 |
 | [Analog-GPS-data-receiver](https://github.com/leaningktower/Analog-GPS-data-receiver) | 分立射频+TinyFPGA 的模拟 GPS 接收教学项目 | C | 164 | 🏷️ 个人社区 |
-| [GNSS-GPS-SDR](https://github.com/JiaoXianjun/GNSS-GPS-SDR) | GPS 录回放、接收与测试相关实验代码 | Python | 157 | 🏷️ 个人社区 |
-| [GNSS-DSP-tools](https://github.com/pmonta/GNSS-DSP-tools) | GNSS 码生成/捕获/跟踪的 Python DSP 工具集 | Python | 141 | 🏷️ 个人社区 |
-| [gps-sdr](https://github.com/gps-sdr/gps-sdr) | 基于 USRP/GN3S 的早期开源 GPS 接收机 | C++ | 107 | 🏷️ 个人社区 |
-| [SoftGNSS](https://github.com/TMBOC/SoftGNSS) | 经典 SoftGNSS 教学接收机维护版 | MATLAB | 90 | 🏷️ 个人社区 |
-| [CU-SDR-Collection](https://github.com/gnsscusdr/CU-SDR-Collection) | 科罗拉多大学开源 GNSS SDR 代码与数据集合 | MATLAB | 80 | 🏷️ 个人社区 |
 | [BDS-3-B1C-B2a-SDR-receiver](https://github.com/lyf8118/BDS-3-B1C-B2a-SDR-receiver) | BDS-3 B1C/B2a 开源 MATLAB 软件接收机 | MATLAB | 73 | 🏷️ 个人社区 |
-| [gps](https://github.com/psas/gps) | PSAS 软件 GPS 相关器（Python） | Python | 71 | 🏷️ 个人社区 |
-| [GNSSFirehose](https://github.com/pmonta/GNSS_Firehose) | 多星座宽带 GNSS 前端数字化（Verilog） | Verilog | 68 | 🏷️ 个人社区 |
+| [BDSSDR](https://github.com/nkyang/BDS_SDR) | 北斗/GNSS 软件接收实验代码（文档较少） | MATLAB | 2 | 🏷️ 个人社区 |
+| [BeagleSDRGPS](https://github.com/jks-prv/Beagle_SDR_GPS) | KiwiSDR：BeagleBone 短波 SDR 与软件 GPS（已归档） | C++ | 521 | 🏷️ 个人社区 |
+| [CU-SDR-Collection](https://github.com/gnsscusdr/CU-SDR-Collection) | 科罗拉多大学开源 GNSS SDR 代码与数据集合 | MATLAB | 80 | 🏷️ 个人社区 |
 | [ESP32-SDR-GPS](https://github.com/iliasam/ESP32_SDR_GPS) | 运行于 ESP32 的软件 GPS 接收实验 | C | 55 | 🏷️ 个人社区 |
-| [SoftGNSS-python](https://github.com/perrysou/SoftGNSS-python) | 经典 SoftGNSS 的 Python 移植工具包 | Python | 44 | 🏷️ 个人社区 |
-| [gnss-baseband](https://github.com/j-core/gnss-baseband) | GPS 类 DSSS 基带接收 IP 核（VHDL） | VHDL | 43 | 🏷️ 个人社区 |
-| [gnss-sdr-1pps](https://github.com/oscimp/gnss-sdr-1pps) | gnss-sdr 的 1-PPS 支持扩展材料 | — | 40 | 🏷️ 个人社区 |
-| [FlyDog-SDR-GPS](https://github.com/flydog-sdr/FlyDog_SDR_GPS) | FlyDog：改进 ADC 的 KiwiSDR 衍生固件 | C++ | 30 | 🏷️ 个人社区 |
 | [Fast_GNSS_ReceiverMATLAB](https://github.com/JohnBagshaw/Fast_GNSS_ReceiverMATLAB) | 高灵敏度快速捕获类 MATLAB GNSS 接收机 | MATLAB | 26 | 🏷️ 个人社区 |
-| [pylgrim](https://github.com/kirienko/pylgrim) | Python 编写的 GNSS 软件接收机 | Python | 21 | 🏷️ 个人社区 |
-| [GNSSSDRHACKRF](https://github.com/jdesbonnet/GNSS_SDR_HACKRF) | HackRF One 上运行 GNSS-SDR 的实验记录 | — | 19 | 🏷️ 个人社区 |
-| [gnsssdrgui](https://github.com/UHaider/gnss_sdr_gui) | GNSS-SDR 图形配置与监视界面 | C++ | 16 | 🏷️ 个人社区 |
-| [meta-gnss-sdr](https://github.com/carlesfernandez/meta-gnss-sdr) | GNSS-SDR 的 OpenEmbedded/Yocto 层 | C | 16 | 🏷️ 个人社区 |
-| [gps-sdr-simulink](https://github.com/dmiralles2009/gps-sdr-simulink) | Simulink 中的 GPS 捕获阶段模型 | MATLAB | 15 | 🏷️ 个人社区 |
+| [FGI-GSRx](https://github.com/nlsfi/FGI-GSRx) | 芬兰 FGI 多星座 MATLAB 软件接收机 | MATLAB | 192 | 🏷️ 官方 · 核心 |
+| [FlyCat-SDR-GPS](https://github.com/flydog-sdr/FlyCat_SDR_GPS) | FlyCat：Orange Pi 用 16-bit 宽带 SDR+GPS 扩展 | C++ | 2 | 🏷️ 个人社区 |
+| [FlyDog-SDR-GPS](https://github.com/flydog-sdr/FlyDog_SDR_GPS) | FlyDog：改进 ADC 的 KiwiSDR 衍生固件 | C++ | 30 | 🏷️ 个人社区 |
+| [Full_Stack_GPS_Receiver](https://github.com/hamsternz/Full_Stack_GPS_Receiver) | 从 1-bit 采样到定位的完整 GPS 软件接收机 | C | 168 | 🏷️ 个人社区 |
+| [gnss-baseband](https://github.com/j-core/gnss-baseband) | GPS 类 DSSS 基带接收 IP 核（VHDL） | VHDL | 43 | 🏷️ 个人社区 |
+| [GNSS-DSP-tools](https://github.com/pmonta/GNSS-DSP-tools) | GNSS 码生成/捕获/跟踪的 Python DSP 工具集 | Python | 141 | 🏷️ 个人社区 |
+| [GNSS-GPS-SDR](https://github.com/JiaoXianjun/GNSS-GPS-SDR) | GPS 录回放、接收与测试相关实验代码 | Python | 157 | 🏷️ 个人社区 |
 | [gnss-rcv](https://github.com/mx4/gnss-rcv) | Rust 实现的 GPS L1 C/A 软件接收机 | Rust | 14 | 🏷️ 个人社区 |
-| [multi-channel-gnss](https://github.com/dasdboot/multi-channel-gnss) | 基于 LimeSDR 的多通道 GNSS 实验项目 | — | 12 | 🏷️ 个人社区 |
+| [gnss-sdr](https://github.com/gnss-sdr/gnss-sdr) | 开源 GNSS 软件定义接收机 | C++ | 2234 | 🏷️ 高校实验室 · 核心 |
+| [gnss-sdr-1pps](https://github.com/oscimp/gnss-sdr-1pps) | gnss-sdr 的 1-PPS 支持扩展材料 | — | 40 | 🏷️ 个人社区 |
 | [gnss-sdr-rs](https://github.com/kewei/gnss-sdr-rs) | Rust 语言 GNSS 软件接收机实验仓库 | Rust | 9 | 🏷️ 个人社区 |
+| [GNSS-SDRLIB](https://github.com/taroz/GNSS-SDRLIB) | 开源 GNSS 软件无线电库 GNSS-SDRLIB | C | 536 | 🏷️ 个人社区 |
+| [GNSSFirehose](https://github.com/pmonta/GNSS_Firehose) | 多星座宽带 GNSS 前端数字化（Verilog） | Verilog | 68 | 🏷️ 个人社区 |
+| [gnsssdrgui](https://github.com/UHaider/gnss_sdr_gui) | GNSS-SDR 图形配置与监视界面 | C++ | 16 | 🏷️ 个人社区 |
+| [GNSSSDRHACKRF](https://github.com/jdesbonnet/GNSS_SDR_HACKRF) | HackRF One 上运行 GNSS-SDR 的实验记录 | — | 19 | 🏷️ 个人社区 |
+| [gps](https://github.com/psas/gps) | PSAS 软件 GPS 相关器（Python） | Python | 71 | 🏷️ 个人社区 |
+| [gps-sdr](https://github.com/gps-sdr/gps-sdr) | 基于 USRP/GN3S 的早期开源 GPS 接收机 | C++ | 107 | 🏷️ 个人社区 |
+| [gps-sdr-simulink](https://github.com/dmiralles2009/gps-sdr-simulink) | Simulink 中的 GPS 捕获阶段模型 | MATLAB | 15 | 🏷️ 个人社区 |
 | [GPSMAXIM2769b-](https://github.com/vaidhyamookiah/GPSMAXIM2769b-) | Maxim 2769b GNSS 前端 PCB（Papilio FPGA） | Eagle | 4 | 🏷️ 个人社区 |
 | [GRID](https://github.com/mmurrian/GRID) | 灵活可扩展的 GNSS/GPS 软件定义接收机 | — | 4 | 🏷️ 个人社区 |
-| [BDSSDR](https://github.com/nkyang/BDS_SDR) | 北斗/GNSS 软件接收实验代码（文档较少） | MATLAB | 2 | 🏷️ 个人社区 |
-| [FlyCat-SDR-GPS](https://github.com/flydog-sdr/FlyCat_SDR_GPS) | FlyCat：Orange Pi 用 16-bit 宽带 SDR+GPS 扩展 | C++ | 2 | 🏷️ 个人社区 |
+| [meta-gnss-sdr](https://github.com/carlesfernandez/meta-gnss-sdr) | GNSS-SDR 的 OpenEmbedded/Yocto 层 | C | 16 | 🏷️ 个人社区 |
+| [multi-channel-gnss](https://github.com/dasdboot/multi-channel-gnss) | 基于 LimeSDR 的多通道 GNSS 实验项目 | — | 12 | 🏷️ 个人社区 |
+| [pylgrim](https://github.com/kirienko/pylgrim) | Python 编写的 GNSS 软件接收机 | Python | 21 | 🏷️ 个人社区 |
+| [SoftGNSS](https://github.com/TMBOC/SoftGNSS) | 经典 SoftGNSS 教学接收机维护版 | MATLAB | 90 | 🏷️ 个人社区 |
+| [SoftGNSS-python](https://github.com/perrysou/SoftGNSS-python) | 经典 SoftGNSS 的 Python 移植工具包 | Python | 44 | 🏷️ 个人社区 |
 
 ### 详细说明
 

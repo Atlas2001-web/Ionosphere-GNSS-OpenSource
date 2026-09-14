@@ -1,0 +1,276 @@
+{
+  "generated": "2026-09-14",
+  "source_page": "https://irimodel.org/",
+  "method": "curl HTML + directory listings; RELATED LINKS probed; GitHub/gh API for wrappers; GAMBIT/SAO portals checked",
+  "already_in_catalog": [
+    "IRI-Fortran",
+    "IRI-2026-package",
+    "IRI-2020-package",
+    "IRI-2016-package",
+    "IRI-2012-package",
+    "IRI-2007-package",
+    "IRI-2001-package",
+    "IRI-COMMON-FILES",
+    "IRI-indices",
+    "IRI-MATLAB-FileExchange",
+    "pyglow",
+    "PyIRI",
+    "iri2016",
+    "iri2020",
+    "CCMC-IRI-online",
+    "NeQuick2-ICTP",
+    "Galileo-NeQuick-G",
+    "Nequick-ITUR",
+    "NeQuickJRC",
+    "NequickG",
+    "ITU-R-iono-tropo-software",
+    "SH-GIM"
+  ],
+  "added": [
+    {
+      "name": "PyIRTAM",
+      "url": "https://github.com/victoriyaforsythe/PyIRTAM",
+      "desc_zh": "用 PyIRI 形式体系处理 IRTAM 系数并重建电子密度的纯 Python 工具",
+      "one_liner_zh": "IRTAM 系数下载与全球网格电子密度重建（纯 Python，对接 PyIRI）",
+      "analysis_zh": "面向 GIRO/IRTAM 同化产物：可读/下载 IRTAM 系数，在给定全球网格与全日时间轴上同时评估 foF2/hmF2 等并重建 Ne。适合把实时同化电离层接到 Python 科研流水线，与气候态 PyIRI 对照。系数来自 LGDC/GAMBIT 接口，需遵守站点访问节奏；不是官方 Fortran irirtam.for 的逐行移植，数值对比请以 IRI-2020 包内 irirtam 子程序为参照。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "IRI模型",
+      "markers": [
+        "core"
+      ],
+      "stars_approx": 4,
+      "source": "irimodel.org IRTAM link → GIRO/GAMBIT + GitHub verified 2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "iricore",
+      "url": "https://github.com/MIST-Experiment/iricore",
+      "desc_zh": "通过 ctypes 调用 IRI-2016/2020 的 Python 接口",
+      "one_liner_zh": "ctypes 包装 IRI-2016/2020，可算 VTEC/STEC 并更新指数文件",
+      "analysis_zh": "把官方 Fortran IRI 编进可 pip 安装的 Python 包，暴露剖面与垂直/斜 TEC，并提供指数文件更新入口。适合 Linux 科研脚本里快速取气候态背景。文档写明主要处理 OUTF、未实现 OARR 用户输入；Windows 需 WSL，且维护节奏偏慢，跟 IRI-2026 对齐前应核对所绑 Fortran 版本。",
+      "language": "Python/Fortran",
+      "license": "see upstream",
+      "category": "ionosphere",
+      "subcategory": "IRI模型",
+      "markers": [],
+      "stars_approx": 2,
+      "source": "web search IRI python wrappers verified 2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
+    },
+    {
+      "name": "pyIRI2016",
+      "url": "https://github.com/rilma/pyIRI2016",
+      "desc_zh": "IRI-2016 的 f2py/CMake Python 包装",
+      "one_liner_zh": "IRI-2016 Fortran 的 f2py 包装（pyiri2016，与 space-physics/iri2016 不同仓）",
+      "analysis_zh": "用现代 CMake + f2py 暴露 iriwebg，便于在 Python 中调用 IRI-2016。与 space-physics/iri2016、官方 irimodel 目录并存时，注意不要混淆仓库名与系数版本。需要编译器链；要最新物理选项仍应回 irimodel.org 的 IRI-2020/2026。",
+      "language": "Python/Fortran",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "IRI模型",
+      "markers": [],
+      "stars_approx": 21,
+      "source": "web search IRI python wrappers verified 2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
+    },
+    {
+      "name": "ionex_reader",
+      "url": "https://github.com/bbrawar/ionex_reader",
+      "desc_zh": "将 IONEX TEC/RMS 图读成 xarray Dataset 的 Python 包",
+      "one_liner_zh": "IONEX→xarray 读取与可视化（支持 JPL/CODE/ESA 等产品）",
+      "analysis_zh": "按文件头解析网格，把 TEC/RMS 装进 xarray，可选日夜界与地磁纬线叠加。适合快速抽检 IGS 各分析中心 IONEX、做差分或画图。功能偏读与展示，不负责建图或写回完整 IONEX；写格式可对照 gnss-lab/ionex、ionex_formatter 或 pygnss。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "IONEX/TEC图",
+      "markers": [],
+      "stars_approx": 2,
+      "source": "IONEX tools gap search verified 2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
+    },
+    {
+      "name": "ionex_formatter",
+      "url": "https://github.com/gnss-lab/ionex_formatter",
+      "desc_zh": "gnss-lab 的 IONEX 格式化/写出相关 Python 模块",
+      "one_liner_zh": "gnss-lab IONEX 写出/格式化模块（与 ionex 读取库配套）",
+      "analysis_zh": "与 gnss-lab/ionex 同属 Padokhin 工具链一侧，侧重把网格化 TEC 整理成可交换的 IONEX。适合自建 GIM/区域图后需要标准化交付的场景。文档与星标很少，集成前请跑样例并对照 IONEX 1.0/1.1 规范；读取侧仍推荐同组织的 ionex。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "IONEX/TEC图",
+      "markers": [],
+      "stars_approx": 2,
+      "source": "IONEX tools gap search verified 2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "mgfernan-pygnss",
+      "url": "https://github.com/mgfernan/pygnss",
+      "desc_zh": "含 IONEX/GIM 读写与 NeQuick 对比等工具的 Python GNSS 工具集",
+      "one_liner_zh": "Python GNSS 工具集：IONEX/GIM、Hatanaka、与 NeQuick 对比 CLI",
+      "analysis_zh": "作者亦维护 NeQuickJRC；本库提供 IONEX 加载、GIM handler、ionex_diff（可对 NeQuick）以及 RINEX/Hatanaka 辅助。适合把电离层图产品接到脚本化质检。与 semuconsulting/pygnss* 系列同名空间易混淆，克隆时认准 mgfernan/pygnss；功能广度不如大型测地套件。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "IONEX/TEC图",
+      "markers": [],
+      "stars_approx": 2,
+      "source": "IONEX tools gap search verified 2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
+    },
+    {
+      "name": "IRTAM-Coefficient-Reader-Fortran",
+      "url": "https://giro.uml.edu/GAMBIT/IrtamReader_Fortran_V1.0.zip",
+      "desc_zh": "GIRO/GAMBIT 发布的 IRTAM 系数 Fortran 读入/解包示例，可对接 IRI",
+      "one_liner_zh": "官方示例：IRTAM 系数 Fortran 读入器（对接 IRI 同化）",
+      "analysis_zh": "从 GAMBIT 页下载的 Fortran 示例，演示如何解析 IRTAM 系数消息并与 IRI 模型联用。适合本地同化/复现研究，而非网页看图。仅为示例读入器，完整实时同化流水线与系数服务条款见 GIRO/GAMBIT；Python 侧可对照 PyIRTAM。",
+      "language": "Fortran",
+      "license": "UMLCAR/GIRO distribution (see archive)",
+      "category": "ionosphere",
+      "subcategory": "IRI模型",
+      "markers": [],
+      "stars_approx": null,
+      "source": "irimodel.org → IRTAM → GAMBIT code samples verified 2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official"
+    },
+    {
+      "name": "GAMBIT-Database-Reader-Java",
+      "url": "https://giro.uml.edu/GAMBIT/GambitReader_Java_V0.1.zip",
+      "desc_zh": "从 GAMBIT 库集成下载 IRTAM 系数的 Java 8+ 示例读入器",
+      "one_liner_zh": "官方示例：GAMBIT 数据库 Java 读入/解包（拉 IRTAM 系数）",
+      "analysis_zh": "GIRO 提供的 Java 示例，用于从 GAMBIT 侧取系数并解包。适合需要脚本化批量取同化系数、又不走 Python 的环境。示例级代码，商用实时 Situation Room 另需订阅协议；系数下载请遵守站点建议的请求间隔。",
+      "language": "Java",
+      "license": "UMLCAR/GIRO distribution (see archive)",
+      "category": "ionosphere",
+      "subcategory": "IRI模型",
+      "markers": [],
+      "stars_approx": null,
+      "source": "irimodel.org → IRTAM → GAMBIT code samples verified 2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official"
+    },
+    {
+      "name": "SAO-Explorer",
+      "url": "https://ulcar.uml.edu/SAO-X/",
+      "desc_zh": "UMLCAR/GIRO 旗舰测高仪数据处理工具（免费 Java 发行，非开源源码）",
+      "one_liner_zh": "GIRO/Digisonde 测高仪缩放与 DIDBase 访问工具（免费二进制）",
+      "analysis_zh": "处理 SAO/SAOXML、内置 ARTIST-5 与剖面反演，并可连 Lowell DIDBase。irimodel 相关的 IRTAM/GIRO 生态常用桌面工具。官方提供跨平台 zip，属免费科学软件而非公开 OSS 源码（license 标 proprietary-freeware）。不做 GNSS TEC 建图；源码级二次开发请另寻开源栈。",
+      "language": "Java",
+      "license": "proprietary-freeware",
+      "category": "ionosphere",
+      "subcategory": "电离层工具",
+      "markers": [],
+      "stars_approx": null,
+      "source": "GIRO SAO Explorer portal verified 2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official"
+    }
+  ],
+  "skipped_web_only_or_duplicate": [
+    {
+      "name": "MIT-Realtime-IRI",
+      "url": "http://madrigal.haystack.mit.edu/models/IRI/index.html",
+      "reason": "RELATED LINKS：网页实时图/动画，无可下载开源代码"
+    },
+    {
+      "name": "IPS-ASWFC-TEC-maps",
+      "url": "https://www.sws.bom.gov.au/Satellite/2/2",
+      "reason": "RELATED LINKS：TEC 在线地图服务，非源码包"
+    },
+    {
+      "name": "WDC-Kyoto-ionocond",
+      "url": "https://wdc.kugi.kyoto-u.ac.jp/ionocond/sigcal/index.html",
+      "reason": "RELATED LINKS：电导率在线计算器，非可下载模型源码"
+    },
+    {
+      "name": "SPENVIS",
+      "url": "http://www.spenvis.oma.be/",
+      "reason": "空间环境信息服务/Web 平台，无公开 SDK 源码（按规则跳过）"
+    },
+    {
+      "name": "ESA-SWE-portal",
+      "url": "https://swe.ssa.esa.int/information-for-portal-users",
+      "reason": "ESA 空间天气门户说明页，非 IRI/电离层开源码"
+    },
+    {
+      "name": "IRTAM-web-maps",
+      "url": "https://giro.uml.edu/IRTAM/",
+      "reason": "实时 foF2/hmF2 网页产品；可下载代码改收录 PyIRTAM 与 Fortran/Java 读入示例"
+    },
+    {
+      "name": "GAMBIT-Explorer-UserApp",
+      "url": "https://giro.uml.edu/GAMBIT/GX.User_v1.3G.zip",
+      "reason": "GUI 二进制订阅/用户端，非开源；示例读入器已另录"
+    },
+    {
+      "name": "CCMC-IRI-web",
+      "url": "https://ccmc.gsfc.nasa.gov/models/IRI~2020/",
+      "reason": "在线计算已有 CCMC-IRI-online 条目"
+    },
+    {
+      "name": "JPL-GDGPS-TEC-maps",
+      "url": "https://gdgps.jpl.nasa.gov/products/tec-maps.html",
+      "reason": "GIM/TEC 产品页，无开源建图软件"
+    },
+    {
+      "name": "CODE-GIM-products",
+      "url": "https://www.aiub.unibe.ch/research/code___analysis_center/index_eng.html",
+      "reason": "分析中心产品，非开源 GIM 软件"
+    },
+    {
+      "name": "Ionex_Parser-ajayraghASL",
+      "url": "https://github.com/ajayraghASL/Ionex_Parser",
+      "reason": "极简 notebook 脚本，与已有 ionex/ionex_reader 能力重复且无许可信息"
+    },
+    {
+      "name": "IRI-2026/2020/2016/2012/2007/2001/COMMON/indices/MATLAB/pyglow",
+      "url": "https://irimodel.org/",
+      "reason": "本轮核验：目录与 MATLAB/pyglow 已在 PROJECTS.json（前序提交已录）"
+    }
+  ],
+  "notes_zh": [
+    "irimodel.org AVAILABILITY 下列出的各 Fortran 版本目录、COMMON FILES、INDICES、MATLAB File Exchange、pyglow 在本轮开始前多数已入库；本轮补 GIRO/IRTAM 可下载代码与遗漏的 Python/IONEX 工具。",
+    "RELATED LINKS 五项均为在线服务/门户，按「非可下载开源码则跳过」处理，详情见 skipped。",
+    "SAO Explorer 按免费科学工具（proprietary-freeware）收录，明确非 OSS 源码。",
+    "SH-GIM 仅保留链接条目，不写展开分析（既有规则）。"
+  ],
+  "actually_merged": [
+    "PyIRTAM",
+    "iricore",
+    "pyIRI2016",
+    "ionex_reader",
+    "ionex_formatter",
+    "mgfernan-pygnss",
+    "IRTAM-Coefficient-Reader-Fortran",
+    "GAMBIT-Database-Reader-Java",
+    "SAO-Explorer"
+  ],
+  "catalog_total_after": 371,
+  "ionosphere_count_after": 78
+}

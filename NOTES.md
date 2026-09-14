@@ -76,3 +76,13 @@
 来源统计：official=44, academic_lab=81, personal_community=226  
 当前总条目：**351**
 
+## IRI/RELATED LINKS 深挖（2026-09-14）
+
+- 源页：https://irimodel.org/ （含 RELATED LINKS、各 Fortran 目录、IRTAM）
+- 研究稿：`research/iri_related_finds.json`
+- 新增 **9**：PyIRTAM, iricore, pyIRI2016, ionex_reader, ionex_formatter, mgfernan-pygnss, IRTAM-Coefficient-Reader-Fortran, GAMBIT-Database-Reader-Java, SAO-Explorer
+- 去掉重复 NeQuick2-ICTP 首页条目（保留 source-code）
+- RELATED LINKS 网页服务（MIT/IPS/Kyoto/SPENVIS/ESA SWE）均跳过，见 finds 的 skipped
+- 当前总条目：**371**；电离层：**78**
+- **未 git push**
+

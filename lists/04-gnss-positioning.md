@@ -9,14 +9,14 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [raPPPid](https://github.com/TUW-VieVS/raPPPid) | 维也纳 VieVS 的 PPP 模块 raPPPid | MATLAB | 149 | 🏷️ 个人社区 · 核心 |
 | [GAMP_PPPH](https://github.com/zhufengGNSS/GAMP_PPPH) | 多星座 PPP 源码（GAMP 相关整理） | — | 78 | 🏷️ 高校实验室 · ★ Star |
 | [GPSPACE](https://github.com/CGS-GIS/GPSPACE) | 加拿大 NRCan GPSPACE PPP Fortran 程序 | Fortran | 58 | 🏷️ 个人社区 |
-| [PPPLib](https://github.com/yxw027/PPPLib) | 精密单点定位库 PPPLib | — | 49 | 🏷️ 高校实验室 |
 | [PPP](https://github.com/XiaoGongWei/PPP) | 静态 PPP 相关 C++ 实现（MG-APP 作者相关） | C++ | 23 | 🏷️ 高校实验室 |
-| [PPPH-UAV](https://github.com/BerkayBahadur/PPPH-UAV) | 面向无人机摄影测量的 GNSS PPP 处理（MATLAB） | MATLAB | 14 | 🏷️ 个人社区 |
-| [RTPPP_B2b](https://github.com/floating0516/RTPPP_B2b) | 北斗 PPP-B2b 改正数解码与实时 PPP 接口 | C | 10 | 🏷️ 个人社区 · 核心 |
 | [ppp_rtklib](https://github.com/mulin33/ppp_rtklib) | 从 RTKLIB 抽出的独立 PPP 模块，便于精读源码 | C | 4 | 🏷️ 个人社区 |
+| [PPPH-UAV](https://github.com/BerkayBahadur/PPPH-UAV) | 面向无人机摄影测量的 GNSS PPP 处理（MATLAB） | MATLAB | 14 | 🏷️ 个人社区 |
+| [PPPLib](https://github.com/yxw027/PPPLib) | 精密单点定位库 PPPLib | — | 49 | 🏷️ 高校实验室 |
+| [raPPPid](https://github.com/TUW-VieVS/raPPPid) | 维也纳 VieVS 的 PPP 模块 raPPPid | MATLAB | 149 | 🏷️ 个人社区 · 核心 |
+| [RTPPP_B2b](https://github.com/floating0516/RTPPP_B2b) | 北斗 PPP-B2b 改正数解码与实时 PPP 接口 | C | 10 | 🏷️ 个人社区 · 核心 |
 
 ### 详细说明
 
@@ -80,8 +80,8 @@ VieVS 体系下的精密单点定位模块，MATLAB 实现，适合与 VLBI/大�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [PRIDE-PPPAR](https://github.com/PrideLab/PRIDE-PPPAR) | 武汉大学 PRIDELab 多星座 PPP 模糊度固定 | C | 415 | 🏷️ 高校实验室 · ★ Star · 核心 |
 | [PPP_AR](https://github.com/heiwa0519/PPP_AR) | 多星座 PPP 模糊度固定（PPP-AR）相关实现 | C | 40 | 🏷️ 个人社区 |
+| [PRIDE-PPPAR](https://github.com/PrideLab/PRIDE-PPPAR) | 武汉大学 PRIDELab 多星座 PPP 模糊度固定 | C | 415 | 🏷️ 高校实验室 · ★ Star · 核心 |
 
 ### 详细说明
 
@@ -119,9 +119,9 @@ VieVS 体系下的精密单点定位模块，MATLAB 实现，适合与 VLBI/大�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [MRTKLIB](https://github.com/h-shiono/MRTKLIB) | 面向 PPP/PPP-AR/PPP-RTK（CLAS/MADOCA）的现代 GNSS 定位库 | C | 78 | 🏷️ 高校实验室 · 核心 |
+| [mrtklib-docker-ui](https://github.com/h-shiono/mrtklib-docker-ui) | MRTKLIB 的 Docker/Web 界面，方便后处理与实时演示 | TypeScript | 10 | 🏷️ 高校实验室 |
 | [pygnsslab](https://github.com/PyGnssLab/pygnsslab) | Python 模块化 RINEX/PPP/PPP-AR 与实时流 | Python | 34 | 🏷️ 个人社区 |
 | [Urban-RTKLIB](https://github.com/MayHarryWang/Urban-RTKLIB) | 面向城市导航的 RTKLIB 改版，侧重 PPP/PPP-RTK | C | 25 | 🏷️ 高校实验室 |
-| [mrtklib-docker-ui](https://github.com/h-shiono/mrtklib-docker-ui) | MRTKLIB 的 Docker/Web 界面，方便后处理与实时演示 | TypeScript | 10 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -157,8 +157,8 @@ VieVS 体系下的精密单点定位模块，MATLAB 实现，适合与 VLBI/大�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [laika](https://github.com/commaai/laika) | comma.ai 的轻量 Python GNSS 处理库 | Python | 723 | 🏷️ 个人社区 · 核心 |
 | [gnss-rtk](https://github.com/nav-solutions/gnss-rtk) | Rust 实现的 PPP/RTK 解算器 | Rust | 79 | 🏷️ 个人社区 |
+| [laika](https://github.com/commaai/laika) | comma.ai 的轻量 Python GNSS 处理库 | Python | 723 | 🏷️ 个人社区 · 核心 |
 
 ### 详细说明
 
@@ -180,11 +180,11 @@ rtk-rs/nav-solutions 系精密定位解算，与 rinex 库同一生态，AGPL。
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [ginan](https://github.com/GeoscienceAustralia/ginan) | Geoscience Australia 精密定位与改正数工具包 | C++ | 343 | 🏷️ 官方 · 核心 |
-| [RTKLIB-B2b](https://github.com/UCAS-Liuchunbo/RTKLIB-B2b) | 基于 RTKLIB 的北斗 PPP-B2b 解码与定位工具包 | C | 74 | 🏷️ 高校实验室 · 核心 |
-| [NavDecoder](https://github.com/NavSesne/NavDecoder) | 解码 PPP-B2b 与 Galileo HAS 并做校验的工具 | Python | 37 | 🏷️ 个人社区 · 核心 |
 | [B2bLIB](https://github.com/GCCLib/B2bLIB) | 北斗 PPP-B2b 服务研究用的 C/C++ 库 | C | 26 | 🏷️ 个人社区 · 核心 |
 | [CSSR-tool](https://github.com/MayHarryWang/CSSR-tool) | 多源协同 CSSR-PPP 改正数预处理工具 | C | 7 | 🏷️ 高校实验室 |
+| [ginan](https://github.com/GeoscienceAustralia/ginan) | Geoscience Australia 精密定位与改正数工具包 | C++ | 343 | 🏷️ 官方 · 核心 |
+| [NavDecoder](https://github.com/NavSesne/NavDecoder) | 解码 PPP-B2b 与 Galileo HAS 并做校验的工具 | Python | 37 | 🏷️ 个人社区 · 核心 |
+| [RTKLIB-B2b](https://github.com/UCAS-Liuchunbo/RTKLIB-B2b) | 基于 RTKLIB 的北斗 PPP-B2b 解码与定位工具包 | C | 74 | 🏷️ 高校实验室 · 核心 |
 
 ### 详细说明
 
@@ -287,12 +287,12 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [GNSSRTK](https://github.com/SupakunZ/GNSS_RTK) | AGV 用 GNSS-RTK 路径规划与车载显示（Python） | Python | 3 | 🏷️ 个人社区 |
+| [HPRTK](https://github.com/yxw027/HPRTK) | 高精度实时定位相关工程（HPRTK） | C++ | 17 | 🏷️ 高校实验室 |
+| [OpenRTK](https://github.com/AndreasArendt/OpenRTK) | 开源精密 GNSS/RTK 软件 | C++ | 23 | 🏷️ 个人社区 |
+| [RTK](https://github.com/GYH-WHU/RTK) | GPS/BDS 双系统 RTK（浮点/固定）C++ 教学系统 | C++ | 11 | 🏷️ 高校实验室 |
 | [rtkbase](https://github.com/Stefal/rtkbase) | 树莓派等 SBC 上自建 GNSS 基准站与 Web 管理 | Python | 769 | 🏷️ 个人社区 · 核心 |
 | [rtklib-py](https://github.com/rtklibexplorer/rtklib-py) | 基于 demo5 的 RTKLIB Python 实现（侧重 PPK） | Python | 244 | 🏷️ 个人社区 |
-| [OpenRTK](https://github.com/AndreasArendt/OpenRTK) | 开源精密 GNSS/RTK 软件 | C++ | 23 | 🏷️ 个人社区 |
-| [HPRTK](https://github.com/yxw027/HPRTK) | 高精度实时定位相关工程（HPRTK） | C++ | 17 | 🏷️ 高校实验室 |
-| [RTK](https://github.com/GYH-WHU/RTK) | GPS/BDS 双系统 RTK（浮点/固定）C++ 教学系统 | C++ | 11 | 🏷️ 高校实验室 |
-| [GNSSRTK](https://github.com/SupakunZ/GNSS_RTK) | AGV 用 GNSS-RTK 路径规划与车载显示（Python） | Python | 3 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -365,8 +365,8 @@ Takasu 的 RTKLIB 是开源 RTK/PPP 事实标准之一，窗口工具与嵌入�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [pyrtklib](https://github.com/IPNL-POLYU/pyrtklib) | 港理工 IPNL 的 RTKLIB Python 绑定，可直接在脚本里调用核心解算 | C | 182 | 🏷️ 高校实验室 · 核心 |
 | [MatRTKLIB](https://github.com/taroz/MatRTKLIB) | RTKLIB 的 MATLAB 封装与分析辅助 | MATLAB | 99 | 🏷️ 个人社区 |
+| [pyrtklib](https://github.com/IPNL-POLYU/pyrtklib) | 港理工 IPNL 的 RTKLIB Python 绑定，可直接在脚本里调用核心解算 | C | 182 | 🏷️ 高校实验室 · 核心 |
 | [pyrtklib_demo5](https://github.com/IPNL-POLYU/pyrtklib_demo5) | 基于 rtklibexplorer demo5 分支的 pyrtklib 变体 | C | 13 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -396,10 +396,10 @@ Takasu 的 RTKLIB 是开源 RTK/PPP 事实标准之一，窗口工具与嵌入�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [libgnss++](https://github.com/rsasaki0109/gnssplusplus-library) | 现代 C++20 GNSS 工具包（SPP/RTK/PPP/CLAS） | C++ | 189 | 🏷️ 个人社区 |
-| [SatellitePosition](https://github.com/LStudioLoren/SatellitePosition) | Python 实现卫星单点定位与 RTK 相对定位的学习项目 | Python | 62 | 🏷️ 个人社区 |
-| [MobileGNSS-SPP](https://github.com/salmoshu/MobileGNSS-SPP) | 面向智能手机的 EKF 单点定位优化实现 | C | 41 | 🏷️ 高校实验室 |
 | [GNSS-Explorer](https://github.com/brucezhcw/GNSS-Explorer) | 基于 RTKLIB 的 SPP 算法优化探索 | C | 21 | 🏷️ 个人社区 |
+| [libgnss++](https://github.com/rsasaki0109/gnssplusplus-library) | 现代 C++20 GNSS 工具包（SPP/RTK/PPP/CLAS） | C++ | 189 | 🏷️ 个人社区 |
+| [MobileGNSS-SPP](https://github.com/salmoshu/MobileGNSS-SPP) | 面向智能手机的 EKF 单点定位优化实现 | C | 41 | 🏷️ 高校实验室 |
+| [SatellitePosition](https://github.com/LStudioLoren/SatellitePosition) | Python 实现卫星单点定位与 RTK 相对定位的学习项目 | Python | 62 | 🏷️ 个人社区 |
 | [SPP_SPV](https://github.com/GYH-WHU/SPP_SPV) | 武大相关 GPS/BDS 单点定位与测速（C++/MATLAB）教学实现 | C++ | 7 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -541,8 +541,8 @@ Python 下处理/绘制基于 RINEX 的 GPS 与 Galileo 数据，教学演示友
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [groops](https://github.com/groops-devs/groops) | 重力场与 GNSS 处理工具包 GROOPS | C++ | 244 | 🏷️ 个人社区 · ★ Star · 核心 |
 | [gnatss](https://github.com/seafloor-geodesy/gnatss) | 海底 GNSS-A 换能器测量社区软件（Python） | Python | 17 | 🏷️ 个人社区 |
+| [groops](https://github.com/groops-devs/groops) | 重力场与 GNSS 处理工具包 GROOPS | C++ | 244 | 🏷️ 个人社区 · ★ Star · 核心 |
 
 ### 详细说明
 

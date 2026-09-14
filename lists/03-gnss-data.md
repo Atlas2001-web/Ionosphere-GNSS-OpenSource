@@ -47,9 +47,9 @@ Android 原始 GNSS 测量日志与桌面可视化分析工具，智能手机高
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [hatanaka](https://github.com/valgur/hatanaka) | Python 调用的 Hatanaka 压缩/解压 | C | 26 | 🏷️ 个人社区 |
-| [crz2rnx](https://github.com/zhufengGNSS/crz2rnx) | Hatanaka RNX2CRX/CRX2RNX 相关程序整理（v4 系） | C | 9 | 🏷️ 高校实验室 |
 | [crx2rnx](https://github.com/nav-solutions/crx2rnx) | Rust 实现的 CRX2RNX 命令行工具 | Rust | 8 | 🏷️ 个人社区 |
+| [crz2rnx](https://github.com/zhufengGNSS/crz2rnx) | Hatanaka RNX2CRX/CRX2RNX 相关程序整理（v4 系） | C | 9 | 🏷️ 高校实验室 |
+| [hatanaka](https://github.com/valgur/hatanaka) | Python 调用的 Hatanaka 压缩/解压 | C | 26 | 🏷️ 个人社区 |
 | [RNXCMP](https://terras.gsi.go.jp/ja/crx2rnx.html) | 日本地理院官方 Hatanaka/CompactRINEX 压缩与恢复工具 | C | — | 🏷️ 官方 · 核心 |
 | [RNXCMP-LICENSE](https://terras.gsi.go.jp/ja/crx2rnx/LICENSE.txt) | 日本地理院 RNXCMP 许可证原文（使用/再分发须引用） | text | — | 🏷️ 官方 |
 
@@ -148,10 +148,10 @@ GFZ 官方用户指南，详述 RINEX 2/3/4 检查、拼接、抽样、元数据
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [georinex](https://github.com/geospace-code/georinex) | 高速 Python RINEX 2/3 NAV/OBS/SP3 读入与 HDF5 转换 | Python | 269 | 🏷️ 高校实验室 · 🔀 Fork · ★ Star · 核心 |
+| [GNSSNexus-rinex](https://github.com/GNSSNexus/rinex) | RINEX 相关读写/处理组件 | Rust | — | 🏷️ 个人社区 |
+| [READ_GNSS](https://github.com/dzd9798/READ_GNSS) | MATLAB 读取多种 GNSS 文件（含 RINEX/IONEX） | MATLAB | 10 | 🏷️ 个人社区 |
 | [rinex](https://github.com/nav-solutions/rinex) | Rust RINEX 解析/生成与 RINEX-Cli（含 SPP/PPP） | Rust | 126 | 🏷️ 个人社区 · 核心 |
 | [RinexReader](https://github.com/aaronboda24/RinexReader) | C++ RINEX 2.x/3.x 读取器 | C++ | 38 | 🏷️ 个人社区 |
-| [READ_GNSS](https://github.com/dzd9798/READ_GNSS) | MATLAB 读取多种 GNSS 文件（含 RINEX/IONEX） | MATLAB | 10 | 🏷️ 个人社区 |
-| [GNSSNexus-rinex](https://github.com/GNSSNexus/rinex) | RINEX 相关读写/处理组件 | Rust | — | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -194,8 +194,8 @@ GeoRust/nav-solutions 系 RINEX 库，附 RINEX-Cli，可做质检、SPP/PPP、C
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [rtcm3torinex](http://software.rtcm-ntrip.org/wiki/rtcm3torinex) | BKG rtcm3torinex：RTCM3 流转 RINEX 的官方小工具 | C | 65 | 🏷️ 官方 |
 | [prx](https://github.com/jtec/prx) | RINEX 3.05 观测转 CSV | Python | 23 | 🏷️ 个人社区 |
+| [rtcm3torinex](http://software.rtcm-ntrip.org/wiki/rtcm3torinex) | BKG rtcm3torinex：RTCM3 流转 RINEX 的官方小工具 | C | 65 | 🏷️ 官方 |
 | [ubx2rinex](https://github.com/nav-solutions/ubx2rinex) | Rust 实现的 u-blox 原始观测到 RINEX 转换/采集工具 | Rust | 12 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -225,29 +225,29 @@ Rust 实现的 u-blox UBX 原始观测反序列化与 RINEX 采集工具，方�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [PyGPSClient](https://github.com/semuconsulting/PyGPSClient) | NMEA/UBX/RTCM/NTRIP 等协议的 Python 图形客户端 | Python | 839 | 🏷️ 个人社区 · 核心 |
-| [ntrip-cpp](https://github.com/ybzwyrcld/ntrip) | NTRIP 2.0 的 C++ caster/client/server 示例 | C++ | 177 | 🏷️ 个人社区 |
-| [pygnssutils](https://github.com/semuconsulting/pygnssutils) | NMEA/UBX/RTCM/NTRIP/SPARTN 的 Python CLI 工具集 | Python | 143 | 🏷️ 个人社区 |
-| [ntripclient](http://software.rtcm-ntrip.org/wiki/ntripclient) | BKG POSIX ntripclient：命令行拉取 NTRIP 数据流 | C | 129 | 🏷️ 官方 |
-| [pyrtcm](https://github.com/semuconsulting/pyrtcm) | RTCM3 报文的 Python 解析与生成库 | Python | 115 | 🏷️ 个人社区 |
-| [ntripserver](http://software.rtcm-ntrip.org/wiki/ntripserver) | BKG POSIX ntripserver：把本地 GNSS 流推到 NTRIP 播发器 | C | 74 | 🏷️ 官方 |
-| [ntrip-go](https://github.com/go-gnss/ntrip) | Go 语言 NTRIP 客户端与服务端库 | Go | 62 | 🏷️ 个人社区 |
-| [caster](https://github.com/Node-NTRIP/caster) | 支持 NTRIP V1/V2 的 Node.js caster 库 | TypeScript | 52 | 🏷️ 个人社区 · 核心 |
-| [cors-relay](https://github.com/tisyang/cors-relay) | CORS/NTRIP 差分流中继与重分发 | C | 49 | 🏷️ 个人社区 |
-| [rtcm](https://github.com/Node-NTRIP/rtcm) | RTCM 3 消息编解码（至 3.3） | TypeScript | 48 | 🏷️ 个人社区 |
-| [nmea-msgs](https://github.com/ros-drivers/nmea_msgs) | ROS 包：NMEA 相关消息类型定义 | CMake | 38 | 🏷️ 个人社区 |
-| [rtcm-rs](https://github.com/martinhakansson/rtcm-rs) | RTCM v3 编解码的 Rust crate | Rust | 32 | 🏷️ 个人社区 |
-| [gstream](https://github.com/Jin-Whu/gstream) | 面向 GNSS 的开源数据流客户端库 | C++ | 20 | 🏷️ 高校实验室 |
-| [ntripstreams](https://github.com/stenseng/ntripstreams) | Python NTRIP 协议读写接口 | Python | 16 | 🏷️ 个人社区 |
-| [pyspartn](https://github.com/semuconsulting/pyspartn) | 解析 SPARTN 精密改正电文的 Python 库 | Python | 12 | 🏷️ 个人社区 |
-| [ntrip-client](https://github.com/nav-solutions/ntrip-client) | 纯 Rust 的简单 NTRIP 客户端对象 | Rust | 4 | 🏷️ 个人社区 |
 | [BKG-NtripCaster](https://igs.bkg.bund.de/ntrip/bkgcaster) | BKG 专业 NtripCaster：GPL 开源实时 GNSS 流播发服务器 | C | — | 🏷️ 官方 · 核心 |
 | [BNC](https://igs.bkg.bund.de/ntrip/bnc) | BKG 开源多流 Ntrip 客户端：收 RTCM 并可做实时 PPP | C++ | — | 🏷️ 官方 · 核心 |
 | [BNC-source-FTP](https://igs.bkg.bund.de/root_ftp/NTRIP/software/BNC/) | BKG FTP：BNC 源码与多平台二进制直接下载目录 | C++ | — | 🏷️ 官方 |
 | [BNS](http://software.rtcm-ntrip.org/wiki/BNS) | BKG Ntrip State Space Server：实时状态空间改正播发相关工具 | C++ | — | 🏷️ 官方 |
+| [caster](https://github.com/Node-NTRIP/caster) | 支持 NTRIP V1/V2 的 Node.js caster 库 | TypeScript | 52 | 🏷️ 个人社区 · 核心 |
 | [Caster-source-FTP](https://igs.bkg.bund.de/root_ftp/NTRIP/software/caster/) | BKG FTP：Professional NtripCaster 源码包直接下载 | C | — | 🏷️ 官方 |
+| [cors-relay](https://github.com/tisyang/cors-relay) | CORS/NTRIP 差分流中继与重分发 | C | 49 | 🏷️ 个人社区 |
 | [EUREF-IP-Ntrip-overview](https://igs.bkg.bund.de/ntrip/index) | BKG/IGS NTRIP 数据与工具总览：流列表、BNC 与 Caster 入口 | various | — | 🏷️ 官方 |
+| [gstream](https://github.com/Jin-Whu/gstream) | 面向 GNSS 的开源数据流客户端库 | C++ | 20 | 🏷️ 高校实验室 |
+| [nmea-msgs](https://github.com/ros-drivers/nmea_msgs) | ROS 包：NMEA 相关消息类型定义 | CMake | 38 | 🏷️ 个人社区 |
+| [ntrip-client](https://github.com/nav-solutions/ntrip-client) | 纯 Rust 的简单 NTRIP 客户端对象 | Rust | 4 | 🏷️ 个人社区 |
+| [ntrip-cpp](https://github.com/ybzwyrcld/ntrip) | NTRIP 2.0 的 C++ caster/client/server 示例 | C++ | 177 | 🏷️ 个人社区 |
+| [ntrip-go](https://github.com/go-gnss/ntrip) | Go 语言 NTRIP 客户端与服务端库 | Go | 62 | 🏷️ 个人社区 |
+| [ntripclient](http://software.rtcm-ntrip.org/wiki/ntripclient) | BKG POSIX ntripclient：命令行拉取 NTRIP 数据流 | C | 129 | 🏷️ 官方 |
+| [ntripserver](http://software.rtcm-ntrip.org/wiki/ntripserver) | BKG POSIX ntripserver：把本地 GNSS 流推到 NTRIP 播发器 | C | 74 | 🏷️ 官方 |
+| [ntripstreams](https://github.com/stenseng/ntripstreams) | Python NTRIP 协议读写接口 | Python | 16 | 🏷️ 个人社区 |
+| [pygnssutils](https://github.com/semuconsulting/pygnssutils) | NMEA/UBX/RTCM/NTRIP/SPARTN 的 Python CLI 工具集 | Python | 143 | 🏷️ 个人社区 |
+| [PyGPSClient](https://github.com/semuconsulting/PyGPSClient) | NMEA/UBX/RTCM/NTRIP 等协议的 Python 图形客户端 | Python | 839 | 🏷️ 个人社区 · 核心 |
+| [pyrtcm](https://github.com/semuconsulting/pyrtcm) | RTCM3 报文的 Python 解析与生成库 | Python | 115 | 🏷️ 个人社区 |
+| [pyspartn](https://github.com/semuconsulting/pyspartn) | 解析 SPARTN 精密改正电文的 Python 库 | Python | 12 | 🏷️ 个人社区 |
+| [rtcm](https://github.com/Node-NTRIP/rtcm) | RTCM 3 消息编解码（至 3.3） | TypeScript | 48 | 🏷️ 个人社区 |
 | [RTCM-Ntrip-Software](http://software.rtcm-ntrip.org/) | RTCM-Ntrip 官方软件门户：BNC/Caster/POSIX 工具源码与文档 | C/C++ | — | 🏷️ 官方 · 核心 |
+| [rtcm-rs](https://github.com/martinhakansson/rtcm-rs) | RTCM v3 编解码的 Rust crate | Rust | 32 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -417,8 +417,8 @@ BKG/RTCM 维护的 NTRIP 开源软件 Trac 门户，集中入口含 BNC、Profes
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [GAMPII-GOOD](https://github.com/zhouforme0318/GAMPII-GOOD) | GOOD：GNSS 观测与产品下载器（GAMP II 配套） | C++ | 123 | 🏷️ 个人社区 |
-| [gnss-downloader](https://github.com/Mereithhh/gnss-downloader) | PyQt5 GUI：从 NASA/WHU FTP 下载 GNSS 数据 | Python | 23 | 🏷️ 个人社区 |
 | [GDDS](https://github.com/LECUT/GDDS) | IGS/CORS/产品/时序等多模块 GNSS 下载 | Python | 13 | 🏷️ 个人社区 |
+| [gnss-downloader](https://github.com/Mereithhh/gnss-downloader) | PyQt5 GUI：从 NASA/WHU FTP 下载 GNSS 数据 | Python | 23 | 🏷️ 个人社区 |
 | [swds-api-downloader](https://github.com/embrace-inpe/swds-api-downloader) | Embrace 空间天气数据服务 API 的自动下载示例 | Python | 4 | 🏷️ 官方 |
 
 ### 详细说明
@@ -508,10 +508,10 @@ BKG/RTCM 维护的 NTRIP 开源软件 Trac 门户，集中入口含 BNC、Profes
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [pyubx2](https://github.com/semuconsulting/pyubx2) | u-blox UBX 协议的 Python 编解码库 | Python | 254 | 🏷️ 个人社区 |
+| [gnss-protos](https://github.com/nav-solutions/gnss-protos) | GNSS 广播协议编解码的 Rust 库 | Rust | 4 | 🏷️ 个人社区 |
 | [gnsstk](https://github.com/SGL-UT/gnsstk) | 原 GPSTk 演进来的 C++ GNSS 基础库 | C++ | 183 | 🏷️ 高校实验室 · 核心 |
 | [pynmeagps](https://github.com/semuconsulting/pynmeagps) | 解析/生成 NMEA 0183 语句的 Python 库，与 pyubx2 同系 | Python | 106 | 🏷️ 个人社区 · 核心 |
-| [gnss-protos](https://github.com/nav-solutions/gnss-protos) | GNSS 广播协议编解码的 Rust 库 | Rust | 4 | 🏷️ 个人社区 |
+| [pyubx2](https://github.com/semuconsulting/pyubx2) | u-blox UBX 协议的 Python 编解码库 | Python | 254 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -592,9 +592,9 @@ semuconsulting 协议栈中专责 NMEA 0183 解析与生成的 Python 库，常�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [gnss-multipath-detector](https://github.com/EvgeniiMunin/gnss-multipath-detector) | GPS L1 C/A 多路径异常检测模型 | Jupyter Notebook | 28 | 🏷️ 个人社区 |
 | [GNSS_Multipath_Analysis_Software](https://github.com/paarnes/GNSS_Multipath_Analysis_Software) | GNSS 观测多路径分析 Python 软件 | Python | 141 | 🏷️ 个人社区 · 核心 |
 | [MAPS](https://github.com/GCCLib/MAPS) | MATLAB GNSS 多路径分析软件 | MATLAB | 35 | 🏷️ 个人社区 |
-| [gnss-multipath-detector](https://github.com/EvgeniiMunin/gnss-multipath-detector) | GPS L1 C/A 多路径异常检测模型 | Jupyter Notebook | 28 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -676,11 +676,11 @@ EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RT
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [pinot](https://github.com/purpleskyfall/pinot) | “Pinot is not only TEQC”——开源 GNSS 数据质检/预处理取向工具 | Python | 25 | 🏷️ 个人社区 · 核心 |
-| [RNXQCE](https://github.com/cuizilu/RNXQCE) | RINEX 2/3 质量检查工具包，定位为 TEQC 停更后的替代取向 | Fortran | 6 | 🏷️ 个人社区 |
 | [Anubis](https://gnutsoftware.com/software/anubis/) | G-Nut/Anubis：多 GNSS RINEX/RTCM 质量检查（Free 开源） | C++ | — | 🏷️ 个人社区 · 核心 |
 | [Anubis-Free-Download](https://gnutsoftware.com/software/anubis/download) | G-Nut/Anubis Free 下载：GPL 源码与 Linux 预编译（Pro 为商业） | C++ | — | 🏷️ 个人社区 |
+| [pinot](https://github.com/purpleskyfall/pinot) | “Pinot is not only TEQC”——开源 GNSS 数据质检/预处理取向工具 | Python | 25 | 🏷️ 个人社区 · 核心 |
 | [plot-Anubis](https://www.pecny.cz/sw/plots/anubis/) | GOP/Pecny 提供的 Anubis XTR 质检结果静态绘图脚本 | Perl | — | 🏷️ 高校实验室 |
+| [RNXQCE](https://github.com/cuizilu/RNXQCE) | RINEX 2/3 质量检查工具包，定位为 TEQC 停更后的替代取向 | Fortran | 6 | 🏷️ 个人社区 |
 | [TEQC](https://www.unavco.org/software/data-processing/teqc/teqc.html) | UNAVCO/GAGE 经典 TEQC：翻译/编辑/质检（已 EOL，闭源免费） | binary (closed) | — | 🏷️ 官方 · 核心 |
 
 ### 详细说明
