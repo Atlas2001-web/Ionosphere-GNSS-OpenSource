@@ -1,7 +1,7 @@
 # 轨道与钟差 / Orbit & Clock
 > 共 **9** 个已收录项目。本文件为链接索引，不含第三方源码。
 
-**这类做什么？** 精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在大型套件中。
+**这类做什么？** 精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。
 
 来源标记：🏷️ 官方 = 机构/国家实验室；🏷️ 高校实验室 = 大学课题组；🏷️ 个人社区 = 个人或小团队。
 
@@ -63,20 +63,6 @@ GFZ 发布的 Software for Precise Orbit and Clock Combination，用方差分量
 
 ### 详细说明
 
-#### [GREAT-IFCB](https://github.com/GREAT-WHU/GREAT-IFCB)  
-*🏷️ 高校实验室*
-
-语言：C++ · 许可：GPL-3.0 · 星标约：15 · 宿主：github
-
-武大 GREAT 组开源的多星座频间钟差（IFCB）估计工具，服务于精密钟差与偏差产品链路，与 GREAT-PVT 等同一研究线。做三频 PPP、相位偏差与钟差产品的人应关注。它是独立小工具，不替代完整 POD 套件；轨道与 UPD/OSB 能力仍多见诸 Ginan、PRIDE、GROOPS 等大型系统。
-
-#### [GREAT-PCE](https://github.com/GREAT-WHU/GREAT-PCE)  
-*🏷️ 高校实验室 · 核心*
-
-语言：C++ · 许可：GPL-3.0 · 星标约：9 · 宿主：github
-
-聚焦精密卫星钟差估计，可与 GREAT-UPD、POD 模块组成轨道钟差产品链，服务 PPP 与时间传递相关研究。适合钟差建模、实时/事后产品试验。输入轨道与地面站网质量决定上限；若目标只是终端定位，通常直接使用 IGS/分析中心钟差即可，不必自建整条钟差产线。
-
 #### [GREAT-UPD](https://github.com/GREAT-WHU/GREAT-UPD)  
 *🏷️ 高校实验室 · 核心*
 
@@ -91,9 +77,23 @@ GFZ 发布的 Software for Precise Orbit and Clock Combination，用方差分量
 
 执行多 GNSS 实时滤波精密轨道确定（POD），偏产品生成与定轨算法验证，而非终端定位。适合轨道/钟差方向研究生对照 GREAT 流水线。公开算例与力模型文档完整度需自查；与 Ginan、GROOPS 等大型套件相比，更适合精读 GREAT 定轨滤波环节，而不是替代整套业务定轨系统。
 
+#### [GREAT-IFCB](https://github.com/GREAT-WHU/GREAT-IFCB)  
+*🏷️ 高校实验室*
+
+语言：C++ · 许可：GPL-3.0 · 星标约：15 · 宿主：github
+
+武大 GREAT 组开源的多星座频间钟差（IFCB）估计工具，服务于精密钟差与偏差产品链路，与 GREAT-PVT 等同一研究线。做三频 PPP、相位偏差与钟差产品的人应关注。它是独立小工具，不替代完整 POD 套件；轨道与 UPD/OSB 能力仍多见诸 Ginan、PRIDE、GROOPS 等大型系统。
+
 #### [rt-clk-service](https://github.com/DoubleString/rt-clk-service)  
 *🏷️ 个人社区*
 
 语言：C++ · 许可：— · 星标约：12 · 宿主：github
 
 面向实时钟差、轨道与 UPD/IFPB 等偏差产品的服务向代码，贴近 PPP-AR 实时链。适合研究实时产品生成。公开完整度有限，需自备数据与对照 IGS 产品。
+
+#### [GREAT-PCE](https://github.com/GREAT-WHU/GREAT-PCE)  
+*🏷️ 高校实验室 · 核心*
+
+语言：C++ · 许可：GPL-3.0 · 星标约：9 · 宿主：github
+
+聚焦精密卫星钟差估计，可与 GREAT-UPD、POD 模块组成轨道钟差产品链，服务 PPP 与时间传递相关研究。适合钟差建模、实时/事后产品试验。输入轨道与地面站网质量决定上限；若目标只是终端定位，通常直接使用 IGS/分析中心钟差即可，不必自建整条钟差产线。

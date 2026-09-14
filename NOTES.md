@@ -105,3 +105,9 @@
 - 当前总条目：**431**
 - 来源统计：official=109, academic_lab=89, personal_community=233
 
+## 相似项目补录 batch2（2026-09-14）
+
+- 新增 **20** 条（cssrlib/PocketSDR/PPP-Wizard/NTRIP/TEC/PWV 等）
+- 当前条目：**468**
+- 分类计数：{'ionosphere': 85, 'troposphere': 25, 'gnss-data': 81, 'gnss-positioning': 72, 'orbit-clock': 9, 'navigation-ins': 50, 'gnss-sdr': 56, 'mobile-apps': 11, 'tools-learning': 26, 'gnss-datasets': 53}
+- 详见 `research/similar_finds.json`

@@ -3,7 +3,7 @@
 本索引按「你要解决什么问题」划分，而不是按编程语言。下面用白话说明每一类在 GNSS 工作流里的位置。
 
 ```
-数据门户(RINEX/SP3/IONEX/CORS) ──► 格式工具/质检
+数据下载/格式(RINEX,RTCM) ──► 质量检查
          │
          ├─► 电离层 TEC/GIM / 闪烁指标
          ├─► 对流层 ZTD/PWV / VMF
@@ -26,8 +26,6 @@
 
 另有 `host` 字段标明托管位置：`github` / `gitlab` / `sourceforge` / `official_site` / `other`。
 
-数据源类（`gnss-datasets`）另有 `registration` 字段，说明见 [`data-access.md`](./data-access.md)。
-
 > 同一上游若存在 GitHub 镜像，目录优先保留**官方站点** URL，并在分析中注明镜像。
 
 ## `ionosphere` — 电离层
@@ -35,32 +33,32 @@
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
 - 列表文件：[`lists/01-ionosphere.md`](../lists/01-ionosphere.md)
-- 当前条目数：**78**
+- 当前条目数：**85**
 
 ## `troposphere` — 对流层
 
 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
 - 列表文件：[`lists/02-troposphere.md`](../lists/02-troposphere.md)
-- 当前条目数：**14**
+- 当前条目数：**25**
 
 ## `gnss-data` — GNSS 数据与格式
 
 RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
 - 列表文件：[`lists/03-gnss-data.md`](../lists/03-gnss-data.md)
-- 当前条目数：**75**
+- 当前条目数：**81**
 
 ## `gnss-positioning` — 精密定位
 
 SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
 - 列表文件：[`lists/04-gnss-positioning.md`](../lists/04-gnss-positioning.md)
-- 当前条目数：**64**
+- 当前条目数：**72**
 
 ## `orbit-clock` — 轨道与钟差
 
-精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在大型套件中。
+精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。
 
 - 列表文件：[`lists/05-orbit-clock.md`](../lists/05-orbit-clock.md)
 - 当前条目数：**9**
@@ -70,14 +68,14 @@ SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现
 GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 
 - 列表文件：[`lists/06-navigation-ins.md`](../lists/06-navigation-ins.md)
-- 当前条目数：**48**
+- 当前条目数：**50**
 
 ## `gnss-sdr` — 软件接收机与信号
 
 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。
 
 - 列表文件：[`lists/07-gnss-sdr.md`](../lists/07-gnss-sdr.md)
-- 当前条目数：**55**
+- 当前条目数：**56**
 
 ## `mobile-apps` — 移动与嵌入式应用
 
@@ -95,10 +93,10 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 
 ## `gnss-datasets` — GNSS 数据源
 
-已核验的 GNSS 相关数据门户与产品库：RINEX 观测/导航、SP3/CLK、IONEX/GIM、对流层格网、偏差产品、实时流、CORS 区域网、掩星与空间天气等。侧重「去哪里拿数据」，不是软件工具。
+需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
 - 列表文件：[`lists/10-gnss-datasets.md`](../lists/10-gnss-datasets.md)
-- 当前条目数：**51**
+- 当前条目数：**53**
 
 ## 与用户仓库的关系标记
 

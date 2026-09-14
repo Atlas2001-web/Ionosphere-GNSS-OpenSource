@@ -5,18 +5,18 @@
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
   "generated": "2026-09-14",
-  "project_count": 448,
+  "project_count": 468,
   "counts_by_category": {
-    "ionosphere": 78,
-    "troposphere": 14,
-    "gnss-data": 75,
-    "gnss-positioning": 64,
+    "ionosphere": 85,
+    "troposphere": 25,
+    "gnss-data": 81,
+    "gnss-positioning": 72,
     "orbit-clock": 9,
-    "navigation-ins": 48,
-    "gnss-sdr": 55,
+    "navigation-ins": 50,
+    "gnss-sdr": 56,
     "mobile-apps": 11,
     "tools-learning": 26,
-    "gnss-datasets": 51
+    "gnss-datasets": 53
   },
   "projects": [
     {
@@ -53,7 +53,8 @@
       "desc_zh": "NASA CCMC 在线运行与说明页（IRI-2020）",
       "stars_approx": null,
       "user_relation": "none",
-      "featured": false
+      "featured": false,
+      "source": "similar-finds-2026-09-14"
     },
     {
       "name": "CDAAC_COSMIC-TEC_Data-Research",
@@ -185,7 +186,8 @@
       "desc_zh": "GIRO 全球电离层测高仪观测网门户（IRTAM 等数据入口）",
       "stars_approx": null,
       "user_relation": "none",
-      "featured": false
+      "featured": false,
+      "source": "similar-finds-2026-09-14"
     },
     {
       "name": "gnss-scintillation-simulator",
@@ -605,7 +607,8 @@
       "desc_zh": "IRI-2001 官方 Fortran 历史版本源码目录",
       "stars_approx": null,
       "user_relation": "none",
-      "featured": false
+      "featured": false,
+      "source": "similar-finds-2026-09-14"
     },
     {
       "name": "IRI-2007-package",
@@ -623,7 +626,8 @@
       "desc_zh": "IRI-2007 官方 Fortran 历史版本源码目录",
       "stars_approx": null,
       "user_relation": "none",
-      "featured": false
+      "featured": false,
+      "source": "similar-finds-2026-09-14"
     },
     {
       "name": "IRI-2012-package",
@@ -641,7 +645,8 @@
       "desc_zh": "IRI-2012 官方 Fortran 源码包（含轨道剖面示例程序）",
       "stars_approx": null,
       "user_relation": "none",
-      "featured": false
+      "featured": false,
+      "source": "similar-finds-2026-09-14"
     },
     {
       "name": "IRI-2016-package",
@@ -659,7 +664,8 @@
       "desc_zh": "IRI-2016 官方 Fortran 源码与系数包目录",
       "stars_approx": null,
       "user_relation": "none",
-      "featured": false
+      "featured": false,
+      "source": "similar-finds-2026-09-14"
     },
     {
       "name": "IRI-2020-package",
@@ -697,7 +703,8 @@
       "desc_zh": "IRI-2026 官方 Fortran 最新源码包目录",
       "stars_approx": null,
       "user_relation": "none",
-      "featured": false
+      "featured": false,
+      "source": "similar-finds-2026-09-14"
     },
     {
       "name": "IRI-COMMON-FILES",
@@ -717,7 +724,8 @@
       "desc_zh": "各版 IRI 共用的系数/公共文件目录（官网明确要求另下）",
       "stars_approx": null,
       "user_relation": "none",
-      "featured": false
+      "featured": false,
+      "source": "similar-finds-2026-09-14"
     },
     {
       "name": "IRI-Fortran",
@@ -755,7 +763,8 @@
       "desc_zh": "IRI 运行所需太阳/地磁指数文件发布页",
       "stars_approx": null,
       "user_relation": "none",
-      "featured": false
+      "featured": false,
+      "source": "similar-finds-2026-09-14"
     },
     {
       "name": "IRI-MATLAB-FileExchange",
@@ -775,7 +784,8 @@
       "desc_zh": "irimodel.org 官方指向的 IRI MATLAB 封装（File Exchange，含 2012/2016）",
       "stars_approx": null,
       "user_relation": "none",
-      "featured": false
+      "featured": false,
+      "source": "similar-finds-2026-09-14"
     },
     {
       "name": "iri2016",
@@ -1135,7 +1145,8 @@
       "desc_zh": "Python 上层大气气候态库，包装 IRI-2012/2016 等（irimodel 官网推荐）",
       "stars_approx": 117,
       "user_relation": "none",
-      "featured": false
+      "featured": false,
+      "source": "similar-finds-2026-09-14"
     },
     {
       "name": "pygnss-tec",
@@ -8166,7 +8177,12 @@
       "host": "github",
       "one_liner_zh": "Python 易移植 PPP-B2b 工具箱",
       "analysis_zh": "面向北斗 PPP-B2b 的 Python 工具箱，强调易移植与试验。适合快速摸电文与改正字段，不先上 C++ 工程。性能与完备性通常弱于 B2bLIB/RTKLIB-B2b；产线应用建议交叉验证 C/C++ 实现。",
-      "markers": []
+      "markers": [],
+      "desc_zh": "Python 易移植 PPP-B2b 工具箱",
+      "stars_approx": 0,
+      "source": "similar-finds-2026-09-14",
+      "featured": false,
+      "user_relation": "none"
     },
     {
       "name": "RTKNAVI-BH",
@@ -8180,7 +8196,12 @@
       "host": "github",
       "one_liner_zh": "RTKNAVI 扩展：实时 PPP-B2b + HAS",
       "analysis_zh": "在 RTKNAVI 上扩展，尝试同时吃 PPP-B2b 与 Galileo HAS 改正做实时 PPP。适合桌面端联调双系统改正源。仓库较新、文档与稳定性需自测；复杂场景仍建议对照官方测试库与 demo5/RTKLIB 分支。",
-      "markers": []
+      "markers": [],
+      "desc_zh": "RTKNAVI 扩展：实时 PPP-B2b + HAS",
+      "stars_approx": 0,
+      "source": "similar-finds-2026-09-14",
+      "featured": false,
+      "user_relation": "none"
     },
     {
       "name": "BDS-3-PPP-B2b-DATA",
@@ -8194,7 +8215,12 @@
       "host": "github",
       "one_liner_zh": "公开一周 BDS-3 PPP-B2b 试验数据",
       "analysis_zh": "公开约一周的 BDS-3 PPP-B2b 相关数据，方便复现解码与定位试验。适合写论文或调试 B2bLIB/RTKLIB-B2b 时当标准输入。不是通用数据中心；长期业务请接 IGS/CDDIS 或自建接收。",
-      "markers": []
+      "markers": [],
+      "desc_zh": "公开一周 BDS-3 PPP-B2b 试验数据",
+      "stars_approx": 10,
+      "source": "similar-finds-2026-09-14",
+      "featured": false,
+      "user_relation": "none"
     },
     {
       "name": "BDS-3-PPP-B2b_IMU_LiDAR",
@@ -8208,7 +8234,12 @@
       "host": "github",
       "one_liner_zh": "PPP-B2b 与 IMU/LiDAR 融合试验",
       "analysis_zh": "把 PPP-B2b 与 IMU/LiDAR 结合的试验工程，面向高动态或遮挡场景的多传感器融合。适合看改正服务如何进组合导航。成熟度与标定流程因仓库而异，引用前请用自有数据复现关键指标。",
-      "markers": []
+      "markers": [],
+      "desc_zh": "PPP-B2b 与 IMU/LiDAR 融合试验",
+      "stars_approx": 6,
+      "source": "similar-finds-2026-09-14",
+      "featured": false,
+      "user_relation": "none"
     },
     {
       "name": "mphw",
@@ -8222,7 +8253,12 @@
       "host": "github",
       "one_liner_zh": "低成本 GNSS-IR/反射测量开源硬件",
       "analysis_zh": "开源低成本 GNSS-IR/反射测量硬件方案（MPHW），配合 SNR 反射测高。适合教学站与原型站网，降低进入 GNSS-R 的硬件门槛。精度受天线与场地多路径制约，科研级水位/雪深仍常对照 gnssrefl + 大地型天线。",
-      "markers": []
+      "markers": [],
+      "desc_zh": "低成本 GNSS-IR/反射测量开源硬件",
+      "stars_approx": 25,
+      "source": "similar-finds-2026-09-14",
+      "featured": false,
+      "user_relation": "none"
     },
     {
       "name": "GNSSR_MERRByS_Python",
@@ -8236,7 +8272,12 @@
       "host": "github",
       "one_liner_zh": "TechDemoSat-1 星载 GNSS-R Python 示例",
       "analysis_zh": "Surrey TechDemoSat-1（MERRByS）星载 GNSS-R 的 Python/Jupyter 示例，演示空间反射数据读取与初步处理。适合星载 GNSS-R 入门。地基 GNSS-IR 请用 gnssrefl；两者几何与校正链不同。",
-      "markers": []
+      "markers": [],
+      "desc_zh": "TechDemoSat-1 星载 GNSS-R Python 示例",
+      "stars_approx": 19,
+      "source": "similar-finds-2026-09-14",
+      "featured": false,
+      "user_relation": "none"
     },
     {
       "name": "GNSS-REFLECTOMETRY-PROCESSING",
@@ -8250,7 +8291,12 @@
       "host": "github",
       "one_liner_zh": "GPU 加速 GNSS-R 处理",
       "analysis_zh": "面向 GNSS 反射测量的 GPU/CUDA 处理实验代码，适合做吞吐或算法加速试验。硬件与驱动依赖重；业务流水线需自行封装 I/O 与质控。",
-      "markers": []
+      "markers": [],
+      "desc_zh": "GPU 加速 GNSS-R 处理",
+      "stars_approx": 17,
+      "source": "similar-finds-2026-09-14",
+      "featured": false,
+      "user_relation": "none"
     },
     {
       "name": "gnssr4river",
@@ -8264,7 +8310,12 @@
       "host": "github",
       "one_liner_zh": "面向河流水文的 GNSS-R Python 工具箱",
       "analysis_zh": "开源 Python GNSS-R/IR 工具箱，偏向河流/水位等水文应用场景。适合把反射测高接到水文监测脚本。功能覆盖面小于 gnssrefl 全家桶，复杂站点仍建议用主流工具交叉检验。",
-      "markers": []
+      "markers": [],
+      "desc_zh": "面向河流水文的 GNSS-R Python 工具箱",
+      "stars_approx": 8,
+      "source": "similar-finds-2026-09-14",
+      "featured": false,
+      "user_relation": "none"
     },
     {
       "name": "GNSS_RR",
@@ -8278,7 +8329,12 @@
       "host": "github",
       "one_liner_zh": "雪面 GNSS 反射/折射连续估计",
       "analysis_zh": "联合反射/折射（GNSS-RR）连续估计雪/粒雪累积、表面质量与密度的方法代码，面向冰冻圈监测。场景专一；通用水位 GNSS-IR 不是其主场。",
-      "markers": []
+      "markers": [],
+      "desc_zh": "雪面 GNSS 反射/折射连续估计",
+      "stars_approx": 7,
+      "source": "similar-finds-2026-09-14",
+      "featured": false,
+      "user_relation": "none"
     },
     {
       "name": "NearRealTimeGNSSIR",
@@ -8292,7 +8348,12 @@
       "host": "github",
       "one_liner_zh": "近实时 GNSS-IR 软件原型",
       "analysis_zh": "朝近实时 GNSS-IR 流水线努力的实现，目标从 SNR 提取水位/雪深/土壤湿度等环境参数。适合做自动化监测原型。工程完整度与多星座支持需实测，稳定产线可对照 gnssrefl。",
-      "markers": []
+      "markers": [],
+      "desc_zh": "近实时 GNSS-IR 软件原型",
+      "stars_approx": 5,
+      "source": "similar-finds-2026-09-14",
+      "featured": false,
+      "user_relation": "none"
     },
     {
       "name": "gpssnrpy",
@@ -8306,7 +8367,12 @@
       "host": "github",
       "one_liner_zh": "RINEX SNR 提取与高度角工具",
       "analysis_zh": "从 GPS RINEX 提取 SNR，并结合导航电文算高度角/方位角，还带下载辅助。常作为 GNSS-IR 前处理积木，与 gnssrefl 生态 complementary。",
-      "markers": []
+      "markers": [],
+      "desc_zh": "RINEX SNR 提取与高度角工具",
+      "stars_approx": 6,
+      "source": "similar-finds-2026-09-14",
+      "featured": false,
+      "user_relation": "none"
     },
     {
       "name": "DDM-Former",
@@ -8320,7 +8386,12 @@
       "host": "github",
       "one_liner_zh": "GNSS-R DDM 海面风速 Transformer 模型",
       "analysis_zh": "用 Transformer 从 GNSS-R DDM 估全球海面风速的研究代码（DDM-Former）。适合遥感/机器学习交叉读者。不是地基 GNSS-IR 工具，输入输出与传统 SNR 干涉测高不同。",
-      "markers": []
+      "markers": [],
+      "desc_zh": "GNSS-R DDM 海面风速 Transformer 模型",
+      "stars_approx": 10,
+      "source": "similar-finds-2026-09-14",
+      "featured": false,
+      "user_relation": "none"
     },
     {
       "name": "BiScEF",
@@ -8334,7 +8405,12 @@
       "host": "github",
       "one_liner_zh": "闪烁数据二进制交换格式实现",
       "analysis_zh": "挪威制图局等推动的闪烁数据二进制交换格式（BiScEF）相关实现，方便闪烁监测接收机数据互通。做多源闪烁融合时应关注格式版本。通用 TEC/ROTI 计算仍用 IonoMoni/OASIS 等。",
-      "markers": []
+      "markers": [],
+      "desc_zh": "闪烁数据二进制交换格式实现",
+      "stars_approx": 2,
+      "source": "similar-finds-2026-09-14",
+      "featured": false,
+      "user_relation": "none"
     },
     {
       "name": "ismr_downloader",
@@ -8348,7 +8424,12 @@
       "host": "github",
       "one_liner_zh": "ISMR 闪烁监测数据下载器",
       "analysis_zh": "从 ISMR Query Tool API 拉取 GNSS/ISMR 闪烁监测数据的命令行下载器。适合批量建闪烁样本库。依赖上游 API 可用性与账号策略；本地下载后需自行做质控。",
-      "markers": []
+      "markers": [],
+      "desc_zh": "ISMR 闪烁监测数据下载器",
+      "stars_approx": 1,
+      "source": "similar-finds-2026-09-14",
+      "featured": false,
+      "user_relation": "none"
     },
     {
       "name": "scintkit",
@@ -8362,7 +8443,12 @@
       "host": "github",
       "one_liner_zh": "ScintPi/GNSS 闪烁简易工具",
       "analysis_zh": "面向 ScintPi 与 GNSS 闪烁数据的简单处理小工具集，适合教学与快速看图。功能边界窄，论文级闪烁指数与多站网分析需接更完整工具。",
-      "markers": []
+      "markers": [],
+      "desc_zh": "ScintPi/GNSS 闪烁简易工具",
+      "stars_approx": 1,
+      "source": "similar-finds-2026-09-14",
+      "featured": false,
+      "user_relation": "none"
     },
     {
       "name": "HASlibTestSuite",
@@ -8376,7 +8462,12 @@
       "host": "github",
       "one_liner_zh": "官方 HASlib 测试套件",
       "analysis_zh": "配套官方 HASlib 的测试套件，用于回归解码正确性。集成 HAS 前应用它核对版本兼容。",
-      "markers": []
+      "markers": [],
+      "desc_zh": "官方 HASlib 测试套件",
+      "stars_approx": 0,
+      "source": "similar-finds-2026-09-14",
+      "featured": false,
+      "user_relation": "none"
     },
     {
       "name": "HASlib.jl",
@@ -8390,7 +8481,415 @@
       "host": "github",
       "one_liner_zh": "HASlib 的 Julia 包装",
       "analysis_zh": "把 HASlib 思路接到 Julia 的社区包装，方便 Julia 用户试验 Galileo HAS。维护与功能覆盖可能落后官方 C 库，关键路径建议仍对照 nlsfi/HASlib。",
-      "markers": []
+      "markers": [],
+      "desc_zh": "HASlib 的 Julia 包装",
+      "stars_approx": 0,
+      "source": "similar-finds-2026-09-14",
+      "featured": false,
+      "user_relation": "none"
+    },
+    {
+      "name": "cssrlib",
+      "url": "https://github.com/hirokawa/cssrlib",
+      "desc_zh": "Python 开源 PPP/PPP-RTK 工具包（CLAS/HAS/BDS PPP/IGS SSR）",
+      "analysis_zh": "基于 RTKLIB 思路的 Python 工具包，解码 Compact SSR、RTCM/IGS SSR 等，对接 QZSS CLAS、Galileo HAS、北斗 PPP 与 IGS 服务做 PPP/PPP-RTK/RTK 教学与试验。附 Colab 教程，适合快速理解开放增强服务。实时生产与完好性需自测；与 MADOCALIB/CLASLIB/MRTKLIB 的 C 实现对照选型。",
+      "language": "Jupyter Notebook",
+      "license": "MIT",
+      "category": "gnss-positioning",
+      "subcategory": "PPP/PPP-RTK",
+      "markers": [
+        "core",
+        "similar-2026-09-14"
+      ],
+      "stars_approx": 211,
+      "source": "similar-finds-batch2-2026-09-14",
+      "featured": true,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "Python 开源 PPP/PPP-RTK 工具包（CLAS/HAS/BDS PPP/IGS SSR）"
+    },
+    {
+      "name": "cssrlib-data",
+      "url": "https://github.com/hirokawa/cssrlib-data",
+      "desc_zh": "CSSRlib 配套样例脚本与数据集",
+      "analysis_zh": "为 CSSRlib 提供样例脚本与试验观测/改正数据，方便本地或 Colab 复现 CLAS、HAS、BDS PPP 等开放服务流程。适合跟着官方教程跑通改正接入与定位。不是长期产品归档；业务数据请接 IGS 或各服务官方中心，并注意样例时段与电文版本。",
+      "language": "Python",
+      "license": "NOASSERTION",
+      "category": "gnss-datasets",
+      "subcategory": "PPP/PPP-RTK样例",
+      "markers": [
+        "similar-2026-09-14"
+      ],
+      "stars_approx": 44,
+      "source": "similar-finds-batch2-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "CSSRlib 配套样例脚本与数据集"
+    },
+    {
+      "name": "PocketSDR",
+      "url": "https://github.com/tomojitakasu/PocketSDR",
+      "desc_zh": "Tomoji Takasu 开源 GNSS 软件接收机（多星座多频 SDR）",
+      "analysis_zh": "RTKLIB 作者推出的开源 GNSS SDR：配套 Pocket SDR FE 前端与 Python/C/C++ 应用，覆盖 GPS/GLONASS/Galileo/QZSS/BDS/NavIC/SBAS 多频信号，可做捕获、跟踪、导航电文与 PVT。适合信号层教学与前端联调。精密 PPP/RTK 解算仍常外接 RTKLIB 系；硬件前端需另行采购或自备。",
+      "language": "C",
+      "license": "NOASSERTION",
+      "category": "gnss-sdr",
+      "subcategory": "软件接收机",
+      "markers": [
+        "core",
+        "similar-2026-09-14"
+      ],
+      "stars_approx": 515,
+      "source": "similar-finds-batch2-2026-09-14",
+      "featured": true,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "Tomoji Takasu 开源 GNSS 软件接收机（多星座多频 SDR）"
+    },
+    {
+      "name": "uNavTools",
+      "url": "https://github.com/IvAn190/uNavTools",
+      "desc_zh": "u-blox→RINEX 工具集，内置基于 CSSRlib 的 RTK/PPP",
+      "analysis_zh": "命令行工具把 u-blox 原始数据转到 RINEX，并借助 CSSRlib 提供 RTK/PPP 模块，适合低成本板卡到开放增强服务的试验链。工程联调与教学友好。完好性、多频模糊度固定与测地级产品化仍弱于 PRIDE/Ginan/MRTKLIB。",
+      "language": "Python",
+      "license": "",
+      "category": "gnss-data",
+      "subcategory": "RINEX工具",
+      "markers": [
+        "similar-2026-09-14"
+      ],
+      "stars_approx": 10,
+      "source": "similar-finds-batch2-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "u-blox→RINEX 工具集，内置基于 CSSRlib 的 RTK/PPP"
+    },
+    {
+      "name": "PPP-RTK-Beechan",
+      "url": "https://github.com/MichaelBeechan/PPP-RTK",
+      "desc_zh": "C 实现的 SPP/RTD/PPP/RTK/PPP-RTK 与 RAIM 试验库",
+      "analysis_zh": "汇总 SPP、RTD、PPP、RTK、PPP-RTK 及 RAIM/ARAIM 等模块的 C 试验工程，便于对照教材读差分、精密定位与完好性流程。适合算法学习与课堂演示。文档与维护节奏需自查；生产部署请优先 PRIDE、Ginan、MRTKLIB 等成熟套件并做回归。",
+      "language": "C",
+      "license": "",
+      "category": "gnss-positioning",
+      "subcategory": "PPP/PPP-RTK",
+      "markers": [
+        "similar-2026-09-14"
+      ],
+      "stars_approx": 26,
+      "source": "similar-finds-batch2-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "C 实现的 SPP/RTD/PPP/RTK/PPP-RTK 与 RAIM 试验库"
+    },
+    {
+      "name": "Easy4PTK",
+      "url": "https://github.com/alxanderjiang/Easy4PTK",
+      "desc_zh": "易移植的多星座 PPP-RTK Python 工具箱",
+      "analysis_zh": "Python/Jupyter 多星座 PPP-RTK 试验箱，强调可读与易移植，便于改状态估计、模糊度策略与改正接入。适合教学与方法原型验证。性能与电文覆盖通常弱于 cssrlib、MRTKLIB；产线或论文对比请用独立真值交叉验证。",
+      "language": "Jupyter Notebook",
+      "license": "",
+      "category": "gnss-positioning",
+      "subcategory": "PPP/PPP-RTK",
+      "markers": [
+        "similar-2026-09-14"
+      ],
+      "stars_approx": 5,
+      "source": "similar-finds-batch2-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "易移植的多星座 PPP-RTK Python 工具箱"
+    },
+    {
+      "name": "AETHER",
+      "url": "https://github.com/LiZhengXiao99/AETHER",
+      "desc_zh": "PPP-RTK 用区域 STEC/VTEC/ZWD/ZTD 大气建模",
+      "analysis_zh": "从 GNSS 观测抽取大气延迟，构建区域 STEC/VTEC 与 ZWD/ZTD 模型以增强 PPP-RTK 收敛与精度。适合研究大气约束对网络 RTK/PPP-RTK 的贡献。结果依赖测站网密度与初始解质量；不能替代全球 GIM 或官方对流层格网产品。",
+      "language": "C++",
+      "license": "GPL-3.0",
+      "category": "ionosphere",
+      "subcategory": "电离层与PPP",
+      "markers": [
+        "similar-2026-09-14"
+      ],
+      "stars_approx": 6,
+      "source": "similar-finds-batch2-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "PPP-RTK 用区域 STEC/VTEC/ZWD/ZTD 大气建模"
+    },
+    {
+      "name": "DeepPredTEC",
+      "url": "https://github.com/vtsuperdarn/DeepPredTEC",
+      "desc_zh": "深度学习预报 GPS TEC 图（SuperDARN 相关）",
+      "analysis_zh": "面向 GPS TEC 图时空预报的深度学习开源实现（SuperDARN 相关团队），可复现论文结构并作空间天气基线。适合电离层 ML 实验。工程同化与多源融合需自建；输入网格、缺失填充与评分指标要与业务 GIM 对齐后再谈业务化。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "TEC预报",
+      "markers": [
+        "similar-2026-09-14"
+      ],
+      "stars_approx": 13,
+      "source": "similar-finds-batch2-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "深度学习预报 GPS TEC 图（SuperDARN 相关）"
+    },
+    {
+      "name": "gnss-scintillation-simulator_2-param",
+      "url": "https://github.com/cu-sense-lab/gnss-scintillation-simulator_2-param",
+      "desc_zh": "CU Sense Lab 两参数 GNSS 闪烁仿真器",
+      "analysis_zh": "科罗拉多大学 Sense Lab 的两参数版 GNSS 闪烁仿真，相对完整版简化相位/幅度扰动建模，便于接收机与信号处理压力测试。适合教学与算法试验。真实赤道/极区场景请结合实测 ISMR 与原版多参数仿真器对照评估。",
+      "language": "MATLAB",
+      "license": "",
+      "category": "ionosphere",
+      "subcategory": "闪烁",
+      "markers": [
+        "similar-2026-09-14"
+      ],
+      "stars_approx": 6,
+      "source": "similar-finds-batch2-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "CU Sense Lab 两参数 GNSS 闪烁仿真器"
+    },
+    {
+      "name": "PPP-RTK-Ionosphere",
+      "url": "https://github.com/nickdaychen/PPP-RTK-Ionosphere",
+      "desc_zh": "MATLAB 侧 PPP-RTK 与电离层相关试验代码",
+      "analysis_zh": "围绕 PPP-RTK 与电离层约束/改正的 MATLAB 试验代码，便于改映射函数与随机模型做对比实验。适合课堂与方法验证。仓库说明偏少，输入改正产品与参考真值需自行准备；实时流与多星座完备性不是其主场。",
+      "language": "MATLAB",
+      "license": "",
+      "category": "ionosphere",
+      "subcategory": "电离层与PPP",
+      "markers": [
+        "similar-2026-09-14"
+      ],
+      "stars_approx": 7,
+      "source": "similar-finds-batch2-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "MATLAB 侧 PPP-RTK 与电离层相关试验代码"
+    },
+    {
+      "name": "pwv_kpno",
+      "url": "https://github.com/mwvgroup/pwv_kpno",
+      "desc_zh": "基于 SuomiNet GPS 的可定制站点 PWV 大气透过率模型",
+      "analysis_zh": "用 SuomiNet 等 GPS 反演的 PWV 驱动 MODTRAN 类大气透过率，默认服务 Kitt Peak，也可扩展到其它站点。面向天文测光改正与 GNSS 气象交叉验证。不是从 RINEX 估 ZWD 的 PPP 引擎；站点扩展需配置与文献引用。",
+      "language": "Python",
+      "license": "GPL-3.0",
+      "category": "troposphere",
+      "subcategory": "GNSS气象/PWV",
+      "markers": [
+        "similar-2026-09-14"
+      ],
+      "stars_approx": 11,
+      "source": "similar-finds-batch2-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "基于 SuomiNet GPS 的可定制站点 PWV 大气透过率模型"
+    },
+    {
+      "name": "geodezyx",
+      "url": "https://github.com/IPGP/geodezyx",
+      "desc_zh": "IPGP 大地测量/地球物理 Python 工具箱（含对流层/PWV）",
+      "analysis_zh": "巴黎地球物理研究所（IPGP）维护的 Python 大地测量/地球物理工具箱，大气模块可做 ZWD→PWV、GPT/VMF 相关接口调用。适合把 GNSS 气象量接到地球物理脚本。完整精密定位请另接专用引擎；网格文件与依赖版本需按文档准备。",
+      "language": "Python",
+      "license": "LGPL-3.0",
+      "category": "troposphere",
+      "subcategory": "GNSS气象/PWV",
+      "markers": [
+        "similar-2026-09-14"
+      ],
+      "stars_approx": 33,
+      "source": "similar-finds-batch2-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "IPGP 大地测量/地球物理 Python 工具箱（含对流层/PWV）"
+    },
+    {
+      "name": "gnssr-raspberry",
+      "url": "https://github.com/ITC-Water-Resources/gnssr-raspberry",
+      "desc_zh": "树莓派上的 GNSS 反射测量（ITC 水资源）",
+      "analysis_zh": "ITC Water Resources 在树莓派上运行的 GNSS 反射测量实验工程，面向低成本水文监测站。适合野外原型与教学演示。仓库星标较少、文档随版本变化；水位/土壤湿度产品建议对照 gnssrefl 与大地型天线结果。",
+      "language": "Python",
+      "license": "",
+      "category": "troposphere",
+      "subcategory": "GNSS-IR",
+      "markers": [
+        "similar-2026-09-14"
+      ],
+      "stars_approx": 3,
+      "source": "similar-finds-batch2-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "树莓派上的 GNSS 反射测量（ITC 水资源）"
+    },
+    {
+      "name": "PyRINEX",
+      "url": "https://github.com/geumjin99/PyRINEX",
+      "desc_zh": "多用途 Python RINEX 读写与质量分析包",
+      "analysis_zh": "面向 RINEX 2/3 的 Python 包，支持批处理、多路径与周跳等质量相关分析，可作为 TEQC/Anubis 之外的脚本化 QC 选项。适合自动化质控流水线。指标定义与报告格式因版本而异，正式归档前请与 Anubis/GFZRNX 交叉核对。",
+      "language": "Python",
+      "license": "",
+      "category": "gnss-data",
+      "subcategory": "多路径/QC",
+      "markers": [
+        "similar-2026-09-14"
+      ],
+      "stars_approx": 16,
+      "source": "similar-finds-batch2-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "多用途 Python RINEX 读写与质量分析包"
+    },
+    {
+      "name": "AgOpenNtripCaster",
+      "url": "https://github.com/AgOpenGPS-Official/AgOpenNtripCaster",
+      "desc_zh": "AgOpenGPS 生态的开源 NTRIP Caster（C#）",
+      "analysis_zh": "面向农业自动驾驶与 AgOpenGPS 社区的 NTRIP 播发端（C#），便于农场自建差分播发。适合 DIY CORS 与农机联调。运维、认证与安全加固通常弱于 BKG 级 caster；公网部署需自行处理账号与带宽监控。",
+      "language": "C#",
+      "license": "",
+      "category": "gnss-data",
+      "subcategory": "RTCM/NTRIP",
+      "markers": [
+        "similar-2026-09-14"
+      ],
+      "stars_approx": 10,
+      "source": "similar-finds-batch2-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "AgOpenGPS 生态的开源 NTRIP Caster（C#）"
+    },
+    {
+      "name": "ntripcaster-docker-bkg",
+      "url": "https://github.com/goblimey/ntripcaster",
+      "desc_zh": "容器化构建与运行 BKG NTRIP Caster 的 Docker 方案",
+      "analysis_zh": "提供 Dockerfile 与说明，方便构建并运行经典 BKG NTRIP Caster，降低在自有服务器部署播发端的门槛。适合运维与教学试验。上游 BKG 许可与版本须单独遵守；生产环境还应配置监控、TLS 与用户管理。",
+      "language": "C",
+      "license": "GPL-3.0",
+      "category": "gnss-data",
+      "subcategory": "RTCM/NTRIP",
+      "markers": [
+        "similar-2026-09-14"
+      ],
+      "stars_approx": 139,
+      "source": "similar-finds-batch2-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "容器化构建与运行 BKG NTRIP Caster 的 Docker 方案"
+    },
+    {
+      "name": "ntripcaster-libev",
+      "url": "https://github.com/tisyang/ntripcaster",
+      "desc_zh": "基于 libev 的高性能 NTRIP Broadcaster（C）",
+      "analysis_zh": "基于 C 与 libev 的事件驱动 NTRIP Broadcaster，强调吞吐与并发连接，适合自建 CORS 中继与播发试验。可与同作者 cors-relay 等工具搭配。协议细节与管理界面因版本而异，公网服务请自行做认证与加固。",
+      "language": "C",
+      "license": "BSD-3-Clause",
+      "category": "gnss-data",
+      "subcategory": "RTCM/NTRIP",
+      "markers": [
+        "similar-2026-09-14"
+      ],
+      "stars_approx": 68,
+      "source": "similar-finds-batch2-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "基于 libev 的高性能 NTRIP Broadcaster（C）"
+    },
+    {
+      "name": "baidu-ntripcaster",
+      "url": "https://github.com/baidu/ntripcaster",
+      "desc_zh": "百度开源的 NTRIP Caster 实现",
+      "analysis_zh": "百度公开的 NTRIP Caster 相关实现，可作自建播发与协议学习的对照样本。适合对比 BKG 与社区实现看消息路由。文档与许可声明以仓库当前文件为准；上线前须完成压力、安全与兼容性测试。",
+      "language": "C",
+      "license": "NOASSERTION",
+      "category": "gnss-data",
+      "subcategory": "RTCM/NTRIP",
+      "markers": [
+        "similar-2026-09-14"
+      ],
+      "stars_approx": 46,
+      "source": "similar-finds-batch2-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "百度开源的 NTRIP Caster 实现"
+    },
+    {
+      "name": "ublox_dgnss",
+      "url": "https://github.com/aussierobots/ublox_dgnss",
+      "desc_zh": "ROS2 u-blox UBX 驱动（F9P/F9R/X20P 差分与移动基站）",
+      "analysis_zh": "面向 ROS2 的 u-blox UBX USB 驱动，支持 ZED-F9P/F9R/X20P 等高精度模块，含差分与 moving-base 配置。适合机器人/车载室外定位联调。不是测地级 PPP 引擎；精密解算请外接 RTKLIB 或科研软件。",
+      "language": "C++",
+      "license": "Apache-2.0",
+      "category": "navigation-ins",
+      "subcategory": "GNSS/INS",
+      "markers": [
+        "similar-2026-09-14"
+      ],
+      "stars_approx": 86,
+      "source": "similar-finds-batch2-2026-09-14",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "ROS2 u-blox UBX 驱动（F9P/F9R/X20P 差分与移动基站）"
+    },
+    {
+      "name": "PPP-Wizard",
+      "url": "http://www.ppp-wizard.net/",
+      "desc_zh": "CNES PPP-WIZARD：整数模糊度 PPP-AR 演示与产品门户",
+      "analysis_zh": "法国空间研究中心（CNES）PPP-WIZARD 项目门户，介绍零差整数模糊度 PPP-AR 演示软件、SSR 计算与日产品/监测入口。适合了解 CNES 实时 PPP-AR 路线并申请软件包。源码不在本页直接 git 克隆；获取方式与许可以官网说明为准，并与 IGS 实时流配合使用。",
+      "language": "C++",
+      "license": "see upstream",
+      "category": "gnss-positioning",
+      "subcategory": "PPP/PPP-AR",
+      "markers": [
+        "core",
+        "similar-2026-09-14"
+      ],
+      "stars_approx": null,
+      "source": "similar-finds-batch2-2026-09-14",
+      "featured": true,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "CNES PPP-WIZARD：整数模糊度 PPP-AR 演示与产品门户"
     }
   ],
   "provenance_counts": {

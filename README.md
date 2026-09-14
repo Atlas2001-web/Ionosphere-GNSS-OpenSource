@@ -3,7 +3,7 @@
 **电离层 · 对流层 · GNSS · 导航（PNT）开源软件精选索引**  
 Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation
 
-[![Projects](https://img.shields.io/badge/verified%20projects-448-blue.svg)](./PROJECTS.json)
+[![Projects](https://img.shields.io/badge/verified%20projects-468-blue.svg)](./PROJECTS.json)
 [![License: CC0](https://img.shields.io/badge/catalog%20license-CC0--1.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
 > **这是链接索引（curated index），不是代码大合集。**  
@@ -15,7 +15,7 @@ Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation
 
 1. 先读 [分类说明](./docs/categories.md)，弄清自己处在数据→改正→定位→组合导航的哪一段  
 2. 打开下方对应的 `lists/*.md`，里面有**表格 + 每条项目的详细中文分析**  
-3. 机器可读清单：[`PROJECTS.json`](./PROJECTS.json)  
+3. 机器可读清单：[`PROJECTS.json`](./PROJECTS.json) · 相似项目检索：[`research/similar_finds.json`](./research/similar_finds.json)  
 4. 克隆上游，不要把第三方源码拷进本仓库
 
 ### 标记
@@ -26,11 +26,11 @@ Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation
 | 🏷️ 高校实验室 | 大学课题组维护 |
 | 🏷️ 个人社区 | 个人或小团队/社区 |
 | 🚩 | 维护者自有公开仓库（仅收录链接，不写详细介绍） |
-| 🔀 | 维护者已 fork（表中列上游） |
+| 🔀 | 维护者已 fork（表中列上游；fork 地址见项目页） |
 | ★ | 维护者 GitHub 星标种子 |
 | 核心 | 建议优先阅读 |
 
-来源统计：官方 **109** · 高校实验室 **89** · 个人社区 **233**
+来源统计：官方 **112** · 高校实验室 **104** · 个人社区 **252**
 
 ---
 
@@ -38,17 +38,17 @@ Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation
 
 | 分类 | 适合谁 | 列表 | 数量 |
 |---|---|---|---:|
-| **电离层** `ionosphere` | 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与… | [01-ionosphere.md](./lists/01-ionosphere.md) | 81 |
-| **对流层** `troposphere` | 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，… | [02-troposphere.md](./lists/02-troposphere.md) | 22 |
-| **GNSS 数据与格式** `gnss-data` | RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与… | [03-gnss-data.md](./lists/03-gnss-data.md) | 52 |
-| **精密定位** `gnss-positioning` | SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优… | [04-gnss-positioning.md](./lists/04-gnss-positioning.md) | 68 |
+| **电离层** `ionosphere` | 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与… | [01-ionosphere.md](./lists/01-ionosphere.md) | 85 |
+| **对流层** `troposphere` | 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，… | [02-troposphere.md](./lists/02-troposphere.md) | 25 |
+| **GNSS 数据与格式** `gnss-data` | RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与… | [03-gnss-data.md](./lists/03-gnss-data.md) | 81 |
+| **精密定位** `gnss-positioning` | SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优… | [04-gnss-positioning.md](./lists/04-gnss-positioning.md) | 72 |
 | **轨道与钟差** `orbit-clock` | 精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立小库较少，多见于大型套件。 | [05-orbit-clock.md](./lists/05-orbit-clock.md) | 9 |
-| **导航** `navigation-ins` | GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。 | [06-navigation-ins.md](./lists/06-navigation-ins.md) | 48 |
-| **软件接收机与信号** `gnss-sdr` | 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。 | [07-gnss-sdr.md](./lists/07-gnss-sdr.md) | 55 |
+| **导航** `navigation-ins` | GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。 | [06-navigation-ins.md](./lists/06-navigation-ins.md) | 50 |
+| **软件接收机与信号** `gnss-sdr` | 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。 | [07-gnss-sdr.md](./lists/07-gnss-sdr.md) | 56 |
 | **移动与嵌入式应用** `mobile-apps` | 手机/嵌入式上的 GNSS 测试、原始测量记录与简易定位。 | [08-mobile-apps.md](./lists/08-mobile-apps.md) | 11 |
 | **学习资源与工具** `tools-learning` | awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。 | [09-tools-learning.md](./lists/09-tools-learning.md) | 26 |
-| **GNSS 数据源** `gnss-datasets` | 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。 | [10-gnss-datasets.md](./lists/10-gnss-datasets.md) | 51 |
-| **合计** | | [`PROJECTS.json`](./PROJECTS.json) | **448** |
+| **GNSS 数据源** `gnss-datasets` | 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。 | [10-gnss-datasets.md](./lists/10-gnss-datasets.md) | 53 |
+| **合计** | | [`PROJECTS.json`](./PROJECTS.json) | **468** |
 
 ---
 
@@ -60,6 +60,7 @@ Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation
 
 | 项目 | 简介 | 标记 |
 |---|---|---|
+| [SH-GIM](https://github.com/Atlas2001-web/SH-GIM) | 球谐展开全球电离层图（GIM）MATLAB 实现（维护者自有，此处不展开） | 🏷️ 个人社区 · 🚩 |
 | [Galileo-NeQuick-G](https://www.gsc-europa.eu/support-to-developers/ionospheric-correction-algorithms/galileo-nequick-g-source-code) | 欧盟 GSC 发布的 Galileo 单频电离层改正 NeQuick G 官方 C 源码 | 🏷️ 官方 · 核心 |
 | [gnss-tec](https://github.com/gnss-lab/gnss-tec) | 由 RINEX 载波/伪距重建斜路径 TEC | 🏷️ 高校实验室 · 核心 |
 | [ionex](https://github.com/gnss-lab/ionex) | Python 读取 IONEX 电离层图文件 | 🏷️ 高校实验室 · 核心 |
@@ -67,7 +68,6 @@ Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation
 | [IRI-2026-package](https://irimodel.org/IRI-2026/) | IRI-2026 官方 Fortran 最新源码包目录 | 🏷️ 官方 · 核心 |
 | [IRI-COMMON-FILES](https://irimodel.org/COMMON_FILES/) | 各版 IRI 共用的系数/公共文件目录（官网明确要求另下） | 🏷️ 官方 · 核心 |
 | [IRI-Fortran](https://irimodel.org/) | COSPAR/URSI 官方 IRI 经验电离层模型 Fortran 源码与系数包 | 🏷️ 官方 · 核心 |
-| [IRI-MATLAB-FileExchange](https://www.mathworks.com/matlabcentral/fileexchange/34863-international-reference-ionosphere-iri-model) | irimodel.org 官方指向的 IRI MATLAB 封装（File Exchange，含 2012/2016） | 🏷️ 官方 · 核心 |
 
 ## 对流层 / Troposphere
 
@@ -117,7 +117,7 @@ SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现
 
 ## 轨道与钟差 / Orbit & Clock
 
-精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在大型套件中。
+精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。
 
 完整列表与逐项分析 → [05-orbit-clock.md](./lists/05-orbit-clock.md)
 
@@ -128,7 +128,7 @@ SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现
 | [GREAT_PODFLT](https://github.com/GREAT-WHU/GREAT_PODFLT) | GREAT 多星座实时滤波精密定轨（POD）模块 | 🏷️ 高校实验室 · 核心 |
 | [SPOCC](https://gnss.gfz.de/services/spocc) | GFZ SPOCC：多 GNSS 精密轨道与钟差加权综合软件 | 🏷️ 官方 · 核心 |
 
-## 导航 / GNSS-INS
+## 导航 / Navigation & INS
 
 GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 
@@ -156,6 +156,7 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 | [FGI-GSRx](https://github.com/nlsfi/FGI-GSRx) | 芬兰 FGI 多星座 MATLAB 软件接收机 | 🏷️ 官方 · 核心 |
 | [gnss-sdr](https://github.com/gnss-sdr/gnss-sdr) | 开源 GNSS 软件定义接收机 | 🏷️ 高校实验室 · 核心 |
 | [gps-sdr-sim](https://github.com/osqzss/gps-sdr-sim) | GPS L1 基带信号仿真（SDR 回放） | 🏷️ 个人社区 · 核心 |
+| [PocketSDR](https://github.com/tomojitakasu/PocketSDR) | Tomoji Takasu 开源 GNSS 软件接收机（多星座多频 SDR） | 🏷️ 个人社区 · 核心 |
 
 ## 移动与嵌入式应用 / Mobile Apps
 
@@ -179,9 +180,9 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 | [awesome-gnss](https://github.com/barbeau/awesome-gnss) | 开源 GNSS 软件与资源社区列表 | 🏷️ 个人社区 · 核心 |
 | [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning) | 导航定位开源项目解读与学习笔记（中文） | 🏷️ 个人社区 · ★ Star · 核心 |
 
-## GNSS 数据源 / GNSS Data Sources
+## GNSS 数据源 / GNSS Datasets
 
-已核验的 GNSS 相关数据门户与产品库：RINEX 观测/导航、SP3/CLK、IONEX/GIM、对流层格网、偏差产品、实时流、CORS 区域网、掩星与空间天气等。侧重「去哪里拿数据」，不是软件工具。
+需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
 完整列表与逐项分析 → [10-gnss-datasets.md](./lists/10-gnss-datasets.md)
 
@@ -198,6 +199,6 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 
 ---
 
-## 许可与免责
+## 许可
 
-本目录文本采用 [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)。各上游项目保留其原许可证；闭源免费工具在条目中标注 `proprietary-freeware`。
+本**目录**以 [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) 贡献；各上游软件许可证以其仓库为准。
