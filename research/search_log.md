@@ -211,3 +211,39 @@
 - Regenerated `lists/*.md`, `README.md` counts/badge, `docs/categories.md`.
 - Did **not** overwrite `research/new_finds.json` (prior 255 merge).
 - Did **not** git push.
+
+
+## Web expansion 2026-09-14
+
+- web_finds.json: 36 candidates
+- merged new: 36
+- skipped: 0
+- catalog total: 345
+- provenance: {'personal_community': 226, 'official': 39, 'academic_lab': 80}
+
+
+## Web expansion 2026-09-14
+
+- web_finds.json: 42 candidates
+- merged new: 6
+- skipped: 36
+- catalog total: 351
+- provenance: {'personal_community': 226, 'official': 44, 'academic_lab': 81}
+
+
+## Web expansion 2026-09-14
+
+- web_finds.json: 42 candidates
+- merged new: 0
+- skipped: 42
+- catalog total: 351
+- provenance: {'personal_community': 226, 'official': 44, 'academic_lab': 81}
+
+
+## Web expansion 2026-09-14
+
+- web_finds.json: 42 candidates
+- merged new: 0
+- skipped: 42
+- catalog total: 351
+- provenance: {'personal_community': 226, 'official': 44, 'academic_lab': 81}

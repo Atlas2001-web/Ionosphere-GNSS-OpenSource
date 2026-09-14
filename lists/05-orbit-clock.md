@@ -1,64 +1,99 @@
 # 轨道与钟差 / Orbit & Clock
-> 共 **6** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **9** 个已收录项目。本文件为链接索引，不含第三方源码。
 
-**这类做什么？** 精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。
+**这类做什么？** 精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在大型套件中。
+
+来源标记：🏷️ 官方 = 机构/国家实验室；🏷️ 高校实验室 = 大学课题组；🏷️ 个人社区 = 个人或小团队。
 
 ## 时间比对
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [cggtts](https://github.com/nav-solutions/cggtts) | CGGTTS 远程时间比对解析与调度 | Rust | 18 |  |
+| [cggtts](https://github.com/nav-solutions/cggtts) | CGGTTS 远程时间比对解析与调度 | Rust | 18 | 🏷️ 个人社区 |
 
 ### 详细说明
 
-#### [cggtts](https://github.com/nav-solutions/cggtts)
+#### [cggtts](https://github.com/nav-solutions/cggtts)  
+*🏷️ 个人社区*
 
-语言：Rust · 许可：MPL-2.0 · 星标约：18
+语言：Rust · 许可：MPL-2.0 · 星标约：18 · 宿主：github
 
 处理 CGGTTS 格式与轨迹调度，服务 GNSS 共视/全视时间比对。适合时间频率实验室。一般导航定位用户用不上。
 
+## 轨道钟差综合
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [GFZ-SPOCC-news](https://www.gfz.de/en/section/space-geodetic-techniques/overview/details-section-news/veroeffentlichung-der-software-for-precise-orbit-and-clock-combination-spocc-1) | GFZ 发布 SPOCC 的新闻说明：多 GNSS 轨道钟差综合开源 | Python | — | 🏷️ 官方 |
+| [IGSMAIL-SPOCC](https://lists.igs.org/pipermail/igsmail/2025/008556.html) | IGSmail：SPOCC 轨道钟差综合软件向社区发布的公告 | text | — | 🏷️ 官方 |
+| [SPOCC](https://gnss.gfz.de/services/spocc) | GFZ SPOCC：多 GNSS 精密轨道与钟差加权综合软件 | Python | — | 🏷️ 官方 · 核心 |
+
+### 详细说明
+
+#### [GFZ-SPOCC-news](https://www.gfz.de/en/section/space-geodetic-techniques/overview/details-section-news/veroeffentlichung-der-software-for-precise-orbit-and-clock-combination-spocc-1)  
+*🏷️ 官方*
+
+语言：Python · 许可：open (GFZ release) · 星标约：— · 宿主：official_site
+
+GFZ 正式介绍 SPOCC 背景与目标的新闻页，说明从原型到可发布 Python/Docker 包的过程，并指向 gnss.gfz.de 下载。适合了解发布动机与组合策略；实际安装、配置与示例仍以软件服务页及用户文档为准。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。
+
+#### [IGSMAIL-SPOCC](https://lists.igs.org/pipermail/igsmail/2025/008556.html)  
+*🏷️ 官方*
+
+语言：text · 许可：n/a (announcement) · 星标约：— · 宿主：official_site
+
+国际 GNSS 服务邮件列表中关于 SPOCC 开源发布的公告，确认软件面向多星座轨道与钟差加权综合，并给出 GFZ 服务页链接。属于官方发布记录，便于引用发布时间线；获取软件请转服务页，本页本身不是代码仓。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。
+
+#### [SPOCC](https://gnss.gfz.de/services/spocc)  
+*🏷️ 官方 · 核心*
+
+语言：Python · 许可：open (GFZ release) · 星标约：— · 宿主：official_site
+
+GFZ 发布的 Software for Precise Orbit and Clock Combination，用方差分量估计对多家分析中心 SP3/CLK 做多星座加权综合，并提供 Docker。面向 IGS 组合与 PPP 用户产品试验。2025 年起经 IGSmail 公开；输入需标准轨道钟差格式，不是单站 PPP 引擎。
 
 ## 钟差/轨道/UPD
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GREAT-UPD](https://github.com/GREAT-WHU/GREAT-UPD) | 武大 GREAT 开源多星座 UPD（未校准相位延迟）估计软件 | C++ | 19 | 核心 |
-| [GREAT_PODFLT](https://github.com/GREAT-WHU/GREAT_PODFLT) | GREAT 多星座实时滤波精密定轨（POD）模块 | C++ | 17 | 核心 |
-| [GREAT-IFCB](https://github.com/GREAT-WHU/GREAT-IFCB) | 多 GNSS 频间钟差（IFCB）估计开源软件 | C++ | 15 |  |
-| [rt-clk-service](https://github.com/DoubleString/rt-clk-service) | 实时 GNSS 钟差/轨道/UPD/IFPB 服务相关 | C++ | 12 |  |
-| [GREAT-PCE](https://github.com/GREAT-WHU/GREAT-PCE) | 武大 GREAT 团队精密卫星钟差估计软件 | C++ | 9 | 核心 |
+| [GREAT-UPD](https://github.com/GREAT-WHU/GREAT-UPD) | 武大 GREAT 开源多星座 UPD（未校准相位延迟）估计软件 | C++ | 19 | 🏷️ 高校实验室 · 核心 |
+| [GREAT_PODFLT](https://github.com/GREAT-WHU/GREAT_PODFLT) | GREAT 多星座实时滤波精密定轨（POD）模块 | C++ | 17 | 🏷️ 高校实验室 · 核心 |
+| [GREAT-IFCB](https://github.com/GREAT-WHU/GREAT-IFCB) | 多 GNSS 频间钟差（IFCB）估计开源软件 | C++ | 15 | 🏷️ 高校实验室 |
+| [rt-clk-service](https://github.com/DoubleString/rt-clk-service) | 实时 GNSS 钟差/轨道/UPD/IFPB 服务相关 | C++ | 12 | 🏷️ 个人社区 |
+| [GREAT-PCE](https://github.com/GREAT-WHU/GREAT-PCE) | 武大 GREAT 团队精密卫星钟差估计软件 | C++ | 9 | 🏷️ 高校实验室 · 核心 |
 
 ### 详细说明
 
-#### [GREAT-UPD](https://github.com/GREAT-WHU/GREAT-UPD)  
-*核心*
+#### [GREAT-IFCB](https://github.com/GREAT-WHU/GREAT-IFCB)  
+*🏷️ 高校实验室*
 
-语言：C++ · 许可：GPL-3.0 · 星标约：19
+语言：C++ · 许可：GPL-3.0 · 星标约：15 · 宿主：github
+
+武大 GREAT 组开源的多星座频间钟差（IFCB）估计工具，服务于精密钟差与偏差产品链路，与 GREAT-PVT 等同一研究线。做三频 PPP、相位偏差与钟差产品的人应关注。它是独立小工具，不替代完整 POD 套件；轨道与 UPD/OSB 能力仍多见诸 Ginan、PRIDE、GROOPS 等大型系统。
+
+#### [GREAT-PCE](https://github.com/GREAT-WHU/GREAT-PCE)  
+*🏷️ 高校实验室 · 核心*
+
+语言：C++ · 许可：GPL-3.0 · 星标约：9 · 宿主：github
+
+聚焦精密卫星钟差估计，可与 GREAT-UPD、POD 模块组成轨道钟差产品链，服务 PPP 与时间传递相关研究。适合钟差建模、实时/事后产品试验。输入轨道与地面站网质量决定上限；若目标只是终端定位，通常直接使用 IGS/分析中心钟差即可，不必自建整条钟差产线。
+
+#### [GREAT-UPD](https://github.com/GREAT-WHU/GREAT-UPD)  
+*🏷️ 高校实验室 · 核心*
+
+语言：C++ · 许可：GPL-3.0 · 星标约：19 · 宿主：github
 
 专门估计多星座 GNSS UPD/未校准相位延迟类产品，为 PPP-AR 模糊度固定提供相位偏差输入。适合需要自建相位偏差链路的课题组与教学演示。产品字段与 IGS OSB/UPD 惯例必须对齐才能接到 PRIDE 等下游；参考卫星选择、日边界与站网几何会直接影响稳定性，发布前应用公开网做交叉检验。
 
 #### [GREAT_PODFLT](https://github.com/GREAT-WHU/GREAT_PODFLT)  
-*核心*
+*🏷️ 高校实验室 · 核心*
 
-语言：C++ · 星标约：17
+语言：C++ · 许可：— · 星标约：17 · 宿主：github
 
 执行多 GNSS 实时滤波精密轨道确定（POD），偏产品生成与定轨算法验证，而非终端定位。适合轨道/钟差方向研究生对照 GREAT 流水线。公开算例与力模型文档完整度需自查；与 Ginan、GROOPS 等大型套件相比，更适合精读 GREAT 定轨滤波环节，而不是替代整套业务定轨系统。
 
-#### [GREAT-IFCB](https://github.com/GREAT-WHU/GREAT-IFCB)
+#### [rt-clk-service](https://github.com/DoubleString/rt-clk-service)  
+*🏷️ 个人社区*
 
-语言：C++ · 许可：GPL-3.0 · 星标约：15
-
-武大 GREAT 组开源的多星座频间钟差（IFCB）估计工具，服务于精密钟差与偏差产品链路，与 GREAT-PVT 等同一研究线。做三频 PPP、相位偏差与钟差产品的人应关注。它是独立小工具，不替代完整 POD 套件；轨道与 UPD/OSB 能力仍多见诸 Ginan、PRIDE、GROOPS 等大型系统。
-
-#### [rt-clk-service](https://github.com/DoubleString/rt-clk-service)
-
-语言：C++ · 星标约：12
+语言：C++ · 许可：— · 星标约：12 · 宿主：github
 
 面向实时钟差、轨道与 UPD/IFPB 等偏差产品的服务向代码，贴近 PPP-AR 实时链。适合研究实时产品生成。公开完整度有限，需自备数据与对照 IGS 产品。
-
-#### [GREAT-PCE](https://github.com/GREAT-WHU/GREAT-PCE)  
-*核心*
-
-语言：C++ · 许可：GPL-3.0 · 星标约：9
-
-聚焦精密卫星钟差估计，可与 GREAT-UPD、POD 模块组成轨道钟差产品链，服务 PPP 与时间传递相关研究。适合钟差建模、实时/事后产品试验。输入轨道与地面站网质量决定上限；若目标只是终端定位，通常直接使用 IGS/分析中心钟差即可，不必自建整条钟差产线。

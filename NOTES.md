@@ -63,3 +63,16 @@
 - 分类计数：{'ionosphere': 52, 'troposphere': 13, 'gnss-data': 56, 'gnss-positioning': 55, 'orbit-clock': 6, 'navigation-ins': 48, 'gnss-sdr': 53, 'mobile-apps': 11, 'tools-learning': 15}
 - 检索日志：`research/search_log.md`
 - 未改写既有 analysis；`new_finds.json` 保留前次合并结果
+
+## Web/官方扩充（2026-09-14）
+
+- 写入 `research/web_finds.json`：**42** 条经 curl/Web 核验的官方/高校/社区站点条目（原创中文简介）
+- 合并入 `PROJECTS.json` 净增 **42**（309→351；原已有 BNC/RNXCMP/VMF/Anubis/EGNOS 等仅富化）
+- 全量补齐 `provenance` + `host`；列表/README 显示 🏷️ 官方 / 高校实验室 / 个人社区
+- ntripserver / ntripclient / rtcm3torinex 改挂 RTCM-Ntrip 官方 wiki
+- 新增代表：IRI 官方、Galileo NeQuick G、gLAB-UPC、BKG Caster、TEQC、GFZRNX、SPOCC、EarthScope gnsstools、gpsd、HTDP、GA Ginan 门户等
+- **未 git push**
+
+来源统计：official=44, academic_lab=81, personal_community=226  
+当前总条目：**351**
+
