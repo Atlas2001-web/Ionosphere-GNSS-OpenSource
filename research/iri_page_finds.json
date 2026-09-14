@@ -1,0 +1,76 @@
+[
+  {
+    "name": "IRI-MATLAB-FileExchange",
+    "url": "https://www.mathworks.com/matlabcentral/fileexchange/34863-international-reference-ionosphere-iri-model",
+    "category": "ionosphere",
+    "subcategory": "IRI模型",
+    "language": "MATLAB",
+    "license": null,
+    "stars": null,
+    "provenance": "official",
+    "host": "official_site",
+    "one_liner_zh": "irimodel.org 官方指向的 IRI MATLAB 封装（File Exchange，含 2012/2016）",
+    "analysis_zh": "国际参考电离层工作组官网明确列出的 MATLAB 版本入口，指向 MathWorks File Exchange 条目，覆盖 IRI-2012 与 IRI-2016 的 MATLAB 调用。适合已经在用 MATLAB 做电离层气候态对比、不想先啃 Fortran 编译链的人。这不是 GitHub 仓，下载与许可以 File Exchange 页面为准；要最新 Fortran 物理更新仍应回到 irimodel.org 的 IRI-2020/2026 源码包。与 space-physics/iri2016 等第三方包装不同，本条目以官网推荐链接为准。",
+    "markers": [
+      "core"
+    ]
+  },
+  {
+    "name": "pyglow",
+    "url": "https://github.com/timduly4/pyglow",
+    "category": "ionosphere",
+    "subcategory": "IRI模型",
+    "language": "Python/Fortran",
+    "license": "MIT",
+    "stars": 117,
+    "provenance": "personal_community",
+    "host": "github",
+    "one_liner_zh": "Python 上层大气气候态库，包装 IRI-2012/2016 等（irimodel 官网推荐）",
+    "analysis_zh": "把 IRI 等上层大气经验模型接到 Python，irimodel.org 在「pyglow」一行直接链到本仓库，说明它是社区里常用的 IRI-2012/2016 包装路径。适合脚本化批量取 Ne/Te 剖面、和 GNSS TEC 产品做气候态对照。底层仍依赖 Fortran 模型文件与指数更新；跟官方最新 IRI-2020/2026 发布节奏可能不同步，精密业务应核对所绑版本。许可 MIT，比部分需注册的官方 C 发行更好集成。",
+    "markers": [
+      "core"
+    ]
+  },
+  {
+    "name": "IRI-2016-package",
+    "url": "https://irimodel.org/IRI-2016/",
+    "category": "ionosphere",
+    "subcategory": "IRI模型",
+    "language": "Fortran",
+    "license": null,
+    "stars": null,
+    "provenance": "official",
+    "host": "official_site",
+    "one_liner_zh": "IRI-2016 官方 Fortran 源码与系数包目录",
+    "analysis_zh": "COSPAR/URSI IRI 工作组在 irimodel.org 发布的 IRI-2016 源码目录，含 Fortran 子程序、系数与说明。很多文献与 MATLAB/pyglow 包装仍对齐这一代。新研究若无追踪官方最新物理选项，应同时看 IRI-2020/2026；指数文件需按官网说明单独更新。",
+    "markers": []
+  },
+  {
+    "name": "IRI-2012-package",
+    "url": "https://irimodel.org/IRI-2012/",
+    "category": "ionosphere",
+    "subcategory": "IRI模型",
+    "language": "Fortran",
+    "license": null,
+    "stars": null,
+    "provenance": "official",
+    "host": "official_site",
+    "one_liner_zh": "IRI-2012 官方 Fortran 源码包（含轨道剖面示例程序）",
+    "analysis_zh": "官方 IRI-2012 发行目录。官网特别提到该版带有 iriorbit 一类沿卫星轨道取 IRI 参数的示例程序，适合空间任务剖面复现与旧论文对照。功能与数据源已有后续版本更新；除非复现 2012 时代结果，新项目优先 IRI-2020/2026，MATLAB/pyglow 用户也要分清自己绑的是哪一代。",
+    "markers": []
+  },
+  {
+    "name": "CCMC-IRI-online",
+    "url": "https://ccmc.gsfc.nasa.gov/models/IRI~2020/",
+    "category": "ionosphere",
+    "subcategory": "IRI模型",
+    "language": null,
+    "license": null,
+    "stars": null,
+    "provenance": "official",
+    "host": "official_site",
+    "one_liner_zh": "NASA CCMC 在线运行与说明页（IRI-2020）",
+    "analysis_zh": "NASA 社区协调建模中心提供的 IRI 在线计算与模型说明入口，适合快速查剖面、看输入开关，而不是本地二次开发。要嵌入自己的 GNSS/TEC 流水线仍需下载 irimodel Fortran 或 Python/MATLAB 包装。页面会指向模型版本与相关文献，可作为官方文档跳板。",
+    "markers": []
+  }
+]

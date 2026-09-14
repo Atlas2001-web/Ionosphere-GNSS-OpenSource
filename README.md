@@ -3,7 +3,7 @@
 **电离层 · 对流层 · GNSS · 导航（PNT）开源软件精选索引**  
 Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation
 
-[![Projects](https://img.shields.io/badge/verified%20projects-351-blue.svg)](./PROJECTS.json)
+[![Projects](https://img.shields.io/badge/verified%20projects-356-blue.svg)](./PROJECTS.json)
 [![License: CC0](https://img.shields.io/badge/catalog%20license-CC0--1.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
 > **这是链接索引（curated index），不是代码大合集。**  
@@ -30,7 +30,7 @@ Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation
 | ★ | 维护者 GitHub 星标种子 |
 | 核心 | 建议优先阅读 |
 
-来源统计：官方 **44** · 高校实验室 **81** · 个人社区 **226**
+来源统计：官方 **227** · 高校实验室 **81** · 个人社区 **226**
 
 ---
 
@@ -38,7 +38,7 @@ Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation
 
 | 分类 | 适合谁 | 列表 | 数量 |
 |---|---|---|---:|
-| **电离层** `ionosphere` | 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与… | [01-ionosphere.md](./lists/01-ionosphere.md) | 58 |
+| **电离层** `ionosphere` | 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与… | [01-ionosphere.md](./lists/01-ionosphere.md) | 63 |
 | **对流层** `troposphere` | 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，… | [02-troposphere.md](./lists/02-troposphere.md) | 14 |
 | **GNSS 数据与格式** `gnss-data` | RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与… | [03-gnss-data.md](./lists/03-gnss-data.md) | 72 |
 | **精密定位** `gnss-positioning` | SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优… | [04-gnss-positioning.md](./lists/04-gnss-positioning.md) | 58 |
@@ -47,7 +47,7 @@ Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation
 | **软件接收机与信号** `gnss-sdr` | 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。 | [07-gnss-sdr.md](./lists/07-gnss-sdr.md) | 55 |
 | **移动与嵌入式应用** `mobile-apps` | 手机/嵌入式上的 GNSS 测试、原始测量记录与简易定位。 | [08-mobile-apps.md](./lists/08-mobile-apps.md) | 11 |
 | **学习资源与工具** `tools-learning` | awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。 | [09-tools-learning.md](./lists/09-tools-learning.md) | 26 |
-| **合计** | | [`PROJECTS.json`](./PROJECTS.json) | **351** |
+| **合计** | | [`PROJECTS.json`](./PROJECTS.json) | **356** |
 
 ---
 
@@ -56,6 +56,8 @@ Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
 完整列表与逐项分析 → [01-ionosphere.md](./lists/01-ionosphere.md)
+
+本轮官网补录：[IRI MATLAB（File Exchange）](https://www.mathworks.com/matlabcentral/fileexchange/34863-international-reference-ionosphere-iri-model) · [pyglow](https://github.com/timduly4/pyglow) · [IRI-2016 包](https://irimodel.org/IRI-2016/) · [IRI-2012 包](https://irimodel.org/IRI-2012/)
 
 | 项目 | 简介 | 标记 |
 |---|---|---|

@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> 共 **58** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **63** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -564,3 +564,49 @@ Open-Access System for Ionospheric Studies：从 GNSS 观测算 ROTI、ΔTEC、S
 语言：Shell · 许可：MIT · 星标约：8 · 宿主：github
 
 探索用机器学习刻画或预测电离层闪烁相关现象的研究型仓库，偏数据驱动实验原型。适合空间天气与机器学习交叉课题入门。闪烁事件稀缺、标签噪声与跨站点泛化是主要风险；报告结果时应保留 S4、σφ、ROTI 等物理基线对照，避免只展示神经网络分数而缺少可解释性。
+
+## IRI官方入口（本轮补录）
+
+| 项目 | 一句话 | 语言 | 标记 |
+|---|---|---|---|
+| [IRI-MATLAB-FileExchange](https://www.mathworks.com/matlabcentral/fileexchange/34863-international-reference-ionosphere-iri-model) | irimodel.org 官方指向的 IRI MATLAB 封装（File Exchange，含 2012/2016） | MATLAB | 核心 · 🏷️ 官方 |
+| [pyglow](https://github.com/timduly4/pyglow) | Python 上层大气气候态库，包装 IRI-2012/2016 等（irimodel 官网推荐） | Python/Fortran | 核心 · 🏷️ 个人社区 |
+| [IRI-2016-package](https://irimodel.org/IRI-2016/) | IRI-2016 官方 Fortran 源码与系数包目录 | Fortran | 🏷️ 官方 |
+| [IRI-2012-package](https://irimodel.org/IRI-2012/) | IRI-2012 官方 Fortran 源码包（含轨道剖面示例程序） | Fortran | 🏷️ 官方 |
+| [CCMC-IRI-online](https://ccmc.gsfc.nasa.gov/models/IRI~2020/) | NASA CCMC 在线运行与说明页（IRI-2020） | — | 🏷️ 官方 |
+
+### 详细说明（本轮补录）
+
+#### [IRI-MATLAB-FileExchange](https://www.mathworks.com/matlabcentral/fileexchange/34863-international-reference-ionosphere-iri-model)  
+*核心 · 🏷️ 官方*
+
+语言：MATLAB
+
+国际参考电离层工作组官网明确列出的 MATLAB 版本入口，指向 MathWorks File Exchange 条目，覆盖 IRI-2012 与 IRI-2016 的 MATLAB 调用。适合已经在用 MATLAB 做电离层气候态对比、不想先啃 Fortran 编译链的人。这不是 GitHub 仓，下载与许可以 File Exchange 页面为准；要最新 Fortran 物理更新仍应回到 irimodel.org 的 IRI-2020/2026 源码包。与 space-physics/iri2016 等第三方包装不同，本条目以官网推荐链接为准。
+
+#### [pyglow](https://github.com/timduly4/pyglow)  
+*核心 · 🏷️ 个人社区*
+
+语言：Python/Fortran · 许可：MIT · 星标约：117
+
+把 IRI 等上层大气经验模型接到 Python，irimodel.org 在「pyglow」一行直接链到本仓库，说明它是社区里常用的 IRI-2012/2016 包装路径。适合脚本化批量取 Ne/Te 剖面、和 GNSS TEC 产品做气候态对照。底层仍依赖 Fortran 模型文件与指数更新；跟官方最新 IRI-2020/2026 发布节奏可能不同步，精密业务应核对所绑版本。许可 MIT，比部分需注册的官方 C 发行更好集成。
+
+#### [IRI-2016-package](https://irimodel.org/IRI-2016/)  
+*🏷️ 官方*
+
+语言：Fortran
+
+COSPAR/URSI IRI 工作组在 irimodel.org 发布的 IRI-2016 源码目录，含 Fortran 子程序、系数与说明。很多文献与 MATLAB/pyglow 包装仍对齐这一代。新研究若无追踪官方最新物理选项，应同时看 IRI-2020/2026；指数文件需按官网说明单独更新。
+
+#### [IRI-2012-package](https://irimodel.org/IRI-2012/)  
+*🏷️ 官方*
+
+语言：Fortran
+
+官方 IRI-2012 发行目录。官网特别提到该版带有 iriorbit 一类沿卫星轨道取 IRI 参数的示例程序，适合空间任务剖面复现与旧论文对照。功能与数据源已有后续版本更新；除非复现 2012 时代结果，新项目优先 IRI-2020/2026，MATLAB/pyglow 用户也要分清自己绑的是哪一代。
+
+#### [CCMC-IRI-online](https://ccmc.gsfc.nasa.gov/models/IRI~2020/)  
+*🏷️ 官方*
+
+NASA 社区协调建模中心提供的 IRI 在线计算与模型说明入口，适合快速查剖面、看输入开关，而不是本地二次开发。要嵌入自己的 GNSS/TEC 流水线仍需下载 irimodel Fortran 或 Python/MATLAB 包装。页面会指向模型版本与相关文献，可作为官方文档跳板。
+
