@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> 共 **63** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **70** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -609,4 +609,46 @@ COSPAR/URSI IRI 工作组在 irimodel.org 发布的 IRI-2016 源码目录，含 
 *🏷️ 官方*
 
 NASA 社区协调建模中心提供的 IRI 在线计算与模型说明入口，适合快速查剖面、看输入开关，而不是本地二次开发。要嵌入自己的 GNSS/TEC 流水线仍需下载 irimodel Fortran 或 Python/MATLAB 包装。页面会指向模型版本与相关文献，可作为官方文档跳板。
+
+## IRI官网目录补全
+
+| 项目 | 一句话 | 标记 |
+|---|---|---|
+| [IRI-2026-package](https://irimodel.org/IRI-2026/) | IRI-2026 官方 Fortran 最新源码包目录 | 🏷️ 官方 · 核心 |
+| [IRI-2007-package](https://irimodel.org/IRI-2007/) | IRI-2007 官方 Fortran 历史版本源码目录 | 🏷️ 官方 |
+| [IRI-2001-package](https://irimodel.org/IRI-2001/) | IRI-2001 官方 Fortran 历史版本源码目录 | 🏷️ 官方 |
+| [IRI-COMMON-FILES](https://irimodel.org/COMMON_FILES/) | 各版 IRI 共用的系数/公共文件目录（官网明确要求另下） | 🏷️ 官方 · 核心 |
+| [IRI-indices](http://irimodel.org/indices/) | IRI 运行所需太阳/地磁指数文件发布页 | 🏷️ 官方 |
+| [GIRO-portal](https://giro.uml.edu/) | GIRO 全球电离层测高仪观测网门户（IRTAM 等数据入口） | 🏷️ 官方 |
+| [NeQuick2-ICTP](https://t-ict4d.ictp.it/nequick2/source-code) | ICTP 官方 NeQuick 2 电离层电子密度模型 Fortran 源码申请页 | 🏷️ 官方 |
+
+### 详细说明
+
+#### [IRI-2026-package](https://irimodel.org/IRI-2026/)
+
+irimodel.org 上标注日期最新的 IRI Fortran 发行目录，工作组持续更新的气候态电离层国际标准模型入口。做与最新文献对齐的 Ne/Te/离子成分剖面时优先从这里取源码与系数。指数文件仍需按官网说明单独更新；Python/MATLAB 包装未必已跟上 2026，绑定前核对版本号。
+
+#### [IRI-2007-package](https://irimodel.org/IRI-2007/)
+
+官方保留的 IRI-2007 发行，便于复现该年代论文或对比模型演进。新项目应改用 IRI-2020/2026；仅当审稿或历史对比需要锁定旧物理选项时再下载本目录。
+
+#### [IRI-2001-package](https://irimodel.org/IRI-2001/)
+
+更早的官方 IRI 发行，主要用于历史复现。系数与选项与当代版本差异大，不适合作为现行 GNSS 电离层改正基准；对照阅读可看官网更新说明与 Bilitza 综述。
+
+#### [IRI-COMMON-FILES](https://irimodel.org/COMMON_FILES/)
+
+irimodel 写明：除版本包外通常还要 COMMON FILES（若 zip 未打进包内）。缺公共系数时编译或运行常失败。搭本地 IRI 时与具体版本目录、最新 INDICES 一起下载；不要只克隆 GitHub 包装而漏官方公共文件。
+
+#### [IRI-indices](http://irimodel.org/indices/)
+
+官方指数文件入口（如 ap、IG、F10.7 相关序列）。IRI 按日期查内部指数，过期指数会让剖面偏离。业务或论文复现应定期更新本页文件；pyglow/第三方包装若自带指数，也要核对其时效。
+
+#### [GIRO-portal](https://giro.uml.edu/)
+
+UML 维护的 GIRO 门户，通向测高仪数据与 IRTAM 等实时同化产品相关入口。适合把测高仪峰值参数与 GNSS TEC/IRI 对比。主要是数据与服务门户，不是 GNSS 解算库；下载具体软件前在站内核对许可与程序页。
+
+#### [NeQuick2-ICTP](https://t-ict4d.ictp.it/nequick2/source-code)
+
+阿卜杜斯·萨拉姆国际理论物理中心 T/ICT4D 发布的 NeQuick 2 气候态电子密度模型，含 ITU 系数与太阳活动/modip 文件。面向穿电离层传播与 TEC 积分研究。源码需向维护者邮件申请；若做 Galileo 单频接收机改正，请改用 GSC 的 NeQuick G 官方实现以免版本混淆。
 

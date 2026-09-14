@@ -5,7 +5,7 @@
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
   "generated": "2026-09-14",
-  "project_count": 356,
+  "project_count": 363,
   "counts_by_category": {
     "ionosphere": 58,
     "troposphere": 14,
@@ -6613,11 +6613,115 @@
       "one_liner_zh": "NASA CCMC 在线运行与说明页（IRI-2020）",
       "analysis_zh": "NASA 社区协调建模中心提供的 IRI 在线计算与模型说明入口，适合快速查剖面、看输入开关，而不是本地二次开发。要嵌入自己的 GNSS/TEC 流水线仍需下载 irimodel Fortran 或 Python/MATLAB 包装。页面会指向模型版本与相关文献，可作为官方文档跳板。",
       "markers": []
+    },
+    {
+      "name": "IRI-2026-package",
+      "url": "https://irimodel.org/IRI-2026/",
+      "category": "ionosphere",
+      "subcategory": "IRI模型",
+      "language": "Fortran",
+      "provenance": "official",
+      "host": "official_site",
+      "markers": [
+        "core"
+      ],
+      "one_liner_zh": "IRI-2026 官方 Fortran 最新源码包目录",
+      "analysis_zh": "irimodel.org 上标注日期最新的 IRI Fortran 发行目录，工作组持续更新的气候态电离层国际标准模型入口。做与最新文献对齐的 Ne/Te/离子成分剖面时优先从这里取源码与系数。指数文件仍需按官网说明单独更新；Python/MATLAB 包装未必已跟上 2026，绑定前核对版本号。",
+      "license": null,
+      "stars": null
+    },
+    {
+      "name": "IRI-2007-package",
+      "url": "https://irimodel.org/IRI-2007/",
+      "category": "ionosphere",
+      "subcategory": "IRI模型",
+      "language": "Fortran",
+      "provenance": "official",
+      "host": "official_site",
+      "markers": [],
+      "one_liner_zh": "IRI-2007 官方 Fortran 历史版本源码目录",
+      "analysis_zh": "官方保留的 IRI-2007 发行，便于复现该年代论文或对比模型演进。新项目应改用 IRI-2020/2026；仅当审稿或历史对比需要锁定旧物理选项时再下载本目录。",
+      "license": null,
+      "stars": null
+    },
+    {
+      "name": "IRI-2001-package",
+      "url": "https://irimodel.org/IRI-2001/",
+      "category": "ionosphere",
+      "subcategory": "IRI模型",
+      "language": "Fortran",
+      "provenance": "official",
+      "host": "official_site",
+      "markers": [],
+      "one_liner_zh": "IRI-2001 官方 Fortran 历史版本源码目录",
+      "analysis_zh": "更早的官方 IRI 发行，主要用于历史复现。系数与选项与当代版本差异大，不适合作为现行 GNSS 电离层改正基准；对照阅读可看官网更新说明与 Bilitza 综述。",
+      "license": null,
+      "stars": null
+    },
+    {
+      "name": "IRI-COMMON-FILES",
+      "url": "https://irimodel.org/COMMON_FILES/",
+      "category": "ionosphere",
+      "subcategory": "IRI模型",
+      "language": "Fortran",
+      "provenance": "official",
+      "host": "official_site",
+      "markers": [
+        "core"
+      ],
+      "one_liner_zh": "各版 IRI 共用的系数/公共文件目录（官网明确要求另下）",
+      "analysis_zh": "irimodel 写明：除版本包外通常还要 COMMON FILES（若 zip 未打进包内）。缺公共系数时编译或运行常失败。搭本地 IRI 时与具体版本目录、最新 INDICES 一起下载；不要只克隆 GitHub 包装而漏官方公共文件。",
+      "license": null,
+      "stars": null
+    },
+    {
+      "name": "IRI-indices",
+      "url": "http://irimodel.org/indices/",
+      "category": "ionosphere",
+      "subcategory": "IRI模型",
+      "language": null,
+      "provenance": "official",
+      "host": "official_site",
+      "markers": [],
+      "one_liner_zh": "IRI 运行所需太阳/地磁指数文件发布页",
+      "analysis_zh": "官方指数文件入口（如 ap、IG、F10.7 相关序列）。IRI 按日期查内部指数，过期指数会让剖面偏离。业务或论文复现应定期更新本页文件；pyglow/第三方包装若自带指数，也要核对其时效。",
+      "license": null,
+      "stars": null
+    },
+    {
+      "name": "GIRO-portal",
+      "url": "https://giro.uml.edu/",
+      "category": "ionosphere",
+      "subcategory": "测高仪/同化",
+      "language": null,
+      "provenance": "official",
+      "host": "official_site",
+      "markers": [],
+      "one_liner_zh": "GIRO 全球电离层测高仪观测网门户（IRTAM 等数据入口）",
+      "analysis_zh": "UML 维护的 GIRO 门户，通向测高仪数据与 IRTAM 等实时同化产品相关入口。适合把测高仪峰值参数与 GNSS TEC/IRI 对比。主要是数据与服务门户，不是 GNSS 解算库；下载具体软件前在站内核对许可与程序页。",
+      "license": null,
+      "stars": null
+    },
+    {
+      "name": "NeQuick2-ICTP",
+      "url": "https://t-ict4d.ictp.it/nequick2",
+      "category": "ionosphere",
+      "subcategory": "NeQuick",
+      "language": "Fortran",
+      "provenance": "official",
+      "host": "official_site",
+      "markers": [
+        "core"
+      ],
+      "one_liner_zh": "ICTP NeQuick 2 官方介绍与源码入口",
+      "analysis_zh": "ICTP 维护的 NeQuick 2 页面，三维电子密度气候态模型，ITU-R 链路与科研常用。与 Galileo NeQuick G（单频改正）不是同一发行，选型时分清。源码获取以站内 Source Code 链接为准；社区 GitHub 包装需核对其是否同步官方。",
+      "license": null,
+      "stars": null
     }
   ],
   "provenance_counts": {
     "personal_community": 227,
-    "official": 48,
+    "official": 55,
     "academic_lab": 81
   }
 }
