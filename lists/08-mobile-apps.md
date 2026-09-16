@@ -9,7 +9,7 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GPSTest](https://github.com/barbeau/gpstest) | 开源 Android GNSS 测试与原始测量记录 | Kotlin | 2402 | 🏷️ 个人社区 · ★ Star · 核心 |
+| [GPSTest](https://github.com/barbeau/gpstest) | 开源 Android GNSS 测试与原始测量记录 | Kotlin | 2402 | 🏷️ 个人社区 ★ 核心 |
 | [GPSLogger](https://github.com/BasicAirData/GPSLogger) | Android 开源 GPS 轨迹记录器 | Java | 504 | 🏷️ 个人社区 |
 | [bluetooth_gnss](https://github.com/ykasidit/bluetooth_gnss) | Android 蓝牙外接 GNSS/RTK 与 NTRIP 应用 | Java | 123 | 🏷️ 个人社区 |
 | [GNSS_Compare](https://github.com/TheGalfins/GNSS_Compare) | 安卓端用原始测量做定位的框架 | Java | 73 | 🏷️ 个人社区 |
@@ -18,7 +18,7 @@
 ### 详细说明
 
 #### [GPSTest](https://github.com/barbeau/gpstest)  
-*🏷️ 个人社区 · ★ Star · 核心*
+*🏷️ 个人社区 ★ 核心*
 
 语言：Kotlin · 许可：Apache-2.0 · 星标约：2402 · 宿主：github
 

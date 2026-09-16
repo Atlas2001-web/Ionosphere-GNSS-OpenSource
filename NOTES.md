@@ -111,3 +111,10 @@
 - 当前条目：**468**
 - 分类计数：{'ionosphere': 85, 'troposphere': 25, 'gnss-data': 81, 'gnss-positioning': 72, 'orbit-clock': 9, 'navigation-ins': 50, 'gnss-sdr': 56, 'mobile-apps': 11, 'tools-learning': 26, 'gnss-datasets': 53}
 - 详见 `research/similar_finds.json`
+
+## 例行检索补录（2026-09-16）
+
+- 新增 **21** 条（RADIATE/mpsim/Gkit-Bias/autorino/rinexmod/FGO/ROS/RAIM 等）
+- 当前条目：**489**
+- 分类计数：{'ionosphere': 85, 'troposphere': 29, 'gnss-data': 86, 'gnss-positioning': 74, 'orbit-clock': 12, 'navigation-ins': 54, 'gnss-sdr': 57, 'mobile-apps': 11, 'tools-learning': 27, 'gnss-datasets': 54}
+- 详见 `research/routine_finds_20260916.json`

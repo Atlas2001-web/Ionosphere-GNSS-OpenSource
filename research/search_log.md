@@ -256,3 +256,12 @@
 - skipped: []
 - total: 431
 - provenance: {'personal_community': 233, 'official': 109, 'academic_lab': 89}
+
+## Routine pass 2026-09-16
+
+- Catalog size before: **468**; after merge: **489** (+21)
+- Finds file: `research/routine_finds_20260916.json`
+- Method: `gh api search/repositories` across scintillation/ROTI/DCB-UPD-OSB/VMF-GPT/PWV/cycle-slip/multipath/FGO/ANTEX-SP3/RINEX4/RAIM/NTRIP/HAS-B2b/CLAS/GNSS-IR/CORS/POD niches; WebSearch for agency pages (BKG/TU Wien/GFZ already saturated); primary README via `gh api repos/.../readme`
+- Dedup against live `PROJECTS.json` URLs; verified each keep with `gh api repos/{owner}/{repo}`
+- Highlights added: RADIATE (TU Wien ray-tracing), mpsim/GIRAS/GMR-Water (GNSS-IR), Gkit-Bias/MCOSB/clkcomb (bias/OSB), autorino/rinexmod (IPGP RINEX ops), FE-GUT & GNSS/INS FGO comparisons, ROS NTRIP/RTKLIB bridges, RAIM_PANG_NAV, GPSL1-MMT-DPE
+- Skipped: pure RTKLIB mirrors, Deep-Navigation/MRTKLIB mirror, thin PWV notebooks, already-cataloged BNC/GREAT-PVT/raPPPid/IonoMoni/OASIS/scintkit

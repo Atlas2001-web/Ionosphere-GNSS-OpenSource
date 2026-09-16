@@ -1,5 +1,5 @@
 # GNSS 数据源 / GNSS Datasets
-> 共 **53** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **54** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
@@ -9,34 +9,34 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [BKG-IGS-Data-Center](https://igs.bkg.bund.de/) | BKG IGS 数据中心：欧洲侧 GNSS 数据与 NTRIP 入口 | data-portal | — | 🏷️ 官方 · 核心 |
-| [CDDIS-GNSS-Archive](https://cddis.nasa.gov/archive/gnss/) | NASA CDDIS：IGS 全球 GNSS 观测与产品主归档之一 | data-portal | — | 🏷️ 官方 · 核心 |
-| [ESA-GSSC](https://gssc.esa.int/) | ESA GNSS Science Support Centre：科学数据与产品门户 | data-portal | — | 🏷️ 官方 · 核心 |
+| [BKG-IGS-Data-Center](https://igs.bkg.bund.de/) | BKG IGS 数据中心：欧洲侧 GNSS 数据与 NTRIP 入口 | data-portal | — | 🏷️ 官方 核心 |
+| [CDDIS-GNSS-Archive](https://cddis.nasa.gov/archive/gnss/) | NASA CDDIS：IGS 全球 GNSS 观测与产品主归档之一 | data-portal | — | 🏷️ 官方 核心 |
+| [ESA-GSSC](https://gssc.esa.int/) | ESA GNSS Science Support Centre：科学数据与产品门户 | data-portal | — | 🏷️ 官方 核心 |
 | [GFZ-ISDC](https://isdc.gfz-potsdam.de/) | GFZ ISDC：波茨坦地球科学研究数据中心门户 | data-portal | — | 🏷️ 官方 |
 | [IGS-Data-Access](https://igs.org/data-access/) | IGS 数据访问页：全球数据中心与获取方式一览 | data-portal | — | 🏷️ 官方 |
-| [IGS-Home](https://igs.org/) | 国际 GNSS 服务（IGS）官网：产品、工作组与数据中心总入口 | data-portal | — | 🏷️ 官方 · 核心 |
-| [NASA-Earthdata-Login](https://urs.earthdata.nasa.gov/) | NASA Earthdata 统一登录：CDDIS 等地球科学数据下载的前置账号 | data-portal | — | 🏷️ 官方 · 核心 |
+| [IGS-Home](https://igs.org/) | 国际 GNSS 服务（IGS）官网：产品、工作组与数据中心总入口 | data-portal | — | 🏷️ 官方 核心 |
+| [NASA-Earthdata-Login](https://urs.earthdata.nasa.gov/) | NASA Earthdata 统一登录：CDDIS 等地球科学数据下载的前置账号 | data-portal | — | 🏷️ 官方 核心 |
 | [SOPAC-CSRC](https://sopac-csrc.ucsd.edu/) | SOPAC/CSRC：Scripps 轨道与永久阵列中心门户 | data-portal | — | 🏷️ 官方 |
 | [SOPAC-Garner-Pub](https://garner.ucsd.edu/pub/) | SOPAC garner 公共目录：产品与相关文件树 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
 #### [BKG-IGS-Data-Center](https://igs.bkg.bund.de/)  
-*🏷️ 官方 · 核心*
+*🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 德国联邦制图与大地测量局维护的 IGS 数据中心门户，同时提供文件下载与实时播发相关入口，是欧洲用户常用镜像与 caster 起点。实时 NTRIP 与事后文件通道彼此独立，配置账号时不要把 caster 凭证与 HTTPS 下载混用。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
 
 #### [CDDIS-GNSS-Archive](https://cddis.nasa.gov/archive/gnss/)  
-*🏷️ 官方 · 核心*
+*🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 IGS 核心数据中心，提供日/小时 RINEX、广播星历、精密 SP3/CLK、IONEX 与偏差等产品。目录按年积日或 GPS 周组织，文件多为压缩格式。适合全球网事后处理与电离层研究。匿名 FTP 已停用，必须 Earthdata 登录；大流量请限速，并核对长文件名规范与校验信息。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
 
 #### [ESA-GSSC](https://gssc.esa.int/)  
-*🏷️ 官方 · 核心*
+*🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
@@ -57,14 +57,14 @@ IGS 核心数据中心，提供日/小时 RINEX、广播星历、精密 SP3/CLK�
 集中列出 IGS 各数据中心镜像地址与访问提示，方便按网络条件选择就近源。本页不托管观测文件本体。各中心登录门槛不同，例如 CDDIS 需要 Earthdata。镜像同步偶有延迟，关键周产品可在两个中心交叉校验大小与时间戳。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
 
 #### [IGS-Home](https://igs.org/)  
-*🏷️ 官方 · 核心*
+*🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 IGS 官方门户，链向产品规范、分析中心、全球/区域数据中心以及实时服务说明。站点本身通常不直接托管海量 RINEX。适合查阅标准文件名、站点日志格式与政策文件。实际观测与产品下载请转到 CDDIS、BKG、ESA GSSC 等归档系统。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
 
 #### [NASA-Earthdata-Login](https://urs.earthdata.nasa.gov/)  
-*🏷️ 官方 · 核心*
+*🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
@@ -91,7 +91,7 @@ SOPAC 侧公开文件树，常包含产品文件与辅助资料，可作为 CDDI
 | [BoM-SWS](https://www.sws.bom.gov.au/) | 澳大利亚 BoM 空间天气服务（SWS） | data-portal | — | 🏷️ 官方 |
 | [CelesTrak-SpaceData](https://celestrak.org/SpaceData/) | CelesTrak SpaceData：空间天气与相关辅助数据镜像 | data-portal | — | 🏷️ 官方 |
 | [GFZ-Kp-Index](https://kp.gfz-potsdam.de/en/) | GFZ Kp 地磁指数官方发布 | data-portal | — | 🏷️ 官方 |
-| [GIRO-DIDBase](https://giro.uml.edu/didbase/) | GIRO DIDBase：全球电离层测高仪数据库 | data-portal | — | 🏷️ 官方 · 核心 |
+| [GIRO-DIDBase](https://giro.uml.edu/didbase/) | GIRO DIDBase：全球电离层测高仪数据库 | data-portal | — | 🏷️ 官方 核心 |
 | [NASA-OMNIWeb](https://omniweb.gsfc.nasa.gov/) | NASA OMNIWeb：太阳风与地磁指数多源合并数据 | data-portal | — | 🏷️ 官方 |
 | [NASA-SPDF](https://spdf.gsfc.nasa.gov/) | NASA SPDF：空间物理数据设施总入口 | data-portal | — | 🏷️ 官方 |
 | [NOAA-SWPC](https://www.swpc.noaa.gov/) | NOAA 空间天气预测中心（SWPC） | data-portal | — | 🏷️ 官方 |
@@ -121,7 +121,7 @@ CelesTrak 提供的空间天气及相关辅助数据集合，方便与卫星轨�
 GFZ 官方发布的行星 Kp 等地磁活动指数，是空间天气研究以及 GNSS 闪烁、ROTI 扰动分析中常用的外部驱动参数，通常开放获取。使用时注意时间分辨率以及确定值与预报值的区别，论文中应明确写出来源机构与产品版本。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
 
 #### [GIRO-DIDBase](https://giro.uml.edu/didbase/)  
-*🏷️ 官方 · 核心*
+*🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
@@ -159,20 +159,20 @@ SWPC 发布的行星 K 指数产品页，便于把地磁活动快速叠加到 GN
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [CAS-BDsmart-Iono-Products](https://data.bdsmart.cn/pub/product/iono/ionex/) | 中科院 CAS 电离层 IONEX 产品（data.bdsmart.cn） | data-portal | — | 🏷️ 官方 · 核心 |
+| [CAS-BDsmart-Iono-Products](https://data.bdsmart.cn/pub/product/iono/ionex/) | 中科院 CAS 电离层 IONEX 产品（data.bdsmart.cn） | data-portal | — | 🏷️ 官方 核心 |
 | [CDDIS-Atmospheric-Products](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/atmospheric_products.html) | CDDIS 大气产品页：电离层 IONEX 与对流层产品索引说明 | data-portal | — | 🏷️ 官方 |
-| [CDDIS-IONEX](https://cddis.nasa.gov/archive/gnss/products/ionex/) | CDDIS IONEX 目录：IGS 及各分析中心全球电离层图 | data-portal | — | 🏷️ 官方 · 核心 |
+| [CDDIS-IONEX](https://cddis.nasa.gov/archive/gnss/products/ionex/) | CDDIS IONEX 目录：IGS 及各分析中心全球电离层图 | data-portal | — | 🏷️ 官方 核心 |
 | [IGS-Ionosphere-WG](https://igs.org/wg/ionosphere/) | IGS 电离层工作组：GIM/IAAC 与产品活动入口 | data-portal | — | 🏷️ 官方 |
-| [JPL-IONEX-Rapid](https://sideshow.jpl.nasa.gov/pub/iono_daily/IONEX_rapid/) | JPL 快速 IONEX 发布目录：日更新全球电离层图 | data-portal | — | 🏷️ 官方 · 核心 |
+| [JPL-IONEX-Rapid](https://sideshow.jpl.nasa.gov/pub/iono_daily/IONEX_rapid/) | JPL 快速 IONEX 发布目录：日更新全球电离层图 | data-portal | — | 🏷️ 官方 核心 |
 | [UPC-gAGE-FastPPP-Products](https://gage.upc.edu/en/gage-products/fast-ppp-products) | UPC gAGE Fast-PPP 产品页：STEC/IONEX/钟差等申请说明 | data-portal | — | 🏷️ 高校实验室 |
 | [UPC-IONEX-Archive](https://cabrera.upc.edu/upc_ionex_GPSonly-RINEXv3/) | UPC 电离层 IONEX 归档目录（分年） | data-portal | — | 🏷️ 高校实验室 |
 | [UPC-IONO4HAS-Products](https://server.gage.upc.edu/iono4has/products.html) | UPC IONO4HAS：面向 HAS 的电离层产品状态页 | data-portal | — | 🏷️ 高校实验室 |
-| [WHU-IGS-Ionosphere-AC](https://panda.whu.edu.cn/yjpt/IGSdlcfxzx.htm) | 武汉大学 IGS 电离层分析中心：GIM/DCB/ROTI 产品说明 | data-portal | — | 🏷️ 高校实验室 · 核心 |
+| [WHU-IGS-Ionosphere-AC](https://panda.whu.edu.cn/yjpt/IGSdlcfxzx.htm) | 武汉大学 IGS 电离层分析中心：GIM/DCB/ROTI 产品说明 | data-portal | — | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
 
 #### [CAS-BDsmart-Iono-Products](https://data.bdsmart.cn/pub/product/iono/ionex/)  
-*🏷️ 官方 · 核心*
+*🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
@@ -186,7 +186,7 @@ SWPC 发布的行星 K 指数产品页，便于把地磁活动快速叠加到 GN
 汇总 IGS 电离层 GIM（IONEX）与对流层相关产品在 CDDIS 的存放说明，并解释新旧文件名对应关系。面向 TEC/ZTD 用户快速定位路径。实际数据文件仍在 archive 树中按日或周存放。Rapid 与 Final 时延不同，引用时应注明分析中心与产品类型。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
 
 #### [CDDIS-IONEX](https://cddis.nasa.gov/archive/gnss/products/ionex/)  
-*🏷️ 官方 · 核心*
+*🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
@@ -200,7 +200,7 @@ SWPC 发布的行星 K 指数产品页，便于把地磁活动快速叠加到 GN
 介绍 IGS 电离层联合产品机制、各分析中心角色以及相关会议与试点活动。适合了解 CODE、JPL、UPC、CAS、WHU 等 IAAC 分工。页面不直接存储 IONEX 文件。综合产品与单中心产品在精度和时延上不同，研究中应分开评估与引用。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
 
 #### [JPL-IONEX-Rapid](https://sideshow.jpl.nasa.gov/pub/iono_daily/IONEX_rapid/)  
-*🏷️ 官方 · 核心*
+*🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
@@ -228,7 +228,7 @@ UPC 提供的分年 IONEX 归档，包含长期时间序列以及最新快速文
 展示与 Galileo HAS 相关的电离层产品链接及当日运行状态，便于开展监测与对比实验。内容偏研究原型，不宜简单等同于 IGS 标准综合 GIM。格式细节见站内说明；长期归档可能与公开 IONEX 目录并存，下载前确认许可范围。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
 
 #### [WHU-IGS-Ionosphere-AC](https://panda.whu.edu.cn/yjpt/IGSdlcfxzx.htm)  
-*🏷️ 高校实验室 · 核心*
+*🏷️ 高校实验室 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
@@ -269,16 +269,16 @@ TARC 面向国际用户的差分与相关数据说明页面，便于获取北斗
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [CODE-AIUB-Analysis-Center](https://www.aiub.unibe.ch/research/code___analysis_center/index_eng.html) | CODE/AIUB 分析中心主页：精密轨道钟差与电离层等产品介绍 | data-portal | — | 🏷️ 官方 · 核心 |
+| [CODE-AIUB-Analysis-Center](https://www.aiub.unibe.ch/research/code___analysis_center/index_eng.html) | CODE/AIUB 分析中心主页：精密轨道钟差与电离层等产品介绍 | data-portal | — | 🏷️ 官方 核心 |
 | [GFZ-GNSS-Services](https://gnss.gfz.de/services) | GFZ GNSS 服务页：产品与在线服务入口 | data-portal | — | 🏷️ 官方 |
 | [GFZ-ISDC-GNSS-Products](https://isdc.gfz-potsdam.de/gnss-products/) | GFZ ISDC GNSS 产品专页 | data-portal | — | 🏷️ 官方 |
 | [IGS-MGEX](https://igs.org/mgex/) | IGS MGEX：多 GNSS 试验网与多星座产品介绍 | data-portal | — | 🏷️ 官方 |
-| [IGS-Products](https://igs.org/products/) | IGS 产品页：轨道、钟差、ERP、偏差、电离层等规范说明 | data-portal | — | 🏷️ 官方 · 核心 |
+| [IGS-Products](https://igs.org/products/) | IGS 产品页：轨道、钟差、ERP、偏差、电离层等规范说明 | data-portal | — | 🏷️ 官方 核心 |
 
 ### 详细说明
 
 #### [CODE-AIUB-Analysis-Center](https://www.aiub.unibe.ch/research/code___analysis_center/index_eng.html)  
-*🏷️ 官方 · 核心*
+*🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
@@ -306,7 +306,7 @@ TARC 面向国际用户的差分与相关数据说明页面，便于获取北斗
 介绍 IGS 多星座试验跟踪网以及轨道、钟差、偏差、天线等实验产品，开展 Galileo、BDS、QZSS 精密应用前应阅读。数据文件仍从标准 IGS 产品目录获取。各星座产品成熟度随时间变化，论文引用请标明 MGEX 与具体分析中心版本。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
 
 #### [IGS-Products](https://igs.org/products/)  
-*🏷️ 官方 · 核心*
+*🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
@@ -316,13 +316,13 @@ TARC 面向国际用户的差分与相关数据说明页面，便于获取北斗
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [COSMIC-CDAAC](https://cdaac-www.cosmic.ucar.edu/) | COSMIC CDAAC：GNSS 无线电掩星大气/电离层产品 | data-portal | — | 🏷️ 官方 · 核心 |
+| [COSMIC-CDAAC](https://cdaac-www.cosmic.ucar.edu/) | COSMIC CDAAC：GNSS 无线电掩星大气/电离层产品 | data-portal | — | 🏷️ 官方 核心 |
 | [COSMIC-GNSS-RO-Data](https://data.cosmic.ucar.edu/gnss-ro/) | COSMIC GNSS-RO 公开数据目录 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
 #### [COSMIC-CDAAC](https://cdaac-www.cosmic.ucar.edu/)  
-*🏷️ 官方 · 核心*
+*🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
@@ -339,16 +339,16 @@ COSMIC/FORMOSAT 等任务的无线电掩星数据中心门户，提供中性大�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [EarthScope-GAGE-GNSS-Archive](https://gage-data.earthscope.org/archive/gnss) | EarthScope GAGE GNSS 归档：北美及合作站观测数据 | data-portal | — | 🏷️ 官方 · 核心 |
+| [EarthScope-GAGE-GNSS-Archive](https://gage-data.earthscope.org/archive/gnss) | EarthScope GAGE GNSS 归档：北美及合作站观测数据 | data-portal | — | 🏷️ 官方 核心 |
 | [EarthScope-Home](https://www.earthscope.org/) | EarthScope 主页：原 UNAVCO/IRIS 合并后的地球科学联盟入口 | data-portal | — | 🏷️ 官方 |
-| [EUREF-EPN-CB](https://www.epncb.oma.be/) | EUREF EPN 中央局：欧洲参考站网数据与产品 | data-portal | — | 🏷️ 官方 · 核心 |
+| [EUREF-EPN-CB](https://www.epncb.oma.be/) | EUREF EPN 中央局：欧洲参考站网数据与产品 | data-portal | — | 🏷️ 官方 核心 |
 | [EUREF-EPN-Obs-FTP](https://epncb.oma.be/ftp/obs/) | EPN 观测数据 FTP/Web 目录 | data-portal | — | 🏷️ 官方 |
-| [GA-GNSS-Data](https://data.gnss.ga.gov.au/) | Geoscience Australia GNSS 数据门户（AUSCORS 等） | data-portal | — | 🏷️ 官方 · 核心 |
+| [GA-GNSS-Data](https://data.gnss.ga.gov.au/) | Geoscience Australia GNSS 数据门户（AUSCORS 等） | data-portal | — | 🏷️ 官方 核心 |
 | [HongKong-SatRef](https://www.geodetic.gov.hk/en/satref/satref.htm) | 香港 SatRef：卫星定位参考站网介绍 | data-portal | — | 🏷️ 官方 |
 | [HongKong-SatRef-RINEX](https://www.geodetic.gov.hk/en/rinex/rinex.htm) | 香港 SatRef RINEX 数据说明与下载 | data-portal | — | 🏷️ 官方 |
 | [IGN-Geodesie](https://geodesie.ign.fr/) | 法国 IGN 大地测量门户（RGP 等相关入口） | data-portal | — | 🏷️ 官方 |
 | [NOAA-CORS-Data-Tree](https://geodesy.noaa.gov/corsdata/) | NOAA CORS 数据目录树 | data-portal | — | 🏷️ 官方 |
-| [NOAA-NGS-CORS](https://geodesy.noaa.gov/CORS/) | NOAA NGS CORS：美国连续运行参考站网数据门户 | data-portal | — | 🏷️ 官方 · 核心 |
+| [NOAA-NGS-CORS](https://geodesy.noaa.gov/CORS/) | NOAA NGS CORS：美国连续运行参考站网数据门户 | data-portal | — | 🏷️ 官方 核心 |
 | [SIRGAS-Home](https://www.sirgas.org/en/) | SIRGAS：拉丁美洲大地参考架与 GNSS 网门户 | data-portal | — | 🏷️ 官方 |
 | [SONEL](https://www.sonel.org/) | SONEL：全球海平面观测网（含 GNSS 并址站） | data-portal | — | 🏷️ 官方 |
 | [UNAVCO-GPS-GNSS-Data](https://www.unavco.org/data/gps-gnss/gps-gnss.html) | UNAVCO 遗留 GNSS 数据页（导向 EarthScope/GAGE） | data-portal | — | 🏷️ 官方 |
@@ -356,7 +356,7 @@ COSMIC/FORMOSAT 等任务的无线电掩星数据中心门户，提供中性大�
 ### 详细说明
 
 #### [EarthScope-GAGE-GNSS-Archive](https://gage-data.earthscope.org/archive/gnss)  
-*🏷️ 官方 · 核心*
+*🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
@@ -370,7 +370,7 @@ GAGE 数据系统上的 GNSS 归档入口，承接原 UNAVCO 测站 RINEX 等产
 EarthScope 联盟门户，汇总地球物理与大地测量设施、项目与数据政策信息。具体 GNSS 文件检索在 GAGE 数据系统完成。历史上 UNAVCO 品牌页面多会重定向到此处。寻找 RINEX 时请优先使用 gage-data.earthscope.org 归档链接。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
 
 #### [EUREF-EPN-CB](https://www.epncb.oma.be/)  
-*🏷️ 官方 · 核心*
+*🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
@@ -384,7 +384,7 @@ EarthScope 联盟门户，汇总地球物理与大地测量设施、项目与数
 EPN 测站观测文件目录，便于按站名直接下载 RINEX，是欧洲区域研究的高频访问路径。目录组织相对稳定，但测站列表会增减。批量下载前应对照中央局站点状态页，剔除长期停测或仅测试用途的测站。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
 
 #### [GA-GNSS-Data](https://data.gnss.ga.gov.au/)  
-*🏷️ 官方 · 核心*
+*🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
@@ -419,7 +419,7 @@ EPN 测站观测文件目录，便于按站名直接下载 RINEX，是欧洲区�
 CORS 观测文件目录树入口，便于按测站、年份与年积日批量抓取公开 RINEX。面向自动化流水线。请控制并发与请求频率，遵守 NOAA 使用政策，并在本地做好缓存与校验，以免重复冲击服务器。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
 
 #### [NOAA-NGS-CORS](https://geodesy.noaa.gov/CORS/)  
-*🏷️ 官方 · 核心*
+*🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
@@ -450,12 +450,12 @@ SIRGAS 官方网站介绍拉丁美洲及周边大地参考框架与 GNSS 站网�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [IGS-RTS](https://igs.org/rts/) | IGS 实时服务（RTS）：实时轨道钟差/SSR 流说明 | data-portal | — | 🏷️ 官方 · 核心 |
+| [IGS-RTS](https://igs.org/rts/) | IGS 实时服务（RTS）：实时轨道钟差/SSR 流说明 | data-portal | — | 🏷️ 官方 核心 |
 
 ### 详细说明
 
 #### [IGS-RTS](https://igs.org/rts/)  
-*🏷️ 官方 · 核心*
+*🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
@@ -465,12 +465,12 @@ SIRGAS 官方网站介绍拉丁美洲及周边大地参考框架与 GNSS 站网�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [VMF-Data-Server-TropProducts](https://vmf.geo.tuwien.ac.at/trop_products/) | TU Wien VMF 对流层格网数据目录（与 /codes 源码区分） | data-portal | — | 🏷️ 官方 · 核心 |
+| [VMF-Data-Server-TropProducts](https://vmf.geo.tuwien.ac.at/trop_products/) | TU Wien VMF 对流层格网数据目录（与 /codes 源码区分） | data-portal | — | 🏷️ 官方 核心 |
 
 ### 详细说明
 
 #### [VMF-Data-Server-TropProducts](https://vmf.geo.tuwien.ac.at/trop_products/)  
-*🏷️ 官方 · 核心*
+*🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
@@ -505,3 +505,18 @@ SIRGAS 官方网站介绍拉丁美洲及周边大地参考框架与 GNSS 站网�
 语言：Python · 许可：NOASSERTION · 星标约：44 · 宿主：github
 
 为 CSSRlib 提供样例脚本与试验观测/改正数据，方便本地或 Colab 复现 CLAS、HAS、BDS PPP 等开放服务流程。适合跟着官方教程跑通改正接入与定位。不是长期产品归档；业务数据请接 IGS 或各服务官方中心，并注意样例时段与电文版本。
+
+## NTRIP服务商/CRS
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [ntrip-catalog](https://github.com/Pix4D/ntrip-catalog) | Pix4D 开源 NTRIP 服务商目录（含坐标参考系 CRS 元数据，CC0） | Python | 14 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [ntrip-catalog](https://github.com/Pix4D/ntrip-catalog)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：CC0-1.0 · 星标约：14 · 宿主：github
+
+以 JSON 维护多家 NTRIP 服务的挂载点与 CRS 信息，站点 ntrip-catalog.org 提供检索。解决 RTCM/NTRIP 握手不携带参考框架信息的问题，便于应用按位置匹配改正坐标系。属开放数据目录而非 caster 实现；条目完整性依赖社区贡献与服务商变更。

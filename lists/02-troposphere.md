@@ -1,5 +1,5 @@
 # 对流层 / Troposphere
-> 共 **25** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **29** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
@@ -71,12 +71,12 @@ MATLAB 工具：获取并分析 GNSS-R 水位观测，同时可生成合成 SNR�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnssrefl](https://github.com/kristinemlarson/gnssrefl) | GNSS-IR：反射信号估水位/土壤湿度/雪深 | Python | 217 | 🏷️ 高校实验室 · 核心 |
+| [gnssrefl](https://github.com/kristinemlarson/gnssrefl) | GNSS-IR：反射信号估水位/土壤湿度/雪深 | Python | 217 | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
 
 #### [gnssrefl](https://github.com/kristinemlarson/gnssrefl)  
-*🏷️ 高校实验室 · 核心*
+*🏷️ 高校实验室 核心*
 
 语言：Python · 许可：GPL-3.0 · 星标约：217 · 宿主：github
 
@@ -140,12 +140,12 @@ ICAMS 用全球大气模式做 InSAR 对流层改正，并考虑空间随机特�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [STD_SWD_Calc](https://github.com/zohrehadavi/STD_SWD_Calc) | 由 GPT/VMF 等计算 GNSS STD/SWD 与模型 ZTD | Python | 10 | 🏷️ 个人社区 · 核心 |
+| [STD_SWD_Calc](https://github.com/zohrehadavi/STD_SWD_Calc) | 由 GPT/VMF 等计算 GNSS STD/SWD 与模型 ZTD | Python | 10 | 🏷️ 个人社区 核心 |
 
 ### 详细说明
 
 #### [STD_SWD_Calc](https://github.com/zohrehadavi/STD_SWD_Calc)  
-*🏷️ 个人社区 · 核心*
+*🏷️ 个人社区 核心*
 
 语言：Python · 许可：GPL-3.0 · 星标约：10 · 宿主：github
 
@@ -155,13 +155,13 @@ Python 包生成斜路径干/湿延迟（STD/SWD）以及基于 GPT/VMF 的模�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [TU-Wien-VMF-GPT-codes](https://vmf.geo.tuwien.ac.at/codes) | TU Wien 官方 VMF1/VMF3/GPT/GMF 源码与格网目录 | Fortran/MATLAB/C++ | — | 🏷️ 官方 · 核心 |
+| [TU-Wien-VMF-GPT-codes](https://vmf.geo.tuwien.ac.at/codes) | TU Wien 官方 VMF1/VMF3/GPT/GMF 源码与格网目录 | Fortran/MATLAB/C++ | — | 🏷️ 官方 核心 |
 | [VMF-TUWien-Home](https://vmf.geo.tuwien.ac.at/) | TU Wien VMF 主页：对流层映射函数产品与代码入口 | Fortran/MATLAB | — | 🏷️ 官方 |
 
 ### 详细说明
 
 #### [TU-Wien-VMF-GPT-codes](https://vmf.geo.tuwien.ac.at/codes)  
-*🏷️ 官方 · 核心*
+*🏷️ 官方 核心*
 
 语言：Fortran/MATLAB/C++ · 许可：TU Wien site terms · 星标约：— · 宿主：official_site
 
@@ -178,12 +178,12 @@ Python 包生成斜路径干/湿延迟（STD/SWD）以及基于 GPT/VMF 的模�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [UNB3m](https://github.com/ohm1122/UNB3m) | UNB3m 中性大气延迟模型 | — | 3 | 🏷️ 个人社区 · ★ Star |
+| [UNB3m](https://github.com/ohm1122/UNB3m) | UNB3m 中性大气延迟模型 | — | 3 | 🏷️ 个人社区 ★ |
 
 ### 详细说明
 
 #### [UNB3m](https://github.com/ohm1122/UNB3m)  
-*🏷️ 个人社区 · ★ Star*
+*🏷️ 个人社区 ★*
 
 语言：— · 许可：— · 星标约：3 · 宿主：github
 
@@ -246,12 +246,20 @@ Surrey TechDemoSat-1（MERRByS）星载 GNSS-R 的 Python/Jupyter 示例，演�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [GIRAS-GPS-Solutions](https://github.com/cemalialtuntas/GIRAS-GPS-Solutions) | GIRAS：MATLAB 开源 GNSS-IR 分析软件（GPS Solutions 论文配套） | MATLAB | 13 | 🏷️ 高校实验室 |
 | [gnssr4river](https://github.com/lroineau/gnssr4river) | 面向河流水文的 GNSS-R Python 工具箱 | Python | 8 | 🏷️ 个人社区 |
 | [gpssnrpy](https://github.com/kristinemlarson/gpssnrpy) | RINEX SNR 提取与高度角工具 | Python | 6 | 🏷️ 高校实验室 |
 | [NearRealTimeGNSSIR](https://github.com/cemalialtuntas/NearRealTimeGNSSIR) | 近实时 GNSS-IR 软件原型 | HTML | 5 | 🏷️ 个人社区 |
 | [gnssr-raspberry](https://github.com/ITC-Water-Resources/gnssr-raspberry) | 树莓派上的 GNSS 反射测量（ITC 水资源） | Python | 3 | 🏷️ 高校实验室 |
 
 ### 详细说明
+
+#### [GIRAS-GPS-Solutions](https://github.com/cemalialtuntas/GIRAS-GPS-Solutions)  
+*🏷️ 高校实验室*
+
+语言：MATLAB · 许可：MIT · 星标约：13 · 宿主：github
+
+Altuntas 与 Tunalioglu 发布的 MATLAB GNSS-IR 工具，可读 RINEX 2/3 与广播/精密星历，支持多星座，含第一菲涅耳区计算与基于 SNR 的反射体高度估计及可视化。适合教学与站点级反射测量试验。依赖 MATLAB 环境；大规模业务化反演可对照 Kristen Larson 的 gnssrefl。
 
 #### [gnssr4river](https://github.com/lroineau/gnssr4river)  
 *🏷️ 个人社区*
@@ -295,3 +303,48 @@ ITC Water Resources 在树莓派上运行的 GNSS 反射测量实验工程，面
 语言：Python · 许可：CC0-1.0 · 星标约：7 · 宿主：github
 
 联合反射/折射（GNSS-RR）连续估计雪/粒雪累积、表面质量与密度的方法代码，面向冰冻圈监测。场景专一；通用水位 GNSS-IR 不是其主场。
+
+## 射线追踪/NWM
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [RADIATE](https://github.com/TUW-VieVS/RADIATE) | 维也纳科技大学 VieVS 开源对流层射线追踪（微波/光学，基于数值天气模式） | Fortran | 23 | 🏷️ 高校实验室 核心 |
+
+### 详细说明
+
+#### [RADIATE](https://github.com/TUW-VieVS/RADIATE)  
+*🏷️ 高校实验室 核心*
+
+语言：Fortran · 许可：GPL-3.0 · 星标约：23 · 宿主：github
+
+TU Wien VieVS 组发布的 Fortran 射线追踪程序，可对微波与光学频段观测重建对流层延迟及相关参数，输入依赖数值天气预报场。适合与 VMF/GPT 产品对照、做高精度延迟研究或 VLBI/GNSS 联合试验。NWM 数据获取与预处理需自备；官方亦有校内 Git 镜像，公开仓以 GitHub 为准。
+
+## GNSS-IR/多路径仿真
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [mpsim](https://github.com/ufrgs-gnss-lab/mpsim) | UFRGS 开源 GNSS 多路径前向仿真器（Matlab/Octave，近地表反射测量） | MATLAB | 48 | 🏷️ 高校实验室 核心 |
+
+### 详细说明
+
+#### [mpsim](https://github.com/ufrgs-gnss-lab/mpsim)  
+*🏷️ 高校实验室 核心*
+
+语言：MATLAB · 许可：BSD-2-Clause · 星标约：48 · 宿主：github
+
+Nievinski 与 Larson 发表于 GPS Solutions 的开源多路径仿真器，用几何光学前向模型模拟近地表反射对 GNSS 观测的影响，服务 GNSS-IR 与定位多路径研究。支持 Matlab/Octave，附路径初始化脚本。面向机理仿真而非直接水位检索流水线；实测反演常与 gnssrefl、GIRAS 等工具衔接。
+
+## GNSS-IR水位
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [GMR-Water](https://github.com/GRseRG-CUMTB/GMR-Water) | 中国矿大（北京）课题组基于 GNSS 多路径反射的水位反演 MATLAB 软件 | MATLAB | 7 | 🏷️ 高校实验室 |
+
+### 详细说明
+
+#### [GMR-Water](https://github.com/GRseRG-CUMTB/GMR-Water)  
+*🏷️ 高校实验室*
+
+语言：MATLAB · 许可：see upstream README · 星标约：7 · 宿主：github
+
+面向 GNSS 多路径反射信号的水位检索实现，提供从观测到水位产品的处理流程，适合水文与近岸监测试验。许可与依赖以仓库说明为准。站点几何、天线环境与 SNR 质量对结果影响大；与通用 GNSS-IR 套件（如 gnssrefl、GIRAS）对照选型时可看其水文专项流程与示例。
