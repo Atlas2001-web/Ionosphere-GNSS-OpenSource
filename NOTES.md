@@ -161,3 +161,9 @@
 - 14–18 均重写为约 0.86–0.94 万字零基础详讲
 - 02 已加厚至约 1.4 万字；03、04 仍在重写
 - 12、13 已加厚
+
+## Gap-fill 合并（2026-09-17）
+
+- 来源：`research/batch_gapfill_20260917.json`
+- 新增 **36** 条（IRI 封装、IONEX/TEC、闪烁/Septentrio、SBAS、层析、掩星、SAMI2 等）
+- 目录总量见 README / PROJECTS.json

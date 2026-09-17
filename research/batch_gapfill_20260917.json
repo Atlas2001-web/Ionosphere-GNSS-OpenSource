@@ -1,0 +1,614 @@
+[
+  {
+    "name": "iri90",
+    "url": "https://github.com/space-physics/iri90",
+    "one_liner_zh": "IRI-90 国际参考电离层的 Python 封装",
+    "analysis_zh": "把经典 IRI-90 Fortran/数据流程包装成 Python，便于脚本化计算给定时刻与位置的电子密度等廓线，适合课堂演示与快速对比 GNSS TEC。输入一般为日期、地理坐标与高度网格；输出为模式密度/相关参量。局限：模型年代较早，精度与 IRI-2016/2020 有差距；依赖编译/数据文件配置，不替代业务 GIM。",
+    "language": "Python",
+    "license": "MIT",
+    "category": "ionosphere",
+    "subcategory": "IRI/NeQuick",
+    "provenance": "academic_lab",
+    "host": "github",
+    "stars_approx": 8,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "FIRI.jl",
+    "url": "https://github.com/fgasdia/FaradayInternationalReferenceIonosphere.jl",
+    "one_liner_zh": "FIRI 法拉第国际参考电离层的 Julia 工具",
+    "analysis_zh": "面向 FIRI（Faraday International Reference Ionosphere）廓线的 Julia 读写与处理库，常用于低频/VLF 传播与低电离层研究。输入为 FIRI 剖面数据与查询坐标；输出为便于后续射线或吸收计算的电子密度廓线。局限：覆盖低电离层场景，不是 GNSS L 波段 TEC 改正主工具；需 Julia 环境。",
+    "language": "Julia",
+    "license": "MIT",
+    "category": "ionosphere",
+    "subcategory": "IRI/NeQuick",
+    "provenance": "academic_lab",
+    "host": "github",
+    "stars_approx": 5,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "SubionosphericVLFInversionAlgorithms.jl",
+    "url": "https://github.com/fgasdia/SubionosphericVLFInversionAlgorithms.jl",
+    "one_liner_zh": "用 VLF 信号反演低电离层的 Julia 算法集",
+    "analysis_zh": "实现亚电离层 VLF 信号反演以估计低电离层参数，适合教学理解“电波—电离层”反问题。输入为 VLF 观测量与传播几何；输出为低电离层特征量估计。局限：与 GNSS TEC/GIM 流水线不同；对传播正演与初值敏感。",
+    "language": "Julia",
+    "license": "MIT",
+    "category": "ionosphere",
+    "subcategory": "工具",
+    "provenance": "academic_lab",
+    "host": "github",
+    "stars_approx": 4,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "SbfParser",
+    "url": "https://github.com/septentrio-gnss/SbfParser",
+    "one_liner_zh": "Septentrio SBF 二进制流/文件解析（含闪烁相关块）",
+    "analysis_zh": "官方生态 Python/Cython 解析器，把 SBF 流转成 JSON 结构，社区已扩展 ISMR（4086）等闪烁监测块，便于从 PolaRx 系列提取 S4、σφ 等。输入为 SBF 文件或流；输出为结构化观测/状态块。局限：侧重解码而非完整闪烁科学产品流水线；大文件需注意内存策略。",
+    "language": "Cython",
+    "license": "BSD-3-Clause",
+    "category": "ionosphere",
+    "subcategory": "闪烁",
+    "provenance": "official",
+    "host": "github",
+    "stars_approx": 12,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "Septentrio-PyDataLink",
+    "url": "https://github.com/septentrio-gnss/Septentrio-PyDataLink",
+    "one_liner_zh": "Septentrio 数据流可视化与互联开源工具",
+    "analysis_zh": "pyDataLink 用于可视化与连接接收机数据流，便于实验教学中快速查看观测与配置链路。输入为接收机/记录数据流；输出为可视化与转发接口。局限：偏工程联调，不直接给出 TEC/闪烁科学指标。",
+    "language": "Python",
+    "license": "BSD-3-Clause",
+    "category": "ionosphere",
+    "subcategory": "工具",
+    "provenance": "official",
+    "host": "github",
+    "stars_approx": 8,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "septentrio_gnss_driver",
+    "url": "https://github.com/septentrio-gnss/septentrio_gnss_driver",
+    "one_liner_zh": "Septentrio GNSS/INS 的 ROS1/ROS2 驱动",
+    "analysis_zh": "把 Septentrio 接收机接入机器人操作系统，发布导航与观测话题，便于车载/无人机平台联调。输入为网口/串口 SBF；输出为 ROS 话题。局限：面向机器人集成而非电离层专题处理；闪烁/ISMR 需另接解析模块。",
+    "language": "C++",
+    "license": "BSD-3-Clause",
+    "category": "gnss-data",
+    "subcategory": "接收机驱动",
+    "provenance": "official",
+    "host": "github",
+    "stars_approx": 133,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "SbfMixer",
+    "url": "https://github.com/septentrio-gnss/SbfMixer",
+    "one_liner_zh": "在 Node-RED 中直接使用 Septentrio 接收机",
+    "analysis_zh": "通过 Node-RED 流程编排访问 Septentrio，适合演示数据采集与简单自动化。输入为接收机连接与流程节点配置；输出为可拖拽的数据管道。局限：教学/原型友好，科研级批处理与质控能力有限。",
+    "language": "JavaScript",
+    "license": "BSD-3-Clause",
+    "category": "ionosphere",
+    "subcategory": "工具",
+    "provenance": "official",
+    "host": "github",
+    "stars_approx": 2,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "BiScEF",
+    "url": "https://github.com/stenseng/BiScEF",
+    "one_liner_zh": "二进制闪烁交换格式 BiScEF 及相关工具",
+    "analysis_zh": "定义/实现 Binary Scintillation Exchange Format，便于闪烁监测数据交换与归档。输入为符合约定的闪烁记录；输出为二进制交换文件或解析结果。局限：需对照格式文档；生态小于 ISMR/IONEX 常见文本格式。",
+    "language": "Python",
+    "license": "",
+    "category": "ionosphere",
+    "subcategory": "闪烁",
+    "provenance": "personal_community",
+    "host": "github",
+    "stars_approx": 1,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "IRTS_SDK",
+    "url": "https://github.com/1acheng/IRTS_SDK",
+    "one_liner_zh": "全球电离层实时云服务（IRTS）客户端 SDK",
+    "analysis_zh": "面向 ionosphere.cn 实时电离层服务的 C/C++ SDK，封装连接与 TEC 获取，便于导航终端做单频改正演示。输入为服务端连接参数与查询位置/时间；输出为实时 TEC/延迟相关量。局限：依赖云服务可用性与账号策略；不是离线开源模式本体。",
+    "language": "",
+    "license": "GPL-3.0",
+    "category": "ionosphere",
+    "subcategory": "电离层产品",
+    "provenance": "personal_community",
+    "host": "github",
+    "stars_approx": 2,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "TEC_calculation_RINEX3",
+    "url": "https://github.com/cssrg-kmitl/TEC_calculation_RINEX3",
+    "one_liner_zh": "MATLAB 从 RINEX 3.04 双频观测计算 TEC/ROTI",
+    "analysis_zh": "泰国 KMITL CSSRG 实验室程序，由双频 RINEX 3 计算 STEC/VTEC、DCB 与 ROTI，主入口 ProcessTECCalculation.m。输入为观测/星历等；输出为一日 TEC 结构与 ROTI。局限：依赖 Linux/Cygwin 命令环境；主要面向 GPS 双频教学实验。",
+    "language": "MATLAB",
+    "license": "",
+    "category": "ionosphere",
+    "subcategory": "TEC估计",
+    "provenance": "academic_lab",
+    "host": "github",
+    "stars_approx": 6,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "Klobuchar.jl",
+    "url": "https://github.com/bukvoj/Klobuchar.jl",
+    "one_liner_zh": "Klobuchar 广播电离层延迟模型的 Julia 实现",
+    "analysis_zh": "实现 GNSS 单频广播 Klobuchar 模型，便于与广播 α/β 参数对照课堂计算。输入为时间、用户位置、视线方向与八参数；输出为电离层时间延迟。局限：仓库体量很小，功能单一；精度受广播模型本身限制。",
+    "language": "Julia",
+    "license": "MIT",
+    "category": "ionosphere",
+    "subcategory": "模型",
+    "provenance": "personal_community",
+    "host": "github",
+    "stars_approx": 2,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "IonOccAnalysis",
+    "url": "https://github.com/wonder2019WHU/IonOccAnalysis",
+    "one_liner_zh": "电离层掩星（Occultation）数据分析工具（武大相关）",
+    "analysis_zh": "C++ 工具面向 GNSS 电离层掩星数据处理与分析，适合理解 LEO—GNSS 链路反演电子密度。输入为掩星观测/相关产品；输出为分析与可视化结果。局限：文档与维护节奏需自行评估；与地基双频 TEC 流程不同。",
+    "language": "C++",
+    "license": "MIT",
+    "category": "ionosphere",
+    "subcategory": "工具",
+    "provenance": "academic_lab",
+    "host": "github",
+    "stars_approx": 2,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "SegmentsComputation",
+    "url": "https://github.com/yxw027/SegmentsComputation",
+    "one_liner_zh": "体素电离层层析中射线段（几何）矩阵算法",
+    "analysis_zh": "实现体素层析里卫星—测站射线与网格相交段的几何矩阵计算，是层析法方程组装的前置步骤。输入为射线路径与体素划分；输出为稀疏段长矩阵。局限：不含完整反演与 TEC 预处理；需自备观测与求解器。",
+    "language": "",
+    "license": "",
+    "category": "ionosphere",
+    "subcategory": "层析",
+    "provenance": "academic_lab",
+    "host": "github",
+    "stars_approx": 0,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "IonoBench",
+    "url": "https://github.com/Mert-chan/IonoBench",
+    "one_liner_zh": "全球电离层时空预报模型基准测试框架",
+    "analysis_zh": "提供对比多种时空深度学习/统计模型预报全球电离层的基准流程，便于复现论文实验。输入为历史 TEC/GIM 类数据与模型配置；输出为预报评分与对比。局限：侧重 ML 基准而非物理模式；数据准备与算力要求不低。",
+    "language": "Jupyter Notebook",
+    "license": "MIT",
+    "category": "ionosphere",
+    "subcategory": "TEC预报/ML",
+    "provenance": "academic_lab",
+    "host": "github",
+    "stars_approx": 2,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "mitiono",
+    "url": "https://github.com/sabrinastronomy/mitiono",
+    "one_liner_zh": "从 GPS 接收机数据提取电离层与波束图（miti-iono）",
+    "analysis_zh": "配套射电/干涉测量电离层缓解研究，从 GPS 数据生成电离层与波束相关图（见 arXiv:2411.06144）。输入为 GPS 接收机数据；输出为电离层/波束产品。局限：面向特定科学场景；后续基带互相关仍在规划。",
+    "language": "Jupyter Notebook",
+    "license": "",
+    "category": "ionosphere",
+    "subcategory": "工具",
+    "provenance": "academic_lab",
+    "host": "github",
+    "stars_approx": 4,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "real-time-ionospheric-maps-Kalman",
+    "url": "https://github.com/AlexandraKoulouri/real-time-ionospheric-maps-using-Kalman",
+    "one_liner_zh": "南美区域实时电离层图（集合卡尔曼）MATLAB 代码",
+    "analysis_zh": "用 Ensemble Kalman Filter 重建南美区域电离层图，展示实时/近实时制图思路。输入为区域 GNSS TEC 相关观测量；输出为时序电离层图。局限：区域与方法绑定；工程化 GIM/IONEX 生产需额外封装。",
+    "language": "MATLAB",
+    "license": "",
+    "category": "ionosphere",
+    "subcategory": "GIM/球谐映射",
+    "provenance": "academic_lab",
+    "host": "github",
+    "stars_approx": 3,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "MyIonosphere_Library",
+    "url": "https://github.com/mguerra96/MyIonosphere_Library",
+    "one_liner_zh": "相位观测 GFLC 与穿刺点 IPP 的 MATLAB 函数库",
+    "analysis_zh": "计算相位几何自由组合（GFLC）与电离层穿刺点，适合教学推导 STEC 观测方程。输入为相位观测与站星几何；输出为 GFLC/IPP。局限：不是完整 TEC 定标与 DCB 解算套件。",
+    "language": "MATLAB",
+    "license": "",
+    "category": "ionosphere",
+    "subcategory": "工具",
+    "provenance": "personal_community",
+    "host": "github",
+    "stars_approx": 4,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "Ionex_Parser",
+    "url": "https://github.com/ajayraghASL/Ionex_Parser",
+    "one_liner_zh": "读取 IONEX 并返回网格 TEC 的 Python 脚本",
+    "analysis_zh": "轻量解析 IONEX，取出各历元 TEC 格网，适合作业与快速画图。输入为 IONEX 文件；输出为 TEC 数组/表格。局限：功能覆盖面小于完整读写库；大文件与 RMS 图支持需自测。",
+    "language": "Jupyter Notebook",
+    "license": "",
+    "category": "ionosphere",
+    "subcategory": "IONEX/TEC图",
+    "provenance": "personal_community",
+    "host": "github",
+    "stars_approx": 2,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "M_ISSION",
+    "url": "https://github.com/wulide4/M_ISSION",
+    "one_liner_zh": "多 GNSS 电离层闪烁指数计算软件",
+    "analysis_zh": "面向多系统 GNSS 的闪烁指数（如 S4 等）处理软件，仓库体积较大，适合闪烁监测实验。输入为高频采样 GNSS 观测；输出为闪烁指数产品。局限：开源许可与文档需自行确认；部署依赖可能偏工程化。",
+    "language": "C++",
+    "license": "",
+    "category": "ionosphere",
+    "subcategory": "闪烁",
+    "provenance": "personal_community",
+    "host": "github",
+    "stars_approx": 0,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "ionospheric-scintillation-mitigation",
+    "url": "https://github.com/fengjie0325/ionospheric-scintillation-mitigation",
+    "one_liner_zh": "电离层闪烁抑制算法的原始计算机代码",
+    "analysis_zh": "论文配套闪烁抑制算法实现（MATLAB），用于理解跟踪环/信号处理层面的缓解思路。输入为受闪烁影响的信号/观测量仿真或实测；输出为抑制后结果对比。局限：代码体量小、场景专用；不替代接收机厂商闭源算法。",
+    "language": "MATLAB",
+    "license": "",
+    "category": "ionosphere",
+    "subcategory": "闪烁",
+    "provenance": "personal_community",
+    "host": "github",
+    "stars_approx": 2,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "pysatSpaceWeather",
+    "url": "https://github.com/pysat/pysatSpaceWeather",
+    "one_liner_zh": "pysat 空间天气指数与数据集支持库",
+    "analysis_zh": "为 pysat 生态提供空间天气指数与相关数据接口，便于把 F10.7、地磁指数等驱动接到电离层分析。输入为数据源配置；输出为统一的 pysat Instrument 对象。局限：本身不算 TEC 解算器；需与 pysat 主库配合。",
+    "language": "Python",
+    "license": "BSD-3-Clause",
+    "category": "ionosphere",
+    "subcategory": "工具",
+    "provenance": "academic_lab",
+    "host": "github",
+    "stars_approx": 14,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "AURORA",
+    "url": "https://github.com/egavazzi/AURORA",
+    "one_liner_zh": "电离层电子输运时变模型 AURORA",
+    "analysis_zh": "描述电离层中电子输运的时间相关模型（MATLAB），用于沉降/能量沉积相关过程理解。输入为驱动与边界条件；输出为电子输运相关场。局限：非 GNSS 测地产品线；配置与物理背景要求较高。",
+    "language": "MATLAB",
+    "license": "GPL-3.0",
+    "category": "ionosphere",
+    "subcategory": "模型",
+    "provenance": "academic_lab",
+    "host": "github",
+    "stars_approx": 3,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "GNSSPositioning",
+    "url": "https://github.com/bitecc/GNSSPositioning",
+    "one_liner_zh": "SPP 教学程序（含电离层/对流层延迟改正）",
+    "analysis_zh": "中文注释友好的 SPP 示例：解码、卫星位置、SPP/SPV 及电离层对流层改正，适合本科课程。输入为 GNSS 观测；输出为定位结果与延迟改正中间量。局限：功能聚焦教学 SPP，不是精密 TEC/GIM 软件。",
+    "language": "C++",
+    "license": "Apache-2.0",
+    "category": "gnss-positioning",
+    "subcategory": "SPP/RTK/PPP",
+    "provenance": "personal_community",
+    "host": "github",
+    "stars_approx": 12,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "SAMI2",
+    "url": "https://github.com/NRL-Plasma-Physics-Division/SAMI2",
+    "one_liner_zh": "NRL SAMI2 二维电离层模式官方源码",
+    "analysis_zh": "Naval Research Laboratory 的 SAMI2（Sami2 is Another Model of the Ionosphere）Fortran 源码，沿磁力线描述低纬—中纬等离子体。输入为经度、季节、太阳活动等；输出为二维密度等场。局限：二维近似；编译与驱动准备有门槛（可与 sami2py 对照）。",
+    "language": "Fortran",
+    "license": "CC0-1.0",
+    "category": "ionosphere",
+    "subcategory": "模型",
+    "provenance": "official",
+    "host": "github",
+    "stars_approx": 6,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "transcar",
+    "url": "https://github.com/space-physics/transcar",
+    "one_liner_zh": "Transcar 一维沉降电离层模式",
+    "analysis_zh": "Blelly/Lilensten/Zettergren 一维沉降电离层模式，用于粒子沉降加热与密度响应研究。输入为沉降能谱等；输出为一维剖面时序。局限：非全球 GIM；与 GNSS 射线积分需自行耦合。",
+    "language": "Fortran",
+    "license": "NOASSERTION",
+    "category": "ionosphere",
+    "subcategory": "模型",
+    "provenance": "academic_lab",
+    "host": "github",
+    "stars_approx": 7,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "radionopy",
+    "url": "https://github.com/UPennEoR/radionopy",
+    "one_liner_zh": "大尺度电离层行为计算的 Python/C 工具",
+    "analysis_zh": "面向射电天文/大尺度电离层效应的数值工具，可计算大范围电离层相关量。输入为模式/几何配置；输出为电离层影响相关场。局限：场景偏射电传播，不是标准 IONEX 生产。",
+    "language": "C",
+    "license": "MIT",
+    "category": "ionosphere",
+    "subcategory": "工具",
+    "provenance": "academic_lab",
+    "host": "github",
+    "stars_approx": 7,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "mat_gemini",
+    "url": "https://github.com/gemini3d/mat_gemini",
+    "one_liner_zh": "GEMINI 三维电离层模式的核心 MATLAB 脚本",
+    "analysis_zh": "为 GEMINI 离子层模式提供 MATLAB 侧核心脚本（配置、读写、后处理接口）。输入为 GEMINI 工程与网格；输出为可分析的场量。局限：需配合 GEMINI 主程序；与目录中 gemini3d 本体分工不同。",
+    "language": "MATLAB",
+    "license": "Apache-2.0",
+    "category": "ionosphere",
+    "subcategory": "模型",
+    "provenance": "academic_lab",
+    "host": "github",
+    "stars_approx": 6,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "EGNOSTools",
+    "url": "https://github.com/DfAC/EGNOSTools",
+    "one_liner_zh": "EGNOS 处理支持工具（含 EMS 相关转换）",
+    "analysis_zh": "辅助 EGNOS/SBAS 消息与 EMS 等格式处理的小工具集，便于课堂演示 MT18/MT26 电离层格网改正链路。输入为 EGNOS/EMS/RINEX 相关文件；输出为转换/解析结果。局限：仓库很小，需与规范文档对照使用。",
+    "language": "Python",
+    "license": "GPL-3.0",
+    "category": "ionosphere",
+    "subcategory": "SBAS电离层",
+    "provenance": "personal_community",
+    "host": "github",
+    "stars_approx": 1,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "t-fors",
+    "url": "https://github.com/viventriglia/t-fors",
+    "one_liner_zh": "行进式电离层扰动（TID）预报系统 T-FORS",
+    "analysis_zh": "欧盟 Horizon 资助的 TID 预报相关开源组件/门户代码，面向扰动预警演示。输入为电离层扰动相关观测与模型配置；输出为 TID 预报产品。局限：业务可用性依赖数据源；与实时 GIM 生产不同。",
+    "language": "HTML",
+    "license": "MIT",
+    "category": "ionosphere",
+    "subcategory": "TEC预报",
+    "provenance": "academic_lab",
+    "host": "github",
+    "stars_approx": 7,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "COSMIC-IONPRF-Ne-TEC",
+    "url": "https://github.com/HassanNooreldeen/COSMIC-IONPRF-NC-CDAAC-UCAR-Ne-TEC",
+    "one_liner_zh": "COSMIC CDAAC 掩星 Ne/TEC 下载与多年分析 MATLAB 脚本",
+    "analysis_zh": "下载并筛选 COSMIC 掩星电子密度廓线，做多年统计分析与教学绘图。输入为 CDAAC 访问与时间范围；输出为 Ne/TEC 相关统计。局限：依赖数据中心政策；不是地基双频 TEC。",
+    "language": "MATLAB",
+    "license": "",
+    "category": "ionosphere",
+    "subcategory": "工具",
+    "provenance": "personal_community",
+    "host": "github",
+    "stars_approx": 9,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "tidd",
+    "url": "https://github.com/vc1492a/tidd",
+    "one_liner_zh": "用在轨 GPS sTEC 变化率异常检测海啸信号",
+    "analysis_zh": "演示从低轨 GPS 的 sTEC 时间变化中做异常检测以指示海啸扰动的方法与笔记本。输入为在轨 GPS TEC 时序；输出为异常检测结果。局限：研究案例向；虚警/漏检与空间天气干扰需注意。",
+    "language": "Jupyter Notebook",
+    "license": "NOASSERTION",
+    "category": "ionosphere",
+    "subcategory": "TEC估计",
+    "provenance": "academic_lab",
+    "host": "github",
+    "stars_approx": 10,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "EGNOS_SDK_Core",
+    "url": "https://github.com/EpsilonRTD/EGNOS_SDK_Core",
+    "one_liner_zh": "EGNOS Android SDK 核心库（兼容 Android 5）",
+    "analysis_zh": "在移动端集成 EGNOS/SBAS 改正能力的 SDK 核心，便于理解终端如何消费 SBAS 电离层格网。输入为 SDK API 与 SBAS 数据通道；输出为改正后的定位相关量。局限：偏移动集成；不是开源 EMS 全链路解析教程。",
+    "language": "Java",
+    "license": "",
+    "category": "ionosphere",
+    "subcategory": "SBAS电离层",
+    "provenance": "personal_community",
+    "host": "github",
+    "stars_approx": 5,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "iono-tomography",
+    "url": "https://github.com/brianbreitsch/iono-tomography",
+    "one_liner_zh": "电离层层析相关 Python 实验代码",
+    "analysis_zh": "开源层析实验代码，便于搭建体素/基函数反演原型。输入为 STEC 与几何；输出为电子密度反演结果。局限：文档与完整度需自行评估；工程稳健性弱于商业/大型实验室系统。",
+    "language": "Python",
+    "license": "",
+    "category": "ionosphere",
+    "subcategory": "层析",
+    "provenance": "academic_lab",
+    "host": "github",
+    "stars_approx": 4,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "317Lab-tomography",
+    "url": "https://github.com/317Lab/tomography",
+    "one_liner_zh": "Lynch 火箭实验室电离层层析成像代码库",
+    "analysis_zh": "火箭/地基联合场景下的电离层层析教学与研究代码。输入为层析观测几何与 TEC；输出为二维/三维重建。局限：星数少、场景专用；需对照实验室文档。",
+    "language": "Jupyter Notebook",
+    "license": "",
+    "category": "ionosphere",
+    "subcategory": "层析",
+    "provenance": "academic_lab",
+    "host": "github",
+    "stars_approx": 1,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "MathWorks-ionex_reader",
+    "url": "https://www.mathworks.com/matlabcentral/fileexchange/172149-ionex_reader",
+    "one_liner_zh": "MATLAB File Exchange：IONEX 读取、制图与单点 TEC 时序",
+    "analysis_zh": "Bhuvnesh 发布的 ionex_reader 工具箱，可读取 IONEX、绘制 TEC/RMS 图并提取任意位置 TEC 时序，适合课堂快速可视化 IGS GIM。输入为 IONEX 文件与经纬坐标；输出为图与时序。局限：File Exchange 许可与更新节奏需查看页面；功能以读/画为主，不含球谐估解。",
+    "language": "MATLAB",
+    "license": "",
+    "category": "ionosphere",
+    "subcategory": "IONEX/TEC图",
+    "provenance": "personal_community",
+    "host": "mathworks",
+    "stars_approx": 0,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  },
+  {
+    "name": "Zenodo-VTEC-map-generation-SBAS",
+    "url": "https://doi.org/10.5281/zenodo.10058636",
+    "one_liner_zh": "Zenodo：支持星基导航误差模型的 VTEC 图生成补充材料",
+    "analysis_zh": "Tampere University 发布的 VTEC 图生成代码/数据补充（VTEC_FORZENODO.zip），用于支撑星基导航电离层误差模型研究与复现。输入见压缩包说明；输出为 VTEC 图相关结果。局限：以论文复现为目的，接口与文档完整度因包而异；使用前请核对许可与引用。",
+    "language": "",
+    "license": "",
+    "category": "ionosphere",
+    "subcategory": "GIM/球谐映射",
+    "provenance": "academic_lab",
+    "host": "zenodo",
+    "stars_approx": 0,
+    "markers": [
+      "gapfill-2026-09-17"
+    ],
+    "source": "gapfill-search 2026-09-17"
+  }
+]

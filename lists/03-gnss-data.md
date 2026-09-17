@@ -1,5 +1,5 @@
 # GNSS 数据与格式 / GNSS Data I/O
-> 共 **88** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **89** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
@@ -902,6 +902,21 @@ Rust 实现的 u-blox UBX 原始观测反序列化与 RINEX 采集工具，方�
 语言：C · 许可：GPL-3.0 · 星标约：14 · 宿主：github
 
 面向 Linux 服务器的无头 C/C++ 流转发与缓存工具，在 RTKLIB 基础上增强 NTRIP（含 TLS）接收/推送，适合台站 DTU→Caster 或产品流分发试验。强调保密传输场景下的用户侧接入。部署与证书配置需运维自理；完整 PPP 引擎仍依赖上游 RTKLIB 或其他解算软件。
+
+## 接收机驱动
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [septentrio_gnss_driver](https://github.com/septentrio-gnss/septentrio_gnss_driver) | Septentrio GNSS/INS 的 ROS1/ROS2 驱动 | C++ | 133 | 🏷️ 官方 |
+
+### 详细说明
+
+#### [septentrio_gnss_driver](https://github.com/septentrio-gnss/septentrio_gnss_driver)  
+*🏷️ 官方*
+
+语言：C++ · 许可：BSD-3-Clause · 星标约：133 · 宿主：github
+
+把 Septentrio 接收机接入机器人操作系统，发布导航与观测话题，便于车载/无人机平台联调。输入为网口/串口 SBF；输出为 ROS 话题。局限：面向机器人集成而非电离层专题处理；闪烁/ISMR 需另接解析模块。
 
 ## SP3/轨道钟差格式
 

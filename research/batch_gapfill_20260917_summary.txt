@@ -1,0 +1,54 @@
+batch_gapfill_20260917 汇总
+新增条目数: 36
+输出: /workspace/ionosphere-gnss-catalog/research/batch_gapfill_20260917.json
+
+按子类:
+  工具 (9): SubionosphericVLFInversionAlgorithms.jl, Septentrio-PyDataLink, SbfMixer, IonOccAnalysis, mitiono, MyIonosphere_Library, pysatSpaceWeather, radionopy, COSMIC-IONPRF-Ne-TEC
+  模型 (5): Klobuchar.jl, AURORA, SAMI2, transcar, mat_gemini
+  闪烁 (4): SbfParser, BiScEF, M_ISSION, ionospheric-scintillation-mitigation
+  层析 (3): SegmentsComputation, iono-tomography, 317Lab-tomography
+  IRI/NeQuick (2): iri90, FIRI.jl
+  TEC估计 (2): TEC_calculation_RINEX3, tidd
+  GIM/球谐映射 (2): real-time-ionospheric-maps-Kalman, Zenodo-VTEC-map-generation-SBAS
+  IONEX/TEC图 (2): Ionex_Parser, MathWorks-ionex_reader
+  SBAS电离层 (2): EGNOSTools, EGNOS_SDK_Core
+  接收机驱动 (1): septentrio_gnss_driver
+  电离层产品 (1): IRTS_SDK
+  TEC预报/ML (1): IonoBench
+  SPP/RTK/PPP (1): GNSSPositioning
+  TEC预报 (1): t-fors
+
+重点条目（建议优先合并）:
+  - iri90
+  - FIRI.jl
+  - SbfParser
+  - BiScEF
+  - IRTS_SDK
+  - TEC_calculation_RINEX3
+  - IonOccAnalysis
+  - SegmentsComputation
+  - M_ISSION
+  - IonoBench
+  - SAMI2
+  - EGNOSTools
+  - t-fors
+  - iono-tomography
+  - MathWorks-ionex_reader
+  - Zenodo-VTEC-map-generation-SBAS
+  - septentrio_gnss_driver
+  - mitiono
+  - real-time-ionospheric-maps-Kalman
+  - Klobuchar.jl
+  - transcar
+  - mat_gemini
+  - pysatSpaceWeather
+
+检索过但未收录/跳过原因（notable misses）:
+  - Seemala GPS-TEC：目录已有。
+  - 1acheng/INX_Editor、mfkiwl/vtec、cssrg TEC-calculation-MATLAB、ionotec、PyTECGg、bbrawar/ionex_reader：已在目录。
+  - odrisci/NeQuickJRC：与 mgfernan/NeQuickJRC 同源，跳过。
+  - aaronjridley/GITM：与 GITMCode/GITM 并行，跳过。
+  - tpl2go/Klobuchar：空仓。
+  - 本批为控质量主动降级未写入: EGNSS4CAP, SSDMD-Ionosphere, KlobucharImplementation, Karaun-Part-7, nanheer-vtec, scintill-ai-web-app, Imaging-EPP-with-VLF, GAVLab-septentrio, cras_septentrio_gnss_driver, ocbpy, AlouetteApp, saga-utils。
+
+未改 PROJECTS.json，未 push。

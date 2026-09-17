@@ -1,5 +1,5 @@
 # 精密定位 / Precise Positioning
-> 共 **74** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **75** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
@@ -291,6 +291,7 @@ GRAZ 等地学机构风格的工具包，覆盖重力场恢复与 GNSS 处理，
 | [SatellitePosition](https://github.com/LStudioLoren/SatellitePosition) | Python 实现卫星单点定位与 RTK 相对定位的学习项目 | Python | 62 | 🏷️ 个人社区 |
 | [MobileGNSS-SPP](https://github.com/salmoshu/MobileGNSS-SPP) | 面向智能手机的 EKF 单点定位优化实现 | C | 41 | 🏷️ 高校实验室 |
 | [GNSS-Explorer](https://github.com/brucezhcw/GNSS-Explorer) | 基于 RTKLIB 的 SPP 算法优化探索 | C | 21 | 🏷️ 个人社区 |
+| [GNSSPositioning](https://github.com/bitecc/GNSSPositioning) | SPP 教学程序（含电离层/对流层延迟改正） | C++ | 12 | 🏷️ 个人社区 |
 | [SPP_SPV](https://github.com/GYH-WHU/SPP_SPV) | 武大相关 GPS/BDS 单点定位与测速（C++/MATLAB）教学实现 | C++ | 7 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -322,6 +323,13 @@ C++20 风格的 SPP/RTK/PPP/CLAS 工具包，含 Python 绑定、Docker、ROS2 �
 语言：C · 许可：— · 星标约：21 · 宿主：github
 
 在 RTKLIB 框架上探索 SPP 算法改进，例如加权模型、粗差探测或选星策略的小改动试验场。适合对照默认配置做消融实验与课程报告。不是独立大型定位套件；若计划回馈社区分支，需注意许可证、代码风格与完整回归测试，避免只报告单一场景上的收益。
+
+#### [GNSSPositioning](https://github.com/bitecc/GNSSPositioning)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：Apache-2.0 · 星标约：12 · 宿主：github
+
+中文注释友好的 SPP 示例：解码、卫星位置、SPP/SPV 及电离层对流层改正，适合本科课程。输入为 GNSS 观测；输出为定位结果与延迟改正中间量。局限：功能聚焦教学 SPP，不是精密 TEC/GIM 软件。
 
 #### [SPP_SPV](https://github.com/GYH-WHU/SPP_SPV)  
 *🏷️ 高校实验室*
