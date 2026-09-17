@@ -16,7 +16,8 @@ Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation
 1. 先读 [分类说明](./docs/categories.md)，弄清自己处在数据→改正→定位→组合导航的哪一段  
 2. 打开下方对应的 `lists/*.md`，里面有**表格 + 每条项目的详细中文分析**  
 3. 机器可读清单：[`PROJECTS.json`](./PROJECTS.json) · 相似项目检索：[`research/similar_finds.json`](./research/similar_finds.json)  
-4. 克隆上游，不要把第三方源码拷进本仓库
+4. 克隆上游，不要把第三方源码拷进本仓库  
+5. [教学讲解（电离层/TEC/GIM/模型）](./docs/tutorials/README.md)：零基础→会用开源工具的课堂式中文讲义，配合 `lists/` 条目
 
 ### 标记
 
