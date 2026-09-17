@@ -134,9 +134,13 @@ $$
 
 （下面单独写 DCB。）常把频率因子收成 $\alpha$：
 
+
 $$
-\mathrm{STEC}=\alpha\,(P_1-P_2-\mathrm{DCB}_{\mathrm{GF}})+\text{噪声},
+\mathrm{STEC}=\alpha\,(P_1-P_2-\mathrm{DCB}_{\mathrm{GF}})+ ,\quad ,
 $$
+
+（噪声）
+
 
 对 GPS L1/L2，$\alpha$ 约为 9.52 TECU/m 量级（精确值用上式算；不同教材因 P_1-P_2 或 P_2-P_1 差一个符号）。
 
@@ -325,9 +329,13 @@ $$
 **题 1.** 伪距与相位方程里电离层项符号各是什么？为什么？  
 **答：**
 
+
 $$
-\text{伪距} +I \text{（群延迟）；相位} -I \text{（相位超前）；来自} n_g>1 \text{、} n_p<1 \text{。}
++I ,\quad -I ,\quad n_g>1 ,\quad n_p<1
 $$
+
+（伪距（群延迟）；相位（相位超前）；来自、。）
+
 
 **题 2.** 写出 $P_{\mathrm{GF}}=P_1-P_2$ 后剩下的主要项。  
 **答：** $I_1-I_2$ + 接收机/卫星码延迟差 + 噪声多路径。
@@ -335,9 +343,13 @@ $$
 **题 3.** 例 A 中 $I_1=3.25\,\mathrm{m} ,\quad I_2=5.35\,\mathrm{m} \quad P_1-P_2$ 与 L_1-L_2（忽略模糊度与偏差）各多少？  
 **答：**
 
+
 $$
-P_1-P_2=-2.10\,\mathrm{m} \text{；} L_1-L_2=+2.10\,\mathrm{m} \text{。}
+P_1-P_2=-2.10\,\mathrm{m} ,\quad L_1-L_2=+2.10\,\mathrm{m}
 $$
+
+（；。）
+
 
 **题 4.** 模糊度在无周跳弧段内扮演什么角色？Leveling 在干什么？  
 **答：** 未知常数偏置；用伪距 GF 把相位 GF 平移到正确绝对水平。
@@ -442,9 +454,13 @@ $$
 
 **答：**
 
+
 $$
-\text{(1) 3.15 m；(2)} 9.52\times3.15\approx30.0\,\mathrm{TECU} \text{；(3)} 9.52\times0.50\approx4.8\,\mathrm{TECU} \text{；(4)} 30.0/1.70\approx17.6\,\mathrm{TECU} \text{。}
+9.52\times3.15\approx30.0\,\mathrm{TECU} ,\quad 9.52\times0.50\approx4.8\,\mathrm{TECU} ,\quad 30.0/1.70\approx17.6\,\mathrm{TECU}
 $$
+
+（(1) 3.15 m；(2)；(3)；(4)。）
+
 
 ---
 
@@ -499,9 +515,13 @@ $$
 
 再构造 leveled 相位 GF：
 
+
 $$
-L_{\mathrm{GF}}^{\mathrm{(lev)}}(t)=L_{\mathrm{GF}}(t)-\hat{B}\approx-(I_1-I_2)\ \text{或按你的符号对齐到 }I_1-I_2.
+L_{\mathrm{GF}}^{\mathrm{(lev)}}(t)=L_{\mathrm{GF}}(t)-\hat{B}\approx-(I_1-I_2)\ ,\quad I_1-I_2.
 $$
+
+（或按你的符号对齐到）
+
 
 最后乘 $\alpha$ 得 STEC。若先做了 DCB 改正，应在 P_GF 上改，再 leveling。
 
@@ -692,7 +712,7 @@ $$
 
 **数值例 D1（构造一组「真值」）：**
 
-令 $G:=\rho+c\Delta t+T=22\,100\,000.000\,\mathrm{m} ,\quad \mathrm{STEC}=18\,\mathrm{TECU}=1.8\times10^{17}\,\mathrm{m}^{-2}$。
+令公共几何钟差对流层项 *G* = 22 100 000.000 m，真 STEC = 18 TECU = 1.8×10¹⁷ m⁻²。
 
 $$
 I_1=\frac{40.3\times1.8\times10^{17}}{(1.57542\times10^9)^{2}}\approx2.92\,\mathrm{m},\quad
@@ -840,9 +860,13 @@ $f_1^{2}f_5^{2}\approx3.435\times10^{36}$，商 ≈3.129×10^18 ,  /40.3Rightarr
 **T3.** $\Delta b=2\,\mathrm{ns}$ 未改正，对 L1/L2 STEC 约偏多少 TECU？  
 **答：**
 
+
 $$
-2\times0.2998\approx0.60\,\mathrm{m} \text{；} 9.516\times0.60\approx5.7\,\mathrm{TECU} \text{。}
+2\times0.2998\approx0.60\,\mathrm{m} ,\quad 9.516\times0.60\approx5.7\,\mathrm{TECU}
 $$
+
+（；。）
+
 
 **T4.** B 估错 0.5 m，leveled STEC 偏多少？  
 **答：** $\approx4.8\,\mathrm{TECU}$。
@@ -850,9 +874,13 @@ $$
 **T5.** 为何 IF 组合与 GF 组合目的相反？各一句。  
 **答：**
 
+
 $$
-\text{IF 消} I \text{保几何；GF 消几何留} I \text{。}
+I ,\quad I
 $$
+
+（IF 消保几何；GF 消几何留。）
+
 
 **T6.** 列出本仓 3 个 TEC 工具、1 个偏差工具、2 个周跳/质检工具。  
 **答：** 如 `gnss-tec`、`Seemala-GPS-TEC`、`tec-suite`；`Gkit-Bias`；`cycle-slip-correction`、`TEQC`。

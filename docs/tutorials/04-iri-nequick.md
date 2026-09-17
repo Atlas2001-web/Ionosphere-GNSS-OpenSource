@@ -644,13 +644,17 @@ $$
 
 直觉链：
 
+
 $$
 (t,\lambda)\mapsto LT,\quad
 (\varphi,\lambda)\mapsto \varphi_{\mathrm{mag}},\quad
 (LT,\chi,\varphi_{\mathrm{mag}},F10.7,Ap)\mapsto
-\{N_mF2,\,h_mF2,\,\text{形状参数}\}
+\{N_mF2,\,h_mF2,\, \}
 \mapsto N_e(h).
 $$
+
+形状参数。
+
 
 ### 10.5 高度：廓线形状比单 TEC 更「要命」的场合
 
@@ -673,11 +677,15 @@ NeQuick（如 `NeQuick2-ICTP`、`Nequick-ITUR`、`NeQuickJRC`）同样给经验 
 
 NeQuick 常用一个与太阳活动相关的驱动（文献与实现中常称 **Az** 或由 F10.7/广播参数映射而来的有效电离水平）来缩放廓线强度。课堂骨架：
 
+
 $$
 N_e(h;\,\varphi,\lambda,t,\,Az)
-\qquad\text{且}\qquad
+\qquad \qquad
 \mathrm{STEC}=\int_{\mathrm{ray}} N_e\,\mathrm{d}s
 $$
+
+且。
+
 
 - **Az 升高** ≈ 「今天电离水平按更活跃的气候页来画」→ 峰与 TEC 基线上移；  
 - **Az 不是 GNSS 观测同化**——它是经验驱动旋钮；  

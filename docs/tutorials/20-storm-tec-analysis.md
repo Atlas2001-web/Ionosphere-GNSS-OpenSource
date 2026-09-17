@@ -411,9 +411,13 @@ def regional_mean(vtec, lats, lons, lat_rng, lon_rng):
 
 F 区电子损失的有效速率强烈依赖分子中性成分。原子氧 O 参与离子化学的「生产与转换」路径，而 N₂、O₂ 丰度升高往往加快复合相关损失。暴时环流把分子丰度较高的空气送到中纬 F 区高度，O/N₂ 下降，于是：
 
+
 $$
-\mathrm{O/N_2}\downarrow \;\Rightarrow\; \text{有效复合}\uparrow \;\Rightarrow\; N_e\mathrm{(F2)}\downarrow \;\Rightarrow\; \mathrm{TEC}\downarrow
+\mathrm{O/N_2}\downarrow \;\Rightarrow\; \uparrow \;\Rightarrow\; N_e\mathrm{(F2)}\downarrow \;\Rightarrow\; \mathrm{TEC}\downarrow
 $$
+
+有效复合。
+
 
 这与「整层被风水平吹走」的卡通不同：即使柱的「几何」还在，**化学寿命**变短也会造成负相。foF2 对峰附近化学更敏感，所以负相有时在测高仪上比在 TEC 上更「干净」——TEC 还含顶部贡献。
 
