@@ -5,11 +5,26 @@
 
 来源标记：🏷️ 官方 = 机构/国家实验室；🏷️ 高校实验室 = 大学课题组；🏷️ 个人社区 = 个人或小团队。
 
+## B2b组合导航
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [BDS-3-PPP-B2b_IMU_LiDAR](https://github.com/xdinav/BDS-3-PPP-B2b_IMU_LiDAR) | PPP-B2b 与 IMU/LiDAR 融合试验 | — | 6 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [BDS-3-PPP-B2b_IMU_LiDAR](https://github.com/xdinav/BDS-3-PPP-B2b_IMU_LiDAR)  
+*🏷️ 个人社区*
+
+语言：— · 许可：— · 星标约：6 · 宿主：github
+
+把 PPP-B2b 与 IMU/LiDAR 结合的试验工程，面向高动态或遮挡场景的多传感器融合。适合看改正服务如何进组合导航。成熟度与标定流程因仓库而异，引用前请用自有数据复现关键指标。
+
 ## GNSS/INS/视觉
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gici-open](https://github.com/chichengcn/gici-open) | GNSS/INS/相机紧组合开源库 GICI | C++ | 667 | 🏷️ 个人社区 核心 |
+| [gici-open](https://github.com/chichengcn/gici-open) | GNSS/INS/相机紧组合开源库 GICI | C++ | 667 | 🏷️ 个人社区 · 核心 |
 | [VINS-GPS-Wheel](https://github.com/Wallong/VINS-GPS-Wheel) | VINS-Mono 融合轮速计与 GNSS（自动驾驶） | C++ | 280 | 🏷️ 个人社区 |
 | [RTK-Visual-Inertial-Navigation](https://github.com/xiaohong-huang/RTK-Visual-Inertial-Navigation) | 滑窗滤波框架下的 RTK 视觉惯性导航 | C++ | 136 | 🏷️ 个人社区 |
 | [carvig](https://github.com/Erensu/carvig) | 车载 INS/GNSS/视觉组合导航（C） | C | 120 | 🏷️ 个人社区 |
@@ -19,7 +34,7 @@
 ### 详细说明
 
 #### [gici-open](https://github.com/chichengcn/gici-open)  
-*🏷️ 个人社区 核心*
+*🏷️ 个人社区 · 核心*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：667 · 宿主：github
 
@@ -75,20 +90,35 @@
 
 面向自动驾驶车辆的 GNSS/IMU 精密定位开源栈，工程案例多。适合车载 ROS 生态。测地学参考架与 PPP-AR 产品需求不同。
 
+## FGO/GNSS-UWB
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [FE-GUT](https://github.com/zhaoqj23/FE-GUT) | 因子图与 EKF 混合的 GNSS/UWB 紧组合（含在线时间标定，开源仿真数据） | C++ | 79 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [FE-GUT](https://github.com/zhaoqj23/FE-GUT)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：BSD-3-Clause · 星标约：79 · 宿主：github
+
+提出将因子图优化与扩展卡尔曼滤波混合用于 GNSS/UWB 紧组合，并引入 Graphical State Space Model 做离散化与在线时间标定，附仿真数据集。适合研究 FGO/EKF 混合架构。环境以 Ubuntu 为主；真实外场与完好性声明需自行扩展验证。
+
 ## GNSS/INS
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [KF-GINS](https://github.com/i2Nav-WHU/KF-GINS) | 基于 EKF 的 GNSS/INS 组合导航 | C++ | 1194 | 🏷️ 高校实验室 核心 |
-| [imu_x_fusion](https://github.com/cggos/imu_x_fusion) | 基于 ESKF/IEKF/UKF 的 IMU+GNSS/里程计松组合 | C++ | 1126 | 🏷️ 个人社区 核心 |
+| [KF-GINS](https://github.com/i2Nav-WHU/KF-GINS) | 基于 EKF 的 GNSS/INS 组合导航 | C++ | 1194 | 🏷️ 高校实验室 · 核心 |
+| [imu_x_fusion](https://github.com/cggos/imu_x_fusion) | 基于 ESKF/IEKF/UKF 的 IMU+GNSS/里程计松组合 | C++ | 1126 | 🏷️ 个人社区 · 核心 |
 | [imugpslocalization](https://github.com/ydsf16/imu_gps_localization) | 误差状态卡尔曼滤波融合 IMU 与 GPS（C++） | C++ | 734 | 🏷️ 个人社区 |
-| [OB_GINS](https://github.com/i2Nav-WHU/OB_GINS) | 基于优化的 GNSS/INS 组合导航 | C++ | 647 | 🏷️ 高校实验室 ★ 核心 |
-| [ignav](https://github.com/Erensu/ignav) | INS 与 GNSS 组合导航实现 | C | 472 | 🏷️ 个人社区 ★ |
-| [GINav](https://github.com/kaichen686/GINav) | MATLAB GNSS 与 GNSS/INS 组合算法 | MATLAB | 309 | 🏷️ 个人社区 ★ 核心 |
+| [OB_GINS](https://github.com/i2Nav-WHU/OB_GINS) | 基于优化的 GNSS/INS 组合导航 | C++ | 647 | 🏷️ 高校实验室 · ★ Star · 核心 |
+| [ignav](https://github.com/Erensu/ignav) | INS 与 GNSS 组合导航实现 | C | 472 | 🏷️ 个人社区 · ★ Star |
+| [GINav](https://github.com/kaichen686/GINav) | MATLAB GNSS 与 GNSS/INS 组合算法 | MATLAB | 309 | 🏷️ 个人社区 · ★ Star · 核心 |
 | [Loose-GNSS-IMU](https://github.com/aaronboda24/Loose-GNSS-IMU) | GNSS 与 IMU 的松组合卡尔曼实现 | C++ | 187 | 🏷️ 个人社区 |
-| [KF-GINS-Matlab](https://github.com/i2Nav-WHU/KF-GINS-Matlab) | KF-GINS 的 MATLAB 版：EKF 松/紧组合 GNSS/INS | MATLAB | 137 | 🏷️ 高校实验室 核心 |
+| [KF-GINS-Matlab](https://github.com/i2Nav-WHU/KF-GINS-Matlab) | KF-GINS 的 MATLAB 版：EKF 松/紧组合 GNSS/INS | MATLAB | 137 | 🏷️ 高校实验室 · 核心 |
 | [ublox_dgnss](https://github.com/aussierobots/ublox_dgnss) | ROS2 u-blox UBX 驱动（F9P/F9R/X20P 差分与移动基站） | C++ | 86 | 🏷️ 个人社区 |
-| [GIOW-release](https://github.com/i2Nav-WHU/GIOW-release) | 全轮角/里程计辅助的 GNSS/INS/ODO 组合导航算法发布版 | C++ | 75 | 🏷️ 高校实验室 核心 |
+| [GIOW-release](https://github.com/i2Nav-WHU/GIOW-release) | 全轮角/里程计辅助的 GNSS/INS/ODO 组合导航算法发布版 | C++ | 75 | 🏷️ 高校实验室 · 核心 |
 | [Wheel-GINS](https://github.com/i2Nav-WHU/Wheel-GINS) | 轮式惯导与 GNSS 组合的导航系统（IEEE TITS 相关） | C++ | 47 | 🏷️ 高校实验室 |
 | [GNSS_IMU](https://github.com/rtklibexplorer/GNSS_IMU) | rtklibexplorer 系松组合 GNSS/IMU 的 Python 实现 | Python | 35 | 🏷️ 个人社区 |
 | [GINS](https://github.com/zhangwhu/GINS) | PPP-RTK 与惯导组合的 GINS 实现（武大相关） | C | 21 | 🏷️ 高校实验室 |
@@ -99,14 +129,14 @@
 ### 详细说明
 
 #### [KF-GINS](https://github.com/i2Nav-WHU/KF-GINS)  
-*🏷️ 高校实验室 核心*
+*🏷️ 高校实验室 · 核心*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：1194 · 宿主：github
 
 经典 EKF 框架的 GNSS/INS 开源实现，文档与课程友好，星标很高。适合教学和基线实现。因子图/滑窗优化性能边界看 OB_GINS/gici。
 
 #### [imu_x_fusion](https://github.com/cggos/imu_x_fusion)  
-*🏷️ 个人社区 核心*
+*🏷️ 个人社区 · 核心*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：1126 · 宿主：github
 
@@ -120,21 +150,21 @@
 用误差状态卡尔曼滤波（ESKF）融合 IMU 与 GPS 的开源 C++ 实现，示例清晰、星标较高，是学习松组合与误差状态建模的常用入口。适合导航算法初学者与机器人定位原型。默认偏松组合教学场景；载波相位 RTK 或视觉紧组合不在核心范围，需另接相应模块。IMU 噪声参数要用 Allan 方差等方法实测，不宜照搬默认值。
 
 #### [OB_GINS](https://github.com/i2Nav-WHU/OB_GINS)  
-*🏷️ 高校实验室 ★ 核心*
+*🏷️ 高校实验室 · ★ Star · 核心*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：647 · 宿主：github
 
 武大 i2Nav 开源的优化型 GNSS/INS 组合，在开源组合导航里引用与星标都高。适合车载/机器人紧组合研究。纯测地 PPP-AR 不是目标；视觉相关见 IC-GVINS。
 
 #### [ignav](https://github.com/Erensu/ignav)  
-*🏷️ 个人社区 ★*
+*🏷️ 个人社区 · ★ Star*
 
 语言：C · 许可：— · 星标约：472 · 宿主：github
 
 C 语言组合导航实现，轻量、易嵌入。适合固件向开发者。功能广度与现代因子图方案不同，选前看清状态模型。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
 
 #### [GINav](https://github.com/kaichen686/GINav)  
-*🏷️ 个人社区 ★ 核心*
+*🏷️ 个人社区 · ★ Star · 核心*
 
 语言：MATLAB · 许可：BSD-2-Clause · 星标约：309 · 宿主：github
 
@@ -148,7 +178,7 @@ MATLAB 实现 GNSS 及松/紧组合常用算法，改方程方便。适合研究
 经典松组合示例：用 GNSS 位置/速度更新 IMU 捷联推算，代码结构直白，便于第一次跑通组合导航闭环。适合课程实验、噪声调参与坐标系对齐练习。没有紧组合伪距观测与视觉约束；进阶可转向 TightlyCoupledINSGNSS、imu_x_fusion 或 OB_GINS，工业车载还需考虑杆臂与时间同步。
 
 #### [KF-GINS-Matlab](https://github.com/i2Nav-WHU/KF-GINS-Matlab)  
-*🏷️ 高校实验室 核心*
+*🏷️ 高校实验室 · 核心*
 
 语言：MATLAB · 许可：GPL-3.0 · 星标约：137 · 宿主：github
 
@@ -162,7 +192,7 @@ MATLAB 实现 GNSS 及松/紧组合常用算法，改方程方便。适合研究
 面向 ROS2 的 u-blox UBX USB 驱动，支持 ZED-F9P/F9R/X20P 等高精度模块，含差分与 moving-base 配置。适合机器人/车载室外定位联调。不是测地级 PPP 引擎；精密解算请外接 RTKLIB 或科研软件。
 
 #### [GIOW-release](https://github.com/i2Nav-WHU/GIOW-release)  
-*🏷️ 高校实验室 核心*
+*🏷️ 高校实验室 · 核心*
 
 语言：C++ · 许可：— · 星标约：75 · 宿主：github
 
@@ -214,7 +244,7 @@ rtklibexplorer 社区风格的松组合 GNSS/IMU Python 实现，便于配合 de
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Multi_Sensor_Fusion](https://github.com/2013fangwentao/Multi_Sensor_Fusion) | GNSS/IMU/视觉等多源融合与 PPP/INS 紧组合 | C++ | 940 | 🏷️ 个人社区 核心 |
+| [Multi_Sensor_Fusion](https://github.com/2013fangwentao/Multi_Sensor_Fusion) | GNSS/IMU/视觉等多源融合与 PPP/INS 紧组合 | C++ | 940 | 🏷️ 个人社区 · 核心 |
 | [GLIO](https://github.com/XikunLiu-huskit/GLIO) | GNSS/LiDAR/IMU 紧耦合连续定位 | C | 438 | 🏷️ 个人社区 |
 | [libRSF](https://github.com/TUC-ProAut/libRSF) | 面向在线定位的鲁棒传感器融合库 | C++ | 337 | 🏷️ 个人社区 |
 | [syncgpslidarimucam](https://github.com/nkliuhui/sync_gps_lidar_imu_cam) | 激光雷达-IMU-相机-GPS 硬件时间同步方案 | C++ | 252 | 🏷️ 个人社区 |
@@ -224,7 +254,7 @@ rtklibexplorer 社区风格的松组合 GNSS/IMU Python 实现，便于配合 de
 ### 详细说明
 
 #### [Multi_Sensor_Fusion](https://github.com/2013fangwentao/Multi_Sensor_Fusion)  
-*🏷️ 个人社区 核心*
+*🏷️ 个人社区 · 核心*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：940 · 宿主：github
 
@@ -269,13 +299,13 @@ MATLAB 实现：以 GPS、里程计与电子罗盘为观测，用扩展卡尔曼
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnss-ins-sim](https://github.com/Aceinna/gnss-ins-sim) | GNSS+INS 轨迹与传感器仿真 | Python | 1487 | 🏷️ 个人社区 核心 |
+| [gnss-ins-sim](https://github.com/Aceinna/gnss-ins-sim) | GNSS+INS 轨迹与传感器仿真 | Python | 1487 | 🏷️ 个人社区 · 核心 |
 | [IndirectEKFIMUGPS](https://github.com/hgpvision/Indirect_EKF_IMU_GPS) | 间接法卡尔曼滤波 IMU/GPS 融合仿真（MATLAB） | MATLAB | 96 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [gnss-ins-sim](https://github.com/Aceinna/gnss-ins-sim)  
-*🏷️ 个人社区 核心*
+*🏷️ 个人社区 · 核心*
 
 语言：Python · 许可：MIT · 星标约：1487 · 宿主：github
 
@@ -335,18 +365,48 @@ MATLAB 仿真仓库：用间接法卡尔曼滤波融合 IMU 与 GPS，传感器�
 
 在 MSCKF-VIO 上增加 GPS 融合，用卫星位置约束抑制视觉惯性漂移并对齐全球坐标，服务无人机与地面机器人。适合已有 MSCKF 栈、需要全球定位的团队。与上游 MSCKF 的同步情况需自查；城市峡谷 GNSS 质量差时收益有限，精密测地仍用专用 PPP/RTK。相机-IMU 外参标定质量往往比 GPS 权重更敏感。
 
+## GNSS/INS对比
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [GNSS_INS_Integrations_Comparisons](https://github.com/ZhengdaoLI0602/GNSS_INS_Integrations_Comparisons) | 港理工相关开源：KF/AKF/FGO/AFGO 等 GNSS/INS 二维定位对比实验代码 | MATLAB | 70 | 🏷️ 高校实验室 |
+
+### 详细说明
+
+#### [GNSS_INS_Integrations_Comparisons](https://github.com/ZhengdaoLI0602/GNSS_INS_Integrations_Comparisons)  
+*🏷️ 高校实验室*
+
+语言：MATLAB · 许可：see upstream README · 星标约：70 · 宿主：github
+
+配套 Remote Sensing 论文的 MATLAB 实验仓，对比固定增益 KF、自适应 KF、因子图及自适应因子图在 GNSS/INS 二维定位中的表现，FGO 部分参考 MathWorks 示例改造。适合算法课与论文复现。非完整车载三维产品；数据准备脚本需按 README 逐步运行。
+
+## ROS2原始观测
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [gnss_ros_standardization](https://github.com/DaikiNiimi/gnss_ros_standardization) | ROS 2 标准化 GNSS 原始观测/星历话题（u-blox/Septentrio/NovAtel/RTCM3） | C++ | 21 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [gnss_ros_standardization](https://github.com/DaikiNiimi/gnss_ros_standardization)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：MIT · 星标约：21 · 宿主：github
+
+统一多品牌接收机原始观测与星历到 ROS 2 标准话题，降低紧组合与多传感器融合的驱动碎片化，含 RTK 演示配置说明。目标是一次开发、多机复用。侧重接口与消息层而非完整 PPP 引擎；具体消息定义、驱动覆盖与硬件接线以仓库文档和演示配置为准。
+
 ## 因子图紧组合
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GraphRTK-INS](https://github.com/GREAT-WHU/GraphRTK-INS) | 武大 GREAT 因子图模块：RTK 与惯导紧组合 | C++ | 83 | 🏷️ 高校实验室 核心 |
+| [GraphRTK-INS](https://github.com/GREAT-WHU/GraphRTK-INS) | 武大 GREAT 因子图模块：RTK 与惯导紧组合 | C++ | 83 | 🏷️ 高校实验室 · 核心 |
 | [GREAT-PIFGO](https://github.com/GREAT-WHU/GREAT-PIFGO) | GREAT 软件中的因子图优化模块（PIFGO） | C++ | 18 | 🏷️ 高校实验室 |
 | [tightly-coupled-gnss-imu-fgo](https://github.com/inuex35/tightly-coupled-gnss-imu-fgo) | GTSAM 上 RTK+IMU 紧组合（LAMBDA/预积分） | Python | 17 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [GraphRTK-INS](https://github.com/GREAT-WHU/GraphRTK-INS)  
-*🏷️ 高校实验室 核心*
+*🏷️ 高校实验室 · 核心*
 
 语言：C++ · 许可：— · 星标约：83 · 宿主：github
 
@@ -370,12 +430,12 @@ GREAT 体系内的因子图优化实现，面向精密定位与组合导航相�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gtsam](https://github.com/borglab/gtsam) | GTSAM 平滑与建图因子图库 | C++ | 3680 | 🏷️ 高校实验室 核心 |
+| [gtsam](https://github.com/borglab/gtsam) | GTSAM 平滑与建图因子图库 | C++ | 3680 | 🏷️ 高校实验室 · 核心 |
 
 ### 详细说明
 
 #### [gtsam](https://github.com/borglab/gtsam)  
-*🏷️ 高校实验室 核心*
+*🏷️ 高校实验室 · 核心*
 
 语言：C++ · 许可：— · 星标约：3680 · 宿主：github
 
@@ -465,6 +525,21 @@ INS 机械编排与误差分析的 Python 包，教学清晰。适合先搞懂 I
 
 公开原始 GNSS 与多传感器融合的代码、数据与结果，便于复现论文设定。适合研究起步。不是开箱即用商业导航软件。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
 
+## ROS/RTKLIB
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [rtklib_ros_bridge](https://github.com/MapIV/rtklib_ros_bridge) | MapIV 开源：将 RTKLIB v2.4.3 b34 解算结果桥接到 ROS 的中间件 | C++ | 121 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [rtklib_ros_bridge](https://github.com/MapIV/rtklib_ros_bridge)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：NOASSERTION · 星标约：121 · 宿主：github
+
+把经典 RTKLIB 定位输出接入 ROS，便于自动驾驶与机器人栈消费 RTK/PPP 结果。绑定 RTKLIB 2.4.3 b34 一代接口。适合已有 RTKLIB 流水线的 ROS 集成；若需要更新算法内核应另选维护中的 RTKLIB 分支或 MRTKLIB，并注意许可与版本差异。
+
 ## 紧组合
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
@@ -487,78 +562,3 @@ MATLAB 实现伪距、伪距率与 INS 的紧组合，并支持双天线测向�
 语言：C++ · 许可：— · 星标约：90 · 宿主：github
 
 紧耦合 GNSS/INS 开源实现，常与 PPPLib 作者社区一并出现。适合紧组合课程实践。维护与许可信息需核对。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
-
-## B2b组合导航
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [BDS-3-PPP-B2b_IMU_LiDAR](https://github.com/xdinav/BDS-3-PPP-B2b_IMU_LiDAR) | PPP-B2b 与 IMU/LiDAR 融合试验 | — | 6 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [BDS-3-PPP-B2b_IMU_LiDAR](https://github.com/xdinav/BDS-3-PPP-B2b_IMU_LiDAR)  
-*🏷️ 个人社区*
-
-语言：— · 许可：— · 星标约：6 · 宿主：github
-
-把 PPP-B2b 与 IMU/LiDAR 结合的试验工程，面向高动态或遮挡场景的多传感器融合。适合看改正服务如何进组合导航。成熟度与标定流程因仓库而异，引用前请用自有数据复现关键指标。
-
-## FGO/GNSS-UWB
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [FE-GUT](https://github.com/zhaoqj23/FE-GUT) | 因子图与 EKF 混合的 GNSS/UWB 紧组合（含在线时间标定，开源仿真数据） | C++ | 79 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [FE-GUT](https://github.com/zhaoqj23/FE-GUT)  
-*🏷️ 个人社区*
-
-语言：C++ · 许可：BSD-3-Clause · 星标约：79 · 宿主：github
-
-提出将因子图优化与扩展卡尔曼滤波混合用于 GNSS/UWB 紧组合，并引入 Graphical State Space Model 做离散化与在线时间标定，附仿真数据集。适合研究 FGO/EKF 混合架构。环境以 Ubuntu 为主；真实外场与完好性声明需自行扩展验证。
-
-## GNSS/INS对比
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [GNSS_INS_Integrations_Comparisons](https://github.com/ZhengdaoLI0602/GNSS_INS_Integrations_Comparisons) | 港理工相关开源：KF/AKF/FGO/AFGO 等 GNSS/INS 二维定位对比实验代码 | MATLAB | 70 | 🏷️ 高校实验室 |
-
-### 详细说明
-
-#### [GNSS_INS_Integrations_Comparisons](https://github.com/ZhengdaoLI0602/GNSS_INS_Integrations_Comparisons)  
-*🏷️ 高校实验室*
-
-语言：MATLAB · 许可：see upstream README · 星标约：70 · 宿主：github
-
-配套 Remote Sensing 论文的 MATLAB 实验仓，对比固定增益 KF、自适应 KF、因子图及自适应因子图在 GNSS/INS 二维定位中的表现，FGO 部分参考 MathWorks 示例改造。适合算法课与论文复现。非完整车载三维产品；数据准备脚本需按 README 逐步运行。
-
-## ROS/RTKLIB
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [rtklib_ros_bridge](https://github.com/MapIV/rtklib_ros_bridge) | MapIV 开源：将 RTKLIB v2.4.3 b34 解算结果桥接到 ROS 的中间件 | C++ | 121 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [rtklib_ros_bridge](https://github.com/MapIV/rtklib_ros_bridge)  
-*🏷️ 个人社区*
-
-语言：C++ · 许可：NOASSERTION · 星标约：121 · 宿主：github
-
-把经典 RTKLIB 定位输出接入 ROS，便于自动驾驶与机器人栈消费 RTK/PPP 结果。绑定 RTKLIB 2.4.3 b34 一代接口。适合已有 RTKLIB 流水线的 ROS 集成；若需要更新算法内核应另选维护中的 RTKLIB 分支或 MRTKLIB，并注意许可与版本差异。
-
-## ROS2原始观测
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [gnss_ros_standardization](https://github.com/DaikiNiimi/gnss_ros_standardization) | ROS 2 标准化 GNSS 原始观测/星历话题（u-blox/Septentrio/NovAtel/RTCM3） | C++ | 21 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [gnss_ros_standardization](https://github.com/DaikiNiimi/gnss_ros_standardization)  
-*🏷️ 个人社区*
-
-语言：C++ · 许可：MIT · 星标约：21 · 宿主：github
-
-统一多品牌接收机原始观测与星历到 ROS 2 标准话题，降低紧组合与多传感器融合的驱动碎片化，含 RTK 演示配置说明。目标是一次开发、多机复用。侧重接口与消息层而非完整 PPP 引擎；具体消息定义、驱动覆盖与硬件接线以仓库文档和演示配置为准。

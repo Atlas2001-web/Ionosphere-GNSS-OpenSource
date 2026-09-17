@@ -10,7 +10,7 @@
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [UrbanNavDataset](https://github.com/IPNL-POLYU/UrbanNavDataset) | 亚洲城市峡谷多传感器定位数据集 | Python | 606 | 🏷️ 高校实验室 |
-| [awesome-gins-datasets](https://github.com/i2Nav-WHU/awesome-gins-datasets) | 武大 i2Nav 整理的车载 GNSS/INS 融合公开数据集列表 | — | 280 | 🏷️ 高校实验室 核心 |
+| [awesome-gins-datasets](https://github.com/i2Nav-WHU/awesome-gins-datasets) | 武大 i2Nav 整理的车载 GNSS/INS 融合公开数据集列表 | — | 280 | 🏷️ 高校实验室 · 核心 |
 | [gnss2tws-green](https://github.com/jzshhh/gnss2tws_green) | 由 GNSS 垂直位移反演陆地水储量 GNSS2TWS | MATLAB | 33 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -23,7 +23,7 @@
 香港/东京等城市峡谷多传感器数据，含真值，是 GNSS/INS/视觉算法基准常用集。适合算法评测。本身不是解算软件。
 
 #### [awesome-gins-datasets](https://github.com/i2Nav-WHU/awesome-gins-datasets)  
-*🏷️ 高校实验室 核心*
+*🏷️ 高校实验室 · 核心*
 
 语言：— · 许可：— · 星标约：280 · 宿主：github
 
@@ -40,13 +40,13 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [awesome-gnss](https://github.com/barbeau/awesome-gnss) | 开源 GNSS 软件与资源社区列表 | — | 599 | 🏷️ 个人社区 核心 |
+| [awesome-gnss](https://github.com/barbeau/awesome-gnss) | 开源 GNSS 软件与资源社区列表 | — | 599 | 🏷️ 个人社区 · 核心 |
 | [awesome-gnss](https://github.com/hdkarimi/awesome-gnss) | GNSS/RNSS 开源工具、数据与课程的 awesome 列表 | — | 50 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [awesome-gnss](https://github.com/barbeau/awesome-gnss)  
-*🏷️ 个人社区 核心*
+*🏷️ 个人社区 · 核心*
 
 语言：— · 许可：Apache-2.0 · 星标约：599 · 宿主：github
 
@@ -196,6 +196,21 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 
 美国国家大地测量局官方开源的 Horizontal Time-Dependent Positioning，Fortran 实现地壳运动模型下的坐标时间归算与框架变换。配套用户指南与 NGS 工具页。GNSS 测站坐标比较、CORS 历元统一常用；不处理原始观测，也不是 PPP 软件。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
 
+## 因子图教程
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [ion_gnss25_fg_code_examples](https://github.com/watsonryan/ion_gnss25_fg_code_examples) | ION GNSS+ 2025 因子图教程示例（基于 GTSAM：里程计/测距/GNSS 伪距） | Python | 7 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [ion_gnss25_fg_code_examples](https://github.com/watsonryan/ion_gnss25_fg_code_examples)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：see upstream README · 星标约：7 · 宿主：github
+
+配套 ION GNSS+ 2025 因子图教程的 Python 示例，基于 GTSAM 演示多机器人里程计、测距约束及单历元/动态 GNSS 伪距定位。适合学习 FGO 与 GNSS 因子建模。教学代码而非生产定位库；运行需自备 GTSAM Python 绑定与依赖环境。
+
 ## PNT仿真
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
@@ -215,14 +230,14 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning) | 导航定位开源项目解读与学习笔记（中文） | — | 2417 | 🏷️ 个人社区 ★ 核心 |
+| [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning) | 导航定位开源项目解读与学习笔记（中文） | — | 2417 | 🏷️ 个人社区 · ★ Star · 核心 |
 | [learning_rtklib](https://github.com/libing64/learning_rtklib) | RTKLIB 学习相关材料 | — | 163 | 🏷️ 个人社区 |
 | [RTKLIB-Manual-CN](https://github.com/salmoshu/RTKLIB-Manual-CN) | RTKLIB 中文手册解读与源码解析笔记 | — | 54 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
 #### [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning)  
-*🏷️ 个人社区 ★ 核心*
+*🏷️ 个人社区 · ★ Star · 核心*
 
 语言：— · 许可：— · 星标约：2417 · 宿主：github
 
@@ -331,18 +346,3 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 语言：Java/app · 许可：USGov public resource · 星标约：— · 宿主：official_site
 
 NOAA 垂直基准转换软件与服务，连接椭球高、大地水准面与潮汐等垂直基准，海岸带与 GNSS 高程应用中常用。以官方发布包与 Web 服务为准；与水平框架工具 HTDP、NCAT 分工不同，高程与平面归算请分别选用对应工具。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。
-
-## 因子图教程
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [ion_gnss25_fg_code_examples](https://github.com/watsonryan/ion_gnss25_fg_code_examples) | ION GNSS+ 2025 因子图教程示例（基于 GTSAM：里程计/测距/GNSS 伪距） | Python | 7 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [ion_gnss25_fg_code_examples](https://github.com/watsonryan/ion_gnss25_fg_code_examples)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：see upstream README · 星标约：7 · 宿主：github
-
-配套 ION GNSS+ 2025 因子图教程的 Python 示例，基于 GTSAM 演示多机器人里程计、测距约束及单历元/动态 GNSS 伪距定位。适合学习 FGO 与 GNSS 因子建模。教学代码而非生产定位库；运行需自备 GTSAM Python 绑定与依赖环境。

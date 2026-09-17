@@ -118,3 +118,12 @@
 - 当前条目：**489**
 - 分类计数：{'ionosphere': 85, 'troposphere': 29, 'gnss-data': 86, 'gnss-positioning': 74, 'orbit-clock': 12, 'navigation-ins': 54, 'gnss-sdr': 57, 'mobile-apps': 11, 'tools-learning': 27, 'gnss-datasets': 54}
 - 详见 `research/routine_finds_20260916.json`
+
+## IONORING / eSWua TEC（2026-09-17）
+
+- 用户提示补充：IONORING（意大利实时 TEC）+ eSWua-TEC 数据门户
+- 新增：**2** → IONORING, eSWua-TEC
+- 类别：`gnss-datasets` / 电离层产品；provenance=official
+- 说明：公开的是监测产品与 Web 服务，不是开源处理代码仓
+
+当前总条目：**491**
