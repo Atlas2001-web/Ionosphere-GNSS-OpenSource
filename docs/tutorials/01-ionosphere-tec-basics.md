@@ -249,13 +249,13 @@ $$
 3. 在 IPP，视线相对当地竖直的天顶角为 z'。球面几何：
 
 $$
-\sin z'=\frac{R_E}{R_E+H}\cos E.
+\sin z′=\frac{R_E}{R_E+H}\cos E.
 $$
 
 4. 映射函数（斜路径相对竖直的放大）：
 
 $$
-M(E)=\frac{1}{\cos z'}=\left(1-\left(\frac{R_E}{R_E+H}\cos E\right)^{2}\right)^{-1/2},
+M(E)=\frac{1}{\cos z′}=\left(1-\left(\frac{R_E}{R_E+H}\cos E\right)^{2}\right)^{-1/2},
 $$
 
 $$
@@ -361,30 +361,22 @@ $$
 **题 2.** 写出 $I\approx(40.3/f^2)\,\mathrm{STEC}$。*f* 加倍，*I* 如何变？若 STEC 从 10 增到 40 TECU（*f* 不变），*I* 如何变？  
 **答：**
 
-$$
-f\to2f\Rightarrow I\to I/4 \text{；STEC×4 ⇒} I \text{×4。}
-$$
+f→2f ⇒ I→I/4；STEC×4 ⇒ I×4。
 
 **题 3.** 用 $n_g$ 与 $n_p$ 各一句说明码延迟与相位超前为何一阶符号相反。  
 **答：**
 
-$$
-n_g-1>0 \text{群路径变长（码延迟）；} n_p-1<0 \text{相路径变短（相位超前）。}
-$$
+n_g−1>0：群路径变长（码延迟）；n_p−1<0：相路径变短（相位超前）。
 
 **题 4.** 仰角 *E* = 30°，*R_E* = 6371 km，*H* = 450 km。计算 sin *z′*、cos *z′*、*M(E)*（三位小数）。若 IPP 处 VTEC = 20 TECU，STEC 约多少？  
 **答：**
 
-$$
-\cos30^\circ\approx0.866 \text{；} R_E/(R_E+H)=6371/6821\approx0.934 \text{；} \sin z'\approx0.809 \text{；} \cos z'\approx0.588 \text{；} M\approx1.701 \text{；STEC≈34.0 TECU。}
-$$
+cos30°≈0.866； R_E/(R_E+H)=6371/6821≈0.934； sin z′≈0.809； cos z′≈0.588； M≈1.701；STEC≈34.0 TECU。
 
 **题 5.** 天顶时 $M$ 等于多少？为何低仰角要截止？  
 **答：**
 
-$$
-M=1 \text{。低仰角} M \text{大且多路径/梯度/壳高误差放大。}
-$$
+M=1。低仰角 M 大且多路径/梯度/壳高误差放大。
 
 **题 6.** IPP 是卫星星下点吗？薄壳「壳」指什么？三问是什么？  
 **答：** 一般不是。壳=假定高度 $H$ 的电子薄球壳。三问：壳高、映射、仰角截止。
@@ -395,9 +387,7 @@ $$
 **题 8.** $f_p\propto\sqrt{N_e}$。$N_e\to4N_e$ 时 *f_p* 与 $(n_g-1)$（*f* 固定）各如何变？  
 **答：**
 
-$$
-f_p\to2f_p \text{；} n_g-1\propto N_e\to4 \text{倍。}
-$$
+f_p→2f_p； n_g-1∝ N_e→4 倍。
 
 **题 9.** TEC 大是否等于闪烁强？对流层延迟能否用 TEC 公式改？GIM 格点常见给 STEC 还是 VTEC？  
 **答：** 否；不能；多为 VTEC。
@@ -489,7 +479,7 @@ $$
 
 取 $R_E=6371\,\mathrm{km}$，$H=450\,\mathrm{km}$，$R_E/(R_E+H)\approx0.934$。
 
-| 仰角 $E$ | $\cos E$ | $\sin z'$ | $\cos z'$ | $M(E)$ | 若 VTEC=15 TECU，STEC≈ |
+| 仰角 $E$ | $\cos E$ | $\sin z′$ | $\cos z′$ | $M(E)$ | 若 VTEC=15 TECU，STEC≈ |
 |---|---|---|---|---|---|
 | $90^\circ$ | 0 | 0 | 1 | 1.00 | 15.0 |
 | $60^\circ$ | 0.500 | 0.467 | 0.884 | 1.13 | 17.0 |
@@ -560,7 +550,7 @@ $$
 
 **参考答案：**
 
-(1) $\cos40^\circ\approx0.766$；$R_E/(R_E+H)=6371/6771\approx0.941$；$\sin z'\approx0.721$；$\cos z'\approx0.693$；$M\approx1.443$。  
+(1) $\cos40^\circ\approx0.766$；$R_E/(R_E+H)=6371/6771\approx0.941$；$\sin z′\approx0.721$；$\cos z′\approx0.693$；$M\approx1.443$。  
 $\mathrm{VTEC}\approx\mathrm{STEC}/M\approx28.0/1.443\approx19.4\,\mathrm{TECU}$。
 
 (2) $\mathrm{STEC}=2.8\times10^{17}\,\mathrm{m}^{-2}$。  
@@ -594,8 +584,8 @@ I_{\mathrm{group}}\approx\frac{40.3}{f^{2}}\,\mathrm{STEC},\quad
 $$
 
 $$
-\sin z'=\frac{R_E}{R_E+H}\cos E,\quad
-M(E)=\frac{1}{\cos z'},\quad
+\sin z′=\frac{R_E}{R_E+H}\cos E,\quad
+M(E)=\frac{1}{\cos z′},\quad
 \mathrm{STEC}\approx M(E)\,\mathrm{VTEC}_{\mathrm{IPP}}.
 $$
 
@@ -719,15 +709,15 @@ $$
 ## 24. 公式解剖台 D：映射 $M(E)$——几何逐步 + 三壳高对照
 
 $$
-\sin z'=\frac{R_E}{R_E+H}\cos E,\qquad
-M(E)=\frac{1}{\cos z'}=\Big(1-\big(\tfrac{R_E}{R_E+H}\cos E\big)^{2}\Big)^{-1/2}.
+\sin z′=\frac{R_E}{R_E+H}\cos E,\qquad
+M(E)=\frac{1}{\cos z′}=\Big(1-\big(\tfrac{R_E}{R_E+H}\cos E\big)^{2}\Big)^{-1/2}.
 $$
 
 **符号：** $R_E$ 地球半径；$H$ 薄壳高；$E$ 仰角；$z'$ 穿刺点天顶角；$M$ 映射因子。
 
-**数值例 A4：** $R_E=6371\,\mathrm{km}$，$E=25^\circ$，$\cos25^\circ\approx0.9063$。
+**数值例 A4：** *R_E* = 6371 km，*E* = 25°，cos25° ≈ 0.9063。
 
-| $H$ (km) | $R_E/(R_E+H)$ | $\sin z'$ | $\cos z'$ | $M$ | VTEC=18 时 STEC |
+| *H* (km) | *R_E*/(*R_E*+*H*) | sin *z′* | cos *z′* | *M* | VTEC=18 时 STEC |
 |---|---|---|---|---|---|
 | 350 | 0.948 | 0.859 | 0.512 | 1.953 | 35.2 |
 | 450 | 0.934 | 0.847 | 0.532 | 1.880 | 33.8 |
@@ -751,33 +741,25 @@ $$
 
 ## 26. 综合演算卷（建议限时 25 分钟）
 
-**题 C1.** $N_e=5\times10^{11}\,\mathrm{m}^{-3}$。相对例 A1（$10^{12}$ 时 $f_p\approx9\,\mathrm{MHz}$），$f_p\approx?$  
+**题 C1.** *N_e* = 5×10¹¹ m⁻³。相对例 A1（10¹² 时 *f_p* ≈ 9 MHz），*f_p* ≈ ?  
 **答：**
 
-$$
-\propto\sqrt{N_e} \text{，故} 9/\sqrt{2}\approx6.4\,\mathrm{MHz} \text{。}
-$$
+∝sqrtN_e，故 9/sqrt2≈6.4 MHz。
 
-**题 C2.** STEC=25 TECU，算 L1、L2 的 $I$（用 $I_{L1}(10\,\mathrm{TECU})\approx1.62\,\mathrm{m}$ 比例法）。  
+**题 C2.** STEC=25 TECU，算 L1、L2 的 *I*（用 *I_L1*(10 TECU)≈1.62 m 比例法）。  
 **答：**
 
-$$
-\times2.5 \text{→} I_1\approx4.05\,\mathrm{m} \text{，} I_2\approx6.68\,\mathrm{m} \text{。}
-$$
+×2.5 → I_1≈4.05 m， I_2≈6.68 m。
 
-**题 C3.** $E=40^\circ$，$H=450\,\mathrm{km}$，$R_E=6371$：求 *M*；若 STEC=30 TECU，VTEC≈?  
+**题 C3.** *E* = 40°，*H* = 450 km，*R_E* = 6371：求 *M*；若 STEC=30 TECU，VTEC≈?  
 **答：**
 
-$$
-\cos40^\circ\approx0.766 \text{；} R_E/(R_E+H)\approx0.934 \text{；} \sin z'\approx0.715 \text{；} \cos z'\approx0.699 \text{；} M\approx1.43 \text{；VTEC≈21.0 TECU。}
-$$
+cos40^°≈0.766； R_E/(R_E+H)≈0.934； sin z′≈0.715； cos z′≈0.699； M≈1.43；VTEC≈21.0 TECU。
 
 **题 C4.** 解释为何双频能测 TEC 而单频不能（各写观测方程一项）。  
 **答：**
 
-$$
-\text{单频} P=\rho+\cdots+I+\cdots \text{中} I \text{与} \rho \text{缠死；双频} I_2=(f_1^{2}/f_2^{2})I_1 \text{，作差消} \rho \text{。}
-$$
+单频 P=rho+cdots+I+cdots 中 I 与 rho 缠死；双频 I_2=(f_1^2/f_2^2)I_1，作差消 rho。
 
 **题 C5.** 指出本仓两个估 TEC、两个 IONEX 入口 `name`。  
 **答：** 如 `gnss-tec`、`Seemala-GPS-TEC`；`CDDIS-IONEX`、`JPL-IONEX-Rapid`。
