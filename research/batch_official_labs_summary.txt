@@ -1,0 +1,65 @@
+batch_official_labs — summary
+date: 2026-09-17
+source tag: batch-official-labs 2026-09-17
+entries: 30
+provenance: {'official': 19, 'academic_lab': 11}
+registration: {'form_register': 8, 'open': 22}
+category: {'ionosphere': 27, 'gnss-datasets': 3}
+
+SKIPPED (already in /tmp/existing_all_urls.txt): IRI/irimodel, NeQuick/ICTP/GSC, GIRO portal+DIDBase+SAO-X, CDDIS IONEX, IGS Ionosphere WG, WHU IGS AC page, eSWua/IONORING, CODE AC intro page, NOAA-SWPC home+Kp, COSMIC/CDAAC, CAS BDsmart final IONEX, GFZ ISDC/services, ppp-wizard home.
+
+HIGHLIGHTS (newly cataloged):
+- DLR-IMPC: SWACI successor; NRT TEC/ROTI; DLR SSO register
+- ROB-European-TEC + IONEX: Europe multi-GNSS VTEC 5 min / 0.5°; open IONEX
+- NOAA GloTEC + NCEI archive: Operational global TEC assimilation + national archive
+- ESA SWE/TIO/IONMON: SWE portal + registration + NRT/forecast TEC apps
+- CODE HTTPS download browser: FTP retired; CODE/ionex/ionosphere trees
+- GFZ Global Ionosphere Maps: IGS IAAC product page (EPOS.P8)
+- UWM igsiono + CDRSK: IGS ionosphere combination/validation centre
+- Beihang ionosphere.cn: University GIM research portal
+- CAS BDsmart RTS iono: Realtime companion to existing final IONEX
+- CNES PPP-WIZARD REAL_TIME: Realtime product directory under existing portal
+- NICT WDC + ionosonde: Japan/Antarctic long-term ionosphere archive
+- UMLCAR downloads / Drift-X / NHPC / CARP: Digisonde/ARTIST ecosystem beyond SAO-X
+- GIRO IRTAM + GAMBIT portals: Official service pages (readers already cataloged)
+- Seemala GPS-TEC + BC ISR: Boston College academic GPS TEC Windows tool
+
+Registration methods captured:
+- form_register: DLR IMPC (EOC SSO Sign up), ESA SWE (/registration + OpenAM email confirm)
+- open: ROB, NOAA SWPC/NCEI, CODE download, UWM, Beihang, CAS RTS, CNES REAL_TIME, NICT, UML tools, GIRO maps, Seemala
+- historical IMPC: email impc-uhd@dlr.de for longer archives
+
+Method: WebSearch + WebFetch + curl HEAD/GET (Mozilla UA); gh MCP needsAuth so limited gh search via CLI (few org hits).
+Did NOT edit PROJECTS.json; did NOT git push.
+
+All entry names:
+  DLR-IMPC	https://impc.dlr.de/
+  DLR-IMPC-Products	https://impc.dlr.de/products
+  ROB-European-TEC	https://gnss.be/SpaceWeather/
+  ROB-IONEX-Products	https://gnss.be/SpaceWeather/Products/IONEX
+  NOAA-SWPC-GloTEC	https://www.spaceweather.gov/products/glotec
+  NOAA-SWPC-GloTEC-Data	https://services.swpc.noaa.gov/products/glotec/
+  NOAA-NCEI-TEC-Archive	https://www.ncei.noaa.gov/products/space-weather/ionospheric-program/total-electron-content
+  ESA-SWE-SSA	https://swe.ssa.esa.int/
+  ESA-SWE-Registration	https://swe.ssa.esa.int/registration
+  ESA-IONMON	https://swe.ssa.esa.int/ionmon
+  ESA-TIO-NRT-TEC	https://swe.ssa.esa.int/tio_tcr
+  ESA-TIO-Forecast-TEC	https://swe.ssa.esa.int/tio_tcf
+  ESA-TIO-Services	https://swe.ssa.esa.int/tio_services
+  CODE-AIUB-Product-Download	https://www.aiub.unibe.ch/download/
+  GFZ-Global-Ionosphere-Maps	https://www.gfz.de/en/section/space-geodetic-techniques/data-products-services/global-gnss-ionosphere-maps
+  UWM-IGS-Iono-Combination	https://igsiono.uwm.edu.pl/
+  UWM-CDRSK-IGS-Validation	https://cdrsk.uwm.edu.pl/centrum-walidacji-i-kombinacji-igs/
+  Beihang-Ionosphere-CN	http://ionosphere.cn/
+  CAS-BDsmart-RTS-Iono	https://data.bdsmart.cn/pub/product/rts/iono/
+  CNES-PPP-WIZARD-Realtime-Products	http://www.ppp-wizard.net/products/REAL_TIME
+  NICT-WDC-Ionosphere-SpaceWeather	https://wdc.nict.go.jp/wdc-top/index.html
+  NICT-Ionosonde-Data	https://wdc.nict.go.jp/Ionosphere/index.html
+  UMLCAR-Downloads	https://ulcar.uml.edu/downloads.html
+  Drift-X	https://ulcar.uml.edu/Drift-X.html
+  NHPC-TrueHeight	https://ulcar.uml.edu/SoftwareUtilities/NHPC/
+  CARP-Average-Profile	https://ulcar.uml.edu/SoftwareUtilities/CARP/
+  GIRO-IRTAM	https://giro.uml.edu/IRTAM/
+  GIRO-GAMBIT	https://giro.uml.edu/GAMBIT/
+  Seemala-GPS-TEC	https://seemala.blogspot.com/2024/04/gps-tec-analysis-program-version-35.html
+  Boston-College-ISR-Ionospheric-Studies	https://www.bc.edu/bc-web/research/sites/institute-for-scientific-research/research/ionospheric-studies.html

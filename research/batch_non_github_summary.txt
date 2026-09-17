@@ -1,0 +1,47 @@
+batch_non_github 汇总 2026-09-17
+新增条目数: 16
+输出: /workspace/ionosphere-gnss-catalog/research/batch_non_github.json
+
+按 host:
+  gitlab (5): swarm-vip-dynamic-models, Swarm-VIP-Dynamic, FARR, pypride, nleht-fdtd-ionosphere
+  official_site (4): ESA-UGI, IMSP-MGS, IRI-Plas-SPIM-IZMIRAN, IONOLAB-TEC-Software
+  zenodo (4): SAMI3-3.22-Zenodo, Okoh-MATLAB-TEC-from-RINEX, Okoh-MATLAB-ROT-ROTI, ScintPi-1.0-Software
+  other (3): Seemala-GPS-TEC, IBP-Model, pyFIRI2018
+
+按 subcategory:
+  TEC估计 (4): ESA-UGI, Okoh-MATLAB-TEC-from-RINEX, Seemala-GPS-TEC, IONOLAB-TEC-Software
+  电离层工具 (4): IMSP-MGS, swarm-vip-dynamic-models, pypride, nleht-fdtd-ionosphere
+  闪烁 (4): Swarm-VIP-Dynamic, ScintPi-1.0-Software, IBP-Model, FARR
+  IRI模型 (2): IRI-Plas-SPIM-IZMIRAN, pyFIRI2018
+  物理模式 (1): SAMI3-3.22-Zenodo
+  闪烁/ROTI (1): Okoh-MATLAB-ROT-ROTI
+
+重点条目（建议优先合并）:
+  - ESA-UGI
+  - IRI-Plas-SPIM-IZMIRAN
+  - SAMI3-3.22-Zenodo
+  - Seemala-GPS-TEC
+  - IBP-Model
+  - FARR
+  - swarm-vip-dynamic-models
+  - IONOLAB-TEC-Software
+  - ScintPi-1.0-Software
+  - pyFIRI2018
+
+核验:
+  - 全部 URL 对 /tmp/existing_all_urls.txt 及并行 batch_iono_models/related 做去重；无 github.com。
+  - HTTP 抽查：ESSR UGI/IMSP、IZMIRAN SPIM 目录与 Iriplas2020.zip、Zenodo concept DOI、KNMI/FARR GitLab、IBP 机构 GitLab、Seemala v3.7 博文、IONOLAB TEC 页、Bitbucket pyFIRI 均为 200。
+  - Zenodo 使用 concept DOI（https://doi.org/10.5281/zenodo.…）。
+  - 门户类含 registration / registration_zh（ESSR、IONOLAB、Seemala、IRI-Plas）。
+
+检索过但未收录 / notable misses:
+  - SourceForge ionis-ai：项目页 404；IRI atlas 偏 HF 数据集且主代码在 GitHub。
+  - gitlab.com/geosol-foss/python/gri-iono：已在 batch_iono_models。
+  - HAO TIE-GCM / CCMC SAMI3 门户：已在 batch_iono_models。
+  - KOH2 Zenodo：与 batch_iono_models GitHub 同源，跳过。
+  - cmolinaord IONEX Reader Zenodo：主发布在 GitHub；目录已有其他 reader。
+  - 官方 IRI/NeQuick（irimodel.org、ICTP、GSC/ESSR NeQuick-G）、IRTAM/GAMBIT reader：已在 PROJECTS。
+  - code.google.com / Launchpad：未找到仍可下载的 TEC/NeQuick 源码仓。
+  - ESSR 源码需登录；未绕过账号抓取。
+
+未修改 PROJECTS.json；无 git push。

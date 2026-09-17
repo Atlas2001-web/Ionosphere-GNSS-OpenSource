@@ -1,5 +1,5 @@
 # 学习资源与工具 / Tools & Learning
-> 共 **27** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **29** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
@@ -257,6 +257,21 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 
 系统梳理 RTKLIB 工具使用、算法要点与工程阅读路径的中文笔记，降低中文读者入门与源码导读成本。适合自学、培训与课题组内部分享。不是可执行定位库；内容可能落后于最新 RTKLIB 或 demo5 分支，关键公式与编译选项请回对官方手册与当前源码。
 
+## HF传播态势
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [Muf_Muncher](https://github.com/mooxle/Muf_Muncher) | 自托管欧洲 HF 传播看板（测高仪 MUF/foF2、空间天气与 POTA） | HTML | 5 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [Muf_Muncher](https://github.com/mooxle/Muf_Muncher)  
+*🏷️ 个人社区*
+
+语言：HTML · 许可：see upstream README · 星标约：5 · 宿主：github
+
+把两座欧洲测高仪的 MUF(D)、foF2、偶发 E 与 NOAA 空间天气、POTA 激活性汇总成一页 glance-and-go 看板，偏业余无线电运营。相邻域里少见的“开源+可自建”传播态势工具。不是射线追踪引擎；数据源与站点配置面向中欧，搬到其它区域要改接入。
+
 ## 网平差
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
@@ -331,6 +346,21 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 语言：— · 许可：MIT · 星标约：33 · 宿主：github
 
 与 Point One 的 RTK 网络服务通信的开源客户端侧代码，便于接云端改正。服务本身非开源；适合对接其生态。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
+
+## SWARM教程
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [Swarm_notebooks](https://github.com/Swarm-DISC/Swarm_notebooks) | ESA Swarm 科学分析 Jupyter 笔记本（含 TEC/Langmuir 示例） | Jupyter Notebook | 10 | 🏷️ 官方 |
+
+### 详细说明
+
+#### [Swarm_notebooks](https://github.com/Swarm-DISC/Swarm_notebooks)  
+*🏷️ 官方*
+
+语言：Jupyter Notebook · 许可：MIT · 星标约：10 · 宿主：github
+
+部署在 VirES VRE 上的官方示例笔记本集合，含 EFIx_LP_1B、TECxTMS_2F 等演示，适合跟着学 Swarm 电离层产品字段与绘图。教学与快速原型友好。依赖 viresclient 与在线环境；不是独立算法库。
 
 ## 垂直基准
 

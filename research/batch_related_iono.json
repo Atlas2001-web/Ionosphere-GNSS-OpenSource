@@ -1,0 +1,542 @@
+[
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "awsgnssroutils",
+    "url": "https://github.com/gnss-ro/aws-opendata",
+    "desc_zh": "AWS 开放数据 GNSS 掩星元数据查询与下载工具（含电离层产品入口）",
+    "analysis_zh": "面向 AWS Registry of Open Data 上的 GNSS 无线电掩星库：提供 awsgnssroutils 查询/筛选/下载接口，覆盖 CDAAC、JPL、ROM SAF 等多处理中心的 Level-1b/2 产品。做 COSMIC/COSMIC-2 电离层 excess phase、电子密度剖面或与辐射探测共址研究时很省事。仓库体量大、含重整格式流水线；日常用 pip 装 awsgnssroutils 即可，不必整仓克隆。",
+    "language": "Python",
+    "license": "BSD-3-Clause",
+    "category": "gnss-datasets",
+    "subcategory": "GNSS掩星/RO",
+    "stars_approx": 21,
+    "provenance": "academic_lab",
+    "host": "github",
+    "one_liner_zh": "AWS 开放数据 GNSS 掩星元数据查询与下载工具（含电离层产品入口）"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "cosmic-crunch",
+    "url": "https://github.com/ErickShepherd/cosmic-crunch",
+    "desc_zh": "批量下载 JPL GENESIS COSMIC-1 掩星剖面并转 netCDF4",
+    "analysis_zh": "把 JPL GENESIS 发布的 COSMIC-1 ASCII Level-2 大气/相关剖面批量拉取并转成 netCDF4，方便对接现代 Python 分析栈。适合需要统一文件格式做掩星气候统计的人。注意它瞄的是 JPL GENESIS 大气剖面链路，不是 CDAAC ionPhs/ionPrf 电离层产品的专用阅读器；电离层 excess phase 请另走 CDAAC/AWS RO。",
+    "language": "Python",
+    "license": "MIT",
+    "category": "gnss-data",
+    "subcategory": "掩星格式转换",
+    "stars_approx": 0,
+    "provenance": "personal_community",
+    "host": "github",
+    "one_liner_zh": "批量下载 JPL GENESIS COSMIC-1 掩星剖面并转 netCDF4"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "pysatCDAAC",
+    "url": "https://github.com/pysat/pysatCDAAC",
+    "desc_zh": "pysat 生态的 CDAAC/COSMIC 仪器插件（含 ionPhs 等标签）",
+    "analysis_zh": "把 UCAR CDAAC GNSS-RO 产品接到 pysat 数据管理框架，文档与代码中列出 ionphs（电离层 excess phase）、podtec、scnLv1 等标签。适合已在用 pysat 做近地空间数据融合、又想顺手读 COSMIC 掩星文件的人。部分标签加载限制需对照 README；不是独立的 Abel 反演引擎。",
+    "language": "Python",
+    "license": "BSD-3-Clause",
+    "category": "gnss-data",
+    "subcategory": "掩星/CDAAC解析",
+    "stars_approx": 3,
+    "provenance": "academic_lab",
+    "host": "github",
+    "one_liner_zh": "pysat 生态的 CDAAC/COSMIC 仪器插件（含 ionPhs 等标签）"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "ROM-SAF-ROPP",
+    "url": "https://rom-saf.eumetsat.int/ropp/",
+    "desc_zh": "ROM SAF 无线电掩星处理包 ROPP（含电离层改正与 Abel 反演模块，注册获取）",
+    "analysis_zh": "EUMETSAT ROM SAF 维护的标准掩星处理套件，ropp_pp 等模块覆盖 excess phase→弯曲角、电离层改正与反演链路，是业务/科研里常见的开源可编译 Fortran 工具链。源码需登录 ROM SAF 账号下载（当前公开页指向 ROPP-12.0）。适合认真做 RO 预处理的人；只想快速读 COSMIC NetCDF 剖面，不必一上来就装整包。",
+    "language": "Fortran",
+    "license": "ROM SAF scientific (registration)",
+    "category": "ionosphere",
+    "subcategory": "GNSS掩星处理",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "one_liner_zh": "ROM SAF 无线电掩星处理包 ROPP（含电离层改正与 Abel 反演模块，注册获取）"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "NHPC",
+    "url": "https://ulcar.uml.edu/SoftwareUtilities/NHPC/",
+    "desc_zh": "UMLCAR 真高剖面反演工具 NHPC（免费下载，配合 SAO Explorer）",
+    "analysis_zh": "Lowell 测高仪生态里经典的真高（true-height）剖面反演程序，SAO Explorer 可通过外部 NHPC 重算剖面。下载目录提供 nhpc431.zip 等版本，属免费科学软件二进制/工具包而非现代 Git 开源仓。做 Digisonde/SAO 剖面研究时几乎绕不开；二次开发接口有限，新项目也可对照开源的 POLAN。",
+    "language": "Fortran/legacy",
+    "license": "proprietary-freeware (UMLCAR)",
+    "category": "ionosphere",
+    "subcategory": "测高仪/真高反演",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "one_liner_zh": "UMLCAR 真高剖面反演工具 NHPC（免费下载，配合 SAO Explorer）"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "CARP",
+    "url": "https://ulcar.uml.edu/SoftwareUtilities/CARP/",
+    "desc_zh": "UMLCAR 平均代表剖面计算工具 CARP（免费下载）",
+    "analysis_zh": "Calculation of Average Representative Profile：在测高仪站网资料上算代表性平均剖面，目录含 CARP.exe 与台站列表。适合气候态/模式对比里需要“典型剖面”的场景。年代较久的 Windows 向工具；日常浏览单站 SAO 仍以 SAO Explorer 为主。",
+    "language": "legacy binary",
+    "license": "proprietary-freeware (UMLCAR)",
+    "category": "ionosphere",
+    "subcategory": "测高仪工具",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "one_liner_zh": "UMLCAR 平均代表剖面计算工具 CARP（免费下载）"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "Drift-X",
+    "url": "https://ulcar.uml.edu/Drift-X.html",
+    "desc_zh": "UMLCAR Digisonde 漂移数据可视化引擎 Drift-X（免费 Java 发行）",
+    "analysis_zh": "面向 Digisonde 漂移（drift）产品的可视化与浏览工具，下载页提供 DriftExplorer_FB3.zip。和 SAO Explorer 同属 Lowell 免费桌面栈，补齐测高仪多普勒/漂移一侧。非开源源码；做水平漂移或 Es 运动研究时比纯 SAO 缩放更直接。",
+    "language": "Java",
+    "license": "proprietary-freeware (UMLCAR)",
+    "category": "ionosphere",
+    "subcategory": "测高仪/漂移",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "one_liner_zh": "UMLCAR Digisonde 漂移数据可视化引擎 Drift-X（免费 Java 发行）"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "Autoscala-INGV",
+    "url": "http://iononet.ingv.it/index.php/download/software",
+    "desc_zh": "INGV Autoscala 测高仪自动缩放及相关分析软件入口",
+    "analysis_zh": "意大利国家地球物理与火山学研究所（INGV）测高仪团队的软件下载页，介绍 Autoscala 自动缩放（foF2、MUF 等）以及数据分析、电离层模型配套工具。适合欧洲/INGV 站网 ionogram 自动处理路线。页面偏门户说明，具体包获取方式以站点 Restricted area / 联系渠道为准，并非 GitHub 式即开即用源码仓。",
+    "language": "various",
+    "license": "scientific distribution (INGV portal)",
+    "category": "ionosphere",
+    "subcategory": "测高仪自动缩放",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "one_liner_zh": "INGV Autoscala 测高仪自动缩放及相关分析软件入口"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "pynasonde",
+    "url": "https://github.com/shibaji7/pynasonde",
+    "desc_zh": "Python 测高仪/电离层电波测深分析工具（回波识别、缩放与反演）",
+    "analysis_zh": "面向精密电离层电波测深的开源 Python 应用：回波识别、噪声区分、描迹分类、标准参数缩放与三维等离子体密度反演等。文档在 Read the Docs，适合不想只靠 SAO Explorer 二进制、想把 ionogram 流水线嵌进 Python 的人。依赖与数据格式以文档为准；与 Digisonde 专有格式的兼容性需按站型验证。",
+    "language": "Python",
+    "license": "MIT",
+    "category": "ionosphere",
+    "subcategory": "测高仪分析",
+    "stars_approx": 5,
+    "provenance": "academic_lab",
+    "host": "github",
+    "one_liner_zh": "Python 测高仪/电离层电波测深分析工具（回波识别、缩放与反演）"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "POLAN",
+    "url": "https://github.com/space-physics/POLAN",
+    "desc_zh": "Titheridge POLAN 真高剖面 Fortran 现代化与 Python 接口",
+    "analysis_zh": "经典 chirp 测高仪真高反演程序 POLAN 的可编译现代移植，并提供 pip/meson 的 Python 绑定。和 UMLCAR NHPC 形成开源对照路线，适合教学与可重复剖面试验。输入需符合 POLAN 期望的描迹/频率高度组织；不是 Digisonde ARTIST 的替代品。",
+    "language": "Fortran",
+    "license": "MIT",
+    "category": "ionosphere",
+    "subcategory": "测高仪/真高反演",
+    "stars_approx": 11,
+    "provenance": "academic_lab",
+    "host": "github",
+    "one_liner_zh": "Titheridge POLAN 真高剖面 Fortran 现代化与 Python 接口"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "jvierine-ionosonde",
+    "url": "https://github.com/jvierine/ionosonde",
+    "desc_zh": "基于 USRP 的开源软件无线电测高仪（垂直/斜向探测）",
+    "analysis_zh": "Juha Vierinen 等维护的纯 Python 跳频雷达/测高仪软件，依托 Ettus USRP 与 GPS 同步，支持垂直与斜向、多站接收网络，可出距离-多普勒谱与 ionogram。适合硬件实验室自建低成本测高仪或极盖 Es 观测。需要 USRP N2x0 与射频前端；软件本身不替代 GIRO Digisonde 业务站。",
+    "language": "Python",
+    "license": "GPL-3.0",
+    "category": "ionosphere",
+    "subcategory": "测高仪硬件软件",
+    "stars_approx": 23,
+    "provenance": "academic_lab",
+    "host": "github",
+    "one_liner_zh": "基于 USRP 的开源软件无线电测高仪（垂直/斜向探测）"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "PHaRLAP",
+    "url": "https://www.dst.defence.gov.au/our-technologies/pharlap-provision-high-frequency-raytracing-laboratory-propagation-studies",
+    "desc_zh": "澳大利亚 DSTG HF 电离层射线追踪 Matlab 工具箱（免费申请，不可再分发）",
+    "analysis_zh": "提供 2D/全磁离子 3D 数值射线追踪与解析追踪，可挂 IRI/IGRF 或用户网格。HF 传播与回波几何研究里事实上的常用引擎，Fortran 核心经 mex 进 Matlab。许可为 DSTG 科学发放：个人申请、禁止再分发。若缺 Matlab，可看 HamSCI PyLap 开源接口，但仍需另行申请 PHaRLAP 本体。",
+    "language": "Fortran/MATLAB",
+    "license": "DSTG request freeware (no redistribution)",
+    "category": "ionosphere",
+    "subcategory": "HF射线追踪",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "one_liner_zh": "澳大利亚 DSTG HF 电离层射线追踪 Matlab 工具箱（免费申请，不可再分发）"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "PyLap",
+    "url": "https://github.com/HamSCI/PyLap",
+    "desc_zh": "HamSCI 对 PHaRLAP 的开源 Python 接口（生成电离层与射线绘图）",
+    "analysis_zh": "用 Python/C 调用 PHaRLAP Fortran 引擎，摆脱 Matlab 授权门槛，保留建 IRI 电离层、射线追踪与绘图等核心流程。业余与科研 HF 传播实验友好。安装目前偏 Ubuntu/x86，且必须先向 DSTG 申请 PHaRLAP 本体与 Intel Fortran 运行库；本身不是可独立运行的完整射线引擎。",
+    "language": "Python",
+    "license": "MIT",
+    "category": "ionosphere",
+    "subcategory": "HF射线追踪",
+    "stars_approx": 14,
+    "provenance": "academic_lab",
+    "host": "github",
+    "one_liner_zh": "HamSCI 对 PHaRLAP 的开源 Python 接口（生成电离层与射线绘图）"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "hfpytrace",
+    "url": "https://github.com/shibaji7/trace",
+    "desc_zh": "HF 射线追踪库 hfpytrace（PHaRLAP 与其它色散关系，含 PyIRI 示例）",
+    "analysis_zh": "开源 HF 射线追踪包，文档与示例演示 IRI 笛卡尔/球坐标斜向射线，密度后端可接 PyIRI。适合想在 Python 里做传播几何、又不愿只绑 Matlab mex 的人。仓库内仍可见 pharlap_lib 相关痕迹，授权与依赖请读上游 LICENSE/文档；与 HamSCI PyLap 路线不同，选型前先确认你是否已有 DSTG PHaRLAP。",
+    "language": "Python",
+    "license": "MIT",
+    "category": "ionosphere",
+    "subcategory": "HF射线追踪",
+    "stars_approx": 1,
+    "provenance": "academic_lab",
+    "host": "github",
+    "one_liner_zh": "HF 射线追踪库 hfpytrace（PHaRLAP 与其它色散关系，含 PyIRI 示例）"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "PyRayHF",
+    "url": "https://github.com/victoriyaforsythe/PyRayHF",
+    "desc_zh": "纯 Python 电离层 HF 射线追踪（虚高与二维射线，对接 PyIRI 生态）",
+    "analysis_zh": "Victoriya Forsythe 等发布的 HF 射线工具，从电子密度剖面计算虚高与二维射线路径，文档在 Read the Docs，与同作者 PyIRI/PyIRTAM 生态衔接自然。适合教学与轻量传播实验。能力相对 PHaRLAP 全磁离子 3D NRT 更聚焦；复杂回波与三维磁离子场景仍可能需要更重的引擎。",
+    "language": "Python",
+    "license": "MIT",
+    "category": "ionosphere",
+    "subcategory": "HF射线追踪",
+    "stars_approx": 10,
+    "provenance": "academic_lab",
+    "host": "github",
+    "one_liner_zh": "纯 Python 电离层 HF 射线追踪（虚高与二维射线，对接 PyIRI 生态）"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "viresclient",
+    "url": "https://github.com/ESA-VirES/VirES-Python-Client",
+    "desc_zh": "ESA VirES Python 客户端：Swarm Langmuir/TEC 等产品转 xarray",
+    "analysis_zh": "官方推荐的 Swarm（及 Aeolus）数据访问库，可按需拉取 EFI Langmuir 探针、TECxTMS_2F 绝对/相对 TEC、以及 CHAMP/GRACE 等扩展 TEC/Ne 产品并载入 pandas/xarray。做 LEO POD 衍生 TEC 与就地电子密度对照时几乎是默认入口。需 VirES 账号；本身不做反演，只负责服务端点与本地装载。",
+    "language": "Python",
+    "license": "MIT",
+    "category": "ionosphere",
+    "subcategory": "SWARM/LEO TEC",
+    "stars_approx": 23,
+    "provenance": "official",
+    "host": "github",
+    "one_liner_zh": "ESA VirES Python 客户端：Swarm Langmuir/TEC 等产品转 xarray"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "Swarm_notebooks",
+    "url": "https://github.com/Swarm-DISC/Swarm_notebooks",
+    "desc_zh": "ESA Swarm 科学分析 Jupyter 笔记本（含 TEC/Langmuir 示例）",
+    "analysis_zh": "部署在 VirES VRE 上的官方示例笔记本集合，含 EFIx_LP_1B、TECxTMS_2F 等演示，适合跟着学 Swarm 电离层产品字段与绘图。教学与快速原型友好。依赖 viresclient 与在线环境；不是独立算法库。",
+    "language": "Jupyter Notebook",
+    "license": "MIT",
+    "category": "tools-learning",
+    "subcategory": "SWARM教程",
+    "stars_approx": 10,
+    "provenance": "official",
+    "host": "github",
+    "one_liner_zh": "ESA Swarm 科学分析 Jupyter 笔记本（含 TEC/Langmuir 示例）"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "geospacelab",
+    "url": "https://github.com/JouleCai/geospacelab",
+    "desc_zh": "近地空间数据存取/可视化框架（含大量 Swarm 与 TEC 产品）",
+    "analysis_zh": "统一 DataHub/Dataset 管线下载、装载并可视化 OMNI、EISCAT、DMSP、Swarm、TEC、AMPERE 等，另有 Swarm 专题文档站点。适合把 LEO 就地测量与地面 TEC 放在同一套坐标/绘图工具里。体量大、功能面广，只做单一 Swarm TEC 时也可能觉得重；按需装依赖即可。",
+    "language": "Python",
+    "license": "BSD-3-Clause",
+    "category": "ionosphere",
+    "subcategory": "SWARM/空间天气数据",
+    "stars_approx": 48,
+    "provenance": "academic_lab",
+    "host": "github",
+    "one_liner_zh": "近地空间数据存取/可视化框架（含大量 Swarm 与 TEC 产品）"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "IonCast-Heliolab2025",
+    "url": "https://github.com/FrontierDevelopmentLab/2025-HL-Ionosphere",
+    "desc_zh": "NASA FDL Heliolab 2025 IonCast：ConvLSTM/GNN/SFNO 电离层预报实验代码",
+    "analysis_zh": "Frontier Development Lab 电离层-热层孪生项目仓库，含 IonCast ConvLSTM 训练/评估脚本，分支覆盖 GNN 与球面 FNO；配套 Zenodo 数据与 ionopy 引用。适合复现较新的全球 TEC/电离层动力学深度学习基线。环境与数据体量不小；ionopy 子目录可能滞后，维护说明指向 spaceml-org/ionopy。",
+    "language": "Python",
+    "license": "Apache-2.0",
+    "category": "ionosphere",
+    "subcategory": "TEC预报/ML",
+    "stars_approx": 5,
+    "provenance": "academic_lab",
+    "host": "github",
+    "one_liner_zh": "NASA FDL Heliolab 2025 IonCast：ConvLSTM/GNN/SFNO 电离层预报实验代码"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "ionopy",
+    "url": "https://github.com/spaceml-org/ionopy",
+    "desc_zh": "Time-Fusion Transformer 数据驱动电离层预报（SpaceML）",
+    "analysis_zh": "SpaceML 维护的电离层预报代码与笔记本，强调时间融合 Transformer，被 IonCast/Heliolab 仓库引用为较新实现。适合跟深度学习 TEC/电离层序列模型。许可证未在 GitHub 标 SPDX，使用前请读仓库说明；数据与训练配置需自备。",
+    "language": "Python",
+    "license": "see upstream README",
+    "category": "ionosphere",
+    "subcategory": "TEC预报/ML",
+    "stars_approx": 4,
+    "provenance": "academic_lab",
+    "host": "github",
+    "one_liner_zh": "Time-Fusion Transformer 数据驱动电离层预报（SpaceML）"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "tec_prediction-ONERA",
+    "url": "https://github.com/aboulch/tec_prediction",
+    "desc_zh": "ONERA ConvLSTM/U-Net 全球 TEC 图预报经典开源实现（Boulch 2018）",
+    "analysis_zh": "卷积循环网络做电离层活动/TEC 图预报的早期公开代码，后被多篇 DeepTEC 类工作引用。研究非商业用途按仓库说明为 GPLv3，商业需联系 ONERA。适合当 ML TEC 基线；年代较早（约 2018），依赖与数据管道需自行适配现行 IONEX/GIM。",
+    "language": "Python",
+    "license": "GPL-3.0 (research); commercial contact ONERA",
+    "category": "ionosphere",
+    "subcategory": "TEC预报/ML",
+    "stars_approx": 19,
+    "provenance": "academic_lab",
+    "host": "github",
+    "one_liner_zh": "ONERA ConvLSTM/U-Net 全球 TEC 图预报经典开源实现（Boulch 2018）"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "SpatioTECformer",
+    "url": "https://github.com/research1011/SpatioTECformer",
+    "desc_zh": "多尺度 CNN + Transformer 的 TEC 时空预报模型（PyTorch）",
+    "analysis_zh": "把多尺度卷积、自适应融合与 Transformer 编码器拼成 71×73 网格 TEC 预报流水线，模块拆成 model/enhanced_cnn 等文件，代码量小但完整可跑。适合读论文式复现。未标 SPDX 许可证；训练依赖作者 HDF5 特征文件，需自备或按 README 路径改。",
+    "language": "Python",
+    "license": "see upstream README",
+    "category": "ionosphere",
+    "subcategory": "TEC预报/ML",
+    "stars_approx": 0,
+    "provenance": "personal_community",
+    "host": "github",
+    "one_liner_zh": "多尺度 CNN + Transformer 的 TEC 时空预报模型（PyTorch）"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "Global-TEC-forecasting-DL",
+    "url": "https://github.com/Laboratorio-Computacion-Cientifica/Global-TEC-forecasting-for-space-weather-application-based-on-deep-learning-techniques",
+    "desc_zh": "全球 TEC 24 小时预报：LSTM/GRU/CNN 全流程（含 DVC）",
+    "analysis_zh": "覆盖采数、预处理、建模与评估的完整深度学习流水线，比较 LSTM、GRU、CNN 做提前 24 小时全球 TEC 预报，并用 DVC 管数据版本。偏工程化复现空间天气业务原型。数据大文件走 DVC 远端，克隆后需按 dvc.yaml 拉数；许可为 AGPL-3.0。",
+    "language": "Python",
+    "license": "AGPL-3.0",
+    "category": "ionosphere",
+    "subcategory": "TEC预报/ML",
+    "stars_approx": 6,
+    "provenance": "academic_lab",
+    "host": "github",
+    "one_liner_zh": "全球 TEC 24 小时预报：LSTM/GRU/CNN 全流程（含 DVC）"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "ionospheric-tec-forecasting-IISC",
+    "url": "https://github.com/codewithavra/ionospheric-tec-forecasting",
+    "desc_zh": "IISC Bangalore 单站 TEC 日前预报（Seq2Seq LSTM 与 CNN-Transformer）",
+    "analysis_zh": "针对 IISC 站分钟级 TEC，对比序列到序列 LSTM 与 CNN+窗口 Transformer，并把预报 TEC 换成 L1/L2/L5 电离层延迟。教学与单站实验很直观，还带 RoTI 相关分析笔记本。站点/时段特定，不是全球 GIM 预报器；体量含数据集，克隆较大。",
+    "language": "Jupyter Notebook",
+    "license": "MIT",
+    "category": "ionosphere",
+    "subcategory": "TEC预报/ML",
+    "stars_approx": 0,
+    "provenance": "academic_lab",
+    "host": "github",
+    "one_liner_zh": "IISC Bangalore 单站 TEC 日前预报（Seq2Seq LSTM 与 CNN-Transformer）"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "ionotec",
+    "url": "https://github.com/sylvathle/ionotec",
+    "desc_zh": "从 RINEX 计算总电子含量的 Python 库",
+    "analysis_zh": "面向 RINEX 观测的 TEC 计算库（原 pytec 更名/迁移至 ionotec），补齐“读观测→几何无关组合→TEC”的轻量路径。适合快速脚本化实验。功能面小于 PyTECGg/tec-suite 一类完整标定流水线；多星座 DCB/硬件延迟处理需自行核对。",
+    "language": "Python",
+    "license": "MIT",
+    "category": "ionosphere",
+    "subcategory": "TEC计算",
+    "stars_approx": 6,
+    "provenance": "personal_community",
+    "host": "github",
+    "one_liner_zh": "从 RINEX 计算总电子含量的 Python 库"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "Muf_Muncher",
+    "url": "https://github.com/mooxle/Muf_Muncher",
+    "desc_zh": "自托管欧洲 HF 传播看板（测高仪 MUF/foF2、空间天气与 POTA）",
+    "analysis_zh": "把两座欧洲测高仪的 MUF(D)、foF2、偶发 E 与 NOAA 空间天气、POTA 激活性汇总成一页 glance-and-go 看板，偏业余无线电运营。相邻域里少见的“开源+可自建”传播态势工具。不是射线追踪引擎；数据源与站点配置面向中欧，搬到其它区域要改接入。",
+    "language": "HTML",
+    "license": "see upstream README",
+    "category": "tools-learning",
+    "subcategory": "HF传播态势",
+    "stars_approx": 5,
+    "provenance": "personal_community",
+    "host": "github",
+    "one_liner_zh": "自托管欧洲 HF 传播看板（测高仪 MUF/foF2、空间天气与 POTA）"
+  },
+  {
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "source": "batch-related-iono 2026-09-17",
+    "featured": false,
+    "user_relation": "none",
+    "name": "Ionosonde-Data-Downloader",
+    "url": "https://github.com/bzossi/Ionosonde-Data-Downloader",
+    "desc_zh": "测高仪数据仓库自动下载脚本",
+    "analysis_zh": "自动从公开仓库拉取测高仪资料的小型 Python 工具，适合批量备数再交给 SAO Explorer / pynasonde / POLAN。维护活跃度一般、星标少，当作脚本起点即可；具体镜像 URL 与站表需对照上游更新。",
+    "language": "Python",
+    "license": "MIT",
+    "category": "gnss-datasets",
+    "subcategory": "测高仪数据获取",
+    "stars_approx": 2,
+    "provenance": "personal_community",
+    "host": "github",
+    "one_liner_zh": "测高仪数据仓库自动下载脚本"
+  }
+]

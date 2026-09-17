@@ -1,5 +1,5 @@
 # GNSS 数据与格式 / GNSS Data I/O
-> 共 **86** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **88** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
@@ -320,6 +320,21 @@ Anubis 免费档下载入口，提供 Linux 预编译与 GPL-3 源码，覆盖�
 语言：Python · 许可：GPL-3.0 · 星标约：11 · 宿主：github
 
 巴黎地球物理研究所（IPGP）维护的 Python 工具，对接 Leica/Septentrio/Topcon/Trimble/BINEX 等厂商官方转换链，强调近实时下载、RINEX3/4 转换、拼接与元数据编辑（联动 rinexmod）。适合台网自动化入库。依赖各厂商转换程序授权与安装；非定位解算引擎。
+
+## 掩星格式转换
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [cosmic-crunch](https://github.com/ErickShepherd/cosmic-crunch) | 批量下载 JPL GENESIS COSMIC-1 掩星剖面并转 netCDF4 | Python | 0 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [cosmic-crunch](https://github.com/ErickShepherd/cosmic-crunch)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：0 · 宿主：github
+
+把 JPL GENESIS 发布的 COSMIC-1 ASCII Level-2 大气/相关剖面批量拉取并转成 netCDF4，方便对接现代 Python 分析栈。适合需要统一文件格式做掩星气候统计的人。注意它瞄的是 JPL GENESIS 大气剖面链路，不是 CDAAC ionPhs/ionPrf 电离层产品的专用阅读器；电离层 excess phase 请另走 CDAAC/AWS RO。
 
 ## Hatanaka/CRX
 
@@ -842,6 +857,21 @@ RTCM-Ntrip 项目提供的 RTCM 3 到 RINEX 转换工具，便于把实时流转
 语言：Rust · 许可：MPL-2.0 · 星标约：12 · 宿主：github
 
 Rust 实现的 u-blox UBX 原始观测反序列化与 RINEX 采集工具，方便把低成本板卡数据送进经典后处理软件。适合外场脚本化采集与自动化。与 android_rinex、georinex 互补；天线高、观测码映射与时钟处理要按接收机配置核对，转换后建议跑质检工具。
+
+## 掩星/CDAAC解析
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [pysatCDAAC](https://github.com/pysat/pysatCDAAC) | pysat 生态的 CDAAC/COSMIC 仪器插件（含 ionPhs 等标签） | Python | 3 | 🏷️ 高校实验室 |
+
+### 详细说明
+
+#### [pysatCDAAC](https://github.com/pysat/pysatCDAAC)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：BSD-3-Clause · 星标约：3 · 宿主：github
+
+把 UCAR CDAAC GNSS-RO 产品接到 pysat 数据管理框架，文档与代码中列出 ionphs（电离层 excess phase）、podtec、scnLv1 等标签。适合已在用 pysat 做近地空间数据融合、又想顺手读 COSMIC 掩星文件的人。部分标签加载限制需对照 README；不是独立的 Abel 反演引擎。
 
 ## RINEX头编辑/重命名
 

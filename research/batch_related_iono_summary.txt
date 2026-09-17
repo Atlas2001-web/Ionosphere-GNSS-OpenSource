@@ -1,0 +1,55 @@
+batch_related_iono — 2026-09-17
+================================
+
+条目数: 27
+分类: {'gnss-datasets': 2, 'gnss-data': 2, 'ionosphere': 21, 'tools-learning': 2}
+来源标记: source="batch-related-iono 2026-09-17", markers=["batch-2026-09-17"]
+对 /tmp/existing_all_urls.txt 硬去重: 通过（0 撞车）
+未修改 PROJECTS.json；未 git push。
+
+覆盖域与代表条目
+----------------
+1) GNSS 无线电掩星 / COSMIC-CDAAC
+   - awsgnssroutils (gnss-ro/aws-opendata): AWS RO 开放数据查询下载
+   - pysatCDAAC: pysat 读 CDAAC（含 ionPhs 等）
+   - cosmic-crunch: JPL GENESIS COSMIC-1 → netCDF4
+   - ROM-SAF-ROPP: 标准 RO 处理包（注册获取，含电离层改正）
+
+2) 测高仪 ionosonde
+   - NHPC / CARP / Drift-X: UMLCAR 免费工具（真高、平均剖面、漂移）
+   - Autoscala-INGV: INGV 自动缩放门户
+   - pynasonde / POLAN / jvierine-ionosonde: 开源分析、真高、SDR 测高仪
+
+3) SWARM / LEO TEC
+   - viresclient + Swarm_notebooks: 官方 Langmuir/TEC 访问与教程
+   - geospacelab: 含大量 Swarm/TEC 产品的近地空间框架
+
+4) HF 射线追踪 / IRI 传播
+   - PHaRLAP（DSTG 申请制）+ PyLap（HamSCI Python 接口）
+   - hfpytrace (shibaji7/trace)、PyRayHF
+   - Muf_Muncher: 业余 HF MUF 态势看板（相邻）
+
+5) ML TEC 预报（有真实代码）
+   - IonCast-Heliolab2025、ionopy
+   - tec_prediction-ONERA（Boulch 经典）、SpatioTECformer
+   - Global-TEC-forecasting-DL、ionospheric-tec-forecasting-IISC
+   - ionotec: RINEX→TEC 轻量库
+
+刻意跳过 / 未找到
+----------------
+- Spire / PlanetiQ: 未发现可用的开源处理工具仓
+- 专用 Android/手机电离层开源 App: 检索无明确命中（GPSTest/GNSSLogger 等已在目录其它类）
+- Autoscala: 无 GitHub 源码仓，仅收录 INGV 下载门户并在分析中说明获取方式
+- wrf-rat/trace-f: shibaji7/trace 的 fork，已去重只留上游
+- 空壳/过时碎片仓（如 ChachaSam/Swarm_TEC）未收
+
+URL 核验
+--------
+- GitHub 条目: gh API 元数据 + curl HTTP 200
+- 官方页: NHPC/CARP/Drift-X/ROPP/Autoscala/UMLCAR downloads 200
+- PHaRLAP: 部分爬虫 UA 会 403，浏览器 UA 可 200 打开官方页（内容已核对）
+
+亮点
+----
+- 补齐目录中几乎空白的「掩星工具 / 测高仪开源栈 / HF 射线追踪 / Swarm TEC 客户端」四条线
+- ML TEC 侧避开已收录的 tec_forecast、ED-AttConvLSTM、DeepPredTEC，补经典 ONERA 与较新 IonCast/Transformer 实现

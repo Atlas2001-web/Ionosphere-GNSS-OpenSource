@@ -4,19 +4,19 @@
   "repo_description_en": "Curated index of open-source ionosphere / troposphere / GNSS / PNT software",
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
-  "generated": "2026-09-16",
-  "project_count": 489,
+  "generated": "2026-09-17",
+  "project_count": 611,
   "counts_by_category": {
-    "ionosphere": 85,
-    "troposphere": 29,
-    "gnss-data": 86,
+    "gnss-data": 88,
+    "gnss-datasets": 60,
     "gnss-positioning": 74,
-    "orbit-clock": 12,
-    "navigation-ins": 54,
     "gnss-sdr": 57,
+    "ionosphere": 197,
     "mobile-apps": 11,
-    "tools-learning": 27,
-    "gnss-datasets": 54
+    "navigation-ins": 54,
+    "orbit-clock": 12,
+    "tools-learning": 29,
+    "troposphere": 29
   },
   "projects": [
     {
@@ -285,6 +285,26 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "CORS/NTRIP 差分流中继与重分发"
+    },
+    {
+      "name": "cosmic-crunch",
+      "url": "https://github.com/ErickShepherd/cosmic-crunch",
+      "desc_zh": "批量下载 JPL GENESIS COSMIC-1 掩星剖面并转 netCDF4",
+      "one_liner_zh": "批量下载 JPL GENESIS COSMIC-1 掩星剖面并转 netCDF4",
+      "analysis_zh": "把 JPL GENESIS 发布的 COSMIC-1 ASCII Level-2 大气/相关剖面批量拉取并转成 netCDF4，方便对接现代 Python 分析栈。适合需要统一文件格式做掩星气候统计的人。注意它瞄的是 JPL GENESIS 大气剖面链路，不是 CDAAC ionPhs/ionPrf 电离层产品的专用阅读器；电离层 excess phase 请另走 CDAAC/AWS RO。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "gnss-data",
+      "subcategory": "掩星格式转换",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 0,
+      "source": "batch-related-iono 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
     },
     {
       "name": "crx2rnx",
@@ -1262,6 +1282,26 @@
       "one_liner_zh": "RTCM3 报文的 Python 解析与生成库"
     },
     {
+      "name": "pysatCDAAC",
+      "url": "https://github.com/pysat/pysatCDAAC",
+      "desc_zh": "pysat 生态的 CDAAC/COSMIC 仪器插件（含 ionPhs 等标签）",
+      "one_liner_zh": "pysat 生态的 CDAAC/COSMIC 仪器插件（含 ionPhs 等标签）",
+      "analysis_zh": "把 UCAR CDAAC GNSS-RO 产品接到 pysat 数据管理框架，文档与代码中列出 ionphs（电离层 excess phase）、podtec、scnLv1 等标签。适合已在用 pysat 做近地空间数据融合、又想顺手读 COSMIC 掩星文件的人。部分标签加载限制需对照 README；不是独立的 Abel 反演引擎。",
+      "language": "Python",
+      "license": "BSD-3-Clause",
+      "category": "gnss-data",
+      "subcategory": "掩星/CDAAC解析",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 3,
+      "source": "batch-related-iono 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
       "name": "pyspartn",
       "url": "https://github.com/semuconsulting/pyspartn",
       "desc_zh": "解析 SPARTN 精密改正电文的 Python 库",
@@ -1638,6 +1678,26 @@
       "one_liner_zh": "u-blox→RINEX 工具集，内置基于 CSSRlib 的 RTK/PPP"
     },
     {
+      "name": "awsgnssroutils",
+      "url": "https://github.com/gnss-ro/aws-opendata",
+      "desc_zh": "AWS 开放数据 GNSS 掩星元数据查询与下载工具（含电离层产品入口）",
+      "one_liner_zh": "AWS 开放数据 GNSS 掩星元数据查询与下载工具（含电离层产品入口）",
+      "analysis_zh": "面向 AWS Registry of Open Data 上的 GNSS 无线电掩星库：提供 awsgnssroutils 查询/筛选/下载接口，覆盖 CDAAC、JPL、ROM SAF 等多处理中心的 Level-1b/2 产品。做 COSMIC/COSMIC-2 电离层 excess phase、电子密度剖面或与辐射探测共址研究时很省事。仓库体量大、含重整格式流水线；日常用 pip 装 awsgnssroutils 即可，不必整仓克隆。",
+      "language": "Python",
+      "license": "BSD-3-Clause",
+      "category": "gnss-datasets",
+      "subcategory": "GNSS掩星/RO",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 21,
+      "source": "batch-related-iono 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
       "name": "BDS-3-PPP-B2b-DATA",
       "url": "https://github.com/zp-9696/BDS-3-PPP-B2b-DATA",
       "category": "gnss-datasets",
@@ -1741,6 +1801,28 @@
       "registration_zh": "公共根目录可浏览 bias/iono 等子树，一般无需账号即可拉取已公开产品。"
     },
     {
+      "name": "CAS-BDsmart-RTS-Iono",
+      "url": "https://data.bdsmart.cn/pub/product/rts/iono/",
+      "desc_zh": "中科院 BDsmart 实时电离层产品目录（RTS IONEX 等）",
+      "one_liner_zh": "中科院 BDsmart 实时电离层产品目录（RTS IONEX 等）",
+      "analysis_zh": "与已收录的 CAS 最终/快速 IONEX 目录配套的实时（RTS）电离层产品树，面向近实时 GIM/SSR 相关用户。适合 PPP-RTK/实时监测试验；事后精密分析仍建议使用最终 IONEX 与多 AC 交叉验证。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "电离层产品",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "open",
+      "registration_zh": "公开 HTTP 目录，通常无需注册即可列举/下载实时电离层产品。"
+    },
+    {
       "name": "CDDIS-Atmospheric-Products",
       "url": "https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/atmospheric_products.html",
       "desc_zh": "CDDIS 大气产品页：电离层 IONEX 与对流层产品索引说明",
@@ -1825,6 +1907,28 @@
       "registration_zh": "空间数据镜像区公开下载，无需账号。"
     },
     {
+      "name": "CNES-PPP-WIZARD-Realtime-Products",
+      "url": "http://www.ppp-wizard.net/products/REAL_TIME",
+      "desc_zh": "CNES PPP-WIZARD 实时产品目录（含实时轨道钟差/偏差及电离层相关输出）",
+      "one_liner_zh": "CNES PPP-WIZARD 实时产品目录（含实时轨道钟差/偏差及电离层相关输出）",
+      "analysis_zh": "CNES PPP-WIZARD 示范系统的 REAL_TIME 产品树，可检索实时流配套文件；CNES 亦通过 IGS-RTS 播发实时 SSR。已收录门户首页，本条补齐可枚举的实时产品路径，便于脚本对接。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "电离层产品",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "open",
+      "registration_zh": "产品目录公开可浏览下载；使用请遵循 CNES PPP-WIZARD 站点说明。"
+    },
+    {
       "name": "CODE-AIUB-Analysis-Center",
       "url": "https://www.aiub.unibe.ch/research/code___analysis_center/index_eng.html",
       "desc_zh": "CODE/AIUB 分析中心主页：精密轨道钟差与电离层等产品介绍",
@@ -1845,6 +1949,28 @@
       "host": "official_site",
       "registration": "open",
       "registration_zh": "介绍页公开。CODE 产品多经 AIUB FTP/HTTPS 或 IGS 数据中心获取；按页内当前下载说明操作。"
+    },
+    {
+      "name": "CODE-AIUB-Product-Download",
+      "url": "https://www.aiub.unibe.ch/download/",
+      "desc_zh": "AIUB/CODE 产品 HTTPS 下载浏览器（含 CODE/ionex/ionosphere 等目录）",
+      "one_liner_zh": "AIUB/CODE 产品 HTTPS 下载浏览器（含 CODE/ionex/ionosphere 等目录）",
+      "analysis_zh": "伯尔尼大学天文研究所 CODE 分析中心的官方产品文件浏览器。可进入 CODE、CODE_MGEX、ionex、ionosphere 等目录获取最终/快速/超快速轨道钟差与 IONEX 等。FTP 已弃用，请改用本 HTTPS 入口；与已收录的 CODE AC 介绍页互补，本条聚焦可下载产品树。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "IGS产品下载",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "open",
+      "registration_zh": "HTTPS 文件浏览器公开，可按目录逐文件下载；原 FTP 已停用，无需账号。"
     },
     {
       "name": "COSMIC-CDAAC",
@@ -5267,6 +5393,26 @@
       "one_liner_zh": "PPP-RTK 用区域 STEC/VTEC/ZWD/ZTD 大气建模"
     },
     {
+      "name": "Aether-IT-model",
+      "url": "https://github.com/AetherModel/Aether",
+      "desc_zh": "热层-电离层耦合物理模式 Aether（勿与 PPP-RTK 的 AETHER 混淆）",
+      "one_liner_zh": "热层-电离层耦合物理模式 Aether（勿与 PPP-RTK 的 AETHER 混淆）",
+      "analysis_zh": "AetherModel/Aether 是热层/电离层耦合的第一性原理模式（C++），面向空间天气与电离层物理过程仿真，与目录里已有的 LiZhengXiao99/AETHER（区域 STEC/VTEC/对流层延迟建模）完全不是同一软件。适用于需要自洽中性-离子耦合输出的研究。局限：部署与算力要求高，文档与输入数据准备有门槛；做 GNSS 测地应用前通常还要额外做射线积分或映射。",
+      "language": "C++",
+      "license": "GPL-3.0",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 27,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
       "name": "ALBUS_ionosphere",
       "url": "https://github.com/twillis449/ALBUS_ionosphere",
       "desc_zh": "由 GPS 数据估计电离层 TEC 与旋转量 RM",
@@ -5283,6 +5429,88 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "由 GPS 数据估计电离层 TEC 与旋转量 RM"
+    },
+    {
+      "name": "Alouette_ISIS_extract",
+      "url": "https://github.com/asc-csa/Alouette_ISIS_extract",
+      "desc_zh": "加拿大航天局：从 Alouette/ISIS 扫描电离图提取数据与元数据",
+      "one_liner_zh": "加拿大航天局：从 Alouette/ISIS 扫描电离图提取数据与元数据",
+      "analysis_zh": "CSA 开源项目，从 Alouette 与 ISIS 卫星历史扫描电离图图像中提取数据与元数据，服务历史底部电离层档案数字化。局限：面向图像档案而非现代 GNSS；处理流水线偏研究复现。",
+      "language": "Python",
+      "license": "CSA",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 11,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "official"
+    },
+    {
+      "name": "apexpy",
+      "url": "https://github.com/aburrell/apexpy",
+      "desc_zh": "Apex/准偶极地磁坐标 Python 封装（电离层坐标变换常用）",
+      "one_liner_zh": "Apex/准偶极地磁坐标 Python 封装（电离层坐标变换常用）",
+      "analysis_zh": "电离层研究里把地理坐标转到 Apex/准偶极坐标的常用库，PyIRI 等也依赖同类坐标。输入纬经高与时间；输出磁纬磁地方时等。局限：不是电子密度模型；需注意 IGRF 年代与外推。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 40,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "Autoscala-INGV",
+      "url": "http://iononet.ingv.it/index.php/download/software",
+      "desc_zh": "INGV Autoscala 测高仪自动缩放及相关分析软件入口",
+      "one_liner_zh": "INGV Autoscala 测高仪自动缩放及相关分析软件入口",
+      "analysis_zh": "意大利国家地球物理与火山学研究所（INGV）测高仪团队的软件下载页，介绍 Autoscala 自动缩放（foF2、MUF 等）以及数据分析、电离层模型配套工具。适合欧洲/INGV 站网 ionogram 自动处理路线。页面偏门户说明，具体包获取方式以站点 Restricted area / 联系渠道为准，并非 GitHub 式即开即用源码仓。",
+      "language": "various",
+      "license": "scientific distribution (INGV portal)",
+      "category": "ionosphere",
+      "subcategory": "测高仪自动缩放",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-related-iono 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official"
+    },
+    {
+      "name": "Beihang-Ionosphere-CN",
+      "url": "http://ionosphere.cn/",
+      "desc_zh": "北航 ionosphere.cn：全球 GNSS TEC 图与空间天气研究产品门户",
+      "one_liner_zh": "北航 ionosphere.cn：全球 GNSS TEC 图与空间天气研究产品门户",
+      "analysis_zh": "北京航空航天大学团队维护的电离层与空间天气站点，提供 Final/Rapid/Ultra 及更高时间分辨率全球 TEC 图展示，并参与 IAG 实时电离层监测等工作组方向。与 CAS BDsmart IONEX 数据树不同，本站偏研究展示与联系入口；批量业务下载优先确认站内 archive 链接或并行使用 data.bdsmart.cn。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "IONEX/TEC图",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "academic_lab",
+      "registration": "open",
+      "registration_zh": "产品展示页公开；具体下载路径见站内 Final/Rapid/Ultra 等栏目，问题可邮件 ac@ionosphere.cn。"
     },
     {
       "name": "BiScEF",
@@ -5304,6 +5532,50 @@
       "user_relation": "none"
     },
     {
+      "name": "Boston-College-ISR-Ionospheric-Studies",
+      "url": "https://www.bc.edu/bc-web/research/sites/institute-for-scientific-research/research/ionospheric-studies.html",
+      "desc_zh": "Boston College ISR 电离层研究组主页（闪烁、层析与 GNSS TEC 方向）",
+      "one_liner_zh": "Boston College ISR 电离层研究组主页（闪烁、层析与 GNSS TEC 方向）",
+      "analysis_zh": "波士顿学院科学研究所电离层研究方向介绍，涵盖全球扰动、层析与闪烁对 GNSS 影响等。作为 Seemala GPS-TEC 等工具的机构背景页收录；部分站点可能对非浏览器客户端返回 406，建议用常规浏览器打开。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "电离层工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "academic_lab",
+      "registration": "open",
+      "registration_zh": "研究室介绍页公开；具体软件多在研究者个人发布页。"
+    },
+    {
+      "name": "CARP-Average-Profile",
+      "url": "https://ulcar.uml.edu/SoftwareUtilities/CARP/",
+      "desc_zh": "CARP：测高仪平均代表剖面（Average Representative Profile）计算工具",
+      "one_liner_zh": "CARP：测高仪平均代表剖面（Average Representative Profile）计算工具",
+      "analysis_zh": "UMLCAR 提供的平均代表剖面工具，用于从多幅测高图剖面提取统计代表结构。服务气候态与模型验证场景；与 NHPC/SAO-X 同属测高仪处理链。",
+      "language": "Fortran",
+      "license": "UML academic (AS IS)",
+      "category": "ionosphere",
+      "subcategory": "电离层工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "academic_lab",
+      "registration": "open",
+      "registration_zh": "公开下载目录，按页内说明使用。"
+    },
+    {
       "name": "CCMC-IRI-online",
       "url": "https://ccmc.gsfc.nasa.gov/models/IRI~2020/",
       "category": "ionosphere",
@@ -5323,6 +5595,28 @@
       "source": "similar-finds-2026-09-14"
     },
     {
+      "name": "CCMC-SAMI3",
+      "url": "https://ccmc.gsfc.nasa.gov/models/SAMI3~3.22",
+      "desc_zh": "CCMC 上的 SAMI3 模型入口（文档/运行请求/发布信息）",
+      "one_liner_zh": "CCMC 上的 SAMI3 模型入口（文档/运行请求/发布信息）",
+      "analysis_zh": "NASA CCMC 的 SAMI3~3.22 模型页面，汇总模型说明、版本与社区获取途径，是找 SAMI3 官方发行与 Runs-on-Request 的入口。局限：页面本身不是 git 仓；源码下载可能指向 Zenodo/协议流程；实际算例仍要本地或 CCMC 环境。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "open",
+      "registration_zh": "CCMC 模型页公开浏览；本地源码/运行请求可能需按 CCMC 流程注册或接受使用条款"
+    },
+    {
       "name": "CDAAC_COSMIC-TEC_Data-Research",
       "url": "https://github.com/haoINvinCbou/CDAAC_COSMIC-TEC_Data-Research",
       "desc_zh": "处理 CDAAC COSMIC 掩星 NetCDF 做 TEC 研究",
@@ -5339,6 +5633,26 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "处理 CDAAC COSMIC 掩星 NetCDF 做 TEC 研究"
+    },
+    {
+      "name": "csonde-gnss-ionosphere",
+      "url": "https://github.com/csonde/gnss",
+      "desc_zh": "RINEX 解析 + 格网/球谐电离层建模的 C 程序集",
+      "one_liner_zh": "RINEX 解析 + 格网/球谐电离层建模的 C 程序集",
+      "analysis_zh": "匈牙利相关学位论文配套代码：含 RINEX 解析、格网电离层模型、球谐模型求解与 PCA 等，适合作为区域建模教学示例。局限：偏研究原型；构建与输入约定需读论文/源码；GPL。",
+      "language": "C",
+      "license": "GPL-3.0",
+      "category": "ionosphere",
+      "subcategory": "GIM",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 10,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
     },
     {
       "name": "DeepPredTEC",
@@ -5361,6 +5675,92 @@
       "one_liner_zh": "深度学习预报 GPS TEC 图（SuperDARN 相关）"
     },
     {
+      "name": "DiffIonMap",
+      "url": "https://github.com/Jin-Whu/DiffIonMap",
+      "desc_zh": "对两幅 IONEX TEC 图做差分可视化的小工具",
+      "one_liner_zh": "对两幅 IONEX TEC 图做差分可视化的小工具",
+      "analysis_zh": "读取两个 IONEX，生成差分电离层图，便于看分析中心差异或风暴扰动相对变化。局限：极简、久未更新；不负责下载或质量控核。",
+      "language": "Python",
+      "license": "unknown",
+      "category": "ionosphere",
+      "subcategory": "GIM",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 0,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
+    },
+    {
+      "name": "DLR-IMPC",
+      "url": "https://impc.dlr.de/",
+      "desc_zh": "DLR 电离层监测与预报中心（IMPC，原 SWACI 继承）：近实时全球/欧洲 TEC、ROTI 与预警门户",
+      "one_liner_zh": "DLR 电离层监测与预报中心（IMPC，原 SWACI 继承）：近实时全球/欧洲 TEC、ROTI 与预警门户",
+      "analysis_zh": "德国宇航中心（DLR）Neustrelitz 运营的业务电离层服务，明确为原 SWACI 的后继门户，并继续提供 SWACI 长期存档。产品包括欧洲/全球近实时 VTEC（约 15 分钟更新、时延通常 <5 分钟）、ROTI、梯度指数与 1 小时预报等，面向 GNSS 导航与空间天气用户。近实时下载需先注册账号；历史批量需邮件申请。适合作为欧洲区域 TEC 对照与扰动监测，不宜当作唯一全球精密 GIM 替代 IGS 最终 IONEX。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "电离层产品",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "form_register",
+      "registration_zh": "门户右上角 Sign up 走 DLR EOC SSO 自助注册；登录后可在 Products & Archives 下载近实时产品。更长时段历史数据需邮件申请 impc-uhd@dlr.de，科学用途通常经 FTP 交付。"
+    },
+    {
+      "name": "DLR-IMPC-Products",
+      "url": "https://impc.dlr.de/products",
+      "desc_zh": "DLR IMPC 产品与档案入口：近实时 TEC/ROTI 等电离层产品分类浏览与下载",
+      "one_liner_zh": "DLR IMPC 产品与档案入口：近实时 TEC/ROTI 等电离层产品分类浏览与下载",
+      "analysis_zh": "IMPC 产品导航页，按 TEC、ROTI、梯度指数等分类链接到欧洲/全球近实时图及说明页。ASCII 矩阵与 PNG 为主要交付格式，新格式规划含 JSON。研究用途可与 ROB 欧洲 TEC、IGS GIM 交叉比对；业务引用请遵守 IMPC terms。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "电离层产品",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "form_register",
+      "registration_zh": "需先在 IMPC 门户完成 DLR SSO 注册并登录，方可进入 Products & Archives 下载；历史长序列另发邮件申请。"
+    },
+    {
+      "name": "Drift-X",
+      "url": "https://ulcar.uml.edu/Drift-X.html",
+      "desc_zh": "Drift Explorer（Drift-X）：Digisonde 漂移数据可视化与分析 Java 工具",
+      "one_liner_zh": "Drift Explorer（Drift-X）：Digisonde 漂移数据可视化与分析 Java 工具",
+      "analysis_zh": "UMLCAR 发布的 Digisonde 漂移（DDA）数据查看器，当前发行约 1.2.14-FB3，ZIP 解压即用。面向测高仪漂移观测质控与教学；与 SAO-X 测高图定标流程互补，不直接输出 GNSS TEC。",
+      "language": "Java",
+      "license": "UML academic (AS IS)",
+      "category": "ionosphere",
+      "subcategory": "电离层工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "academic_lab",
+      "registration": "open",
+      "registration_zh": "发行包 ZIP 公开下载；Java 8+ 运行，无需安装程序。"
+    },
+    {
       "name": "ED-AttConvLSTM",
       "url": "https://github.com/leeliangchao/ED-AttConvLSTM",
       "desc_zh": "注意力 ConvLSTM 的 TEC 图预报模型",
@@ -5377,6 +5777,200 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "注意力 ConvLSTM 的 TEC 图预报模型"
+    },
+    {
+      "name": "ESA-IONMON",
+      "url": "https://swe.ssa.esa.int/ionmon",
+      "desc_zh": "ESA IONMON：电离层监测最新全球 TEC/RMS 等产品应用",
+      "one_liner_zh": "ESA IONMON：电离层监测最新全球 TEC/RMS 等产品应用",
+      "analysis_zh": "ESA 空间天气网络中的电离层监测应用入口，面向全球 TEC 及相关质量信息的业务展示与档案访问。适合欧洲用户做空间天气态势与 GNSS 单频改正评估；具体文件格式与引用条款以门户内文档为准。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "IONEX/TEC图",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "form_register",
+      "registration_zh": "ESA SWE 账号登录后访问；未注册先完成 /registration。"
+    },
+    {
+      "name": "ESA-SWE-Registration",
+      "url": "https://swe.ssa.esa.int/registration",
+      "desc_zh": "ESA SWE/SSA 门户免费账号注册页（开通电离层 TIO 等服务的前置步骤）",
+      "one_liner_zh": "ESA SWE/SSA 门户免费账号注册页（开通电离层 TIO 等服务的前置步骤）",
+      "analysis_zh": "专用于创建 ESA 空间天气门户账号的注册表单。若目标是下载近实时/预报 TEC 图或使用 IONMON，需先完成本页注册再回主站登录授权。属于数据访问元条目，本身不托管观测文件。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "电离层产品",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "form_register",
+      "registration_zh": "填写邮箱等信息提交注册请求，查收确认邮件并在时限内完成 OpenAM 确认，随后用邮箱登录门户勾选/开通 TIO、IONMON 等应用。"
+    },
+    {
+      "name": "ESA-SWE-SSA",
+      "url": "https://swe.ssa.esa.int/",
+      "desc_zh": "ESA 空间天气服务网络（SWE/SSA）门户：含穿越电离层电波链路等业务服务",
+      "one_liner_zh": "ESA 空间天气服务网络（SWE/SSA）门户：含穿越电离层电波链路等业务服务",
+      "analysis_zh": "欧洲航天局空间态势感知空间天气段的统一门户，聚合地磁、太阳与电离层等多域服务。电离层相关能力集中在 Transionospheric Radio Link（TIO）与 IONMON 等应用。多数深度产品需注册后授权；公开仪表盘可先浏览当前状态。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "电离层产品",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "form_register",
+      "registration_zh": "访问受保护应用前先到 swe.ssa.esa.int/registration 免费注册，按邮件完成 OpenAM 确认后登录；注册时可勾选 TIO 等电离层相关服务。"
+    },
+    {
+      "name": "ESA-TIO-Forecast-TEC",
+      "url": "https://swe.ssa.esa.int/tio_tcf",
+      "desc_zh": "ESA TIO TEC 预报图服务（约 1 小时量级电离层预报）",
+      "one_liner_zh": "ESA TIO TEC 预报图服务（约 1 小时量级电离层预报）",
+      "analysis_zh": "与近实时 TEC 配套的预报产品入口，服务短时电离层状态预估与链路质量评估。适合运行支持与教学演示；科学研究若需可复现网格文件，请在登录后按服务说明导出并记录版本/时次。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "TEC预报",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "form_register",
+      "registration_zh": "需 ESA SWE 注册账号登录后使用 TIO TEC 预报服务。"
+    },
+    {
+      "name": "ESA-TIO-NRT-TEC",
+      "url": "https://swe.ssa.esa.int/tio_tcr",
+      "desc_zh": "ESA TIO 近实时 TEC 图服务（穿越电离层电波链路）",
+      "one_liner_zh": "ESA TIO 近实时 TEC 图服务（穿越电离层电波链路）",
+      "analysis_zh": "ESA SWE 网络 Transionospheric 服务族中的近实时 TEC 图产品页，用于评估跨电离层链路与 GNSS 相关影响。与 DLR IMPC、ROB 欧洲 TEC 同属欧洲业务产品生态，可多源交叉验证。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "IONEX/TEC图",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "form_register",
+      "registration_zh": "需 ESA SWE 注册账号登录后使用 TIO 近实时 TEC 服务。"
+    },
+    {
+      "name": "ESA-TIO-Services",
+      "url": "https://swe.ssa.esa.int/tio_services",
+      "desc_zh": "ESA 穿越电离层电波链路（TIO）服务总览：TEC、闪烁与扰动监测索引",
+      "one_liner_zh": "ESA 穿越电离层电波链路（TIO）服务总览：TEC、闪烁与扰动监测索引",
+      "analysis_zh": "TIO 服务族目录页，汇总近实时/预报 TEC、闪烁图、扰动监测与电离层改正质量评估等入口。作为欧洲官方电离层业务导航页收录，便于从单一书签进入各子产品。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "电离层产品",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "form_register",
+      "registration_zh": "总览页公开；具体服务下载/交互多需 SWE 账号。"
+    },
+    {
+      "name": "ESA-UGI",
+      "url": "https://essr.esa.int/project/unified-gnss-ionosphere",
+      "desc_zh": "ESA UGI：从多系统 GNSS 观测估计 vTEC/IFB/模糊度的开源包（ESSR）",
+      "one_liner_zh": "ESA UGI：从多系统 GNSS 观测估计 vTEC/IFB/模糊度的开源包（ESSR）",
+      "analysis_zh": "欧洲航天局在 ESSR 发布的 Unified GNSS Ionosphere（UGI）程序包，面向 GPS/Galileo/BDS 双频观测估计垂直 TEC、频间偏差与载波模糊度，支持体素/多层/球谐等 2D–3D 电离层表征。适合作为 GNSS 电离层估计研究的可复现起点。源码托管在 ESSR 的 git，下载需注册 ESA Community 账号并接受 ESA Community License v2.4 Weak Copyleft；输入需预先标记/改正周跳。页面 HTTP 200 可访问。",
+      "language": "unknown",
+      "license": "ESA Community License v2.4 Weak Copyleft (Type 2)",
+      "category": "ionosphere",
+      "subcategory": "TEC估计",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-non-github 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "form_register",
+      "registration_zh": "在 ESSR 注册/登录 ESA 账号后，按项目页接受许可协议再拉取源码。"
+    },
+    {
+      "name": "FARR",
+      "url": "https://gitlab.com/longleywj/farr",
+      "desc_zh": "FARR：磁化碰撞等离子体中电波传播的三维 FDTD 开源代码（GitLab）",
+      "one_liner_zh": "FARR：磁化碰撞等离子体中电波传播的三维 FDTD 开源代码（GitLab）",
+      "analysis_zh": "NJIT/Boston University 开发的 Finite-Difference Time-Domain ARRay，面向地球电离层类磁化碰撞等离子体中的无线电波传播与闪烁机理仿真，CMake/Docker/Python 辅助，文档 https://longleywj.gitlab.io/farr/。GPL-3.0，论文 Green et al. Frontiers 2025；使用需遵守仓内 Rules of the Road（引用与合作邀请期）。默认分支 Release。适合物理级闪烁/传播数值试验，非 GNSS TEC 业务软件。",
+      "language": "C++",
+      "license": "GPL-3.0",
+      "category": "ionosphere",
+      "subcategory": "闪烁",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 1,
+      "source": "batch-non-github 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "gitlab",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "FIRI-2018",
+      "url": "https://github.com/AlexT1983/FIRI-2018",
+      "desc_zh": "低电离层经验模型 FIRI-2018 的 MATLAB 实现",
+      "one_liner_zh": "低电离层经验模型 FIRI-2018 的 MATLAB 实现",
+      "analysis_zh": "FIRI（Faraday-International Reference Ionosphere）侧重低电离层电子密度，本仓库给出 2018 版 MATLAB 实现，可与 IRI 高层剖面拼接思路对照。输入为位置/时间等模型参数；输出低电离层 Ne。局限：主要服务低频/VLF/吸收研究，对 GNSS L 波段 TEC 贡献相对小；MATLAB 生态。",
+      "language": "MATLAB",
+      "license": "BSD-3-Clause",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 2,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
     },
     {
       "name": "Galileo-NeQuick-G",
@@ -5417,6 +6011,46 @@
       "one_liner_zh": "官方示例：GAMBIT 数据库 Java 读入/解包（拉 IRTAM 系数）"
     },
     {
+      "name": "gcmprocpy",
+      "url": "https://github.com/NCAR/gcmprocpy",
+      "desc_zh": "TIE-GCM / WACCM-X 输出后处理与分析的 Python 工具",
+      "one_liner_zh": "TIE-GCM / WACCM-X 输出后处理与分析的 Python 工具",
+      "analysis_zh": "gcmprocpy 面向 NCAR TIE-GCM 与 WACCM-X 模式输出，做后处理、诊断与可视化，降低直接啃 netCDF 压力层网格的成本。输入为模式标准输出；输出为分析用场量/图。局限：本身不运行模式；强依赖对应模式版本的变量命名与网格约定；WACCM-X 完整源码通常走 CESM 体系，本仓库只覆盖后处理侧。",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 6,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "official"
+    },
+    {
+      "name": "GEMINI3D",
+      "url": "https://github.com/gemini3d/gemini3d",
+      "desc_zh": "三维电离层流体-电动力学物理模型（Fortran，社区活跃）",
+      "one_liner_zh": "三维电离层流体-电动力学物理模型（Fortran，社区活跃）",
+      "analysis_zh": "GEMINI3D 是面向电离层的三维流体电动力学数值模式，用 Fortran 求解等离子体密度、速度与电场等，常用于极光区、不规则体和无线电传播相关的物理仿真。输入通常包括中性大气背景、太阳/地磁驱动与网格配置；输出为三维电子密度与相关场量的时序场。对 GNSS 用户而言，它不是直接从 RINEX 算 TEC 的工具，而是提供物理一致性的电子密度场，可再投影为 STEC/VTEC 做对比实验。局限：需要编译与并行计算资源，参数调校门槛高，不适合当作日常 GIM 生产流水线。",
+      "language": "Fortran",
+      "license": "Apache-2.0",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 69,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
       "name": "Geometric-Matrix-For-Ionospheric-Tomogrphy",
       "url": "https://github.com/yujieqing/Geometric-Matrix-For-Ionospheric-Tomogrphy",
       "desc_zh": "电离层层析几何矩阵相关代码",
@@ -5435,6 +6069,26 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "电离层层析几何矩阵相关代码"
+    },
+    {
+      "name": "geospacelab",
+      "url": "https://github.com/JouleCai/geospacelab",
+      "desc_zh": "日地空间数据收集/管理/可视化库，含 TEC、Swarm、EISCAT 等",
+      "one_liner_zh": "日地空间数据收集/管理/可视化库，含 TEC、Swarm、EISCAT 等",
+      "analysis_zh": "GeospaceLAB 用 Python 统一拉取与管理 OMNI、地磁指数、EISCAT、DMSP、Swarm、TEC、AMPERE 等，并做可视化，适合快速搭电离层观测对比分析环境。输入多为各数据中心接口或本地缓存；输出为结构化数据集与图。局限：依赖外部数据源可用性与注册策略；不是 TEC 解算引擎本身；包体与依赖较重。",
+      "language": "Python",
+      "license": "BSD-3-Clause",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 48,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
     },
     {
       "name": "Get_IPP",
@@ -5457,6 +6111,92 @@
       "one_liner_zh": "电离层穿刺点（IPP）计算"
     },
     {
+      "name": "GFZ-Global-Ionosphere-Maps",
+      "url": "https://www.gfz.de/en/section/space-geodetic-techniques/data-products-services/global-gnss-ionosphere-maps",
+      "desc_zh": "GFZ IGS 电离层分析中心全球 GNSS TEC 图产品说明页（EPOS.P8）",
+      "one_liner_zh": "GFZ IGS 电离层分析中心全球 GNSS TEC 图产品说明页（EPOS.P8）",
+      "analysis_zh": "德国地学研究中心作为 IGS 电离层分析中心（IAAC）的官方产品介绍：基于约 250 站 IGS 网、GPS/GLONASS/Galileo，用 EPOS.P8 生成全球 VTEC 图，并给出 DOI 与文献。本页偏文档/入口；批量 IONEX 请转到 ISDC 或 CDDIS 的 GFZ 产品路径。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "IONEX/TEC图",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "open",
+      "registration_zh": "介绍页公开；实际 IONEX 文件通常经 GFZ ISDC/CDDIS 等数据中心获取（ISDC 可能需注册）。"
+    },
+    {
+      "name": "GIM_fusion_VLBI",
+      "url": "https://github.com/arrueegg/GIM_fusion_VLBI",
+      "desc_zh": "把 VLBI 信息同化/融合进全球电离层图（GIM）的研究代码",
+      "one_liner_zh": "把 VLBI 信息同化/融合进全球电离层图（GIM）的研究代码",
+      "analysis_zh": "探索将 VLBI 相关信息融入 GIM 的数据同化/融合流程，拓展传统纯 GNSS GIM。局限：研究仓、星数低；输入数据与实验配置需读论文/脚本；非业务 GIM 软件。",
+      "language": "Python",
+      "license": "unknown",
+      "category": "ionosphere",
+      "subcategory": "GIM",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 1,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "GIRO-GAMBIT",
+      "url": "https://giro.uml.edu/GAMBIT/",
+      "desc_zh": "GIRO GAMBIT：底部电离层时间线全球同化模型门户与系数服务",
+      "one_liner_zh": "GIRO GAMBIT：底部电离层时间线全球同化模型门户与系数服务",
+      "analysis_zh": "GAMBIT（Global Assimilative Model of Bottomside Ionospheric Timeline）官方主页，提供与 IRTAM 相关的系数获取与工具说明。目录中已有 Java/Fortran 读取器下载链接，本条收录门户本身以便发现 API/文档更新。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "IRI模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "academic_lab",
+      "registration": "open",
+      "registration_zh": "主页与说明公开；读者工具 ZIP 已另列，数据访问按其文档。"
+    },
+    {
+      "name": "GIRO-IRTAM",
+      "url": "https://giro.uml.edu/IRTAM/",
+      "desc_zh": "GIRO IRTAM：基于全球测高仪的 IRI 实时同化 foF2/hmF2 等映射",
+      "one_liner_zh": "GIRO IRTAM：基于全球测高仪的 IRI 实时同化 foF2/hmF2 等映射",
+      "analysis_zh": "Global Ionospheric Radio Observatory 的 IRI Real-Time Assimilative Mapping 服务页，将全球 Digisonde 近实时特性同化进 IRI，生成 F2 临界频率与峰高近实时图。已收录 IRTAM 系数读取器压缩包与 PyIRTAM，本条补齐官方产品可视化/服务入口。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "IRI模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "academic_lab",
+      "registration": "open",
+      "registration_zh": "近实时地图公开浏览；系数/程序化接口见 GAMBIT 相关说明，DIDBase 深度访问可能需账号。"
+    },
+    {
       "name": "GIRO-portal",
       "url": "https://giro.uml.edu/",
       "category": "ionosphere",
@@ -5474,6 +6214,46 @@
       "user_relation": "none",
       "featured": false,
       "source": "similar-finds-2026-09-14"
+    },
+    {
+      "name": "GITM",
+      "url": "https://github.com/GITMCode/GITM",
+      "desc_zh": "全球电离层-热层模式 GITM 官方社区源码（Fortran）",
+      "one_liner_zh": "全球电离层-热层模式 GITM 官方社区源码（Fortran）",
+      "analysis_zh": "GITM（Global Ionosphere/Thermosphere Model）是广泛使用的全球三维热层-电离层模式，源码以 Fortran 为主，可在社区组织 GITMCode 下获取。用于风暴期、极光加热、电子密度扰动等过程研究；输出 netCDF/二进制场，常与 Kamodo、自研插值脚本对接做卫星轨道飞越或 GNSS 射线对比。局限：编译与输入驱动（太阳指数、高纬强迫等）复杂；与 aaronjridley/GITM 等镜像存在并行维护情况，选用时注意版本与补丁一致性。",
+      "language": "Fortran",
+      "license": "Apache-2.0",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 28,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "Global-TEC-forecasting-DL",
+      "url": "https://github.com/Laboratorio-Computacion-Cientifica/Global-TEC-forecasting-for-space-weather-application-based-on-deep-learning-techniques",
+      "desc_zh": "全球 TEC 24 小时预报：LSTM/GRU/CNN 全流程（含 DVC）",
+      "one_liner_zh": "全球 TEC 24 小时预报：LSTM/GRU/CNN 全流程（含 DVC）",
+      "analysis_zh": "覆盖采数、预处理、建模与评估的完整深度学习流水线，比较 LSTM、GRU、CNN 做提前 24 小时全球 TEC 预报，并用 DVC 管数据版本。偏工程化复现空间天气业务原型。数据大文件走 DVC 远端，克隆后需按 dvc.yaml 拉数；许可为 AGPL-3.0。",
+      "language": "Python",
+      "license": "AGPL-3.0",
+      "category": "ionosphere",
+      "subcategory": "TEC预报/ML",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 6,
+      "source": "batch-related-iono 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
     },
     {
       "name": "gnss-scintillation-simulator",
@@ -5534,6 +6314,26 @@
       "one_liner_zh": "由 RINEX 载波/伪距重建斜路径 TEC"
     },
     {
+      "name": "GNSS-Workshop-TEC",
+      "url": "https://github.com/breid-phys/GNSS-Workshop",
+      "desc_zh": "研讨班材料：从 GNSS 数据探索到 TEC 测量",
+      "one_liner_zh": "研讨班材料：从 GNSS 数据探索到 TEC 测量",
+      "analysis_zh": "教学/研讨班 Jupyter 材料，演示 GNSS 数据探索与 TEC 测量流程，适合入门。局限：非生产库；依赖研讨班数据布局。",
+      "language": "Python",
+      "license": "GPL-3.0",
+      "category": "ionosphere",
+      "subcategory": "TEC估计",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 0,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
       "name": "GNSS.IonosphereMaps",
       "url": "https://github.com/gurkanguldas/GNSS.IonosphereMaps",
       "desc_zh": "GNSS 电离层图生成与处理",
@@ -5554,6 +6354,26 @@
       "one_liner_zh": "GNSS 电离层图生成与处理"
     },
     {
+      "name": "GNSS_TOM",
+      "url": "https://github.com/sailvssea/GNSS_TOM",
+      "desc_zh": "GNSS 对流层与电离层层析 C++ 实现（风格仿 GPSTk）",
+      "one_liner_zh": "GNSS 对流层与电离层层析 C++ 实现（风格仿 GPSTk）",
+      "analysis_zh": "同时面向对流层水汽与电离层 TEC 的层析代码，C++ 实现并参考 GPSTk 风格。输入为 GNSS 相关观测量/几何；输出层析体素场。局限：星数低、文档少；电离层与对流层模块成熟度需实测；许可为 NOASSERTION。",
+      "language": "C++",
+      "license": "unknown",
+      "category": "ionosphere",
+      "subcategory": "层析",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 1,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
       "name": "gnssutils",
       "url": "https://github.com/ljlamarche/gnssutils",
       "desc_zh": "地基 GNSS 闪烁数据处理工具",
@@ -5572,6 +6392,170 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "地基 GNSS 闪烁数据处理工具"
+    },
+    {
+      "name": "gps-tec-cnn-lstm-attention",
+      "url": "https://github.com/hyy-why/gps-tec-cnn-lstm-attention",
+      "desc_zh": "CNN-BiLSTM-Attention 的电离层 TEC 预测复现代码",
+      "one_liner_zh": "CNN-BiLSTM-Attention 的电离层 TEC 预测复现代码",
+      "analysis_zh": "论文配套的 CNN-BiLSTM 注意力 TEC 预测代码，面向复现而非业务运行。局限：星数低；数据准备脚本完整度需检查。",
+      "language": "Python",
+      "license": "unknown",
+      "category": "ionosphere",
+      "subcategory": "TEC估计",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 1,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
+    },
+    {
+      "name": "gri-iono",
+      "url": "https://gitlab.com/geosol-foss/python/gri-iono",
+      "desc_zh": "跨电离层传播延迟与角度改正（Bent/IRI/NeQuick2/NeQuickG 等）Python 包",
+      "one_liner_zh": "跨电离层传播延迟与角度改正（Bent/IRI/NeQuick2/NeQuickG 等）Python 包",
+      "analysis_zh": "gri-iono（PyPI 可装）面向信号穿电离层传播，提供 Bent、IRI、NeQuick2、NeQuickG 等延迟与角度改正接口，偏通信/测控链路而不是 GNSS 测站 TEC 建图。输入为时间、位置、频率与模型开关；输出延迟与角度改正量。局限：源码在 GitLab；部分底层模式仍依赖外部系数/可执行文件；与测地学 GIM/STEC 流水线目标不同。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 0,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "gitlab",
+      "provenance": "personal_community"
+    },
+    {
+      "name": "HamSCI-ionosonde",
+      "url": "https://github.com/HamSCI/hamsci_ionosonde",
+      "desc_zh": "HamSCI 低成本啁啾测高仪的处理与验证软件",
+      "one_liner_zh": "HamSCI 低成本啁啾测高仪的处理与验证软件",
+      "analysis_zh": "配套 HamSCI 低成本 chirp 测高仪：SDR 发收、互相关测时延、估算虚高，并在日食等事件中与业务测高仪对比。输入为 SDR/GNU Radio 采集；输出时延与虚高序列。局限：依赖实验执照与硬件；频段 2–10 MHz，与 GNSS 频段不同。",
+      "language": "Python",
+      "license": "GPL-3.0",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 1,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "HAO-TGCM-portal",
+      "url": "https://www.hao.ucar.edu/modeling/tgcm",
+      "desc_zh": "NCAR HAO TGCM/TIE-GCM 文档与发布说明门户",
+      "one_liner_zh": "NCAR HAO TGCM/TIE-GCM 文档与发布说明门户",
+      "analysis_zh": "HAO 上的 TIE-GCM/TIME-GCM 家族说明、用户指南与发布历史入口，补充 GitHub 源码仓的文档侧。局限：部分老版本下载流程可能仍要邮件注册；以 GitHub NCAR/tiegcm 为当前源码主渠道更合适。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "open",
+      "registration_zh": "文档公开；历史版本下载有时需邮件列表/注册，以页面说明为准"
+    },
+    {
+      "name": "hfpytrace",
+      "url": "https://github.com/shibaji7/trace",
+      "desc_zh": "HF 射线追踪库 hfpytrace（PHaRLAP 与其它色散关系，含 PyIRI 示例）",
+      "one_liner_zh": "HF 射线追踪库 hfpytrace（PHaRLAP 与其它色散关系，含 PyIRI 示例）",
+      "analysis_zh": "开源 HF 射线追踪包，文档与示例演示 IRI 笛卡尔/球坐标斜向射线，密度后端可接 PyIRI。适合想在 Python 里做传播几何、又不愿只绑 Matlab mex 的人。仓库内仍可见 pharlap_lib 相关痕迹，授权与依赖请读上游 LICENSE/文档；与 HamSCI PyLap 路线不同，选型前先确认你是否已有 DSTG PHaRLAP。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "HF射线追踪",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 1,
+      "source": "batch-related-iono 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "IBP-Model",
+      "url": "https://igit.iap-kborn.de/ibp/ibp-model",
+      "desc_zh": "IAP Kühlungsborn IBP：低纬赤道等离子体泡发生概率经验/ML 模型（机构 GitLab）",
+      "one_liner_zh": "IAP Kühlungsborn IBP：低纬赤道等离子体泡发生概率经验/ML 模型（机构 GitLab）",
+      "analysis_zh": "莱布尼茨大气物理所 Kühlungsborn 在机构 GitLab（igit.iap-kborn.de）开源的 Ionospheric Bubble Probability 模型，基于 CHAMP/Swarm 磁场与电子密度，输出随 DOY/经度/地方时/F10.7 变化的低纬泡发生概率指数（0–1），并可 pip 安装 ibpmodel。MIT 许可，文档见 ReadTheDocs。适合赤道闪烁/EPB 气候概率与 Swarm L2 IBP_CLI 产品对照；非 TEC 反演工具。公开仓 HTTP 200。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "闪烁",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 0,
+      "source": "batch-non-github 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "other",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "igs-roti",
+      "url": "https://github.com/jonathanblade/igs-roti",
+      "desc_zh": "IGS ROTI Maps 产品的 Web 可视化小工具",
+      "one_liner_zh": "IGS ROTI Maps 产品的 Web 可视化小工具",
+      "analysis_zh": "针对 IGS ROTI map 产品的可视化网页/工具，方便快速查看全球/区域 ROTI 图，而不是从原始观测算 ROTI。局限：依赖 IGS 产品发布；仓库小、维护有限。",
+      "language": "Python",
+      "license": "unknown",
+      "category": "ionosphere",
+      "subcategory": "闪烁",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 2,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
+    },
+    {
+      "name": "IMSP-MGS",
+      "url": "https://essr.esa.int/project/ionosphere-modular-software-package-imsp-mgs",
+      "desc_zh": "ESA IMSP+MGS：GNSS-R/SAR/雷达测深电离层效应模块化仿真包",
+      "one_liner_zh": "ESA IMSP+MGS：GNSS-R/SAR/雷达测深电离层效应模块化仿真包",
+      "analysis_zh": "ONERA/RDA/IEEC 在 ESA TDE 框架下开发、经 ESSR 发布的 Ionosphere Modular Software Package，用于仿真 GNSS-R、SAR 与雷达测深等任务几何及 30 MHz–3 GHz 主要电离层效应。适合任务设计与电离层误差敏感性分析，而非地面 GNSS TEC 产品流水线。源码经 ESSR git 提供，许可为 ESA Community License v2.4 Strong Copyleft；下载需 ESSR 账号。页面 HTTP 200。",
+      "language": "unknown",
+      "license": "ESA Community License v2.4 Strong Copyleft (Type 1)",
+      "category": "ionosphere",
+      "subcategory": "电离层工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-non-github 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "form_register",
+      "registration_zh": "ESSR 注册登录后按项目“Source code”链接获取；需同意 ESA Community License。"
     },
     {
       "name": "INPE-TEC-Maps-IONEX",
@@ -5612,6 +6596,46 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "跨平台 IONEX 文件编辑工具"
+    },
+    {
+      "name": "Ion-Phys-Toolkit",
+      "url": "https://github.com/PANXIONG-CN/Ion-Phys-Toolkit",
+      "desc_zh": "面向 TEC 预报的物理信息学习最小可复现工具包",
+      "one_liner_zh": "面向 TEC 预报的物理信息学习最小可复现工具包",
+      "analysis_zh": "物理信息（PINN/类 PINN）TEC 预报的精简发布，便于复现论文设定。局限：标注为 minimal release；功能面窄；需自备训练数据。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "TEC估计",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 0,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "IonCast-Heliolab2025",
+      "url": "https://github.com/FrontierDevelopmentLab/2025-HL-Ionosphere",
+      "desc_zh": "NASA FDL Heliolab 2025 IonCast：ConvLSTM/GNN/SFNO 电离层预报实验代码",
+      "one_liner_zh": "NASA FDL Heliolab 2025 IonCast：ConvLSTM/GNN/SFNO 电离层预报实验代码",
+      "analysis_zh": "Frontier Development Lab 电离层-热层孪生项目仓库，含 IonCast ConvLSTM 训练/评估脚本，分支覆盖 GNN 与球面 FNO；配套 Zenodo 数据与 ionopy 引用。适合复现较新的全球 TEC/电离层动力学深度学习基线。环境与数据体量不小；ionopy 子目录可能滞后，维护说明指向 spaceml-org/ionopy。",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "category": "ionosphere",
+      "subcategory": "TEC预报/ML",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 5,
+      "source": "batch-related-iono 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
     },
     {
       "name": "ionex",
@@ -5784,6 +6808,28 @@
       "one_liner_zh": "由 IONEX 绘制电离层 TEC 地图"
     },
     {
+      "name": "IONOLAB-TEC-Software",
+      "url": "https://www.ionolab.org/index.php?language=en&page=ionolabtec",
+      "desc_zh": "IONOLAB-TEC/STEC：土耳其 IONOLAB 实验室 GNSS TEC/STEC 估计软件（需登录）",
+      "one_liner_zh": "IONOLAB-TEC/STEC：土耳其 IONOLAB 实验室 GNSS TEC/STEC 估计软件（需登录）",
+      "analysis_zh": "Hacettepe/IONOLAB 团队提供的 IONOLAB-TEC/STEC 本地下载软件入口，与站点上的 IONOLAB-TEC Online、IRI-Plas 在线服务配套，面向学术 GNSS TEC/STEC 估计。下载页明确要求先登录；新用户需在 ionolab.org 注册。面向科研非商业用途，发表需引用服务页所列论文。软件页 HTTP 200；IRI-Plas 子页偶发 500，以 TEC 软件页为准。",
+      "language": "unknown",
+      "license": "academic research (non-commercial; cite required)",
+      "category": "ionosphere",
+      "subcategory": "TEC估计",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-non-github 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "academic_lab",
+      "registration": "form_register",
+      "registration_zh": "在 https://www.ionolab.org 注册并登录后，方可从 IONOLAB-TEC Software 页下载。"
+    },
+    {
       "name": "IonoMoni",
       "url": "https://github.com/qiliu2025/IonoMoni",
       "desc_zh": "多星座 ROTI/AATR/STEC/VTEC 监测",
@@ -5804,6 +6850,86 @@
       "one_liner_zh": "多星座 ROTI/AATR/STEC/VTEC 监测"
     },
     {
+      "name": "ionopy",
+      "url": "https://github.com/spaceml-org/ionopy",
+      "desc_zh": "Time-Fusion Transformer 数据驱动电离层预报（SpaceML）",
+      "one_liner_zh": "Time-Fusion Transformer 数据驱动电离层预报（SpaceML）",
+      "analysis_zh": "SpaceML 维护的电离层预报代码与笔记本，强调时间融合 Transformer，被 IonCast/Heliolab 仓库引用为较新实现。适合跟深度学习 TEC/电离层序列模型。许可证未在 GitHub 标 SPDX，使用前请读仓库说明；数据与训练配置需自备。",
+      "language": "Python",
+      "license": "see upstream README",
+      "category": "ionosphere",
+      "subcategory": "TEC预报/ML",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 4,
+      "source": "batch-related-iono 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "Ionort-raytrace",
+      "url": "https://github.com/blair3sat/ionosphere-rt",
+      "desc_zh": "电离层三维射线追踪程序 Ionort（Azzarone 等）开源拷贝",
+      "one_liner_zh": "电离层三维射线追踪程序 Ionort（Azzarone 等）开源拷贝",
+      "analysis_zh": "基于 Ionort 射线追踪思想的 Fortran 实现，用于给定电子密度背景下追踪无线电射线路径，可服务 HF/GNSS 传播与层析正演。局限：仓库较旧；电子密度场需外部提供（IRI/模式）；与商业/成熟射线库相比文档与测试不足。",
+      "language": "Fortran",
+      "license": "unknown",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 17,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "Ionosonde-Data-Downloader",
+      "url": "https://github.com/bzossi/Ionosonde-Data-Downloader",
+      "desc_zh": "从公共库自动下载测高仪数据的 Python 脚本",
+      "one_liner_zh": "从公共库自动下载测高仪数据的 Python 脚本",
+      "analysis_zh": "自动化从测高仪数据仓库拉取数据，减少手工下载。局限：依赖上游站点结构；站点变更会导致脚本失效；不做描迹反演。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 2,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
+    },
+    {
+      "name": "ionosonde_volgatech",
+      "url": "https://github.com/Vladimi-lan/ionosonde_volgatech",
+      "desc_zh": "伏尔加技术大学相关测高仪数据处理代码",
+      "one_liner_zh": "伏尔加技术大学相关测高仪数据处理代码",
+      "analysis_zh": "与具体测高仪系统相关的 Python 处理代码，体量不小，可作为非 GIRO 数据源处理参考。局限：缺少清晰英文 README；通用性与许可需使用者自行确认（license 字段为空）。",
+      "language": "Python",
+      "license": "unknown",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 13,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
       "name": "ionosphere-plotting",
       "url": "https://github.com/arwildo/ionosphere-plotting",
       "desc_zh": "TEC、foF2 与 DST 等指数的绘图脚本",
@@ -5820,6 +6946,26 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "TEC、foF2 与 DST 等指数的绘图脚本"
+    },
+    {
+      "name": "ionosphereAI",
+      "url": "https://github.com/space-physics/ionosphereAI",
+      "desc_zh": "从光学/被动雷达/非相干散射等噪声数据中检测电离层特征",
+      "one_liner_zh": "从光学/被动雷达/非相干散射等噪声数据中检测电离层特征",
+      "analysis_zh": "面向多种电离层遥感噪声数据的特征检测工具，偏机器学习/信号处理，不是 GNSS TEC 解算。局限：与 GNSS 流水线耦合需自行对接；任务定义随数据源变化。",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 11,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
     },
     {
       "name": "Ionospheric-Scintillation-Maps-and-PDOP",
@@ -5840,6 +6986,66 @@
       "one_liner_zh": "电离层闪烁成像及其对 PDOP 影响的研究代码"
     },
     {
+      "name": "ionospheric-tec-forecasting-IISC",
+      "url": "https://github.com/codewithavra/ionospheric-tec-forecasting",
+      "desc_zh": "IISC Bangalore 单站 TEC 日前预报（Seq2Seq LSTM 与 CNN-Transformer）",
+      "one_liner_zh": "IISC Bangalore 单站 TEC 日前预报（Seq2Seq LSTM 与 CNN-Transformer）",
+      "analysis_zh": "针对 IISC 站分钟级 TEC，对比序列到序列 LSTM 与 CNN+窗口 Transformer，并把预报 TEC 换成 L1/L2/L5 电离层延迟。教学与单站实验很直观，还带 RoTI 相关分析笔记本。站点/时段特定，不是全球 GIM 预报器；体量含数据集，克隆较大。",
+      "language": "Jupyter Notebook",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "TEC预报/ML",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 0,
+      "source": "batch-related-iono 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "Ionospheric-TEC-Kriging-Turkiye",
+      "url": "https://github.com/skaratay/Ionospheric-TEC-Kriging-Turkiye",
+      "desc_zh": "土耳其区域 TEC 风暴分析的普通克里金/GPR MATLAB 代码",
+      "one_liner_zh": "土耳其区域 TEC 风暴分析的普通克里金/GPR MATLAB 代码",
+      "analysis_zh": "用普通克里金（及 GPR 表述）做土耳其上空 TEC 时空分析，覆盖太阳周 24–25 风暴个例，属于区域插值建图示例。局限：区域与个例绑定；MATLAB；推广到全球网格需改观测网与协方差模型。",
+      "language": "MATLAB",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "GIM",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 0,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "Ionospheric-TEC-ROTI-Interactives",
+      "url": "https://github.com/Tesfay-Tesfu/Ionospheric-TEC-ROTI-Interactives",
+      "desc_zh": "交互式 TEC/ROTI 计算（可选高度角，扰动日/静日对比）",
+      "one_liner_zh": "交互式 TEC/ROTI 计算（可选高度角，扰动日/静日对比）",
+      "analysis_zh": "带 Tkinter/交互流程的 TEC 与 ROTI 计算工具，可按高度角筛选并对比扰动日与静日，输出 30 s 与 5 min 窗口 ROTI。输入为用户准备的 TEC 数据文件夹（非完整 RINEX 解算链）。局限：依赖外部已算好的 TEC；GUI 交互偏本地脚本；许可未声明。",
+      "language": "Python",
+      "license": "unknown",
+      "category": "ionosphere",
+      "subcategory": "闪烁",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 3,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
+    },
+    {
       "name": "Ionospheric-VTEC-Forecasting",
       "url": "https://github.com/ICCT-ML-in-geodesy/Ionospheric-VTEC-Forecasting",
       "desc_zh": "机器学习预报垂直 TEC 的示例项目",
@@ -5858,6 +7064,26 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "机器学习预报垂直 TEC 的示例项目"
+    },
+    {
+      "name": "ionotec",
+      "url": "https://github.com/sylvathle/ionotec",
+      "desc_zh": "从 RINEX 计算总电子含量的 Python 库",
+      "one_liner_zh": "从 RINEX 计算总电子含量的 Python 库",
+      "analysis_zh": "面向 RINEX 观测的 TEC 计算库（原 pytec 更名/迁移至 ionotec），补齐“读观测→几何无关组合→TEC”的轻量路径。适合快速脚本化实验。功能面小于 PyTECGg/tec-suite 一类完整标定流水线；多星座 DCB/硬件延迟处理需自行核对。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "TEC计算",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 6,
+      "source": "batch-related-iono 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
     },
     {
       "name": "IonoTomo",
@@ -5896,6 +7122,26 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "电离层分析工具集"
+    },
+    {
+      "name": "IPE",
+      "url": "https://github.com/NOAA-SWPC/IPE",
+      "desc_zh": "NOAA SWPC 电离层-等离子体层-电动力学模式 IPE",
+      "one_liner_zh": "NOAA SWPC 电离层-等离子体层-电动力学模式 IPE",
+      "analysis_zh": "IPE（Ionosphere Plasmasphere Electrodynamics）由 NOAA 空间天气预测中心开源，描述电离层与等离子体层耦合及电动力学，面向业务与科研的全球电子密度等产品。适合作为物理/半业务背景场，与实测 TEC、闪烁指数对比。局限：配置与耦合运行门槛不低；星数不多、社区文档相对 GITM/TIE-GCM 更散；不宜直接替代经验修正模型做接收机实时改正。",
+      "language": "Fortran",
+      "license": "GPL-3.0",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 5,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "official"
     },
     {
       "name": "IRI-2001-package",
@@ -6094,6 +7340,28 @@
       "source": "similar-finds-2026-09-14"
     },
     {
+      "name": "IRI-Plas-SPIM-IZMIRAN",
+      "url": "https://www.izmiran.ru/ionosphere/weather/grif/SPIM/",
+      "desc_zh": "IZMIRAN IRI-Plas/SPIM：扩展至等离子体层的 IRI Fortran 源码与系数包",
+      "one_liner_zh": "IZMIRAN IRI-Plas/SPIM：扩展至等离子体层的 IRI Fortran 源码与系数包",
+      "analysis_zh": "俄罗斯 IZMIRAN 维护的 ISO-IRI-Plas（SPIM）官方下载目录，提供 Isomain/Iriplas2020 等 Fortran 主程序与 ISOCOEF/APRZ 等系数 ZIP，可计算电离层–等离子体层电子密度与 TEC，并支持 GPS TEC 同化改正 foF2/hmF2。目录内 Iriplas2020.zip 等可直接 HTTP 下载（已核验 200），另有 IRI-Plas-MAP 生成 GIM 风格中值图。使用发表结果需按 readme 引用 Gulyaeva/Bilitza 等文献；系数需定期更新。与 irimodel.org 标准 IRI 互补，侧重等离子体层扩展与天气指数。",
+      "language": "Fortran",
+      "license": "scientific distribution (cite required)",
+      "category": "ionosphere",
+      "subcategory": "IRI模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-non-github 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "open",
+      "registration_zh": "目录与 ZIP 公开下载，无需账号；发表需按 readme 致谢引用。"
+    },
+    {
       "name": "iri2016",
       "url": "https://github.com/space-physics/iri2016",
       "desc_zh": "IRI-2016 的 Python/MATLAB 接口",
@@ -6148,6 +7416,26 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "IRI2020 参数相关资源"
+    },
+    {
+      "name": "IRI_TID",
+      "url": "https://github.com/w2naf/IRI_TID",
+      "desc_zh": "在 PyIRI 电子密度场上叠加正弦 TID 扰动，供 HF 射线追踪",
+      "one_liner_zh": "在 PyIRI 电子密度场上叠加正弦 TID 扰动，供 HF 射线追踪",
+      "analysis_zh": "先跑 PyIRI 得到三维电子密度，再叠加行进电离层扰动（TID）正弦扰动，切片后可送入 PyLap/PHaRLAP 等 HF 射线程序。服务中纬度 TID/重力波传播研究。局限：扰动为简化解析形式；依赖 PyIRI；不是观测反演 TID 的工具。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 1,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
     },
     {
       "name": "iricore",
@@ -6221,6 +7509,126 @@
       "one_liner_zh": "ITU-R 电离层/对流层电波传播软件与验证数据入口",
       "provenance": "official",
       "host": "official_site"
+    },
+    {
+      "name": "jvierine-ionosonde",
+      "url": "https://github.com/jvierine/ionosonde",
+      "desc_zh": "开源测高仪/电离图相关 Python 软件（社区星数较高）",
+      "one_liner_zh": "开源测高仪/电离图相关 Python 软件（社区星数较高）",
+      "analysis_zh": "面向测高仪数据处理与实验的 Python 项目，可用于电离图获取/分析相关工作流。与 GNSS TEC 互补，提供底部电离层约束。局限：README 信息偏少，需读代码确认具体仪器格式；不替代 GIRO/SAO 官方工具链。",
+      "language": "Python",
+      "license": "GPL-3.0",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 23,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "Kamodo",
+      "url": "https://github.com/nasa/Kamodo",
+      "desc_zh": "NASA CCMC Kamodo：把 GITM/TIEGCM/IRI/WACCM-X 等输出函数化分析",
+      "one_liner_zh": "NASA CCMC Kamodo：把 GITM/TIEGCM/IRI/WACCM-X 等输出函数化分析",
+      "analysis_zh": "Kamodo（CCMC 读者套件）把多种日地空间模式输出“函数化”，统一插值、单位换算、可视化与卫星飞越（flythrough）。对电离层目录特别有价值：支持 GITM、TIEGCM、IRI、WACCM-X、CTIPe、SWMF-IE 等，便于把物理模式电子密度接到观测对比。输入是各模式输出目录；输出是可调用的 Kamodo 对象与图。局限：依赖与内存要求不低；不同模式 reader 成熟度不一；不是从 GNSS 观测解算 TEC 的软件。",
+      "language": "Python",
+      "license": "NASA-Open",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 58,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "official"
+    },
+    {
+      "name": "Kamodo-core",
+      "url": "https://github.com/nasa/Kamodo-core",
+      "desc_zh": "Kamodo 核心库：科学数据函数化 API（与 CCMC readers 配套）",
+      "one_liner_zh": "Kamodo 核心库：科学数据函数化 API（与 CCMC readers 配套）",
+      "analysis_zh": "Kamodo-core 提供函数化科学数据访问的核心 API，CCMC 的 Kamodo readers 建立其上。单独使用可把任意网格场变成可组合函数；与 nasa/Kamodo 搭配更完整。局限：只有 core 时缺少各模式专用 reader；安装路径在历史上有 ensemblegov 与 nasa 组织迁移，注意文档版本。",
+      "language": "Python",
+      "license": "NASA-Open",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 5,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "official"
+    },
+    {
+      "name": "Klobuchar-study-code",
+      "url": "https://github.com/KaijingZheng/Klobuchar-ionosphere-model-in-global-navigation-satellite-systems",
+      "desc_zh": "Klobuchar 广播电离层模型精度评估与改进探索的 MATLAB 代码",
+      "one_liner_zh": "Klobuchar 广播电离层模型精度评估与改进探索的 MATLAB 代码",
+      "analysis_zh": "教学/研究向的 Klobuchar 实现与精度探讨，便于理解 GPS 广播八参数改正。局限：非新品算法库；星数为 0；改进结论需独立验证。",
+      "language": "MATLAB",
+      "license": "unknown",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 0,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
+    },
+    {
+      "name": "KOH2-ionosphere",
+      "url": "https://github.com/asparuhkamburov/KOH2-ionosphere",
+      "desc_zh": "南极 Livingston 岛 KOH2 站 GNSS TEC 处理与太阳周 25 分析",
+      "one_liner_zh": "南极 Livingston 岛 KOH2 站 GNSS TEC 处理与太阳周 25 分析",
+      "analysis_zh": "单站（KOH2）TEC 处理、检验与太阳周 25 分析脚本，可作为极区测站流程参考。局限：强绑定单站个例；泛化到其他站需改路径与偏差策略。",
+      "language": "Python",
+      "license": "GPL-3.0",
+      "category": "ionosphere",
+      "subcategory": "TEC估计",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 0,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "LongwaveModePropagator.jl",
+      "url": "https://github.com/fgasdia/LongwaveModePropagator.jl",
+      "desc_zh": "地球-电离层波导中 VLF 长波模传播的 Julia 模型",
+      "one_liner_zh": "地球-电离层波导中 VLF 长波模传播的 Julia 模型",
+      "analysis_zh": "用 Julia 模拟 VLF 在地球-电离层波导中的模态传播，服务低电离层与远距 VLF 研究，和 GNSS L 波段 TEC 工具链互补。局限：领域偏 VLF；对 GNSS 测地用户直接用途有限。",
+      "language": "Julia",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 26,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
     },
     {
       "name": "m_gim",
@@ -6357,6 +7765,26 @@
       "host": "official_site"
     },
     {
+      "name": "NeQuick2-MLF2",
+      "url": "https://github.com/SkydelSolutions/nequick2-mlf2",
+      "desc_zh": "基于 Galileo NeQuick-G 思路改写的 NeQuick2-MLF2（Gustave Eiffel / Safran）",
+      "one_liner_zh": "基于 Galileo NeQuick-G 思路改写的 NeQuick2-MLF2（Gustave Eiffel / Safran）",
+      "analysis_zh": "该仓库提供 NeQuick2-MLF2 电离层模式实现，说明基于 Galileo NeQuick-G 算法并由 Gustave Eiffel University / Safran Trusted 4D 修改。对需要在仿真器或接收机侧嵌入 NeQuick 族改正的开发者有参考价值。局限：星数为 0；与官方 NeQuick2/NeQuick-G 发布渠道并行，引用与验证需自行对照 ICTP/ESA/JRC 参考实现；文档相对简略。",
+      "language": "C",
+      "license": "unknown",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 0,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
+    },
+    {
       "name": "NequickG",
       "url": "https://github.com/tpl2go/NequickG",
       "desc_zh": "Galileo NeQuick-G 电离层模型 Python 实现",
@@ -6413,6 +7841,178 @@
       "one_liner_zh": "JRC NeQuickG C 实现镜像/整理"
     },
     {
+      "name": "NHPC-TrueHeight",
+      "url": "https://ulcar.uml.edu/SoftwareUtilities/NHPC/",
+      "desc_zh": "NHPC：测高仪迹线真高剖面反演工具（Digisonde/ARTIST 配套）",
+      "one_liner_zh": "NHPC：测高仪迹线真高剖面反演工具（Digisonde/ARTIST 配套）",
+      "analysis_zh": "将 ARTIST 等自动/人工定标的测高仪迹线反演为等离子体频率–真高剖面的经典工具，常嵌入 SAO Explorer 工作流。适合底层电离层剖面研究与 IRI/IRTAM 对照；输入依赖合格 SAO/定标结果，非 GNSS TEC 估计器。",
+      "language": "Fortran/C",
+      "license": "UML academic (AS IS)",
+      "category": "ionosphere",
+      "subcategory": "电离层工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "academic_lab",
+      "registration": "open",
+      "registration_zh": "工具目录公开下载，按页内说明编译/使用。"
+    },
+    {
+      "name": "NICT-Ionosonde-Data",
+      "url": "https://wdc.nict.go.jp/Ionosphere/index.html",
+      "desc_zh": "NICT 日本测高仪（ionosonde）观测数据入口",
+      "one_liner_zh": "NICT 日本测高仪（ionosonde）观测数据入口",
+      "analysis_zh": "Wakkanai、Kokubunji、Yamagawa、Okinawa 等日本测高仪数字化资料入口，可与 GIRO/DIDBase 全球测高仪生态对照。适合 foF2/hmF2 气候统计或与 GNSS TEC 联合分析；不是 GNSS IONEX 替代品。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "电离层工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "open",
+      "registration_zh": "测高仪数据页面公开；具体站年下载按页面链接操作。"
+    },
+    {
+      "name": "NICT-WDC-Ionosphere-SpaceWeather",
+      "url": "https://wdc.nict.go.jp/wdc-top/index.html",
+      "desc_zh": "日本 NICT 世界数据中心（WDC-ISW）：电离层与空间天气长期数据门户",
+      "one_liner_zh": "日本 NICT 世界数据中心（WDC-ISW）：电离层与空间天气长期数据门户",
+      "analysis_zh": "日本信息通信研究机构运营的世界数据中心，保存自 IGY 以来日本本土与南极测高仪等电离层资料及空间天气预警相关数据，并作为 WDS 成员对外分发。偏观测档案与空间天气，与 GNSS GIM 产品互补；做亚太区域电离层气候或闪烁背景研究时很有价值。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "电离层产品",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "open",
+      "registration_zh": "多数公开资料可直接下载；部分历史/专项数据集按站内说明申请。"
+    },
+    {
+      "name": "nleht-fdtd-ionosphere",
+      "url": "https://gitlab.com/nleht/fdtd",
+      "desc_zh": "nleht/fdtd：电离层 VLF 波 MPI 并行 FDTD 计算代码（GitLab）",
+      "one_liner_zh": "nleht/fdtd：电离层 VLF 波 MPI 并行 FDTD 计算代码（GitLab）",
+      "analysis_zh": "面向电离层中甚低频（VLF）波传播的三维时域有限差分 C++ 代码，支持 MPI 多节点。适合低电离层/波导传播与 D 区扰动数值实验，与 GNSS L 波段闪烁工具互补。公开 GitLab 项目；许可与构建说明以仓库为准。页面可访问。",
+      "language": "C++",
+      "license": "see upstream repository",
+      "category": "ionosphere",
+      "subcategory": "电离层工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 1,
+      "source": "batch-non-github 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "gitlab",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "NOAA-NCEI-TEC-Archive",
+      "url": "https://www.ncei.noaa.gov/products/space-weather/ionospheric-program/total-electron-content",
+      "desc_zh": "NOAA/NCEI US-TEC 与 GloTEC 国家归档说明与下载入口",
+      "one_liner_zh": "NOAA/NCEI US-TEC 与 GloTEC 国家归档说明与下载入口",
+      "analysis_zh": "美国国家环境信息中心对 SWPC TEC 产品的权威归档页：US-TEC（约 2004–2023）与 GloTEC（约 2025 起）均可由此进入 cloud-access 下载，并附格式 README。历史事件复现与气候态统计用此页；近实时态势优先 SWPC GloTEC 产品页/services。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "电离层产品",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "open",
+      "registration_zh": "NCEI 档案与云下载入口公开；大体积批量按门户提示使用 cloud-access 下载器。"
+    },
+    {
+      "name": "NOAA-SWPC-GloTEC",
+      "url": "https://www.spaceweather.gov/products/glotec",
+      "desc_zh": "NOAA/SWPC GloTEC：近实时全球 TEC 同化图（GNSS+COSMIC-2）业务产品页",
+      "one_liner_zh": "NOAA/SWPC GloTEC：近实时全球 TEC 同化图（GNSS+COSMIC-2）业务产品页",
+      "analysis_zh": "美国国家海洋大气局空间天气预测中心的全球 TEC 同化系统展示页。GloTEC 以 IRI-2016 为背景、Gauss-Markov 卡尔曼滤波同化地基 GNSS sTEC 与 COSMIC-2 掩星 sTEC，提供全球/北美/CONUS 图、相对 30 日中值异常与观测计数。面向 GNSS 延迟与空间天气态势感知；精密大地测量最终产品仍建议对照 IGS GIM。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "电离层产品",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "open",
+      "registration_zh": "产品页与图像公开；机器可读数据见 services.swpc.noaa.gov，无需注册。"
+    },
+    {
+      "name": "NOAA-SWPC-GloTEC-Data",
+      "url": "https://services.swpc.noaa.gov/products/glotec/",
+      "desc_zh": "NOAA/SWPC GloTEC 机器可读数据目录（GeoJSON / NetCDF）",
+      "one_liner_zh": "NOAA/SWPC GloTEC 机器可读数据目录（GeoJSON / NetCDF）",
+      "analysis_zh": "SWPC 官方 HTTP 产品树，提供 geojson_2d_urt 与 netcdf_2d_urt 等目录，便于自动化拉取近实时全球 TEC 网格。适合做业务监控看板或与自有 GNSS TEC 估计交叉验证；长期归档请改走 NCEI 空间天气门户。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "电离层产品",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "open",
+      "registration_zh": "HTTP 目录公开，GeoJSON/NetCDF 可直接抓取，无需账号。"
+    },
+    {
+      "name": "ntcmg",
+      "url": "https://github.com/lguldur/ntcmg",
+      "desc_zh": "Galileo NTCM-G 电离层改正算法的 C++ 实现",
+      "one_liner_zh": "Galileo NTCM-G 电离层改正算法的 C++ 实现",
+      "analysis_zh": "按 Galileo OS《NTCM-G Ionospheric Model Description》实现的 NTCM-G 经验改正，与 NeQuick-G 同属单频用户电离层延迟估算路线，但是不同算法族。输入为广播/模型所需系数与链路几何；输出为电离层延迟估计。局限：仓库体量小、星数低；需对照官方 PDF 验证实现完整度；不替代双频无消电离层或 GIM。",
+      "language": "C++",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 3,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
+    },
+    {
       "name": "OASIS",
       "url": "https://github.com/giorgiopicanco/OASIS",
       "desc_zh": "从 RINEX 计算 ROTI/ΔTEC/SIDX 等扰动指标",
@@ -6453,6 +8053,106 @@
       "one_liner_zh": "OASIS 用户星标副本/相关仓库"
     },
     {
+      "name": "Okoh-MATLAB-ROT-ROTI",
+      "url": "https://doi.org/10.5281/zenodo.7913105",
+      "desc_zh": "Daniel Okoh：由 TEC 序列计算 30 s ROT 与 5 min ROTI 的 MATLAB 函数",
+      "one_liner_zh": "Daniel Okoh：由 TEC 序列计算 30 s ROT 与 5 min ROTI 的 MATLAB 函数",
+      "analysis_zh": "配套 Zenodo 软件存档（concept DOI 10.5281/zenodo.7913105），提供 rot30s_mean.m 与 roti5m.m，从 GNSS/其他仪器 TEC 时间序列计算 30 秒 TEC 变化率与 5 分钟 ROTI。CC-BY-4.0，体积小、接口清晰，便于嵌入已有 TEC 流水线做不规则性监测。需自备定标后的 TEC 输入。",
+      "language": "MATLAB",
+      "license": "CC-BY-4.0",
+      "category": "ionosphere",
+      "subcategory": "闪烁/ROTI",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-non-github 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "other",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "Okoh-MATLAB-TEC-from-RINEX",
+      "url": "https://doi.org/10.5281/zenodo.7711905",
+      "desc_zh": "Daniel Okoh：从 GNSS RINEX 提取 TEC 的 MATLAB 脚本集（Zenodo）",
+      "one_liner_zh": "Daniel Okoh：从 GNSS RINEX 提取 TEC 的 MATLAB 脚本集（Zenodo）",
+      "analysis_zh": "NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept DOI 10.5281/zenodo.7711905），面向 RINEX 观测做周跳检测/改正、相位平滑与 TEC 提取，示例来自 U-Blox 接收机。许可 CC-BY-4.0，文件为可直接下载的 .m 脚本，无 GitHub 依赖。适合教学与单站 TEC 试验；生产级多系统流水线可对照 Seemala/IONOLAB 等工具。",
+      "language": "MATLAB",
+      "license": "CC-BY-4.0",
+      "category": "ionosphere",
+      "subcategory": "TEC估计",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-non-github 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "other",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "PHaRLAP",
+      "url": "https://www.dst.defence.gov.au/our-technologies/pharlap-provision-high-frequency-raytracing-laboratory-propagation-studies",
+      "desc_zh": "澳大利亚 DSTG HF 电离层射线追踪 Matlab 工具箱（免费申请，不可再分发）",
+      "one_liner_zh": "澳大利亚 DSTG HF 电离层射线追踪 Matlab 工具箱（免费申请，不可再分发）",
+      "analysis_zh": "提供 2D/全磁离子 3D 数值射线追踪与解析追踪，可挂 IRI/IGRF 或用户网格。HF 传播与回波几何研究里事实上的常用引擎，Fortran 核心经 mex 进 Matlab。许可为 DSTG 科学发放：个人申请、禁止再分发。若缺 Matlab，可看 HamSCI PyLap 开源接口，但仍需另行申请 PHaRLAP 本体。",
+      "language": "Fortran/MATLAB",
+      "license": "DSTG request freeware (no redistribution)",
+      "category": "ionosphere",
+      "subcategory": "HF射线追踪",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-related-iono 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official"
+    },
+    {
+      "name": "PMGC-SimVP",
+      "url": "https://github.com/OnlyYouNotInCity/PMGC-SimVP",
+      "desc_zh": "参数化多尺度门控卷积 + SimVP 的全球 TEC 时空预报",
+      "one_liner_zh": "参数化多尺度门控卷积 + SimVP 的全球 TEC 时空预报",
+      "analysis_zh": "深度学习全球 TEC 预报实现（PMGC-SimVP），Apache-2.0。局限：研究代码；训练数据与超参需自行对齐论文；推理前要有历史 TEC 栅格。",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "category": "ionosphere",
+      "subcategory": "TEC估计",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 0,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "POLAN",
+      "url": "https://github.com/space-physics/POLAN",
+      "desc_zh": "Titheridge POLAN：测高仪虚高到真高反演（Fortran/现代封装）",
+      "one_liner_zh": "Titheridge POLAN：测高仪虚高到真高反演（Fortran/现代封装）",
+      "analysis_zh": "经典 POLAN 算法用于从测高仪/电离图虚高估计真实高度剖面，space-physics 仓库提供可编译的现代维护。对把测高仪 foF2/hmF2 与 GNSS TEC 联合分析很有用。局限：需要质量较好的描迹/虚高输入；不直接处理 GNSS；使用者需了解测高仪反演假设。",
+      "language": "Fortran",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 11,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
       "name": "PPP-RTK-Ionosphere",
       "url": "https://github.com/nickdaychen/PPP-RTK-Ionosphere",
       "desc_zh": "MATLAB 侧 PPP-RTK 与电离层相关试验代码",
@@ -6471,6 +8171,26 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "MATLAB 侧 PPP-RTK 与电离层相关试验代码"
+    },
+    {
+      "name": "pyFIRI2018",
+      "url": "https://bitbucket.org/ozolotov/pyfiri2018",
+      "desc_zh": "pyFIRI：FIRI-2018 非极光 D 区参考电离层的 Python3 实现（Bitbucket）",
+      "one_liner_zh": "pyFIRI：FIRI-2018 非极光 D 区参考电离层的 Python3 实现（Bitbucket）",
+      "analysis_zh": "Oleg Zolotov 等实现的 FIRI-2018（Friedrich 等更新的低电离层经验模式）Python 包，用 xarray 对论文附表电子密度剖面插值，服务 VLF/低频传播与 D 区研究。Apache-2.0。原 GitLab 镜像注明已迁至 Bitbucket；与 GitHub 上其他 FIRI 表格式发布可并存。请同时引用 Friedrich et al. 2018 与 Zolotov et al. SoftwareX 2021。页面 HTTP 200。",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "category": "ionosphere",
+      "subcategory": "IRI模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-non-github 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "other",
+      "provenance": "academic_lab"
     },
     {
       "name": "pyglow",
@@ -6588,6 +8308,126 @@
       "one_liner_zh": "IRTAM 系数下载与全球网格电子密度重建（纯 Python，对接 PyIRI）"
     },
     {
+      "name": "PyLap",
+      "url": "https://github.com/HamSCI/PyLap",
+      "desc_zh": "HamSCI 对 PHaRLAP 的开源 Python 接口（生成电离层与射线绘图）",
+      "one_liner_zh": "HamSCI 对 PHaRLAP 的开源 Python 接口（生成电离层与射线绘图）",
+      "analysis_zh": "用 Python/C 调用 PHaRLAP Fortran 引擎，摆脱 Matlab 授权门槛，保留建 IRI 电离层、射线追踪与绘图等核心流程。业余与科研 HF 传播实验友好。安装目前偏 Ubuntu/x86，且必须先向 DSTG 申请 PHaRLAP 本体与 Intel Fortran 运行库；本身不是可独立运行的完整射线引擎。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "HF射线追踪",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 14,
+      "source": "batch-related-iono 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "pynasonde",
+      "url": "https://github.com/shibaji7/pynasonde",
+      "desc_zh": "精密电离层无线电探测的开源 Python 应用",
+      "one_liner_zh": "精密电离层无线电探测的开源 Python 应用",
+      "analysis_zh": "面向精密电离层无线电探测（sounding）的 Python 应用，服务实验测高/探测数据处理。局限：相对传统 Digisonde 软件生态仍小；硬件/数据格式适配需对照文档。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 5,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "pypride",
+      "url": "https://gitlab.com/gofrito/pypride",
+      "desc_zh": "pypride：行星雷达/VLBI 处理库（含 IONEX TEC 获取与闪烁表 TEC 计算）",
+      "one_liner_zh": "pypride：行星雷达/VLBI 处理库（含 IONEX TEC 获取与闪烁表 TEC 计算）",
+      "analysis_zh": "GitLab 上的 pypride（PRIDE 相关派生）Python/Fortran 混合包，面向深空/VLBI 几何与延迟处理；内含从 CDDIS 拉取 IONEX 及 computeTEC 等由闪烁观测表估计上下行电离层贡献的脚本。MIT/GPL 标注并存，以仓内为准。对 GNSS 电离层用户价值在于 IONEX 自动获取与行星际闪烁相关 TEC 估算；主业并非地面 GNSS TEC 流水线。公开仓可克隆。",
+      "language": "Python",
+      "license": "MIT (see upstream; classifiers also mention GPL)",
+      "category": "ionosphere",
+      "subcategory": "电离层工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 1,
+      "source": "batch-non-github 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "gitlab",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "PyRayHF",
+      "url": "https://github.com/victoriyaforsythe/PyRayHF",
+      "desc_zh": "纯 Python 电离层 HF 射线追踪（虚高与二维射线，对接 PyIRI 生态）",
+      "one_liner_zh": "纯 Python 电离层 HF 射线追踪（虚高与二维射线，对接 PyIRI 生态）",
+      "analysis_zh": "Victoriya Forsythe 等发布的 HF 射线工具，从电子密度剖面计算虚高与二维射线路径，文档在 Read the Docs，与同作者 PyIRI/PyIRTAM 生态衔接自然。适合教学与轻量传播实验。能力相对 PHaRLAP 全磁离子 3D NRT 更聚焦；复杂回波与三维磁离子场景仍可能需要更重的引擎。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "HF射线追踪",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 10,
+      "source": "batch-related-iono 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "pysat",
+      "url": "https://github.com/pysat/pysat",
+      "desc_zh": "日地空间科学通用数据分析框架（多载荷一致接口）",
+      "one_liner_zh": "日地空间科学通用数据分析框架（多载荷一致接口）",
+      "analysis_zh": "pysat 提供跨平台一致的数据分析工作流，生态含空间天气指数、模式接口等，常与电离层卫星/地基数据一起用。局限：本身不是 IRI/TEC 专用包；学习曲线在“生态”而非单函数。",
+      "language": "Python",
+      "license": "BSD-3-Clause",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 173,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "pysatModels",
+      "url": "https://github.com/pysat/pysatModels",
+      "desc_zh": "pysat 生态中的模式分析与模式-数据对比接口",
+      "one_liner_zh": "pysat 生态中的模式分析与模式-数据对比接口",
+      "analysis_zh": "在 pysat 框架下对接模式输出并做模式-观测对比，便于把经验/物理电离层模式纳入同一分析脚本。局限：需先熟悉 pysat；具体模式覆盖以文档为准。",
+      "language": "Python",
+      "license": "BSD-3-Clause",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 9,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
       "name": "PyTECGg",
       "url": "https://github.com/viventriglia/PyTECGg",
       "desc_zh": "多星座 GNSS TEC 重建与校准（Python+Rust）",
@@ -6611,6 +8451,170 @@
       "one_liner_zh": "多星座 GNSS TEC 重建与校准（Python+Rust）"
     },
     {
+      "name": "pytiegcm",
+      "url": "https://github.com/asher-pembroke/pytiegcm",
+      "desc_zh": "TIE-GCM 输出的轻量 Python 读取器",
+      "one_liner_zh": "TIE-GCM 输出的轻量 Python 读取器",
+      "analysis_zh": "小型 Python reader，方便把 TIE-GCM netCDF 读进分析脚本。适合不想上完整 Kamodo/gcmprocpy 时做快速检查。局限：功能远少于 Kamodo；维护不活跃（约 2022）；变量覆盖需自测。",
+      "language": "Python",
+      "license": "unknown",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 3,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
+    },
+    {
+      "name": "quakeion",
+      "url": "https://github.com/Gm015555/quakeion",
+      "desc_zh": "震例目录 + CODE GIM TEC/ROT/ROTI 分析（零 API Key）",
+      "one_liner_zh": "震例目录 + CODE GIM TEC/ROT/ROTI 分析（零 API Key）",
+      "analysis_zh": "把地震目录与电离层 TEC/ROT/ROTI 分析串起来，并可用 Kp/Dst 过滤地磁暴，强调无需额外 API Key。适合震电离层耦合统计入门。局限：依赖 GIM/IONEX 而非测站原始 STEC；因果解释需谨慎；星数为 0。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "TEC估计",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 0,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
+    },
+    {
+      "name": "Raytrace-Model",
+      "url": "https://github.com/kyruzic/Raytrace-Model",
+      "desc_zh": "电离层中无线电波三维传播的 MATLAB 射线模型",
+      "one_liner_zh": "电离层中无线电波三维传播的 MATLAB 射线模型",
+      "analysis_zh": "MATLAB 三维射线传播模型，用于教学/研究型传播实验。局限：GPL；偏原型；输入密度模型与数值稳定性需用户把关。",
+      "language": "MATLAB",
+      "license": "GPL-3.0",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 7,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
+    },
+    {
+      "name": "RIM",
+      "url": "https://github.com/SWMFsoftware/RIM",
+      "desc_zh": "SWMF 体系中的 Ridley 电离层模式（RIM）",
+      "one_liner_zh": "SWMF 体系中的 Ridley 电离层模式（RIM）",
+      "analysis_zh": "Space Weather Modeling Framework 组件之一，描述高纬电离层电动力学等，常与全球磁层模式耦合。局限：通常作为 SWMF 整体使用；单独跑与输入耦合复杂；许可字段不清晰。",
+      "language": "Fortran",
+      "license": "unknown",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 0,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "official"
+    },
+    {
+      "name": "ROB-European-TEC",
+      "url": "https://gnss.be/SpaceWeather/",
+      "desc_zh": "比利时皇家天文台（ROB）欧洲近实时多 GNSS VTEC 空间天气门户",
+      "one_liner_zh": "比利时皇家天文台（ROB）欧洲近实时多 GNSS VTEC 空间天气门户",
+      "analysis_zh": "ROB/OMA 基于 EUREF 常设网 GPS+GLONASS+Galileo 观测生成欧洲区域近实时 VTEC 与变率产品（约 5 分钟、0.5° 网格，2022-05 起多系统）。门户提供统计对比图与北/中/南欧时间序列，联系 iono@oma.be。适合欧洲区域扰动监测与 PPP 区域改正对照；全球尺度仍需 IGS/各 AC 的 GIM。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "IONEX/TEC图",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "open",
+      "registration_zh": "网页公开浏览，无需注册；下载 IONEX 时请按站点要求致谢/引用。"
+    },
+    {
+      "name": "ROB-IONEX-Products",
+      "url": "https://gnss.be/SpaceWeather/Products/IONEX",
+      "desc_zh": "ROB 欧洲 VTEC 产品 IONEX 公开下载目录",
+      "one_liner_zh": "ROB 欧洲 VTEC 产品 IONEX 公开下载目录",
+      "analysis_zh": "与 gnss.be/SpaceWeather 可视化配套的 IONEX 文件归档，便于脚本批量拉取欧洲近实时 TEC 图。格式与 IGS IONEX 兼容，适合接入自有 TEC 可视化或 PPP 区域改正试验。使用前请阅读站点免责声明与引用要求。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "IONEX/TEC图",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "registration": "open",
+      "registration_zh": "IONEX 文件公开可下载，站点要求使用时引用或致谢 ROB 产品。"
+    },
+    {
+      "name": "ROM-SAF-ROPP",
+      "url": "https://rom-saf.eumetsat.int/ropp/",
+      "desc_zh": "ROM SAF 无线电掩星处理包 ROPP（含电离层改正与 Abel 反演模块，注册获取）",
+      "one_liner_zh": "ROM SAF 无线电掩星处理包 ROPP（含电离层改正与 Abel 反演模块，注册获取）",
+      "analysis_zh": "EUMETSAT ROM SAF 维护的标准掩星处理套件，ropp_pp 等模块覆盖 excess phase→弯曲角、电离层改正与反演链路，是业务/科研里常见的开源可编译 Fortran 工具链。源码需登录 ROM SAF 账号下载（当前公开页指向 ROPP-12.0）。适合认真做 RO 预处理的人；只想快速读 COSMIC NetCDF 剖面，不必一上来就装整包。",
+      "language": "Fortran",
+      "license": "ROM SAF scientific (registration)",
+      "category": "ionosphere",
+      "subcategory": "GNSS掩星处理",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-related-iono 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official"
+    },
+    {
+      "name": "roti-gnss-ml",
+      "url": "https://github.com/NeelayS/roti-gnss",
+      "desc_zh": "基于深度学习的 GNSS ROTI 时间序列预报实验代码",
+      "one_liner_zh": "基于深度学习的 GNSS ROTI 时间序列预报实验代码",
+      "analysis_zh": "Notebook 实验：对 GNSS 导出的 ROTI 做深度学习时序预报。局限：研究原型；数据与复现说明有限；不是业务 ROTI 生成器。",
+      "language": "Python",
+      "license": "unknown",
+      "category": "ionosphere",
+      "subcategory": "闪烁",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 3,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
+    },
+    {
       "name": "rtcm2ionex",
       "url": "https://github.com/d-roma/rtcm2ionex",
       "desc_zh": "将 RTCM VTEC 消息转为 IONEX",
@@ -6627,6 +8631,126 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "将 RTCM VTEC 消息转为 IONEX"
+    },
+    {
+      "name": "sami2py",
+      "url": "https://github.com/sami2py/sami2py",
+      "desc_zh": "NRL SAMI2 二维电离层模式的 Python 封装（运行/读档/绘图）",
+      "one_liner_zh": "NRL SAMI2 二维电离层模式的 Python 封装（运行/读档/绘图）",
+      "analysis_zh": "sami2py 把海军实验室 SAMI2 二维电离层模式包成 Python：可设置经度、年积日等驱动并运行 Fortran 内核，再把输出归档、加载与绘图。相对完整 IRI/NeQuick 气候模型，它更强调沿磁力线的等离子体动力学。输入含经度、日期、可选中性大气缩放与自定义 ExB 漂移等；输出为模式场。局限：依赖 Fortran 编译器；二维近似不覆盖全球三维结构；仓库近年更新偏少。",
+      "language": "Python/Fortran",
+      "license": "BSD-3-Clause",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 21,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "SAMI3-3.22-CCMC-mirror",
+      "url": "https://github.com/sylee918/SAMI3",
+      "desc_zh": "CCMC 发布的 SAMI3-3.22 源码镜像（个人搬运）",
+      "one_liner_zh": "CCMC 发布的 SAMI3-3.22 源码镜像（个人搬运）",
+      "analysis_zh": "从 CCMC/Zenodo 体系搬运的 SAMI3-3.22 Fortran 源码镜像，方便 git clone。正式引用仍建议指向 CCMC 模型页或 Zenodo DOI。局限：非官方持续维护仓；体积大；配置与运行说明需回到 CCMC 文档。",
+      "language": "Fortran",
+      "license": "unknown",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 0,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
+    },
+    {
+      "name": "SAMI3-3.22-Zenodo",
+      "url": "https://doi.org/10.5281/zenodo.7895858",
+      "desc_zh": "SAMI3 3.22：NRL 电离层/等离子体层三维模式 Fortran 源码（Zenodo 软件存档）",
+      "one_liner_zh": "SAMI3 3.22：NRL 电离层/等离子体层三维模式 Fortran 源码（Zenodo 软件存档）",
+      "analysis_zh": "Joe Huba（Syntek/NRL）在 Zenodo 以 software 类型存档的 SAMI3-3.22 官方源码包（concept DOI 10.5281/zenodo.7895858），附 sami3-3.22.tgz（约 39 MB）与用户手册。用于全球电离层–等离子体层物理仿真，常与 GNSS TEC/掩星对比。许可 CC-BY-4.0。目录中另有 GitHub 镜像与 CCMC 门户，本条收录可直接下载的 Zenodo 软件存档本身。concept/record 页 HTTP 200。",
+      "language": "Fortran",
+      "license": "CC-BY-4.0",
+      "category": "ionosphere",
+      "subcategory": "物理模式",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-non-github 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "other",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "SAMI3-4.00",
+      "url": "https://github.com/jdhuba/sami3-4.00",
+      "desc_zh": "SAMI3 作者侧公开的 4.00 现代化 Fortran 源码",
+      "one_liner_zh": "SAMI3 作者侧公开的 4.00 现代化 Fortran 源码",
+      "analysis_zh": "Joe Huba 等在 GitHub 公开的 SAMI3-4.00，基于 3.22 做了现代化整理，属于少有的 SAMI3 可直接 clone 的源码树。用于三维电离层/等离子体层物理仿真。局限：用户手册仍在完善；输入驱动与编译环境需自行摸索；与 CCMC/Zenodo 上的 3.22 发行版并存，科研引用需写清版本。",
+      "language": "Fortran",
+      "license": "Apache-2.0",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 1,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "official"
+    },
+    {
+      "name": "SAMI3-GITM-python",
+      "url": "https://github.com/abukowski21/SAMI3-GITM-python",
+      "desc_zh": "SAMI3 与 GITM 耦合输出的 Python/Jupyter 分析示例",
+      "one_liner_zh": "SAMI3 与 GITM 耦合输出的 Python/Jupyter 分析示例",
+      "analysis_zh": "围绕 SAMI3–GITM 耦合或对照实验的 Python/Notebook 工具集，便于读场、画图与做简单诊断，而不是完整模式本体。适合已有模式输出、需要快速分析的用户。局限：文档偏少；依赖具体输出格式；不能替代官方模式仓库。",
+      "language": "Python",
+      "license": "GPL-3.0",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 6,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "sami3_gitm",
+      "url": "https://github.com/jdhuba/sami3_gitm",
+      "desc_zh": "Huba 公开的 SAMI3/GITM 基础耦合 vanilla 代码",
+      "one_liner_zh": "Huba 公开的 SAMI3/GITM 基础耦合 vanilla 代码",
+      "analysis_zh": "作者仓库提供的 SAMI3 与 GITM 数据接口的基础（vanilla）版本，使用 EUVAC 等驱动，适合追溯耦合实现。局限：偏早期快照；缺少现代文档与测试；生产研究更建议结合 SAMI3-4.00 / GITM 新仓与论文配置。",
+      "language": "Fortran",
+      "license": "unknown",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 7,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "official"
     },
     {
       "name": "SAO-Explorer",
@@ -6684,6 +8808,70 @@
       "user_relation": "none"
     },
     {
+      "name": "ScintPi-1.0-Software",
+      "url": "https://doi.org/10.5281/zenodo.4905193",
+      "desc_zh": "UT Dallas ScintPi 1.0：低成本 GNSS 闪烁仪采集与可视化软件（Zenodo ZIP）",
+      "one_liner_zh": "UT Dallas ScintPi 1.0：低成本 GNSS 闪烁仪采集与可视化软件（Zenodo ZIP）",
+      "analysis_zh": "德州大学达拉斯分校发布的 ScintPi 1.0 官方采集/可视化软件 ZIP（concept DOI 10.5281/zenodo.4905193），经 USB 连接硬件，面向教育与低成本闪烁监测。CC-BY-4.0，“as is”无质保。与 GitHub 上第三方 scintkit 小工具不同，本条是仪器配套官方软件存档。适合教学网部署；论文级多站 S4/σφ 分析仍需专用 GISTM 或商用接收机链路。",
+      "language": "unknown",
+      "license": "CC-BY-4.0",
+      "category": "ionosphere",
+      "subcategory": "闪烁",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-non-github 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "other",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "Seemala-GPS-TEC",
+      "url": "https://seemala.blogspot.com/2024/04/gps-tec-analysis-program-version-35.html",
+      "desc_zh": "Boston College ISR Gopi Seemala GPS-TEC：从 RINEX 估计 GPS TEC 的便携 Windows 程序",
+      "one_liner_zh": "Boston College ISR Gopi Seemala GPS-TEC：从 RINEX 估计 GPS TEC 的便携 Windows 程序",
+      "analysis_zh": "波士顿学院科学研究所研究者维护的经典 GPS TEC 分析程序（当前介绍为 v3.5），读取 RINEX 2/3 观测与导航文件并自动拉取 DCB，输出 CMN 文本与日变化图。在低纬电离层教学与区域 TEC 研究中使用极广；目前文档称暂仅 GPS。请按作者章节引用，注意 Windows/VC++ 运行库依赖。",
+      "language": "Windows/Exe",
+      "license": "academic (cite Seemala 2023; AS IS)",
+      "category": "ionosphere",
+      "subcategory": "TEC估计",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "other",
+      "provenance": "academic_lab",
+      "registration": "open",
+      "registration_zh": "博客页提供 Google Drive ZIP 直链，解压即运行；无需注册。"
+    },
+    {
+      "name": "Seemala-GPS-TEC",
+      "url": "https://seemala.blogspot.com/2026/08/gps-tec-analysis-program-version-37.html",
+      "desc_zh": "Gopi Seemala GPS-TEC：广泛使用的 RINEX→TEC Windows 便携程序（博客发布）",
+      "one_liner_zh": "Gopi Seemala GPS-TEC：广泛使用的 RINEX→TEC Windows 便携程序（博客发布）",
+      "analysis_zh": "印度空间物理学者 Gopi Seemala 维护的 GPS-TEC 分析程序（当前博文为 v3.7），从 GPS RINEX 2/3 观测提取电离层 TEC，Windows 便携 ZIP（Google Drive），无需安装。算法见 Seemala 2023 Elsevier 章节，社区引用极广。目前仅 GPS（其他星座待测）。非开源源码发布，但是可下载的研究用可执行软件；使用请引用作者章节。博文与下载页 HTTP 200。",
+      "language": "Windows binary",
+      "license": "freeware for research (cite Seemala 2023)",
+      "category": "ionosphere",
+      "subcategory": "TEC估计",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-non-github 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "other",
+      "provenance": "personal_community",
+      "registration": "open",
+      "registration_zh": "博文公开；程序 ZIP 经 Google Drive 链接下载，无需专用门户账号。"
+    },
+    {
       "name": "SegmentsComputation",
       "url": "https://github.com/yujieqing/SegmentsComputation",
       "desc_zh": "体素电离层层析中的射线段矩阵计算",
@@ -6720,6 +8908,86 @@
       "one_liner_zh": "球谐展开全球电离层图（GIM）MATLAB 实现（维护者自有，此处不展开）",
       "host": "github",
       "provenance": "personal_community"
+    },
+    {
+      "name": "SpatioTECformer",
+      "url": "https://github.com/research1011/SpatioTECformer",
+      "desc_zh": "多尺度 CNN + Transformer 的 TEC 时空预报模型（PyTorch）",
+      "one_liner_zh": "多尺度 CNN + Transformer 的 TEC 时空预报模型（PyTorch）",
+      "analysis_zh": "把多尺度卷积、自适应融合与 Transformer 编码器拼成 71×73 网格 TEC 预报流水线，模块拆成 model/enhanced_cnn 等文件，代码量小但完整可跑。适合读论文式复现。未标 SPDX 许可证；训练依赖作者 HDF5 特征文件，需自备或按 README 路径改。",
+      "language": "Python",
+      "license": "see upstream README",
+      "category": "ionosphere",
+      "subcategory": "TEC预报/ML",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 0,
+      "source": "batch-related-iono 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
+    },
+    {
+      "name": "SuperSID",
+      "url": "https://github.com/sberl/supersid",
+      "desc_zh": "突发电离层扰动（SID）监测软件（跨平台，社区维护分支）",
+      "one_liner_zh": "突发电离层扰动（SID）监测软件（跨平台，社区维护分支）",
+      "analysis_zh": "SuperSID 用简易 VLF 接收监测突发电离层扰动（太阳耀斑等引起的 D 区吸收变化），sberl 分支相对活跃。输出 SID 幅度时间序列。局限：监测的是 VLF 幅度而非 GNSS TEC；站点环境噪声影响大。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "闪烁",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 16,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
+    },
+    {
+      "name": "Swarm-VIP-Dynamic",
+      "url": "https://gitlab.com/KNMI-OSS/spaceweather/swarm-vip-dynamic",
+      "desc_zh": "KNMI Swarm-VIP-Dynamic 工作仓：ISMR 闪烁文件处理与电离层模型评估脚本",
+      "one_liner_zh": "KNMI Swarm-VIP-Dynamic 工作仓：ISMR 闪烁文件处理与电离层模型评估脚本",
+      "analysis_zh": "KNMI 在 Swarm-VIP-Dynamic（UiO/Birmingham/INGV/DLR/KNMI）合作中的代码仓：含有效 F10.7 代理、Septentrio PolaRX5S ISMR 闪烁监测文件处理与可视化、项目模型及 IBP 等外部模型评估、Swarm 轨道派生磁纬/地方时等。与 swarm-vip-dynamic-models 库配套，偏研究流水线与闪烁数据可视化。公开 GitLab 仓；许可以仓内说明为准。页面 HTTP 200。",
+      "language": "Python",
+      "license": "see upstream repository",
+      "category": "ionosphere",
+      "subcategory": "闪烁",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 0,
+      "source": "batch-non-github 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "gitlab",
+      "provenance": "official"
+    },
+    {
+      "name": "swarm-vip-dynamic-models",
+      "url": "https://gitlab.com/KNMI-OSS/spaceweather/libs/swarm-vip-dynamic-models",
+      "desc_zh": "KNMI Swarm-VIP-Dynamic：Swarm 原位电子密度与不规则性 GLM 经验模型 Python 包",
+      "one_liner_zh": "KNMI Swarm-VIP-Dynamic：Swarm 原位电子密度与不规则性 GLM 经验模型 Python 包",
+      "analysis_zh": "荷兰皇家气象研究所（KNMI）在 GitLab 发布的 Python 包，评估 Swarm VIP Dynamic 项目拟合的广义线性模型，按地理位置、磁纬/地方时、季节、F10.7、Kp/Hp30 与太阳风等输入预测 Ne、RODI 等电离层参数，覆盖赤道至极区。依赖 pandas/numpy，可自动拉取 OMNI/F10.7/Kp。BSD-3-Clause。适合 Swarm 原位气候态对照与不规则性气候研究；非 GNSS TEC 估计器。仓库可公开克隆。",
+      "language": "Python",
+      "license": "BSD-3-Clause",
+      "category": "ionosphere",
+      "subcategory": "电离层工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 0,
+      "source": "batch-non-github 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "gitlab",
+      "provenance": "official"
     },
     {
       "name": "synthetic_ionospheric_tomography_isl",
@@ -6776,6 +9044,46 @@
       "one_liner_zh": "INPE Embrace 相关的 TEC 处理示例"
     },
     {
+      "name": "TEC-forecast-F107",
+      "url": "https://github.com/hekaixuan-atm/TEC-forecast",
+      "desc_zh": "非均匀 F10.7 强迫下的全球 TEC 深度学习预报代码",
+      "one_liner_zh": "非均匀 F10.7 强迫下的全球 TEC 深度学习预报代码",
+      "analysis_zh": "强调空间非均匀 F10.7 强迫的全球 TEC 预报实验代码。局限：仓库小；复现依赖作者数据划分；非物理模式。",
+      "language": "Python",
+      "license": "unknown",
+      "category": "ionosphere",
+      "subcategory": "TEC估计",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 0,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "TEC-MoLLM",
+      "url": "https://github.com/PANXIONG-CN/TEC-MoLLM",
+      "desc_zh": "GNN+时序 CNN+LLM（LoRA）的全球 TEC 预报研究代码",
+      "one_liner_zh": "GNN+时序 CNN+LLM（LoRA）的全球 TEC 预报研究代码",
+      "analysis_zh": "多模态深度学习 TEC 预报原型，组合图网络、时序卷积与大模型 LoRA 微调。输入为历史 TEC/空间天气特征；输出预报场。局限：算力与复现成本高；与经典物理/经验模式比可解释性弱；许可未标明。",
+      "language": "Python",
+      "license": "unknown",
+      "category": "ionosphere",
+      "subcategory": "TEC估计",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 4,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
       "name": "tec-suite",
       "url": "https://github.com/gnss-lab/tec-suite",
       "desc_zh": "SIMuRG 团队 TEC 重建套件",
@@ -6830,6 +9138,132 @@
       "host": "github",
       "provenance": "academic_lab",
       "one_liner_zh": "单/双频方法估计电离层延迟梯度"
+    },
+    {
+      "name": "tec_prediction-ONERA",
+      "url": "https://github.com/aboulch/tec_prediction",
+      "desc_zh": "ONERA ConvLSTM/U-Net 全球 TEC 图预报经典开源实现（Boulch 2018）",
+      "one_liner_zh": "ONERA ConvLSTM/U-Net 全球 TEC 图预报经典开源实现（Boulch 2018）",
+      "analysis_zh": "卷积循环网络做电离层活动/TEC 图预报的早期公开代码，后被多篇 DeepTEC 类工作引用。研究非商业用途按仓库说明为 GPLv3，商业需联系 ONERA。适合当 ML TEC 基线；年代较早（约 2018），依赖与数据管道需自行适配现行 IONEX/GIM。",
+      "language": "Python",
+      "license": "GPL-3.0 (research); commercial contact ONERA",
+      "category": "ionosphere",
+      "subcategory": "TEC预报/ML",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 19,
+      "source": "batch-related-iono 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab"
+    },
+    {
+      "name": "TIE-GCM",
+      "url": "https://github.com/NCAR/tiegcm",
+      "desc_zh": "NCAR 官方热层-电离层-电动力学环流模式 TIE-GCM v3 源码",
+      "one_liner_zh": "NCAR 官方热层-电离层-电动力学环流模式 TIE-GCM v3 源码",
+      "analysis_zh": "TIE-GCM 是 NCAR HAO 发展的三维耦合热层-电离层-电动力学 GCM，GitHub 上现为官方开源仓库（含 src、scripts、tiegcmrun）。输入需配套数据文件（太阳、地磁、边界等），输出 netCDF 压力层/高度场。GNSS 研究里常拿来做风暴期 TEC/电子密度对照或数据同化背景。局限：需要 Fortran/MPI/netCDF 与较大输入数据集；业务化改正仍多用 IRI/NeQuick/GIM，而非直接跑 TIE-GCM。",
+      "language": "Fortran",
+      "license": "NCAR-academic",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 27,
+      "source": "batch-iono-models 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "official"
+    },
+    {
+      "name": "UMLCAR-Downloads",
+      "url": "https://ulcar.uml.edu/downloads.html",
+      "desc_zh": "UMass Lowell UMLCAR 电离层软件下载中心（SAO-X/Drift-X/NHPC/DCART 等）",
+      "one_liner_zh": "UMass Lowell UMLCAR 电离层软件下载中心（SAO-X/Drift-X/NHPC/DCART 等）",
+      "analysis_zh": "洛厄尔麻省大学大气研究中心官方下载索引：SAO Explorer（含 ARTIST-5）、Drift-X、BinBrowser、DCART、NHPC、CARP 等 Digisonde/测高仪工具集中入口。已单独收录 SAO-X 主页，本条作为软件总目录便于发现其余开源/可下载工具。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "电离层工具",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "academic_lab",
+      "registration": "open",
+      "registration_zh": "软件包公开下载；连接 DIDBase 在线库另需 GIRO/DIDBase 账号。"
+    },
+    {
+      "name": "UWM-CDRSK-IGS-Validation",
+      "url": "https://cdrsk.uwm.edu.pl/centrum-walidacji-i-kombinacji-igs/",
+      "desc_zh": "UWM CDRSK：IGS 电离层验证与组合中心机构介绍（波兰语门户）",
+      "one_liner_zh": "UWM CDRSK：IGS 电离层验证与组合中心机构介绍（波兰语门户）",
+      "analysis_zh": "Warmia-Mazury 大学空间环境射电诊断中心（CDRSK）对 IGS 电离层验证/组合职能的机构页，可与 igsiono.uwm.edu.pl 技术页对照。对需要联系组合中心或了解 UWM 职责分工的用户有用。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "IONEX/TEC图",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "academic_lab",
+      "registration": "open",
+      "registration_zh": "机构介绍页公开，无需注册。"
+    },
+    {
+      "name": "UWM-IGS-Iono-Combination",
+      "url": "https://igsiono.uwm.edu.pl/",
+      "desc_zh": "波兰 Warmia-Mazury 大学 IGS 电离层组合/验证中心站点（igsiono）",
+      "one_liner_zh": "波兰 Warmia-Mazury 大学 IGS 电离层组合/验证中心站点（igsiono）",
+      "analysis_zh": "University of Warmia and Mazury（Olsztyn）承担 IGS 电离层图组合与验证相关门户，面向各 IAAC 独立 GIM 的加权组合（如 IGSG）流程与产品入口。与 IGS Ionosphere WG 页面互补，适合追踪官方组合策略与验证信息。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "IONEX/TEC图",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": null,
+      "source": "batch-official-labs 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "academic_lab",
+      "registration": "open",
+      "registration_zh": "组合中心信息公开浏览；组合 IONEX 亦经 IGS 数据中心分发。"
+    },
+    {
+      "name": "viresclient",
+      "url": "https://github.com/ESA-VirES/VirES-Python-Client",
+      "desc_zh": "ESA VirES Python 客户端：Swarm Langmuir/TEC 等产品转 xarray",
+      "one_liner_zh": "ESA VirES Python 客户端：Swarm Langmuir/TEC 等产品转 xarray",
+      "analysis_zh": "官方推荐的 Swarm（及 Aeolus）数据访问库，可按需拉取 EFI Langmuir 探针、TECxTMS_2F 绝对/相对 TEC、以及 CHAMP/GRACE 等扩展 TEC/Ne 产品并载入 pandas/xarray。做 LEO POD 衍生 TEC 与就地电子密度对照时几乎是默认入口。需 VirES 账号；本身不做反演，只负责服务端点与本地装载。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "SWARM/LEO TEC",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 23,
+      "source": "batch-related-iono 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "official"
     },
     {
       "name": "vtec",
@@ -8607,6 +11041,26 @@
       "one_liner_zh": "RTKLIB 学习相关材料"
     },
     {
+      "name": "Muf_Muncher",
+      "url": "https://github.com/mooxle/Muf_Muncher",
+      "desc_zh": "自托管欧洲 HF 传播看板（测高仪 MUF/foF2、空间天气与 POTA）",
+      "one_liner_zh": "自托管欧洲 HF 传播看板（测高仪 MUF/foF2、空间天气与 POTA）",
+      "analysis_zh": "把两座欧洲测高仪的 MUF(D)、foF2、偶发 E 与 NOAA 空间天气、POTA 激活性汇总成一页 glance-and-go 看板，偏业余无线电运营。相邻域里少见的“开源+可自建”传播态势工具。不是射线追踪引擎；数据源与站点配置面向中欧，搬到其它区域要改接入。",
+      "language": "HTML",
+      "license": "see upstream README",
+      "category": "tools-learning",
+      "subcategory": "HF传播态势",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 5,
+      "source": "batch-related-iono 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community"
+    },
+    {
       "name": "Navigation-Learning",
       "url": "https://github.com/LiZhengXiao99/Navigation-Learning",
       "desc_zh": "导航定位开源项目解读与学习笔记（中文）",
@@ -8752,6 +11206,26 @@
       "host": "github",
       "provenance": "academic_lab",
       "one_liner_zh": "RTKLIB 中文手册解读与源码解析笔记"
+    },
+    {
+      "name": "Swarm_notebooks",
+      "url": "https://github.com/Swarm-DISC/Swarm_notebooks",
+      "desc_zh": "ESA Swarm 科学分析 Jupyter 笔记本（含 TEC/Langmuir 示例）",
+      "one_liner_zh": "ESA Swarm 科学分析 Jupyter 笔记本（含 TEC/Langmuir 示例）",
+      "analysis_zh": "部署在 VirES VRE 上的官方示例笔记本集合，含 EFIx_LP_1B、TECxTMS_2F 等演示，适合跟着学 Swarm 电离层产品字段与绘图。教学与快速原型友好。依赖 viresclient 与在线环境；不是独立算法库。",
+      "language": "Jupyter Notebook",
+      "license": "MIT",
+      "category": "tools-learning",
+      "subcategory": "SWARM教程",
+      "markers": [
+        "batch-2026-09-17"
+      ],
+      "stars_approx": 10,
+      "source": "batch-related-iono 2026-09-17",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "official"
     },
     {
       "name": "UNAVCO-Software-Portal",
@@ -9363,9 +11837,9 @@
     }
   ],
   "provenance_counts": {
-    "official": 112,
-    "academic_lab": 113,
-    "personal_community": 264
+    "personal_community": 284,
+    "academic_lab": 173,
+    "official": 154
   },
   "updated": "2026-09-17"
 }

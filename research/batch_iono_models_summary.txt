@@ -1,0 +1,42 @@
+batch_iono_models 汇总 2026-09-17
+新增条目数: 55
+输出: /workspace/ionosphere-gnss-catalog/research/batch_iono_models.json
+
+按子类:
+  模型 (19): GEMINI3D, Aether-IT-model, sami2py, GITM, IPE, TIE-GCM, ntcmg, gri-iono, NeQuick2-MLF2, SAMI3-4.00, SAMI3-3.22-CCMC-mirror, sami3_gitm, CCMC-SAMI3, FIRI-2018, LongwaveModePropagator.jl, IRI_TID, RIM, Klobuchar-study-code, HAO-TGCM-portal
+  工具 (19): gcmprocpy, Kamodo, Kamodo-core, geospacelab, SAMI3-GITM-python, POLAN, pytiegcm, Ionort-raytrace, Raytrace-Model, jvierine-ionosonde, pynasonde, HamSCI-ionosonde, Ionosonde-Data-Downloader, ionosonde_volgatech, Alouette_ISIS_extract, ionosphereAI, pysat, pysatModels, apexpy
+  TEC估计 (8): quakeion, TEC-MoLLM, Ion-Phys-Toolkit, PMGC-SimVP, gps-tec-cnn-lstm-attention, TEC-forecast-F107, KOH2-ionosphere, GNSS-Workshop-TEC
+  闪烁 (4): SuperSID, Ionospheric-TEC-ROTI-Interactives, igs-roti, roti-gnss-ml
+  GIM (4): csonde-gnss-ionosphere, DiffIonMap, Ionospheric-TEC-Kriging-Turkiye, GIM_fusion_VLBI
+  层析 (1): GNSS_TOM
+
+重点条目（建议优先合并）:
+  - TIE-GCM
+  - GITM
+  - GEMINI3D
+  - Kamodo
+  - sami2py
+  - SAMI3-4.00
+  - geospacelab
+  - ntcmg
+  - gri-iono
+  - IPE
+  - gcmprocpy
+  - pynasonde
+  - SuperSID
+  - GNSS_TOM
+  - quakeion
+  - IRI_TID
+
+检索过但无可用开源代码/未收录原因（notable misses）:
+  - WACCM-X 完整模式：走 CESM/WACCM 大体系，未发现独立小仓可一键编译；仅有 gcmprocpy 后处理与少量分析脚本。
+  - 官方 NeQuick-G/IRI Fortran：目录已有 irimodel.org、ESA/GSC、ICTP、PyIRI、iri2016/2020、iricore 等，本批不再重复。
+  - odrisci/NeQuickJRC：与已收录 mgfernan/NeQuickJRC 同源，跳过。
+  - aaronjridley/GITM：与 GITMCode/GITM 并行，本批只收社区仓以免重复。
+  - SegED-SwinLSTM / waccmx-skill / Gaileo_iono_model：空仓或无实质代码。
+  - DQY-haofan/ISAC-ISL-Ionospheric-Tomography：几乎空仓（size≈5）。
+  - Zenodo SAMI3-3.22 DOI 页：本环境 curl 403，改以 CCMC 页 + GitHub 镜像收录。
+  - 大量“Ionosphere UCI 机器学习数据集”仓库与同名混淆，已排除。
+  - 专有 Digisonde 商业软件、无代码论文 PDF：跳过。
+
+已跳过（已在 existing_all_urls）: 无

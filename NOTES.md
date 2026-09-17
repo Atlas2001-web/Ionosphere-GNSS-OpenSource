@@ -127,3 +127,14 @@
 - 说明：公开的是监测产品与 Web 服务，不是开源处理代码仓
 
 当前总条目：**491**
+
+## 电离层全网补搜合并（2026-09-17）
+
+- 四路并行：`batch_iono_models` / `batch_official_labs` / `batch_related_iono` / `batch_non_github`
+- 原始候选约 128，交叉去重后新增 **120**（已与目录 URL 去重；跨批重复优先保留官方实验室条目）
+- 标记：`batch-2026-09-17`
+- 类别分布（本批）：{'gnss-data': 2, 'gnss-datasets': 4, 'ionosphere': 112, 'tools-learning': 2}
+- 来源分布（本批）：{'personal_community': 20, 'academic_lab': 60, 'official': 40}
+
+当前总条目：**611**
+

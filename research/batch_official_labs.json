@@ -1,0 +1,572 @@
+[
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "DLR-IMPC",
+    "url": "https://impc.dlr.de/",
+    "subcategory": "电离层产品",
+    "registration": "form_register",
+    "registration_zh": "门户右上角 Sign up 走 DLR EOC SSO 自助注册；登录后可在 Products & Archives 下载近实时产品。更长时段历史数据需邮件申请 impc-uhd@dlr.de，科学用途通常经 FTP 交付。",
+    "one_liner_zh": "DLR 电离层监测与预报中心（IMPC，原 SWACI 继承）：近实时全球/欧洲 TEC、ROTI 与预警门户",
+    "analysis_zh": "德国宇航中心（DLR）Neustrelitz 运营的业务电离层服务，明确为原 SWACI 的后继门户，并继续提供 SWACI 长期存档。产品包括欧洲/全球近实时 VTEC（约 15 分钟更新、时延通常 <5 分钟）、ROTI、梯度指数与 1 小时预报等，面向 GNSS 导航与空间天气用户。近实时下载需先注册账号；历史批量需邮件申请。适合作为欧洲区域 TEC 对照与扰动监测，不宜当作唯一全球精密 GIM 替代 IGS 最终 IONEX。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "DLR-IMPC-Products",
+    "url": "https://impc.dlr.de/products",
+    "subcategory": "电离层产品",
+    "registration": "form_register",
+    "registration_zh": "需先在 IMPC 门户完成 DLR SSO 注册并登录，方可进入 Products & Archives 下载；历史长序列另发邮件申请。",
+    "one_liner_zh": "DLR IMPC 产品与档案入口：近实时 TEC/ROTI 等电离层产品分类浏览与下载",
+    "analysis_zh": "IMPC 产品导航页，按 TEC、ROTI、梯度指数等分类链接到欧洲/全球近实时图及说明页。ASCII 矩阵与 PNG 为主要交付格式，新格式规划含 JSON。研究用途可与 ROB 欧洲 TEC、IGS GIM 交叉比对；业务引用请遵守 IMPC terms。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "ROB-European-TEC",
+    "url": "https://gnss.be/SpaceWeather/",
+    "subcategory": "IONEX/TEC图",
+    "registration": "open",
+    "registration_zh": "网页公开浏览，无需注册；下载 IONEX 时请按站点要求致谢/引用。",
+    "one_liner_zh": "比利时皇家天文台（ROB）欧洲近实时多 GNSS VTEC 空间天气门户",
+    "analysis_zh": "ROB/OMA 基于 EUREF 常设网 GPS+GLONASS+Galileo 观测生成欧洲区域近实时 VTEC 与变率产品（约 5 分钟、0.5° 网格，2022-05 起多系统）。门户提供统计对比图与北/中/南欧时间序列，联系 iono@oma.be。适合欧洲区域扰动监测与 PPP 区域改正对照；全球尺度仍需 IGS/各 AC 的 GIM。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "ROB-IONEX-Products",
+    "url": "https://gnss.be/SpaceWeather/Products/IONEX",
+    "subcategory": "IONEX/TEC图",
+    "registration": "open",
+    "registration_zh": "IONEX 文件公开可下载，站点要求使用时引用或致谢 ROB 产品。",
+    "one_liner_zh": "ROB 欧洲 VTEC 产品 IONEX 公开下载目录",
+    "analysis_zh": "与 gnss.be/SpaceWeather 可视化配套的 IONEX 文件归档，便于脚本批量拉取欧洲近实时 TEC 图。格式与 IGS IONEX 兼容，适合接入自有 TEC 可视化或 PPP 区域改正试验。使用前请阅读站点免责声明与引用要求。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "NOAA-SWPC-GloTEC",
+    "url": "https://www.spaceweather.gov/products/glotec",
+    "subcategory": "电离层产品",
+    "registration": "open",
+    "registration_zh": "产品页与图像公开；机器可读数据见 services.swpc.noaa.gov，无需注册。",
+    "one_liner_zh": "NOAA/SWPC GloTEC：近实时全球 TEC 同化图（GNSS+COSMIC-2）业务产品页",
+    "analysis_zh": "美国国家海洋大气局空间天气预测中心的全球 TEC 同化系统展示页。GloTEC 以 IRI-2016 为背景、Gauss-Markov 卡尔曼滤波同化地基 GNSS sTEC 与 COSMIC-2 掩星 sTEC，提供全球/北美/CONUS 图、相对 30 日中值异常与观测计数。面向 GNSS 延迟与空间天气态势感知；精密大地测量最终产品仍建议对照 IGS GIM。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "NOAA-SWPC-GloTEC-Data",
+    "url": "https://services.swpc.noaa.gov/products/glotec/",
+    "subcategory": "电离层产品",
+    "registration": "open",
+    "registration_zh": "HTTP 目录公开，GeoJSON/NetCDF 可直接抓取，无需账号。",
+    "one_liner_zh": "NOAA/SWPC GloTEC 机器可读数据目录（GeoJSON / NetCDF）",
+    "analysis_zh": "SWPC 官方 HTTP 产品树，提供 geojson_2d_urt 与 netcdf_2d_urt 等目录，便于自动化拉取近实时全球 TEC 网格。适合做业务监控看板或与自有 GNSS TEC 估计交叉验证；长期归档请改走 NCEI 空间天气门户。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "NOAA-NCEI-TEC-Archive",
+    "url": "https://www.ncei.noaa.gov/products/space-weather/ionospheric-program/total-electron-content",
+    "subcategory": "电离层产品",
+    "registration": "open",
+    "registration_zh": "NCEI 档案与云下载入口公开；大体积批量按门户提示使用 cloud-access 下载器。",
+    "one_liner_zh": "NOAA/NCEI US-TEC 与 GloTEC 国家归档说明与下载入口",
+    "analysis_zh": "美国国家环境信息中心对 SWPC TEC 产品的权威归档页：US-TEC（约 2004–2023）与 GloTEC（约 2025 起）均可由此进入 cloud-access 下载，并附格式 README。历史事件复现与气候态统计用此页；近实时态势优先 SWPC GloTEC 产品页/services。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "ESA-SWE-SSA",
+    "url": "https://swe.ssa.esa.int/",
+    "subcategory": "电离层产品",
+    "registration": "form_register",
+    "registration_zh": "访问受保护应用前先到 swe.ssa.esa.int/registration 免费注册，按邮件完成 OpenAM 确认后登录；注册时可勾选 TIO 等电离层相关服务。",
+    "one_liner_zh": "ESA 空间天气服务网络（SWE/SSA）门户：含穿越电离层电波链路等业务服务",
+    "analysis_zh": "欧洲航天局空间态势感知空间天气段的统一门户，聚合地磁、太阳与电离层等多域服务。电离层相关能力集中在 Transionospheric Radio Link（TIO）与 IONMON 等应用。多数深度产品需注册后授权；公开仪表盘可先浏览当前状态。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "ESA-SWE-Registration",
+    "url": "https://swe.ssa.esa.int/registration",
+    "subcategory": "电离层产品",
+    "registration": "form_register",
+    "registration_zh": "填写邮箱等信息提交注册请求，查收确认邮件并在时限内完成 OpenAM 确认，随后用邮箱登录门户勾选/开通 TIO、IONMON 等应用。",
+    "one_liner_zh": "ESA SWE/SSA 门户免费账号注册页（开通电离层 TIO 等服务的前置步骤）",
+    "analysis_zh": "专用于创建 ESA 空间天气门户账号的注册表单。若目标是下载近实时/预报 TEC 图或使用 IONMON，需先完成本页注册再回主站登录授权。属于数据访问元条目，本身不托管观测文件。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "ESA-IONMON",
+    "url": "https://swe.ssa.esa.int/ionmon",
+    "subcategory": "IONEX/TEC图",
+    "registration": "form_register",
+    "registration_zh": "ESA SWE 账号登录后访问；未注册先完成 /registration。",
+    "one_liner_zh": "ESA IONMON：电离层监测最新全球 TEC/RMS 等产品应用",
+    "analysis_zh": "ESA 空间天气网络中的电离层监测应用入口，面向全球 TEC 及相关质量信息的业务展示与档案访问。适合欧洲用户做空间天气态势与 GNSS 单频改正评估；具体文件格式与引用条款以门户内文档为准。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "ESA-TIO-NRT-TEC",
+    "url": "https://swe.ssa.esa.int/tio_tcr",
+    "subcategory": "IONEX/TEC图",
+    "registration": "form_register",
+    "registration_zh": "需 ESA SWE 注册账号登录后使用 TIO 近实时 TEC 服务。",
+    "one_liner_zh": "ESA TIO 近实时 TEC 图服务（穿越电离层电波链路）",
+    "analysis_zh": "ESA SWE 网络 Transionospheric 服务族中的近实时 TEC 图产品页，用于评估跨电离层链路与 GNSS 相关影响。与 DLR IMPC、ROB 欧洲 TEC 同属欧洲业务产品生态，可多源交叉验证。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "ESA-TIO-Forecast-TEC",
+    "url": "https://swe.ssa.esa.int/tio_tcf",
+    "subcategory": "TEC预报",
+    "registration": "form_register",
+    "registration_zh": "需 ESA SWE 注册账号登录后使用 TIO TEC 预报服务。",
+    "one_liner_zh": "ESA TIO TEC 预报图服务（约 1 小时量级电离层预报）",
+    "analysis_zh": "与近实时 TEC 配套的预报产品入口，服务短时电离层状态预估与链路质量评估。适合运行支持与教学演示；科学研究若需可复现网格文件，请在登录后按服务说明导出并记录版本/时次。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "ESA-TIO-Services",
+    "url": "https://swe.ssa.esa.int/tio_services",
+    "subcategory": "电离层产品",
+    "registration": "form_register",
+    "registration_zh": "总览页公开；具体服务下载/交互多需 SWE 账号。",
+    "one_liner_zh": "ESA 穿越电离层电波链路（TIO）服务总览：TEC、闪烁与扰动监测索引",
+    "analysis_zh": "TIO 服务族目录页，汇总近实时/预报 TEC、闪烁图、扰动监测与电离层改正质量评估等入口。作为欧洲官方电离层业务导航页收录，便于从单一书签进入各子产品。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "CODE-AIUB-Product-Download",
+    "url": "https://www.aiub.unibe.ch/download/",
+    "subcategory": "IGS产品下载",
+    "registration": "open",
+    "registration_zh": "HTTPS 文件浏览器公开，可按目录逐文件下载；原 FTP 已停用，无需账号。",
+    "one_liner_zh": "AIUB/CODE 产品 HTTPS 下载浏览器（含 CODE/ionex/ionosphere 等目录）",
+    "analysis_zh": "伯尔尼大学天文研究所 CODE 分析中心的官方产品文件浏览器。可进入 CODE、CODE_MGEX、ionex、ionosphere 等目录获取最终/快速/超快速轨道钟差与 IONEX 等。FTP 已弃用，请改用本 HTTPS 入口；与已收录的 CODE AC 介绍页互补，本条聚焦可下载产品树。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "GFZ-Global-Ionosphere-Maps",
+    "url": "https://www.gfz.de/en/section/space-geodetic-techniques/data-products-services/global-gnss-ionosphere-maps",
+    "subcategory": "IONEX/TEC图",
+    "registration": "open",
+    "registration_zh": "介绍页公开；实际 IONEX 文件通常经 GFZ ISDC/CDDIS 等数据中心获取（ISDC 可能需注册）。",
+    "one_liner_zh": "GFZ IGS 电离层分析中心全球 GNSS TEC 图产品说明页（EPOS.P8）",
+    "analysis_zh": "德国地学研究中心作为 IGS 电离层分析中心（IAAC）的官方产品介绍：基于约 250 站 IGS 网、GPS/GLONASS/Galileo，用 EPOS.P8 生成全球 VTEC 图，并给出 DOI 与文献。本页偏文档/入口；批量 IONEX 请转到 ISDC 或 CDDIS 的 GFZ 产品路径。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "academic_lab",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "UWM-IGS-Iono-Combination",
+    "url": "https://igsiono.uwm.edu.pl/",
+    "subcategory": "IONEX/TEC图",
+    "registration": "open",
+    "registration_zh": "组合中心信息公开浏览；组合 IONEX 亦经 IGS 数据中心分发。",
+    "one_liner_zh": "波兰 Warmia-Mazury 大学 IGS 电离层组合/验证中心站点（igsiono）",
+    "analysis_zh": "University of Warmia and Mazury（Olsztyn）承担 IGS 电离层图组合与验证相关门户，面向各 IAAC 独立 GIM 的加权组合（如 IGSG）流程与产品入口。与 IGS Ionosphere WG 页面互补，适合追踪官方组合策略与验证信息。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "academic_lab",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "UWM-CDRSK-IGS-Validation",
+    "url": "https://cdrsk.uwm.edu.pl/centrum-walidacji-i-kombinacji-igs/",
+    "subcategory": "IONEX/TEC图",
+    "registration": "open",
+    "registration_zh": "机构介绍页公开，无需注册。",
+    "one_liner_zh": "UWM CDRSK：IGS 电离层验证与组合中心机构介绍（波兰语门户）",
+    "analysis_zh": "Warmia-Mazury 大学空间环境射电诊断中心（CDRSK）对 IGS 电离层验证/组合职能的机构页，可与 igsiono.uwm.edu.pl 技术页对照。对需要联系组合中心或了解 UWM 职责分工的用户有用。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "academic_lab",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "Beihang-Ionosphere-CN",
+    "url": "http://ionosphere.cn/",
+    "subcategory": "IONEX/TEC图",
+    "registration": "open",
+    "registration_zh": "产品展示页公开；具体下载路径见站内 Final/Rapid/Ultra 等栏目，问题可邮件 ac@ionosphere.cn。",
+    "one_liner_zh": "北航 ionosphere.cn：全球 GNSS TEC 图与空间天气研究产品门户",
+    "analysis_zh": "北京航空航天大学团队维护的电离层与空间天气站点，提供 Final/Rapid/Ultra 及更高时间分辨率全球 TEC 图展示，并参与 IAG 实时电离层监测等工作组方向。与 CAS BDsmart IONEX 数据树不同，本站偏研究展示与联系入口；批量业务下载优先确认站内 archive 链接或并行使用 data.bdsmart.cn。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "CAS-BDsmart-RTS-Iono",
+    "url": "https://data.bdsmart.cn/pub/product/rts/iono/",
+    "subcategory": "电离层产品",
+    "registration": "open",
+    "registration_zh": "公开 HTTP 目录，通常无需注册即可列举/下载实时电离层产品。",
+    "one_liner_zh": "中科院 BDsmart 实时电离层产品目录（RTS IONEX 等）",
+    "analysis_zh": "与已收录的 CAS 最终/快速 IONEX 目录配套的实时（RTS）电离层产品树，面向近实时 GIM/SSR 相关用户。适合 PPP-RTK/实时监测试验；事后精密分析仍建议使用最终 IONEX 与多 AC 交叉验证。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "CNES-PPP-WIZARD-Realtime-Products",
+    "url": "http://www.ppp-wizard.net/products/REAL_TIME",
+    "subcategory": "电离层产品",
+    "registration": "open",
+    "registration_zh": "产品目录公开可浏览下载；使用请遵循 CNES PPP-WIZARD 站点说明。",
+    "one_liner_zh": "CNES PPP-WIZARD 实时产品目录（含实时轨道钟差/偏差及电离层相关输出）",
+    "analysis_zh": "CNES PPP-WIZARD 示范系统的 REAL_TIME 产品树，可检索实时流配套文件；CNES 亦通过 IGS-RTS 播发实时 SSR。已收录门户首页，本条补齐可枚举的实时产品路径，便于脚本对接。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "NICT-WDC-Ionosphere-SpaceWeather",
+    "url": "https://wdc.nict.go.jp/wdc-top/index.html",
+    "subcategory": "电离层产品",
+    "registration": "open",
+    "registration_zh": "多数公开资料可直接下载；部分历史/专项数据集按站内说明申请。",
+    "one_liner_zh": "日本 NICT 世界数据中心（WDC-ISW）：电离层与空间天气长期数据门户",
+    "analysis_zh": "日本信息通信研究机构运营的世界数据中心，保存自 IGY 以来日本本土与南极测高仪等电离层资料及空间天气预警相关数据，并作为 WDS 成员对外分发。偏观测档案与空间天气，与 GNSS GIM 产品互补；做亚太区域电离层气候或闪烁背景研究时很有价值。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "official",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "NICT-Ionosonde-Data",
+    "url": "https://wdc.nict.go.jp/Ionosphere/index.html",
+    "subcategory": "电离层工具",
+    "registration": "open",
+    "registration_zh": "测高仪数据页面公开；具体站年下载按页面链接操作。",
+    "one_liner_zh": "NICT 日本测高仪（ionosonde）观测数据入口",
+    "analysis_zh": "Wakkanai、Kokubunji、Yamagawa、Okinawa 等日本测高仪数字化资料入口，可与 GIRO/DIDBase 全球测高仪生态对照。适合 foF2/hmF2 气候统计或与 GNSS TEC 联合分析；不是 GNSS IONEX 替代品。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "academic_lab",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "UMLCAR-Downloads",
+    "url": "https://ulcar.uml.edu/downloads.html",
+    "subcategory": "电离层工具",
+    "registration": "open",
+    "registration_zh": "软件包公开下载；连接 DIDBase 在线库另需 GIRO/DIDBase 账号。",
+    "one_liner_zh": "UMass Lowell UMLCAR 电离层软件下载中心（SAO-X/Drift-X/NHPC/DCART 等）",
+    "analysis_zh": "洛厄尔麻省大学大气研究中心官方下载索引：SAO Explorer（含 ARTIST-5）、Drift-X、BinBrowser、DCART、NHPC、CARP 等 Digisonde/测高仪工具集中入口。已单独收录 SAO-X 主页，本条作为软件总目录便于发现其余开源/可下载工具。"
+  },
+  {
+    "language": "Java",
+    "license": "UML academic (AS IS)",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "academic_lab",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "Drift-X",
+    "url": "https://ulcar.uml.edu/Drift-X.html",
+    "subcategory": "电离层工具",
+    "registration": "open",
+    "registration_zh": "发行包 ZIP 公开下载；Java 8+ 运行，无需安装程序。",
+    "one_liner_zh": "Drift Explorer（Drift-X）：Digisonde 漂移数据可视化与分析 Java 工具",
+    "analysis_zh": "UMLCAR 发布的 Digisonde 漂移（DDA）数据查看器，当前发行约 1.2.14-FB3，ZIP 解压即用。面向测高仪漂移观测质控与教学；与 SAO-X 测高图定标流程互补，不直接输出 GNSS TEC。"
+  },
+  {
+    "language": "Fortran/C",
+    "license": "UML academic (AS IS)",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "academic_lab",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "NHPC-TrueHeight",
+    "url": "https://ulcar.uml.edu/SoftwareUtilities/NHPC/",
+    "subcategory": "电离层工具",
+    "registration": "open",
+    "registration_zh": "工具目录公开下载，按页内说明编译/使用。",
+    "one_liner_zh": "NHPC：测高仪迹线真高剖面反演工具（Digisonde/ARTIST 配套）",
+    "analysis_zh": "将 ARTIST 等自动/人工定标的测高仪迹线反演为等离子体频率–真高剖面的经典工具，常嵌入 SAO Explorer 工作流。适合底层电离层剖面研究与 IRI/IRTAM 对照；输入依赖合格 SAO/定标结果，非 GNSS TEC 估计器。"
+  },
+  {
+    "language": "Fortran",
+    "license": "UML academic (AS IS)",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "academic_lab",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "CARP-Average-Profile",
+    "url": "https://ulcar.uml.edu/SoftwareUtilities/CARP/",
+    "subcategory": "电离层工具",
+    "registration": "open",
+    "registration_zh": "公开下载目录，按页内说明使用。",
+    "one_liner_zh": "CARP：测高仪平均代表剖面（Average Representative Profile）计算工具",
+    "analysis_zh": "UMLCAR 提供的平均代表剖面工具，用于从多幅测高图剖面提取统计代表结构。服务气候态与模型验证场景；与 NHPC/SAO-X 同属测高仪处理链。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "academic_lab",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "GIRO-IRTAM",
+    "url": "https://giro.uml.edu/IRTAM/",
+    "subcategory": "IRI模型",
+    "registration": "open",
+    "registration_zh": "近实时地图公开浏览；系数/程序化接口见 GAMBIT 相关说明，DIDBase 深度访问可能需账号。",
+    "one_liner_zh": "GIRO IRTAM：基于全球测高仪的 IRI 实时同化 foF2/hmF2 等映射",
+    "analysis_zh": "Global Ionospheric Radio Observatory 的 IRI Real-Time Assimilative Mapping 服务页，将全球 Digisonde 近实时特性同化进 IRI，生成 F2 临界频率与峰高近实时图。已收录 IRTAM 系数读取器压缩包与 PyIRTAM，本条补齐官方产品可视化/服务入口。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "academic_lab",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "GIRO-GAMBIT",
+    "url": "https://giro.uml.edu/GAMBIT/",
+    "subcategory": "IRI模型",
+    "registration": "open",
+    "registration_zh": "主页与说明公开；读者工具 ZIP 已另列，数据访问按其文档。",
+    "one_liner_zh": "GIRO GAMBIT：底部电离层时间线全球同化模型门户与系数服务",
+    "analysis_zh": "GAMBIT（Global Assimilative Model of Bottomside Ionospheric Timeline）官方主页，提供与 IRTAM 相关的系数获取与工具说明。目录中已有 Java/Fortran 读取器下载链接，本条收录门户本身以便发现 API/文档更新。"
+  },
+  {
+    "language": "Windows/Exe",
+    "license": "academic (cite Seemala 2023; AS IS)",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "academic_lab",
+    "host": "other",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "Seemala-GPS-TEC",
+    "url": "https://seemala.blogspot.com/2024/04/gps-tec-analysis-program-version-35.html",
+    "subcategory": "TEC估计",
+    "registration": "open",
+    "registration_zh": "博客页提供 Google Drive ZIP 直链，解压即运行；无需注册。",
+    "one_liner_zh": "Boston College ISR Gopi Seemala GPS-TEC：从 RINEX 估计 GPS TEC 的便携 Windows 程序",
+    "analysis_zh": "波士顿学院科学研究所研究者维护的经典 GPS TEC 分析程序（当前介绍为 v3.5），读取 RINEX 2/3 观测与导航文件并自动拉取 DCB，输出 CMN 文本与日变化图。在低纬电离层教学与区域 TEC 研究中使用极广；目前文档称暂仅 GPS。请按作者章节引用，注意 Windows/VC++ 运行库依赖。"
+  },
+  {
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "stars_approx": null,
+    "provenance": "academic_lab",
+    "host": "official_site",
+    "source": "batch-official-labs 2026-09-17",
+    "markers": [
+      "batch-2026-09-17"
+    ],
+    "name": "Boston-College-ISR-Ionospheric-Studies",
+    "url": "https://www.bc.edu/bc-web/research/sites/institute-for-scientific-research/research/ionospheric-studies.html",
+    "subcategory": "电离层工具",
+    "registration": "open",
+    "registration_zh": "研究室介绍页公开；具体软件多在研究者个人发布页。",
+    "one_liner_zh": "Boston College ISR 电离层研究组主页（闪烁、层析与 GNSS TEC 方向）",
+    "analysis_zh": "波士顿学院科学研究所电离层研究方向介绍，涵盖全球扰动、层析与闪烁对 GNSS 影响等。作为 Seemala GPS-TEC 等工具的机构背景页收录；部分站点可能对非浏览器客户端返回 406，建议用常规浏览器打开。"
+  }
+]
