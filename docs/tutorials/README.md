@@ -5,7 +5,7 @@
 > 你要解决什么问题？先想清楚，再选工具。  
 > 本系列**不替代**上游文档，也不塞公式墙；目标是：零基础读完，能在目录里找对软件，并知道主要误差从哪来。
 
-路径设计：**入门 → 进阶 → 精通·实战**。不必一天读完；按阶段打勾即可。总进度表见 [17-roadmap-beginner-to-expert.md](./17-roadmap-beginner-to-expert.md)。
+路径设计：**入门（建模概念）→ 现象分析 → 精通·实战**。不必一天读完；按阶段打勾即可。总进度表见 [17-roadmap-beginner-to-expert.md](./17-roadmap-beginner-to-expert.md)。
 
 ---
 
@@ -39,6 +39,30 @@
 | 13 | [13-scintillation-modeling.md](./13-scintillation-modeling.md) | 分清监测 vs 仿真；低纬/高纬不套同一规则 |
 
 **进阶出口作业**：路线 B 单站 STEC + 写半页「我的区域 VTEC/GIM 流程」（对照第 10 课清单）。
+
+---
+
+## 现象分析（19–23）
+
+> **入门建模概念 → 本段现象分析 → 精通实验**。  
+> 建模回答「怎么算 / 怎么预报」；现象分析回答「天上发生了什么、图上证据是什么、如何排除假象」。用户反馈指出目录曾偏建模——本段专门补「读现象」。
+
+| 次序 | 文稿 | 学完应能 |
+|:---:|---|---|
+| 19 | [19-phenomena-overview.md](./19-phenomena-overview.md) | 分清现象分析 vs 建模 vs 建图；观测签名四件套；安静/扰动对照；VTEC/ROTI/foF2/掩星各看什么 |
+| 20 | [20-storm-tec-analysis.md](./20-storm-tec-analysis.md) | 正/负相风暴分区描述；GIM 差分 + Kp/Dst/SYM-H 九步剧本；常见假象 |
+| 21 | [21-equatorial-anomaly-bubbles.md](./21-equatorial-anomaly-bubbles.md) | 先 EIA 后泡；TEC 耗空通道 + ROTI；季节/地方时工作流 |
+| 22 | [22-tid-traveling-disturbances.md](./22-tid-traveling-disturbances.md) | 去趋势 δTEC；多站延迟/keogram；与风暴、泡、闪烁对照 |
+| 23 | [23-flare-eclipse-special.md](./23-flare-eclipse-special.md) | 耀斑日侧同步 TEC 突增；日食 TEC 洞对齐食相；何时不看闪烁 |
+
+**现象分析出口作业**：任选 20–23 之一，按该课逐步清单交半页结论（工具 `name` 须能在 `PROJECTS.json` 找到）。
+
+建议阅读顺序提醒：
+
+1. 至少完成入门 01–03（量纲与 GIM）后再进 19；  
+2. 05（ROTI/闪烁）对 21–23 很有帮助；  
+3. 14（空间天气复盘）与 20 互补——14 是总复盘法，20 专攻正负相；  
+4. 做完现象分析再回头看 11–12、04 的模型，不易把模拟场误标成观测。
 
 ---
 
@@ -91,18 +115,4 @@
 - [电离层软件列表](../../lists/01-ionosphere.md)
 - [总路线图 17](./17-roadmap-beginner-to-expert.md)
 
-
-## 现象分析（必读，不只是建模）
-
-建模告诉你「怎么算数」；现象分析告诉你「天上发生了什么、图上该怎么读」。
-
-| 课 | 文稿 | 你学完能做什么 |
-|:---:|---|---|
-| 19 | [现象分析总览](./19-phenomena-overview.md) | 分清建模 vs 现象分析；安静/扰动；先看哪些观测量 |
-| 20 | [磁暴与 TEC](./20-storm-tec-analysis.md) | 正/负相暴；GIM 差分图；地磁指数对齐 |
-| 21 | [赤道异常与气泡](./21-equatorial-anomaly-bubbles.md) | EIA 双峰；气泡/羽状结构；TEC/ROTI 判读 |
-| 22 | [TID 行进扰动](./22-tid-traveling-disturbances.md) | 波状 TEC 残差；周期/空间尺度直觉 |
-| 23 | [耀斑与日食](./23-flare-eclipse-special.md) | 突增/日食空洞；高采样 GNSS 分析套路 |
-
-> 21–23 若链接暂时 404，表示还在写入；19–20 已可用。01–08 已加入「现象向」质控与读图清单。
 
