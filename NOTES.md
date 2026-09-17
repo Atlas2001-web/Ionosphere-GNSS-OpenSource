@@ -144,3 +144,9 @@
 - 索引按「入门 / 进阶 / 精通·实战」组织，根 README 已链到教学目录
 - 同步继续 gap-fill 搜索（见 `research/batch_gapfill_*`，若尚未生成则仍在跑）
 
+## 教学加厚 + 实验课 18（2026-09-17）
+
+- 加厚精通篇 12/14/15/16/17；新增实验课 `18-lab-compare-gims.md`（多分析中心 GIM 对比）
+- `docs/tutorials/README.md` 按 入门 / 进阶 / 精通·实战 / 实验课 重组
+- 补搜仍在进行（gap-fill）
+
