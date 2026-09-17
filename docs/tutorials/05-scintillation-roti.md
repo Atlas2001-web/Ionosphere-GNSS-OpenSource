@@ -524,16 +524,16 @@ TEC / GIM 回答的是雾**有多厚**（柱含量）；闪烁回答的是雾里
 
 ### P2. Fresnel 尺度：为什么「几公里」这种尺度特别重要？
 
-衍射干涉里有一个特征横向尺度，课堂常称 **Fresnel 尺度** *rF*（量级直觉即可，不必死背推导）：
+衍射干涉里有一个特征横向尺度，课堂常称 **Fresnel 尺度** $r_F$（量级直觉即可，不必死背推导）：
 
-＄＄
+$$
 r_F \sim \sqrt{\lambda\,z_{\mathrm{eff}}}
-＄＄
+$$
 
-- λ：载波波长（GPS L1 约 0.19 m 量级）；  
-- zₑբբ：等效传播几何尺度（与不规则体层高、接收机位置有关，教学上可想成「屏到天线的有效距离」）。
+- $\lambda$：载波波长（GPS L1 约 0.19 m 量级）；  
+- $z_{\mathrm{eff}}$：等效传播几何尺度（与不规则体层高、接收机位置有关，教学上可想成「屏到天线的有效距离」）。
 
-对 GNSS L 波段、F 区高度量级的屏，*rF* 常常落在**数百米到数公里**这一档。直觉：
+对 GNSS L 波段、F 区高度量级的屏，$r_F$ 常常落在**数百米到数公里**这一档。直觉：
 
 - 不规则体谱在 Fresnel 尺度附近有能量 → 地面干涉对比度容易大 → **幅度闪烁**更显眼；  
 - 很大尺度的平滑梯度 → 更像慢慢弯折射线（折射/延迟变化），不一定制造强衍射斑；  
@@ -553,7 +553,7 @@ r_F \sim \sqrt{\lambda\,z_{\mathrm{eff}}}
 为什么能「一边凶、一边还好」？
 
 - **谱形状**：有的环境相位起伏谱更陡、能量偏大尺度 → 相位指标先抬头；有的环境 Fresnel 尺度能量足 → 幅度指数更醒目。  
-- **频率**：同一不规则体环境下，通常频率越低越容易抖得凶（延迟与相位扰动大致随 1/f² 一类因子变强的直觉），但幅度饱和、多径与接收机实现会改写表象。  
+- **频率**：同一不规则体环境下，通常频率越低越容易抖得凶（延迟与相位扰动大致随 $1/f^2$ 一类因子变强的直觉），但幅度饱和、多径与接收机实现会改写表象。  
 - **几何**：低仰角路径更长、穿刺点扫过结构的相对速度也不同 → 时间谱被「多普勒拉伸」。  
 - **接收机**：环路带宽、振荡器、前端滤波决定你「听得见」哪一段起伏。
 
@@ -563,23 +563,23 @@ r_F \sim \sqrt{\lambda\,z_{\mathrm{eff}}}
 
 教学常用形式（实现细节随标准略有出入，写报告务必引用你所用产品的定义）：
 
-＄＄
+$$
 \mathrm{S4} = \sqrt{\frac{\langle I^2\rangle - \langle I\rangle^2}{\langle I\rangle^2}}
-＄＄
+$$
 
 符号账：
 
 | 符号 | 含义 |
 |---|---|
-| I | 信号**强度**（功率或强度观测量；有的实现用幅度平方） |
-| langle·rangle | 在长度 *T* 的统计窗口内的时间平均 |
+| $I$ | 信号**强度**（功率或强度观测量；有的实现用幅度平方） |
+| $\langle\cdot\rangle$ | 在长度 $T$ 的统计窗口内的时间平均 |
 | 分子 | 强度的方差（「晃了多少」） |
 | 分母 | 平均强度的平方（归一化，使 S4 无量纲） |
 | 开方 | 回到「相对起伏」的标准差量级 |
 
 直觉阶梯：
 
-- S4≈ 0：强度几乎不晃；  
+- $\mathrm{S4}\approx 0$：强度几乎不晃；  
 - S4 升高：相对起伏变大；  
 - 强闪烁时可能出现**饱和**（指数不再线性反映「更碎」），文献阈值勿生搬。
 
@@ -596,17 +596,17 @@ r_F \sim \sqrt{\lambda\,z_{\mathrm{eff}}}
 
 教学写法：
 
-＄＄
+$$
 \sigma_\varphi = \sqrt{\langle(\varphi-\langle\varphi\rangle)^2\rangle}
-＄＄
+$$
 
 或在去趋势/滤波后的相位残差上取窗口标准差（实现必须写清）。
 
 | 符号 | 含义 |
 |---|---|
-| φ | 载波相位（弧度或换算后的单位；报告必须声明） |
-| langleφrangle | 窗口内均值，或低通趋势 |
-| σ_φ | 残差相位的标准差 → 「绳子被风吹抖的幅度」 |
+| $\varphi$ | 载波相位（弧度或换算后的单位；报告必须声明） |
+| $\langle\varphi\rangle$ | 窗口内均值，或低通趋势 |
+| $\sigma_\varphi$ | 残差相位的标准差 → 「绳子被风吹抖的幅度」 |
 
 要点：
 
@@ -624,32 +624,32 @@ r_F \sim \sqrt{\lambda\,z_{\mathrm{eff}}}
 
 #### P6.2 ROT
 
-＄＄
+$$
 \mathrm{ROT}(t) = \frac{\mathrm{STEC}(t)-\mathrm{STEC}(t-\Delta t)}{\Delta t}
-＄＄
+$$
 
 | 符号 | 含义 |
 |---|---|
-| STEC(t) | 时刻 *t* 的斜 TEC（常用 TECU） |
-| Δ t | 采样间隔（如 30 s、1 s；必须写进方法） |
-| *ROT* | TEC **变化率**（常见单位 TECU/min，读文献核对） |
+| $\mathrm{STEC}(t)$ | 时刻 $t$ 的斜 TEC（常用 TECU） |
+| $\Delta t$ | 采样间隔（如 30 s、1 s；必须写进方法） |
+| $\mathrm{ROT}$ | TEC **变化率**（常见单位 TECU/min，读文献核对） |
 
 人话：下一拍比上一拍「电子柱」变了多快。平静时 ROT 相对光滑；小尺度结构扫过视线时出现毛刺。
 
 #### P6.3 ROTI
 
-在长度为 W 的滑动窗口内，对 ROT 做起伏统计，最常见是标准差：
+在长度为 $W$ 的滑动窗口内，对 ROT 做起伏统计，最常见是标准差：
 
-＄＄
+$$
 \mathrm{ROTI}(t) = \sqrt{\frac{1}{N-1}\sum_{i=1}^{N}\bigl(\mathrm{ROT}_i-\overline{\mathrm{ROT}}\bigr)^2}
-＄＄
+$$
 
 | 符号 | 含义 |
 |---|---|
-| W | 窗口时长（如 5 min；软件默认可能不同） |
-| N | 窗内 ROT 样本数 |
-| overline{ROT} | 窗内 ROT 均值 |
-| *ROTI* | 「这段时间变化率有多毛」 |
+| $W$ | 窗口时长（如 5 min；软件默认可能不同） |
+| $N$ | 窗内 ROT 样本数 |
+| $\overline{\mathrm{ROT}}$ | 窗内 ROT 均值 |
+| $\mathrm{ROTI}$ | 「这段时间变化率有多毛」 |
 
 ROTI 工具举例：`igs-roti`、`Okoh-MATLAB-ROT-ROTI`、`Ionospheric-TEC-ROTI-Interactives`、`roti-gnss-ml`。
 
@@ -783,13 +783,13 @@ ROTI 工具举例：`igs-roti`、`Okoh-MATLAB-ROT-ROTI`、`Ionospheric-TEC-ROTI-
 
 **Q1.** 用相位屏 + 地面干涉图样，三句话解释闪烁如何从「电子疙瘩」变成「天线口面明暗」。  
 
-**Q2.** Fresnel 尺度 rF∼√{λ zₑբբ} 的课堂意义是什么？为何「有不规则体」仍可能闪烁不强？  
+**Q2.** Fresnel 尺度 $r_F\sim\sqrt{\lambda z_{\mathrm{eff}}}$ 的课堂意义是什么？为何「有不规则体」仍可能闪烁不强？  
 
-**Q3.** 写出 S4 公式中 *I*、langle·rangle、分子、分母各表示什么；并说明为何 1 Hz C/N0 难冒充专用 S4。  
+**Q3.** 写出 S4 公式中 $I$、$\langle\cdot\rangle$、分子、分母各表示什么；并说明为何 1 Hz C/N0 难冒充专用 S4。  
 
 **Q4.** σφ 的符号定义是什么？高纬暴时为何教学上常先谈相位闪烁？  
 
-**Q5.** 从 STEC 到 ROT 再到 ROTI，写出两个公式级步骤，并解释窗口 W 过短/过长的相反风险。  
+**Q5.** 从 STEC 到 ROT 再到 ROTI，写出两个公式级步骤，并解释窗口 $W$ 过短/过长的相反风险。  
 
 **Q6.** 举出两种「ROTI 与 S4 分家」的情景，并给出你应优先做的排查。  
 
@@ -805,7 +805,7 @@ ROTI 工具举例：`igs-roti`、`Okoh-MATLAB-ROT-ROTI`、`Ionospheric-TEC-ROTI-
 
 1. 屏搓皱波前 → 衍射干涉 → 图样扫过天线。  
 2. 对上 Fresnel 档的尺度才易出强幅度闪烁；大尺度梯度≠衍射斑。  
-3. I 强度；平均；方差；归一；1 Hz 欠采样。  
+3. $I$ 强度；平均；方差；归一；1 Hz 欠采样。  
 4. 相位残差标准差；高纬沉降/对流更伤相位跟踪。  
 5. 差分得 ROT；窗内标差得 ROTI；短窗假阳性、长窗假阴性。  
 6. 梯度混入 / 平滑过度等；先 QC 与对齐定义。  
@@ -838,7 +838,7 @@ ROTI 工具举例：`igs-roti`、`Okoh-MATLAB-ROT-ROTI`、`Ionospheric-TEC-ROTI-
 
 ### P14. 强度、幅度、功率：读 S4 文献时的单位陷阱
 
-不同实现把 I 取为：
+不同实现把 $I$ 取为：
 
 - 瞬时功率；  
 - 幅度的平方；  
@@ -847,7 +847,7 @@ ROTI 工具举例：`igs-roti`、`Okoh-MATLAB-ROT-ROTI`、`Ionospheric-TEC-ROTI-
 若分母用了错误的归一化，S4 会被人为压低或抬高。教学纪律：
 
 1. 先读产品说明里「I 是什么」；  
-2. 再看窗口 T（常见 60 s 量级，但以文档为准）；  
+2. 再看窗口 $T$（常见 60 s 量级，但以文档为准）；  
 3. 最后才和别人的数字比大小。
 
 还有 **S4 校正项**：有的产品输出「去除热噪声贡献」后的 S4。把未校正与已校正混在一张散点图里，相关系数会撒谎。写方法节时抄一句产品字段名，胜过写三句形容词。
@@ -889,7 +889,7 @@ ROTI 工具举例：`igs-roti`、`Okoh-MATLAB-ROT-ROTI`、`Ionospheric-TEC-ROTI-
 
 同一不规则体环境，教学板书常写：
 
-- 电离层延迟 ∝ 1/f² 量级直觉；  
+- 电离层延迟 $\propto 1/f^2$ 量级直觉；  
 - 相位扰动随频率降低而变大的趋势；  
 - 幅度闪烁在弱散射区与谱、Fresnel 过滤有关，强散射可饱和。
 
@@ -958,20 +958,20 @@ ROTI 工具举例：`igs-roti`、`Okoh-MATLAB-ROT-ROTI`、`Ionospheric-TEC-ROTI-
 
 ### P25. 板书级推导：从「相对速度」到「时间谱为何重要」
 
-设不规则体横向特征尺度为 *L*，卫星–穿刺点相对地面的扫掠速度量级为 vₑբբ。则时间起伏特征频率粗估：
+设不规则体横向特征尺度为 $L$，卫星–穿刺点相对地面的扫掠速度量级为 $v_{\mathrm{eff}}$。则时间起伏特征频率粗估：
 
-＄＄
+$$
 f_{\mathrm{char}} \sim \frac{v_{\mathrm{eff}}}{L}
-＄＄
+$$
 
-- *L* 接近 Fresnel 尺度且 vₑբբ 较大 → f_char 升高 → 需要更高采样才不糊。  
+- $L$ 接近 Fresnel 尺度且 $v_{\mathrm{eff}}$ 较大 → $f_{\mathrm{char}}$ 升高 → 需要更高采样才不糊。  
 - 低仰角、快速漂移动力学会把同一空间结构「压缩」成更尖的时间尖峰。  
 
 这就是为什么只说「我用了 GNSS 数据」不够：必须说清采样间隔与窗口。`igs-roti` 与 `Okoh-MATLAB-ROT-ROTI` 若默认窗不同，数值差一截仍可能都「没错」——错在你没声明。
 
 ### P26. 「代理指标」的伦理三行（建议贴在显示器下方）
 
-1. **定义行：** 我计算的是窗口 *W*、采样 Δ t 下的 ROTI（或产品版 S4/σφ）。  
+1. **定义行：** 我计算的是窗口 $W$、采样 $\Delta t$ 下的 ROTI（或产品版 S4/σφ）。  
 2. **关系行：** 它与闪烁活动统计相关，但不是 S4 的同义语。  
 3. **边界行：** 假阳性已用 QC / 仰角 / 邻站 / 对照日约束；未约束项明示。
 
@@ -1061,6 +1061,6 @@ f_{\mathrm{char}} \sim \frac{v_{\mathrm{eff}}}{L}
 
 ### P34. 附：符号速查卡（打印用）
 
-S4=√((langle I²rangle-langle Irangle²)/langle Irangle²)；sigma_varphi=std(varphi_detrended)；ROT=DeltaSTEC/Delta t；ROTI=std(ROT)_W；r_F∼sqrt{lambda zₑ_f_f}；代理 ≠ 恒等；低纬看 LT 气泡，高纬看地磁相位；假阳性先 QC。
+$\mathrm{S4}=\sqrt{(\langle I^2\rangle-\langle I\rangle^2)/\langle I\rangle^2}$；$\sigma_\varphi=\mathrm{std}(\varphi_{\mathrm{detrended}})$；$\mathrm{ROT}=\Delta\mathrm{STEC}/\Delta t$；$\mathrm{ROTI}=\mathrm{std}(\mathrm{ROT})_{W}$；$r_F\sim\sqrt{\lambda z_{\mathrm{eff}}}$；代理 ≠ 恒等；低纬看 LT 气泡，高纬看地磁相位；假阳性先 QC。
 
 （本节 PRINCIPLES 完。）

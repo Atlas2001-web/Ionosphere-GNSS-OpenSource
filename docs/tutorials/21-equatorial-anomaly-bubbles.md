@@ -111,9 +111,9 @@
 
 预反转增强（PRE）：日落后赤道向上漂移常出现短暂增强，把 F 层抬高，底部梯度进入更易不稳定的状态。于是：
 
-⇒ F ⇒ R – T ⇒
-
-PRE 上涌；层抬高；生长率↑；EPB 更可能出现。
+$$
+\text{PRE 上涌} \;\Rightarrow\; F\text{ 层抬高} \;\Rightarrow\; R\text{–}T\text{ 生长率↑} \;\Rightarrow\; \text{EPB 更可能出现}
+$$
 
 反过来说：你拿 LT=14 的图找泡，像中午找萤火虫。
 
