@@ -482,9 +482,9 @@ $$
 
 ## 14. 映射函数再练：三个仰角对照表
 
-取 $R_E=6371\,\mathrm{km}$，$H=450\,\mathrm{km}$，$R_E/(R_E+H)\approx0.934$。
+取 $R_E=6371$ km，$H=450$ km，$R_E/(R_E+H)\approx0.934$。
 
-| 仰角 $E$ | $\cos E$ | $\sin z'$ | $\cos z'$ | $M(E)$ | 若 VTEC=15 TECU，STEC≈ |
+| 仰角 E | cos E | sin z′ | cos z′ | M(E) | 若 VTEC=15 TECU，STEC≈ |
 |---|---|---|---|---|---|
 | 90° | 0 | 0 | 1 | 1.00 | 15.0 |
 | 60° | 0.500 | 0.467 | 0.884 | 1.13 | 17.0 |
@@ -522,8 +522,8 @@ $$
 
 | 你现在会的 | 下一课才会的 | 不要提前假装会 |
 |---|---|---|
-| $I\propto\mathrm{STEC}/f^{2}$ | 如何从 $P_1,P_2$ 解出 STEC | 「我已经测到真 TEC」 |
-| $M(E)$、IPP | 多站建 GIM、IONEX 字段 | 「彩图 = 真值」 |
+| I ∝ STEC / f² | 如何从 P₁,P₂ 解出 STEC | 「我已经测到真 TEC」 |
+| M(E)、IPP | 多站建 GIM、IONEX 字段 | 「彩图 = 真值」 |
 | 形态因果 | 耀斑/暴/TID 专题分析流程 | 「活跃」二字交差 |
 | 点名 `gnss-tec` 等 | DCB、周跳、平滑参数 | 不问 README 就发论文图 |
 
@@ -547,22 +547,34 @@ $$
 
 ## 18. 最后一道综合演算（建议当作业）
 
-某中纬测站，某历元跟踪一颗 GPS 卫星，仰角 E=40°。设壳高 $H=400\,\mathrm{km}$，$R_E=6371\,\mathrm{km}$。由双频（假设已完美改正偏差与模糊度，本课只练几何与延迟）得到 STEC $=28.0\,\mathrm{TECU}$。
+某中纬测站，某历元跟踪一颗 GPS 卫星，仰角 E=40°。设壳高 $H=400$ km，$R_E=6371$ km。由双频（假设已完美改正偏差与模糊度，本课只练几何与延迟）得到 STEC = 28.0 TECU。
 
 **(1)** 计算 $M(E)$ 与 IPP 处等效 VTEC。  
-**(2)** 估算 L1 与 L2 一阶群延迟（米）。取 $f_1=1575.42\,\mathrm{MHz}$，$f_2=1227.60\,\mathrm{MHz}$，$I=40.3\cdot\mathrm{STEC}_{m^{-2}}/f^{2}$。  
+**(2)** 估算 L1 与 L2 一阶群延迟（米）。取 $f_1=1575.42$ MHz，$f_2=1227.60$ MHz，$I=40.3\cdot\mathrm{STEC}/f^{2}$（STEC 用 m⁻²）。  
 **(3)** 若有人把 28 TECU 直接当成 VTEC 填进地图，错在哪里？误差大约多少 TECU？
 
 **参考答案：**
 
-(1) $\cos40^\circ\approx0.766$；$R_E/(R_E+H)=6371/6771\approx0.941$；$\sin z'\approx0.721$；$\cos z'\approx0.693$；$M\approx1.443$。  
-$\mathrm{VTEC}\approx\mathrm{STEC}/M\approx28.0/1.443\approx19.4\,\mathrm{TECU}$。
+(1)
+$$
+\cos40^\circ\approx0.766,\quad R_E/(R_E+H)=6371/6771\approx0.941,\quad \sin z'\approx0.721,\quad \cos z'\approx0.693,\quad M\approx1.443.
+$$
+$$
+\mathrm{VTEC}\approx\mathrm{STEC}/M\approx28.0/1.443\approx19.4\,\mathrm{TECU}.
+$$
 
-(2) $\mathrm{STEC}=2.8\times10^{17}\,\mathrm{m}^{-2}$。  
-$I_1\approx40.3\times2.8\times10^{17}/(1.57542\times10^9)^{2}\approx4.55\,\mathrm{m}$。  
-$I_2\approx40.3\times2.8\times10^{17}/(1.22760\times10^9)^{2}\approx7.49\,\mathrm{m}$。
+(2)
+$$
+\mathrm{STEC}=2.8\times10^{17}\,\mathrm{m}^{-2}.
+$$
+$$
+I_1\approx40.3\times2.8\times10^{17}/(1.57542\times10^9)^{2}\approx4.55\,\mathrm{m},
+$$
+$$
+I_2\approx40.3\times2.8\times10^{17}/(1.22760\times10^9)^{2}\approx7.49\,\mathrm{m}.
+$$
 
-(3) 错在把斜路径值当竖直值；偏高约 $28.0-19.4=8.6\,\mathrm{TECU}$（相对真等效 VTEC 约 44%）。低仰角时这类错误更夸张。
+(3) 错在把斜路径值当竖直值；偏高约 8.6 TECU（28.0−19.4；相对真等效 VTEC 约 44%）。低仰角时这类错误更夸张。
 
 把这道题独立做完，比再读十页「加长精讲」更接近真懂。
 
@@ -703,10 +715,10 @@ $$
 | L2 | $1.22760\times10^{9}$ | $1.507\times10^{18}$ | $2.67\,\mathrm{m}$ |
 | L5 | $1.17645\times10^{9}$ | $1.384\times10^{18}$ | $2.91\,\mathrm{m}$ |
 
-**验算比例：** $I_2/I_1=(f_1/f_2)^{2}=(1575.42/1227.60)^{2}\approx1.647$；$1.62\times1.647\approx2.67$，吻合。  
+**验算比例：** $I_2/I_1=(f_1/f_2)^{2}=(1575.42/1227.60)^{2}\approx1.647$，且 $1.62\times1.647\approx2.67$，吻合。  
 **若 STEC=35 TECU：** 各 $I$ 乘 3.5 → L1 约 $5.7\,\mathrm{m}$，L2 约 $9.3\,\mathrm{m}$。
 
-**TECU 换算式（等价）：** $\mathrm{STEC}_{\mathrm{m}^{-2}}=(\mathrm{STEC}_{\mathrm{TECU})\times10^{16}$。  
+**TECU 换算式（等价）：** STEC(m⁻²) = STEC(TECU) × 10¹⁶。  
 有的笔记写 $I[\mathrm{m}]=40.3\cdot\mathrm{TEC}_{\mathrm{TECU}}/f_{\mathrm{MHz}}^{2}$——**前因子会变**，必须以该式声明的频率单位为准。本课统一：$f$ 用 Hz，STEC 用 m⁻²，系数 40.3。
 
 ---
@@ -720,9 +732,9 @@ $$
 
 **符号：** $R_E$ 地球半径；$H$ 薄壳高；$E$ 仰角；$z'$ 穿刺点天顶角；$M$ 映射因子。
 
-**数值例 A4：** $R_E=6371\,\mathrm{km}$，E=25°，$\cos25^\circ\approx0.9063$。
+**数值例 A4：** $R_E=6371$ km，E=25°，cos 25° ≈ 0.9063。
 
-| $H$ (km) | $R_E/(R_E+H)$ | $\sin z'$ | $\cos z'$ | $M$ | VTEC=18 时 STEC |
+| H (km) | RE/(RE+H) | sin z′ | cos z′ | M | VTEC=18 时 STEC |
 |---|---|---|---|---|---|
 | 350 | 0.948 | 0.859 | 0.512 | 1.953 | 35.2 |
 | 450 | 0.934 | 0.847 | 0.532 | 1.880 | 33.8 |
