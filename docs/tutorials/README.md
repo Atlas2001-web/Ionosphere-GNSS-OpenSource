@@ -90,3 +90,19 @@
 - [数据获取说明](../data-access.md)
 - [电离层软件列表](../../lists/01-ionosphere.md)
 - [总路线图 17](./17-roadmap-beginner-to-expert.md)
+
+
+## 现象分析（必读，不只是建模）
+
+建模告诉你「怎么算数」；现象分析告诉你「天上发生了什么、图上该怎么读」。
+
+| 课 | 文稿 | 你学完能做什么 |
+|:---:|---|---|
+| 19 | [现象分析总览](./19-phenomena-overview.md) | 分清建模 vs 现象分析；安静/扰动；先看哪些观测量 |
+| 20 | [磁暴与 TEC](./20-storm-tec-analysis.md) | 正/负相暴；GIM 差分图；地磁指数对齐 |
+| 21 | [赤道异常与气泡](./21-equatorial-anomaly-bubbles.md) | EIA 双峰；气泡/羽状结构；TEC/ROTI 判读 |
+| 22 | [TID 行进扰动](./22-tid-traveling-disturbances.md) | 波状 TEC 残差；周期/空间尺度直觉 |
+| 23 | [耀斑与日食](./23-flare-eclipse-special.md) | 突增/日食空洞；高采样 GNSS 分析套路 |
+
+> 21–23 若链接暂时 404，表示还在写入；19–20 已可用。01–08 已加入「现象向」质控与读图清单。
+

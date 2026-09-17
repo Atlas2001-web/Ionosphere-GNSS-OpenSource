@@ -327,3 +327,108 @@
 - 「foF2 缺测时，你的负相结论降到几成把握？」  
 
 不会答不是丢脸；丢脸的是**假装有把握**。
+
+
+---
+
+## 15. 完整课堂示范剧本：从「听说有暴」到「半页结论」（约 90 分钟可拆两节）
+
+下面把九步剧本扩成**带时间盒**的课堂流程。助教可按表喊停。
+
+| 时段 | 做什么 | 禁止做什么 |
+|---|---|---|
+| 0–10 min | 读 SWPC/`NOAA-SWPC` 事件摘要，写 UTC 与区域 | 下载十家 GIM |
+| 10–20 min | 拉 Kp + SYM-H（`GFZ-Kp-Index`、`NASA-OMNIWeb`），标谷值 | 解释全部磁层物理 |
+| 20–30 min | 选对照日并写下理由 | 用 IRI 当日输出当对照 |
+| 30–50 min | 下载同一 AC 的 IONEX（`CDDIS-IONEX`），`ionex`/`ionex_reader` 出图 | 改球谐阶数「优化美观」 |
+| 50–65 min | 做 ΔVTEC，执行 §13 的 12 个注视点 | 只截极值上色图发群 |
+| 65–80 min | 区域平均 TEC 与 SYM-H 对齐；可选 `GIRO-DIDBase` foF2 | 宣称 5 分钟因果 |
+| 80–90 min | 写半页结论 + 两条假象 | 抄网上「升高 xx TECU」 |
+
+### 15.1 示范结论（虚构教学用，数字仅示意读色标方式）
+
+> UTC 某日，研究区取东亚扇区。Kp 峰值高档，SYM-H 主相谷值出现在约 HH:MM（来源 `NASA-OMNIWeb`）。对照方案 Q：事件前一日，全日 Kp 偏低。VTEC 取同一分析中心 IONEX（经 `CDDIS-IONEX`，读写 `ionex-analyzer`）。差分显示：日侧低纬出现正 ΔVTEC 斑块，中纬带为宽带负区；相对 SYM-H 谷值，负区在恢复相仍清晰（受 GIM 2 h 分辨率限制，不谈分钟领先）。第二家产品（`JPL-IONEX-Rapid`）同号但幅度略小。`GIRO-DIDBase` 某中纬站 foF2 下降，与负区同向。置信度中高；主要怀疑是海洋区正斑块可能受覆盖影响。未使用 `iri2020` 作为对照。
+
+把这段当**格式样板**，不要背里面的「剧情」。
+
+### 15.2 「分区填表」作业纸（建议印刷）
+
+| 磁纬带 | 日侧 ΔVTEC 符号 | 夜侧符号 | foF2？ | ROTI？ | 一句话 |
+|---|---|---|---|---|---|
+| 低纬 \|MLAT\|<20° |  |  |  |  |  |
+| 中纬 20–50° |  |  |  |  |  |
+| 高纬 >50° |  |  |  |  |  |
+
+填空比写散文更能逼出「混合响应」意识。
+
+---
+
+## 16. 更多误解与「看起来很勤快」的假勤奋
+
+### 误解 11：暴越强，全球 TEC 一定越高
+
+强度（SYM-H 多负）与 TEC 符号无简单单调关系。强暴可以造成深负相。
+
+### 误解 12：做了机器学习预报就算完成现象分析
+
+`DeepPredTEC`、`TEC-MoLLM`、`SpatioTECformer` 等预报仓很有价值，但**预报成功 ≠ 你完成了本次事件的观测归因**。本课作业仍要差分图。
+
+### 误解 13：近实时图与最终 GIM 混着讲「发现了快速变化」
+
+`ESA-TIO-NRT-TEC`、`NOAA-SWPC-GloTEC`、`DLR-IMPC-Products` 适合时效；与 final IONEX 比差异时，先当产品世代差异。
+
+### 误解 14：把赤道泡的夜侧耗空全部算作「负相风暴」
+
+泡可以在非暴安静夜出现（见 21 课）。先看 LT、ROTI、季节，再贴「风暴负相」标签。
+
+### 假勤奋清单（请避免）
+
+- 下载 8 家 GIM 却不做同一 AC 差分；  
+- 画 20 张漂亮图没有 SYM-H 竖线；  
+- 长篇机制综述零观测句；  
+- 工具名写成「某个 ionex 库」而不写 `PROJECTS.json` 的 `name`。
+
+---
+
+## 17. 扩展测验与口答
+
+**Q7.** 为什么恢复相也要出差分图？  
+**Q8.** 区域平均 TEC「没变」但地图很花，可能原因？  
+**Q9.** 给出一个「降低海洋极值措辞强度」的改写例句。  
+**Q10.** 点名两个近实时 TEC 产品 `name` 与一个测高仪入口 `name`。  
+
+### 答案要点
+
+**A7.** 负相与环流/成分恢复常拖到恢复相；只看主相会漏故事。  
+**A8.** 正负分区抵消；或结构迁移使平均归零。  
+**A9.** 把「海洋出现 +25 TECU 的强正相」改成「海洋扇区见正差分，但测站稀疏，幅度仅作参考」。  
+**A10.** 例：`NOAA-SWPC-GloTEC`、`ESA-TIO-NRT-TEC`；`GIRO-DIDBase`。
+
+---
+
+## 18. 工具速查表（风暴 TEC 分析专用）
+
+| 目的 | `PROJECTS.json` 的 `name` |
+|---|---|
+| IONEX 下载 | `CDDIS-IONEX`、`ionex-downloader`、`UPC-IONEX-Archive` |
+| IONEX 读绘 | `ionex`、`ionex-rs`、`ionex_reader`、`ionex-analyzer` |
+| 差分 | `DiffIonMap` |
+| 多中心交叉 | `JPL-IONEX-Rapid`、`GFZ-Global-Ionosphere-Maps`、`WHU-IGS-Ionosphere-AC`、`ROB-IONEX-Products` |
+| 指数 | `GFZ-Kp-Index`、`NOAA-SWPC-Planetary-K`、`NASA-OMNIWeb`、`pysatSpaceWeather` |
+| 实验室框架 | `geospacelab`、`Kamodo`、`pysat` |
+| 单站 TEC | `Seemala-GPS-TEC`、`IONOLAB-TEC-Software`、`tec-suite`、`gnss-tec`、`mitiono` |
+| 不规则旁证 | `IonoMoni`、`OASIS`、`igs-roti` |
+| 测高旁证 | `GIRO-DIDBase`、`GIRO-IRTAM` |
+| 掩星旁证 | `COSMIC-CDAAC`、`IonOccAnalysis` |
+| 磁纬 | `apexpy` |
+| 业务总览 | `NOAA-SWPC`、`BoM-SWS`、`ESA-SWE-SSA` |
+
+---
+
+## 19. 本日口令与下课前 60 秒复述
+
+> 先对照，后正负；先分区，后平均；先 SYM-H，后故事。
+
+请一位同学闭卷复述：正相定义、九步中的步骤 3/6/8、一个假象例子。复述不全则回家把 §6 抄成自己的检查表——**抄写是允许的学习动作**。
+
+下一课回到低纬结构：[21-equatorial-anomaly-bubbles.md](./21-equatorial-anomaly-bubbles.md)。
