@@ -20,7 +20,7 @@
 **现场乙**：STEC 白天比官方高七八 TECU，晚上也高——有人说没改 DCB。DCB 怎能假装成电子柱？  
 **现场丙**：相位曲线漂亮，伪距像心电图。师兄说「载波平滑」。平滑是糊直线吗？
 
-**交付**：用观测方程讲清码/相与 $+I/-I$；逐步推导 GF 并完成数值例；解释模糊度与 leveling/平滑；写出 DCB 进入 GF 的预告式；按清单从 RINEX 走到 STEC 并知道每步失效模式；能点名本仓真实工具。
+**交付**：用观测方程讲清码/相与 +I/-I；逐步推导 GF 并完成数值例；解释模糊度与 leveling/平滑；写出 DCB 进入 GF 的预告式；按清单从 RINEX 走到 STEC 并知道每步失效模式；能点名本仓真实工具。
 
 **边界**：要有双频（或多频）观测才谈 GF TEC；单频只能模型改正。本课不建 GIM（03），不把 IRI 当实测（04），不把闪烁当 TEC（05）。
 
@@ -31,12 +31,12 @@
 | 术语 | 人话 | 稍严 |
 |---|---|---|
 | 双频 $f_1,f_2$ | 两把无线电尺子 | 如 GPS L1/L2 |
-| 伪距 $P$（码） | 粗糙但有绝对尺度 | 噪声/多路径大 |
-| 载波相位 $L$ | 精密但缺零点 | 含整周模糊度 |
-| 整周模糊度 $N$ | 不知从第几格起算 | 无周跳弧段内近常数 |
+| 伪距 P（码） | 粗糙但有绝对尺度 | 噪声/多路径大 |
+| 载波相位 L | 精密但缺零点 | 含整周模糊度 |
+| 整周模糊度 N | 不知从第几格起算 | 无周跳弧段内近常数 |
 | 周跳 | 尺子掉了重拿 | 模糊度台阶变化 |
 | 几何距离 $\rho$ | 真几何路程（近似） | 对两频公共 |
-| 对流层 $T$ / 钟差 | 中性延迟 / 钟不准 | 一阶对两频公共 |
+| 对流层 T / 钟差 | 中性延迟 / 钟不准 | 一阶对两频公共 |
 | 电离层 *I_i* | 第 *i* 频一阶延迟 | $I_i=40.3\,\mathrm{STEC}/f_i^{2}$ |
 | 几何无关 GF | 两频组合消公共几何 | 留电离层+偏差等 |
 | 相位平滑 / leveling | 用相位约束伪距水平 | 绝对靠码，形状靠相 |
@@ -52,7 +52,7 @@
 
 ### 3.1 极简伪距（码）方程
 
-对频率 $i=1,2$（单位：米）：
+对频率 i=1,2（单位：米）：
 
 $$
 P_i=\rho+c(\delta t_r-\delta t^s)+T_{\mathrm{trop}}+I_i+b_{r,i}-b^{s}_{i}+\varepsilon_{P_i}.
@@ -93,7 +93,7 @@ $$
 I_i=\frac{40.3}{f_i^{2}}\,\mathrm{STEC}\implies\frac{I_2}{I_1}=\frac{f_1^{2}}{f_2^{2}}.
 $$
 
-GPS L1/L2：$f_1=1575.42\,\mathrm{MHz} ,\quad f_2=1227.60\,\mathrm{MHz} ,\quad f_1/f_2=154/120=77/60 \text{，故 } I_2/I_1=(77/60)^{2}\approx1.647$。频率低的 L2，电离层延迟更大。
+GPS L1/L2：$f_1=1575.42\,\mathrm{MHz} ,\quad f_2=1227.60\,\mathrm{MHz} ,\quad f_1/f_2=154/120=77/60$，故 I_2/I_1=(77/60)^2≈1.647。频率低的 L2，电离层延迟更大。
 
 ---
 
@@ -101,7 +101,7 @@ GPS L1/L2：$f_1=1575.42\,\mathrm{MHz} ,\quad f_2=1227.60\,\mathrm{MHz} ,\quad f
 
 ### 4.1 目标
 
-构造观测量，使 $\rho \text{、} T_{\mathrm{trop}}$、钟差等**对两频相同的项**消掉，只留下与 *I*（即 STEC）及偏差有关的部分。
+构造观测量，使 $\rho$、T_trop、钟差等**对两频相同的项**消掉，只留下与 *I*（即 STEC）及偏差有关的部分。
 
 ### 4.2 伪距 GF：一步一步
 
@@ -126,7 +126,7 @@ $$
 I_1-I_2=40.3\,\mathrm{STEC}\left(\frac{1}{f_1^{2}}-\frac{1}{f_2^{2}}\right)=40.3\,\mathrm{STEC}\cdot\frac{f_2^{2}-f_1^{2}}{f_1^{2}f_2^{2}}.
 $$
 
-因 $f_2<f_1 \text{，} 1/f_2^{2}>1/f_1^{2} \text{，故 } I_1-I_2<0 \text{；有人定义 } P_2-P_1$ 使符号为正——**读软件时看清定义**。解 STEC：
+因 $f_2<f_1$，$1/f_2^{2}>1/f_1^{2}$，故 $I_1-I_2<0$；有人定义 $P_2-P_1$ 使符号为正——**读软件时看清定义**。解 STEC：
 
 $$
 \mathrm{STEC}=\frac{1}{40.3}\cdot\frac{f_1^{2}f_2^{2}}{f_2^{2}-f_1^{2}}\big[(P_1-P_2)-\mathrm{DCB}_{\mathrm{terms}}\big]+\cdots
@@ -138,7 +138,7 @@ $$
 \mathrm{STEC}=\alpha\,(P_1-P_2-\mathrm{DCB}_{\mathrm{GF}})+\text{噪声},
 $$
 
-对 GPS L1/L2，$\alpha \text{ 约为 } 9.52\,\mathrm{TECU/m} \text{ 量级（精确值用上式算；不同教材因 } P_1-P_2 \text{ 或 } P_2-P_1$ 差一个符号）。
+对 GPS L1/L2，$\alpha$ 约为 9.52 TECU/m 量级（精确值用上式算；不同教材因 P_1-P_2 或 P_2-P_1 差一个符号）。
 
 ### 4.3 相位 GF
 
@@ -146,7 +146,7 @@ $$
 L_{\mathrm{GF}}\equiv L_1-L_2=-(I_1-I_2)+\lambda_1 N_1-\lambda_2 N_2+\Delta\delta+\varepsilon_{L}.
 $$
 
-令模糊度组合 $B=\lambda_1 N_1-\lambda_2 N_2+\cdots \text{ 在无周跳弧段内为**未知常数**，则 } L_{\mathrm{GF}}$ 的时间变化主要反映 STEC 的时间变化（符号注意），绝对水平被 *B* 拖住。
+令模糊度组合 $B=\lambda_1 N_1-\lambda_2 N_2+\cdots$ 在无周跳弧段内为未知常数，则 L_GF 的时间变化主要反映 STEC 的时间变化（符号注意），绝对水平被 *B* 拖住。
 
 ### 4.4 常见误解
 
@@ -189,9 +189,9 @@ $$
 
 （此处用 $P_2-P_1=+2.10$ 使 STEC 为正）：
 
-代入 $f_1,f_2 \text{ 可得 STEC } \approx20\,\mathrm{TECU}$。**要点**：两伪距只差约 2.1 m，却编码了 20 TECU；公共的两千万米被减掉了。
+代入 f_1,f_2 可得 STEC $\approx20\,\mathrm{TECU}$。**要点**：两伪距只差约 2.1 m，却编码了 20 TECU；公共的两千万米被减掉了。
 
-**理想相位**（同一历元，忽略模糊度时）：$L_1=\rho+T+c\Delta t-I_1 ,\quad L_2=\cdots-I_2 \text{，故 } L_1-L_2=-(I_1-I_2)=+2.10\,\mathrm{m} \text{，与伪距 GF **符号相反**——正是 } +I \text{ vs } -I$ 的直接后果。
+**理想相位**（同一历元，忽略模糊度时）：$L_1=\rho+T+c\Delta t-I_1 ,\quad L_2=\cdots-I_2$，故 L_1-L_2=-(I_1-I_2)=+2.10 m，与伪距 GF 符号相反——正是 +I vs -I 的直接后果。
 
 ---
 
@@ -206,7 +206,7 @@ $$
 
 ### 6.2 周跳
 
-跟踪中断或失锁，整周数跳变 → $B$ 换了一个常数 → GF 相位时间序列出现**台阶**。不处理就平滑，会把假台阶抹进「TEC」。
+跟踪中断或失锁，整周数跳变 → B 换了一个常数 → GF 相位时间序列出现**台阶**。不处理就平滑，会把假台阶抹进「TEC」。
 
 本仓库可点名：`cycle-slip-correction`、`DRCycleSlip`；质量检查：`TEQC`、`Anubis`（均已在 `PROJECTS.json` 核验）。
 
@@ -237,7 +237,7 @@ P_1-P_2=(I_1-I_2)+\underbrace{(b_{r,1}-b_{r,2})}_{\approx\mathrm{DCB}_r}
 -\underbrace{(b^{s}_{1}-b^{s}_{2})}_{\approx\mathrm{DCB}^{s}}+\varepsilon.
 $$
 
-卫星差分码偏差 $\mathrm{DCB}^{s} \text{ 与接收机 } \mathrm{DCB}_r \text{（口语里 IFB 家族）以**与频率相关的延迟差**进入 GF，和 } (I_1-I_2)$ 加在一起。换算成 TECU 后，看起来就像电子柱整体抬升或压低——白天夜里一起偏，形状像「电离层多了一层楼」，其实是仪器账。
+卫星差分码偏差 $\mathrm{DCB}^{s}$ 与接收机 DCB_r（口语里 IFB 家族）以与频率相关的延迟差进入 GF，和 (I_1-I_2) 加在一起。换算成 TECU 后，看起来就像电子柱整体抬升或压低——白天夜里一起偏，形状像「电离层多了一层楼」，其实是仪器账。
 
 **预告级改正**：
 
@@ -261,7 +261,7 @@ $$
 
 ## 8. 数值例 B：把 GF、模糊度、DCB 串成小故事
 
-沿用例 A 的真 STEC=20 TECU，$I_1=3.25\,\mathrm{m} ,\quad I_2=5.35\,\mathrm{m} \text{，公共项 } G=22{,}000{,}000\,\mathrm{m}$。
+沿用例 A 的真 STEC=20 TECU，$I_1=3.25\,\mathrm{m} ,\quad I_2=5.35\,\mathrm{m}$，公共项 G=22{,}000{,}000 m。
 
 现设卫星+接收机总码 GF 偏差使
 
@@ -269,7 +269,7 @@ $$
 P_1-P_2=(I_1-I_2)+\Delta b=-2.10+0.40=-1.70\,\mathrm{m}.
 $$
 
-若你**不改 DCB**，把 $-1.70\,\mathrm{m} \text{ 当纯电离层差，STEC 会从 20 偏到约 } 20\times(1.70/2.10)\approx16.2\,\mathrm{TECU}$（或依符号定义偏到另一侧）——系统性偏差约 4 TECU。
+若你**不改 DCB**，把 -1.70 m 当纯电离层差，STEC 会从 20 偏到约 $20\times(1.70/2.10)\approx16.2\,\mathrm{TECU}$（或依符号定义偏到另一侧）——系统性偏差约 4 TECU。
 
 相位侧：设 $\lambda_1 N_1-\lambda_2 N_2=B=12.00\,\mathrm{m}$（未知常数）。则
 
@@ -277,7 +277,7 @@ $$
 L_1-L_2=-(I_1-I_2)+B=2.10+12.00=14.10\,\mathrm{m}.
 $$
 
-时间上 STEC 变，$2.10$ 变，*B* 不变 → 曲线形状对，水平错。用弧段 leveling：把相位 GF 平移到与（DCB 改正后的）伪距 GF 一致，恢复绝对水平。
+时间上 STEC 变，2.10 变，*B* 不变 → 曲线形状对，水平错。用弧段 leveling：把相位 GF 平移到与（DCB 改正后的）伪距 GF 一致，恢复绝对水平。
 
 **周跳**：某时刻 $B:12.00\to12.00+\lambda_{\mathrm{eff}}$（有效波长量级跳变）→ 曲线台阶。平滑前必须切弧或修复。
 
@@ -288,7 +288,7 @@ $$
 | 步 | 做什么 | 不做 / 做错会怎样 |
 |---|---|---|
 | 1 | 确认双频观测类型存在 | 单频强行 GF → 无意义 |
-| 2 | 读 RINEX：时间、PRN、$P,L$、（可选）CN0 | 垃圾进垃圾出。工具：`georinex`、`rinex`、`PyRINEX` |
+| 2 | 读 RINEX：时间、PRN、P,L、（可选）CN0 | 垃圾进垃圾出。工具：`georinex`、`rinex`、`PyRINEX` |
 | 3 | 解压/转换若需要 | 工具：`crx2rnx`、`hatanaka`、`RNXCMP`、`GFZRNX` |
 | 4 | 时间与系统对齐 | 错星错历元组合 |
 | 5 | 仰角截止 + 粗差剔除 | 低仰角多路径主导「假天气」 |
@@ -332,7 +332,7 @@ $$
 **题 2.** 写出 $P_{\mathrm{GF}}=P_1-P_2$ 后剩下的主要项。  
 **答：** $I_1-I_2$ + 接收机/卫星码延迟差 + 噪声多路径。
 
-**题 3.** 例 A 中 $I_1=3.25\,\mathrm{m} ,\quad I_2=5.35\,\mathrm{m} \quad P_1-P_2 \text{ 与 } L_1-L_2$（忽略模糊度与偏差）各多少？  
+**题 3.** 例 A 中 $I_1=3.25\,\mathrm{m} ,\quad I_2=5.35\,\mathrm{m} \quad P_1-P_2$ 与 L_1-L_2（忽略模糊度与偏差）各多少？  
 **答：**
 
 $$
@@ -342,7 +342,7 @@ $$
 **题 4.** 模糊度在无周跳弧段内扮演什么角色？Leveling 在干什么？  
 **答：** 未知常数偏置；用伪距 GF 把相位 GF 平移到正确绝对水平。
 
-**题 5.** 例 B 中 $\Delta b=+0.40\,\mathrm{m} \text{ 混入 } P_1-P_2$ 且不改 DCB，约导致多少 TECU 偏差（相对 20 TECU、2.10 m 标尺）？  
+**题 5.** 例 B 中 $\Delta b=+0.40\,\mathrm{m}$ 混入 P_1-P_2 且不改 DCB，约导致多少 TECU 偏差（相对 20 TECU、2.10 m 标尺）？  
 **答：** 约 $20\times0.40/2.10\approx3.8\,\mathrm{TECU}$ 量级。
 
 **题 6.** 列出 RINEX→STEC 至少六步，并各给一种失效模式。  
@@ -354,7 +354,7 @@ $$
 **题 8.** 只有单频能否做本课 GF TEC？你的 STEC 与 GIM VTEC 相减前要问什么？  
 **答：** 不能。是否映射、壳高、时间、IPP、DCB。
 
-**题 9.** GPS $I_2/I_1\approx(f_1/f_2)^{2}\approx1.647 \text{。若 } I_1=4.00\,\mathrm{m} ,\quad I_2\approx?$  
+**题 9.** GPS $I_2/I_1\approx(f_1/f_2)^{2}\approx1.647$。若 I_1=4.00 m ,  I_2≈?  
 **答：** $\approx6.59\,\mathrm{m}$。
 
 **题 10.** 周跳在相位 GF 序列上通常长什么样？平滑前应怎样？  
@@ -392,16 +392,16 @@ $$
 - $f_1^{2}f_2^{2}/(f_1^{2}-f_2^{2})\approx3.836\times10^{18}$；  
 - $/40.3\approx9.52\times10^{16}\,\mathrm{m}^{-2}/\mathrm{m}=9.52\,\mathrm{TECU/m}$。
 
-故 $P_2-P_1=2.10\,\mathrm{m} \text{ → STEC } \approx9.52\times2.10\approx20.0\,\mathrm{TECU}$。**请在自己计算器上复现**；这是本课「真懂 GF」的毕业演算。
+故 P_2-P_1=2.10 m → STEC $\approx9.52\times2.10\approx20.0\,\mathrm{TECU}$。**请在自己计算器上复现**；这是本课「真懂 GF」的毕业演算。
 
 ---
 
 ## 14. 板书应留八行
 
-1. $P=+I ,\quad L=-I \text{；} I=40.3\,\mathrm{STEC}/f^{2}$。  
+1. $P=+I ,\quad L=-I$；I=40.3 STEC/f^2。  
 2. $P_1-P_2=(I_1-I_2)+\mathrm{DCB}_{\mathrm{GF}}+\varepsilon$。  
-3. $\mathrm{STEC}=\alpha(P_2-P_1-\mathrm{DCB}\ldots) \text{，L1/L2 上 } \alpha\sim9.52\,\mathrm{TECU/m}$。  
-4. 相位 GF 多一个常数模糊度组合 $B$。  
+3. $\mathrm{STEC}=\alpha(P_2-P_1-\mathrm{DCB}\ldots)$，L1/L2 上 alpha∼9.52 TECU/m。  
+4. 相位 GF 多一个常数模糊度组合 B。  
 5. Leveling/平滑：码定水平，相描形状；先处理周跳。  
 6. DCB 伪装成 TEC；类型对齐；`Gkit-Bias`。  
 7. 九至十一节清单：每步都有失效模式。  
@@ -433,12 +433,12 @@ $$
 
 ## 17. 综合演算作业（建议提交）
 
-已知某弧段无周跳。某历元 DCB 已改正后的伪距：$P_1=22{,}150{,}012.40\,\mathrm{m} ,\quad P_2=22{,}150{,}015.55\,\mathrm{m} \text{。相位 GF 已 leveling，使该历元相位导出的 STEC 与伪距一致。取 } \alpha=9.52\,\mathrm{TECU/m} \text{（对 } P_2-P_1$）。
+已知某弧段无周跳。某历元 DCB 已改正后的伪距：$P_1=22{,}150{,}012.40\,\mathrm{m} ,\quad P_2=22{,}150{,}015.55\,\mathrm{m}$。相位 GF 已 leveling，使该历元相位导出的 STEC 与伪距一致。取 alpha=9.52 TECU/m（对 P_2-P_1）。
 
 (1) $P_2-P_1=?$  
 (2) STEC≈?  
 (3) 若未改正的 DCB 使 $P_2-P_1$ 少了 0.50 m，STEC 偏差约多少 TECU？  
-(4) 若仰角 $30^\circ \text{、} H=450\,\mathrm{km} \text{、} M\approx1.70$（用 01 课结果），等效 VTEC≈?
+(4) 若仰角 $30^\circ$、H=450 km、M≈1.70（用 01 课结果），等效 VTEC≈?
 
 **答：**
 
@@ -450,7 +450,7 @@ $$
 
 ## 18. 收束
 
-双频估 TEC 的逻辑链是：色散 $I\propto1/f^{2} \text{ → 码 } +I \text{、相 } -I \text{ → GF 消去公共几何 → 频率因子换成 STEC → 相位提供干净变化、伪距/leveling 提供绝对水平 → DCB 必须从 GF 里拿走 → 周跳决定弧段。RINEX 流水线每一步都有可命名的失效模式。会手算 } \alpha$ 与例 A/B，才算从「听说几何无关」升级到「能查账」。
+双频估 TEC 的逻辑链是：色散 $I\propto1/f^{2}$ → 码 +I、相 -I → GF 消去公共几何 → 频率因子换成 STEC → 相位提供干净变化、伪距/leveling 提供绝对水平 → DCB 必须从 GF 里拿走 → 周跳决定弧段。RINEX 流水线每一步都有可命名的失效模式。会手算 alpha 与例 A/B，才算从「听说几何无关」升级到「能查账」。
 
 引用项目名均来自 `PROJECTS.json` 核验。未 git push。下一文件：`03-gim-ionex.md`。
 
@@ -464,7 +464,7 @@ $$
 |---|---|---|
 | 几何距离 $\rho$ | 是（忽略天线相位中心频率差等小项） | 消掉 |
 | 接收机/卫星钟差 | 是（一阶） | 消掉 |
-| 对流层 $T$ | 是（L 波段几乎不色散） | 消掉 |
+| 对流层 T | 是（L 波段几乎不色散） | 消掉 |
 | 电离层 *I_i* | **否**，$\propto1/f_i^{2}$ | **留下差** |
 | 码硬件延迟 $b_i$ | **否** | **留下 DCB** |
 | 多路径/噪声 | 否 | 残留，常放大 |
@@ -503,9 +503,9 @@ $$
 L_{\mathrm{GF}}^{\mathrm{(lev)}}(t)=L_{\mathrm{GF}}(t)-\hat{B}\approx-(I_1-I_2)\ \text{或按你的符号对齐到 }I_1-I_2.
 $$
 
-最后乘 $\alpha \text{ 得 STEC。若先做了 DCB 改正，应在 } P_{\mathrm{GF}}$ 上改，再 leveling。
+最后乘 $\alpha$ 得 STEC。若先做了 DCB 改正，应在 P_GF 上改，再 leveling。
 
-**权重变体**：伪距噪声大，可用低仰角降权、或只用高 CN0 历元估 $B$。不同软件默认不同——**对比结果前读 leveling 一节**。
+**权重变体**：伪距噪声大，可用低仰角降权、或只用高 CN0 历元估 B。不同软件默认不同——**对比结果前读 leveling 一节**。
 
 ---
 
@@ -535,7 +535,7 @@ $$
 
 ## 23. 与第一课、第三课的接口检查表
 
-从 01 带来：$I=40.3\,\mathrm{STEC}/f^{2} \text{；码相符号；STEC vs VTEC；} M(E)$。  
+从 01 带来：$I=40.3\,\mathrm{STEC}/f^{2}$；码相符号；STEC vs VTEC；M(E)。  
 本课交出：STEC(t) 时间序列（最好已 DCB、已周跳处理）。  
 交给 03：多站 STEC + IPP + 映射 → 格网/球谐 VTEC → IONEX。
 
@@ -558,12 +558,12 @@ $$
 
 ## 25. 再做一个完整迷你数值（从米到 TECU 到 VTEC）
 
-公共项 $G=21{,}500{,}000.000\,\mathrm{m} \text{。真 STEC=15 TECU ⇒ 用比例相对例 A（20 TECU 时差 2.10 m）：差 } \Delta I=I_2-I_1=2.10\times15/20=1.575\,\mathrm{m}$。  
-故理想 $P_2-P_1=1.575\,\mathrm{m} \text{。加未建模 DCB 使观测 } P_2-P_1=1.575+0.25=1.825\,\mathrm{m}$。
+公共项 G=21{,}500{,}000.000 m。真 STEC=15 TECU ⇒ 用比例相对例 A（20 TECU 时差 2.10 m）：差 $\Delta I=I_2-I_1=2.10\times15/20=1.575\,\mathrm{m}$。  
+故理想 $P_2-P_1=1.575 m$。加未建模 DCB 使观测 $P_2-P_1=1.575+0.25=1.825 m$。
 
 - 未改 DCB：$\mathrm{STEC}_{\mathrm{raw}}=9.52\times1.825\approx17.4\,\mathrm{TECU}$（偏高 2.4）。  
 - 改正后：$9.52\times1.575\approx15.0\,\mathrm{TECU}$。  
-- 仰角 $60^\circ ,\quad M\approx1.13 \text{（01 课表）：} \mathrm{VTEC}\approx15.0/1.13\approx13.3\,\mathrm{TECU}$。
+- 仰角 $60^\circ ,\quad M\approx1.13$（01 课表）：VTEC≈15.0/1.13≈13.3 TECU。
 
 请独立重算一遍，确认「0.25 m 的偏差 ×9.52 ≈ 2.4 TECU」印在直觉里。
 
@@ -639,15 +639,15 @@ for each station-day RINEX:
 
 ## 29. 与「无电离层组合」的一句话区分（防混淆）
 
-定位里常见 **ionosphere-free（IF）** 组合：故意把一阶 $I$ 消掉，留下几何，服务定位。  
-本课 **geometry-free（GF）** 组合：故意把几何消掉，留下 $I$，服务 TEC。  
+定位里常见 **ionosphere-free（IF）** 组合：故意把一阶 I 消掉，留下几何，服务定位。  
+本课 **geometry-free（GF）** 组合：故意把几何消掉，留下 I，服务 TEC。  
 二者系数不同、目的相反。听到「无电离层」不要当成「几何无关」——搞混会整条流水线反着做。
 
 ---
 
 ## 30. 收束朗读稿
 
-双频 GNSS 估 TEC，本质是色散测量。码观测携带 $+I \text{，相位携带 } -I \text{ 与整周未知数。两频相减得到几何无关组合，公共距离与对流层退出，电离层差与 DCB 留下。频率因子 } \alpha \text{ 把米换成 TECU；GPS L1/L2 约 9.52 TECU/m。相位模糊度在无周跳弧段是常数，用伪距 leveling 或平滑钉绝对水平。DCB 必须改正且观测类型对齐，否则数 TECU 的假电子柱会跟你一整天。RINEX 流水线从确认双频、质检、周跳、GF、平滑、DCB 到输出 STEC，每步都有失效模式。会手算 } \alpha$ 与例题，才算真正下课。
+双频 GNSS 估 TEC，本质是色散测量。码观测携带 +I，相位携带 -I 与整周未知数。两频相减得到几何无关组合，公共距离与对流层退出，电离层差与 DCB 留下。频率因子 $\alpha$ 把米换成 TECU；GPS L1/L2 约 9.52 TECU/m。相位模糊度在无周跳弧段是常数，用伪距 leveling 或平滑钉绝对水平。DCB 必须改正且观测类型对齐，否则数 TECU 的假电子柱会跟你一整天。RINEX 流水线从确认双频、质检、周跳、GF、平滑、DCB 到输出 STEC，每步都有失效模式。会手算 alpha 与例题，才算真正下课。
 
 （完）下一课：`03-gim-ionex.md`。引用名均经 `PROJECTS.json` 核验。未 git push。
 
@@ -665,7 +665,7 @@ for each station-day RINEX:
 
 ## 32. 观测方程符号全拆 + 代入数字
 
-伪距（频率 $i$）：
+伪距（频率 i）：
 
 $$
 P_i=\rho+c(\delta t_r-\delta t^s)+T+I_i+(b_{r,i}-b_i^s)+\varepsilon_{P_i}.
@@ -677,7 +677,7 @@ $$
 | $\rho$ | m | 几何距离，例中取公共部分并入 *G* |
 | *c* | m/s | 光速 $\approx2.99792458\times10^8$ |
 | $\delta t_r,\delta t^s$ | s | 钟差；乘 *c* 变米 |
-| $T$ | m | 对流层延迟 |
+| T | m | 对流层延迟 |
 | $I_i=40.3\,\mathrm{STEC}/f_i^{2}$ | m | 电离层群延迟 |
 | $b_{r,i},b_i^s$ | m | 码硬件延迟 |
 | $\varepsilon$ | m | 噪声与多路径 |
@@ -688,7 +688,7 @@ $$
 L_i=\rho+c(\delta t_r-\delta t^s)+T-I_i+\lambda_i N_i+(\delta_{r,i}-\delta_i^s)+\varepsilon_{L_i}.
 $$
 
-额外：$\lambda_i=c/f_i \text{（L1 } \approx0.1903\,\mathrm{m} \text{，L2 } \approx0.2442\,\mathrm{m} \text{）；*N_i* 整周未知；} -I_i$ 相位超前。
+额外：$\lambda_i=c/f_i$（L1 ≈0.1903 m，L2 ≈0.2442 m）；*N_i* 整周未知；-I_i 相位超前。
 
 **数值例 D1（构造一组「真值」）：**
 
@@ -709,7 +709,7 @@ $$
 L_1=G-I_1=22\,099\,997.08,\quad L_2=G-I_2=22\,099\,995.19.
 $$
 
-检查：$P_2-P_1=1.89\,\mathrm{m} ,\quad L_1-L_2=1.89\,\mathrm{m} \text{（相位差与伪距差同值、来自 } \pm I$ 结构）。
+检查：$P_2-P_1=1.89\,\mathrm{m} ,\quad L_1-L_2=1.89\,\mathrm{m}$（相位差与伪距差同值、来自 pm I 结构）。
 
 ---
 
@@ -737,7 +737,7 @@ $$
 
 **步 4** 算 $\alpha$（再手算一遍）：
 
-$f_1^{2}=2.48195\times10^{18} ,\quad f_2^{2}=1.50700\times10^{18} \text{，差 } 0.97495\times10^{18}$。  
+$f_1^{2}=2.48195\times10^{18} ,\quad f_2^{2}=1.50700\times10^{18}$，差 0.97495×10^18。  
 积 $f_1^{2}f_2^{2}=3.740\times10^{36}$。  
 商 $3.835\times10^{18}$。  
 $/40.3\Rightarrow\alpha\approx9.516\times10^{16}\,\mathrm{m}^{-2}/\mathrm{m}=9.516\,\mathrm{TECU/m}$。
@@ -751,7 +751,7 @@ $/40.3\Rightarrow\alpha\approx9.516\times10^{16}\,\mathrm{m}^{-2}/\mathrm{m}=9.5
 
 ## 34. 模糊度 + Leveling 数值例
 
-设真 $I_2-I_1=1.89\,\mathrm{m} \text{，相位组合常数 } B=\lambda_1 N_1-\lambda_2 N_2=7.50\,\mathrm{m}$（随便取的未知数）。
+设真 I_2-I_1=1.89 m，相位组合常数 $B=\lambda_1 N_1-\lambda_2 N_2=7.50\,\mathrm{m}$（随便取的未知数）。
 
 则观测
 
@@ -775,7 +775,7 @@ $$
 L_{\mathrm{GF}}^{\mathrm{(lev)}}=L_{\mathrm{GF}}-\hat{B}\approx P_{\mathrm{GF}}\approx1.89\,\mathrm{m}\to\mathrm{STEC}=18\,\mathrm{TECU}.
 $$
 
-**周跳例：** *t_0* 后 *N_1* 跳 +1 → *B* 增 $\lambda_1\approx0.190\,\mathrm{m} \text{ → } L_{\mathrm{GF}} \text{ 台阶 0.19 m → STEC 假跳 } 9.516\times0.19\approx1.8\,\mathrm{TECU}$。必须切弧或修复（`cycle-slip-correction`、`DRCycleSlip`）。
+**周跳例：** *t_0* 后 *N_1* 跳 +1 → *B* 增 $\lambda_1\approx0.190\,\mathrm{m}$ → L_GF 台阶 0.19 m → STEC 假跳 9.516×0.19≈1.8 TECU。必须切弧或修复（`cycle-slip-correction`、`DRCycleSlip`）。
 
 ---
 
@@ -787,14 +787,14 @@ $$
 1\,\mathrm{ns}\times c\approx0.2998\,\mathrm{m}.
 $$
 
-设卫星+接收机总 GF 偏差 $\Delta b=+3.0\,\mathrm{ns}\approx+0.899\,\mathrm{m} \text{ 加在 } P_2-P_1$ 上。
+设卫星+接收机总 GF 偏差 $\Delta b=+3.0\,\mathrm{ns}\approx+0.899\,\mathrm{m}$ 加在 P_2-P_1 上。
 
-真 $P_2-P_1=1.89 \text{，观测变成 } 1.89+0.899=2.789\,\mathrm{m}$。  
+真 $P_2-P_1=1.89$，观测变成 1.89+0.899=2.789 m。  
 未改正：$\mathrm{STEC}_{\mathrm{raw}}=9.516\times2.789\approx26.5\,\mathrm{TECU}$（真值 18，**偏高 8.5 TECU**）。
 
-改正：$P_2-P_1-\Delta b \text{ 再乘 } \alpha$。类型必须对齐（C1W vs C1C）；工具线索 `Gkit-Bias`。
+改正：$P_2-P_1-\Delta b$ 再乘 alpha。类型必须对齐（C1W vs C1C）；工具线索 `Gkit-Bias`。
 
-**口诀：** $0.1\,\mathrm{m} \text{ 的 GF 偏差 } \approx0.95\,\mathrm{TECU} \text{；} 1\,\mathrm{ns}\approx0.3\,\mathrm{m}\approx2.85\,\mathrm{TECU} \text{（L1/L2 } \alpha$）。
+**口诀：** 0.1 m 的 GF 偏差 $\approx0.95\,\mathrm{TECU}$；1 ns≈0.3 m≈2.85 TECU（L1/L2 alpha）。
 
 ---
 
@@ -806,7 +806,7 @@ $P_1=21\,550\,010.20 ,\quad P_2=21\,550\,012.55$，且 DCB 已改正，无周跳
 
 1. $P_2-P_1=2.35\,\mathrm{m}$。  
 2. $\mathrm{STEC}=9.516\times2.35\approx22.4\,\mathrm{TECU}$。  
-3. 仰角 $E=35^\circ ,\quad H=450\,\mathrm{km} \text{：} \cos35^\circ\approx0.8192 \text{；} R_E/(R_E+H)\approx0.934 \text{；} \sin z'\approx0.765 \text{；} \cos z'\approx0.644 \text{；} M\approx1.55$。  
+3. 仰角 $E=35^\circ ,\quad H=450\,\mathrm{km}$：cos35^circ≈0.8192；R_E/(R_E+H)≈0.934；sin z'≈0.765；cos z'≈0.644；M≈1.55。  
 4. $\mathrm{VTEC}\approx22.4/1.55\approx14.5\,\mathrm{TECU}$。  
 5. 与 GIM 比：若 GIM 在 IPP 插值得 15.0，差 0.5 TECU——合理噪声/模型差；若差 8 TECU 且全日同号，先查 DCB。
 
@@ -823,18 +823,18 @@ $$
 $$
 
 粗算：$f_5^{2}\approx1.384\times10^{18} ,\quad f_1^{2}-f_5^{2}\approx1.098\times10^{18}$，  
-$f_1^{2}f_5^{2}\approx3.435\times10^{36} \text{，商 } \approx3.129\times10^{18} ,\quad /40.3\Rightarrow\alpha_{15}\approx7.76\,\mathrm{TECU/m}$。
+$f_1^{2}f_5^{2}\approx3.435\times10^{36}$，商 ≈3.129×10^18 ,  /40.3Rightarrowalpha_15≈7.76 TECU/m。
 
-**含义：** 同样 1 m 的 $P_5-P_1 \text{，换成 TECU 的尺子与 L1/L2 不同。混用频率对却套错 } \alpha$，尺度必歪。DCB 产品也必须是该频率对/码类型。
+**含义：** 同样 1 m 的 P_5-P_1，换成 TECU 的尺子与 L1/L2 不同。混用频率对却套错 $\alpha$，尺度必歪。DCB 产品也必须是该频率对/码类型。
 
 ---
 
 ## 38. 加厚测验（演算）
 
-**T1.** 由例 D1：$I_1=2.92 ,\quad I_2=4.81 \text{。写 } P_1,P_2 \text{（} G=22\,100\,000 \text{）并算 } P_2-P_1$。  
+**T1.** 由例 D1：$I_1=2.92 ,\quad I_2=4.81$。写 P_1,P_2（G=22 100 000）并算 P_2-P_1。  
 **答：** 见 §32；差 1.89 m。
 
-**T2.** 用 $\alpha=9.516 \text{ 从 } P_2-P_1=1.89$ 还原 STEC。  
+**T2.** 用 $\alpha=9.516$ 从 P_2-P_1=1.89 还原 STEC。  
 **答：** 18.0 TECU。
 
 **T3.** $\Delta b=2\,\mathrm{ns}$ 未改正，对 L1/L2 STEC 约偏多少 TECU？  
@@ -844,7 +844,7 @@ $$
 2\times0.2998\approx0.60\,\mathrm{m} \text{；} 9.516\times0.60\approx5.7\,\mathrm{TECU} \text{。}
 $$
 
-**T4.** $B$ 估错 0.5 m，leveled STEC 偏多少？  
+**T4.** B 估错 0.5 m，leveled STEC 偏多少？  
 **答：** $\approx4.8\,\mathrm{TECU}$。
 
 **T5.** 为何 IF 组合与 GF 组合目的相反？各一句。  
@@ -861,10 +861,10 @@ $$
 
 ## 39. 值班速算条（建议抄卡片）
 
-- $\alpha_{L1L2}\approx9.52\,\mathrm{TECU/m} \text{（对 } P_2-P_1$）。  
+- $\alpha_{L1L2}\approx9.52\,\mathrm{TECU/m}$（对 P_2-P_1）。  
 - $1\,\mathrm{ns}\approx0.30\,\mathrm{m}\approx2.85\,\mathrm{TECU}$（L1/L2 GF）。  
 - $0.1\,\mathrm{m}\approx0.95\,\mathrm{TECU}$。  
-- 周跳 $+1 \text{ 周 @L1 } \approx0.19\,\mathrm{m}\approx1.8\,\mathrm{TECU}$（视 GF 定义）。  
+- 周跳 +1 周 @L1 $\approx0.19\,\mathrm{m}\approx1.8\,\mathrm{TECU}$（视 GF 定义）。  
 - 先周跳切弧，再 leveling，再 DCB，再乘 $\alpha$。  
 - 与 GIM 比：平移→DCB；拧巴→周跳/时间/频率对。
 
@@ -872,6 +872,6 @@ $$
 
 ## 40. 收束（加厚版）
 
-本课加厚后，你应能：**逐步写出** $P_i,L_i \text{ 每个符号；**手算** } I_1,I_2 \text{ 与 } P_2-P_1 \text{；**推出** } \alpha$ 并得到 STEC；**演示** leveling 如何吃掉 *B*；**把 ns 级 DCB 换成 TECU**；**指出**流水线每步失效模式。引用项目名均来自 `PROJECTS.json`。未 git push。
+本课加厚后，你应能：**逐步写出** P_i,L_i 每个符号；手算 I_1,I_2 与 P_2-P_1；推出 $\alpha$ 并得到 STEC；**演示** leveling 如何吃掉 *B*；**把 ns 级 DCB 换成 TECU**；**指出**流水线每步失效模式。引用项目名均来自 `PROJECTS.json`。未 git push。
 
 下一课：`03-gim-ionex.md`。

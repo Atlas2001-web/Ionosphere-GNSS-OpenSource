@@ -67,7 +67,7 @@ $$
 $$
 
 - *A* 的第 *i* 行：这条射线穿过各体素的长度（或权重）；构造思路见 `Geometric-Matrix-For-Ionospheric-Tomogrphy`。  
-- *A* 通常又「胖」又病态：列相关强，很多 $\mathbf{x} \text{ 都能几乎拟合 } \mathbf{y}$。  
+- *A* 通常又「胖」又病态：列相关强，很多 $\mathbf{x}$ 都能几乎拟合 mathbf{y}。  
 - 直接最小二乘 $\min\|A\mathbf{x}-\mathbf{y}\|$ 往往噪声放大器。
 
 实务上要加：
@@ -129,7 +129,7 @@ $$
 
 | 条目 | 你拿它干什么 |
 |---|---|
-| `Geometric-Matrix-For-Ionospheric-Tomogrphy` | 理解/构造几何矩阵 $A$（注意原名拼写 Tomogrphy） |
+| `Geometric-Matrix-For-Ionospheric-Tomogrphy` | 理解/构造几何矩阵 A（注意原名拼写 Tomogrphy） |
 | `IonoTomo` | 层析相关实现入口（先读 README 与算例） |
 | `synthetic_ionospheric_tomography_isl` | **合成数据**：在已知真值上练手，强力推荐 |
 
@@ -306,4 +306,4 @@ $$
 2. **没有先验与独立剖面验证的三维图，默认不可信。**  
 3. **先合成、后真网；先 GIM 稳、后层析。** 工具入口从 `Geometric-Matrix-For-Ionospheric-Tomogrphy`、`IonoTomo`、`synthetic_ionospheric_tomography_isl` 开始，背景用 `PyIRI` / `IRI-2020-package`，互补用掩星与测高仪相关条目。
 
-下一课 [12-data-assimilation-intro.md](./12-data-assimilation-intro.md) 把「先验背景」升级成「会随时间预报的模式」，并讲清 $x,y,H$ 框图。
+下一课 [12-data-assimilation-intro.md](./12-data-assimilation-intro.md) 把「先验背景」升级成「会随时间预报的模式」，并讲清 x,y,H 框图。

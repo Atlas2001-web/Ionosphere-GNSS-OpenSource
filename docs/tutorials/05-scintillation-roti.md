@@ -571,7 +571,7 @@ $$
 
 | 符号 | 含义 |
 |---|---|
-| $I$ | 信号**强度**（功率或强度观测量；有的实现用幅度平方） |
+| I | 信号**强度**（功率或强度观测量；有的实现用幅度平方） |
 | $\langle\cdot\rangle$ | 在长度 *T* 的统计窗口内的时间平均 |
 | 分子 | 强度的方差（「晃了多少」） |
 | 分母 | 平均强度的平方（归一化，使 S4 无量纲） |
@@ -638,7 +638,7 @@ $$
 
 #### P6.3 ROTI
 
-在长度为 $W$ 的滑动窗口内，对 ROT 做起伏统计，最常见是标准差：
+在长度为 W 的滑动窗口内，对 ROT 做起伏统计，最常见是标准差：
 
 $$
 \mathrm{ROTI}(t) = \sqrt{\frac{1}{N-1}\sum_{i=1}^{N}\bigl(\mathrm{ROT}_i-\overline{\mathrm{ROT}}\bigr)^2}
@@ -646,8 +646,8 @@ $$
 
 | 符号 | 含义 |
 |---|---|
-| $W$ | 窗口时长（如 5 min；软件默认可能不同） |
-| $N$ | 窗内 ROT 样本数 |
+| W | 窗口时长（如 5 min；软件默认可能不同） |
+| N | 窗内 ROT 样本数 |
 | $\overline{\mathrm{ROT}}$ | 窗内 ROT 均值 |
 | $\mathrm{ROTI}$ | 「这段时间变化率有多毛」 |
 
@@ -789,7 +789,7 @@ ROTI 工具举例：`igs-roti`、`Okoh-MATLAB-ROT-ROTI`、`Ionospheric-TEC-ROTI-
 
 **Q4.** σφ 的符号定义是什么？高纬暴时为何教学上常先谈相位闪烁？  
 
-**Q5.** 从 STEC 到 ROT 再到 ROTI，写出两个公式级步骤，并解释窗口 $W$ 过短/过长的相反风险。  
+**Q5.** 从 STEC 到 ROT 再到 ROTI，写出两个公式级步骤，并解释窗口 W 过短/过长的相反风险。  
 
 **Q6.** 举出两种「ROTI 与 S4 分家」的情景，并给出你应优先做的排查。  
 
@@ -805,7 +805,7 @@ ROTI 工具举例：`igs-roti`、`Okoh-MATLAB-ROT-ROTI`、`Ionospheric-TEC-ROTI-
 
 1. 屏搓皱波前 → 衍射干涉 → 图样扫过天线。  
 2. 对上 Fresnel 档的尺度才易出强幅度闪烁；大尺度梯度≠衍射斑。  
-3. $I$ 强度；平均；方差；归一；1 Hz 欠采样。  
+3. I 强度；平均；方差；归一；1 Hz 欠采样。  
 4. 相位残差标准差；高纬沉降/对流更伤相位跟踪。  
 5. 差分得 ROT；窗内标差得 ROTI；短窗假阳性、长窗假阴性。  
 6. 梯度混入 / 平滑过度等；先 QC 与对齐定义。  
@@ -838,7 +838,7 @@ ROTI 工具举例：`igs-roti`、`Okoh-MATLAB-ROT-ROTI`、`Ionospheric-TEC-ROTI-
 
 ### P14. 强度、幅度、功率：读 S4 文献时的单位陷阱
 
-不同实现把 $I$ 取为：
+不同实现把 I 取为：
 
 - 瞬时功率；  
 - 幅度的平方；  
@@ -847,7 +847,7 @@ ROTI 工具举例：`igs-roti`、`Okoh-MATLAB-ROT-ROTI`、`Ionospheric-TEC-ROTI-
 若分母用了错误的归一化，S4 会被人为压低或抬高。教学纪律：
 
 1. 先读产品说明里「I 是什么」；  
-2. 再看窗口 $T$（常见 60 s 量级，但以文档为准）；  
+2. 再看窗口 T（常见 60 s 量级，但以文档为准）；  
 3. 最后才和别人的数字比大小。
 
 还有 **S4 校正项**：有的产品输出「去除热噪声贡献」后的 S4。把未校正与已校正混在一张散点图里，相关系数会撒谎。写方法节时抄一句产品字段名，胜过写三句形容词。
@@ -964,7 +964,7 @@ $$
 f_{\mathrm{char}} \sim \frac{v_{\mathrm{eff}}}{L}
 $$
 
-- *L* 接近 Fresnel 尺度且 $v_{\mathrm{eff}} \text{ 较大 → } f_{\mathrm{char}}$ 升高 → 需要更高采样才不糊。  
+- *L* 接近 Fresnel 尺度且 $v_{\mathrm{eff}}$ 较大 → f_char 升高 → 需要更高采样才不糊。  
 - 低仰角、快速漂移动力学会把同一空间结构「压缩」成更尖的时间尖峰。  
 
 这就是为什么只说「我用了 GNSS 数据」不够：必须说清采样间隔与窗口。`igs-roti` 与 `Okoh-MATLAB-ROT-ROTI` 若默认窗不同，数值差一截仍可能都「没错」——错在你没声明。
@@ -1061,6 +1061,6 @@ $$
 
 ### P34. 附：符号速查卡（打印用）
 
-$\mathrm{S4}=\sqrt{(\langle I^2\rangle-\langle I\rangle^2)/\langle I\rangle^2} \text{；} \sigma_\varphi=\mathrm{std}(\varphi_{\mathrm{detrended}}) \text{；} \mathrm{ROT}=\Delta\mathrm{STEC}/\Delta t \text{；} \mathrm{ROTI}=\mathrm{std}(\mathrm{ROT})_{W} \text{；} r_F\sim\sqrt{\lambda z_{\mathrm{eff}}}$；代理 ≠ 恒等；低纬看 LT 气泡，高纬看地磁相位；假阳性先 QC。
+$\mathrm{S4}=\sqrt{(\langle I^2\rangle-\langle I\rangle^2)/\langle I\rangle^2}$；sigma_varphi=std(varphi_detrended)；ROT=DeltaSTEC/Delta t；ROTI=std(ROT)_W；r_F∼sqrt{lambda zₑ_f_f}；代理 ≠ 恒等；低纬看 LT 气泡，高纬看地磁相位；假阳性先 QC。
 
 （本节 PRINCIPLES 完。）
