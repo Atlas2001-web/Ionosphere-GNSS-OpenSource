@@ -572,7 +572,7 @@ $$
 | 符号 | 含义 |
 |---|---|
 | $I$ | 信号**强度**（功率或强度观测量；有的实现用幅度平方） |
-| $\langle\cdot\rangle$ | 在长度 $T$ 的统计窗口内的时间平均 |
+| $\langle\cdot\rangle$ | 在长度 *T* 的统计窗口内的时间平均 |
 | 分子 | 强度的方差（「晃了多少」） |
 | 分母 | 平均强度的平方（归一化，使 S4 无量纲） |
 | 开方 | 回到「相对起伏」的标准差量级 |
@@ -630,7 +630,7 @@ $$
 
 | 符号 | 含义 |
 |---|---|
-| $\mathrm{STEC}(t)$ | 时刻 $t$ 的斜 TEC（常用 TECU） |
+| $\mathrm{STEC}(t)$ | 时刻 *t* 的斜 TEC（常用 TECU） |
 | $\Delta t$ | 采样间隔（如 30 s、1 s；必须写进方法） |
 | $\mathrm{ROT}$ | TEC **变化率**（常见单位 TECU/min，读文献核对） |
 
@@ -785,7 +785,7 @@ ROTI 工具举例：`igs-roti`、`Okoh-MATLAB-ROT-ROTI`、`Ionospheric-TEC-ROTI-
 
 **Q2.** Fresnel 尺度 $r_F\sim\sqrt{\lambda z_{\mathrm{eff}}}$ 的课堂意义是什么？为何「有不规则体」仍可能闪烁不强？  
 
-**Q3.** 写出 S4 公式中 $I$、$\langle\cdot\rangle$、分子、分母各表示什么；并说明为何 1 Hz C/N0 难冒充专用 S4。  
+**Q3.** 写出 S4 公式中 *I*、$\langle\cdot\rangle$、分子、分母各表示什么；并说明为何 1 Hz C/N0 难冒充专用 S4。  
 
 **Q4.** σφ 的符号定义是什么？高纬暴时为何教学上常先谈相位闪烁？  
 
@@ -958,20 +958,20 @@ ROTI 工具举例：`igs-roti`、`Okoh-MATLAB-ROT-ROTI`、`Ionospheric-TEC-ROTI-
 
 ### P25. 板书级推导：从「相对速度」到「时间谱为何重要」
 
-设不规则体横向特征尺度为 $L$，卫星–穿刺点相对地面的扫掠速度量级为 $v_{\mathrm{eff}}$。则时间起伏特征频率粗估：
+设不规则体横向特征尺度为 *L*，卫星–穿刺点相对地面的扫掠速度量级为 $v_{\mathrm{eff}}$。则时间起伏特征频率粗估：
 
 $$
 f_{\mathrm{char}} \sim \frac{v_{\mathrm{eff}}}{L}
 $$
 
-- *L* 接近 Fresnel 尺度且 $v_{\mathrm{eff}}$ 较大 → $f_{\mathrm{char}}$ 升高 → 需要更高采样才不糊。  
+- *L* 接近 Fresnel 尺度且 $v_{\mathrm{eff}} \text{ 较大 → } f_{\mathrm{char}}$ 升高 → 需要更高采样才不糊。  
 - 低仰角、快速漂移动力学会把同一空间结构「压缩」成更尖的时间尖峰。  
 
 这就是为什么只说「我用了 GNSS 数据」不够：必须说清采样间隔与窗口。`igs-roti` 与 `Okoh-MATLAB-ROT-ROTI` 若默认窗不同，数值差一截仍可能都「没错」——错在你没声明。
 
 ### P26. 「代理指标」的伦理三行（建议贴在显示器下方）
 
-1. **定义行：** 我计算的是窗口 $W$、采样 $\Delta t$ 下的 ROTI（或产品版 S4/σφ）。  
+1. **定义行：** 我计算的是窗口 *W*、采样 $\Delta t$ 下的 ROTI（或产品版 S4/σφ）。  
 2. **关系行：** 它与闪烁活动统计相关，但不是 S4 的同义语。  
 3. **边界行：** 假阳性已用 QC / 仰角 / 邻站 / 对照日约束；未约束项明示。
 
@@ -1061,6 +1061,6 @@ $$
 
 ### P34. 附：符号速查卡（打印用）
 
-$\mathrm{S4}=\sqrt{(\langle I^2\rangle-\langle I\rangle^2)/\langle I\rangle^2}$；$\sigma_\varphi=\mathrm{std}(\varphi_{\mathrm{detrended}})$；$\mathrm{ROT}=\Delta\mathrm{STEC}/\Delta t$；$\mathrm{ROTI}=\mathrm{std}(\mathrm{ROT})_{W}$；$r_F\sim\sqrt{\lambda z_{\mathrm{eff}}}$；代理 ≠ 恒等；低纬看 LT 气泡，高纬看地磁相位；假阳性先 QC。
+$\mathrm{S4}=\sqrt{(\langle I^2\rangle-\langle I\rangle^2)/\langle I\rangle^2} \text{；} \sigma_\varphi=\mathrm{std}(\varphi_{\mathrm{detrended}}) \text{；} \mathrm{ROT}=\Delta\mathrm{STEC}/\Delta t \text{；} \mathrm{ROTI}=\mathrm{std}(\mathrm{ROT})_{W} \text{；} r_F\sim\sqrt{\lambda z_{\mathrm{eff}}}$；代理 ≠ 恒等；低纬看 LT 气泡，高纬看地磁相位；假阳性先 QC。
 
 （本节 PRINCIPLES 完。）
