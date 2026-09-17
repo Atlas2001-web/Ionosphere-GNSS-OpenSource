@@ -6,7 +6,11 @@
 
 ---
 
-## 1. 开场：同一场暴，有人说 TEC 升了，有人说塌了——两边都可能对
+## 1.
+
+![磁暴分析思路：暴日相对安静日的残差](./images/fig-storm-quiet-residual.png)
+
+> 图源：本仓库自制示意（非真实事件数据）。正相/负相只是教学示意。 开场：同一场暴，有人说 TEC 升了，有人说塌了——两边都可能对
 
 值班群里常见吵架：
 
@@ -165,9 +169,9 @@ PPEF 加强东向电场 → 喷泉↑ → EIA 峰↑ 或峰极移，这是**正�
 
 ## 5. GIM 差分：观测主兵器
 
-\[
+$$
 \Delta\mathrm{VTEC}(\phi,\lambda,t)=\mathrm{VTEC}_\mathrm{storm}-\mathrm{VTEC}_\mathrm{ref}(t_\mathrm{match})
-\]
+$$
 
 `t_match`：同 UT **或** 同 LT，二选一写进笔记。
 
@@ -366,7 +370,6 @@ def regional_mean(vtec, lats, lons, lat_rng, lon_rng):
 
 下一课 [21-equatorial-anomaly-bubbles.md](./21-equatorial-anomaly-bubbles.md)：喷泉、EIA 与 Rayleigh–Taylor 直觉下的等离子体泡。
 
-
 ---
 
 ## 17. 因果链板书课（45 分钟可讲完的「原则课」）
@@ -408,9 +411,9 @@ def regional_mean(vtec, lats, lons, lat_rng, lon_rng):
 
 F 区电子损失的有效速率强烈依赖分子中性成分。原子氧 O 参与离子化学的「生产与转换」路径，而 N₂、O₂ 丰度升高往往加快复合相关损失。暴时环流把分子丰度较高的空气送到中纬 F 区高度，O/N₂ 下降，于是：
 
-\[
+$$
 \mathrm{O/N_2}\downarrow \;\Rightarrow\; \text{有效复合}\uparrow \;\Rightarrow\; N_e\mathrm{(F2)}\downarrow \;\Rightarrow\; \mathrm{TEC}\downarrow
-\]
+$$
 
 这与「整层被风水平吹走」的卡通不同：即使柱的「几何」还在，**化学寿命**变短也会造成负相。foF2 对峰附近化学更敏感，所以负相有时在测高仪上比在 TEC 上更「干净」——TEC 还含顶部贡献。
 
@@ -521,7 +524,6 @@ F 区电子损失的有效速率强烈依赖分子中性成分。原子氧 O 参
 
 下一课回到低纬电动力学与不稳定：[21-equatorial-anomaly-bubbles.md](./21-equatorial-anomaly-bubbles.md)。
 
-
 ---
 
 ## 26. 工作示例：区域平均与「像 PPEF / 像 DDEF」的粗判伪代码
@@ -592,7 +594,6 @@ def split_by_lt(vtec_series, lt_hours, day=(10, 18), night=(20, 4)):
 
 下一课 [21-equatorial-anomaly-bubbles.md](./21-equatorial-anomaly-bubbles.md)。
 
-
 ---
 
 ## 31. 一页纸速查（可贴显示器）
@@ -604,16 +605,13 @@ def split_by_lt(vtec_series, lt_hours, day=(10, 18), night=(20, 4)):
 **操作**：同 AC 差分 + SYM-H 竖线 + 分区表 + 旁证 + 候选措辞。  
 **工具**：`CDDIS-IONEX`、`ionex-analyzer`、`DiffIonMap`、`NASA-OMNIWeb`、`GFZ-Kp-Index`、`GIRO-DIDBase`、`Seemala-GPS-TEC`、`apexpy`。
 
-
 > **最后一句**：机制写候选，差分写证据；两者缺一，本课不算完成。
-
 
 （文中所有工具名以仓库根目录 `PROJECTS.json` 的 `name` 字段为准；若上游更名，以 JSON 为准同步笔记。）
 
 完整检查表见 §19；口令见 §25；脚本骨架见 §9 与 §26。
 
  OK.
-
 
 ---
 

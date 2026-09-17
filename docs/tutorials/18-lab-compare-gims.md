@@ -162,13 +162,13 @@ IGS（国际 GNSS 服务）体系里，多家机构各自做电离层产品，�
 
 在公共网格有效点上计算（教学公式即可）：
 
-\[
+$$
 \begin{aligned}
 \mathrm{Bias} &= \overline{A-B} \\
 \mathrm{RMSE} &= \sqrt{\overline{(A-B)^2}} \\
 P_{5} &= \frac{\#\{|A-B|>5\,\mathrm{TECU}\}}{\#\{\text{有效点}\}}
 \end{aligned}
-\]
+$$
 
 建议再算：
 
@@ -291,7 +291,6 @@ P_{5} &= \frac{\#\{|A-B|>5\,\mathrm{TECU}\}}{\#\{\text{有效点}\}}
 ```
 
 **记住一句话**：先量「尺子之间差多少」，再声称「我比真理改进了多少」。
-
 
 ---
 

@@ -304,7 +304,6 @@ ROTI 有点像「用位移计差分看地面是否在抖」；S4 更像「灯是
 - [05-scintillation-roti.md](./05-scintillation-roti.md) · [06-iono-positioning.md](./06-iono-positioning.md) · [14-space-weather-case.md](./14-space-weather-case.md)  
 - 列表：[`lists/01-ionosphere.md`](../../lists/01-ionosphere.md)
 
-
 ---
 
 ## 17. 「何时指数够用」决策树（口述版）

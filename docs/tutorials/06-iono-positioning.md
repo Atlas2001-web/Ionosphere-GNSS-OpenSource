@@ -306,7 +306,6 @@ PPP 再精密，也怕跟踪层崩溃。第 05 讲的闪烁/ROTI 在这里表现
 - 闪烁：[05-scintillation-roti.md](./05-scintillation-roti.md)  
 - 下一讲：[07-ionosonde-occultation.md](./07-ionosonde-occultation.md)
 
-
 ---
 
 ## 14. 把「频率」说得更慢一点（零假设补课）

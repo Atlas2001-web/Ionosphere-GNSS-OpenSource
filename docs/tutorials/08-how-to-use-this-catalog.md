@@ -144,7 +144,7 @@
 | 注意 | IRI 常需 COMMON 系数与指数文件，条目分析里会写；NeQuick-G 是改正算法叙事，勿与科研 NeQuick2 开关混用 |
 
 **工作例：**  
-「课程要画某经纬点 \(N_e(h)\)」→ `IRI-2026-package` + `IRI-COMMON-FILES`（或 `PyIRI`/`iri2020` 封装）→ 输出廓线。  
+「课程要画某经纬点 $N_e(h)$」→ `IRI-2026-package` + `IRI-COMMON-FILES`（或 `PyIRI`/`iri2020` 封装）→ 输出廓线。  
 「单频定位改正」→ `Galileo-NeQuick-G`，不要误下成只为气候学对比的包还抱怨电文参数对不上。
 
 ---
