@@ -964,7 +964,7 @@ $$
 f_{\mathrm{char}} \sim \frac{v_{\mathrm{eff}}}{L}
 $$
 
-- $L$ 接近 Fresnel 尺度且 $v_{\mathrm{eff}}$ 较大 → $f_{\mathrm{char}}$ 升高 → 需要更高采样才不糊。  
+- *L* 接近 Fresnel 尺度且 $v_{\mathrm{eff}}$ 较大 → $f_{\mathrm{char}}$ 升高 → 需要更高采样才不糊。  
 - 低仰角、快速漂移动力学会把同一空间结构「压缩」成更尖的时间尖峰。  
 
 这就是为什么只说「我用了 GNSS 数据」不够：必须说清采样间隔与窗口。`igs-roti` 与 `Okoh-MATLAB-ROT-ROTI` 若默认窗不同，数值差一截仍可能都「没错」——错在你没声明。

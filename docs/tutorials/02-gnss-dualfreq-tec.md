@@ -101,7 +101,7 @@ GPS L1/L2：$f_1=1575.42\,\mathrm{MHz}$，$f_2=1227.60\,\mathrm{MHz}$，$f_1/f_2
 
 ### 4.1 目标
 
-构造观测量，使 $\rho$、$T_{\mathrm{trop}}$、钟差等**对两频相同的项**消掉，只留下与 $I$（即 STEC）及偏差有关的部分。
+构造观测量，使 $\rho$、$T_{\mathrm{trop}}$、钟差等**对两频相同的项**消掉，只留下与 *I*（即 STEC）及偏差有关的部分。
 
 ### 4.2 伪距 GF：一步一步
 
@@ -146,7 +146,7 @@ $$
 L_{\mathrm{GF}}\equiv L_1-L_2=-(I_1-I_2)+\lambda_1 N_1-\lambda_2 N_2+\Delta\delta+\varepsilon_{L}.
 $$
 
-令模糊度组合 $B=\lambda_1 N_1-\lambda_2 N_2+\cdots$ 在无周跳弧段内为**未知常数**，则 $L_{\mathrm{GF}}$ 的时间变化主要反映 STEC 的时间变化（符号注意），绝对水平被 $B$ 拖住。
+令模糊度组合 $B=\lambda_1 N_1-\lambda_2 N_2+\cdots$ 在无周跳弧段内为**未知常数**，则 $L_{\mathrm{GF}}$ 的时间变化主要反映 STEC 的时间变化（符号注意），绝对水平被 *B* 拖住。
 
 ### 4.4 常见误解
 
@@ -323,13 +323,21 @@ $$
 ## 11. 课堂测验（带演算）
 
 **题 1.** 伪距与相位方程里电离层项符号各是什么？为什么？  
-**答：** 伪距 $+I$（群延迟）；相位 $-I$（相位超前）；来自 $n_g>1$、$n_p<1$。
+**答：**
+
+$$
+\text{伪距} +I \text{（群延迟）；相位} -I \text{（相位超前）；来自} n_g>1 \text{、} n_p<1 \text{。}
+$$
 
 **题 2.** 写出 $P_{\mathrm{GF}}=P_1-P_2$ 后剩下的主要项。  
 **答：** $I_1-I_2$ + 接收机/卫星码延迟差 + 噪声多路径。
 
 **题 3.** 例 A 中 $I_1=3.25\,\mathrm{m}$，$I_2=5.35\,\mathrm{m}$。$P_1-P_2$ 与 $L_1-L_2$（忽略模糊度与偏差）各多少？  
-**答：** $P_1-P_2=-2.10\,\mathrm{m}$；$L_1-L_2=+2.10\,\mathrm{m}$。
+**答：**
+
+$$
+P_1-P_2=-2.10\,\mathrm{m} \text{；} L_1-L_2=+2.10\,\mathrm{m} \text{。}
+$$
 
 **题 4.** 模糊度在无周跳弧段内扮演什么角色？Leveling 在干什么？  
 **答：** 未知常数偏置；用伪距 GF 把相位 GF 平移到正确绝对水平。
@@ -432,7 +440,11 @@ $$
 (3) 若未改正的 DCB 使 $P_2-P_1$ 少了 0.50 m，STEC 偏差约多少 TECU？  
 (4) 若仰角 $30^\circ$、$H=450\,\mathrm{km}$、$M\approx1.70$（用 01 课结果），等效 VTEC≈?
 
-**答：** (1) 3.15 m；(2) $9.52\times3.15\approx30.0\,\mathrm{TECU}$；(3) $9.52\times0.50\approx4.8\,\mathrm{TECU}$；(4) $30.0/1.70\approx17.6\,\mathrm{TECU}$。
+**答：**
+
+$$
+\text{(1) 3.15 m；(2)} 9.52\times3.15\approx30.0\,\mathrm{TECU} \text{；(3)} 9.52\times0.50\approx4.8\,\mathrm{TECU} \text{；(4)} 30.0/1.70\approx17.6\,\mathrm{TECU} \text{。}
+$$
 
 ---
 
@@ -676,7 +688,7 @@ $$
 L_i=\rho+c(\delta t_r-\delta t^s)+T-I_i+\lambda_i N_i+(\delta_{r,i}-\delta_i^s)+\varepsilon_{L_i}.
 $$
 
-额外：$\lambda_i=c/f_i$（L1 $\approx0.1903\,\mathrm{m}$，L2 $\approx0.2442\,\mathrm{m}$）；$N_i$ 整周未知；$-I_i$ 相位超前。
+额外：$\lambda_i=c/f_i$（L1 $\approx0.1903\,\mathrm{m}$，L2 $\approx0.2442\,\mathrm{m}$）；*N_i* 整周未知；$-I_i$ 相位超前。
 
 **数值例 D1（构造一组「真值」）：**
 
@@ -763,7 +775,7 @@ $$
 L_{\mathrm{GF}}^{\mathrm{(lev)}}=L_{\mathrm{GF}}-\hat{B}\approx P_{\mathrm{GF}}\approx1.89\,\mathrm{m}\to\mathrm{STEC}=18\,\mathrm{TECU}.
 $$
 
-**周跳例：** $t_0$ 后 $N_1$ 跳 +1 → $B$ 增 $\lambda_1\approx0.190\,\mathrm{m}$ → $L_{\mathrm{GF}}$ 台阶 0.19 m → STEC 假跳 $9.516\times0.19\approx1.8\,\mathrm{TECU}$。必须切弧或修复（`cycle-slip-correction`、`DRCycleSlip`）。
+**周跳例：** *t_0* 后 *N_1* 跳 +1 → *B* 增 $\lambda_1\approx0.190\,\mathrm{m}$ → $L_{\mathrm{GF}}$ 台阶 0.19 m → STEC 假跳 $9.516\times0.19\approx1.8\,\mathrm{TECU}$。必须切弧或修复（`cycle-slip-correction`、`DRCycleSlip`）。
 
 ---
 
@@ -826,13 +838,21 @@ $f_1^{2}f_5^{2}\approx3.435\times10^{36}$，商 $\approx3.129\times10^{18}$，$/
 **答：** 18.0 TECU。
 
 **T3.** $\Delta b=2\,\mathrm{ns}$ 未改正，对 L1/L2 STEC 约偏多少 TECU？  
-**答：** $2\times0.2998\approx0.60\,\mathrm{m}$；$9.516\times0.60\approx5.7\,\mathrm{TECU}$。
+**答：**
+
+$$
+2\times0.2998\approx0.60\,\mathrm{m} \text{；} 9.516\times0.60\approx5.7\,\mathrm{TECU} \text{。}
+$$
 
 **T4.** $B$ 估错 0.5 m，leveled STEC 偏多少？  
 **答：** $\approx4.8\,\mathrm{TECU}$。
 
 **T5.** 为何 IF 组合与 GF 组合目的相反？各一句。  
-**答：** IF 消 $I$ 保几何；GF 消几何留 $I$。
+**答：**
+
+$$
+\text{IF 消} I \text{保几何；GF 消几何留} I \text{。}
+$$
 
 **T6.** 列出本仓 3 个 TEC 工具、1 个偏差工具、2 个周跳/质检工具。  
 **答：** 如 `gnss-tec`、`Seemala-GPS-TEC`、`tec-suite`；`Gkit-Bias`；`cycle-slip-correction`、`TEQC`。
@@ -852,6 +872,6 @@ $f_1^{2}f_5^{2}\approx3.435\times10^{36}$，商 $\approx3.129\times10^{18}$，$/
 
 ## 40. 收束（加厚版）
 
-本课加厚后，你应能：**逐步写出** $P_i,L_i$ 每个符号；**手算** $I_1,I_2$ 与 $P_2-P_1$；**推出** $\alpha$ 并得到 STEC；**演示** leveling 如何吃掉 $B$；**把 ns 级 DCB 换成 TECU**；**指出**流水线每步失效模式。引用项目名均来自 `PROJECTS.json`。未 git push。
+本课加厚后，你应能：**逐步写出** $P_i,L_i$ 每个符号；**手算** $I_1,I_2$ 与 $P_2-P_1$；**推出** $\alpha$ 并得到 STEC；**演示** leveling 如何吃掉 *B*；**把 ns 级 DCB 换成 TECU**；**指出**流水线每步失效模式。引用项目名均来自 `PROJECTS.json`。未 git push。
 
 下一课：`03-gim-ionex.md`。

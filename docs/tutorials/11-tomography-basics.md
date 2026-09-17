@@ -60,14 +60,14 @@ GNSS TEC 就是「总和」；巷子里的车就是各高度/各体素的电子�
 
 ## 3. 最小数学直觉（不堆公式，但要会说话）
 
-把空间分成许多体素，未知密度排成向量 $\mathbf{x}$。第 $i$ 条 GNSS 射线给出积分观测 $y_i$（与 STEC 对应），则
+把空间分成许多体素，未知密度排成向量 $\mathbf{x}$。第 *i* 条 GNSS 射线给出积分观测 *y_i*（与 STEC 对应），则
 
 $$
 \mathbf{y} = A\mathbf{x} + \boldsymbol{\varepsilon}
 $$
 
 - $A$ 的第 $i$ 行：这条射线穿过各体素的长度（或权重）；构造思路见 `Geometric-Matrix-For-Ionospheric-Tomogrphy`。  
-- $A$ 通常又「胖」又病态：列相关强，很多 $\mathbf{x}$ 都能几乎拟合 $\mathbf{y}$。  
+- *A* 通常又「胖」又病态：列相关强，很多 $\mathbf{x}$ 都能几乎拟合 $\mathbf{y}$。  
 - 直接最小二乘 $\min\|A\mathbf{x}-\mathbf{y}\|$ 往往噪声放大器。
 
 实务上要加：

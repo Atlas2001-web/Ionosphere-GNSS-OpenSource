@@ -578,7 +578,7 @@ $$
 q \propto n_n \cdot \sigma \cdot F_\lambda \cdot f(\chi)
 $$
 
-其中 $n_n$ 中性密度，$\sigma$ 电离截面，$F_\lambda$ 该波段通量，$f(\chi)$ 为天顶角几何因子（χ→90° 变弱）。耀斑时 $F_\lambda$ 陡升；日食时有效 $F_\lambda$ 下降。这就是两套剧本共用的「水龙头旋钮」。
+其中 *n_n* 中性密度，$\sigma$ 电离截面，$F_\lambda$ 该波段通量，$f(\chi)$ 为天顶角几何因子（χ→90° 变弱）。耀斑时 $F_\lambda$ 陡升；日食时有效 $F_\lambda$ 下降。这就是两套剧本共用的「水龙头旋钮」。
 
 ---
 
