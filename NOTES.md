@@ -167,3 +167,8 @@
 - 来源：`research/batch_gapfill_20260917.json`
 - 新增 **36** 条（IRI 封装、IONEX/TEC、闪烁/Septentrio、SBAS、层析、掩星、SAMI2 等）
 - 目录总量见 README / PROJECTS.json
+
+## 03/04 详写收尾（2026-09-17）
+
+- `03-gim-ionex.md` ≈10938 字；`04-iri-nequick.md` ≈10577 字
+- 至此 `docs/tutorials/` 01–18 均已按零基础详讲标准重写（普遍 0.8–1.5 万字级）
