@@ -33,3 +33,23 @@
 - 回 [教学目录](./README.md) 按阶段跳转  
 - 数据与分类：[`docs/data-access.md`](../data-access.md)、[`docs/categories.md`](../categories.md)  
 - 持续补全的软件表：[`lists/01-ionosphere.md`](../../lists/01-ionosphere.md)
+
+
+---
+
+## 能力雷达（自学打分 1–5）
+
+- 概念：STEC/VTEC/DCB/ROTI  
+- 工具：能独立从 list 找到上游并跑通 README 例子  
+- 产品：能解释 IGS GIM 与近实时产品差别  
+- 事件：能复盘一场磁暴 TEC  
+- 方法边界：知道何时不该做层析/何时不该叫同化  
+
+全部 ≥4 且做过 [16](./16-practice-one-day-tec.md) 与 [14](./14-space-weather-case.md)，可视为本教程路径的「精通」。
+
+## 之后读什么（方向，而非书单堆砌）
+
+- IGS Ionosphere Working Group 产品说明  
+- 一篇经典 GIM 论文 + 一篇闪烁综述 + 一篇 GNSS 层析  
+- 每读一篇就回本仓库补链接或笔记（[15](./15-from-paper-to-code.md)）
+
