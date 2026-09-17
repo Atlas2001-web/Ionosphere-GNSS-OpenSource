@@ -337,3 +337,121 @@
 - [`docs/data-access.md`](../data-access.md)  
 - [`lists/01-ionosphere.md`](../../lists/01-ionosphere.md) · [`03-gnss-data.md`](../../lists/03-gnss-data.md) · [`04-gnss-positioning.md`](../../lists/04-gnss-positioning.md) · [`10-gnss-datasets.md`](../../lists/10-gnss-datasets.md)  
 - [`PROJECTS.json`](../../PROJECTS.json) · [`CONTRIBUTING.md`](../../CONTRIBUTING.md)
+
+---
+
+## 19. 现象路由表：我想分析 storm / EIA / TID / 闪烁 → 去哪？
+
+前面场景 A–G 按「产品类型」找软件。科研里更常见的入口是：**「我要分析某某现象」**。下表把现象接到**列表文件 + 教程编号 + 最小工具链**。请从这里抄进开题报告的「数据与方法」草稿。
+
+### 19.1 总路由（先看这张）
+
+| 我说「我想分析…」 | 先读教程 | 主列表 | 常辅列表 | 典型实名入口（举例） |
+|---|---|---|---|---|
+| **磁暴 storm 的电离层响应** | [14](./14-space-weather-case.md)、[03](./03-gim-ionex.md)、[07](./07-ionosonde-occultation.md)、现象定位残差见 [06](./06-iono-positioning.md) §19+ | `lists/01-ionosphere.md` | `lists/10-gnss-datasets.md`、测高/掩星同 10+01 | `ionex`、`CDDIS-IONEX`、`GIRO-DIDBase`、`COSMIC-CDAAC`、TEC 估计诸条目 |
+| **EIA 赤道电离异常** | [01](./01-ionosphere-tec-basics.md)、[03](./03-gim-ionex.md)、[07](./07-ionosonde-occultation.md) §21.2 | `01`（TEC/GIM） | `10`（IONEX/观测） | `ionex`、`mosgim`、`gnss-tec`、`CDDIS-IONEX`；两侧台站测高仪条目 |
+| **TID 行进式扰动** | [01](./01-ionosphere-tec-basics.md)、[02](./02-gnss-dualfreq-tec.md)、[07](./07-ionosonde-occultation.md) §21.3；多站 TEC | `01` TEC 估计 | `03` QC、`10` 观测 | `gnss-tec` / `pygnss-tec` / `tec-suite` + 多站 RINEX；GIM 仅作背景 |
+| **闪烁 / ROTI / 气泡夜** | [05](./05-scintillation-roti.md)（含一夜清单）、[06](./06-iono-positioning.md) 后果、[13](./13-scintillation-modeling.md) 建模 | `01` 子类 **闪烁**、**闪烁/ROTI** | `10`、`03` | `igs-roti`、`Okoh-MATLAB-ROT-ROTI`、`ismr_downloader`、`scintkit`、`OASIS`、`IonoMoni`… |
+| **暴时定位失败分诊** | [06](./06-iono-positioning.md) §19–22、[05](./05-scintillation-roti.md) | `04-gnss-positioning` | `01`、`03` | `RTKLIB`、`gLAB-UPC`、`PRIDE-PPPAR`、`ginan` + ROTI/GIM 对照 |
+| **多仪器联合确认** | [07](./07-ionosonde-occultation.md) §20–26 Playbook | `01` + `10` | `03` | GIRO + COSMIC + CDDIS 组合拳 |
+
+### 19.2 「一句话问题 → 路由」速查
+
+把你的话换成下表左列，然后走右列。
+
+| 一句话问题 | 路由 |
+|---|---|
+| 「暴日全球 TEC 怎么变？」 | 教程 03+14 → `10` 下 IONEX → `01` 读 `ionex` → 差分制图 |
+| 「暴日某站 F2 峰抬升了吗？」 | 教程 07 → `10`/`01` 测高仪（`GIRO-DIDBase`…）→ 勿只用 GNSS TEC 替代 |
+| 「今晚 EIA 双峰明显吗？」 | 教程 03+07§21.2 → 纬度剖面 VTEC（GIM 或多站） |
+| 「这是不是 TID？」 | 教程 07§21.3 → 多站高采样 TEC → 估周期/方向/速度；GIM 太滑时常不够 |
+| 「有没有闪烁？」 | 教程 05 → 有 ISMR 走 S4；仅 RINEX 走 ROTI 代理并写清 |
+| 「为什么 RTK 固定不了，是不是电离层？」 | 教程 06§19 → 残差画像三型 → 再决定回 05 还是 03 |
+| 「掩星能不能证明我的暴时故事？」 | 教程 07 Playbook → `COSMIC-CDAAC` 等 → 检查切点距离 |
+| 「我想用模型对比暴/EIA」 | 教程 04 → IRI/NeQuick 条目；验证仍要回 07 的观测三角 |
+
+### 19.3 现象 × 子类搜索词（在 `01-ionosphere.md` 里 Ctrl+F）
+
+| 现象 | 建议搜索的子类/关键词 |
+|---|---|
+| storm 背景 TEC | TEC 估计、IONEX/TEC 图、GIM |
+| storm 峰值 | 测高仪、IRI（对比用） |
+| storm 廓线 | 掩星、RO |
+| EIA | TEC、GIM、IONEX；（测高仪作锚） |
+| TID | TEC 估计；（QC 在 lists/03） |
+| 闪烁 | 闪烁、闪烁/ROTI、ismr |
+| 定位后果 | 转到 `lists/04-gnss-positioning.md` |
+
+### 19.4 推荐学习顺序（按现象兴趣）
+
+**路径 Storm：**  
+08（本路由）→ 03 GIM → 14 空间天气案例 → 07 Playbook → 06 残差分诊 →（可选）12 同化进阶。
+
+**路径 EIA：**  
+01 TEC 基础 → 03 GIM → 07§21.2 → 16 一日 TEC 实践 →（可选）10 建 GIM。
+
+**路径 TID：**  
+02 双频 TEC → 多站练习（自拟）→ 07§21.3 → 11 层析基础（进阶，理解三维限制）。
+
+**路径 Scintillation：**  
+05 全文（含一夜案例）→ 06 后果 → 13 建模 → 08 回表找仿真/ISMR 条目。
+
+### 19.5 反模式（现象分析专用）
+
+1. **拿全球 GIM 证明闪烁** — 分辨率与物理量都不对；回教程 05。  
+2. **单站 TEC 振荡就写 TID** — 缺传播参数；回 07§21.3。  
+3. **EIA 与闪烁混称** — 背景结构 vs 小尺度不规则体；两句分开写。  
+4. **只有定位残差就写「确认闪烁」** — 残差是后果，指标在 05。  
+5. **三仪器数字逼相等** — 先对齐定义；回 07§6 与 §22。
+
+### 19.6 把路由写进笔记的填空模板
+
+> 我的现象是 **[storm / EIA / TID / scintillation / 混合]**。  
+> 我先读教程 **[编号]**，主列表 **[lists/..]**，辅列表 **[…]**。  
+> 最小证据集是 **[仪器1 产品 + 仪器2 产品]**。  
+> 确认等级目标是 **[提示 / 支持 / 确认]**。  
+> 若分析定位后果，加读教程 **06** 并打开 **lists/04**。  
+> 所用条目名以 `PROJECTS.json` 为准：**(列出)**。
+
+---
+
+## 20. 现象路由自测
+
+1. 分析闪烁应先打开哪一讲？ROTI 子类在哪个 list？  
+2. 「是不是 TID」为什么不能只靠单站？教程哪一节？  
+3. EIA 主力产品是什么？闪烁指标如何正确表述？  
+4. 暴时既想看峰高又想看全球 TEC，教程与数据如何分工？  
+5. 定位固定失败时，路由上应同时打开哪两个 lists？  
+6. 写出 Storm 与 Scintillation 两条推荐学习路径的第一步。  
+7. 举一个「用 GIM 证明闪烁」为什么是反模式。  
+8. 填空模板里「确认等级目标」三项是什么？
+
+### 20.1 参考答案
+
+1. 教程 05；`lists/01-ionosphere.md` 的闪烁/ROTI。  
+2. 需多站传播证据；07§21.3。  
+3. VTEC/GIM 纬度结构；闪烁是可能伴随而非 EIA 判据。  
+4. 峰高→07+测高仪数据；全球 TEC→03+IONEX；联合→07 Playbook。  
+5. `lists/04-gnss-positioning.md` +（对照）`lists/01-ionosphere.md`（及 03 QC）。  
+6. Storm：08 路由后读 03；Scintillation：直接精读 05。  
+7. GIM 平滑大尺度电子含量，不测量幅度/相位闪烁。  
+8. 提示 / 支持 / 确认。
+
+---
+
+## 21. 与场景 A–G 的关系（避免两套地图打架）
+
+- 场景 A–G：**按任务**（估 TEC、读 GIM、跑 IRI…）找门。  
+- §19 现象路由：**按科学对象**（storm/EIA/TID/闪烁）找门。  
+- 实际课题 = 两者相乘：例如「分析 EIA」→ 现象表指向 TEC/GIM → 再执行场景 A/B 的具体步骤。  
+- 「分析闪烁夜的定位后果」→ 现象表 05+06 → 场景 E + 场景 F。
+
+把本节当作封面索引；细节操作仍回各场景与各专题教程。
+
+---
+
+## 22. 增补后你应能做的三件事
+
+1. 听到 storm/EIA/TID/闪烁任一词，能指出教程编号与 list 文件。  
+2. 能写出最小证据集与确认等级，而不是只有软件名。  
+3. 能把现象路由与场景 A–G 拼成一条不绕路的开题路径。
