@@ -638,3 +638,210 @@ for each station-day RINEX:
 （完）
 
 配套上一课：`01-ionosphere-tec-basics.md`。配套下一课：`03-gim-ionex.md`。
+
+
+---
+
+## 32. 观测方程符号全拆 + 代入数字
+
+伪距（频率 \(i\)）：
+
+\[
+P_i=\rho+c(\delta t_r-\delta t^s)+T+I_i+(b_{r,i}-b_i^s)+\varepsilon_{P_i}.
+\]
+
+| 符号 | 单位 | 本课数值角色 |
+|---|---|---|
+| \(P_i\) | m | 观测伪距 |
+| \(\rho\) | m | 几何距离，例中取公共部分并入 \(G\) |
+| \(c\) | m/s | 光速 \(\approx2.99792458\times10^8\) |
+| \(\delta t_r,\delta t^s\) | s | 钟差；乘 \(c\) 变米 |
+| \(T\) | m | 对流层延迟 |
+| \(I_i=40.3\,\mathrm{STEC}/f_i^{2}\) | m | 电离层群延迟 |
+| \(b_{r,i},b_i^s\) | m | 码硬件延迟 |
+| \(\varepsilon\) | m | 噪声与多路径 |
+
+相位：
+
+\[
+L_i=\rho+c(\delta t_r-\delta t^s)+T-I_i+\lambda_i N_i+(\delta_{r,i}-\delta_i^s)+\varepsilon_{L_i}.
+\]
+
+额外：\(\lambda_i=c/f_i\)（L1 \(\approx0.1903\,\mathrm{m}\)，L2 \(\approx0.2442\,\mathrm{m}\)）；\(N_i\) 整周未知；\(-I_i\) 相位超前。
+
+**数值例 D1（构造一组「真值」）：**
+
+令 \(G:=\rho+c\Delta t+T=22\,100\,000.000\,\mathrm{m}\)，\(\mathrm{STEC}=18\,\mathrm{TECU}=1.8\times10^{17}\,\mathrm{m}^{-2}\)。
+
+\[
+I_1=\frac{40.3\times1.8\times10^{17}}{(1.57542\times10^9)^{2}}\approx2.92\,\mathrm{m},\quad
+I_2=\frac{40.3\times1.8\times10^{17}}{(1.22760\times10^9)^{2}}\approx4.81\,\mathrm{m}.
+\]
+
+硬件延迟暂取 0，噪声 0，模糊度暂忽略：
+
+\[
+P_1=G+I_1=22\,100\,002.92,\quad P_2=G+I_2=22\,100\,004.81,
+\]
+\[
+L_1=G-I_1=22\,099\,997.08,\quad L_2=G-I_2=22\,099\,995.19.
+\]
+
+检查：\(P_2-P_1=1.89\,\mathrm{m}\)，\(L_1-L_2=1.89\,\mathrm{m}\)（相位差与伪距差同值、来自 \(\pm I\) 结构）。
+
+---
+
+## 33. GF 推导逐步填空（带数字）
+
+**步 1** 写 \(P_1-P_2\)：
+
+\[
+P_1-P_2=(I_1-I_2)+(b_{r,1}-b_{r,2})-(b_1^s-b_2^s)+\varepsilon_{P_1}-\varepsilon_{P_2}.
+\]
+
+例 D1 无偏：\(P_1-P_2=2.92-4.81=-1.89\,\mathrm{m}\)。
+
+**步 2** 电离层差与 STEC：
+
+\[
+I_2-I_1=40.3\,\mathrm{STEC}\Big(\frac{1}{f_2^{2}}-\frac{1}{f_1^{2}}\Big)=40.3\,\mathrm{STEC}\,\frac{f_1^{2}-f_2^{2}}{f_1^{2}f_2^{2}}.
+\]
+
+**步 3** 解出 STEC：
+
+\[
+\mathrm{STEC}=\frac{1}{40.3}\cdot\frac{f_1^{2}f_2^{2}}{f_1^{2}-f_2^{2}}(P_2-P_1)=\alpha(P_2-P_1).
+\]
+
+**步 4** 算 \(\alpha\)（再手算一遍）：
+
+\(f_1^{2}=2.48195\times10^{18}\)，\(f_2^{2}=1.50700\times10^{18}\)，差 \(0.97495\times10^{18}\)。  
+积 \(f_1^{2}f_2^{2}=3.740\times10^{36}\)。  
+商 \(3.835\times10^{18}\)。  
+\(/40.3\Rightarrow\alpha\approx9.516\times10^{16}\,\mathrm{m}^{-2}/\mathrm{m}=9.516\,\mathrm{TECU/m}\)。
+
+**步 5** 代入：\(\mathrm{STEC}=9.516\times1.89\approx18.0\,\mathrm{TECU}\)。✓
+
+**步 6** 相位 GF：\(L_1-L_2=-(I_1-I_2)+\lambda_1 N_1-\lambda_2 N_2+\cdots\)。  
+无模糊度时 \(L_1-L_2=+1.89\,\mathrm{m}\)。有模糊度时多常数 \(B\)。
+
+---
+
+## 34. 模糊度 + Leveling 数值例
+
+设真 \(I_2-I_1=1.89\,\mathrm{m}\)，相位组合常数 \(B=\lambda_1 N_1-\lambda_2 N_2=7.50\,\mathrm{m}\)（随便取的未知数）。
+
+则观测
+
+\[
+L_{\mathrm{GF}}:=L_1-L_2=1.89+7.50=9.39\,\mathrm{m}
+\]
+
+（此处约定使电离层项与 \(P_2-P_1\) 同向；你实现时统一符号即可）。
+
+伪距 \(P_{\mathrm{GF}}:=P_2-P_1=1.89\,\mathrm{m}\)。
+
+弧段上若 STEC 缓慢变，\(P_{\mathrm{GF}}(t)\) 跟着变，\(B\) 不变。Leveling：
+
+\[
+\hat{B}=\big\langle L_{\mathrm{GF}}(t)-P_{\mathrm{GF}}(t)\big\rangle_{\mathrm{arc}}.
+\]
+
+理想无噪：\(\hat{B}=7.50\,\mathrm{m}\)。Leveled：
+
+\[
+L_{\mathrm{GF}}^{\mathrm{(lev)}}=L_{\mathrm{GF}}-\hat{B}\approx P_{\mathrm{GF}}\approx1.89\,\mathrm{m}\to\mathrm{STEC}=18\,\mathrm{TECU}.
+\]
+
+**周跳例：** \(t_0\) 后 \(N_1\) 跳 +1 → \(B\) 增 \(\lambda_1\approx0.190\,\mathrm{m}\) → \(L_{\mathrm{GF}}\) 台阶 0.19 m → STEC 假跳 \(9.516\times0.19\approx1.8\,\mathrm{TECU}\)。必须切弧或修复（`cycle-slip-correction`、`DRCycleSlip`）。
+
+---
+
+## 35. DCB 数值：纳秒 → 米 → TECU
+
+码 DCB 产品常以 ns 计。换算：
+
+\[
+1\,\mathrm{ns}\times c\approx0.2998\,\mathrm{m}.
+\]
+
+设卫星+接收机总 GF 偏差 \(\Delta b=+3.0\,\mathrm{ns}\approx+0.899\,\mathrm{m}\) 加在 \(P_2-P_1\) 上。
+
+真 \(P_2-P_1=1.89\)，观测变成 \(1.89+0.899=2.789\,\mathrm{m}\)。  
+未改正：\(\mathrm{STEC}_{\mathrm{raw}}=9.516\times2.789\approx26.5\,\mathrm{TECU}\)（真值 18，**偏高 8.5 TECU**）。
+
+改正：\(P_2-P_1-\Delta b\) 再乘 \(\alpha\)。类型必须对齐（C1W vs C1C）；工具线索 `Gkit-Bias`。
+
+**口诀：** \(0.1\,\mathrm{m}\) 的 GF 偏差 \(\approx0.95\,\mathrm{TECU}\)；\(1\,\mathrm{ns}\approx0.3\,\mathrm{m}\approx2.85\,\mathrm{TECU}\)（L1/L2 \(\alpha\)）。
+
+---
+
+## 36. 迷你流水线数字（从 RINEX 字段到 VTEC）
+
+假设已读出某历元（单位 m）：
+
+\(P_1=21\,550\,010.20\)，\(P_2=21\,550\,012.55\)，且 DCB 已改正，无周跳，leveling 完成。
+
+1. \(P_2-P_1=2.35\,\mathrm{m}\)。  
+2. \(\mathrm{STEC}=9.516\times2.35\approx22.4\,\mathrm{TECU}\)。  
+3. 仰角 \(E=35^\circ\)，\(H=450\,\mathrm{km}\)：\(\cos35^\circ\approx0.8192\)；\(R_E/(R_E+H)\approx0.934\)；\(\sin z'\approx0.765\)；\(\cos z'\approx0.644\)；\(M\approx1.55\)。  
+4. \(\mathrm{VTEC}\approx22.4/1.55\approx14.5\,\mathrm{TECU}\)。  
+5. 与 GIM 比：若 GIM 在 IPP 插值得 15.0，差 0.5 TECU——合理噪声/模型差；若差 8 TECU 且全日同号，先查 DCB。
+
+读 RINEX 可用 `georinex`、`rinex`、`PyRINEX`；估 TEC 可用 `gnss-tec`、`pygnss-tec`、`Seemala-GPS-TEC`、`tec-suite`、`PyTECGg` 等。
+
+---
+
+## 37. \(\alpha\) 换频：L1/L5 会怎样？
+
+GPS L5 \(f_5=1176.45\,\mathrm{MHz}\)。对 L1/L5：
+
+\[
+\alpha_{15}=\frac{1}{40.3}\frac{f_1^{2}f_5^{2}}{f_1^{2}-f_5^{2}}.
+\]
+
+粗算：\(f_5^{2}\approx1.384\times10^{18}\)，\(f_1^{2}-f_5^{2}\approx1.098\times10^{18}\)，  
+\(f_1^{2}f_5^{2}\approx3.435\times10^{36}\)，商 \(\approx3.129\times10^{18}\)，\(/40.3\Rightarrow\alpha_{15}\approx7.76\,\mathrm{TECU/m}\)。
+
+**含义：** 同样 1 m 的 \(P_5-P_1\)，换成 TECU 的尺子与 L1/L2 不同。混用频率对却套错 \(\alpha\)，尺度必歪。DCB 产品也必须是该频率对/码类型。
+
+---
+
+## 38. 加厚测验（演算）
+
+**T1.** 由例 D1：\(I_1=2.92\)，\(I_2=4.81\)。写 \(P_1,P_2\)（\(G=22\,100\,000\)）并算 \(P_2-P_1\)。  
+**答：** 见 §32；差 1.89 m。
+
+**T2.** 用 \(\alpha=9.516\) 从 \(P_2-P_1=1.89\) 还原 STEC。  
+**答：** 18.0 TECU。
+
+**T3.** \(\Delta b=2\,\mathrm{ns}\) 未改正，对 L1/L2 STEC 约偏多少 TECU？  
+**答：** \(2\times0.2998\approx0.60\,\mathrm{m}\)；\(9.516\times0.60\approx5.7\,\mathrm{TECU}\)。
+
+**T4.** \(B\) 估错 0.5 m，leveled STEC 偏多少？  
+**答：** \(\approx4.8\,\mathrm{TECU}\)。
+
+**T5.** 为何 IF 组合与 GF 组合目的相反？各一句。  
+**答：** IF 消 \(I\) 保几何；GF 消几何留 \(I\)。
+
+**T6.** 列出本仓 3 个 TEC 工具、1 个偏差工具、2 个周跳/质检工具。  
+**答：** 如 `gnss-tec`、`Seemala-GPS-TEC`、`tec-suite`；`Gkit-Bias`；`cycle-slip-correction`、`TEQC`。
+
+---
+
+## 39. 值班速算条（建议抄卡片）
+
+- \(\alpha_{L1L2}\approx9.52\,\mathrm{TECU/m}\)（对 \(P_2-P_1\)）。  
+- \(1\,\mathrm{ns}\approx0.30\,\mathrm{m}\approx2.85\,\mathrm{TECU}\)（L1/L2 GF）。  
+- \(0.1\,\mathrm{m}\approx0.95\,\mathrm{TECU}\)。  
+- 周跳 \(+1\) 周 @L1 \(\approx0.19\,\mathrm{m}\approx1.8\,\mathrm{TECU}\)（视 GF 定义）。  
+- 先周跳切弧，再 leveling，再 DCB，再乘 \(\alpha\)。  
+- 与 GIM 比：平移→DCB；拧巴→周跳/时间/频率对。
+
+---
+
+## 40. 收束（加厚版）
+
+本课加厚后，你应能：**逐步写出** \(P_i,L_i\) 每个符号；**手算** \(I_1,I_2\) 与 \(P_2-P_1\)；**推出** \(\alpha\) 并得到 STEC；**演示** leveling 如何吃掉 \(B\)；**把 ns 级 DCB 换成 TECU**；**指出**流水线每步失效模式。引用项目名均来自 `PROJECTS.json`。未 git push。
+
+下一课：`03-gim-ionex.md`。

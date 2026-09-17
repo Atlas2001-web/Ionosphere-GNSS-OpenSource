@@ -574,3 +574,171 @@ M(E)=\frac{1}{\cos z'},\quad
 （完）
 
 下一文件：`02-gnss-dualfreq-tec.md`。
+
+
+---
+
+## 21. 公式解剖台 A：等离子体频率——每个符号 + 数字
+
+回顾：
+
+\[
+\omega_p=\sqrt{\frac{N_e\,e^{2}}{\varepsilon_0\,m_e}},\qquad f_p=\frac{\omega_p}{2\pi}.
+\]
+
+**逐步拆符号：**
+
+1. \(N_e\)：电子数密度，单位 \(\mathrm{m}^{-3}\)。例：F2 峰白天可取 \(N_e=1.0\times10^{12}\,\mathrm{m}^{-3}\)（即 \(10^{6}\,\mathrm{cm}^{-3}\)）。  
+2. \(e=1.60217662\times10^{-19}\,\mathrm{C}\)：元电荷。  
+3. \(\varepsilon_0=8.854187817\times10^{-12}\,\mathrm{F\,m}^{-1}\)：真空介电常数。  
+4. \(m_e=9.1093837\times10^{-31}\,\mathrm{kg}\)：电子质量。  
+5. \(\omega_p\)：角频率（rad/s）；\(f_p\)：普通频率（Hz）。
+
+**数值例 A1（手算结构）：**
+
+先算 \(e^{2}= (1.602\times10^{-19})^{2}\approx2.566\times10^{-38}\)。  
+再算 \(\varepsilon_0 m_e\approx8.854\times10^{-12}\times9.109\times10^{-31}\approx8.065\times10^{-42}\)。  
+则 \(e^{2}/(\varepsilon_0 m_e)\approx3.18\times10^{3}\)。  
+对 \(N_e=10^{12}\)：\(N_e e^{2}/(\varepsilon_0 m_e)\approx3.18\times10^{15}\)，开方 \(\omega_p\approx5.64\times10^{7}\,\mathrm{rad/s}\)，  
+\(f_p=\omega_p/(2\pi)\approx9.0\,\mathrm{MHz}\)。
+
+**对照 GNSS：** L1 约 1575 MHz，\(f_1/f_p\approx175\)，\(X=(f_p/f_1)^{2}\approx3.3\times10^{-5}\ll1\)，故可作微扰展开。  
+**变密度：** 若 \(N_e\to4\times10^{12}\)，则 \(f_p\to18\,\mathrm{MHz}\)，\(X\) 变 4 倍，一阶 \(n_g-1\) 也变 4 倍。
+
+---
+
+## 22. 公式解剖台 B：从 \(n=\sqrt{1-X}\) 到 \(n_g\)——每一步
+
+\[
+X=\frac{f_p^{2}}{f^{2}}=\frac{\omega_p^{2}}{\omega^{2}}.
+\]
+
+- \(X\)：无量纲。  
+- \(f\)：载波频率（Hz）；\(\omega=2\pi f\)。
+
+因 \(X\ll1\)：
+
+\[
+n_p=\sqrt{1-X}=1-\frac{X}{2}-\frac{X^{2}}{8}-\cdots\approx1-\frac{X}{2}.
+\]
+
+**群折射率定义（符号）：**
+
+\[
+n_g=n_p+f\frac{\partial n_p}{\partial f}.
+\]
+
+对 \(n_p\approx1-\frac{1}{2}f_p^{2}/f^{2}\)（\(f_p\) 与 \(f\) 无关）：
+
+\[
+\frac{\partial n_p}{\partial f}=+\frac{f_p^{2}}{f^{3}}\implies f\frac{\partial n_p}{\partial f}=+\frac{f_p^{2}}{f^{2}}.
+\]
+
+于是
+
+\[
+n_g\approx\Big(1-\frac{1}{2}\frac{f_p^{2}}{f^{2}}\Big)+\frac{f_p^{2}}{f^{2}}=1+\frac{1}{2}\frac{f_p^{2}}{f^{2}}.
+\]
+
+**结论钉死：** \(n_p-1\approx -X/2<0\)（相位超前）；\(n_g-1\approx +X/2>0\)（群/码延迟）。
+
+**数值例 A2：** 取 \(f_p=9\,\mathrm{MHz}\)，\(f=1575.42\,\mathrm{MHz}\)，\(X=(9/1575.42)^{2}\approx3.26\times10^{-5}\)。  
+则 \(n_g-1\approx X/2\approx1.63\times10^{-5}\)。  
+若路径上等效均匀段长 \(L=200\,\mathrm{km}=2\times10^{5}\,\mathrm{m}\)（仅示意局部），多余群路径 \(\approx(n_g-1)L\approx3.3\,\mathrm{m}\)。真实要用 \(\int N_e\mathrm{d}s\)，不能假设整段均匀——此处只练「小 \(X\) 也能积出米级延迟」。
+
+---
+
+## 23. 公式解剖台 C：\(40.3\) 与 \(I=40.3\,\mathrm{STEC}/f^{2}\)
+
+工程写法：
+
+\[
+n_g-1=\frac{40.3\,N_e}{f^{2}},\qquad
+I=\int(n_g-1)\,\mathrm{d}s=\frac{40.3}{f^{2}}\int N_e\,\mathrm{d}s=\frac{40.3}{f^{2}}\,\mathrm{STEC}.
+\]
+
+**符号账：**
+
+| 符号 | 单位 | 角色 |
+|---|---|---|
+| \(40.3\) | \(\mathrm{m}^{3}\mathrm{s}^{-2}\) | 常数组合 \(e^{2}/(8\pi^{2}\varepsilon_0 m_e)\) 的工程值 |
+| \(N_e\) | \(\mathrm{m}^{-3}\) | 局地电子密度 |
+| \(f\) | \(\mathrm{Hz}\) | 载波频率 |
+| \(\mathrm{STEC}\) | \(\mathrm{m}^{-2}\) | \(\int N_e\mathrm{d}s\) |
+| \(I\) | \(\mathrm{m}\) | 一阶群延迟等效距离 |
+
+**数值例 A3（L1/L2 对照表）：**
+
+取 \(\mathrm{STEC}=10^{17}\,\mathrm{m}^{-2}=10\,\mathrm{TECU}\)。
+
+| 频率 | \(f\) (Hz) | \(f^{2}\) | \(40.3\times10^{17}/f^{2}\) ≈ \(I\) |
+|---|---|---|---|
+| L1 | \(1.57542\times10^{9}\) | \(2.482\times10^{18}\) | \(1.62\,\mathrm{m}\) |
+| L2 | \(1.22760\times10^{9}\) | \(1.507\times10^{18}\) | \(2.67\,\mathrm{m}\) |
+| L5 | \(1.17645\times10^{9}\) | \(1.384\times10^{18}\) | \(2.91\,\mathrm{m}\) |
+
+**验算比例：** \(I_2/I_1=(f_1/f_2)^{2}=(1575.42/1227.60)^{2}\approx1.647\)；\(1.62\times1.647\approx2.67\)，吻合。  
+**若 STEC=35 TECU：** 各 \(I\) 乘 3.5 → L1 约 \(5.7\,\mathrm{m}\)，L2 约 \(9.3\,\mathrm{m}\)。
+
+**TECU 换算式（等价）：** \(\mathrm{STEC}_{\mathrm{m}^{-2}}=(\mathrm{STEC}_{\mathrm{TECU})\times10^{16}\)。  
+有的笔记写 \(I[\mathrm{m}]=40.3\cdot\mathrm{TEC}_{\mathrm{TECU}}/f_{\mathrm{MHz}}^{2}\)——**前因子会变**，必须以该式声明的频率单位为准。本课统一：\(f\) 用 Hz，STEC 用 \(\mathrm{m}^{-2}\)，系数 40.3。
+
+---
+
+## 24. 公式解剖台 D：映射 \(M(E)\)——几何逐步 + 三壳高对照
+
+\[
+\sin z'=\frac{R_E}{R_E+H}\cos E,\qquad
+M(E)=\frac{1}{\cos z'}=\Big(1-\big(\tfrac{R_E}{R_E+H}\cos E\big)^{2}\Big)^{-1/2}.
+\]
+
+**符号：** \(R_E\) 地球半径；\(H\) 薄壳高；\(E\) 仰角；\(z'\) 穿刺点天顶角；\(M\) 映射因子。
+
+**数值例 A4：** \(R_E=6371\,\mathrm{km}\)，\(E=25^\circ\)，\(\cos25^\circ\approx0.9063\)。
+
+| \(H\) (km) | \(R_E/(R_E+H)\) | \(\sin z'\) | \(\cos z'\) | \(M\) | VTEC=18 时 STEC |
+|---|---|---|---|---|---|
+| 350 | 0.948 | 0.859 | 0.512 | 1.953 | 35.2 |
+| 450 | 0.934 | 0.847 | 0.532 | 1.880 | 33.8 |
+| 550 | 0.920 | 0.834 | 0.552 | 1.812 | 32.6 |
+
+**读表：** 同一仰角同一 VTEC，壳高从 350→550 km，STEC 估测差约 2.6 TECU。低仰角时差更大。对比两家产品前，先对齐 \(H\)。
+
+**IPP 水平距离粗估：** 地心角 \(\approx z'-z\) 相关；仰角越低，IPP 离测站越远（可数十至数百 km）。用 `Get_IPP` 算精确经纬，不要心算代替建图。
+
+---
+
+## 25. 形态因果加数值感觉
+
+**昼夜：** 中纬安静日，VTEC 可从夜侧 ~5–10 TECU 升到正午 ~20–40 TECU（太阳活动与季节强依赖）。因果：EUV 开关 + 复合时标。  
+**EIA：** 驼峰处可比赤道槽高数至十余 TECU。因果：喷泉 + 沿磁力线扩散。  
+**太阳周：** 高年与低年同季节安静日，全球平均 TEC 可差一倍量级（粗印象）。因果：EUV 流量。
+
+**误读训练：** 仰角从 90°→20°，\(M:1\to\sim2\)。若 VTEC 不变=20 TECU，STEC 从 20→40。不懂映射的人会喊「TEC 翻倍的扰动」——其实是几何。
+
+---
+
+## 26. 综合演算卷（建议限时 25 分钟）
+
+**题 C1.** \(N_e=5\times10^{11}\,\mathrm{m}^{-3}\)。相对例 A1（\(10^{12}\) 时 \(f_p\approx9\,\mathrm{MHz}\)），\(f_p\approx?\)  
+**答：** \(\propto\sqrt{N_e}\)，故 \(9/\sqrt{2}\approx6.4\,\mathrm{MHz}\)。
+
+**题 C2.** STEC=25 TECU，算 L1、L2 的 \(I\)（用 \(I_{L1}(10\,\mathrm{TECU})\approx1.62\,\mathrm{m}\) 比例法）。  
+**答：** \(\times2.5\) → \(I_1\approx4.05\,\mathrm{m}\)，\(I_2\approx6.68\,\mathrm{m}\)。
+
+**题 C3.** \(E=40^\circ\)，\(H=450\,\mathrm{km}\)，\(R_E=6371\)：求 \(M\)；若 STEC=30 TECU，VTEC≈?  
+**答：** \(\cos40^\circ\approx0.766\)；\(R_E/(R_E+H)\approx0.934\)；\(\sin z'\approx0.715\)；\(\cos z'\approx0.699\)；\(M\approx1.43\)；VTEC≈21.0 TECU。
+
+**题 C4.** 解释为何双频能测 TEC 而单频不能（各写观测方程一项）。  
+**答：** 单频 \(P=\rho+\cdots+I+\cdots\) 中 \(I\) 与 \(\rho\) 缠死；双频 \(I_2=(f_1^{2}/f_2^{2})I_1\)，作差消 \(\rho\)。
+
+**题 C5.** 指出本仓两个估 TEC、两个 IONEX 入口 `name`。  
+**答：** 如 `gnss-tec`、`Seemala-GPS-TEC`；`CDDIS-IONEX`、`JPL-IONEX-Rapid`。
+
+---
+
+## 27. 本课加厚后的「最低掌握线」
+
+能默写并解释：\(\omega_p\) 式、\(n_p\)/\(n_g\) 符号相反、\(I=40.3\,\mathrm{STEC}/f^{2}\) 每个符号、TECU 定义、\(M(E)\) 几何、一例 L1/L2 延迟数字、一例壳高敏感。不能只背「电离层有电子」。
+
+下一课 `02-gnss-dualfreq-tec.md` 把 \(+I/-I\) 写进 \(P,L\) 方程并做 GF 手算。
