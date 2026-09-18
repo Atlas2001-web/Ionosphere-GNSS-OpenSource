@@ -9,11 +9,11 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnss-sdr](https://github.com/gnss-sdr/gnss-sdr) | 开源 GNSS 软件定义接收机 | C++ | 2234 | 🏷️ 高校实验室 · 核心 |
+| [gnss-sdr](https://github.com/gnss-sdr/gnss-sdr) | 开源 GNSS 软件定义接收机 | C++ | 2234 | 🏷️ 高校实验室 核心 |
 | [GNSS-SDRLIB](https://github.com/taroz/GNSS-SDRLIB) | 开源 GNSS 软件无线电库 GNSS-SDRLIB | C | 536 | 🏷️ 个人社区 |
 | [BeagleSDRGPS](https://github.com/jks-prv/Beagle_SDR_GPS) | KiwiSDR：BeagleBone 短波 SDR 与软件 GPS（已归档） | C++ | 521 | 🏷️ 个人社区 |
-| [PocketSDR](https://github.com/tomojitakasu/PocketSDR) | Tomoji Takasu 开源 GNSS 软件接收机（多星座多频 SDR） | C | 515 | 🏷️ 个人社区 · 核心 |
-| [FGI-GSRx](https://github.com/nlsfi/FGI-GSRx) | 芬兰 FGI 多星座 MATLAB 软件接收机 | MATLAB | 192 | 🏷️ 官方 · 核心 |
+| [PocketSDR](https://github.com/tomojitakasu/PocketSDR) | Tomoji Takasu 开源 GNSS 软件接收机（多星座多频 SDR） | C | 515 | 🏷️ 个人社区 核心 |
+| [FGI-GSRx](https://github.com/nlsfi/FGI-GSRx) | 芬兰 FGI 多星座 MATLAB 软件接收机 | MATLAB | 192 | 🏷️ 官方 核心 |
 | [Full_Stack_GPS_Receiver](https://github.com/hamsternz/Full_Stack_GPS_Receiver) | 从 1-bit 采样到定位的完整 GPS 软件接收机 | C | 168 | 🏷️ 个人社区 |
 | [Analog-GPS-data-receiver](https://github.com/leaningktower/Analog-GPS-data-receiver) | 分立射频+TinyFPGA 的模拟 GPS 接收教学项目 | C | 164 | 🏷️ 个人社区 |
 | [GNSS-GPS-SDR](https://github.com/JiaoXianjun/GNSS-GPS-SDR) | GPS 录回放、接收与测试相关实验代码 | Python | 157 | 🏷️ 个人社区 |
@@ -46,7 +46,7 @@
 ### 详细说明
 
 #### [gnss-sdr](https://github.com/gnss-sdr/gnss-sdr)  
-*🏷️ 高校实验室 · 核心*
+*🏷️ 高校实验室 核心*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：2234 · 宿主：github
 
@@ -67,14 +67,14 @@
 KiwiSDR 上游核心：在 BeagleBone 上提供 Web 可访问短波接收，并含软件定义 GPS 相关能力；仓库状态为归档。适合研究 Kiwi 架构或做衍生硬件参考。新功能与安全修复已停止，活跃使用请关注社区衍生板卡（如 FlyDog/FlyCat）及其分支。BeagleBone 镜像与帽板硬件版本必须匹配。
 
 #### [PocketSDR](https://github.com/tomojitakasu/PocketSDR)  
-*🏷️ 个人社区 · 核心*
+*🏷️ 个人社区 核心*
 
 语言：C · 许可：NOASSERTION · 星标约：515 · 宿主：github
 
 RTKLIB 作者推出的开源 GNSS SDR：配套 Pocket SDR FE 前端与 Python/C/C++ 应用，覆盖 GPS/GLONASS/Galileo/QZSS/BDS/NavIC/SBAS 多频信号，可做捕获、跟踪、导航电文与 PVT。适合信号层教学与前端联调。精密 PPP/RTK 解算仍常外接 RTKLIB 系；硬件前端需另行采购或自备。
 
 #### [FGI-GSRx](https://github.com/nlsfi/FGI-GSRx)  
-*🏷️ 官方 · 核心*
+*🏷️ 官方 核心*
 
 语言：MATLAB · 许可：GPL-3.0 · 星标约：192 · 宿主：github
 
@@ -280,7 +280,7 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gps-sdr-sim](https://github.com/osqzss/gps-sdr-sim) | GPS L1 基带信号仿真（SDR 回放） | C | 3466 | 🏷️ 个人社区 · 核心 |
+| [gps-sdr-sim](https://github.com/osqzss/gps-sdr-sim) | GPS L1 基带信号仿真（SDR 回放） | C | 3466 | 🏷️ 个人社区 核心 |
 | [multi-sdr-gps-sim](https://github.com/Mictronics/multi-sdr-gps-sim) | 多 SDR 平台的 GPS L1 实时 IQ 仿真 | C | 264 | 🏷️ 个人社区 |
 | [SignalSim](https://github.com/globsky/SignalSim) | 多阶段 GNSS 信号与数据仿真器 | C++ | 208 | 🏷️ 个人社区 |
 | [gps-sdr-sim-assistant](https://github.com/frank-pian/gps-sdr-sim-assistant) | gps-sdr-sim 的图形化助手工具 | JavaScript | 63 | 🏷️ 个人社区 |
@@ -297,7 +297,7 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 ### 详细说明
 
 #### [gps-sdr-sim](https://github.com/osqzss/gps-sdr-sim)  
-*🏷️ 个人社区 · 核心*
+*🏷️ 个人社区 核心*
 
 语言：C · 许可：MIT · 星标约：3466 · 宿主：github
 

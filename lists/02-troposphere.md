@@ -1,5 +1,5 @@
 # 对流层 / Troposphere
-> 共 **29** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **31** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
@@ -35,6 +35,8 @@ Surrey TechDemoSat-1（MERRByS）星载 GNSS-R 的 Python/Jupyter 示例，演�
 | [geodezyx](https://github.com/IPGP/geodezyx) | IPGP 大地测量/地球物理 Python 工具箱（含对流层/PWV） | Python | 33 | 🏷️ 高校实验室 |
 | [PW_from_GPS](https://github.com/ZiskinZiv/PW_from_GPS) | GPS 可降水量（PWV）分析与 ML 应用工具 | Python | 22 | 🏷️ 个人社区 |
 | [pwv_kpno](https://github.com/mwvgroup/pwv_kpno) | 基于 SuomiNet GPS 的可定制站点 PWV 大气透过率模型 | Python | 11 | 🏷️ 高校实验室 |
+| [OpATOM](https://github.com/benceturak/GeoPack/tree/GPSTomographyToolbox/GPSTomographyToolbox) | 布达佩斯理工 OpATOM：Python GNSS 对流层湿折射率层析（MART）工具箱 | Python | 3 | 🏷️ 高校实验室 |
+| [ATom-TUWien](https://github.com/GregorMoeller/ATom) | TU Wien MATLAB：GNSS 大气层析与湿折射率三维重建（含 GUI） | MATLAB | 2 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -58,6 +60,20 @@ Surrey TechDemoSat-1（MERRByS）星载 GNSS-R 的 Python/Jupyter 示例，演�
 语言：Python · 许可：GPL-3.0 · 星标约：11 · 宿主：github
 
 用 SuomiNet 等 GPS 反演的 PWV 驱动 MODTRAN 类大气透过率，默认服务 Kitt Peak，也可扩展到其它站点。面向天文测光改正与 GNSS 气象交叉验证。不是从 RINEX 估 ZWD 的 PPP 引擎；站点扩展需配置与文献引用。
+
+#### [OpATOM](https://github.com/benceturak/GeoPack/tree/GPSTomographyToolbox/GPSTomographyToolbox)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：— · 星标约：3 · 宿主：github
+
+BME 大地测量组发布的开源 Python 层析工具箱，由 ZWD/梯度、SP3、VMF1 网格重建三维湿折射率并可换算水汽密度，含 MART 迭代、粗差剔除与探空气球验证样例。适合近实时 GNSS 气象层析实验；输入偏 Bernese TRP/VMF1 工作流，区域尺度与体素设计需按研究区自调。用户指南见 gpsmet.geod.bme.hu。
+
+#### [ATom-TUWien](https://github.com/GregorMoeller/ATom)  
+*🏷️ 高校实验室*
+
+语言：MATLAB · 许可：GPL-3.0 · 星标约：2 · 宿主：github
+
+维也纳工业大学 GNSS-ATom 项目的 MATLAB 层析软件，沿弯曲信号路径重建低层大气三维湿折射率，并支持广播星历→方位角、ZTD→斜延迟、数值天气模式与折射场互转。GPL-3。适合对流层层析方法教学；依赖 MATLAB GUI 与多种大地测量格式，不是实时业务系统。
 
 ## VMF/GGOS产品
 
@@ -217,12 +233,12 @@ MATLAB 工具：获取并分析 GNSS-R 水位观测，同时可生成合成 SNR�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnssrefl](https://github.com/kristinemlarson/gnssrefl) | GNSS-IR：反射信号估水位/土壤湿度/雪深 | Python | 217 | 🏷️ 高校实验室 · 核心 |
+| [gnssrefl](https://github.com/kristinemlarson/gnssrefl) | GNSS-IR：反射信号估水位/土壤湿度/雪深 | Python | 217 | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
 
 #### [gnssrefl](https://github.com/kristinemlarson/gnssrefl)  
-*🏷️ 高校实验室 · 核心*
+*🏷️ 高校实验室 核心*
 
 语言：Python · 许可：GPL-3.0 · 星标约：217 · 宿主：github
 
@@ -270,12 +286,12 @@ ICAMS 用全球大气模式做 InSAR 对流层改正，并考虑空间随机特�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [mpsim](https://github.com/ufrgs-gnss-lab/mpsim) | UFRGS 开源 GNSS 多路径前向仿真器（Matlab/Octave，近地表反射测量） | MATLAB | 48 | 🏷️ 高校实验室 · 核心 |
+| [mpsim](https://github.com/ufrgs-gnss-lab/mpsim) | UFRGS 开源 GNSS 多路径前向仿真器（Matlab/Octave，近地表反射测量） | MATLAB | 48 | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
 
 #### [mpsim](https://github.com/ufrgs-gnss-lab/mpsim)  
-*🏷️ 高校实验室 · 核心*
+*🏷️ 高校实验室 核心*
 
 语言：MATLAB · 许可：BSD-2-Clause · 星标约：48 · 宿主：github
 
@@ -285,12 +301,12 @@ Nievinski 与 Larson 发表于 GPS Solutions 的开源多路径仿真器，用�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [RADIATE](https://github.com/TUW-VieVS/RADIATE) | 维也纳科技大学 VieVS 开源对流层射线追踪（微波/光学，基于数值天气模式） | Fortran | 23 | 🏷️ 高校实验室 · 核心 |
+| [RADIATE](https://github.com/TUW-VieVS/RADIATE) | 维也纳科技大学 VieVS 开源对流层射线追踪（微波/光学，基于数值天气模式） | Fortran | 23 | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
 
 #### [RADIATE](https://github.com/TUW-VieVS/RADIATE)  
-*🏷️ 高校实验室 · 核心*
+*🏷️ 高校实验室 核心*
 
 语言：Fortran · 许可：GPL-3.0 · 星标约：23 · 宿主：github
 
@@ -300,12 +316,12 @@ TU Wien VieVS 组发布的 Fortran 射线追踪程序，可对微波与光学频
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [STD_SWD_Calc](https://github.com/zohrehadavi/STD_SWD_Calc) | 由 GPT/VMF 等计算 GNSS STD/SWD 与模型 ZTD | Python | 10 | 🏷️ 个人社区 · 核心 |
+| [STD_SWD_Calc](https://github.com/zohrehadavi/STD_SWD_Calc) | 由 GPT/VMF 等计算 GNSS STD/SWD 与模型 ZTD | Python | 10 | 🏷️ 个人社区 核心 |
 
 ### 详细说明
 
 #### [STD_SWD_Calc](https://github.com/zohrehadavi/STD_SWD_Calc)  
-*🏷️ 个人社区 · 核心*
+*🏷️ 个人社区 核心*
 
 语言：Python · 许可：GPL-3.0 · 星标约：10 · 宿主：github
 
@@ -315,13 +331,13 @@ Python 包生成斜路径干/湿延迟（STD/SWD）以及基于 GPT/VMF 的模�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [TU-Wien-VMF-GPT-codes](https://vmf.geo.tuwien.ac.at/codes) | TU Wien 官方 VMF1/VMF3/GPT/GMF 源码与格网目录 | Fortran/MATLAB/C++ | — | 🏷️ 官方 · 核心 |
+| [TU-Wien-VMF-GPT-codes](https://vmf.geo.tuwien.ac.at/codes) | TU Wien 官方 VMF1/VMF3/GPT/GMF 源码与格网目录 | Fortran/MATLAB/C++ | — | 🏷️ 官方 核心 |
 | [VMF-TUWien-Home](https://vmf.geo.tuwien.ac.at/) | TU Wien VMF 主页：对流层映射函数产品与代码入口 | Fortran/MATLAB | — | 🏷️ 官方 |
 
 ### 详细说明
 
 #### [TU-Wien-VMF-GPT-codes](https://vmf.geo.tuwien.ac.at/codes)  
-*🏷️ 官方 · 核心*
+*🏷️ 官方 核心*
 
 语言：Fortran/MATLAB/C++ · 许可：TU Wien site terms · 星标约：— · 宿主：official_site
 
@@ -338,12 +354,12 @@ Python 包生成斜路径干/湿延迟（STD/SWD）以及基于 GPT/VMF 的模�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [UNB3m](https://github.com/ohm1122/UNB3m) | UNB3m 中性大气延迟模型 | — | 3 | 🏷️ 个人社区 · ★ Star |
+| [UNB3m](https://github.com/ohm1122/UNB3m) | UNB3m 中性大气延迟模型 | — | 3 | 🏷️ 个人社区 ★ |
 
 ### 详细说明
 
 #### [UNB3m](https://github.com/ohm1122/UNB3m)  
-*🏷️ 个人社区 · ★ Star*
+*🏷️ 个人社区 ★*
 
 语言：— · 许可：— · 星标约：3 · 宿主：github
 

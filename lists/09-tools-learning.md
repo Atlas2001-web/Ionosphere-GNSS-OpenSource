@@ -10,7 +10,7 @@
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [UrbanNavDataset](https://github.com/IPNL-POLYU/UrbanNavDataset) | 亚洲城市峡谷多传感器定位数据集 | Python | 606 | 🏷️ 高校实验室 |
-| [awesome-gins-datasets](https://github.com/i2Nav-WHU/awesome-gins-datasets) | 武大 i2Nav 整理的车载 GNSS/INS 融合公开数据集列表 | — | 280 | 🏷️ 高校实验室 · 核心 |
+| [awesome-gins-datasets](https://github.com/i2Nav-WHU/awesome-gins-datasets) | 武大 i2Nav 整理的车载 GNSS/INS 融合公开数据集列表 | — | 280 | 🏷️ 高校实验室 核心 |
 | [gnss2tws-green](https://github.com/jzshhh/gnss2tws_green) | 由 GNSS 垂直位移反演陆地水储量 GNSS2TWS | MATLAB | 33 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -23,7 +23,7 @@
 香港/东京等城市峡谷多传感器数据，含真值，是 GNSS/INS/视觉算法基准常用集。适合算法评测。本身不是解算软件。
 
 #### [awesome-gins-datasets](https://github.com/i2Nav-WHU/awesome-gins-datasets)  
-*🏷️ 高校实验室 · 核心*
+*🏷️ 高校实验室 核心*
 
 语言：— · 许可：— · 星标约：280 · 宿主：github
 
@@ -40,13 +40,13 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [awesome-gnss](https://github.com/barbeau/awesome-gnss) | 开源 GNSS 软件与资源社区列表 | — | 599 | 🏷️ 个人社区 · 核心 |
+| [awesome-gnss](https://github.com/barbeau/awesome-gnss) | 开源 GNSS 软件与资源社区列表 | — | 599 | 🏷️ 个人社区 核心 |
 | [awesome-gnss](https://github.com/hdkarimi/awesome-gnss) | GNSS/RNSS 开源工具、数据与课程的 awesome 列表 | — | 50 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [awesome-gnss](https://github.com/barbeau/awesome-gnss)  
-*🏷️ 个人社区 · 核心*
+*🏷️ 个人社区 核心*
 
 语言：— · 许可：Apache-2.0 · 星标约：599 · 宿主：github
 
@@ -230,14 +230,14 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning) | 导航定位开源项目解读与学习笔记（中文） | — | 2417 | 🏷️ 个人社区 · ★ Star · 核心 |
+| [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning) | 导航定位开源项目解读与学习笔记（中文） | — | 2417 | 🏷️ 个人社区 ★ 核心 |
 | [learning_rtklib](https://github.com/libing64/learning_rtklib) | RTKLIB 学习相关材料 | — | 163 | 🏷️ 个人社区 |
 | [RTKLIB-Manual-CN](https://github.com/salmoshu/RTKLIB-Manual-CN) | RTKLIB 中文手册解读与源码解析笔记 | — | 54 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
 #### [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning)  
-*🏷️ 个人社区 · ★ Star · 核心*
+*🏷️ 个人社区 ★ 核心*
 
 语言：— · 许可：— · 星标约：2417 · 宿主：github
 

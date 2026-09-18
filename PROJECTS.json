@@ -4,19 +4,19 @@
   "repo_description_en": "Curated index of open-source ionosphere / troposphere / GNSS / PNT software",
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
-  "generated": "2026-09-17",
-  "project_count": 647,
+  "generated": "2026-09-18",
+  "project_count": 656,
   "counts_by_category": {
-    "gnss-data": 89,
-    "gnss-datasets": 60,
-    "gnss-positioning": 75,
-    "gnss-sdr": 57,
-    "ionosphere": 231,
-    "mobile-apps": 11,
+    "ionosphere": 232,
+    "troposphere": 31,
+    "gnss-data": 92,
+    "gnss-positioning": 76,
+    "orbit-clock": 13,
     "navigation-ins": 54,
-    "orbit-clock": 12,
+    "gnss-sdr": 57,
+    "mobile-apps": 12,
     "tools-learning": 29,
-    "troposphere": 29
+    "gnss-datasets": 60
   },
   "projects": [
     {
@@ -12554,12 +12554,193 @@
       "one_liner_zh": "TU Wien VMF 主页：对流层映射函数产品与代码入口",
       "provenance": "official",
       "host": "official_site"
+    },
+    {
+      "name": "GSILIB",
+      "url": "https://terras.gsi.go.jp/geo_info/gsilib/gsilib.html",
+      "desc_zh": "日本国土地理院公开的多 GNSS 基线/PPP 解析库（RTKLIB 衍生，含 IFB/ISB）",
+      "analysis_zh": "国土地理院（GSI）基于 RTKLIB 2.4.2 与 ANTTOOL 发布的多 GNSS 解析软件，支持 GPS/QZSS/GLONASS/Galileo 的 L1/L2/L5 基线处理，并新增异机种 IFB/ISB 估计与 L2P–L2C 四分之一周校正。BSD-2（ANTApp 为 GPL-3）。适合日本公共测量与多星座短基线实验；Windows 为主，功能分批核验后公开，不是完整实时 RTK 套件。",
+      "language": "C",
+      "license": "BSD-2-Clause (ANTApp GPL-3.0)",
+      "category": "gnss-positioning",
+      "subcategory": "SPP/RTK/PPP",
+      "markers": [
+        "routine-2026-09-18",
+        "core"
+      ],
+      "stars_approx": null,
+      "source": "routine-web-search-2026-09-18",
+      "featured": true,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "日本国土地理院公开的多 GNSS 基线/PPP 解析库（RTKLIB 衍生，含 IFB/ISB）"
+    },
+    {
+      "name": "VARION",
+      "url": "https://github.com/giorgiosavastano/VARION",
+      "desc_zh": "Sapienza 变分法实时电离层：由 RINEX 估计 sTEC 变化（海啸扰动等）",
+      "analysis_zh": "罗马一大（Sapienza）开源的变分法电离层观测工具，读取 RINEX 观测/广播星历估计 slant TEC 变化，用于站级近实时扰动监测（如海啸电离层扰动）。Python+NumPy/Pandas，GPL-3。适合单站高频 TEC 扰动教学与案例复现；依赖较旧的 Python 2.7+ 生态，需自行准备导航文件与站坐标。",
+      "language": "Python",
+      "license": "GPL-3.0",
+      "category": "ionosphere",
+      "subcategory": "TEC估计",
+      "markers": [
+        "routine-2026-09-18"
+      ],
+      "stars_approx": 15,
+      "source": "routine-web-search-2026-09-18",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "Sapienza 变分法实时电离层：由 RINEX 估计 sTEC 变化（海啸扰动等）"
+    },
+    {
+      "name": "Cube",
+      "url": "https://github.com/liush18/Cube",
+      "desc_zh": "中科院精密测量院：GPS 卫星钟/解耦钟估计与 PPP-AR（RTKLIB 二次开发）",
+      "analysis_zh": "基于 RTKLIB 的服务端钟差/解耦钟（DCK）估计与用户端 PPP/PPP-AR 工具，可输出坐标、ZTD、模糊度与残差文件。BSD-2（继承 RTKLIB）。适合研究 IRC/DCK 模型与钟差产品生成；目前以 GPS、Windows 实验为主，多星座与跨平台移植需自行扩展。",
+      "language": "C",
+      "license": "BSD-2-Clause",
+      "category": "orbit-clock",
+      "subcategory": "钟差/轨道/UPD",
+      "markers": [
+        "routine-2026-09-18"
+      ],
+      "stars_approx": 30,
+      "source": "routine-web-search-2026-09-18",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "中科院精密测量院：GPS 卫星钟/解耦钟估计与 PPP-AR（RTKLIB 二次开发）"
+    },
+    {
+      "name": "ATom-TUWien",
+      "url": "https://github.com/GregorMoeller/ATom",
+      "desc_zh": "TU Wien MATLAB：GNSS 大气层析与湿折射率三维重建（含 GUI）",
+      "analysis_zh": "维也纳工业大学 GNSS-ATom 项目的 MATLAB 层析软件，沿弯曲信号路径重建低层大气三维湿折射率，并支持广播星历→方位角、ZTD→斜延迟、数值天气模式与折射场互转。GPL-3。适合对流层层析方法教学；依赖 MATLAB GUI 与多种大地测量格式，不是实时业务系统。",
+      "language": "MATLAB",
+      "license": "GPL-3.0",
+      "category": "troposphere",
+      "subcategory": "GNSS气象/PWV",
+      "markers": [
+        "routine-2026-09-18"
+      ],
+      "stars_approx": 2,
+      "source": "routine-web-search-2026-09-18",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "TU Wien MATLAB：GNSS 大气层析与湿折射率三维重建（含 GUI）"
+    },
+    {
+      "name": "OpATOM",
+      "url": "https://github.com/benceturak/GeoPack/tree/GPSTomographyToolbox/GPSTomographyToolbox",
+      "desc_zh": "布达佩斯理工 OpATOM：Python GNSS 对流层湿折射率层析（MART）工具箱",
+      "analysis_zh": "BME 大地测量组发布的开源 Python 层析工具箱，由 ZWD/梯度、SP3、VMF1 网格重建三维湿折射率并可换算水汽密度，含 MART 迭代、粗差剔除与探空气球验证样例。适合近实时 GNSS 气象层析实验；输入偏 Bernese TRP/VMF1 工作流，区域尺度与体素设计需按研究区自调。用户指南见 gpsmet.geod.bme.hu。",
+      "language": "Python",
+      "license": "",
+      "category": "troposphere",
+      "subcategory": "GNSS气象/PWV",
+      "markers": [
+        "routine-2026-09-18"
+      ],
+      "stars_approx": 3,
+      "source": "routine-web-search-2026-09-18",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "布达佩斯理工 OpATOM：Python GNSS 对流层湿折射率层析（MART）工具箱"
+    },
+    {
+      "name": "geoveil-mp",
+      "url": "https://github.com/miluta7/geoveil-mp",
+      "desc_zh": "Rust/Python：RINEX 逐码多路径 MP 组合、周跳检测与 SNR 序列导出",
+      "analysis_zh": "面向连续站质控的多路径分析库（Anubis/TEQC 思路），对每个伪距码做 MP 线性组合、弧段去模糊、间隔自适应周跳检测，并导出 SNR。MIT，PyPI 预编译轮。适合长时序台站多路径趋势监控；本身不做精密定位，需配合 SP3 才有高度角加权统计。",
+      "language": "Rust",
+      "license": "MIT",
+      "category": "gnss-data",
+      "subcategory": "多路径/QC",
+      "markers": [
+        "routine-2026-09-18"
+      ],
+      "stars_approx": 0,
+      "source": "routine-web-search-2026-09-18",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "Rust/Python：RINEX 逐码多路径 MP 组合、周跳检测与 SNR 序列导出"
+    },
+    {
+      "name": "geoveil-cn0",
+      "url": "https://github.com/miluta7/geoveil-cn0",
+      "desc_zh": "Rust/Python：RINEX CN0 质量评分与干扰/欺骗/干扰检测",
+      "analysis_zh": "GNSS 信号质量分析库，输出 0–100 综合评分、星空图与时序，并检测 jamming/spoofing/interference；支持 RINEX 2/3/4 与 Hatanaka。MIT，PyPI。适合 CORS 台站健康度与干扰监测；欺骗检测依赖导航文件可见性对比，算法阈值非认证级威胁情报。",
+      "language": "Rust",
+      "license": "MIT",
+      "category": "gnss-data",
+      "subcategory": "质量检查",
+      "markers": [
+        "routine-2026-09-18"
+      ],
+      "stars_approx": 3,
+      "source": "routine-web-search-2026-09-18",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "Rust/Python：RINEX CN0 质量评分与干扰/欺骗/干扰检测"
+    },
+    {
+      "name": "ntrip-caster-go",
+      "url": "https://github.com/symysak/ntrip-caster",
+      "desc_zh": "Go 实现的 NTRIP v1/v2 Caster：就近基站切换、挂载点认证与热重载",
+      "analysis_zh": "轻量 NTRIP 播发端，支持 v1/v2 客户端拉取与基站推送、按 GGA 就近切换虚拟挂载点、账号认证与 SIGHUP 热重载。适合自建小型 CORS/农机差分播发；密码明文配置、尚无原生 TLS，公网部署需前置反向代理并自行加固。许可未在 GitHub 标明 SPDX，使用前请确认上游条款。",
+      "language": "Go",
+      "license": "",
+      "category": "gnss-data",
+      "subcategory": "RTCM/NTRIP",
+      "markers": [
+        "routine-2026-09-18"
+      ],
+      "stars_approx": 1,
+      "source": "routine-web-search-2026-09-18",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "Go 实现的 NTRIP v1/v2 Caster：就近基站切换、挂载点认证与热重载"
+    },
+    {
+      "name": "SparkFun_u-blox_GNSS_v3",
+      "url": "https://github.com/SparkFun/SparkFun_u-blox_GNSS_v3",
+      "desc_zh": "SparkFun Arduino 库：通过 Configuration Interface 驱动 u-blox GNSS 模块",
+      "analysis_zh": "面向嵌入式/创客的 Arduino 库，用 u-blox Configuration Interface 配置与读取模块，便于采集原始测量或 NMEA。适合低成本接收机原型与教学；不是精密定位引擎，高级 RTK/PPP 仍需配合基站与解算软件。",
+      "language": "C++",
+      "license": "MIT-style (SparkFun code)",
+      "category": "mobile-apps",
+      "subcategory": "嵌入式/Arduino",
+      "markers": [
+        "routine-2026-09-18"
+      ],
+      "stars_approx": 104,
+      "source": "routine-web-search-2026-09-18",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "SparkFun Arduino 库：通过 Configuration Interface 驱动 u-blox GNSS 模块"
     }
   ],
   "provenance_counts": {
-    "personal_community": 296,
-    "academic_lab": 192,
-    "official": 159
+    "official": 160,
+    "academic_lab": 196,
+    "personal_community": 300
   },
-  "updated": "2026-09-17"
+  "updated": "2026-09-18"
 }

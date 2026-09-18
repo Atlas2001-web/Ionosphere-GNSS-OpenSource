@@ -1,5 +1,5 @@
 # 移动与嵌入式应用 / Mobile Apps
-> 共 **11** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **12** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** 手机/嵌入式上的 GNSS 测试、原始测量记录与简易定位。
 
@@ -9,7 +9,7 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GPSTest](https://github.com/barbeau/gpstest) | 开源 Android GNSS 测试与原始测量记录 | Kotlin | 2402 | 🏷️ 个人社区 · ★ Star · 核心 |
+| [GPSTest](https://github.com/barbeau/gpstest) | 开源 Android GNSS 测试与原始测量记录 | Kotlin | 2402 | 🏷️ 个人社区 ★ 核心 |
 | [GPSLogger](https://github.com/BasicAirData/GPSLogger) | Android 开源 GPS 轨迹记录器 | Java | 504 | 🏷️ 个人社区 |
 | [bluetooth_gnss](https://github.com/ykasidit/bluetooth_gnss) | Android 蓝牙外接 GNSS/RTK 与 NTRIP 应用 | Java | 123 | 🏷️ 个人社区 |
 | [GNSS_Compare](https://github.com/TheGalfins/GNSS_Compare) | 安卓端用原始测量做定位的框架 | Java | 73 | 🏷️ 个人社区 |
@@ -18,7 +18,7 @@
 ### 详细说明
 
 #### [GPSTest](https://github.com/barbeau/gpstest)  
-*🏷️ 个人社区 · ★ Star · 核心*
+*🏷️ 个人社区 ★ 核心*
 
 语言：Kotlin · 许可：Apache-2.0 · 星标约：2402 · 宿主：github
 
@@ -106,3 +106,18 @@ Go 实现的跨平台 GNSS 工具，强调 PPS/PTP/NTP 授时、RINEX/RTCM 与�
 语言：C++ · 许可：— · 星标约：2 · 宿主：github
 
 在 Arduino 上用 GNSS（GPS/GLONASS/Galileo）NMEA 语句与 PPS 秒脉冲实现时钟与守时，方便嵌入式授时和业余无线电时间基准。适合单片机爱好者与简易时频同步。功能止于时钟/授时，不含 RTK 或精密 PVT；可用星座取决于所接 GNSS 模块固件。PPS 布线与晶振稳定度影响短期守时表现。
+
+## 嵌入式/Arduino
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SparkFun_u-blox_GNSS_v3](https://github.com/SparkFun/SparkFun_u-blox_GNSS_v3) | SparkFun Arduino 库：通过 Configuration Interface 驱动 u-blox GNSS 模块 | C++ | 104 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [SparkFun_u-blox_GNSS_v3](https://github.com/SparkFun/SparkFun_u-blox_GNSS_v3)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：MIT-style (SparkFun code) · 星标约：104 · 宿主：github
+
+面向嵌入式/创客的 Arduino 库，用 u-blox Configuration Interface 配置与读取模块，便于采集原始测量或 NMEA。适合低成本接收机原型与教学；不是精密定位引擎，高级 RTK/PPP 仍需配合基站与解算软件。

@@ -242,3 +242,12 @@
 - 前几轮「全库 Unicode / 替换 $$」把正文改乱（全角 ＄＄、公式碎片）
 - 已将 `docs/tutorials/` **回滚到 fcc8426**（GitHub `$`/`$$` 可读的版本），仅保留几何直觉 B 条的明文角度写法
 - 不再做全库暴力替换；后续只定点修露源码行
+
+## 例行检索补录（2026-09-18）
+
+- 稿件：`research/routine_finds_20260918.json`（9 条核验候选）
+- 本轮净增 **9**：GSILIB, VARION, Cube, ATom-TUWien, OpATOM, geoveil-mp, geoveil-cn0, ntrip-caster-go, SparkFun_u-blox_GNSS_v3
+- 跳过：pppx（学术非商用二进制发行，非 OSI 开源）、SouthPAN-GNSS-Receiver-Documentation（已归档文档仓）、INTOMO/SNACS（无公开源码或页面不可核验）
+- 当前条目：**656**
+- 分类计数：{'ionosphere': 232, 'troposphere': 31, 'gnss-data': 92, 'gnss-positioning': 76, 'orbit-clock': 13, 'navigation-ins': 54, 'gnss-sdr': 57, 'mobile-apps': 12, 'tools-learning': 29, 'gnss-datasets': 60}
+- 来源统计：{'official': 160, 'academic_lab': 196, 'personal_community': 300}

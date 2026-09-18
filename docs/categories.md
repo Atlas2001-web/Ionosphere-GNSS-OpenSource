@@ -33,35 +33,35 @@
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
 - 列表文件：[`lists/01-ionosphere.md`](../lists/01-ionosphere.md)
-- 当前条目数：**231**
+- 当前条目数：**232**
 
 ## `troposphere` — 对流层
 
 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
 - 列表文件：[`lists/02-troposphere.md`](../lists/02-troposphere.md)
-- 当前条目数：**29**
+- 当前条目数：**31**
 
 ## `gnss-data` — GNSS 数据与格式
 
 RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
 - 列表文件：[`lists/03-gnss-data.md`](../lists/03-gnss-data.md)
-- 当前条目数：**89**
+- 当前条目数：**92**
 
 ## `gnss-positioning` — 精密定位
 
 SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
 - 列表文件：[`lists/04-gnss-positioning.md`](../lists/04-gnss-positioning.md)
-- 当前条目数：**75**
+- 当前条目数：**76**
 
 ## `orbit-clock` — 轨道与钟差
 
 精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。
 
 - 列表文件：[`lists/05-orbit-clock.md`](../lists/05-orbit-clock.md)
-- 当前条目数：**12**
+- 当前条目数：**13**
 
 ## `navigation-ins` — 导航
 
@@ -82,7 +82,7 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 手机/嵌入式上的 GNSS 测试、原始测量记录与简易定位。
 
 - 列表文件：[`lists/08-mobile-apps.md`](../lists/08-mobile-apps.md)
-- 当前条目数：**11**
+- 当前条目数：**12**
 
 ## `tools-learning` — 学习资源与工具
 
