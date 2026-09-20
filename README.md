@@ -50,8 +50,14 @@
 | TEC 水平梯度 | ![](./docs/tutorials/images/fig-tec-gradient.png) | [21](./docs/tutorials/21-equatorial-anomaly-bubbles.md) · [22 TID](./docs/tutorials/22-tid-traveling-disturbances.md) |
 | GNSS 频段 | ![](./docs/tutorials/images/fig-gnss-freq-bands.png) | [01 基础](./docs/tutorials/01-ionosphere-tec-basics.md) |
 | DCB 偏差伪装 | ![](./docs/tutorials/images/fig-bias-dcb.png) | [01](./docs/tutorials/01-ionosphere-tec-basics.md) · [02](./docs/tutorials/02-gnss-dualfreq-tec.md) |
+| 全球 VTEC 海岸线底图 | ![](./docs/tutorials/images/fig-vtec-global-coast.png) | [01 基础](./docs/tutorials/01-ionosphere-tec-basics.md) · [21 EIA](./docs/tutorials/21-equatorial-anomaly-bubbles.md) |
+| EIA 双峰 TEC 地图 | ![](./docs/tutorials/images/fig-eia-tec-map-coast.png) | [21 赤道异常](./docs/tutorials/21-equatorial-anomaly-bubbles.md) |
+| ROTI 热点海岸图 | ![](./docs/tutorials/images/fig-roti-hotspots-coast.png) | [05 闪烁](./docs/tutorials/05-scintillation-roti.md) |
+| 磁暴 ΔTEC 海岸图 | ![](./docs/tutorials/images/fig-storm-tec-diff-coast.png) | [20 磁暴](./docs/tutorials/20-storm-tec-analysis.md) |
+| 气泡闪烁带海岸图 | ![](./docs/tutorials/images/fig-bubble-belt-coast.png) | [05 闪烁](./docs/tutorials/05-scintillation-roti.md) · [21](./docs/tutorials/21-equatorial-anomaly-bubbles.md) |
+| IPP 轨迹海岸图 | ![](./docs/tutorials/images/fig-ipp-tracks-coast.png) | [01 基础](./docs/tutorials/01-ionosphere-tec-basics.md) |
 
-配图再生：`python3 scripts/make_phenomena_figs.py` · `python3 scripts/make_supplement_figs.py` · `python3 scripts/make_geom_figs.py` · 来源登记：[SOURCES.md](./docs/tutorials/images/SOURCES.md)
+配图再生：`python3 scripts/make_phenomena_figs.py` · `python3 scripts/make_supplement_figs.py` · `python3 scripts/make_geom_figs.py` · `python3 scripts/make_coast_maps.py` · 来源登记：[SOURCES.md](./docs/tutorials/images/SOURCES.md)
 
 ---
 

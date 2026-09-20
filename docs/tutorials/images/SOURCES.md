@@ -36,11 +36,19 @@
 | `fig-gnss-freq-bands.png` | Original schematic | CC0-1.0 |
 | `fig-bias-dcb.png` | Original schematic | CC0-1.0 |
 
+| `fig-vtec-global-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
+| `fig-eia-tec-map-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
+| `fig-roti-hotspots-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
+| `fig-storm-tec-diff-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
+| `fig-bubble-belt-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
+| `fig-ipp-tracks-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
+
 再生命令（仓库根目录）：
 
 - `.venv/bin/python scripts/make_phenomena_figs.py`
 - `.venv/bin/python scripts/make_supplement_figs.py`
 - `.venv/bin/python scripts/make_geom_figs.py`
 - `.venv/bin/python scripts/make_teaching_figs.py`
+- `.venv/bin/python scripts/make_coast_maps.py`
 
 若日后增加 NASA / NOAA / Wikimedia Commons 图，必须在本文件追加：URL、作者、许可（如 Public Domain / CC BY 4.0），并在课文引用处写明。
