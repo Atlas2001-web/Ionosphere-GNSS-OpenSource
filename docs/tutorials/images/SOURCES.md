@@ -18,6 +18,6 @@
 | `fig-roti-time-series.png` | Original schematic | CC0-1.0 |
 | `fig-phenomena-gallery.png` | Original collage | CC0-1.0 |
 
-再生：`python3 scripts/make_phenomena_figs.py`（需 matplotlib/numpy）。
+再生：`python3 scripts/make_phenomena_figs.py`（需 matplotlib/numpy；推荐 Noto Sans CJK 字体）。
 
 若增加 NASA/NOAA/Wikimedia 图，须在本文件追加 URL、作者、许可，并在课文引用处写明。
