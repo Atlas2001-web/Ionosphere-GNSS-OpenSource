@@ -17,15 +17,28 @@
 
 | 路径 | 作用 |
 |---|---|
-| `lists/01-ionosphere.md` … `lists/10-gnss-datasets.md` | 人读的分类表 + 中文分析 |
-| `PROJECTS.json` | 机器可读的全量条目（约 611） |
-| `docs/categories.md` | 类别定义与边界 |
-| `docs/data-access.md` | 数据门户注册方式徽章怎么读 |
-| `docs/tutorials/` | 你正在读的课堂讲义 |
-| 根 `README.md` | 标记含义、分类一览、精选表 |
-| `CONTRIBUTING.md` | 如何贡献新条目（给人看，不是自动登记机器人） |
+| [`lists/01-ionosphere.md`](../../lists/01-ionosphere.md) … [`lists/10-gnss-datasets.md`](../../lists/10-gnss-datasets.md) | 人读的分类表 + 中文分析 |
+| [`PROJECTS.json`](../../PROJECTS.json) | 机器可读的全量条目（约 611） |
+| [`docs/categories.md`](../categories.md) | 类别定义与边界 |
+| [`docs/data-access.md`](../data-access.md) | 数据门户注册方式徽章怎么读 |
+| [`docs/software/`](../software/README.md) | **动手短文**：安装 / 最小示例 / 常见坑（georinex、ionex、RTKLIB…） |
+| [`docs/tutorials/`](./README.md) | 你正在读的课堂讲义 |
+| 根 [`README.md`](../../README.md) | 标记含义、分类一览、精选表 |
+| [`CONTRIBUTING.md`](../../CONTRIBUTING.md) | 如何贡献新条目（给人看，不是自动登记机器人） |
 
 **类比：** 本仓像「博物馆导览册」。展品在各上游「博物馆」里；导览册告诉你展厅怎么走、哪件值得先看，但你不能把青铜器搬进导览册装订线。
+
+### 1.1 路径速查（先抄这张）
+
+| 我想… | 先开 | 再开 |
+|---|---|---|
+| 认类别边界 | [`docs/categories.md`](../categories.md) | 对应 `lists/*.md` |
+| 动手跑某个软件 | [`docs/software/README.md`](../software/README.md) | 上游 URL（`PROJECTS.json`） |
+| 下数据 / 注册 | [`docs/data-access.md`](../data-access.md) | [`lists/10-gnss-datasets.md`](../../lists/10-gnss-datasets.md) |
+| 学概念 | 本目录 `01`–`07`、`09`… | 回表找软件 |
+| 机器搜条目 | [`PROJECTS.json`](../../PROJECTS.json) | 用 `name` / `url` 钉死 |
+
+**三句口诀：** 列表认路 → 软件短文动手 → 上游克隆。不要把第三方源码拷进本仓。
 
 ---
 
@@ -109,9 +122,9 @@
 | 步骤 | 去哪 |
 |---|---|
 | 概念 | [01](./01-ionosphere-tec-basics.md)、[02](./02-gnss-dualfreq-tec.md)；偏差深挖 [09](./09-dcb-biases-deep.md) |
-| 软件 | `lists/01-ionosphere.md` → 子类 **TEC 估计**（`gnss-tec`、`tec-suite`、`pygnss-tec`、`Seemala-GPS-TEC`、`Okoh-MATLAB-TEC-from-RINEX`、`IONOLAB-TEC-Software`…） |
-| 读 RINEX / QC | `lists/03-gnss-data.md`（`georinex`、`TEQC`、`Anubis`…） |
-| 观测数据 | `lists/10-gnss-datasets.md`（`CDDIS-GNSS-Archive` 等） |
+| 列表 | [`lists/01-ionosphere.md`](../../lists/01-ionosphere.md) → **TEC 估计**；QC 见 [`lists/03-gnss-data.md`](../../lists/03-gnss-data.md)；数据 [`lists/10-gnss-datasets.md`](../../lists/10-gnss-datasets.md) |
+| 动手短文 | [`docs/software/`](../software/README.md)：[`georinex`](../software/georinex.md)、[`Anubis`](../software/anubis.md)、[`GFZRNX`](../software/gfzrnx.md)、[`PyTECGg`](../software/pytecgg.md)、[`IonoMoni`](../software/ionomoni.md) |
+| 观测数据 | `CDDIS-GNSS-Archive` 等（注册见 [`data-access.md`](../data-access.md)） |
 
 **工作例（口述版）：**  
 「我要某站一天的 VTEC 曲线」→ 下载 RINEX → `georinex` 确认有双频观测 → `gnss-tec` 或 `pygnss-tec` 估 TEC → 画图。若绝对值与公开 GIM 差一截，先读第 09 讲 DCB，而不是先改物理常数泄愤。
@@ -123,9 +136,9 @@
 | 步骤 | 去哪 |
 |---|---|
 | 概念 | [03-gim-ionex.md](./03-gim-ionex.md) |
-| 读图软件 | `01-ionosphere` → **IONEX/TEC 图**（`ionex`、`ionex-rs`、`ionex_reader`、`INX_Editor`、`DiffIonMap`…） |
-| 自己建图 | 同列表 → **GIM / GIM/球谐映射**（如 `mosgim`；`SH-GIM` 为 🚩 仅收录） |
-| 下载产品 | `10-gnss-datasets` → `CDDIS-IONEX`、`JPL-IONEX-Rapid` 等；说明见 [`data-access.md`](../data-access.md) |
+| 列表 | [`lists/01-ionosphere.md`](../../lists/01-ionosphere.md) → **IONEX/TEC 图**、**GIM**；产品 [`lists/10-gnss-datasets.md`](../../lists/10-gnss-datasets.md) |
+| 动手短文 | [`ionex（GIM）`](../software/ionex-gim.md)；球谐边界见 [`SH-GIM`](../software/sh-gim.md)（🚩 短述） |
+| 下载产品 | `CDDIS-IONEX`、`JPL-IONEX-Rapid` 等 → [`data-access.md`](../data-access.md) |
 
 **工作例：**  
 「只想快速看全球 VTEC 动画」→ 下 IONEX → `ionex` 读取 → 绘图。不必先建站网解算。
@@ -155,6 +168,7 @@
 |---|---|
 | 门户与注册 | [`docs/data-access.md`](../data-access.md) |
 | 条目表 | [`lists/10-gnss-datasets.md`](../../lists/10-gnss-datasets.md) |
+| 读数/拉流短文 | [`georinex`](../software/georinex.md)、[`BNC`](../software/bnc.md)、[`pygnssutils`](../software/pygnssutils.md) → [`docs/software/`](../software/README.md) |
 | 例 | 观测：`CDDIS-GNSS-Archive`；GIM：`CDDIS-IONEX`；掩星：`COSMIC-CDAAC`；测高：`GIRO-DIDBase` |
 
 **工作例：**  
@@ -167,7 +181,8 @@
 | 步骤 | 去哪 |
 |---|---|
 | 概念 | [05-scintillation-roti.md](./05-scintillation-roti.md) |
-| 软件 | `01-ionosphere` → **闪烁**、**闪烁/ROTI**（`igs-roti`、`Okoh-MATLAB-ROT-ROTI`、`Ionospheric-TEC-ROTI-Interactives`、`roti-gnss-ml`、`gnss-scintillation-simulator`、`scintill-ai`、`BiScEF`、`scintkit`、`OASIS`、`IonoMoni`、`gnssutils`、`ismr_downloader`…） |
+| 列表 | [`lists/01-ionosphere.md`](../../lists/01-ionosphere.md) → **闪烁**、**闪烁/ROTI** |
+| 动手短文 | [`OASIS`](../software/oasis-roti.md)、[`IonoMoni`](../software/ionomoni.md)、[闪烁仿真](../software/iono-scintillation.md) |
 | 若需先有 TEC | 先走场景 A |
 
 **工作例：**  
@@ -182,8 +197,8 @@
 | 步骤 | 去哪 |
 |---|---|
 | 概念 | [06-iono-positioning.md](./06-iono-positioning.md) |
-| 定位套件 | `lists/04-gnss-positioning.md`（`RTKLIB`、`gLAB-UPC`、`PRIDE-PPPAR`、`ginan`、`pyrtklib`…） |
-| 单频模型源码 | `01-ionosphere` 中 `Klobuchar-study-code`、`Galileo-NeQuick-G` 等 |
+| 列表 | [`lists/04-gnss-positioning.md`](../../lists/04-gnss-positioning.md)；单频模型见 [`lists/01-ionosphere.md`](../../lists/01-ionosphere.md) |
+| 动手短文 | [`RTKLIB`](../software/rtklib.md)、[`PRIDE-PPPAR`](../software/pride-pppar.md) |
 
 **工作例：**  
 教学 SPP + Klobuchar → 模型条目 + `RTKLIB`/`gLAB-UPC`。  
@@ -195,9 +210,11 @@
 
 概念见 [07-ionosonde-occultation.md](./07-ionosonde-occultation.md)。
 
-- 软件偏 `lists/01-ionosphere.md`：`Autoscala-INGV`、`SAO-Explorer`、`POLAN`、`ROM-SAF-ROPP`、`cosmic-crunch`…  
-- 数据偏 `lists/10-gnss-datasets.md`：`GIRO-DIDBase`、`COSMIC-CDAAC`、`COSMIC-GNSS-RO-Data`…  
-- 解析辅助：`pysatCDAAC`、`awsgnssroutils` 等。
+| 路径 | 去哪 |
+|---|---|
+| 列表（软件） | [`lists/01-ionosphere.md`](../../lists/01-ionosphere.md)：`Autoscala-INGV`、`SAO-Explorer`、`POLAN`、`ROM-SAF-ROPP`、`cosmic-crunch`… |
+| 列表（数据） | [`lists/10-gnss-datasets.md`](../../lists/10-gnss-datasets.md)：`GIRO-DIDBase`、`COSMIC-CDAAC`… |
+| 动手短文索引 | [`docs/software/README.md`](../software/README.md)（测高/掩星以列表上游为准；通用读数见 [`georinex`](../software/georinex.md)） |
 
 ---
 
@@ -333,8 +350,7 @@
 ## 延伸阅读（本仓库）
 
 - 本系列目录：[README.md](./README.md)  
-- [`docs/categories.md`](../categories.md)  
-- [`docs/data-access.md`](../data-access.md)  
+- [`docs/categories.md`](../categories.md) · [`docs/data-access.md`](../data-access.md) · [`docs/software/README.md`](../software/README.md)  
 - [`lists/01-ionosphere.md`](../../lists/01-ionosphere.md) · [`03-gnss-data.md`](../../lists/03-gnss-data.md) · [`04-gnss-positioning.md`](../../lists/04-gnss-positioning.md) · [`10-gnss-datasets.md`](../../lists/10-gnss-datasets.md)  
 - [`PROJECTS.json`](../../PROJECTS.json) · [`CONTRIBUTING.md`](../../CONTRIBUTING.md)
 
