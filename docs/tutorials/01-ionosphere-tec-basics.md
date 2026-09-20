@@ -81,12 +81,11 @@
 
 ![大气分层示意（本仓库自制）](./images/fig-atmosphere-layers.png)
 
+> 图源：本仓库自制示意，见 [`images/SOURCES.md`](./images/SOURCES.md)。请对照：对流层→平流层→中间层→热层；电离层是**状态命名**，不是新盖的楼。
+
 ![Chapman 型 Ne(h) 廓线](./images/fig-chapman-ne.png)
 
-> 图源：自制示意。D/E/F1/F2 分层与 $N_m$F2；VTEC 是整柱，不是峰密度本身。
-
-
-> 图源：本仓库自制示意，见 [`images/SOURCES.md`](./images/SOURCES.md)。请对照：对流层→平流层→中间层→热层；电离层是**状态命名**，不是新盖的楼。
+> 图源：自制 Chapman 型廓线示意。教学上用「单峰随高度先升后降」建立 $N_e(h)$ 直觉；VTEC 是整柱积分，不是峰密度 NmF2。
 
 请画地球圆弧，向外标高度。
 
@@ -374,9 +373,11 @@ $$
 
 ![群延迟随频率变化（STEC=10 TECU）](./images/fig-iono-delay-vs-freq.png)
 
+> 图源：本仓库按 $I\approx 40.3\cdot\mathrm{STEC}/f^{2}$ 计算绘制，见 [`images/SOURCES.md`](./images/SOURCES.md)。频率越低，同一 STEC 的延迟越大——色散的可视化。
+
 ![GNSS 主要频段](./images/fig-gnss-freq-bands.png)
 
-> 图源：自制示意。频率越低，同一 STEC 的延迟越大（$\propto 1/f^{2}$）。
+> 图源：自制示意。L1/L2/L5 等落在 GHz 量级；同一 STEC 下频率越低延迟越大（$\propto 1/f^{2}$）——与上图同一物理。
 
 ![双频差 → STEC 思路](./images/fig-dualfreq-tec.png)
 
@@ -384,10 +385,7 @@ $$
 
 ![DCB 伪装成 TEC 偏移](./images/fig-bias-dcb.png)
 
-> 图源：自制示意。未改正 DCB ≈ 整条 STEC 曲线整体平移数 TECU。
-
-
-> 图源：本仓库按 $I\approx 40.3\cdot\mathrm{STEC}/f^{2}$ 计算绘制，见 [`images/SOURCES.md`](./images/SOURCES.md)。频率越低，同一 STEC 的延迟越大——色散的可视化。
+> 图源：自制示意。未改正 DCB ≈ 整条 STEC 曲线整体平移数 TECU；本课先认长相，标定见 [09](./09-dcb-biases-deep.md)。
 
 取 $\mathrm{STEC}=10^{17}\,\mathrm{m}^{-2}=10\,\mathrm{TECU}$：
 
@@ -426,16 +424,15 @@ $$
 
 ![薄壳几何：斜路径 STEC 与穿刺点 VTEC](./images/fig-stec-vtec-shell.png)
 
+> 图源：本仓库自制示意，见 [`images/SOURCES.md`](./images/SOURCES.md)。斜水管穿薄壳 → IPP；竖直雾厚 = VTEC；斜管总量 ≈ $M(E)\times$ VTEC。
+
 ![穿刺点 IPP 示意](./images/fig-ipp-pierce-point.png)
 
-> 图源：自制示意。视线与薄壳交点 = IPP；VTEC 挂在 IPP，不是挂在测站正上方。
+> 图源：自制示意。视线与薄壳交点 = IPP；VTEC 挂在 IPP，不是挂在测站正上方。IPP **一般不是**卫星星下点。
 
 ![薄壳映射函数 M(E)](./images/fig-mapping-function.png)
 
-> 图源：自制计算示意。低仰角 M 陡增；壳高差会改映射与 IPP 位置。
-
-
-> 图源：本仓库自制示意，见 [`images/SOURCES.md`](./images/SOURCES.md)。斜水管穿薄壳 → IPP；竖直雾厚 = VTEC；斜管总量 ≈ $M(E)\times$ VTEC。
+> 图源：自制计算示意。天顶附近 $M\approx1$；低仰角 $M$ 陡增——几何放大，不是「雾突然变厚」。壳高差会改映射与 IPP 位置。
 
 ### 8.1 几何逐步推
 
