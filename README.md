@@ -2,9 +2,9 @@
 
 **电离层 · GNSS · 导航开源索引**（链接精选，不是代码大合集）
 
-[![Projects](https://img.shields.io/badge/verified%20projects-678-blue.svg)](./PROJECTS.json)
+[![Projects](https://img.shields.io/badge/verified%20projects-692-blue.svg)](./PROJECTS.json)
 [![CC0](https://img.shields.io/badge/catalog-CC0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
-[![Datasets](https://img.shields.io/badge/data%20portals-68-teal.svg)](./lists/10-gnss-datasets.md)
+[![Datasets](https://img.shields.io/badge/data%20portals-77-teal.svg)](./lists/10-gnss-datasets.md)
 
 <p align="center">
   <img src="./docs/tutorials/images/fig-phenomena-gallery.png" alt="Ionosphere phenomena gallery" width="920"/>
@@ -49,19 +49,19 @@
 
 | 分类 | 列表 | 数 |
 |---|---|---:|
-| 电离层 | [01](./lists/01-ionosphere.md) | 232 |
+| 电离层 | [01](./lists/01-ionosphere.md) | 234 |
 | 对流层 | [02](./lists/02-troposphere.md) | 32 |
-| GNSS 数据与格式 | [03](./lists/03-gnss-data.md) | 101 |
+| GNSS 数据与格式 | [03](./lists/03-gnss-data.md) | 102 |
 | 精密定位 | [04](./lists/04-gnss-positioning.md) | 76 |
 | 轨道与钟差 | [05](./lists/05-orbit-clock.md) | 13 |
-| 导航 | [06](./lists/06-navigation-ins.md) | 55 |
+| 导航 | [06](./lists/06-navigation-ins.md) | 56 |
 | 软件接收机 | [07](./lists/07-gnss-sdr.md) | 58 |
-| 移动应用 | [08](./lists/08-mobile-apps.md) | 14 |
+| 移动应用 | [08](./lists/08-mobile-apps.md) | 15 |
 | 学习工具 | [09](./lists/09-tools-learning.md) | 29 |
-| **数据源门户** | [10](./lists/10-gnss-datasets.md) | 68 |
-| **合计** | [PROJECTS.json](./PROJECTS.json) | **678** |
+| **数据源门户** | [10](./lists/10-gnss-datasets.md) | 77 |
+| **合计** | [PROJECTS.json](./PROJECTS.json) | **692** |
 
-标记：🏷️ 官方 / 高校实验室 / 个人社区 · 来源约 官方 166 · 高校 200 · 社区 312
+标记：🏷️ 官方 / 高校实验室 / 个人社区 · 来源约 官方 172 · 高校 206 · 社区 314
 
 ---
 

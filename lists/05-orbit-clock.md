@@ -1,38 +1,8 @@
 # 轨道与钟差 / Orbit & Clock
 
-[![13](https://img.shields.io/badge/projects-13-blue.svg)](../PROJECTS.json) · 精密轨道 · 钟差 · UPD/OSB（多集成在大型套件）
+[![13](https://img.shields.io/badge/projects-13-blue.svg)](../PROJECTS.json) · 精密轨道 · 钟差 · UPD/OSB
 
 > 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
-
-## DCB/UPD/IFCB/OSB
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [Gkit-Bias](https://github.com/LiZhengXiao99/Gkit-Bias) | 面向全频点 PPP-AR 的开源卫星端偏差估计（DCB/UPD/IFCB 与 OSB 转换） | C++ | 8 | 🏷️ 个人社区 核心 精选 |
-
-### 详细说明
-
-#### [Gkit-Bias](https://github.com/LiZhengXiao99/Gkit-Bias)  
-*🏷️ 个人社区 核心 精选*
-
-语言：C++ · 许可：GPL-3.0 · 星标约：8 · 宿主：github
-
-C++ 实现三套偏差模式：DCB（码偏差与 VTEC 球谐联立）、UPD 与 IFCB（频间钟差），并支持向 OSB 转换，服务全频点 PPP-AR。输入侧重 RINEX 观测与星历。文档以中文为主，适合偏差链路研究；与 GREAT-UPD/IFCB、CAS DCB 产品对照使用，生产稳定性需自测。
-
-## OSB/偏差估计
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [MCOSB](https://github.com/GCCLib/MCOSB) | 多 GNSS 多频码 OSB（Observable-Specific Bias）估计 MATLAB 工具 | MATLAB | 11 | 🏷️ 高校实验室 |
-
-### 详细说明
-
-#### [MCOSB](https://github.com/GCCLib/MCOSB)  
-*🏷️ 高校实验室*
-
-语言：MATLAB · 许可：see upstream README · 星标约：11 · 宿主：github
-
-面向多系统多频码观测的 OSB 估计脚本集，含读观测、提取多通道偏差、估计与分析等步骤，并涉及 SINEX 类偏差文件。用户需自行准备测站网观测数据。适合偏差产品研究与教学；生产级 OSB 仍以 IGS/各分析中心产品为主，本库偏算法复现。
 
 ## 时间比对
 
@@ -48,6 +18,21 @@ C++ 实现三套偏差模式：DCB（码偏差与 VTEC 球谐联立）、UPD 与
 语言：Rust · 许可：MPL-2.0 · 星标约：18 · 宿主：github
 
 处理 CGGTTS 格式与轨迹调度，服务 GNSS 共视/全视时间比对。适合时间频率实验室。一般导航定位用户用不上。
+
+## 钟差/相位偏差合成
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [clkcomb](https://github.com/YuanxinPan/clkcomb) | 多 GNSS 钟差与相位偏差产品合成程序（IGS repro3 相关实践） | C++ | 3 | 🏷️ 高校实验室 |
+
+### 详细说明
+
+#### [clkcomb](https://github.com/YuanxinPan/clkcomb)  
+*🏷️ 高校实验室*
+
+语言：C++ · 许可：BSD-3-Clause · 星标约：3 · 宿主：github
+
+Yuanxin Pan 开源的钟差/相位偏差合成工具，源于学位论文并应用于武大参与的 IGS 第三次重处理等研究，可综合多分析中心产品以改善 PPP-AR。附理论文档与论文索引。星标不多但科学指向明确；闭源 PPPx 二进制定位引擎不在本条目范围。
 
 ## 轨道钟差综合
 
@@ -80,20 +65,20 @@ GFZ 正式介绍 SPOCC 背景与目标的新闻页，说明从原型到可发布
 
 GFZ 发布的 Software for Precise Orbit and Clock Combination，用方差分量估计对多家分析中心 SP3/CLK 做多星座加权综合，并提供 Docker。面向 IGS 组合与 PPP 用户产品试验。2025 年起经 IGSmail 公开；输入需标准轨道钟差格式，不是单站 PPP 引擎。
 
-## 钟差/相位偏差合成
+## DCB/UPD/IFCB/OSB
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [clkcomb](https://github.com/YuanxinPan/clkcomb) | 多 GNSS 钟差与相位偏差产品合成程序（IGS repro3 相关实践） | C++ | 3 | 🏷️ 高校实验室 |
+| [Gkit-Bias](https://github.com/LiZhengXiao99/Gkit-Bias) | 面向全频点 PPP-AR 的开源卫星端偏差估计（DCB/UPD/IFCB 与 OSB 转换） | C++ | 8 | 🏷️ 个人社区 核心 精选 |
 
 ### 详细说明
 
-#### [clkcomb](https://github.com/YuanxinPan/clkcomb)  
-*🏷️ 高校实验室*
+#### [Gkit-Bias](https://github.com/LiZhengXiao99/Gkit-Bias)  
+*🏷️ 个人社区 核心 精选*
 
-语言：C++ · 许可：BSD-3-Clause · 星标约：3 · 宿主：github
+语言：C++ · 许可：GPL-3.0 · 星标约：8 · 宿主：github
 
-Yuanxin Pan 开源的钟差/相位偏差合成工具，源于学位论文并应用于武大参与的 IGS 第三次重处理等研究，可综合多分析中心产品以改善 PPP-AR。附理论文档与论文索引。星标不多但科学指向明确；闭源 PPPx 二进制定位引擎不在本条目范围。
+C++ 实现三套偏差模式：DCB（码偏差与 VTEC 球谐联立）、UPD 与 IFCB（频间钟差），并支持向 OSB 转换，服务全频点 PPP-AR。输入侧重 RINEX 观测与星历。文档以中文为主，适合偏差链路研究；与 GREAT-UPD/IFCB、CAS DCB 产品对照使用，生产稳定性需自测。
 
 ## 钟差/轨道/UPD
 
@@ -115,20 +100,6 @@ Yuanxin Pan 开源的钟差/相位偏差合成工具，源于学位论文并应�
 
 基于 RTKLIB 的服务端钟差/解耦钟（DCK）估计与用户端 PPP/PPP-AR 工具，可输出坐标、ZTD、模糊度与残差文件。BSD-2（继承 RTKLIB）。适合研究 IRC/DCK 模型与钟差产品生成；目前以 GPS、Windows 实验为主，多星座与跨平台移植需自行扩展。
 
-#### [GREAT-IFCB](https://github.com/GREAT-WHU/GREAT-IFCB)  
-*🏷️ 高校实验室*
-
-语言：C++ · 许可：GPL-3.0 · 星标约：15 · 宿主：github
-
-武大 GREAT 组开源的多星座频间钟差（IFCB）估计工具，服务于精密钟差与偏差产品链路，与 GREAT-PVT 等同一研究线。做三频 PPP、相位偏差与钟差产品的人应关注。它是独立小工具，不替代完整 POD 套件；轨道与 UPD/OSB 能力仍多见诸 Ginan、PRIDE、GROOPS 等大型系统。
-
-#### [GREAT-PCE](https://github.com/GREAT-WHU/GREAT-PCE)  
-*🏷️ 高校实验室 核心*
-
-语言：C++ · 许可：GPL-3.0 · 星标约：9 · 宿主：github
-
-聚焦精密卫星钟差估计，可与 GREAT-UPD、POD 模块组成轨道钟差产品链，服务 PPP 与时间传递相关研究。适合钟差建模、实时/事后产品试验。输入轨道与地面站网质量决定上限；若目标只是终端定位，通常直接使用 IGS/分析中心钟差即可，不必自建整条钟差产线。
-
 #### [GREAT-UPD](https://github.com/GREAT-WHU/GREAT-UPD)  
 *🏷️ 高校实验室 核心*
 
@@ -143,9 +114,38 @@ Yuanxin Pan 开源的钟差/相位偏差合成工具，源于学位论文并应�
 
 执行多 GNSS 实时滤波精密轨道确定（POD），偏产品生成与定轨算法验证，而非终端定位。适合轨道/钟差方向研究生对照 GREAT 流水线。公开算例与力模型文档完整度需自查；与 Ginan、GROOPS 等大型套件相比，更适合精读 GREAT 定轨滤波环节，而不是替代整套业务定轨系统。
 
+#### [GREAT-IFCB](https://github.com/GREAT-WHU/GREAT-IFCB)  
+*🏷️ 高校实验室*
+
+语言：C++ · 许可：GPL-3.0 · 星标约：15 · 宿主：github
+
+武大 GREAT 组开源的多星座频间钟差（IFCB）估计工具，服务于精密钟差与偏差产品链路，与 GREAT-PVT 等同一研究线。做三频 PPP、相位偏差与钟差产品的人应关注。它是独立小工具，不替代完整 POD 套件；轨道与 UPD/OSB 能力仍多见诸 Ginan、PRIDE、GROOPS 等大型系统。
+
 #### [rt-clk-service](https://github.com/DoubleString/rt-clk-service)  
 *🏷️ 个人社区*
 
 语言：C++ · 许可：— · 星标约：12 · 宿主：github
 
 面向实时钟差、轨道与 UPD/IFPB 等偏差产品的服务向代码，贴近 PPP-AR 实时链。适合研究实时产品生成。公开完整度有限，需自备数据与对照 IGS 产品。
+
+#### [GREAT-PCE](https://github.com/GREAT-WHU/GREAT-PCE)  
+*🏷️ 高校实验室 核心*
+
+语言：C++ · 许可：GPL-3.0 · 星标约：9 · 宿主：github
+
+聚焦精密卫星钟差估计，可与 GREAT-UPD、POD 模块组成轨道钟差产品链，服务 PPP 与时间传递相关研究。适合钟差建模、实时/事后产品试验。输入轨道与地面站网质量决定上限；若目标只是终端定位，通常直接使用 IGS/分析中心钟差即可，不必自建整条钟差产线。
+
+## OSB/偏差估计
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [MCOSB](https://github.com/GCCLib/MCOSB) | 多 GNSS 多频码 OSB（Observable-Specific Bias）估计 MATLAB 工具 | MATLAB | 11 | 🏷️ 高校实验室 |
+
+### 详细说明
+
+#### [MCOSB](https://github.com/GCCLib/MCOSB)  
+*🏷️ 高校实验室*
+
+语言：MATLAB · 许可：see upstream README · 星标约：11 · 宿主：github
+
+面向多系统多频码观测的 OSB 估计脚本集，含读观测、提取多通道偏差、估计与分析等步骤，并涉及 SINEX 类偏差文件。用户需自行准备测站网观测数据。适合偏差产品研究与教学；生产级 OSB 仍以 IGS/各分析中心产品为主，本库偏算法复现。

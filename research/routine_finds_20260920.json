@@ -1,0 +1,300 @@
+[
+  {
+    "name": "corshub",
+    "url": "https://github.com/peinser/corshub",
+    "desc_zh": "可审计、可自托管的 Python NTRIP v2 Caster（CORS 差分汇聚）",
+    "analysis_zh": "Peinser 发布的自托管 NTRIP v2 caster：汇聚多基站 RTCM 改正并通过 HTTPS 分发给流动站，支持就近挂载点与可审计配置。BSD-3-Clause，适合小型 CORS/社区差分试验。公网部署仍需自行处理 TLS 终结、账号与带宽；功能深度不及 BKG Professional Caster，但源码开放便于二次开发。",
+    "language": "Python",
+    "license": "BSD-3-Clause",
+    "category": "gnss-data",
+    "subcategory": "RTCM/NTRIP",
+    "markers": [
+      "routine-2026-09-20"
+    ],
+    "stars_approx": 1,
+    "source": "routine-web-search-2026-09-20",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "可自托管的 Python NTRIP v2 Caster（CORS 汇聚）"
+  },
+  {
+    "name": "ubxlib",
+    "url": "https://github.com/u-blox/ubxlib",
+    "desc_zh": "u-blox 官方便携 C 库：模块/GNSS/蜂窝等嵌入式 API",
+    "analysis_zh": "u-blox 官方开源的可移植 C 库，面向 MCU/RTOS 场景提供 GNSS 与蜂窝等产品统一 API，作为各平台 SDK 的附加层。Apache-2.0。适合嵌入式原始测量/配置联调；不是精密定位引擎，PC 端解析更常见 pyubx2 等工具。",
+    "language": "C",
+    "license": "Apache-2.0",
+    "category": "mobile-apps",
+    "subcategory": "嵌入式",
+    "markers": [
+      "routine-2026-09-20"
+    ],
+    "stars_approx": 358,
+    "source": "routine-web-search-2026-09-20",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "official",
+    "one_liner_zh": "u-blox 官方嵌入式 C 库（GNSS/蜂窝 API）"
+  },
+  {
+    "name": "ahrs",
+    "url": "https://github.com/Mayitzin/ahrs",
+    "desc_zh": "Python AHRS 姿态估计工具箱（IMU 滤波与四元数）",
+    "analysis_zh": "纯 Python 的 Attitude and Heading Reference Systems 工具箱，实现多种 IMU 姿态滤波与四元数/旋转表征，常作为 GNSS/INS 松组合的姿态前端或教学对照。MIT，文档与示例较完整。本身不做 GNSS 观测处理；与 RTK/PPP 组合需自备传感器同步与外参。",
+    "language": "Python",
+    "license": "MIT",
+    "category": "navigation-ins",
+    "subcategory": "INS工具包",
+    "markers": [
+      "routine-2026-09-20"
+    ],
+    "stars_approx": 726,
+    "source": "routine-web-search-2026-09-20",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "Python AHRS/IMU 姿态估计工具箱"
+  },
+  {
+    "name": "madrigalWeb",
+    "url": "https://github.com/MITHaystack/madrigalWeb",
+    "desc_zh": "MIT Haystack：OpenMadrigal/CEDAR 数据库 Python Web API 客户端",
+    "analysis_zh": "访问全球 Madrigal 站点（含 CEDAR）的官方 Python 客户端，可检索/下载非相干散射雷达、GNSS TEC 等空间天气与电离层归档。MIT。适合批量脚本拉取；需遵守各站点数据政策，部分实验需注册。配套门户见 OpenMadrigal。",
+    "language": "Python",
+    "license": "MIT",
+    "category": "ionosphere",
+    "subcategory": "数据接口",
+    "markers": [
+      "routine-2026-09-20"
+    ],
+    "stars_approx": 4,
+    "source": "routine-web-search-2026-09-20",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "academic_lab",
+    "one_liner_zh": "OpenMadrigal/CEDAR Python 数据客户端"
+  },
+  {
+    "name": "DARNtids",
+    "url": "https://github.com/w2naf/DARNtids",
+    "desc_zh": "基于 SuperDARN 的行进式电离层扰动（TID）检测开源工具",
+    "analysis_zh": "面向 SuperDARN 雷达数据的 TID（Traveling Ionospheric Disturbance）检测与分析代码，GPL-3.0。适合将高频雷达观测与 GNSS TEC/TID 研究对照。依赖 SuperDARN 数据环境与雷达物理背景；不是 GNSS RINEX 处理链。",
+    "language": "Python",
+    "license": "GPL-3.0",
+    "category": "ionosphere",
+    "subcategory": "TID/扰动",
+    "markers": [
+      "routine-2026-09-20"
+    ],
+    "stars_approx": 4,
+    "source": "routine-web-search-2026-09-20",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "academic_lab",
+    "one_liner_zh": "SuperDARN TID 行进扰动检测工具"
+  },
+  {
+    "name": "NRCan-CACS",
+    "url": "https://webapp.csrs.nrcan.gc.ca/geod/data-donnees/cacs-scca.php",
+    "desc_zh": "加拿大 NRCan CACS：国家/省域连续 GNSS 参考站 RINEX 下载",
+    "analysis_zh": "加拿大自然资源部 CSRS 门户提供的 Canadian Active Control System 数据入口，可按站选取并下载 RINEX 观测与元数据，亦分发部分精密星历/钟差选项。北美高纬与极区电离层、地壳形变研究常用。收录前已 HTTP 核验页面可访问；批量下载请遵守 NRCan 礼貌访问与引用要求。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "区域CORS",
+    "markers": [
+      "routine-2026-09-20"
+    ],
+    "stars_approx": null,
+    "source": "portal-verify-2026-09-20",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "加拿大 CACS 连续 GNSS 网 RINEX 门户",
+    "registration": "open",
+    "registration_zh": "网页选站后可直接打包下载公开 RINEX/元数据；若个别服务跳转需联邦账号，以页面当前提示为准。"
+  },
+  {
+    "name": "Japan-MIRAI-Archive",
+    "url": "https://go.gnss.go.jp/mirai/miraiarchive/",
+    "desc_zh": "日本内阁府 GO!GNSS MIRAI：HTTPS 归档 RINEX（含 QZSS 监测站）",
+    "analysis_zh": "日本内阁府 GO!GNSS 门户的 MIRAI 归档，提供按年积日组织的 RINEX 3/4 观测与导航文件（含 Hatanaka 压缩），可用 wget/curl 批量拉取，并提供日文件 list。相对 GSI GEONET 传统申请制，该入口对注册用户更友好，适合日本及周边电离层案例。须注册账号；QZSS L1C/B 等细节见页面说明。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "区域CORS",
+    "markers": [
+      "routine-2026-09-20"
+    ],
+    "stars_approx": null,
+    "source": "portal-verify-2026-09-20",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "日本 MIRAI HTTPS RINEX 归档（含 QZSS）",
+    "registration": "form_register",
+    "registration_zh": "在 GO!GNSS 站点注册/登录后，用账号基本认证经 HTTPS 下载；命令行示例见 MIRAI Archive 页。"
+  },
+  {
+    "name": "Korea-GNSS-Data",
+    "url": "https://www.gnssdata.or.kr/",
+    "desc_zh": "韩国 GNSS 数据门户：多机构 CORS 事后 RINEX 申请下载",
+    "analysis_zh": "韩国 GNSS 数据服务门户汇聚国土地理院、海洋定位、气象与科研等机构参考站，提供事后 RINEX 打包下载（单次跨度常有上限）。适合朝鲜半岛及周边区域电离层/定位验证。需网页注册登录；具体可下载台站与保留策略以站点现行说明为准。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "区域CORS",
+    "markers": [
+      "routine-2026-09-20"
+    ],
+    "stars_approx": null,
+    "source": "portal-verify-2026-09-20",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "韩国多机构 CORS 事后 RINEX 门户",
+    "registration": "form_register",
+    "registration_zh": "门户提供登录/회원가입；登录后在事后数据页选站与时段申请 ZIP 下载，注意单次跨度限制。"
+  },
+  {
+    "name": "Spain-IGN-ERGNSS",
+    "url": "https://datos-geodesia.ign.es/ERGNSS/",
+    "desc_zh": "西班牙 IGN：ERGNSS 国家 GNSS 网公开数据目录",
+    "analysis_zh": "西班牙国家地理研究所大地测量数据服务器上的 ERGNSS 目录，提供国家连续 GNSS 网相关文件的开放索引（亦可见 EUREF/IGS 等并列目录）。西欧中纬电离层与区域网研究可作补充源。目录型 HTTPS 访问；子目录结构与文件命名以站点为准，批量抓取请限速。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "区域CORS",
+    "markers": [
+      "routine-2026-09-20"
+    ],
+    "stars_approx": null,
+    "source": "portal-verify-2026-09-20",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "西班牙 IGN ERGNSS 公开 GNSS 数据目录",
+    "registration": "open",
+    "registration_zh": "HTTPS 目录公开浏览/下载；请遵守 IGN 数据条款并避免高并发爬取。"
+  },
+  {
+    "name": "AMBER-Magnetometers",
+    "url": "https://magnetometers.bc.edu/",
+    "desc_zh": "波士顿学院 AMBER：非洲等地区地磁台链数据",
+    "analysis_zh": "Boston College 维护的 AMBER 等磁强计网络数据中心，提供 ASCII 日文件与日绘图，服务低纬/非洲扇区空间天气与电流体系研究，可与 GNSS ROTI/闪烁对照。门户含 Downloads 浏览；使用请遵守站点引用与数据政策。本条是地磁辅助数据，不是 GNSS 观测归档。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "空间天气辅助",
+    "markers": [
+      "routine-2026-09-20"
+    ],
+    "stars_approx": null,
+    "source": "portal-verify-2026-09-20",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "academic_lab",
+    "one_liner_zh": "BC AMBER 等磁强计网络数据中心",
+    "registration": "open",
+    "registration_zh": "网站 Downloads 区可浏览 ASCII/绘图文件树；若个别数据集改需申请，以页面说明为准。"
+  },
+  {
+    "name": "FMI-IMAGE",
+    "url": "https://space.fmi.fi/image/",
+    "desc_zh": "芬兰气象研究所 IMAGE：北欧地磁台链数据",
+    "analysis_zh": "FMI 的 IMAGE（International Monitor for Auroral Geomagnetic Effects）地磁台网门户，覆盖北欧高纬，提供研究用磁情指数与台站数据入口，常与极光区 GNSS TEC/闪烁联合分析。网页公开；具体 FTP/文件服务与引用格式见站内文档。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "空间天气辅助",
+    "markers": [
+      "routine-2026-09-20"
+    ],
+    "stars_approx": null,
+    "source": "portal-verify-2026-09-20",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "FMI IMAGE 北欧地磁台链数据",
+    "registration": "open",
+    "registration_zh": "门户与数据说明公开；按站内链接获取文件/服务，遵守 FMI 引用要求。"
+  },
+  {
+    "name": "CARISMA",
+    "url": "https://www.carisma.ca/",
+    "desc_zh": "加拿大 CARISMA：中高层纬度地磁阵列数据",
+    "analysis_zh": "CARISMA（Canadian Array for Realtime Investigations of Magnetic Activity）地磁阵列门户，服务加拿大扇区磁暴/亚暴与磁场脉动研究，可与北美 GNSS 电离层扰动对照。站点介绍获取途径；详细下载规则以其数据政策为准。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "空间天气辅助",
+    "markers": [
+      "routine-2026-09-20"
+    ],
+    "stars_approx": null,
+    "source": "portal-verify-2026-09-20",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "academic_lab",
+    "one_liner_zh": "加拿大 CARISMA 地磁阵列数据门户",
+    "registration": "open",
+    "registration_zh": "主页公开；按站内 Data/Access 说明获取，部分历史产品可能需联系维护方。"
+  },
+  {
+    "name": "SuperDARN-VT",
+    "url": "https://vt.superdarn.org/",
+    "desc_zh": "弗吉尼亚理工 SuperDARN：高频雷达与电离层对流数据入口",
+    "analysis_zh": "Virginia Tech SuperDARN 门户是国际高频雷达网的重要节点，提供极区/亚极区电离层对流与散射相关产品入口，常与 GNSS TEC/TID、地磁扰动联合使用。数据政策与镜像站点以社区现行说明为准；配合 DARNtids 等开源工具做 TID 分析。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "空间天气辅助",
+    "markers": [
+      "routine-2026-09-20"
+    ],
+    "stars_approx": null,
+    "source": "portal-verify-2026-09-20",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "academic_lab",
+    "one_liner_zh": "VT SuperDARN 高频雷达/对流数据入口",
+    "registration": "open",
+    "registration_zh": "门户公开浏览；原始/拟合数据下载按其 Data 页规则，部分需社区账号或引用声明。"
+  },
+  {
+    "name": "OpenMadrigal",
+    "url": "https://openmadrigal.org/",
+    "desc_zh": "OpenMadrigal：全球 Madrigal/CEDAR 空间天气与电离层数据库联盟",
+    "analysis_zh": "OpenMadrigal 项目主页，介绍分布式 Madrigal 数据库（CEDAR、ISR TEC 等）及开源服务器/客户端。科研上常作非相干散射雷达与 GNSS TEC 产品的交叉验证入口。具体实验数据在各成员站（如 cedar.openmadrigal.org）；Python 访问见 madrigalWeb。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "空间天气辅助",
+    "markers": [
+      "routine-2026-09-20"
+    ],
+    "stars_approx": null,
+    "source": "portal-verify-2026-09-20",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "academic_lab",
+    "one_liner_zh": "OpenMadrigal/CEDAR 分布式空间天气数据库",
+    "registration": "form_register",
+    "registration_zh": "主页公开；下载具体实验数据时按各 Madrigal 站点注册/登录规则，并用 madrigalWeb 等客户端。"
+  }
+]

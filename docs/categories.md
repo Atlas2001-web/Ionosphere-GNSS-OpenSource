@@ -6,16 +6,16 @@
 
 | 分类 | 一句话 | 列表 | 数 |
 |---|---|---|---:|
-| 电离层 | STEC/VTEC、GIM、闪烁与层析 | [01](../lists/01-ionosphere.md) | 232 |
+| 电离层 | STEC/VTEC、GIM、闪烁与层析 | [01](../lists/01-ionosphere.md) | 234 |
 | 对流层 | ZTD/PWV、VMF/GPT、GNSS-IR | [02](../lists/02-troposphere.md) | 32 |
-| GNSS 数据与格式 | RINEX/RTCM、质检、产品下载 | [03](../lists/03-gnss-data.md) | 101 |
+| GNSS 数据与格式 | RINEX/RTCM、质检、产品下载 | [03](../lists/03-gnss-data.md) | 102 |
 | 精密定位 | SPP / RTK / PPP / 网络 RTK | [04](../lists/04-gnss-positioning.md) | 76 |
 | 轨道与钟差 | 精密轨道、钟差、UPD/OSB（多集成套件） | [05](../lists/05-orbit-clock.md) | 13 |
-| 导航 | GNSS/INS、视觉组合 | [06](../lists/06-navigation-ins.md) | 55 |
+| 导航 | GNSS/INS、视觉组合 | [06](../lists/06-navigation-ins.md) | 56 |
 | 软件接收机 | IQ→PVT、信号仿真 | [07](../lists/07-gnss-sdr.md) | 58 |
-| 移动应用 | 手机原始测量、嵌入式 | [08](../lists/08-mobile-apps.md) | 14 |
+| 移动应用 | 手机原始测量、嵌入式 | [08](../lists/08-mobile-apps.md) | 15 |
 | 学习工具 | awesome、笔记、可视化 | [09](../lists/09-tools-learning.md) | 29 |
-| **数据源门户** | RINEX / IONEX / CORS / 实时流 | [10](../lists/10-gnss-datasets.md) | 68 |
+| **数据源门户** | RINEX / IONEX / CORS / 实时流 | [10](../lists/10-gnss-datasets.md) | 77 |
 
 工作流直觉（无流程图）：**数据与格式** 是上游 → 电离层 / 对流层 / 精密定位 并行 → 轨道钟差喂定位 → 导航做组合；另线是 **GNSS-SDR** 与 **手机 App**。
 
