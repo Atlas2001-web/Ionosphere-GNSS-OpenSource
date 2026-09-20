@@ -836,6 +836,8 @@ Python 下处理/绘制基于 RINEX 的 GPS 与 Galileo 数据，教学演示友
 ### 详细说明
 
 #### [RTKLIB](https://github.com/tomojitakasu/RTKLIB)  
+
+> 操作说明：[`docs/software/rtklib.md`](../docs/software/rtklib.md)
 *🏷️ 个人社区 ★ 核心*
 
 语言：C · 许可：— · 星标约：3128 · 宿主：github

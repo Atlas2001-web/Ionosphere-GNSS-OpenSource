@@ -61,6 +61,8 @@
 提供 NTRIP 2.0 协议下 caster、客户端与服务端示例，星标较高，适合嵌入 C++ 服务或学习握手与挂载点逻辑。二次开发差分转发、教学演示都常见。完整鉴权、集群与监控需自增；Python/Go 生态另有 pygnssutils 与 go-gnss/ntrip，运维桌面场景仍常看 BNC。
 
 #### [pygnssutils](https://github.com/semuconsulting/pygnssutils)  
+
+> 操作说明：[`docs/software/pygnssutils.md`](../docs/software/pygnssutils.md)
 *🏷️ 个人社区*
 
 语言：Python · 许可：BSD-3-Clause · 星标约：143 · 宿主：github
@@ -250,6 +252,8 @@ Peinser 发布的自托管 NTRIP v2 caster：汇聚多基站 RTCM 改正并通�
 德国联邦制图与大地测量局发布的 NTRIP 1/2 播发器，基于 Icecast，可同时服务大量客户端。2024 年 9 月起免费提供源码与软件，下载见 BKG FTP。只做流分发不解码内容，不含 VRS；与 BNC 客户端配套常用于 IGS/EUREF 实时站运维与教研演示。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
 
 #### [BNC](https://igs.bkg.bund.de/ntrip/bnc)  
+
+> 操作说明：[`docs/software/bnc.md`](../docs/software/bnc.md)
 *🏷️ 官方 核心*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：— · 宿主：official_site
@@ -574,6 +578,8 @@ EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RT
 ### 详细说明
 
 #### [georinex](https://github.com/geospace-code/georinex)  
+
+> 操作说明：[`docs/software/georinex.md`](../docs/software/georinex.md)
 *🏷️ 高校实验室 🔀 ★ 核心*
 
 语言：Python · 许可：MIT · 星标约：269 · 宿主：github

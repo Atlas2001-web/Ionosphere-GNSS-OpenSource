@@ -361,6 +361,8 @@ SIMuRG/gnss-lab 系经典 STEC 重建库，输入 RINEX 相位与伪距，输出
 基于双频接收机观测在 MATLAB 里算 TEC，输入偏 RINEX 2.11/GPS，教学友好。适合本科实验与快速验证。多星座、RINEX 3/4 与现代化 DCB 产品支持有限；科研产线建议再接 PyTECGg 等。
 
 #### [PyTECGg](https://github.com/viventriglia/PyTECGg)  
+
+> 操作说明：[`docs/software/pytecgg.md`](../docs/software/pytecgg.md)
 *🏷️ 个人社区 🔀 ★ 核心*
 
 语言：Python · 许可：GPL-3.0 · 星标约：29 · 宿主：github
@@ -1777,6 +1779,8 @@ SpaceML 维护的电离层预报代码与笔记本，强调时间融合 Transfor
 ### 详细说明
 
 #### [IonoMoni](https://github.com/qiliu2025/IonoMoni)  
+
+> 操作说明：[`docs/software/ionomoni.md`](../docs/software/ionomoni.md)
 *🏷️ 个人社区 ★*
 
 语言：C++ · 许可：— · 星标约：37 · 宿主：github
@@ -1791,6 +1795,8 @@ C++ 实现多星座电离层监测指标（ROTI、AATR、STEC/VTEC），偏近�
 仿真电离层引起的相位与幅度闪烁，用于接收机跟踪环与完好性试验。适合算法仿真，不是实测 ROTI 产品生成器。参数调谐需对照文献与实测统计。
 
 #### [OASIS](https://github.com/giorgiopicanco/OASIS)  
+
+> 操作说明：[`docs/software/oasis-roti.md`](../docs/software/oasis-roti.md)
 *🏷️ 个人社区 核心*
 
 语言：Python · 许可：— · 星标约：16 · 宿主：github
@@ -1848,6 +1854,8 @@ Open-Access System for Ionospheric Studies：从 GNSS 观测算 ROTI、ΔTEC、S
 ### 详细说明
 
 #### [SH-GIM](https://github.com/Atlas2001-web/SH-GIM)  
+
+> 操作说明：[`docs/software/sh-gim.md`](../docs/software/sh-gim.md)
 *🏷️ 个人社区 🚩 精选*
 
 维护者自有仓库，本索引仅作分类收录，不作详细介绍。请直接查看上游 README。
