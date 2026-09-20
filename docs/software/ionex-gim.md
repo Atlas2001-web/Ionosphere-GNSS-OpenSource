@@ -1,89 +1,114 @@
-# IONEX / GIM · 用 Python `ionex` 读全球电离层图
+# ionex（读 IONEX GIM）
 
-目录条目：[`PROJECTS.json` → `ionex`](../../PROJECTS.json) · 上游 <https://github.com/gnss-lab/ionex>
+目录：[`PROJECTS.json` → `ionex`](../../PROJECTS.json) · 上游 <https://github.com/gnss-lab/ionex>
 
-## 作用与场景
+## 用途
 
-**GIM（Global Ionospheric Map）** 是分析中心发布的全球垂直 TEC 格网；交换格式多为 **IONEX**（`.inx` / 常见命名如 `igsgDDD0.YYi`）。
-
-**本页主讲**：轻量 Python 模块 **`ionex`（gnss-lab）**——把 IONEX **读进 Python**，按历元取出 TEC 格网，便于和自己的 STEC/穿刺点结果对照、画图或插值。
-
-**它解决什么**：你已经会下 CODE/IGS/UPC 等 GIM，但打开文件是一大坨文本；需要「按时间拿出一张图」的几行代码。
-
-**不负责**：不生成 GIM；不算接收机 STEC；不替代球谐建模软件。
-
-### SH-GIM（仅指针，不展开）
-
-本仓维护者另有 MATLAB 球谐 GIM 实现 [`SH-GIM`](https://github.com/Atlas2001-web/SH-GIM)，目录已收录但**此处不介绍安装与源码**。需要请直接看该仓库 README。
-
-## 术语｜人话
-
-| 术语 | 人话 |
-|---|---|
-| IONEX | 电离层交换格式：多张「世界 TEC 地图」按时间排列 |
-| GIM | 全球电离层图产品（常以 IONEX 发布） |
-| TEC / VTEC | 垂直方向电子柱含量（格网点上的值） |
-| 格网 | 经纬度步长（如 2.5°×5°）+ 参考高度壳层 |
-| epoch | 这一张图对应的时刻 |
+- 用 Python 包 **`ionex`** 读取分析中心 **IONEX** 全球电离层图（GIM）。
+- 按历元取出 VTEC 格网，便于与自站 STEC/穿刺点对照、画图、插值。
+- **不做：** 生成 GIM；不算接收机 STEC；不替代球谐建模。
+- SH-GIM 边界见 [sh-gim](./sh-gim.md)（短述，不在此展开求解）。
 
 ## 安装
 
-上游 README 推荐 editable 安装（PyPI 情况以当前上游为准）：
-
 ```bash
-python3 -m pip install -U pip
-python3 -m pip install -e "git+https://github.com/gnss-lab/ionex.git#egg=ionex"
-python3 -c "import ionex; print('ok')"
+python3 -m venv .venv && source .venv/bin/activate
+pip install -U pip
+pip install -e "git+https://github.com/gnss-lab/ionex.git#egg=ionex
+# 或：git clone … && pip install -e .
+python -c "import ionex; print(ionex.__file__)"
+pip install numpy scipy matplotlib   # 画图/插值常用
 ```
 
-依赖很少（`setup.py` 中 `install_requires` 为空）；建议 Python 3。
+## 快速上手
 
-## 最小可跑示例
-
-文件请自行从 CDDIS `gnss/products/ionex/` 等下载（见 [data-access](../data-access.md)）。占位路径：
+```bash
+# 0) 文件自检（必须是 IONEX，不是 HTML 登录页）
+head -n 5 data/igsg0490.23i
+grep -n "END OF FILE" data/igsg0490.23i | tail
+```
 
 ```python
 import ionex
+from datetime import datetime
 
-# 以当前上游文档为准：ionex.reader → 迭代 IonexMap
-with open("data/sample.inx") as f:
-    for ionex_map in ionex.reader(f):
-        print(ionex_map.epoch)   # datetime
-        print(ionex_map.height)  # 壳层高度
-        tec = ionex_map.tec      # 一维 list：按纬向切片拼成的 TEC
-        # grid 定义纬度/经度起止与步长（属性名见上游：grid.latitude / grid.longitude）
-        print(ionex_map.grid)
-        break  # 先看第一张图
+# 1) 读一张图
+with open("data/igsg0490.23i") as f:
+    m = next(ionex.reader(f))
+print(m.epoch, m.height, m.grid.latitude, m.grid.longitude, len(m.tec))
+
+# 2) 建历元索引
+maps = {}
+with open("data/igsg0490.23i") as f:
+    for m in ionex.reader(f):
+        maps[m.epoch] = m
+times = sorted(maps)
+print(len(times), times[0], times[-1])
+
+# 3) 最近邻历元
+t_obs = datetime(2023, 2, 18, 14, 5, 0)
+t_map = min(times, key=lambda u: abs((u - t_obs).total_seconds()))
+print(t_obs, t_map, (t_map - t_obs).total_seconds())
 ```
 
-对照自站 TEC 时：取与穿刺点时间最近的一张图 → 按经纬度在 `tec` 格网中插值（插值需自写或用 scipy；本库只负责读入）。
+格网 reshape / 双线性插值：按 `grid` 的 lat/lon 步长计算 `nlat,nlon`，断言 `len(tec)==nlat*nlon` 再 reshape；插值在库外完成（教程 [03](../tutorials/03-gim-ionex.md)/[18](../tutorials/18-lab-compare-gims.md)）。
+
+**预期：** `epoch` 为 datetime；`tec` 为一维格网值；地球数据门户若下到 HTML，`reader` 会解析失败——先 `head` 自检。
 
 ## 输入 / 输出
 
-| 方向 | 说明 |
+| 方向 | 内容 |
 |---|---|
-| 输入 | IONEX 文本（路径或已打开的 file 对象） |
-| 输出 | 迭代得到的 `IonexMap`：`epoch`、`tec`、`height`、`grid` |
-| 异常 | 未知类型/版本、文件截断、单图解析错误（见上游 `IONEXError` 等） |
+| 输入 | IONEX 文本（`.i` / `.inx` 等）；IGS/CODE/UPC 等产品 |
+| 输出 | 迭代得到的 map 对象（epoch/height/grid/tec） |
+| 不做 | 写回 IONEX；球谐反演 |
 
-`tec` 的排布：一维列表，由多个「固定经度上的纬度剖面」拼接；起止步长读 `grid`。**不要假设**它已是 `numpy` 二维阵——需要时自行 `reshape`。
+## 常用参数
 
-## 常见坑
+本包以 **reader 迭代** 为主，几乎无复杂 CLI。注意：
 
-| 现象 | 可能原因 | 怎么处理 |
-|---|---|---|
-| 与自算 STEC 差一截 | DCB、映射函数、壳层高度、时间未对齐 | 先读 [03 课](../tutorials/03-gim-ionex.md)；统一时间系统 |
-| 文件读到一半报错 | 下载不完整或非 IONEX | 核对 CDDIS 校验；确认是 `*.inx` 而非 HTML 错误页 |
-| 只想「看一眼全球图」 | 可先用分析中心网页预览 | 本库适合可编程对照 |
-| 需要写 IONEX / 更高阶 | `ionex` 只读 | 另寻 `ionex_formatter` 等目录条目 |
+| 项 | 说明 |
+|---|---|
+| 产品类型 | 快速/最终勿混用却不标注 |
+| `tec` 单位 | 头文件比例尺（常见 0.1 TECU） |
+| `grid` | 勿写死 71×73；只从文件读 |
+| RMS 图 | 勿把 RMS map 当 TEC |
 
-## 接到电离层分析哪一步
+## 接到工作流哪一步
 
-- 概念与对照方法 → [03 · GIM / IONEX](../tutorials/03-gim-ionex.md)  
-- 自站双频 STEC → [02](../tutorials/02-gnss-dualfreq-tec.md) · [georinex](./georinex.md)  
-- 下载门户 → [数据怎么下](../data-access.md) · 列表中的 CDDIS-IONEX 等
+- 路径 A/E：与 [pytecgg](./pytecgg.md) VTEC 对照；教程 [03](../tutorials/03-gim-ionex.md)/[18](../tutorials/18-lab-compare-gims.md)
+- 数据：[data-access](../data-access.md) · CDDIS `gnss/products/ionex/`
+- 自建求解边界：[sh-gim](./sh-gim.md)
 
-## 目录指针
+## 常见问题
 
-- `PROJECTS.json`：`name=ionex` · `url=https://github.com/gnss-lab/ionex`  
-- 相关：`ionex-analyzer`、`ionex_formatter`、`SH-GIM`（不展开）
+| 现象 | 处理 |
+|---|---|
+| 解析失败 | `head` 是否 HTML；检查 Earthdata 登录下载 |
+| reshape 报错 | 用文件内 dlat/dlon 算维度 |
+| 与 STEC「对不上」 | GIM=壳层 VTEC；观测=斜向+DCB；比趋势勿强行相等 |
+| 混用快速/最终 | 日志写清产品 ID |
+| 想生成 GIM | 本包不负责；看开源 GIM 列表 |
+
+## 相关工具
+
+[pytecgg](./pytecgg.md) · [sh-gim](./sh-gim.md) · [georinex](./georinex.md)
+
+## 操作检查清单
+
+1. 安装/编译后，帮助命令（`-h`/`-H`/`--help`）可运行。  
+2. 用官方 example 或最小样例跑通，再换自己的数据。  
+3. 确认输入时间覆盖、路径、权限。  
+4. 保留日志；失败时只改一个变量重试。  
+5. 参数以本机帮助/上游 README 为准（本文可能滞后）。  
+6. 产出文件非空且时间戳更新。  
+7. 接到下一工具前做格式抽查（`head`/`wc`/`grep`）。
+
+## 预期 I/O 速查
+
+| 阶段 | 成功判据 |
+|---|---|
+| 安装 | 可执行文件或 `import` 成功 |
+| 冒烟 | example 退出码 0 或生成预期文件 |
+| 正式跑 | 输出目录有目标产品且体量合理 |
+| 失败 | 日志指出缺文件/鉴权/覆盖问题，而非静默空结果 |
