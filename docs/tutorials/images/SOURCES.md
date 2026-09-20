@@ -25,11 +25,13 @@
 | `fig-penetrating-efield.png` | Original schematic | CC0-1.0 |
 | `fig-ipp-pierce-point.png` | Original schematic | CC0-1.0 |
 | `fig-chapman-ne.png` | Original schematic | CC0-1.0 |
+| `fig-chapman-layer.png` | Original schematic | CC0-1.0 |
 | `fig-dst-kp-timeline.png` | Original schematic | CC0-1.0 |
 | `fig-dualfreq-tec.png` | Original schematic | CC0-1.0 |
 | `fig-mapping-function.png` | Original schematic | CC0-1.0 |
 | `fig-roti-map-schematic.png` | Original schematic | CC0-1.0 |
 | `fig-phase-scint-time.png` | Original schematic | CC0-1.0 |
+| `fig-phase-scint.png` | Original schematic | CC0-1.0 |
 | `fig-tec-gradient.png` | Original schematic | CC0-1.0 |
 | `fig-gnss-freq-bands.png` | Original schematic | CC0-1.0 |
 | `fig-bias-dcb.png` | Original schematic | CC0-1.0 |
@@ -39,5 +41,6 @@
 - `.venv/bin/python scripts/make_phenomena_figs.py`
 - `.venv/bin/python scripts/make_supplement_figs.py`
 - `.venv/bin/python scripts/make_geom_figs.py`
+- `.venv/bin/python scripts/make_teaching_figs.py`
 
 若日后增加 NASA / NOAA / Wikimedia Commons 图，必须在本文件追加：URL、作者、许可（如 Public Domain / CC BY 4.0），并在课文引用处写明。
