@@ -36,6 +36,9 @@
 | 赤道喷泉 / EIA | ![](./docs/tutorials/images/fig-fountain-eia.png) | [21 赤道异常](./docs/tutorials/21-equatorial-anomaly-bubbles.md) |
 | 磁暴多相位 TEC | ![](./docs/tutorials/images/fig-storm-phases-tec.png) | [20 磁暴](./docs/tutorials/20-storm-tec-analysis.md) |
 | S4 闪烁 | ![](./docs/tutorials/images/fig-s4-scint.png) | [05 闪烁](./docs/tutorials/05-scintillation-roti.md) |
+| 极光椭圆 | ![](./docs/tutorials/images/fig-aurora-oval.png) | [20 磁暴/空间天气](./docs/tutorials/20-storm-tec-analysis.md) |
+| 日食 TEC 洞 | ![](./docs/tutorials/images/fig-eclipse-tec-hole.png) | [23 耀斑日食](./docs/tutorials/23-flare-eclipse-special.md) |
+| 穿透电场 | ![](./docs/tutorials/images/fig-penetrating-efield.png) | [20 磁暴](./docs/tutorials/20-storm-tec-analysis.md) |
 | Ne 高度剖面 | ![](./docs/tutorials/images/fig-ne-profile-layers.png) | [01 基础](./docs/tutorials/01-ionosphere-tec-basics.md) |
 
 配图再生：`python3 scripts/make_phenomena_figs.py` · 来源登记：[SOURCES.md](./docs/tutorials/images/SOURCES.md)
