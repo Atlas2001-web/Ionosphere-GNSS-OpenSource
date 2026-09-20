@@ -97,7 +97,12 @@
 
 ## 4. 指数时间线 + GIM 差分
 
-1. 用 `GFZ-Kp-Index`、`NASA-OMNIWeb` 钉：扰动开始、SYM-H 谷、恢复。  
+1. 用 `GFZ-Kp-Index`、`NASA-OMNIWeb` 钉：扰动开始、SYM-H 谷、恢复。
+
+![Dst / SYM-H 与 Kp 时间线示意](./images/fig-dst-kp-timeline.png)
+
+> 图源：自制示意。先钉 SSC / 主相谷 / 恢复，再叠 ΔVTEC——指数是时间轴钉子，不是 TEC 本身。
+  
 2. 选对照（Q/R/C），写局限。  
 3. `CDDIS-IONEX`（或 `JPL-IONEX-Rapid` 等）取**同一 AC** 暴日与对照。  
 4. `ionex` / `ionex_reader` / `DiffIonMap` 做 ΔVTEC 地图 + 区域平均时间序列与 SYM-H 同轴。

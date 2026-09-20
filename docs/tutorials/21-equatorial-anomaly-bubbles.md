@@ -101,6 +101,15 @@ $$
 
 ![闪烁 S4 示意](./images/fig-s4-scint.png)
 
+![相位闪烁时序示意](./images/fig-phase-scint-time.png)
+
+> 图源：自制示意。安静弧段突然进入强相位抖窗——与 ROTI/S4 同看。
+
+![ROTI 地图热点示意](./images/fig-roti-map-schematic.png)
+
+> 图源：自制示意。夜侧低纬羽状/双带热点提示 EPB 活动区，需与 TEC 掉口对照。
+
+
 > 图源：自制示意。泡壁不规则导致幅度闪烁指数升高；与 ROTI 同窗互相印证。
 
 ---

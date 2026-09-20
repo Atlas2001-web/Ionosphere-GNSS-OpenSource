@@ -40,8 +40,18 @@
 | 日食 TEC 洞 | ![](./docs/tutorials/images/fig-eclipse-tec-hole.png) | [23 耀斑日食](./docs/tutorials/23-flare-eclipse-special.md) |
 | 穿透电场 | ![](./docs/tutorials/images/fig-penetrating-efield.png) | [20 磁暴](./docs/tutorials/20-storm-tec-analysis.md) |
 | Ne 高度剖面 | ![](./docs/tutorials/images/fig-ne-profile-layers.png) | [01 基础](./docs/tutorials/01-ionosphere-tec-basics.md) |
+| IPP 穿刺点 | ![](./docs/tutorials/images/fig-ipp-pierce-point.png) | [01 基础](./docs/tutorials/01-ionosphere-tec-basics.md) |
+| Chapman Ne 廓线 | ![](./docs/tutorials/images/fig-chapman-ne.png) | [01 基础](./docs/tutorials/01-ionosphere-tec-basics.md) · [19](./docs/tutorials/19-phenomena-overview.md) |
+| Dst / Kp 时间线 | ![](./docs/tutorials/images/fig-dst-kp-timeline.png) | [20 磁暴](./docs/tutorials/20-storm-tec-analysis.md) |
+| 双频 → TEC | ![](./docs/tutorials/images/fig-dualfreq-tec.png) | [01 基础](./docs/tutorials/01-ionosphere-tec-basics.md) · [02](./docs/tutorials/02-gnss-dualfreq-tec.md) |
+| 薄壳映射 M(E) | ![](./docs/tutorials/images/fig-mapping-function.png) | [01 基础](./docs/tutorials/01-ionosphere-tec-basics.md) |
+| ROTI 图示意 | ![](./docs/tutorials/images/fig-roti-map-schematic.png) | [21 赤道异常](./docs/tutorials/21-equatorial-anomaly-bubbles.md) · [19](./docs/tutorials/19-phenomena-overview.md) |
+| 相位闪烁时序 | ![](./docs/tutorials/images/fig-phase-scint-time.png) | [21](./docs/tutorials/21-equatorial-anomaly-bubbles.md) · [05](./docs/tutorials/05-scintillation-roti.md) |
+| TEC 水平梯度 | ![](./docs/tutorials/images/fig-tec-gradient.png) | [22 TID](./docs/tutorials/22-tid-traveling-disturbances.md) |
+| GNSS 频段 | ![](./docs/tutorials/images/fig-gnss-freq-bands.png) | [01 基础](./docs/tutorials/01-ionosphere-tec-basics.md) |
+| DCB 偏差伪装 | ![](./docs/tutorials/images/fig-bias-dcb.png) | [01](./docs/tutorials/01-ionosphere-tec-basics.md) · [02](./docs/tutorials/02-gnss-dualfreq-tec.md) |
 
-配图再生：`python3 scripts/make_phenomena_figs.py` · 来源登记：[SOURCES.md](./docs/tutorials/images/SOURCES.md)
+配图再生：`python3 scripts/make_phenomena_figs.py` · `python3 scripts/make_supplement_figs.py` · `python3 scripts/make_geom_figs.py` · 来源登记：[SOURCES.md](./docs/tutorials/images/SOURCES.md)
 
 ---
 

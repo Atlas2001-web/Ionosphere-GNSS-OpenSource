@@ -18,6 +18,11 @@
 
 ![TID 波前（TEC 残差场）示意](./images/fig-tid-wavefront.png)
 
+![TEC 水平梯度示意](./images/fig-tec-gradient.png)
+
+> 图源：自制示意。波列/泡壁表现为局地 $\nabla$TEC 尖峰；检测前先去趋势。
+
+
 > 图源：本仓库自制示意（非实测）。斜向红蓝条纹＝波前；箭头示意传播方向。标准全球 GIM 往往「看不见」这种中尺度纹。
 
 ### 交付物
