@@ -2,6 +2,24 @@
 
 本页配合 [`lists/10-gnss-datasets.md`](../lists/10-gnss-datasets.md) 使用，解释常见登录门槛、IGS 目录结构，以及目录里「注册方式」徽章怎么读。
 
+
+## 我要什么数据？（一屏决策表）
+
+| 你想要 | 优先门户 | 注册 | 备注 |
+|---|---|:---:|---|
+| 全球 RINEX 观测 / 广播星历 | [CDDIS](https://cddis.nasa.gov/archive/gnss/) · [BKG](https://igs.bkg.bund.de/) · [ESA GSSC](https://gssc.esa.int/) | 网页注册 / 视中心 | CDDIS 需 Earthdata |
+| 精密轨道 SP3 / 钟差 CLK / 偏差 | CDDIS `gnss/products/` · [IGS files](https://files.igs.org/) | 同左 | 注意长文件名与 GPS 周 |
+| 电离层 GIM / IONEX | CDDIS `ionex` · CODE/UPC 等分析中心 | 视源 | Rapid/Final 时延不同 |
+| 高采样率观测（闪烁/同震） | [CDDIS high-rate 说明](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/high-rate_data.html) + `cddis-highrate-downloader` | Earthdata | 流量大，务必限速 |
+| 区域 CORS | GeoNet NZ · IBGE RBMC · NOAA CORS · 各国网 | 视网络 | 先读区域许可 |
+| 实时 RTCM / SSR | BKG / IGS RTS NTRIP | 账号或挂载点 | 与事后文件通道分开配置 |
+| 掩星 RO | CDAAC · ROM SAF · AWS GNSS-RO | 账号/开放 | 电离层 excess phase 常用 |
+| 地磁指数 / 台站（空间天气对照） | [Kyoto WDC](https://wdc.kugi.kyoto-u.ac.jp/) · INTERMAGNET · SuperMAG | 开放/注册 | 不是 GNSS 观测本身 |
+| 闪烁 ISMR | [ISMR Query Tool](https://ismrquerytool.fct.unesp.br/) · `ismr_downloader` | 网页注册 | 低纬研究常用 |
+
+更细的逐站说明见 [`lists/10-gnss-datasets.md`](../lists/10-gnss-datasets.md)。
+
+
 ## 注册方式徽章怎么读
 
 | 字段值 | 列表显示 | 含义 |
