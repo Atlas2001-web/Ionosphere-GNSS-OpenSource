@@ -14,7 +14,8 @@ Outputs under docs/tutorials/images/:
   fig-bias-dcb.png
 
 Usage (from repo root):
-  .venv/bin/python scripts/make_geom_figs.py
+  /workspace/iono-figs/.venv/bin/python scripts/make_geom_figs.py
+  # or: .venv/bin/python scripts/make_geom_figs.py
 """
 from __future__ import annotations
 
@@ -22,7 +23,7 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.patches import Arc, Circle, Ellipse, FancyBboxPatch, Rectangle
+from matplotlib.patches import Circle, FancyBboxPatch
 from matplotlib.colors import LinearSegmentedColormap
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,8 +33,8 @@ OUT.mkdir(parents=True, exist_ok=True)
 plt.rcParams.update({
     "font.size": 11,
     "axes.titlesize": 13,
-    "figure.dpi": 150,
-    "savefig.dpi": 150,
+    "figure.dpi": 160,
+    "savefig.dpi": 160,
     "axes.unicode_minus": False,
 })
 
@@ -45,7 +46,6 @@ LIGHT_BLUE = "#5dade2"
 LIGHT_RED = "#e74c3c"
 GREY = "#7f8c8d"
 PURPLE = "#8e44ad"
-GOLD = "#f4d03f"
 TEAL = "#148f77"
 
 
@@ -62,48 +62,54 @@ def _save(fig, name: str) -> Path:
 
 
 def fig_ipp_pierce_point() -> Path:
-    """Receiver–satellite ray piercing thin shell at IPP."""
+    """Receiver–satellite ray piercing thin shell at IPP + STEC slant path."""
     fig, ax = plt.subplots(figsize=(8.5, 5.2))
     ax.set_facecolor("white")
     fig.patch.set_facecolor("white")
 
-    # Earth disk (lower portion)
     earth = Circle((0, -0.15), 1.0, facecolor="#d5f5e3", edgecolor=GREEN, lw=2.0, zorder=1)
     ax.add_patch(earth)
     ax.text(0, -0.35, "Earth", ha="center", color="#1e8449", fontsize=10, fontweight="bold")
 
-    # Thin shell arc
     shell_r = 1.55
     theta = np.linspace(np.deg2rad(25), np.deg2rad(155), 200)
     ax.plot(shell_r * np.cos(theta), shell_r * np.sin(theta) - 0.15,
             color=BLUE, lw=2.5, zorder=2)
-    ax.text(0, shell_r - 0.05, f"thin shell H ≈ 350–450 km",
+    # faint shell band
+    for dr in (-0.06, 0.06):
+        ax.plot((shell_r + dr) * np.cos(theta), (shell_r + dr) * np.sin(theta) - 0.15,
+                color="#d6eaf8", lw=6, alpha=0.5, zorder=0)
+    ax.text(0, shell_r - 0.02, "thin shell H ≈ 350–450 km",
             ha="center", va="bottom", color=BLUE, fontsize=9)
 
-    # Receiver on surface
     rx_ang = np.deg2rad(70)
     rx = (1.0 * np.cos(rx_ang), 1.0 * np.sin(rx_ang) - 0.15)
     ax.plot(*rx, "o", color="#1e8449", ms=9, zorder=5)
     ax.text(rx[0] - 0.12, rx[1] - 0.12, "receiver", color="#1e8449",
             fontsize=9, ha="right", va="top")
 
-    # Satellite
     sat = (2.35, 2.05)
     ax.plot(*sat, "^", color=ORANGE, ms=14, zorder=5)
     ax.text(sat[0] + 0.05, sat[1] + 0.05, "GNSS sat", color=ORANGE,
             fontsize=9, ha="left", va="bottom")
 
-    # Ray line
-    ax.plot([rx[0], sat[0]], [rx[1], sat[1]], color=RED, lw=2.0, zorder=3)
+    ax.plot([rx[0], sat[0]], [rx[1], sat[1]], color=ORANGE, lw=1.8, zorder=3)
 
-    # IPP: intersection with shell (approximate along ray)
-    # Parametrize ray and find distance ≈ shell_r from earth center (0,-0.15)
     t = np.linspace(0, 1, 400)
     xs = rx[0] + t * (sat[0] - rx[0])
     ys = rx[1] + t * (sat[1] - rx[1])
     dist = np.sqrt(xs**2 + (ys + 0.15)**2)
-    idx = np.argmin(np.abs(dist - shell_r))
+    idx = int(np.argmin(np.abs(dist - shell_r)))
     ipp = (xs[idx], ys[idx])
+
+    near = np.abs(dist - shell_r) < 0.12
+    ax.plot(xs[near], ys[near], color=RED, lw=4.5, alpha=0.55, zorder=4,
+            solid_capstyle="round")
+    mid_idxs = np.flatnonzero(near)
+    mid = mid_idxs[len(mid_idxs) // 2]
+    ax.text(xs[mid] - 0.38, ys[mid] + 0.16, "STEC slant path",
+            color=RED, fontsize=9, fontweight="bold", rotation=38)
+
     ax.plot(*ipp, "o", color=PURPLE, ms=11, zorder=6)
     ax.annotate(
         "IPP\n(pierce point)",
@@ -113,7 +119,6 @@ def fig_ipp_pierce_point() -> Path:
         zorder=7,
     )
 
-    # Local vertical at IPP
     cx, cy = 0.0, -0.15
     vdir = np.array([ipp[0] - cx, ipp[1] - cy])
     vdir = vdir / np.linalg.norm(vdir)
@@ -124,7 +129,6 @@ def fig_ipp_pierce_point() -> Path:
     )
     ax.text(*(ipp + 0.52 * vdir), "local\nvertical", color=GREY, fontsize=8, ha="center")
 
-    # Elevation cue
     ax.annotate(
         "", xy=(rx[0] + 0.55, rx[1] + 0.35), xytext=rx,
         arrowprops=dict(arrowstyle="-|>", color=TEAL, lw=1.3),
@@ -141,53 +145,51 @@ def fig_ipp_pierce_point() -> Path:
 
 
 def fig_chapman_ne() -> Path:
-    """Chapman-like Ne(h) profile with layer labels."""
-    fig, ax = plt.subplots(figsize=(6.2, 6.0))
+    """Single Chapman Ne(h) emphasizing hmF2 peak (distinct from D/E/F band chart)."""
+    fig, ax = plt.subplots(figsize=(6.4, 5.8))
     ax.set_facecolor("white")
     fig.patch.set_facecolor("white")
 
-    h = np.linspace(60, 800, 900)
-    # Multi-layer Chapman-ish schematic
-    def chap(h, hm, Nm, H):
-        z = (h - hm) / H
-        return Nm * np.exp(0.5 * (1.0 - z - np.exp(-z)))
+    h = np.linspace(80, 700, 700)
+    hmF2 = 300.0
+    NmF2 = 1.0
+    H = 55.0
+    z = (h - hmF2) / H
+    ne = NmF2 * np.exp(0.5 * (1.0 - z - np.exp(-z)))
+    # faint secondary E bump for context only — no D/E/F band labels
+    hmE, HE = 110.0, 14.0
+    zE = (h - hmE) / HE
+    ne = ne + 0.16 * np.exp(0.5 * (1.0 - zE - np.exp(-zE)))
 
-    ne = (
-        chap(h, 110, 1.2e11, 12)
-        + chap(h, 160, 2.5e11, 18)
-        + chap(h, 300, 1.1e12, 55)
-        + 0.8e11 * np.exp(-(h - 90) / 25) * (h < 120)
+    ax.fill_betweenx(h, 0, ne, color="#d4e6f1", alpha=0.7, zorder=0)
+    ax.plot(ne, h, color=BLUE, lw=2.5, zorder=2)
+
+    ax.axhline(hmF2, color=RED, ls="--", lw=1.5, zorder=1)
+    ax.plot(NmF2, hmF2, "o", color=RED, ms=10, zorder=4)
+    ax.annotate(
+        r"$h_m$F2 peak",
+        xy=(NmF2, hmF2),
+        xytext=(0.45, 420),
+        fontsize=12,
+        color=RED,
+        fontweight="bold",
+        arrowprops=dict(arrowstyle="-|>", color=RED, lw=1.6),
+        zorder=5,
     )
-    # Soft D-region bump
-    ne += 3.5e10 * np.exp(-0.5 * ((h - 80) / 12) ** 2)
+    ax.text(NmF2 + 0.05, hmF2 - 50, r"$N_m$F2", color=RED, fontsize=10)
+    ax.annotate(
+        "",
+        xy=(0.22, hmF2 + H),
+        xytext=(0.22, hmF2),
+        arrowprops=dict(arrowstyle="<->", color=ORANGE, lw=1.5),
+    )
+    ax.text(0.26, hmF2 + H / 2, r"$H$", color=ORANGE, fontsize=11, va="center")
 
-    ax.plot(ne / 1e11, h, color=BLUE, lw=2.4)
-    ax.fill_betweenx(h, 0, ne / 1e11, color=LIGHT_BLUE, alpha=0.25)
-
-    # Layer bands
-    bands = [
-        (70, 95, "D", "#fadbd8"),
-        (95, 145, "E", "#fdebd0"),
-        (145, 220, "F1", "#d5f5e3"),
-        (220, 500, "F2", "#d6eaf8"),
-    ]
-    for lo, hi, lab, col in bands:
-        ax.axhspan(lo, hi, color=col, alpha=0.35, zorder=0)
-        ax.text(0.15, (lo + hi) / 2, lab, transform=ax.get_yaxis_transform(),
-                va="center", ha="left", fontsize=10, fontweight="bold",
-                color="0.35")
-
-    # Peak marker
-    hm_f2 = 300
-    ax.axhline(hm_f2, color=RED, ls=":", lw=1.2)
-    ax.plot(1.1e12 / 1e11, hm_f2, "o", color=RED, ms=7)
-    ax.text(11.5, hm_f2 + 18, r"$N_m$F2 / $h_m$F2", color=RED, fontsize=9)
-
-    ax.set_xlim(0, 14)
-    ax.set_ylim(60, 750)
-    ax.set_xlabel(r"$N_e$ (schematic, $\times 10^{11}\,\mathrm{m}^{-3}$)")
+    ax.set_xlabel(r"Electron density $N_e$ (relative)")
     ax.set_ylabel("Altitude (km)")
-    ax.set_title("Chapman-like electron-density profile (schematic)")
+    ax.set_xlim(0, 1.25)
+    ax.set_ylim(80, 700)
+    ax.set_title(r"Chapman $N_e(h)$ — F2 peak height $h_m$F2")
     ax.grid(True, alpha=0.25)
     _cc0(ax)
     fig.tight_layout()
@@ -199,12 +201,10 @@ def fig_dst_kp_timeline() -> Path:
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(9.0, 5.4), sharex=True)
     fig.patch.set_facecolor("white")
 
-    t = np.linspace(0, 72, 721)  # hours
-    # Quiet then storm
+    t = np.linspace(0, 72, 721)
     onset = 18.0
     main = 24.0
     dst = -8 + 4 * np.sin(2 * np.pi * t / 24)
-    # Sudden commencement bump then deep main phase
     dst = np.where(t >= onset, dst + 25 * np.exp(-((t - onset) / 1.2) ** 2), dst)
     main_depth = -95 * (1 - np.exp(-(np.clip(t - main, 0, None)) / 3.5))
     recover = np.exp(-(np.clip(t - (main + 10), 0, None)) / 22.0)
@@ -224,7 +224,6 @@ def fig_dst_kp_timeline() -> Path:
     ax1.grid(True, alpha=0.25)
     ax1.set_title("Geomagnetic indices during a storm (schematic)")
 
-    # Kp bars
     rng = np.random.default_rng(7)
     edges = np.arange(0, 72, 3)
     kp = np.clip(
@@ -250,24 +249,32 @@ def fig_dst_kp_timeline() -> Path:
 
 
 def fig_dualfreq_tec() -> Path:
-    """Dual-frequency delay difference → STEC idea."""
+    """Dual-frequency delay difference → STEC (distinct from geometry-free cartoon)."""
     fig, axes = plt.subplots(1, 2, figsize=(10.0, 4.6),
                              gridspec_kw=dict(width_ratios=[1.05, 1.0], wspace=0.32))
     fig.patch.set_facecolor("white")
 
     ax = axes[0]
     ax.set_facecolor("white")
-    f = np.linspace(1.0, 1.7, 200)  # GHz
-    stec = 20e16  # m^-2
-    I = 40.3 * stec / (f * 1e9) ** 2  # meters
+    f = np.linspace(1.0, 1.7, 200)
+    stec = 20e16
+    I = 40.3 * stec / (f * 1e9) ** 2
     ax.plot(f, I, color=BLUE, lw=2.3)
-    # Mark L1 L2 L5
-    marks = [(1.57542, "L1"), (1.22760, "L2"), (1.17645, "L5")]
-    for ff, lab in marks:
+    marks = [(1.57542, "L1", GREEN), (1.22760, "L2", ORANGE), (1.17645, "L5", TEAL)]
+    for ff, lab, col in marks:
         ii = 40.3 * stec / (ff * 1e9) ** 2
-        ax.plot(ff, ii, "o", color=RED, ms=7)
+        ax.plot(ff, ii, "o", color=col, ms=8)
         ax.annotate(lab, xy=(ff, ii), xytext=(ff + 0.04, ii + 0.25),
-                    fontsize=9, color=RED)
+                    fontsize=9, color=col)
+    # Delta between L1 and L2
+    i1 = 40.3 * stec / (1.57542e9) ** 2
+    i2 = 40.3 * stec / (1.22760e9) ** 2
+    ax.annotate(
+        "", xy=(1.22760 - 0.03, i1), xytext=(1.22760 - 0.03, i2),
+        arrowprops=dict(arrowstyle="<->", color=RED, lw=1.6),
+    )
+    ax.text(1.10, (i1 + i2) / 2, r"$\Delta I$", color=RED, fontsize=11,
+            fontweight="bold", va="center")
     ax.set_xlabel("Frequency (GHz)")
     ax.set_ylabel("Group delay I (m) for STEC=20 TECU")
     ax.set_title(r"$I \propto \mathrm{STEC}/f^{2}$")
@@ -276,31 +283,32 @@ def fig_dualfreq_tec() -> Path:
 
     ax2 = axes[1]
     ax2.set_facecolor("white")
-    # Cartoon: P1, P2 boxes and difference
     ax2.set_xlim(0, 10)
     ax2.set_ylim(0, 10)
     ax2.axis("off")
-    ax2.add_patch(FancyBboxPatch((0.6, 6.5), 3.6, 2.2, boxstyle="round,pad=0.15",
-                                 facecolor="#d6eaf8", edgecolor=BLUE, lw=1.8))
-    ax2.text(2.4, 7.6, r"$P_1$ (L1 code)" + "\n" + r"$+I_1$ + geom + …",
-             ha="center", va="center", fontsize=10, color=BLUE)
-    ax2.add_patch(FancyBboxPatch((5.8, 6.5), 3.6, 2.2, boxstyle="round,pad=0.15",
-                                 facecolor="#fdebd0", edgecolor=ORANGE, lw=1.8))
-    ax2.text(7.6, 7.6, r"$P_2$ (L2 code)" + "\n" + r"$+I_2$ + geom + …",
-             ha="center", va="center", fontsize=10, color=ORANGE)
-    ax2.annotate("", xy=(5.0, 4.6), xytext=(2.4, 6.5),
-                 arrowprops=dict(arrowstyle="-|>", color=GREY, lw=1.5))
-    ax2.annotate("", xy=(5.0, 4.6), xytext=(7.6, 6.5),
-                 arrowprops=dict(arrowstyle="-|>", color=GREY, lw=1.5))
-    ax2.add_patch(FancyBboxPatch((2.2, 2.6), 5.6, 2.0, boxstyle="round,pad=0.15",
-                                 facecolor="#e8daef", edgecolor=PURPLE, lw=1.8))
-    ax2.text(5.0, 3.6,
-             r"$P_1-P_2 \approx (I_1-I_2)$" + "\n+ DCB + noise"
-             "\n→ geometry-free → STEC",
-             ha="center", va="center", fontsize=10, color=PURPLE)
-    ax2.set_title("Dual-frequency → STEC (idea)")
+    box = FancyBboxPatch(
+        (0.5, 5.0), 9.0, 4.0, boxstyle="round,pad=0.2,rounding_size=0.35",
+        facecolor="#eaf2f8", edgecolor=BLUE, lw=1.8,
+    )
+    ax2.add_patch(box)
+    ax2.text(
+        5.0, 7.6,
+        r"$\mathrm{STEC} \propto \dfrac{f_1^{2} f_2^{2}}{f_1^{2}-f_2^{2}}"
+        r"\,(I_2 - I_1)$",
+        ha="center", va="center", fontsize=12, color="#1a5276",
+    )
+    ax2.text(5.0, 5.8, "group-delay difference → TEC",
+             ha="center", fontsize=11, color=BLUE)
 
-    fig.suptitle("Dual-frequency TEC measurement (schematic)", fontsize=13, y=1.02)
+    ax2.barh([3.0], [3.2], height=0.5, left=2.2, color=GREEN, alpha=0.85)
+    ax2.barh([1.7], [5.0], height=0.5, left=2.2, color=ORANGE, alpha=0.85)
+    ax2.text(1.9, 3.0, r"$I_1$", ha="right", va="center", color=GREEN, fontsize=11)
+    ax2.text(1.9, 1.7, r"$I_2$", ha="right", va="center", color=ORANGE, fontsize=11)
+    ax2.text(5.0, 0.6, r"$f_1 > f_2$  ⇒  $I_1 < I_2$", ha="center",
+             fontsize=10, color=GREY)
+    ax2.set_title("Dual-frequency TEC estimate")
+
+    fig.suptitle("Dual-frequency TEC from group delay (schematic)", fontsize=13, y=1.02)
     return _save(fig, "fig-dualfreq-tec.png")
 
 
@@ -329,10 +337,12 @@ def fig_mapping_function() -> Path:
     ax.set_title(r"Thin-shell mapping: $\mathrm{STEC}\approx M(E)\cdot\mathrm{VTEC}$")
     ax.legend(loc="upper right", fontsize=9)
     ax.grid(True, alpha=0.25)
-    ax.text(0.52, 0.18,
-            r"$M=\left(1-\left(\frac{R_E}{R_E+H}\cos E\right)^2\right)^{-1/2}$",
-            transform=ax.transAxes, fontsize=9, color=BLUE,
-            bbox=dict(boxstyle="round", facecolor="#eaf2f8", edgecolor=BLUE, alpha=0.9))
+    ax.text(
+        0.50, 0.18,
+        r"$M=\left(1-\left(\frac{R_E}{R_E+H}\cos E\right)^2\right)^{-1/2}$",
+        transform=ax.transAxes, fontsize=9, color=BLUE,
+        bbox=dict(boxstyle="round", facecolor="#eaf2f8", edgecolor=BLUE, alpha=0.9),
+    )
     _cc0(ax)
     fig.tight_layout()
     return _save(fig, "fig-mapping-function.png")
@@ -348,9 +358,7 @@ def fig_roti_map_schematic() -> Path:
     lat = np.linspace(-40, 40, 161)
     LON, LAT = np.meshgrid(lon, lat)
 
-    # Quiet background
     roti = 0.05 + 0.02 * np.cos(np.deg2rad(LON / 3))
-    # Nightside equatorial hotspots (two longitude sectors)
     for lon0 in (-35, 20):
         roti += 0.55 * np.exp(
             -0.5 * ((LAT - 8) / 6) ** 2
@@ -360,7 +368,6 @@ def fig_roti_map_schematic() -> Path:
             -0.5 * ((LAT + 10) / 6.5) ** 2
             - 0.5 * ((LON - lon0 + 3) / 11) ** 2
         )
-    # Mild mid-lat noise
     rng = np.random.default_rng(3)
     roti += 0.015 * rng.standard_normal(LON.shape)
 
@@ -395,16 +402,13 @@ def fig_phase_scint_time() -> Path:
     fig.patch.set_facecolor("white")
 
     rng = np.random.default_rng(11)
-    t = np.linspace(0, 10, 2001)  # minutes
-    # Carrier phase residual (rad) — quiet then strong scintillation
+    t = np.linspace(0, 10, 2001)
     phi = 0.08 * rng.standard_normal(len(t))
-    # Smooth quiet component
     kernel = np.ones(15) / 15
     phi = np.convolve(phi, kernel, mode="same")
     burst = (t > 3.5) & (t < 7.0)
     env = np.exp(-((t - 5.2) / 1.1) ** 2)
     phi = phi + burst * env * (1.8 * rng.standard_normal(len(t)))
-    # Mild low-freq wander
     phi += 0.15 * np.sin(2 * np.pi * t / 4.5)
 
     ax.plot(t, phi, color=BLUE, lw=1.0)
@@ -422,19 +426,19 @@ def fig_phase_scint_time() -> Path:
 
 def fig_tec_gradient() -> Path:
     """Horizontal TEC gradient schematic: profile + ∇TEC."""
-    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8.5, 5.4), sharex=True,
-                                   gridspec_kw=dict(height_ratios=[1.2, 1.0], hspace=0.08))
+    fig, (ax1, ax2) = plt.subplots(
+        2, 1, figsize=(8.5, 5.4), sharex=True,
+        gridspec_kw=dict(height_ratios=[1.2, 1.0], hspace=0.08),
+    )
     fig.patch.set_facecolor("white")
 
-    x = np.linspace(-800, 800, 801)  # km
-    # Smooth background + steep wall (bubble edge)
+    x = np.linspace(-800, 800, 801)
     vtec = (
         28
         - 3 * (x / 800) ** 2
         - 12 / (1 + np.exp(-(x + 80) / 18))
         + 12 / (1 + np.exp(-(x - 220) / 22))
     )
-    # Small TID ripple
     vtec += 1.2 * np.sin(2 * np.pi * x / 280)
 
     ax1.set_facecolor("white")
@@ -447,13 +451,15 @@ def fig_tec_gradient() -> Path:
     ax1.set_title("Horizontal TEC structure & gradient (schematic)")
     ax1.grid(True, alpha=0.25)
 
-    grad = np.gradient(vtec, x) * 1000  # TECU / 1000 km → per km; scale to TECU/100 km
+    grad = np.gradient(vtec, x)
     grad100 = grad * 100
     ax2.set_facecolor("white")
     ax2.plot(x, grad100, color=RED, lw=2.0)
     ax2.axhline(0, color=GREY, lw=0.8)
-    ax2.fill_between(x, 0, grad100, where=np.abs(grad100) > 1.5,
-                     color=LIGHT_RED, alpha=0.35)
+    ax2.fill_between(
+        x, 0, grad100, where=np.abs(grad100) > 1.5,
+        color=LIGHT_RED, alpha=0.35,
+    )
     ax2.set_xlabel("Horizontal distance (km)")
     ax2.set_ylabel(r"$\nabla$TEC (TECU / 100 km)")
     ax2.set_xlim(-800, 800)
@@ -487,9 +493,11 @@ def fig_gnss_freq_bands() -> Path:
     ax.set_ylim(-0.8, 3.8)
     ax.set_title("Selected GNSS frequency bands (schematic)")
     ax.grid(True, axis="x", alpha=0.3)
-    ax.text(0.5, -0.18,
-            r"Lower $f$ → larger ionospheric delay ($\propto 1/f^{2}$)",
-            transform=ax.transAxes, ha="center", color=GREY, fontsize=9)
+    ax.text(
+        0.5, -0.18,
+        r"Lower $f$ → larger ionospheric delay ($\propto 1/f^{2}$)",
+        transform=ax.transAxes, ha="center", color=GREY, fontsize=9,
+    )
     _cc0(ax, y=0.04)
     fig.tight_layout()
     return _save(fig, "fig-gnss-freq-bands.png")
@@ -504,7 +512,7 @@ def fig_bias_dcb() -> Path:
     t = np.linspace(0, 24, 289)
     true_stec = 12 + 10 * np.sin(2 * np.pi * (t - 6) / 24)
     true_stec = np.clip(true_stec, 4, None)
-    dcb_offset = 5.5  # TECU equivalent
+    dcb_offset = 5.5
     biased = true_stec + dcb_offset
 
     ax.plot(t, true_stec, color=GREEN, lw=2.3, label="True STEC (schematic)")
