@@ -196,6 +196,8 @@
 | 22 | TID | 网络 δTEC 波列 |
 | 23 | 耀斑 / 日食 | 高采样 TEC 跳 / 洞 |
 
+高纬极光卵落到海岸的示意底图见 [20](./20-storm-tec-analysis.md)。
+
 **工具速查**：`CDDIS-IONEX`、`ionex-analyzer`、`DiffIonMap`、`Seemala-GPS-TEC`、`igs-roti`、`IonoMoni`、`GIRO-DIDBase`、`COSMIC-CDAAC`、`GFZ-Kp-Index`、`NASA-OMNIWeb`、`IRI_TID`、`tidd`。
 
 **测验要点**：现象分析 vs 建模；ROTI≠TEC；对照 Q/R；峰抬升需 foF2/掩星；读图五问。  
