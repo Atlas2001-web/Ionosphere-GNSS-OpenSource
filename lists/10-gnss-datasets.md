@@ -1,9 +1,8 @@
 # GNSS 数据源 / GNSS Datasets
-> 共 **68** 个已收录项目。本文件为链接索引，不含第三方源码。
 
-**这类做什么？** 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
+[![68](https://img.shields.io/badge/portals-68-teal.svg)](../PROJECTS.json) · RINEX · SP3/CLK · IONEX · CORS · 实时流
 
-来源标记：🏷️ 官方 = 机构/国家实验室；🏷️ 高校实验室 = 大学课题组；🏷️ 个人社区 = 个人或小团队。
+> 怎么下？→ [`docs/data-access.md`](../docs/data-access.md) · 表内含**注册方式** · 🏷️ 多为官方门户
 
 ## CORS区域网
 

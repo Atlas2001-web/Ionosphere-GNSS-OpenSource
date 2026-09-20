@@ -1,9 +1,8 @@
 # 精密定位 / Precise Positioning
-> 共 **76** 个已收录项目。本文件为链接索引，不含第三方源码。
 
-**这类做什么？** SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
+[![76](https://img.shields.io/badge/projects-76-blue.svg)](../PROJECTS.json) · SPP · RTK/PPK · PPP/PPP-AR · 网络 RTK
 
-来源标记：🏷️ 官方 = 机构/国家实验室；🏷️ 高校实验室 = 大学课题组；🏷️ 个人社区 = 个人或小团队。
+> 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 ## PPP
 
