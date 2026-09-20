@@ -17,10 +17,17 @@
 | `fig-flare-sudden-ionize.png` | Original schematic | CC0-1.0 |
 | `fig-roti-time-series.png` | Original schematic | CC0-1.0 |
 | `fig-phenomena-gallery.png` | Original schematic | CC0-1.0 |
-
-再生命令（仓库根目录）：`.venv/bin/python scripts/make_phenomena_figs.py`
-
-若日后增加 NASA / NOAA / Wikimedia Commons 图，必须在本文件追加：URL、作者、许可（如 Public Domain / CC BY 4.0），并在课文引用处写明。
 | `fig-fountain-eia.png` | Original schematic | CC0-1.0 |
 | `fig-storm-phases-tec.png` | Original schematic | CC0-1.0 |
 | `fig-s4-scint.png` | Original schematic | CC0-1.0 |
+| `fig-aurora-oval.png` | Original schematic | CC0-1.0 |
+| `fig-eclipse-tec-hole.png` | Original schematic | CC0-1.0 |
+| `fig-penetrating-efield.png` | Original schematic | CC0-1.0 |
+
+再生命令（仓库根目录）：
+
+- `.venv/bin/python scripts/make_phenomena_figs.py`
+- `.venv/bin/python scripts/make_supplement_figs.py`
+- `.venv/bin/python scripts/make_next_figs.py`
+
+若日后增加 NASA / NOAA / Wikimedia Commons 图，必须在本文件追加：URL、作者、许可（如 Public Domain / CC BY 4.0），并在课文引用处写明。
