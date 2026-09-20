@@ -1,10 +1,10 @@
 # Image sources / 配图来源
 
-本目录配图均为**本仓库教学自绘**（matplotlib 示意/计算图），不从公众号或不明版权网页抓图。
+本目录配图均为**本仓库为教学自行绘制**的示意/计算图（matplotlib），不从公众号或不明版权网页抓取。
 
-| File | Type | License |
+| File | Type | License for reuse in this repo |
 |---|---|---|
-| `fig-iono-delay-vs-freq.png` | Original plot | CC0-1.0 |
+| `fig-iono-delay-vs-freq.png` | Original plot | CC0-1.0 (catalog media) |
 | `fig-stec-vtec-shell.png` | Original schematic | CC0-1.0 |
 | `fig-atmosphere-layers.png` | Original schematic | CC0-1.0 |
 | `fig-dualfreq-geometry-free.png` | Original schematic | CC0-1.0 |
@@ -16,8 +16,11 @@
 | `fig-ne-profile-layers.png` | Original schematic | CC0-1.0 |
 | `fig-flare-sudden-ionize.png` | Original schematic | CC0-1.0 |
 | `fig-roti-time-series.png` | Original schematic | CC0-1.0 |
-| `fig-phenomena-gallery.png` | Original collage | CC0-1.0 |
+| `fig-phenomena-gallery.png` | Original schematic | CC0-1.0 |
 
-再生：`python3 scripts/make_phenomena_figs.py`（需 matplotlib/numpy；推荐 Noto Sans CJK 字体）。
+再生命令（仓库根目录）：`.venv/bin/python scripts/make_phenomena_figs.py`
 
-若增加 NASA/NOAA/Wikimedia 图，须在本文件追加 URL、作者、许可，并在课文引用处写明。
+若日后增加 NASA / NOAA / Wikimedia Commons 图，必须在本文件追加：URL、作者、许可（如 Public Domain / CC BY 4.0），并在课文引用处写明。
+| `fig-fountain-eia.png` | Original schematic | CC0-1.0 |
+| `fig-storm-phases-tec.png` | Original schematic | CC0-1.0 |
+| `fig-s4-scint.png` | Original schematic | CC0-1.0 |

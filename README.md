@@ -33,6 +33,9 @@
 | TID 行波 | ![](./docs/tutorials/images/fig-tid-wavefront.png) | [22 TID](./docs/tutorials/22-tid-traveling-disturbances.md) |
 | 磁暴残差 | ![](./docs/tutorials/images/fig-storm-quiet-residual.png) | [20 磁暴](./docs/tutorials/20-storm-tec-analysis.md) |
 | 耀斑突增 | ![](./docs/tutorials/images/fig-flare-sudden-ionize.png) | [23 耀斑日食](./docs/tutorials/23-flare-eclipse-special.md) |
+| 赤道喷泉 / EIA | ![](./docs/tutorials/images/fig-fountain-eia.png) | [21 赤道异常](./docs/tutorials/21-equatorial-anomaly-bubbles.md) |
+| 磁暴多相位 TEC | ![](./docs/tutorials/images/fig-storm-phases-tec.png) | [20 磁暴](./docs/tutorials/20-storm-tec-analysis.md) |
+| S4 闪烁 | ![](./docs/tutorials/images/fig-s4-scint.png) | [05 闪烁](./docs/tutorials/05-scintillation-roti.md) |
 | Ne 高度剖面 | ![](./docs/tutorials/images/fig-ne-profile-layers.png) | [01 基础](./docs/tutorials/01-ionosphere-tec-basics.md) |
 
 配图再生：`python3 scripts/make_phenomena_figs.py` · 来源登记：[SOURCES.md](./docs/tutorials/images/SOURCES.md)
