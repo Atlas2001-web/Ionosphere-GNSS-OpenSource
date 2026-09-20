@@ -56,6 +56,12 @@
 | 磁暴 ΔTEC 海岸图 | ![](./docs/tutorials/images/fig-storm-tec-diff-coast.png) | [20 磁暴](./docs/tutorials/20-storm-tec-analysis.md) |
 | 气泡闪烁带海岸图 | ![](./docs/tutorials/images/fig-bubble-belt-coast.png) | [21 赤道异常](./docs/tutorials/21-equatorial-anomaly-bubbles.md) |
 | IPP 轨迹海岸图 | ![](./docs/tutorials/images/fig-ipp-tracks-coast.png) | [22 TID](./docs/tutorials/22-tid-traveling-disturbances.md) |
+| TID 波前海岸图 | ![](./docs/tutorials/images/fig-tid-wavefront-coast.png) | [22 TID](./docs/tutorials/22-tid-traveling-disturbances.md) · [19 概览](./docs/tutorials/19-phenomena-overview.md) |
+| 极光椭圆海岸图 | ![](./docs/tutorials/images/fig-aurora-oval-coast.png) | [20 磁暴/空间天气](./docs/tutorials/20-storm-tec-analysis.md) · [19 概览](./docs/tutorials/19-phenomena-overview.md) |
+| 日食 TEC 洞海岸图 | ![](./docs/tutorials/images/fig-eclipse-tec-hole-coast.png) | [23 耀斑日食](./docs/tutorials/23-flare-eclipse-special.md) |
+| 耀斑突增海岸图 | ![](./docs/tutorials/images/fig-flare-sudden-coast.png) | [23 耀斑日食](./docs/tutorials/23-flare-eclipse-special.md) · [19 概览](./docs/tutorials/19-phenomena-overview.md) |
+| 磁赤道 / EIA 峰纬度 | ![](./docs/tutorials/images/fig-magnetic-equator-coast.png) | [21 赤道异常](./docs/tutorials/21-equatorial-anomaly-bubbles.md) |
+| 昏界线 / 日落后不规则带 | ![](./docs/tutorials/images/fig-terminator-tec-coast.png) | [21 赤道异常](./docs/tutorials/21-equatorial-anomaly-bubbles.md) · [05 闪烁](./docs/tutorials/05-scintillation-roti.md) |
 
 配图再生：`python3 scripts/make_phenomena_figs.py` · `python3 scripts/make_supplement_figs.py` · `python3 scripts/make_geom_figs.py` · `python3 scripts/make_coast_maps.py` · 来源登记：[SOURCES.md](./docs/tutorials/images/SOURCES.md)
 

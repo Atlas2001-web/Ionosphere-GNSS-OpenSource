@@ -42,6 +42,12 @@
 | `fig-storm-tec-diff-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
 | `fig-bubble-belt-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
 | `fig-ipp-tracks-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
+| `fig-tid-wavefront-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
+| `fig-aurora-oval-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
+| `fig-eclipse-tec-hole-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
+| `fig-flare-sudden-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
+| `fig-magnetic-equator-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
+| `fig-terminator-tec-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
 
 再生命令（仓库根目录）：
 
