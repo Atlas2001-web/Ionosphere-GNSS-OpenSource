@@ -28,6 +28,5 @@
 
 - `.venv/bin/python scripts/make_phenomena_figs.py`
 - `.venv/bin/python scripts/make_supplement_figs.py`
-- `.venv/bin/python scripts/make_next_figs.py`
 
 若日后增加 NASA / NOAA / Wikimedia Commons 图，必须在本文件追加：URL、作者、许可（如 Public Domain / CC BY 4.0），并在课文引用处写明。
