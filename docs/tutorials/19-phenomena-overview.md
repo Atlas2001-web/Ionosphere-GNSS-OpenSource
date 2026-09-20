@@ -1,24 +1,161 @@
-# 19. 电离层现象总览（图优先）
+# 19 · 现象分析总览：什么叫「看现象」，不是「做模型」
 
-先看图，再点进专题课。配图均为本仓自绘示意（CC0），**不是**实测 GIM 产品。
+> **课堂定位**：现象分析专题第一课（19–23）。前置：[01](./01-ionosphere-tec-basics.md)、[03](./03-gim-ionex.md)、[05](./05-scintillation-roti.md)、[07](./07-ionosonde-occultation.md)。  
+> **学完应能**：区分现象分析与建模；列出安静日 vs 扰动日观测签名；知道先看哪张图（VTEC / ROTI / foF2 / 掩星）；能在 `PROJECTS.json` 点到对口 `name`。  
+> **本课不做**：流体方程推导、改 TIE-GCM、背某次磁暴 TEC 数字。
 
-![现象速览](./images/fig-phenomena-gallery.png)
+---
 
-## 常见现象 → 图 → 专课
+## 1. 开场：先读现象，再谈模型
 
-| 现象 | 你在图上应看到什么 | 图 | 专课 |
+![现象签名拼贴：安静形态 vs 扰动签名](./images/fig-phenomena-gallery.png)
+
+> 图源：本仓库自制示意拼贴（非实测）。从左到右：日夜 TEC 剖面、泡/耗空、TID 波纹、Ne 高度剖面——提示「不同现象长不一样」。
+
+用户常说：目录里建模讲得多，但看到 TEC 图却不会判断「正相风暴 / 泡 / TID」。  
+**现象分析**：天空/数据里发生了什么？证据？如何排除假象？  
+**建模**：方程或经验公式能否复现/预报？
+
+顺序拨正：**先读现象，再决定要不要建模**。
+
+### 1.1 厨房类比（精炼）
+
+| 类比 | 物理 | 你在做什么 |
+|---|---|---|
+| 雾有多厚 | TEC / VTEC | 量柱含量 |
+| 雾在翻滚 | ROTI / 闪烁 | 量小尺度不规则 |
+| 某层楼峰值 | foF2 / NmF2 | 量 F2 峰，非整柱 |
+| 电梯井剖面 | 掩星 Ne(h) | 量竖直结构 |
+| 台风抽打大楼 | 磁暴 / 耀斑 / 日食 | 外部驱动 |
+| 天气预报软件 | IRI / 环流模式 | **建模** |
+| 监控回放 | GIM 差分 + 指数 | **现象分析** |
+
+### 1.2 交付物
+
+1. [ ] 三句话区分：现象分析 / 建模 / GIM 建图。  
+2. [ ] 默写观测签名四件套：形态、时间、空间、伴随指数。  
+3. [ ] 写清安静对照方案（Q/R/C）及局限。  
+4. [ ] 对着未知图先问读图五问（§5）。  
+5. [ ] 说出 VTEC / ROTI / foF2 / 掩星各自擅长与盲区。  
+6. [ ] 点名 ≥8 个相关 `PROJECTS.json` 的 `name`。
+
+---
+
+## 2. 词表（必会）
+
+| 术语 | 人话 |
+|---|---|
+| 现象分析 | 用多源观测证明「是哪类、何时何地、强弱」 |
+| 观测签名 | 形态 + 尺度 + 时间线 + 多仪器一致 |
+| 假象 | 空洞填补、平滑、DCB、分析中心差等 |
+| 对照日 / 差分图 | quiet baseline；扰动 − 对照 |
+| VTEC / STEC | 竖直/斜路径电子柱 |
+| ROTI | TEC 变化率「抖不抖」——**不是**平均 TEC |
+| foF2 / NmF2 | F2 峰频率/密度（点测） |
+| Kp / SYM-H | 地磁活动；SYM-H 钉主相谷值 |
+| 地方时 LT / 磁纬 | 泡、EIA、耀斑都强依赖 |
+
+**纪律**：禁止 ROTI 高＝TEC 高；禁止把 IRI 气候图当观测；禁止只看全球平均就断言「全球正相」。
+
+---
+
+## 3. 三件不同的事 + 签名四件套
+
+| 维度 | 现象分析 | 建模 | GIM 建图 |
 |---|---|---|---|
-| 日夜 / EIA | 白天高、夜间低；低纬双侧驼峰 | [日夜 TEC](./images/fig-tec-day-night.png) · [EIA](./images/fig-eia-twin-crests.png) | [21](./21-equatorial-anomaly-bubbles.md) |
-| 气泡 / 闪烁 | TEC 被“挖空”的细长耗空 | [气泡](./images/fig-scintillation-bubbles.png) | [05](./05-scintillation-roti.md) · [21](./21-equatorial-anomaly-bubbles.md) |
-| TID | 残差场里斜向波前随时间推进 | [TID](./images/fig-tid-wavefront.png) | [22](./22-tid-traveling-disturbances.md) |
-| 磁暴 | 扰动减去宁静后的正/负残差斑 | [磁暴残差](./images/fig-storm-quiet-residual.png) | [20](./20-storm-tec-analysis.md) |
-| 耀斑 | 短时间尖峰抬升 | [耀斑](./images/fig-flare-sudden-ionize.png) | [23](./23-flare-eclipse-special.md) |
-| 高度结构 | D/E/F 层 Ne 剖面 | [Ne](./images/fig-ne-profile-layers.png) | [01](./01-ionosphere-tec-basics.md) |
+| 问题 | 发生了什么？ | 机制能否复现？ | 如何估一张图？ |
+| 输入 | 观测 + 指数 | 驱动 + 方程 | RINEX/STEC |
+| 成功 | 可复核、排假象 | 与观测定量一致 | 精度/覆盖 |
 
-## 读图口诀
+刑侦取证 ≠ 开物理引擎 ≠ 画全国雾厚图。
 
-1. **先定时空**：地方时、纬度、磁情指数  
-2. **再分几何 vs 天气**：映射/仰角别当成空间天气  
-3. **最后才归因**：喷泉、穿透电场、重力波、耀斑 EUV/X  
+**观测签名四件套**（每遇候选现象强制填）：
 
-再生配图：`python3 scripts/make_phenomena_figs.py`
+1. **形态**：双峰？波状？羽状耗空？突然跳升？  
+2. **时间**：分钟 / 小时 / 天？相对驱动指数先后？  
+3. **空间**：局地 / 扇区 / 半球？依赖 LT、磁纬？  
+4. **多仪器**：VTEC、ROTI、foF2、掩星、地磁是否同向？
+
+**安静对照**：Q＝事件前安静邻近日；R≈27 天太阳自转；C＝同月气候中位数。笔记第一行写「方案字母 + 为何选 + 不能证明什么」。
+
+![日夜 TEC 纬度剖面示意](./images/fig-tec-day-night.png)
+
+> 图源：自制示意。昼侧双峰（EIA）更醒目，夜侧整体偏低——提醒先认「气候日变化」，再谈扰动差分。
+
+---
+
+## 4. 你手里有哪些「眼睛」？
+
+![分层 + Ne 剖面示意](./images/fig-ne-profile-layers.png)
+
+> 图源：自制昼侧 Ne(h) 示意。VTEC 是整柱积分；foF2/掩星才直接谈峰与高度结构。
+
+| 眼睛 | 擅长 | 盲区 | 仓库入口（点名） |
+|---|---|---|---|
+| VTEC / GIM | 大尺度正负相、EIA | 小泡丝、短波 TID | `CDDIS-IONEX`、`ionex`、`DiffIonMap`、`JPL-IONEX-Rapid` |
+| ROTI / 闪烁 | 抖、陡梯度、泡壁 | 不给平均 TEC 升降 | `igs-roti`、`IonoMoni`、`OASIS`、`Okoh-MATLAB-ROT-ROTI` |
+| 单站 TEC | 高时间分辨率、TID/耀斑 | 单站无全球形态 | `Seemala-GPS-TEC`、`tec-suite`、`gnss-tec` |
+| foF2 | 峰密度、扩展 F | 点测≠整柱 | `GIRO-DIDBase`、`NICT-Ionosonde-Data` |
+| 掩星 Ne(h) | 峰抬升、底部掏空 | 时空稀疏 | `COSMIC-CDAAC`、`IonOccAnalysis` |
+| 指数 | 时间轴钉子 | 本身不是 TEC | `GFZ-Kp-Index`、`NASA-OMNIWeb`、`NOAA-SWPC` |
+
+---
+
+## 5. 检查清单与读图五问
+
+**开场钉钉**：UTC 日期与区域；候选现象；驱动线索；对照方案 Q/R/C。
+
+**最低组合**：VTEC（或区域 TEC）+ 差分；代表站/区域 TEC 与指数同轴；泡看 ROTI；峰看 foF2；高度看掩星；两家产品交叉。
+
+**读图五问**：① 哪里？② 何时（相对 SYM-H/日落）？③ 增强还是耗空、平移还是结构重排？④ GIM 平滑是否可信？⑤ 另一只眼睛同意吗？
+
+**结论门槛**：只写读到的量级与形态；列支持/存疑；声明产品 `name`；模型另开小节。
+
+---
+
+## 6. 课堂演示（安静 vs 扰动）
+
+1. 用 `GFZ-Kp-Index` / `NOAA-SWPC-Planetary-K` 选安静日与高 Kp+SYM-H 下降日。  
+2. 从 `CDDIS-IONEX` 下**同一分析中心**两天产品。  
+3. 画三张：安静 VTEC、扰动 VTEC、差分。  
+4. 60 秒口述：区域、正负、色标量级、相对 SYM-H、有无 ROTI、初步判断与置信度。
+
+评分看：是否读色标、提对照、提假象——不看是否「猜中标准答案」。
+
+---
+
+## 7. 常见误解（速查）
+
+| 误解 | 纠正 |
+|---|---|
+| 有模型输出＝分析了现象 | 无观测签名对照只是演示模型 |
+| 全球平均 TEC 升＝正相风暴 | 正负常分区、分 LT（见 20） |
+| ROTI 高＝电子很多 | ROTI＝变化率起伏；泡壁常 TEC 低而抖 |
+| GIM 小波纹＝MSTID | 标准 GIM 分辨率常不够（见 22） |
+| foF2 降＝TEC 必降 | 峰与整柱可不完全同步 |
+| 两家 GIM 差几 TECU＝新物理 | 先当产品差，第三家交叉 |
+
+---
+
+## 8. 导航、工具、测验、作业
+
+| 课 | 主线 | 动作 |
+|---|---|---|
+| 20 | 磁暴正/负相 | GIM 差分 + SYM-H |
+| 21 | EIA / 泡 | 双峰 + ROTI 羽状 |
+| 22 | TID | 网络 δTEC 波列 |
+| 23 | 耀斑 / 日食 | 高采样 TEC 跳 / 洞 |
+
+**工具速查**：`CDDIS-IONEX`、`ionex-analyzer`、`DiffIonMap`、`Seemala-GPS-TEC`、`igs-roti`、`IonoMoni`、`GIRO-DIDBase`、`COSMIC-CDAAC`、`GFZ-Kp-Index`、`NASA-OMNIWeb`、`IRI_TID`、`tidd`。以上 `name` 以根目录 `PROJECTS.json` 为准。
+
+**测验要点**：现象分析 vs 建模；ROTI≠TEC；对照 Q/R 风险；峰抬升需 foF2/掩星；读图五问；点名 IONEX/ROTI/测高/掩星各一。
+
+**作业**：复制 §5 清单填一个历史日；记下 Kp/SYM-H 来源；写 3 个计划下载的 `name`；练 60 秒口述。
+
+### 小结
+
+1. 现象分析是刑侦，不是先开物理引擎。  
+2. 签名＝形态+时间+空间+多仪器；缺一降置信度。  
+3. 每只眼睛有盲区；永远警惕产品假象。
+
+下一课：[20-storm-tec-analysis.md](./20-storm-tec-analysis.md)。

@@ -434,7 +434,7 @@ def fig_phenomena_gallery() -> None:
     _save(fig, "fig-phenomena-gallery.png")
 
 
-def fig_tid_wavefront_fixed() -> None:
+def fig_tid_wavefront() -> None:
     """Rewrite TID figure (separate from mistaken save in earlier draft)."""
     lon = np.linspace(-20, 20, 240)
     lat = np.linspace(-15, 15, 180)
@@ -474,7 +474,7 @@ def main() -> None:
     fig_tec_day_night()
     fig_ne_profile_layers()
     fig_scintillation_bubbles()
-    fig_tid_wavefront_fixed()
+    fig_tid_wavefront()
     fig_flare_sudden_ionize()
     fig_roti_time_series()
     fig_phenomena_gallery()
