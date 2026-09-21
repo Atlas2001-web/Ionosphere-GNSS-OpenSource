@@ -62,6 +62,11 @@
 | 耀斑突增海岸图 | ![](./docs/tutorials/images/fig-flare-sudden-coast.png) | [23 耀斑日食](./docs/tutorials/23-flare-eclipse-special.md) |
 | 磁赤道 / EIA 峰纬度 | ![](./docs/tutorials/images/fig-magnetic-equator-coast.png) | [21 赤道异常](./docs/tutorials/21-equatorial-anomaly-bubbles.md) |
 | 昏界线 / 日落后不规则带 | ![](./docs/tutorials/images/fig-terminator-tec-coast.png) | [21 赤道异常](./docs/tutorials/21-equatorial-anomaly-bubbles.md) |
+| GNSS 站网 / IPP 足迹 | ![](./docs/tutorials/images/fig-gnss-network-coast.png) | [06 定位](./docs/tutorials/06-iono-positioning.md) · [10 建图](./docs/tutorials/10-build-gim-workflow.md) |
+| 亚太 ROTI 热点海岸图 | ![](./docs/tutorials/images/fig-roti-asia-coast.png) | [05 闪烁](./docs/tutorials/05-scintillation-roti.md) |
+| 磁暴主相/恢复相 ΔTEC | ![](./docs/tutorials/images/fig-storm-phases-coast.png) | [03 GIM](./docs/tutorials/03-gim-ionex.md) · [20 磁暴](./docs/tutorials/20-storm-tec-analysis.md) |
+| TEC 水平梯度海岸图 | ![](./docs/tutorials/images/fig-tec-gradient-coast.png) | [06 定位](./docs/tutorials/06-iono-positioning.md) |
+| GIM 格网 + IPP 采样 | ![](./docs/tutorials/images/fig-gim-grid-ipps-coast.png) | [03 GIM](./docs/tutorials/03-gim-ionex.md) · [10 建图](./docs/tutorials/10-build-gim-workflow.md) |
 
 配图再生：`python3 scripts/make_phenomena_figs.py` · `python3 scripts/make_supplement_figs.py` · `python3 scripts/make_geom_figs.py` · `python3 scripts/make_coast_maps.py` · 来源登记：[SOURCES.md](./docs/tutorials/images/SOURCES.md)
 

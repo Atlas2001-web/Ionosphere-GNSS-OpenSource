@@ -578,6 +578,268 @@ def fig_terminator_tec_coast() -> None:
     fig.subplots_adjust(bottom=0.06)
     _save(fig, "fig-terminator-tec-coast.png")
 
+# ---------------------------------------------------------------------------
+# 13. GNSS receiver network + sample IPP footprints
+# ---------------------------------------------------------------------------
+def fig_gnss_network_coast() -> None:
+    fig = plt.figure(figsize=(10.5, 5.2))
+    ax = fig.add_subplot(1, 1, 1, projection=PROJ)
+    _basemap(ax, extent=[-180, 180, -60, 70])
+
+    rng = np.random.default_rng(21)
+    clusters = [
+        (-100, 40, 35, 12, 8),
+        (-60, -20, 18, 15, 12),
+        (10, 48, 40, 12, 8),
+        (105, 30, 35, 18, 12),
+        (135, -25, 12, 10, 8),
+        (35, 0, 15, 18, 12),
+        (75, 20, 12, 8, 6),
+    ]
+    lons, lats = [], []
+    for lon0, lat0, n, sx, sy in clusters:
+        lons.append(lon0 + rng.normal(0, sx, n))
+        lats.append(lat0 + rng.normal(0, sy, n))
+    lons.append(rng.uniform(-170, 170, 12))
+    lats.append(rng.uniform(-45, 65, 12))
+    rx_lon = np.clip(np.concatenate(lons), -175, 175)
+    rx_lat = np.clip(np.concatenate(lats), -55, 68)
+
+    ax.scatter(
+        rx_lon, rx_lat, s=22, c="#1a5276", marker="^",
+        transform=PROJ, zorder=6, edgecolors="white", linewidths=0.35, label="GNSS rx",
+    )
+
+    colors = ["#e74c3c", "#27ae60", "#8e44ad", "#f39c12"]
+    hubs = [(-100, 38), (10, 48), (116, 35), (139, 35)]
+    for i, ((hlon, hlat), color) in enumerate(zip(hubs, colors)):
+        for j in range(4):
+            t = np.linspace(0, 1, 60)
+            ang = 0.4 + 0.35 * j + 0.1 * i
+            lon_arc = hlon + 18 * t * np.cos(ang) + 2 * np.sin(3 * np.pi * t)
+            lat_arc = hlat + 14 * t * np.sin(ang + 0.3) + 1.5 * np.sin(2 * np.pi * t)
+            ax.plot(lon_arc, lat_arc, "-", color=color, lw=1.2, alpha=0.75, transform=PROJ, zorder=5)
+            ax.scatter(lon_arc[::10], lat_arc[::10], s=10, c=color, transform=PROJ, zorder=5, alpha=0.85)
+
+    ax.legend(loc="lower left", fontsize=8, framealpha=0.9)
+    ax.set_title("GNSS receiver network + sample IPP footprints (schematic)")
+    _footer(fig)
+    fig.subplots_adjust(bottom=0.06)
+    _save(fig, "fig-gnss-network-coast.png")
+
+
+# ---------------------------------------------------------------------------
+# 14. East / SE Asia–Pacific ROTI hotspots after sunset
+# ---------------------------------------------------------------------------
+def fig_roti_asia_coast() -> None:
+    lon = np.linspace(60, 160, 201)
+    lat = np.linspace(-40, 50, 181)
+    Lon, Lat = np.meshgrid(lon, lat)
+
+    rng = np.random.default_rng(33)
+    roti = 0.07 + 0.035 * rng.random(Lon.shape)
+
+    patches = [
+        (100, 12, 9, 5, 1.35),
+        (110, -10, 8, 4.5, 1.2),
+        (120, 8, 7, 4, 1.15),
+        (130, -8, 8, 4, 1.05),
+        (95, -5, 6, 3.5, 0.95),
+        (140, 15, 6, 3.5, 0.9),
+        (85, 10, 7, 4, 0.85),
+        (115, 18, 5, 3, 0.75),
+        (125, -15, 6, 3.5, 0.8),
+        (150, 5, 5, 3, 0.7),
+    ]
+    for lon0, lat0, sx, sy, amp in patches:
+        roti += amp * np.exp(-(((Lon - lon0) / sx) ** 2 + ((Lat - lat0) / sy) ** 2))
+    roti *= 0.55 + 0.45 * np.exp(-(np.abs(Lat) - 10) ** 2 / (2 * 12**2))
+    roti = np.clip(roti, 0, 1.7)
+
+    fig = plt.figure(figsize=(9.5, 6.2))
+    ax = fig.add_subplot(1, 1, 1, projection=PROJ)
+    _basemap(ax, extent=[60, 160, -40, 50])
+    mesh = ax.pcolormesh(
+        Lon, Lat, roti, transform=PROJ, cmap="hot_r", shading="auto",
+        zorder=1, alpha=0.9, vmin=0, vmax=1.55,
+    )
+    ax.axhline(0, color="cyan", ls="--", lw=0.7, alpha=0.5, zorder=4)
+    cb = fig.colorbar(mesh, ax=ax, orientation="vertical", pad=0.02, shrink=0.85)
+    cb.set_label("ROTI (TECU/min, schematic)")
+    ax.set_title("East / SE Asia–Pacific ROTI hotspots after sunset (schematic)")
+    _footer(fig)
+    fig.subplots_adjust(bottom=0.06)
+    _save(fig, "fig-roti-asia-coast.png")
+
+
+# ---------------------------------------------------------------------------
+# 15. Dual panel: storm main-phase vs recovery-phase ΔTEC
+# ---------------------------------------------------------------------------
+def fig_storm_phases_coast() -> None:
+    lon = np.linspace(-180, 180, 361)
+    lat = np.linspace(-70, 70, 141)
+    Lon, Lat = np.meshgrid(lon, lat)
+
+    main = 14 * np.exp(-((Lat - 25) / 20) ** 2) * np.exp(-((Lon - 10) / 55) ** 2)
+    main += 11 * np.exp(-((Lat + 20) / 18) ** 2) * np.exp(-((Lon + 50) / 50) ** 2)
+    main += 8 * (
+        np.exp(-((Lat - 15) / 7) ** 2) + np.exp(-((Lat + 15) / 7) ** 2)
+    ) * np.exp(-(Lon / 70) ** 2)
+    main += -10 * np.exp(-((Lat - 58) / 10) ** 2) * np.exp(-((Lon - 90) / 45) ** 2)
+    main += -7 * np.exp(-((Lat + 55) / 11) ** 2) * np.exp(-((Lon + 100) / 50) ** 2)
+
+    rec = -12 * np.exp(-((Lat - 45) / 16) ** 2) * np.exp(-((Lon - 30) / 60) ** 2)
+    rec += -11 * np.exp(-((Lat + 40) / 15) ** 2) * np.exp(-((Lon + 40) / 55) ** 2)
+    rec += -8 * np.exp(-(Lat / 30) ** 2) * np.exp(-((Lon + 80) / 65) ** 2)
+    rec += 4 * np.exp(-((Lat - 15) / 10) ** 2) * np.exp(-((Lon - 100) / 70) ** 2)
+    rec += 3.5 * np.exp(-((Lat + 12) / 10) ** 2) * np.exp(-((Lon - 120) / 65) ** 2)
+
+    fig = plt.figure(figsize=(12.0, 5.0))
+    axes = [
+        fig.add_subplot(1, 2, 1, projection=PROJ),
+        fig.add_subplot(1, 2, 2, projection=PROJ),
+    ]
+    vmax = 15
+    fields = [main, rec]
+    titles = ["Main phase ΔTEC (schematic)", "Recovery phase ΔTEC (schematic)"]
+    meshes = []
+    for ax, field, title in zip(axes, fields, titles):
+        _basemap(ax, extent=[-180, 180, -70, 70])
+        mesh = ax.pcolormesh(
+            Lon, Lat, field, transform=PROJ, cmap="RdBu_r", shading="auto",
+            zorder=1, alpha=0.88, vmin=-vmax, vmax=vmax,
+        )
+        meshes.append(mesh)
+        ax.set_title(title, fontsize=11)
+
+    cax = fig.add_axes([0.92, 0.18, 0.015, 0.65])
+    cb = fig.colorbar(meshes[0], cax=cax)
+    cb.set_label("ΔTEC (TECU, schematic)")
+    fig.suptitle("Storm main-phase vs recovery-phase ΔTEC (schematic)", fontsize=12, y=0.98)
+    _footer(fig)
+    fig.subplots_adjust(bottom=0.08, left=0.04, right=0.90, wspace=0.12)
+    _save(fig, "fig-storm-phases-coast.png")
+
+
+# ---------------------------------------------------------------------------
+# 16. Horizontal TEC gradient magnitude / arrows (regional)
+# ---------------------------------------------------------------------------
+def fig_tec_gradient_coast() -> None:
+    lon = np.linspace(95, 145, 201)
+    lat = np.linspace(5, 50, 181)
+    Lon, Lat = np.meshgrid(lon, lat)
+
+    day = np.exp(-((Lon - 120) / 35) ** 2)
+    bg = 14 + 10 * day * np.exp(-((Lat - 28) / 30) ** 2)
+    cn = 26 * day * np.exp(-((Lat - 18) / 5.5) ** 2)
+    cs = 8 * day * np.exp(-((Lat - 5) / 6) ** 2)
+    trough = -6 * day * np.exp(-((Lat - 8) / 4) ** 2)
+    tongue = 9 * np.exp(-((Lat - 38) / 7) ** 2) * np.exp(-((Lon - 125) / 18) ** 2)
+    tec = bg + cn + cs + trough + tongue
+
+    dlat = lat[1] - lat[0]
+    dlon = lon[1] - lon[0]
+    dtec_dlat, dtec_dlon = np.gradient(tec, dlat, dlon)
+    grad_e = dtec_dlon / np.maximum(np.cos(np.deg2rad(Lat)), 0.2)
+    grad_n = dtec_dlat
+    gmag = np.sqrt(grad_e**2 + grad_n**2)
+
+    fig = plt.figure(figsize=(9.0, 6.5))
+    ax = fig.add_subplot(1, 1, 1, projection=PROJ)
+    _basemap(ax, extent=[95, 145, 5, 50])
+    mesh = ax.pcolormesh(
+        Lon, Lat, gmag, transform=PROJ, cmap="YlOrRd", shading="auto",
+        zorder=1, alpha=0.88, vmin=0, vmax=np.percentile(gmag, 98),
+    )
+    step = 12
+    ax.quiver(
+        Lon[::step, ::step],
+        Lat[::step, ::step],
+        grad_e[::step, ::step],
+        grad_n[::step, ::step],
+        transform=PROJ,
+        zorder=5,
+        color="#1a5276",
+        alpha=0.75,
+        scale=45,
+        width=0.0035,
+        headwidth=3.5,
+    )
+    cb = fig.colorbar(mesh, ax=ax, orientation="vertical", pad=0.02, shrink=0.85)
+    cb.set_label("|∇H TEC| (TECU/deg, schematic)")
+    ax.set_title("Horizontal TEC gradient magnitude + arrows (schematic)")
+    _footer(fig)
+    fig.subplots_adjust(bottom=0.06)
+    _save(fig, "fig-tec-gradient-coast.png")
+
+
+# ---------------------------------------------------------------------------
+# 17. GIM VTEC grid / contours + many IPP pierce points
+# ---------------------------------------------------------------------------
+def fig_gim_grid_ipps_coast() -> None:
+    lon = np.linspace(-180, 180, 181)
+    lat = np.linspace(-70, 70, 71)
+    Lon, Lat = np.meshgrid(lon, lat)
+
+    day = 0.5 * (1 + np.cos(np.deg2rad(Lon - 30)))
+    day = np.clip(day, 0, 1)
+    base = 6 + 20 * day * np.exp(-(Lat / 50) ** 2)
+    cn = 16 * day * np.exp(-((Lat - 14) / 7) ** 2) * np.exp(-((Lon - 30) / 65) ** 2)
+    cs = 15 * day * np.exp(-((Lat + 14) / 7.5) ** 2) * np.exp(-((Lon - 30) / 65) ** 2)
+    vtec = np.clip(base + cn + cs, 0, None)
+
+    fig = plt.figure(figsize=(10.5, 5.4))
+    ax = fig.add_subplot(1, 1, 1, projection=PROJ)
+    _basemap(ax, extent=[-180, 180, -70, 70])
+    mesh = ax.pcolormesh(
+        Lon, Lat, vtec, transform=PROJ, cmap="viridis", shading="auto",
+        zorder=1, alpha=0.82,
+    )
+    ax.contour(
+        Lon, Lat, vtec, levels=8, transform=PROJ,
+        colors="k", linewidths=0.35, alpha=0.35, zorder=2,
+    )
+    ax.scatter(
+        Lon[::4, ::6].ravel(), Lat[::4, ::6].ravel(),
+        s=4, c="white", alpha=0.35, transform=PROJ, zorder=3, marker="s",
+    )
+
+    rng = np.random.default_rng(11)
+    ipp_lons, ipp_lats = [], []
+    for lon0, lat0, n, sx, sy in [
+        (-100, 38, 80, 25, 12),
+        (-55, -15, 50, 18, 14),
+        (15, 45, 90, 20, 10),
+        (110, 28, 100, 22, 14),
+        (135, -22, 35, 12, 8),
+        (30, 5, 40, 20, 12),
+        (-150, 55, 20, 25, 8),
+    ]:
+        ipp_lons.append(lon0 + rng.normal(0, sx, n))
+        ipp_lats.append(lat0 + rng.normal(0, sy, n))
+    for k in range(18):
+        lon0 = rng.uniform(-160, 160)
+        lat0 = rng.uniform(-45, 55)
+        t = np.linspace(0, 1, 14)
+        ipp_lons.append(lon0 + 22 * t + rng.normal(0, 0.8, 14))
+        ipp_lats.append(lat0 + 12 * (t - 0.3) + rng.normal(0, 0.6, 14))
+    ipp_lon = np.clip(np.concatenate(ipp_lons), -178, 178)
+    ipp_lat = np.clip(np.concatenate(ipp_lats), -68, 68)
+    ax.scatter(
+        ipp_lon, ipp_lat, s=7, c="#e74c3c", marker="o",
+        transform=PROJ, zorder=6, edgecolors="white", linewidths=0.15,
+        alpha=0.75, label="IPP samples",
+    )
+    ax.legend(loc="lower left", fontsize=8, framealpha=0.9)
+    cb = fig.colorbar(mesh, ax=ax, orientation="vertical", pad=0.02, shrink=0.78)
+    cb.set_label("GIM VTEC (TECU, schematic)")
+    ax.set_title("GIM VTEC grid / contours + IPP pierce points (schematic)")
+    _footer(fig)
+    fig.subplots_adjust(bottom=0.06)
+    _save(fig, "fig-gim-grid-ipps-coast.png")
+
+
+
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     # First batch
@@ -594,7 +856,13 @@ def main() -> None:
     fig_flare_sudden_coast()
     fig_magnetic_equator_coast()
     fig_terminator_tec_coast()
-    print("done: 12 coastline basemap figures")
+    # Third batch
+    fig_gnss_network_coast()
+    fig_roti_asia_coast()
+    fig_storm_phases_coast()
+    fig_tec_gradient_coast()
+    fig_gim_grid_ipps_coast()
+    print("done: 17 coastline basemap figures")
 
 
 if __name__ == "__main__":

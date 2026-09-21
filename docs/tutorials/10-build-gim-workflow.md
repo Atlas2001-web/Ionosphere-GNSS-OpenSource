@@ -73,6 +73,14 @@
 
 **落点**：`IGS-Data-Access`、`IGS-Products`、`EarthScope-gnsstools`、`CDDIS-GNSS-Archive`；产品对照 `CDDIS-IONEX`、`JPL-IONEX-Rapid`、`DLR-IMPC`、`ESA-TIO-NRT-TEC`、`NOAA-SWPC-GloTEC`、`ROB-European-TEC`、`INPE-TEC-Maps-IONEX`、`GFZ-Global-Ionosphere-Maps`、`WHU-IGS-Ionosphere-AC`。列表：[`lists/10-gnss-datasets.md`](../../lists/10-gnss-datasets.md)。
 
+![GNSS 站网与 IPP 足迹海岸图：选站覆盖](./images/fig-gnss-network-coast.png)
+
+> **看图要点**
+> - **机制**：选站决定 IPP 能钉住哪里；陆密洋疏是结构性的，不是画图软件的锅。
+> - **看什么**：目标区周围有没有站/足迹；大片空白就要接受平滑外推。
+> - **别误判**：示意站网；点得多不等于质控都过关。
+> 图源：本仓库自制示意场 + Natural Earth 海岸线（非实测事件）。
+
 ### 3.2 质量检查与周跳
 
 **在干什么**  
@@ -122,6 +130,22 @@
 
 **课堂必记局限**：真实电离层有厚度、有倾斜梯度；GNSS 几何很斜；**垂直结构不能靠薄壳 magically 变出来**。
 
+![IPP 地面轨迹海岸图](./images/fig-ipp-tracks-coast.png)
+
+> **看图要点**
+> - **机制**：壳高与仰角决定 IPP 落点；轨迹图是检查「采样是否围住研究区」的第一眼工具。
+> - **看什么**：弧线是否盖住目标海岸带；低仰角是否滑出区外。
+> - **别误判**：示意几何；壳高一改，弧线水平位置会挪。
+> 图源：本仓库自制示意场 + Natural Earth 海岸线（非实测事件）。
+
+![GIM 格网与 IPP 采样点海岸图](./images/fig-gim-grid-ipps-coast.png)
+
+> **看图要点**
+> - **机制**：建图 = 把 IPP 上的 VTEC 采样估计到格网；点的疏密直接决定哪里可信。
+> - **看什么**：格网场与红点覆盖是否匹配；空洞处的漂亮等值线要降权。
+> - **别误判**：示意产品；换网格重跑漂亮 ≠ 独立验证。
+> 图源：本仓库自制示意场 + Natural Earth 海岸线（非实测事件）。
+
 ### 3.5 空间模型怎么选
 
 | 做法 | 适合 | 代价 | 目录可对号 |
@@ -168,6 +192,14 @@
 ---
 
 ## 5. 端到端「一日最小可行」建议路径
+
+![全球 VTEC 海岸线底图：一日路径对照](./images/fig-vtec-global-coast.png)
+
+> **看图要点**
+> - **机制**：一日最小路径先能画出「像气候」的 VTEC 地理格局，再谈与官方 GIM 差分。
+> - **看什么**：日侧/夜侧、低纬双峰趋势是否出现在你的区域裁剪里。
+> - **别误判**：示意场只作读图锚点；你的正式产品仍要以 IONEX/自建流程为准。
+> 图源：本仓库自制示意场 + Natural Earth 海岸线（非实测事件）。
 
 1. 下载一天 `CDDIS-IONEX`，用 `ionex` 画出中国区或你所在经纬带 VTEC。  
 2. 选 5–10 个 IGS 站，用 `gnss-tec` 或 `Seemala-GPS-TEC` 等跑通单站 STEC，把 IPP 投到地图上。  
