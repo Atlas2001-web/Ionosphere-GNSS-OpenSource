@@ -36,6 +36,35 @@
 | `fig-gnss-freq-bands.png` | Original schematic | CC0-1.0 |
 | `fig-bias-dcb.png` | Original schematic | CC0-1.0 |
 
+
+| `fig-plasma-freq-vs-ne.png` | Original plot | CC0-1.0 |
+| `fig-phase-group-vs-freq.png` | Original plot | CC0-1.0 |
+| `fig-shell-ipp-path.png` | Original schematic | CC0-1.0 |
+| `fig-mapping-me-curve.png` | Original plot | CC0-1.0 |
+| `fig-dcb-parallel-shift.png` | Original schematic | CC0-1.0 |
+| `fig-iono-free-combo.png` | Original schematic | CC0-1.0 |
+| `fig-chapman-ne-h.png` | Original plot | CC0-1.0 |
+| `fig-s4-sigmaphi-series.png` | Original schematic | CC0-1.0 |
+| `fig-single-vs-dual-tec.png` | Original schematic | CC0-1.0 |
+| `fig-residual-three-faces.png` | Original schematic | CC0-1.0 |
+| `fig-fresnel-scale.png` | Original schematic | CC0-1.0 |
+| `fig-instruments-complement.png` | Original schematic | CC0-1.0 |
+| `fig-code-phase-signs.png` | Original schematic | CC0-1.0 |
+
+
+| `fig-pseudorange-to-stec.png` | Original schematic | CC0-1.0 |
+| `fig-singlefreq-vs-dualfreq.png` | Original schematic | CC0-1.0 |
+| `fig-dcb-sat-rx-split.png` | Original schematic | CC0-1.0 |
+| `fig-ionogram-trace.png` | Original schematic | CC0-1.0 |
+| `fig-gnss-ro-geometry.png` | Original schematic | CC0-1.0 |
+| `fig-iri-vs-ionosonde.png` | Original schematic | CC0-1.0 |
+| `fig-catalog-nav.png` | Original schematic | CC0-1.0 |
+| `fig-gim-grid-ipps-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
+| `fig-gnss-network-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
+| `fig-roti-asia-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
+| `fig-storm-phases-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
+| `fig-tec-gradient-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
+
 | `fig-vtec-global-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
 | `fig-eia-tec-map-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
 | `fig-roti-hotspots-coast.png` | Original map with Natural Earth coastlines (CC0 schematic field) | CC0-1.0 |
@@ -55,6 +84,8 @@
 - `.venv/bin/python scripts/make_supplement_figs.py`
 - `.venv/bin/python scripts/make_geom_figs.py`
 - `.venv/bin/python scripts/make_teaching_figs.py`
+- `.venv/bin/python scripts/make_concept_figs.py`
+- `.venv/bin/python scripts/make_gap_figs.py`
 - `.venv/bin/python scripts/make_coast_maps.py`
 
 若日后增加 NASA / NOAA / Wikimedia Commons 图，必须在本文件追加：URL、作者、许可（如 Public Domain / CC BY 4.0），并在课文引用处写明。
