@@ -1,817 +1,393 @@
-# Anubis · G-Nut Free QC 操作手册
+# Anubis
 
 目录：[`PROJECTS.json` → `Anubis`](../../PROJECTS.json) · 官网 <https://gnutsoftware.com/software/anubis/> · 配置说明 <https://www.pecny.cz/gop/index.php/gnss/70-gnss-software/221-anubis-configuration> · 下载 <https://gnutsoftware.com/software/anubis/download> · Free 常见 GPL-3；Pro/RT 商业
 
-> 面向 **RINEX 质量检查** 的岗位。本页只讲 **Anubis Free**（Linux 常见）。输出 XTR/XML，不是 TEC，不是定位引擎。键名以本机 `anubis -h` 与官方配置文档为准。
+> 操作手册。祈使句。本页只讲 **Anubis Free**（Linux 预编译常见）。键名以本机 `anubis -h` / `anubis -X` 与官方配置页为准。输出是 QC 报表，不是 TEC，不是定位解。
 
-## 1. 用途与边界
+---
 
-### 1.1 一句话
+## 用途与边界
 
-Anubis（G-Nut）对 GNSS 观测做 QC：完整性、缺口、多路径、SNR、周跳迹象、系统可用性，产出可 grep 的报表。
+**用：**
 
-### 1.2 应该用
+- 对 RINEX 观测做 **QC**：完整性、缺口、多路径、SNR、周跳迹象、系统可用性。
+- 产出可 `grep` 的 **XTR** 与结构化 **XML**。
+- 数据中心日检、站网健康、TEC / ROTI / PPP **前门禁**。
+- 论文「数据质量」附录材料。
 
-- 数据中心日检 / 站网健康
-- TEC、ROTI、PPP 前的门禁
-- 论文「数据质量」附录材料
+**不用 / 边界：**
 
-### 1.3 不应该用
+- **不做** 拼接 / 抽稀 / 改 RINEX → 先 [gfzrnx](./gfzrnx.md)（顺序：GFZRNX → Anubis → 科学软件）。
+- **不做** 校准 TEC → [pytecgg](./pytecgg.md)（作者 **viventriglia**）。
+- **不做** ROTI → [oasis-roti](./oasis-roti.md) / [ionomoni](./ionomoni.md)。
+- **不做** 精密定位 → [rtklib](./rtklib.md) / [pride-pppar](./pride-pppar.md)。
+- Free **没有** Pro 的实时流 / 高级编辑 / JSON 高等级功能——勿抄 Pro 文档操作 Free。
 
-- 拼接/抽稀/改 RINEX → [gfzrnx](./gfzrnx.md)（顺序：GFZRNX → Anubis → 科学软件）
-- 校准 TEC → [pytecgg](./pytecgg.md)（作者 viventriglia）
-- ROTI → [oasis-roti](./oasis-roti.md)/[ionomoni](./ionomoni.md)
-- 精密定位 → [rtklib](./rtklib.md)/[pride-pppar](./pride-pppar.md)
-- Free 文档里写 Pro 功能
+一句话：Anubis = **体检站**；QC 通过 ≠ 绝对 TEC 正确。
 
-### 1.4 与电离层工作的关系
+---
 
-QC 通过 ≠ 绝对 TEC 正确。Anubis 只告诉你「这站这天能不能进流水线」。
+## 安装（多平台 + 报错）
 
-## 2. 多平台安装
+### Linux（主线）
 
-### 2.1 步骤
-
-1. 打开下载页（可能需注册），取 Free/Linux 预编译或源码。
-2. `chmod +x anubis`，放入 `PATH`。
+1. 打开下载页（可能需注册），取 **Free / Linux** 预编译或源码。  
+2. 解压，`chmod +x anubis`，放入 `~/bin` 或 `/usr/local/bin`。  
 3. 冒烟：
 
 ```bash
+mkdir -p ~/bin
+# 假设下载后文件名为 anubis
+chmod +x anubis && mv anubis ~/bin/
+export PATH="$HOME/bin:$PATH"
+echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc
 anubis -h | head -n 40
-anubis -X | head -n 50
+anubis -V 2>/dev/null || true
+anubis -X | head -n 60
 ```
 
-**期望：** 帮助与默认 XML 打出。
+**期望：** `-h` 含 `-x`/`-X`；`-X` 打出默认 XML（含 `gen`/`inp`/`out`/`qc` 等节点示意）。
 
-### 2.2 报错表
+### macOS / Windows
 
-| 现象 | 处理 |
-| --- | --- |
-| 缺 `.so` | 用官方预编译或按 README 装依赖 |
-| `-X` 空 | 重新下载；检查执行位 |
-| Windows 换行怪 | 配置 XML 用 LF；`dos2unix` |
-| 与 Pro 键混淆 | 只信 Free 文档 |
+- Free 官方主推 Linux；其它平台用 **WSL2** 或按官网当前包。  
+- XML 一律 **LF**；从 Windows 拷来的配置先 `dos2unix`。
 
-## 3. 完整逐步命令与期望输出
+### 安装期常见报错
 
-### 3.1 导出金样 XML
+| 现象 | 原因 | 修复 |
+|---|---|---|
+| `anubis: command not found` | PATH / 未 chmod | `which anubis`；`chmod +x` |
+| 缺 `.so` | 动态库 | 用官网预编译；或按 README 装依赖 |
+| `-X` 空或秒退 | 坏包 / 无执行位 | 重新下载；检查架构 x86_64 |
+| XML 解析怪 | CRLF | `dos2unix qc/*.xml` |
+| 文档键在 Free 不存在 | 抄了 Pro | 只信本机 `-X` 与 Free 说明 |
+
+### 安装验收
 
 ```bash
-mkdir -p qc logs
+test -x "$(command -v anubis)"
+anubis -X > /tmp/anubis_default.xml
+test -s /tmp/anubis_default.xml
+wc -l /tmp/anubis_default.xml
+```
+
+---
+
+## 快速冒烟（10 分钟）
+
+```bash
+mkdir -p qc logs out_qc
 anubis -X > qc/anubis_qc.xml
 cp qc/anubis_qc.xml qc/anubis_qc.xml.ok
-```
 
-编辑 `<inp>` OBS/NAV、`<out>` xtr/xml；**绝对路径更稳**。
+# 用编辑器改 <inp> 的 OBS/NAV、<out> 的 xtr/xml 为绝对路径
+# 或下一节用 CLI 覆盖，少改 XML
 
-### 3.2 单站日运行
-
-```bash
-anubis -x qc/anubis_qc.xml 2>&1 | tee logs/anubis_smoke.log
-# 或 stdin：anubis < qc/anubis_qc.xml
-ls -la *.xtr *.xml 2>/dev/null | head
-grep -E 'MP|gap|SNR|Summary|Completeness' *.xtr | head -n 40
-```
-
-**期望：** 非空 `.xtr`；终端有摘要。
-
-### 3.3 CLI 覆盖路径（键名以 `-h` 为准）
-
-```bash
 anubis -x qc/anubis_qc.xml \
-  :inp:rinexo=/abs/data/site0010.24o \
+  :inp:rinexo=/abs/data/SITE0010.24o \
   :inp:rinexn=/abs/data/brdc0010.24n \
-  2>&1 | tee logs/anubis_site0010.log
+  :out:xtr=/abs/out_qc/SITE0010.xtr \
+  :out:log=/abs/logs/anubis_SITE0010.log \
+  2>&1 | tee logs/anubis_smoke.log
+
+ls -la out_qc/SITE0010.xtr logs/anubis_SITE0010.log
+grep -E 'Summary|Completeness|MP|gap|SNR|MPTH' out_qc/SITE0010.xtr | head -n 40
 ```
 
-### 3.4 模式阶梯 thin → lite → full
+**期望：** `.xtr` 非空（通常 ≫1 KB）；能 `grep` 到 Summary / Completeness 类关键字（字样随版本）。  
+**失败：** `cannot open` → 路径；空 xtr → OBS 坏或时间窗为空。
 
-在 XML 切换（键名以手册为准）：
-
-| 模式 | 用途 | 耗时 |
-| --- | --- | --- |
-| thin | 元数据快扫 | 短 |
-| lite | 缺口/完整性日检 | 中 |
-| full | 综合定量/定性 | 长 |
-
-网检策略：全网 lite → 问题站 full。
-
-### 3.5 批量日检
+等价启动形式（以上游为准）：
 
 ```bash
-for f in /abs/data/*.24o; do
-  b=$(basename "$f")
-  anubis -x qc/anubis_qc.xml :inp:rinexo="$f" \
-    2>&1 | tee "logs/anubis_${b}.log" || echo FAIL "$f"
-done
-grep FAIL logs/anubis_*.log || true
-```
-
-### 3.6 与 GFZRNX 联用
-
-```bash
-gfzrnx -finp data/raw.24o -fout data/site_30s.24o -smp 30 -chk -kv -f
-anubis -x qc/anubis_qc.xml :inp:rinexo=/abs/data/site_30s.24o
-```
-
-### 3.7 门禁：进 TEC / PPP
-
-```bash
-# 若 Completeness 极低或 MP 极端 → 跳过科学软件
-# 通过 → georinex 探活 → pytecgg / pride-pppar
-```
-
-### 3.8 社区绘图（无官方支持承诺）
-
-```text
-https://www.pecny.cz/sw/plots/anubis/
-# plot_anubis.pl 等指向 XTR
-```
-
-### 3.9 与 georinex 交叉验缺口
-
-```bash
-python -m georinex.gtime data/site0010.24o
-# 对齐时间窗后再比 XTR gap
-```
-
-## 4. 参数与文件字段表
-
-### 4.1 CLI
-
-| 项 | 说明 |
-| --- | --- |
-| `-X` | 打印默认 XML |
-| `-x file` | 按配置运行 |
-| `:inp:rinexo=` | 覆盖 OBS |
-| `:inp:rinexn=` | 覆盖 NAV |
-
-### 4.2 输入
-
-| 类型 | 说明 |
-| --- | --- |
-| RINEX OBS | 2/3（4 看版本） |
-| RINEX NAV | 建议提供 |
-| XML | 配置 |
-
-### 4.3 输出
-
-| 类型 | 说明 |
-| --- | --- |
-| XTR | 主报表 |
-| XML | 结构化结果 |
-| 日志 | 进度/错误 |
-
-### 4.4 XTR 常搜关键字
-
-`Summary`、`Completeness`、`gap`、`MP`、`SNR`、`slip`/`cs`（字样随版本）。
-
-### 4.5 明确不输出
-
-STEC、ROTI、`.pos`、IONEX。
-
-## 5. 接到电离层 / GNSS 哪一步
-
-| 场景 | 链接 |
-| --- | --- |
-| 手册索引 | [README](./README.md) |
-| 数据 | [data-access](../data-access.md) |
-| 读盘 | [georinex](./georinex.md) |
-| 清洗 | [gfzrnx](./gfzrnx.md) |
-| QC | [anubis](./anubis.md) |
-| TEC | [pytecgg](./pytecgg.md) |
-| ROTI | [oasis-roti](./oasis-roti.md) · [ionomoni](./ionomoni.md) |
-| GIM | [ionex-gim](./ionex-gim.md) · [sh-gim](./sh-gim.md) |
-| 实时 | [pygnssutils](./pygnssutils.md) · [bnc](./bnc.md) · [bkg-ntripcaster](./bkg-ntripcaster.md) |
-| 定位 | [rtklib](./rtklib.md) · [pride-pppar](./pride-pppar.md) |
-| 闪烁仿真 | [iono-scintillation](./iono-scintillation.md) |
-| TEC 课 | [02](../tutorials/02-gnss-dualfreq-tec.md) · [16](../tutorials/16-practice-one-day-tec.md) |
-| 闪烁课 | [05](../tutorials/05-scintillation-roti.md) · [13](../tutorials/13-scintillation-modeling.md) |
-| 磁暴 | [20](../tutorials/20-storm-tec-analysis.md) |
-| 定位课 | [06](../tutorials/06-iono-positioning.md) |
-| GIM 课 | [03](../tutorials/03-gim-ionex.md) · [10](../tutorials/10-build-gim-workflow.md) · [18](../tutorials/18-lab-compare-gims.md) |
-| DCB | [09](../tutorials/09-dcb-biases-deep.md) |
-
-路径角色：几乎所有 A/B/D 的「体检站」。
-
-## 6. 可操作坑（≥12）
-
-1. Free/Pro 功能混谈 — 以官网档位为准。
-2. 相对路径失败 — 绝对路径或固定 cwd。
-3. 把 Anubis 当拼接工具 — 改文件用 gfzrnx。
-4. XTR 过大难读 — 先 lite；grep。
-5. 与 georinex 缺口不一致 — 对齐窗再比。
-6. CRLF 破坏 XML — dos2unix。
-7. 缺 NAV — 补 BRDC。
-8. QC 通过当绝对 TEC — 错。
-9. 批量忽略 FAIL — grep FAIL。
-10. 输出覆盖未备份 — 按站日分目录。
-11. 键名抄旧教程 — 以本机 `-X` 为准。
-12. 坏站硬跑 PPP — 先看 MP/完好率。
-13. 只看终端不看 XTR — 不够。
-14. Hatanaka 未转 — 先 CRX2RNX。
-15. 只读目录写不出 — 改 out。
-16. 时区读缺口 — 统一 GPST/UTC。
-
-## 7. 同类怎么选
-
-| 需求 | 选 |
-| --- | --- |
-| QC 报表 | **Anubis Free** |
-| 改 RINEX | gfzrnx |
-| 读 Python | georinex |
-| 实时流 QC | Pro/RT 或其它链 |
-
-## 8. 场景卡片
-
-### 卡片 A · 新站首日
-
-lite QC → 看完好率/MP → 决定是否纳入 TEC 网。
-
-### 卡片 B · 磁暴日前夜
-
-对事件窗涉及站跑 full → 标记缺口段 → 解释 ROTI/PPP 异常时引用。
-
-### 卡片 C · 数据中心周报
-
-批量 lite → FAIL 列表 → 人工抽 full。
-
-## 9. 门禁阈值示例（自定义，非官方）
-
-| 指标（示意） | 动作 |
-| --- | --- |
-| 完好率过低 | 丢弃站日 |
-| MP 极端 | 丢弃或降权 |
-| 长缺口跨事件 | 换站 |
-
-把阈值写进项目协议，不要口头约定。
-
-## 10. 附录：命令一页纸
-
-```bash
-anubis -h
-anubis -X > qc/anubis_qc.xml
 anubis -x qc/anubis_qc.xml
-grep -E 'MP|gap|Summary' *.xtr | head
+anubis < qc/anubis_qc.xml
+cat qc/anubis_qc.xml | anubis
 ```
 
-## 11. 端到端操作剧本
+---
 
-1. 安装验收  
-2. `-X` 金样  
-3. 官方/自备最小 OBS+NAV  
-4. lite 通过  
-5. 记录 XTR 摘要到笔记  
-6. 交给 georinex/pytecgg 或 PPP  
-7. 若科学结果荒谬，回看 XTR 时段
+## 完整工作流
 
-## 12. 日志关键字与处置
-
-| 关键字 | 处置 |
-| --- | --- |
-| cannot open | 路径 |
-| parse / xml | LF/键名 |
-| empty | OBS 坏或窗错 |
-
-## 13. XML 编辑实例（概念）
-
-```xml
-<!-- 示意：真实键名以 -X 导出为准 -->
-<!-- inp: rinexo / rinexn 绝对路径 -->
-<!-- out: xtr / xml 路径 -->
-<!-- qc mode: lite -->
-```
-
-一次只改一处；保留 `.ok` 金样。
-
-## 14. 与 GFZRNX / georinex 接口契约
-
-| 上游 | Anubis | 下游 |
-| --- | --- | --- |
-| 原始 RINEX | QC | 决定去留 |
-| gfzrnx 清洗后 | QC | georinex / 科学 |
-| — | XTR | 不进 TEC 数值计算 |
-
-## 15. 安全与合规
-
-- 遵守官网 EULA；Free/Pro 勿混用分发。
-- 站坐标与数据政策按单位规定。
-- 日志可能含路径与站名——分享前脱敏。
-
-## 16. 快速失败矩阵
-
-| 症状 | 先查 |
-| --- | --- |
-| 命令找不到 | PATH / venv |
-| 空输出 | 时间覆盖 / 过滤过严 |
-| 鉴权失败 | 用户口令 / ACL |
-| OOM | 切窗 / 抽稀 / 降并行 |
-| NaN 全日 | 双频 / 弧段 / 星历 |
-| 与文献数值差一个量级 | 窗口定义 / 单位 / 时间系 |
-
-## 17. 移交与复现信息模板
-
-```text
-DATE:
-HOST:
-TOOL_VERSION:
-CMD:          # 口令打码
-INPUT_SHA256:
-CONFIG:
-LOG:
-RESULT: OK|FAIL
-NEXT_TOOL:
-NOTES:
-```
-
-## 18. 接到本仓库其它页的检查表
-
-- [ ] 已读本手册用途边界
-- [ ] 安装验收通过
-- [ ] example/冒烟通过
-- [ ] 日志已保留
-- [ ] 产出非空
-- [ ] 下游工具与格式已选定
-- [ ] 版本号写入实验笔记
-- [ ] 不把边界外产物当科学结论
-
-| 场景 | 链接 |
-| --- | --- |
-| 手册索引 | [README](./README.md) |
-| 数据 | [data-access](../data-access.md) |
-| 读盘 | [georinex](./georinex.md) |
-| 清洗 | [gfzrnx](./gfzrnx.md) |
-| QC | [anubis](./anubis.md) |
-| TEC | [pytecgg](./pytecgg.md) |
-| ROTI | [oasis-roti](./oasis-roti.md) · [ionomoni](./ionomoni.md) |
-| GIM | [ionex-gim](./ionex-gim.md) · [sh-gim](./sh-gim.md) |
-| 实时 | [pygnssutils](./pygnssutils.md) · [bnc](./bnc.md) · [bkg-ntripcaster](./bkg-ntripcaster.md) |
-| 定位 | [rtklib](./rtklib.md) · [pride-pppar](./pride-pppar.md) |
-| 闪烁仿真 | [iono-scintillation](./iono-scintillation.md) |
-| TEC 课 | [02](../tutorials/02-gnss-dualfreq-tec.md) · [16](../tutorials/16-practice-one-day-tec.md) |
-| 闪烁课 | [05](../tutorials/05-scintillation-roti.md) · [13](../tutorials/13-scintillation-modeling.md) |
-| 磁暴 | [20](../tutorials/20-storm-tec-analysis.md) |
-| 定位课 | [06](../tutorials/06-iono-positioning.md) |
-| GIM 课 | [03](../tutorials/03-gim-ionex.md) · [10](../tutorials/10-build-gim-workflow.md) · [18](../tutorials/18-lab-compare-gims.md) |
-| DCB | [09](../tutorials/09-dcb-biases-deep.md) |
-
-## 19. 逐步命令（扩写）：安装后 30 分钟必做
+### 工作流 A：金样 XML → 单站 lite 日检 → 门禁结论
 
 ```bash
-# A. 金样
+# A1 导出并冻结金样
 anubis -X > qc/anubis_qc.xml
 cp qc/anubis_qc.xml qc/anubis_qc.xml.ok
 
-# B. 最小站日（路径改成你的）
+# A2 在 XML 里设 qc 模式为 lite（键名以 -X 为准；常见为 qc 段 verbosity / 模式开关）
+# 策略：全网 lite；问题站再 full
+
+# A3 跑站日
+SITE=SITE0010
+OBS=/data/${SITE}.24o
+NAV=/data/brdc0010.24n
 anubis -x qc/anubis_qc.xml \
-  :inp:rinexo=/data/SITE00XXX_R_20240010000_01D_30S_MO.rnx \
-  :inp:rinexn=/data/BRDC00IGS_R_20240010000_01D_MN.rnx \
-  2>&1 | tee logs/anubis_SITE_001.log
+  :inp:rinexo="$OBS" \
+  :inp:rinexn="$NAV" \
+  :out:xtr=/data/qc/${SITE}.xtr \
+  :out:xml=/data/qc/${SITE}_qc.xml \
+  :out:log=/data/logs/anubis_${SITE}.log \
+  2>&1 | tee logs/anubis_${SITE}.console
 
-# C. 抽查
-grep -E 'Summary|Completeness|MPTH|MP|gap|SNR' *.xtr | head -n 60
-wc -l *.xtr
+# A4 抽查
+grep -E 'Summary|Completeness|MPTH|MP |gap|SNR' /data/qc/${SITE}.xtr | head -n 60
+wc -c /data/qc/${SITE}.xtr
+```
 
-# D. lite 全网骨架
+**门禁（项目自定义，非官方）：** 完好率过低 / MP 极端 / 事件窗长缺口 → **丢弃站日**，不要进 pytecgg / pdp3。把阈值写进协议。
+
+### 工作流 B：thin → lite → full 阶梯
+
+| 模式 | 用途 | NAV | 耗时 |
+|---|---|---|---|
+| thin | 头/元数据快扫 | 可选 | 短 |
+| lite | 定量 QC、缺口/完整性日检 | 建议有 | 中 |
+| full | 定性/综合定量 | 通常需要 | 长 |
+
+```bash
+# 全网：lite
 for f in /data/rinex/*.rnx; do
-  anubis -x qc/anubis_qc.xml :inp:rinexo="$f" \
-    2>&1 | tee logs/anubis_$(basename "$f").log || echo FAIL "$f"
+  b=$(basename "$f" .rnx)
+  anubis -x qc/anubis_lite.xml :inp:rinexo="$f" :inp:rinexn=/data/BRDC.rnx \
+    :out:xtr=/data/qc/${b}.xtr :out:log=/data/logs/${b}.log \
+    2>&1 | tee -a logs/batch_console.log || echo "FAIL $f" | tee -a logs/fail.list
 done
+
+# 问题站：改用 full 配置金样再跑
+anubis -x qc/anubis_full.xml :inp:rinexo=/data/BAD.rnx :inp:rinexn=/data/BRDC.rnx \
+  :out:xtr=/data/qc/BAD_full.xtr
 ```
 
-**期望输出（示意）：**
-
-```text
-... Anubis processing ...
-writing SITE.xtr
-Summary: Completeness ...
-MP ...
-DONE
-```
-
-
-## 20. 场景卡片（扩）
-
-### 新站验收
-lite → 记录完好率 → 决定是否进 TEC 网。
-
-### 事件研究
-事件日前对相关站 full → 缺口表进论文附录。
-
-### 清洗后复检
-gfzrnx `-smp 30` 后必须再 Anubis，确认没有切坏。
-
-### 与 PPP 对照
-PPP 固定率崩盘日 → 回看同日 XTR 的 MP/gap。
-
-
-## 21. 配方与常用组合
-
-| 配方 | 命令要点 |
-| --- | --- |
-| 快扫 | thin/lite |
-| 问题站深挖 | full + grep MP/gap |
-| 清洗后 | gfzrnx → anubis |
-| 门禁脚本 | grep Completeness 自定义阈值 |
-
-
-## 22. 输入抽样检查清单（跑主流程前）
+### 工作流 C：与 GFZRNX 联用（清洗后再 QC）
 
 ```bash
-# 通用
-ls -la data/
-head -n 20 data/* 2>/dev/null | head -n 40
-file data/* 2>/dev/null | head
-# 若是压缩包
-gunzip -t data/*.gz 2>/dev/null || true
-# 若是 RINEX
-python -m georinex.gtime data/SITE.obs 2>/dev/null || true
+gfzrnx -finp /data/raw.24o -fout /data/SITE_30s.24o -smp 30 -chk -kv -f \
+  -errlog logs/gfzrnx_SITE.err
+anubis -x qc/anubis_qc.xml \
+  :inp:rinexo=/data/SITE_30s.24o \
+  :inp:rinexn=/data/BRDC.rnx \
+  :out:xtr=/data/qc/SITE_30s.xtr
+# 抽稀后部分统计会变——阈值勿照搬 1 Hz 旧标准
 ```
 
-
-## 23. 输出验收清单（跑完后）
-
-- [ ] 目标文件存在
-- [ ] `wc -c` 合理（非 0、非异常小）
-- [ ] 日志无未处理 FATAL
-- [ ] 抽查 3 个关键字段/关键字
-- [ ] 时间覆盖符合任务窗
-- [ ] 版本与命令已记入笔记
-
-
-## 24. 与上下游契约（扩）
-
-| 上游 | Anubis | 下游 |
-| --- | --- | --- |
-| CDDIS/本地 RINEX | QC | 去留决策 |
-| gfzrnx 输出 | QC | georinex/pytecgg/ppp |
-| XTR | 不参与数值 TEC | 仅质控证据 |
-
-
-## 25. 故障树（anubis）
-
-```text
-失败
- ├─ 安装/PATH → which / import / -h
- ├─ 输入文件 → head/file/gunzip -t/gtime
- ├─ 配置/旗标 → 与 -h 对照；回退金样配置
- ├─ 权限/磁盘 → ls -l / df -h
- ├─ 网络/鉴权 → 401/超时/证书
- └─ 算法窗/采样 → 与手册窗口定义核对
-```
-
-
-## 26. 日批与周报模板
+### 工作流 D：与 georinex 交叉验缺口
 
 ```bash
-#!/usr/bin/env bash
-set -euo pipefail
-DAY=$1
-mkdir -p logs out/$DAY
-# TODO: anubis 正式命令
-echo "$DAY $(date -Is)" >> logs/anubis_batch_index.txt
+python -m georinex.gtime /data/SITE0010.24o | tee logs/gtime_SITE.txt
+# 对齐时间窗后，再解释 XTR 里的 gap 段
+grep -i gap /data/qc/SITE0010.xtr | head
 ```
 
-周报字段：成功站日数、FAIL 列表、磁盘占用、上游版本。
-
-
-## 27. 教学演示脚本（口述提纲）
-
-1. 边界一句话  
-2. 安装验收屏幕共享  
-3. 跑通最小样例  
-4. 故意弄坏一个输入并按坑表修  
-5. 展示输出关键字  
-6. 指向下一工具手册  
-
-
-## 28. 性能与资源
-
-| 项 | 建议 |
-| --- | --- |
-| CPU | 先单进程稳态，再并行 |
-| 内存 | 1 Hz 全日警惕；先抽稀 |
-| 磁盘 | 日志+产物预留 2× |
-| 网络 | 产品下载失败要可离线重跑 |
-
-
-## 29. 版本升级 checklist
-
-1. 读上游 Release  
-2. 备份金样配置  
-3. 重装/替换二进制  
-4. 跑最小回归  
-5. diff `-h` 输出  
-6. 更新自己的包装脚本  
-7. 记版本号到 PROJECT 笔记  
-
-
-## 30. 相关工具
-
-见第 5 节与 [software README](./README.md)。参数冲突时：**本机帮助 > 上游 README > 本手册**。
-
-
-## 31. 期望 I/O 对照表（站日级）
-
-| 阶段 | 成功判据 | 失败样例 |
-| --- | --- | --- |
-| 安装 | `anubis -h` 有输出 | command not found |
-| XML | `-X` 导出非空 | 空文件 |
-| 运行 | xtr size>1k | cannot open |
-| 抽查 | grep 到 Summary | 全空 grep |
-| 门禁 | 笔记记录阈值结论 | 口头「好像行」 |
-
-## 32. 批量结果汇总脚本骨架
+### 工作流 E：批量汇总 CSV
 
 ```bash
-#!/usr/bin/env bash
-set -euo pipefail
-echo "station,logfile,fail_flag" > qc_summary.csv
-for log in logs/anubis_*.log; do
-  st=$(basename "$log" .log)
-  if grep -q FAIL "$log"; then f=1; else f=0; fi
-  echo "$st,$log,$f" >> qc_summary.csv
+echo "station,xtr_bytes,has_summary,fail_log" > qc_summary.csv
+for xtr in /data/qc/*.xtr; do
+  st=$(basename "$xtr" .xtr)
+  sz=$(wc -c < "$xtr")
+  hs=$(grep -c -E 'Summary|Completeness' "$xtr" || true)
+  fl=0
+  grep -q FAIL "logs/anubis_${st}.log" 2>/dev/null && fl=1 || true
+  echo "$st,$sz,$hs,$fl" >> qc_summary.csv
 done
 column -t -s, qc_summary.csv | head
 ```
 
-## 33. 与 tutorials 的具体挂钩句
-
-- 做 [16](../tutorials/16-practice-one-day-tec.md) 前：对本站日跑 lite，把 Summary 贴进实验笔记。
-- 做 [20](../tutorials/20-storm-tec-analysis.md) 前：风暴日相关站 full，缺口表进附录。
-- 做 [06](../tutorials/06-iono-positioning.md) 前：坏站别进 PPP。
-
-## 34. 常见 XTR 误读
-
-1. 把某一系统完好率低当成整站报废——先看任务是否需要该系统。  
-2. 把高 MP 时段的 ROTI 峰当成「纯电离层」——可能是多路径。  
-3. 抽样率变更后仍用旧阈值——抽稀会改变部分统计。  
-
-## 35. 收尾检查
-
-```bash
-test -s qc/anubis_qc.xml.ok
-ls *.xtr | head
-grep -E 'Summary' *.xtr | head
-echo ANUBIS_MANUAL_OK
-```
-
-## 36. 版本与引用
-
-- 在论文/报告写明：Anubis Free 版本号、QC 模式、关键阈值。
-- 引用与许可以官网为准。
-- 本手册不替代 EULA。
-
-## 37. 不要做的事（再强调）
-
-- 不要把 XTR 数值当 TEC。
-- 不要跳过 QC 直接发表 PPP/TEC。
-- 不要混用 Pro 文档操作 Free。
-- 不要在 CRLF XML 上浪费半天——先 dos2unix。
-
-## 相关工具（复述）
-
-[gfzrnx](./gfzrnx.md) · [georinex](./georinex.md) · [pytecgg](./pytecgg.md) · [pride-pppar](./pride-pppar.md) · [rtklib](./rtklib.md) · [oasis-roti](./oasis-roti.md) · [ionomoni](./ionomoni.md) · [README](./README.md)
-
-## A1. 操作时间盒（番茄钟）
-
-25 min 安装验收；25 min example；25 min 自备数据；15 min 写复现包。
-
-### A1.1 检查点
-
-- 命令可复述
-- 日志路径已知
-- 失败时回到第 1 个假设
-
-### A1.2 检查点
-
-- 命令可复述
-- 日志路径已知
-- 失败时回到第 2 个假设
-
-### A1.3 检查点
-
-- 命令可复述
-- 日志路径已知
-- 失败时回到第 3 个假设
-
-### A1.4 检查点
-
-- 命令可复述
-- 日志路径已知
-- 失败时回到第 4 个假设
-
-### A1.5 检查点
-
-- 命令可复述
-- 日志路径已知
-- 失败时回到第 5 个假设
-
-### A1.6 检查点
-
-- 命令可复述
-- 日志路径已知
-- 失败时回到第 6 个假设
-
-### A1.7 检查点
-
-- 命令可复述
-- 日志路径已知
-- 失败时回到第 7 个假设
-
-### A1.8 检查点
-
-- 命令可复述
-- 日志路径已知
-- 失败时回到第 8 个假设
-
-### A1.9 检查点
-
-- 命令可复述
-- 日志路径已知
-- 失败时回到第 9 个假设
-
-### A1.10 检查点
-
-- 命令可复述
-- 日志路径已知
-- 失败时回到第 10 个假设
-
-### A1.11 检查点
-
-- 命令可复述
-- 日志路径已知
-- 失败时回到第 11 个假设
-
-### A1.12 检查点
-
-- 命令可复述
-- 日志路径已知
-- 失败时回到第 12 个假设
-
-### A1.13 检查点
-
-- 命令可复述
-- 日志路径已知
-- 失败时回到第 13 个假设
-
-### A1.14 检查点
-
-- 命令可复述
-- 日志路径已知
-- 失败时回到第 14 个假设
-
-### A1.15 检查点
-
-- 命令可复述
-- 日志路径已知
-- 失败时回到第 15 个假设
-
-### A1.16 检查点
-
-- 命令可复述
-- 日志路径已知
-- 失败时回到第 16 个假设
-
-### A1.17 检查点
-
-- 命令可复述
-- 日志路径已知
-- 失败时回到第 17 个假设
-
-### A1.18 检查点
-
-- 命令可复述
-- 日志路径已知
-- 失败时回到第 18 个假设
-
-### A1.19 检查点
-
-- 命令可复述
-- 日志路径已知
-- 失败时回到第 19 个假设
-
-### A1.20 检查点
-
-- 命令可复述
-- 日志路径已知
-- 失败时回到第 20 个假设
-
-## A2. 输入/输出矩阵（扩）
-
-| # | 输入 | 变换 | 输出 | 验收 |
-| --- | --- | --- | --- | --- |
-
-| 1 | 数据/配置 1 | 本工具步骤 1 | 产物 1 | size>0 + 关键字 |
-
-| 2 | 数据/配置 2 | 本工具步骤 2 | 产物 2 | size>0 + 关键字 |
-
-| 3 | 数据/配置 3 | 本工具步骤 3 | 产物 3 | size>0 + 关键字 |
-
-| 4 | 数据/配置 4 | 本工具步骤 4 | 产物 4 | size>0 + 关键字 |
-
-| 5 | 数据/配置 5 | 本工具步骤 5 | 产物 5 | size>0 + 关键字 |
-
-| 6 | 数据/配置 6 | 本工具步骤 6 | 产物 6 | size>0 + 关键字 |
-
-| 7 | 数据/配置 7 | 本工具步骤 7 | 产物 7 | size>0 + 关键字 |
-
-| 8 | 数据/配置 8 | 本工具步骤 8 | 产物 8 | size>0 + 关键字 |
-
-| 9 | 数据/配置 9 | 本工具步骤 9 | 产物 9 | size>0 + 关键字 |
-
-| 10 | 数据/配置 10 | 本工具步骤 10 | 产物 10 | size>0 + 关键字 |
-
-| 11 | 数据/配置 11 | 本工具步骤 11 | 产物 11 | size>0 + 关键字 |
-
-| 12 | 数据/配置 12 | 本工具步骤 12 | 产物 12 | size>0 + 关键字 |
-
-| 13 | 数据/配置 13 | 本工具步骤 13 | 产物 13 | size>0 + 关键字 |
-
-| 14 | 数据/配置 14 | 本工具步骤 14 | 产物 14 | size>0 + 关键字 |
-
-| 15 | 数据/配置 15 | 本工具步骤 15 | 产物 15 | size>0 + 关键字 |
-
-
-## A3. 命令备忘录（复制区）
-
-```bash
-# 记录你的真实命令
-# CMD1=
-# CMD2=
-# CMD3=
-```
-
-
-## A4. 对照实验设计
-
-| 实验 | 变量 | 对照组 | 观测量 |
-| --- | --- | --- | --- |
-| E1 | 采样 | 1 Hz vs 30 s | 产物稳定性 |
-| E2 | 系统 | G vs GREC | 完整性 |
-| E3 | 窗口 | 默认 vs 加严 | 弧段数 |
-| E4 | 截止角 | 10 vs 20 | 噪声 |
-| E5 | 时间窗 | 全日 vs 事件窗 | 峰值对齐 |
-
-
-## A5. 交付给同事的一页纸
-
-1. 工具与版本
-2. 一条成功命令
-3. 输入样例路径
-4. 输出样例路径
-5. 三个坑
-6. 下一工具链接
-
-
-## A6. 与路径 A–E 的硬连接
-
-- A TEC：data-access → georinex → anubis/gfzrnx → **pytecgg** → ionex-gim
-- B 扰动：RINEX → **ionomoni/oasis** → 教程 05/20
-- C 实时：pygnssutils/bnc → **bkg-ntripcaster** → rtklib
-- D 坐标：anubis → rtklib → **pride-pppar**
-- E GIM：ionex-gim；**sh-gim** 仅边界
-
-
-## A7. 术语速查
-
-| 术语 | 一句话 |
-| --- | --- |
-| RINEX | 观测交换格式 |
-| RTCM | 实时差分电文 |
-| NTRIP | 基于 HTTP 的差分传输 |
-| STEC/VTEC | 斜/垂直电子含量 |
-| ROTI | TEC 变化率指数 |
-| S4 | 振幅闪烁指数（硬件） |
-| IPP | 穿刺点 |
-| DCB | 码偏差 |
-| GIM/IONEX | 全球电离层图交换 |
-| PPP-AR | 精密单点+模糊度固定 |
-| QC | 质量检查 |
-| SP3 | 精密轨道 |
-
-
-## A8. 文件命名建议
+### 工作流 F：进 TEC / PPP 前的一页结论
 
 ```text
-logs/TOOL_SITE_YYYYDDD.log
-out/YYYY/DDD/SITE/...
-qc/TOOL_config.ok
+站日: SITE 2024/001
+模式: lite
+Completeness: ...（从 XTR 抄）
+MP 备注: ...
+缺口: 无 / 有（UTC 时段）
+门禁: PASS → pytecgg 或 pdp3
+      FAIL → 换站或修数据
 ```
 
+---
 
-## A9. 回归命令清单
+## 输入 / 输出与字段表
+
+### CLI（本机 `-h` 为准）
+
+| 项 | 含义 |
+|---|---|
+| `-h` / `--help` | 帮助 |
+| `-V` | 版本（若提供） |
+| `-X` | 默认配置打到 stdout |
+| `-x file` | 按 XML 运行 |
+| `-z file` | 写出配置（若提供） |
+| `:inp:rinexo=路径` | 覆盖 OBS |
+| `:inp:rinexn=路径` | 覆盖 NAV |
+| `:out:xtr=路径` | XTR 输出 |
+| `:out:xml=路径` | XML QC 输出 |
+| `:out:log=路径` | 日志 |
+| `:out:verb=N` | 日志详细度 |
+| `:qc:…` | 覆盖 QC 段属性（键以 `-X` 为准） |
+
+常见长选项别名（教程 PDF，以二进制为准）：`--rinexo`=`:inp:rinexo`，`--xtr`=`:out:xtr`。
+
+### XML 主结构
+
+| 段 | 作用 |
+|---|---|
+| `gen` | 时间窗、星座、采样、站点列表 |
+| `sys` / `gnss` | 系统/观测类型过滤 |
+| `nav` | 导航数据处理 |
+| `inp` | `rinexo` / `rinexn`（必填类） |
+| `out` | `xtr` / `xml` / `log` |
+| `qc` | 模式与各段 verbosity |
+| `site` | 站元数据（若用） |
+
+星座三字母常见：`GPS` `GLO` `GAL` `BDS` `SBS` `QZS`（以配置页为准）。
+
+### 输入文件
+
+| 类型 | Free 注意 |
+|---|---|
+| RINEX OBS 2/3 | 主输入；4 看版本 |
+| RINEX NAV | full/定性建议提供；lite 也建议带 |
+| `.gz` | Free≥2.1 常可读 gzip；Hatanaka 多在 Pro——Free 先 `CRX2RNX` |
+
+### 输出
+
+| 类型 | 内容 |
+|---|---|
+| XTR | 主报表：分节、可 grep；含完好率/MP/SNR/gap 等 |
+| XML | 标准 QC 摘要交换 |
+| log | 进度与错误 |
+
+### XTR 常搜关键字
+
+`Summary`、`Completeness`、`gap`、`MP` / `MPTH`、`SNR`、`slip` / `cs`（字样随版本）。先 `grep -n` 再读上下文。
+
+### 明确不输出
+
+STEC、ROTI、`.pos`、IONEX、校准 `veq`。
+
+---
+
+## 接到 tutorials / 工作流哪一步
+
+| 场景 | 本手册 | 下游 |
+|---|---|---|
+| 路径 A TEC | 工作流 A/F | [pytecgg](./pytecgg.md) · 教程 [16](../tutorials/16-practice-one-day-tec.md) |
+| 路径 B 扰动 | 事件日前 full | [oasis-roti](./oasis-roti.md) · [20](../tutorials/20-storm-tec-analysis.md) |
+| 路径 D 坐标 | 坏站剔除 | [pride-pppar](./pride-pppar.md) · [06](../tutorials/06-iono-positioning.md) |
+| 清洗后复检 | 工作流 C | 确认 gfzrnx 未切坏 |
+| 索引 | — | [README](./README.md) |
+
+---
+
+## 可操作坑（现象 → 原因 → 修复）
+
+1. **`cannot open` / 找不到输入**  
+   原因：相对路径、cwd 不对。  
+   修复：全部改绝对路径；或 `cd` 到约定目录再跑。
+
+2. **空 xtr / 几乎无 Summary**  
+   原因：OBS 损坏、时间窗为空、过滤过严。  
+   修复：`head`/`georinex.gtime`；放宽 `gen` 时间；回滚金样 XML。
+
+3. **XML 解析失败**  
+   原因：CRLF、手工改坏标签。  
+   修复：`dos2unix`；`cp qc/anubis_qc.xml.ok qc/anubis_qc.xml`。
+
+4. **把 Anubis 当拼接工具**  
+   原因：边界混淆。  
+   修复：改文件用 [gfzrnx](./gfzrnx.md)。
+
+5. **Free 上使用 Pro 键（json/实时/编辑）**  
+   原因：文档档位混用。  
+   修复：只保留 `-X` 里存在的键。
+
+6. **QC 通过就当绝对 TEC 正确**  
+   原因：误解门禁。  
+   修复：Anubis 只决定去留；绝对值走 pytecgg。
+
+7. **批量忽略 FAIL**  
+   原因：无汇总。  
+   修复：工作流 E；`grep FAIL logs/`。
+
+8. **缺 NAV 跑 full**  
+   原因：定性 QC 需要星历。  
+   修复：补 BRDC；或先 lite。
+
+9. **Hatanaka `.YYd` 直接喂 Free**  
+   原因：Free 对 crx 支持有限。  
+   修复：`CRX2RNX` 后再 QC。
+
+10. **1 Hz 与 30 s 共用同一完好率阈值**  
+    原因：抽稀改变统计。  
+    修复：按采样分阈值表。
+
+11. **只看终端不看 XTR**  
+    原因：摘要不全。  
+    修复：强制 `grep Summary` 入笔记。
+
+12. **输出覆盖未分站日**  
+    原因：同名 xtr 互踩。  
+    修复：`out/qc/YYYY/DDD/SITE.xtr`。
+
+13. **与 georinex 缺口对不上**  
+    原因：时间窗/系统过滤不一致。  
+    修复：先对齐窗与系统再比。
+
+14. **高 MP 时段的 ROTI 峰全算电离层**  
+    原因：环境多路径。  
+    修复：XTR MP 节与 ROTI 同时引用。
+
+15. **只读目录写不出**  
+    原因：`:out:` 无写权限。  
+   修复：改到可写盘；`df -h`。
+
+16. **键名抄旧教程**  
+    原因：版本演进。  
+    修复：每次 `anubis -X` diff 金样。
+
+---
+
+## 同类选型
+
+| 需求 | 选 |
+|---|---|
+| QC 报表 XTR/XML | **Anubis Free** |
+| 改/拼/抽稀 RINEX | gfzrnx |
+| Python 读盘 | georinex |
+| 实时流 QC | Anubis Pro/RT 或其它链 |
+| 科学 TEC/ROTI | pytecgg / oasis / ionomoni |
+
+---
+
+## 操作检查清单
+
+1. `anubis -h` / `-X` 可用；金样 `.ok` 已存。  
+2. OBS/NAV 路径绝对；gzip 完整。  
+3. 模式选定 thin/lite/full。  
+4. xtr `wc -c` 合理；grep 到 Summary。  
+5. 门禁结论写入笔记（PASS/FAIL + 理由）。  
+6. FAIL 站不进 PPP/TEC。  
+7. 版本号与命令行记入实验记录。  
+8. 冲突时：**本机 `-h`/`-X` > 上游页 > 本手册**。
+
+---
+
+## 附录 · 命令一页纸
 
 ```bash
-set -euo pipefail
-# 1 help
-# 2 example
-# 3 assert
-echo PASS
+anubis -h
+anubis -X > qc/anubis_qc.xml
+cp qc/anubis_qc.xml qc/anubis_qc.xml.ok
+anubis -x qc/anubis_qc.xml :inp:rinexo=/ABS/OBS :inp:rinexn=/ABS/NAV :out:xtr=/ABS/OUT.xtr
+grep -E 'Summary|Completeness|MP|gap|SNR' /ABS/OUT.xtr | head
 ```
 
+---
 
-## A10. 结束语
+## 相关
 
-参数冲突时信本机帮助。越界产品不要硬解释。先门禁后科学。
-
+[README](./README.md) · [gfzrnx](./gfzrnx.md) · [georinex](./georinex.md) · [pytecgg](./pytecgg.md) · [pride-pppar](./pride-pppar.md) · [rtklib](./rtklib.md) · [oasis-roti](./oasis-roti.md) · [ionomoni](./ionomoni.md)
