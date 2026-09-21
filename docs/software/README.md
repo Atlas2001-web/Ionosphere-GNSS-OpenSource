@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **14 篇**操作手册（合计约 6434 行）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **14 篇**操作手册（合计约 3544 行）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -12,20 +12,20 @@
 
 | # | 手册 | 做什么 | 行数 |
 | ---: | --- | --- | ---: |
-| 1 | [georinex.md](./georinex.md) | RINEX → xarray / Python | 240 |
-| 2 | [gfzrnx.md](./gfzrnx.md) | RINEX 检查 / 拼接 / 抽稀 | 413 |
-| 3 | [anubis.md](./anubis.md) | 观测 QC → XTR/XML | 394 |
-| 4 | [pytecgg.md](./pytecgg.md) | 校准 sTEC/vTEC（作者 viventriglia） | 412 |
-| 5 | [ionomoni.md](./ionomoni.md) | STEC / ROTI / AATR（C++） | 628 |
-| 6 | [oasis-roti.md](./oasis-roti.md) | ROTI / ΔTEC / SIDX（Python） | 614 |
-| 7 | [ionex-gim.md](./ionex-gim.md) | 读 IONEX GIM | 608 |
-| 8 | [sh-gim.md](./sh-gim.md) | 维护者球谐仓**边界**（求解器未开源） | 313 |
-| 9 | [pygnssutils.md](./pygnssutils.md) | NTRIP CLI / 小 caster | 660 |
-| 10 | [bnc.md](./bnc.md) | BKG 多流客户端 | 194 |
-| 11 | [bkg-ntripcaster.md](./bkg-ntripcaster.md) | BKG Caster 播发 | 651 |
-| 12 | [rtklib.md](./rtklib.md) | RTK / PPP CLI | 244 |
-| 13 | [pride-pppar.md](./pride-pppar.md) | PPP-AR | 441 |
-| 14 | [iono-scintillation.md](./iono-scintillation.md) | MATLAB 闪烁仿真 | 622 |
+| 1 | [georinex.md](./georinex.md) | RINEX → xarray / Python | 239 |
+| 2 | [gfzrnx.md](./gfzrnx.md) | RINEX 检查 / 拼接 / 抽稀 | 412 |
+| 3 | [anubis.md](./anubis.md) | 观测 QC → XTR/XML | 393 |
+| 4 | [pytecgg.md](./pytecgg.md) | 校准 sTEC/vTEC（作者 viventriglia） | 411 |
+| 5 | [ionomoni.md](./ionomoni.md) | STEC / ROTI / AATR（C++） | 172 |
+| 6 | [oasis-roti.md](./oasis-roti.md) | ROTI / ΔTEC / SIDX（Python） | 173 |
+| 7 | [ionex-gim.md](./ionex-gim.md) | 读 IONEX GIM | 181 |
+| 8 | [sh-gim.md](./sh-gim.md) | 维护者球谐仓**边界**（求解器未开源） | 124 |
+| 9 | [pygnssutils.md](./pygnssutils.md) | NTRIP CLI / 小 caster | 250 |
+| 10 | [bnc.md](./bnc.md) | BKG 多流客户端 | 193 |
+| 11 | [bkg-ntripcaster.md](./bkg-ntripcaster.md) | BKG Caster 播发 | 182 |
+| 12 | [rtklib.md](./rtklib.md) | RTK / PPP CLI | 243 |
+| 13 | [pride-pppar.md](./pride-pppar.md) | PPP-AR | 440 |
+| 14 | [iono-scintillation.md](./iono-scintillation.md) | MATLAB 闪烁仿真 | 131 |
 
 每篇结构：**用途边界 → 安装 → 逐步命令+期望输出 → I/O 字段 → 参数 → 接到哪步 → ≥12 坑 → 选型**。
 
@@ -144,8 +144,8 @@ iono-scintillation：概念/仿真旁路，不替代实测 ROTI
 
 ## 体量与文风
 
-- 常规工具文：稠密操作优先；已改写篇可短于 300 行，未改写篇仍可能 600+
-- SH-GIM：**300–500**（边界准确优先）
+- 常规工具文：稠密操作优先；已全面 QUALITY 改写，多数 120–450 行
+- SH-GIM：短边界说明优先（准确 > 凑行）
 - 本索引：先列全手册，再写路径
 - 禁止问答注水、禁止为凑行数复读
 
