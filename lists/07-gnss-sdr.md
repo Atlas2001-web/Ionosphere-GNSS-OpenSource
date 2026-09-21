@@ -1,8 +1,9 @@
 # 软件接收机与信号 / GNSS-SDR
+> 共 **58** 个已收录项目。本文件为链接索引，不含第三方源码。
 
-[![58](https://img.shields.io/badge/projects-58-blue.svg)](../PROJECTS.json) · IQ→PVT · 信号仿真 · 监控
+**这类做什么？** 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。
 
-> 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+来源标记：🏷️ 官方 = 机构/国家实验室；🏷️ 高校实验室 = 大学课题组；🏷️ 个人社区 = 个人或小团队。
 
 ## 软件接收机
 
@@ -11,7 +12,7 @@
 | [gnss-sdr](https://github.com/gnss-sdr/gnss-sdr) | 开源 GNSS 软件定义接收机 | C++ | 2234 | 🏷️ 高校实验室 核心 |
 | [GNSS-SDRLIB](https://github.com/taroz/GNSS-SDRLIB) | 开源 GNSS 软件无线电库 GNSS-SDRLIB | C | 536 | 🏷️ 个人社区 |
 | [BeagleSDRGPS](https://github.com/jks-prv/Beagle_SDR_GPS) | KiwiSDR：BeagleBone 短波 SDR 与软件 GPS（已归档） | C++ | 521 | 🏷️ 个人社区 |
-| [PocketSDR](https://github.com/tomojitakasu/PocketSDR) | Tomoji Takasu 开源 GNSS 软件接收机（多星座多频 SDR） | C | 515 | 🏷️ 个人社区 核心 精选 |
+| [PocketSDR](https://github.com/tomojitakasu/PocketSDR) | Tomoji Takasu 开源 GNSS 软件接收机（多星座多频 SDR） | C | 515 | 🏷️ 个人社区 核心 |
 | [FGI-GSRx](https://github.com/nlsfi/FGI-GSRx) | 芬兰 FGI 多星座 MATLAB 软件接收机 | MATLAB | 192 | 🏷️ 官方 核心 |
 | [Full_Stack_GPS_Receiver](https://github.com/hamsternz/Full_Stack_GPS_Receiver) | 从 1-bit 采样到定位的完整 GPS 软件接收机 | C | 168 | 🏷️ 个人社区 |
 | [Analog-GPS-data-receiver](https://github.com/leaningktower/Analog-GPS-data-receiver) | 分立射频+TinyFPGA 的模拟 GPS 接收教学项目 | C | 164 | 🏷️ 个人社区 |
@@ -67,7 +68,7 @@
 KiwiSDR 上游核心：在 BeagleBone 上提供 Web 可访问短波接收，并含软件定义 GPS 相关能力；仓库状态为归档。适合研究 Kiwi 架构或做衍生硬件参考。新功能与安全修复已停止，活跃使用请关注社区衍生板卡（如 FlyDog/FlyCat）及其分支。BeagleBone 镜像与帽板硬件版本必须匹配。
 
 #### [PocketSDR](https://github.com/tomojitakasu/PocketSDR)  
-*🏷️ 个人社区 核心 精选*
+*🏷️ 个人社区 核心*
 
 语言：C · 许可：NOASSERTION · 星标约：515 · 宿主：github
 

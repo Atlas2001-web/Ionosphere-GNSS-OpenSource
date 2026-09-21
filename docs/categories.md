@@ -1,47 +1,110 @@
-# 分类说明
+# 分类说明（写给初学者）
 
-按「你要解决什么问题」划分，**不按编程语言**。徽章与计数与列表页一致。
+本索引按「你要解决什么问题」划分，而不是按编程语言。下面用白话说明每一类在 GNSS 工作流里的位置。
 
-## 分类一览
+```
+数据下载/格式(RINEX,RTCM) ──► 质量检查
+         │
+         ├─► 电离层 TEC/GIM / 闪烁指标
+         ├─► 对流层 ZTD/PWV / VMF
+         └─► 精密定位 RTK/PPP ──► 轨道钟差产品
+                    │
+                    └─► GNSS/INS / 视觉组合导航
 
-| 分类 | 一句话 | 列表 | 数 |
-|---|---|---|---:|
-| 电离层 | STEC/VTEC、GIM、闪烁与层析 | [01](../lists/01-ionosphere.md) | 234 |
-| 对流层 | ZTD/PWV、VMF/GPT、GNSS-IR | [02](../lists/02-troposphere.md) | 32 |
-| GNSS 数据与格式 | RINEX/RTCM、质检、产品下载 | [03](../lists/03-gnss-data.md) | 102 |
-| 精密定位 | SPP / RTK / PPP / 网络 RTK | [04](../lists/04-gnss-positioning.md) | 76 |
-| 轨道与钟差 | 精密轨道、钟差、UPD/OSB（多集成套件） | [05](../lists/05-orbit-clock.md) | 13 |
-| 导航 | GNSS/INS、视觉组合 | [06](../lists/06-navigation-ins.md) | 56 |
-| 软件接收机 | IQ→PVT、信号仿真 | [07](../lists/07-gnss-sdr.md) | 58 |
-| 移动应用 | 手机原始测量、嵌入式 | [08](../lists/08-mobile-apps.md) | 15 |
-| 学习工具 | awesome、笔记、可视化 | [09](../lists/09-tools-learning.md) | 29 |
-| **数据源门户** | RINEX / IONEX / CORS / 实时流 | [10](../lists/10-gnss-datasets.md) | 77 |
+另线：GNSS-SDR（从无线电采样到伪距/相位）；手机 App（原始测量采集）
+```
 
-工作流直觉（无流程图）：**数据与格式** 是上游 → 电离层 / 对流层 / 精密定位 并行 → 轨道钟差喂定位 → 导航做组合；另线是 **GNSS-SDR** 与 **手机 App**。
+## 来源 / 维护方标记（provenance）
 
-数据怎么下 → [`data-access.md`](./data-access.md)。
-
-## 来源徽章（provenance）
-
-`PROJECTS.json` 的 `provenance` 在列表里显示为：
+每条项目在 `PROJECTS.json` 中带有 `provenance` 字段，列表里显示为徽章：
 
 | 值 | 徽章 | 含义 |
 |---|---|---|
-| `official` | 🏷️ 官方 | 政府机构、国家实验室、国际联盟或官方服务 |
-| `academic_lab` | 🏷️ 高校实验室 | 大学/研究所课题组（非主管部门官网） |
-| `personal_community` | 🏷️ 个人社区 | 个人、小型社区或公司开源档 |
+| `official` | 🏷️ 官方 | 政府机构、国家实验室、国际联盟或官方服务站点维护的发行（如 ESA/GSC、BKG、NOAA/NGS、GSI、IGS 工具、TU Wien VMF、GFZ、EarthScope/UNAVCO 等） |
+| `academic_lab` | 🏷️ 高校实验室 | 大学或研究所课题组发布、但并非国家测绘/航天主管部门官网的软件（如 UPC gAGE、武大 GREAT、CU Boulder SoftGPS 配套页等） |
+| `personal_community` | 🏷️ 个人社区 | 个人开发者、小型社区团队或公司开源档（含 Anubis Free、多数 GitHub 个人仓等） |
 
-`host`：`github` / `gitlab` / `sourceforge` / `official_site` / `other`。
+另有 `host` 字段标明托管位置：`github` / `gitlab` / `sourceforge` / `official_site` / `other`。
 
-> 同一上游若有 GitHub 镜像，目录优先保留**官方站点** URL。
+> 同一上游若存在 GitHub 镜像，目录优先保留**官方站点** URL，并在分析中注明镜像。
 
-## 与维护者仓库的关系
+## `ionosphere` — 电离层
+
+研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
+
+- 列表文件：[`lists/01-ionosphere.md`](../lists/01-ionosphere.md)
+- 当前条目数：**235**
+
+## `troposphere` — 对流层
+
+中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
+
+- 列表文件：[`lists/02-troposphere.md`](../lists/02-troposphere.md)
+- 当前条目数：**32**
+
+## `gnss-data` — GNSS 数据与格式
+
+RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
+
+- 列表文件：[`lists/03-gnss-data.md`](../lists/03-gnss-data.md)
+- 当前条目数：**108**
+
+## `gnss-positioning` — 精密定位
+
+SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
+
+- 列表文件：[`lists/04-gnss-positioning.md`](../lists/04-gnss-positioning.md)
+- 当前条目数：**78**
+
+## `orbit-clock` — 轨道与钟差
+
+精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。
+
+- 列表文件：[`lists/05-orbit-clock.md`](../lists/05-orbit-clock.md)
+- 当前条目数：**13**
+
+## `navigation-ins` — 导航
+
+GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
+
+- 列表文件：[`lists/06-navigation-ins.md`](../lists/06-navigation-ins.md)
+- 当前条目数：**57**
+
+## `gnss-sdr` — 软件接收机与信号
+
+从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。
+
+- 列表文件：[`lists/07-gnss-sdr.md`](../lists/07-gnss-sdr.md)
+- 当前条目数：**58**
+
+## `mobile-apps` — 移动与嵌入式应用
+
+手机/嵌入式上的 GNSS 测试、原始测量记录与简易定位。
+
+- 列表文件：[`lists/08-mobile-apps.md`](../lists/08-mobile-apps.md)
+- 当前条目数：**16**
+
+## `tools-learning` — 学习资源与工具
+
+awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
+
+- 列表文件：[`lists/09-tools-learning.md`](../lists/09-tools-learning.md)
+- 当前条目数：**29**
+
+## `gnss-datasets` — GNSS 数据源
+
+需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
+
+- 列表文件：[`lists/10-gnss-datasets.md`](../lists/10-gnss-datasets.md)
+- 当前条目数：**80**
+
+## 与用户仓库的关系标记
 
 | 标记 | 含义 |
 |---|---|
-| 🚩 自有 / owned | 维护者自有公开仓（仅链接，不展开） |
-| 🔀 Fork / fork | 已 fork；表中仍列**上游** URL |
+| 🚩 自有 / owned | 维护者自有公开仓库（仅链接，不写详细介绍） |
+| 🔀 Fork / fork | 维护者已 fork，表中仍列**上游** URL |
 | ★ Star / starred | 出现在维护者 GitHub stars 中的种子 |
-| 核心 / core | 建议优先阅读的代表项目 |
+| 核心 / core | 本目录推荐优先阅读的代表性项目 |
 
 > 私有仓库（如 `SH-GIM-proprietary`）**不会**出现在公开索引中。

@@ -1,8 +1,9 @@
 # 对流层 / Troposphere
+> 共 **32** 个已收录项目。本文件为链接索引，不含第三方源码。
 
-[![32](https://img.shields.io/badge/projects-32-blue.svg)](../PROJECTS.json) · ZTD/PWV · VMF/GPT · GNSS-IR
+**这类做什么？** 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
-> 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+来源标记：🏷️ 官方 = 机构/国家实验室；🏷️ 高校实验室 = 大学课题组；🏷️ 个人社区 = 个人或小团队。
 
 ## 星载GNSS-R
 
@@ -285,12 +286,12 @@ ICAMS 用全球大气模式做 InSAR 对流层改正，并考虑空间随机特�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [mpsim](https://github.com/ufrgs-gnss-lab/mpsim) | UFRGS 开源 GNSS 多路径前向仿真器（Matlab/Octave，近地表反射测量） | MATLAB | 48 | 🏷️ 高校实验室 核心 精选 |
+| [mpsim](https://github.com/ufrgs-gnss-lab/mpsim) | UFRGS 开源 GNSS 多路径前向仿真器（Matlab/Octave，近地表反射测量） | MATLAB | 48 | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
 
 #### [mpsim](https://github.com/ufrgs-gnss-lab/mpsim)  
-*🏷️ 高校实验室 核心 精选*
+*🏷️ 高校实验室 核心*
 
 语言：MATLAB · 许可：BSD-2-Clause · 星标约：48 · 宿主：github
 
@@ -300,12 +301,12 @@ Nievinski 与 Larson 发表于 GPS Solutions 的开源多路径仿真器，用�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [RADIATE](https://github.com/TUW-VieVS/RADIATE) | 维也纳科技大学 VieVS 开源对流层射线追踪（微波/光学，基于数值天气模式） | Fortran | 23 | 🏷️ 高校实验室 核心 精选 |
+| [RADIATE](https://github.com/TUW-VieVS/RADIATE) | 维也纳科技大学 VieVS 开源对流层射线追踪（微波/光学，基于数值天气模式） | Fortran | 23 | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
 
 #### [RADIATE](https://github.com/TUW-VieVS/RADIATE)  
-*🏷️ 高校实验室 核心 精选*
+*🏷️ 高校实验室 核心*
 
 语言：Fortran · 许可：GPL-3.0 · 星标约：23 · 宿主：github
 

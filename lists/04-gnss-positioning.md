@@ -1,8 +1,9 @@
 # 精密定位 / Precise Positioning
+> 共 **78** 个已收录项目。本文件为链接索引，不含第三方源码。
 
-[![76](https://img.shields.io/badge/projects-76-blue.svg)](../PROJECTS.json) · SPP · RTK/PPK · PPP/PPP-AR · 网络 RTK
+**这类做什么？** SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
-> 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+来源标记：🏷️ 官方 = 机构/国家实验室；🏷️ 高校实验室 = 大学课题组；🏷️ 个人社区 = 个人或小团队。
 
 ## 多星座PPP
 
@@ -70,12 +71,12 @@ Automatic PPP Analysis Software-Türkiye（APAS-TR）处理 GPS/GLONASS/Galileo/
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [CLASLIB](https://github.com/QZSS-Strategy-Office/claslib) | 日本内阁府 QZSS 官方 CLAS 厘米级增强测试库（Compact SSR/PPP-RTK） | C | 56 | 🏷️ 官方 核心 精选 |
+| [CLASLIB](https://github.com/QZSS-Strategy-Office/claslib) | 日本内阁府 QZSS 官方 CLAS 厘米级增强测试库（Compact SSR/PPP-RTK） | C | 56 | 🏷️ 官方 核心 |
 
 ### 详细说明
 
 #### [CLASLIB](https://github.com/QZSS-Strategy-Office/claslib)  
-*🏷️ 官方 核心 精选*
+*🏷️ 官方 核心*
 
 语言：C · 许可：see upstream (derived RTKLIB/GSILIB) · 星标约：56 · 宿主：github
 
@@ -85,14 +86,14 @@ CLAS 测试库解码 Compact SSR（RTCM MT4073），提供 SSR2OSR、SSR2OBS 与
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [cssrlib](https://github.com/hirokawa/cssrlib) | Python 开源 PPP/PPP-RTK 工具包（CLAS/HAS/BDS PPP/IGS SSR） | Jupyter Notebook | 211 | 🏷️ 高校实验室 核心 精选 |
+| [cssrlib](https://github.com/hirokawa/cssrlib) | Python 开源 PPP/PPP-RTK 工具包（CLAS/HAS/BDS PPP/IGS SSR） | Jupyter Notebook | 211 | 🏷️ 高校实验室 核心 |
 | [PPP-RTK-Beechan](https://github.com/MichaelBeechan/PPP-RTK) | C 实现的 SPP/RTD/PPP/RTK/PPP-RTK 与 RAIM 试验库 | C | 26 | 🏷️ 个人社区 |
 | [Easy4PTK](https://github.com/alxanderjiang/Easy4PTK) | 易移植的多星座 PPP-RTK Python 工具箱 | Jupyter Notebook | 5 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [cssrlib](https://github.com/hirokawa/cssrlib)  
-*🏷️ 高校实验室 核心 精选*
+*🏷️ 高校实验室 核心*
 
 语言：Jupyter Notebook · 许可：MIT · 星标约：211 · 宿主：github
 
@@ -161,6 +162,7 @@ Glenn MacGougan 等维护的 Essential GNSS Project，提供 RINEX 2.x 解码、
 | [PPP](https://github.com/XiaoGongWei/PPP) | 静态 PPP 相关 C++ 实现（MG-APP 作者相关） | C++ | 23 | 🏷️ 高校实验室 |
 | [PPPH-UAV](https://github.com/BerkayBahadur/PPPH-UAV) | 面向无人机摄影测量的 GNSS PPP 处理（MATLAB） | MATLAB | 14 | 🏷️ 个人社区 |
 | [RTPPP_B2b](https://github.com/floating0516/RTPPP_B2b) | 北斗 PPP-B2b 改正数解码与实时 PPP 接口 | C | 10 | 🏷️ 个人社区 核心 |
+| [PyGNSSFix](https://github.com/rodrigo-moliveira/PyGNSSFix) | Python SPP/PPP 工具箱（WLS/EKF，GPS+GAL） | Python | 7 | 🏷️ 个人社区 |
 | [ppp_rtklib](https://github.com/mulin33/ppp_rtklib) | 从 RTKLIB 抽出的独立 PPP 模块，便于精读源码 | C | 4 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -214,6 +216,13 @@ NRCan 公开的 PPP Fortran 代码，历史与官方 CSRS-PPP 服务同源脉络
 
 解码北斗 PPP-B2b 广播的精密轨道钟差改正，带流解析、缓冲与完整性检查，便于接入实时 PPP 流水线。做 BDS-3 短报文 PPP 或接收机原型时应优先阅读。仓库体量小、许可未标明，工程化与多系统融合仍需自补；可与 PRIDE、Ginan、RTKLIB 实时分支对照改正数接口设计。区域服务范围与信号可见性会直接影响改正可用性。
 
+#### [PyGNSSFix](https://github.com/rodrigo-moliveira/PyGNSSFix)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：7 · 宿主：github
+
+面向事后处理的 Python GNSS 定位工具包（MIT），实现 SPP、伪距 PPP 与载波 PPP，支持 GPS/Galileo、单双频与消电离层组合，求解器含 WLS 与 EKF，并含周跳检测与模糊度相关流程。适合教学与可复现实验。目前星座覆盖与工程化程度不及 PRIDE/Ginan 一类大型套件；配置与产品输入需按仓库示例核对。
+
 #### [ppp_rtklib](https://github.com/mulin33/ppp_rtklib)  
 *🏷️ 个人社区*
 
@@ -241,7 +250,7 @@ Geoscience Australia 对开源 GNSS 分析中心软件 Ginan 的官方说明，�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [gLAB-Download](https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite-links/glab-download) | gLAB 官方下载页：Linux 源码包与 Windows/Cygwin 安装包 | C/Python | — | 🏷️ 高校实验室 |
-| [gLAB-UPC](https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite) | UPC gAGE 官方 gLAB：ESA 合同支持的 GNSS 处理与教学套件 | C/Python | — | 🏷️ 高校实验室 核心 精选 |
+| [gLAB-UPC](https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite) | UPC gAGE 官方 gLAB：ESA 合同支持的 GNSS 处理与教学套件 | C/Python | — | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
 
@@ -253,7 +262,7 @@ Geoscience Australia 对开源 GNSS 分析中心软件 Ginan 的官方说明，�
 UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许可说明（GUI LGPL-3，核心/绘图 Apache 2.0）。做教学实验请从此获取而非不明镜像。版本与 Qt/Python 依赖需按说明匹配目标发行版，避免混用旧 GUI 与新核心。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
 
 #### [gLAB-UPC](https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite)  
-*🏷️ 高校实验室 核心 精选*
+*🏷️ 高校实验室 核心*
 
 语言：C/Python · 许可：Apache-2.0 + LGPL-3.0 (GUI) · 星标约：— · 宿主：official_site
 
@@ -292,7 +301,7 @@ GRAZ 等地学机构风格的工具包，覆盖重力场恢复与 GNSS 处理，
 | [GNSS-Explorer](https://github.com/brucezhcw/GNSS-Explorer) | 基于 RTKLIB 的 SPP 算法优化探索 | C | 21 | 🏷️ 个人社区 |
 | [GNSSPositioning](https://github.com/bitecc/GNSSPositioning) | SPP 教学程序（含电离层/对流层延迟改正） | C++ | 12 | 🏷️ 个人社区 |
 | [SPP_SPV](https://github.com/GYH-WHU/SPP_SPV) | 武大相关 GPS/BDS 单点定位与测速（C++/MATLAB）教学实现 | C++ | 7 | 🏷️ 高校实验室 |
-| [GSILIB](https://terras.gsi.go.jp/geo_info/gsilib/gsilib.html) | 日本国土地理院公开的多 GNSS 基线/PPP 解析库（RTKLIB 衍生，含 IFB/ISB） | C | — | 🏷️ 官方 核心 精选 |
+| [GSILIB](https://terras.gsi.go.jp/geo_info/gsilib/gsilib.html) | 日本国土地理院公开的多 GNSS 基线/PPP 解析库（RTKLIB 衍生，含 IFB/ISB） | C | — | 🏷️ 官方 核心 |
 
 ### 详细说明
 
@@ -339,7 +348,7 @@ C++20 风格的 SPP/RTK/PPP/CLAS 工具包，含 Python 绑定、Docker、ROS2 �
 基于 C++/MATLAB 的 GPS+BDS 单点定位与测速教学系统，可解码 NovAtel 等接收机输出后完成基本解算。适合本科/研究生课程设计。精度、完备性监测与粗差处理不及 RTKLIB 或商用引擎；科研对比应统一星历钟差产品与误差模型后再引用数值结论。
 
 #### [GSILIB](https://terras.gsi.go.jp/geo_info/gsilib/gsilib.html)  
-*🏷️ 官方 核心 精选*
+*🏷️ 官方 核心*
 
 语言：C · 许可：BSD-2-Clause (ANTApp GPL-3.0) · 星标约：— · 宿主：official_site
 
@@ -616,7 +625,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [MALIB](https://github.com/JAXA-SNU/MALIB) | JAXA/SNU 的 MADOCA-PPP 库：支持 L6E 的实时/事后 PPP（RTKLIB 衍生） | C | 77 | 🏷️ 官方 |
-| [MADOCALIB](https://github.com/QZSS-Strategy-Office/madocalib) | 日本内阁府 QZSS 官方 MADOCA-PPP 测试库（事后 PPP 参考实现） | C | 59 | 🏷️ 官方 核心 精选 |
+| [MADOCALIB](https://github.com/QZSS-Strategy-Office/madocalib) | 日本内阁府 QZSS 官方 MADOCA-PPP 测试库（事后 PPP 参考实现） | C | 59 | 🏷️ 官方 核心 |
 
 ### 详细说明
 
@@ -628,7 +637,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 日本宇宙航空研究开发机构与合作方发布的 MADOCA-PPP 专用程序包，在 RTKLIB 基础上强化 L6E 改正与 rtkrcv/rnx2rtkp 流程，并附带开空测试数据。面向实时与事后 MADOCA 定位试验。与内阁府 MADOCALIB/CLASLIB 互补；上游标注为 RTKLIB fork，选用时注意许可证与版本对应关系。
 
 #### [MADOCALIB](https://github.com/QZSS-Strategy-Office/madocalib)  
-*🏷️ 官方 核心 精选*
+*🏷️ 官方 核心*
 
 语言：C · 许可：BSD-2-Clause (+ additional clauses) · 星标约：59 · 宿主：github
 
@@ -696,7 +705,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 | [pygnsslab](https://github.com/PyGnssLab/pygnsslab) | Python 模块化 RINEX/PPP/PPP-AR 与实时流 | Python | 34 | 🏷️ 个人社区 |
 | [Urban-RTKLIB](https://github.com/MayHarryWang/Urban-RTKLIB) | 面向城市导航的 RTKLIB 改版，侧重 PPP/PPP-RTK | C | 25 | 🏷️ 高校实验室 |
 | [mrtklib-docker-ui](https://github.com/h-shiono/mrtklib-docker-ui) | MRTKLIB 的 Docker/Web 界面，方便后处理与实时演示 | TypeScript | 10 | 🏷️ 高校实验室 |
-| [PPP-Wizard](http://www.ppp-wizard.net/) | CNES PPP-WIZARD：整数模糊度 PPP-AR 演示与产品门户 | C++ | — | 🏷️ 官方 核心 精选 |
+| [PPP-Wizard](http://www.ppp-wizard.net/) | CNES PPP-WIZARD：整数模糊度 PPP-AR 演示与产品门户 | C++ | — | 🏷️ 官方 核心 |
 
 ### 详细说明
 
@@ -729,7 +738,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 给 MRTKLIB 套一层容器与网页操作，降低命令行门槛，便于课堂或外场演示 PPP/PPP-RTK。适合快速试 CLAS/MADOCA 相关配置与看星空图类状态。解算能力完全取决于背后的 MRTKLIB 版本与改正源；复杂工程参数仍建议回到命令行复现，并把容器镜像 tag 钉死以免漂移。
 
 #### [PPP-Wizard](http://www.ppp-wizard.net/)  
-*🏷️ 官方 核心 精选*
+*🏷️ 官方 核心*
 
 语言：C++ · 许可：see upstream · 星标约：— · 宿主：official_site
 
@@ -836,8 +845,6 @@ Python 下处理/绘制基于 RINEX 的 GPS 与 Galileo 数据，教学演示友
 ### 详细说明
 
 #### [RTKLIB](https://github.com/tomojitakasu/RTKLIB)  
-
-> 操作说明：[`docs/software/rtklib.md`](../docs/software/rtklib.md)
 *🏷️ 个人社区 ★ 核心*
 
 语言：C · 许可：— · 星标约：3128 · 宿主：github
@@ -865,3 +872,18 @@ Takasu 的 RTKLIB 是开源 RTK/PPP 事实标准之一，窗口工具与嵌入�
 语言：Rust · 许可：MIT · 星标约：18 · 宿主：github
 
 一个核心提供 SPP/RTK/PPP、SGP4/会合等与 RINEX/RTCM/SP3/NTRIP 解析，并带多语言绑定。适合想要「单依赖多协议」的新项目。相对经典库验证样本仍在积累，关键应用需交叉比对 RTKLIB/IGS。
+
+## 定位引擎绑定
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [sidereon-python](https://github.com/neilberkman/sidereon-python) | sidereon 引擎 Python 包（SPP/轨道/格式） | Python | 1 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [sidereon-python](https://github.com/neilberkman/sidereon-python)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：1 · 宿主：github
+
+sidereon 统一 GNSS+轨道力学引擎的 Python 发行（MIT，pip install sidereon），以 numpy 数组暴露 SPP、TLE 传播、SP3 加载与时间/坐标系转换；核为静态链接 Rust。目录已收录 Rust 主仓 sidereon，本条便于 Python 用户直达。功能面仍在演进；精密 PPP/RTK 深度需对照主仓路线图。

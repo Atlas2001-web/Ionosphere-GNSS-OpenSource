@@ -1,8 +1,9 @@
 # 导航 / Navigation & INS
+> 共 **57** 个已收录项目。本文件为链接索引，不含第三方源码。
 
-[![56](https://img.shields.io/badge/projects-56-blue.svg)](../PROJECTS.json) · GNSS/INS · 视觉组合 · 车载/机器人
+**这类做什么？** GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 
-> 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+来源标记：🏷️ 官方 = 机构/国家实验室；🏷️ 高校实验室 = 大学课题组；🏷️ 个人社区 = 个人或小团队。
 
 ## B2b组合导航
 
@@ -584,3 +585,18 @@ MATLAB 实现伪距、伪距率与 INS 的紧组合，并支持双天线测向�
 语言：Python · 许可：GPL-3.0 · 星标约：54 · 宿主：github
 
 ROS 包用于连接 NTRIP caster、接收 RTCM，并服务于 u-blox ZED-F9P 一类 RTK 接收机，方便机器人/自动驾驶实验车接入差分。适合 ROS1/相关车载栈快速打通链路。依赖具体 ROS 发行版与串口/USB 配置；不是通用精密大地测量软件。
+
+## 因子图融合
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [gnssFGO](https://github.com/hz658832/gnssFGO) | RWTH 在线 GNSS/多传感器因子图定位（ROS2） | C++ | 52 | 🏷️ 高校实验室 |
+
+### 详细说明
+
+#### [gnssFGO](https://github.com/hz658832/gnssFGO)  
+*🏷️ 高校实验室*
+
+语言：C++ · 许可：BSD-3-Clause · 星标约：52 · 宿主：github
+
+亚琛工大 IRT 的 gnssFGO（BSD-3-Clause，ROS 2），以连续时间轨迹与因子图融合松/紧耦合 GNSS、激光/视觉里程计等，配套数据集与 Docker。原 rwth-irt 仓已归档，维护迁至本地址。适合车载多传感器研究。依赖 ROS 2 与大量子模块，工程门槛高于纯 GNSS PPP 工具。

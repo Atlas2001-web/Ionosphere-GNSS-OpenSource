@@ -1,8 +1,9 @@
 # 移动与嵌入式应用 / Mobile Apps
+> 共 **16** 个已收录项目。本文件为链接索引，不含第三方源码。
 
-[![15](https://img.shields.io/badge/projects-15-blue.svg)](../PROJECTS.json) · 手机原始测量 · 嵌入式 · 简易定位
+**这类做什么？** 手机/嵌入式上的 GNSS 测试、原始测量记录与简易定位。
 
-> 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+来源标记：🏷️ 官方 = 机构/国家实验室；🏷️ 高校实验室 = 大学课题组；🏷️ 个人社区 = 个人或小团队。
 
 ## Android
 
@@ -57,6 +58,7 @@ PRIDE 团队面向智能手机的多频 GNSS 与 IMU 采集工具，便于把手
 |---|---|---|---:|---|
 | [ubxlib](https://github.com/u-blox/ubxlib) | u-blox 官方嵌入式 C 库（GNSS/蜂窝 API） | C | 358 | 🏷️ 官方 |
 | [GNSSTimeServer](https://github.com/Montecri/GNSSTimeServer) | ESP8266/ESP32 的 GNSS 授时 NTP/PTP 服务器 | C | 232 | 🏷️ 个人社区 |
+| [esp32-xbee](https://github.com/nebkat/esp32-xbee) | ESP32 NTRIP/UART 桥接固件（Ardusimple） | C | 119 | 🏷️ 个人社区 |
 | [STM32-GNSS](https://github.com/SimpleMethod/STM32-GNSS) | STM32 u-blox GNSS 库（UBX，含 DMA） | C | 89 | 🏷️ 个人社区 |
 | [satpulse](https://github.com/jclark/satpulse) | 跨平台 GNSS 授时、定位与接收机配置 GUI | Go | 63 | 🏷️ 个人社区 |
 | [STM32Primer2-GNSS-Tracker](https://github.com/nemuisan/STM32Primer2_GNSS_Tracker) | STM32 Primer2 平台的 GNSS 轨迹记录器 | C | 31 | 🏷️ 个人社区 |
@@ -78,6 +80,13 @@ u-blox 官方开源的可移植 C 库，面向 MCU/RTOS 场景提供 GNSS 与蜂
 语言：C · 许可：— · 星标约：232 · 宿主：github
 
 以太网/WiFi GNSS 授时服务器：以 GPS/北斗/GLONASS/Galileo 为时间源，对外提供 NTP、RDATE、PTP，硬件基于 ESP8266/ESP32 与 Arduino 生态。适合实验室、业余台站本地时间同步。精度受模块、天线与网络抖动限制，达不到电信机房原子钟等级；天线与固件选项对照上游说明。
+
+#### [esp32-xbee](https://github.com/nebkat/esp32-xbee)  
+*🏷️ 个人社区*
+
+语言：C · 许可：GPL-3.0 · 星标约：119 · 宿主：github
+
+Ardusimple WiFi NTRIP Master 的官方 ESP-IDF 固件（GPL-3.0），把 ESP32 UART 桥接到 WiFi，提供 NTRIP Client/Server/Caster 与 TCP/UDP、Web 配置界面。适合低成本基站/流动站差分链路。硬件引脚默认面向其板卡；通用 ESP32 需改 GPIO。不是精密定位解算器。
 
 #### [STM32-GNSS](https://github.com/SimpleMethod/STM32-GNSS)  
 *🏷️ 个人社区*

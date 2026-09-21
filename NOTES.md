@@ -251,3 +251,10 @@
 - 当前条目：**656**
 - 分类计数：{'ionosphere': 232, 'troposphere': 31, 'gnss-data': 92, 'gnss-positioning': 76, 'orbit-clock': 13, 'navigation-ins': 54, 'gnss-sdr': 57, 'mobile-apps': 12, 'tools-learning': 29, 'gnss-datasets': 60}
 - 来源统计：{'official': 160, 'academic_lab': 196, 'personal_community': 300}
+
+## 例行检索补录（2026-09-21）
+
+- 新增 **14** 条（earthscope-sdk/gnssanalysis/PyGNSSFix/ntrip-core/esp32-xbee/Heki/gnssFGO/UFCORS/OPUS 等）
+- 当前条目：**706**
+- 分类计数：{'ionosphere': 235, 'troposphere': 32, 'gnss-data': 108, 'gnss-positioning': 78, 'orbit-clock': 13, 'navigation-ins': 57, 'gnss-sdr': 58, 'mobile-apps': 16, 'tools-learning': 29, 'gnss-datasets': 80}
+- 详见 `research/routine_finds_20260921.json`

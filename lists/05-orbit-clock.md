@@ -1,8 +1,9 @@
 # 轨道与钟差 / Orbit & Clock
+> 共 **13** 个已收录项目。本文件为链接索引，不含第三方源码。
 
-[![13](https://img.shields.io/badge/projects-13-blue.svg)](../PROJECTS.json) · 精密轨道 · 钟差 · UPD/OSB
+**这类做什么？** 精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。
 
-> 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+来源标记：🏷️ 官方 = 机构/国家实验室；🏷️ 高校实验室 = 大学课题组；🏷️ 个人社区 = 个人或小团队。
 
 ## 时间比对
 
@@ -40,7 +41,7 @@ Yuanxin Pan 开源的钟差/相位偏差合成工具，源于学位论文并应�
 |---|---|---|---:|---|
 | [GFZ-SPOCC-news](https://www.gfz.de/en/section/space-geodetic-techniques/overview/details-section-news/veroeffentlichung-der-software-for-precise-orbit-and-clock-combination-spocc-1) | GFZ 发布 SPOCC 的新闻说明：多 GNSS 轨道钟差综合开源 | Python | — | 🏷️ 官方 |
 | [IGSMAIL-SPOCC](https://lists.igs.org/pipermail/igsmail/2025/008556.html) | IGSmail：SPOCC 轨道钟差综合软件向社区发布的公告 | text | — | 🏷️ 官方 |
-| [SPOCC](https://gnss.gfz.de/services/spocc) | GFZ SPOCC：多 GNSS 精密轨道与钟差加权综合软件 | Python | — | 🏷️ 官方 核心 精选 |
+| [SPOCC](https://gnss.gfz.de/services/spocc) | GFZ SPOCC：多 GNSS 精密轨道与钟差加权综合软件 | Python | — | 🏷️ 官方 核心 |
 
 ### 详细说明
 
@@ -59,7 +60,7 @@ GFZ 正式介绍 SPOCC 背景与目标的新闻页，说明从原型到可发布
 国际 GNSS 服务邮件列表中关于 SPOCC 开源发布的公告，确认软件面向多星座轨道与钟差加权综合，并给出 GFZ 服务页链接。属于官方发布记录，便于引用发布时间线；获取软件请转服务页，本页本身不是代码仓。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。
 
 #### [SPOCC](https://gnss.gfz.de/services/spocc)  
-*🏷️ 官方 核心 精选*
+*🏷️ 官方 核心*
 
 语言：Python · 许可：open (GFZ release) · 星标约：— · 宿主：official_site
 
@@ -69,12 +70,12 @@ GFZ 发布的 Software for Precise Orbit and Clock Combination，用方差分量
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Gkit-Bias](https://github.com/LiZhengXiao99/Gkit-Bias) | 面向全频点 PPP-AR 的开源卫星端偏差估计（DCB/UPD/IFCB 与 OSB 转换） | C++ | 8 | 🏷️ 个人社区 核心 精选 |
+| [Gkit-Bias](https://github.com/LiZhengXiao99/Gkit-Bias) | 面向全频点 PPP-AR 的开源卫星端偏差估计（DCB/UPD/IFCB 与 OSB 转换） | C++ | 8 | 🏷️ 个人社区 核心 |
 
 ### 详细说明
 
 #### [Gkit-Bias](https://github.com/LiZhengXiao99/Gkit-Bias)  
-*🏷️ 个人社区 核心 精选*
+*🏷️ 个人社区 核心*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：8 · 宿主：github
 

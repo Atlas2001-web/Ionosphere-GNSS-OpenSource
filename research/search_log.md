@@ -265,3 +265,12 @@
 - Dedup against live `PROJECTS.json` URLs; verified each keep with `gh api repos/{owner}/{repo}`
 - Highlights added: RADIATE (TU Wien ray-tracing), mpsim/GIRAS/GMR-Water (GNSS-IR), Gkit-Bias/MCOSB/clkcomb (bias/OSB), autorino/rinexmod (IPGP RINEX ops), FE-GUT & GNSS/INS FGO comparisons, ROS NTRIP/RTKLIB bridges, RAIM_PANG_NAV, GPSL1-MMT-DPE
 - Skipped: pure RTKLIB mirrors, Deep-Navigation/MRTKLIB mirror, thin PWV notebooks, already-cataloged BNC/GREAT-PVT/raPPPid/IonoMoni/OASIS/scintkit
+
+## Routine pass 2026-09-21
+
+- Catalog size before: **692**; after merge: **706** (+14)
+- Finds file: `research/routine_finds_20260921.json`
+- Method: WebSearch (agency/GitLab/gaps) + `gh search repos` (RINEX/NTRIP/PPP/scintillation topics; later hit API rate limit) + curl/`gh api` live checks; dedup vs `/tmp/existing_urls.txt` and PROJECTS.json
+- Highlights added: earthscope-sdk, GeoscienceAustralia/gnssanalysis, PyGNSSFix, ntrip-core, esp32-xbee, Heki TEC Fortran page, ubx-mga converter, grinq, GNSS_OSI_download, sidereon-python, gnssFGO (maintained fork), NOAA-UFCORS, NGS-OPUS, IBGE-RBMC-API
+- Skipped: PPPx (closed academic-only binary), TrigNet portal (egress unreachable), gnss.osi.ie portal (egress unreachable; kept download script), thin RINEX toys, mirrors of already-listed OASIS/IonoMoni/EarthScope-gnsstools, rwth-irt/gnssFGO archive URL (pointed users to hz658832 maintainer fork)
+
