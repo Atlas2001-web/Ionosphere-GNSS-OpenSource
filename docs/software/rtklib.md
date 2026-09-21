@@ -1,602 +1,243 @@
-# RTKLIB
+# RTKLIB · 定位 CLI 操作手册
 
-目录：[`PROJECTS.json` → `RTKLIB`](../../PROJECTS.json) · 上游 <https://github.com/tomojitakasu/RTKLIB> · 常用维护分支 <https://github.com/rtklibexplorer/RTKLIB>（demo5 / explorer）
+目录：[`PROJECTS.json` → `RTKLIB`](../../PROJECTS.json) · 原版 <https://github.com/tomojitakasu/RTKLIB> · explorer（推荐）<https://github.com/rtklibexplorer/RTKLIB>（原 demo5；**2025-07 起 demo5 分支退役，活动在 `main`，产品名常称 RTKLIB-EX**）
 
-> 操作手册。祈使句。**模式号 `-p`、解状态 Q 值以你编译的二进制 `-h` / 手册为准**——原版与 explorer 有差异。
+> 岗位：事后 SPP/RTK/浮点 PPP → `.pos`。本页旗标表来自 **本机编译的 explorer `rnx2rtkp` EX 2.5.1** 的 `-?`；换二进制先重跑 `-?`。
 
----
+## 1. 用途与边界
 
-## 用途与边界
+**做：** `rnx2rtkp` 事后定位；`convbin` 原始→RINEX；`str2str` 流转发；可选 GUI（RTKPOST/RTKNAVI）。主产品是**坐标时间序列**。
 
-**用：**
+**不做：** STEC/VTEC/ROTI（→ [pytecgg](./pytecgg.md)/[oasis-roti](./oasis-roti.md)）；发表级 PPP-AR（→ [pride-pppar](./pride-pppar.md)）；多流录盘主力（→ [bnc](./bnc.md)）。电离层在此是改正/误差源，不是 GIM 产品。
 
-- 开源 **SPP / DGPS / RTK / 静态 / 运动学 / 浮点 PPP**（库 + GUI + CLI）。
-- 主产品：**坐标时间序列**（`.pos`）与相关统计。
-- 事后：`rnx2rtkp`；原始日志转 RINEX：`convbin`；流转发：`str2str`；实时：`rtkrcv`。
-- 评估电离层扰动对**固定率 / 残差**的影响（对照 ROTI 高值时段）。
+## 2. 安装 / 编译（路径写死）
 
-**不用 / 边界：**
+### 2.1 Windows 预编译
 
-- **不是** STEC/VTEC/ROTI 产品引擎 → [pytecgg](./pytecgg.md)（viventriglia）、[oasis-roti](./oasis-roti.md)、[ionomoni](./ionomoni.md)。
-- **不是** 发表级 PPP-AR 首选 → [pride-pppar](./pride-pppar.md)。
-- **不是** NTRIP 多流录盘主力 → [bnc](./bnc.md)；脚本单流 → [pygnssutils](./pygnssutils.md)。
-- 电离层在 RTKLIB 里是**改正模型或误差源**，不是科研 GIM。SH-GIM 边界见 [sh-gim](./sh-gim.md)。
+1. 打开 <https://github.com/rtklibexplorer/RTKLIB/releases>
+2. 解压 zip，把含 `rnx2rtkp.exe` 的目录加入用户 PATH
+3. 新开 cmd：`rnx2rtkp -?` · `convbin -?`
 
-一句话：RTKLIB = **定位与流工具箱**；要 TEC 图请换链。
-
----
-
-## 安装（多平台 + 报错）
-
-### Windows
-
-1. 从 tomojitakasu 或 rtklibexplorer **Releases** 取预编译 zip。  
-2. 解压，把 `bin`（或含 `rnx2rtkp.exe` 的目录）加入用户 `PATH`。  
-3. 新开 cmd：
-
-```bat
-rnx2rtkp -h
-convbin -h
-str2str -h
-```
-
-### Linux（explorer / demo5 源码示例）
+### 2.2 Linux：explorer `main`（推荐 CMake）
 
 ```bash
 sudo apt update
-sudo apt install -y build-essential git make gcc g++
+sudo apt install -y build-essential cmake git gfortran
+# GUI 还要 Qt 开发包；只要 CLI 可稍后装
 git clone https://github.com/rtklibexplorer/RTKLIB.git
 cd RTKLIB
-# 按该仓库当前 README 进入 app/ 或对应目录 make
-# 示意（路径随分支变化，以 README 为准）：
-# cd app/consis && make
-# 或官方文档写明的 cmake/make 流程
-export PATH="$PWD/bin:$PATH"   # 按实际产出目录改
+mkdir -p build && cd build
+cmake ..
+make -j"$(nproc)"
+# 默认可执行文件进构建树；可选：
+sudo make install   # 通常装到 /usr/local/bin
 hash -r
-rnx2rtkp -h | head
-convbin -h | head
+rnx2rtkp -? | head
+rnx2rtkp --version
 ```
 
-### macOS
+### 2.3 Linux：只要 CLI 的旧 make（仍可用，README 标 DEPRECATED）
 
 ```bash
-xcode-select --install
-brew install gcc make git   # 若需要
-# 同 Linux：clone explorer 后按 README 编译
+cd RTKLIB/app/consapp/rnx2rtkp/gcc && make -j"$(nproc)"
+# 产出：./rnx2rtkp
+cd ../../convbin/gcc && make -j"$(nproc)"
+export PATH="/abs/path/to/RTKLIB/app/consapp/rnx2rtkp/gcc:/abs/path/to/RTKLIB/app/consapp/convbin/gcc:$PATH"
 ```
 
-### Docker / 无编译环境
+本手册验证：`app/consapp/rnx2rtkp/gcc` + `gfortran` 链接成功 → `rnx2rtkp RTKLIB EX 2.5.1`。
 
-优先用发行包或单位已编译二进制；不要在未理解分支差异时混用多个 `rnx2rtkp`。
-
-### 安装期常见报错
-
-| 现象 | 处理 |
-|---|---|
-| `rnx2rtkp: command not found` | PATH；`which rnx2rtkp` |
-| 编译 `undefined reference` | 缺库；装 `build-essential`；清再 make |
-| Windows 智能屏幕拦截 | 解除锁定 / 单位白名单 |
-| GUI 能开 CLI 没有 | 确认 `bin` 入 PATH，不是只装了 GUI 快捷方式 |
-| 两套 RTKLIB 行为不同 | `which -a rnx2rtkp`；删掉旧版或改 PATH 顺序 |
-| `-p` 与文档不符 | **重读本机 `-h`**，不要死记网络旧帖 |
-
-### 安装验收
+### 2.4 原版 tomojitakasu
 
 ```bash
-command -v rnx2rtkp convbin
-rnx2rtkp -h | head -n 40
-# 记录：分支名、编译日期、帮助里的 positioning mode 列表
+git clone https://github.com/tomojitakasu/RTKLIB.git RTKLIB-official
+# 同样走 app/consapp/<app>/gcc 或该仓 README
+# 不要与 explorer 的 rnx2rtkp 混在同一 PATH 前缀
+which -a rnx2rtkp
 ```
 
----
+| 现象 | 原因 | 修复 |
+| --- | --- | --- |
+| `command not found` | PATH | `export PATH=...:$PATH`；`hash -r` |
+| `cannot find -lgfortran` | 链了 Fortran 运行时 | `sudo apt install gfortran` |
+| 两套行为不同 | PATH 里多个二进制 | `which -a rnx2rtkp`；只留一套 |
+| `-p` 与网帖不符 | 分支差异 | 信本机 `-?` |
 
-## 快速冒烟（10 分钟）
+## 3. 端到端：测试数据 SPP → 读懂 `.pos` → 静态 RTK
 
-准备：rover OBS+NAV；RTK 再加 base OBS。路径占位。
+数据：explorer 仓自带 `test/data/rinex/30400920.05o` + `.05n`（及基站 `07590920.*`）。以下为 **本机 EX 2.5.1 真实输出**。
 
-```bash
-# 0) 输入自检
-head -n 5 rover.obs base.obs rover.nav
-python -m georinex.gtime rover.obs 2>/dev/null || gfzrnx -finp rover.obs -meta epo 2>/dev/null || true
-
-# 1) 原始日志 → RINEX（若已是 RINEX 跳过）
-convbin -r ubx -o rover.obs -n rover.nav rover.ubx
-# 期望：生成非空 rover.obs / rover.nav
-
-# 2) SPP 冒烟（最简）
-rnx2rtkp -o out_spp.pos rover.obs rover.nav
-wc -l out_spp.pos
-head -n 5 out_spp.pos
-# 期望：.pos 行数随历元增长；有头注释与数据行
-
-# 3) 静态 RTK 示意（-p 以 -h 为准！）
-rnx2rtkp -p 2 -m 15 -o out_rtk.pos rover.obs base.obs rover.nav
-grep -v '^%' out_rtk.pos | head
-```
-
-**冒烟失败：** 空 `.pos`、立刻退出码非 0、或全是 Q=0 —— 查共视、时间对齐、文件是否 HTML。
-
----
-
-## 完整工作流
-
-### 工作流 A：事后 SPP → 看电离层活跃日残差
-
-教程：[06](../tutorials/06-iono-positioning.md)。
+### 3.1 SPP（单点）
 
 ```bash
+RNX=rnx2rtkp   # 或绝对路径 .../gcc/rnx2rtkp
+D=RTKLIB/test/data/rinex
 mkdir -p out logs
-rnx2rtkp -o out/spp.pos -m 10 rover.obs rover.nav 2> logs/spp.err
-# 可选：配置文件
-# rnx2rtkp -k conf/spp.conf -o out/spp.pos rover.obs rover.nav
+$RNX -p 0 -m 15 -sys G -e -t \
+  -o out/spp.pos \
+  "$D/30400920.05o" "$D/30400920.05n"
 wc -l out/spp.pos
-awk 'BEGIN{c=0} !/^%/ {c++} END{print c}' out/spp.pos
+head -n 12 out/spp.pos
 ```
 
-**期望：** 数据行 > 0；日志无 `no navigation data` 一类致命错。
+**终端进度行含义：** `processing : 2005/04/02 00:00:30 Q=5` → 正在处理该历元；`Q=5` 表示当前解类型为 single（见下表）。
 
-对照同日 ROTI（[oasis-roti](./oasis-roti.md)）：高 ROTI 时段 SPP 噪声变大属预期，不是 RTKLIB「坏了」。
+**真实文件头 + 首行数据：**
 
-### 工作流 B：短基线静态 RTK
+```text
+% program   : rnx2rtkp ver.EX 2.5.1
+% inp file  : .../30400920.05o
+% inp file  : .../30400920.05n
+% obs start : 2005/04/02 00:00:00.0 GPST (week1316 518400.0s)
+% obs end   : 2005/04/02 00:59:30.0 GPST (week1316 521970.0s)
+%
+% (x/y/z-ecef=WGS84,Q=1:fix,2:float,3:sbas,4:dgps,5:single,6:ppp,ns=# of satellites)
+%  GPST                      x-ecef(m)      y-ecef(m)      z-ecef(m)   Q  ns   sdx(m)   sdy(m)   sdz(m)  sdxy(m)  sdyz(m)  sdzx(m) age(s)  ratio
+2005/04/02 00:00:00.000  -3978242.2255   3382841.5580   3649902.4074   5   7   4.5201   5.5463   4.4294  -4.4441   3.8489  -3.3337   0.00    0.0
+```
+
+### 3.2 逐字段解码（上表第一行数据）
+
+| 字段 | 本行值 | 含义 |
+| --- | --- | --- |
+| 日期时间 | `2005/04/02 00:00:00.000` | 解的历元；因 `-t` 为 `yyyy/mm/dd hh:mm:ss.ss`；默认时间系 GPST（`-u` 改 UTC） |
+| x-ecef | `-3978242.2255` | WGS84 ECEF X (m)；因加了 `-e`。不加 `-e` 则是 lat/lon/height |
+| y-ecef | `3382841.5580` | ECEF Y (m) |
+| z-ecef | `3649902.4074` | ECEF Z (m) |
+| Q | `5` | 解状态：1 fix / 2 float / 3 sbas / 4 dgps / **5 single** / 6 ppp |
+| ns | `7` | 所用卫星数 |
+| sdx/sdy/sdz | `4.52…` | 坐标标准差 (m) |
+| sdxy/sdyz/sdzx | 协方差项 | 用于误差椭圆等 |
+| age | `0.00` | 差分龄期 (s)；SPP 为 0 |
+| ratio | `0.0` | 模糊度固定 ratio；SPP 无 AR → 0 |
+
+### 3.3 静态 RTK（rover + base）
 
 ```bash
-# B1 确认时间重叠与共视（可用 georinex / anubis）
-# B2 跑 RTK（示例旗标，核对 -h）
-rnx2rtkp -p 2 -m 15 -o out/rtk.pos \
-  rover.obs base.obs rover.nav 2> logs/rtk.err
+$RNX -p 3 -m 15 -sys G -e -t \
+  -o out/rtk.pos \
+  "$D/07590920.05o" "$D/30400920.05o" \
+  "$D/07590920.05n" "$D/30400920.05n"
+# 文件顺序：第 1 个 OBS = rover，第 2 个 OBS = base，其后 NAV…
+grep -v '^%' out/rtk.pos | head -n 5
+```
 
-# B3 统计 Q（列位置随版本变——先 head 看列名）
-head -n 30 out/rtk.pos
-# 典型注释含 Q: 1=fix, 2=float, 5=single ...（以文件头为准）
+**真实片段：**
 
+```text
+2005/04/02 00:00:00.000  -3976219.7132   3382373.1680   3652512.9438   2   7  ...  ratio 0.0
+2005/04/02 00:01:00.000  ...                                                         Q=2
+2005/04/02 00:01:30.000  -3976219.4191   3382372.5427   3652512.5819   1   7  ...  ratio 40.1
+```
+
+解读：前几历元 `Q=2`（float）→ `00:01:30` 起 `Q=1`（fix），`ratio` 从 0 跳到 ~40。固定后 `sdx` 从米级掉到毫米级——这是短基线静态 RTK 的正常收敛，不是“文件坏了”。
+
+### 3.4 统计 Q 分布
+
+```bash
 python - <<'PY'
 from collections import Counter
 q=Counter()
 with open("out/rtk.pos") as f:
     for line in f:
-        if line.startswith("%") or not line.strip():
-            continue
+        if line.startswith("%") or not line.strip(): continue
         parts=line.split()
-        # 许多版本 Q 在 ECEF 三列之后；若失败请按文件头改索引
-        if len(parts) >= 6:
-            try: q[parts[5]] += 1
-            except Exception: pass
+        # -e -t 时：日期 时间 x y z Q ns ...
+        q[parts[5]] += 1
 print(dict(q))
 PY
 ```
 
-**期望：** 短基线晴朗电离层下固定占比合理；赤道夜间 / 磁暴日固定率下降 → 对照教程 [05](../tutorials/05-scintillation-roti.md)/[20](../tutorials/20-storm-tec-analysis.md)。
+## 4. `rnx2rtkp` 全旗标表（EX 2.5.1 `-?`）
 
-### 工作流 C：浮点 PPP（事后）
+| 旗标 | 作用 | 默认 |
+| --- | --- | --- |
+| `-?` | 打印帮助 | |
+| `-k file` | 从 conf 读选项；**命令行覆盖 conf** | off |
+| `-o file` | 输出 `.pos`；省略则 stdout | stdout |
+| `-ts ds ts` | 起始 `y/m/d` + `h:m:s` | OBS 起点 |
+| `-te de te` | 结束日时 | OBS 终点 |
+| `-ti tint` | 输出间隔秒 | 全历元 |
+| `-p mode` | 0 single · 1 dgps · 2 kinematic · 3 static · 4 static-start · 5 moving-base · 6 fixed · 7 ppp-kine · 8 ppp-static · 9 ppp-fixed | **2**（注意默认是 kinematic！SPP 必须显式 `-p 0`） |
+| `-m mask` | 高度截止角（度） | 15 |
+| `-sys s[,s…]` | G/R/E/J/C/I | 帮助写 G\|R；本机构建里未指定时源码会扩到多系统——**以你跑出的行为为准** |
+| `-f freq` | 相对定位频率数 1/2/3 | 2 |
+| `-v thres` | AR 检验阈值；`0.0`=不做 AR | 3.0 |
+| `-b` | 反向滤波 | off |
+| `-c` | 前后向组合 | off |
+| `-i` | 瞬时 AR | off |
+| `-h` | fix-and-hold AR | off |
+| `-bl bl,std` | 基线长约束 | |
+| `-e` | 输出 ECEF xyz | 默认 lat/lon/h |
+| `-a` | 输出 ENU 基线 | |
+| `-n` | NMEA GGA | off |
+| `-g` | lat/lon 用度分秒 | 默认小数度 |
+| `-t` | 时间用日历格式 | 默认 GPS 秒 |
+| `-u` | 时间 UTC | 默认 GPST |
+| `-d col` | 时间小数位 | 3 |
+| `-s sep` | 字段分隔符 | 空格 |
+| `-r x y z` | 基站（或 fixed 模式流动站）ECEF | 单点均值 |
+| `-l lat lon hgt` | 同上，地理坐标 | |
+| `-y level` | 0 off / 1 states / 2 residuals → `.stat` | 0 |
+| `-x level` | debug trace | 0 |
+| `--rover` / `--base` | 多站名列表 | |
+| `--version` | 打印版本 | |
 
-```bash
-# 需要与观测日匹配的 SP3 + CLK；天线模型按手册
-ls precise.sp3 precise.clk
-rnx2rtkp -o out/ppp.pos rover.obs rover.nav precise.sp3 precise.clk 2> logs/ppp.err
-# 或 -k conf/ppp.conf
-wc -l out/ppp.pos
-tail -n 5 out/ppp.pos
-```
+输入文件规则：最多 16 个；**第一个 OBS = rover**；相对模式**第二个 OBS = base**；至少一个 NAV；SP3 扩展名 `.sp3`/`.eph`；路径可用通配符（shell 下请加引号）。
 
-**期望：** 收敛后坐标稳定；缺产品 / 时长过短 → 不收敛。发表级模糊度固定走 [pride-pppar](./pride-pppar.md)。
-
-### 工作流 D：convbin 批量 + QC 后再定位
-
-```bash
-for ubx in raw/*.ubx; do
-  b=$(basename "$ubx" .ubx)
-  convbin -r ubx -o "rinex/${b}.obs" -n "rinex/${b}.nav" "$ubx"
-done
-# QC
-# anubis ...
-# 再 rnx2rtkp
-```
-
-### 工作流 E：实时流（先事后、后实时）
-
-```bash
-# E1 用 BNC/pygnssutils 确认能拉流并落盘
-# E2 str2str 转发示例（端口与路径自定）
-str2str -in ntrip://user:pass@caster:2101/MOUNT -out tcpsvr://:2102
-# E3 rtkrcv 或 RTKNAVI 订该端口
-# 失败时：立刻退回文件模式 rnx2rtkp，排除流龄期问题
-```
-
-实时 PPP 无匹配 SSR 时关掉 PPP，只验流。
-
-### 工作流 F：配置文件固化实验
+### 4.1 `convbin` 最小例
 
 ```bash
-cp conf/template.conf conf/my_rtk.conf
-# 编辑：pos1-posmode, elev mask, ionoopt, tropopt, anttype...
-rnx2rtkp -k conf/my_rtk.conf -o out/exp001.pos rover.obs base.obs rover.nav
-# 每次只改一个旋钮；日志与 conf 一并归档
+convbin -r ubx -o rover.obs -n rover.nav rover.ubx
+# -r：原始格式；-o OBS；-n NAV
+head -n 3 rover.obs   # 期望 RINEX VERSION / TYPE
 ```
 
----
+### 4.2 配置文件固化
 
-## 输入 / 输出与字段表
+```bash
+rnx2rtkp -k conf/my_rtk.conf -o out/exp.pos rover.obs base.obs rover.nav
+# 每次只改 conf 里一个键（pos1-posmode / pos1-elmask / pos1-ionoopt…）
+```
 
-### 输入
+## 5. 接到哪一步
 
-| 类型 | 说明 |
-|---|---|
-| RINEX OBS | rover 必需；RTK 加 base |
-| RINEX NAV | 广播星历；PPP 可加精密产品 |
-| SP3 / CLK | PPP |
-| ANTEX / 天线参数 | 精密处理 |
-| UBX/RTCM/原始 | 经 `convbin` / `str2str` |
-| 可选 IONEX | 作电离层改正输入（仍非 TEC 产品输出） |
+| 场景 | 动作 | 链接 |
+| --- | --- | --- |
+| 电离层与定位 | 本页 SPP/RTK | [06](../tutorials/06-iono-positioning.md) |
+| 磁暴日固定率 | RTK Q 序列 + ROTI | [20](../tutorials/20-storm-tec-analysis.md) · [oasis-roti](./oasis-roti.md) |
+| 实时 | 先事后冒烟，再 [bnc](./bnc.md) 转发 + `str2str`/`rtkrcv` | 路径 C |
+| 发表坐标 | 冒烟后换 | [pride-pppar](./pride-pppar.md) |
+| 只要 TEC | 离开本页 | [pytecgg](./pytecgg.md) |
 
-### 输出 `.pos`（常见列，以文件头为准）
+## 6. 坑（现象 → 原因 → 修复）
 
-| 列 / 标记 | 含义 | 操作注意 |
-|---|---|---|
-| 时间 | GPST 等 | 与 ROTI/TEC 对齐时统一时间系 |
-| x/y/z 或 e/n/u | 坐标 | 看头：ECEF 还是 ENU |
-| `Q` | 解状态 | 1 固定 / 2 浮点 / … 以头注释为准 |
-| `ns` | 卫星数 | 过少不可信 |
-| sdn/sde/… | 标准差 | 用于粗滤 |
+| # | 现象 | 原因 | 修复 |
+| --- | --- | --- | --- |
+| 1 | `.pos` 几乎空 / 退出非 0 | 无 NAV、OBS 是 HTML、路径错 | `head` 输入；查 stderr；换 NAV 日 |
+| 2 | 自称 RTK 但 Q 全是 5 | 没传 base 或 `-p` 仍是 single | 确认第 2 个 OBS；`-p 3` |
+| 3 | 固定率崩 | 基线过长 / 无共视 / 截止角过高 | 查时间重叠；`-m 10`；换短基线 |
+| 4 | PPP 不收敛 | 缺 SP3/CLK 或日期错一天 | `head`/`tail` 产品时间；加长观测 |
+| 5 | 死记 `-p` 跨分支 | 原版/EX 文档混贴 | 每次 `-?`；归档 `rnx2rtkp -? > logs/help.txt` |
+| 6 | 天线高系统差 | ARP/天线高未设 | conf 里天线参数；或先冒烟再精密 |
+| 7 | 实时乱跳先调 AR | 流龄期/网络 | 先修 caster；`age` 列；退回文件模式 |
+| 8 | 把 `.pos` 当 TEC | 链选错 | → pytecgg |
+| 9 | GUI 勾选与 CLI conf 不一致 | 两套来源 | 只信磁盘上的 `-k` 文件 |
+| 10 | 旧 `.pos` 被追加弄脏 | 同名输出 | 跑前 `rm` 或换 `-o` |
+| 11 | 列解析脚本升级后错位 | 头注释变了 | 重读 `%` 头；按列名解析 |
+| 12 | `no common satellites` | 时间/系统无交集 | georinex 对两端 `gtime`/time；`-sys` 对齐 |
+| 13 | PATH 里官方与 EX 混用 | 两个 `rnx2rtkp` | `which -a`；删旧或改顺序 |
+| 14 | 磁暴对照却同时改了全部参数 | 实验不干净 | 只留电离层相关旋钮 |
 
-可选 `.stat`：残差与内部状态，排障用。
-
-### 不做的输出
-
-校准 STEC、ROTI 序列、IONEX GIM、闪烁 S4。
-
----
-
-## 常用参数
-
-| 项 | 说明 |
-|---|---|
-| `-p` | 定位模式编号（**必查 `-h`**） |
-| `-o` | 输出 `.pos` |
-| `-m` | 高度截止角（度） |
-| `-k conf` | 配置文件 |
-| `-sys` | 系统过滤（若支持） |
-| `convbin -r` | 原始格式：ubx/rtcm3/… |
-| `str2str -in/-out` | 流 URL |
-| ionoopt / tropopt | 多在 conf；模型选择影响 PPP/RTK |
-
-GUI（RTKNAVI / RTKPOST）与 CLI 配置**不要混用同一实验的「口头参数」**——以实际写入的 conf 为准。
-
----
-
-## 接到 tutorials / 工作流哪一步
-
-| 场景 | 步骤 | 链接 |
-|---|---|---|
-| 电离层与定位 | 本页工作流 A/B | [06](../tutorials/06-iono-positioning.md) |
-| 磁暴日固定率 | B + ROTI 对照 | [20](../tutorials/20-storm-tec-analysis.md) · [05](../tutorials/05-scintillation-roti.md) |
-| 实时差分实验 | E + BNC | [bnc](./bnc.md) · 路径 C |
-| 发表级坐标 | RTKLIB 冒烟后换 | [pride-pppar](./pride-pppar.md) |
-| 输入 QC | 定位前 | [anubis](./anubis.md) · [gfzrnx](./gfzrnx.md) |
-| 只要 TEC | 离开本页 | [pytecgg](./pytecgg.md) · [02](../tutorials/02-gnss-dualfreq-tec.md) |
-
----
-
-## 可操作坑（≥12）
-
-1. **死记 `-p` 数字跨分支** — 每次新二进制先 `-h`。  
-2. **无共视硬跑 RTK** — 先时间重叠与星座交集。  
-3. **基线过长当短基线静态** — 固定率崩；改策略或 PPP。  
-4. **PPP 缺 SP3/CLK 或日期错一天** — 不收敛。  
-5. **天线高 / ARP 未设** — 高程系统差。  
-6. **实时龄期爆炸却先调模糊度参数** — 先修网络与 caster。  
-7. **把 `.pos` 当 TEC** — 错链；去 pytecgg。  
-8. **混用 GUI 勾选与 CLI 旧 conf** — 归档 conf 哈希。  
-9. **高多路径站** — 先 Anubis；别只降截止角。  
-10. **NAV 与 OBS 不同日** — 夜班文件拼接错误。  
-11. **Windows 与 Linux 换行 / 路径** — conf 内路径用正斜杠或按手册。  
-12. **磁暴日与静日比固定率却改了全部参数** — 只留电离层相关变量。  
-13. **str2str 权限绑定低端口** — 用 2102 等高端口。  
-14. **explorer 与原版文档混贴** — 选定分支，只看该分支文档。  
-15. **输出被旧文件追加弄脏** — 跑前删或换 `-o` 名。  
-16. **忽略头注释改列解析脚本** — 升级 RTKLIB 后重看头。
-
----
-
-## 同类选型
+## 7. 选型
 
 | 需求 | 选 |
-|---|---|
-| 教学 / 工程 RTK、快速 PPP 冒烟 | **RTKLIB** |
-| PPP-AR、精密科研坐标 | **PRIDE-PPPAR** |
-| 多流录盘 GUI | **BNC** |
-| 脚本拉一流 | **pygnssutils** |
-| TEC / ROTI | **pytecgg / oasis-roti / ionomoni** |
-
----
-
-## 操作检查清单
-
-1. `rnx2rtkp`/`convbin` 在 PATH。  
-2. 记录分支与 `-h` 模式表。  
-3. SPP 非空 `.pos`。  
-4. RTK：共视、基线、Q 分布合理。  
-5. PPP：产品时间覆盖。  
-6. conf 与日志同目录归档。  
-7. 实时前先事后冒烟。  
-8. 不把输出当 TEC。  
-9. 高 ROTI 时段单独标记。  
-10. 参数以本机手册为准。
-
----
-
-## 附录 A · `.pos` 头示意
-
-```text
-% program   : RTKLIB demo5
-% ...
-% (x/y/z-ecef=0,e/n/u-baseline=1,... Q=1:fix,2:float,3:sbas,4:dgps,5:single,6:ppp)
-%  GPST                  x-ecef(m)      y-ecef(m)      z-ecef(m)   Q  ns
-%  2024/01/01 00:00:00.000  ...
-```
-
-列索引以**你的文件头**为准，勿照抄旧博客。
-
----
-
-## 附录 B · 最小回归
-
-```bash
-#!/usr/bin/env bash
-set -euo pipefail
-rnx2rtkp -o /tmp/spp_smoke.pos "$1" "$2"
-test -s /tmp/spp_smoke.pos
-grep -v '^%' /tmp/spp_smoke.pos | head -n 1
-echo PASS
-```
-
-用法：`./smoke.sh rover.obs rover.nav`。
-
----
-
-## 附录 C · 与 ROTI 对照流程
-
-```bash
-# 1) 出 pos
-rnx2rtkp -k conf/rtk.conf -o out/storm.pos rover.obs base.obs rover.nav
-# 2) 出 ROTI（工具链见 oasis-roti / ionomoni 手册）
-# 3) 按时间对齐画 Q 与 ROTI；只报告相关，不宣称因果除非实验设计支持
-```
-
----
-
-## 附录 D · conf 关键项备忘（名称随版本）
-
-| 概念 | 常见键（示意） | 操作 |
-|---|---|---|
-| 模式 | pos1-posmode | 与 `-p` 一致 |
-| 截止角 | pos1-elmask | 15–20 常见起点 |
-| 电离层 | pos1-ionoopt | 改时记日志 |
-| 对流层 | pos1-tropopt | PPP 敏感 |
-| 动力学 | pos1-dynamics | 静态/运动 |
-| 模糊度 | pos2-* | 别一次全改 |
-
----
-
-## 附录 E · convbin 期望
-
-```text
-$ convbin -r ubx -o rover.obs -n rover.nav rover.ubx
-# 退出码 0；ls -l rover.obs 显示合理字节；head 见 RINEX VERSION
-```
-
-失败：格式旗标错、文件截断、权限。
-
----
-
-## 附录 F · 错误日志关键词
-
-| 日志 | 动作 |
-|---|---|
-| no common satellites | 查时间 / 系统 |
-| no navigation data | NAV 路径 / 日 |
-| point positioning error | 先 SPP 单独跑 |
-| age of differential | 流延迟 |
-| authenticity / license N/A | 忽略网络谣传；RTKLIB 开源 |
-
----
-
-## 附录 G · 目录推荐布局
-
-```text
-exp/2024-01-01/
-  raw/ conf/ rinex/ out/ logs/
-  README.txt   # 分支、命令、数据来源
-```
-
----
-
-## 附录 H · 何时离开 RTKLIB
-
-- 需要校准 TEC 图与 IPP → pytecgg。  
-- 需要开源球谐解 → 列表 mosgim 等；非 SH-GIM 公开仓。  
-- 需要多流合规录盘 → BNC。  
-- 需要 AR 产品级 → PRIDE-PPPAR。
-
----
-
-## 相关工具
-
-[pride-pppar](./pride-pppar.md) · [bnc](./bnc.md) · [pygnssutils](./pygnssutils.md) · [anubis](./anubis.md) · [gfzrnx](./gfzrnx.md) · [georinex](./georinex.md) · [oasis-roti](./oasis-roti.md) · [pytecgg](./pytecgg.md)
-
-
----
-
-## 附录 I · 逐步排障树
-
-```text
-.pos 空或几乎空
-  ├─ rnx2rtkp 退出码非 0 → 读 logs/*.err 第一处 error
-  ├─ no navigation data → 换 NAV / 查日界
-  ├─ OBS 是 HTML → 重新下载
-  └─ 有数据但 Q 全 single
-        ├─ 声称 RTK → 查是否传入 base.obs
-        ├─ 基线过长 / 共视差 → 缩时段或换站
-        └─ 截止角过高 → 降到 10–15 再比
-
-PPP 不收敛
-  ├─ SP3/CLK 覆盖？ `head`/`tail` 产品时间
-  ├─ 观测时长 < 1–2 h？加长
-  ├─ 天线/PCV？先关精密天线选项冒烟
-  └─ 仍差 → 换 PRIDE-PPPAR 做对照
-```
-
----
-
-## 附录 J · 与 georinex 联合确认输入
-
-```bash
-python - <<'PY'
-import georinex as gr
-ro = gr.load("rover.obs", use="G")
-ba = gr.load("base.obs", use="G")
-print("rover", ro.time.values[0], ro.time.values[-1], ro.sizes)
-print("base ", ba.time.values[0], ba.time.values[-1], ba.sizes)
-# 粗算重叠
-import numpy as np
-t0 = max(ro.time.values[0], ba.time.values[0])
-t1 = min(ro.time.values[-1], ba.time.values[-1])
-print("overlap_ok", t0 < t1, t0, t1)
-PY
-rnx2rtkp -p 2 -o out/rtk.pos rover.obs base.obs rover.nav
-```
-
----
-
-## 附录 K · 批量多日 SPP
-
-```bash
-#!/usr/bin/env bash
-set -euo pipefail
-for day in 001 002 003; do
-  rnx2rtkp -o "out/spp_${day}.pos" \
-    "rinex/ROVI${day}0.24o" "rinex/brdc${day}0.24n" \
-    2> "logs/spp_${day}.err" || echo "FAIL $day" | tee -a logs/fail.txt
-done
-wc -l out/spp_*.pos
-```
-
----
-
-## 附录 L · 质量门禁（交付前）
-
-| 门禁 | 阈值（按项目改） |
-|---|---|
-| SPP 行数 | > 100 |
-| RTK 固定占比 | 短基线静日 > 50%（示例） |
-| 卫星数中位 | ≥ 8 |
-| 日志 fatal | 0 |
-| conf 已归档 | 是 |
-
-不达标：停止出图，先修数据。
-
----
-
-## 附录 M · 命令速查卡
-
-```bash
-rnx2rtkp -h
-convbin -h
-str2str -h
-rtkrcv -h   # 若已编译
-rnx2rtkp -o out.pos rover.obs rover.nav
-rnx2rtkp -k my.conf -o out.pos rover.obs base.obs rover.nav
-convbin -r ubx -o a.obs -n a.nav a.ubx
-str2str -in file://a.rtcm3 -out tcpsvr://:2102
-```
-
----
-
-## 附录 N · 期望成功输出（SPP）
-
-```text
-%  GPST                  x-ecef(m)      y-ecef(m)      z-ecef(m)   Q  ns
-2024/01/01 00:00:00.000  -3960000.123   3340000.456   3700000.789   5  10
-2024/01/01 00:00:30.000  -3960000.111   3340000.444   3700000.777   5  11
-```
-
----
-
-## 附录 O · 安全与合规
-
-- NTRIP 账号勿写入公开 git；用环境变量或本地 conf（gitignore）。  
-- 数据再分发遵守提供方条款。  
-- 不要对未授权 caster 做压测。
-
----
-
-## 附录 P · 版本记录模板
-
-```text
-date:
-rtklib_branch:
-commit_or_release:
-uname:
-command:
-input_files:
-output:
-notes:
-```
-
-每跑关键实验填一行。
-
-
----
-
-## 附录 Q · 静态 vs 运动学检查
-
-```bash
-# 静态：接收机固定，pos 应收敛到亚米～厘米级（视模式）
-# 运动学：不要用静态模式硬套车载数据
-rnx2rtkp -k conf/static.conf -o out/static.pos rover.obs base.obs rover.nav
-rnx2rtkp -k conf/kinematic.conf -o out/kine.pos rover.obs base.obs rover.nav
-# 比较 residuals / Q；车载用 kinematic
-```
-
----
-
-## 附录 R · 电离层选项对照实验（可重复）
-
-```bash
-for opt in off brdc ionex; do
-  # 在 conf 中切换 ionoopt；或按你分支支持的 CLI
-  cp conf/base.conf conf/iono_${opt}.conf
-  # 编辑 conf/iono_${opt}.conf …
-  rnx2rtkp -k conf/iono_${opt}.conf -o out/iono_${opt}.pos \
-    rover.obs base.obs rover.nav 2> logs/iono_${opt}.err
-done
-# 只改电离层项；其余锁定；结果表归档
-```
-
----
-
-## 附录 S · 相关工具（复述）
-
-[bnc](./bnc.md) · [pygnssutils](./pygnssutils.md) · [pride-pppar](./pride-pppar.md) · [anubis](./anubis.md) · [gfzrnx](./gfzrnx.md) · [georinex](./georinex.md) · [oasis-roti](./oasis-roti.md) · [ionomoni](./ionomoni.md) · [pytecgg](./pytecgg.md) · [sh-gim](./sh-gim.md)
-
-
----
-
-## 附录 T · 一页纸验收
-
-1. `which rnx2rtkp` 指向预期分支。  
-2. SPP `.pos` 非空。  
-3. RTK 有 base 且 Q 有变化。  
-4. PPP 产品日匹配。  
-5. conf + 日志已归档。  
-6. 未把输出标成 TEC。  
-7. 教程 [06](../tutorials/06-iono-positioning.md) 对照完成。  
-8. 高 ROTI 时段已标记。  
-9. NTRIP 密钥未入 git。  
-10. `-h` 已保存到 `logs/rnx2rtkp_help.txt`。
-
-```bash
-rnx2rtkp -h > logs/rnx2rtkp_help.txt
-convbin -h > logs/convbin_help.txt
-```
-
-完成以上再宣布「RTKLIB 链路通」。
+| --- | --- |
+| 教学/工程 RTK、PPP 冒烟 | **RTKLIB / EX** |
+| PPP-AR | **PRIDE-PPPAR** |
+| 多流录盘 | **BNC** |
+| TEC/ROTI | **pytecgg / oasis-roti / ionomoni** |
+
+## 8. 相关
+
+[pride-pppar](./pride-pppar.md) · [bnc](./bnc.md) · [pygnssutils](./pygnssutils.md) · [anubis](./anubis.md) · [gfzrnx](./gfzrnx.md) · [georinex](./georinex.md) · [pytecgg](./pytecgg.md)
