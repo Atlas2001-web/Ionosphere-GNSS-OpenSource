@@ -15,6 +15,14 @@
 
 ## 1. 仓库里都有什么？（地图）
 
+
+![目录导航卡片：按问题选入口](./images/fig-catalog-nav.png)
+
+> **看图要点**
+> - **看什么**：按问题选 `lists` / `PROJECTS.json` / 教程 / 软件短文入口。
+> - **别误判**：导览册 ≠ 把上游源码拷进本仓。
+> 图源：自制 CC0。
+
 | 路径 | 作用 |
 |---|---|
 | [`lists/01-ionosphere.md`](../../lists/01-ionosphere.md) … [`lists/10-gnss-datasets.md`](../../lists/10-gnss-datasets.md) | 人读的分类表 + 中文分析 |

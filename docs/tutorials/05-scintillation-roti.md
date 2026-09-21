@@ -457,6 +457,12 @@ ROTI 工具举例：`igs-roti`、`Okoh-MATLAB-ROT-ROTI`、`Ionospheric-TEC-ROTI-
 > - **别误判**：区域裁剪示意；勿与美洲窗口数值横比窗长未对齐的产品。
 > 图源：本仓库自制示意场 + Natural Earth 海岸线（非实测事件）。
 
+![ROTI 热点海岸图：夜侧低纬抖点](./images/fig-roti-hotspots-coast.png)
+
+> **看图要点**
+> - **看什么**：夜侧低纬 ROTI 热点相对海岸与磁纬的落点，是否贴日落后窗口。
+> - **别误判**：高 ROTI ≠ 高 TEC；示意热点勿当实测事件定位。
+> 图源：自制示意场 + Natural Earth 海岸线（非实测）。现象细读见 19–23。
 
 ### 11.5 「TEC 降 + S4 升」可以同窗
 

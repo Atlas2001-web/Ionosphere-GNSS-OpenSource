@@ -409,6 +409,8 @@ $$
 ### 7.6 为何双频能测、单频只能猜？（方程预告）
 
 
+![单频猜 vs 双频测](./images/fig-singlefreq-vs-dualfreq.png)
+
 > **看图要点**：同一份真延迟，单频模型只能贴近；双频用第二把尺子直接量。图源：自制 CC0。
 
 ![单频只能改正 vs 双频可测 TEC](./images/fig-single-vs-dual-tec.png)
