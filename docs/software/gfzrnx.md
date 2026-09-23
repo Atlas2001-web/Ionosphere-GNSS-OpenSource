@@ -1,10 +1,10 @@
 # GFZRNX
 
-目录：[`PROJECTS.json` → `GFZRNX`](../../PROJECTS.json) · 产品页 <https://www.gfz.de/en/section/space-geodetic-techniques/data-products-services/gfzrnx-gnss-toolbox> · 用户手册 <https://gnss.git-pages.gfz-potsdam.de/gfzrnx/> · 下载/许可 <https://gnss.gfz-potsdam.de/services/gfzrnx>
+目录：[`PROJECTS.json` → `GFZRNX`](../../PROJECTS.json) · 产品页 <https://www.gfz.de/en/section/space-geodetic-techniques/data-products-services/gfzrnx-gnss-toolbox> · 用户手册 <https://gnss.git-pages.gfz-potsdam.de/gfzrnx/> · 下载/许可 <https://gnss.gfz.de/services/gfzrnx>
 
 > 操作手册。祈使句。面向电离层/GNSS 流水线的 **RINEX 预处理**。参数以本机 `gfzrnx -h` 与上游 Users Guide 为准（常见 2.2.x）。路径为占位符。可执行文件名因平台而异（`gfzrnx_lx` / `gfzrnx_osx` / `gfzrnx.exe`）；下文统一写 `gfzrnx`。
 >
-> **本 QC 环境未安装官方二进制**（须在 <https://gnss.gfz-potsdam.de/services/gfzrnx> **登记下载**）。下文命令与 `-h` 节选来自 Users Guide / 已捕获帮助文本；装上后以本机 `gfzrnx -h` 覆盖。**不要编造本机统计数字。**
+> **本 QC 环境未安装官方二进制**（须在 <https://gnss.gfz.de/services/gfzrnx> **登记下载**）。下文命令与 `-h` 节选来自 Users Guide / 已捕获帮助文本；装上后以本机 `gfzrnx -h` 覆盖。**不要编造本机统计数字。**
 
 ---
 
