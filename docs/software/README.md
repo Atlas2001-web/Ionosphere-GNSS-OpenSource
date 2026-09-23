@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **14 篇**操作手册（合计约 3502 行）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **14 篇**操作手册（合计约 3810 行）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -12,7 +12,7 @@
 
 | # | 手册 | 做什么 | 行数 |
 | ---: | --- | --- | ---: |
-| 1 | [georinex.md](./georinex.md) | RINEX → xarray / Python | 168 |
+| 1 | [georinex.md](./georinex.md) | RINEX → xarray / Python | 272 |
 | 2 | [gfzrnx.md](./gfzrnx.md) | RINEX 检查 / 拼接 / 抽稀 | 414 |
 | 3 | [anubis.md](./anubis.md) | 观测 QC → XTR/XML | 393 |
 | 4 | [pytecgg.md](./pytecgg.md) | 校准 sTEC/vTEC（作者 viventriglia） | 468 |
@@ -21,11 +21,11 @@
 | 7 | [ionex-gim.md](./ionex-gim.md) | 读 IONEX GIM | 181 |
 | 8 | [sh-gim.md](./sh-gim.md) | 维护者球谐仓**边界**（求解器未开源） | 124 |
 | 9 | [pygnssutils.md](./pygnssutils.md) | NTRIP CLI / 小 caster | 250 |
-| 10 | [bnc.md](./bnc.md) | BKG 多流客户端 | 134 |
+| 10 | [bnc.md](./bnc.md) | BKG 多流客户端 | 272 |
 | 11 | [bkg-ntripcaster.md](./bkg-ntripcaster.md) | BKG Caster 播发 | 182 |
 | 12 | [rtklib.md](./rtklib.md) | RTK / PPP CLI | 272 |
 | 13 | [pride-pppar.md](./pride-pppar.md) | PPP-AR | 440 |
-| 14 | [iono-scintillation.md](./iono-scintillation.md) | MATLAB 闪烁仿真 | 131 |
+| 14 | [iono-scintillation.md](./iono-scintillation.md) | MATLAB 闪烁仿真 | 197 |
 
 每篇结构：**用途边界 → 安装 → 逐步命令+期望输出 → I/O 字段 → 参数 → 接到哪步 → ≥8 坑 → 选型**。
 
@@ -88,7 +88,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 ---
 
 
-最近质检（ops）：已按 short-hard 重写 **gfzrnx** / **rtklib** / **pytecgg**（登记下载边界、explorer EX 真输出、作者 viventriglia）；行数以本表 `wc -l` 为准。
+最近质检（ops）：Round2 已按 short-hard 重写 **bnc** / **georinex** / **iono-scintillation**（BNC REQC 真跑、georinex 1.16.2 真输出、闪烁仓 Libraries 打包边界；MATLAB 未在质检机运行）；此前 **gfzrnx** / **rtklib** / **pytecgg**。行数以本表 `wc -l` 为准。
 
 ## 推荐阅读顺序（新人）
 
