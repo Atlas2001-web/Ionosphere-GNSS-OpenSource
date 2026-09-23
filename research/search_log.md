@@ -280,3 +280,12 @@
 - Scope: EUREF/EPOS/M3G/GLASS, NRCan CSRS-PPP, IBGE-PPP API, NGS OPUS-Projects/ncat-lib, BEV APOS, GFZ isdc-data HTTPS, GeoNet Data API, GSI RINGO, TITIPy, gsit, TU Delft IGP, rtk_client
 - Skipped (dup/thin/no-license/closed): BeidouProbe (no license), RtkGpsPlus/RTDLIB (stale forks), go_ntrip/lf7817-rtk (no license), EDAS client (proprietary), claslib/madocalib/ginan/cssrlib/GREAT already listed
 - Merged: research/routine_finds_20260923.json → +15 (706→721)
+
+## Routine pass 2026-09-23b (afternoon)
+
+- Catalog size before: **718**; after merge: **733** (+15)
+- Finds file: `research/routine_finds_20260923b.json`
+- Method: `gh api search/repositories` (topic/TEC/ROTI/RINEX4/NTRIP/Android/SDR niches) + WebSearch for agency portals; live checks via `gh api repos/...` and `curl -sI -L`; dedup vs PROJECTS.json URLs/names
+- Niches targeted after morning portal-heavy pass: ionosphere analysis (GRITI/spinifex), navigation-ins gaps (OpenVINS/MINS), GNSS-A (GARPOS), LEO-FGO, SDR GUI sim, NMEA parser, NOAA NCN API + CORS AWS NODD, SWEPOS, RENAG, UPC Chapman TOMION rapid
+- Skipped notable: RMextract (superseded by spinifex; still cited but redundant this pass), OASIS/IonoMoni/PyTECGg/gnss-tec already listed, toRINEX (no license), jancelin/RtkGps (fork), lf7817/rtk (thin/no strong GNSS raw path), NequickG (no license), gpredict (sat tracking, weaker catalog fit), piksi_tools/ublox_utils (optional), google-gnss-logger (stale alpha), SONEL already listed, CLASS CORS portal egress fail
+

@@ -5,18 +5,18 @@
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
   "generated": "2026-09-23",
-  "project_count": 718,
+  "project_count": 733,
   "counts_by_category": {
-    "ionosphere": 234,
+    "ionosphere": 236,
     "troposphere": 32,
-    "gnss-data": 109,
-    "gnss-positioning": 80,
+    "gnss-data": 111,
+    "gnss-positioning": 82,
     "orbit-clock": 13,
-    "navigation-ins": 57,
-    "gnss-sdr": 58,
+    "navigation-ins": 59,
+    "gnss-sdr": 59,
     "mobile-apps": 16,
-    "tools-learning": 30,
-    "gnss-datasets": 89
+    "tools-learning": 31,
+    "gnss-datasets": 94
   },
   "projects": [
     {
@@ -13973,12 +13973,312 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "Python 终端 RTK：NTRIP + 串口 GNSS 客户端"
+    },
+    {
+      "name": "GRITI",
+      "url": "https://github.com/dinsmoro/GRITI",
+      "desc_zh": "Python 电离层瞬变分析：Madrigal TEC、AMPERE、Kp/OMNI 等可视化",
+      "analysis_zh": "宾州州立相关开源仓 GRITI，面向电离层瞬变事件的 Python 分析流水线：可自动拉取 Madrigal δvTEC、AMPERE、Kp 与 OMNI，并做 keogram、滑动相关、FFT/Lomb-Scargle 等。需要本地配置路径与部分账号；部分 ISR/磁强计数据需自行下载。适合空间天气个例研究，不是从 RINEX 重建 TEC 的解算器。",
+      "language": "Python",
+      "license": "AGPL-3.0",
+      "category": "ionosphere",
+      "subcategory": "电离层工具",
+      "markers": [
+        "routine-2026-09-23b"
+      ],
+      "stars_approx": 5,
+      "source": "routine-finds-20260923b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "GRITI：多源电离层瞬变分析与可视化工具箱"
+    },
+    {
+      "name": "spinifex",
+      "url": "https://git.astron.nl/RD/spinifex",
+      "desc_zh": "ASTRON：射电天文电离层 TEC/法拉第旋转纯 Python 工具（继任 RMextract）",
+      "analysis_zh": "荷兰 ASTRON 维护的 Spinifex，用纯 Python 从 IONEX/TOMION 等模型估计视线 TEC 与旋转量度（RM），面向 LOFAR 等干涉测量改正。可 pip 安装 GitLab 主仓；GitHub 仅为镜像。依赖外部 IONEX 下载与地磁模型，不是 GNSS 双频 STEC 估计算法本身。",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "category": "ionosphere",
+      "subcategory": "电离层工具",
+      "markers": [
+        "routine-2026-09-23b"
+      ],
+      "stars_approx": 4,
+      "source": "routine-finds-20260923b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "gitlab",
+      "provenance": "official",
+      "one_liner_zh": "ASTRON Spinifex：射电天文 TEC/RM 电离层工具"
+    },
+    {
+      "name": "OpenVINS",
+      "url": "https://github.com/rpng/open_vins",
+      "desc_zh": "RPNG 开源视觉-惯性导航平台（滤波/标定/评测齐全）",
+      "analysis_zh": "罗切斯特理工 RPNG 组的 OpenVINS，是广泛引用的开源视觉-惯性里程计研究平台，提供 MSCKF 类滤波、在线标定与评测工具，并被后续多传感器项目复用。本身以相机+IMU 为主，GNSS 融合需看扩展或姊妹项目 MINS。ROS/非 ROS 构建均有文档；许可 GPL-3.0。",
+      "language": "C++",
+      "license": "GPL-3.0",
+      "category": "navigation-ins",
+      "subcategory": "GNSS/视觉/INS",
+      "markers": [
+        "routine-2026-09-23b"
+      ],
+      "stars_approx": 3115,
+      "source": "routine-finds-20260923b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "OpenVINS：RPNG 视觉-惯性导航开源研究平台"
+    },
+    {
+      "name": "MINS",
+      "url": "https://github.com/rpng/MINS",
+      "desc_zh": "RPNG 多传感器紧组合惯性导航：IMU/相机/LiDAR/GNSS/轮速",
+      "analysis_zh": "同一 RPNG 组发布的 MINS，在滤波框架下紧组合 IMU、相机、LiDAR、GNSS 与轮速，并支持在线外参标定与仿真评测。覆盖 VINS、GPS-INS、LIO 等多用例，文档与 ROS1/ROS2 CI 较完整。计算与传感器配置门槛较高；不是纯 GNSS PPP/RTK 引擎。",
+      "language": "C++",
+      "license": "GPL-3.0",
+      "category": "navigation-ins",
+      "subcategory": "多传感器融合",
+      "markers": [
+        "routine-2026-09-23b"
+      ],
+      "stars_approx": 779,
+      "source": "routine-finds-20260923b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "MINS：RPNG 多传感器（含 GNSS）紧组合导航系统"
+    },
+    {
+      "name": "navsu",
+      "url": "https://github.com/stanford-gps-lab/navsu",
+      "desc_zh": "斯坦福 GPS Lab：MATLAB GNSS 解析、时间与 IGS 产品工具箱",
+      "analysis_zh": "Stanford GPS Lab 的 navsu MATLAB 工具箱，聚合 RINEX/产品解析、时间函数、IGS 轨道钟差下载与若干估计示例。适合教学与快速原型，依赖 MATLAB 环境与网络拉取 IGS。不是完整 PPP/RTK 商业级引擎，功能随仓库 examples 演进。",
+      "language": "MATLAB",
+      "license": "MIT",
+      "category": "gnss-data",
+      "subcategory": "基础库",
+      "markers": [
+        "routine-2026-09-23b"
+      ],
+      "stars_approx": 24,
+      "source": "routine-finds-20260923b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "navsu：斯坦福 GPS Lab MATLAB GNSS/IGS 工具箱"
+    },
+    {
+      "name": "GARPOS",
+      "url": "https://github.com/s-watanabe-jhod/garpos",
+      "desc_zh": "日本海上保安厅：GNSS-声学海底定位解算（含声速结构）",
+      "analysis_zh": "日本海上保安厅水路部公开的 GARPOS，专用于 GNSS-Acoustic（船载 GNSS + 海底应答器测距）联合解算，并可同时估计声速结构相关参数。面向海底大地测量而非陆地 RTK/PPP。Python 实现，GPL-3.0；需准备观测配置与海洋声学先验，门槛偏专业。",
+      "language": "Python",
+      "license": "GPL-3.0",
+      "category": "gnss-positioning",
+      "subcategory": "大地测量/GNSS",
+      "markers": [
+        "routine-2026-09-23b"
+      ],
+      "stars_approx": 25,
+      "source": "routine-finds-20260923b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "official",
+      "one_liner_zh": "GARPOS：日本海保 GNSS-声学海底定位开源解算器"
+    },
+    {
+      "name": "gnss_timeseries_viewers",
+      "url": "https://github.com/kmaterna/gnss_timeseries_viewers",
+      "desc_zh": "读取 PBO/UNR 等坐标时序、拟合趋势季节项并堆叠绘图",
+      "analysis_zh": "伯克利相关维护者发布的 Python 包，专注 GNSS 坐标时间序列：读 PBO/UNR 等产品、估计斜率/季节项/阶跃，并做堆叠图。依赖 Poetry/conda 环境与 EarthScope 相关 CLI。用于形变时序分析，不处理原始 RINEX 观测。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "tools-learning",
+      "subcategory": "可视化",
+      "markers": [
+        "routine-2026-09-23b"
+      ],
+      "stars_approx": 36,
+      "source": "routine-finds-20260923b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "gnss_timeseries_viewers：PBO/UNR 坐标时序分析绘图"
+    },
+    {
+      "name": "GraphGNSSLib_LEO",
+      "url": "https://github.com/PolyU-TASLAB/GraphGNSSLib_LEO",
+      "desc_zh": "港理工 TASLab：GNSS+LEO 伪距/多普勒因子图定位（ROS）",
+      "analysis_zh": "香港理工 TASLab 在 GraphGNSSLib 基础上扩展的 GNSS–LEO 耦合定位包，用因子图融合 GNSS 实测与 LEO 仿真伪距/多普勒，并与 SPP 对比。面向城市峡谷等场景研究，依赖 ROS/Ceres 与 RTKLIB 读 RINEX。LEO 观测量多为仿真，实网可用性取决于数据准备。",
+      "language": "C++",
+      "license": "MIT",
+      "category": "gnss-positioning",
+      "subcategory": "因子图",
+      "markers": [
+        "routine-2026-09-23b"
+      ],
+      "stars_approx": 18,
+      "source": "routine-finds-20260923b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "GraphGNSSLib_LEO：GNSS+LEO 因子图定位开源包"
+    },
+    {
+      "name": "gui_sdr_gps_sim",
+      "url": "https://github.com/okiedocus/gui_sdr_gps_sim",
+      "desc_zh": "Rust GUI：经 HackRF 生成 GPS/BDS/Galileo 基带并支持轨迹仿真",
+      "analysis_zh": "跨平台桌面 GNSS 信号仿真器，基于 gps-sdr-sim 思路用 Rust/egui 提供 GUI，可合成 GPS L1、BDS B1C、Galileo E1 并通过 HackRF 发射，含路线编辑。适合接收机/导航软件室内测试。发射受各国频谱法规约束，务必屏蔽箱或持证；项目标注仍在完善中。",
+      "language": "Rust",
+      "license": "GPL-3.0",
+      "category": "gnss-sdr",
+      "subcategory": "信号仿真",
+      "markers": [
+        "routine-2026-09-23b"
+      ],
+      "stars_approx": 37,
+      "source": "routine-finds-20260923b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "gui_sdr_gps_sim：HackRF 多星座 GNSS 信号仿真 GUI"
+    },
+    {
+      "name": "pynmea2",
+      "url": "https://github.com/Knio/pynmea2",
+      "desc_zh": "流行的 Python NMEA 0183 语句解析库",
+      "analysis_zh": "轻量 Python 库，解析 GPS/GNSS 设备输出的 NMEA 0183 语句（GGA/RMC 等），星标高、API 简单，适合日志回放与嵌入式串口数据管道。只处理文本协议，不含 RTCM/RINEX，也不做定位解算；与已收录的 pynmeagps 互补（生态不同）。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "gnss-data",
+      "subcategory": "基础库",
+      "markers": [
+        "routine-2026-09-23b"
+      ],
+      "stars_approx": 681,
+      "source": "routine-finds-20260923b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "pynmea2：高星标 Python NMEA 0183 解析库"
+    },
+    {
+      "name": "NOAA-NCN-API",
+      "url": "https://geodesy.noaa.gov/web_services/ncn-api.shtml",
+      "desc_zh": "NOAA NGS：NCN/CORS 站点属性与最近站查询 Web API",
+      "analysis_zh": "美国国家大地测量局提供的 NOAA CORS Network（NCN）Web API，可按站名取属性、或按 ECEF 坐标查最近参考站，服务 Data Explorer 等应用。返回元数据而非 RINEX 本体；下载观测请配合 corsdata/AWS NODD/UFCORS。须遵守 NGS 服务条款与合理访问频率。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "CORS区域网",
+      "markers": [
+        "routine-2026-09-23b"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260923b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NOAA NCN API：CORS 站元数据与最近站查询"
+    },
+    {
+      "name": "NOAA-CORS-AWS",
+      "url": "https://noaa-cors-pds.s3.amazonaws.com/index.html",
+      "desc_zh": "NOAA NODD：CORS/NCN RINEX 在 AWS S3 上的公开对象存储镜像",
+      "analysis_zh": "NOAA Open Data Dissemination（NODD）把 NCN/CORS RINEX 放到公开 S3 桶 noaa-cors-pds，可用 HTTPS/AWS 工具按年积日/站名批量拉取，常比官网树更适合云端脚本。与 geodesy.noaa.gov/corsdata 同源产品、不同分发通道。大流量请注意带宽与对象键命名约定。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "CORS区域网",
+      "markers": [
+        "routine-2026-09-23b"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260923b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NOAA CORS on AWS：NCN RINEX 的 S3/NODD 分发"
+    },
+    {
+      "name": "SWEPOS-RINEX",
+      "url": "https://www.lantmateriet.se/en/geodata/gps-geodesy-and-swepos/lantmateriets-doi-objects/swepos-rinex-data/",
+      "desc_zh": "瑞典 Lantmäteriet SWEPOS 国家参考站网 RINEX（DOI/CC0）",
+      "analysis_zh": "瑞典测绘局 Lantmäteriet 运营的 SWEPOS 连续运行参考站观测数据门户（DOI 10.23701/c5tc-ew52），提供日文件 RINEX 2/3，FTP/SFTP 开放获取并标注 CC0。需按站方说明注册后访问。适合北欧区域网与科研对照；实时流/精密产品权限另见 SWEPOS 服务条款。",
+      "language": "data-portal",
+      "license": "CC0-1.0",
+      "category": "gnss-datasets",
+      "subcategory": "区域CORS",
+      "markers": [
+        "routine-2026-09-23b"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260923b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "SWEPOS：瑞典国家 GNSS 参考网 RINEX 开放数据"
+    },
+    {
+      "name": "RENAG",
+      "url": "https://renag.resif.fr/",
+      "desc_zh": "法国国家永久 GNSS 网 RÉNAG（RESIF）：站网、质量与产品门户",
+      "analysis_zh": "法国 RÉNAG（Réseau National GNSS permanent）官方站点，挂靠 RESIF，提供永久站信息、数据政策、可用性/质量说明、实时与产品入口（doi:10.15778/resif.rg）。科研用户可由此定位法国开放 GNSS 观测。具体下载协议与许可证以站方/RESIF 声明为准，不是解算软件。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "区域CORS",
+      "markers": [
+        "routine-2026-09-23b"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260923b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "RENAG：法国国家永久 GNSS 网数据与元数据门户"
+    },
+    {
+      "name": "UPC-Chapman-TOMION-Rapid",
+      "url": "https://chapman.upc.es/tomion/rapid/",
+      "desc_zh": "UPC gAGE Chapman：TOMION/IONEX 快速电离层产品目录",
+      "analysis_zh": "加泰罗尼亚理工 gAGE 在 chapman.upc.es 上的 TOMION rapid 目录，按年提供可匿名拉取的快速电离层格网/相关产品，常被射电天文与 GNSS 工具（如 Spinifex）作为免账号 IONEX 源。覆盖与延迟不及 CDDIS 正式库全面；大批量请遵守站点礼貌爬取，最终产品以 UPC/IGS 说明为准。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "电离层产品",
+      "markers": [
+        "routine-2026-09-23b"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260923b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "academic_lab",
+      "one_liner_zh": "UPC Chapman：TOMION/IONEX 快速电离层产品下载"
     }
   ],
   "provenance_counts": {
-    "official": 188,
-    "academic_lab": 210,
-    "personal_community": 320
+    "official": 194,
+    "academic_lab": 217,
+    "personal_community": 322
   },
   "updated": "2026-09-23"
 }

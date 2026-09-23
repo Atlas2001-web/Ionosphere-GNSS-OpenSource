@@ -1,5 +1,5 @@
 # 学习资源与工具 / Tools & Learning
-> 共 **30** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **31** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
@@ -79,6 +79,7 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [ge-gnss-visibility](https://github.com/taroz/ge-gnss-visibility) | Google Earth 鱼眼可见性分析 | MATLAB | 137 | 🏷️ 个人社区 |
+| [gnss_timeseries_viewers](https://github.com/kmaterna/gnss_timeseries_viewers) | gnss_timeseries_viewers：PBO/UNR 坐标时序分析绘图 | Python | 36 | 🏷️ 高校实验室 |
 | [EasyGNSS](https://github.com/whigg/EasyGNSS) | 面向低成本 GNSS 的图形界面辅助工具 | Python | 4 | 🏷️ 高校实验室 |
 | [GPS-Velocity-Viewer](https://www.unavco.org/software/visualization/GPS-Velocity-Viewer/GPS-Velocity-Viewer.html) | UNAVCO GPS 速度场在线可视化查看器 | web | — | 🏷️ 官方 |
 
@@ -90,6 +91,13 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 语言：MATLAB · 许可：MIT · 星标约：137 · 宿主：github
 
 在任意位置生成虚拟鱼眼天顶图并判断 GNSS 可见性，城市遮挡研究直观。需要 Google Earth 相关环境。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
+
+#### [gnss_timeseries_viewers](https://github.com/kmaterna/gnss_timeseries_viewers)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：MIT · 星标约：36 · 宿主：github
+
+伯克利相关维护者发布的 Python 包，专注 GNSS 坐标时间序列：读 PBO/UNR 等产品、估计斜率/季节项/阶跃，并做堆叠图。依赖 Poetry/conda 环境与 EarthScope 相关 CLI。用于形变时序分析，不处理原始 RINEX 观测。
 
 #### [EasyGNSS](https://github.com/whigg/EasyGNSS)  
 *🏷️ 高校实验室*

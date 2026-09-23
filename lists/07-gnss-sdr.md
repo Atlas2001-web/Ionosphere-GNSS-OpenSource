@@ -1,5 +1,5 @@
 # 软件接收机与信号 / GNSS-SDR
-> 共 **58** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **59** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。
 
@@ -294,6 +294,7 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 | [gps-sdr-sim-assistant](https://github.com/frank-pian/gps-sdr-sim-assistant) | gps-sdr-sim 的图形化助手工具 | JavaScript | 63 | 🏷️ 个人社区 |
 | [galileo-sdr-sim](https://github.com/harshadms/galileo-sdr-sim) | Galileo E1B/C 信号生成器 | C++ | 62 | 🏷️ 个人社区 |
 | [BeiDou_B1C](https://github.com/lnexenl/BeiDou_B1C) | 北斗 B1C 信号生成与捕获（MATLAB） | MATLAB | 38 | 🏷️ 个人社区 |
+| [gui_sdr_gps_sim](https://github.com/okiedocus/gui_sdr_gps_sim) | gui_sdr_gps_sim：HackRF 多星座 GNSS 信号仿真 GUI | Rust | 37 | 🏷️ 个人社区 |
 | [gnss-RX](https://github.com/HeryMwenegoha/gnss-RX) | GNSS 观测量仿真器（MATLAB） | MATLAB | 32 | 🏷️ 个人社区 |
 | [gnss-signal-simulator-rs](https://github.com/danusha2345/gnss-signal-simulator-rs) | Rust 多星座 GNSS 信号仿真器（含 GPS L1/L5 等） | Rust | 30 | 🏷️ 个人社区 |
 | [GPSGALSSS](https://github.com/domonforyou/GPS_GAL_SSS) | GPS/Galileo 卫星信号模拟器（关联 RTKLIB） | C++ | 29 | 🏷️ 个人社区 |
@@ -345,6 +346,13 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 语言：MATLAB · 许可：MIT · 星标约：38 · 宿主：github
 
 用 MATLAB 生成并捕获北斗 B1C 相关信号，服务新信号体制与捕获跟踪算法验证。适合 GNSS-SDR/信号课程实验。不是完整多星座软件接收机；与 SoftGNSS、gnss-sdr、gps-sdr-sim 组合时，要统一采样率、中频与前端滤波模型再比捕获灵敏度。
+
+#### [gui_sdr_gps_sim](https://github.com/okiedocus/gui_sdr_gps_sim)  
+*🏷️ 个人社区*
+
+语言：Rust · 许可：GPL-3.0 · 星标约：37 · 宿主：github
+
+跨平台桌面 GNSS 信号仿真器，基于 gps-sdr-sim 思路用 Rust/egui 提供 GUI，可合成 GPS L1、BDS B1C、Galileo E1 并通过 HackRF 发射，含路线编辑。适合接收机/导航软件室内测试。发射受各国频谱法规约束，务必屏蔽箱或持证；项目标注仍在完善中。
 
 #### [gnss-RX](https://github.com/HeryMwenegoha/gnss-RX)  
 *🏷️ 个人社区*

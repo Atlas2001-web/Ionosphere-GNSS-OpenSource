@@ -1,5 +1,5 @@
 # GNSS 数据与格式 / GNSS Data I/O
-> 共 **109** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **111** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
@@ -768,12 +768,21 @@ MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [pynmea2](https://github.com/Knio/pynmea2) | pynmea2：高星标 Python NMEA 0183 解析库 | Python | 681 | 🏷️ 个人社区 |
 | [pyubx2](https://github.com/semuconsulting/pyubx2) | u-blox UBX 协议的 Python 编解码库 | Python | 254 | 🏷️ 个人社区 |
 | [gnsstk](https://github.com/SGL-UT/gnsstk) | 原 GPSTk 演进来的 C++ GNSS 基础库 | C++ | 183 | 🏷️ 高校实验室 核心 |
 | [pynmeagps](https://github.com/semuconsulting/pynmeagps) | 解析/生成 NMEA 0183 语句的 Python 库，与 pyubx2 同系 | Python | 106 | 🏷️ 个人社区 核心 |
+| [navsu](https://github.com/stanford-gps-lab/navsu) | navsu：斯坦福 GPS Lab MATLAB GNSS/IGS 工具箱 | MATLAB | 24 | 🏷️ 高校实验室 |
 | [gnss-protos](https://github.com/nav-solutions/gnss-protos) | GNSS 广播协议编解码的 Rust 库 | Rust | 4 | 🏷️ 个人社区 |
 
 ### 详细说明
+
+#### [pynmea2](https://github.com/Knio/pynmea2)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：681 · 宿主：github
+
+轻量 Python 库，解析 GPS/GNSS 设备输出的 NMEA 0183 语句（GGA/RMC 等），星标高、API 简单，适合日志回放与嵌入式串口数据管道。只处理文本协议，不含 RTCM/RINEX，也不做定位解算；与已收录的 pynmeagps 互补（生态不同）。
 
 #### [pyubx2](https://github.com/semuconsulting/pyubx2)  
 *🏷️ 个人社区*
@@ -795,6 +804,13 @@ MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实�
 语言：Python · 许可：BSD-3-Clause · 星标约：106 · 宿主：github
 
 semuconsulting 协议栈中专责 NMEA 0183 解析与生成的 Python 库，常与 PyGPSClient、pyubx2、pyrtcm 组合使用。适合日志解析、测试桩、桌面监控与自动化脚本。不做精密定位解算；字段完整性随接收机方言与专有语句变化，遇到厂商扩展语句时需要自行补充定义再解析。
+
+#### [navsu](https://github.com/stanford-gps-lab/navsu)  
+*🏷️ 高校实验室*
+
+语言：MATLAB · 许可：MIT · 星标约：24 · 宿主：github
+
+Stanford GPS Lab 的 navsu MATLAB 工具箱，聚合 RINEX/产品解析、时间函数、IGS 轨道钟差下载与若干估计示例。适合教学与快速原型，依赖 MATLAB 环境与网络拉取 IGS。不是完整 PPP/RTK 商业级引擎，功能随仓库 examples 演进。
 
 #### [gnss-protos](https://github.com/nav-solutions/gnss-protos)  
 *🏷️ 个人社区*

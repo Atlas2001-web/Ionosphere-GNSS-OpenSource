@@ -1,8 +1,18 @@
 # 分类说明（写给初学者）
 
-本索引按「你要解决什么问题」划分，而不是按编程语言。
+本索引按「你要解决什么问题」划分，而不是按编程语言。下面用白话说明每一类在 GNSS 工作流里的位置。
 
-典型路径是：先拿到数据与格式工具（RINEX/RTCM），做质量检查，再按目标分支——电离层 TEC/GIM/闪烁、对流层 ZTD/PWV/VMF，或精密定位 RTK/PPP（常配合轨道钟差产品）；需要车载/机器人室外定位时再接到 GNSS/INS（及视觉）组合。另有两条独立线：GNSS-SDR（从无线电采样到伪距/相位），以及手机 App（原始测量采集）。
+```
+数据下载/格式(RINEX,RTCM) ──► 质量检查
+         │
+         ├─► 电离层 TEC/GIM / 闪烁指标
+         ├─► 对流层 ZTD/PWV / VMF
+         └─► 精密定位 RTK/PPP ──► 轨道钟差产品
+                    │
+                    └─► GNSS/INS / 视觉组合导航
+
+另线：GNSS-SDR（从无线电采样到伪距/相位）；手机 App（原始测量采集）
+```
 
 ## 来源 / 维护方标记（provenance）
 
@@ -23,7 +33,7 @@
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
 - 列表文件：[`lists/01-ionosphere.md`](../lists/01-ionosphere.md)
-- 当前条目数：**234**
+- 当前条目数：**236**
 
 ## `troposphere` — 对流层
 
@@ -37,14 +47,14 @@
 RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
 - 列表文件：[`lists/03-gnss-data.md`](../lists/03-gnss-data.md)
-- 当前条目数：**109**
+- 当前条目数：**111**
 
 ## `gnss-positioning` — 精密定位
 
 SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
 - 列表文件：[`lists/04-gnss-positioning.md`](../lists/04-gnss-positioning.md)
-- 当前条目数：**80**
+- 当前条目数：**82**
 
 ## `orbit-clock` — 轨道与钟差
 
@@ -58,14 +68,14 @@ SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现
 GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 
 - 列表文件：[`lists/06-navigation-ins.md`](../lists/06-navigation-ins.md)
-- 当前条目数：**57**
+- 当前条目数：**59**
 
 ## `gnss-sdr` — 软件接收机与信号
 
 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。
 
 - 列表文件：[`lists/07-gnss-sdr.md`](../lists/07-gnss-sdr.md)
-- 当前条目数：**58**
+- 当前条目数：**59**
 
 ## `mobile-apps` — 移动与嵌入式应用
 
@@ -79,14 +89,14 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
 - 列表文件：[`lists/09-tools-learning.md`](../lists/09-tools-learning.md)
-- 当前条目数：**30**
+- 当前条目数：**31**
 
 ## `gnss-datasets` — GNSS 数据源
 
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
 - 列表文件：[`lists/10-gnss-datasets.md`](../lists/10-gnss-datasets.md)
-- 当前条目数：**89**
+- 当前条目数：**94**
 
 ## 与用户仓库的关系标记
 

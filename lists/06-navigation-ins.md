@@ -1,5 +1,5 @@
 # 导航 / Navigation & INS
-> 共 **57** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **59** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 
@@ -245,6 +245,7 @@ rtklibexplorer 社区风格的松组合 GNSS/IMU Python 实现，便于配合 de
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [Multi_Sensor_Fusion](https://github.com/2013fangwentao/Multi_Sensor_Fusion) | GNSS/IMU/视觉等多源融合与 PPP/INS 紧组合 | C++ | 940 | 🏷️ 个人社区 核心 |
+| [MINS](https://github.com/rpng/MINS) | MINS：RPNG 多传感器（含 GNSS）紧组合导航系统 | C++ | 779 | 🏷️ 高校实验室 |
 | [GLIO](https://github.com/XikunLiu-huskit/GLIO) | GNSS/LiDAR/IMU 紧耦合连续定位 | C | 438 | 🏷️ 个人社区 |
 | [libRSF](https://github.com/TUC-ProAut/libRSF) | 面向在线定位的鲁棒传感器融合库 | C++ | 337 | 🏷️ 个人社区 |
 | [syncgpslidarimucam](https://github.com/nkliuhui/sync_gps_lidar_imu_cam) | 激光雷达-IMU-相机-GPS 硬件时间同步方案 | C++ | 252 | 🏷️ 个人社区 |
@@ -259,6 +260,13 @@ rtklibexplorer 社区风格的松组合 GNSS/IMU Python 实现，便于配合 de
 语言：C++ · 许可：GPL-3.0 · 星标约：940 · 宿主：github
 
 中文社区高星的多传感器融合定位仓库，覆盖 GNSS、IMU、相机，并含 PPP/INS 紧组合思路，文档与示例偏工程实践。适合车载与机器人组合导航入门到中级实现。代码风格与依赖随版本变化，完好性与测地级产品接口不如 Ginan、PRIDE；可与 imu_x_fusion、gici-open、OB_GINS 对照架构差异。
+
+#### [MINS](https://github.com/rpng/MINS)  
+*🏷️ 高校实验室*
+
+语言：C++ · 许可：GPL-3.0 · 星标约：779 · 宿主：github
+
+同一 RPNG 组发布的 MINS，在滤波框架下紧组合 IMU、相机、LiDAR、GNSS 与轮速，并支持在线外参标定与仿真评测。覆盖 VINS、GPS-INS、LIO 等多用例，文档与 ROS1/ROS2 CI 较完整。计算与传感器配置门槛较高；不是纯 GNSS PPP/RTK 引擎。
 
 #### [GLIO](https://github.com/XikunLiu-huskit/GLIO)  
 *🏷️ 个人社区*
@@ -322,6 +330,7 @@ MATLAB 仿真仓库：用间接法卡尔曼滤波融合 IMU 与 GPS，传感器�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [OpenVINS](https://github.com/rpng/open_vins) | OpenVINS：RPNG 视觉-惯性导航开源研究平台 | C++ | 3115 | 🏷️ 高校实验室 |
 | [GVINS-HKUST](https://github.com/HKUST-Aerial-Robotics/GVINS) | 港科大 Aerial Robotics：紧耦合 GNSS-视觉-惯性系统 | C++ | 1160 | 🏷️ 高校实验室 |
 | [IC-GVINS](https://github.com/i2Nav-WHU/IC-GVINS) | INS 中心的稳健实时 GNSS-视觉-惯性导航 | C++ | 690 | 🏷️ 高校实验室 |
 | [gnss_comm](https://github.com/HKUST-Aerial-Robotics/gnss_comm) | GNSS 原始测量处理的 ROS 基础定义与工具 | C++ | 164 | 🏷️ 高校实验室 |
@@ -329,6 +338,13 @@ MATLAB 仿真仓库：用间接法卡尔曼滤波融合 IMU 与 GPS，传感器�
 | [msckfvioGPS](https://github.com/loveforeverLi/msckf_vio_GPS) | MSCKF 视觉惯性里程计与 GPS 融合 | C++ | 31 | 🏷️ 个人社区 |
 
 ### 详细说明
+
+#### [OpenVINS](https://github.com/rpng/open_vins)  
+*🏷️ 高校实验室*
+
+语言：C++ · 许可：GPL-3.0 · 星标约：3115 · 宿主：github
+
+罗切斯特理工 RPNG 组的 OpenVINS，是广泛引用的开源视觉-惯性里程计研究平台，提供 MSCKF 类滤波、在线标定与评测工具，并被后续多传感器项目复用。本身以相机+IMU 为主，GNSS 融合需看扩展或姊妹项目 MINS。ROS/非 ROS 构建均有文档；许可 GPL-3.0。
 
 #### [GVINS-HKUST](https://github.com/HKUST-Aerial-Robotics/GVINS)  
 *🏷️ 高校实验室*

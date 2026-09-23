@@ -1,5 +1,5 @@
 # 精密定位 / Precise Positioning
-> 共 **80** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **82** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
@@ -273,6 +273,7 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [groops](https://github.com/groops-devs/groops) | 重力场与 GNSS 处理工具包 GROOPS | C++ | 244 | 🏷️ 个人社区 ★ 核心 |
+| [GARPOS](https://github.com/s-watanabe-jhod/garpos) | GARPOS：日本海保 GNSS-声学海底定位开源解算器 | Python | 25 | 🏷️ 官方 |
 | [gnatss](https://github.com/seafloor-geodesy/gnatss) | 海底 GNSS-A 换能器测量社区软件（Python） | Python | 17 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -283,6 +284,13 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 语言：C++ · 许可：GPL-3.0 · 星标约：244 · 宿主：github
 
 GRAZ 等地学机构风格的工具包，覆盖重力场恢复与 GNSS 处理，适合大地测量联合反演。学习成本高；纯导航 RTK 不是最短路径。
+
+#### [GARPOS](https://github.com/s-watanabe-jhod/garpos)  
+*🏷️ 官方*
+
+语言：Python · 许可：GPL-3.0 · 星标约：25 · 宿主：github
+
+日本海上保安厅水路部公开的 GARPOS，专用于 GNSS-Acoustic（船载 GNSS + 海底应答器测距）联合解算，并可同时估计声速结构相关参数。面向海底大地测量而非陆地 RTK/PPP。Python 实现，GPL-3.0；需准备观测配置与海洋声学先验，门槛偏专业。
 
 #### [gnatss](https://github.com/seafloor-geodesy/gnatss)  
 *🏷️ 个人社区*
@@ -572,6 +580,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [gtsam_gnss](https://github.com/taroz/gtsam_gnss) | 基于 GTSAM 的 GNSS 因子与 MATLAB 封装 | C++ | 136 | 🏷️ 个人社区 |
+| [GraphGNSSLib_LEO](https://github.com/PolyU-TASLAB/GraphGNSSLib_LEO) | GraphGNSSLib_LEO：GNSS+LEO 因子图定位开源包 | C++ | 18 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -581,6 +590,13 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 语言：C++ · 许可：MIT · 星标约：136 · 宿主：github
 
 为 GTSAM 提供 GNSS 因子与 MATLAB 包装，方便在因子图框架里拼伪距/相位/IMU。适合算法研究。完整测地产品链需自配数据与模糊度策略。
+
+#### [GraphGNSSLib_LEO](https://github.com/PolyU-TASLAB/GraphGNSSLib_LEO)  
+*🏷️ 高校实验室*
+
+语言：C++ · 许可：MIT · 星标约：18 · 宿主：github
+
+香港理工 TASLab 在 GraphGNSSLib 基础上扩展的 GNSS–LEO 耦合定位包，用因子图融合 GNSS 实测与 LEO 仿真伪距/多普勒，并与 SPP 对比。面向城市峡谷等场景研究，依赖 ROS/Ceres 与 RTKLIB 读 RINEX。LEO 观测量多为仿真，实网可用性取决于数据准备。
 
 ## PPP-RTK/HAS
 

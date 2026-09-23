@@ -267,3 +267,9 @@
 - 详见 `research/routine_finds_20260923.json`
 - 来源统计（本轮新增）：official 11 · academic_lab 2 · personal_community 2
 
+## 例行检索补录（2026-09-23b）
+
+- 新增 **15** 条（RINGO/M3G/EPOS-GLASS/IBGE-PPP/CSRS-PPP/OPUS-Projects/ncat-lib/BEV-APOS/TITIPy 等）
+- 当前条目：**733**
+- 分类计数：{'ionosphere': 236, 'troposphere': 32, 'gnss-data': 111, 'gnss-positioning': 82, 'orbit-clock': 13, 'navigation-ins': 59, 'gnss-sdr': 59, 'mobile-apps': 16, 'tools-learning': 31, 'gnss-datasets': 94}
+- 详见 `research/routine_finds_20260923b.json`
