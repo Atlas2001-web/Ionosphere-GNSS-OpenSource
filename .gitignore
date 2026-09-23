@@ -40,3 +40,4 @@ Thumbs.db
 # Local research caches / QC scratch (keep curated JSON tracked)
 research/__pycache__/
 research/_qc_touch_log_*.json
+research/_meta_cache.json
