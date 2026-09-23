@@ -87,6 +87,9 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
+
+最近质检（ops）：已按 short-hard 重写 **gfzrnx** / **rtklib** / **pytecgg**（登记下载边界、explorer EX 真输出、作者 viventriglia）；行数以本表 `wc -l` 为准。
+
 ## 推荐阅读顺序（新人）
 
 1. 本页「全部手册」表 + [data-access](../data-access.md)
