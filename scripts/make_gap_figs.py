@@ -12,7 +12,7 @@ Outputs under docs/tutorials/images/:
   fig-singlefreq-vs-dualfreq.png
 
 Usage (repo root):
-  /workspace/iono-figs/.venv/bin/python scripts/make_gap_figs.py
+  .venv/bin/python scripts/make_gap_figs.py
 """
 from __future__ import annotations
 

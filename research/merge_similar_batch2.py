@@ -8,7 +8,7 @@ from collections import Counter, defaultdict
 from datetime import date
 from pathlib import Path
 
-ROOT = Path("/workspace/ionosphere-gnss-catalog")
+ROOT = Path(__file__).resolve().parents[1]
 PROJECTS_PATH = ROOT / "PROJECTS.json"
 SIMILAR_PATH = ROOT / "research" / "similar_finds.json"
 LISTS = ROOT / "lists"

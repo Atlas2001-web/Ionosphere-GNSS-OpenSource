@@ -5,7 +5,7 @@ import json
 from collections import OrderedDict, defaultdict
 from pathlib import Path
 
-ROOT = Path("/workspace/ionosphere-gnss-catalog")
+ROOT = Path(__file__).resolve().parents[1]
 
 CAT_META = {
     "ionosphere": {

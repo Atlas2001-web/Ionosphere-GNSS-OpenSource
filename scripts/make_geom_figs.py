@@ -14,7 +14,7 @@ Outputs under docs/tutorials/images/:
   fig-bias-dcb.png
 
 Usage (from repo root):
-  /workspace/iono-figs/.venv/bin/python scripts/make_geom_figs.py
+  .venv/bin/python scripts/make_geom_figs.py
   # or: .venv/bin/python scripts/make_geom_figs.py
 """
 from __future__ import annotations
