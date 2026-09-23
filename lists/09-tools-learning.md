@@ -40,24 +40,24 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [awesome-gnss](https://github.com/barbeau/awesome-gnss) | 开源 GNSS 软件与资源社区列表 | — | 599 | 🏷️ 个人社区 核心 |
-| [awesome-gnss](https://github.com/hdkarimi/awesome-gnss) | GNSS/RNSS 开源工具、数据与课程的 awesome 列表 | — | 50 | 🏷️ 个人社区 |
+| [awesome-gnss-barbeau](https://github.com/barbeau/awesome-gnss) | Sean Barbeau 维护的开源 GNSS 软件与资源 awesome 列表 | — | 599 | 🏷️ 个人社区 核心 |
+| [awesome-gnss-hdkarimi](https://github.com/hdkarimi/awesome-gnss) | hdkarimi：GNSS/RNSS 开源工具、数据与慕课的 awesome 列表 | — | 50 | 🏷️ 个人社区 |
 
 ### 详细说明
 
-#### [awesome-gnss](https://github.com/barbeau/awesome-gnss)  
+#### [awesome-gnss-barbeau](https://github.com/barbeau/awesome-gnss)  
 *🏷️ 个人社区 核心*
 
 语言：— · 许可：Apache-2.0 · 星标约：599 · 宿主：github
 
 Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献入口，本目录大量种子来源之一。适合定期浏览查新。本身不含算法实现。
 
-#### [awesome-gnss](https://github.com/hdkarimi/awesome-gnss)  
+#### [awesome-gnss-hdkarimi](https://github.com/hdkarimi/awesome-gnss)  
 *🏷️ 个人社区*
 
 语言：— · 许可：MIT · 星标约：50 · 宿主：github
 
-策展 GNSS/RNSS 相关开源软件、数据、工具与慕课入口的 awesome 列表，帮助新人快速摸清领域版图。适合浏览式调研与课程资源推荐。链接时效性需自行点击验证；与本精选目录互补——awesome 偏广度，本目录强调核验 URL、分类与中文技术分析。
+策展 GNSS/RNSS 相关开源软件、数据、工具与慕课入口的 awesome 列表，帮助新人快速摸清领域版图。与 barbeau/awesome-gnss（现名 awesome-gnss-barbeau）是不同策展；链接时效性需自行点击验证。
 
 ## 高程/大地水准面
 
@@ -109,11 +109,11 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [EGNOS-Toolkit](https://sourceforge.net/projects/libegnos) | SourceForge EGNOS Toolkit：SBAS/EGNOS 消息与接收算法工具 | C/C++ | — | 🏷️ 个人社区 |
+| [EGNOS-Toolkit](https://sourceforge.net/projects/libegnos/) | SourceForge EGNOS Toolkit：SBAS/EGNOS 消息与接收算法工具 | C/C++ | — | 🏷️ 个人社区 |
 
 ### 详细说明
 
-#### [EGNOS-Toolkit](https://sourceforge.net/projects/libegnos)  
+#### [EGNOS-Toolkit](https://sourceforge.net/projects/libegnos/)  
 *🏷️ 个人社区*
 
 语言：C/C++ · 许可：EUPL · 星标约：— · 宿主：sourceforge

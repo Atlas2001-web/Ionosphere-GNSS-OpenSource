@@ -261,7 +261,7 @@ CNES PPP-WIZARD 示范系统的 REAL_TIME 产品树，可检索实时流配套�
 
 语言：data-portal · 许可：CC-BY-4.0 · 星标约：— · 宿主：official_site
 
-INGV「电子空间天气高层大气」数据库中的 TEC 专题（DOI:10.13127/eswua/tec，CC BY 4.0）。计算中心接入 RING、EUREF 与 IGS 实时/事后观测，7×24 产出地中海、欧洲与全球 TEC 产品。地中海现报（nc_med）即 IONORING 思路的产品化：RING NTRIP 实时流、10 分钟、0.1° 网格、LOWESS、无背景模型以免抹平不规则；另有地中海 30 分钟短期预报、欧洲 TEC/梯度图、全球 NeQuick2 同化现报，以及基于自回归神经网络与预报 Kp 的 24 小时全球预报。站点提供 Download Tool、Web Service 指南与可用性地图；示例 REST 如 `http://ws-eswua.rm.ingv.it/tecdb.php/records/wsnc_med?filter=dt,eq,YYYY-MM-DD%20HH:MM:SS`，返回 JSON 网格点（lat/lon/tec）。适合需要意大利/地中海高分辨率实时 TEC 或程序化拉图的用户；不是 GNSS 原始观测归档（RING 原始站数据另循 RING/INGV 渠道）。收录前已核验落地页可访问；使用请按页面引用元数据与 CC BY 4.0。
+INGV eSWua 数据库 TEC 专题（DOI:10.13127/eswua/tec，CC BY 4.0）。接入 RING/EUREF/IGS 观测，持续产出地中海、欧洲与全球 TEC 现报/短期预报（含 NeQuick2 同化与 24h 预报），并提供 Download Tool 与 REST 示例。适合意大利/地中海高分辨率实时 TEC 或程序化拉图；不是 GNSS 原始观测归档。引用请按页面元数据与 CC BY 4.0。
 
 #### [IGS-Ionosphere-WG](https://igs.org/wg/ionosphere/)  
 *🏷️ 官方*
@@ -275,7 +275,7 @@ INGV「电子空间天气高层大气」数据库中的 TEC 专题（DOI:10.1312
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-意大利国家地球物理与火山学研究所（INGV）上层大气物理组维护的实时电离层 TEC 监测页。系统利用 RING（Rete Integrata Nazionale GNSS）约 40 个测站的双频观测，在 IPP 上估计 VTEC 后用 LOWESS 插值，生成覆盖约 35°N–48°N、5°E–20°E 的 0.1°×0.1° 网格图，约每 10 分钟刷新，典型时延低于 1 分钟。论文（Remote Sensing 2021）与 IGS GIM、比利时 ROB 欧洲图对比，RMSE 约 2–3 TECu，并讨论了 2017 年 X9.3 耀斑与随后地磁暴期间的区域响应，以及用于单点定位改正时相对 Klobuchar/GIM 的改善。本页主要展示最新地图与近 24 小时动画，不是开源处理软件仓库；算法与产品说明见论文。批量历史产品与 Web 服务请转到同组的 eSWua TEC 数据库（DOI:10.13127/eswua/tec）。收录时已 HTTP 核验页面可访问；使用与引用请遵守 INGV/论文要求。
+INGV 基于 RING 网（约 40 站）的意大利区域实时 VTEC 监测页：IPP 估计后 LOWESS 插值，约 0.1° 网格、~10 分钟刷新。本页主要展示最新地图与近 24 小时动画，不是开源处理仓库；批量历史与 Web 服务请用同组 eSWua-TEC。使用与引用遵守 INGV/相关论文要求。
 
 #### [JPL-IONEX-Rapid](https://sideshow.jpl.nasa.gov/pub/iono_daily/IONEX_rapid/)  
 *🏷️ 官方 核心*

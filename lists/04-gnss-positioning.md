@@ -647,7 +647,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [pyrtklib](https://github.com/IPNL-POLYU/pyrtklib) | 港理工 IPNL 的 RTKLIB Python 绑定，可直接在脚本里调用核心解算 | C | 182 | 🏷️ 高校实验室 核心 |
+| [pyrtklib](https://github.com/IPNL-POLYU/pyrtklib) | 港理工 IPNL 的 RTKLIB Python 绑定（勿与 alainmuls/pyRTKLib-RINEX 混淆） | C | 182 | 🏷️ 高校实验室 核心 |
 | [MatRTKLIB](https://github.com/taroz/MatRTKLIB) | RTKLIB 的 MATLAB 封装与分析辅助 | MATLAB | 99 | 🏷️ 个人社区 |
 | [pyrtklib_demo5](https://github.com/IPNL-POLYU/pyrtklib_demo5) | 基于 rtklibexplorer demo5 分支的 pyrtklib 变体 | C | 13 | 🏷️ 高校实验室 |
 
@@ -809,16 +809,16 @@ C++ 开源定位软件，中文导航学习社区常见推荐。适合跟 Naviga
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [pyRTKLib](https://github.com/alainmuls/pyRTKLib) | RINEX GPS/Galileo 处理与绘图 | Python | 50 | 🏷️ 个人社区 |
+| [pyRTKLib-RINEX](https://github.com/alainmuls/pyRTKLib) | Alain Muls：基于 RINEX 的 GPS/Galileo 处理与绘图（非 RTKLIB 绑定） | Python | 50 | 🏷️ 个人社区 |
 
 ### 详细说明
 
-#### [pyRTKLib](https://github.com/alainmuls/pyRTKLib)  
+#### [pyRTKLib-RINEX](https://github.com/alainmuls/pyRTKLib)  
 *🏷️ 个人社区*
 
 语言：Python · 许可：— · 星标约：50 · 宿主：github
 
-Python 下处理/绘制基于 RINEX 的 GPS 与 Galileo 数据，教学演示友好。精密模糊度固定与多星座全产品不如专用 PPP-AR 软件。
+个人维护的 Python 工具，侧重 RINEX GPS/Galileo 观测处理与绘图，教学演示友好。与港理工 IPNL 的 pyrtklib（原生 RTKLIB C 绑定）不是同一项目；精密模糊度固定与多星座 PPP-AR 请用专用引擎。
 
 ## RAIM/完好性
 

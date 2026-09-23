@@ -13,9 +13,9 @@
 | [ntrip-cpp](https://github.com/ybzwyrcld/ntrip) | NTRIP 2.0 的 C++ caster/client/server 示例 | C++ | 177 | 🏷️ 个人社区 |
 | [pygnssutils](https://github.com/semuconsulting/pygnssutils) | NMEA/UBX/RTCM/NTRIP/SPARTN 的 Python CLI 工具集 | Python | 143 | 🏷️ 个人社区 |
 | [ntripcaster-docker-bkg](https://github.com/goblimey/ntripcaster) | 容器化构建与运行 BKG NTRIP Caster 的 Docker 方案 | C | 139 | 🏷️ 个人社区 |
-| [ntripclient](http://software.rtcm-ntrip.org/wiki/ntripclient) | BKG POSIX ntripclient：命令行拉取 NTRIP 数据流 | C | 129 | 🏷️ 官方 |
+| [ntripclient](https://software.rtcm-ntrip.org/wiki/ntripclient) | BKG POSIX ntripclient：命令行拉取 NTRIP 数据流 | C | 129 | 🏷️ 官方 |
 | [pyrtcm](https://github.com/semuconsulting/pyrtcm) | RTCM3 报文的 Python 解析与生成库 | Python | 115 | 🏷️ 个人社区 |
-| [ntripserver](http://software.rtcm-ntrip.org/wiki/ntripserver) | BKG POSIX ntripserver：把本地 GNSS 流推到 NTRIP 播发器 | C | 74 | 🏷️ 官方 |
+| [ntripserver](https://software.rtcm-ntrip.org/wiki/ntripserver) | BKG POSIX ntripserver：把本地 GNSS 流推到 NTRIP 播发器 | C | 74 | 🏷️ 官方 |
 | [ntripcaster-libev](https://github.com/tisyang/ntripcaster) | 基于 libev 的高性能 NTRIP Broadcaster（C） | C | 68 | 🏷️ 个人社区 |
 | [ntrip-go](https://github.com/go-gnss/ntrip) | Go 语言 NTRIP 客户端与服务端库 | Go | 62 | 🏷️ 个人社区 |
 | [caster](https://github.com/Node-NTRIP/caster) | 支持 NTRIP V1/V2 的 Node.js caster 库 | TypeScript | 52 | 🏷️ 个人社区 核心 |
@@ -41,10 +41,10 @@
 | [BKG-NtripCaster](https://igs.bkg.bund.de/ntrip/bkgcaster) | BKG 专业 NtripCaster：GPL 开源实时 GNSS 流播发服务器 | C | — | 🏷️ 官方 核心 |
 | [BNC](https://igs.bkg.bund.de/ntrip/bnc) | BKG 开源多流 Ntrip 客户端：收 RTCM 并可做实时 PPP | C++ | — | 🏷️ 官方 核心 |
 | [BNC-source-FTP](https://igs.bkg.bund.de/root_ftp/NTRIP/software/BNC/) | BKG FTP：BNC 源码与多平台二进制直接下载目录 | C++ | — | 🏷️ 官方 |
-| [BNS](http://software.rtcm-ntrip.org/wiki/BNS) | BKG Ntrip State Space Server：实时状态空间改正播发相关工具 | C++ | — | 🏷️ 官方 |
+| [BNS](https://software.rtcm-ntrip.org/wiki/BNS) | BKG Ntrip State Space Server：实时状态空间改正播发相关工具 | C++ | — | 🏷️ 官方 |
 | [Caster-source-FTP](https://igs.bkg.bund.de/root_ftp/NTRIP/software/caster/) | BKG FTP：Professional NtripCaster 源码包直接下载 | C | — | 🏷️ 官方 |
 | [EUREF-IP-Ntrip-overview](https://igs.bkg.bund.de/ntrip/index) | BKG/IGS NTRIP 数据与工具总览：流列表、BNC 与 Caster 入口 | various | — | 🏷️ 官方 |
-| [RTCM-Ntrip-Software](http://software.rtcm-ntrip.org/) | RTCM-Ntrip 官方软件门户：BNC/Caster/POSIX 工具源码与文档 | C/C++ | — | 🏷️ 官方 核心 |
+| [RTCM-Ntrip-Software](https://software.rtcm-ntrip.org/) | RTCM-Ntrip 官方软件门户：BNC/Caster/POSIX 工具源码与文档 | C/C++ | — | 🏷️ 官方 核心 |
 
 ### 详细说明
 
@@ -76,7 +76,7 @@
 
 提供 Dockerfile 与说明，方便构建并运行经典 BKG NTRIP Caster，降低在自有服务器部署播发端的门槛。适合运维与教学试验。上游 BKG 许可与版本须单独遵守；生产环境还应配置监控、TLS 与用户管理。
 
-#### [ntripclient](http://software.rtcm-ntrip.org/wiki/ntripclient)  
+#### [ntripclient](https://software.rtcm-ntrip.org/wiki/ntripclient)  
 *🏷️ 官方*
 
 语言：C · 许可：GPL · 星标约：129 · 宿主：official_site
@@ -90,7 +90,7 @@
 
 专注 RTCM 3.x 消息编解码，可嵌入 NTRIP 客户端或自研差分链路，便于在 Python 里拆 MSM、站星改正。适合不想拉起完整 BNC 又能看懂差分电文的人。不含 caster 调度与精密定位；与 go-gnss/ntrip、ybzwyrcld/ntrip、nunojpg 系列传输层工具互补，和 pyubx2 同属 semuconsulting 协议栈。
 
-#### [ntripserver](http://software.rtcm-ntrip.org/wiki/ntripserver)  
+#### [ntripserver](https://software.rtcm-ntrip.org/wiki/ntripserver)  
 *🏷️ 官方*
 
 语言：C · 许可：GPL · 星标约：74 · 宿主：official_site
@@ -272,7 +272,7 @@ Peinser 发布的自托管 NTRIP v2 caster：汇聚多基站 RTCM 改正并通�
 
 BKG 提供的 BNC 发行目录，含 GPL-3 源码包、各发行版二进制与变更说明，与产品介绍页互补，便于脚本化拉取固定版本做复现。使用时注意版本与依赖库匹配；功能说明与 PPP 选项仍以 BNC 主页文档为准。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。
 
-#### [BNS](http://software.rtcm-ntrip.org/wiki/BNS)  
+#### [BNS](https://software.rtcm-ntrip.org/wiki/BNS)  
 *🏷️ 官方*
 
 语言：C++ · 许可：GPL · 星标约：— · 宿主：official_site
@@ -293,7 +293,7 @@ BKG 的 Ntrip 状态空间服务器条目，面向实时 SSR/改正信息播发�
 
 BKG 托管的 NTRIP/实时 GNSS 服务总览，提供流列表、归档与 BNC/Caster 工具入口。搭建或接入 IGS 实时流时的官方导航页。具体开源组件请分别进入 BNC、Caster 与 RTCM-Ntrip 软件站核对版本与许可证。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
 
-#### [RTCM-Ntrip-Software](http://software.rtcm-ntrip.org/)  
+#### [RTCM-Ntrip-Software](https://software.rtcm-ntrip.org/)  
 *🏷️ 官方 核心*
 
 语言：C/C++ · 许可：GPL (components) · 星标约：— · 宿主：official_site
@@ -935,13 +935,13 @@ gpsd 社区官网，提供安装文档、兼容硬件列表与发布信息。源
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [rtcm3torinex](http://software.rtcm-ntrip.org/wiki/rtcm3torinex) | BKG rtcm3torinex：RTCM3 流转 RINEX 的官方小工具 | C | 65 | 🏷️ 官方 |
+| [rtcm3torinex](https://software.rtcm-ntrip.org/wiki/rtcm3torinex) | BKG rtcm3torinex：RTCM3 流转 RINEX 的官方小工具 | C | 65 | 🏷️ 官方 |
 | [prx](https://github.com/jtec/prx) | RINEX 3.05 观测转 CSV | Python | 23 | 🏷️ 个人社区 |
 | [ubx2rinex](https://github.com/nav-solutions/ubx2rinex) | Rust 实现的 u-blox 原始观测到 RINEX 转换/采集工具 | Rust | 12 | 🏷️ 个人社区 |
 
 ### 详细说明
 
-#### [rtcm3torinex](http://software.rtcm-ntrip.org/wiki/rtcm3torinex)  
+#### [rtcm3torinex](https://software.rtcm-ntrip.org/wiki/rtcm3torinex)  
 *🏷️ 官方*
 
 语言：C · 许可：GPL · 星标约：65 · 宿主：official_site

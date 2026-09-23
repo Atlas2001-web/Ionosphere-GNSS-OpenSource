@@ -29,7 +29,7 @@
 | [RTK-Visual-Inertial-Navigation](https://github.com/xiaohong-huang/RTK-Visual-Inertial-Navigation) | 滑窗滤波框架下的 RTK 视觉惯性导航 | C++ | 136 | 🏷️ 个人社区 |
 | [carvig](https://github.com/Erensu/carvig) | 车载 INS/GNSS/视觉组合导航（C） | C | 120 | 🏷️ 个人社区 |
 | [salsa](https://github.com/yxw027/salsa) | GNSS+视觉+惯性状态估计相关实现 | C++ | 14 | 🏷️ 高校实验室 |
-| [GVINS](https://github.com/zhangwhu/GVINS) | PPP-RTK/INS/视觉组合导航（勿与 HKUST GVINS 混淆） | C++ | 12 | 🏷️ 高校实验室 |
+| [GVINS-WHU](https://github.com/zhangwhu/GVINS) | 武大相关：PPP-RTK/INS/视觉组合导航（勿与港科大 GVINS-HKUST 混淆） | C++ | 12 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -68,12 +68,12 @@
 
 融合 GNSS、视觉与惯性的状态估计原型，用于机器人室外全局定位并抑制纯视觉惯性漂移。适合多传感器融合架构与外参标定实验。传感器时间同步与标定成本较高；纯测地精密定位不如专用 PPP/RTK 引擎，本仓库价值在融合框架设计而非载波相位解算深度。
 
-#### [GVINS](https://github.com/zhangwhu/GVINS)  
+#### [GVINS-WHU](https://github.com/zhangwhu/GVINS)  
 *🏷️ 高校实验室*
 
 语言：C++ · 许可：— · 星标约：12 · 宿主：github
 
-在 PPP-RTK/INS 基础上再融合视觉观测，面向复杂遮挡环境的连续定位。适合多传感器融合与自动驾驶定位课题。务必注意：与 HKUST-Aerial-Robotics/GVINS 是不同项目，论文、数据集与作者均不相同；引用与复现前核对仓库说明，避免文献与代码串台。
+在 PPP-RTK/INS 基础上再融合视觉观测，面向复杂遮挡环境的连续定位。与 HKUST-Aerial-Robotics/GVINS（现名 GVINS-HKUST）是不同项目，论文、数据集与作者均不相同；引用与复现前核对仓库说明。
 
 ## 车载定位
 
@@ -322,7 +322,7 @@ MATLAB 仿真仓库：用间接法卡尔曼滤波融合 IMU 与 GPS，传感器�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GVINS](https://github.com/HKUST-Aerial-Robotics/GVINS) | 紧耦合 GNSS-视觉-惯性系统 | C++ | 1160 | 🏷️ 高校实验室 |
+| [GVINS-HKUST](https://github.com/HKUST-Aerial-Robotics/GVINS) | 港科大 Aerial Robotics：紧耦合 GNSS-视觉-惯性系统 | C++ | 1160 | 🏷️ 高校实验室 |
 | [IC-GVINS](https://github.com/i2Nav-WHU/IC-GVINS) | INS 中心的稳健实时 GNSS-视觉-惯性导航 | C++ | 690 | 🏷️ 高校实验室 |
 | [gnss_comm](https://github.com/HKUST-Aerial-Robotics/gnss_comm) | GNSS 原始测量处理的 ROS 基础定义与工具 | C++ | 164 | 🏷️ 高校实验室 |
 | [ublox_driver](https://github.com/HKUST-Aerial-Robotics/ublox_driver) | 面向 ZED-F9P 的 ROS u-blox 驱动 | C++ | 159 | 🏷️ 高校实验室 |
@@ -330,7 +330,7 @@ MATLAB 仿真仓库：用间接法卡尔曼滤波融合 IMU 与 GPS，传感器�
 
 ### 详细说明
 
-#### [GVINS](https://github.com/HKUST-Aerial-Robotics/GVINS)  
+#### [GVINS-HKUST](https://github.com/HKUST-Aerial-Robotics/GVINS)  
 *🏷️ 高校实验室*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：1160 · 宿主：github

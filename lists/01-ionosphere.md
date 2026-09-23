@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> 共 **237** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **234** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -15,8 +15,7 @@
 | [317Lab-tomography](https://github.com/317Lab/tomography) | Lynch 火箭实验室电离层层析成像代码库 | Jupyter Notebook | 1 | 🏷️ 高校实验室 |
 | [GNSS_TOM](https://github.com/sailvssea/GNSS_TOM) | GNSS 对流层与电离层层析 C++ 实现（风格仿 GPSTk） | C++ | 1 | 🏷️ 高校实验室 |
 | [Geometric-Matrix-For-Ionospheric-Tomogrphy](https://github.com/yujieqing/Geometric-Matrix-For-Ionospheric-Tomogrphy) | 电离层层析几何矩阵相关代码 | — | — | 🏷️ 个人社区 ★ |
-| [SegmentsComputation](https://github.com/yujieqing/SegmentsComputation) | 体素电离层层析中的射线段矩阵计算 | C++ | 0 | 🏷️ 个人社区 |
-| [SegmentsComputation](https://github.com/yxw027/SegmentsComputation) | 体素电离层层析中射线段（几何）矩阵算法 | — | 0 | 🏷️ 高校实验室 |
+| [SegmentsComputation](https://github.com/yujieqing/SegmentsComputation) | 体素电离层层析射线段矩阵计算（原作者仓，已归档） | C++ | 0 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -67,14 +66,7 @@
 
 语言：C++ · 许可：— · 星标约：0 · 宿主：github
 
-专注层析反演里体素穿越段（segment）几何矩阵的算法实现，是三维电子密度反演的前置数值模块。做 GNSS 电离层层析的研究者可直接复用或对照公式。不是完整层析软件，需自备观测方程、权重与正则化；可与 IonoTomo、synthetic 层析仓库搭配搭建实验链。矩阵稀疏性与体素划分策略会显著影响反演稳定性。
-
-#### [SegmentsComputation](https://github.com/yxw027/SegmentsComputation)  
-*🏷️ 高校实验室*
-
-语言：— · 许可：— · 星标约：0 · 宿主：github
-
-实现体素层析里卫星—测站射线与网格相交段的几何矩阵计算，是层析法方程组装的前置步骤。输入为射线路径与体素划分；输出为稀疏段长矩阵。局限：不含完整反演与 TEC 预处理；需自备观测与求解器。
+专注层析反演里体素穿越段（segment）几何矩阵的 C++ 实现，是三维电子密度反演的前置数值模块。原作者仓现已 archived；yxw027 同名仓为相同文件树副本，目录已去重只留本仓。不是完整层析软件，需自备观测方程与正则化。
 
 ## 电离层与PPP
 
@@ -334,8 +326,7 @@ Space Weather Modeling Framework 组件之一，描述高纬电离层电动力�
 | [Okoh-MATLAB-TEC-from-RINEX](https://doi.org/10.5281/zenodo.7711905) | Daniel Okoh：从 GNSS RINEX 提取 TEC 的 MATLAB 脚本集（Zenodo） | MATLAB | — | 🏷️ 高校实验室 |
 | [PMGC-SimVP](https://github.com/OnlyYouNotInCity/PMGC-SimVP) | 参数化多尺度门控卷积 + SimVP 的全球 TEC 时空预报 | Python | 0 | 🏷️ 高校实验室 |
 | [quakeion](https://github.com/Gm015555/quakeion) | 震例目录 + CODE GIM TEC/ROT/ROTI 分析（零 API Key） | Python | 0 | 🏷️ 个人社区 |
-| [Seemala-GPS-TEC](https://seemala.blogspot.com/2024/04/gps-tec-analysis-program-version-35.html) | Boston College ISR Gopi Seemala GPS-TEC：从 RINEX 估计 GPS TEC 的便携 Windows 程序 | Windows/Exe | — | 🏷️ 高校实验室 |
-| [Seemala-GPS-TEC](https://seemala.blogspot.com/2026/08/gps-tec-analysis-program-version-37.html) | Gopi Seemala GPS-TEC：广泛使用的 RINEX→TEC Windows 便携程序（博客发布） | Windows binary | — | 🏷️ 个人社区 |
+| [Seemala-GPS-TEC](https://seemala.blogspot.com/2026/08/gps-tec-analysis-program-version-37.html) | Gopi Seemala GPS-TEC：从 RINEX 估计 GPS TEC 的便携 Windows 程序（当前 v3.7） | Windows/Exe | — | 🏷️ 高校实验室 |
 | [TEC-forecast-F107](https://github.com/hekaixuan-atm/TEC-forecast) | 非均匀 F10.7 强迫下的全球 TEC 深度学习预报代码 | Python | 0 | 🏷️ 高校实验室 |
 | [vtec](https://github.com/mfkiwl/vtec) | 垂直 TEC（VTEC）计算相关工具 | — | — | 🏷️ 个人社区 ★ |
 
@@ -509,19 +500,12 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 
 把地震目录与电离层 TEC/ROT/ROTI 分析串起来，并可用 Kp/Dst 过滤地磁暴，强调无需额外 API Key。适合震电离层耦合统计入门。局限：依赖 GIM/IONEX 而非测站原始 STEC；因果解释需谨慎；星数为 0。
 
-#### [Seemala-GPS-TEC](https://seemala.blogspot.com/2024/04/gps-tec-analysis-program-version-35.html)  
+#### [Seemala-GPS-TEC](https://seemala.blogspot.com/2026/08/gps-tec-analysis-program-version-37.html)  
 *🏷️ 高校实验室*
 
-语言：Windows/Exe · 许可：academic (cite Seemala 2023; AS IS) · 星标约：— · 宿主：other
+语言：Windows/Exe · 许可：freeware for research (cite Seemala 2023) · 星标约：— · 宿主：other
 
-波士顿学院科学研究所研究者维护的经典 GPS TEC 分析程序（当前介绍为 v3.5），读取 RINEX 2/3 观测与导航文件并自动拉取 DCB，输出 CMN 文本与日变化图。在低纬电离层教学与区域 TEC 研究中使用极广；目前文档称暂仅 GPS。请按作者章节引用，注意 Windows/VC++ 运行库依赖。
-
-#### [Seemala-GPS-TEC](https://seemala.blogspot.com/2026/08/gps-tec-analysis-program-version-37.html)  
-*🏷️ 个人社区*
-
-语言：Windows binary · 许可：freeware for research (cite Seemala 2023) · 星标约：— · 宿主：other
-
-印度空间物理学者 Gopi Seemala 维护的 GPS-TEC 分析程序（当前博文为 v3.7），从 GPS RINEX 2/3 观测提取电离层 TEC，Windows 便携 ZIP（Google Drive），无需安装。算法见 Seemala 2023 Elsevier 章节，社区引用极广。目前仅 GPS（其他星座待测）。非开源源码发布，但是可下载的研究用可执行软件；使用请引用作者章节。博文与下载页 HTTP 200。
+波士顿学院 ISR / 空间物理学者 Gopi Seemala 维护的经典 GPS TEC 分析程序（博客当前为 v3.7）。读取 GPS RINEX 2/3 观测与导航文件并自动拉取 DCB，输出 CMN 文本与日变化图；Windows 便携 ZIP，无需安装。低纬电离层教学与区域 TEC 研究引用极广；目前文档称暂仅 GPS。请按 Seemala 2023 章节引用，注意 VC++ 运行库依赖。非开源源码发布。
 
 #### [TEC-forecast-F107](https://github.com/hekaixuan-atm/TEC-forecast)  
 *🏷️ 高校实验室*
@@ -959,10 +943,9 @@ University of Warmia and Mazury（Olsztyn）承担 IGS 电离层图组合与验�
 | [gnss-scintillation-simulator_2-param](https://github.com/cu-sense-lab/gnss-scintillation-simulator_2-param) | CU Sense Lab 两参数 GNSS 闪烁仿真器 | MATLAB | 6 | 🏷️ 高校实验室 |
 | [Ionospheric-TEC-ROTI-Interactives](https://github.com/Tesfay-Tesfu/Ionospheric-TEC-ROTI-Interactives) | 交互式 TEC/ROTI 计算（可选高度角，扰动日/静日对比） | Python | 3 | 🏷️ 个人社区 |
 | [roti-gnss-ml](https://github.com/NeelayS/roti-gnss) | 基于深度学习的 GNSS ROTI 时间序列预报实验代码 | Python | 3 | 🏷️ 个人社区 |
-| [BiScEF](https://github.com/kartverket/BiScEF) | 闪烁数据二进制交换格式实现 | Python | 2 | 🏷️ 官方 |
+| [BiScEF](https://github.com/kartverket/BiScEF) | 挪威制图局 Kartverket：闪烁数据二进制交换格式 BiScEF 官方实现 | Python | 2 | 🏷️ 官方 |
 | [igs-roti](https://github.com/jonathanblade/igs-roti) | IGS ROTI Maps 产品的 Web 可视化小工具 | Python | 2 | 🏷️ 个人社区 |
 | [ionospheric-scintillation-mitigation](https://github.com/fengjie0325/ionospheric-scintillation-mitigation) | 电离层闪烁抑制算法的原始计算机代码 | MATLAB | 2 | 🏷️ 个人社区 |
-| [BiScEF](https://github.com/stenseng/BiScEF) | 二进制闪烁交换格式 BiScEF 及相关工具 | Python | 1 | 🏷️ 个人社区 |
 | [FARR](https://gitlab.com/longleywj/farr) | FARR：磁化碰撞等离子体中电波传播的三维 FDTD 开源代码（GitLab） | C++ | 1 | 🏷️ 高校实验室 |
 | [scintkit](https://github.com/qwsae10/scintkit) | ScintPi/GNSS 闪烁简易工具 | Jupyter Notebook | 1 | 🏷️ 个人社区 |
 | [IBP-Model](https://igit.iap-kborn.de/ibp/ibp-model) | IAP Kühlungsborn IBP：低纬赤道等离子体泡发生概率经验/ML 模型（机构 GitLab） | Python | 0 | 🏷️ 高校实验室 |
@@ -1012,7 +995,7 @@ Notebook 实验：对 GNSS 导出的 ROTI 做深度学习时序预报。局限�
 
 语言：Python · 许可：MIT · 星标约：2 · 宿主：github
 
-挪威制图局等推动的闪烁数据二进制交换格式（BiScEF）相关实现，方便闪烁监测接收机数据互通。做多源闪烁融合时应关注格式版本。通用 TEC/ROTI 计算仍用 IonoMoni/OASIS 等。
+挪威制图局（Kartverket）维护的 Binary Scintillation Exchange Format 实现与示例；stenseng/BiScEF 已声明迁移至此仓，故目录只保留官方仓。便于闪烁监测接收机数据互通；做多源融合时关注格式版本。通用 TEC/ROTI 计算仍用 IonoMoni/OASIS 等。
 
 #### [igs-roti](https://github.com/jonathanblade/igs-roti)  
 *🏷️ 个人社区*
@@ -1027,13 +1010,6 @@ Notebook 实验：对 GNSS 导出的 ROTI 做深度学习时序预报。局限�
 语言：MATLAB · 许可：— · 星标约：2 · 宿主：github
 
 论文配套闪烁抑制算法实现（MATLAB），用于理解跟踪环/信号处理层面的缓解思路。输入为受闪烁影响的信号/观测量仿真或实测；输出为抑制后结果对比。局限：代码体量小、场景专用；不替代接收机厂商闭源算法。
-
-#### [BiScEF](https://github.com/stenseng/BiScEF)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：— · 星标约：1 · 宿主：github
-
-定义/实现 Binary Scintillation Exchange Format，便于闪烁监测数据交换与归档。输入为符合约定的闪烁记录；输出为二进制交换文件或解析结果。局限：需对照格式文档；生态小于 ISMR/IONEX 常见文本格式。
 
 #### [FARR](https://gitlab.com/longleywj/farr)  
 *🏷️ 高校实验室*
@@ -1775,7 +1751,7 @@ SpaceML 维护的电离层预报代码与笔记本，强调时间融合 Transfor
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [IonoMoni](https://github.com/qiliu2025/IonoMoni) | 多星座 ROTI/AATR/STEC/VTEC 监测 | C++ | 37 | 🏷️ 个人社区 ★ |
-| [gnss-scintillation-simulator](https://github.com/cu-sense-lab/gnss-scintillation-simulator) | GNSS 频段相位/幅度闪烁仿真 | MATLAB | 25 | 🏷️ 个人社区 |
+| [gnss-scintillation-simulator](https://github.com/cu-sense-lab/gnss-scintillation-simulator) | CU Boulder Sense Lab：GNSS 频段相位/幅度闪烁仿真 | MATLAB | 25 | 🏷️ 高校实验室 |
 | [OASIS](https://github.com/giorgiopicanco/OASIS) | 从 RINEX 计算 ROTI/ΔTEC/SIDX 等扰动指标 | Python | 16 | 🏷️ 个人社区 核心 |
 | [scintill-ai](https://github.com/viventriglia/scintill-ai) | 用机器学习做电离层闪烁相关分析的研究项目 | Shell | 8 | 🏷️ 个人社区 |
 | [TITIPy](https://github.com/pignalberi/TITIPy) | Swarm 顶部电离层 RODI/ROTI/ROTEI（Python） | Python | 8 | 🏷️ 高校实验室 |
@@ -1794,11 +1770,11 @@ SpaceML 维护的电离层预报代码与笔记本，强调时间融合 Transfor
 C++ 实现多星座电离层监测指标（ROTI、AATR、STEC/VTEC），偏近实时监测。适合需要编译型性能的台站软件。文档与许可信息需自行确认；科研绘图可再接 Python 可视化。
 
 #### [gnss-scintillation-simulator](https://github.com/cu-sense-lab/gnss-scintillation-simulator)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：MATLAB · 许可：— · 星标约：25 · 宿主：github
 
-仿真电离层引起的相位与幅度闪烁，用于接收机跟踪环与完好性试验。适合算法仿真，不是实测 ROTI 产品生成器。参数调谐需对照文献与实测统计。
+科罗拉多大学 Boulder Satellite Navigation and Sensing Lab（cu-sense-lab）开源的 GNSS 闪烁仿真器，生成相位与幅度闪烁序列，用于接收机跟踪环与完好性试验。适合算法仿真，不是实测 ROTI 产品生成器；参数需对照文献与实测统计。同实验室还有简化两参数版 gnss-scintillation-simulator_2-param。
 
 #### [OASIS](https://github.com/giorgiopicanco/OASIS)  
 *🏷️ 个人社区 核心*
@@ -1854,12 +1830,12 @@ Alessio Pignalberi（INGV，ESA INTENS）发布的 Python 工具：从 ESA Swarm
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [SH-GIM](https://github.com/Atlas2001-web/SH-GIM) | 球谐展开全球电离层图（GIM）MATLAB 实现（维护者自有，此处不展开） | MATLAB | 104 | 🏷️ 个人社区 🚩 核心 |
+| [M_GIM-zcytju](https://github.com/zcytju/M_GIM) | zcytju：多系统全球/区域电离层 GIM 建模 MATLAB 软件 | MATLAB | 23 | 🏷️ 个人社区 ★ |
 | [mosgim2](https://github.com/PadArt/mosgim2) | 相位差法构建 GNSS 全球电离层图 | Python | 17 | 🏷️ 个人社区 ★ |
 | [mosgim](https://github.com/gnss-lab/mosgim) | Padokhin 早期 MosGIM GIM 技术实现 | Python | 6 | 🏷️ 高校实验室 |
 | [real-time-ionospheric-maps-Kalman](https://github.com/AlexandraKoulouri/real-time-ionospheric-maps-using-Kalman) | 南美区域实时电离层图（集合卡尔曼）MATLAB 代码 | MATLAB | 3 | 🏷️ 高校实验室 |
-| [m_gim](https://github.com/PANXIONG-CN/m_gim) | MATLAB 侧 GIM 相关脚本 | MATLAB | 1 | 🏷️ 个人社区 ★ |
+| [m_gim-PANXIONG](https://github.com/PANXIONG-CN/m_gim) | PANXIONG：小体量 MATLAB GIM 脚本草稿 | MATLAB | 1 | 🏷️ 个人社区 ★ |
 | [GNSS.IonosphereMaps](https://github.com/gurkanguldas/GNSS.IonosphereMaps) | GNSS 电离层图生成与处理 | — | — | 🏷️ 个人社区 ★ |
-| [M_GIM](https://github.com/zcytju/M_GIM) | 电离层 GIM 相关 MATLAB/工具实现 | — | — | 🏷️ 个人社区 ★ |
 | [Zenodo-VTEC-map-generation-SBAS](https://doi.org/10.5281/zenodo.10058636) | Zenodo：支持星基导航误差模型的 VTEC 图生成补充材料 | — | 0 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -1868,6 +1844,13 @@ Alessio Pignalberi（INGV，ESA INTENS）发布的 Python 工具：从 ESA Swarm
 *🏷️ 个人社区 🚩 核心*
 
 维护者自有仓库，本索引仅作分类收录，不作详细介绍。请直接查看上游 README。
+
+#### [M_GIM-zcytju](https://github.com/zcytju/M_GIM)  
+*🏷️ 个人社区 ★*
+
+语言：MATLAB · 许可：— · 星标约：23 · 宿主：github
+
+面向多系统全球与区域电离层建模的 MATLAB 工具（仓库描述：Multi-system global and regional ionospheric modeling）。适合已有 MATLAB 电离层工作流的人试用。请自行核验 IONEX/球谐输入输出约定；与 PANXIONG 的 m_gim-PANXIONG 小脚本不是同一项目。
 
 #### [mosgim2](https://github.com/PadArt/mosgim2)  
 *🏷️ 个人社区 ★*
@@ -1890,12 +1873,12 @@ MosGIM 早期公开版本，便于追溯相位差 GIM 的原始流程。适合�
 
 用 Ensemble Kalman Filter 重建南美区域电离层图，展示实时/近实时制图思路。输入为区域 GNSS TEC 相关观测量；输出为时序电离层图。局限：区域与方法绑定；工程化 GIM/IONEX 生产需额外封装。
 
-#### [m_gim](https://github.com/PANXIONG-CN/m_gim)  
+#### [m_gim-PANXIONG](https://github.com/PANXIONG-CN/m_gim)  
 *🏷️ 个人社区 ★*
 
 语言：MATLAB · 许可：— · 星标约：1 · 宿主：github
 
-小体量 MATLAB GIM 相关代码，适合作为课程作业或方法草稿。功能覆盖面有限，不宜单独承担业务化建图。
+个人小仓 MATLAB GIM 相关脚本，适合课程作业或方法草稿。功能面窄，不宜单独承担业务化建图；更完整的多系统建模见 zcytju/M_GIM。
 
 #### [GNSS.IonosphereMaps](https://github.com/gurkanguldas/GNSS.IonosphereMaps)  
 *🏷️ 个人社区 ★*
@@ -1903,13 +1886,6 @@ MosGIM 早期公开版本，便于追溯相位差 GIM 的原始流程。适合�
 语言：— · 许可：— · 星标约：— · 宿主：github
 
 侧重从 GNSS 观测生成与处理电离层图，适合做图件可视化或区域 TEC 展示。工程完整度与多星座支持需实测；若目标是可发表级全球 GIM，应同时参考 MosGIM2 与 IGS 产品规范。
-
-#### [M_GIM](https://github.com/zcytju/M_GIM)  
-*🏷️ 个人社区 ★*
-
-语言：— · 许可：— · 星标约：— · 宿主：github
-
-面向 GIM 建模的 MATLAB 侧工具集合，适合已有 MATLAB 电离层工作流的人快速试用。公开说明偏少，需自行核验输入输出格式是否符合 IONEX/球谐习惯；可与 M_GIM 等变体对照使用。
 
 #### [Zenodo-VTEC-map-generation-SBAS](https://doi.org/10.5281/zenodo.10058636)  
 *🏷️ 高校实验室*
@@ -2119,11 +2095,11 @@ Joe Huba（Syntek/NRL）在 Zenodo 以 software 类型存档的 SAMI3-3.22 官�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Heki-GNSS-TEC-Software](http://www.ep.sci.hokudai.ac.jp/~heki/software.htm) | Heki 公开 Fortran：L4/STEC 与电离层层析 | Fortran | — | 🏷️ 高校实验室 |
+| [Heki-GNSS-TEC-Software](https://www.ep.sci.hokudai.ac.jp/~heki/software.htm) | Heki 公开 Fortran：L4/STEC 与电离层层析 | Fortran | — | 🏷️ 高校实验室 |
 
 ### 详细说明
 
-#### [Heki-GNSS-TEC-Software](http://www.ep.sci.hokudai.ac.jp/~heki/software.htm)  
+#### [Heki-GNSS-TEC-Software](https://www.ep.sci.hokudai.ac.jp/~heki/software.htm)  
 *🏷️ 高校实验室*
 
 语言：Fortran · 许可：academic research (as-is) · 星标约：— · 宿主：official_site

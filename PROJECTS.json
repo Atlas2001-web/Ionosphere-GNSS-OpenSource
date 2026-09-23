@@ -5,9 +5,9 @@
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
   "generated": "2026-09-23",
-  "project_count": 721,
+  "project_count": 718,
   "counts_by_category": {
-    "ionosphere": 237,
+    "ionosphere": 234,
     "troposphere": 32,
     "gnss-data": 109,
     "gnss-positioning": 80,
@@ -196,7 +196,7 @@
     },
     {
       "name": "BNS",
-      "url": "http://software.rtcm-ntrip.org/wiki/BNS",
+      "url": "https://software.rtcm-ntrip.org/wiki/BNS",
       "desc_zh": "BKG Ntrip State Space Server：实时状态空间改正播发相关工具",
       "analysis_zh": "BKG 的 Ntrip 状态空间服务器条目，面向实时 SSR/改正信息播发场景，源码与说明见 RTCM-Ntrip 发行包。适合研究实时 PPP/SSR 链路搭建；现代部署更常见 BNC 与 Professional Caster 组合，本工具偏专用或历史工作流，接入前请对照当前 trunk 文档。",
       "language": "C++",
@@ -1077,7 +1077,7 @@
     },
     {
       "name": "ntripclient",
-      "url": "http://software.rtcm-ntrip.org/wiki/ntripclient",
+      "url": "https://software.rtcm-ntrip.org/wiki/ntripclient",
       "desc_zh": "BKG 官方 POSIX NTRIP 客户端",
       "analysis_zh": "官方轻量 NTRIP 客户端，从播发器订阅 RTCM 等流并写到标准输出或端口。源码位于 RTCM-Ntrip trunk。适合脚本化取流；需要解码/PPP/GUI 时改用 BNC。",
       "language": "C",
@@ -1095,7 +1095,7 @@
     },
     {
       "name": "ntripserver",
-      "url": "http://software.rtcm-ntrip.org/wiki/ntripserver",
+      "url": "https://software.rtcm-ntrip.org/wiki/ntripserver",
       "desc_zh": "BKG 官方 POSIX NTRIP 服务器端工具",
       "analysis_zh": "RTCM-Ntrip 官方仓库中的 POSIX ntripserver，用于将接收机或文件流上传至 NtripCaster。源码见 software.rtcm-ntrip.org 浏览器。轻量适合嵌入式/服务器脚本；完整 GUI 与 PPP 请用 BNC。GitHub 上存在社区镜像。",
       "language": "C",
@@ -1489,7 +1489,7 @@
     },
     {
       "name": "RTCM-Ntrip-Software",
-      "url": "http://software.rtcm-ntrip.org/",
+      "url": "https://software.rtcm-ntrip.org/",
       "desc_zh": "RTCM-Ntrip 官方软件门户：BNC/Caster/POSIX 工具源码与文档",
       "analysis_zh": "BKG/RTCM 维护的 NTRIP 开源软件 Trac 门户，集中入口含 BNC、Professional Caster、POSIX ntripserver/client、BNS、rtcm3torinex 等。可浏览源码树与变更日志。部署前请核对各组件许可证与最新标签；专业播发器亦见 BKG 独立下载页。",
       "language": "C/C++",
@@ -1527,7 +1527,7 @@
     },
     {
       "name": "rtcm3torinex",
-      "url": "http://software.rtcm-ntrip.org/wiki/rtcm3torinex",
+      "url": "https://software.rtcm-ntrip.org/wiki/rtcm3torinex",
       "desc_zh": "官方 RTCM3→RINEX 转换工具",
       "analysis_zh": "RTCM-Ntrip 项目提供的 RTCM 3 到 RINEX 转换工具，便于把实时流转成事后文件。说明与附件见官方 wiki。功能聚焦转换；质检与编辑需搭配 Anubis/GFZRNX 等。",
       "language": "C",
@@ -2163,7 +2163,7 @@
       "url": "http://www.eswua.ingv.it/ewphp/landing.php?doi=tec",
       "desc_zh": "INGV eSWua 数据库：地中海/欧洲/全球 TEC 现报与预报产品入口",
       "one_liner_zh": "INGV eSWua 数据库：地中海/欧洲/全球 TEC 现报与预报产品入口",
-      "analysis_zh": "INGV「电子空间天气高层大气」数据库中的 TEC 专题（DOI:10.13127/eswua/tec，CC BY 4.0）。计算中心接入 RING、EUREF 与 IGS 实时/事后观测，7×24 产出地中海、欧洲与全球 TEC 产品。地中海现报（nc_med）即 IONORING 思路的产品化：RING NTRIP 实时流、10 分钟、0.1° 网格、LOWESS、无背景模型以免抹平不规则；另有地中海 30 分钟短期预报、欧洲 TEC/梯度图、全球 NeQuick2 同化现报，以及基于自回归神经网络与预报 Kp 的 24 小时全球预报。站点提供 Download Tool、Web Service 指南与可用性地图；示例 REST 如 `http://ws-eswua.rm.ingv.it/tecdb.php/records/wsnc_med?filter=dt,eq,YYYY-MM-DD%20HH:MM:SS`，返回 JSON 网格点（lat/lon/tec）。适合需要意大利/地中海高分辨率实时 TEC 或程序化拉图的用户；不是 GNSS 原始观测归档（RING 原始站数据另循 RING/INGV 渠道）。收录前已核验落地页可访问；使用请按页面引用元数据与 CC BY 4.0。",
+      "analysis_zh": "INGV eSWua 数据库 TEC 专题（DOI:10.13127/eswua/tec，CC BY 4.0）。接入 RING/EUREF/IGS 观测，持续产出地中海、欧洲与全球 TEC 现报/短期预报（含 NeQuick2 同化与 24h 预报），并提供 Download Tool 与 REST 示例。适合意大利/地中海高分辨率实时 TEC 或程序化拉图；不是 GNSS 原始观测归档。引用请按页面元数据与 CC BY 4.0。",
       "language": "data-portal",
       "license": "CC-BY-4.0",
       "category": "gnss-datasets",
@@ -2538,7 +2538,7 @@
       "url": "http://ionos.ingv.it/ionoring/ionoring.htm",
       "desc_zh": "意大利 INGV 基于 RING 网的实时 TEC 监测与地图发布页",
       "one_liner_zh": "意大利 INGV 基于 RING 网的实时 TEC 监测与地图发布页",
-      "analysis_zh": "意大利国家地球物理与火山学研究所（INGV）上层大气物理组维护的实时电离层 TEC 监测页。系统利用 RING（Rete Integrata Nazionale GNSS）约 40 个测站的双频观测，在 IPP 上估计 VTEC 后用 LOWESS 插值，生成覆盖约 35°N–48°N、5°E–20°E 的 0.1°×0.1° 网格图，约每 10 分钟刷新，典型时延低于 1 分钟。论文（Remote Sensing 2021）与 IGS GIM、比利时 ROB 欧洲图对比，RMSE 约 2–3 TECu，并讨论了 2017 年 X9.3 耀斑与随后地磁暴期间的区域响应，以及用于单点定位改正时相对 Klobuchar/GIM 的改善。本页主要展示最新地图与近 24 小时动画，不是开源处理软件仓库；算法与产品说明见论文。批量历史产品与 Web 服务请转到同组的 eSWua TEC 数据库（DOI:10.13127/eswua/tec）。收录时已 HTTP 核验页面可访问；使用与引用请遵守 INGV/论文要求。",
+      "analysis_zh": "INGV 基于 RING 网（约 40 站）的意大利区域实时 VTEC 监测页：IPP 估计后 LOWESS 插值，约 0.1° 网格、~10 分钟刷新。本页主要展示最新地图与近 24 小时动画，不是开源处理仓库；批量历史与 Web 服务请用同组 eSWua-TEC。使用与引用遵守 INGV/相关论文要求。",
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
@@ -4034,10 +4034,10 @@
       "one_liner_zh": "Python 模块化 RINEX/PPP/PPP-AR 与实时流"
     },
     {
-      "name": "pyRTKLib",
+      "name": "pyRTKLib-RINEX",
       "url": "https://github.com/alainmuls/pyRTKLib",
-      "desc_zh": "RINEX GPS/Galileo 处理与绘图",
-      "analysis_zh": "Python 下处理/绘制基于 RINEX 的 GPS 与 Galileo 数据，教学演示友好。精密模糊度固定与多星座全产品不如专用 PPP-AR 软件。",
+      "desc_zh": "Alain Muls：基于 RINEX 的 GPS/Galileo 处理与绘图（非 RTKLIB 绑定）",
+      "analysis_zh": "个人维护的 Python 工具，侧重 RINEX GPS/Galileo 观测处理与绘图，教学演示友好。与港理工 IPNL 的 pyrtklib（原生 RTKLIB C 绑定）不是同一项目；精密模糊度固定与多星座 PPP-AR 请用专用引擎。",
       "language": "Python",
       "license": "",
       "category": "gnss-positioning",
@@ -4049,12 +4049,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "RINEX GPS/Galileo 处理与绘图"
+      "one_liner_zh": "Alain Muls：基于 RINEX 的 GPS/Galileo 处理与绘图（非 RTKLIB 绑定）"
     },
     {
       "name": "pyrtklib",
       "url": "https://github.com/IPNL-POLYU/pyrtklib",
-      "desc_zh": "港理工 IPNL 的 RTKLIB Python 绑定，可直接在脚本里调用核心解算",
+      "desc_zh": "港理工 IPNL 的 RTKLIB Python 绑定（勿与 alainmuls/pyRTKLib-RINEX 混淆）",
       "analysis_zh": "港理工 IPNL 将 RTKLIB C 核心封装为 Python 扩展，便于在科研脚本里直接调用 PPK/RTK/PPP 而不反复改 C 工程。适合算法对比、批量后处理与教学演示。接口覆盖取决于绑定版本；实时流与新信号支持需对照所选 RTKLIB 分支。与 rtklib-py（纯 Python 重写）不同，本库强调调用原生 C 性能。",
       "language": "C",
       "license": "MIT",
@@ -4069,7 +4069,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "港理工 IPNL 的 RTKLIB Python 绑定，可直接在脚本里调用核心解算"
+      "one_liner_zh": "港理工 IPNL 的 RTKLIB Python 绑定（勿与 alainmuls/pyRTKLib-RINEX 混淆）"
     },
     {
       "name": "pyrtklib_demo5",
@@ -5602,34 +5602,14 @@
       "stars": 2,
       "provenance": "official",
       "host": "github",
-      "one_liner_zh": "闪烁数据二进制交换格式实现",
-      "analysis_zh": "挪威制图局等推动的闪烁数据二进制交换格式（BiScEF）相关实现，方便闪烁监测接收机数据互通。做多源闪烁融合时应关注格式版本。通用 TEC/ROTI 计算仍用 IonoMoni/OASIS 等。",
+      "one_liner_zh": "挪威制图局 Kartverket：闪烁数据二进制交换格式 BiScEF 官方实现",
+      "analysis_zh": "挪威制图局（Kartverket）维护的 Binary Scintillation Exchange Format 实现与示例；stenseng/BiScEF 已声明迁移至此仓，故目录只保留官方仓。便于闪烁监测接收机数据互通；做多源融合时关注格式版本。通用 TEC/ROTI 计算仍用 IonoMoni/OASIS 等。",
       "markers": [],
-      "desc_zh": "闪烁数据二进制交换格式实现",
+      "desc_zh": "挪威制图局 Kartverket：闪烁数据二进制交换格式 BiScEF 官方实现",
       "stars_approx": 2,
       "source": "similar-finds-2026-09-14",
       "featured": false,
       "user_relation": "none"
-    },
-    {
-      "name": "BiScEF",
-      "url": "https://github.com/stenseng/BiScEF",
-      "desc_zh": "二进制闪烁交换格式 BiScEF 及相关工具",
-      "one_liner_zh": "二进制闪烁交换格式 BiScEF 及相关工具",
-      "analysis_zh": "定义/实现 Binary Scintillation Exchange Format，便于闪烁监测数据交换与归档。输入为符合约定的闪烁记录；输出为二进制交换文件或解析结果。局限：需对照格式文档；生态小于 ISMR/IONEX 常见文本格式。",
-      "language": "Python",
-      "license": "",
-      "category": "ionosphere",
-      "subcategory": "闪烁",
-      "markers": [
-        "gapfill-2026-09-17"
-      ],
-      "stars_approx": 1,
-      "source": "gapfill-search 2026-09-17",
-      "featured": false,
-      "user_relation": "none",
-      "host": "github",
-      "provenance": "personal_community"
     },
     {
       "name": "Boston-College-ISR-Ionospheric-Studies",
@@ -6438,8 +6418,8 @@
     {
       "name": "gnss-scintillation-simulator",
       "url": "https://github.com/cu-sense-lab/gnss-scintillation-simulator",
-      "desc_zh": "GNSS 频段相位/幅度闪烁仿真",
-      "analysis_zh": "仿真电离层引起的相位与幅度闪烁，用于接收机跟踪环与完好性试验。适合算法仿真，不是实测 ROTI 产品生成器。参数调谐需对照文献与实测统计。",
+      "desc_zh": "CU Boulder Sense Lab：GNSS 频段相位/幅度闪烁仿真",
+      "analysis_zh": "科罗拉多大学 Boulder Satellite Navigation and Sensing Lab（cu-sense-lab）开源的 GNSS 闪烁仿真器，生成相位与幅度闪烁序列，用于接收机跟踪环与完好性试验。适合算法仿真，不是实测 ROTI 产品生成器；参数需对照文献与实测统计。同实验室还有简化两参数版 gnss-scintillation-simulator_2-param。",
       "language": "MATLAB",
       "license": "",
       "category": "ionosphere",
@@ -6450,8 +6430,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "GNSS 频段相位/幅度闪烁仿真"
+      "provenance": "academic_lab",
+      "one_liner_zh": "CU Boulder Sense Lab：GNSS 频段相位/幅度闪烁仿真"
     },
     {
       "name": "gnss-scintillation-simulator_2-param",
@@ -7971,10 +7951,10 @@
       "provenance": "academic_lab"
     },
     {
-      "name": "m_gim",
+      "name": "m_gim-PANXIONG",
       "url": "https://github.com/PANXIONG-CN/m_gim",
-      "desc_zh": "MATLAB 侧 GIM 相关脚本",
-      "analysis_zh": "小体量 MATLAB GIM 相关代码，适合作为课程作业或方法草稿。功能覆盖面有限，不宜单独承担业务化建图。",
+      "desc_zh": "PANXIONG：小体量 MATLAB GIM 脚本草稿",
+      "analysis_zh": "个人小仓 MATLAB GIM 相关脚本，适合课程作业或方法草稿。功能面窄，不宜单独承担业务化建图；更完整的多系统建模见 zcytju/M_GIM。",
       "language": "MATLAB",
       "license": "",
       "category": "ionosphere",
@@ -7988,27 +7968,27 @@
       "user_relation": "starred",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "MATLAB 侧 GIM 相关脚本"
+      "one_liner_zh": "PANXIONG：小体量 MATLAB GIM 脚本草稿"
     },
     {
-      "name": "M_GIM",
+      "name": "M_GIM-zcytju",
       "url": "https://github.com/zcytju/M_GIM",
-      "desc_zh": "电离层 GIM 相关 MATLAB/工具实现",
-      "analysis_zh": "面向 GIM 建模的 MATLAB 侧工具集合，适合已有 MATLAB 电离层工作流的人快速试用。公开说明偏少，需自行核验输入输出格式是否符合 IONEX/球谐习惯；可与 M_GIM 等变体对照使用。",
-      "language": "",
+      "desc_zh": "zcytju：多系统全球/区域电离层 GIM 建模 MATLAB 软件",
+      "analysis_zh": "面向多系统全球与区域电离层建模的 MATLAB 工具（仓库描述：Multi-system global and regional ionospheric modeling）。适合已有 MATLAB 电离层工作流的人试用。请自行核验 IONEX/球谐输入输出约定；与 PANXIONG 的 m_gim-PANXIONG 小脚本不是同一项目。",
+      "language": "MATLAB",
       "license": "",
       "category": "ionosphere",
       "subcategory": "GIM/球谐映射",
       "markers": [
         "starred"
       ],
-      "stars_approx": null,
+      "stars_approx": 23,
       "source": "curated+verified (awesome-gnss / stars / API / official site)",
       "featured": false,
       "user_relation": "starred",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "电离层 GIM 相关 MATLAB/工具实现"
+      "one_liner_zh": "zcytju：多系统全球/区域电离层 GIM 建模 MATLAB 软件"
     },
     {
       "name": "M_ISSION",
@@ -9389,33 +9369,11 @@
     },
     {
       "name": "Seemala-GPS-TEC",
-      "url": "https://seemala.blogspot.com/2024/04/gps-tec-analysis-program-version-35.html",
-      "desc_zh": "Boston College ISR Gopi Seemala GPS-TEC：从 RINEX 估计 GPS TEC 的便携 Windows 程序",
-      "one_liner_zh": "Boston College ISR Gopi Seemala GPS-TEC：从 RINEX 估计 GPS TEC 的便携 Windows 程序",
-      "analysis_zh": "波士顿学院科学研究所研究者维护的经典 GPS TEC 分析程序（当前介绍为 v3.5），读取 RINEX 2/3 观测与导航文件并自动拉取 DCB，输出 CMN 文本与日变化图。在低纬电离层教学与区域 TEC 研究中使用极广；目前文档称暂仅 GPS。请按作者章节引用，注意 Windows/VC++ 运行库依赖。",
-      "language": "Windows/Exe",
-      "license": "academic (cite Seemala 2023; AS IS)",
-      "category": "ionosphere",
-      "subcategory": "TEC估计",
-      "markers": [
-        "batch-2026-09-17"
-      ],
-      "stars_approx": null,
-      "source": "batch-official-labs 2026-09-17",
-      "featured": false,
-      "user_relation": "none",
-      "host": "other",
-      "provenance": "academic_lab",
-      "registration": "open",
-      "registration_zh": "博客页提供 Google Drive ZIP 直链，解压即运行；无需注册。"
-    },
-    {
-      "name": "Seemala-GPS-TEC",
       "url": "https://seemala.blogspot.com/2026/08/gps-tec-analysis-program-version-37.html",
-      "desc_zh": "Gopi Seemala GPS-TEC：广泛使用的 RINEX→TEC Windows 便携程序（博客发布）",
-      "one_liner_zh": "Gopi Seemala GPS-TEC：广泛使用的 RINEX→TEC Windows 便携程序（博客发布）",
-      "analysis_zh": "印度空间物理学者 Gopi Seemala 维护的 GPS-TEC 分析程序（当前博文为 v3.7），从 GPS RINEX 2/3 观测提取电离层 TEC，Windows 便携 ZIP（Google Drive），无需安装。算法见 Seemala 2023 Elsevier 章节，社区引用极广。目前仅 GPS（其他星座待测）。非开源源码发布，但是可下载的研究用可执行软件；使用请引用作者章节。博文与下载页 HTTP 200。",
-      "language": "Windows binary",
+      "desc_zh": "Gopi Seemala GPS-TEC：从 RINEX 估计 GPS TEC 的便携 Windows 程序（当前 v3.7）",
+      "one_liner_zh": "Gopi Seemala GPS-TEC：从 RINEX 估计 GPS TEC 的便携 Windows 程序（当前 v3.7）",
+      "analysis_zh": "波士顿学院 ISR / 空间物理学者 Gopi Seemala 维护的经典 GPS TEC 分析程序（博客当前为 v3.7）。读取 GPS RINEX 2/3 观测与导航文件并自动拉取 DCB，输出 CMN 文本与日变化图；Windows 便携 ZIP，无需安装。低纬电离层教学与区域 TEC 研究引用极广；目前文档称暂仅 GPS。请按 Seemala 2023 章节引用，注意 VC++ 运行库依赖。非开源源码发布。",
+      "language": "Windows/Exe",
       "license": "freeware for research (cite Seemala 2023)",
       "category": "ionosphere",
       "subcategory": "TEC估计",
@@ -9427,15 +9385,15 @@
       "featured": false,
       "user_relation": "none",
       "host": "other",
-      "provenance": "personal_community",
+      "provenance": "academic_lab",
       "registration": "open",
       "registration_zh": "博文公开；程序 ZIP 经 Google Drive 链接下载，无需专用门户账号。"
     },
     {
       "name": "SegmentsComputation",
       "url": "https://github.com/yujieqing/SegmentsComputation",
-      "desc_zh": "体素电离层层析中的射线段矩阵计算",
-      "analysis_zh": "专注层析反演里体素穿越段（segment）几何矩阵的算法实现，是三维电子密度反演的前置数值模块。做 GNSS 电离层层析的研究者可直接复用或对照公式。不是完整层析软件，需自备观测方程、权重与正则化；可与 IonoTomo、synthetic 层析仓库搭配搭建实验链。矩阵稀疏性与体素划分策略会显著影响反演稳定性。",
+      "desc_zh": "体素电离层层析射线段矩阵计算（原作者仓，已归档）",
+      "analysis_zh": "专注层析反演里体素穿越段（segment）几何矩阵的 C++ 实现，是三维电子密度反演的前置数值模块。原作者仓现已 archived；yxw027 同名仓为相同文件树副本，目录已去重只留本仓。不是完整层析软件，需自备观测方程与正则化。",
       "language": "C++",
       "license": "",
       "category": "ionosphere",
@@ -9447,27 +9405,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "体素电离层层析中的射线段矩阵计算"
-    },
-    {
-      "name": "SegmentsComputation",
-      "url": "https://github.com/yxw027/SegmentsComputation",
-      "desc_zh": "体素电离层层析中射线段（几何）矩阵算法",
-      "one_liner_zh": "体素电离层层析中射线段（几何）矩阵算法",
-      "analysis_zh": "实现体素层析里卫星—测站射线与网格相交段的几何矩阵计算，是层析法方程组装的前置步骤。输入为射线路径与体素划分；输出为稀疏段长矩阵。局限：不含完整反演与 TEC 预处理；需自备观测与求解器。",
-      "language": "",
-      "license": "",
-      "category": "ionosphere",
-      "subcategory": "层析",
-      "markers": [
-        "gapfill-2026-09-17"
-      ],
-      "stars_approx": 0,
-      "source": "gapfill-search 2026-09-17",
-      "featured": false,
-      "user_relation": "none",
-      "host": "github",
-      "provenance": "academic_lab"
+      "one_liner_zh": "体素电离层层析射线段矩阵计算（原作者仓，已归档）"
     },
     {
       "name": "Septentrio-PyDataLink",
@@ -10589,9 +10527,9 @@
       "one_liner_zh": "GTSAM 平滑与建图因子图库"
     },
     {
-      "name": "GVINS",
+      "name": "GVINS-HKUST",
       "url": "https://github.com/HKUST-Aerial-Robotics/GVINS",
-      "desc_zh": "紧耦合 GNSS-视觉-惯性系统",
+      "desc_zh": "港科大 Aerial Robotics：紧耦合 GNSS-视觉-惯性系统",
       "analysis_zh": "港科大开源 GVINS，把 GNSS 约束进 VIO，改善全局一致性。适合无人机/户外 SLAM。对 GNSS 原始观测质量敏感。",
       "language": "C++",
       "license": "GPL-3.0",
@@ -10604,13 +10542,13 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "紧耦合 GNSS-视觉-惯性系统"
+      "one_liner_zh": "港科大 Aerial Robotics：紧耦合 GNSS-视觉-惯性系统"
     },
     {
-      "name": "GVINS",
+      "name": "GVINS-WHU",
       "url": "https://github.com/zhangwhu/GVINS",
-      "desc_zh": "PPP-RTK/INS/视觉组合导航（勿与 HKUST GVINS 混淆）",
-      "analysis_zh": "在 PPP-RTK/INS 基础上再融合视觉观测，面向复杂遮挡环境的连续定位。适合多传感器融合与自动驾驶定位课题。务必注意：与 HKUST-Aerial-Robotics/GVINS 是不同项目，论文、数据集与作者均不相同；引用与复现前核对仓库说明，避免文献与代码串台。",
+      "desc_zh": "武大相关：PPP-RTK/INS/视觉组合导航（勿与港科大 GVINS-HKUST 混淆）",
+      "analysis_zh": "在 PPP-RTK/INS 基础上再融合视觉观测，面向复杂遮挡环境的连续定位。与 HKUST-Aerial-Robotics/GVINS（现名 GVINS-HKUST）是不同项目，论文、数据集与作者均不相同；引用与复现前核对仓库说明。",
       "language": "C++",
       "license": "",
       "category": "navigation-ins",
@@ -10622,7 +10560,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "PPP-RTK/INS/视觉组合导航（勿与 HKUST GVINS 混淆）"
+      "one_liner_zh": "武大相关：PPP-RTK/INS/视觉组合导航（勿与港科大 GVINS-HKUST 混淆）"
     },
     {
       "name": "GVINS-Dataset",
@@ -11487,9 +11425,9 @@
       "one_liner_zh": "武大 i2Nav 整理的车载 GNSS/INS 融合公开数据集列表"
     },
     {
-      "name": "awesome-gnss",
+      "name": "awesome-gnss-barbeau",
       "url": "https://github.com/barbeau/awesome-gnss",
-      "desc_zh": "开源 GNSS 软件与资源社区列表",
+      "desc_zh": "Sean Barbeau 维护的开源 GNSS 软件与资源 awesome 列表",
       "analysis_zh": "Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献入口，本目录大量种子来源之一。适合定期浏览查新。本身不含算法实现。",
       "language": "",
       "license": "Apache-2.0",
@@ -11504,13 +11442,13 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "开源 GNSS 软件与资源社区列表"
+      "one_liner_zh": "Sean Barbeau 维护的开源 GNSS 软件与资源 awesome 列表"
     },
     {
-      "name": "awesome-gnss",
+      "name": "awesome-gnss-hdkarimi",
       "url": "https://github.com/hdkarimi/awesome-gnss",
-      "desc_zh": "GNSS/RNSS 开源工具、数据与课程的 awesome 列表",
-      "analysis_zh": "策展 GNSS/RNSS 相关开源软件、数据、工具与慕课入口的 awesome 列表，帮助新人快速摸清领域版图。适合浏览式调研与课程资源推荐。链接时效性需自行点击验证；与本精选目录互补——awesome 偏广度，本目录强调核验 URL、分类与中文技术分析。",
+      "desc_zh": "hdkarimi：GNSS/RNSS 开源工具、数据与慕课的 awesome 列表",
+      "analysis_zh": "策展 GNSS/RNSS 相关开源软件、数据、工具与慕课入口的 awesome 列表，帮助新人快速摸清领域版图。与 barbeau/awesome-gnss（现名 awesome-gnss-barbeau）是不同策展；链接时效性需自行点击验证。",
       "language": "",
       "license": "MIT",
       "category": "tools-learning",
@@ -11522,7 +11460,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "GNSS/RNSS 开源工具、数据与课程的 awesome 列表"
+      "one_liner_zh": "hdkarimi：GNSS/RNSS 开源工具、数据与慕课的 awesome 列表"
     },
     {
       "name": "earth-gravitational-model",
@@ -11562,7 +11500,7 @@
     },
     {
       "name": "EGNOS-Toolkit",
-      "url": "https://sourceforge.net/projects/libegnos",
+      "url": "https://sourceforge.net/projects/libegnos/",
       "desc_zh": "EGNOS/SBAS 工具集（SourceForge）",
       "analysis_zh": "基于 EGNOS SDK 的 Linux/UNIX 移植，处理 SISNET、EMS 文件并实现用户端 SBAS 算法，许可 EUPL。托管于 SourceForge，更新偏旧。现代多星座 SBAS/HAS 研究需结合新文档与其他开源栈。",
       "language": "C/C++",
@@ -13552,7 +13490,7 @@
     },
     {
       "name": "Heki-GNSS-TEC-Software",
-      "url": "http://www.ep.sci.hokudai.ac.jp/~heki/software.htm",
+      "url": "https://www.ep.sci.hokudai.ac.jp/~heki/software.htm",
       "desc_zh": "北海道大学 Heki：GNSS L4/STEC 与三维层析 Fortran 公开程序",
       "analysis_zh": "日置幸一郎课题组公开的 Fortran 工具页：rdrnx/rdrnx3 从 RINEX 生成几何无关 L4、rdeph 算卫星位置、tomo 做三维电子密度层析，并含 CID 仿真与 GEONET 荷载示例。学术研究常用。许可为研究用公开源码（非 SPDX）；社区镜像见 yu-0124/GNSS-TEC_tools。编译与坐标系约定需对照说明书。",
       "language": "Fortran",
@@ -14040,7 +13978,7 @@
   "provenance_counts": {
     "official": 188,
     "academic_lab": 210,
-    "personal_community": 323
+    "personal_community": 320
   },
   "updated": "2026-09-23"
 }
