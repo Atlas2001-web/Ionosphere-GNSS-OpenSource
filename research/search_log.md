@@ -274,3 +274,9 @@
 - Highlights added: earthscope-sdk, GeoscienceAustralia/gnssanalysis, PyGNSSFix, ntrip-core, esp32-xbee, Heki TEC Fortran page, ubx-mga converter, grinq, GNSS_OSI_download, sidereon-python, gnssFGO (maintained fork), NOAA-UFCORS, NGS-OPUS, IBGE-RBMC-API
 - Skipped: PPPx (closed academic-only binary), TrigNet portal (egress unreachable), gnss.osi.ie portal (egress unreachable; kept download script), thin RINEX toys, mirrors of already-listed OASIS/IonoMoni/EarthScope-gnsstools, rwth-irt/gnssFGO archive URL (pointed users to hz658832 maintainer fork)
 
+
+## 2026-09-23 routine web search
+
+- Scope: EUREF/EPOS/M3G/GLASS, NRCan CSRS-PPP, IBGE-PPP API, NGS OPUS-Projects/ncat-lib, BEV APOS, GFZ isdc-data HTTPS, GeoNet Data API, GSI RINGO, TITIPy, gsit, TU Delft IGP, rtk_client
+- Skipped (dup/thin/no-license/closed): BeidouProbe (no license), RtkGpsPlus/RTDLIB (stale forks), go_ntrip/lf7817-rtk (no license), EDAS client (proprietary), claslib/madocalib/ginan/cssrlib/GREAT already listed
+- Merged: research/routine_finds_20260923.json → +15 (706→721)

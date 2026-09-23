@@ -1,5 +1,5 @@
 # GNSS 数据与格式 / GNSS Data I/O
-> 共 **108** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **109** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
@@ -334,6 +334,7 @@ BKG/RTCM 维护的 NTRIP 开源软件 Trac 门户，集中入口含 BNC、Profes
 | [Anubis](https://gnutsoftware.com/software/anubis/) | G-Nut/Anubis：多 GNSS RINEX/RTCM 质量检查（Free 开源） | C++ | — | 🏷️ 个人社区 核心 |
 | [Anubis-Free-Download](https://gnutsoftware.com/software/anubis/download) | G-Nut/Anubis Free 下载：GPL 源码与 Linux 预编译（Pro 为商业） | C++ | — | 🏷️ 个人社区 |
 | [plot-Anubis](https://www.pecny.cz/sw/plots/anubis/) | GOP/Pecny 提供的 Anubis XTR 质检结果静态绘图脚本 | Perl | — | 🏷️ 高校实验室 |
+| [RINGO](https://terras.gsi.go.jp/software/ringo/en/) | GSI 官方 RINGO：多系统 RINEX 预处理/质检 CLI | Go | — | 🏷️ 官方 |
 | [TEQC](https://www.unavco.org/software/data-processing/teqc/teqc.html) | UNAVCO/GAGE 经典 TEQC：翻译/编辑/质检（已 EOL，闭源免费） | binary (closed) | — | 🏷️ 官方 核心 |
 
 ### 详细说明
@@ -386,6 +387,13 @@ Anubis 免费档下载入口，提供 Linux 预编译与 GPL-3 源码，覆盖�
 语言：Perl · 许可：free (as-is) · 星标约：— · 宿主：official_site
 
 捷克大地测量观测台相关页面提供的 plot_anubis.pl，读取 Anubis 输出的 XTR 生成单站质检图，免费且无支持承诺。适合批量为数据中心出静态图；若需交互仪表盘或实时告警，应评估 Anubis 商业档或其他可视化栈。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。
+
+#### [RINGO](https://terras.gsi.go.jp/software/ringo/en/)  
+*🏷️ 官方*
+
+语言：Go · 许可：GSI Website Terms of Use v2.0 · 星标约：— · 宿主：official_site
+
+国土地理院（GSI）公开的 RINGO（RINEX pre-processing tool using Go），提供多系统 RINEX 编辑/合并、钟跳改正、质量检查、电离层改正、BINEX/RTCM→RINEX、RINEX→CSV 与交互查看器等。官方提供 Windows/Linux/macOS/FreeBSD/Solaris 预编译二进制（当前页标注 v0.9.6，2026-05）。许可适用 GSI Website Terms of Use v2.0（允许使用、修改与再分发，以官网条款为准）。不是精密定位引擎；大网批量与边角格式请对照文档与 EPS 论文（Earth Planets Space 75:54, 2023）。
 
 #### [TEQC](https://www.unavco.org/software/data-processing/teqc/teqc.html)  
 *🏷️ 官方 核心*

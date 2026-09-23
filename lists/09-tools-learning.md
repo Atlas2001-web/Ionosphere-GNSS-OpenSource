@@ -1,5 +1,5 @@
 # 学习资源与工具 / Tools & Learning
-> 共 **29** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **30** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
@@ -306,9 +306,17 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [ncat-lib](https://github.com/noaa-ngs/ncat-lib) | NGS NCAT Java 库：离线坐标/基准转换 | Java | 21 | 🏷️ 官方 |
 | [NGS-NCAT](https://geodesy.noaa.gov/NCAT/) | NOAA/NGS NCAT：大地坐标与参考框架转换工具 | web/service | — | 🏷️ 官方 |
 
 ### 详细说明
+
+#### [ncat-lib](https://github.com/noaa-ngs/ncat-lib)  
+*🏷️ 官方*
+
+语言：Java · 许可：USGov (17 USC 105 / NOAA terms) · 星标约：21 · 宿主：github
+
+NGS 公开的 NCAT（NGS Coordinate Conversion and Transformation Tool）底层 Java 转换模块库，可用 Ant 构建 jar，在无网络环境下做坐标与基准转换（NADCON/VERTCON 格网需另从 NCAT 站点下载）。美国政府雇员作品在美不受版权限制（17 U.S.C. §105），并对外提供免版税非独占许可（仓库 SPDX 标为 NOASSERTION/other）。与已收录的 NGS-NCAT 网页工具互补（网页 vs 可嵌入库）。不是 GNSS 观测解算器。
 
 #### [NGS-NCAT](https://geodesy.noaa.gov/NCAT/)  
 *🏷️ 官方*

@@ -1,5 +1,5 @@
 # GNSS 数据源 / GNSS Datasets
-> 共 **80** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **89** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
@@ -674,6 +674,8 @@ JHU/APL SuperMAG 汇集全球地磁台站并提供统一坐标与多种指数/�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [BEV-APOS](https://www.bev.gv.at/Services/Produkte/Grundlagenvermessung/APOS.html) | BEV APOS：奥地利 CORS；RINEX 事后免费 | data-portal | — | 🏷️ 官方 |
+| [GeoNet-Data-API](https://data.geonet.org.nz/) | GeoNet Data API：新西兰 GNSS RINEX 机器接口 | data-portal | — | 🏷️ 官方 |
 | [GeoNet-NZ-Geodetic](https://www.geonet.org.nz/data/types/geodetic) | 新西兰 GeoNet 大地测量/GNSS 数据 | data-portal | — | 🏷️ 官方 |
 | [IBGE-RBMC](https://www.ibge.gov.br/en/geosciences/geodetic-network/2421-rbmc.html) | 巴西 IBGE RBMC 连续 GNSS 网 | data-portal | — | 🏷️ 官方 |
 | [IBGE-RBMC-API](https://servicodados.ibge.gov.br/api/docs/rbmc?versao=1) | 巴西 RBMC REST API（RINEX 按站下载） | data-portal | — | 🏷️ 官方 |
@@ -684,6 +686,20 @@ JHU/APL SuperMAG 汇集全球地磁台站并提供统一坐标与多种指数/�
 | [Spain-IGN-ERGNSS](https://datos-geodesia.ign.es/ERGNSS/) | 西班牙 IGN ERGNSS 公开 GNSS 数据目录 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
+
+#### [BEV-APOS](https://www.bev.gv.at/Services/Produkte/Grundlagenvermessung/APOS.html)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：CC-BY-4.0 (APOS-PP) · 星标约：— · 宿主：official_site
+
+奥地利联邦计量与测量局（BEV）运营的 Austrian Positioning Service。APOS-PP 提供约 40 站 GPS/GLO/GAL/BDS 的 RINEX（1 s / 30 s）事后数据，经 Geoportal 免费下载且无需注册，许可为 CC BY 4.0；实时 RTK/DGPS/RAW 为收费或需注册服务。站网按 EUREF Class A 维护，坐标参考 ETRS89。适合中欧区域 CORS 对照与教学；实时改正不在免费范围内。英文产品说明页见 BEV 官网 English 栏目。
+
+#### [GeoNet-Data-API](https://data.geonet.org.nz/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+GeoNet 面向自动化拉取的稳定 Data API（data.geonet.org.nz）：浏览/下载原始数据与产品；GNSS RINEX 位于 /v1/data/gnss/rinex/（另有 1 Hz 路径）。支持 gzip Accept-Encoding。旧兼容端点计划于 2026 年底退役，脚本应迁移到 /v1/data/。数据自由开放，使用前需阅读 Data Policy/Disclaimer 并引用数据集 DOI。与已收录的 GeoNet 大地测量说明页互补（门户介绍 vs 机器接口）。
 
 #### [GeoNet-NZ-Geodetic](https://www.geonet.org.nz/data/types/geodetic)  
 *🏷️ 官方*
@@ -760,9 +776,26 @@ IBGE 服务数据文档中的 RBMC API（v1），提供 rinex2/rinex3 及 1 秒�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [CSRS-PPP](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/ppp.php?locale=en) | NRCan CSRS-PPP：官方免费在线精密单点定位 | data-portal | — | 🏷️ 官方 |
+| [IBGE-PPP-API](https://servicodados.ibge.gov.br/api/docs/ppp?versao=1) | IBGE-PPP REST：巴西在线精密单点定位 API | data-portal | — | 🏷️ 官方 |
 | [NGS-OPUS](https://www.ngs.noaa.gov/OPUS/) | NGS OPUS 在线静态精密定位服务 | data-portal | — | 🏷️ 官方 |
+| [NGS-OPUS-Projects](https://geodesy.noaa.gov/OPUS-Projects/OpusProjects.shtml) | NGS OPUS Projects：多站控制网在线处理 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
+
+#### [CSRS-PPP](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/ppp.php?locale=en)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：Open Government Licence - Canada · 星标约：— · 宿主：official_site
+
+NRCan 加拿大大地测量处长期运营的 CSRS-PPP Web 服务：提交 RINEX 后返回位置/轨迹、对流层天顶延迟与接收机钟差等产品，支持静态/动态与多参考框架。数据与产品适用 Open Government Licence – Canada；使用需登录免费账户。2026 年起对部分历史观测切换 IGS Repro3 产品（见服务更新页）。引擎本身不开源，但属广泛引用的官方免费科学服务；批量可用官方脚本接口（申请发放）。与 IBGE-PPP（下游封装）及本地开源 PPP 套件互补。
+
+#### [IBGE-PPP-API](https://servicodados.ibge.gov.br/api/docs/ppp?versao=1)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+巴西地理统计局（IBGE）公开的 IBGE-PPP API：上传 RINEX（含 Hatanaka）后由后端调用 NRCan CSRS-PPP 引擎，返回兼容 SIRGAS2000/ITRF 的静态或动态坐标与不确定度。表单字段含 arquivo、tipo-levantamento、modelo-antena、altura-antena、email、autorizacao-uso 等；文档注明单请求约 10MB 上限。与已收录的 RBMC API 互补（数据下载 vs 在线 PPP）。需遵守 IBGE 服务条款与授权字段；大文件请改用官网网页通道。
 
 #### [NGS-OPUS](https://www.ngs.noaa.gov/OPUS/)  
 *🏷️ 官方*
@@ -770,3 +803,70 @@ IBGE 服务数据文档中的 RBMC API（v1），提供 rinex2/rinex3 及 1 秒�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 NGS Online Positioning User Service：用户上传双频静态观测，由 NGS 处理返回 ITRF/NAD83 等坐标与质量报告，广泛用于北美控制点检核。免费科学/工程门户，不是开源解算源码。文件长度、天线型号与共享选项以现行 OPUS 说明为准；动态/实时需求请改用其他服务。
+
+#### [NGS-OPUS-Projects](https://geodesy.noaa.gov/OPUS-Projects/OpusProjects.shtml)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+美国国家大地测量局（NGS）OPUS Projects 5.x：面向多测站、多时段控制网的在线管理与处理（PAGES 套件），可视化会话并与国家空间参考系统（NSRS）约束平差。创建项目通常需完成官方培训并注册为项目管理者；若要入库 NGS IDB 还需项目跟踪号与 WinDesc 点之记。属官方免费科学/测绘服务（非 OSI 源码发行）。与已收录的单站 OPUS 互补；NSRS 数据元切换节点请关注 NGS 公告。
+
+## 元数据
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [M3G](https://gnss-metadata.eu/landing/m3g) | EUREF/EPOS M3G：多网 GNSS 站元数据与 API | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [M3G](https://gnss-metadata.eu/landing/m3g)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+比利时皇家天文台（ROB）为 EPOS/EPN 及加密网维护的 Metadata Management and Distribution System for Multiple GNSS Networks。支持 IGS 风格站点日志上传校验、网络/DOI/名义数据供给与许可等元数据分发；公开 REST API（文档见 gnss-metadata.eu 与 m3g-rob.github.io）。科研侧常用来程序化拉取欧洲参考站元数据。系统本体未必整仓开源；数据访问遵循站方声明许可。DOI: 10.24414/ROB-GNSS-M3G。
+
+## 国际联盟
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [EPOS-GNSS](https://gnss-epos.eu/) | EPOS GNSS TCS：欧洲 GNSS 数据与产品门户 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [EPOS-GNSS](https://gnss-epos.eu/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+EPOS GNSS Thematic Core Service 官方门户，汇总欧洲 GNSS 观测、坐标时间序列、速度场与应变等产品入口，并链向 Data/Products Gateway、M3G 与各节点（ROB、INGV、UGA-CNRS、SGO-EPND 等）。适合从科研工作流入口定位欧洲开源/开放 GNSS 资产。具体下载权限与许可以各节点与数据集声明为准；程序化访问优先看配套 GLASS API。
+
+## 数据接口
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [EPOS-GLASS-API](https://gnssdata-epos.oca.eu/GlassFramework/) | EPOS GLASS API：欧洲 GNSS RINEX/元数据 REST | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [EPOS-GLASS-API](https://gnssdata-epos.oca.eu/GlassFramework/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+由 UBI、ROB、CNRS-OCA、INGV 等在 EPOS 框架下开发的 GLASS Framework API（OCA 节点实例），提供 GNSS 台站、高采样/常规 RINEX 元数据及下载 URL 等 REST 接口（JSON/XML/CSV 等）。开发说明见 GlassFramework/about.html；Swagger 亦可经 EPOS GNSS 门户进入。适合脚本化检索欧洲节点观测而不必手工翻 FTP。账号/配额与站级许可以节点策略为准；不是定位解算器。
+
+## IGS数据中心
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [GFZ-ISDC-Data-HTTPS](https://isdc-data.gfz.de/gnss/) | GFZ ISDC GNSS HTTPS 归档（新旧 FTP 迁移） | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [GFZ-ISDC-Data-HTTPS](https://isdc-data.gfz.de/gnss/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+德国地学研究中心（GFZ）Information System and Data Center 的 GNSS HTTPS 数据根：/gnss/data/daily、/highrate 等目录提供日文件与高采样观测及产品树，匿名 HTTPS 浏览下载。IGSMail 等通告已推动从旧 FTP 迁移至此主机（旧 FTP 计划关停）。与已收录的 isdc.gfz-potsdam.de 门户页互补——本条指向可直接 wget/curl 的数据树。使用请遵守 GFZ/ISDC 数据政策并引用相应 DOI。

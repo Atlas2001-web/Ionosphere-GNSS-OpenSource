@@ -1,5 +1,5 @@
 # 精密定位 / Precise Positioning
-> 共 **78** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **80** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
@@ -887,3 +887,33 @@ Takasu 的 RTKLIB 是开源 RTK/PPP 事实标准之一，窗口工具与嵌入�
 语言：Python · 许可：MIT · 星标约：1 · 宿主：github
 
 sidereon 统一 GNSS+轨道力学引擎的 Python 发行（MIT，pip install sidereon），以 numpy 数组暴露 SPP、TLE 传播、SP3 加载与时间/坐标系转换；核为静态链接 Rust。目录已收录 Rust 主仓 sidereon，本条便于 Python 用户直达。功能面仍在演进；精密 PPP/RTK 深度需对照主仓路线图。
+
+## 形变/多源联合
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [IGP-TUDelft](https://github.com/TUDelftGeodesy/IGP) | TU Delft IGP：GNSS/InSAR/水准 STM 联合处理 | MATLAB | 2 | 🏷️ 高校实验室 |
+
+### 详细说明
+
+#### [IGP-TUDelft](https://github.com/TUDelftGeodesy/IGP)  
+*🏷️ 高校实验室*
+
+语言：MATLAB · 许可：Apache-2.0 · 星标约：2 · 宿主：github
+
+TU Delft Geodesy 发布的 Integrated Geodetic Processing（IGP，Apache-2.0，MATLAB）：以 Space-Time Matrix（STM）为公共数据模型，覆盖初始化、点/历元选择与分解降维、多源统计检验融合、最小二乘预测与可视化。可将 GNSS CORS 与 InSAR、水准等纳入同一形变分析链。需 MATLAB 环境；InSAR 初始化/降维步骤内存需求较高。不是实时 RTK/PPP 引擎，而是区域形变与多源大地测量联合科研工具箱（Release 1.0b1 说明见 README）。
+
+## RTK客户端
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [rtk_client](https://github.com/tobiasnix/rtk_client) | Python 终端 RTK：NTRIP + 串口 GNSS 客户端 | Python | 0 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [rtk_client](https://github.com/tobiasnix/rtk_client)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：AGPL-3.0 · 星标约：0 · 宿主：github
+
+Python 终端 RTK 客户端（AGPL-3.0）：经 NTRIP 拉取 RTCM3 改正并注入串口 GNSS 模块，curses 界面显示 Fixed/Float、卫星与 SNR，支持 TLS、YAML 配置、CSV 轨迹日志、自动重连与模块配置文件（LC29H / generic NMEA）。面向低成本流动站联调，不是模糊度固定解算库（依赖接收机内部 RTK）。星标虽少但 2026 仍有推送；部署需自备 NTRIP 账号与兼容接收机。

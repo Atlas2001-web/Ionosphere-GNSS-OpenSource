@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> 共 **235** 个已收录项目。本文件为链接索引，不含第三方源码。
+> 共 **237** 个已收录项目。本文件为链接索引，不含第三方源码。
 
 **这类做什么？** 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -318,6 +318,7 @@ Space Weather Modeling Framework 组件之一，描述高纬电离层电动力�
 | [tec-suite](https://github.com/gnss-lab/tec-suite) | SIMuRG 团队 TEC 重建套件 | Python | 23 | 🏷️ 高校实验室 |
 | [pygnss-tec](https://github.com/eureka-0/pygnss-tec) | RINEX 读取与 TEC 计算（Rust 加速） | Python | 16 | 🏷️ 个人社区 |
 | [VARION](https://github.com/giorgiosavastano/VARION) | Sapienza 变分法实时电离层：由 RINEX 估计 sTEC 变化（海啸扰动等） | Python | 15 | 🏷️ 高校实验室 |
+| [gsit](https://github.com/aldebaran1/gsit) | GSIT：TEC/ROTI/IPP 与光学磁力计 Python 工具 | Python | 10 | 🏷️ 个人社区 |
 | [tidd](https://github.com/vc1492a/tidd) | 用在轨 GPS sTEC 变化率异常检测海啸信号 | Jupyter Notebook | 10 | 🏷️ 高校实验室 |
 | [TEC_calculation_RINEX3](https://github.com/cssrg-kmitl/TEC_calculation_RINEX3) | MATLAB 从 RINEX 3.04 双频观测计算 TEC/ROTI | MATLAB | 6 | 🏷️ 高校实验室 |
 | [TEC_gradient_computation](https://github.com/cssrg-kmitl/TEC_gradient_computation) | 单/双频方法估计电离层延迟梯度 | MATLAB | 6 | 🏷️ 高校实验室 |
@@ -395,6 +396,13 @@ Python 包读 RINEX 并算 TEC，关键路径用 Rust 加速，和 PyTECGg 同�
 语言：Python · 许可：GPL-3.0 · 星标约：15 · 宿主：github
 
 罗马一大（Sapienza）开源的变分法电离层观测工具，读取 RINEX 观测/广播星历估计 slant TEC 变化，用于站级近实时扰动监测（如海啸电离层扰动）。Python+NumPy/Pandas，GPL-3。适合单站高频 TEC 扰动教学与案例复现；依赖较旧的 Python 2.7+ 生态，需自行准备导航文件与站坐标。
+
+#### [gsit](https://github.com/aldebaran1/gsit)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：10 · 宿主：github
+
+面向电离层社区的 Python 框架（MIT）：双频伪距/相位 TEC、相位改正 TEC、ROTI、薄壳 VTEC、IPP，以及卫星 AER/WGS84 位置；并含全天空成像与 IPP 叠置、三轴磁力计 HDZ↔XYZ、OMNIWeb IMF 读取与轨迹绘图。适合教学与多传感器对照原型。仓库近年少更新（约 2017 推送），依赖与 RINEX 版本覆盖需自行验证；不是生产级 GIM/PPP 引擎。
 
 #### [tidd](https://github.com/vc1492a/tidd)  
 *🏷️ 高校实验室*
@@ -1770,6 +1778,7 @@ SpaceML 维护的电离层预报代码与笔记本，强调时间融合 Transfor
 | [gnss-scintillation-simulator](https://github.com/cu-sense-lab/gnss-scintillation-simulator) | GNSS 频段相位/幅度闪烁仿真 | MATLAB | 25 | 🏷️ 个人社区 |
 | [OASIS](https://github.com/giorgiopicanco/OASIS) | 从 RINEX 计算 ROTI/ΔTEC/SIDX 等扰动指标 | Python | 16 | 🏷️ 个人社区 核心 |
 | [scintill-ai](https://github.com/viventriglia/scintill-ai) | 用机器学习做电离层闪烁相关分析的研究项目 | Shell | 8 | 🏷️ 个人社区 |
+| [TITIPy](https://github.com/pignalberi/TITIPy) | Swarm 顶部电离层 RODI/ROTI/ROTEI（Python） | Python | 8 | 🏷️ 高校实验室 |
 | [Ionospheric-Scintillation-Maps-and-PDOP](https://github.com/AlexandraKoulouri/Ionospheric-Scintillation-Maps-and-PDOP) | 电离层闪烁成像及其对 PDOP 影响的研究代码 | MATLAB | 5 | 🏷️ 个人社区 |
 | [gnssutils](https://github.com/ljlamarche/gnssutils) | 地基 GNSS 闪烁数据处理工具 | Python | 3 | 🏷️ 个人社区 ★ |
 | [OASIS-ohm1122](https://github.com/ohm1122/OASIS) | OASIS 用户星标副本/相关仓库 | — | — | 🏷️ 个人社区 ★ |
@@ -1804,6 +1813,13 @@ Open-Access System for Ionospheric Studies：从 GNSS 观测算 ROTI、ΔTEC、S
 语言：Shell · 许可：MIT · 星标约：8 · 宿主：github
 
 探索用机器学习刻画或预测电离层闪烁相关现象的研究型仓库，偏数据驱动实验原型。适合空间天气与机器学习交叉课题入门。闪烁事件稀缺、标签噪声与跨站点泛化是主要风险；报告结果时应保留 S4、σφ、ROTI 等物理基线对照，避免只展示神经网络分数而缺少可解释性。
+
+#### [TITIPy](https://github.com/pignalberi/TITIPy)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：CC-BY-NC-SA-3.0 · 星标约：8 · 宿主：github
+
+Alessio Pignalberi（INGV，ESA INTENS）发布的 Python 工具：从 ESA Swarm Langmuir 探针与 POD/TEC 产品计算顶部电离层 RODI、ROTI、ROTEI 等指数并制图。流程含 Swarm FTP 下载、CDF 读取、参数计算与极区/散点图。许可为 CC BY-NC-SA 3.0；需自备 Swarm 分发中心账号写入 User_credentials.txt。面向星载而非常规地基 RINEX TEC 流水线；依赖 basemap/apexpy/spacepy 等，环境搭建成本需预估。论文：Computers & Geosciences 148:104675 (2021)。
 
 #### [Ionospheric-Scintillation-Maps-and-PDOP](https://github.com/AlexandraKoulouri/Ionospheric-Scintillation-Maps-and-PDOP)  
 *🏷️ 个人社区*
