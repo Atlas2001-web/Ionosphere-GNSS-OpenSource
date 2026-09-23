@@ -9,8 +9,8 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnss-sdr](https://github.com/gnss-sdr/gnss-sdr) | 开源 GNSS 软件定义接收机 | C++ | 2234 | 🏷️ 高校实验室 核心 |
-| [GNSS-SDRLIB](https://github.com/taroz/GNSS-SDRLIB) | 开源 GNSS 软件无线电库 GNSS-SDRLIB | C | 536 | 🏷️ 个人社区 |
+| [gnss-sdr](https://github.com/gnss-sdr/gnss-sdr) | gnss-sdr：开源 GNSS 软件定义接收机 | C++ | 2234 | 🏷️ 高校实验室 核心 |
+| [GNSS-SDRLIB](https://github.com/taroz/GNSS-SDRLIB) | GNSS-SDRLIB：C 语言 GNSS SDR 库 | C | 536 | 🏷️ 个人社区 |
 | [BeagleSDRGPS](https://github.com/jks-prv/Beagle_SDR_GPS) | KiwiSDR：BeagleBone 短波 SDR 与软件 GPS（已归档） | C++ | 521 | 🏷️ 个人社区 |
 | [PocketSDR](https://github.com/tomojitakasu/PocketSDR) | Tomoji Takasu 开源 GNSS 软件接收机（多星座多频 SDR） | C | 515 | 🏷️ 个人社区 核心 |
 | [FGI-GSRx](https://github.com/nlsfi/FGI-GSRx) | 芬兰 FGI 多星座 MATLAB 软件接收机 | MATLAB | 192 | 🏷️ 官方 核心 |
@@ -29,7 +29,7 @@
 | [gnss-baseband](https://github.com/j-core/gnss-baseband) | GPS 类 DSSS 基带接收 IP 核（VHDL） | VHDL | 43 | 🏷️ 个人社区 |
 | [gnss-sdr-1pps](https://github.com/oscimp/gnss-sdr-1pps) | gnss-sdr 的 1-PPS 支持扩展材料 | — | 40 | 🏷️ 个人社区 |
 | [FlyDog-SDR-GPS](https://github.com/flydog-sdr/FlyDog_SDR_GPS) | FlyDog：改进 ADC 的 KiwiSDR 衍生固件 | C++ | 30 | 🏷️ 个人社区 |
-| [Fast_GNSS_ReceiverMATLAB](https://github.com/JohnBagshaw/Fast_GNSS_ReceiverMATLAB) | 高灵敏度快速捕获类 MATLAB GNSS 接收机 | MATLAB | 26 | 🏷️ 个人社区 |
+| [Fast_GNSS_ReceiverMATLAB](https://github.com/JohnBagshaw/Fast_GNSS_ReceiverMATLAB) | 高灵敏度快速捕获 MATLAB GNSS 接收机实验 | MATLAB | 26 | 🏷️ 个人社区 |
 | [pylgrim](https://github.com/kirienko/pylgrim) | Python 编写的 GNSS 软件接收机 | Python | 21 | 🏷️ 个人社区 |
 | [docker-gnsssdr](https://github.com/carlesfernandez/docker-gnsssdr) | 预装 GNSS-SDR 的 Docker 镜像 | Dockerfile | 19 | 🏷️ 个人社区 |
 | [GNSSSDRHACKRF](https://github.com/jdesbonnet/GNSS_SDR_HACKRF) | HackRF One 上运行 GNSS-SDR 的实验记录 | — | 19 | 🏷️ 个人社区 |
@@ -58,7 +58,7 @@
 
 语言：C · 许可：— · 星标约：536 · 宿主：github
 
-广为人知的开源 GNSS SDR 库（C），覆盖从采样到接收处理的主要环节，常被教学与研究引用，作者另有可见性分析等工具。适合需要 C 语言 SDR 库、又可对照同一作者生态的用户。与 gnss-sdr（C++/GNU Radio 风格）集成方式不同，按上游 README 选择构建与前端。Windows/Linux 构建选项与前端驱动文档要一并阅读。
+广为人知的 C 语言 GNSS SDR 库，覆盖采样到接收处理主要环节，作者另有可见性分析等工具。与 gnss-sdr（C++/GNU Radio 风格）生态不同；Windows/Linux 构建与前端驱动按上游 README 选择。
 
 #### [BeagleSDRGPS](https://github.com/jks-prv/Beagle_SDR_GPS)  
 *🏷️ 个人社区*
@@ -91,21 +91,21 @@ FGI 开源多星座 MATLAB 接收机，方便改基带算法与抗干扰试验�
 #### [Analog-GPS-data-receiver](https://github.com/leaningktower/Analog-GPS-data-receiver)  
 *🏷️ 个人社区*
 
-语言：C · 许可：— · 星标约：164 · 宿主：github
+语言：C · 许可：MIT · 星标约：164 · 宿主：github
 
 用分立射频元件与 TinyFPGA 搭建偏「模拟前端」风格的 GPS 接收链路，帮助理解从射频到数据的路径。适合电子与射频教学、极客实验。调试门槛高、不是量产导航产品；算法研究更常见路径仍是 ADC 采样后接软件接收机。元器件公差与布局对前端噪声系数影响很大。焊接与屏蔽不良会直接抬高本底噪声。选用前建议先跑通作者提供的最小示例。
 
 #### [GNSS-GPS-SDR](https://github.com/JiaoXianjun/GNSS-GPS-SDR)  
 *🏷️ 个人社区*
 
-语言：Python · 许可：— · 星标约：157 · 宿主：github
+语言：Python · 许可：GPL-2.0 · 星标约：157 · 宿主：github
 
 围绕 GPS 信号录制、回放、接收与测试的若干实验代码（含 Python），便于做干扰、回放攻击面或接收机鲁棒性试验。适合实验室安全与 SDR 研究。仓库偏实验拼盘，文档结构化弱于单一主线项目；射频回放与发射须合法合规。不同脚本年代跨度大，依赖环境可能互相冲突。脚本依赖的 SDR 驱动版本跨度大，建议用虚拟环境隔离。
 
 #### [GNSS-DSP-tools](https://github.com/pmonta/GNSS-DSP-tools)  
 *🏷️ 个人社区*
 
-语言：Python · 许可：— · 星标约：141 · 宿主：github
+语言：Python · 许可：MIT · 星标约：141 · 宿主：github
 
 Python 工具集，提供 GNSS 扩频码生成、捕获与跟踪等基带 DSP 积木，方便拼装接收机实验与画中间结果。适合信号处理课程与算法原型。不是开箱即用的多星座实时接收机；完整工程链路可对照 gnss-sdr 或 GNSS-SDRLIB。示例脚本对输入采样格式敏感，先对齐位宽与端序。示例默认参数面向教学，外场需重调门限。
 
@@ -133,14 +133,14 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 #### [BDS-3-B1C-B2a-SDR-receiver](https://github.com/lyf8118/BDS-3-B1C-B2a-SDR-receiver)  
 *🏷️ 个人社区*
 
-语言：MATLAB · 许可：— · 星标约：73 · 宿主：github
+语言：MATLAB · 许可：GPL-2.0 · 星标约：73 · 宿主：github
 
 科罗拉多大学相关作者开源的 BDS-3 B1C/B2a MATLAB 软件接收机，含码生成、数据+导频捕获跟踪、电文解码、伪距生成与定位。面向北斗新信号算法教学与论文复现。当前聚焦 B1C/B2a，不是全星座通用接收机；与 SoftGNSS、FGI-GSRx、CU-SDR-Collection 并列时，重点看北斗新信号基带细节。
 
 #### [gps](https://github.com/psas/gps)  
 *🏷️ 个人社区*
 
-语言：Python · 许可：— · 星标约：71 · 宿主：github
+语言：Python · 许可：GPL-3.0 · 星标约：71 · 宿主：github
 
 波特兰州立大学火箭队（PSAS）相关的软件 GPS 相关器实现，用 Python 展示相关与接收结构，便于业余与教学阅读。适合想看清相关器数据流的人。不是完整多星座商用接收机；可与 SoftGNSS、GNSS-DSP-tools 对照学习。火箭遥测场景与地面静态测试的参数需求不同。火箭遥测带宽有限时需裁剪日志与速率。
 
@@ -154,7 +154,7 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 #### [ESP32-SDR-GPS](https://github.com/iliasam/ESP32_SDR_GPS)  
 *🏷️ 个人社区*
 
-语言：C · 许可：— · 星标约：55 · 宿主：github
+语言：C · 许可：MIT · 星标约：55 · 宿主：github
 
 把软件 GPS 接收尝试跑在 ESP32 上，探索 MCU 级 SDR 定位的可行性与资源极限。适合嵌入式 SDR 爱好者与教学演示。算力、内存与前端质量受限，性能远低于 PC+SDR 上的 gnss-sdr；宜作演示，不宜作导航产品基线。前端采样与中频设置决定能否锁住真实卫星。天线与采样时钟抖动会显著影响锁星成功率。
 
@@ -191,7 +191,7 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 
 语言：MATLAB · 许可：MIT · 星标约：26 · 宿主：github
 
-强调捕获速度与灵敏度的 MATLAB 接收机实现，适合弱信号算法试验。
+面向捕获速度与弱信号灵敏度的 MATLAB GNSS 接收机实现，适合算法试验与教学对照。不是完整多星座产品级 SDR；前端与性能边界以仓库说明为准。
 
 #### [pylgrim](https://github.com/kirienko/pylgrim)  
 *🏷️ 个人社区*
@@ -210,7 +210,7 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 #### [GNSSSDRHACKRF](https://github.com/jdesbonnet/GNSS_SDR_HACKRF)  
 *🏷️ 个人社区*
 
-语言：— · 许可：— · 星标约：19 · 宿主：github
+语言：— · 许可：MIT · 星标约：19 · 宿主：github
 
 整理如何把 GNSS-SDR 接到 HackRF One 做卫星信号接收实验，含配置片段与常见踩坑。面向手头已有 HackRF、想试软件 GNSS 接收的人。仓库偏实验笔记而非产品级接收机；HackRF 带宽与噪声系数相对专用前端有限，弱信号捕获需要耐心调增益与天线。天线与低噪放选择往往比软件参数更关键。
 
@@ -224,7 +224,7 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 #### [meta-gnss-sdr](https://github.com/carlesfernandez/meta-gnss-sdr)  
 *🏷️ 个人社区*
 
-语言：C · 许可：— · 星标约：16 · 宿主：github
+语言：C · 许可：MIT · 星标约：16 · 宿主：github
 
 把 gnss-sdr 集成进嵌入式 Linux 镜像的 OpenEmbedded layer（meta-gnss-sdr），方便在定制发行版或板卡上部署软件接收机。适合 Yocto/OE 系统集成者。不改变算法本身；配方版本需与上游 gnss-sdr 发布对齐，构建时间与依赖较大。层优先级与其它 radio/SDR 层冲突时需调整 BB 文件。
 
@@ -238,14 +238,14 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 #### [gnss-rcv](https://github.com/mx4/gnss-rcv)  
 *🏷️ 个人社区*
 
-语言：Rust · 许可：— · 星标约：14 · 宿主：github
+语言：Rust · 许可：MIT · 星标约：14 · 宿主：github
 
 用 Rust 编写的软件定义 GNSS 接收机，当前聚焦 GPS L1 C/A，展示现代语言实现捕获跟踪链路的可行性。适合关心内存安全与 Rust 生态的开发者。星座与功能远少于 gnss-sdr；适合学习实验，不宜直接当作生产多星座监控站软件。Rust 工具链与特性门控按 Cargo 清单启用即可。
 
 #### [multi-channel-gnss](https://github.com/dasdboot/multi-channel-gnss)  
 *🏷️ 个人社区*
 
-语言：— · 许可：— · 星标约：12 · 宿主：github
+语言：— · 许可：MIT · 星标约：12 · 宿主：github
 
 基于 Lime Microsystems LimeSDR 的多通道 GNSS 实验仓库，探索多通道接收与高级前端用法。适合已有 LimeSDR、想做多通道采集/测试的人。文档与完整度需自查，驱动与固件版本敏感，不适合当作开箱即用商用接收机。LimeSDR 校准与通道一致性会直接影响多通道实验结论。通道间幅度/相位一致性要先做校准再下结论。
 
@@ -357,7 +357,7 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 #### [gnss-RX](https://github.com/HeryMwenegoha/gnss-RX)  
 *🏷️ 个人社区*
 
-语言：MATLAB · 许可：— · 星标约：32 · 宿主：github
+语言：MATLAB · 许可：BSD-3-Clause · 星标约：32 · 宿主：github
 
 MATLAB GNSS 测量仿真器，按场景生成伪距等观测，便于定位滤波、完好性算法联调与课堂教学。适合尚无真实接收机数据时的软件试验。输出是仿真观测量，不是从 IQ 解调的 SDR 链路；需要射频/基带级信号请改用 gps-sdr-sim 或 SoftGNSS 类工具。仿真噪声与真实多路径统计仍有差距，外场前要再标定。
 
@@ -399,7 +399,7 @@ GPS 与 Galileo 卫星信号模拟相关实现，说明中提及与 RTKLIB 能�
 #### [gps-qzss-sdr-sim](https://github.com/iGNSS/gps-qzss-sdr-sim)  
 *🏷️ 个人社区*
 
-语言：— · 许可：— · 星标约：1 · 宿主：github
+语言：— · 许可：MIT · 星标约：1 · 宿主：github
 
 软件定义的 GPS（及 QZSS）信号仿真，用于生成可回放或经 SDR 发射的基带/IQ，服务接收机测试。适合实验室信号源需求。仓库星标很少，维护与文档完整度需自查；任何实发须遵守无线电法规，优先评估更活跃的 gps-sdr-sim。若长期无人维护，建议迁移到 osqzss/gps-sdr-sim 生态。
 
@@ -507,7 +507,7 @@ VHDL 代码用于生成 GPS L1 C/A 以及 Galileo E1OS、E5 的 PRN 与无数据
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [LEOGPS](https://github.com/sammmlow/LEOGPS) | Python 星载 GPS/相对导航工具 | Python | 88 | 🏷️ 个人社区 |
-| [hardware](https://github.com/oresat/oresat-gps-hardware) | OreSat 立方星 SDR GPS 接收硬件设计 | — | 33 | 🏷️ 高校实验室 |
+| [hardware](https://github.com/oresat/oresat-gps-hardware) | OreSat 立方星 SDR GPS 接收硬件设计 | Makefile | 33 | 🏷️ 高校实验室 |
 | [oresat-gps-software](https://github.com/oresat/oresat-gps-software) | OreSat 立方星 GPS 接收机软件 | Python | 22 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -522,13 +522,13 @@ VHDL 代码用于生成 GPS L1 C/A 以及 Galileo E1OS、E5 的 PRN 与无数据
 #### [hardware](https://github.com/oresat/oresat-gps-hardware)  
 *🏷️ 高校实验室*
 
-语言：— · 许可：— · 星标约：33 · 宿主：github
+语言：Makefile · 许可：CERN-OHL-S-2.0 · 星标约：33 · 宿主：github
 
 OreSat 开源卫星项目的 SDR GPS 接收及相关硬件设计文件，服务立方星载荷与业余卫星实验。适合航天业余硬件参考。需与 oresat-gps-software 配套理解；空间环境、功耗与认证要求远高于地面 SDR 玩具项目。宇航级元器件替代与热真空试验不在本仓库范围。飞行件元器件筛选与热真空不在本仓库交付范围。
 
 #### [oresat-gps-software](https://github.com/oresat/oresat-gps-software)  
 *🏷️ 高校实验室*
 
-语言：Python · 许可：— · 星标约：22 · 宿主：github
+语言：Python · 许可：GPL-3.0 · 星标约：22 · 宿主：github
 
 OreSat 项目 GPS 接收机软件部分，与 oresat-gps-hardware 配套，覆盖星上接收相关流程与接口。适合立方星载荷软件与开源航天参考。面向特定硬件与任务约束，不是通用多星座精密定位或 RTK 引擎。星上算力与存储配额会限制可开日志级别。星上存储配额会限制可长期开启的日志等级。选用前建议先跑通作者提供的最小示例。

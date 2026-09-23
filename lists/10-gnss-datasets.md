@@ -835,7 +835,7 @@ NRCan 加拿大大地测量处长期运营的 CSRS-PPP Web 服务：提交 RINEX
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-巴西地理统计局（IBGE）公开的 IBGE-PPP API：上传 RINEX（含 Hatanaka）后由后端调用 NRCan CSRS-PPP 引擎，返回兼容 SIRGAS2000/ITRF 的静态或动态坐标与不确定度。表单字段含 arquivo、tipo-levantamento、modelo-antena、altura-antena、email、autorizacao-uso 等；文档注明单请求约 10MB 上限。与已收录的 RBMC API 互补（数据下载 vs 在线 PPP）。需遵守 IBGE 服务条款与授权字段；大文件请改用官网网页通道。
+巴西 IBGE 公开的 PPP REST API：上传 RINEX（含 Hatanaka）后由后端调用 NRCan CSRS-PPP，返回 SIRGAS2000/ITRF 坐标与不确定度。适合南美区域事后 PPP 批处理；配额、字段与授权条款以 IBGE 文档为准，不是本地开源引擎。
 
 #### [NGS-OPUS](https://www.ngs.noaa.gov/OPUS/)  
 *🏷️ 官方*

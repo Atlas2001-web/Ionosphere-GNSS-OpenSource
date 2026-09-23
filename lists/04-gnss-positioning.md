@@ -295,7 +295,7 @@ GRAZ 等地学机构风格的工具包，覆盖重力场恢复与 GNSS 处理，
 #### [gnatss](https://github.com/seafloor-geodesy/gnatss)  
 *🏷️ 个人社区*
 
-语言：Python · 许可：— · 星标约：17 · 宿主：github
+语言：Python · 许可：BSD-3-Clause · 星标约：17 · 宿主：github
 
 海床大地测量社区维护的 GNSS-Acoustic（GNSS-A）软件：海面 GNSS 与水声测距联合约束海底换能器/点位，用于海底形变与板块边界监测。面向海洋大地测量课题组。不是陆地 RTK/PPP；依赖船舶、声学与时间同步链路，作业与数据成本远高于陆基站网。社区仓库，版本接口以上游发布说明为准。
 
@@ -381,7 +381,7 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [laika](https://github.com/commaai/laika) | comma.ai 的轻量 Python GNSS 处理库 | Python | 723 | 🏷️ 个人社区 核心 |
+| [laika](https://github.com/commaai/laika) | laika：comma.ai 轻量 Python GNSS 库 | Python | 723 | 🏷️ 个人社区 核心 |
 | [gnss-rtk](https://github.com/nav-solutions/gnss-rtk) | Rust 实现的 PPP/RTK 解算器 | Rust | 79 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -451,7 +451,7 @@ rtk-rs/nav-solutions 系精密定位解算，与 rinex 库同一生态，AGPL。
 |---|---|---|---:|---|
 | [rtkbase](https://github.com/Stefal/rtkbase) | 树莓派等 SBC 上自建 GNSS 基准站与 Web 管理 | Python | 769 | 🏷️ 个人社区 核心 |
 | [rtklib-py](https://github.com/rtklibexplorer/rtklib-py) | 基于 demo5 的 RTKLIB Python 实现（侧重 PPK） | Python | 244 | 🏷️ 个人社区 |
-| [OpenRTK](https://github.com/AndreasArendt/OpenRTK) | 开源精密 GNSS/RTK 软件 | C++ | 23 | 🏷️ 个人社区 |
+| [OpenRTK](https://github.com/AndreasArendt/OpenRTK) | OpenRTK：轻量开源精密 GNSS/RTK | C++ | 23 | 🏷️ 个人社区 |
 | [HPRTK](https://github.com/yxw027/HPRTK) | 高精度实时定位相关工程（HPRTK） | C++ | 17 | 🏷️ 高校实验室 |
 | [RTK](https://github.com/GYH-WHU/RTK) | GPS/BDS 双系统 RTK（浮点/固定）C++ 教学系统 | C++ | 11 | 🏷️ 高校实验室 |
 | [GNSSRTK](https://github.com/SupakunZ/GNSS_RTK) | AGV 用 GNSS-RTK 路径规划与车载显示（Python） | Python | 3 | 🏷️ 个人社区 |
@@ -477,7 +477,7 @@ rtk-rs/nav-solutions 系精密定位解算，与 rinex 库同一生态，AGPL。
 
 语言：C++ · 许可：MIT · 星标约：23 · 宿主：github
 
-小型开源 RTK/精密 GNSS 实现，MIT 许可友好。适合嵌入式或教学裁剪。成熟度与社区小于 RTKLIB。
+体量较小的开源 RTK/精密 GNSS 代码，MIT 许可便于嵌入式或课程裁剪。社区与文档成熟度明显小于 RTKLIB；上线前请自测模糊度与多星座支持范围。
 
 #### [HPRTK](https://github.com/yxw027/HPRTK)  
 *🏷️ 高校实验室*
@@ -764,8 +764,8 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Net_Diff](https://github.com/YizeZhang/Net_Diff) | GNSS 数据下载、定位解算与结果分析套件 | HTML | 178 | 🏷️ 个人社区 |
-| [POSGO](https://github.com/lizhengnss/POSGO) | 开源 GNSS 定位软件 POSGO | C++ | 116 | 🏷️ 个人社区 |
+| [Net_Diff](https://github.com/YizeZhang/Net_Diff) | Net_Diff：下载+定位+分析综合套件 | HTML | 178 | 🏷️ 个人社区 |
+| [POSGO](https://github.com/lizhengnss/POSGO) | POSGO：C++ 开源 GNSS 定位软件 | C++ | 116 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -781,7 +781,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 语言：C++ · 许可：GPL-3.0 · 星标约：116 · 宿主：github
 
-C++ 开源定位软件，中文导航学习社区常见推荐。适合跟 Navigation-Learning 笔记对照源码。功能边界以仓库文档为准，和 PRIDE/Ginan 分工不同。
+中文导航学习社区常见的 C++ 开源定位软件，便于对照 Navigation-Learning 等笔记读源码。定位模式与产品支持以仓库文档为准；精密 PPP-AR/业务化能力通常弱于 PRIDE、Ginan。
 
 ## PPP脚本
 
@@ -917,7 +917,7 @@ sidereon 统一 GNSS+轨道力学引擎的 Python 发行（MIT，pip install sid
 
 语言：MATLAB · 许可：Apache-2.0 · 星标约：2 · 宿主：github
 
-TU Delft Geodesy 发布的 Integrated Geodetic Processing（IGP，Apache-2.0，MATLAB）：以 Space-Time Matrix（STM）为公共数据模型，覆盖初始化、点/历元选择与分解降维、多源统计检验融合、最小二乘预测与可视化。可将 GNSS CORS 与 InSAR、水准等纳入同一形变分析链。需 MATLAB 环境；InSAR 初始化/降维步骤内存需求较高。不是实时 RTK/PPP 引擎，而是区域形变与多源大地测量联合科研工具箱（Release 1.0b1 说明见 README）。
+TU Delft 开源 IGP（MATLAB，Apache-2.0）：以 Space-Time Matrix 统一 GNSS/InSAR/水准等多源形变处理（选择、检验、预测与可视化）。需 MATLAB；InSAR 初始化与数据准备成本不低，偏大地测量形变而非电离层 TEC。
 
 ## RTK客户端
 

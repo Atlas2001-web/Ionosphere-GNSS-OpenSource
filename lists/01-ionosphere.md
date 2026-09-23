@@ -14,7 +14,7 @@
 | [synthetic_ionospheric_tomography_isl](https://github.com/suixin11suoyu/synthetic_ionospheric_tomography_isl) | 多 GNSS 星间链路辅助电离层层析仿真 | — | 2 | 🏷️ 个人社区 |
 | [317Lab-tomography](https://github.com/317Lab/tomography) | Lynch 火箭实验室电离层层析成像代码库 | Jupyter Notebook | 1 | 🏷️ 高校实验室 |
 | [GNSS_TOM](https://github.com/sailvssea/GNSS_TOM) | GNSS 对流层与电离层层析 C++ 实现（风格仿 GPSTk） | C++ | 1 | 🏷️ 高校实验室 |
-| [Geometric-Matrix-For-Ionospheric-Tomogrphy](https://github.com/yujieqing/Geometric-Matrix-For-Ionospheric-Tomogrphy) | 电离层层析几何矩阵相关代码 | — | — | 🏷️ 个人社区 ★ |
+| [Geometric-Matrix-For-Ionospheric-Tomogrphy](https://github.com/yujieqing/Geometric-Matrix-For-Ionospheric-Tomogrphy) | 层析几何矩阵构建（C++，yujieqing） | C++ | — | 🏷️ 个人社区 ★ |
 | [SegmentsComputation](https://github.com/yujieqing/SegmentsComputation) | 体素电离层层析射线段矩阵计算（原作者仓，已归档） | C++ | 0 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -57,9 +57,9 @@
 #### [Geometric-Matrix-For-Ionospheric-Tomogrphy](https://github.com/yujieqing/Geometric-Matrix-For-Ionospheric-Tomogrphy)  
 *🏷️ 个人社区 ★*
 
-语言：— · 许可：— · 星标约：— · 宿主：github
+语言：C++ · 许可：GPL-3.0 · 星标约：— · 宿主：github
 
-构造电离层层析用的几何矩阵，是层析反演前处理关键一步。适合写层析原型时对照。完整正则化反演与三维可视化需自建或接其他库。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
+yujieqing 仓库：为电离层层析准备几何/射线矩阵相关代码，可与同作者 SegmentsComputation 等配合。偏矩阵构造环节，不是完整层析反演或 TEC 预处理流水线；仓库活跃度与文档需自行评估。
 
 #### [SegmentsComputation](https://github.com/yujieqing/SegmentsComputation)  
 *🏷️ 个人社区*
@@ -74,7 +74,7 @@
 |---|---|---|---:|---|
 | [PPP-RTK-Ionosphere](https://github.com/nickdaychen/PPP-RTK-Ionosphere) | MATLAB 侧 PPP-RTK 与电离层相关试验代码 | MATLAB | 7 | 🏷️ 个人社区 |
 | [AETHER](https://github.com/LiZhengXiao99/AETHER) | PPP-RTK 用区域 STEC/VTEC/ZWD/ZTD 大气建模 | C++ | 6 | 🏷️ 高校实验室 |
-| [WA_ion_model_PPP](https://github.com/FearlessWu/WA_ion_model_PPP) | 广域电离层模型与 PPP 相关实现 | — | — | 🏷️ 个人社区 ★ |
+| [WA_ion_model_PPP](https://github.com/FearlessWu/WA_ion_model_PPP) | 广域电离层模型与 PPP 相关实现 | C++ | — | 🏷️ 个人社区 ★ |
 
 ### 详细说明
 
@@ -95,7 +95,7 @@
 #### [WA_ion_model_PPP](https://github.com/FearlessWu/WA_ion_model_PPP)  
 *🏷️ 个人社区 ★*
 
-语言：— · 许可：— · 星标约：— · 宿主：github
+语言：C++ · 许可：— · 星标约：— · 宿主：github
 
 把广域电离层模型和 PPP 联系起来的实践代码，适合看电离层约束如何进精密单点。完整度与星座支持需实测；系统级 PPP 仍建议对照 PRIDE、Ginan、raPPPid。
 
@@ -517,7 +517,7 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 #### [vtec](https://github.com/mfkiwl/vtec)  
 *🏷️ 个人社区 ★*
 
-语言：— · 许可：— · 星标约：— · 宿主：github
+语言：— · 许可：MIT · 星标约：— · 宿主：github
 
 围绕 VTEC 换算与相关计算的小工具，适合把 STEC 投影到垂直方向做图或预报输入。功能边界较窄，完整双频重建与偏差估计需配合专业 TEC 库。
 
@@ -797,7 +797,7 @@ C++ 工具面向 GNSS 电离层掩星数据处理与分析，适合理解 LEO—
 #### [INX_Editor](https://github.com/1acheng/INX_Editor)  
 *🏷️ 个人社区 ★*
 
-语言：— · 许可：— · 星标约：16 · 宿主：github
+语言：— · 许可：GPL-3.0 · 星标约：16 · 宿主：github
 
 面向 IONEX 的桌面编辑与检查，改网格、头信息或局部 TEC 值时比手改文本省事。适合产品质检与教学演示。不是 TEC 估计算法库；重建 TEC 仍需 PyTECGg/gnss-tec 等。
 
@@ -1016,7 +1016,7 @@ Notebook 实验：对 GNSS 导出的 ROTI 做深度学习时序预报。局限�
 
 语言：C++ · 许可：GPL-3.0 · 星标约：1 · 宿主：gitlab
 
-NJIT/Boston University 开发的 Finite-Difference Time-Domain ARRay，面向地球电离层类磁化碰撞等离子体中的无线电波传播与闪烁机理仿真，CMake/Docker/Python 辅助，文档 https://longleywj.gitlab.io/farr/。GPL-3.0，论文 Green et al. Frontiers 2025；使用需遵守仓内 Rules of the Road（引用与合作邀请期）。默认分支 Release。适合物理级闪烁/传播数值试验，非 GNSS TEC 业务软件。
+NJIT/Boston University 的三维 FDTD 开源码（GitLab，GPL-3.0），仿真磁化碰撞等离子体中的电波传播与闪烁。提供 CMake/Docker/Python 辅助。面向传播机理研究，不是 GNSS 观测解算或 GIM 产品工具。
 
 #### [scintkit](https://github.com/qwsae10/scintkit)  
 *🏷️ 个人社区*
@@ -1069,7 +1069,7 @@ KNMI 在 Swarm-VIP-Dynamic（UiO/Birmingham/INGV/DLR/KNMI）合作中的代码�
 | [IMSP-MGS](https://essr.esa.int/project/ionosphere-modular-software-package-imsp-mgs) | ESA IMSP+MGS：GNSS-R/SAR/雷达测深电离层效应模块化仿真包 | unknown | — | 🏷️ 官方 |
 | [IonKit-NH](https://github.com/ohm1122/IonKit-NH) | IonKit-NH 电离层工具包 | — | — | 🏷️ 个人社区 ★ |
 | [IonKit-NH-tanggdut](https://github.com/tanggdut/IonKit-NH) | IonKit-NH 相关衍生/整理 | — | — | 🏷️ 个人社区 ★ |
-| [IonTools](https://github.com/rumkex/IonTools) | 电离层分析工具集 | — | — | 🏷️ 个人社区 ★ |
+| [IonTools](https://github.com/rumkex/IonTools) | IonTools：电离层分析辅助小工具（C++） | C++ | — | 🏷️ 个人社区 ★ |
 | [NHPC-TrueHeight](https://ulcar.uml.edu/SoftwareUtilities/NHPC/) | NHPC：测高仪迹线真高剖面反演工具（Digisonde/ARTIST 配套） | Fortran/C | — | 🏷️ 高校实验室 |
 | [NICT-Ionosonde-Data](https://wdc.nict.go.jp/Ionosphere/index.html) | NICT 日本测高仪（ionosonde）观测数据入口 | data-portal | — | 🏷️ 官方 |
 | [SAO-Explorer](https://ulcar.uml.edu/SAO-X/) | GIRO/Digisonde 测高仪缩放与 DIDBase 访问工具（免费二进制） | Java | — | 🏷️ 官方 |
@@ -1151,23 +1151,23 @@ ONERA/RDA/IEEC 在 ESA TDE 框架下开发、经 ESSR 发布的 Ionosphere Modul
 #### [IonKit-NH](https://github.com/ohm1122/IonKit-NH)  
 *🏷️ 个人社区 ★*
 
-语言：— · 许可：— · 星标约：— · 宿主：github
+语言：— · 许可：GPL-3.0 · 星标约：— · 宿主：github
 
 IonKit-NH 工具包星标种子，覆盖电离层数据处理相关脚本。适合浏览星标工作流；与 tanggdut 衍生版注意分辨上游。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
 
 #### [IonKit-NH-tanggdut](https://github.com/tanggdut/IonKit-NH)  
 *🏷️ 个人社区 ★*
 
-语言：— · 许可：— · 星标约：— · 宿主：github
+语言：— · 许可：GPL-3.0 · 星标约：— · 宿主：github
 
 IonKit-NH 的衍生整理版，可能含路径或示例改动。合并进产线前先 diff 上游 ohm1122 版本，避免重复维护。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
 
 #### [IonTools](https://github.com/rumkex/IonTools)  
 *🏷️ 个人社区 ★*
 
-语言：— · 许可：— · 星标约：— · 宿主：github
+语言：C++ · 许可：— · 星标约：— · 宿主：github
 
-电离层分析杂项工具集合，适合补充主流程里缺的小步骤。功能边界以仓库说明为准，关键科学结论建议用主流 TEC/GIM 库复核。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
+GitHub rumkex/IonTools，偏辅助脚本/小工具集合，用来补主流程里零散步骤。功能边界以仓库说明为准；关键 TEC/GIM 结论建议用主流库复核，勿把过时脚本当生产基线。
 
 #### [NHPC-TrueHeight](https://ulcar.uml.edu/SoftwareUtilities/NHPC/)  
 *🏷️ 高校实验室*
@@ -1340,14 +1340,14 @@ irimodel 写明：除版本包外通常还要 COMMON FILES（若 zip 未打进�
 
 语言：MATLAB · 许可：— · 星标约：— · 宿主：official_site
 
-国际参考电离层工作组官网明确列出的 MATLAB 版本入口，指向 MathWorks File Exchange 条目，覆盖 IRI-2012 与 IRI-2016 的 MATLAB 调用。适合已经在用 MATLAB 做电离层气候态对比、不想先啃 Fortran 编译链的人。这不是 GitHub 仓，下载与许可以 File Exchange 页面为准；要最新 Fortran 物理更新仍应回到 irimodel.org 的 IRI-2020/2026 源码包。与 space-physics/iri2016 等第三方包装不同，本条目以官网推荐链接为准。
+irimodel.org 官方列出的 IRI MATLAB 入口（MathWorks File Exchange，含 2012/2016）。适合已在 MATLAB 做气候态对比、不想先编译 Fortran 的用户。下载与许可以 File Exchange 为准；追最新物理更新仍应回 irimodel.org / IRI 主源码。
 
 #### [IRI-Plas-SPIM-IZMIRAN](https://www.izmiran.ru/ionosphere/weather/grif/SPIM/)  
 *🏷️ 官方*
 
 语言：Fortran · 许可：scientific distribution (cite required) · 星标约：— · 宿主：official_site
 
-俄罗斯 IZMIRAN 维护的 ISO-IRI-Plas（SPIM）官方下载目录，提供 Isomain/Iriplas2020 等 Fortran 主程序与 ISOCOEF/APRZ 等系数 ZIP，可计算电离层–等离子体层电子密度与 TEC，并支持 GPS TEC 同化改正 foF2/hmF2。目录内 Iriplas2020.zip 等可直接 HTTP 下载（已核验 200），另有 IRI-Plas-MAP 生成 GIM 风格中值图。使用发表结果需按 readme 引用 Gulyaeva/Bilitza 等文献；系数需定期更新。与 irimodel.org 标准 IRI 互补，侧重等离子体层扩展与天气指数。
+IZMIRAN 官方 IRI-Plas/SPIM 下载页：Fortran 主程序与系数包，把 IRI 扩展到等离子体层并可同化 GPS TEC。适合需要等离子体层 TEC 的气候态/同化试验；编译与系数版本须与页面 ZIP 对齐，不是 GNSS STEC 观测解算器。
 
 #### [IRTAM-Coefficient-Reader-Fortran](https://giro.uml.edu/GAMBIT/IrtamReader_Fortran_V1.0.zip)  
 *🏷️ 官方*
@@ -1579,7 +1579,7 @@ SWPC 官方 HTTP 产品树，提供 geojson_2d_urt 与 netcdf_2d_urt 等目录�
 | [FIRI.jl](https://github.com/fgasdia/FaradayInternationalReferenceIonosphere.jl) | FIRI 法拉第国际参考电离层的 Julia 工具 | Julia | 5 | 🏷️ 高校实验室 |
 | [Nequick-ITUR](https://github.com/tpl2go/Nequick-ITUR) | ITU-R NeQuick 2 的 Python 封装 | Fortran | 4 | 🏷️ 个人社区 |
 | [NeQuickJRC](https://github.com/mgfernan/NeQuickJRC) | JRC NeQuickG C 实现镜像/整理 | C | 4 | 🏷️ 个人社区 |
-| [IRI2020_parameters](https://github.com/ohm1122/IRI2020_parameters) | IRI2020 参数相关资源 | — | — | 🏷️ 个人社区 ★ |
+| [IRI2020_parameters](https://github.com/ohm1122/IRI2020_parameters) | IRI2020 参数相关资源 | MATLAB | — | 🏷️ 个人社区 ★ |
 
 ### 详细说明
 
@@ -1642,7 +1642,7 @@ IRI-2020 的可调用封装，跟进较新气候学版本。适合更新背景�
 #### [IRI2020_parameters](https://github.com/ohm1122/IRI2020_parameters)  
 *🏷️ 个人社区 ★*
 
-语言：— · 许可：— · 星标约：— · 宿主：github
+语言：MATLAB · 许可：BSD-2-Clause · 星标约：— · 宿主：github
 
 整理 IRI2020 运行所需参数/资源，减少自己找系数文件的时间。宜与 iri2020 主仓库搭配，而非独立模型。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
 
@@ -1673,14 +1673,14 @@ ESA 软件资源库中的 NeQuick G 条目，说明该实现按 Galileo 单频�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Get_IPP](https://github.com/Chenjiajun01/Get_IPP) | 电离层穿刺点（IPP）计算 | — | — | 🏷️ 个人社区 ★ |
+| [Get_IPP](https://github.com/Chenjiajun01/Get_IPP) | 电离层穿刺点（IPP）计算 | C++ | — | 🏷️ 个人社区 ★ |
 
 ### 详细说明
 
 #### [Get_IPP](https://github.com/Chenjiajun01/Get_IPP)  
 *🏷️ 个人社区 ★*
 
-语言：— · 许可：— · 星标约：— · 宿主：github
+语言：C++ · 许可：— · 星标约：— · 宿主：github
 
 根据测站与卫星几何求电离层穿刺点，GIM/层析前处理常用。适合教学与自写映射函数前的几何模块。单薄脚本型项目，坐标框架与壳层高度约定要与主流程一致。
 
@@ -1811,7 +1811,7 @@ Open-Access System for Ionospheric Studies：从 GNSS 观测算 ROTI、ΔTEC、S
 
 语言：Python · 许可：CC-BY-NC-SA-3.0 · 星标约：8 · 宿主：github
 
-Alessio Pignalberi（INGV，ESA INTENS）发布的 Python 工具：从 ESA Swarm Langmuir 探针与 POD/TEC 产品计算顶部电离层 RODI、ROTI、ROTEI 等指数并制图。流程含 Swarm FTP 下载、CDF 读取、参数计算与极区/散点图。许可为 CC BY-NC-SA 3.0；需自备 Swarm 分发中心账号写入 User_credentials.txt。面向星载而非常规地基 RINEX TEC 流水线；依赖 basemap/apexpy/spacepy 等，环境搭建成本需预估。论文：Computers & Geosciences 148:104675 (2021)。
+INGV/ESA INTENS 的 Swarm 顶部电离层湍流指数工具（Python）：从 Langmuir 探针与 POD/TEC 产品算 RODI/ROTI/ROTEI 并制图，含下载与 CDF 读取。CC BY-NC-SA 3.0，需自备 Swarm 账号；面向顶部电离层闪烁研究，不是地基双频 TEC 解算器。
 
 #### [Ionospheric-Scintillation-Maps-and-PDOP](https://github.com/AlexandraKoulouri/Ionospheric-Scintillation-Maps-and-PDOP)  
 *🏷️ 个人社区*
@@ -1851,7 +1851,7 @@ Alessio Pignalberi（INGV，ESA INTENS）发布的 Python 工具：从 ESA Swarm
 | [mosgim](https://github.com/gnss-lab/mosgim) | Padokhin 早期 MosGIM GIM 技术实现 | Python | 6 | 🏷️ 高校实验室 |
 | [real-time-ionospheric-maps-Kalman](https://github.com/AlexandraKoulouri/real-time-ionospheric-maps-using-Kalman) | 南美区域实时电离层图（集合卡尔曼）MATLAB 代码 | MATLAB | 3 | 🏷️ 高校实验室 |
 | [m_gim-PANXIONG](https://github.com/PANXIONG-CN/m_gim) | PANXIONG：小体量 MATLAB GIM 脚本草稿 | MATLAB | 1 | 🏷️ 个人社区 ★ |
-| [GNSS.IonosphereMaps](https://github.com/gurkanguldas/GNSS.IonosphereMaps) | GNSS 电离层图生成与处理 | — | — | 🏷️ 个人社区 ★ |
+| [GNSS.IonosphereMaps](https://github.com/gurkanguldas/GNSS.IonosphereMaps) | GNSS.IonosphereMaps：Java 电离层图工具 | Java | — | 🏷️ 个人社区 ★ |
 | [Zenodo-VTEC-map-generation-SBAS](https://doi.org/10.5281/zenodo.10058636) | Zenodo：支持星基导航误差模型的 VTEC 图生成补充材料 | — | 0 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -1899,9 +1899,9 @@ MosGIM 早期公开版本，便于追溯相位差 GIM 的原始流程。适合�
 #### [GNSS.IonosphereMaps](https://github.com/gurkanguldas/GNSS.IonosphereMaps)  
 *🏷️ 个人社区 ★*
 
-语言：— · 许可：— · 星标约：— · 宿主：github
+语言：Java · 许可：Apache-2.0 · 星标约：— · 宿主：github
 
-侧重从 GNSS 观测生成与处理电离层图，适合做图件可视化或区域 TEC 展示。工程完整度与多星座支持需实测；若目标是可发表级全球 GIM，应同时参考 MosGIM2 与 IGS 产品规范。
+gurkanguldas 的 Java 仓库，面向 GNSS 电离层图处理与展示。适合 JVM 技术栈快速查看 TEC 图；算法深度与产品化程度以 README 为准，科研级 GIM 仍建议对照 IGS/CODE 流程。
 
 #### [Zenodo-VTEC-map-generation-SBAS](https://doi.org/10.5281/zenodo.10058636)  
 *🏷️ 高校实验室*

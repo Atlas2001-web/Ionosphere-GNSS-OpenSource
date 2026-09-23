@@ -23,7 +23,7 @@
 | [rtcm](https://github.com/Node-NTRIP/rtcm) | RTCM 3 消息编解码（至 3.3） | TypeScript | 48 | 🏷️ 个人社区 |
 | [baidu-ntripcaster](https://github.com/baidu/ntripcaster) | 百度开源的 NTRIP Caster 实现 | C | 46 | 🏷️ 个人社区 |
 | [millipede-caster](https://github.com/pbeyssac/millipede-caster) | 高性能开源 NTRIP/RTK Caster（C） | C | 43 | 🏷️ 个人社区 |
-| [nmea-msgs](https://github.com/ros-drivers/nmea_msgs) | ROS 包：NMEA 相关消息类型定义 | CMake | 38 | 🏷️ 个人社区 |
+| [nmea-msgs](https://github.com/ros-drivers/nmea_msgs) | nmea_msgs：ROS 用 NMEA 消息接口 | CMake | 38 | 🏷️ 个人社区 |
 | [ntripbrowser](https://github.com/emlid/ntripbrowser) | CLI 查询 NTRIP caster 源表与挂载点 | Python | 32 | 🏷️ 个人社区 |
 | [rtcm-rs](https://github.com/martinhakansson/rtcm-rs) | RTCM v3 编解码的 Rust crate | Rust | 32 | 🏷️ 个人社区 |
 | [gstream](https://github.com/Jin-Whu/gstream) | 面向 GNSS 的开源数据流客户端库 | C++ | 20 | 🏷️ 高校实验室 |
@@ -393,7 +393,7 @@ Anubis 免费档下载入口，提供 Linux 预编译与 GPL-3 源码，覆盖�
 
 语言：Go · 许可：GSI Website Terms of Use v2.0 · 星标约：— · 宿主：official_site
 
-国土地理院（GSI）公开的 RINGO（RINEX pre-processing tool using Go），提供多系统 RINEX 编辑/合并、钟跳改正、质量检查、电离层改正、BINEX/RTCM→RINEX、RINEX→CSV 与交互查看器等。官方提供 Windows/Linux/macOS/FreeBSD/Solaris 预编译二进制（当前页标注 v0.9.6，2026-05）。许可适用 GSI Website Terms of Use v2.0（允许使用、修改与再分发，以官网条款为准）。不是精密定位引擎；大网批量与边角格式请对照文档与 EPS 论文（Earth Planets Space 75:54, 2023）。
+日本 GSI 官方 RINGO（Go）：多系统 RINEX 编辑/合并、钟跳与质检、电离层改正，以及 BINEX/RTCM→RINEX、CSV 导出与查看器。提供多平台预编译二进制；适合测站预处理流水线。细节与许可以 GSI 软件页为准。
 
 #### [TEQC](https://www.unavco.org/software/data-processing/teqc/teqc.html)  
 *🏷️ 官方 核心*
@@ -521,7 +521,7 @@ EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RT
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [FAST](https://github.com/ChangChuntao/FAST) | GNSS 数据下载、质量分析、SPP 与选站 | Python | 206 | 🏷️ 个人社区 ★ 核心 |
+| [FAST](https://github.com/ChangChuntao/FAST) | FAST：GNSS 下载/质检/SPP/选站（Python） | Python | 206 | 🏷️ 个人社区 ★ 核心 |
 
 ### 详细说明
 
@@ -853,7 +853,7 @@ EarthScope 开源的 GNSS 产品联邦工具，按日期与任务在十余个 IG
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnsstk-apps](https://github.com/SGL-UT/gnsstk-apps) | GNSSTK 配套应用程序集 | — | 68 | 🏷️ 高校实验室 |
+| [gnsstk-apps](https://github.com/SGL-UT/gnsstk-apps) | gnsstk-apps：GNSSTK 命令行工具集 | — | 68 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -862,7 +862,7 @@ EarthScope 开源的 GNSS 产品联邦工具，按日期与任务在十余个 IG
 
 语言：— · 许可：— · 星标约：68 · 宿主：github
 
-从原 GPSTk 拆出的应用程序仓库，提供基于 gnsstk 的命令行工具。适合不想从零写 C++ 调用的用户。与现代 Python 工具链相比部署偏重。
+SGL-UT 从 GPSTk 拆出的应用程序仓，基于 gnsstk 提供命令行工具。适合不想手写 C++ API 的用户；部署相对现代 Python 工具链偏重，版本需与 gnsstk 核心库对齐。
 
 ## RINEX/SP3
 
