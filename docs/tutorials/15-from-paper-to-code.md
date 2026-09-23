@@ -324,3 +324,5 @@ DCB/偏差基准、映射与薄壳高度、码类型是否一致。见第 09 课
 计时：真正熟练后，步骤 1–3 应在 10 分钟内完成。若做不到，先练 [08](./08-how-to-use-this-catalog.md)，不要在论文 Introduction 里继续盘旋。
 
 **检索口诀**：任务词 → lists → 条目 `name` → data-access → 上游 README → 公开日试跑。
+
+**相关链接**：软件短文索引 [`docs/software/README.md`](../software/README.md) · 数据门户 [`data-access`](../data-access.md) · 一日实战 [16](./16-practice-one-day-tec.md)

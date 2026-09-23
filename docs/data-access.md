@@ -64,3 +64,15 @@
 | **VMF** | TU Wien 对流层格网 |
 | **CDAAC / COSMIC** | 掩星常需账号 |
 | **GIRO / DIDBase** | 测高仪；与 GNSS TEC 对比时对齐时间与穿透点 |
+
+## 相关教程与软件
+
+下完数据后常接：
+
+| 目标 | 去哪 |
+|---|---|
+| 双频 STEC / 一日练习 | [02](./tutorials/02-gnss-dualfreq-tec.md) · [16](./tutorials/16-practice-one-day-tec.md) |
+| 读 GIM / IONEX | [03](./tutorials/03-gim-ionex.md) · [ionex-gim](./software/ionex-gim.md) |
+| 目录怎么用 | [08](./tutorials/08-how-to-use-this-catalog.md) |
+| RINEX 读盘 / QC | [georinex](./software/georinex.md) · [anubis](./software/anubis.md) |
+| 软件短文总索引 | [software/README](./software/README.md) · [tutorials/README](./tutorials/README.md) |

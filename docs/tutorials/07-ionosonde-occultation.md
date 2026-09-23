@@ -668,4 +668,6 @@ $$
 
 **版本说明**：本文件按「机制 → 公式拆解 → 观测签名 → 分析步骤」与 01–06 课同深度重写；嵌入大气分层、$N_e$/Chapman 廓线、薄壳 STEC/VTEC、日夜 TEC、IPP、EIA 等自制 CC0 图；引用项目名均来自 `PROJECTS.json` 核验。现象课 19–23 保持独立短文，不回灌成长文墙。
 
+**相关软件 / 数据入口**（GNSS 侧读盘）：[`georinex`](../software/georinex.md) · 门户见上文 [`data-access`](../data-access.md) · 层析衔接 [11](./11-tomography-basics.md)
+
 （完）

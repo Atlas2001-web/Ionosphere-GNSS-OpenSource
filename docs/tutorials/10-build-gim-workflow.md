@@ -332,3 +332,5 @@ $$
 ## 14. 延伸阅读
 
 - [03-gim-ionex.md](./03-gim-ionex.md) · [09-dcb-biases-deep.md](./09-dcb-biases-deep.md) · [11-tomography-basics.md](./11-tomography-basics.md) · [16-practice-one-day-tec.md](./16-practice-one-day-tec.md)
+
+**相关软件**：[`ionex-gim`](../software/ionex-gim.md) · [`sh-gim`](../software/sh-gim.md) · [`pytecgg`](../software/pytecgg.md)

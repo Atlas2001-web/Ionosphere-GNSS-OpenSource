@@ -210,3 +210,5 @@
 3. 每只眼睛有盲区；永远警惕产品假象。
 
 下一课：[20-storm-tec-analysis.md](./20-storm-tec-analysis.md)。
+
+**相关软件 / 数据入口**：[`ionex-gim`](../software/ionex-gim.md) · [`oasis-roti`](../software/oasis-roti.md) · [`ionomoni`](../software/ionomoni.md) · [`data-access`](../data-access.md)

@@ -109,3 +109,4 @@ gfzrnx -finp work/SITE001{a..x}.24o \
 - 抽稀后读盘 → [georinex](./georinex.md) → [pytecgg](./pytecgg.md)
 - QC → [anubis](./anubis.md)；定位 → [rtklib](./rtklib.md) / [pride-pppar](./pride-pppar.md)
 - 高频闪烁 → [oasis-roti](./oasis-roti.md)（**禁止**先抽稀）
+- 教程 → [02](../tutorials/02-gnss-dualfreq-tec.md) · [16](../tutorials/16-practice-one-day-tec.md)；数据 → [data-access](../data-access.md)

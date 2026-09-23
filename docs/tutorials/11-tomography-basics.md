@@ -307,3 +307,5 @@ $$
 3. **先合成、后真网；先 GIM 稳、后层析。** 工具入口从 `Geometric-Matrix-For-Ionospheric-Tomogrphy`、`IonoTomo`、`synthetic_ionospheric_tomography_isl` 开始，背景用 `PyIRI` / `IRI-2020-package`，互补用掩星与测高仪相关条目。
 
 下一课 [12-data-assimilation-intro.md](./12-data-assimilation-intro.md) 把「先验背景」升级成「会随时间预报的模式」，并讲清 $x,y,H$ 框图。
+
+**相关链接**：上一课 [10](./10-build-gim-workflow.md) · 下一课 [12](./12-data-assimilation-intro.md) · 闪烁分流 [05](./05-scintillation-roti.md) · 数据入口 [`data-access`](../data-access.md) · 软件索引 [`docs/software/README.md`](../software/README.md)

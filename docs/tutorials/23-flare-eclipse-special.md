@@ -145,3 +145,5 @@
 3. 多源与分流：暴、泡、TID、耀斑/日食标签不要互相污染。
 
 返回总览：[19-phenomena-overview.md](./19-phenomena-overview.md)。
+
+**相关软件 / 数据入口**：[`pytecgg`](../software/pytecgg.md) · [`ionex-gim`](../software/ionex-gim.md) · [`data-access`](../data-access.md)

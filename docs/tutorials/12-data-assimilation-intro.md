@@ -294,3 +294,5 @@ $H$ 是路径积分（层析正演）。这是信息最丰、也最贵、最病�
 
 - [04-iri-nequick.md](./04-iri-nequick.md) · [09-dcb-biases-deep.md](./09-dcb-biases-deep.md) · [11-tomography-basics.md](./11-tomography-basics.md) · [14-space-weather-case.md](./14-space-weather-case.md) · [15-from-paper-to-code.md](./15-from-paper-to-code.md)  
 - 列表：[`lists/01-ionosphere.md`](../../lists/01-ionosphere.md) · [`lists/10-gnss-datasets.md`](../../lists/10-gnss-datasets.md) · [`docs/data-access.md`](../data-access.md)
+
+**相关链接**：软件短文索引 [`docs/software/README.md`](../software/README.md) · GIM 产品 [`ionex-gim`](../software/ionex-gim.md) · 相关课 [11](./11-tomography-basics.md) · [04](./04-iri-nequick.md)

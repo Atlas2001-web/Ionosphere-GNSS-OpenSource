@@ -370,3 +370,5 @@ $$
 - 勾选能力检查表中「两家 IGS GIM 可差数 TECU」与「完成 18 课统计表」两项。
 
 未交 RMSE 表者，不建议在周报写「已理解产品不确定性」。
+
+**相关软件 / 数据入口**：[`ionex-gim`](../software/ionex-gim.md) · [`sh-gim`](../software/sh-gim.md) · [`data-access`](../data-access.md) · 相关课 [03](./03-gim-ionex.md) · [09](./09-dcb-biases-deep.md)

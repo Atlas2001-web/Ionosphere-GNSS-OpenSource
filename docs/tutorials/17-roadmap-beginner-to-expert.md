@@ -278,3 +278,5 @@
 - 本周若卡在「中心间到底差多少」→ [18-lab-compare-gims.md](./18-lab-compare-gims.md)  
 - 数据与分类：[`docs/data-access.md`](../data-access.md)、[`docs/categories.md`](../categories.md)  
 - 软件表：[`lists/01-ionosphere.md`](../../lists/01-ionosphere.md) · 总表 [`PROJECTS.json`](../../PROJECTS.json)
+
+**相关软件索引**：[`docs/software/README.md`](../software/README.md)

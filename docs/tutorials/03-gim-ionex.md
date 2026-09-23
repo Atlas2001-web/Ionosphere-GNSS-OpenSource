@@ -780,4 +780,6 @@ $$
 
 **版本说明**：本文件按「机制 → 公式拆解 → 观测签名 → 分析步骤」与 01/02 课同深度重写；嵌入薄壳/IPP/映射/DCB/风暴差值等自制 CC0 图；引用项目名均来自 `PROJECTS.json` 核验。现象课 19–23 保持独立短文，不回灌成长文墙。
 
+**相关软件 / 数据入口**：[`ionex-gim`](../software/ionex-gim.md) · [`sh-gim`](../software/sh-gim.md) · [`data-access`](../data-access.md) · 进阶建图 [10](./10-build-gim-workflow.md)
+
 （完）

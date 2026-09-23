@@ -343,3 +343,7 @@ ROTI 有点像「用位移计差分看地面是否在抖」；S4 更像「灯是
 - 我没有把 ROTI 改名为 S4：□  
 - 我没有把 TID（如 `IRI_TID`）写成闪烁机制正文：□  
 - 仿真若使用，对照的实测指数是：________
+
+**相关软件 / 数据入口**：[`iono-scintillation`](../software/iono-scintillation.md) · [`oasis-roti`](../software/oasis-roti.md) · [`ionomoni`](../software/ionomoni.md) · [`data-access`](../data-access.md)
+
+**相关课**：[05](./05-scintillation-roti.md) · [14](./14-space-weather-case.md) · [21](./21-equatorial-anomaly-bubbles.md)

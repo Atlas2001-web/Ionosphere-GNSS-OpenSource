@@ -312,3 +312,5 @@
 ## 10. 延伸阅读
 
 - [10-build-gim-workflow.md](./10-build-gim-workflow.md) · [14-space-weather-case.md](./14-space-weather-case.md) · [15-from-paper-to-code.md](./15-from-paper-to-code.md) · [17-roadmap-beginner-to-expert.md](./17-roadmap-beginner-to-expert.md) · [18-lab-compare-gims.md](./18-lab-compare-gims.md)
+
+**相关软件**：[`georinex`](../software/georinex.md) · [`pytecgg`](../software/pytecgg.md) · [`ionex-gim`](../software/ionex-gim.md) · [`anubis`](../software/anubis.md)

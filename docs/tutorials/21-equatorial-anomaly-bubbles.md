@@ -197,3 +197,5 @@ $$
 > 先山后沟；先 LT 后标签；TEC 掉口要对 ROTI。
 
 下一课：[22-tid-traveling-disturbances.md](./22-tid-traveling-disturbances.md)。
+
+**相关软件 / 数据入口**：[`oasis-roti`](../software/oasis-roti.md) · [`ionomoni`](../software/ionomoni.md) · [`data-access`](../data-access.md) · 相关课 [05](./05-scintillation-roti.md)

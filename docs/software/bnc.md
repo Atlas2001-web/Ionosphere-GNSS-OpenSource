@@ -131,3 +131,4 @@ python -m georinex.time /data/rinex/lab/你的文件.rnx
 - 落盘探活 → [georinex](./georinex.md)；清洗/抽稀 → [gfzrnx](./gfzrnx.md)
 - 事后定位 → [rtklib](./rtklib.md)；Caster → [bkg-ntripcaster](./bkg-ntripcaster.md)
 - 轻量脚本拉流 → [pygnssutils](./pygnssutils.md)
+- 数据门户 → [data-access](../data-access.md)；定位课 → [06](../tutorials/06-iono-positioning.md)

@@ -180,3 +180,5 @@
 > 先差分，后贴链；先 SYM-H，后故事；正负可以并存，标签不能偷懒。
 
 下一课：[21-equatorial-anomaly-bubbles.md](./21-equatorial-anomaly-bubbles.md)。
+
+**相关软件 / 数据入口**：[`ionex-gim`](../software/ionex-gim.md) · [`data-access`](../data-access.md) · 相关课 [03](./03-gim-ionex.md) · [14](./14-space-weather-case.md) · [18](./18-lab-compare-gims.md)

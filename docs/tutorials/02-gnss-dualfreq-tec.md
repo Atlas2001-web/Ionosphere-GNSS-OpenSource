@@ -757,4 +757,6 @@ $$
 
 **版本说明**：本文件按「机制 → 公式拆解 → 观测签名 → 分析步骤」与 01 课同深度重写；嵌入延迟–频率、频段、双频差、GF、DCB 等自制图；引用项目名均来自 `PROJECTS.json` 核验。现象课 19–23 保持独立短文，不回灌成长文墙。
 
+**相关软件 / 数据入口**：[`georinex`](../software/georinex.md) · [`gfzrnx`](../software/gfzrnx.md) · [`pytecgg`](../software/pytecgg.md) · [`data-access`](../data-access.md)
+
 （完）

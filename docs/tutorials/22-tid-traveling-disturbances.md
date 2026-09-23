@@ -129,3 +129,5 @@
 > 去趋势，看人浪；有延迟，才 traveling；GIM 不够细，别硬认涟漪。
 
 下一课：[23-flare-eclipse-special.md](./23-flare-eclipse-special.md)。
+
+**相关软件 / 数据入口**：[`pytecgg`](../software/pytecgg.md) · [`georinex`](../software/georinex.md) · [`data-access`](../data-access.md) · 相关课 [02](./02-gnss-dualfreq-tec.md)

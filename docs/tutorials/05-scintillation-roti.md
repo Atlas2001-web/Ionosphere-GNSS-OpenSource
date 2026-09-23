@@ -591,7 +591,7 @@ TEC 图回答电子有多少；闪烁回答信号抖不抖。不规则体搓皱�
 
 数据门户侧见 [`lists/10-gnss-datasets.md`](../../lists/10-gnss-datasets.md)。索引仓只指路；克隆去上游；许可证看上游。
 
-**软件用法短文**（若需命令级入门）：[`docs/software/iono-scintillation.md`](../software/iono-scintillation.md)、[`docs/software/oasis-roti.md`](../software/oasis-roti.md)。
+**软件用法短文**（若需命令级入门）：[`docs/software/iono-scintillation.md`](../software/iono-scintillation.md)、[`docs/software/oasis-roti.md`](../software/oasis-roti.md)。 数据门户：[`data-access`](../data-access.md)；批处理监测另见 [`ionomoni`](../software/ionomoni.md)。
 
 ---
 

@@ -375,3 +375,5 @@ IGS 分析中心（如 CODE、JPL、CAS、UPC、WHU 等，具体文件以 `CDDIS
 - 想按小时把下载→出图跑通：[16 一日实战](./16-practice-one-day-tec.md)  
 - 想量化「产品差」：[18 GIM 对比实验](./18-lab-compare-gims.md)  
 - 想安排多周进度：[17 路线图](./17-roadmap-beginner-to-expert.md)
+
+**相关软件**：[`ionex-gim`](../software/ionex-gim.md) · [`oasis-roti`](../software/oasis-roti.md) · [`ionomoni`](../software/ionomoni.md)
