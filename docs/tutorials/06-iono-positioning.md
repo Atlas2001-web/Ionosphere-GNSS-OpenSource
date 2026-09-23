@@ -232,27 +232,27 @@ $$
 \mathrm{STEC}
 \;\xrightarrow{40.3/f^{2}}\;
 I(f)
-\;\xrightarrow{\text{单频}}\;
-\text{模型/GIM 改正}
+\;\xrightarrow{\text{single-freq}}\;
+\text{model/GIM corr.}
 $$
 
 $$
 \{P_1,P_2\}
-\;\xrightarrow{\text{IF 权重}}\;
+\;\xrightarrow{\text{IF weights}}\;
 P_{\mathrm{IF}}
-\;\xrightarrow{\text{一阶 }I\to 0}\;
-\text{更好的距离观测}
+\;\xrightarrow{\text{1st-order }I\to 0}\;
+\text{better range}
 $$
 
 $$
 \mathrm{VTEC}_{\mathrm{GIM}}
 \;\xrightarrow{M(E)}\;
 I_{\mathrm{corr}}
-\;\xrightarrow{\text{从伪距减掉}}\;
-\text{改正后的测距}
+\;\xrightarrow{\text{subtract from }P}\;
+\text{corrected range}
 $$
 
-读法（中文在公式外）：库存 STEC 经色散变成米级延迟；单频借入外部值去减；双频用线性组合把一阶系数洗成 0；GIM 路径还多一步「竖→斜」映射。
+读法（中文在公式外）：库存 STEC 经色散变成米级延迟；单频借入模型/GIM 改正去减；双频用 IF 权重把一阶 $I$ 洗成 0，得到更好的距离观测；GIM 路径还多一步「竖→斜」映射，再从伪距减掉。
 
 ---
 
@@ -416,9 +416,10 @@ $$
 +
 \left(\frac{f_2^{2}}{f_1^{2}-f_2^{2}}\right)^{2}
 }\,\sigma_P
-\approx 3\,\sigma_P
-\quad\text{（L1/L2 量级口算）}.
+\approx 3\,\sigma_P.
 $$
+
+（L1/L2 量级口算。）
 
 人话：消雾要付「尺子变毛」的税。相位 IF 同理，但相位原始噪声小，税相对可承受——这也是精密定位爱相位的原因之一。
 
@@ -429,8 +430,10 @@ $$
 $$
 \Delta I
 \;\sim\;
-\text{（基线投影）}\times\text{（水平 TEC 梯度）}\times\text{（映射几何）}.
+(\text{baseline proj.})\times(\text{horiz. TEC grad.})\times(\text{mapping geom.}).
 $$
+
+读法：基线投影 × 水平 TEC 梯度 × 映射几何。
 
 不必背严式；要会说：**RTK 怕的是梯度，不只是绝对 TEC 高低。**
 

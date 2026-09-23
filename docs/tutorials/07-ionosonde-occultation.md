@@ -203,7 +203,7 @@ $$
 N_e
 \;\xrightarrow{\propto\sqrt{N_e}}\;
 f_p
-\;\xrightarrow{\text{垂直反射条件}}\;
+\;\xrightarrow{\text{vert. reflection}}\;
 f_oF2,\,N_mF2
 $$
 
@@ -211,7 +211,7 @@ $$
 \Delta t
 \;\xrightarrow{c/2}\;
 h'
-\;\xrightarrow{\text{缩放/反演}}\;
+\;\xrightarrow{\text{scaling/inversion}}\;
 h,\,h_mF2
 $$
 
@@ -219,19 +219,19 @@ $$
 N_e(h)
 \;\xrightarrow{\int\mathrm{d}h}\;
 \mathrm{TEC}_{\mathrm{partial}}
-\;\xleftrightarrow{\text{定义对齐}}\;
+\;\xleftrightarrow{\text{defn. align}}\;
 \mathrm{VTEC}_{\mathrm{GNSS}}
 $$
 
 $$
-\text{弯曲角}/\text{多余相位}
-\;\xrightarrow{\text{Abel 等}}\;
+\alpha/\text{excess phase}
+\;\xrightarrow{\text{Abel etc.}}\;
 N_e(h)
-\;\xrightarrow{\text{过境几何}}\;
-\text{切片廓线}
+\;\xrightarrow{\text{pass geometry}}\;
+\text{slice profile}
 $$
 
-读法（中文在公式外）：密度决定等离子体频率；临界频率钉住峰值密度；时延先变成虚高再努力还原真高；柱总量是积分，积分上下限不同数值就不同；掩星从路径观测量反演径向廓线。
+读法（中文在公式外）：密度决定等离子体频率；垂直反射条件钉住 $f_oF2$、$N_mF2$；时延先变成虚高再缩放/反演真高；柱总量是积分，定义对齐后才与 GNSS VTEC 比；掩星从弯曲角/多余相位经 Abel 等反演 $N_e(h)$，再按过境几何看成切片廓线。
 
 ---
 
@@ -254,9 +254,10 @@ $$
 工程近似（$N_e$ 用 $\mathrm{m}^{-3}$，$f_p$ 用 Hz）：
 
 $$
-f_p \approx 8.98\,\sqrt{N_e}
-\quad\text{（数量级口诀常记 }f_p[\mathrm{MHz}]\approx 9\sqrt{N_e[10^{12}\,\mathrm{m}^{-3}]}\text{）}.
+f_p \approx 8.98\,\sqrt{N_e}.
 $$
+
+数量级口诀常记：$f_p[\mathrm{MHz}]\approx 9\sqrt{N_e[10^{12}\,\mathrm{m}^{-3}]}$。
 
 **垂直探测反射条件（理想化）**：波频率 $f$ 升到与当地 $f_p$ 相当，折射率趋近 0，波难以继续上行——回波来自「刚好够密」的高度。对 F2 层普通波，临界频率记为 $f_oF2$，对应峰值密度 $N_mF2$。
 
@@ -322,9 +323,10 @@ GNSS 斜路径：
 $$
 \mathrm{STEC}=\int_{\mathrm{ray}} N_e\,\mathrm{d}s,
 \quad
-\mathrm{VTEC}\approx \frac{\mathrm{STEC}}{M(E)}
-\quad\text{（映射，见 02/03）}.
+\mathrm{VTEC}\approx \frac{\mathrm{STEC}}{M(E)}.
 $$
+
+（映射，见 02/03。）
 
 | 符号 | 含义 | 单位 |
 |---|---|---|
@@ -355,14 +357,16 @@ $$
 教学直觉链（不把 Abel 写成考试吓人口径，但必须有步骤感）：
 
 $$
-\text{多余相位 / 多普勒}
+\text{excess phase / Doppler}
 \;\rightarrow\;
-\text{弯曲角 }\alpha(a)
+\alpha(a)
 \;\rightarrow\;
-\text{折射指数 }n(r)
+n(r)
 \;\rightarrow\;
 N_e(h).
 $$
+
+读法：多余相位/多普勒 → 弯曲角 $\alpha(a)$ → 折射指数 $n(r)$ → $N_e(h)$。
 
 球对称假设下，经典 Abel 型关系把弯曲角剖面换成径向折射率剖面；电离层段再把折射率亏损与 $N_e$ 联系起来（色散背景与 01 课 $n-1\propto N_e/f^{2}$ 同族）。
 

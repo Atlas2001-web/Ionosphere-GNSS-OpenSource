@@ -174,7 +174,7 @@ $$
 P_1,\,P_2
 \;\xrightarrow{\mathrm{GF}}\;
 P_{\mathrm{GF}}
-\;\xrightarrow{\text{频率因子}}\;
+\;\xrightarrow{\text{freq. factor}}\;
 \mathrm{STEC}_{\mathrm{raw}}
 \;=\;
 \mathrm{STEC}_{\mathrm{true}}+b^{\mathrm{sat}}+b_{\mathrm{rcv}}+\varepsilon
@@ -182,13 +182,13 @@ $$
 
 $$
 \{b^{\mathrm{sat}}\},\,\{b_{\mathrm{rcv}}\}
-\;\xrightarrow{\text{datum 约束}}\;
-\text{可估的唯一解}
-\;\xrightarrow{\text{产品改正}}\;
+\;\xrightarrow{\text{datum constraint}}\;
+\text{unique estimable sol.}
+\;\xrightarrow{\text{product corr.}}\;
 \mathrm{STEC}_{\mathrm{corr}}
 $$
 
-读法（中文在公式外）：双频相减得到几何无关量；换成 TEC 域后仍带着两端偏差；没有基准约束则零点不可观；改正并对齐产品后，绝对值才谈得上与 GIM/IRI 比。
+读法（中文在公式外）：双频相减得到几何无关量；经频率因子换成 TEC 域后仍带着两端偏差；datum 约束给出可估的唯一解；产品改正并对齐后，绝对值才谈得上与 GIM/IRI 比。
 
 ---
 

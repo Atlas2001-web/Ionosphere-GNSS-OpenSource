@@ -195,10 +195,10 @@ P_i=\cdots+I_i,\quad L_i=\cdots-I_i+\lambda_i N_i
 \;\xrightarrow{\alpha}\;
 \mathrm{STEC}
 \;\xrightarrow{\text{leveling}}\;
-\mathrm{STEC}(t)\ \text{干净绝对}.
+\mathrm{STEC}_{\mathrm{lev}}(t).
 $$
 
-读法（中文在公式外）：延迟公式 → 写入码/相方程 → 差分消几何 → 频率因子换成 TECU → 用相位定形、伪距定高。
+读法（中文在公式外）：延迟公式 → 写入码/相方程 → 差分消几何 → 频率因子换成 TECU → leveling 得到干净绝对 STEC。
 
 ---
 
@@ -286,8 +286,10 @@ $$
 常把频率因子收成 $\alpha$：
 
 $$
-\mathrm{STEC}=\alpha\,(P_2-P_1-\mathrm{DCB}_{\mathrm{GF}})+\text{噪声}.
+\mathrm{STEC}=\alpha\,(P_2-P_1-\mathrm{DCB}_{\mathrm{GF}})+\varepsilon.
 $$
+
+（$\varepsilon$：噪声与未建模项。）
 
 ### 7.2 手算 $\alpha$（本课毕业演算）
 
@@ -355,15 +357,18 @@ $$
 
 $$
 P_{\mathrm{GF}}(t)=P_2(t)-P_1(t),\qquad
-L_{\mathrm{GF}}(t)=L_1(t)-L_2(t)\quad\text{（实现时统一到与 }P_{\mathrm{GF}}\text{ 同向）}.
+L_{\mathrm{GF}}(t)=L_1(t)-L_2(t).
 $$
+
+实现时把 $L_{\mathrm{GF}}$ 统一到与 $P_{\mathrm{GF}}$ 同向。
 
 理想无噪无偏时，某约定下 $P_{\mathrm{GF}}+L_{\mathrm{GF}}\approx B$（常数）。弧段平均：
 
 $$
-\hat{B}=\frac{1}{N}\sum_{k=1}^{N}\big(P_{\mathrm{GF}}(t_k)\mp L_{\mathrm{GF}}(t_k)\big)
-\quad\text{（符号依你的 }L_{\mathrm{GF}}\text{ 定义）}.
+\hat{B}=\frac{1}{N}\sum_{k=1}^{N}\big(P_{\mathrm{GF}}(t_k)\mp L_{\mathrm{GF}}(t_k)\big).
 $$
+
+$\mp$ 的符号依你的 $L_{\mathrm{GF}}$ 定义而定。
 
 把相位序列平移到与伪距同一绝对水平 → **leveled phase TEC**，再乘 $\alpha$。
 

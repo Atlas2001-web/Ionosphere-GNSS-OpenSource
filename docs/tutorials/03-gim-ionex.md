@@ -194,15 +194,15 @@ $$
 \mathrm{STEC}_{r}^{s}(t)
 \;\xrightarrow{M(e),\,h_s,\,\mathrm{IPP}}\;
 \mathrm{VTEC}(\lambda,\varphi,t)+b_r+b^{s}
-\;\xrightarrow{\text{多站堆叠 + 正则}}\;
-\hat{\mathrm{VTEC}}\ \text{场}
+\;\xrightarrow{\text{stack + regularize}}\;
+\hat{\mathrm{VTEC}}
 \;\xrightarrow{\text{IONEX}}\;
-\text{格网整数}\times 10^{\mathrm{EXPONENT}}
+N_{\mathrm{grid}}\times 10^{\mathrm{EXPONENT}}
 \;\xrightarrow{\text{storm}-\text{quiet}}\;
 \Delta\mathrm{VTEC}.
 $$
 
-读法（中文在公式外）：斜柱观测 → 映射钉在 IPP 并纠缠 DCB → 多站估计出场 → 写成交换文件 →（可选）减安静基线看扰动笔迹。
+读法（中文在公式外）：斜柱观测 → 映射钉在 IPP 并纠缠 DCB → 多站堆叠 + 正则估计出场 → 写成 IONEX 格网整数 × 10^EXPONENT →（可选）减安静基线看扰动笔迹。
 
 ---
 
@@ -361,10 +361,10 @@ $N_{\max}$ 决定可表示的最短波长。格网步长很细、但截断阶对
 IONEX 数据段常见为**整数**，用头里的指数还原：
 
 $$
-\mathrm{TECU} = \mathrm{整数} \times 10^{\mathrm{EXPONENT}}.
+\mathrm{TECU} = N_{\mathrm{grid}} \times 10^{\mathrm{EXPONENT}}.
 $$
 
-（具体以文件说明为准；常见有 0.1 TECU 量级编码。）
+其中 $N_{\mathrm{grid}}$ 为 IONEX 数据段整数编码（具体以文件说明为准；常见有 0.1 TECU 量级）。
 
 **手算例**：看见整数 123，指数 $-1$，则 $12.3\,\mathrm{TECU}$。形状可以完全「像样」，色标也漂亮，但绝对值乘错 10——数量级灾难第一名。
 
@@ -710,7 +710,7 @@ $$
 1. $\mathrm{STEC}\approx M(e)\,\mathrm{VTEC}(\mathrm{IPP})+b_r+b^{s}+\varepsilon$。  
 2. 建图 = 多站堆叠估计，常欠定；正则偏爱某种脸。  
 3. 球谐 $N_{\max}$ = 波长旋钮；截断有 Gibbs/振铃。  
-4. IONEX：先读头；$\mathrm{TECU}=\mathrm{整数}\times10^{\mathrm{EXPONENT}}$。  
+4. IONEX：先读头；$\mathrm{TECU}=N_{\mathrm{grid}}\times10^{\mathrm{EXPONENT}}$（$N_{\mathrm{grid}}$：格网整数）。  
 5. AC 差有因：站网、壳高、DCB、正则、时延、上层口径。  
 6. $\Delta\mathrm{VTEC}=V_{\mathrm{storm}}-\overline{V}_{\mathrm{quiet}}$：掀气候底子，非自动证机理。  
 7. 对比自建前：统一斜/竖、映射、壳高、时间、DCB。  
@@ -732,9 +732,11 @@ $$
 $$
 
 $$
-\mathrm{TECU}=\mathrm{整数}\times10^{\mathrm{EXPONENT}},\quad
+\mathrm{TECU}=N_{\mathrm{grid}}\times10^{\mathrm{EXPONENT}},\quad
 \Delta\mathrm{VTEC}=V_{\mathrm{storm}}-\overline{V}_{\mathrm{quiet}}.
 $$
+
+（$N_{\mathrm{grid}}$：IONEX 格网整数。）
 
 **值班速算条（建议抄卡片）：**
 

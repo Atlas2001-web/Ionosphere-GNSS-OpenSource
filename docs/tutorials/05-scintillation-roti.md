@@ -216,8 +216,8 @@ $L$ 靠近 $r_F$ 且扫掠快 → $f_{\mathrm{char}}$ 升高 → **采样必须�
 ## 6. 公式路线图（先看全图，再逐步拆）
 
 $$
-\text{不规则体}
-\;\xrightarrow{\text{相位屏 + 衍射}}\;
+\text{irregularities}
+\;\xrightarrow{\text{phase screen + diffraction}}\;
 \{I(t),\,\varphi(t)\}
 \;\xrightarrow{T,\,W}\;
 \{\mathrm{S4},\,\sigma_\varphi\}
@@ -229,11 +229,11 @@ $$
 \mathrm{ROT}(t)
 \;\xrightarrow{W}\;
 \mathrm{ROTI}(t)
-\;\xrightarrow{\text{代理伦理}}\;
-\text{「不规则体活动↑」而非「S4=…」}
+\;\xrightarrow{\text{proxy ethics}}\;
+\text{activity}\uparrow\ \text{not}\ \mathrm{S4}=\cdots
 $$
 
-读法（中文在公式外）：真实闪烁指数来自高强度/相位序列；ROTI 来自 TEC 序列的变化率起伏。两条箭头可以同向，但终点物理量不同。
+读法（中文在公式外）：不规则体经相位屏/衍射成强度与相位序列，再得 S4、σφ；ROTI 来自 TEC 变化率起伏，只代理「不规则体活动↑」，不能直接写成「S4=…」。两条箭头可以同向，但终点物理量不同。
 
 ---
 
