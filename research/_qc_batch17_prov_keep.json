@@ -1,0 +1,207 @@
+{
+  "keeps": [
+    {
+      "name": "GFZRNX",
+      "provenance": "official",
+      "detail": "GFZ Space Geodetic Techniques toolbox page — already official"
+    },
+    {
+      "name": "GNSSNexus-rinex",
+      "provenance": "personal_community",
+      "detail": "GNSSNexus org empty bio/company → keep personal_community"
+    },
+    {
+      "name": "Essential-GNSS",
+      "provenance": "personal_community",
+      "detail": "SourceForge Essential GNSS / Glenn MacGougan — keep personal_community"
+    },
+    {
+      "name": "BDSSDR",
+      "provenance": "personal_community",
+      "detail": "nkyang PhD MATLAB hobby bio, no lab company → keep personal_community"
+    },
+    {
+      "name": "FlyCat-SDR-GPS",
+      "provenance": "personal_community",
+      "detail": "flydog-sdr community hardware org → keep personal_community"
+    },
+    {
+      "name": "CDAAC_COSMIC-TEC_Data-Research",
+      "provenance": "personal_community",
+      "detail": "haoINvinCbou student bio, no lab org → keep personal_community"
+    },
+    {
+      "name": "FARR",
+      "provenance": "academic_lab",
+      "detail": "GitLab longleywj/farr; NJIT/BU FDTD — already academic_lab"
+    },
+    {
+      "name": "GIM_fusion_VLBI",
+      "provenance": "academic_lab",
+      "detail": "arrueegg company=ETH Zürich PhD ionospheric modeling — confirm academic_lab"
+    },
+    {
+      "name": "GIRO-IRTAM",
+      "provenance": "academic_lab",
+      "detail": "UML GIRO IRTAM portal — keep academic_lab; skipped Chinese (portal)"
+    },
+    {
+      "name": "GNSS-Workshop-TEC",
+      "provenance": "academic_lab",
+      "detail": "breid-phys empty bio; workshop teaching materials already academic_lab"
+    },
+    {
+      "name": "HamSCI-ionosonde",
+      "provenance": "academic_lab",
+      "detail": "HamSCI citizen-science org with research partners — keep academic_lab"
+    },
+    {
+      "name": "hfpytrace",
+      "provenance": "academic_lab",
+      "detail": "shibaji7 Research Associate ERAU — confirm academic_lab"
+    },
+    {
+      "name": "IBP-Model",
+      "provenance": "academic_lab",
+      "detail": "IAP Kühlungsborn institutional GitLab — confirm academic_lab"
+    },
+    {
+      "name": "Ion-Phys-Toolkit",
+      "provenance": "academic_lab",
+      "detail": "PANXIONG-CN company=Tsinghua University — confirm academic_lab"
+    },
+    {
+      "name": "ionex-analyzer",
+      "provenance": "personal_community",
+      "detail": "matador96 JS developer — keep personal_community"
+    },
+    {
+      "name": "Ionex_Parser",
+      "provenance": "personal_community",
+      "detail": "ajayraghASL Augsense Lab (commercial) ≠ academic — keep personal_community"
+    },
+    {
+      "name": "IonKit-NH",
+      "provenance": "personal_community",
+      "detail": "ohm1122 empty bio — keep personal_community"
+    },
+    {
+      "name": "IonoBench",
+      "provenance": "academic_lab",
+      "detail": "Mert-chan empty bio; catalog already academic_lab — keep"
+    },
+    {
+      "name": "IonOccAnalysis",
+      "provenance": "academic_lab",
+      "detail": "wonder2019WHU WHU-related C++ — keep academic_lab"
+    },
+    {
+      "name": "piksi_tools",
+      "provenance": "personal_community",
+      "detail": "swift-nav vendor OSS; categories.md maps 公司开源档→personal_community — KEEP (contrast septentrio historical official)"
+    },
+    {
+      "name": "swift-nav-pygnss",
+      "provenance": "personal_community",
+      "detail": "same swift-nav vendor OSS policy — KEEP personal_community"
+    },
+    {
+      "name": "PocketSDR-AFS",
+      "provenance": "personal_community",
+      "detail": "osqzss Takuji Ebinuma personal — keep personal_community"
+    },
+    {
+      "name": "LANS-AFS-SIM",
+      "provenance": "personal_community",
+      "detail": "osqzss personal — keep personal_community"
+    },
+    {
+      "name": "namuru-gps",
+      "provenance": "personal_community",
+      "detail": "osqzss personal — keep personal_community"
+    },
+    {
+      "name": "rt-navi",
+      "provenance": "personal_community",
+      "detail": "nav-solutions community org — keep personal_community"
+    },
+    {
+      "name": "nav-solutions-gnss",
+      "provenance": "personal_community",
+      "detail": "nav-solutions community org — keep personal_community"
+    },
+    {
+      "name": "Klobuchar.jl",
+      "provenance": "personal_community",
+      "detail": "bukvoj empty — keep personal_community"
+    },
+    {
+      "name": "IRI_TID",
+      "provenance": "academic_lab",
+      "detail": "w2naf company=University of Scranton — confirm academic_lab"
+    },
+    {
+      "name": "SAMI3-4.00",
+      "provenance": "official",
+      "detail": "jdhuba SAMI3 author-side — already official"
+    },
+    {
+      "name": "ismr_downloader",
+      "provenance": "academic_lab",
+      "detail": "GEGE-UNESP org — confirm academic_lab"
+    },
+    {
+      "name": "nleht-fdtd-ionosphere",
+      "provenance": "academic_lab",
+      "detail": "nleht GitLab VLF FDTD — already academic_lab"
+    },
+    {
+      "name": "pypride",
+      "provenance": "academic_lab",
+      "detail": "gofrito/pypride GitLab PRIDE-related — already academic_lab"
+    },
+    {
+      "name": "ATom-TUWien",
+      "provenance": "academic_lab",
+      "detail": "GregorMoeller / TU Wien ATom — confirm academic_lab"
+    },
+    {
+      "name": "tec-example",
+      "provenance": "official",
+      "detail": "embrace-inpe INPE Embrace — already official"
+    },
+    {
+      "name": "ionospheric-scintillation-mitigation",
+      "provenance": "personal_community",
+      "detail": "fengjie0325 paper code — keep personal_community"
+    },
+    {
+      "name": "gnssr-raspberry",
+      "provenance": "academic_lab",
+      "detail": "ITC-Water-Resources Faculty ITC — confirm academic_lab"
+    },
+    {
+      "name": "SbfMixer",
+      "provenance": "official",
+      "detail": "septentrio-gnss manufacturer org — already official; Chinese not rewritten this batch"
+    },
+    {
+      "name": "libsbp",
+      "provenance": "personal_community",
+      "detail": "swift-nav vendor OSS / core+featured — KEEP personal per 公司开源档 policy (batch18 optional)"
+    },
+    {
+      "name": "pynex",
+      "provenance": "personal_community",
+      "detail": "swift-nav vendor OSS — KEEP personal_community"
+    }
+  ],
+  "fixes": [
+    {
+      "name": "m_gim-PANXIONG",
+      "from": "personal_community",
+      "to": "academic_lab",
+      "detail": "PANXIONG-CN company=Tsinghua University; same author as Ion-Phys-Toolkit academic_lab"
+    }
+  ]
+}

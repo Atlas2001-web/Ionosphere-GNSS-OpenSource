@@ -39,8 +39,8 @@
 | [gnss-sdr-rs](https://github.com/kewei/gnss-sdr-rs) | gnss-sdr-rs：Rust 语言 GNSS 软件接收机实验 | Rust | 9 | 🏷️ 个人社区 |
 | [GPSMAXIM2769b-](https://github.com/vaidhyamookiah/GPSMAXIM2769b-) | GPSMAXIM2769b-：Maxim 2769b GNSS 前端 PCB（Papilio） | Eagle | 4 | 🏷️ 个人社区 |
 | [GRID](https://github.com/mmurrian/GRID) | GRID：灵活可扩展 GNSS/GPS 软件定义接收机 | — | 4 | 🏷️ 个人社区 |
-| [BDSSDR](https://github.com/nkyang/BDS_SDR) | 北斗/GNSS 软件接收实验代码（文档较少） | MATLAB | 2 | 🏷️ 个人社区 |
-| [FlyCat-SDR-GPS](https://github.com/flydog-sdr/FlyCat_SDR_GPS) | FlyCat：Orange Pi 用 16-bit 宽带 SDR+GPS 扩展 | C++ | 2 | 🏷️ 个人社区 |
+| [BDSSDR](https://github.com/nkyang/BDS_SDR) | BDSSDR：北斗/GNSS 软件接收 MATLAB 实验码 | MATLAB | 2 | 🏷️ 个人社区 |
+| [FlyCat-SDR-GPS](https://github.com/flydog-sdr/FlyCat_SDR_GPS) | FlyCat-SDR-GPS：Orange Pi 用 16-bit 宽带 SDR+GPS 扩展 | C++ | 2 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -559,7 +559,7 @@ OreSat 项目 GPS 接收机软件部分，与 oresat-gps-hardware 配套，覆�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [LANS-AFS-SIM](https://github.com/osqzss/LANS-AFS-SIM) | LunaNet LANS AFS 基带信号发生器（月面导航仿真） | C | 9 | 🏷️ 个人社区 |
+| [LANS-AFS-SIM](https://github.com/osqzss/LANS-AFS-SIM) | LANS-AFS-SIM：LunaNet LANS AFS 基带信号发生器 | C | 9 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -574,7 +574,7 @@ OreSat 项目 GPS 接收机软件部分，与 oresat-gps-hardware 配套，覆�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [PocketSDR-AFS](https://github.com/osqzss/PocketSDR-AFS) | 基于 PocketSDR 的 LunaNet LANS AFS 软件接收机 | C | 18 | 🏷️ 个人社区 |
+| [PocketSDR-AFS](https://github.com/osqzss/PocketSDR-AFS) | PocketSDR-AFS：基于 PocketSDR 的 LunaNet LANS AFS 接收 | C | 18 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -589,7 +589,7 @@ OreSat 项目 GPS 接收机软件部分，与 oresat-gps-hardware 配套，覆�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [namuru-gps](https://github.com/osqzss/namuru-gps) | Verilog 实现的 GPS C/A 跟踪通道（Namuru 风格） | Verilog | 6 | 🏷️ 个人社区 |
+| [namuru-gps](https://github.com/osqzss/namuru-gps) | namuru-gps：Verilog GPS C/A 跟踪通道（Namuru 风格） | Verilog | 6 | 🏷️ 个人社区 |
 
 ### 详细说明
 

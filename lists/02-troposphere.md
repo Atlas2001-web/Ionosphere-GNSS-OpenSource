@@ -34,7 +34,7 @@ Surrey TechDemoSat-1（MERRByS）星载 GNSS-R 的 Python/Jupyter 示例，演�
 | [PW_from_GPS](https://github.com/ZiskinZiv/PW_from_GPS) | PW_from_GPS：GPS 可降水量（PWV）分析与 ML 工具 | Python | 22 | 🏷️ 个人社区 |
 | [pwv_kpno](https://github.com/mwvgroup/pwv_kpno) | pwv_kpno：SuomiNet GPS PWV 驱动的透过率模型 | Python | 11 | 🏷️ 高校实验室 |
 | [OpATOM](https://github.com/benceturak/GeoPack/tree/GPSTomographyToolbox/GPSTomographyToolbox) | OpATOM：BME GNSS 对流层湿折射率 MART 层析工具箱 | Python | 3 | 🏷️ 高校实验室 |
-| [ATom-TUWien](https://github.com/GregorMoeller/ATom) | TU Wien MATLAB：GNSS 大气层析与湿折射率三维重建（含 GUI） | MATLAB | 2 | 🏷️ 高校实验室 |
+| [ATom-TUWien](https://github.com/GregorMoeller/ATom) | ATom-TUWien：GNSS 大气层析与湿折射率三维重建 | MATLAB | 2 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -99,7 +99,7 @@ BME 大地测量组发布的开源 Python 层析工具箱，由 ZWD/梯度、SP3
 | [gpssnrpy](https://github.com/kristinemlarson/gpssnrpy) | gpssnrpy：RINEX SNR 提取与高度角/方位角 | Python | 6 | 🏷️ 高校实验室 |
 | [NearRealTimeGNSSIR](https://github.com/cemalialtuntas/NearRealTimeGNSSIR) | NearRealTimeGNSSIR：近实时 GNSS-IR 软件原型 | HTML | 5 | 🏷️ 高校实验室 |
 | [FindSnowOutliers](https://github.com/kristinemlarson/FindSnowOutliers) | FindSnowOutliers：SNR 检测天线积雪异常 | MATLAB | 4 | 🏷️ 高校实验室 |
-| [gnssr-raspberry](https://github.com/ITC-Water-Resources/gnssr-raspberry) | 树莓派上的 GNSS 反射测量（ITC 水资源） | Python | 3 | 🏷️ 高校实验室 |
+| [gnssr-raspberry](https://github.com/ITC-Water-Resources/gnssr-raspberry) | gnssr-raspberry：树莓派 GNSS 反射测量（ITC 水资源） | Python | 3 | 🏷️ 高校实验室 |
 | [gpsonlySNR](https://github.com/kristinemlarson/gpsonlySNR) | gpsonlySNR：GPS RINEX→SNR 提取工具 | Fortran | 2 | 🏷️ 高校实验室 |
 
 ### 详细说明

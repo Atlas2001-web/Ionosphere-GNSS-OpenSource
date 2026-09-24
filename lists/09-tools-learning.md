@@ -531,7 +531,7 @@ NOAA 垂直基准转换软件与服务，连接椭球高、大地水准面与潮
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [piksi_tools](https://github.com/swift-nav/piksi_tools) | Swift Navigation Piksi 接收机工具集（Python） | Python | 36 | 🏷️ 个人社区 |
+| [piksi_tools](https://github.com/swift-nav/piksi_tools) | piksi_tools：Swift Navigation Piksi 接收机 Python 工具 | Python | 36 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -546,7 +546,7 @@ NOAA 垂直基准转换软件与服务，连接椭球高、大地水准面与潮
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [swift-nav-pygnss](https://github.com/swift-nav/pygnss) | Swift Navigation 的 Python GNSS 实用库（pygnss） | Python | 24 | 🏷️ 个人社区 |
+| [swift-nav-pygnss](https://github.com/swift-nav/pygnss) | swift-nav-pygnss：Swift Navigation Python GNSS 实用库 | Python | 24 | 🏷️ 个人社区 |
 
 ### 详细说明
 

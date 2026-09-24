@@ -162,7 +162,7 @@ Python/Jupyter 多星座 PPP-RTK 试验箱，强调可读与易移植，便于�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Essential-GNSS](https://sourceforge.net/projects/gnsstk/) | SourceForge Essential GNSS：轻量 C 库与事后 LSQ/EKF/RTK 处理（非 GPSTk） | C | — | 🏷️ 个人社区 |
+| [Essential-GNSS](https://sourceforge.net/projects/gnsstk/) | Essential-GNSS：轻量 C 库与事后 LSQ/EKF/RTK（SourceForge） | C | — | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -1056,7 +1056,7 @@ Python 终端 RTK 客户端（AGPL-3.0）：经 NTRIP 拉取 RTCM3 改正并注�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [rt-navi](https://github.com/nav-solutions/rt-navi) | Rust 实时导航演示：U-Blox 原始观测 + gnss-rtk 解算 | Rust | 12 | 🏷️ 个人社区 |
+| [rt-navi](https://github.com/nav-solutions/rt-navi) | rt-navi：Rust 实时导航演示（U-Blox + gnss-rtk） | Rust | 12 | 🏷️ 个人社区 |
 
 ### 详细说明
 

@@ -608,7 +608,7 @@ EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RT
 | [rinex](https://github.com/nav-solutions/rinex) | rinex：Rust RINEX 解析与 RINEX-Cli | Rust | 126 | 🏷️ 个人社区 核心 |
 | [RinexReader](https://github.com/aaronboda24/RinexReader) | RinexReader：C++ RINEX 2/3 读取库 | C++ | 38 | 🏷️ 个人社区 |
 | [READ_GNSS](https://github.com/dzd9798/READ_GNSS) | READ_GNSS：MATLAB 读 RINEX/IONEX 等 GNSS 文件 | MATLAB | 10 | 🏷️ 个人社区 |
-| [GNSSNexus-rinex](https://github.com/GNSSNexus/rinex) | RINEX 相关读写/处理组件 | Rust | — | 🏷️ 个人社区 |
+| [GNSSNexus-rinex](https://github.com/GNSSNexus/rinex) | GNSSNexus-rinex：Rust RINEX 读写组件 | Rust | — | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -653,7 +653,7 @@ GNSSNexus 下的 RINEX 组件，适合特定工具链内使用。选型时与 ge
 |---|---|---|---:|---|
 | [pynex](https://github.com/swift-nav/pynex) | pynex：Swift 归档的 Python RINEX 工具集 | Python | 21 | 🏷️ 个人社区 |
 | [uNavTools](https://github.com/IvAn190/uNavTools) | uNavTools：u-blox→RINEX 与 CSSRlib RTK/PPP 工具集 | Python | 10 | 🏷️ 个人社区 |
-| [GFZRNX](https://www.gfz.de/en/section/space-geodetic-techniques/data-products-services/gfzrnx-gnss-toolbox) | GFZ 的 RINEX 检查/拼接/抽样工具箱（科研非商用免费） | binary toolkit | — | 🏷️ 官方 |
+| [GFZRNX](https://www.gfz.de/en/section/space-geodetic-techniques/data-products-services/gfzrnx-gnss-toolbox) | GFZRNX：GFZ RINEX 检查/拼接/抽样工具箱 | binary toolkit | — | 🏷️ 官方 |
 | [GFZRNX-UserGuide](https://gnss.git-pages.gfz-potsdam.de/gfzrnx/) | GFZRNX 2.2 用户手册：任务、EULA 与 Hatanaka/统计等操作说明 | docs | — | 🏷️ 官方 |
 | [rinex-masker](https://github.com/J-kroeger/rinex-masker) | rinex-masker：RINEX 遮挡掩膜与 DOP 影响分析 | Python | 0 | 🏷️ 高校实验室 |
 
@@ -1303,7 +1303,7 @@ MIT 许可的 Python 脚本，从 gnss.osi.ie 批量下载爱尔兰 Active GNSS 
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [nav-solutions-gnss](https://github.com/nav-solutions/gnss) | Rust GNSS 星座/信号等基础定义 crate（nav-solutions） | Rust | 11 | 🏷️ 个人社区 |
+| [nav-solutions-gnss](https://github.com/nav-solutions/gnss) | nav-solutions-gnss：Rust 星座/信号基础定义 crate | Rust | 11 | 🏷️ 个人社区 |
 
 ### 详细说明
 
