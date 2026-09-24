@@ -1,0 +1,224 @@
+[
+  {
+    "name": "GNSSPositioning",
+    "action": "keep",
+    "detail": "empty bio/company → keep personal_community",
+    "owner": "bitecc"
+  },
+  {
+    "name": "multi-channel-gnss",
+    "action": "keep",
+    "detail": "empty bio/company → keep personal_community",
+    "owner": "dasdboot"
+  },
+  {
+    "name": "gnssr-synth",
+    "action": "keep",
+    "detail": "empty bio/company → keep personal_community",
+    "owner": "purnelldj"
+  },
+  {
+    "name": "READ_GNSS",
+    "action": "keep",
+    "detail": "empty bio/company → keep personal_community",
+    "owner": "dzd9798"
+  },
+  {
+    "name": "uNavTools",
+    "action": "keep",
+    "detail": "empty bio/company (Barcelona) → keep personal_community",
+    "owner": "IvAn190"
+  },
+  {
+    "name": "gnss-sdr-rs",
+    "action": "keep",
+    "detail": "empty bio/company (Sweden) → keep personal_community",
+    "owner": "kewei"
+  },
+  {
+    "name": "ntrip-catalog",
+    "action": "keep",
+    "detail": "Pix4D SA commercial org catalog → keep personal_community",
+    "owner": "Pix4D"
+  },
+  {
+    "name": "PPP-RTK-Ionosphere",
+    "action": "keep",
+    "detail": "empty bio/company → keep personal_community",
+    "owner": "nickdaychen"
+  },
+  {
+    "name": "esp2822NMEAsim",
+    "action": "keep",
+    "detail": "Ph.D. bio but company @RobotecAI commercial → keep personal_community",
+    "owner": "michalpelka"
+  },
+  {
+    "name": "ion_gnss25_fg_code_examples",
+    "action": "keep",
+    "detail": "PNT bio; no university/agency company → keep personal_community",
+    "owner": "watsonryan"
+  },
+  {
+    "name": "ionosphere-plotting",
+    "action": "keep",
+    "detail": "software engineer @ hospital; not academic GNSS lab → keep personal_community",
+    "owner": "arwildo"
+  },
+  {
+    "name": "sp3",
+    "action": "keep",
+    "detail": "nav-solutions community org (France) → keep personal_community",
+    "owner": "nav-solutions"
+  },
+  {
+    "name": "SbfParser",
+    "action": "keep",
+    "detail": "already official (Septentrio) — confirmed",
+    "owner": "septentrio-gnss"
+  },
+  {
+    "name": "Alouette_ISIS_extract",
+    "action": "keep",
+    "detail": "already official (CSA) — confirmed",
+    "owner": "asc-csa"
+  },
+  {
+    "name": "Swarm_notebooks",
+    "action": "keep",
+    "detail": "already official (ESA Swarm-DISC) — confirmed",
+    "owner": "Swarm-DISC"
+  },
+  {
+    "name": "rinexmod",
+    "action": "keep",
+    "detail": "already academic_lab (IPGP org) — confirmed",
+    "owner": "IPGP"
+  },
+  {
+    "name": "RTK",
+    "action": "keep",
+    "detail": "already academic_lab; GYH-WHU bio Wuhan University undergrad — confirmed",
+    "owner": "GYH-WHU"
+  },
+  {
+    "name": "GVINS-WHU",
+    "action": "keep",
+    "detail": "already academic_lab — confirmed",
+    "owner": "zhangwhu"
+  },
+  {
+    "name": "ionosphereAI",
+    "action": "keep",
+    "detail": "already academic_lab (space-physics org) — confirmed",
+    "owner": "space-physics"
+  },
+  {
+    "name": "POLAN",
+    "action": "keep",
+    "detail": "already academic_lab (space-physics org) — confirmed",
+    "owner": "space-physics"
+  },
+  {
+    "name": "MCOSB",
+    "action": "keep",
+    "detail": "already academic_lab; GCCLib bio PI Zhetao Zhang — confirmed",
+    "owner": "GCCLib"
+  },
+  {
+    "name": "pwv_kpno",
+    "action": "keep",
+    "detail": "already academic_lab (mwvgroup org) — confirmed",
+    "owner": "mwvgroup"
+  },
+  {
+    "name": "PyRayHF",
+    "action": "keep",
+    "detail": "already academic_lab; bio space physicist ionospheric modelling — confirmed",
+    "owner": "victoriyaforsythe"
+  },
+  {
+    "name": "tidd",
+    "action": "keep",
+    "detail": "already academic_lab — confirmed (commercial Infactory now; leave as-is)",
+    "owner": "vc1492a"
+  },
+  {
+    "name": "DDM-Former",
+    "action": "keep",
+    "detail": "already academic_lab — confirmed",
+    "owner": "daixinzhao"
+  },
+  {
+    "name": "csonde-gnss-ionosphere",
+    "action": "keep",
+    "detail": "already academic_lab — confirmed",
+    "owner": "csonde"
+  },
+  {
+    "name": "mrtklib-docker-ui",
+    "action": "keep",
+    "detail": "already academic_lab — confirmed",
+    "owner": "h-shiono"
+  },
+  {
+    "name": "crz2rnx",
+    "action": "keep",
+    "detail": "already academic_lab — confirmed",
+    "owner": "zhufengGNSS"
+  },
+  {
+    "name": "awsgnssroutils",
+    "action": "keep",
+    "detail": "already academic_lab — confirmed",
+    "owner": "gnss-ro"
+  },
+  {
+    "name": "pysatModels",
+    "action": "keep",
+    "detail": "already academic_lab (pysat org) — confirmed",
+    "owner": "pysat"
+  },
+  {
+    "name": "Septentrio-PyDataLink",
+    "action": "keep",
+    "detail": "already official — confirmed",
+    "owner": "septentrio-gnss"
+  },
+  {
+    "name": "iri90",
+    "action": "keep",
+    "detail": "already academic_lab — confirmed",
+    "owner": "space-physics"
+  },
+  {
+    "name": "CSSR-tool",
+    "action": "keep",
+    "detail": "already academic_lab — confirmed",
+    "owner": "MayHarryWang"
+  },
+  {
+    "name": "GMR-Water",
+    "action": "keep",
+    "detail": "already academic_lab (CUMTB group) — confirmed",
+    "owner": "GRseRG-CUMTB"
+  },
+  {
+    "name": "SPP_SPV",
+    "action": "keep",
+    "detail": "already academic_lab — confirmed",
+    "owner": "GYH-WHU"
+  },
+  {
+    "name": "radionopy",
+    "action": "keep",
+    "detail": "already academic_lab (UPenn Aguirre EoR) — confirmed",
+    "owner": "UPennEoR"
+  },
+  {
+    "name": "sami3_gitm",
+    "action": "keep",
+    "detail": "already official — confirmed",
+    "owner": "jdhuba"
+  }
+]

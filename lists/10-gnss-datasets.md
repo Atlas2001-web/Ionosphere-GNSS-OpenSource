@@ -7,7 +7,7 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [awsgnssroutils](https://github.com/gnss-ro/aws-opendata) | AWS 开放数据 GNSS 掩星元数据查询与下载工具（含电离层产品入口） | Python | 21 | 🏷️ 高校实验室 |
+| [awsgnssroutils](https://github.com/gnss-ro/aws-opendata) | awsgnssroutils：AWS 开放数据 GNSS 掩星查询下载 | Python | 21 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -22,12 +22,12 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [BDS-3-PPP-B2b-DATA](https://github.com/zp-9696/BDS-3-PPP-B2b-DATA) | 公开一周 BDS-3 PPP-B2b 试验数据 | — | 10 | 🏷️ 个人社区 |
+| [BDS-3-PPP-B2b-DATA](https://github.com/zp-9696/BDS-3-PPP-B2b-DATA) | BDS-3-PPP-B2b-DATA：公开一周 BDS-3 PPP-B2b 试验数据 | — | 10 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
 #### [BDS-3-PPP-B2b-DATA](https://github.com/zp-9696/BDS-3-PPP-B2b-DATA)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：— · 许可：— · 星标约：10 · 宿主：github
 
@@ -731,7 +731,7 @@ Geoscience Australia 对 Southern Positioning Augmentation Network 的官方说�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [ntrip-catalog](https://github.com/Pix4D/ntrip-catalog) | Pix4D 开源 NTRIP 服务商目录（含坐标参考系 CRS 元数据，CC0） | Python | 14 | 🏷️ 个人社区 |
+| [ntrip-catalog](https://github.com/Pix4D/ntrip-catalog) | ntrip-catalog：Pix4D 开源 NTRIP 服务商 CRS 目录 | Python | 14 | 🏷️ 个人社区 |
 | [RAMSAC-NTRIP](https://www.ign.gob.ar/NuestrasActividades/Geodesia/RamsacNtrip) | 阿根廷 RAMSAC-NTRIP：国家 CORS 实时流门户 | data-portal | — | 🏷️ 官方 |
 | [TUSAGA-Aktif](https://www.tusaga-aktif.gov.tr/) | TUSAGA-Aktif：土耳其国家主动 GNSS 网服务门户 | data-portal | — | 🏷️ 官方 |
 

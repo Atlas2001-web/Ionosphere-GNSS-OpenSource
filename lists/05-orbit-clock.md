@@ -138,7 +138,7 @@ C++ 实现三套偏差模式：DCB（码偏差与 VTEC 球谐联立）、UPD 与
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [MCOSB](https://github.com/GCCLib/MCOSB) | 多 GNSS 多频码 OSB（Observable-Specific Bias）估计 MATLAB 工具 | MATLAB | 11 | 🏷️ 高校实验室 |
+| [MCOSB](https://github.com/GCCLib/MCOSB) | MCOSB：多 GNSS 多频码 OSB 估计 MATLAB 工具 | MATLAB | 11 | 🏷️ 高校实验室 |
 
 ### 详细说明
 

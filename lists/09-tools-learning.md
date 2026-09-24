@@ -1,5 +1,5 @@
 # 学习资源与工具 / Tools & Learning
-> **44** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **47** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
@@ -118,6 +118,7 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 | [EGNOS-GSC-User-Support](https://egnos.gsc-europa.eu/) | EGNOS GSC：欧洲静地导航重叠系统用户支持 | data-portal | — | 🏷️ 官方 |
 | [EGNOS-Toolkit](https://sourceforge.net/projects/libegnos/) | SourceForge EGNOS Toolkit：SBAS/EGNOS 消息与接收算法工具 | C/C++ | — | 🏷️ 个人社区 |
 | [FAA-WAAS](https://www.faa.gov/about/office_org/headquarters_offices/ato/service_units/techops/navservices/gnss/waas) | FAA WAAS：美国广域增强系统官方介绍 | data-portal | — | 🏷️ 官方 |
+| [ICAO-PBN](https://www.icao.int/safety/pbn/Pages/Overview.aspx) | ICAO PBN：基于性能导航官方概述入口 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -142,10 +143,18 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 
 联邦航空局关于 WAAS 的官方导航页，说明广域增强架构、服务与相关 GNSS 导航服务入口。portal-terms；与 NSTB 测试数据页互补。偏航空完好性与服务说明，不是 RINEX 下载站；技术细节与运行状态请再循 FAA/NAVCEN 相关链接核实。
 
+#### [ICAO-PBN](https://www.icao.int/safety/pbn/Pages/Overview.aspx)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+国际民航组织关于 Performance-Based Navigation（PBN）的概述页，链向航空导航性能与相关文件框架，常与 GNSS/SBAS 完好性运行要求对照。官方 portal；偏规章与运行概念，不是接收机开源代码。具体 SARPs/手册下载遵循 ICAO 分发规则。
+
 ## 机构软件门户
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [ENRI-Japan](https://www.enri.go.jp/eng/index.html) | ENRI：日本电子航法研究所（航空 CNS）门户 | data-portal | — | 🏷️ 官方 |
 | [GA-Positioning-Services](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/services-and-tools) | Geoscience Australia 定位服务与工具门户（SouthPAN/AUSPOS/数据中心） | various | — | 🏷️ 官方 |
 | [GPS.gov](https://www.gps.gov/) | GPS.gov：美国 GPS 系统官方公众信息站 | data-portal | — | 🏷️ 官方 |
 | [ISRO-IRNSS-NavIC](https://www.isro.gov.in/IRNSS_Programme.html) | ISRO NavIC：印度区域导航系统官方计划页 | data-portal | — | 🏷️ 官方 |
@@ -154,6 +163,13 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 | [USCG-NAVCEN](https://www.navcen.uscg.gov/) | NAVCEN：美国海岸警卫队导航与 GNSS 门户 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
+
+#### [ENRI-Japan](https://www.enri.go.jp/eng/index.html)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+ENRI 是日本在航空交通管理与通信导航监视（ATM/CNS）领域的国家级研究机构英文门户，涵盖电子航法与相关 GNSS/增强研究入口。官方 portal；适合查日方航空导航与完好性研究方向。具体报告与数据分发条款以各子页为准，非 CORS 下载站。
 
 #### [GA-Positioning-Services](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/services-and-tools)  
 *🏷️ 官方*
@@ -246,7 +262,7 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [ion_gnss25_fg_code_examples](https://github.com/watsonryan/ion_gnss25_fg_code_examples) | ION GNSS+ 2025 因子图教程示例（基于 GTSAM：里程计/测距/GNSS 伪距） | Python | 7 | 🏷️ 个人社区 |
+| [ion_gnss25_fg_code_examples](https://github.com/watsonryan/ion_gnss25_fg_code_examples) | ion_gnss25_fg_code_examples：ION GNSS+ 2025 因子图教程 | Python | 7 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -376,11 +392,19 @@ Rokubun 编写的 GNSS 数据处理 Jupyter 教程，覆盖从观测到基础解
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [geodesy-js](https://github.com/chrisveness/geodesy) | geodesy-js：浏览器/Node 可用的 JS 大地测量库 | JavaScript | 1227 | 🏷️ 个人社区 |
 | [Geodesy.jl](https://github.com/JuliaGeo/Geodesy.jl) | Geodesy.jl：Julia 坐标与大地测量变换库 | Julia | 114 | 🏷️ 个人社区 |
 | [ncat-lib](https://github.com/noaa-ngs/ncat-lib) | NGS NCAT Java 库：离线坐标/基准转换 | Java | 21 | 🏷️ 官方 |
 | [NGS-NCAT](https://geodesy.noaa.gov/NCAT/) | NOAA/NGS NCAT：大地坐标与参考框架转换工具 | web/service | — | 🏷️ 官方 |
 
 ### 详细说明
+
+#### [geodesy-js](https://github.com/chrisveness/geodesy)  
+*🏷️ 个人社区*
+
+语言：JavaScript · 许可：MIT · 星标约：1227 · 宿主：github
+
+chrisveness 维护的 JS 大地测量工具集，覆盖常见椭球上的距离、方位与坐标变换，浏览器与 Node 可用。MIT 许可；填补 Web 前端坐标计算缺口。偏通用大地测量，不处理 RINEX/RTK 观测；高精度应用请核对方位约定与椭球参数。
 
 #### [Geodesy.jl](https://github.com/JuliaGeo/Geodesy.jl)  
 *🏷️ 个人社区*
@@ -469,7 +493,7 @@ GSC 关于 Galileo Open Service Navigation Message Authentication（OSNMA）的�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Swarm_notebooks](https://github.com/Swarm-DISC/Swarm_notebooks) | ESA Swarm 科学分析 Jupyter 笔记本（含 TEC/Langmuir 示例） | Jupyter Notebook | 10 | 🏷️ 官方 |
+| [Swarm_notebooks](https://github.com/Swarm-DISC/Swarm_notebooks) | Swarm_notebooks：ESA Swarm 科学分析 Jupyter 示例 | Jupyter Notebook | 10 | 🏷️ 官方 |
 
 ### 详细说明
 

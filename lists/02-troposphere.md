@@ -8,7 +8,7 @@
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [GNSSR_MERRByS_Python](https://github.com/pjalesSSTL/GNSSR_MERRByS_Python) | GNSSR_MERRByS_Python：TechDemoSat-1 星载 GNSS-R 示例 | Jupyter Notebook | 19 | 🏷️ 高校实验室 |
-| [DDM-Former](https://github.com/daixinzhao/DDM-Former) | GNSS-R DDM 海面风速 Transformer 模型 | Python | 10 | 🏷️ 高校实验室 |
+| [DDM-Former](https://github.com/daixinzhao/DDM-Former) | DDM-Former：GNSS-R DDM 海面风速 Transformer | Python | 10 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -32,7 +32,7 @@ Surrey TechDemoSat-1（MERRByS）星载 GNSS-R 的 Python/Jupyter 示例，演�
 |---|---|---|---:|---|
 | [geodezyx](https://github.com/IPGP/geodezyx) | geodezyx：IPGP 大地测量/地球物理 Python 工具箱 | Python | 33 | 🏷️ 高校实验室 |
 | [PW_from_GPS](https://github.com/ZiskinZiv/PW_from_GPS) | PW_from_GPS：GPS 可降水量（PWV）分析与 ML 工具 | Python | 22 | 🏷️ 个人社区 |
-| [pwv_kpno](https://github.com/mwvgroup/pwv_kpno) | 基于 SuomiNet GPS 的可定制站点 PWV 大气透过率模型 | Python | 11 | 🏷️ 高校实验室 |
+| [pwv_kpno](https://github.com/mwvgroup/pwv_kpno) | pwv_kpno：SuomiNet GPS PWV 驱动的透过率模型 | Python | 11 | 🏷️ 高校实验室 |
 | [OpATOM](https://github.com/benceturak/GeoPack/tree/GPSTomographyToolbox/GPSTomographyToolbox) | 布达佩斯理工 OpATOM：Python GNSS 对流层湿折射率层析（MART）工具箱 | Python | 3 | 🏷️ 高校实验室 |
 | [ATom-TUWien](https://github.com/GregorMoeller/ATom) | TU Wien MATLAB：GNSS 大气层析与湿折射率三维重建（含 GUI） | MATLAB | 2 | 🏷️ 高校实验室 |
 
@@ -95,7 +95,7 @@ BME 大地测量组发布的开源 Python 层析工具箱，由 ZWD/梯度、SP3
 | [gnssSNR](https://github.com/kristinemlarson/gnssSNR) | gnssSNR：RINEX→SNR/几何角，GNSS-IR 前置工具 | Fortran | 15 | 🏷️ 高校实验室 |
 | [GIRAS-GPS-Solutions](https://github.com/cemalialtuntas/GIRAS-GPS-Solutions) | GIRAS：MATLAB 开源 GNSS-IR 分析（GPS Solutions 配套） | MATLAB | 13 | 🏷️ 高校实验室 |
 | [FresnelMaps](https://github.com/kristinemlarson/FresnelMaps) | FresnelMaps：GNSS-IR 菲涅耳区地图生成工具 | Python | 9 | 🏷️ 高校实验室 |
-| [gnssr4river](https://github.com/lroineau/gnssr4river) | 面向河流水文的 GNSS-R Python 工具箱 | Python | 8 | 🏷️ 个人社区 |
+| [gnssr4river](https://github.com/lroineau/gnssr4river) | gnssr4river：面向河流水文的 GNSS-R Python 工具箱 | Python | 8 | 🏷️ 高校实验室 |
 | [gpssnrpy](https://github.com/kristinemlarson/gpssnrpy) | RINEX SNR 提取与高度角工具 | Python | 6 | 🏷️ 高校实验室 |
 | [NearRealTimeGNSSIR](https://github.com/cemalialtuntas/NearRealTimeGNSSIR) | NearRealTimeGNSSIR：近实时 GNSS-IR 软件原型 | HTML | 5 | 🏷️ 高校实验室 |
 | [FindSnowOutliers](https://github.com/kristinemlarson/FindSnowOutliers) | FindSnowOutliers：SNR 检测天线积雪异常 | MATLAB | 4 | 🏷️ 高校实验室 |
@@ -126,7 +126,7 @@ Altuntas 与 Tunalioglu 发布的 MATLAB GNSS-IR 工具，可读 RINEX 2/3 与�
 Kristine Larson 团队工具，为地基 GNSS-IR/反射测量绘制菲涅耳区地图，辅助选址与几何解释。MIT 许可；与 gnssSNR、gnssrefl 同谱系前置工具。输入站坐标与天线高需准确，输出服务实验设计，本身不做水位或雪深反演。
 
 #### [gnssr4river](https://github.com/lroineau/gnssr4river)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：Python · 许可：— · 星标约：8 · 宿主：github
 
@@ -171,7 +171,7 @@ Larson 团队 Fortran 工具，翻译/读取 GPS RINEX 并提取 SNR，服务反
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GMR-Water](https://github.com/GRseRG-CUMTB/GMR-Water) | 中国矿大（北京）课题组基于 GNSS 多路径反射的水位反演 MATLAB 软件 | MATLAB | 7 | 🏷️ 高校实验室 |
+| [GMR-Water](https://github.com/GRseRG-CUMTB/GMR-Water) | GMR-Water：矿大（北京）GNSS 多路径反射水位反演 | MATLAB | 7 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -220,7 +220,7 @@ Larson 团队 Fortran 工具，翻译/读取 GPS RINEX 并提取 SNR，服务反
 | [gnssIR-matlab-v3](https://github.com/kristinemlarson/gnssIR_matlab_v3) | gnssIR-matlab-v3：Larson 实验室 GNSS-IR MATLAB | MATLAB | 30 | 🏷️ 高校实验室 |
 | [gnssIR-python](https://github.com/kristinemlarson/gnssIR_python) | gnssIR_python：Larson 实验室 GNSS-IR Python 脚本 | Python | 26 | 🏷️ 高校实验室 |
 | [gnssrlowcost](https://github.com/purnelldj/gnssr_lowcost) | gnssrlowcost：低成本 GNSS 反射测量分析 | MATLAB | 14 | 🏷️ 个人社区 |
-| [gnssr-synth](https://github.com/purnelldj/gnssr_synth) | GNSS-R 水位观测分析与合成 SNR 数据 | MATLAB | 11 | 🏷️ 个人社区 |
+| [gnssr-synth](https://github.com/purnelldj/gnssr_synth) | gnssr-synth：GNSS-R 水位分析与合成 SNR | MATLAB | 11 | 🏷️ 个人社区 |
 
 ### 详细说明
 

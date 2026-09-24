@@ -72,7 +72,7 @@
 | 45 | [gnsspy.md](./gnsspy.md) | Python GNSS 读写/分析（pandas + RINEX 2↔3） | 228 | **已短硬** · 本机 **3.0.1**/`e6879bf`；质检复跑 demo.10o→22×9/2历元/14SV G07 L1=118767195.326；converter 2→3 OK（XYZ Y/Z=0；3→2 回写 `read_obsFile` Length mismatch）；**无 PyPI**；对照 [georinex](./georinex.md) · **质检复跑通过** |
 | 46 | [ionex-rs.md](./ionex-rs.md) | Rust IONEX 解析/写回（nav-solutions） | 171 | **已短硬** · crates.io **0.1.0**/tip `bcb9171`；CKMG0020 → 129575 点/25 图；87.5N=9.2 TECU；往返 807703 B；交叉 [ionex-gim](./ionex-gim.md) |
 | 47 | [madocalib.md](./madocalib.md) | QZSS MADOCA-PPP 官方测试库（事后 PPP） | 165 | **已短硬** · tip `0089f7d` / **VER 2.1**；Linux `rnx2rtkp`；MIZU 1 h → 118 历元 Q=6；交叉 [cssrlib](./cssrlib.md)/[haslib](./haslib.md)/[rtklib](./rtklib.md)/[pride-pppar](./pride-pppar.md) |
-| 48 | [aacgmv2.md](./aacgmv2.md) | AACGM-v2 地磁坐标（mlat/mlon/MLT） | 209 | **已短硬** · 本机 **2.7.1**/`5f85579`；geo(40N,80W,250km)→mlat≈50.53 mlon≈−4.09 mlt≈10.09；交叉 [apexpy](./apexpy.md) · [`079c94a`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/079c94a) |
+| 48 | [aacgmv2.md](./aacgmv2.md) | AACGM-v2 地磁坐标（mlat/mlon/MLT） | 209 | **已短硬** · 本机 **2.7.1**/`5f85579`；geo(40N,80W,250km)→mlat≈50.53 mlon≈−4.09 mlt≈10.09；交叉 [apexpy](./apexpy.md) · [`308b035`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/308b035) |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
