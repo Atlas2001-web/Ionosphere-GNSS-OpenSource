@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **32 篇**操作手册（合计 **7942** 行，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **33 篇**操作手册（合计 **8234** 行，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -15,7 +15,7 @@
 | **软件手册质检**（本 bot） | 已短硬篇的**二遍质检补洞**（错 I/O、过时旗标、仍薄点）；优先 `georinex` / `rtklib` / `bnc` / `gfzrnx` / `pytecgg` | 勿大改「仍薄/缺篇」同事正在写的文件 |
 | **软件用法讲解**（并行） | 写 **尚未短硬 / 缺篇** 新手册 | 勿重写下表已标「已短硬」全文（补丁可协调） |
 
-**下一优先（质检二遍，按弱→强）：** 停写门槛已近——剩余主要是 **登记/环境受限**（`anubis` / `ionomoni` / `iono-scintillation` / `gfzrnx`）无本机真实 I/O 可补；**sh-gim** 保持边界。**R9 已完成** `cssrlib`/`gnss-tec`/`pinot`/`autorino`。**R10** 已质检 `rnxcmp`/`nequickg` 并短硬入库 `hatanaka`（Python；官方二进制见 rnxcmp）。**R11** 已质检 `haslib`/`laika`。**已短硬入库 `pyglow` + `iri2016`**（IRI 气候态两条路径）。**用法讲解已入库** `gnss_lib_py` + `PyIRI`（Stanford NavData / 纯 Python IRI）。**用法讲解已入库** `pyirtam` + `fast`（IRTAM 系数重建 / GNSS 下载·QC·SPP）。**用法讲解已入库** `awsgnssroutils`（AWS RO；calibratedPhase 实拉）+ `android_rinex`（GnssLogger→RINEX；仓内样例+georinex 实跑）+ **`cosmic-crunch`**（GENESIS 大气 L2→netCDF；非 CDAAC ionPrf）。
+**下一优先（质检二遍，按弱→强）：** 停写门槛已近——剩余主要是 **登记/环境受限**（`anubis` / `ionomoni` / `iono-scintillation` / `gfzrnx`）无本机真实 I/O 可补；**sh-gim** 保持边界。**R9 已完成** `cssrlib`/`gnss-tec`/`pinot`/`autorino`。**R10** 已质检 `rnxcmp`/`nequickg` 并短硬入库 `hatanaka`（Python；官方二进制见 rnxcmp）。**R11** 已质检 `haslib`/`laika`。**已短硬入库 `pyglow` + `iri2016`**（IRI 气候态两条路径）。**用法讲解已入库** `gnss_lib_py` + `PyIRI`（Stanford NavData / 纯 Python IRI）。**用法讲解已入库** `pyirtam` + `fast`（IRTAM 系数重建 / GNSS 下载·QC·SPP）。**用法讲解已入库** `pysatCDAAC`（CDAAC ionPrf 实拉；ionPhs load 坑）+ `awsgnssroutils`（AWS RO；calibratedPhase 实拉）+ `android_rinex`（GnssLogger→RINEX；仓内样例+georinex 实跑）+ **`cosmic-crunch`**（GENESIS 大气 L2→netCDF；非 CDAAC ionPrf）。
 **sh-gim：** 保持短边界，禁止注水扩写。  
 **停写条件：** 剩余皆 PASS，或仅剩 sh-gim 边界 / 登记受限且无进一步真实 I/O 增益。
 
@@ -57,6 +57,7 @@
 | 30 | [awsgnssroutils.md](./awsgnssroutils.md) | AWS Open Data GNSS-RO 查询/下载（calibratedPhase 等） | 245 | **已短硬** · 本机 1.2.7；cosmic1 Phase 2636→3 文件；cosmic2 仅 atm 对照；开放 S3 / rotcol 门禁 |
 | 31 | [pyirtam.md](./pyirtam.md) | 纯 Python IRTAM 系数→网格 Ne（对接 PyIRI） | 177 | **已短硬** · 本机 PyIRTAM **0.0.7**；LGDC 2024-06-01 02:15 四系数 + run_PyIRTAM 实跑 |
 | 32 | [fast.md](./fast.md) | GNSS 下载 / QC / 广播星历 SPP / 选站 | 215 | **已短硬** · 本机 tip **3.01.01**；ABPO satNum + 1h SPP Δ≈0.69 m；FTP 下载本机失败已记 |
+| 33 | [pysatcdaac.md](./pysatcdaac.md) | pysat 生态 CDAAC/COSMIC（ionPrf/ionPhs） | 293 | **已短硬** · 本机 0.0.5；ionprf 2019-01-01 59→53；ionphs 下 144、load 维冲突改 netCDF4 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -98,6 +99,7 @@
 | 手机 GnssLogger → RINEX | [android_rinex.md](./android_rinex.md) |
 | GENESIS COSMIC-1 **大气** L2→netCDF（非 ionPrf） | [cosmic-crunch.md](./cosmic-crunch.md) |
 | AWS GNSS-RO 查/下（**calibratedPhase** / 大气三型） | [awsgnssroutils.md](./awsgnssroutils.md) |
+| CDAAC **ionPrf / ionPhs**（pysat） | [pysatcdaac.md](./pysatcdaac.md) |
 | 闪烁仿真（MATLAB） | [iono-scintillation.md](./iono-scintillation.md) |
 
 ---
@@ -138,7 +140,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
-最近新增（用法讲解）：**pyirtam**（0.0.7；LGDC 四系数+IRI/IRTAM NmF2/vTEC）+ **fast**（3.01.01；ABPO satNum+1h SPP；FTP 下载失败记坑）+ **awsgnssroutils**（1.2.7；Phase 3 文件+atm 对照；S3 开放/rotcol 门禁）+ **gnss_lib_py**（1.1.0 NavData/OBS）+ **pyiri**（0.1.7 单点 NmF2/vTEC）。最近新增（质检）：**iri2016**（1.12.0；xarray 剖面+foF2/TEC；与 pyglow 同点对照）+ **pyglow**（Py3.8/`1988757`；IRI-2016/2012 剖面+IGRF/HWM14 实跑；`igrf2015` 静默退出坑）。最近新增（用法讲解）：**cosmic-crunch**（2.1.2；GENESIS L2 10 文件实拉+netCDF groups 探活；边界≠CDAAC ionPrf）。最近质检（R11）：**haslib**（1.0.2；11 HAS；RTCM/IGS 字节；`-m`/`HAS_Decoder.py` 帮助坑）+ **laika**（2880 历元/PDOP/pytest 17 复跑）。最近新增（质检）：**hatanaka**（2.8.1/`rinex-decompress`+georinex 实跑）+ **R10 质检** `rnxcmp`（gzip/CRLF/`-h`）/`nequickg`（Medium 全表 + `map`/plt 坑）。最近新增（用法讲解）：**android_rinex**（GnssLogger→RINEX；1379 历元+georinex 探活）+ **haslib**（1.0.2 SBF→RTCM 11 HAS）+ **laika**（slac1700.18o 实跑；Earthdata 未跑）；前序 **rnxcmp**（GSI RNXCMP 4.2.0 实跑）+ **nequickg**（Py3 移植后 Medium 校验行实跑；官方 C 登记受限）；前序 **pinot**（orderfile/sitecheck/metacheck 实跑）+ **autorino**（2.4.2 cfgfile_check 实跑；convert 环境受限）；前序 **cssrlib**（1.2.1 SPP）+ **gnss-tec**（1.1.1）。最近质检（ops）：**R9 二遍**已补 `cssrlib`（`nav.t`）/`gnss-tec`（stdout+type N）/`pinot`（subnet/low2upper 复跑）/`autorino`（check_rnx `figure_saver` 实错）。**R8 二遍**已补 `pytecgg`（ABMF 全日 veq 实跑；作者 viventriglia）/`gfzrnx`（`-sifl` guide-only，无官方二进制 stdout）。**R7 二遍**已补 `georinex`（NAV 实跑）/`rtklib`（apt↔EX PATH）/`bnc`（REQC vs NTRIP 标签）。Round6：**anubis**（登记受限）+ **pride-pppar**（3.2.11 实跑头；FTPS 未出解）；**sh-gim 未扩**。Round5：**pygnssutils**；Round4：**bkg-ntripcaster**；Round3：**ionex-gim** / **oasis-roti** / **ionomoni**；Round2：**bnc** / **georinex** / **iono-scintillation**；Round1：**gfzrnx** / **rtklib** / **pytecgg**。行数以本表 `wc -l` 为准。
+最近新增（用法讲解）：**pysatCDAAC**（0.0.5；ionprf 59→53；ionphs 144 下、load 维冲突）+ **pyirtam**（0.0.7；LGDC 四系数+IRI/IRTAM NmF2/vTEC）+ **fast**（3.01.01；ABPO satNum+1h SPP；FTP 下载失败记坑）+ **awsgnssroutils**（1.2.7；Phase 3 文件+atm 对照；S3 开放/rotcol 门禁）+ **gnss_lib_py**（1.1.0 NavData/OBS）+ **pyiri**（0.1.7 单点 NmF2/vTEC）。最近新增（质检）：**iri2016**（1.12.0；xarray 剖面+foF2/TEC；与 pyglow 同点对照）+ **pyglow**（Py3.8/`1988757`；IRI-2016/2012 剖面+IGRF/HWM14 实跑；`igrf2015` 静默退出坑）。最近新增（用法讲解）：**cosmic-crunch**（2.1.2；GENESIS L2 10 文件实拉+netCDF groups 探活；边界≠CDAAC ionPrf）。最近质检（R11）：**haslib**（1.0.2；11 HAS；RTCM/IGS 字节；`-m`/`HAS_Decoder.py` 帮助坑）+ **laika**（2880 历元/PDOP/pytest 17 复跑）。最近新增（质检）：**hatanaka**（2.8.1/`rinex-decompress`+georinex 实跑）+ **R10 质检** `rnxcmp`（gzip/CRLF/`-h`）/`nequickg`（Medium 全表 + `map`/plt 坑）。最近新增（用法讲解）：**android_rinex**（GnssLogger→RINEX；1379 历元+georinex 探活）+ **haslib**（1.0.2 SBF→RTCM 11 HAS）+ **laika**（slac1700.18o 实跑；Earthdata 未跑）；前序 **rnxcmp**（GSI RNXCMP 4.2.0 实跑）+ **nequickg**（Py3 移植后 Medium 校验行实跑；官方 C 登记受限）；前序 **pinot**（orderfile/sitecheck/metacheck 实跑）+ **autorino**（2.4.2 cfgfile_check 实跑；convert 环境受限）；前序 **cssrlib**（1.2.1 SPP）+ **gnss-tec**（1.1.1）。最近质检（ops）：**R9 二遍**已补 `cssrlib`（`nav.t`）/`gnss-tec`（stdout+type N）/`pinot`（subnet/low2upper 复跑）/`autorino`（check_rnx `figure_saver` 实错）。**R8 二遍**已补 `pytecgg`（ABMF 全日 veq 实跑；作者 viventriglia）/`gfzrnx`（`-sifl` guide-only，无官方二进制 stdout）。**R7 二遍**已补 `georinex`（NAV 实跑）/`rtklib`（apt↔EX PATH）/`bnc`（REQC vs NTRIP 标签）。Round6：**anubis**（登记受限）+ **pride-pppar**（3.2.11 实跑头；FTPS 未出解）；**sh-gim 未扩**。Round5：**pygnssutils**；Round4：**bkg-ntripcaster**；Round3：**ionex-gim** / **oasis-roti** / **ionomoni**；Round2：**bnc** / **georinex** / **iono-scintillation**；Round1：**gfzrnx** / **rtklib** / **pytecgg**。行数以本表 `wc -l` 为准。
 
 ## 推荐阅读顺序（新人）
 
@@ -174,6 +176,7 @@ data-access
    ├─ android_rinex (手机 GnssLogger→RINEX3)
    ├─ cosmic-crunch (GENESIS 大气 RO L2→netCDF；电离层 RO→data-access/CDAAC)
    ├─ awsgnssroutils (AWS RO 三型查/下；电离层用 calibratedPhase；Ne→CDAAC)
+   ├─ pysatcdaac (CDAAC ionPrf/ionPhs→pysat；Ne 用 ionprf；ionphs 建议 netCDF4)
    ├─ pinot (旧 TEQC 批壳 / 缺站日目录)
    ├─ fast (下载/QC/粗 SPP/选站)
    ├─ rnxcmp (官方 Hatanaka CRX)
