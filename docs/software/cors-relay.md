@@ -1,9 +1,9 @@
 # cors-relay · CORS/NTRIP 差分中继操作手册
 
-目录：[`PROJECTS.json` → `cors-relay`](../../PROJECTS.json) · 上游 <https://github.com/tisyang/cors-relay> · tip **`1238947`**（`REPO_VERSION`=`123894`，`REPO_DATE`=`2020-04-23`）· **BSD-3-Clause** · NTRIP **1.0** · 依赖 **libev** + **sqlite3** · 本机验证（2026-09-24 05:45 EDT）：`cmake`/`make` → `./cors-relay`；管理口 **8000**；Caster **8001–8003**；源表 **3** STR；鉴权 **ICY 200** / **401**
+目录：[`PROJECTS.json` → `cors-relay`](../../PROJECTS.json) · 上游 <https://github.com/tisyang/cors-relay> · tip **`1238947`**（`REPO_VERSION`=`123894`，`REPO_DATE`=`2020-04-23`）· **BSD-3-Clause** · NTRIP **1.0** · 依赖 **libev** + **sqlite3** · 本机验证（2026-09-24 05:45 EDT）：`cmake`/`make` → `./cors-relay`；管理口 **8000**；Caster **8001–8003**；源表 **3** STR；鉴权 **ICY 200** / **401** · **质检复跑** 2026-09-24 06:17 EDT（tip **`1238947`**/`REPO`=`123894`/`2020-04-23`；二进制 **188496** B；管理 `USER-LIST`/`SOURCE-LIST`/`CLIENT-LIST` 对齐；8001/8002/8003 源表 STR×**3**/`Content-Length`=**390**；合法订流仅 **`ICY 200 OK\r\n`**（**12** B，无后续差分字节）；错口令/未知用户 **401**；未知挂载→源表非 401；**无真源未臆造 RTCM**；交叉 [ntripcaster-libev](./ntripcaster-libev.md)/[bkg-ntripcaster](./bkg-ntripcaster.md)/[pygnssutils](./pygnssutils.md)）
 
 > 岗位：把上游 CORS/NTRIP 帐号池 **中继再分发** 给内网客户端（GGA 上行 + RTCM 下行）。**无** `-h`/`--help`；冲突时：**上游 README / 源码端口与命令字 > 本文**。  
-> 公网源表/订流入口 → [data-access](../data-access.md)「实时 NTRIP」；脚本客户端 → [pygnssutils](./pygnssutils.md)；多流 GUI → [bnc](./bnc.md)；生产播发 → [bkg-ntripcaster](./bkg-ntripcaster.md)。
+> 公网源表/订流入口 → [data-access](../data-access.md)「实时 NTRIP」；脚本客户端 → [pygnssutils](./pygnssutils.md)；多流 GUI → [bnc](./bnc.md)；同作者自建播发 → [ntripcaster-libev](./ntripcaster-libev.md)；生产播发 → [bkg-ntripcaster](./bkg-ntripcaster.md)。
 
 ## 1. 用途与边界
 
@@ -46,7 +46,7 @@ make -j"$(nproc)"
 ls -la cors-relay
 ```
 
-本机构建：`REPO_VERSION` 头文件为 `123894` / `2020-04-23`；链接产出 `build/cors-relay`（约 188 KB）。`cmake_minimum_required(2.8)` 在新 CMake 上仅 Deprecation Warning。
+本机构建：`REPO_VERSION` 头文件为 `123894` / `2020-04-23`；链接产出 `build/cors-relay`（本机 **188496** B）。`cmake_minimum_required(2.8)` 在新 CMake 上仅 Deprecation Warning。
 
 | 现象 | 原因 | 修复 |
 | --- | --- | --- |
@@ -64,7 +64,7 @@ export CONSOLE_PASSWD=labpass          # 默认字面量 passwd；勿提交
 stdbuf -oL -eL ./cors-relay
 ```
 
-**本机启动横幅 + 日志（2026-09-24 05:45 EDT，ANSI 已剥）：**
+**本机启动横幅 + 日志（2026-09-24 05:45 EDT，ANSI 已剥；质检复跑 06:17 EDT 进程仍在听 8000–8003）：**
 
 ```text
 qxbroadcaster version 123894, 2020-04-23
@@ -155,14 +155,19 @@ ENDSOURCETABLE
 ### 3.3 订挂载鉴权（无真实上游 → 只验握手）
 
 ```text
-# 合法用户 demo:newpass →
+# 合法用户 demo:newpass →（质检复跑：整段仅 12 B，无后续差分）
 ICY 200 OK
 
-# 错口令 / 未知用户 →
+# 错口令 / 未知用户 / 已知挂载但无 Authorization →
 HTTP/1.0 401 Unauthorized
+
+# 未知挂载（即使带合法 Basic）→ 回源表，不是 401
+SOURCETABLE 200 OK
+… STR×3 …
+ENDSOURCETABLE
 ```
 
-之后须客户端继续推 **GGA**；本机 `SOURCE-ADD` 指向 `127.0.0.1` 且无对端 Caster 时 **不会** 出现可持续 RTCM 字节——**禁止臆造帧 dump**。有真源时：`SOURCE-ADD` 的 `SERVER` 填上游 IP，且上游端口 = 本机监听口（8001↔8001 …）。
+之后须客户端继续推 **GGA**；本机 `SOURCE-ADD` 指向 `127.0.0.1` 且无对端 Caster 时 **不会** 出现可持续 RTCM 字节（质检复跑确认 `ICY 200` 后 2 s 内 **0** 额外字节）——**禁止臆造帧 dump**。有真源时：`SOURCE-ADD` 的 `SERVER` 填上游 IP，且上游端口 = 本机监听口（8001↔8001 …）。
 
 联调客户端示例（有真源后）：
 
@@ -189,14 +194,14 @@ HTTP/1.0 401 Unauthorized
 1. 注册/取得上游 NTRIP → [data-access](../data-access.md)  
 2. 本机中继池 → **本文**  
 3. 客户端探源表/订流 → [ntripbrowser](./ntripbrowser.md) / [pygnssutils](./pygnssutils.md) / [ntrip-client](./ntrip-client.md) / [bnc](./bnc.md)  
-4. 自建完整播发（非帐号池中继）→ [bkg-ntripcaster](./bkg-ntripcaster.md)  
+4. 自建轻量播发 → [ntripcaster-libev](./ntripcaster-libev.md)；生产多用户 → [bkg-ntripcaster](./bkg-ntripcaster.md)  
 5. 落盘后 TEC/定位 → 路径 A/D（[georinex](./georinex.md) / [rtklib](./rtklib.md) …）
 
 ## 6. 坑（≥8）
 
 1. **无 `-h`**：任何参数仍直接起服务；勿期待 Usage。  
 2. **横幅叫 `qxbroadcaster`**：与二进制名 `cors-relay` 不一致，属历史遗留。  
-3. **挂载写死**：非三 STR 名 → 只回源表，不会 401 提示「无此挂载」。  
+3. **挂载写死**：非三 STR 名（含带合法 Basic）→ **只回源表**，不会 401 提示「无此挂载」（质检复跑 `/NOPE` 已确认）。  
 4. **端口写死 8001–8003**：上游必须同端口；千寻外网常见 8001/2/3 习惯。  
 5. **`SOURCE-ADD` 无端口字段**：填错 IP 只会在订流后失败，管理口仍 `OK`。  
 6. **管理口默认口令 `passwd`**：公网务必 `CONSOLE_PASSWD` + 防火墙；口令禁进 git。  
@@ -212,9 +217,10 @@ HTTP/1.0 401 Unauthorized
 | 需求 | 选 |
 | --- | --- |
 | 上游帐号池 → 内网多用户中继 | **cors-relay（本文）** |
+| 同作者轻量自建播发（SOURCE 推流） | [ntripcaster-libev](./ntripcaster-libev.md) |
 | 正规多用户播发 / 中继配置项 | [bkg-ntripcaster](./bkg-ntripcaster.md) |
 | 五分钟脚本拉流 / 小 caster | [pygnssutils](./pygnssutils.md) |
 | 多流 GUI 录盘 | [bnc](./bnc.md) |
 | 只查源表 | [ntripbrowser](./ntripbrowser.md) |
 
-同作者播发端见 `PROJECTS.json` → `ntripcaster-libev`（尚未短硬手册）。
+同作者播发端见已短硬 [ntripcaster-libev](./ntripcaster-libev.md)（口 **2101**；动态源表；对照本文帐号池中继）。
