@@ -25,7 +25,7 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 | [gici-open](https://github.com/chichengcn/gici-open) | GICI：GNSS/INS/相机紧组合开源库 | C++ | 667 | 🏷️ 高校实验室 核心 |
 | [VINS-GPS-Wheel](https://github.com/Wallong/VINS-GPS-Wheel) | VINS-GPS-Wheel：VINS-Mono+轮速+GNSS | C++ | 280 | 🏷️ 个人社区 |
 | [RTK-Visual-Inertial-Navigation](https://github.com/xiaohong-huang/RTK-Visual-Inertial-Navigation) | RTK-VIN：滑窗滤波 RTK 视觉惯性导航 | C++ | 136 | 🏷️ 高校实验室 |
-| [carvig](https://github.com/Erensu/carvig) | 车载 INS/GNSS/视觉组合导航（C） | C | 120 | 🏷️ 个人社区 |
+| [carvig](https://github.com/Erensu/carvig) | carvig：车载 INS/GNSS/视觉组合导航 | C | 120 | 🏷️ 高校实验室 |
 | [salsa](https://github.com/yxw027/salsa) | GNSS+视觉+惯性状态估计相关实现 | C++ | 14 | 🏷️ 高校实验室 |
 | [GVINS-WHU](https://github.com/zhangwhu/GVINS) | 武大相关：PPP-RTK/INS/视觉组合导航（勿与港科大 GVINS-HKUST 混淆） | C++ | 12 | 🏷️ 高校实验室 |
 
@@ -53,7 +53,7 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 在滑窗滤波框架里融合 RTK/DGNSS 与视觉惯性，面向高精度户外机器人与自动驾驶实验。适合已有 VIO 基础、想引入载波相位差分约束的团队。测地网 RTK 服务运维与模糊度完好性监测非其主场；可与 GVINS、gici-open、Multi_Sensor_Fusion 比较紧耦合策略。外参标定质量往往比滤波形式更能决定最终精度。
 
 #### [carvig](https://github.com/Erensu/carvig)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：C · 许可：— · 星标约：120 · 宿主：github
 
@@ -115,7 +115,7 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 | [GINav](https://github.com/kaichen686/GINav) | MATLAB GNSS/INS 松紧组合常用算法实现 | MATLAB | 309 | 🏷️ 个人社区 ★ 核心 |
 | [Loose-GNSS-IMU](https://github.com/aaronboda24/Loose-GNSS-IMU) | Loose-GNSS-IMU：经典 GNSS/IMU 松组合卡尔曼 | C++ | 187 | 🏷️ 高校实验室 |
 | [KF-GINS-Matlab](https://github.com/i2Nav-WHU/KF-GINS-Matlab) | KF-GINS-Matlab：EKF 松/紧组合 MATLAB 版 | MATLAB | 137 | 🏷️ 高校实验室 核心 |
-| [ublox_dgnss](https://github.com/aussierobots/ublox_dgnss) | ROS2 u-blox UBX 驱动（F9P/F9R/X20P 差分与移动基站） | C++ | 86 | 🏷️ 个人社区 |
+| [ublox_dgnss](https://github.com/aussierobots/ublox_dgnss) | ublox_dgnss：ROS2 u-blox UBX 驱动 | C++ | 86 | 🏷️ 个人社区 |
 | [GIOW-release](https://github.com/i2Nav-WHU/GIOW-release) | GIOW：GNSS/INS/ODO 轮速辅助组合导航 | C++ | 75 | 🏷️ 高校实验室 核心 |
 | [Wheel-GINS](https://github.com/i2Nav-WHU/Wheel-GINS) | 轮式惯导与 GNSS 组合的导航系统（IEEE TITS 相关） | C++ | 47 | 🏷️ 高校实验室 |
 | [GNSS_IMU](https://github.com/rtklibexplorer/GNSS_IMU) | rtklibexplorer 系松组合 GNSS/IMU 的 Python 实现 | Python | 35 | 🏷️ 个人社区 |
@@ -246,7 +246,7 @@ rtklibexplorer 社区风格的松组合 GNSS/IMU Python 实现，便于配合 de
 | [MINS](https://github.com/rpng/MINS) | MINS：RPNG 多传感器（含 GNSS）紧组合导航系统 | C++ | 779 | 🏷️ 高校实验室 |
 | [GLIO](https://github.com/XikunLiu-huskit/GLIO) | GLIO：GNSS/LiDAR/IMU 紧耦合连续定位 | C | 438 | 🏷️ 高校实验室 |
 | [libRSF](https://github.com/TUC-ProAut/libRSF) | libRSF：鲁棒传感器融合与在线定位库 | C++ | 337 | 🏷️ 高校实验室 |
-| [syncgpslidarimucam](https://github.com/nkliuhui/sync_gps_lidar_imu_cam) | 激光雷达-IMU-相机-GPS 硬件时间同步方案 | C++ | 252 | 🏷️ 个人社区 |
+| [syncgpslidarimucam](https://github.com/nkliuhui/sync_gps_lidar_imu_cam) | syncgpslidarimucam：多传感器硬件授时同步 | C++ | 252 | 🏷️ 个人社区 |
 | [GREAT-MSF](https://github.com/GREAT-WHU/GREAT-MSF) | GREAT-MSF：PPP/RTK+INS 多传感器融合 | C++ | 150 | 🏷️ 高校实验室 |
 | [GPSMilemeterIMUEKFLocation](https://github.com/gilbertz/GPS_Milemeter_IMU_EKFLocation) | GPS_Milemeter_IMU_EKF：GPS+里程计+罗盘 EKF（MATLAB） | MATLAB | 89 | 🏷️ 高校实验室 |
 
@@ -391,7 +391,7 @@ OKVIS2-X 在经典 OKVIS 视觉惯性框架上扩展稠密深度或 LiDAR，并�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GNSS_INS_Integrations_Comparisons](https://github.com/ZhengdaoLI0602/GNSS_INS_Integrations_Comparisons) | 港理工相关开源：KF/AKF/FGO/AFGO 等 GNSS/INS 二维定位对比实验代码 | MATLAB | 70 | 🏷️ 高校实验室 |
+| [GNSS_INS_Integrations_Comparisons](https://github.com/ZhengdaoLI0602/GNSS_INS_Integrations_Comparisons) | GNSS/INS 二维定位算法对比 | MATLAB | 70 | 🏷️ 高校实验室 |
 
 ### 详细说明
 

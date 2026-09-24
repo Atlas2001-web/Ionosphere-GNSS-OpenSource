@@ -16,7 +16,7 @@ RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品�
 | [ntripserver](https://software.rtcm-ntrip.org/wiki/ntripserver) | BKG POSIX ntripserver：把本地 GNSS 流推到 NTRIP 播发器 | C | 74 | 🏷️ 官方 |
 | [ntripcaster-libev](https://github.com/tisyang/ntripcaster) | 基于 libev 的高性能 NTRIP Broadcaster（C） | C | 68 | 🏷️ 个人社区 |
 | [ntrip-go](https://github.com/go-gnss/ntrip) | Go 语言 NTRIP 客户端与服务端库 | Go | 62 | 🏷️ 个人社区 |
-| [caster](https://github.com/Node-NTRIP/caster) | 支持 NTRIP V1/V2 的 Node.js caster 库 | TypeScript | 52 | 🏷️ 个人社区 核心 |
+| [caster](https://github.com/Node-NTRIP/caster) | caster：Node.js NTRIP V1/V2 库 | TypeScript | 52 | 🏷️ 个人社区 核心 |
 | [cors-relay](https://github.com/tisyang/cors-relay) | CORS/NTRIP 差分流中继与重分发 | C | 49 | 🏷️ 个人社区 |
 | [rtcm](https://github.com/Node-NTRIP/rtcm) | rtcm：RTCM 3（至 3.3）TypeScript 编解码 | TypeScript | 48 | 🏷️ 个人社区 |
 | [baidu-ntripcaster](https://github.com/baidu/ntripcaster) | baidu/ntripcaster：百度开源 NTRIP 播发端 | C | 46 | 🏷️ 个人社区 |
@@ -333,7 +333,7 @@ BKG/RTCM 维护的 NTRIP 开源软件 Trac 门户，集中入口含 BNC、Profes
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [pinot](https://github.com/purpleskyfall/pinot) | “Pinot is not only TEQC”——开源 GNSS 数据质检/预处理取向工具 | Python | 25 | 🏷️ 个人社区 核心 |
+| [pinot](https://github.com/purpleskyfall/pinot) | pinot：开源 GNSS 质检预处理工具 | Python | 25 | 🏷️ 个人社区 核心 |
 | [RNXQCE](https://github.com/cuizilu/RNXQCE) | RINEX 2/3 质量检查工具包，定位为 TEQC 停更后的替代取向 | Fortran | 6 | 🏷️ 个人社区 |
 | [geoveil-cn0](https://github.com/miluta7/geoveil-cn0) | Rust/Python：RINEX CN0 质量评分与干扰/欺骗/干扰检测 | Rust | 3 | 🏷️ 个人社区 |
 | [grinq](https://github.com/PJarrin/grinq) | RINEX 镜像与 Anubis QC 的 Python 工具箱 | Python | 1 | 🏷️ 个人社区 |
@@ -944,7 +944,7 @@ Android 原始 GNSS 测量日志与桌面可视化分析工具，智能手机高
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gpsd](https://gitlab.com/gpsd/gpsd) | 跨平台 gpsd：把 GNSS/AIS 接收机协议统一成客户端易用接口 | C | 104 | 🏷️ 个人社区 |
+| [gpsd](https://gitlab.com/gpsd/gpsd) | gpsd：跨平台 GNSS/AIS 守护进程 | C | 104 | 🏷️ 个人社区 |
 | [gpsd-website](https://gpsd.io/) | gpsd 项目官网：文档、兼容接收机列表与发行说明 | C | — | 🏷️ 个人社区 |
 
 ### 详细说明

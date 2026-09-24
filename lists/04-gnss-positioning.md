@@ -26,8 +26,8 @@ Automatic PPP Analysis Software-Türkiye（APAS-TR）处理 GPS/GLONASS/Galileo/
 | [RTKLIB-B2b](https://github.com/UCAS-Liuchunbo/RTKLIB-B2b) | RTKLIB-B2b：北斗 PPP-B2b 解码定位包 | C | 74 | 🏷️ 高校实验室 核心 |
 | [PPP-BayesTree](https://github.com/wvu-navLab/PPP-BayesTree) | PPP-BayesTree：增量图优化 PPP 收敛研究代码 | C++ | 57 | 🏷️ 高校实验室 |
 | [Virtual-Network-DGNSS](https://github.com/Azurehappen/Virtual-Network-DGNSS-Project) | VN-DGNSS：PPP/SSR 驱动的开源虚拟基站差分 | C++ | 39 | 🏷️ 高校实验室 |
-| [NavDecoder](https://github.com/NavSesne/NavDecoder) | 解码 PPP-B2b 与 Galileo HAS 并做校验的工具 | Python | 37 | 🏷️ 个人社区 核心 |
-| [B2bLIB](https://github.com/GCCLib/B2bLIB) | 北斗 PPP-B2b 服务研究用的 C/C++ 库 | C | 26 | 🏷️ 个人社区 核心 |
+| [NavDecoder](https://github.com/NavSesne/NavDecoder) | NavDecoder：PPP-B2b 与 HAS 电文解码 | Python | 37 | 🏷️ 个人社区 核心 |
+| [B2bLIB](https://github.com/GCCLib/B2bLIB) | B2bLIB：北斗 PPP-B2b C/C++ 解码库 | C | 26 | 🏷️ 高校实验室 核心 |
 | [CSSR-tool](https://github.com/MayHarryWang/CSSR-tool) | 多源协同 CSSR-PPP 改正数预处理工具 | C | 7 | 🏷️ 高校实验室 |
 | [GipsyX-JPL](https://gipsy-oasis.jpl.nasa.gov/) | JPL GipsyX：授权精密定位软件与产品门户 | data-portal | — | 🏷️ 官方 |
 
@@ -69,7 +69,7 @@ Automatic PPP Analysis Software-Türkiye（APAS-TR）处理 GPS/GLONASS/Galileo/
 同时解码北斗 PPP-B2b 与 Galileo HAS 精密改正并做校验，方便多星座增强产品对比与电文一致性检查。适合 SSR/HAS 电文层研究与教学演示。仓库名拼写特殊但不影响克隆；完整 PPP 解算需另接引擎，本库主责改正数解析。版本升级后应用官方样例回归。
 
 #### [B2bLIB](https://github.com/GCCLib/B2bLIB)  
-*🏷️ 个人社区 核心*
+*🏷️ 高校实验室 核心*
 
 语言：C · 许可：— · 星标约：26 · 宿主：github
 
@@ -178,12 +178,12 @@ Glenn MacGougan 等维护的 Essential GNSS Project，提供 RINEX 2.x 解码、
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [raPPPid](https://github.com/TUW-VieVS/raPPPid) | raPPPid：维也纳 VieVS 的 PPP 模块 | MATLAB | 149 | 🏷️ 高校实验室 核心 |
-| [GAMP_PPPH](https://github.com/zhufengGNSS/GAMP_PPPH) | 多星座 PPP 源码（GAMP 相关整理） | — | 78 | 🏷️ 高校实验室 ★ |
+| [GAMP_PPPH](https://github.com/zhufengGNSS/GAMP_PPPH) | GAMP_PPPH：多星座 PPP 学习源码 | — | 78 | 🏷️ 高校实验室 ★ |
 | [GPSPACE](https://github.com/CGS-GIS/GPSPACE) | GPSPACE：加拿大 NRCan 开源 PPP Fortran 程序 | Fortran | 58 | 🏷️ 官方 |
 | [PPPLib](https://github.com/yxw027/PPPLib) | 精密单点定位库 PPPLib | — | 49 | 🏷️ 高校实验室 |
 | [PPP](https://github.com/XiaoGongWei/PPP) | 静态 PPP 相关 C++ 实现（MG-APP 作者相关） | C++ | 23 | 🏷️ 高校实验室 |
 | [PPPH-UAV](https://github.com/BerkayBahadur/PPPH-UAV) | 面向无人机摄影测量的 GNSS PPP 处理（MATLAB） | MATLAB | 14 | 🏷️ 个人社区 |
-| [RTPPP_B2b](https://github.com/floating0516/RTPPP_B2b) | 北斗 PPP-B2b 改正数解码与实时 PPP 接口 | C | 10 | 🏷️ 个人社区 核心 |
+| [RTPPP_B2b](https://github.com/floating0516/RTPPP_B2b) | RTPPP_B2b：B2b 改正实时 PPP 接口 | C | 10 | 🏷️ 个人社区 核心 |
 | [PyGNSSFix](https://github.com/rodrigo-moliveira/PyGNSSFix) | Python SPP/PPP 工具箱（WLS/EKF，GPS+GAL） | Python | 7 | 🏷️ 个人社区 |
 | [ppp_rtklib](https://github.com/mulin33/ppp_rtklib) | 从 RTKLIB 抽出的独立 PPP 模块，便于精读源码 | C | 4 | 🏷️ 个人社区 |
 
@@ -426,7 +426,7 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnss_gpu](https://github.com/rsasaki0109/gnss_gpu) | CUDA 粒子滤波+3D 城市模型的 NLOS 抑制定位 | Python | 83 | 🏷️ 个人社区 |
+| [gnss_gpu](https://github.com/rsasaki0109/gnss_gpu) | gnss_gpu：CUDA 粒子滤波城市定位 | Python | 83 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -710,7 +710,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [pyrtklib](https://github.com/IPNL-POLYU/pyrtklib) | pyrtklib：RTKLIB 的 Python 绑定 | C | 182 | 🏷️ 高校实验室 核心 |
-| [MatRTKLIB](https://github.com/taroz/MatRTKLIB) | RTKLIB 的 MATLAB 封装与分析辅助 | MATLAB | 99 | 🏷️ 个人社区 |
+| [MatRTKLIB](https://github.com/taroz/MatRTKLIB) | MatRTKLIB：RTKLIB 的 MATLAB 封装 | MATLAB | 99 | 🏷️ 个人社区 |
 | [pyrtklib_demo5](https://github.com/IPNL-POLYU/pyrtklib_demo5) | 基于 rtklibexplorer demo5 分支的 pyrtklib 变体 | C | 13 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -767,7 +767,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 | [pygnsslab](https://github.com/PyGnssLab/pygnsslab) | Python 模块化 RINEX/PPP/PPP-AR 与实时流 | Python | 34 | 🏷️ 个人社区 |
 | [Urban-RTKLIB](https://github.com/MayHarryWang/Urban-RTKLIB) | 面向城市导航的 RTKLIB 改版，侧重 PPP/PPP-RTK | C | 25 | 🏷️ 高校实验室 |
 | [mrtklib-docker-ui](https://github.com/h-shiono/mrtklib-docker-ui) | MRTKLIB 的 Docker/Web 界面，方便后处理与实时演示 | TypeScript | 10 | 🏷️ 高校实验室 |
-| [PPP-Wizard](http://www.ppp-wizard.net/) | CNES PPP-WIZARD：整数模糊度 PPP-AR 演示与产品门户 | C++ | — | 🏷️ 官方 核心 |
+| [PPP-Wizard](http://www.ppp-wizard.net/) | PPP-Wizard：CNES 整数模糊度 PPP-AR | C++ | — | 🏷️ 官方 核心 |
 
 ### 详细说明
 

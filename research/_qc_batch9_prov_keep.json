@@ -1,0 +1,116 @@
+[
+  {
+    "name": "gpsd",
+    "owner": "gpsd (GitLab)",
+    "decision": "KEEP",
+    "note": "long-running FOSS daemon; no agency/university org — personal_community"
+  },
+  {
+    "name": "MatRTKLIB",
+    "owner": "taroz",
+    "decision": "KEEP",
+    "note": "Taro Suzuki personal researcher / taroz.net"
+  },
+  {
+    "name": "gnss_gpu",
+    "owner": "rsasaki0109",
+    "decision": "KEEP",
+    "note": "MAP IV (TIER IV) company engineer — company stays personal_community"
+  },
+  {
+    "name": "CU-SDR-Collection",
+    "owner": "gnsscusdr",
+    "decision": "KEEP",
+    "note": "empty bio/company; CU affiliation only in repo title"
+  },
+  {
+    "name": "syncgpslidarimucam",
+    "owner": "nkliuhui",
+    "decision": "KEEP",
+    "note": "empty profile"
+  },
+  {
+    "name": "NequickG",
+    "owner": "tpl2go",
+    "decision": "KEEP",
+    "note": "empty profile"
+  },
+  {
+    "name": "NavDecoder",
+    "owner": "NavSesne",
+    "decision": "KEEP",
+    "note": "empty profile"
+  },
+  {
+    "name": "pinot",
+    "owner": "purpleskyfall",
+    "decision": "KEEP",
+    "note": "personal geomatics; no university company field"
+  },
+  {
+    "name": "OASIS",
+    "owner": "giorgiopicanco",
+    "decision": "KEEP",
+    "note": "PhD bio, no current institution in profile"
+  },
+  {
+    "name": "caster",
+    "owner": "Node-NTRIP",
+    "decision": "KEEP",
+    "note": "small community org"
+  },
+  {
+    "name": "SparkFun_u-blox_GNSS_v3",
+    "owner": "SparkFun",
+    "decision": "KEEP",
+    "note": "company org — catalog policy keeps commercial as personal_community"
+  },
+  {
+    "name": "GNSSFirehose",
+    "owner": "pmonta",
+    "decision": "KEEP",
+    "note": "personal; California"
+  },
+  {
+    "name": "ublox_dgnss",
+    "owner": "aussierobots",
+    "decision": "KEEP",
+    "note": "Aussie Robots company org"
+  },
+  {
+    "name": "STM32-GNSS",
+    "owner": "SimpleMethod",
+    "decision": "KEEP",
+    "note": "personal Poland"
+  },
+  {
+    "name": "STD_SWD_Calc",
+    "owner": "zohrehadavi",
+    "decision": "KEEP",
+    "note": "empty profile"
+  },
+  {
+    "name": "ionex-rs",
+    "owner": "nav-solutions",
+    "decision": "KEEP",
+    "note": "community GeoRust-adjacent org, France — not a university lab"
+  },
+  {
+    "name": "gps-sdr",
+    "owner": "gps-sdr",
+    "decision": "KEEP",
+    "note": "legacy personal project account"
+  },
+  {
+    "name": "gnss-sdr-monitor",
+    "owner": "acebrianjuan",
+    "decision": "KEEP",
+    "note": "personal Spain"
+  },
+  {
+    "name": "RTPPP_B2b",
+    "owner": "floating0516",
+    "decision": "KEEP",
+    "note": "Li He; empty affiliation"
+  }
+]

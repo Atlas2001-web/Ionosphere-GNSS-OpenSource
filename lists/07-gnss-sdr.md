@@ -16,12 +16,12 @@
 | [Analog-GPS-data-receiver](https://github.com/leaningktower/Analog-GPS-data-receiver) | Analog-GPS-data-receiver：分立射频+FPGA GPS 教学接收 | C | 164 | 🏷️ 高校实验室 |
 | [GNSS-GPS-SDR](https://github.com/JiaoXianjun/GNSS-GPS-SDR) | GNSS-GPS-SDR：GPS 录回放实验代码 | Python | 157 | 🏷️ 个人社区 |
 | [GNSS-DSP-tools](https://github.com/pmonta/GNSS-DSP-tools) | GNSS-DSP-tools：码生成/捕获/跟踪 DSP 积木 | Python | 141 | 🏷️ 个人社区 |
-| [gps-sdr](https://github.com/gps-sdr/gps-sdr) | 基于 USRP/GN3S 的早期开源 GPS 接收机 | C++ | 107 | 🏷️ 个人社区 |
+| [gps-sdr](https://github.com/gps-sdr/gps-sdr) | gps-sdr：早期 USRP/GN3S GPS 接收机 | C++ | 107 | 🏷️ 个人社区 |
 | [SoftGNSS](https://github.com/TMBOC/SoftGNSS) | SoftGNSS：经典 GPS 软件接收机教学版 | MATLAB | 90 | 🏷️ 高校实验室 |
-| [CU-SDR-Collection](https://github.com/gnsscusdr/CU-SDR-Collection) | 科罗拉多大学开源 GNSS SDR 代码与数据集合 | MATLAB | 80 | 🏷️ 个人社区 |
+| [CU-SDR-Collection](https://github.com/gnsscusdr/CU-SDR-Collection) | CU-SDR-Collection：科罗拉多大学 GNSS SDR 集 | MATLAB | 80 | 🏷️ 个人社区 |
 | [BDS-3-B1C-B2a-SDR-receiver](https://github.com/lyf8118/BDS-3-B1C-B2a-SDR-receiver) | BDS-3 B1C/B2a：开源 MATLAB 软件接收机 | MATLAB | 73 | 🏷️ 高校实验室 |
 | [gps](https://github.com/psas/gps) | PSAS 软件 GPS 相关器（Python） | Python | 71 | 🏷️ 高校实验室 |
-| [GNSSFirehose](https://github.com/pmonta/GNSS_Firehose) | 多星座宽带 GNSS 前端数字化（Verilog） | Verilog | 68 | 🏷️ 个人社区 |
+| [GNSSFirehose](https://github.com/pmonta/GNSS_Firehose) | GNSSFirehose：多星座宽带前端数字化 | Verilog | 68 | 🏷️ 个人社区 |
 | [ESP32-SDR-GPS](https://github.com/iliasam/ESP32_SDR_GPS) | 运行于 ESP32 的软件 GPS 接收实验 | C | 55 | 🏷️ 个人社区 |
 | [SoftGNSS-python](https://github.com/perrysou/SoftGNSS-python) | 经典 SoftGNSS 的 Python 移植工具包 | Python | 44 | 🏷️ 个人社区 |
 | [gnss-baseband](https://github.com/j-core/gnss-baseband) | GPS 类 DSSS 基带接收 IP 核（VHDL） | VHDL | 43 | 🏷️ 个人社区 |
@@ -451,7 +451,7 @@ VHDL 代码用于生成 GPS L1 C/A 以及 Galileo E1OS、E5 的 PRN 与无数据
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnss-sdr-monitor](https://github.com/acebrianjuan/gnss-sdr-monitor) | GNSS-SDR 实时状态图形监控 | C++ | 114 | 🏷️ 个人社区 |
+| [gnss-sdr-monitor](https://github.com/acebrianjuan/gnss-sdr-monitor) | gnss-sdr-monitor：GNSS-SDR 状态 GUI | C++ | 114 | 🏷️ 个人社区 |
 
 ### 详细说明
 

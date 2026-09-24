@@ -322,7 +322,7 @@ TU Wien VieVS 组发布的 Fortran 射线追踪程序，可对微波与光学频
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [STD_SWD_Calc](https://github.com/zohrehadavi/STD_SWD_Calc) | 由 GPT/VMF 等计算 GNSS STD/SWD 与模型 ZTD | Python | 10 | 🏷️ 个人社区 核心 |
+| [STD_SWD_Calc](https://github.com/zohrehadavi/STD_SWD_Calc) | STD_SWD_Calc：斜路径延迟与模型 ZTD | Python | 10 | 🏷️ 个人社区 核心 |
 
 ### 详细说明
 
