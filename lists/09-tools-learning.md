@@ -30,7 +30,7 @@ awesome 列表、源码笔记、可见性可视化、SBAS/认证等学习工具�
 #### [gnss2tws-green](https://github.com/jzshhh/gnss2tws_green)  
 *🏷️ 个人社区*
 
-语言：MATLAB · 许可：— · 星标约：33 · 宿主：github
+语言：MATLAB · 许可：GPL-3.0 · 星标约：33 · 宿主：github
 
 开源 MATLAB 工具 GNSS2TWS：利用 GNSS 测站日尺度垂直位移，经格林函数等方法推断陆地水储量（TWS）变化，服务水文大地测量。适合已有精密坐标时间序列、做气候水文交叉的研究者。不是导航定位解算器；空间平滑、负载模型与参考框架假设必须按配套论文核对。输入坐标序列质量决定反演可信度。站点分布稀疏时，反演空间分辨率会明显下降。
 
@@ -61,7 +61,7 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [earth-gravitational-model](https://github.com/barbeau/earth-gravitational-model) | WGS84 海拔转 EGM84 海拔的轻量库 | Java | 18 | 🏷️ 个人社区 |
+| [earth-gravitational-model](https://github.com/barbeau/earth-gravitational-model) | earth-gravitational-model：WGS84→EGM84 海拔转换（Android 向） | Java | 18 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -70,7 +70,7 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 
 语言：Java · 许可：LGPL-2.1 · 星标约：18 · 宿主：github
 
-把 GeoTools 大地水准面模型做成轻量 Java 库，方便 Android 上做海拔转换。测地学严密应用请用专业大地水准面产品。
+基于 GeoTools 大地水准面模型的轻量 Java 库，方便 Android 海拔转换。测地学严密应用请用专业大地水准面产品与更新格网。
 
 ## 可视化
 
@@ -221,7 +221,7 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [kshana](https://github.com/ashfordeOU/kshana) | 开源可复现 PNT 韧性仿真（轨道/完好性/融合） | Rust | 6 | 🏷️ 个人社区 |
+| [kshana](https://github.com/ashfordeOU/kshana) | kshana：开源 PNT 韧性/完好性仿真框架 | Rust | 6 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -230,7 +230,7 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 
 语言：Rust · 许可：AGPL-3.0 · 星标约：6 · 宿主：github
 
-覆盖轨道、参考架、可用性/DOP、GNSS/INS、ARAIM/SBAS 保护级等的仿真框架，带跨语言绑定。适合完好性与韧性研究。AGPL；项目较新。
+覆盖轨道、参考架、DOP、GNSS/INS、ARAIM/SBAS 保护级等的仿真框架，带跨语言绑定。适合完好性与韧性研究。AGPL；项目较新，接口可能变化。
 
 ## 课程笔记
 

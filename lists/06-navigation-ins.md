@@ -41,7 +41,7 @@ GNSS 与 IMU（及视觉）松/紧组合，车载与机器人户外定位。
 #### [VINS-GPS-Wheel](https://github.com/Wallong/VINS-GPS-Wheel)  
 *🏷️ 个人社区*
 
-语言：C++ · 许可：— · 星标约：280 · 宿主：github
+语言：C++ · 许可：GPL-3.0 · 星标约：280 · 宿主：github
 
 在 VINS-Mono 上紧耦合轮速计、松耦合 GPS，并在 KAIST 等数据集验证，面向自动驾驶室外定位。适合已有视觉惯性栈、想加轮速与 GNSS 全局约束的团队。依赖 ROS/VINS 生态；GNSS 中断或城市峡谷时仍主要靠视觉惯性与轮速。轮速标度因数误差会在长直道上缓慢积累。数据集标定文件缺失时融合容易发散。
 
@@ -320,7 +320,7 @@ MATLAB 实现：以 GPS、里程计与电子罗盘为观测，用扩展卡尔曼
 #### [IndirectEKFIMUGPS](https://github.com/hgpvision/Indirect_EKF_IMU_GPS)  
 *🏷️ 个人社区*
 
-语言：MATLAB · 许可：— · 星标约：96 · 宿主：github
+语言：MATLAB · 许可：MIT · 星标约：96 · 宿主：github
 
 MATLAB 仿真仓库：用间接法卡尔曼滤波融合 IMU 与 GPS，传感器数据由仿真生成，便于推导弹、调噪声参数与画误差曲线。适合课程推导与滤波器对照。不含真实外场驱动；落地需接真实 IMU/GNSS、重做轴系与噪声标定，并评估时间同步误差。间接法状态定义与直接法不同，对照论文阅读更顺。状态维数变化时要同步改协方差初始化。
 
@@ -329,8 +329,8 @@ MATLAB 仿真仓库：用间接法卡尔曼滤波融合 IMU 与 GPS，传感器�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [OpenVINS](https://github.com/rpng/open_vins) | OpenVINS：RPNG 视觉-惯性导航开源研究平台 | C++ | 3115 | 🏷️ 高校实验室 |
-| [GVINS-HKUST](https://github.com/HKUST-Aerial-Robotics/GVINS) | 港科大 Aerial Robotics：紧耦合 GNSS-视觉-惯性系统 | C++ | 1160 | 🏷️ 高校实验室 |
-| [IC-GVINS](https://github.com/i2Nav-WHU/IC-GVINS) | INS 中心的稳健实时 GNSS-视觉-惯性导航 | C++ | 690 | 🏷️ 高校实验室 |
+| [GVINS-HKUST](https://github.com/HKUST-Aerial-Robotics/GVINS) | GVINS：港科大紧耦合 GNSS-视觉-惯性系统 | C++ | 1160 | 🏷️ 高校实验室 |
+| [IC-GVINS](https://github.com/i2Nav-WHU/IC-GVINS) | IC-GVINS：INS 中心的实时 GNSS-VIO 组合导航 | C++ | 690 | 🏷️ 高校实验室 |
 | [gnss_comm](https://github.com/HKUST-Aerial-Robotics/gnss_comm) | GNSS 原始测量处理的 ROS 基础定义与工具 | C++ | 164 | 🏷️ 高校实验室 |
 | [ublox_driver](https://github.com/HKUST-Aerial-Robotics/ublox_driver) | 面向 ZED-F9P 的 ROS u-blox 驱动 | C++ | 159 | 🏷️ 高校实验室 |
 | [msckfvioGPS](https://github.com/loveforeverLi/msckf_vio_GPS) | MSCKF 视觉惯性里程计与 GPS 融合 | C++ | 31 | 🏷️ 个人社区 |
@@ -349,14 +349,14 @@ MATLAB 仿真仓库：用间接法卡尔曼滤波融合 IMU 与 GPS，传感器�
 
 语言：C++ · 许可：GPL-3.0 · 星标约：1160 · 宿主：github
 
-港科大开源 GVINS，把 GNSS 约束进 VIO，改善全局一致性。适合无人机/户外 SLAM。对 GNSS 原始观测质量敏感。
+HKUST Aerial Robotics 把 GNSS 因子织进 VIO，改善长航时全局一致性。适合无人机与户外 SLAM。对 GNSS 原始观测质量与初始化敏感；城市峡谷仍需多路径策略。
 
 #### [IC-GVINS](https://github.com/i2Nav-WHU/IC-GVINS)  
 *🏷️ 高校实验室*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：690 · 宿主：github
 
-以 INS 为中心耦合 GNSS 与视觉，强调实时与稳健。适合户外机器人/自动驾驶定位研究。标定与同步数据要求高。
+i2Nav 开源的 INS 中心多传感器组合，把 GNSS 与视觉约束进惯性状态，强调实时稳健。适合户外机器人与自动驾驶定位研究。标定、时间同步与数据集质量要求高；纯测地事后 PPP 请另选 PRIDE/Ginan。
 
 #### [gnss_comm](https://github.com/HKUST-Aerial-Robotics/gnss_comm)  
 *🏷️ 高校实验室*
@@ -415,7 +415,7 @@ MATLAB 仿真仓库：用间接法卡尔曼滤波融合 IMU 与 GPS，传感器�
 |---|---|---|---:|---|
 | [GraphRTK-INS](https://github.com/GREAT-WHU/GraphRTK-INS) | 武大 GREAT 因子图模块：RTK 与惯导紧组合 | C++ | 83 | 🏷️ 高校实验室 核心 |
 | [GREAT-PIFGO](https://github.com/GREAT-WHU/GREAT-PIFGO) | GREAT 软件中的因子图优化模块（PIFGO） | C++ | 18 | 🏷️ 高校实验室 |
-| [tightly-coupled-gnss-imu-fgo](https://github.com/inuex35/tightly-coupled-gnss-imu-fgo) | GTSAM 上 RTK+IMU 紧组合（LAMBDA/预积分） | Python | 17 | 🏷️ 个人社区 |
+| [tightly-coupled-gnss-imu-fgo](https://github.com/inuex35/tightly-coupled-gnss-imu-fgo) | tightly-coupled-gnss-imu-fgo：FGO 路线 RTK+IMU 原型 | Python | 17 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -438,13 +438,13 @@ GREAT 体系内的因子图优化实现，面向精密定位与组合导航相�
 
 语言：Python · 许可：BSD-3-Clause · 星标约：17 · 宿主：github
 
-在 GTSAM 因子图上做双差 RTK+IMU 预积分，含 LAMBDA 固定，并给东京城市数据复现。适合 FGO 路线研究。Python 原型性能有限。
+在 GTSAM 上做双差 RTK+IMU 预积分，含 LAMBDA 固定，并给东京城市数据复现。适合 FGO 路线研究。Python 原型性能有限，工程部署需重写。
 
 ## 因子图库
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gtsam](https://github.com/borglab/gtsam) | GTSAM 平滑与建图因子图库 | C++ | 3680 | 🏷️ 高校实验室 核心 |
+| [gtsam](https://github.com/borglab/gtsam) | GTSAM：因子图平滑/建图库（GNSS 扩展需另接） | C++ | 3680 | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
 
@@ -453,7 +453,7 @@ GREAT 体系内的因子图优化实现，面向精密定位与组合导航相�
 
 语言：C++ · 许可：— · 星标约：3680 · 宿主：github
 
-通用因子图优化库，被 gtsam_gnss、GVINS、FGO-RTK 等大量 GNSS 项目依赖。本身不是 GNSS 解算器；要 GNSS 因子需接扩展。
+通用因子图优化库，被 gtsam_gnss、GVINS、FGO-RTK 等大量 GNSS 项目依赖。本身不是 GNSS 解算器；要 GNSS 因子需接 gtsam_gnss 等扩展。
 
 ## 数据集
 

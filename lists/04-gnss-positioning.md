@@ -161,7 +161,7 @@ Glenn MacGougan 等维护的 Essential GNSS Project，提供 RINEX 2.x 解码、
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [raPPPid](https://github.com/TUW-VieVS/raPPPid) | 维也纳 VieVS 的 PPP 模块 raPPPid | MATLAB | 149 | 🏷️ 个人社区 核心 |
+| [raPPPid](https://github.com/TUW-VieVS/raPPPid) | raPPPid：维也纳 VieVS 的 PPP 模块 | MATLAB | 149 | 🏷️ 高校实验室 核心 |
 | [GAMP_PPPH](https://github.com/zhufengGNSS/GAMP_PPPH) | 多星座 PPP 源码（GAMP 相关整理） | — | 78 | 🏷️ 高校实验室 ★ |
 | [GPSPACE](https://github.com/CGS-GIS/GPSPACE) | 加拿大 NRCan GPSPACE PPP Fortran 程序 | Fortran | 58 | 🏷️ 个人社区 |
 | [PPPLib](https://github.com/yxw027/PPPLib) | 精密单点定位库 PPPLib | — | 49 | 🏷️ 高校实验室 |
@@ -174,11 +174,11 @@ Glenn MacGougan 等维护的 Essential GNSS Project，提供 RINEX 2.x 解码、
 ### 详细说明
 
 #### [raPPPid](https://github.com/TUW-VieVS/raPPPid)  
-*🏷️ 个人社区 核心*
+*🏷️ 高校实验室 核心*
 
 语言：MATLAB · 许可：GPL-3.0 · 星标约：149 · 宿主：github
 
-VieVS 体系下的精密单点定位模块，MATLAB 实现，适合与 VLBI/大地测量流程结合的课题组。非实时引擎；工业 RTK 请看 RTKLIB/商业机。
+VieVS（TU Wien）精密单点定位模块，MATLAB 实现，便于与 VLBI/大地测量流程结合。非实时引擎；工业 RTK/嵌入式请看 RTKLIB 或商业机。
 
 #### [GAMP_PPPH](https://github.com/zhufengGNSS/GAMP_PPPH)  
 *🏷️ 高校实验室 ★*
@@ -388,7 +388,7 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [laika](https://github.com/commaai/laika) | laika：comma.ai 轻量 Python GNSS 库 | Python | 723 | 🏷️ 个人社区 核心 |
-| [gnss-rtk](https://github.com/nav-solutions/gnss-rtk) | Rust 实现的 PPP/RTK 解算器 | Rust | 79 | 🏷️ 个人社区 |
+| [gnss-rtk](https://github.com/nav-solutions/gnss-rtk) | gnss-rtk：Rust PPP/RTK 解算（AGPL） | Rust | 79 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -404,7 +404,7 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 
 语言：Rust · 许可：AGPL-3.0 · 星标约：79 · 宿主：github
 
-rtk-rs/nav-solutions 系精密定位解算，与 rinex 库同一生态，AGPL。适合 Rust 栈爱好者。生态年轻于 RTKLIB；许可对闭源集成不友好。
+与 rinex 库同一 Rust 生态的精密定位解算，AGPL。适合 Rust 栈爱好者。生态年轻于 RTKLIB；AGPL 对闭源集成不友好。
 
 ## 城市峡谷
 
@@ -540,7 +540,7 @@ goGPS 的 Java 实现，便于嵌进 JVM 应用。功能气质同 MATLAB 版但�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gps_pvt](https://github.com/fenrir-naru/gps_pvt) | Ruby 可控的 GNSS PVT 与多格式解析 | C++ | 6 | 🏷️ 个人社区 |
+| [gps_pvt](https://github.com/fenrir-naru/gps_pvt) | gps_pvt：Ruby 可控 PVT + RINEX/SP3/UBX 解析 | C++ | 6 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -549,22 +549,22 @@ goGPS 的 Java 实现，便于嵌进 JVM 应用。功能气质同 MATLAB 版但�
 
 语言：C++ · 许可：— · 星标约：6 · 宿主：github
 
-提供可在 Ruby 下控制的 PVT 解算，并解析 RINEX/SP3/ANTEX/UBX。适合自动化脚本爱好者。小众语言生态限制了社区规模。
+提供可在 Ruby 下控制的 PVT，并解析 RINEX/SP3/ANTEX/UBX。适合脚本自动化爱好者。小众语言生态限制社区体量；精密 PPP-AR 请看专用引擎。
 
 ## 因子图RTK
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GraphGNSSLib](https://github.com/weisongwen/GraphGNSSLib) | 因子图优化的 GNSS 定位与 RTK | C | 628 | 🏷️ 个人社区 核心 |
+| [GraphGNSSLib](https://github.com/weisongwen/GraphGNSSLib) | GraphGNSSLib：FGO 风格 GNSS/RTK 开源库 | C | 628 | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
 
 #### [GraphGNSSLib](https://github.com/weisongwen/GraphGNSSLib)  
-*🏷️ 个人社区 核心*
+*🏷️ 高校实验室 核心*
 
 语言：C · 许可：— · 星标约：628 · 宿主：github
 
-用因子图做 GNSS 定位/RTK 的开源包，把现代图优化引入经典差分定位。适合研究 FGO+GNSS、城市峡谷鲁棒性。传统基站网 RTK 运维流程不是其主场。
+用因子图做 GNSS 定位与 RTK，把现代图优化引入经典差分流程。适合研究城市峡谷鲁棒性与 FGO+GNSS。传统基站网运维与播发不是其主场；LEO 扩展见 GraphGNSSLib_LEO。
 
 ## PVT/精密定位
 
@@ -585,7 +585,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gtsam_gnss](https://github.com/taroz/gtsam_gnss) | 基于 GTSAM 的 GNSS 因子与 MATLAB 封装 | C++ | 136 | 🏷️ 个人社区 |
+| [gtsam_gnss](https://github.com/taroz/gtsam_gnss) | gtsam_gnss：GTSAM GNSS 因子 + MATLAB 包装 | C++ | 136 | 🏷️ 个人社区 |
 | [GraphGNSSLib_LEO](https://github.com/PolyU-TASLAB/GraphGNSSLib_LEO) | GraphGNSSLib_LEO：GNSS+LEO 因子图定位开源包 | C++ | 18 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -595,7 +595,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 语言：C++ · 许可：MIT · 星标约：136 · 宿主：github
 
-为 GTSAM 提供 GNSS 因子与 MATLAB 包装，方便在因子图框架里拼伪距/相位/IMU。适合算法研究。完整测地产品链需自配数据与模糊度策略。
+在因子图框架里拼伪距/相位/IMU 等 GNSS 因子，并提供 MATLAB 包装。适合算法研究。完整测地产品链与模糊度策略需自配。
 
 #### [GraphGNSSLib_LEO](https://github.com/PolyU-TASLAB/GraphGNSSLib_LEO)  
 *🏷️ 高校实验室*
@@ -770,13 +770,13 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Net_Diff](https://github.com/YizeZhang/Net_Diff) | Net_Diff：下载+定位+分析综合套件 | HTML | 178 | 🏷️ 个人社区 |
+| [Net_Diff](https://github.com/YizeZhang/Net_Diff) | Net_Diff：下载+定位+分析综合套件 | HTML | 178 | 🏷️ 高校实验室 |
 | [POSGO](https://github.com/lizhengnss/POSGO) | POSGO：C++ 开源 GNSS 定位软件 | C++ | 116 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [Net_Diff](https://github.com/YizeZhang/Net_Diff)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：HTML · 许可：— · 星标约：178 · 宿主：github
 
@@ -793,7 +793,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [ppp-tools](https://github.com/aewallin/ppp-tools) | 基于 RINEX 的 PPP 脚本工具集 | Python | 121 | 🏷️ 个人社区 |
+| [ppp-tools](https://github.com/aewallin/ppp-tools) | ppp-tools：RINEX→PPP 自动化脚本（时间实验室向） | Python | 121 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -802,7 +802,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 语言：Python · 许可：GPL-2.0 · 星标约：121 · 宿主：github
 
-用脚本把 RINEX 丢给 PPP 引擎并整理结果，常用于时间实验室/钟差相关 PPP。适合自动化胶水道具。核心解算器仍依赖外部程序。
+脚本化调用外部 PPP 并归档结果，常见于时间实验室/钟差相关流程。适合自动化胶水道具。核心解算仍依赖外部引擎；不是独立精密定位库。
 
 ## PPP-AR
 

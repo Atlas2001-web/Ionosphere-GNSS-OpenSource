@@ -8,7 +8,7 @@
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [GPSTest](https://github.com/barbeau/gpstest) | 开源 Android GNSS 测试与原始测量记录 | Kotlin | 2402 | 🏷️ 个人社区 ★ 核心 |
-| [GPSLogger](https://github.com/BasicAirData/GPSLogger) | Android 开源 GPS 轨迹记录器 | Java | 504 | 🏷️ 个人社区 |
+| [GPSLogger](https://github.com/BasicAirData/GPSLogger) | GPSLogger：安卓开源轨迹与传感器记录器 | Java | 504 | 🏷️ 个人社区 |
 | [bluetooth_gnss](https://github.com/ykasidit/bluetooth_gnss) | Android 蓝牙外接 GNSS/RTK 与 NTRIP 应用 | Java | 123 | 🏷️ 个人社区 |
 | [GNSS_Compare](https://github.com/TheGalfins/GNSS_Compare) | 手机原始测量定位框架（GPS/Galileo 等） | Java | 73 | 🏷️ 个人社区 |
 | [PRIDE-GeoDataLogger](https://github.com/PrideLab/PRIDE-GeoDataLogger) | PRIDE 团队手机多频 GNSS 与 IMU 采集工具 | — | 22 | 🏷️ 高校实验室 |
@@ -27,7 +27,7 @@
 
 语言：Java · 许可：GPL-3.0 · 星标约：504 · 宿主：github
 
-记录轨迹与传感器辅助信息，户外测绘/运动轨迹常用。不做载波相位精密定位。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
+记录 GPS 轨迹与辅助传感器信息，户外测绘、运动轨迹常用。不做载波相位精密定位；原始测量科研请看 GnssLogger/GPSTest。
 
 #### [bluetooth_gnss](https://github.com/ykasidit/bluetooth_gnss)  
 *🏷️ 个人社区*
@@ -76,7 +76,7 @@ u-blox 官方开源的可移植 C 库，面向 MCU/RTOS 场景提供 GNSS 与蜂
 #### [GNSSTimeServer](https://github.com/Montecri/GNSSTimeServer)  
 *🏷️ 个人社区*
 
-语言：C · 许可：— · 星标约：232 · 宿主：github
+语言：C · 许可：MIT · 星标约：232 · 宿主：github
 
 以太网/WiFi GNSS 授时服务器：以 GPS/北斗/GLONASS/Galileo 为时间源，对外提供 NTP、RDATE、PTP，硬件基于 ESP8266/ESP32 与 Arduino 生态。适合实验室、业余台站本地时间同步。精度受模块、天线与网络抖动限制，达不到电信机房原子钟等级；天线与固件选项对照上游说明。
 
@@ -125,7 +125,7 @@ Cryologger Glacier Velocity Tracker 以 Arduino/MicroMod 与 SparkFun ZED-F9P �
 #### [GNSSClock](https://github.com/stevemarple/GNSS_Clock)  
 *🏷️ 个人社区*
 
-语言：C++ · 许可：— · 星标约：2 · 宿主：github
+语言：C++ · 许可：LGPL-2.1 · 星标约：2 · 宿主：github
 
 在 Arduino 上用 GNSS（GPS/GLONASS/Galileo）NMEA 语句与 PPS 秒脉冲实现时钟与守时，方便嵌入式授时和业余无线电时间基准。适合单片机爱好者与简易时频同步。功能止于时钟/授时，不含 RTK 或精密 PVT；可用星座取决于所接 GNSS 模块固件。PPS 布线与晶振稳定度影响短期守时表现。
 

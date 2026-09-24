@@ -953,7 +953,7 @@ University of Warmia and Mazury（Olsztyn）承担 IGS 电离层图组合与验�
 | [igs-roti](https://github.com/jonathanblade/igs-roti) | IGS ROTI Maps 产品的 Web 可视化小工具 | Python | 2 | 🏷️ 个人社区 |
 | [ionospheric-scintillation-mitigation](https://github.com/fengjie0325/ionospheric-scintillation-mitigation) | 电离层闪烁抑制算法的原始计算机代码 | MATLAB | 2 | 🏷️ 个人社区 |
 | [FARR](https://gitlab.com/longleywj/farr) | FARR：磁化碰撞等离子体中电波传播的三维 FDTD 开源代码（GitLab） | C++ | 1 | 🏷️ 高校实验室 |
-| [scintkit](https://github.com/qwsae10/scintkit) | ScintPi/GNSS 闪烁简易工具 | Jupyter Notebook | 1 | 🏷️ 个人社区 |
+| [scintkit](https://github.com/qwsae10/scintkit) | scintkit：ScintPi/GNSS 闪烁快看工具集 | Jupyter Notebook | 1 | 🏷️ 个人社区 |
 | [IBP-Model](https://igit.iap-kborn.de/ibp/ibp-model) | IAP Kühlungsborn IBP：低纬赤道等离子体泡发生概率经验/ML 模型（机构 GitLab） | Python | 0 | 🏷️ 高校实验室 |
 | [M_ISSION](https://github.com/wulide4/M_ISSION) | 多 GNSS 电离层闪烁指数计算软件 | C++ | 0 | 🏷️ 个人社区 |
 | [ScintPi-1.0-Software](https://doi.org/10.5281/zenodo.4905193) | UT Dallas ScintPi 1.0：低成本 GNSS 闪烁仪采集与可视化软件（Zenodo ZIP） | unknown | — | 🏷️ 高校实验室 |
@@ -1029,7 +1029,7 @@ NJIT/Boston University 的三维 FDTD 开源码（GitLab，GPL-3.0），仿真�
 
 语言：Jupyter Notebook · 许可：— · 星标约：1 · 宿主：github
 
-面向 ScintPi 与 GNSS 闪烁数据的简单处理小工具集，适合教学与快速看图。功能边界窄，论文级闪烁指数与多站网分析需接更完整工具。
+面向 ScintPi 与 GNSS 闪烁的简单处理与看图，偏教学演示。论文级闪烁指数、多站网与业务化质控需接更完整工具链。
 
 #### [IBP-Model](https://igit.iap-kborn.de/ibp/ibp-model)  
 *🏷️ 高校实验室*
@@ -1420,7 +1420,7 @@ Oleg Zolotov 等实现的 FIRI-2018（Friedrich 等更新的低电离层经验�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [tec_forecast](https://github.com/mauriciodev/tec_forecast) | 基于深度学习的全球 TEC 图预报示例 | Jupyter Notebook | 31 | 🏷️ 个人社区 ★ |
+| [tec_forecast](https://github.com/mauriciodev/tec_forecast) | 基于深度学习的全球 TEC 图预报示例 | Jupyter Notebook | 31 | 🏷️ 个人社区 |
 | [DeepPredTEC](https://github.com/vtsuperdarn/DeepPredTEC) | 深度学习预报 GPS TEC 图（SuperDARN 相关） | Python | 13 | 🏷️ 高校实验室 |
 | [ED-AttConvLSTM](https://github.com/leeliangchao/ED-AttConvLSTM) | 注意力 ConvLSTM 的 TEC 图预报模型 | Jupyter Notebook | 10 | 🏷️ 个人社区 |
 | [Ionospheric-VTEC-Forecasting](https://github.com/ICCT-ML-in-geodesy/Ionospheric-VTEC-Forecasting) | IAG 研究组 ML 预报 VTEC 的教学示例 | Jupyter Notebook | 9 | 🏷️ 高校实验室 ★ |
@@ -1430,9 +1430,9 @@ Oleg Zolotov 等实现的 FIRI-2018（Friedrich 等更新的低电离层经验�
 ### 详细说明
 
 #### [tec_forecast](https://github.com/mauriciodev/tec_forecast)  
-*🏷️ 个人社区 ★*
+*🏷️ 个人社区*
 
-语言：Jupyter Notebook · 许可：— · 星标约：31 · 宿主：github
+语言：Jupyter Notebook · 许可：MIT · 星标约：31 · 宿主：github
 
 用 Keras/TF 等多类深度学习模型在全球电离层图上做 TEC 预报实验。适合学 ML+空间天气交叉的人对照复现。不是业务预报系统；数据切分、基线与物理约束要自己补齐，可与 ED-AttConvLSTM 等对比。
 
@@ -1588,7 +1588,7 @@ SWPC 官方 HTTP 产品树，提供 geojson_2d_urt 与 netcdf_2d_urt 等目录�
 | [iri2016](https://github.com/space-physics/iri2016) | IRI-2016 的 Python/MATLAB 接口 | Fortran | 85 | 🏷️ 高校实验室 |
 | [PyIRI](https://github.com/victoriyaforsythe/PyIRI) | 国际参考电离层 IRI 的纯 Python 实现 | Python | 48 | 🏷️ 高校实验室 核心 |
 | [NequickG](https://github.com/tpl2go/NequickG) | Galileo NeQuick-G 电离层模型 Python 实现 | Python | 45 | 🏷️ 个人社区 核心 |
-| [iri2020](https://github.com/space-physics/iri2020) | IRI-2020 气候模型封装 | Fortran | 25 | 🏷️ 高校实验室 |
+| [iri2020](https://github.com/space-physics/iri2020) | iri2020：IRI-2020 Fortran/Python 可调用封装 | Fortran | 25 | 🏷️ 高校实验室 |
 | [iri90](https://github.com/space-physics/iri90) | IRI-90 国际参考电离层的 Python 封装 | Python | 8 | 🏷️ 高校实验室 |
 | [FIRI.jl](https://github.com/fgasdia/FaradayInternationalReferenceIonosphere.jl) | FIRI 法拉第国际参考电离层的 Julia 工具 | Julia | 5 | 🏷️ 高校实验室 |
 | [Nequick-ITUR](https://github.com/tpl2go/Nequick-ITUR) | ITU-R NeQuick 2 的 Python 封装 | Fortran | 4 | 🏷️ 个人社区 |
@@ -1623,7 +1623,7 @@ SWPC 官方 HTTP 产品树，提供 geojson_2d_urt 与 netcdf_2d_urt 等目录�
 
 语言：Fortran · 许可：MIT · 星标约：25 · 宿主：github
 
-IRI-2020 的可调用封装，跟进较新气候学版本。适合更新背景场或做版本差异试验。依赖 Fortran 构建；与 GNSS 实测 TEC 同化需另接。
+跟进 IRI-2020 的可调用封装，便于更新背景场或做版本差异试验。依赖 Fortran 构建；与 GNSS 实测 TEC 同化需另接观测链。
 
 #### [iri90](https://github.com/space-physics/iri90)  
 *🏷️ 高校实验室*

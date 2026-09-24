@@ -18,19 +18,19 @@ RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka、质检与 IGS 产品下载。
 | [ntrip-go](https://github.com/go-gnss/ntrip) | Go 语言 NTRIP 客户端与服务端库 | Go | 62 | 🏷️ 个人社区 |
 | [caster](https://github.com/Node-NTRIP/caster) | 支持 NTRIP V1/V2 的 Node.js caster 库 | TypeScript | 52 | 🏷️ 个人社区 核心 |
 | [cors-relay](https://github.com/tisyang/cors-relay) | CORS/NTRIP 差分流中继与重分发 | C | 49 | 🏷️ 个人社区 |
-| [rtcm](https://github.com/Node-NTRIP/rtcm) | RTCM 3 消息编解码（至 3.3） | TypeScript | 48 | 🏷️ 个人社区 |
-| [baidu-ntripcaster](https://github.com/baidu/ntripcaster) | 百度开源的 NTRIP Caster 实现 | C | 46 | 🏷️ 个人社区 |
+| [rtcm](https://github.com/Node-NTRIP/rtcm) | rtcm：RTCM 3（至 3.3）TypeScript 编解码 | TypeScript | 48 | 🏷️ 个人社区 |
+| [baidu-ntripcaster](https://github.com/baidu/ntripcaster) | baidu/ntripcaster：百度开源 NTRIP 播发端 | C | 46 | 🏷️ 个人社区 |
 | [millipede-caster](https://github.com/pbeyssac/millipede-caster) | 高性能开源 NTRIP/RTK Caster（C） | C | 43 | 🏷️ 个人社区 |
-| [nmea-msgs](https://github.com/ros-drivers/nmea_msgs) | nmea_msgs：ROS 用 NMEA 消息接口 | CMake | 38 | 🏷️ 个人社区 |
+| [nmea-msgs](https://github.com/ros-drivers/nmea_msgs) | nmea_msgs：ROS 用 NMEA 消息接口（ros-drivers） | CMake | 38 | 🏷️ 官方 |
 | [ntripbrowser](https://github.com/emlid/ntripbrowser) | CLI 查询 NTRIP caster 源表与挂载点 | Python | 32 | 🏷️ 个人社区 |
 | [rtcm-rs](https://github.com/martinhakansson/rtcm-rs) | RTCM v3 编解码的 Rust crate | Rust | 32 | 🏷️ 个人社区 |
 | [gstream](https://github.com/Jin-Whu/gstream) | 面向 GNSS 的开源数据流客户端库 | C++ | 20 | 🏷️ 高校实验室 |
 | [NTRIPcaster-python](https://github.com/Rampump/NTRIPcaster) | 轻量 Python NTRIP Caster | Python | 20 | 🏷️ 个人社区 |
 | [Caster_Project](https://github.com/KOROyo123/Caster_Project) | Libevent+Redis 跨平台 NTRIP Caster | C++ | 19 | 🏷️ 个人社区 |
-| [ntripstreams](https://github.com/stenseng/ntripstreams) | Python NTRIP 协议读写接口 | Python | 16 | 🏷️ 个人社区 |
+| [ntripstreams](https://github.com/stenseng/ntripstreams) | ntripstreams：Python NTRIP 客户端/读写接口 | Python | 16 | 🏷️ 个人社区 |
 | [NtripCore](https://github.com/bouskdav/NtripCore) | .NET Core 轻量 NTRIP caster（rev.2） | C# | 14 | 🏷️ 个人社区 |
 | [pyspartn](https://github.com/semuconsulting/pyspartn) | 解析 SPARTN 精密改正电文的 Python 库 | Python | 12 | 🏷️ 个人社区 |
-| [AgOpenNtripCaster](https://github.com/AgOpenGPS-Official/AgOpenNtripCaster) | AgOpenGPS 生态的开源 NTRIP Caster（C#） | C# | 10 | 🏷️ 个人社区 |
+| [AgOpenNtripCaster](https://github.com/AgOpenGPS-Official/AgOpenNtripCaster) | AgOpenNtripCaster：AgOpenGPS 生态 NTRIP 播发端 | C# | 10 | 🏷️ 个人社区 |
 | [ntripCaster-go](https://github.com/xk1yan/ntripCaster) | Go 高性能 NTRIP Caster | Go | 9 | 🏷️ 个人社区 |
 | [ntrip-client](https://github.com/nav-solutions/ntrip-client) | 纯 Rust 的简单 NTRIP 客户端对象 | Rust | 4 | 🏷️ 个人社区 |
 | [ntrip-core](https://github.com/greenforge-labs/ntrip-core) | Rust 异步 NTRIP 客户端（v1/v2 + TLS） | Rust | 4 | 🏷️ 个人社区 |
@@ -128,14 +128,14 @@ RTCM-Ntrip 官方仓库中的 POSIX ntripserver，用于将接收机或文件流
 
 语言：TypeScript · 许可：GPL-3.0 · 星标约：48 · 宿主：github
 
-覆盖至 RTCM 3.3 的消息编解码，JS/TS 生态少见。适合 Web 或 Node 实时应用。GPL；高性能 C++ 嵌入另选其他实现。
+覆盖至 RTCM 3.3 的消息编解码，填补 JS/TS 生态空白。适合 Web/Node 实时差分原型。GPL；嵌入式高性能场景另选 C/C++ 实现。
 
 #### [baidu-ntripcaster](https://github.com/baidu/ntripcaster)  
 *🏷️ 个人社区*
 
-语言：C · 许可：NOASSERTION · 星标约：46 · 宿主：github
+语言：C · 许可：— · 星标约：46 · 宿主：github
 
-百度公开的 NTRIP Caster 相关实现，可作自建播发与协议学习的对照样本。适合对比 BKG 与社区实现看消息路由。文档与许可声明以仓库当前文件为准；上线前须完成压力、安全与兼容性测试。
+百度 Open Source 组织公开的 NTRIP Caster，可作自建播发与协议学习的对照样本。适合对比 BKG 与社区实现。按 catalog 政策记为个人社区（公司开源档）；上线前须完成压力、安全与兼容性测试。
 
 #### [millipede-caster](https://github.com/pbeyssac/millipede-caster)  
 *🏷️ 个人社区*
@@ -145,11 +145,11 @@ RTCM-Ntrip 官方仓库中的 POSIX ntripserver，用于将接收机或文件流
 Millipede 是面向 RTK/CORS 场景的开源 NTRIP caster（C，BSD-3-Clause），强调吞吐与可运维部署，适合自建差分播发或做多基站接入试验。协议与鉴权能力需对照其文档与版本说明；公网部署仍要自行处理 TLS、账号与带宽监控。相对 BKG Professional Caster，社区文档更轻，但源码开放便于二次开发。
 
 #### [nmea-msgs](https://github.com/ros-drivers/nmea_msgs)  
-*🏷️ 个人社区*
+*🏷️ 官方*
 
 语言：CMake · 许可：— · 星标约：38 · 宿主：github
 
-ros-drivers 维护的 nmea_msgs，定义与 NMEA 标准相关的 ROS 消息，方便驱动、导航与记录节点交换 GNSS 语句。适合 ROS 机器人接入 GNSS 接收机。只提供消息契约，不含语句解析与 PVT；解析与定位需配合 nmea_navsat_driver 等包。消息字段随 ROS 发行版可能微调，编译前核对依赖。
+ros-drivers 组织维护的 nmea_msgs，定义与 NMEA 相关的 ROS 消息，方便驱动、导航与录包节点交换 GNSS 语句。适合机器人接入 GNSS 接收机。只提供消息契约，不含语句解析与 PVT；解析需另接驱动或 nmea_navsat_driver 一类包。
 
 #### [ntripbrowser](https://github.com/emlid/ntripbrowser)  
 *🏷️ 个人社区*
@@ -191,7 +191,7 @@ Emlid 发布的 CLI，用于拉取并浏览 NTRIP caster 的 source table，快�
 
 语言：Python · 许可：MIT · 星标约：16 · 宿主：github
 
-用 Python 与 NTRIP Caster/客户端传 GNSS 流，适合接 RTCM 改正。适合自建流处理原型。完整 PPP 引擎与播发管理需另接 BNC/自研。
+Python 对接 NTRIP Caster/客户端传 GNSS 流，适合接 RTCM 改正做原型。完整 PPP 引擎与播发管理需另接 BNC 或自研。
 
 #### [NtripCore](https://github.com/bouskdav/NtripCore)  
 *🏷️ 个人社区*
@@ -212,7 +212,7 @@ Emlid 发布的 CLI，用于拉取并浏览 NTRIP caster 的 source table，快�
 
 语言：C# · 许可：— · 星标约：10 · 宿主：github
 
-面向农业自动驾驶与 AgOpenGPS 社区的 NTRIP 播发端（C#），便于农场自建差分播发。适合 DIY CORS 与农机联调。运维、认证与安全加固通常弱于 BKG 级 caster；公网部署需自行处理账号与带宽监控。
+AgOpenGPS-Official 组织下的 NTRIP 播发端（C#），面向农业自动驾驶与 DIY CORS。适合农机联调。按 catalog 政策记为个人社区（社区 DIY）；公网部署需自行处理账号、带宽与安全加固。
 
 #### [ntripCaster-go](https://github.com/xk1yan/ntripCaster)  
 *🏷️ 个人社区*
@@ -436,7 +436,7 @@ Anubis 免费档下载入口，提供 Linux 预编译与 GPL-3 源码，覆盖�
 |---|---|---|---:|---|
 | [hatanaka](https://github.com/valgur/hatanaka) | Python 调用的 Hatanaka 压缩/解压 | C | 26 | 🏷️ 个人社区 |
 | [crz2rnx](https://github.com/zhufengGNSS/crz2rnx) | Hatanaka RNX2CRX/CRX2RNX 相关程序整理（v4 系） | C | 9 | 🏷️ 高校实验室 |
-| [crx2rnx](https://github.com/nav-solutions/crx2rnx) | Rust 实现的 CRX2RNX 命令行工具 | Rust | 8 | 🏷️ 个人社区 |
+| [crx2rnx](https://github.com/nav-solutions/crx2rnx) | crx2rnx：Rust 实现的 CRX→RNX 命令行工具 | Rust | 8 | 🏷️ 个人社区 |
 | [RNXCMP](https://terras.gsi.go.jp/ja/crx2rnx.html) | 日本地理院官方 Hatanaka/CompactRINEX 压缩与恢复工具 | C | — | 🏷️ 官方 核心 |
 | [RNXCMP-LICENSE](https://terras.gsi.go.jp/ja/crx2rnx/LICENSE.txt) | 日本地理院 RNXCMP 许可证原文（使用/再分发须引用） | text | — | 🏷️ 官方 |
 
@@ -461,7 +461,7 @@ Anubis 免费档下载入口，提供 Linux 预编译与 GPL-3 源码，覆盖�
 
 语言：Rust · 许可：MPL-2.0 · 星标约：8 · 宿主：github
 
-Rust 版 Hatanaka 解压 CLI，便于现代工具链集成。适合不想绑官方 Fortran/C 发行包的场景。与官方 RNXCMP 的比特级兼容性需用样例回归。
+Rust 版 Hatanaka（CRX2RNX）解压，便于现代工具链集成。适合不想绑官方 Fortran/C 发行包的场景。与官方 RNXCMP 的比特级兼容性需用样例回归。
 
 #### [RNXCMP](https://terras.gsi.go.jp/ja/crx2rnx.html)  
 *🏷️ 官方 核心*
@@ -481,7 +481,7 @@ GSI 公布的 RNXCMP 许可文本，基于地理院网站条款并要求修改�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [cycle-slip-correction](https://github.com/embrace-inpe/cycle-slip-correction) | 周跳分析与改正命令行工具 | Python | 14 | 🏷️ 官方 |
+| [cycle-slip-correction](https://github.com/embrace-inpe/cycle-slip-correction) | cycle-slip-correction：周跳探测改正命令行工具 | Python | 14 | 🏷️ 官方 |
 | [DRCycleSlip](https://github.com/Jin-Whu/DRCycleSlip) | 周跳探测与修复的 Python 实现 | Python | 4 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -491,7 +491,7 @@ GSI 公布的 RNXCMP 许可文本，基于地理院网站条款并要求修改�
 
 语言：Python · 许可：MIT · 星标约：14 · 宿主：github
 
-命令行分析并尝试改正周跳，常用于低纬电离层活跃区数据。适合前处理试验。与定位引擎内置周跳探测策略可能不一致，接入 PPP 前要统一标志。
+命令行分析并尝试改正周跳，常用于低纬电离层活跃区前处理。适合接入自建流水线前试验。与定位引擎内置周跳策略可能不一致，标志含义需统一。
 
 #### [DRCycleSlip](https://github.com/Jin-Whu/DRCycleSlip)  
 *🏷️ 高校实验室*
@@ -519,16 +519,16 @@ EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RT
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [FAST](https://github.com/ChangChuntao/FAST) | FAST：GNSS 下载/质检/SPP/选站（Python） | Python | 206 | 🏷️ 个人社区 ★ 核心 |
+| [FAST](https://github.com/ChangChuntao/FAST) | FAST：GNSS 下载/质检/SPP/选站（Python） | Python | 206 | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
 
 #### [FAST](https://github.com/ChangChuntao/FAST)  
-*🏷️ 个人社区 ★ 核心*
+*🏷️ 高校实验室 核心*
 
 语言：Python · 许可：GPL-3.0 · 星标约：206 · 宿主：github
 
-模块化 Python 软件：IGS/数据下载、质量分析、单点定位、测站选择等，中文用户多。适合日常数据准备。精密 PPP-AR/科研级 POD 仍需 PRIDE/Ginan 等。
+模块化 Python 工具：IGS 等数据下载、质量分析、单点定位与测站选择，中文用户较多。适合日常数据准备与教学。精密 PPP-AR、科研级轨道钟差仍需 PRIDE、Ginan 等；大批量任务请做好镜像与校验策略。
 
 ## 下载
 
@@ -590,7 +590,7 @@ EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RT
 |---|---|---|---:|---|
 | [georinex](https://github.com/geospace-code/georinex) | 高速 Python RINEX 2/3 NAV/OBS/SP3 读入与 HDF5 转换 | Python | 269 | 🏷️ 高校实验室 🔀 ★ 核心 |
 | [rinex](https://github.com/nav-solutions/rinex) | Rust RINEX 解析/生成与 RINEX-Cli（含 SPP/PPP） | Rust | 126 | 🏷️ 个人社区 核心 |
-| [RinexReader](https://github.com/aaronboda24/RinexReader) | C++ RINEX 2.x/3.x 读取器 | C++ | 38 | 🏷️ 个人社区 |
+| [RinexReader](https://github.com/aaronboda24/RinexReader) | RinexReader：C++ RINEX 2/3 读取库 | C++ | 38 | 🏷️ 个人社区 |
 | [READ_GNSS](https://github.com/dzd9798/READ_GNSS) | MATLAB 读取多种 GNSS 文件（含 RINEX/IONEX） | MATLAB | 10 | 🏷️ 个人社区 |
 | [GNSSNexus-rinex](https://github.com/GNSSNexus/rinex) | RINEX 相关读写/处理组件 | Rust | — | 🏷️ 个人社区 |
 
@@ -615,7 +615,7 @@ GeoRust/nav-solutions 系 RINEX 库，附 RINEX-Cli，可做质检、SPP/PPP、C
 
 语言：C++ · 许可：MIT · 星标约：38 · 宿主：github
 
-轻量 C++ RINEX 读取，覆盖 GPS/GLONASS/Galileo 等常见情况。适合嵌入自研 C++ 程序。功能广度不及 gnsstk；写文件与 QC 需自补。
+覆盖 GPS/GLONASS/Galileo 等常见情况的轻量读取器，适合嵌入自研 C++ 程序。功能广度不及 gnsstk；写文件与 QC 需自补。
 
 #### [READ_GNSS](https://github.com/dzd9798/READ_GNSS)  
 *🏷️ 个人社区*
@@ -704,16 +704,16 @@ NLS/FGI（nlsfi）维护的 Galileo High Accuracy Service 解码库，支持从 
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GNSS-Metadata-Standard](https://github.com/IonMetadataWorkingGroup/GNSS-Metadata-Standard) | GNSS 软件接收机元数据标准与工具 | C++ | 59 | 🏷️ 个人社区 |
+| [GNSS-Metadata-Standard](https://github.com/IonMetadataWorkingGroup/GNSS-Metadata-Standard) | GNSS-Metadata-Standard：SDR IQ 元数据 XML 标准 | C++ | 59 | 🏷️ 官方 |
 
 ### 详细说明
 
 #### [GNSS-Metadata-Standard](https://github.com/IonMetadataWorkingGroup/GNSS-Metadata-Standard)  
-*🏷️ 个人社区*
+*🏷️ 官方*
 
 语言：C++ · 许可：LGPL-3.0 · 星标约：59 · 宿主：github
 
-定义 SDR/原始采样元数据标准并提供工具，便于交换 IQ 与前端配置。做 GNSS-SDR 或自研接收机时很有用。与 RINEX 观测生态互补而非替代。
+ION GNSS SDR Metadata Working Group 定义原始采样/前端配置的元数据交换标准并提供工具。做 GNSS-SDR 或自研接收机时很有用。与 RINEX 观测生态互补而非替代。
 
 ## 多路径/QC
 
@@ -721,7 +721,7 @@ NLS/FGI（nlsfi）维护的 Galileo High Accuracy Service 解码库，支持从 
 |---|---|---|---:|---|
 | [GNSS_Multipath_Analysis_Software](https://github.com/paarnes/GNSS_Multipath_Analysis_Software) | GNSS 观测多路径分析 Python 软件 | Python | 141 | 🏷️ 个人社区 核心 |
 | [MAPS](https://github.com/GCCLib/MAPS) | MATLAB GNSS 多路径分析软件 | MATLAB | 35 | 🏷️ 个人社区 |
-| [gnss-multipath-detector](https://github.com/EvgeniiMunin/gnss-multipath-detector) | GPS L1 C/A 多路径异常检测模型 | Jupyter Notebook | 28 | 🏷️ 个人社区 |
+| [gnss-multipath-detector](https://github.com/EvgeniiMunin/gnss-multipath-detector) | gnss-multipath-detector：L1 C/A 多路径 ML 探测 notebook | Jupyter Notebook | 28 | 🏷️ 个人社区 |
 | [PyRINEX](https://github.com/geumjin99/PyRINEX) | 多用途 Python RINEX 读写与质量分析包 | Python | 16 | 🏷️ 高校实验室 |
 | [geoveil-mp](https://github.com/miluta7/geoveil-mp) | Rust/Python：RINEX 逐码多路径 MP 组合、周跳检测与 SNR 序列导出 | Rust | 0 | 🏷️ 个人社区 |
 
@@ -746,7 +746,7 @@ MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实�
 
 语言：Jupyter Notebook · 许可：— · 星标约：28 · 宿主：github
 
-用数据驱动方法探测 GPS L1 C/A 多路径异常，偏研究 notebook。适合探索 ML+GNSS 质量控。生产嵌入需重做工程化。
+用机器学习探测 GPS L1 C/A 多路径异常，以研究 notebook 为主。适合探索 ML+GNSS 质控思路。生产嵌入与实时门控需重做工程化。
 
 #### [PyRINEX](https://github.com/geumjin99/PyRINEX)  
 *🏷️ 高校实验室*
@@ -836,16 +836,16 @@ EarthScope 开源的 GNSS 产品联邦工具，按日期与任务在十余个 IG
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnsspy](https://github.com/GNSSpy-Project/gnsspy) | Python GNSS 数据工具包 | Python | 209 | 🏷️ 个人社区 ★ |
+| [gnsspy](https://github.com/GNSSpy-Project/gnsspy) | gnsspy：Python GNSS 数据读写与分析包 | Python | 209 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [gnsspy](https://github.com/GNSSpy-Project/gnsspy)  
-*🏷️ 个人社区 ★*
+*🏷️ 个人社区*
 
 语言：Python · 许可：MIT · 星标约：209 · 宿主：github
 
-面向 GNSS 观测处理的 Python 工具包，读数据、做基础分析较方便。适合教学与中小脚本。功能深度不及 gnsstk/Ginan；精密定位请接专用引擎。
+读 GNSS 观测、做基础分析较方便，适合教学与中小脚本。功能深度不及 gnsstk/Ginan；精密定位请接专用引擎。
 
 ## 基础库应用
 
@@ -919,7 +919,7 @@ gpsd 社区官网，提供安装文档、兼容硬件列表与发布信息。源
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GPSTk](https://github.com/SGL-UT/GPSTk) | GPSTk 归档库（请改用 GNSSTK） | C++ | 360 | 🏷️ 高校实验室 |
+| [GPSTk](https://github.com/SGL-UT/GPSTk) | GPSTk：已归档，请迁移到 gnsstk / gnsstk-apps | C++ | 360 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -950,7 +950,7 @@ gpsd 社区官网，提供安装文档、兼容硬件列表与发布信息。源
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [rtcm3torinex](https://software.rtcm-ntrip.org/wiki/rtcm3torinex) | BKG rtcm3torinex：RTCM3 流转 RINEX 的官方小工具 | C | 65 | 🏷️ 官方 |
-| [prx](https://github.com/jtec/prx) | RINEX 3.05 观测转 CSV | Python | 23 | 🏷️ 个人社区 |
+| [prx](https://github.com/jtec/prx) | prx：RINEX 3.05 观测→CSV 小工具 | Python | 23 | 🏷️ 个人社区 |
 | [ubx2rinex](https://github.com/nav-solutions/ubx2rinex) | Rust 实现的 u-blox 原始观测到 RINEX 转换/采集工具 | Rust | 12 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -967,7 +967,7 @@ RTCM-Ntrip 项目提供的 RTCM 3 到 RINEX 转换工具，便于把实时流转
 
 语言：Python · 许可：MIT · 星标约：23 · 宿主：github
 
-把 RINEX 3.05 观测文件转成 CSV，便于表格软件或简单脚本分析。适合快速查看。高精度批处理与多格式支持不如 georinex。
+轻量把 RINEX 3.05 观测导出 CSV，方便 Excel/脚本快看。适合快速抽查。高精度批处理与多格式支持请优先 georinex。
 
 #### [ubx2rinex](https://github.com/nav-solutions/ubx2rinex)  
 *🏷️ 个人社区*
