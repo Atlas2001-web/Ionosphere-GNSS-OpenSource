@@ -1,0 +1,32 @@
+[
+  {
+    "name": "SbfMixer",
+    "action": "KEEP",
+    "provenance": "official",
+    "evidence": "github.com/septentrio-gnss/SbfMixer — owner type Organization (Septentrio manufacturer); consistent with sibling Septentrio entries"
+  },
+  {
+    "name": "libsbp",
+    "action": "KEEP",
+    "provenance": "personal_community",
+    "evidence": "swift-nav vendor OSS; categories.md maps 公司开源 → personal_community (batch17)"
+  },
+  {
+    "name": "piksi_tools",
+    "action": "KEEP",
+    "provenance": "personal_community",
+    "evidence": "swift-nav vendor; same policy as libsbp / swift-nav-pygnss / pynex"
+  },
+  {
+    "name": "swift-nav-pygnss",
+    "action": "KEEP",
+    "provenance": "personal_community",
+    "evidence": "swift-nav vendor; no flip"
+  },
+  {
+    "name": "pynex",
+    "action": "KEEP",
+    "provenance": "personal_community",
+    "evidence": "swift-nav archived tooling; personal_community"
+  }
+]

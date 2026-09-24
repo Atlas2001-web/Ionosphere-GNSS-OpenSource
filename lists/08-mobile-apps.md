@@ -79,7 +79,7 @@ PRIDE 团队面向智能手机的多频 GNSS 与 IMU 采集工具，便于把手
 | [STM32Primer2-GNSS-Tracker](https://github.com/nemuisan/STM32Primer2_GNSS_Tracker) | STM32Primer2-GNSS-Tracker：Primer2 平台 GNSS 轨迹记录 | C | 31 | 🏷️ 个人社区 |
 | [esp32-gps](https://github.com/mrichar1/esp32-gps) | ESP32 上整合 GPS、蓝牙与 NTRIP/RTK 转发 | Python | 23 | 🏷️ 个人社区 |
 | [Cryologger-GVT](https://github.com/cryologger/glacier-velocity-tracker) | Cryologger GVT：面向 PPP 的开源冰川 GNSS 测速仪 | C++ | 19 | 🏷️ 个人社区 |
-| [GNSSClock](https://github.com/stevemarple/GNSS_Clock) | 基于 GNSS NMEA/PPS 的 Arduino 时钟 | C++ | 2 | 🏷️ 个人社区 |
+| [GNSSClock](https://github.com/stevemarple/GNSS_Clock) | GNSSClock：Arduino 上读 NMEA/PPS 的 GNSS 时钟 | C++ | 2 | 🏷️ 个人社区 |
 
 ### 详细说明
 
