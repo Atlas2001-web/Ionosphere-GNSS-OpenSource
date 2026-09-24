@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **14 篇**操作手册（合计约 3810 行）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **14 篇**操作手册（合计约 3927 行）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -16,9 +16,9 @@
 | 2 | [gfzrnx.md](./gfzrnx.md) | RINEX 检查 / 拼接 / 抽稀 | 414 |
 | 3 | [anubis.md](./anubis.md) | 观测 QC → XTR/XML | 393 |
 | 4 | [pytecgg.md](./pytecgg.md) | 校准 sTEC/vTEC（作者 viventriglia） | 468 |
-| 5 | [ionomoni.md](./ionomoni.md) | STEC / ROTI / AATR（C++） | 172 |
-| 6 | [oasis-roti.md](./oasis-roti.md) | ROTI / ΔTEC / SIDX（Python） | 173 |
-| 7 | [ionex-gim.md](./ionex-gim.md) | 读 IONEX GIM | 181 |
+| 5 | [ionomoni.md](./ionomoni.md) | STEC / ROTI / AATR（C++） | 219 |
+| 6 | [oasis-roti.md](./oasis-roti.md) | ROTI / ΔTEC / SIDX（Python） | 224 |
+| 7 | [ionex-gim.md](./ionex-gim.md) | 读 IONEX GIM | 200 |
 | 8 | [sh-gim.md](./sh-gim.md) | 维护者球谐仓**边界**（求解器未开源） | 124 |
 | 9 | [pygnssutils.md](./pygnssutils.md) | NTRIP CLI / 小 caster | 250 |
 | 10 | [bnc.md](./bnc.md) | BKG 多流客户端 | 272 |
@@ -88,7 +88,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 ---
 
 
-最近质检（ops）：Round2 已按 short-hard 重写 **bnc** / **georinex** / **iono-scintillation**（BNC REQC 真跑、georinex 1.16.2 真输出、闪烁仓 Libraries 打包边界；MATLAB 未在质检机运行）；此前 **gfzrnx** / **rtklib** / **pytecgg**。行数以本表 `wc -l` 为准。
+最近质检（ops）：Round3 已按 short-hard 重写 **ionex-gim** / **oasis-roti** / **ionomoni**（ionex 0.2 包内测试 IONEX 真读；pyOASIS 1.0.3 样例 BOAV 真跑出 SP3/RNX3/ROTI/ΔTEC；IonoMoni 按 v1.1.2 XML/PDF/`-x` 实键，Linux 质检机无官方 Win 二进制故不伪造 stdout）；Round2：**bnc** / **georinex** / **iono-scintillation**；Round1：**gfzrnx** / **rtklib** / **pytecgg**。行数以本表 `wc -l` 为准。
 
 ## 推荐阅读顺序（新人）
 
