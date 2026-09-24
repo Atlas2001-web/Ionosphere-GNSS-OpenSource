@@ -1,6 +1,6 @@
 # GREAT_PODFLT · 武大实时滤波精密定轨（PODFLT）操作手册
 
-目录：[`PROJECTS.json` → `GREAT_PODFLT`](../../PROJECTS.json) · 上游 <https://github.com/GREAT-WHU/GREAT_PODFLT> · tip **`bd9fb71`**（`Update README.md` 2026-08-06）· tag **`v1.0.0`** → **`902bee5`** · **GPL-3.0**（PDF §2.2；GitHub license 字段空）· ★**17** · C++14/CMake · 本机验证（2026-09-24 07:04–07:10 EDT）：`g++ 14.2.0` + `cmake 3.31.6` + **`-DUSE_OPENMP=ON`** → `src/build/Bin/great_podflt` **9641192** B + 静态库 `Lib/liblib{GREAT,GNut}.a`（**10732088** / **10111660** B）；`-h`/`-V 1` → **`GREAT/POD_FLT [0.9.0]`**（`$Rev: 2448 $`，源码编于 **Sep 24 2026 11:08:54**）；缺 XML → `xconfig: not file read … File was not found`（exit **0**）；仓内 `sample/.../xml/podflt.xml` 含字面 `/<install_dir>/` → **Start-end tags mismatch** exit **1**；替换占位并指向 `utils/gnss_sys_file/` 后 `-brdm` 空跑：系统文件可读，`/home/iGMAS/...` OBS/NAV/DCB/SNX 全缺 → **88**×`.21o` Incomplete header + **27**×`can not get the xyz from sp3 or rinexn` → exit **1**；落 `logger/great_podlflt.log` **14062** B（≠ XML 写的 `LOGRT.log`）；**无** 新 `orb_*` / `.SP3` → **未臆造** POD；仓内参考 SP3（GPS）**16375106** B / **241957** 行 / 历元 **8641** / PG01 首行 `−13135.440185 13798.701066 18084.192806` / sha₁₂=`c22334bd0d0e`；`orb_*` 为 **Git LFS 指针**（**134** B → 目标 **280719358** B）；PDF **8520528** B
+目录：[`PROJECTS.json` → `GREAT_PODFLT`](../../PROJECTS.json) · 上游 <https://github.com/GREAT-WHU/GREAT_PODFLT> · tip **`bd9fb71`**（`Update README.md` 2026-08-06）· tag **`v1.0.0`** → **`902bee5`** · **GPL-3.0**（PDF §2.2；GitHub license 字段空）· ★**17** · C++14/CMake · 本机验证（2026-09-24 07:04–07:10 EDT；**质检复跑 07:17 EDT**）：tip **`bd9fb71`**/tag **`v1.0.0`**→**`902bee5`**/★**17**；`g++ 14.2.0`+`cmake 3.31.6`+**`-DUSE_OPENMP=ON`** → `src/build/Bin/great_podflt` **9639256** B+ `Lib/liblib{GREAT,GNut}.a`（**10731110** / **10112684** B）；`-h`/`-V 1` → **`GREAT/POD_FLT [0.9.0]`**（`$Rev: 2448 $`，compiled **Sep 24 2026 07:10:57**）；缺 `-x` 文件 → `xconfig: … File was not found` exit **1**；仓内 `sample/.../xml/podflt.xml` 字面 `/<install_dir>/` → **Start-end tags mismatch** exit **1**；参考 SP3（GPS）**16375106** B / **241957** 行 / 历元 **8641** / PG01 `−13135.440185 13798.701066 18084.192806` / sha₁₂=`c22334bd0d0e`；`orb_*` **Git LFS 指针** **134** B；PDF **8520528** B；预编译 `great_orbdif` **`GREAT-orbdif [1.0.0]`**；**无 OBS → 未臆造 POD**（写作 `-brdm` 空跑 **88**×Incomplete/**14062** B log/**9641192** B bin/**11:08:54** 编译戳 **未复验**，本 QC 不以之为准）
 
 > 岗位：**多 GNSS 滤波精密定轨（POD）**（SRIF；双频无电离层；可选模糊度固定 / EOP / 收发钟同步）→ 产出 SP3 + ORB，供 orbdif ACR 评估与下游 PPP。冲突时：**本机 `great_podflt -h` / `doc/GREAT_PODFLT.pdf` / 样例 `xml/podflt.xml` / 上游 README > 本文**。  
 > 同链钟差 → [great-pce](./great-pce.md)；UPD/IFCB → [great-upd](./great-upd.md)/[great-ifcb](./great-ifcb.md)；多 AC 综合 → [clkcomb](./clkcomb.md)/[spocc](./spocc.md)；产品门户 → [data-access](../data-access.md)「SP3 / CLK / bias」。下游 PPP → [great-pvt](./great-pvt.md)/[pride-pppar](./pride-pppar.md)/[ginan](./ginan.md)。**≠** 终端定位主引擎。
@@ -59,7 +59,7 @@ cd src && mkdir -p build && cd build
 # 默认 USE_OPENMP=OFF 仍会 -fopenmp 编译 → 链接缺 omp_*；务必 ON：
 cmake .. -DCMAKE_BUILD_TYPE=Release -DUSE_OPENMP=ON
 make -j$(nproc)              # 产物在本目录 Bin/（非 build_Linux/）
-ls -la Bin/great_podflt      # 本机：9641192 B
+ls -la Bin/great_podflt      # 本机质检：9639256 B（写作曾报 9641192）
 # 本机为静态 liblibGREAT.a / liblibGNut.a + 动态 libgomp —— 一般无需 LD_LIBRARY_PATH
 # （对照 great-pce / great-upd 的 .so + LD_LIBRARY_PATH 坑）
 ./Bin/great_podflt -h
@@ -68,7 +68,7 @@ ls -la Bin/great_podflt      # 本机：9641192 B
 **本机 `-h`：**
 
 ```text
-GREAT/POD_FLT [0.9.0] compiled: Sep 24 2026 11:08:54 ($Rev: 2448 $)
+GREAT/POD_FLT [0.9.0] compiled: Sep 24 2026 07:10:57 ($Rev: 2448 $)
 
 Usage: 
 
@@ -88,7 +88,7 @@ Usage:
 | `undefined reference to omp_get_*` / `GOMP_parallel` | 未开 OpenMP 链接 | `cmake … -DUSE_OPENMP=ON` 后重编 |
 | `Start-end tags mismatch` | XML 含 `/<install_dir>/` 被解析成标签 | 换成真实绝对路径（勿留尖括号占位） |
 | `error while loading shared libraries: libgomp.so.1` | 缺 OpenMP 运行时 | `apt install libgomp1` |
-| 缺 `-x` 文件仍 exit **0** | `xconfig: … File was not found` | 改路径；**勿**当成功 |
+| 缺 `-x` 文件 exit **1** | `xconfig: … File was not found` | 改路径；**勿**当成功 |
 | 无 OBS 仍扫站表后 exit **1** | iGMAS 路径空 | 见 §3.2；**勿当成功 SP3** |
 
 ## 3. 端到端（本机真跑）
@@ -100,7 +100,7 @@ BIN=~/iono_ops/GREAT_PODFLT/src/build/Bin/great_podflt
 $BIN -h                 # GREAT/POD_FLT [0.9.0] …  ；exit 0
 $BIN -V 1               # 同上版本行  ；exit 0
 $BIN -x /tmp/no_such_podflt.xml
-# → xconfig: not file read /tmp/no_such_podflt.xml File was not found  ；exit 0（注意非 1）
+# → xconfig: not file read /tmp/no_such_podflt.xml File was not found  ；exit **1**
 $BIN -X | head           # 倾倒默认 XML 骨架（gen/inputs/outputs/rec…） ；exit 0
 $BIN                     # 无参：用法提示 + “check your xml file with input node…” ；exit 0
 ```
@@ -141,7 +141,7 @@ $BIN -x /tmp/podflt-smoke/xml/podflt.xml -brdm
 #   …（全球网站表逐站失败；末 brdm2100.21p 同）
 # exit 1
 ls -la /tmp/podflt-smoke/logger /tmp/podflt-smoke/result
-# logger/great_podlflt.log  14062 B   ← 注意文件名拼写 podlflt（源码硬编码）
+# logger/great_podlflt.log  ← 文件名拼写 podlflt（源码硬编码）；写作曾报 **14062** B（本 QC **未复验**该空跑）
 # result/ 空 —— 无 orb_out / out.SP3
 ```
 
@@ -245,7 +245,7 @@ POD 产品服务定位/同化；**不**替代 TEC/GIM。
 6. **二进制名 / 目录**：`great_podflt` 小写；产物在 `src/build/Bin/`；辅目录是 **`utils/`** 不是 README 的 `util/`。
 7. **静态库 vs 兄弟篇 `.so`**：本机 PODFLT 链 `liblib*.a`，一般**不必** `LD_LIBRARY_PATH`；但 **仍依赖 `libgomp.so.1`**。对照 [great-pce](./great-pce.md) 的 `libLibGREAT.so` 陷阱，勿混抄。
 8. **orbdif 预编译**：需 `chmod +x`；样例 `orbdif.xml` 含 **Win 盘符路径**，Linux 必改。
-9. **缺文件 exit 码怪**：缺 `-x` 文件 exit **0**；XML 标签错 exit **1**——脚本勿只看 0。
+9. **缺文件 exit 码**：缺 `-x` 文件 exit **1**；XML 标签错（Start-end tags mismatch）exit **1**；`-h`/`-V`/`-X`/无参 exit **0**——脚本勿只看 0。
 10. **`tropo="ture"`**：样例笔误；真跑前核对 PDF/源码期望值。
 11. **≠ PCE ≠ UPD ≠ clkcomb**：POD 定轨；PCE 估钟；UPD/IFCB 相位/频间偏差；clkcomb/SPOCC 综合多 AC。
 12. **规模门禁**：样例多日 × 数十站 × 30 s + 模糊度——缺内存/线程先砍 `<rec>` / `num_threads` / 时窗。
