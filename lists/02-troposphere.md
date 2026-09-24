@@ -154,7 +154,7 @@ ITC Water Resources 在树莓派上运行的 GNSS 反射测量实验工程，面
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GNSS-REFLECTOMETRY-PROCESSING](https://github.com/oriolcervello/GNSS-REFLECTOMETRY-PROCESSING) | GPU 加速 GNSS-R 处理 | Cuda | 17 | 🏷️ 个人社区 |
+| [GNSS-REFLECTOMETRY-PROCESSING](https://github.com/oriolcervello/GNSS-REFLECTOMETRY-PROCESSING) | GNSS-R GPU 处理：CUDA 加速反射测量试验码 | Cuda | 17 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -163,7 +163,7 @@ ITC Water Resources 在树莓派上运行的 GNSS 反射测量实验工程，面
 
 语言：Cuda · 许可：GPL-3.0 · 星标约：17 · 宿主：github
 
-面向 GNSS 反射测量的 GPU/CUDA 处理实验代码，适合做吞吐或算法加速试验。硬件与驱动依赖重；业务流水线需自行封装 I/O 与质控。
+面向 GNSS 反射测量的 GPU/CUDA 处理实验代码，适合吞吐或算法加速试验。硬件驱动与 CUDA 版本依赖重；业务化 I/O、质控与产品归档需自行封装，水位 GNSS-IR 脚本路线见 gnssIR 系列。
 
 ## GNSS-IR/RR
 
@@ -202,28 +202,28 @@ Surrey Satellite Technology 提供的 TechDemoSat-1（MERRByS）星载 GNSS-R �
 #### [gnssIR-matlab-v3](https://github.com/kristinemlarson/gnssIR_matlab_v3)  
 *🏷️ 高校实验室*
 
-语言：MATLAB · 许可：— · 星标约：30 · 宿主：github
+语言：MATLAB · 许可：MIT · 星标约：30 · 宿主：github
 
 Kristine Larson 团队发布的 GNSS 干涉反射（GNSS-IR）MATLAB 新版，用信噪比（SNR）随高度角振荡反演反射面高度，常用于水位、雪深与土壤湿度。面向已有 MATLAB 流程的地球物理与大地测量用户。边界是反射测高/环境遥感，不做对流层 ZTD；Python 产线请优先对照同作者持续维护的 gnssrefl，本仓库更偏 MATLAB 用户留存版本。
 
 #### [gnssIR-python](https://github.com/kristinemlarson/gnssIR_python)  
 *🏷️ 高校实验室*
 
-语言：Python · 许可：— · 星标约：26 · 宿主：github
+语言：Python · 许可：MIT · 星标约：26 · 宿主：github
 
 Larson 实验室较早的 GNSS-IR Python 脚本集，从 GNSS 观测提取 SNR 干涉条纹并估计反射器高度，服务水位与地表环境监测。适合想在纯脚本环境快速试验 GNSS-IR 的研究者。工程化、命令行与多星座流程弱于现维护的 gnssrefl；新项目建议直接用 gnssrefl，本库可作算法对照或旧文复现。
 
 #### [gnssrlowcost](https://github.com/purnelldj/gnssr_lowcost)  
 *🏷️ 个人社区*
 
-语言：MATLAB · 许可：— · 星标约：14 · 宿主：github
+语言：MATLAB · 许可：MIT · 星标约：14 · 宿主：github
 
 面向低成本 GNSS 硬件的反射测量分析，同时给出 MATLAB 与 Python 路径，降低 GNSS-R/IR 入门与课程实验门槛。适合教学站与原型站网。测高精度与稳定性通常不及大地型天线+gnssrefl；使用前需核对天线相位中心、多路径几何与采样率是否满足干涉条纹分辨需求。场地开阔度与多路径环境会显著影响可用弧段长度。
 
 #### [gnssr-synth](https://github.com/purnelldj/gnssr_synth)  
 *🏷️ 个人社区*
 
-语言：MATLAB · 许可：— · 星标约：11 · 宿主：github
+语言：MATLAB · 许可：MIT · 星标约：11 · 宿主：github
 
 MATLAB 工具：获取并分析 GNSS-R 水位观测，同时可生成合成 SNR，便于方法试验、误差传播与教学演示。面向反射测高与水文监测研究者。侧重水位场景与合成数据，不是覆盖雪深/土壤湿度的完整 GNSS-IR 套件；低成本接收机路线可并读同作者 gnssr_lowcost，产线级处理仍常回 gnssrefl。
 
@@ -352,16 +352,16 @@ Python 包生成斜路径干/湿延迟（STD/SWD）以及基于 GPT/VMF 的模�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [UNB3m](https://github.com/ohm1122/UNB3m) | UNB3m 中性大气延迟模型 | — | 3 | 🏷️ 个人社区 ★ |
+| [UNB3m](https://github.com/ohm1122/UNB3m) | UNB3m：无气象观测时的天顶延迟粗模型 |  | 3 | 🏷️ 个人社区 ★ |
 
 ### 详细说明
 
 #### [UNB3m](https://github.com/ohm1122/UNB3m)  
-*🏷️ 个人社区 ★*
+*🏷️ 个人社区*
 
 语言：— · 许可：— · 星标约：3 · 宿主：github
 
-UNB 系列中性大气经验模型，无实测气象时给天顶延迟粗值。适合教学与低精度先验。精度不及 VMF+数值天气模式；精密 PPP 优先 VMF3/GPT3。
+UNB 系列中性大气经验模型，在缺少实测气象时给出天顶延迟粗值。适合教学与低精度先验。精密 PPP 优先 VMF3/GPT3 等；精度上限明显低于数值天气模式产品。
 
 ## 大气模型
 

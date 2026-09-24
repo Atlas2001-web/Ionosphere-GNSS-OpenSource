@@ -74,7 +74,7 @@ u-blox 官方开源的可移植 C 库，面向 MCU/RTOS 场景提供 GNSS 与蜂
 #### [GNSSTimeServer](https://github.com/Montecri/GNSSTimeServer)  
 *🏷️ 个人社区*
 
-语言：C · 许可：— · 星标约：232 · 宿主：github
+语言：C · 许可：MIT · 星标约：232 · 宿主：github
 
 以太网/WiFi GNSS 授时服务器：以 GPS/北斗/GLONASS/Galileo 为时间源，对外提供 NTP、RDATE、PTP，硬件基于 ESP8266/ESP32 与 Arduino 生态。适合实验室、业余台站本地时间同步。精度受模块、天线与网络抖动限制，达不到电信机房原子钟等级；天线与固件选项对照上游说明。
 
@@ -115,7 +115,7 @@ Go 实现的跨平台 GNSS 工具，强调 PPS/PTP/NTP 授时、RINEX/RTCM 与�
 #### [GNSSClock](https://github.com/stevemarple/GNSS_Clock)  
 *🏷️ 个人社区*
 
-语言：C++ · 许可：— · 星标约：2 · 宿主：github
+语言：C++ · 许可：LGPL-2.1 · 星标约：2 · 宿主：github
 
 在 Arduino 上用 GNSS（GPS/GLONASS/Galileo）NMEA 语句与 PPS 秒脉冲实现时钟与守时，方便嵌入式授时和业余无线电时间基准。适合单片机爱好者与简易时频同步。功能止于时钟/授时，不含 RTK 或精密 PVT；可用星座取决于所接 GNSS 模块固件。PPS 布线与晶振稳定度影响短期守时表现。
 

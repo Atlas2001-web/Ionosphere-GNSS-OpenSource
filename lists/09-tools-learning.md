@@ -29,7 +29,7 @@ awesome 列表、源码笔记、可见性可视化、SBAS/认证等学习工具�
 #### [gnss2tws-green](https://github.com/jzshhh/gnss2tws_green)  
 *🏷️ 个人社区*
 
-语言：MATLAB · 许可：— · 星标约：33 · 宿主：github
+语言：MATLAB · 许可：GPL-3.0 · 星标约：33 · 宿主：github
 
 开源 MATLAB 工具 GNSS2TWS：利用 GNSS 测站日尺度垂直位移，经格林函数等方法推断陆地水储量（TWS）变化，服务水文大地测量。适合已有精密坐标时间序列、做气候水文交叉的研究者。不是导航定位解算器；空间平滑、负载模型与参考框架假设必须按配套论文核对。输入坐标序列质量决定反演可信度。站点分布稀疏时，反演空间分辨率会明显下降。
 
@@ -332,7 +332,7 @@ NGS 公开的 NCAT（NGS Coordinate Conversion and Transformation Tool）底层 
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [OSNMA](https://github.com/Algafix/OSNMA) | Galileo OSNMA 协议 Python 实现 | Python | 52 | 🏷️ 个人社区 |
+| [OSNMA](https://github.com/Algafix/OSNMA) | OSNMA：Galileo 抗欺骗消息认证 Python 实现 | Python | 52 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -341,7 +341,7 @@ NGS 公开的 NCAT（NGS Coordinate Conversion and Transformation Tool）底层 
 
 语言：Python · 许可：EUPL-1.2 · 星标约：52 · 宿主：github
 
-实现 Galileo 开放业务消息认证（OSNMA），用于抗欺骗研究与接收机试验。适合安全/完好性方向。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
+实现 Galileo OSNMA 开放业务消息认证，服务抗欺骗与接收机完好性试验。适合导航安全研究方向。密钥/证书与协议版本随欧盟规范更新，接入前核对上游文档，勿把过期脚本当生产基线。
 
 ## RTK网络客户端
 

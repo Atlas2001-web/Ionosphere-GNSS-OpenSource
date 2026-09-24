@@ -22,7 +22,7 @@ GNSS 与 IMU（及视觉）松/紧组合，车载与机器人户外定位。
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gici-open](https://github.com/chichengcn/gici-open) | GNSS/INS/相机紧组合开源库 GICI | C++ | 667 | 🏷️ 个人社区 核心 |
+| [gici-open](https://github.com/chichengcn/gici-open) | GICI：GNSS+INS+相机紧组合开源库 | C++ | 667 | 🏷️ 个人社区 核心 |
 | [VINS-GPS-Wheel](https://github.com/Wallong/VINS-GPS-Wheel) | VINS-Mono 融合轮速计与 GNSS（自动驾驶） | C++ | 280 | 🏷️ 个人社区 |
 | [RTK-Visual-Inertial-Navigation](https://github.com/xiaohong-huang/RTK-Visual-Inertial-Navigation) | 滑窗滤波框架下的 RTK 视觉惯性导航 | C++ | 136 | 🏷️ 个人社区 |
 | [carvig](https://github.com/Erensu/carvig) | 车载 INS/GNSS/视觉组合导航（C） | C | 120 | 🏷️ 个人社区 |
@@ -32,11 +32,11 @@ GNSS 与 IMU（及视觉）松/紧组合，车载与机器人户外定位。
 ### 详细说明
 
 #### [gici-open](https://github.com/chichengcn/gici-open)  
-*🏷️ 个人社区 核心*
+*🏷️ 个人社区*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：667 · 宿主：github
 
-多传感器紧组合库，支持 GNSS（含精密定位模式）与 INS/相机，工程结构完整。适合机器人户外定位。编译与配置复杂；测地事后处理另选 PRIDE。
+支持 GNSS（含精密定位模式）与 INS/相机的紧组合库，工程结构完整。适合机器人与户外多传感器定位。编译与配置门槛较高；纯测地事后 PPP 更常见 PRIDE，松组合入门可看 KF-GINS。
 
 #### [VINS-GPS-Wheel](https://github.com/Wallong/VINS-GPS-Wheel)  
 *🏷️ 个人社区*
@@ -77,7 +77,7 @@ GNSS 与 IMU（及视觉）松/紧组合，车载与机器人户外定位。
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [eagleye](https://github.com/MapIV/eagleye) | 基于 GNSS/IMU 的精密车载定位 | C++ | 775 | 🏷️ 个人社区 |
+| [eagleye](https://github.com/MapIV/eagleye) | eagleye：车载 GNSS/IMU 精密定位（ROS 向） | C++ | 775 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -86,7 +86,7 @@ GNSS 与 IMU（及视觉）松/紧组合，车载与机器人户外定位。
 
 语言：C++ · 许可：BSD-3-Clause · 星标约：775 · 宿主：github
 
-面向自动驾驶车辆的 GNSS/IMU 精密定位开源栈，工程案例多。适合车载 ROS 生态。测地学参考架与 PPP-AR 产品需求不同。
+面向自动驾驶车辆的 GNSS/IMU 精密定位开源栈，工程案例与 ROS 集成较多。适合车载定位联调。测地学参考架、PPP-AR 产品与事后精密处理需求不同；测地用户请另选 PRIDE/Ginan。
 
 ## FGO/GNSS-UWB
 
@@ -107,7 +107,7 @@ GNSS 与 IMU（及视觉）松/紧组合，车载与机器人户外定位。
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [KF-GINS](https://github.com/i2Nav-WHU/KF-GINS) | 基于 EKF 的 GNSS/INS 组合导航 | C++ | 1194 | 🏷️ 高校实验室 核心 |
+| [KF-GINS](https://github.com/i2Nav-WHU/KF-GINS) | KF-GINS：经典 EKF GNSS/INS（高星标教学向） | C++ | 1194 | 🏷️ 高校实验室 核心 |
 | [imu_x_fusion](https://github.com/cggos/imu_x_fusion) | 基于 ESKF/IEKF/UKF 的 IMU+GNSS/里程计松组合 | C++ | 1126 | 🏷️ 个人社区 核心 |
 | [imugpslocalization](https://github.com/ydsf16/imu_gps_localization) | 误差状态卡尔曼滤波融合 IMU 与 GPS（C++） | C++ | 734 | 🏷️ 个人社区 |
 | [OB_GINS](https://github.com/i2Nav-WHU/OB_GINS) | 基于优化的 GNSS/INS 组合导航 | C++ | 647 | 🏷️ 高校实验室 ★ 核心 |
@@ -127,11 +127,11 @@ GNSS 与 IMU（及视觉）松/紧组合，车载与机器人户外定位。
 ### 详细说明
 
 #### [KF-GINS](https://github.com/i2Nav-WHU/KF-GINS)  
-*🏷️ 高校实验室 核心*
+*🏷️ 高校实验室*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：1194 · 宿主：github
 
-经典 EKF 框架的 GNSS/INS 开源实现，文档与课程友好，星标很高。适合教学和基线实现。因子图/滑窗优化性能边界看 OB_GINS/gici。
+经典误差状态 EKF 的 GNSS/INS 开源实现，文档与示例友好，社区星标很高。适合组合导航课与基线实现。因子图/滑窗与多传感器紧组合边界请看 OB_GINS、gici；外场前务必完成 IMU 噪声与杆臂标定。
 
 #### [imu_x_fusion](https://github.com/cggos/imu_x_fusion)  
 *🏷️ 个人社区 核心*
@@ -246,7 +246,7 @@ rtklibexplorer 社区风格的松组合 GNSS/IMU Python 实现，便于配合 de
 | [GLIO](https://github.com/XikunLiu-huskit/GLIO) | GNSS/LiDAR/IMU 紧耦合连续定位 | C | 438 | 🏷️ 个人社区 |
 | [libRSF](https://github.com/TUC-ProAut/libRSF) | 面向在线定位的鲁棒传感器融合库 | C++ | 337 | 🏷️ 个人社区 |
 | [syncgpslidarimucam](https://github.com/nkliuhui/sync_gps_lidar_imu_cam) | 激光雷达-IMU-相机-GPS 硬件时间同步方案 | C++ | 252 | 🏷️ 个人社区 |
-| [GREAT-MSF](https://github.com/GREAT-WHU/GREAT-MSF) | GREAT 多传感器融合（PPP/RTK+INS 等） | C++ | 150 | 🏷️ 高校实验室 |
+| [GREAT-MSF](https://github.com/GREAT-WHU/GREAT-MSF) | GREAT-MSF：GREAT 栈多传感器融合系统 | C++ | 150 | 🏷️ 高校实验室 |
 | [GPSMilemeterIMUEKFLocation](https://github.com/gilbertz/GPS_Milemeter_IMU_EKFLocation) | GPS+里程计+罗盘 EKF 融合定位（MATLAB） | MATLAB | 89 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -291,7 +291,7 @@ rtklibexplorer 社区风格的松组合 GNSS/IMU Python 实现，便于配合 de
 
 语言：C++ · 许可：GPL-3.0 · 星标约：150 · 宿主：github
 
-GREAT 组多传感器融合系统，支持 PPP/RTK 与 INS 等组合。适合已跟 GREAT-PVT 的用户向上集成。文档跟随版本变化。
+GREAT 软件栈中的多传感器融合系统，可衔接 PPP/RTK 与 INS 等组合。适合已跟 GREAT-PVT 的用户向上集成导航。文档与依赖随版本变化；与 KF-GINS、OB_GINS 对照时重点看融合架构而非只比轨迹图。
 
 #### [GPSMilemeterIMUEKFLocation](https://github.com/gilbertz/GPS_Milemeter_IMU_EKFLocation)  
 *🏷️ 个人社区*
@@ -304,22 +304,22 @@ MATLAB 实现：以 GPS、里程计与电子罗盘为观测，用扩展卡尔曼
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnss-ins-sim](https://github.com/Aceinna/gnss-ins-sim) | GNSS+INS 轨迹与传感器仿真 | Python | 1487 | 🏷️ 个人社区 核心 |
+| [gnss-ins-sim](https://github.com/Aceinna/gnss-ins-sim) | gnss-ins-sim：轨迹与 IMU/GNSS 噪声仿真（高星标） | Python | 1487 | 🏷️ 个人社区 核心 |
 | [IndirectEKFIMUGPS](https://github.com/hgpvision/Indirect_EKF_IMU_GPS) | 间接法卡尔曼滤波 IMU/GPS 融合仿真（MATLAB） | MATLAB | 96 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [gnss-ins-sim](https://github.com/Aceinna/gnss-ins-sim)  
-*🏷️ 个人社区 核心*
+*🏷️ 个人社区*
 
 语言：Python · 许可：MIT · 星标约：1487 · 宿主：github
 
-生成运动轨迹、传感器噪声与简单融合仿真，星标很高。适合算法回归测试。真实 GNSS 信号层仿真请看 gps-sdr-sim/SignalSim。
+生成运动轨迹、传感器噪声与简单融合仿真，星标很高，便于算法回归。适合组合导航单元测试。真实射频/中频信号层仿真请看 gps-sdr-sim、SignalSim，二者层次不同。
 
 #### [IndirectEKFIMUGPS](https://github.com/hgpvision/Indirect_EKF_IMU_GPS)  
 *🏷️ 个人社区*
 
-语言：MATLAB · 许可：— · 星标约：96 · 宿主：github
+语言：MATLAB · 许可：MIT · 星标约：96 · 宿主：github
 
 MATLAB 仿真仓库：用间接法卡尔曼滤波融合 IMU 与 GPS，传感器数据由仿真生成，便于推导弹、调噪声参数与画误差曲线。适合课程推导与滤波器对照。不含真实外场驱动；落地需接真实 IMU/GNSS、重做轴系与噪声标定，并评估时间同步误差。间接法状态定义与直接法不同，对照论文阅读更顺。状态维数变化时要同步改协方差初始化。
 
