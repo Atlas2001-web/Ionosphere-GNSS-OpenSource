@@ -24,7 +24,6 @@
 > - **分析用法**：用密集网残差/keogram，勿在粗 GIM 上硬认 MSTID。
 > 图源：本仓库自制示意（非实测）。
 
-### 交付物
 ![TID 波前海岸图：δTEC 斜纹落到地理](./images/fig-tid-wavefront-coast.png)
 
 > **看图要点**
@@ -33,7 +32,7 @@
 > - **别误判**：示意残差场，不是某次实测 MSTID；勿在粗 GIM 上硬认同等细纹。
 > 图源：本仓库自制示意场 + Natural Earth 海岸线（非实测事件）。
 
-
+### 交付物
 
 1. [ ] 定义 TID / LSTID / MSTID 与尺度直觉。  
 2. [ ] 口述 AGW→中性调制→δTEC。  
