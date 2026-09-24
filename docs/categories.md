@@ -6,91 +6,95 @@
 
 ## 来源标记（provenance）
 
+每条项目在 `PROJECTS.json` 中带有 `provenance` 字段，列表里显示为徽章：
+
 | 值 | 徽章 | 含义 |
 |---|---|---|
-| `official` | 🏷️ 官方 | 机构/国家实验室/国际联盟官网发行 |
-| `academic_lab` | 🏷️ 高校实验室 | 大学或研究所课题组（非主管部门官网） |
-| `personal_community` | 🏷️ 个人社区 | 个人、小团队或公司开源档 |
+| `official` | 🏷️ 官方 | 政府机构、国家实验室、国际联盟或官方服务站点维护的发行（如 ESA/GSC、BKG、NOAA/NGS、GSI、IGS 工具、TU Wien VMF、GFZ、EarthScope/UNAVCO 等） |
+| `academic_lab` | 🏷️ 高校实验室 | 大学或研究所课题组发布、但并非国家测绘/航天主管部门官网的软件（如 UPC gAGE、武大 GREAT、CU Boulder SoftGPS 配套页等） |
+| `personal_community` | 🏷️ 个人社区 | 个人开发者、小型社区团队或公司开源档（含 Anubis Free、多数 GitHub 个人仓等） |
 
-`host`：`github` / `gitlab` / `sourceforge` / `official_site` / `other`。有官方站时优先收录官方 URL。
+另有 `host` 字段标明托管位置：`github` / `gitlab` / `sourceforge` / `official_site` / `other`。
+
+> 同一上游若存在 GitHub 镜像，目录优先保留**官方站点** URL，并在分析中注明镜像。
 
 ## `ionosphere` — 电离层
 
-电离层电子含量与扰动：STEC/VTEC、GIM、IRI/NeQuick、ROTI/闪烁与层析。
+研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
-- 列表：[`lists/01-ionosphere.md`](../lists/01-ionosphere.md)
-- 条目：**236**
+- 列表文件：[`lists/01-ionosphere.md`](../lists/01-ionosphere.md)
+- 当前条目数：**238**
 
 ## `troposphere` — 对流层
 
-中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT、PWV、GNSS-IR。
+中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
-- 列表：[`lists/02-troposphere.md`](../lists/02-troposphere.md)
-- 条目：**32**
+- 列表文件：[`lists/02-troposphere.md`](../lists/02-troposphere.md)
+- 当前条目数：**33**
 
 ## `gnss-data` — GNSS 数据与格式
 
-RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka、质检与 IGS 产品下载。
+RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
-- 列表：[`lists/03-gnss-data.md`](../lists/03-gnss-data.md)
-- 条目：**111**
+- 列表文件：[`lists/03-gnss-data.md`](../lists/03-gnss-data.md)
+- 当前条目数：**111**
 
 ## `gnss-positioning` — 精密定位
 
-SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 与因子图定位。
+SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
-- 列表：[`lists/04-gnss-positioning.md`](../lists/04-gnss-positioning.md)
-- 条目：**82**
+- 列表文件：[`lists/04-gnss-positioning.md`](../lists/04-gnss-positioning.md)
+- 当前条目数：**83**
 
 ## `orbit-clock` — 轨道与钟差
 
-精密轨道、钟差与 UPD/OSB；多数能力在大型套件内，本类保持精简。
+精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。
 
-- 列表：[`lists/05-orbit-clock.md`](../lists/05-orbit-clock.md)
-- 条目：**13**
+- 列表文件：[`lists/05-orbit-clock.md`](../lists/05-orbit-clock.md)
+- 当前条目数：**13**
 
 ## `navigation-ins` — 导航
 
-GNSS 与 IMU（及视觉）松/紧组合，车载与机器人户外定位。
+GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 
-- 列表：[`lists/06-navigation-ins.md`](../lists/06-navigation-ins.md)
-- 条目：**59**
+- 列表文件：[`lists/06-navigation-ins.md`](../lists/06-navigation-ins.md)
+- 当前条目数：**59**
 
 ## `gnss-sdr` — 软件接收机与信号
 
-从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控。
+从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。
 
-- 列表：[`lists/07-gnss-sdr.md`](../lists/07-gnss-sdr.md)
-- 条目：**59**
+- 列表文件：[`lists/07-gnss-sdr.md`](../lists/07-gnss-sdr.md)
+- 当前条目数：**59**
 
 ## `mobile-apps` — 移动与嵌入式应用
 
-手机/嵌入式 GNSS 测试、原始测量记录与简易定位。
+手机/嵌入式上的 GNSS 测试、原始测量记录与简易定位。
 
-- 列表：[`lists/08-mobile-apps.md`](../lists/08-mobile-apps.md)
-- 条目：**16**
+- 列表文件：[`lists/08-mobile-apps.md`](../lists/08-mobile-apps.md)
+- 当前条目数：**18**
 
 ## `tools-learning` — 学习资源与工具
 
-awesome 列表、源码笔记、可见性可视化、SBAS/认证等学习工具。
+awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
-- 列表：[`lists/09-tools-learning.md`](../lists/09-tools-learning.md)
-- 条目：**31**
+- 列表文件：[`lists/09-tools-learning.md`](../lists/09-tools-learning.md)
+- 当前条目数：**31**
 
 ## `gnss-datasets` — GNSS 数据源
 
-RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品入口。
+需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
-- 列表：[`lists/10-gnss-datasets.md`](../lists/10-gnss-datasets.md)
-- 条目：**94**
+- 列表文件：[`lists/10-gnss-datasets.md`](../lists/10-gnss-datasets.md)
+- 当前条目数：**102**
 
 ## 与用户仓库的关系标记
 
 | 标记 | 含义 |
 |---|---|
-| 🚩 自有 / owned | 维护者自有公开仓（仅链接） |
-| 🔀 Fork / fork | 已 fork；表中仍列上游 URL |
-| ★ Star / starred | 维护者 stars 中的种子 |
-| 核心 / core | 推荐优先阅读的代表项目 |
+| 🚩 自有 / owned | 维护者自有公开仓库（仅链接，不写详细介绍） |
+| 🔀 Fork / fork | 维护者已 fork，表中仍列**上游** URL |
+| ★ Star / starred | 出现在维护者 GitHub stars 中的种子 |
+| 核心 / core | 本目录推荐优先阅读的代表性项目 |
 
-> 私有仓不会出现在公开索引中。
+> 私有仓库（如 `SH-GIM-proprietary`）**不会**出现在公开索引中。

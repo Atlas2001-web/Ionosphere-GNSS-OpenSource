@@ -1,7 +1,7 @@
 # 移动与嵌入式应用 / Mobile Apps
-> **16** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **18** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
-手机/嵌入式 GNSS 测试、原始测量记录与简易定位。
+手机/嵌入式上的 GNSS 测试、原始测量记录与简易定位。
 
 ## Android
 
@@ -42,6 +42,7 @@
 语言：Java · 许可：Apache-2.0 · 星标约：73 · 宿主：github
 
 在 Android 上从原始测量解算位置，支持 GPS/Galileo 等，便于算法上机对比。适合教学与原型 App。维护节奏一般；长期采数与设备兼容性测试仍常搭配 GPSTest 等工具。
+
 #### [PRIDE-GeoDataLogger](https://github.com/PrideLab/PRIDE-GeoDataLogger)  
 *🏷️ 高校实验室*
 
@@ -60,6 +61,7 @@ PRIDE 团队面向智能手机的多频 GNSS 与 IMU 采集工具，便于把手
 | [satpulse](https://github.com/jclark/satpulse) | 跨平台 GNSS 授时、定位与接收机配置 GUI | Go | 63 | 🏷️ 个人社区 |
 | [STM32Primer2-GNSS-Tracker](https://github.com/nemuisan/STM32Primer2_GNSS_Tracker) | STM32 Primer2 平台的 GNSS 轨迹记录器 | C | 31 | 🏷️ 个人社区 |
 | [esp32-gps](https://github.com/mrichar1/esp32-gps) | ESP32 上整合 GPS、蓝牙与 NTRIP/RTK 转发 | Python | 23 | 🏷️ 个人社区 |
+| [Cryologger-GVT](https://github.com/cryologger/glacier-velocity-tracker) | Cryologger GVT：面向 PPP 的开源冰川 GNSS 测速仪 | C++ | 19 | 🏷️ 个人社区 |
 | [GNSSClock](https://github.com/stevemarple/GNSS_Clock) | 基于 GNSS NMEA/PPS 的 Arduino 时钟 | C++ | 2 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -74,7 +76,7 @@ u-blox 官方开源的可移植 C 库，面向 MCU/RTOS 场景提供 GNSS 与蜂
 #### [GNSSTimeServer](https://github.com/Montecri/GNSSTimeServer)  
 *🏷️ 个人社区*
 
-语言：C · 许可：MIT · 星标约：232 · 宿主：github
+语言：C · 许可：— · 星标约：232 · 宿主：github
 
 以太网/WiFi GNSS 授时服务器：以 GPS/北斗/GLONASS/Galileo 为时间源，对外提供 NTP、RDATE、PTP，硬件基于 ESP8266/ESP32 与 Arduino 生态。适合实验室、业余台站本地时间同步。精度受模块、天线与网络抖动限制，达不到电信机房原子钟等级；天线与固件选项对照上游说明。
 
@@ -112,10 +114,18 @@ Go 实现的跨平台 GNSS 工具，强调 PPS/PTP/NTP 授时、RINEX/RTCM 与�
 语言：Python · 许可：— · 星标约：23 · 宿主：github
 
 在 ESP32 上把 GNSS 模块、串口/蓝牙与 NTRIP 客户端/Caster/转发串起来，方便做物联网终端或农机差分原型。适合嵌入式联调与野外低成本试验。吞吐、天线与长期稳定性弱于工业板卡；公网播发需自行处理账号与安全。
+
+#### [Cryologger-GVT](https://github.com/cryologger/glacier-velocity-tracker)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：GPL-3.0 · 星标约：19 · 宿主：github
+
+Cryologger Glacier Velocity Tracker 以 Arduino/MicroMod 与 SparkFun ZED-F9P 采集多频 GNSS，面向极地冰川日尺度流速与事后 PPP。提供组装文档与固件，GPL-3.0。是硬件+固件方案，定位解算多依赖外部 PPP 服务；恶劣环境部署需自行供电与防护。
+
 #### [GNSSClock](https://github.com/stevemarple/GNSS_Clock)  
 *🏷️ 个人社区*
 
-语言：C++ · 许可：LGPL-2.1 · 星标约：2 · 宿主：github
+语言：C++ · 许可：— · 星标约：2 · 宿主：github
 
 在 Arduino 上用 GNSS（GPS/GLONASS/Galileo）NMEA 语句与 PPS 秒脉冲实现时钟与守时，方便嵌入式授时和业余无线电时间基准。适合单片机爱好者与简易时频同步。功能止于时钟/授时，不含 RTK 或精密 PVT；可用星座取决于所接 GNSS 模块固件。PPS 布线与晶振稳定度影响短期守时表现。
 
@@ -140,6 +150,7 @@ Go 实现的跨平台 GNSS 工具，强调 PPS/PTP/NTP 授时、RINEX/RTCM 与�
 |---|---|---|---:|---|
 | [GNSS_MobileCalculator](https://github.com/RogerioDoCarmo/GNSS_MobileCalculator) | Android 原始伪距 SPS 示例 | Java | 15 | 🏷️ 个人社区 |
 | [androidGnss](https://github.com/AILocAR/androidGnss) | Android 原始 GNSS 伪距定位 MATLAB 代码 | MATLAB | 14 | 🏷️ 高校实验室 |
+| [google-gnss-logger](https://github.com/gscatto/google-gnss-logger) | google-gnss-logger：GNSS Logger 原始测量 Java 解析库 | Java | 8 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -156,3 +167,10 @@ Go 实现的跨平台 GNSS 工具，强调 PPS/PTP/NTP 授时、RINEX/RTCM 与�
 语言：MATLAB · 许可：Apache-2.0 · 星标约：14 · 宿主：github
 
 面向 Android 原始 GNSS 测量的 MATLAB 伪距定位示例与实验代码，方便在桌面端复现手机观测处理。适合课堂与算法对比。输入依赖手机端记录的原始测量文件；实时嵌入式部署需另接 Java/Kotlin 或 NDK 方案。
+
+#### [google-gnss-logger](https://github.com/gscatto/google-gnss-logger)  
+*🏷️ 个人社区*
+
+语言：Java · 许可：MIT · 星标约：8 · 宿主：github
+
+MIT 许可的 Java 库，高效解析 Android GNSS Logger 导出的原始测量与传感器事件文本格式，可配置只读所需字段。适合手机原始观测后处理管线。仓库偏库而非 App；上游 Logger 格式若变更需跟进。与已收录 GPSTest 等采集工具互补。

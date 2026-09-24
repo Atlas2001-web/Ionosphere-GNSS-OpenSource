@@ -1,7 +1,7 @@
 # GNSS 数据源 / GNSS Datasets
-> **94** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **102** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
-RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品入口。
+需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
 ## GNSS掩星/RO
 
@@ -140,6 +140,7 @@ SOPAC 侧公开文件树，常包含产品文件与辅助资料，可作为 CDDI
 | [NASA-SPDF](https://spdf.gsfc.nasa.gov/) | NASA SPDF：空间物理数据设施总入口 | data-portal | — | 🏷️ 官方 |
 | [NOAA-SWPC](https://www.swpc.noaa.gov/) | NOAA 空间天气预测中心（SWPC） | data-portal | — | 🏷️ 官方 |
 | [NOAA-SWPC-Planetary-K](https://www.swpc.noaa.gov/products/planetary-k-index) | NOAA SWPC 行星 K 指数产品 | data-portal | — | 🏷️ 官方 |
+| [NRCAN-Solar-Radio-Flux](https://www.spaceweather.gc.ca/forecast-prevision/solar-solaire/solarflux/sx-5-en.php) | NRCan 太阳射电流量：F10.7 等空间天气驱动存档 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -198,6 +199,13 @@ NASA 空间物理数据设施总入口，托管太阳风、磁层与相关日地
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 SWPC 发布的行星 K 指数产品页，便于把地磁活动快速叠加到 GNSS ROTI 或闪烁时间轴上做事件分析。与 GFZ Kp 密切相关但发布节奏与文件格式可能不同，对比研究时必须分别注明来源，避免混用造成时间轴错位。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+
+#### [NRCAN-Solar-Radio-Flux](https://www.spaceweather.gc.ca/forecast-prevision/solar-solaire/solarflux/sx-5-en.php)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Space Weather Canada 维护的太阳射电流量测量存档，提供日值、月平均与旋转平均等文本/图表，是 IRI、NeQuick 等电离层模型常用的太阳活动驱动输入。页面开放浏览下载。仅含射电通量时间序列，不含 GNSS 原始观测或全球 TEC 图产品。
 
 ## 电离层产品
 
@@ -323,6 +331,7 @@ UPC 提供的分年 IONEX 归档，包含长期时间序列以及最新快速文
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [CAS-BDsmart-Pub](https://data.bdsmart.cn/pub/) | CAS 数据发布根：DCB/GIM/SSR 等相关产品入口 | data-portal | — | 🏷️ 官方 |
+| [CDDIS-DCB-Product](https://www.earthdata.nasa.gov/data/space-geodesy-techniques/gnss/differential-code-bias-product) | CDDIS DCB：NASA 归档的 GNSS 码偏差产品入口 | data-portal | — | 🏷️ 官方 |
 | [CSNO-TARC](https://www.csno-tarc.cn/) | 中国卫星导航系统管理办公室测试评估研究中心（TARC） | data-portal | — | 🏷️ 官方 |
 | [CSNO-TARC-Differential](https://www.csno-tarc.cn/en/data/differential) | TARC 差分数据英文页 | data-portal | — | 🏷️ 官方 |
 
@@ -334,6 +343,13 @@ UPC 提供的分年 IONEX 归档，包含长期时间序列以及最新快速文
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 中科院相关 GNSS 产品的 HTTPS 发布根目录，常见子树包括多星座码偏差、全球电离层图以及实时 SSR 转存等。适合把偏差与 GIM 放在同一流水线下载。具体子目录以站点为准；论文引用请标明 CAS 产品标识、日期与文件长名。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+
+#### [CDDIS-DCB-Product](https://www.earthdata.nasa.gov/data/space-geodesy-techniques/gnss/differential-code-bias-product)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+NASA Earthdata 上的 GNSS Differential Code Bias 产品页，说明 CDDIS 归档的多分析中心 DCB/相关偏差产品用途与获取路径。TEC 校准、PPP 与多频组合常用。下载通常需 Earthdata 账号；旧 CDDIS HTML 已重定向至此。不是本地估偏软件。
 
 #### [CSNO-TARC](https://www.csno-tarc.cn/)  
 *🏷️ 官方*
@@ -458,6 +474,7 @@ COSMIC/FORMOSAT 等任务的无线电掩星数据中心门户，提供中性大�
 | [EUREF-EPN-CB](https://www.epncb.oma.be/) | EUREF EPN 中央局：欧洲参考站网数据与产品 | data-portal | — | 🏷️ 官方 核心 |
 | [EUREF-EPN-Obs-FTP](https://epncb.oma.be/ftp/obs/) | EPN 观测数据 FTP/Web 目录 | data-portal | — | 🏷️ 官方 |
 | [GA-GNSS-Data](https://data.gnss.ga.gov.au/) | Geoscience Australia GNSS 数据门户（AUSCORS 等） | data-portal | — | 🏷️ 官方 核心 |
+| [GA-GNSS-RINEX-S3](https://ga-gnss-data-rinex-v1.s3.amazonaws.com/index.html) | GA RINEX S3：澳大利亚 CORS 观测的对象存储浏览 | data-portal | — | 🏷️ 官方 |
 | [HongKong-SatRef](https://www.geodetic.gov.hk/en/satref/satref.htm) | 香港 SatRef：卫星定位参考站网介绍 | data-portal | — | 🏷️ 官方 |
 | [HongKong-SatRef-RINEX](https://www.geodetic.gov.hk/en/rinex/rinex.htm) | 香港 SatRef RINEX 数据说明与下载 | data-portal | — | 🏷️ 官方 |
 | [IGN-Geodesie](https://geodesie.ign.fr/) | 法国 IGN 大地测量门户（RGP 等相关入口） | data-portal | — | 🏷️ 官方 |
@@ -505,6 +522,13 @@ EPN 测站观测文件目录，便于按站名直接下载 RINEX，是欧洲区�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 澳大利亚地球科学局 GNSS 数据服务，覆盖澳新等区域参考站观测与相关产品的检索下载，是亚太用户重要区域网来源。旧版 ga.gov.au 深链可能失效，请优先使用本数据域名与官方 API 文档，并关注站网元数据更新。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+
+#### [GA-GNSS-RINEX-S3](https://ga-gnss-data-rinex-v1.s3.amazonaws.com/index.html)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+GA 将校验后的 CORS RINEX（含 Hatanaka/gzip）放到公开 S3 桶 ga-gnss-data-rinex-v1，提供网页对象浏览与云端批量拉取。与 SFTP/Web API 同源产品、不同通道。大流量注意对象键约定与开放/受限站权限；不是实时 NTRIP。
 
 #### [HongKong-SatRef](https://www.geodetic.gov.hk/en/satref/satref.htm)  
 *🏷️ 官方*
@@ -581,6 +605,7 @@ SIRGAS 官方网站介绍拉丁美洲及周边大地参考框架与 GNSS 站网�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [IGS-RTS](https://igs.org/rts/) | IGS 实时服务（RTS）：实时轨道钟差/SSR 流说明 | data-portal | — | 🏷️ 官方 核心 |
+| [SouthPAN](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/about-the-program/southpan) | SouthPAN：澳新 SBAS/精密定位增强官方项目页 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -590,6 +615,13 @@ SIRGAS 官方网站介绍拉丁美洲及周边大地参考框架与 GNSS 站网�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 说明 IGS 实时轨道钟差及 SSR 播发框架、参与分析中心与应用场景，面向实时 PPP 与完整性监测。本页通常不直接推送数据流，需经 BKG 等 NTRIP caster 接入。流可用性与消息版本会更新，上线前应核对挂载点表和解码库兼容性。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+
+#### [SouthPAN](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/about-the-program/southpan)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Geoscience Australia 对 Southern Positioning Augmentation Network 的官方说明页，概述面向澳新的卫星基增强与精密定位服务路线。工程用户可由此了解服务能力与入口，再链到数据中心/NTRIP 注册。本页是项目介绍而非开源解算器；具体改正流访问需按站方注册策略。
 
 ## NTRIP服务商/CRS
 
@@ -630,6 +662,7 @@ SIRGAS 官方网站介绍拉丁美洲及周边大地参考框架与 GNSS 站网�
 | [FMI-IMAGE](https://space.fmi.fi/image/) | FMI IMAGE 北欧地磁台链数据 | data-portal | — | 🏷️ 官方 |
 | [INTERMAGNET](https://www.intermagnet.org/) | INTERMAGNET 全球地磁台网数据 | data-portal | — | 🏷️ 官方 |
 | [Kyoto-WDC-Geomagnetism](https://wdc.kugi.kyoto-u.ac.jp/) | 京都 WDC：Kp/Dst 等地磁指数 | data-portal | — | 🏷️ 官方 核心 |
+| [NOAA-NGDC-Ionosphere](https://www.ngdc.noaa.gov/stp/iono/) | NGDC iono：NOAA 电离层/STP 历史产品目录 | data-portal | — | 🏷️ 官方 |
 | [OpenMadrigal](https://openmadrigal.org/) | OpenMadrigal/CEDAR 分布式空间天气数据库 | data-portal | — | 🏷️ 高校实验室 |
 | [SuperDARN-VT](https://vt.superdarn.org/) | VT SuperDARN 高频雷达/对流数据入口 | data-portal | — | 🏷️ 高校实验室 |
 | [SuperMAG](https://supermag.jhuapl.edu/) | SuperMAG 全球地磁合并数据 | data-portal | — | 🏷️ 高校实验室 |
@@ -670,6 +703,13 @@ FMI 的 IMAGE（International Monitor for Auroral Geomagnetic Effects）地磁�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 京都 WDC for Geomagnetism 提供 Kp、Dst 等经典地磁指数与相关数据服务，是空间天气与电离层扰动研究的常用外部驱动入口。门户以网页/文件服务为主；下载与引用规则见站点说明。本条收录「数据怎么拿」，不是 GNSS 观测归档。
+
+#### [NOAA-NGDC-Ionosphere](https://www.ngdc.noaa.gov/stp/iono/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+NOAA 国家地球物理数据中心的空间天气/电离层目录页，汇总 DRAP、T 指数等 STP 电离层相关历史产品链接，便于检索美方传统辅助数据。界面偏静态目录索引；近实时空间天气请优先 SWPC，RINEX/IONEX 主归档请用 CDDIS 等。
 
 #### [OpenMadrigal](https://openmadrigal.org/)  
 *🏷️ 高校实验室*
@@ -814,12 +854,20 @@ IBGE 服务数据文档中的 RBMC API（v1），提供 rinex2/rinex3 及 1 秒�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [AUSPOS](https://www.ga.gov.au/scientific-topics/positioning-navigation/geodesy/auspos) | AUSPOS：澳大利亚官方在线静态 GNSS 精密处理 | data-portal | — | 🏷️ 官方 |
 | [CSRS-PPP](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/ppp.php?locale=en) | NRCan CSRS-PPP：官方免费在线精密单点定位 | data-portal | — | 🏷️ 官方 |
 | [IBGE-PPP-API](https://servicodados.ibge.gov.br/api/docs/ppp?versao=1) | IBGE-PPP REST：巴西在线精密单点定位 API | data-portal | — | 🏷️ 官方 |
 | [NGS-OPUS](https://www.ngs.noaa.gov/OPUS/) | NGS OPUS 在线静态精密定位服务 | data-portal | — | 🏷️ 官方 |
 | [NGS-OPUS-Projects](https://geodesy.noaa.gov/OPUS-Projects/OpusProjects.shtml) | NGS OPUS Projects：多站控制网在线处理 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
+
+#### [AUSPOS](https://www.ga.gov.au/scientific-topics/positioning-navigation/geodesy/auspos)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Geoscience Australia 的 AUSPOS 免费在线上传双频静态 RINEX，返回 GDA2020/GDA94 与 ITRF 坐标报告。面向测量与科研用户做单站事后精密定位，无需自建 PPP 引擎。依赖站网与 IGS 产品时效；动态/RTK 场景请改用 NTRIP 或本地解算软件。
 
 #### [CSRS-PPP](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/ppp.php?locale=en)  
 *🏷️ 官方*
@@ -868,9 +916,17 @@ NGS Online Positioning User Service：用户上传双频静态观测，由 NGS �
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [APREF](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/geodesy/asia-pacific-reference-frame) | APREF：亚太 GNSS 参考框架官方项目与产品入口 | data-portal | — | 🏷️ 官方 |
 | [EPOS-GNSS](https://gnss-epos.eu/) | EPOS GNSS TCS：欧洲 GNSS 数据与产品门户 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
+
+#### [APREF](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/geodesy/asia-pacific-reference-frame)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+由 Geoscience Australia 担任中央局的 Asia-Pacific Reference Frame 项目页，说明区域连续运行站网、分析中心组合与 SINEX 等产品分发。科研与测绘用户可由此对接亚太 ITRF 加密框架。观测下载走 GA GNSS Data Centre；本页偏项目与产品说明，不是解算软件。
 
 #### [EPOS-GNSS](https://gnss-epos.eu/)  
 *🏷️ 官方*
@@ -884,6 +940,7 @@ EPOS GNSS Thematic Core Service 官方门户，汇总欧洲 GNSS 观测、坐标
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [EPOS-GLASS-API](https://gnssdata-epos.oca.eu/GlassFramework/) | EPOS GLASS API：欧洲 GNSS RINEX/元数据 REST | data-portal | — | 🏷️ 官方 |
+| [GA-GNSS-RINEX-API](https://data.gnss.ga.gov.au/docs/rinex-file-query/v1.0/web-api-access.html) | GA RINEX API：澳 GNSS 数据中心文件查询接口 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -893,6 +950,13 @@ EPOS GNSS Thematic Core Service 官方门户，汇总欧洲 GNSS 观测、坐标
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 由 UBI、ROB、CNRS-OCA、INGV 等在 EPOS 框架下开发的 GLASS Framework API（OCA 节点实例），提供 GNSS 台站、高采样/常规 RINEX 元数据及下载 URL 等 REST 接口（JSON/XML/CSV 等）。开发说明见 GlassFramework/about.html；Swagger 亦可经 EPOS GNSS 门户进入。适合脚本化检索欧洲节点观测而不必手工翻 FTP。账号/配额与站级许可以节点策略为准；不是定位解算器。
+
+#### [GA-GNSS-RINEX-API](https://data.gnss.ga.gov.au/docs/rinex-file-query/v1.0/web-api-access.html)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+GA GNSS Data Centre 的 RINEX 查询 API 说明：可按站名、时间窗、文件周期/类型与 RINEX 版本检索，返回含下载链接的 JSON。匿名可取开放数据，鉴权可取受限站。适合脚本化拉取澳新/APREF 相关观测；与已收录的门户首页互补，侧重程序化接口。
 
 ## IGS数据中心
 

@@ -1,7 +1,7 @@
 # 精密定位 / Precise Positioning
-> **82** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **83** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
-SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 与因子图定位。
+SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
 ## 多星座PPP
 
@@ -22,8 +22,9 @@ Automatic PPP Analysis Software-Türkiye（APAS-TR）处理 GPS/GLONASS/Galileo/
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [ginan](https://github.com/GeoscienceAustralia/ginan) | Ginan：澳大地测量局精密定位与改正数工程栈 | C++ | 343 | 🏷️ 官方 核心 |
+| [ginan](https://github.com/GeoscienceAustralia/ginan) | Geoscience Australia 精密定位与改正数工具包 | C++ | 343 | 🏷️ 官方 核心 |
 | [RTKLIB-B2b](https://github.com/UCAS-Liuchunbo/RTKLIB-B2b) | 基于 RTKLIB 的北斗 PPP-B2b 解码与定位工具包 | C | 74 | 🏷️ 高校实验室 核心 |
+| [Virtual-Network-DGNSS](https://github.com/Azurehappen/Virtual-Network-DGNSS-Project) | VN-DGNSS：PPP/SSR 驱动的开源虚拟基站差分 | C++ | 39 | 🏷️ 高校实验室 |
 | [NavDecoder](https://github.com/NavSesne/NavDecoder) | 解码 PPP-B2b 与 Galileo HAS 并做校验的工具 | Python | 37 | 🏷️ 个人社区 核心 |
 | [B2bLIB](https://github.com/GCCLib/B2bLIB) | 北斗 PPP-B2b 服务研究用的 C/C++ 库 | C | 26 | 🏷️ 个人社区 核心 |
 | [CSSR-tool](https://github.com/MayHarryWang/CSSR-tool) | 多源协同 CSSR-PPP 改正数预处理工具 | C | 7 | 🏷️ 高校实验室 |
@@ -31,11 +32,11 @@ Automatic PPP Analysis Software-Türkiye（APAS-TR）处理 GPS/GLONASS/Galileo/
 ### 详细说明
 
 #### [ginan](https://github.com/GeoscienceAustralia/ginan)  
-*🏷️ 官方*
+*🏷️ 官方 核心*
 
 语言：C++ · 许可：— · 星标约：343 · 宿主：github
 
-澳大利亚 Geoscience Australia 的现代化 C++ 精密定位与改正数工具包，工程化与服务化取向明显。适合阅读运营级 PPP/SSR 架构。编译依赖较重；完全复现其服务还需官方数据流与配置，不宜当轻量脚本库。
+澳大利亚定位项目开源工具包，支撑精密定位与改正数生成，工程化程度高。适合要看现代化 C++ 精密定位与服务化架构的人。编译依赖重；完全复现运营服务还需数据与配置。
 
 #### [RTKLIB-B2b](https://github.com/UCAS-Liuchunbo/RTKLIB-B2b)  
 *🏷️ 高校实验室 核心*
@@ -43,6 +44,13 @@ Automatic PPP Analysis Software-Türkiye（APAS-TR）处理 GPS/GLONASS/Galileo/
 语言：C · 许可：— · 星标约：74 · 宿主：github
 
 基于 RTKLIB 改造的北斗 PPP-B2b 解码与定位工具包，填补开源社区在 B2b 实操链路上的缺口。适合对照 ICD 评估收敛、精度与可用性。可与 floating0516/RTPPP_B2b、GCCLib/B2bLIB、NavDecoder 并列试验；注意电文版本、接收机原始流格式与许可声明是否满足你的使用场景。
+
+#### [Virtual-Network-DGNSS](https://github.com/Azurehappen/Virtual-Network-DGNSS-Project)  
+*🏷️ 高校实验室*
+
+语言：C++ · 许可：GPL-3.0 · 星标约：39 · 宿主：github
+
+加州大学河滨分校相关团队开源的虚拟网络差分 GNSS：服务端消费 SSR，向客户端输出虚拟参考站 RTCM OSR（GPS L1/BDS B1/Galileo E1），免建物理基站。面向车道级/车辆定位研究。依赖实时 SSR 源与 Ubuntu 构建；不是传统 CORS 网。GPL-3.0。
 
 #### [NavDecoder](https://github.com/NavSesne/NavDecoder)  
 *🏷️ 个人社区 核心*
@@ -156,7 +164,7 @@ Glenn MacGougan 等维护的 Essential GNSS Project，提供 RINEX 2.x 解码、
 | [raPPPid](https://github.com/TUW-VieVS/raPPPid) | 维也纳 VieVS 的 PPP 模块 raPPPid | MATLAB | 149 | 🏷️ 个人社区 核心 |
 | [GAMP_PPPH](https://github.com/zhufengGNSS/GAMP_PPPH) | 多星座 PPP 源码（GAMP 相关整理） | — | 78 | 🏷️ 高校实验室 ★ |
 | [GPSPACE](https://github.com/CGS-GIS/GPSPACE) | 加拿大 NRCan GPSPACE PPP Fortran 程序 | Fortran | 58 | 🏷️ 个人社区 |
-| [PPPLib](https://github.com/yxw027/PPPLib) | PPPLib：开源 PPP 状态估计与资源管理库 |  | 49 | 🏷️ 高校实验室 |
+| [PPPLib](https://github.com/yxw027/PPPLib) | 精密单点定位库 PPPLib | — | 49 | 🏷️ 高校实验室 |
 | [PPP](https://github.com/XiaoGongWei/PPP) | 静态 PPP 相关 C++ 实现（MG-APP 作者相关） | C++ | 23 | 🏷️ 高校实验室 |
 | [PPPH-UAV](https://github.com/BerkayBahadur/PPPH-UAV) | 面向无人机摄影测量的 GNSS PPP 处理（MATLAB） | MATLAB | 14 | 🏷️ 个人社区 |
 | [RTPPP_B2b](https://github.com/floating0516/RTPPP_B2b) | 北斗 PPP-B2b 改正数解码与实时 PPP 接口 | C | 10 | 🏷️ 个人社区 核心 |
@@ -191,7 +199,7 @@ NRCan 公开的 PPP Fortran 代码，历史与官方 CSRS-PPP 服务同源脉络
 
 语言：— · 许可：— · 星标约：49 · 宿主：github
 
-结构清晰的开源 PPP 库，便于阅读状态估计与资源管理代码。适合课程设计与二次开发起点。社区体量小于 PRIDE/Ginan/RTKLIB；模糊度固定与多星座完备性请以实测和文档为准。
+开源 PPP 库，便于阅读 PPP 状态估计与资源管理结构。适合课程设计与二次开发起点。社区体量小于 PRIDE/RTKLIB；功能完整性以实测为准。
 
 #### [PPP](https://github.com/XiaoGongWei/PPP)  
 *🏷️ 高校实验室*
@@ -282,6 +290,7 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 语言：C++ · 许可：GPL-3.0 · 星标约：244 · 宿主：github
 
 格拉茨工业大学 ITSG 背景的 GROOPS，覆盖重力场恢复、GNSS 处理与轨道确定，含 GUI 与 MPI 并行。适合大地测量联合反演与科研计算。学习曲线陡；纯导航 RTK/PPP-AR 工程请优先专用套件。
+
 #### [GARPOS](https://github.com/s-watanabe-jhod/garpos)  
 *🏷️ 官方*
 
@@ -501,7 +510,7 @@ rtk-rs/nav-solutions 系精密定位解算，与 rinex 库同一生态，AGPL。
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [goGPS_Java](https://github.com/goGPS-Project/goGPS_Java) | goGPS Java：JVM 可读的 GNSS 观测处理库 | Java | 66 | 🏷️ 高校实验室 |
+| [goGPS_Java](https://github.com/goGPS-Project/goGPS_Java) | goGPS Java 观测处理库 | Java | 66 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -510,7 +519,7 @@ rtk-rs/nav-solutions 系精密定位解算，与 rinex 库同一生态，AGPL。
 
 语言：Java · 许可：— · 星标约：66 · 宿主：github
 
-goGPS 家族的 Java 实现，便于嵌进 JVM/Android 相关应用。算法气质接近 MATLAB 版但生态不同。算法试验仍有人偏 MATLAB；服务器集成或移动端可优先考虑本库。
+goGPS 的 Java 实现，便于嵌进 JVM 应用。功能气质同 MATLAB 版但生态不同。移动端/服务器集成可考虑；算法试验仍有人偏 MATLAB 版。
 
 ## 相对定位/PPP
 
@@ -546,16 +555,16 @@ goGPS 家族的 Java 实现，便于嵌进 JVM/Android 相关应用。算法气�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GraphGNSSLib](https://github.com/weisongwen/GraphGNSSLib) | GraphGNSSLib：FGO 风格 GNSS/RTK 定位库 | C | 628 | 🏷️ 个人社区 核心 |
+| [GraphGNSSLib](https://github.com/weisongwen/GraphGNSSLib) | 因子图优化的 GNSS 定位与 RTK | C | 628 | 🏷️ 个人社区 核心 |
 
 ### 详细说明
 
 #### [GraphGNSSLib](https://github.com/weisongwen/GraphGNSSLib)  
-*🏷️ 个人社区*
+*🏷️ 个人社区 核心*
 
 语言：C · 许可：— · 星标约：628 · 宿主：github
 
-用因子图做 GNSS 定位与 RTK，把现代图优化引入经典差分流程。适合研究城市峡谷鲁棒性与 FGO+GNSS。传统基站网运维、播发与计费不是其主场；工程选型可与 RTKLIB、gici 对照。
+用因子图做 GNSS 定位/RTK 的开源包，把现代图优化引入经典差分定位。适合研究 FGO+GNSS、城市峡谷鲁棒性。传统基站网 RTK 运维流程不是其主场。
 
 ## PVT/精密定位
 
@@ -691,7 +700,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [MG_APP](https://github.com/XiaoGongWei/MG_APP) | MG-APP：GPS Solutions 论文配套多 GNSS 定位软件 | C++ | 98 | 🏷️ 高校实验室 |
+| [MG_APP](https://github.com/XiaoGongWei/MG_APP) | MG-APP 多 GNSS 精密定位应用（论文配套） | C++ | 98 | 🏷️ 高校实验室 |
 | [QuadSPP](https://github.com/hdkarimi/QuadSPP) | 多星座标准单点定位（SPP）实现 | C | 14 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -701,7 +710,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 语言：C++ · 许可：— · 星标约：98 · 宿主：github
 
-与 GPS Solutions 论文配套的多 GNSS 精密定位软件，方便对照文章设置与结果。适合学术复现与方法对比。工程支持与版本节奏取决于作者维护；生产级 PPP-AR 更常见 PRIDE、Ginan、RTKLIB 生态。
+与 GPS Solutions 论文配套的多 GNSS 定位软件，便于对照文章复现。适合学术复现。工程支持与持续更新取决于作者精力。
 
 #### [QuadSPP](https://github.com/hdkarimi/QuadSPP)  
 *🏷️ 个人社区*

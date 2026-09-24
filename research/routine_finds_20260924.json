@@ -1,0 +1,282 @@
+[
+  {
+    "name": "AUSPOS",
+    "url": "https://www.ga.gov.au/scientific-topics/positioning-navigation/geodesy/auspos",
+    "desc_zh": "澳大利亚地球科学局在线静态 GPS/GNSS 精密处理服务",
+    "analysis_zh": "Geoscience Australia 的 AUSPOS 免费在线上传双频静态 RINEX，返回 GDA2020/GDA94 与 ITRF 坐标报告。面向测量与科研用户做单站事后精密定位，无需自建 PPP 引擎。依赖站网与 IGS 产品时效；动态/RTK 场景请改用 NTRIP 或本地解算软件。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "在线解算",
+    "markers": [
+      "routine-2026-09-24"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "AUSPOS：澳大利亚官方在线静态 GNSS 精密处理"
+  },
+  {
+    "name": "APREF",
+    "url": "https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/geodesy/asia-pacific-reference-frame",
+    "desc_zh": "亚太参考框架 APREF：区域连续 GNSS 网与坐标产品入口",
+    "analysis_zh": "由 Geoscience Australia 担任中央局的 Asia-Pacific Reference Frame 项目页，说明区域连续运行站网、分析中心组合与 SINEX 等产品分发。科研与测绘用户可由此对接亚太 ITRF 加密框架。观测下载走 GA GNSS Data Centre；本页偏项目与产品说明，不是解算软件。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "国际联盟",
+    "markers": [
+      "routine-2026-09-24"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "APREF：亚太 GNSS 参考框架官方项目与产品入口"
+  },
+  {
+    "name": "GA-GNSS-RINEX-API",
+    "url": "https://data.gnss.ga.gov.au/docs/rinex-file-query/v1.0/web-api-access.html",
+    "desc_zh": "Geoscience Australia RINEX 文件查询 Web API 文档",
+    "analysis_zh": "GA GNSS Data Centre 的 RINEX 查询 API 说明：可按站名、时间窗、文件周期/类型与 RINEX 版本检索，返回含下载链接的 JSON。匿名可取开放数据，鉴权可取受限站。适合脚本化拉取澳新/APREF 相关观测；与已收录的门户首页互补，侧重程序化接口。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "数据接口",
+    "markers": [
+      "routine-2026-09-24"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "GA RINEX API：澳 GNSS 数据中心文件查询接口"
+  },
+  {
+    "name": "GA-GNSS-RINEX-S3",
+    "url": "https://ga-gnss-data-rinex-v1.s3.amazonaws.com/index.html",
+    "desc_zh": "Geoscience Australia CORS RINEX 的公开 S3 浏览镜像",
+    "analysis_zh": "GA 将校验后的 CORS RINEX（含 Hatanaka/gzip）放到公开 S3 桶 ga-gnss-data-rinex-v1，提供网页对象浏览与云端批量拉取。与 SFTP/Web API 同源产品、不同通道。大流量注意对象键约定与开放/受限站权限；不是实时 NTRIP。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "CORS区域网",
+    "markers": [
+      "routine-2026-09-24"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "GA RINEX S3：澳大利亚 CORS 观测的对象存储浏览"
+  },
+  {
+    "name": "SouthPAN",
+    "url": "https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/about-the-program/southpan",
+    "desc_zh": "澳新南方定位增强网 SouthPAN：SBAS/PPP 增强官方介绍",
+    "analysis_zh": "Geoscience Australia 对 Southern Positioning Augmentation Network 的官方说明页，概述面向澳新的卫星基增强与精密定位服务路线。工程用户可由此了解服务能力与入口，再链到数据中心/NTRIP 注册。本页是项目介绍而非开源解算器；具体改正流访问需按站方注册策略。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "实时流",
+    "markers": [
+      "routine-2026-09-24"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "SouthPAN：澳新 SBAS/精密定位增强官方项目页"
+  },
+  {
+    "name": "CDDIS-DCB-Product",
+    "url": "https://www.earthdata.nasa.gov/data/space-geodesy-techniques/gnss/differential-code-bias-product",
+    "desc_zh": "NASA Earthdata/CDDIS：GNSS 差分码偏差（DCB）产品说明与获取",
+    "analysis_zh": "NASA Earthdata 上的 GNSS Differential Code Bias 产品页，说明 CDDIS 归档的多分析中心 DCB/相关偏差产品用途与获取路径。TEC 校准、PPP 与多频组合常用。下载通常需 Earthdata 账号；旧 CDDIS HTML 已重定向至此。不是本地估偏软件。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "偏差产品",
+    "markers": [
+      "routine-2026-09-24"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "CDDIS DCB：NASA 归档的 GNSS 码偏差产品入口"
+  },
+  {
+    "name": "NRCAN-Solar-Radio-Flux",
+    "url": "https://www.spaceweather.gc.ca/forecast-prevision/solar-solaire/solarflux/sx-5-en.php",
+    "desc_zh": "加拿大自然资源部：太阳射电流量（含 F10.7）历史存档",
+    "analysis_zh": "Space Weather Canada 维护的太阳射电流量测量存档，提供日值、月平均与旋转平均等文本/图表，是 IRI、NeQuick 等电离层模型常用的太阳活动驱动输入。页面开放浏览下载。仅含射电通量时间序列，不含 GNSS 原始观测或全球 TEC 图产品。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "地磁空间天气",
+    "markers": [
+      "routine-2026-09-24"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "NRCan 太阳射电流量：F10.7 等空间天气驱动存档"
+  },
+  {
+    "name": "NOAA-NGDC-Ionosphere",
+    "url": "https://www.ngdc.noaa.gov/stp/iono/",
+    "desc_zh": "NOAA NGDC：电离层相关 STP 数据目录（历史产品入口）",
+    "analysis_zh": "NOAA 国家地球物理数据中心的空间天气/电离层目录页，汇总 DRAP、T 指数等 STP 电离层相关历史产品链接，便于检索美方传统辅助数据。界面偏静态目录索引；近实时空间天气请优先 SWPC，RINEX/IONEX 主归档请用 CDDIS 等。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "空间天气辅助",
+    "markers": [
+      "routine-2026-09-24"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "NGDC iono：NOAA 电离层/STP 历史产品目录"
+  },
+  {
+    "name": "RMextract",
+    "url": "https://github.com/lofar-astron/RMextract",
+    "desc_zh": "ASTRON：从 GPS/WMM 提取 TEC 与法拉第旋转量（RMextract）",
+    "analysis_zh": "荷兰 ASTRON 长期使用的 RMextract，面向射电干涉测量从 GPS TEC 与地磁模型估计旋转量度等。仓库注明已被 Spinifex 继任且不再积极开发，但仍广泛出现在文献与旧流程中。适合对照复现；新项目优先 Spinifex。许可 GPL-3.0。",
+    "language": "C",
+    "license": "GPL-3.0",
+    "category": "ionosphere",
+    "subcategory": "电离层工具",
+    "markers": [
+      "routine-2026-09-24"
+    ],
+    "stars_approx": 36,
+    "source": "routine-finds-20260924",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "official",
+    "one_liner_zh": "RMextract：ASTRON 射电天文 TEC/RM 经典工具（已继任）"
+  },
+  {
+    "name": "ocbpy",
+    "url": "https://github.com/aburrell/ocbpy",
+    "desc_zh": "极盖边界自适应坐标系与磁坐标转换 Python 库",
+    "analysis_zh": "与 apexpy 同作者体系的 ocbpy，把观测转换到基于极盖边界（OCB）的自适应磁坐标，便于高纬电离层与磁层统计研究。许可 BSD-3-Clause。主要服务空间物理坐标变换，不直接读取 RINEX 或做 TEC 反演；常与极光电集流等数据集联用。",
+    "language": "Python",
+    "license": "BSD-3-Clause",
+    "category": "ionosphere",
+    "subcategory": "工具",
+    "markers": [
+      "routine-2026-09-24"
+    ],
+    "stars_approx": 11,
+    "source": "routine-finds-20260924",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "academic_lab",
+    "one_liner_zh": "ocbpy：极盖边界自适应磁坐标转换库"
+  },
+  {
+    "name": "hwm14",
+    "url": "https://github.com/gemini3d/hwm14",
+    "desc_zh": "NRL HWM14 水平风场模型的 CMake/Fortran 开源构建",
+    "analysis_zh": "gemini3d 维护的 NRL Horizontal Wind Model 2014 可构建库，用 CMake 生成 libhwm14，供上层大气/电离层耦合与轨迹仿真调用。Apache-2.0。是中性风经验模型而非 GNSS 处理软件；旧 HWM93 包装仓已归档，新集成优先此仓。",
+    "language": "Fortran",
+    "license": "Apache-2.0",
+    "category": "troposphere",
+    "subcategory": "大气模型",
+    "markers": [
+      "routine-2026-09-24"
+    ],
+    "stars_approx": 7,
+    "source": "routine-finds-20260924",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "academic_lab",
+    "one_liner_zh": "hwm14：NRL 水平风场模型开源 CMake 构建"
+  },
+  {
+    "name": "Virtual-Network-DGNSS",
+    "url": "https://github.com/Azurehappen/Virtual-Network-DGNSS-Project",
+    "desc_zh": "UCR：用 PPP/SSR 生成全球虚拟基站 RTCM OSR 的开源 VN-DGNSS",
+    "analysis_zh": "加州大学河滨分校相关团队开源的虚拟网络差分 GNSS：服务端消费 SSR，向客户端输出虚拟参考站 RTCM OSR（GPS L1/BDS B1/Galileo E1），免建物理基站。面向车道级/车辆定位研究。依赖实时 SSR 源与 Ubuntu 构建；不是传统 CORS 网。GPL-3.0。",
+    "language": "C++",
+    "license": "GPL-3.0",
+    "category": "gnss-positioning",
+    "subcategory": "PPP/改正数",
+    "markers": [
+      "routine-2026-09-24"
+    ],
+    "stars_approx": 39,
+    "source": "routine-finds-20260924",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "academic_lab",
+    "one_liner_zh": "VN-DGNSS：PPP/SSR 驱动的开源虚拟基站差分"
+  },
+  {
+    "name": "google-gnss-logger",
+    "url": "https://github.com/gscatto/google-gnss-logger",
+    "desc_zh": "解析 Google GNSS Logger 原始测量与传感器日志的 Java 库",
+    "analysis_zh": "MIT 许可的 Java 库，高效解析 Android GNSS Logger 导出的原始测量与传感器事件文本格式，可配置只读所需字段。适合手机原始观测后处理管线。仓库偏库而非 App；上游 Logger 格式若变更需跟进。与已收录 GPSTest 等采集工具互补。",
+    "language": "Java",
+    "license": "MIT",
+    "category": "mobile-apps",
+    "subcategory": "原始测量",
+    "markers": [
+      "routine-2026-09-24"
+    ],
+    "stars_approx": 8,
+    "source": "routine-finds-20260924",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "google-gnss-logger：GNSS Logger 原始测量 Java 解析库"
+  },
+  {
+    "name": "Cryologger-GVT",
+    "url": "https://github.com/cryologger/glacier-velocity-tracker",
+    "desc_zh": "开源低成本冰川流速观测仪：Arduino + u-blox F9P 面向 PPP",
+    "analysis_zh": "Cryologger Glacier Velocity Tracker 以 Arduino/MicroMod 与 SparkFun ZED-F9P 采集多频 GNSS，面向极地冰川日尺度流速与事后 PPP。提供组装文档与固件，GPL-3.0。是硬件+固件方案，定位解算多依赖外部 PPP 服务；恶劣环境部署需自行供电与防护。",
+    "language": "C++",
+    "license": "GPL-3.0",
+    "category": "mobile-apps",
+    "subcategory": "嵌入式",
+    "markers": [
+      "routine-2026-09-24"
+    ],
+    "stars_approx": 19,
+    "source": "routine-finds-20260924",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "Cryologger GVT：面向 PPP 的开源冰川 GNSS 测速仪"
+  }
+]

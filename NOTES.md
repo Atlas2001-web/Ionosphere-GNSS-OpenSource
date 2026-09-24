@@ -273,3 +273,10 @@
 - 当前条目：**733**
 - 分类计数：{'ionosphere': 236, 'troposphere': 32, 'gnss-data': 111, 'gnss-positioning': 82, 'orbit-clock': 13, 'navigation-ins': 59, 'gnss-sdr': 59, 'mobile-apps': 16, 'tools-learning': 31, 'gnss-datasets': 94}
 - 详见 `research/routine_finds_20260923b.json`
+
+## 例行检索补录（2026-09-24）
+
+- 新增 **14** 条（AUSPOS/APREF/GA-RINEX-API/SouthPAN/CDDIS-DCB/RMextract/ocbpy/VN-DGNSS 等）
+- 当前条目：**747**
+- 分类计数：{'ionosphere': 238, 'troposphere': 33, 'gnss-data': 111, 'gnss-positioning': 83, 'orbit-clock': 13, 'navigation-ins': 59, 'gnss-sdr': 59, 'mobile-apps': 18, 'tools-learning': 31, 'gnss-datasets': 102}
+- 详见 `research/routine_finds_20260924.json`

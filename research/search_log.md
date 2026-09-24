@@ -289,3 +289,11 @@
 - Niches targeted after morning portal-heavy pass: ionosphere analysis (GRITI/spinifex), navigation-ins gaps (OpenVINS/MINS), GNSS-A (GARPOS), LEO-FGO, SDR GUI sim, NMEA parser, NOAA NCN API + CORS AWS NODD, SWEPOS, RENAG, UPC Chapman TOMION rapid
 - Skipped notable: RMextract (superseded by spinifex; still cited but redundant this pass), OASIS/IonoMoni/PyTECGg/gnss-tec already listed, toRINEX (no license), jancelin/RtkGps (fork), lf7817/rtk (thin/no strong GNSS raw path), NequickG (no license), gpredict (sat tracking, weaker catalog fit), piksi_tools/ublox_utils (optional), google-gnss-logger (stale alpha), SONEL already listed, CLASS CORS portal egress fail
 
+## Routine pass 2026-09-24
+
+- Catalog size before: **733**; after merge: **747** (+14)
+- Finds file: `research/routine_finds_20260924.json`
+- Method: `gh api search/repositories` + WebSearch for AUSPOS/APREF/SouthPAN/DCB/TrigNet niches; `curl -sI -L` / `gh api repos/...` live checks; dedup vs PROJECTS.json
+- Focus after 20260923b: AU agency portals (AUSPOS/APREF/RINEX API/S3/SouthPAN), CDDIS DCB Earthdata page, NRCan F10.7, NGDC iono dir, RMextract/ocbpy/hwm14, VN-DGNSS, phone/embedded GNSS (google-gnss-logger, Cryologger-GVT)
+- Skipped: TrigNet (egress unreachable), MG_APP (unclear/mixed licence + stale), RawMeaLogger/PyScint (no license), GalileoHack (optional hackathon), gpredict (sat tracking), ppp-tools already listed, SONEL/scintkit/OASIS already listed, ntrip.data.gnss.ga.gov.au HTTP 501 from box
+
