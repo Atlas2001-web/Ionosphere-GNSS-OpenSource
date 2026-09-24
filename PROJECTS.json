@@ -5,18 +5,18 @@
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
   "generated": "2026-09-24",
-  "project_count": 955,
+  "project_count": 969,
   "counts_by_category": {
+    "ionosphere": 281,
+    "troposphere": 44,
     "gnss-data": 133,
-    "gnss-datasets": 140,
     "gnss-positioning": 101,
-    "gnss-sdr": 76,
-    "ionosphere": 278,
-    "mobile-apps": 29,
+    "orbit-clock": 29,
     "navigation-ins": 71,
-    "orbit-clock": 27,
+    "gnss-sdr": 76,
+    "mobile-apps": 29,
     "tools-learning": 59,
-    "troposphere": 41
+    "gnss-datasets": 146
   },
   "projects": [
     {
@@ -18837,12 +18837,318 @@
       "one_liner_zh": "NASA CDDIS：GNSS 轨道与钟差产品说明页",
       "registration": "mixed",
       "registration_zh": "说明页公开；实际下载多经 Earthdata，请遵守上游条款。"
+    },
+    {
+      "name": "ReNEP-Portugal",
+      "url": "https://renep.dgterritorio.gov.pt/",
+      "desc_zh": "葡萄牙 DGT ReNEP：国家 GNSS 连续运行参考站公共服务",
+      "analysis_zh": "葡萄牙领土总局（DGT）维护的国家 GNSS 永久站网 ReNEP 门户，提供站点信息、新闻与用户注册入口，服务国家大地基准。西欧国家 CORS/NTRIP 公开入口的补充，与已收录西班牙 ERGNSS、法国 IGN 等互补。界面以葡萄牙语为主。收录前已 HTTP 核验；注册与数据条款以上游为准。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "国家CORS",
+      "markers": [
+        "routine-2026-09-24q"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924q",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "葡萄牙 DGT ReNEP：国家 GNSS 连续运行参考站公共服务",
+      "registration": "mixed",
+      "registration_zh": "门户可浏览；服务与数据下载可能需注册，请遵守上游条款。"
+    },
+    {
+      "name": "GNSSNet-Hungary",
+      "url": "https://www.gnssnet.hu/",
+      "desc_zh": "匈牙利 GNSSNet：Lechner 宇宙大地测量台实时/后处理服务门户",
+      "analysis_zh": "匈牙利 GNSS 服务中心（Lechner/宇宙大地测量台）门户，提供实时流、后处理、坐标变换与 FarmRTK 等入口。中欧国家 CORS 公开信息页，与 ASG-EUPOS、CROPOS 等区域网互补。界面以匈牙利语为主。收录前已 HTTP 200 核验；商用/注册条款以上游为准。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "国家CORS",
+      "markers": [
+        "routine-2026-09-24q"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924q",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "匈牙利 GNSSNet：Lechner 宇宙大地测量台实时/后处理服务门户",
+      "registration": "mixed",
+      "registration_zh": "门户可浏览；实时/后处理等服务通常需注册或签约。"
+    },
+    {
+      "name": "CSN-Chile-GPS",
+      "url": "https://gps.csn.uchile.cl/",
+      "desc_zh": "智利国家地震中心 CSN：GPS/GNSS 台站图与公开数据入口",
+      "analysis_zh": "智利大学物理数学学院国家地震中心（CSN）GPS 站点门户，含台站地图（RTX/外项目标注）与数据联系入口。拉美地震—大地测量联合网的公开观测入口，可补 SIRGAS/国家 CORS。学术机构运营；数据发布范围以站点说明为准。收录前已 HTTP 核验。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "区域CORS",
+      "markers": [
+        "routine-2026-09-24q"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924q",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "academic_lab",
+      "one_liner_zh": "智利国家地震中心 CSN：GPS/GNSS 台站图与公开数据入口",
+      "registration": "mixed",
+      "registration_zh": "门户与地图公开；数据获取方式请遵循 CSN 说明与引用要求。"
+    },
+    {
+      "name": "SIRGAS-Stations",
+      "url": "https://www.sirgas.org/en/stations/",
+      "desc_zh": "SIRGAS：连续运行站列表、日志与地图（DGFI-TUM 分析中心）",
+      "analysis_zh": "SIRGAS 连续运行参考站专页，提供站表、log、邮件列表与地图，由 DGFI-TUM 分析中心托管。与已收录 SIRGAS 主页互补，本页直达台站元数据。拉美区域参考框架研究常用入口。收录前已 HTTP 核验；产品与引用请遵守 SIRGAS/DGFI 规定。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "区域CORS",
+      "markers": [
+        "routine-2026-09-24q"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924q",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "SIRGAS：连续运行站列表、日志与地图（DGFI-TUM 分析中心）",
+      "registration": "open",
+      "registration_zh": "台站元数据公开浏览；周解/多年度产品请遵守上游条款。"
+    },
+    {
+      "name": "EUREF-EPN-Troposphere",
+      "url": "https://www.epncb.oma.be/_productsservices/troposphere/",
+      "desc_zh": "EUREF EPN：对流层产品与服务专页",
+      "analysis_zh": "EPN 中央局对流层产品服务页，汇总欧洲永久 GNSS 网的对流层延迟相关产品入口。与已收录 EPN 主页、观测 FTP 互补，本页专指对流层派生产品。GNSS 气象与 ZTD 对比常用。收录前已 HTTP 核验；下载与引用遵循 EPN/EUREF 规定。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "troposphere",
+      "subcategory": "EPN对流层",
+      "markers": [
+        "routine-2026-09-24q"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924q",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "EUREF EPN：对流层产品与服务专页",
+      "registration": "open",
+      "registration_zh": "产品说明公开；具体文件获取请遵守 EPN 数据政策。"
+    },
+    {
+      "name": "EUREF-EPN-Data-Access",
+      "url": "https://www.epncb.oma.be/_networkdata/data_access/",
+      "desc_zh": "EUREF EPN：观测数据访问说明与入口",
+      "analysis_zh": "EPN 网络数据访问专页，说明如何获取欧洲永久 GNSS 站观测与相关资源。与 EPN 主页、Obs FTP 互补，偏数据获取指引而非产品目录。欧洲区域 CORS/RINEX 研究常用导航页。收录前已 HTTP 核验；访问方式、镜像与配额以上游政策为准。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "区域CORS",
+      "markers": [
+        "routine-2026-09-24q"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924q",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "EUREF EPN：观测数据访问说明与入口",
+      "registration": "mixed",
+      "registration_zh": "说明页公开；部分数据源可能需账号或协议。"
+    },
+    {
+      "name": "VMF3-GNSS-Products",
+      "url": "https://vmf.geo.tuwien.ac.at/trop_products/GNSS/VMF3/",
+      "desc_zh": "TU Wien：VMF3 GNSS 对流层产品目录（EI/FC/OP）",
+      "analysis_zh": "维也纳工大 VMF 数据服务器上 VMF3 面向 GNSS 的产品目录，含 VMF3_EI/FC/OP 等子目录。与已收录 trop_products 总目录、VMF 主页互补，本 URL 直达 VMF3。精密定位与 ZTD 映射常用网格。收录前已 HTTP 核验；使用请引用 TU Wien VMF 文档。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "troposphere",
+      "subcategory": "VMF产品",
+      "markers": [
+        "routine-2026-09-24q"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924q",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "TU Wien：VMF3 GNSS 对流层产品目录（EI/FC/OP）",
+      "registration": "open",
+      "registration_zh": "目录公开下载；请遵守 TU Wien VMF 引用与使用说明。"
+    },
+    {
+      "name": "VMF1-GNSS-Products",
+      "url": "https://vmf.geo.tuwien.ac.at/trop_products/GNSS/VMF1/",
+      "desc_zh": "TU Wien：VMF1 GNSS 对流层产品目录",
+      "analysis_zh": "VMF 数据服务器上较早期的 VMF1 GNSS 产品目录，与 VMF3 目录并列。历史解算与文献复现仍常引用 VMF1。与 trop_products 总页、codes 页互补。收录前已 HTTP 核验；引用格式见 TU Wien VMF 说明。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "troposphere",
+      "subcategory": "VMF产品",
+      "markers": [
+        "routine-2026-09-24q"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924q",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "TU Wien：VMF1 GNSS 对流层产品目录",
+      "registration": "open",
+      "registration_zh": "目录公开下载；请遵守 TU Wien VMF 引用与使用说明。"
+    },
+    {
+      "name": "NOAA-EMM",
+      "url": "https://www.ngdc.noaa.gov/geomag/EMM/",
+      "desc_zh": "NOAA NCEI：增强磁模型 EMM 门户",
+      "analysis_zh": "NCEI Enhanced Magnetic Model（EMM）产品页，提供比 WMM 更精细的地壳/岩石圈磁场模型入口。与已收录 WMM 门户互补，服务航向/磁偏与空间天气地磁背景。模型系数与计算器见页内链接。收录前已 HTTP 核验；遵守 NOAA 公共域/引用惯例。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "地磁模型",
+      "markers": [
+        "routine-2026-09-24q"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924q",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NOAA NCEI：增强磁模型 EMM 门户",
+      "registration": "open",
+      "registration_zh": "门户与多数产品公开；请遵守 NOAA/NCEI 使用与引用要求。"
+    },
+    {
+      "name": "PSMSL",
+      "url": "https://www.psmsl.org/",
+      "desc_zh": "PSMSL：全球平均海平面数据服务（验潮站）",
+      "analysis_zh": "Permanent Service for Mean Sea Level 官方站，汇集全球验潮站月/年均值，并与 GLOSS 等协作。GNSS 潮位计/GNSS-IR 海面研究常与 PSMSL 序列对照。与已收录 SONEL 互补：SONEL 偏 GNSS@tide gauge，本站偏经典验潮。收录前已 HTTP 核验。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "海平面",
+      "markers": [
+        "routine-2026-09-24q"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924q",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "PSMSL：全球平均海平面数据服务（验潮站）",
+      "registration": "open",
+      "registration_zh": "数据公开下载；请遵守 PSMSL 引用与使用政策。"
+    },
+    {
+      "name": "SWPC-Solar-Synoptic-Map",
+      "url": "https://www.swpc.noaa.gov/products/solar-synoptic-map",
+      "desc_zh": "NOAA SWPC：太阳综合图（Solar Synoptic Map）产品",
+      "analysis_zh": "SWPC 太阳综合图产品页，概括日面活动区与预报相关结构，服务于空间天气值班与 GNSS/HF 影响背景。与 SDO/SOHO 成像、GOES 通量产品互补，偏综合研判图。收录前已 HTTP 核验（现域名常落在 spaceweather.gov）。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "太阳观测",
+      "markers": [
+        "routine-2026-09-24q"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924q",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NOAA SWPC：太阳综合图（Solar Synoptic Map）产品",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；请遵守 NOAA/SWPC 数据使用要求。"
+    },
+    {
+      "name": "SWPC-Solar-Geophysical-Event-Reports",
+      "url": "https://www.swpc.noaa.gov/products/solar-and-geophysical-event-reports",
+      "desc_zh": "NOAA SWPC：太阳与地球物理事件报告",
+      "analysis_zh": "SWPC Solar and Geophysical Event Reports 产品页，归档耀斑、粒子与地磁等事件报告文本。便于把 GNSS 扰动时段对齐到官方事件纪要，与 DONKI、GOES 通量互补。收录前已 HTTP 核验；文本产品多为公开。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "空间天气事件",
+      "markers": [
+        "routine-2026-09-24q"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924q",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NOAA SWPC：太阳与地球物理事件报告",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；请遵守 NOAA/SWPC 使用与引用要求。"
+    },
+    {
+      "name": "IVS-IVSOPAR",
+      "url": "https://ivsopar.obspm.fr/",
+      "desc_zh": "巴黎天文台 IVS 分析中心：大地测量 VLBI 产品门户",
+      "analysis_zh": "Observatoire de Paris 托管的 IVS 大地测量 VLBI 分析服务门户，提供 VLBI 解算与地球定向相关产品入口。轨道/参考框架与 EOP 用户可与 IERS EOP、GNSS 框架联合使用。收录前已 HTTP 核验；产品级别与引用见 IVS/巴黎天文台说明。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "orbit-clock",
+      "subcategory": "VLBI/EOP",
+      "markers": [
+        "routine-2026-09-24q"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924q",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "巴黎天文台 IVS 分析中心：大地测量 VLBI 产品门户",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；产品下载与引用请遵守 IVS/上游条款。"
+    },
+    {
+      "name": "nyx",
+      "url": "https://github.com/nyx-space/nyx",
+      "desc_zh": "Nyx：高保真快验的 Rust 宇航动力学工具库",
+      "analysis_zh": "nyx-space 维护的 Rust 宇航动力学工具包，AGPL-3.0，星标近五百。覆盖轨道传播、定轨与任务分析等，可与 GNSS 精密轨道/钟差产品对照或做仿真前端。偏航天动力学而非 GNSS 观测解算；许可证对闭源集成有约束。收录前已 gh api 核验。",
+      "language": "Rust",
+      "license": "AGPL-3.0",
+      "category": "orbit-clock",
+      "subcategory": "轨道动力学",
+      "markers": [
+        "routine-2026-09-24q"
+      ],
+      "stars_approx": 490,
+      "source": "routine-finds-20260924q",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "Nyx：高保真快验的 Rust 宇航动力学工具库"
     }
   ],
   "provenance_counts": {
-    "official": 298,
-    "academic_lab": 336,
-    "personal_community": 321
+    "official": 310,
+    "academic_lab": 337,
+    "personal_community": 322
   },
   "updated": "2026-09-24"
 }

@@ -428,3 +428,11 @@
 - Avoided: SAPOS/TrigNet unreachable pattern, IGS products near-dup (`igs.org/products`), OPUS/CODE FTP near-dups or 404, litpos/aspos/skpos/cors.ga down, scintill-ai/PyIRI/gnss_lib_py already listed, SoapyOsmo (thin ★17), NAMRIA agency home (weak GNSS specificity), SIRGAS `/es/` near EN home
 - Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
 
+## Routine pass 2026-09-24q
+
+- Catalog size before: **955**; after merge: **969** (+14)
+- Finds file: `research/routine_finds_20260924q.json`
+- Method: Europe CORS leftovers (ReNEP, GNSSNet-HU) + LatAm (CSN Chile GPS, SIRGAS stations) + EPN tropo/data-access + VMF1/VMF3 product dirs + NOAA EMM/PSMSL + SWPC synoptic/event reports + IVSOPAR VLBI + nyx orbit toolkit; `gh api`+`curl`; dedup vs PROJECTS.json and all `routine_finds_*.json`
+- Avoided: ROMPOS/HEPOS/TrigNet/AFREF unreachable or 403; OPUS/CORS/IERS-EOP near-dups; SILSO datafiles near SILSO home; CDDIS MGEX→Earthdata already listed; INEGI geodesia dead; saturated PPP/pyrtklib/Soapy stacks; gr-satellites weak GNSS fit
+- Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
+

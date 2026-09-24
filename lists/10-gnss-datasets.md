@@ -1,5 +1,5 @@
 # GNSS 数据源 / GNSS Datasets
-> **140** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **146** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
@@ -865,6 +865,8 @@ JHU/APL SuperMAG 汇集全球地磁台站并提供统一坐标与多种指数/�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [BEV-APOS](https://www.bev.gv.at/Services/Produkte/Grundlagenvermessung/APOS.html) | BEV APOS：奥地利 CORS；RINEX 事后免费 | data-portal | — | 🏷️ 官方 |
+| [CSN-Chile-GPS](https://gps.csn.uchile.cl/) | 智利国家地震中心 CSN：GPS/GNSS 台站图与公开数据入口 | data-portal | — | 🏷️ 高校实验室 |
+| [EUREF-EPN-Data-Access](https://www.epncb.oma.be/_networkdata/data_access/) | EUREF EPN：观测数据访问说明与入口 | data-portal | — | 🏷️ 官方 |
 | [GeoNet-Data-API](https://data.geonet.org.nz/) | GeoNet Data API：新西兰 GNSS RINEX 机器接口 | data-portal | — | 🏷️ 官方 |
 | [GeoNet-NZ-Geodetic](https://www.geonet.org.nz/data/types/geodetic) | 新西兰 GeoNet 大地测量/GNSS 数据 | data-portal | — | 🏷️ 官方 |
 | [IBGE-RBMC](https://www.ibge.gov.br/en/geosciences/geodetic-network/2421-rbmc.html) | 巴西 IBGE RBMC 连续 GNSS 网 | data-portal | — | 🏷️ 官方 |
@@ -877,6 +879,7 @@ JHU/APL SuperMAG 汇集全球地磁台站并提供统一坐标与多种指数/�
 | [OS-Net-DataHub](https://osdatahub.os.uk/data/positioning/osnet) | OS Net Data Hub：英国 GNSS 基准站 RINEX 产品入口 | data-portal | — | 🏷️ 官方 |
 | [PositioNZ](https://apps.linz.govt.nz/ftp/positionz/) | PositioNZ：新西兰国家 GNSS 网 RINEX FTP 入口 | data-portal | — | 🏷️ 官方 |
 | [RENAG](https://renag.resif.fr/) | RENAG：法国国家永久 GNSS 网数据与元数据门户 | data-portal | — | 🏷️ 官方 |
+| [SIRGAS-Stations](https://www.sirgas.org/en/stations/) | SIRGAS：连续运行站列表、日志与地图（DGFI-TUM 分析中心） | data-portal | — | 🏷️ 官方 |
 | [Spain-IGN-ERGNSS](https://datos-geodesia.ign.es/ERGNSS/) | 西班牙 IGN ERGNSS 公开 GNSS 数据目录 | data-portal | — | 🏷️ 官方 |
 | [SWEPOS-RINEX](https://www.lantmateriet.se/en/geodata/gps-geodesy-and-swepos/lantmateriets-doi-objects/swepos-rinex-data/) | SWEPOS：瑞典国家 GNSS 参考网 RINEX 开放数据 | data-portal | — | 🏷️ 官方 |
 | [TU-Delft-GNSS-Data](https://gnss1.tudelft.nl/) | TU Delft GNSS：高校大地测量项目观测数据服务器 | data-portal | — | 🏷️ 高校实验室 |
@@ -889,6 +892,20 @@ JHU/APL SuperMAG 汇集全球地磁台站并提供统一坐标与多种指数/�
 语言：data-portal · 许可：CC-BY-4.0 (APOS-PP) · 星标约：— · 宿主：official_site
 
 奥地利联邦计量与测量局（BEV）运营的 Austrian Positioning Service。APOS-PP 提供约 40 站 GPS/GLO/GAL/BDS 的 RINEX（1 s / 30 s）事后数据，经 Geoportal 免费下载且无需注册，许可为 CC BY 4.0；实时 RTK/DGPS/RAW 为收费或需注册服务。站网按 EUREF Class A 维护，坐标参考 ETRS89。适合中欧区域 CORS 对照与教学；实时改正不在免费范围内。英文产品说明页见 BEV 官网 English 栏目。
+
+#### [CSN-Chile-GPS](https://gps.csn.uchile.cl/)  
+*🏷️ 高校实验室*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+智利大学物理数学学院国家地震中心（CSN）GPS 站点门户，含台站地图（RTX/外项目标注）与数据联系入口。拉美地震—大地测量联合网的公开观测入口，可补 SIRGAS/国家 CORS。学术机构运营；数据发布范围以站点说明为准。收录前已 HTTP 核验。
+
+#### [EUREF-EPN-Data-Access](https://www.epncb.oma.be/_networkdata/data_access/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+EPN 网络数据访问专页，说明如何获取欧洲永久 GNSS 站观测与相关资源。与 EPN 主页、Obs FTP 互补，偏数据获取指引而非产品目录。欧洲区域 CORS/RINEX 研究常用导航页。收录前已 HTTP 核验；访问方式、镜像与配额以上游政策为准。
 
 #### [GeoNet-Data-API](https://data.geonet.org.nz/)  
 *🏷️ 官方*
@@ -973,6 +990,13 @@ Land Information New Zealand 的 PositioNZ 连续运行参考站观测 FTP/HTTPS
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 法国 RÉNAG（Réseau National GNSS permanent）官方站点，挂靠 RESIF，提供永久站信息、数据政策、可用性/质量说明、实时与产品入口（doi:10.15778/resif.rg）。科研用户可由此定位法国开放 GNSS 观测。具体下载协议与许可证以站方/RESIF 声明为准，不是解算软件。
+
+#### [SIRGAS-Stations](https://www.sirgas.org/en/stations/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+SIRGAS 连续运行参考站专页，提供站表、log、邮件列表与地图，由 DGFI-TUM 分析中心托管。与已收录 SIRGAS 主页互补，本页直达台站元数据。拉美区域参考框架研究常用入口。收录前已 HTTP 核验；产品与引用请遵守 SIRGAS/DGFI 规定。
 
 #### [Spain-IGN-ERGNSS](https://datos-geodesia.ign.es/ERGNSS/)  
 *🏷️ 官方*
@@ -1298,7 +1322,9 @@ OMNIWeb Data Explorer 表单页，可对 OMNI 太阳风/地磁等参数绘图、
 |---|---|---|---:|---|
 | [ASG-EUPOS](https://www.asgeupos.pl/) | 波兰 ASG-EUPOS：国家 GNSS 增强/参考站网门户 | data-portal | — | 🏷️ 官方 |
 | [CROPOS](https://www.cropos.hr/) | 克罗地亚 CROPOS：国家 GNSS 参考站网与实时服务 | data-portal | — | 🏷️ 官方 |
+| [GNSSNet-Hungary](https://www.gnssnet.hu/) | 匈牙利 GNSSNet：Lechner 宇宙大地测量台实时/后处理服务门户 | data-portal | — | 🏷️ 官方 |
 | [GSI-Terras-GEONET](https://terras.gsi.go.jp/) | 国土地理院 Terras：GEONET 电子基准点数据提供门户 | data-portal | — | 🏷️ 官方 |
+| [ReNEP-Portugal](https://renep.dgterritorio.gov.pt/) | 葡萄牙 DGT ReNEP：国家 GNSS 连续运行参考站公共服务 | data-portal | — | 🏷️ 官方 |
 | [SRGI-BIG-InaCORS](https://srgi.big.go.id/) | 印尼 BIG SRGI：Ina-CORS 实时/后处理与 RINEX 下载门户 | data-portal | — | 🏷️ 官方 |
 | [SWEPOS-Portal](https://swepos.lantmateriet.se/) | 瑞典 SWEPOS 服务门户（Lantmäteriet） | data-portal | — | 🏷️ 官方 |
 
@@ -1318,12 +1344,26 @@ GUGiK 运营的波兰 ASG-EUPOS 系统门户，介绍参考站网、管理中心
 
 CROatian POsitioning System 门户，介绍国家参考站网概念、差分/高精度实时服务与资费说明。南欧区域 CORS/NRTK 代表性系统。注册与服务开通按站点流程。收录前已核验可访问。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。
 
+#### [GNSSNet-Hungary](https://www.gnssnet.hu/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+匈牙利 GNSS 服务中心（Lechner/宇宙大地测量台）门户，提供实时流、后处理、坐标变换与 FarmRTK 等入口。中欧国家 CORS 公开信息页，与 ASG-EUPOS、CROPOS 等区域网互补。界面以匈牙利语为主。收录前已 HTTP 200 核验；商用/注册条款以上游为准。
+
 #### [GSI-Terras-GEONET](https://terras.gsi.go.jp/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 日本 GSI 电子基准点（GEONET）观测与解析成果的互联网提供门户，含站点移设/停用公告。与已收录 SFTP 说明、RNXCMP、RINGO 等互补，本页为数据服务主入口。日文界面为主，有英语入口提示。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。
+
+#### [ReNEP-Portugal](https://renep.dgterritorio.gov.pt/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+葡萄牙领土总局（DGT）维护的国家 GNSS 永久站网 ReNEP 门户，提供站点信息、新闻与用户注册入口，服务国家大地基准。西欧国家 CORS/NTRIP 公开入口的补充，与已收录西班牙 ERGNSS、法国 IGN 等互补。界面以葡萄牙语为主。收录前已 HTTP 核验；注册与数据条款以上游为准。
 
 #### [SRGI-BIG-InaCORS](https://srgi.big.go.id/)  
 *🏷️ 官方*
@@ -1353,3 +1393,18 @@ Lantmäteriet 的 SWEPOS 服务门户，面向瑞典 GNSS 增强服务用户入�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 ASG-EUPOS 服务站点，汇总站网服务入口，并含电离层（I95、IRIM/GRIM 等）相关链接与登录注册。偏业务服务导航而非原始 RINEX 全量镜像。使用前请核对服务条款与计费。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。
+
+## 海平面
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [PSMSL](https://www.psmsl.org/) | PSMSL：全球平均海平面数据服务（验潮站） | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [PSMSL](https://www.psmsl.org/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Permanent Service for Mean Sea Level 官方站，汇集全球验潮站月/年均值，并与 GLOSS 等协作。GNSS 潮位计/GNSS-IR 海面研究常与 PSMSL 序列对照。与已收录 SONEL 互补：SONEL 偏 GNSS@tide gauge，本站偏经典验潮。收录前已 HTTP 核验。

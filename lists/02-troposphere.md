@@ -1,5 +1,5 @@
 # 对流层 / Troposphere
-> **41** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **44** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
@@ -463,3 +463,41 @@ gemini3d 维护的 NRL Horizontal Wind Model 2014 可构建库，用 CMake 生�
 语言：Python · 许可：MIT · 星标约：7 · 宿主：github
 
 读取 GNSS 接收机输出并分析植被光学厚度（VOD）的 Python 工具，MIT 许可。属 GNSS 反射/衰减遥感旁支，与测地定位互补。星数不高但许可证清晰、主题明确。结果依赖天线环境与预处理；不替代专用 GNSS-IR 套件如 gnssrefl。适合生态/水文遥感试验。
+
+## EPN对流层
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [EUREF-EPN-Troposphere](https://www.epncb.oma.be/_productsservices/troposphere/) | EUREF EPN：对流层产品与服务专页 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [EUREF-EPN-Troposphere](https://www.epncb.oma.be/_productsservices/troposphere/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+EPN 中央局对流层产品服务页，汇总欧洲永久 GNSS 网的对流层延迟相关产品入口。与已收录 EPN 主页、观测 FTP 互补，本页专指对流层派生产品。GNSS 气象与 ZTD 对比常用。收录前已 HTTP 核验；下载与引用遵循 EPN/EUREF 规定。
+
+## VMF产品
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [VMF1-GNSS-Products](https://vmf.geo.tuwien.ac.at/trop_products/GNSS/VMF1/) | TU Wien：VMF1 GNSS 对流层产品目录 | data-portal | — | 🏷️ 官方 |
+| [VMF3-GNSS-Products](https://vmf.geo.tuwien.ac.at/trop_products/GNSS/VMF3/) | TU Wien：VMF3 GNSS 对流层产品目录（EI/FC/OP） | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [VMF1-GNSS-Products](https://vmf.geo.tuwien.ac.at/trop_products/GNSS/VMF1/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+VMF 数据服务器上较早期的 VMF1 GNSS 产品目录，与 VMF3 目录并列。历史解算与文献复现仍常引用 VMF1。与 trop_products 总页、codes 页互补。收录前已 HTTP 核验；引用格式见 TU Wien VMF 说明。
+
+#### [VMF3-GNSS-Products](https://vmf.geo.tuwien.ac.at/trop_products/GNSS/VMF3/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+维也纳工大 VMF 数据服务器上 VMF3 面向 GNSS 的产品目录，含 VMF3_EI/FC/OP 等子目录。与已收录 trop_products 总目录、VMF 主页互补，本 URL 直达 VMF3。精密定位与 ZTD 映射常用网格。收录前已 HTTP 核验；使用请引用 TU Wien VMF 文档。

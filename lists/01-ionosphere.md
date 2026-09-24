@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> **278** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **281** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -2603,6 +2603,7 @@ NCEI 的 GOES 卫星空间天气数据门户，汇总 GOES 相关存档与产品
 |---|---|---|---:|---|
 | [SDO-GSFC](https://sdo.gsfc.nasa.gov/) | NASA SDO：太阳动力学观测台主站（EUV 等日面驱动） | data-portal | — | 🏷️ 官方 |
 | [SOHO-NASA](https://sohowww.nascom.nasa.gov/) | NASA/ESA SOHO：日冕与太阳风成像/档案门户 | data-portal | — | 🏷️ 官方 |
+| [SWPC-Solar-Synoptic-Map](https://www.swpc.noaa.gov/products/solar-synoptic-map) | NOAA SWPC：太阳综合图（Solar Synoptic Map）产品 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -2620,11 +2621,19 @@ Solar Dynamics Observatory 官方门户，提供大气成像仪等日面 EUV/磁
 
 Solar and Heliospheric Observatory 主站，含 gallery、data/archive 与任务状态。LASCO 等日冕观测常用于 CME 预警，与 GNSS 电离层暴分析的上游空间天气相关。长期任务档案成熟；具体数据级产品请跟 archive 指引。与 SDO 成像互补。收录前已 HTTP 核验页面可访问。
 
+#### [SWPC-Solar-Synoptic-Map](https://www.swpc.noaa.gov/products/solar-synoptic-map)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+SWPC 太阳综合图产品页，概括日面活动区与预报相关结构，服务于空间天气值班与 GNSS/HF 影响背景。与 SDO/SOHO 成像、GOES 通量产品互补，偏综合研判图。收录前已 HTTP 核验（现域名常落在 spaceweather.gov）。
+
 ## 空间天气事件
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [CCMC-DONKI](https://kauai.ccmc.gsfc.nasa.gov/DONKI/) | CCMC DONKI：空间天气事件通知与知识库 | data-portal | — | 🏷️ 官方 |
+| [SWPC-Solar-Geophysical-Event-Reports](https://www.swpc.noaa.gov/products/solar-and-geophysical-event-reports) | NOAA SWPC：太阳与地球物理事件报告 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -2634,6 +2643,13 @@ Solar and Heliospheric Observatory 主站，含 gallery、data/archive 与任务
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 Community Coordinated Modeling Center 的 DONKI（Database Of Notifications, Knowledge, Information），检索 CME、耀斑、高能粒子等事件与通知归档。便于把 GNSS 电离层扰动时段对齐到上游太阳/行星际事件。公开检索为主；模型运行另见 CCMC。收录前已 HTTP 核验。
+
+#### [SWPC-Solar-Geophysical-Event-Reports](https://www.swpc.noaa.gov/products/solar-and-geophysical-event-reports)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+SWPC Solar and Geophysical Event Reports 产品页，归档耀斑、粒子与地磁等事件报告文本。便于把 GNSS 扰动时段对齐到官方事件纪要，与 DONKI、GOES 通量互补。收录前已 HTTP 核验；文本产品多为公开。
 
 ## 太阳可视化
 
@@ -2679,3 +2695,18 @@ Community Coordinated Modeling Center 的 DONKI（Database Of Notifications, Kno
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 SWPC GOES Proton Flux 产品页，监测太阳高能质子事件（SPE）。质子暴可影响极区 HF/GNSS 与卫星单粒子效应，是电离层/空间天气分析中与 X 射线耀斑、太阳风并列的上游输入。与已收录 GOES X-ray、NGDC GOES 归档互补，偏实时通量产品。收录前已 HTTP 核验。
+
+## 地磁模型
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [NOAA-EMM](https://www.ngdc.noaa.gov/geomag/EMM/) | NOAA NCEI：增强磁模型 EMM 门户 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [NOAA-EMM](https://www.ngdc.noaa.gov/geomag/EMM/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+NCEI Enhanced Magnetic Model（EMM）产品页，提供比 WMM 更精细的地壳/岩石圈磁场模型入口。与已收录 WMM 门户互补，服务航向/磁偏与空间天气地磁背景。模型系数与计算器见页内链接。收录前已 HTTP 核验；遵守 NOAA 公共域/引用惯例。

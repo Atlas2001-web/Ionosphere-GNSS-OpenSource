@@ -395,3 +395,10 @@
 - 当前条目：**954**
 - 分类计数：{'ionosphere': 278, 'troposphere': 41, 'gnss-data': 132, 'gnss-positioning': 101, 'orbit-clock': 27, 'navigation-ins': 71, 'gnss-sdr': 76, 'mobile-apps': 29, 'tools-learning': 59, 'gnss-datasets': 140}
 - 详见 `research/routine_finds_20260924p.json`
+
+## 例行检索补录（2026-09-24q）
+
+- 新增 **14** 条（ReNEP/GNSSNet/CSN-Chile/SIRGAS stations、EPN tropo/data-access、VMF1/VMF3、EMM/PSMSL、SWPC synoptic/events、IVSOPAR、nyx 等）
+- 当前条目：**969**
+- 分类计数：{'ionosphere': 281, 'troposphere': 44, 'gnss-data': 133, 'gnss-positioning': 101, 'orbit-clock': 29, 'navigation-ins': 71, 'gnss-sdr': 76, 'mobile-apps': 29, 'tools-learning': 59, 'gnss-datasets': 146}
+- 详见 `research/routine_finds_20260924q.json`
