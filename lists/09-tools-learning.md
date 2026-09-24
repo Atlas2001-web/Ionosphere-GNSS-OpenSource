@@ -79,7 +79,7 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 | [ge-gnss-visibility](https://github.com/taroz/ge-gnss-visibility) | ge-gnss-visibility：Google Earth 可见性分析 | MATLAB | 137 | 🏷️ 个人社区 |
 | [gnss_timeseries_viewers](https://github.com/kmaterna/gnss_timeseries_viewers) | gnss_timeseries_viewers：PBO/UNR 坐标时序分析绘图 | Python | 36 | 🏷️ 高校实验室 |
 | [EasyGNSS](https://github.com/whigg/EasyGNSS) | EasyGNSS：低成本 GNSS 图形界面辅助工具 | Python | 4 | 🏷️ 高校实验室 |
-| [GPS-Velocity-Viewer](https://www.unavco.org/software/visualization/GPS-Velocity-Viewer/GPS-Velocity-Viewer.html) | UNAVCO GPS 速度场在线可视化查看器 | web | — | 🏷️ 官方 |
+| [GPS-Velocity-Viewer](https://www.unavco.org/software/visualization/GPS-Velocity-Viewer/GPS-Velocity-Viewer.html) | GPS-Velocity-Viewer：UNAVCO GNSS 速度场在线可视化 | web | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -354,7 +354,7 @@ Rokubun 编写的 GNSS 数据处理 Jupyter 教程，覆盖从观测到基础解
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [NGS-ADJUST](https://geodesy.noaa.gov/PC_PROD/ADJUST/) | NGS ADJUST 套件：GPS 项目蓝簿提交用最小二乘平差（无源免费） | Win32 binaries | — | 🏷️ 官方 |
+| [NGS-ADJUST](https://geodesy.noaa.gov/PC_PROD/ADJUST/) | NGS-ADJUST：NGS 蓝簿 GPS 网最小二乘平差套件（无源免费） | Win32 binaries | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -370,7 +370,7 @@ Rokubun 编写的 GNSS 数据处理 Jupyter 教程，覆盖从观测到基础解
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [Navipedia](https://gssc.esa.int/navipedia/index.php/Main_Page) | Navipedia：ESA GSSC 的 GNSS 参考百科 | data-portal | — | 🏷️ 官方 |
-| [NGS-GPS-Toolbox](https://geodesy.noaa.gov/gps-toolbox/) | NOAA/NGS《GPS Toolbox》专栏历史代码索引（源码已改向作者索取） | various | — | 🏷️ 官方 |
+| [NGS-GPS-Toolbox](https://geodesy.noaa.gov/gps-toolbox/) | NGS-GPS-Toolbox：NGS《GPS Toolbox》专栏历史代码索引 | various | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -395,7 +395,7 @@ Rokubun 编写的 GNSS 数据处理 Jupyter 教程，覆盖从观测到基础解
 | [geodesy-js](https://github.com/chrisveness/geodesy) | geodesy-js：浏览器/Node 可用的 JS 大地测量库 | JavaScript | 1227 | 🏷️ 个人社区 |
 | [Geodesy.jl](https://github.com/JuliaGeo/Geodesy.jl) | Geodesy.jl：Julia 坐标与大地测量变换库 | Julia | 114 | 🏷️ 个人社区 |
 | [ncat-lib](https://github.com/noaa-ngs/ncat-lib) | NGS NCAT Java 库：离线坐标/基准转换 | Java | 21 | 🏷️ 官方 |
-| [NGS-NCAT](https://geodesy.noaa.gov/NCAT/) | NOAA/NGS NCAT：大地坐标与参考框架转换工具 | web/service | — | 🏷️ 官方 |
+| [NGS-NCAT](https://geodesy.noaa.gov/NCAT/) | NGS-NCAT：NOAA/NGS 大地坐标与参考框架在线转换 | web/service | — | 🏷️ 官方 |
 | [NRCan-TRX](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/trx.php) | 加拿大 NRCan TRX：在线大地坐标/高程转换工具 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
@@ -516,7 +516,7 @@ GSC 关于 Galileo Open Service Navigation Message Authentication（OSNMA）的�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [VDATUM](https://vdatum.noaa.gov/) | NOAA VDatum：垂直基准面转换工具集 | Java/app | — | 🏷️ 官方 |
+| [VDATUM](https://vdatum.noaa.gov/) | VDATUM：NOAA 椭球高↔大地水准面/潮汐垂直基准转换 | Java/app | — | 🏷️ 官方 |
 
 ### 详细说明
 

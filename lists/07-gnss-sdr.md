@@ -429,8 +429,8 @@ GPS 与 Galileo 卫星信号模拟相关实现，说明中提及与 RTKLIB 能�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [CCAR-GNSS-SDR-Book](https://ccar.colorado.edu/gnss/) | CU Boulder CCAR 的 SoftGPS 教材支持站：已知问题与配套说明 | MATLAB | — | 🏷️ 高校实验室 |
-| [SoftGPS-CU-Boulder](https://www.colorado.edu/lab/rf-satnav/resources/original-open-source-gpsgnss-sdr) | 科罗拉多大学软 GNSS 接收机教材配套与 GN3S 前端开源资源 | MATLAB | — | 🏷️ 高校实验室 |
+| [CCAR-GNSS-SDR-Book](https://ccar.colorado.edu/gnss/) | CCAR-GNSS-SDR-Book：SoftGPS 教材已知问题与配套说明站 | MATLAB | — | 🏷️ 高校实验室 |
+| [SoftGPS-CU-Boulder](https://www.colorado.edu/lab/rf-satnav/resources/original-open-source-gpsgnss-sdr) | SoftGPS-CU-Boulder：CU 软 GNSS 教材配套与 GN3S 前端资源页 | MATLAB | — | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -590,7 +590,7 @@ OreSat 项目 GPS 接收机软件部分，与 oresat-gps-hardware 配套，覆�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [namuru-gps](https://github.com/osqzss/namuru-gps) | namuru-gps：Verilog GPS C/A 跟踪通道（Namuru 风格） | Verilog | 6 | 🏷️ 个人社区 |
-| [gps-fpga](https://github.com/osqzss/gps-fpga) | GPS L1 C/A 单通道 FPGA 相关器（AXI4-Lite 控制） | SystemVerilog | 4 | 🏷️ 个人社区 |
+| [gps-fpga](https://github.com/osqzss/gps-fpga) | gps-fpga：GPS L1 C/A 单通道 FPGA 相关器（AXI4-Lite） | SystemVerilog | 4 | 🏷️ 个人社区 |
 
 ### 详细说明
 

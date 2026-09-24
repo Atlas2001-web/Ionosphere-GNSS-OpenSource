@@ -271,7 +271,7 @@ Geoscience Australia 对开源 GNSS 分析中心软件 Ginan 的官方说明，�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gLAB-Download](https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite-links/glab-download) | gLAB 官方下载页：Linux 源码包与 Windows/Cygwin 安装包 | C/Python | — | 🏷️ 高校实验室 |
+| [gLAB-Download](https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite-links/glab-download) | gLAB-Download：UPC gLAB 官方源码与 Win/Cygwin 安装包页 | C/Python | — | 🏷️ 高校实验室 |
 | [gLAB-UPC](https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite) | gLAB：GNSS 处理与教学套件 | C/Python | — | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
@@ -1071,7 +1071,7 @@ nav-solutions 框架下的实时 PoC：以 U-Blox 原始/手动模式作测量�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [libswiftnav](https://github.com/swift-nav/libswiftnav) | Swift Navigation 可移植 C 库：GNSS 公用算法与工具函数 | C | 23 | 🏷️ 个人社区 |
+| [libswiftnav](https://github.com/swift-nav/libswiftnav) | libswiftnav：Swift Navigation 可移植 GNSS 算法 C 库 | C | 23 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -1086,7 +1086,7 @@ nav-solutions 框架下的实时 PoC：以 U-Blox 原始/手动模式作测量�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [NavAI](https://github.com/AlvaroTena/NavAI) | GNSS 多路径缓解与自适应观测加权的 AI 研究代码 | Python | 6 | 🏷️ 个人社区 |
+| [NavAI](https://github.com/AlvaroTena/NavAI) | NavAI：多路径缓解与观测加权的 AI 研究代码 | Python | 6 | 🏷️ 个人社区 |
 
 ### 详细说明
 

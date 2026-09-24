@@ -211,7 +211,7 @@ MIT 许可的 Java 库，高效解析 Android GNSS Logger 导出的原始测量�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [QZQSM](https://github.com/baggio63446333/QZQSM) | Arduino 库：QZSS 灾害危机管理（DC Report）报文 | C++ | 21 | 🏷️ 个人社区 |
+| [QZQSM](https://github.com/baggio63446333/QZQSM) | QZQSM：Arduino 上解析 QZSS DC Report 的嵌入式库 | C++ | 21 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -226,7 +226,7 @@ MIT 许可的 Java 库，高效解析 Android GNSS Logger 导出的原始测量�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnsshat](https://github.com/jimmypaputto/gnsshat) | 树莓派 GNSS HAT 驱动：UBX/C++/Python 与实时 Web 面板 | C++ | 22 | 🏷️ 个人社区 |
+| [gnsshat](https://github.com/jimmypaputto/gnsshat) | gnsshat：树莓派 GNSS HAT 的 UBX 驱动与 Flask 面板 | C++ | 22 | 🏷️ 个人社区 |
 
 ### 详细说明
 

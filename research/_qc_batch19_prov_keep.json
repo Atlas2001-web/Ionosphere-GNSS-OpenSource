@@ -1,0 +1,74 @@
+[
+  {
+    "name": "SoftGPS-CU-Boulder",
+    "provenance": "academic_lab",
+    "action": "KEEP",
+    "reason": "CU Boulder RF & SatNav lab SoftGNSS companion page"
+  },
+  {
+    "name": "CCAR-GNSS-SDR-Book",
+    "provenance": "academic_lab",
+    "action": "KEEP",
+    "reason": "CU Boulder CCAR book support site"
+  },
+  {
+    "name": "Swarm-VIP-Dynamic",
+    "provenance": "official",
+    "action": "KEEP",
+    "reason": "KNMI-OSS GitLab org; agency OSS"
+  },
+  {
+    "name": "swarm-vip-dynamic-models",
+    "provenance": "official",
+    "action": "KEEP",
+    "reason": "KNMI-OSS GitLab libs; BSD-3 package"
+  },
+  {
+    "name": "NGS-ADJUST",
+    "provenance": "official",
+    "action": "KEEP",
+    "reason": "NOAA/NGS PC_PROD freeware binaries"
+  },
+  {
+    "name": "NGS-NCAT",
+    "provenance": "official",
+    "action": "KEEP",
+    "reason": "NOAA/NGS NCAT web/service"
+  },
+  {
+    "name": "VDATUM",
+    "provenance": "official",
+    "action": "KEEP",
+    "reason": "NOAA VDatum official"
+  },
+  {
+    "name": "GFZRNX-UserGuide",
+    "provenance": "official",
+    "action": "KEEP",
+    "reason": "GFZ gfzrnx docs site"
+  },
+  {
+    "name": "Anubis-Free-Download",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "G-Nut commercial vendor free tier; categories map 公司开源→personal_community"
+  },
+  {
+    "name": "geoveil-mp",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "personal GitHub MIT library"
+  },
+  {
+    "name": "libswiftnav",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "swift-nav vendor OSS; same policy as libsbp"
+  },
+  {
+    "name": "SpatioTECformer",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "personal research GitHub"
+  }
+]

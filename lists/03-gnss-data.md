@@ -42,7 +42,7 @@ RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品�
 | [BNC](https://igs.bkg.bund.de/ntrip/bnc) | BKG 开源多流 Ntrip 客户端：收 RTCM 并可做实时 PPP | C++ | — | 🏷️ 官方 核心 |
 | [BNC-source-FTP](https://igs.bkg.bund.de/root_ftp/NTRIP/software/BNC/) | BNC-source-FTP：BKG FTP 上的 BNC 源码与二进制目录 | C++ | — | 🏷️ 官方 |
 | [BNS](https://software.rtcm-ntrip.org/wiki/BNS) | BNS：BKG Ntrip 状态空间改正播发服务端 | C++ | — | 🏷️ 官方 |
-| [Caster-source-FTP](https://igs.bkg.bund.de/root_ftp/NTRIP/software/caster/) | BKG FTP：Professional NtripCaster 源码包直接下载 | C | — | 🏷️ 官方 |
+| [Caster-source-FTP](https://igs.bkg.bund.de/root_ftp/NTRIP/software/caster/) | Caster-source-FTP：BKG Professional NtripCaster 源码 FTP 目录 | C | — | 🏷️ 官方 |
 | [EUREF-IP-Ntrip-overview](https://igs.bkg.bund.de/ntrip/index) | BKG/IGS NTRIP 数据与工具总览：流列表、BNC 与 Caster 入口 | various | — | 🏷️ 官方 |
 | [RTCM-Ntrip-Software](https://software.rtcm-ntrip.org/) | RTCM-Ntrip：BNC/Caster 官方软件门户 | C/C++ | — | 🏷️ 官方 核心 |
 
@@ -346,7 +346,7 @@ BKG/RTCM 维护的 NTRIP 开源软件 Trac 门户，集中入口含 BNC、Profes
 | [geoveil-cn0](https://github.com/miluta7/geoveil-cn0) | geoveil-cn0：RINEX CN0 质量评分与干扰/欺骗检测 | Rust | 3 | 🏷️ 高校实验室 |
 | [grinq](https://github.com/PJarrin/grinq) | RINEX 镜像与 Anubis QC 的 Python 工具箱 | Python | 1 | 🏷️ 个人社区 |
 | [Anubis](https://gnutsoftware.com/software/anubis/) | G-Nut/Anubis：多 GNSS RINEX/RTCM 质量检查（Free 开源） | C++ | — | 🏷️ 个人社区 核心 |
-| [Anubis-Free-Download](https://gnutsoftware.com/software/anubis/download) | G-Nut/Anubis Free 下载：GPL 源码与 Linux 预编译（Pro 为商业） | C++ | — | 🏷️ 个人社区 |
+| [Anubis-Free-Download](https://gnutsoftware.com/software/anubis/download) | Anubis-Free-Download：G-Nut Anubis Free 的 GPL 源码与 Linux 包 | C++ | — | 🏷️ 个人社区 |
 | [plot-Anubis](https://www.pecny.cz/sw/plots/anubis/) | plot-Anubis：Anubis XTR 质检结果静态绘图脚本 | Perl | — | 🏷️ 高校实验室 |
 | [RINGO](https://terras.gsi.go.jp/software/ringo/en/) | GSI 官方 RINGO：多系统 RINEX 预处理/质检 CLI | Go | — | 🏷️ 官方 |
 | [TEQC](https://www.unavco.org/software/data-processing/teqc/teqc.html) | TEQC：经典 GNSS 翻译/编辑/质检工具 | binary (closed) | — | 🏷️ 官方 核心 |
@@ -454,7 +454,7 @@ Anubis 免费档下载入口，提供 Linux 预编译与 GPL-3 源码，覆盖�
 | [crz2rnx](https://github.com/zhufengGNSS/crz2rnx) | crz2rnx：Hatanaka RNX2CRX/CRX2RNX 程序整理 | C | 9 | 🏷️ 高校实验室 |
 | [crx2rnx](https://github.com/nav-solutions/crx2rnx) | crx2rnx：Rust 实现的 CRX→RNX 命令行工具 | Rust | 8 | 🏷️ 个人社区 |
 | [RNXCMP](https://terras.gsi.go.jp/ja/crx2rnx.html) | 日本地理院官方 Hatanaka/CompactRINEX 压缩与恢复工具 | C | — | 🏷️ 官方 核心 |
-| [RNXCMP-LICENSE](https://terras.gsi.go.jp/ja/crx2rnx/LICENSE.txt) | 日本地理院 RNXCMP 许可证原文（使用/再分发须引用） | text | — | 🏷️ 官方 |
+| [RNXCMP-LICENSE](https://terras.gsi.go.jp/ja/crx2rnx/LICENSE.txt) | RNXCMP-LICENSE：GSI RNXCMP 许可证原文（须引 Hatanaka 2008） | text | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -654,7 +654,7 @@ GNSSNexus 下的 RINEX 组件，适合特定工具链内使用。选型时与 ge
 | [pynex](https://github.com/swift-nav/pynex) | pynex：Swift 归档的 Python RINEX 工具集 | Python | 21 | 🏷️ 个人社区 |
 | [uNavTools](https://github.com/IvAn190/uNavTools) | uNavTools：u-blox→RINEX 与 CSSRlib RTK/PPP 工具集 | Python | 10 | 🏷️ 个人社区 |
 | [GFZRNX](https://www.gfz.de/en/section/space-geodetic-techniques/data-products-services/gfzrnx-gnss-toolbox) | GFZRNX：GFZ RINEX 检查/拼接/抽样工具箱 | binary toolkit | — | 🏷️ 官方 |
-| [GFZRNX-UserGuide](https://gnss.git-pages.gfz-potsdam.de/gfzrnx/) | GFZRNX 2.2 用户手册：任务、EULA 与 Hatanaka/统计等操作说明 | docs | — | 🏷️ 官方 |
+| [GFZRNX-UserGuide](https://gnss.git-pages.gfz-potsdam.de/gfzrnx/) | GFZRNX-UserGuide：GFZRNX 2.2 任务、EULA 与 Hatanaka 操作手册 | docs | — | 🏷️ 官方 |
 | [rinex-masker](https://github.com/J-kroeger/rinex-masker) | rinex-masker：RINEX 遮挡掩膜与 DOP 影响分析 | Python | 0 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -771,7 +771,7 @@ Leibniz Universität Hannover 地球测量研究所开源工具，量化 GNSS �
 | [MAPS](https://github.com/GCCLib/MAPS) | MAPS：MATLAB GNSS 多路径分析与处理 | MATLAB | 35 | 🏷️ 高校实验室 |
 | [gnss-multipath-detector](https://github.com/EvgeniiMunin/gnss-multipath-detector) | gnss-multipath-detector：L1 C/A 多路径 ML 探测 notebook | Jupyter Notebook | 28 | 🏷️ 个人社区 |
 | [PyRINEX](https://github.com/geumjin99/PyRINEX) | PyRINEX：多用途 Python RINEX 读写与质量分析 | Python | 16 | 🏷️ 高校实验室 |
-| [geoveil-mp](https://github.com/miluta7/geoveil-mp) | Rust/Python：RINEX 逐码多路径 MP 组合、周跳检测与 SNR 序列导出 | Rust | 0 | 🏷️ 个人社区 |
+| [geoveil-mp](https://github.com/miluta7/geoveil-mp) | geoveil-mp：Rust/Python 的 RINEX 多路径 MP 与周跳质控库 | Rust | 0 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -1318,7 +1318,7 @@ MIT 许可的 Python 脚本，从 gnss.osi.ie 批量下载爱尔兰 Active GNSS 
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [azarashi](https://github.com/nbtk/azarashi) | QZSS 灾害危机报告（DCR）解码器（Python） | Python | 44 | 🏷️ 个人社区 |
+| [azarashi](https://github.com/nbtk/azarashi) | azarashi：QZSS 灾害危机报告（DCR）Python 解码器 | Python | 44 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -1333,7 +1333,7 @@ MIT 许可的 Python 脚本，从 gnss.osi.ie 批量下载爱尔兰 Active GNSS 
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [ublox8-qzss-almanac-converter](https://github.com/jkivilin/ublox8-gps-qzss-yuma-almanac-converter) | QZSS/GPS 官方历书转 u-blox 8/M8 UBX-MGA 历书消息 | Python | 12 | 🏷️ 个人社区 |
+| [ublox8-qzss-almanac-converter](https://github.com/jkivilin/ublox8-gps-qzss-yuma-almanac-converter) | ublox8-qzss-almanac-converter：YUMA 历书→u-blox UBX-MGA | Python | 12 | 🏷️ 个人社区 |
 
 ### 详细说明
 

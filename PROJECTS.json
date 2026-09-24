@@ -80,7 +80,7 @@
     {
       "name": "Anubis-Free-Download",
       "url": "https://gnutsoftware.com/software/anubis/download",
-      "desc_zh": "G-Nut/Anubis Free 下载：GPL 源码与 Linux 预编译（Pro 为商业）",
+      "desc_zh": "只收免费档，可替部分 TEQC 事后 QC；Pro/实时另计商业授权",
       "analysis_zh": "Anubis 免费档下载入口，提供 Linux 预编译与 GPL-3 源码，覆盖基础事后 QC；Pro/实时功能单独收费。收录时仅指向免费开源档。适合替代部分 TEQC 质检流程；若需编辑流或实时监控，请另行评估商业授权档是否必要。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。",
       "language": "C++",
       "license": "GPL-3.0 (Free tier)",
@@ -91,7 +91,7 @@
       "source": "web/official verified 2026-09-14",
       "featured": false,
       "user_relation": "none",
-      "one_liner_zh": "G-Nut/Anubis Free 下载：GPL 源码与 Linux 预编译（Pro 为商业）",
+      "one_liner_zh": "Anubis-Free-Download：G-Nut Anubis Free 的 GPL 源码与 Linux 包",
       "provenance": "personal_community",
       "host": "official_site"
     },
@@ -253,7 +253,7 @@
     {
       "name": "Caster-source-FTP",
       "url": "https://igs.bkg.bund.de/root_ftp/NTRIP/software/caster/",
-      "desc_zh": "BKG FTP：Professional NtripCaster 源码包直接下载",
+      "desc_zh": "可钉版本号拉 tar 并核 sha256；配置与补丁见同目录 CHANGES/手册",
       "analysis_zh": "可直接获取 ntripcaster 源码 tar 与校验文件的 FTP 目录，对应 BKG 专业播发器免费开源发行。运维部署时可固定版本号拉取并核对 sha256。配置与安全补丁见同目录 CHANGES 与手册；功能介绍见 bkgcaster 产品页。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。",
       "language": "C",
       "license": "GPL",
@@ -264,7 +264,7 @@
       "source": "web/official verified 2026-09-14",
       "featured": false,
       "user_relation": "none",
-      "one_liner_zh": "BKG FTP：Professional NtripCaster 源码包直接下载",
+      "one_liner_zh": "Caster-source-FTP：BKG Professional NtripCaster 源码 FTP 目录",
       "provenance": "official",
       "host": "official_site"
     },
@@ -533,7 +533,7 @@
     {
       "name": "GFZRNX-UserGuide",
       "url": "https://gnss.git-pages.gfz-potsdam.de/gfzrnx/",
-      "desc_zh": "GFZRNX 2.2 用户手册：任务、EULA 与 Hatanaka/统计等操作说明",
+      "desc_zh": "闭源工具箱说明书，不是源码仓；科研免费与商业许可边界写在 EULA",
       "analysis_zh": "GFZ 官方用户指南，详述 RINEX 2/3/4 检查、拼接、抽样、元数据与 Hatanaka 相关操作，并区分科研免费与商业许可。配合 gfzrnx 下载页使用。不是开源源码文档，但对正确理解闭源工具箱能力边界与 EULA 非常关键。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。",
       "language": "docs",
       "license": "proprietary-freeware (see EULA)",
@@ -544,7 +544,7 @@
       "source": "web/official verified 2026-09-14",
       "featured": false,
       "user_relation": "none",
-      "one_liner_zh": "GFZRNX 2.2 用户手册：任务、EULA 与 Hatanaka/统计等操作说明",
+      "one_liner_zh": "GFZRNX-UserGuide：GFZRNX 2.2 任务、EULA 与 Hatanaka 操作手册",
       "provenance": "official",
       "host": "official_site"
     },
@@ -1436,7 +1436,7 @@
     {
       "name": "RNXCMP-LICENSE",
       "url": "https://terras.gsi.go.jp/ja/crx2rnx/LICENSE.txt",
-      "desc_zh": "日本地理院 RNXCMP 许可证原文（使用/再分发须引用）",
+      "desc_zh": "再分发 CompactRINEX 前必读；二进制与功能仍以 crx2rnx 官方包为准",
       "analysis_zh": "GSI 公布的 RNXCMP 许可文本，基于地理院网站条款并要求修改再分发时引用 Hatanaka 2008 文献。打包分发 CompactRINEX 工具或写入衍生软件前应阅读本文件。功能实现与二进制仍以 crx2rnx 主下载页的官方源码包为准。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。",
       "language": "text",
       "license": "GSI Website Terms (cite Hatanaka 2008)",
@@ -1447,7 +1447,7 @@
       "source": "web/official verified 2026-09-14",
       "featured": false,
       "user_relation": "none",
-      "one_liner_zh": "日本地理院 RNXCMP 许可证原文（使用/再分发须引用）",
+      "one_liner_zh": "RNXCMP-LICENSE：GSI RNXCMP 许可证原文（须引 Hatanaka 2008）",
       "provenance": "official",
       "host": "official_site"
     },
@@ -3166,7 +3166,7 @@
     {
       "name": "gLAB-Download",
       "url": "https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite-links/glab-download",
-      "desc_zh": "gLAB 官方下载页：Linux 源码包与 Windows/Cygwin 安装包",
+      "desc_zh": "教学实验请从本页取包；Qt/Python 依赖要按版本说明对齐",
       "analysis_zh": "UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许可说明（GUI LGPL-3，核心/绘图 Apache 2.0）。做教学实验请从此获取而非不明镜像。版本与 Qt/Python 依赖需按说明匹配目标发行版，避免混用旧 GUI 与新核心。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。",
       "language": "C/Python",
       "license": "Apache-2.0 + LGPL-3.0 (GUI)",
@@ -3177,7 +3177,7 @@
       "source": "web/official verified 2026-09-14",
       "featured": false,
       "user_relation": "none",
-      "one_liner_zh": "gLAB 官方下载页：Linux 源码包与 Windows/Cygwin 安装包",
+      "one_liner_zh": "gLAB-Download：UPC gLAB 官方源码与 Win/Cygwin 安装包页",
       "provenance": "academic_lab",
       "host": "official_site"
     },
@@ -4486,7 +4486,7 @@
     {
       "name": "CCAR-GNSS-SDR-Book",
       "url": "https://ccar.colorado.edu/gnss/",
-      "desc_zh": "CU Boulder CCAR 的 SoftGPS 教材支持站：已知问题与配套说明",
+      "desc_zh": "配合 Borre/Akos 学捕获跟踪；前端停售，采集可改用其他 SDR",
       "analysis_zh": "科罗拉多大学 CCAR 为《A Software-Defined GPS and Galileo Receiver》提供的支持主页，含常见问题与前端模块信息。配合 MATLAB SoftGNSS 学习从捕获、跟踪到导航电文。不再销售前端硬件；实践采集可改用其他 SDR 前端并对照社区 SoftGNSS 仓库。",
       "language": "MATLAB",
       "license": "book companion",
@@ -4497,7 +4497,7 @@
       "source": "web/official verified 2026-09-14",
       "featured": false,
       "user_relation": "none",
-      "one_liner_zh": "CU Boulder CCAR 的 SoftGPS 教材支持站：已知问题与配套说明",
+      "one_liner_zh": "CCAR-GNSS-SDR-Book：SoftGPS 教材已知问题与配套说明站",
       "provenance": "academic_lab",
       "host": "official_site"
     },
@@ -5397,7 +5397,7 @@
     {
       "name": "SoftGPS-CU-Boulder",
       "url": "https://www.colorado.edu/lab/rf-satnav/resources/original-open-source-gpsgnss-sdr",
-      "desc_zh": "科罗拉多大学软 GNSS 接收机教材配套与 GN3S 前端开源资源",
+      "desc_zh": "教学溯源入口；GN3S 硬件已停产，完整 MATLAB 工程见社区 SoftGNSS",
       "analysis_zh": "CU Boulder RF & SatNav 实验室维护的 SoftGNSS/教材配套页面，介绍 Borre/Akos 软件接收机 MATLAB 流程与 SiGe GN3S 采样前端（驱动等多基于 GPL）。硬件已停产，代码仍具教学价值。完整 MATLAB 工程亦见于社区 SoftGNSS 仓库；本页为学术溯源入口。",
       "language": "MATLAB",
       "license": "book companion / GPL front-end bits",
@@ -5408,7 +5408,7 @@
       "source": "web/official verified 2026-09-14",
       "featured": false,
       "user_relation": "none",
-      "one_liner_zh": "科罗拉多大学软 GNSS 接收机教材配套与 GN3S 前端开源资源",
+      "one_liner_zh": "SoftGPS-CU-Boulder：CU 软 GNSS 教材配套与 GN3S 前端资源页",
       "provenance": "academic_lab",
       "host": "official_site"
     },
@@ -7660,7 +7660,7 @@
     {
       "name": "IRI2020_parameters",
       "url": "https://github.com/ohm1122/IRI2020_parameters",
-      "desc_zh": "IRI2020 参数相关资源",
+      "desc_zh": "减找系数文件时间；须搭 iri2020 主仓，勿当独立模型或过时脚本基线",
       "analysis_zh": "整理 IRI2020 运行所需参数/资源，减少自己找系数文件的时间。宜与 iri2020 主仓库搭配，而非独立模型。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。",
       "language": "MATLAB",
       "license": "BSD-2-Clause",
@@ -7675,7 +7675,7 @@
       "user_relation": "starred",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "IRI2020 参数相关资源"
+      "one_liner_zh": "IRI2020_parameters：IRI2020 运行参数/系数整理仓"
     },
     {
       "name": "iri90",
@@ -8455,7 +8455,7 @@
     {
       "name": "OASIS-ohm1122",
       "url": "https://github.com/ohm1122/OASIS",
-      "desc_zh": "OASIS 用户星标副本/相关仓库",
+      "desc_zh": "算法与接口以 giorgiopicanco/OASIS 上游为准；引用请核 canonical URL",
       "analysis_zh": "用户星标的 OASIS 相关仓库，实际算法与数据接口以 giorgiopicanco/OASIS 上游为准。引用论文时请核对 canonical URL。",
       "language": "",
       "license": "",
@@ -8470,7 +8470,7 @@
       "user_relation": "starred",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "OASIS 用户星标副本/相关仓库"
+      "one_liner_zh": "OASIS-ohm1122：OASIS 闪烁/ROTI 相关用户星标副本"
     },
     {
       "name": "Okoh-MATLAB-ROT-ROTI",
@@ -9155,8 +9155,8 @@
     {
       "name": "SAMI3-3.22-CCMC-mirror",
       "url": "https://github.com/sylee918/SAMI3",
-      "desc_zh": "CCMC 发布的 SAMI3-3.22 源码镜像（个人搬运）",
-      "one_liner_zh": "CCMC 发布的 SAMI3-3.22 源码镜像（个人搬运）",
+      "desc_zh": "方便 clone；正式引用回 CCMC/Zenodo，配置说明也回官方文档",
+      "one_liner_zh": "SAMI3-3.22-CCMC-mirror：SAMI3-3.22 Fortran 个人 git 镜像",
       "analysis_zh": "从 CCMC/Zenodo 体系搬运的 SAMI3-3.22 Fortran 源码镜像，方便 git clone。正式引用仍建议指向 CCMC 模型页或 Zenodo DOI。局限：非官方持续维护仓；体积大；配置与运行说明需回到 CCMC 文档。",
       "language": "Fortran",
       "license": "unknown",
@@ -9450,8 +9450,8 @@
     {
       "name": "SpatioTECformer",
       "url": "https://github.com/research1011/SpatioTECformer",
-      "desc_zh": "多尺度 CNN + Transformer 的 TEC 时空预报模型（PyTorch）",
-      "one_liner_zh": "多尺度 CNN + Transformer 的 TEC 时空预报模型（PyTorch）",
+      "desc_zh": "论文式复现够用；训练靠作者 HDF5，未标 SPDX，勿当业务预报基线",
+      "one_liner_zh": "SpatioTECformer：多尺度 CNN+Transformer 的 TEC 网格预报（PyTorch）",
       "analysis_zh": "把多尺度卷积、自适应融合与 Transformer 编码器拼成 71×73 网格 TEC 预报流水线，模块拆成 model/enhanced_cnn 等文件，代码量小但完整可跑。适合读论文式复现。未标 SPDX 许可证；训练依赖作者 HDF5 特征文件，需自备或按 README 路径改。",
       "language": "Python",
       "license": "see upstream README",
@@ -9510,8 +9510,8 @@
     {
       "name": "Swarm-VIP-Dynamic",
       "url": "https://gitlab.com/KNMI-OSS/spaceweather/swarm-vip-dynamic",
-      "desc_zh": "KNMI Swarm-VIP-Dynamic 工作仓：ISMR 闪烁文件处理与电离层模型评估脚本",
-      "one_liner_zh": "KNMI Swarm-VIP-Dynamic 工作仓：ISMR 闪烁文件处理与电离层模型评估脚本",
+      "desc_zh": "研究流水线/可视化为主；与 models 包配套，许可以 GitLab 说明为准",
+      "one_liner_zh": "Swarm-VIP-Dynamic：KNMI 的 ISMR 闪烁处理与模型评估工作仓",
       "analysis_zh": "KNMI 在 Swarm-VIP-Dynamic（UiO/Birmingham/INGV/DLR/KNMI）合作中的代码仓：含有效 F10.7 代理、Septentrio PolaRX5S ISMR 闪烁监测文件处理与可视化、项目模型及 IBP 等外部模型评估、Swarm 轨道派生磁纬/地方时等。与 swarm-vip-dynamic-models 库配套，偏研究流水线与闪烁数据可视化。公开 GitLab 仓；许可以仓内说明为准。页面 HTTP 200。",
       "language": "Python",
       "license": "see upstream repository",
@@ -9530,8 +9530,8 @@
     {
       "name": "swarm-vip-dynamic-models",
       "url": "https://gitlab.com/KNMI-OSS/spaceweather/libs/swarm-vip-dynamic-models",
-      "desc_zh": "KNMI Swarm-VIP-Dynamic：Swarm 原位电子密度与不规则性 GLM 经验模型 Python 包",
-      "one_liner_zh": "KNMI Swarm-VIP-Dynamic：Swarm 原位电子密度与不规则性 GLM 经验模型 Python 包",
+      "desc_zh": "吃磁纬/地方时与 F10.7/Kp 等驱动；预测原位气候态，不是 GNSS TEC 估计器",
+      "one_liner_zh": "swarm-vip-dynamic-models：Swarm 原位 Ne/RODI 的 GLM 经验模型包",
       "analysis_zh": "荷兰皇家气象研究所（KNMI）在 GitLab 发布的 Python 包，评估 Swarm VIP Dynamic 项目拟合的广义线性模型，按地理位置、磁纬/地方时、季节、F10.7、Kp/Hp30 与太阳风等输入预测 Ne、RODI 等电离层参数，覆盖赤道至极区。依赖 pandas/numpy，可自动拉取 OMNI/F10.7/Kp。BSD-3-Clause。适合 Swarm 原位气候态对照与不规则性气候研究；非 GNSS TEC 估计器。仓库可公开克隆。",
       "language": "Python",
       "license": "BSD-3-Clause",
@@ -9550,7 +9550,7 @@
     {
       "name": "synthetic_ionospheric_tomography_isl",
       "url": "https://github.com/suixin11suoyu/synthetic_ionospheric_tomography_isl",
-      "desc_zh": "多 GNSS 星间链路辅助电离层层析仿真",
+      "desc_zh": "偏论文几何复现；落地要自备 ISL/地基接口，可对照 SegmentsComputation",
       "analysis_zh": "仿真多 GNSS 星间链路（ISL）辅助的电离层层析，探索新观测几何对电子密度反演的贡献。适合读相关论文后复现实验设置与几何配置。公开星标低、偏研究原型，落地需自备真实 ISL 或地基数据接口；可与 SegmentsComputation、IonoTomo 对照正演与矩阵环节。仿真噪声模型应尽量贴近目标星座链路预算。",
       "language": "",
       "license": "",
@@ -9563,7 +9563,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "多 GNSS 星间链路辅助电离层层析仿真"
+      "one_liner_zh": "synthetic_ionospheric_tomography_isl：多 GNSS 星间链路层析仿真"
     },
     {
       "name": "t-fors",
@@ -9906,7 +9906,7 @@
     {
       "name": "vtec",
       "url": "https://github.com/mfkiwl/vtec",
-      "desc_zh": "垂直 TEC（VTEC）计算相关工具",
+      "desc_zh": "边界窄，只做垂直投影辅助；完整双频重建请配专业 TEC 库",
       "analysis_zh": "围绕 VTEC 换算与相关计算的小工具，适合把 STEC 投影到垂直方向做图或预报输入。功能边界较窄，完整双频重建与偏差估计需配合专业 TEC 库。",
       "language": "",
       "license": "MIT",
@@ -9921,12 +9921,12 @@
       "user_relation": "starred",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "垂直 TEC（VTEC）计算相关工具"
+      "one_liner_zh": "vtec：STEC→VTEC 换算与相关小工具（MIT）"
     },
     {
       "name": "WA_ion_model_PPP",
       "url": "https://github.com/FearlessWu/WA_ion_model_PPP",
-      "desc_zh": "广域电离层模型与 PPP 相关实现",
+      "desc_zh": "看约束怎么进精密单点；系统级仍对照 PRIDE / Ginan / raPPPid",
       "analysis_zh": "把广域电离层模型和 PPP 联系起来的实践代码，适合看电离层约束如何进精密单点。完整度与星座支持需实测；系统级 PPP 仍建议对照 PRIDE、Ginan、raPPPid。",
       "language": "C++",
       "license": "",
@@ -9941,7 +9941,7 @@
       "user_relation": "starred",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "广域电离层模型与 PPP 相关实现"
+      "one_liner_zh": "WA_ion_model_PPP：广域电离层约束进 PPP 的实践代码"
     },
     {
       "name": "Zenodo-VTEC-map-generation-SBAS",
@@ -11591,7 +11591,7 @@
     {
       "name": "GPS-Velocity-Viewer",
       "url": "https://www.unavco.org/software/visualization/GPS-Velocity-Viewer/GPS-Velocity-Viewer.html",
-      "desc_zh": "UNAVCO GPS 速度场在线可视化查看器",
+      "desc_zh": "教学探索快；科研制图常导出后用 GMT/Python，不替代时序精密分析",
       "analysis_zh": "面向 GNSS 测站速度场的浏览器可视化工具，便于快速查看区域形变矢量。属于机构托管的 Web 应用而非本地库；科研制图仍常导出后用 GMT/Python。适合教学演示与数据探索，不能替代时间序列精密分析或网平差软件。使用前请核验上游页面与许可条款。",
       "language": "web",
       "license": "site terms",
@@ -11602,7 +11602,7 @@
       "source": "web/official verified 2026-09-14",
       "featured": false,
       "user_relation": "none",
-      "one_liner_zh": "UNAVCO GPS 速度场在线可视化查看器",
+      "one_liner_zh": "GPS-Velocity-Viewer：UNAVCO GNSS 速度场在线可视化",
       "provenance": "official",
       "host": "official_site"
     },
@@ -11742,7 +11742,7 @@
     {
       "name": "NGS-ADJUST",
       "url": "https://geodesy.noaa.gov/PC_PROD/ADJUST/",
-      "desc_zh": "NGS ADJUST 套件：GPS 项目蓝簿提交用最小二乘平差（无源免费）",
+      "desc_zh": "面向向 NGS 提交的美国工程用户；国际测区/科研 PPP 不必依赖",
       "analysis_zh": "美国 NGS 发布的 ADJUST 及配套 CHKOBS 等 Windows 工具，用于水平/GPS 观测平差与蓝簿数据检查。提供可执行包，不提供源码。面向向 NGS 提交工程的美国用户；一般科研 PPP 或国际测区处理不必依赖本套件。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。",
       "language": "Win32 binaries",
       "license": "proprietary-freeware",
@@ -11753,14 +11753,14 @@
       "source": "web/official verified 2026-09-14",
       "featured": false,
       "user_relation": "none",
-      "one_liner_zh": "NGS ADJUST 套件：GPS 项目蓝簿提交用最小二乘平差（无源免费）",
+      "one_liner_zh": "NGS-ADJUST：NGS 蓝簿 GPS 网最小二乘平差套件（无源免费）",
       "provenance": "official",
       "host": "official_site"
     },
     {
       "name": "NGS-GPS-Toolbox",
       "url": "https://geodesy.noaa.gov/gps-toolbox/",
-      "desc_zh": "NOAA/NGS《GPS Toolbox》专栏历史代码索引（源码已改向作者索取）",
+      "desc_zh": "2024-09 后不再直托源码，需联系作者；文献溯源用，非持续发行渠道",
       "analysis_zh": "国家大地测量局汇集的 GPS Solutions 期刊工具箱文章目录，涵盖 RINEX 类库、模糊度、Klobuchar、轨道插值等经典小品。2024-09 后站点不再直接托管源码，需联系作者或期刊。适合文献溯源与教学对照，不宜当作持续维护的软件发行渠道。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。",
       "language": "various",
       "license": "varies by article",
@@ -11771,14 +11771,14 @@
       "source": "web/official verified 2026-09-14",
       "featured": false,
       "user_relation": "none",
-      "one_liner_zh": "NOAA/NGS《GPS Toolbox》专栏历史代码索引（源码已改向作者索取）",
+      "one_liner_zh": "NGS-GPS-Toolbox：NGS《GPS Toolbox》专栏历史代码索引",
       "provenance": "official",
       "host": "official_site"
     },
     {
       "name": "NGS-NCAT",
       "url": "https://geodesy.noaa.gov/NCAT/",
-      "desc_zh": "NOAA/NGS NCAT：大地坐标与参考框架转换工具",
+      "desc_zh": "Web/服务归算美国基准；不做观测处理，常与 HTDP、VDATUM 联用",
       "analysis_zh": "国家大地测量局坐标转换与变换工具，支持多种美国大地基准与框架之间的点位转换。以 Web/服务形式提供，便于把 GNSS 成果归算到所需基准。不是观测处理软件；与 HTDP、VDATUM 等 NGS 工具链互补，做美国测区成果交付时常一起查阅。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。",
       "language": "web/service",
       "license": "USGov public resource",
@@ -11789,7 +11789,7 @@
       "source": "web/official verified 2026-09-14",
       "featured": false,
       "user_relation": "none",
-      "one_liner_zh": "NOAA/NGS NCAT：大地坐标与参考框架转换工具",
+      "one_liner_zh": "NGS-NCAT：NOAA/NGS 大地坐标与参考框架在线转换",
       "provenance": "official",
       "host": "official_site"
     },
@@ -11924,7 +11924,7 @@
     {
       "name": "VDATUM",
       "url": "https://vdatum.noaa.gov/",
-      "desc_zh": "NOAA VDatum：垂直基准面转换工具集",
+      "desc_zh": "海岸带与 GNSS 高程常用；平面归算请改用 NCAT/HTDP",
       "analysis_zh": "NOAA 垂直基准转换软件与服务，连接椭球高、大地水准面与潮汐等垂直基准，海岸带与 GNSS 高程应用中常用。以官方发布包与 Web 服务为准；与水平框架工具 HTDP、NCAT 分工不同，高程与平面归算请分别选用对应工具。使用前请核验上游页面与许可条款。",
       "language": "Java/app",
       "license": "USGov public resource",
@@ -11935,7 +11935,7 @@
       "source": "web/official verified 2026-09-14",
       "featured": false,
       "user_relation": "none",
-      "one_liner_zh": "NOAA VDatum：垂直基准面转换工具集",
+      "one_liner_zh": "VDATUM：NOAA 椭球高↔大地水准面/潮汐垂直基准转换",
       "provenance": "official",
       "host": "official_site"
     },
@@ -12597,7 +12597,7 @@
     {
       "name": "geoveil-mp",
       "url": "https://github.com/miluta7/geoveil-mp",
-      "desc_zh": "Rust/Python：RINEX 逐码多路径 MP 组合、周跳检测与 SNR 序列导出",
+      "desc_zh": "台站长时序多路径趋势好用；不做精密定位，高度角加权需另配 SP3",
       "analysis_zh": "面向连续站质控的多路径分析库（Anubis/TEQC 思路），对每个伪距码做 MP 线性组合、弧段去模糊、间隔自适应周跳检测，并导出 SNR。MIT，PyPI 预编译轮。适合长时序台站多路径趋势监控；本身不做精密定位，需配合 SP3 才有高度角加权统计。",
       "language": "Rust",
       "license": "MIT",
@@ -12612,7 +12612,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Rust/Python：RINEX 逐码多路径 MP 组合、周跳检测与 SNR 序列导出"
+      "one_liner_zh": "geoveil-mp：Rust/Python 的 RINEX 多路径 MP 与周跳质控库"
     },
     {
       "name": "geoveil-cn0",
@@ -16757,7 +16757,7 @@
     {
       "name": "azarashi",
       "url": "https://github.com/nbtk/azarashi",
-      "desc_zh": "QZSS 灾害危机报告（DCR）解码器（Python）",
+      "desc_zh": "灾情电文字段演示用；格式随 ICD 演进，不替代测地级定位引擎",
       "analysis_zh": "解析准天顶卫星系统（QZSS）灾害与危机管理（DCR）电文的 Python 工具，MIT 许可。面向日本及周边区域的灾情预警链路验证，与普通 NMEA/UBX 定位库互补。电文格式随 QZSS 规范演进，解码前需核对官方 ICD 与样本。适合灾情接收演示与消息字段研究，不替代测地级定位引擎。",
       "language": "Python",
       "license": "MIT",
@@ -16772,12 +16772,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "QZSS 灾害危机报告（DCR）解码器（Python）"
+      "one_liner_zh": "azarashi：QZSS 灾害危机报告（DCR）Python 解码器"
     },
     {
       "name": "QZQSM",
       "url": "https://github.com/baggio63446333/QZQSM",
-      "desc_zh": "Arduino 库：QZSS 灾害危机管理（DC Report）报文",
+      "desc_zh": "与桌面 azarashi 互补；依赖接收机是否吐 DCR/NMEA，非航空认证",
       "analysis_zh": "面向嵌入式的 QZSS DC Report 报文 Arduino 库，BSD-3-Clause。可在带 GNSS 模块的 MCU 上解析灾情类广播，与桌面端 azarashi 形成软硬互补。依赖具体接收机是否输出原始 DCR/相关 NMEA；天线与区域覆盖会影响可用性。适合创客与应急原型，非航空认证实现。",
       "language": "C++",
       "license": "BSD-3-Clause",
@@ -16792,12 +16792,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Arduino 库：QZSS 灾害危机管理（DC Report）报文"
+      "one_liner_zh": "QZQSM：Arduino 上解析 QZSS DC Report 的嵌入式库"
     },
     {
       "name": "libswiftnav",
       "url": "https://github.com/swift-nav/libswiftnav",
-      "desc_zh": "Swift Navigation 可移植 C 库：GNSS 公用算法与工具函数",
+      "desc_zh": "偏数值例程，不通信（通信看 libsbp）；CMake 构建，API 随版本变",
       "analysis_zh": "标准 C 实现的平台无关 GNSS 工具库（libswiftnav），LGPL-3.0，面向软件接收机或需 GNSS 数值例程的嵌入式/主机程序。不负责与 Swift 接收机通信（那是 libsbp）；本库偏算法与公用函数。构建需 CMake；API 随版本演进，接入前请对照文档与测试。与已收录的 libsbp/piksi_tools 同属厂商开源栈。",
       "language": "C",
       "license": "LGPL-3.0",
@@ -16812,12 +16812,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Swift Navigation 可移植 C 库：GNSS 公用算法与工具函数"
+      "one_liner_zh": "libswiftnav：Swift Navigation 可移植 GNSS 算法 C 库"
     },
     {
       "name": "NavAI",
       "url": "https://github.com/AlvaroTena/NavAI",
-      "desc_zh": "GNSS 多路径缓解与自适应观测加权的 AI 研究代码",
+      "desc_zh": "博士课题复现友好；结果绑训练场景，不能直接当通用测地产品",
       "analysis_zh": "博士课题开源：将机器学习用于 GNSS 观测可靠性与多路径抑制，并含仿真与加权实验代码，MIT 许可。星数不多但补齐多路径/AI 交叉这一薄点。结果依赖训练数据与场景，不能直接当作通用测地产品。适合算法对照与复现实验；部署需自备观测与标签管线。",
       "language": "Python",
       "license": "MIT",
@@ -16832,12 +16832,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "GNSS 多路径缓解与自适应观测加权的 AI 研究代码"
+      "one_liner_zh": "NavAI：多路径缓解与观测加权的 AI 研究代码"
     },
     {
       "name": "ionFR",
       "url": "https://github.com/csobey/ionFR",
-      "desc_zh": "基于 IGRF 与 IONEX 的电离层法拉第旋转预测",
+      "desc_zh": "射电天文极化校正向；输出 FR 而非 STEC，依赖外部 IONEX/IGRF 质量",
       "analysis_zh": "给定视线、地理位置与历元，结合 IGRF 地磁场与 IONEX TEC 图估计电离层法拉第旋转（FR），GPL-3.0。服务射电天文与极化校正，也与 GNSS 电离层产品消费相关。依赖外部 IONEX/IGRF 文件质量；输出是 FR 估计而非 STEC 重建。适合电离层传播旁路分析，而非 PPP 改正生成。",
       "language": "Python",
       "license": "GPL-3.0",
@@ -16852,12 +16852,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "基于 IGRF 与 IONEX 的电离层法拉第旋转预测"
+      "one_liner_zh": "ionFR：用 IGRF+IONEX 估计电离层法拉第旋转"
     },
     {
       "name": "gps-fpga",
       "url": "https://github.com/osqzss/gps-fpga",
-      "desc_zh": "GPS L1 C/A 单通道 FPGA 相关器（AXI4-Lite 控制）",
+      "desc_zh": "教学/前端联调；需自备射频与约束文件，不提供完整 PVT",
       "analysis_zh": "SystemVerilog 描述的单通道 GPS L1 C/A FPGA 相关器，经 AXI4-Lite 控制，MIT 许可。与 namuru-gps 等同属硬件相关器薄点补齐；星数低但许可证清晰、接口明确。需自备射频前端与 FPGA 工程约束，不提供完整 PVT。适合教学与相关器前端联调，而非现成接收机产品。",
       "language": "SystemVerilog",
       "license": "MIT",
@@ -16872,12 +16872,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "GPS L1 C/A 单通道 FPGA 相关器（AXI4-Lite 控制）"
+      "one_liner_zh": "gps-fpga：GPS L1 C/A 单通道 FPGA 相关器（AXI4-Lite）"
     },
     {
       "name": "gnsshat",
       "url": "https://github.com/jimmypaputto/gnsshat",
-      "desc_zh": "树莓派 GNSS HAT 驱动：UBX/C++/Python 与实时 Web 面板",
+      "desc_zh": "天空图/RTK 演示方便；厘米级依赖改正流与天线，板卡绑定需注意",
       "analysis_zh": "面向 Jimmy Paputto GNSS HAT 的驱动库，覆盖 u-blox UBX，并提供 C++/C/Python API 与 Flask 实时仪表盘（天空图、RF、RTK 相对图等），MIT 许可。虽绑定厂商板卡，但对通用 UBX 串口/SPI 仍有参考价值。RTK 固定与厘米级显示依赖改正流与天线环境。适合树莓派现场演示与低成本监测。",
       "language": "C++",
       "license": "MIT",
@@ -16892,12 +16892,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "树莓派 GNSS HAT 驱动：UBX/C++/Python 与实时 Web 面板"
+      "one_liner_zh": "gnsshat：树莓派 GNSS HAT 的 UBX 驱动与 Flask 面板"
     },
     {
       "name": "ublox8-qzss-almanac-converter",
       "url": "https://github.com/jkivilin/ublox8-gps-qzss-yuma-almanac-converter",
-      "desc_zh": "QZSS/GPS 官方历书转 u-blox 8/M8 UBX-MGA 历书消息",
+      "desc_zh": "冷启动辅助与回放专用；输出须匹配固件协议，不替代精密星历",
       "analysis_zh": "把官方 YUMA 类历书转换为 u-blox 8/M8 的 UBX-MGA 历书消息，MIT 许可，便于冷启动辅助与实验室回放。体量小、用途专一，填补 QZSS 历书到接收机协议的缝隙。输出需与固件协议版本匹配；不替代精密星历。适合嵌入式与接收机配置脚本作者。",
       "language": "Python",
       "license": "MIT",
@@ -16912,7 +16912,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "QZSS/GPS 官方历书转 u-blox 8/M8 UBX-MGA 历书消息"
+      "one_liner_zh": "ublox8-qzss-almanac-converter：YUMA 历书→u-blox UBX-MGA"
     },
     {
       "name": "ESSP-EGNOS-User-Support",

@@ -9,7 +9,7 @@
 |---|---|---|---:|---|
 | [IonoTomo](https://github.com/Joshuaalbert/IonoTomo) | IonoTomo：射电天文射线追踪与电离层层析仿真 | Jupyter Notebook | 11 | 🏷️ 高校实验室 |
 | [iono-tomography](https://github.com/brianbreitsch/iono-tomography) | iono-tomography：电离层层析 Python 实验原型 | Python | 4 | 🏷️ 高校实验室 |
-| [synthetic_ionospheric_tomography_isl](https://github.com/suixin11suoyu/synthetic_ionospheric_tomography_isl) | 多 GNSS 星间链路辅助电离层层析仿真 | — | 2 | 🏷️ 个人社区 |
+| [synthetic_ionospheric_tomography_isl](https://github.com/suixin11suoyu/synthetic_ionospheric_tomography_isl) | synthetic_ionospheric_tomography_isl：多 GNSS 星间链路层析仿真 | — | 2 | 🏷️ 个人社区 |
 | [317Lab-tomography](https://github.com/317Lab/tomography) | 317Lab-tomography：Lynch 火箭实验室电离层层析代码 | Jupyter Notebook | 1 | 🏷️ 高校实验室 |
 | [GNSS_TOM](https://github.com/sailvssea/GNSS_TOM) | GNSS_TOM：GNSS 对流层与电离层层析 C++（仿 GPSTk 风） | C++ | 1 | 🏷️ 高校实验室 |
 | [Geometric-Matrix-For-Ionospheric-Tomogrphy](https://github.com/yujieqing/Geometric-Matrix-For-Ionospheric-Tomogrphy) | 层析几何矩阵构建（C++，yujieqing） | C++ | — | 🏷️ 个人社区 ★ |
@@ -72,7 +72,7 @@ yujieqing 仓库：为电离层层析准备几何/射线矩阵相关代码，可
 |---|---|---|---:|---|
 | [PPP-RTK-Ionosphere](https://github.com/nickdaychen/PPP-RTK-Ionosphere) | PPP-RTK-Ionosphere：MATLAB PPP-RTK 与电离层试验 | MATLAB | 7 | 🏷️ 个人社区 |
 | [AETHER](https://github.com/LiZhengXiao99/AETHER) | AETHER：PPP-RTK 区域 STEC/VTEC 与 ZWD/ZTD 建模 | C++ | 6 | 🏷️ 高校实验室 |
-| [WA_ion_model_PPP](https://github.com/FearlessWu/WA_ion_model_PPP) | 广域电离层模型与 PPP 相关实现 | C++ | — | 🏷️ 个人社区 ★ |
+| [WA_ion_model_PPP](https://github.com/FearlessWu/WA_ion_model_PPP) | WA_ion_model_PPP：广域电离层约束进 PPP 的实践代码 | C++ | — | 🏷️ 个人社区 ★ |
 
 ### 详细说明
 
@@ -128,7 +128,7 @@ yujieqing 仓库：为电离层层析准备几何/射线矩阵相关代码，可
 | [Klobuchar-study-code](https://github.com/KaijingZheng/Klobuchar-ionosphere-model-in-global-navigation-satellite-systems) | Klobuchar-study-code：广播八参数模型评估 MATLAB | MATLAB | 0 | 🏷️ 个人社区 |
 | [NeQuick2-MLF2](https://github.com/SkydelSolutions/nequick2-mlf2) | NeQuick2-MLF2：NeQuick-G 思路改写（Gustave Eiffel/Safran） | C | 0 | 🏷️ 个人社区 |
 | [RIM](https://github.com/SWMFsoftware/RIM) | RIM：SWMF 体系中的 Ridley 高纬电离层模式 | Fortran | 0 | 🏷️ 官方 |
-| [SAMI3-3.22-CCMC-mirror](https://github.com/sylee918/SAMI3) | CCMC 发布的 SAMI3-3.22 源码镜像（个人搬运） | Fortran | 0 | 🏷️ 个人社区 |
+| [SAMI3-3.22-CCMC-mirror](https://github.com/sylee918/SAMI3) | SAMI3-3.22-CCMC-mirror：SAMI3-3.22 Fortran 个人 git 镜像 | Fortran | 0 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -358,7 +358,7 @@ Space Weather Modeling Framework 组件之一，描述高纬电离层电动力�
 | [quakeion](https://github.com/Gm015555/quakeion) | quakeion：震例目录 + CODE GIM TEC/ROT/ROTI 分析 | Python | 0 | 🏷️ 个人社区 |
 | [Seemala-GPS-TEC](https://seemala.blogspot.com/2026/08/gps-tec-analysis-program-version-37.html) | Seemala GPS-TEC：RINEX 估计 GPS TEC（Windows） | Windows/Exe | — | 🏷️ 高校实验室 |
 | [TEC-forecast-F107](https://github.com/hekaixuan-atm/TEC-forecast) | 空间非均匀 F10.7 强迫的全球 TEC 预报代码 | Python | 0 | 🏷️ 高校实验室 |
-| [vtec](https://github.com/mfkiwl/vtec) | 垂直 TEC（VTEC）计算相关工具 | — | — | 🏷️ 个人社区 ★ |
+| [vtec](https://github.com/mfkiwl/vtec) | vtec：STEC→VTEC 换算与相关小工具（MIT） | — | — | 🏷️ 个人社区 ★ |
 
 ### 详细说明
 
@@ -990,7 +990,7 @@ University of Warmia and Mazury（Olsztyn）承担 IGS 电离层图组合与验�
 | [IBP-Model](https://igit.iap-kborn.de/ibp/ibp-model) | IBP-Model：低纬赤道等离子体泡发生概率（IAP Kühlungsborn） | Python | 0 | 🏷️ 高校实验室 |
 | [M_ISSION](https://github.com/wulide4/M_ISSION) | M_ISSION：多 GNSS 电离层闪烁指数计算软件 | C++ | 0 | 🏷️ 个人社区 |
 | [ScintPi-1.0-Software](https://doi.org/10.5281/zenodo.4905193) | ScintPi-1.0-Software：UT Dallas 低成本闪烁仪配套软件 | unknown | — | 🏷️ 高校实验室 |
-| [Swarm-VIP-Dynamic](https://gitlab.com/KNMI-OSS/spaceweather/swarm-vip-dynamic) | KNMI Swarm-VIP-Dynamic 工作仓：ISMR 闪烁文件处理与电离层模型评估脚本 | Python | 0 | 🏷️ 官方 |
+| [Swarm-VIP-Dynamic](https://gitlab.com/KNMI-OSS/spaceweather/swarm-vip-dynamic) | Swarm-VIP-Dynamic：KNMI 的 ISMR 闪烁处理与模型评估工作仓 | Python | 0 | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -1120,7 +1120,7 @@ KNMI 在 Swarm-VIP-Dynamic（UiO/Birmingham/INGV/DLR/KNMI）合作中的代码�
 | [NHPC-TrueHeight](https://ulcar.uml.edu/SoftwareUtilities/NHPC/) | NHPC：测高仪迹线真高剖面反演（Digisonde/ARTIST） | Fortran/C | — | 🏷️ 高校实验室 |
 | [NICT-Ionosonde-Data](https://wdc.nict.go.jp/Ionosphere/index.html) | NICT 日本测高仪（ionosonde）观测数据入口 | data-portal | — | 🏷️ 官方 |
 | [SAO-Explorer](https://ulcar.uml.edu/SAO-X/) | GIRO/Digisonde 测高仪缩放与 DIDBase 访问工具（免费二进制） | Java | — | 🏷️ 官方 |
-| [swarm-vip-dynamic-models](https://gitlab.com/KNMI-OSS/spaceweather/libs/swarm-vip-dynamic-models) | KNMI Swarm-VIP-Dynamic：Swarm 原位电子密度与不规则性 GLM 经验模型 Python 包 | Python | 0 | 🏷️ 官方 |
+| [swarm-vip-dynamic-models](https://gitlab.com/KNMI-OSS/spaceweather/libs/swarm-vip-dynamic-models) | swarm-vip-dynamic-models：Swarm 原位 Ne/RODI 的 GLM 经验模型包 | Python | 0 | 🏷️ 官方 |
 | [UMLCAR-Downloads](https://ulcar.uml.edu/downloads.html) | UMass Lowell UMLCAR 电离层软件下载中心（SAO-X/Drift-X/NHPC/DCART 等） | data-portal | — | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -1633,7 +1633,7 @@ SWPC 官方 HTTP 产品树，提供 geojson_2d_urt 与 netcdf_2d_urt 等目录�
 | [FIRI.jl](https://github.com/fgasdia/FaradayInternationalReferenceIonosphere.jl) | FIRI.jl：法拉第国际参考电离层 Julia 工具 | Julia | 5 | 🏷️ 高校实验室 |
 | [Nequick-ITUR](https://github.com/tpl2go/Nequick-ITUR) | Nequick-ITUR：ITU-R NeQuick 2 的 Python/Fortran 封装 | Fortran | 4 | 🏷️ 个人社区 |
 | [NeQuickJRC](https://github.com/mgfernan/NeQuickJRC) | NeQuickJRC：JRC NeQuickG 的 ANSI-C 可编译整理 | C | 4 | 🏷️ 个人社区 |
-| [IRI2020_parameters](https://github.com/ohm1122/IRI2020_parameters) | IRI2020 参数相关资源 | MATLAB | — | 🏷️ 个人社区 ★ |
+| [IRI2020_parameters](https://github.com/ohm1122/IRI2020_parameters) | IRI2020_parameters：IRI2020 运行参数/系数整理仓 | MATLAB | — | 🏷️ 个人社区 ★ |
 
 ### 详细说明
 
@@ -1763,7 +1763,7 @@ UML 维护的 GIRO 门户，通向测高仪数据与 IRTAM 等实时同化产品
 | [ionopy](https://github.com/spaceml-org/ionopy) | ionopy：SpaceML Time-Fusion Transformer 电离层预报 | Python | 4 | 🏷️ 高校实验室 |
 | [IonoBench](https://github.com/Mert-chan/IonoBench) | IonoBench：全球电离层时空预报模型基准框架 | Jupyter Notebook | 2 | 🏷️ 高校实验室 |
 | [ionospheric-tec-forecasting-IISC](https://github.com/codewithavra/ionospheric-tec-forecasting) | ionospheric-tec-forecasting-IISC：单站 TEC 日前预报 | Jupyter Notebook | 0 | 🏷️ 高校实验室 |
-| [SpatioTECformer](https://github.com/research1011/SpatioTECformer) | 多尺度 CNN + Transformer 的 TEC 时空预报模型（PyTorch） | Python | 0 | 🏷️ 个人社区 |
+| [SpatioTECformer](https://github.com/research1011/SpatioTECformer) | SpatioTECformer：多尺度 CNN+Transformer 的 TEC 网格预报（PyTorch） | Python | 0 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -1827,7 +1827,7 @@ SpaceML 维护的电离层预报代码与笔记本，强调时间融合 Transfor
 | [TITIPy](https://github.com/pignalberi/TITIPy) | Swarm 顶部电离层 RODI/ROTI/ROTEI（Python） | Python | 8 | 🏷️ 高校实验室 |
 | [Ionospheric-Scintillation-Maps-and-PDOP](https://github.com/AlexandraKoulouri/Ionospheric-Scintillation-Maps-and-PDOP) | Ionospheric-Scintillation-Maps-and-PDOP：闪烁成像与 PDOP 影响 | MATLAB | 5 | 🏷️ 高校实验室 |
 | [gnssutils](https://github.com/ljlamarche/gnssutils) | 地基 GNSS 闪烁数据清洗与指标计算工具 | Python | 3 | 🏷️ 个人社区 ★ |
-| [OASIS-ohm1122](https://github.com/ohm1122/OASIS) | OASIS 用户星标副本/相关仓库 | — | — | 🏷️ 个人社区 ★ |
+| [OASIS-ohm1122](https://github.com/ohm1122/OASIS) | OASIS-ohm1122：OASIS 闪烁/ROTI 相关用户星标副本 | — | — | 🏷️ 个人社区 ★ |
 | [Okoh-MATLAB-ROT-ROTI](https://doi.org/10.5281/zenodo.7913105) | Okoh-MATLAB-ROT-ROTI：TEC 序列算 30s ROT 与 5min ROTI | MATLAB | — | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -2188,7 +2188,7 @@ space-physics 维护的地磁指数读写工具，常为电离层/空间天气�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [ionFR](https://github.com/csobey/ionFR) | 基于 IGRF 与 IONEX 的电离层法拉第旋转预测 | Python | 12 | 🏷️ 个人社区 |
+| [ionFR](https://github.com/csobey/ionFR) | ionFR：用 IGRF+IONEX 估计电离层法拉第旋转 | Python | 12 | 🏷️ 个人社区 |
 
 ### 详细说明
 
