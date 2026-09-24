@@ -1,6 +1,6 @@
 # Ginan · Geoscience Australia 精密定位 / 改正工具箱操作手册
 
-目录：[`PROJECTS.json` → `ginan`](../../PROJECTS.json) · 上游 <https://github.com/GeoscienceAustralia/ginan> · Docker Hub `gnssanalysis/ginan` · 许可 **Apache-2.0** · 发布 **v4.1.4** · tip **`5033996`** · 入口 **`pea`** · 本机验证：Linux 预编译 `pea` + 官方 `ppp_example.yaml` → `--dry-run` 通过；`--max_epochs 20` 写出 ALIC/DARW/HOB2 `.POS`（ALIC 末历元相对 IGS20 参考 ≈**0.08 m** 3D，仅冒烟）· 2026-09-24 05:11 EDT
+目录：[`PROJECTS.json` → `ginan`](../../PROJECTS.json) · 上游 <https://github.com/GeoscienceAustralia/ginan> · Docker Hub `gnssanalysis/ginan` · 许可 **Apache-2.0** · 发布 **v4.1.4** · tip **`5033996`** · 入口 **`pea`** · 本机验证：Linux 预编译 `pea` + 官方 `ppp_example.yaml` → `--dry-run` 通过；`--max_epochs 20` 写出 ALIC/DARW/HOB2 `.POS`（ALIC 末历元相对 IGS20 参考 ≈**0.08 m** 3D，仅冒烟）· 2026-09-24 05:16 EDT · **质检复跑通过**（dry-run；`--max_epochs 20` ALIC 3D≈0.08 m；tip `5033996`）
 
 > 岗位：事后 **PPP / 网解 / POD** 与实时改正试验；YAML 驱动。冲突时：**本机 `pea -h` / 仓内 `exampleConfigs/` > 本文**。轻量 CLI → [rtklib](./rtklib.md)；发表级 PPP-AR → [pride-pppar](./pride-pppar.md)；开放 SSR 教学 → [cssrlib](./cssrlib.md)。
 
@@ -21,6 +21,8 @@
 - 本机**无 Docker**；源码 `vcpkg` 依赖重，冒烟优先 **Release 预编译**
 
 一句话：Ginan = **GA 现代化 C++ GNSS 分析中心工具箱（pea）**。
+
+**质检边界：** 本机用 Release 预编译 `pea` 做 dry-run + `--max_epochs 20` 冒烟；**未**跑全日 PPP/网解/POD，**未**Docker/`vcpkg` 源码编译。完整解算请自备产品与算力。
 
 | 术语 | 含义 |
 | --- | --- |
@@ -111,7 +113,7 @@ cd ~/iono_ops/ginan/exampleConfigs
 ls outputs/ppp_example_HEAD/*.POS | head
 ```
 
-**本机结果（v4.1.4 / tip `5033996`，2026-09-24 05:11 EDT）：**
+**本机结果（v4.1.4 / tip `5033996`，2026-09-24 05:11 EDT；质检复跑 2026-09-24 05:16 EDT 同数）：**
 
 ```text
 Dry-run successful: configuration and sanity checks passed

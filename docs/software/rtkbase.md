@@ -1,6 +1,6 @@
 # RTKBase · Stefal 树莓派 GNSS 基站 + Web UI 操作手册
 
-目录：[`PROJECTS.json` → `rtkbase`](../../PROJECTS.json) · 上游 <https://github.com/Stefal/rtkbase> · 许可 **AGPL-3.0** · 发布 **v2.7.0** · tip **`2ce7ce0`** · 捆 **RTKLIB-EX v2.5.0**（`str2str`/`convbin`）· 本机验证：`settings.conf.default` 解析；`RTKBaseConfigManager` 合并默认/用户配置；`install.sh --help`；**无 Pi / 无 GNSS 硬件 → 未启 systemd / 未订 NTRIP / 未开 Web** · 2026-09-24 05:11 EDT
+目录：[`PROJECTS.json` → `rtkbase`](../../PROJECTS.json) · 上游 <https://github.com/Stefal/rtkbase> · 许可 **AGPL-3.0** · 发布 **v2.7.0** · tip **`2ce7ce0`** · 捆 **RTKLIB-EX v2.5.0**（`str2str`/`convbin`）· 本机验证：`settings.conf.default` 解析；`RTKBaseConfigManager` 合并默认/用户配置；`install.sh --help`；**无 Pi / 无 GNSS 硬件 → 未启 systemd / 未订 NTRIP / 未开 Web** · 2026-09-24 05:16 EDT · **质检复跑通过**（ConfigManager+install help；12 unit；无 Pi/GNSS 未启服务；tip `2ce7ce0`）
 
 > 岗位：SBC（Raspberry Pi / Orange Pi）上把 **接收机 RAW → TCP → NTRIP/落盘/本地 caster**，并用 Flask Web 管服务。冲突时：**本机 `tools/install.sh --help` / `settings.conf` / 上游 README > 本文**。纯 CLI 流转 → [rtklib](./rtklib.md)；多用户 Caster → [bkg-ntripcaster](./bkg-ntripcaster.md)；桌面联调 → [pygpsclient](./pygpsclient.md)。
 
@@ -21,6 +21,8 @@
 - 本机共享 Linux **无 USB 接收机、无 systemd 目标部署** → 下列「可测 / 不可测」须遵守
 
 一句话：RTKBase = **爱好者/小台站的 Pi 基站发行版（Web + str2str + 接收机配置）**。
+
+**质检边界：** 本机可复现 clone / `tools/install.sh --help` / ConfigManager 合并 INI / 12 个 unit 模板；**无树莓派、无 GNSS 接收机 → 未** `systemctl start`、**未**探测串口、**未**上行 NTRIP、**未**开 Web。
 
 | 术语 | 含义 |
 | --- | --- |
@@ -85,7 +87,7 @@ PY
 # 期望：version 2.7.0；tcp_port 5015；caster.centipede.fr / Your_mount_name
 ```
 
-**本机结果（tip `2ce7ce0` / conf 2.7.0，2026-09-24 05:11 EDT）：** `install.sh --help` 正常；ConfigManager 写出合并后的 `/tmp/rtkbase_user.conf`；解析到 **12** 个 `unit/*.service`。未启动 Web（缺 root/systemd/接收机）。
+**本机结果（tip `2ce7ce0` / conf 2.7.0，2026-09-24 05:11 EDT；质检复跑 2026-09-24 05:16 EDT 同数）：** `install.sh --help` 正常；ConfigManager 写出合并后的 `/tmp/rtkbase_user.conf`；解析到 **12** 个 `unit/*.service`。未启动 Web（缺 root/systemd/接收机）。
 
 ## 3. 服务、NTRIP 与数据流
 
