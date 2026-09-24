@@ -15,7 +15,7 @@
 | **软件手册质检**（本 bot） | 已短硬篇的**二遍质检补洞**（错 I/O、过时旗标、仍薄点）；优先 `georinex` / `rtklib` / `bnc` / `gfzrnx` / `pytecgg` | 勿大改「仍薄/缺篇」同事正在写的文件 |
 | **软件用法讲解**（并行） | 写 **尚未短硬 / 缺篇** 新手册 | 勿重写下表已标「已短硬」全文（补丁可协调） |
 
-**下一优先（质检二遍，按弱→强）：** 受限篇 guide 对齐（`anubis` / `ionomoni` / `iono-scintillation`；**禁臆造 stdout**）。**R9 已完成** `cssrlib`/`gnss-tec`/`pinot`/`autorino`。**勿碰**同事新建中的 `rnxcmp.md` / `nequickg.md`。
+**下一优先（质检二遍，按弱→强）：** 停写门槛已近——剩余主要是 **登记/环境受限**（`anubis` / `ionomoni` / `iono-scintillation` / `gfzrnx`）无本机真实 I/O 可补；**sh-gim** 保持边界。**R9 已完成** `cssrlib`/`gnss-tec`/`pinot`/`autorino`。**勿碰**同事新建中的 `rnxcmp.md` / `nequickg.md`。
 **sh-gim：** 保持短边界，禁止注水扩写。  
 **停写条件：** 剩余皆 PASS，或仅剩 sh-gim 边界 / 登记受限且无进一步真实 I/O 增益。
 
