@@ -9,6 +9,7 @@ import sys
 if str(Path(__file__).resolve().parent) not in sys.path:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
 from sync_readme_counts import sync_readme_counts
+from _idempotent_io import append_notes_section, write_json_if_changed, write_text_if_changed
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -799,7 +800,7 @@ def regenerate_lists(projects):
             lines.append("")
 
         path = ROOT / "lists" / meta["file"]
-        path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+        write_text_if_changed(path, "\n".join(lines).rstrip() + "\n")
 
 
 def readme_preview_rows(projects, cat, limit=7):
@@ -847,20 +848,24 @@ def update_categories_md(counts):
             text,
             count=1,
         )
-    path.write_text(text, encoding="utf-8")
+    write_text_if_changed(path, text)
 
 
 def main():
     with open(ROOT / "PROJECTS.json", encoding="utf-8") as f:
         cat = json.load(f)
     existing_urls = {p["url"].rstrip("/").lower() for p in cat["projects"]}
+    existing_names = {p["name"] for p in cat["projects"]}
 
     added = []
     for raw in NEW_ENTRIES:
         e = finalize_entry(raw)
         u = e["url"].rstrip("/").lower()
         if u in existing_urls:
-            print("SKIP dup", e["name"], e["url"])
+            print("SKIP dup url", e["name"], e["url"])
+            continue
+        if e["name"] in existing_names:
+            print("SKIP dup name", e["name"], e["url"])
             continue
         # analysis length check
         nchars = len(e["analysis_zh"])
@@ -868,7 +873,14 @@ def main():
             print(f"WARN length {e['name']}: {nchars}")
         cat["projects"].append(e)
         existing_urls.add(u)
+        existing_names.add(e["name"])
         added.append(e)
+
+    if not added:
+        print("ADDED", 0)
+        print("TOTAL", len(cat["projects"]))
+        print("SKIP_WRITE (no new entries; leave lists/categories/NOTES/PROJECTS/README untouched)")
+        return
 
     from collections import Counter as _Counter
     counts = _Counter(p["category"] for p in cat["projects"])
@@ -876,28 +888,20 @@ def main():
     cat["counts_by_category"] = {k: counts[k] for k in CAT_ORDER}
     cat["generated"] = "2026-09-14"
 
-    with open(ROOT / "PROJECTS.json", "w", encoding="utf-8") as f:
-        json.dump(cat, f, ensure_ascii=False, indent=2)
-        f.write("\n")
-
-    with open(ROOT / "research" / "new_finds.json", "w", encoding="utf-8") as f:
-        json.dump(added, f, ensure_ascii=False, indent=2)
-        f.write("\n")
+    write_json_if_changed(ROOT / "PROJECTS.json", cat)
+    write_json_if_changed(ROOT / "research" / "new_finds.json", added)
 
     regenerate_lists(cat["projects"])
     regenerate_readme(cat["projects"], cat["counts_by_category"])
     update_categories_md(cat["counts_by_category"])
 
-    # update NOTES lightly
-    notes = ROOT / "NOTES.md"
-    notes.write_text(
-        notes.read_text(encoding="utf-8").rstrip()
-        + f"\n\n## 增量合并（2026-09-14）\n\n"
-        + f"- 自 `research/missing_meta.json` 与补充 gh 检索合并新增 **{len(added)}** 条\n"
+    append_notes_section(
+        ROOT / "NOTES.md",
+        "## 增量合并（2026-09-14）",
+        f"- 自 `research/missing_meta.json` 与补充 gh 检索合并新增 **{len(added)}** 条\n"
         + f"- 当前条目：**{cat['project_count']}**\n"
         + f"- 分类计数：{dict(cat['counts_by_category'])}\n"
         + f"- 详见 `research/new_finds.json`\n",
-        encoding="utf-8",
     )
 
     print("ADDED", len(added))

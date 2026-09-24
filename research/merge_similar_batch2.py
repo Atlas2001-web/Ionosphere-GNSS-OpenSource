@@ -12,6 +12,12 @@ import sys
 if str(Path(__file__).resolve().parent) not in sys.path:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
 from sync_readme_counts import sync_readme_counts
+from _idempotent_io import (
+    append_notes_section,
+    projects_substantively_equal,
+    write_json_if_changed,
+    write_text_if_changed,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECTS_PATH = ROOT / "PROJECTS.json"
@@ -506,7 +512,7 @@ def regenerate_lists(projects):
                 lines.append(p.get("analysis_zh") or one_liner(p))
                 lines.append("")
 
-        (LISTS / meta["file"]).write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+        write_text_if_changed(LISTS / meta["file"], "\n".join(lines).rstrip() + "\n")
 
 
 def regenerate_categories(counts):
@@ -553,7 +559,7 @@ def regenerate_categories(counts):
         "> 私有仓库（如 `SH-GIM-proprietary`）**不会**出现在公开索引中。",
         "",
     ]
-    (DOCS / "categories.md").write_text("\n".join(cat_doc), encoding="utf-8")
+    write_text_if_changed(DOCS / "categories.md", "\n".join(cat_doc))
 
 
 def regenerate_readme(projects, counts, prov_counts):
@@ -564,6 +570,7 @@ def regenerate_readme(projects, counts, prov_counts):
 def main():
     catalog = json.loads(PROJECTS_PATH.read_text(encoding="utf-8"))
     projects = catalog["projects"]
+    original_projects = json.loads(json.dumps(projects, ensure_ascii=False))
 
     # normalize incomplete
     for p in projects:
@@ -593,6 +600,13 @@ def main():
         existing_names.add(e["name"])
         added.append(e)
 
+    normalized_only = (not added) and not projects_substantively_equal(projects, original_projects)
+    if not added and not normalized_only:
+        print("ADDED", 0)
+        print("TOTAL", len(projects))
+        print("SKIP_WRITE (no new entries / no normalize changes)")
+        return
+
     counts = Counter(p["category"] for p in projects)
     prov_counts = Counter(p.get("provenance") for p in projects)
     catalog["projects"] = projects
@@ -600,7 +614,7 @@ def main():
     catalog["counts_by_category"] = {k: counts.get(k, 0) for k in CAT_META}
     catalog["generated"] = date.today().isoformat()
 
-    PROJECTS_PATH.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    write_json_if_changed(PROJECTS_PATH, catalog)
 
     # Merge into similar_finds.json: keep prior + append new batch as research record
     prior = []
@@ -625,22 +639,19 @@ def main():
                     "markers": e.get("markers") or [],
                 }
             )
-    SIMILAR_PATH.write_text(json.dumps(prior, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    write_json_if_changed(SIMILAR_PATH, prior)
 
     regenerate_lists(projects)
     regenerate_categories(counts)
     regenerate_readme(projects, counts, prov_counts)
 
-    # NOTES append
-    notes = ROOT / "NOTES.md"
-    notes.write_text(
-        notes.read_text(encoding="utf-8").rstrip()
-        + f"\n\n## 相似项目补录 batch2（2026-09-14）\n\n"
-        + f"- 新增 **{len(added)}** 条（cssrlib/PocketSDR/PPP-Wizard/NTRIP/TEC/PWV 等）\n"
+    append_notes_section(
+        ROOT / "NOTES.md",
+        "## 相似项目补录 batch2（2026-09-14）",
+        f"- 新增 **{len(added)}** 条（cssrlib/PocketSDR/PPP-Wizard/NTRIP/TEC/PWV 等）\n"
         + f"- 当前条目：**{catalog['project_count']}**\n"
         + f"- 分类计数：{dict(catalog['counts_by_category'])}\n"
         + f"- 详见 `research/similar_finds.json`\n",
-        encoding="utf-8",
     )
 
     print("ADDED", len(added))

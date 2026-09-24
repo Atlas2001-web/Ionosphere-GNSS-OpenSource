@@ -12,6 +12,12 @@ import sys
 if str(Path(__file__).resolve().parent) not in sys.path:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
 from sync_readme_counts import sync_readme_counts
+from _idempotent_io import (
+    append_notes_section,
+    projects_substantively_equal,
+    write_json_if_changed,
+    write_text_if_changed,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECTS_PATH = ROOT / "PROJECTS.json"
@@ -342,6 +348,7 @@ def stars_cell(p: dict) -> str:
 def main() -> None:
     catalog = json.loads(PROJECTS_PATH.read_text())
     projects = catalog["projects"]
+    original_projects = json.loads(json.dumps(projects, ensure_ascii=False))
     finds = json.loads(WEB_FINDS.read_text())
 
     existing = {norm_url(p["url"]): p for p in projects}
@@ -465,6 +472,14 @@ def main() -> None:
     counts = Counter(p["category"] for p in projects)
     prov_counts = Counter(p.get("provenance") for p in projects)
 
+    # Idempotent: no adds and no substantive field/order changes → skip all writes.
+    if not added and projects_substantively_equal(projects, original_projects):
+        print("ADDED", 0)
+        print("SKIPPED", len(skipped))
+        print("TOTAL", len(projects))
+        print("SKIP_WRITE (no new entries / no substantive updates)")
+        return
+
     catalog["projects"] = projects
     catalog["project_count"] = len(projects)
     catalog["counts_by_category"] = {k: counts.get(k, 0) for k in cat_order}
@@ -473,7 +488,7 @@ def main() -> None:
         catalog.get("note")
         or "Curated index of open GNSS/ionosphere software; verify upstream licenses before use."
     )
-    PROJECTS_PATH.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n")
+    write_json_if_changed(PROJECTS_PATH, catalog)
 
     # --- regenerate lists ---
     for cat, meta in CAT_META.items():
@@ -521,7 +536,7 @@ def main() -> None:
                 lines.append(p.get("analysis_zh") or one_liner(p))
                 lines.append("")
 
-        (LISTS / meta["file"]).write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+        write_text_if_changed(LISTS / meta["file"], "\n".join(lines).rstrip() + "\n")
 
     # --- categories.md ---
     cat_doc = []
@@ -566,36 +581,34 @@ def main() -> None:
     cat_doc.append("")
     cat_doc.append("> 私有仓库（如 `SH-GIM-proprietary`）**不会**出现在公开索引中。")
     cat_doc.append("")
-    (DOCS / "categories.md").write_text("\n".join(cat_doc), encoding="utf-8")
+    write_text_if_changed(DOCS / "categories.md", "\n".join(cat_doc))
 
     # README: sync counts only (preserve navigational template)
     sync_readme_counts(ROOT)
 
-    # NOTES append
-    notes_path = ROOT / "NOTES.md"
-    notes = notes_path.read_text(encoding="utf-8") if notes_path.exists() else ""
-    append = f"""
+    total = len(projects)
+    append_notes_section(
+        ROOT / "NOTES.md",
+        "## Web/官方扩充（2026-09-14）",
+        f"- 新增经核验的非 GitHub/官方站点条目写入 `research/web_finds.json`（本轮合并新增 **{len(added)}**）\n"
+        f"- 全量条目补齐 `provenance`（official / academic_lab / personal_community）与 `host`\n"
+        f"- 列表与 README 增加 🏷️ 官方 / 高校实验室 / 个人社区 徽章\n"
+        f"- 若干 GitHub 镜像改挂官方上游（ntripserver/client/rtcm3torinex）\n"
+        f"- 未 git push\n\n"
+        f"来源统计：official={prov_counts.get('official',0)}, academic_lab={prov_counts.get('academic_lab',0)}, personal_community={prov_counts.get('personal_community',0)}\n"
+        f"当前总条目：**{total}**\n"
+        f"新增名称：{', '.join(added) if added else '(none)'}\n",
+    )
 
-## Web/官方扩充（2026-09-14）
-
-- 新增经核验的非 GitHub/官方站点条目写入 `research/web_finds.json`（本轮合并新增 **{len(added)}**）
-- 全量条目补齐 `provenance`（official / academic_lab / personal_community）与 `host`
-- 列表与 README 增加 🏷️ 官方 / 高校实验室 / 个人社区 徽章
-- 若干 GitHub 镜像改挂官方上游（ntripserver/client/rtcm3torinex）
-- 未 git push
-
-来源统计：official={prov_counts.get('official',0)}, academic_lab={prov_counts.get('academic_lab',0)}, personal_community={prov_counts.get('personal_community',0)}
-当前总条目：**{total}**
-新增名称：{', '.join(added) if added else '(none)'}
-"""
-    notes_path.write_text(notes.rstrip() + append, encoding="utf-8")
-
-    # search log snippet
-    log_path = ROOT / "research" / "search_log.md"
-    log_path.write_text(
-        (log_path.read_text(encoding="utf-8") if log_path.exists() else "")
-        + f"\n\n## Web expansion 2026-09-14\n\n- web_finds.json: {len(finds)} candidates\n- merged new: {len(added)}\n- skipped: {len(skipped)}\n- catalog total: {total}\n- provenance: {dict(prov_counts)}\n",
-        encoding="utf-8",
+    # search log snippet (idempotent by heading)
+    append_notes_section(
+        ROOT / "research" / "search_log.md",
+        "## Web expansion 2026-09-14",
+        f"- web_finds.json: {len(finds)} candidates\n"
+        f"- merged new: {len(added)}\n"
+        f"- skipped: {len(skipped)}\n"
+        f"- catalog total: {total}\n"
+        f"- provenance: {dict(prov_counts)}\n",
     )
 
     print("ADDED", len(added))

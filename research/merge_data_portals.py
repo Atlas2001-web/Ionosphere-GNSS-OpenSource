@@ -12,6 +12,7 @@ import sys
 if str(Path(__file__).resolve().parent) not in sys.path:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
 from sync_readme_counts import sync_readme_counts
+from _idempotent_io import append_notes_section, write_json_if_changed, write_text_if_changed
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECTS_PATH = ROOT / "PROJECTS.json"
@@ -204,7 +205,7 @@ def write_list_generic(cat: str, meta: dict, projects: list) -> None:
                 lines.append(p.get("analysis_zh") or one_liner(p))
                 lines.append("")
 
-    (LISTS / meta["file"]).write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+    write_text_if_changed(LISTS / meta["file"], "\n".join(lines).rstrip() + "\n")
 
 
 def write_data_access_doc() -> None:
@@ -259,7 +260,7 @@ CDDIS 是 IGS 全球数据中心之一，观测、导航、SP3/CLK、IONEX、偏
 
 更细的逐站说明见 `lists/10-gnss-datasets.md` 各条目「如何获取」。
 """
-    (DOCS / "data-access.md").write_text(text, encoding="utf-8")
+    write_text_if_changed(DOCS / "data-access.md", text)
 
 
 def main() -> None:
@@ -310,6 +311,13 @@ def main() -> None:
         existing_names.add(entry["name"])
         added.append(entry["name"])
 
+    if not added:
+        print("ADDED", 0)
+        print("SKIPPED", len(skipped))
+        print("TOTAL", len(projects))
+        print("SKIP_WRITE (no new portals; leave lists/categories/NOTES/PROJECTS/README untouched)")
+        return
+
     cat_order = list(CAT_META.keys())
     projects.sort(
         key=lambda p: (
@@ -339,7 +347,7 @@ def main() -> None:
             catalog.get("note")
             or "SH-GIM-proprietary is private and intentionally omitted from public lists."
         )
-    PROJECTS_PATH.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    write_json_if_changed(PROJECTS_PATH, catalog)
 
     # regenerate ALL lists (so counts stay consistent) — only rewrite gnss-datasets fully custom;
     # for others, lightly refresh header counts by reusing existing files would drift.
@@ -394,26 +402,22 @@ def main() -> None:
     cat_doc.append("")
     cat_doc.append("> 私有仓库（如 `SH-GIM-proprietary`）**不会**出现在公开索引中。")
     cat_doc.append("")
-    (DOCS / "categories.md").write_text("\n".join(cat_doc), encoding="utf-8")
+    write_text_if_changed(DOCS / "categories.md", "\n".join(cat_doc))
 
     # README: sync counts only (preserve navigational template)
     sync_readme_counts(ROOT)
 
-    notes_path = ROOT / "NOTES.md"
-    notes = notes_path.read_text(encoding="utf-8") if notes_path.exists() else ""
-    append = f"""
-
-## GNSS 数据源类扩充（2026-09-14）
-
-- 新增类别 `gnss-datasets` → `lists/10-gnss-datasets.md`
-- 写入 `research/data_portals.json`，本轮合并新增 **{len(added)}**
-- 说明文档：`docs/data-access.md`（Earthdata/CDDIS、IGS 目录、注册徽章）
-- 注册方式统计：{dict(reg_counts)}
-- 未 git push
-
-当前总条目：**{total}**（gnss-datasets={counts.get('gnss-datasets',0)}）
-"""
-    notes_path.write_text(notes.rstrip() + append, encoding="utf-8")
+    total = len(projects)
+    append_notes_section(
+        ROOT / "NOTES.md",
+        "## GNSS 数据源类扩充（2026-09-14）",
+        f"- 新增类别 `gnss-datasets` → `lists/10-gnss-datasets.md`\n"
+        f"- 写入 `research/data_portals.json`，本轮合并新增 **{len(added)}**\n"
+        f"- 说明文档：`docs/data-access.md`（Earthdata/CDDIS、IGS 目录、注册徽章）\n"
+        f"- 注册方式统计：{dict(reg_counts)}\n"
+        f"- 未 git push\n\n"
+        f"当前总条目：**{total}**（gnss-datasets={counts.get('gnss-datasets',0)}）\n",
+    )
 
     print("ADDED", len(added))
     print("SKIPPED", len(skipped))
