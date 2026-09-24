@@ -1,5 +1,5 @@
 # GNSS 数据与格式 / GNSS Data I/O
-> **132** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **133** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
@@ -1064,6 +1064,7 @@ gpsd 社区官网，提供安装文档、兼容硬件列表与发布信息。源
 | [rtcm3torinex](https://software.rtcm-ntrip.org/wiki/rtcm3torinex) | BKG rtcm3torinex：RTCM3 流转 RINEX 的官方小工具 | C | 65 | 🏷️ 官方 |
 | [prx](https://github.com/jtec/prx) | prx：RINEX 3.05 观测→CSV 小工具 | Python | 23 | 🏷️ 个人社区 |
 | [ubx2rinex](https://github.com/nav-solutions/ubx2rinex) | ubx2rinex：Rust 实现 UBX 到 RINEX 转换/采集 | Rust | 12 | 🏷️ 个人社区 |
+| [rinex2bin](https://github.com/nav-solutions/rinex2bin) | rinex2bin：RINEX→BINEX 命令行序列化（nav-solutions） | Rust | 1 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -1087,6 +1088,13 @@ RTCM-Ntrip 项目提供的 RTCM 3 到 RINEX 转换工具，便于把实时流转
 语言：Rust · 许可：MPL-2.0 · 星标约：12 · 宿主：github
 
 Rust 实现的 u-blox UBX 原始观测反序列化与 RINEX 采集工具，方便把低成本板卡数据送进经典后处理软件。适合外场脚本化采集与自动化。与 android_rinex、georinex 互补；天线高、观测码映射与时钟处理要按接收机配置核对，转换后建议跑质检工具。
+
+#### [rinex2bin](https://github.com/nav-solutions/rinex2bin)  
+*🏷️ 个人社区*
+
+语言：Rust · 许可：MPL-2.0 · 星标约：1 · 宿主：github
+
+把 RINEX（优先 NAV）序列化成 BINEX 二进制流/`.bin` 文件，便于紧凑分发或写 I/O。与同组织 rinex / ubx2rinex 互补。crates 0.1.0 流尽后忙等须 timeout；OBS 仍 WIP，生产前用样例回归。本身不做定位解算。
 
 ## 掩星/CDAAC解析
 

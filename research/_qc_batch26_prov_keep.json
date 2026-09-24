@@ -1,0 +1,116 @@
+[
+  {
+    "owner": "nav-solutions",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "FOSS org France; all siblings PC; incl. rinex2bin"
+  },
+  {
+    "owner": "pothosware",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "Pothosware FOSS suite; no univ/lab"
+  },
+  {
+    "owner": "osqzss",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "User Takuji Ebinuma"
+  },
+  {
+    "owner": "swift-nav",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "vendor OSS"
+  },
+  {
+    "owner": "novatel",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "Hexagon|NovAtel vendor"
+  },
+  {
+    "owner": "Fixposition",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "vendor"
+  },
+  {
+    "owner": "Aceinna",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "vendor"
+  },
+  {
+    "owner": "bolderflight",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "Bolder Flight Systems vendor"
+  },
+  {
+    "owner": "swri-robotics",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "batch25 KEEP not re-opened"
+  },
+  {
+    "owner": "107-systems",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "community FOSS"
+  },
+  {
+    "owner": "ublox-rs",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "community FOSS org"
+  },
+  {
+    "owner": "csobey",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "User; company/bio null"
+  },
+  {
+    "owner": "vincenthumphrey",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "User; company/bio null"
+  },
+  {
+    "owner": "DeepHorizons",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "User Joshua Milas; no lab company"
+  },
+  {
+    "owner": "Binabh",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "User"
+  },
+  {
+    "owner": "kristianpaul",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "User"
+  },
+  {
+    "owner": "stevemarple",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "User"
+  },
+  {
+    "owner": "AlvaroTena",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "User"
+  },
+  {
+    "owner": "nbtk",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "User"
+  }
+]

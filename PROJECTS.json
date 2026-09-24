@@ -11194,8 +11194,8 @@
     {
       "name": "rinex2bin",
       "url": "https://github.com/nav-solutions/rinex2bin",
-      "desc_zh": "Rust：RINEX→BINEX 序列化 CLI（nav-solutions / rtk-rs）",
-      "analysis_zh": "把 RINEX 导航/观测序列化为 BINEX 文件或可写流。crates 0.1.0 流尽后忙等须 timeout；OBS 仍 WIP。",
+      "desc_zh": "把 RINEX（优先 NAV）写成 BINEX 流或 `.bin`；OBS 仍 WIP，流尽后忙等须 timeout",
+      "analysis_zh": "nav-solutions / rtk-rs 生态的 RINEX→BINEX CLI（MPL-2.0，Rust）。便于紧凑分发或写 I/O；crates 0.1.0 在输入流结束后会忙等，脚本侧请加 timeout。OBS 路径仍属 WIP，生产前用样例回归。与同组织 rinex / ubx2rinex 互补，不做定位解算。",
       "language": "Rust",
       "license": "MPL-2.0",
       "category": "gnss-data",
@@ -11209,7 +11209,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "rinex2bin：RINEX→BINEX CLI（nav-solutions）"
+      "one_liner_zh": "rinex2bin：RINEX→BINEX 命令行序列化（nav-solutions）"
     },
     {
       "name": "clkcomb",
@@ -18842,7 +18842,7 @@
   "provenance_counts": {
     "official": 298,
     "academic_lab": 336,
-    "personal_community": 320
+    "personal_community": 321
   },
   "updated": "2026-09-24"
 }
