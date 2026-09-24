@@ -1,5 +1,5 @@
 # 轨道与钟差 / Orbit & Clock
-> **16** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **18** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。
 
@@ -179,3 +179,33 @@ CS-SI 维护的底层太空动力学库，覆盖轨道传播、力模型、姿�
 语言：Python · 许可：BSD-3-Clause · 星标约：91 · 宿主：github
 
 Tudatpy 是 TU Delft Tudat 的 Python 接口，面向轨道传播、天体动力学仿真与教学。BSD-3-Clause；与 Orekit 互补（Python/C++ 绑定 vs Java）。非专用 GNSS POD 套件，但可作精密轨道/力模型实验底座；推荐用 conda 发行包，完整文档与示例见 tudat.space。
+
+## 偏差与校准
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [IGS-Bias-Calibration-WG](https://igs.org/wg/bias/) | IGS 偏差与校准工作组：DCB/OSB 等偏差产品入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [IGS-Bias-Calibration-WG](https://igs.org/wg/bias/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+汇总 IGS Bias and Calibration 工作组活动，面向差分码偏差、可观测量特定偏差（OSB）及校准议题。对 PPP-AR、多系统组合与钟差产品一致性很关键。页面为活动与文档入口，具体偏差文件仍从 IGS 产品树获取。收录前已 HTTP 核验；引用请注明产品来源与版本。
+
+## 时标产品
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [BIPM-Time-FTP](https://www.bipm.org/en/time-ftp) | BIPM 时间 FTP：UTC/UTCr/TT(BIPM) 等时标产品入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [BIPM-Time-FTP](https://www.bipm.org/en/time-ftp)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+国际计量局时间部门提供的 FTP/产品入口，涵盖 UTC、快速 UTC 与 TT(BIPM) 等时标文件，是 GNSS 时间比对、CGGTTS 与实验室钟差溯源的常用上游。页面说明访问方式与目录结构，实际文件经 FTP 拉取。时标修订与通告需对照 BIPM Circular T。收录前已 HTTP 核验；使用请遵守 BIPM 数据政策。

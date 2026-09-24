@@ -1,5 +1,5 @@
 # 对流层 / Troposphere
-> **39** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **40** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
@@ -433,3 +433,18 @@ space-physics 维护的 LOWTRAN7 现代封装，用 f2py/CMake 在 Python 中直
 语言：Fortran · 许可：Apache-2.0 · 星标约：7 · 宿主：github
 
 gemini3d 维护的 NRL Horizontal Wind Model 2014 可构建库，用 CMake 生成 libhwm14，供上层大气/电离层耦合与轨迹仿真调用。Apache-2.0。是中性风经验模型而非 GNSS 处理软件；旧 HWM93 包装仓已归档，新集成优先此仓。
+
+## 对流层产品
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [IGS-Troposphere-WG](https://igs.org/wg/troposphere/) | IGS 对流层工作组：ZTD/梯度产品与活动入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [IGS-Troposphere-WG](https://igs.org/wg/troposphere/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+介绍 IGS 对流层联合产品、分析中心角色及会议活动，是查找 ZTD、梯度与相关试点的入口页。页面本身不托管大容量产品文件，下载通常走 CDDIS/IGN 等数据中心。对流层产品与电离层/轨道产品解耦，引用时需核对产品版本与时延。收录前已用 HTTP 核验可访问；使用请遵守 IGS 与上游条款。

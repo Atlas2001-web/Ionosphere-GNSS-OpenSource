@@ -1,5 +1,5 @@
 # GNSS 数据与格式 / GNSS Data I/O
-> **126** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **128** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
@@ -1283,3 +1283,33 @@ EarthScope 发布的 Python 客户端（Apache-2.0，PyPI: earthscope-sdk），�
 语言：Python · 许可：MIT · 星标约：1 · 宿主：github
 
 MIT 许可的 Python 脚本，从 gnss.osi.ie 批量下载爱尔兰 Active GNSS 站 RINEX（ZIP），可列站号并按日期/小时段抓取。填补西欧岛屿 CORS 自动化缺口。使用前须同意站点条款；公开窗口常约近 30 天。门户偶发网络可达性问题，失败时核对站点状态。
+
+## 天线模型
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [IGS-Antenna-WG](https://igs.org/wg/antenna/) | IGS 天线工作组：ANTEX/天线相位中心模型入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [IGS-Antenna-WG](https://igs.org/wg/antenna/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+面向接收机与卫星天线校准、ANTEX 发布与相位中心变化（PCV/PCO）议题。精密定位与轨道确定对天线模型敏感，此页可快速定位工作组文档与发布说明。实际 atx 文件仍从 IGS 产品目录获取。收录前已 HTTP 核验；使用请对照最新 ANTEX 版本。
+
+## Rust定义
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [nav-solutions-gnss](https://github.com/nav-solutions/gnss) | Rust GNSS 星座/信号等基础定义 crate（nav-solutions） | Rust | 11 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [nav-solutions-gnss](https://github.com/nav-solutions/gnss)  
+*🏷️ 个人社区*
+
+语言：Rust · 许可：MPL-2.0 · 星标约：11 · 宿主：github
+
+为 nav-solutions 生态提供星座、信号与相关枚举/定义的 Rust crate，供 rinex、gnss-rtk、rt-navi 等库复用。MPL-2.0；本身不做解算，但减少各 crate 重复定义。命名刻意加前缀以免与泛名“gnss”冲突。API 随生态演进，接入前请核对 crates.io 版本与 MSRV。适合 Rust GNSS 工具链开发者。

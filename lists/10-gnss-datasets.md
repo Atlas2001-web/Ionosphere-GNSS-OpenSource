@@ -1,5 +1,5 @@
 # GNSS 数据源 / GNSS Datasets
-> **125** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **127** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
@@ -1156,3 +1156,33 @@ EarthScope（原 UNAVCO）整理的 GPS/GNSS 数据访问方法页，对比 Web�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 德国地学研究中心（GFZ）Information System and Data Center 的 GNSS HTTPS 数据根：/gnss/data/daily、/highrate 等目录提供日文件与高采样观测及产品树，匿名 HTTPS 浏览下载。IGSMail 等通告已推动从旧 FTP 迁移至此主机（旧 FTP 计划关停）。与已收录的 isdc.gfz-potsdam.de 门户页互补——本条指向可直接 wget/curl 的数据树。使用请遵守 GFZ/ISDC 数据政策并引用相应 DOI。
+
+## 多系统扩展
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [IGS-Multi-GNSS-WG](https://igs.org/wg/multi-gnss/) | IGS Multi-GNSS 工作组：多系统扩展与 MGEX 协同入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [IGS-Multi-GNSS-WG](https://igs.org/wg/multi-gnss/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+介绍 IGS 多系统 GNSS 工作组职责及与 MGEX 的衔接，适合跟踪新信号、新星座在 IGS 框架中的试验与标准化进展。页面偏组织与活动说明，观测与产品下载仍走 MGEX/CDDIS 等渠道。与仅 GPS 时代产品体系对照阅读更有帮助。收录前已 HTTP 核验可访问。
+
+## 参考框架
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [IGS-Reference-Frame-WG](https://igs.org/wg/reference-frame/) | IGS 参考框架工作组：测站坐标与框架一致性入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [IGS-Reference-Frame-WG](https://igs.org/wg/reference-frame/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+说明 IGS 参考框架工作组在测站坐标、框架对齐与相关产品一致性方面的职责。对长期时间序列、速度场与框架转换用户有指引价值。页面不直接提供 SINEX 下载，产品仍走 IGS 产品中心。收录前已 HTTP 核验可访问；引用请遵循 IGS 框架产品说明。

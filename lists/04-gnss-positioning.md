@@ -1,5 +1,5 @@
 # 精密定位 / Precise Positioning
-> **97** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **98** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
@@ -1051,3 +1051,18 @@ taroz 维护的单频 RTK-GNSS 流动/基准站方案，底层依托 RTKLIB，�
 语言：Python · 许可：AGPL-3.0 · 星标约：0 · 宿主：github
 
 Python 终端 RTK 客户端（AGPL-3.0）：经 NTRIP 拉取 RTCM3 改正并注入串口 GNSS 模块，curses 界面显示 Fixed/Float、卫星与 SNR，支持 TLS、YAML 配置、CSV 轨迹日志、自动重连与模块配置文件（LC29H / generic NMEA）。面向低成本流动站联调，不是模糊度固定解算库（依赖接收机内部 RTK）。星标虽少但 2026 仍有推送；部署需自备 NTRIP 账号与兼容接收机。
+
+## 实时PVT
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [rt-navi](https://github.com/nav-solutions/rt-navi) | Rust 实时导航演示：U-Blox 原始观测 + gnss-rtk 解算 | Rust | 12 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [rt-navi](https://github.com/nav-solutions/rt-navi)  
+*🏷️ 个人社区*
+
+语言：Rust · 许可：MPL-2.0 · 星标约：12 · 宿主：github
+
+nav-solutions 框架下的实时 PoC：以 U-Blox 原始/手动模式作测量源，喂给同组织的 PVT 解算器并与接收机固件解对比。MPL-2.0；当前单串口单接收机。偏工程验证而非测地级 PPP-AR 产品，外参、时间同步与对流层模型需使用者自理。与已收录的 gnss-rtk/rinex 等 crate 同一生态。

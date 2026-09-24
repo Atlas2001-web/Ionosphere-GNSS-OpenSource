@@ -1,0 +1,296 @@
+[
+  {
+    "name": "IGS-Troposphere-WG",
+    "url": "https://igs.org/wg/troposphere/",
+    "desc_zh": "IGS 对流层工作组：ZTD/梯度产品与活动入口",
+    "analysis_zh": "介绍 IGS 对流层联合产品、分析中心角色及会议活动，是查找 ZTD、梯度与相关试点的入口页。页面本身不托管大容量产品文件，下载通常走 CDDIS/IGN 等数据中心。对流层产品与电离层/轨道产品解耦，引用时需核对产品版本与时延。收录前已用 HTTP 核验可访问；使用请遵守 IGS 与上游条款。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "troposphere",
+    "subcategory": "对流层产品",
+    "markers": [
+      "routine-2026-09-24i"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924i",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "IGS 对流层工作组：ZTD/梯度产品与活动入口",
+    "registration": "open",
+    "registration_zh": "工作组/门户页面公开浏览；产品下载走各自数据中心或上游条款。"
+  },
+  {
+    "name": "IGS-Bias-Calibration-WG",
+    "url": "https://igs.org/wg/bias/",
+    "desc_zh": "IGS 偏差与校准工作组：DCB/OSB 等偏差产品入口",
+    "analysis_zh": "汇总 IGS Bias and Calibration 工作组活动，面向差分码偏差、可观测量特定偏差（OSB）及校准议题。对 PPP-AR、多系统组合与钟差产品一致性很关键。页面为活动与文档入口，具体偏差文件仍从 IGS 产品树获取。收录前已 HTTP 核验；引用请注明产品来源与版本。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "orbit-clock",
+    "subcategory": "偏差与校准",
+    "markers": [
+      "routine-2026-09-24i"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924i",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "IGS 偏差与校准工作组：DCB/OSB 等偏差产品入口",
+    "registration": "open",
+    "registration_zh": "工作组/门户页面公开浏览；产品下载走各自数据中心或上游条款。"
+  },
+  {
+    "name": "IGS-Multi-GNSS-WG",
+    "url": "https://igs.org/wg/multi-gnss/",
+    "desc_zh": "IGS Multi-GNSS 工作组：多系统扩展与 MGEX 协同入口",
+    "analysis_zh": "介绍 IGS 多系统 GNSS 工作组职责及与 MGEX 的衔接，适合跟踪新信号、新星座在 IGS 框架中的试验与标准化进展。页面偏组织与活动说明，观测与产品下载仍走 MGEX/CDDIS 等渠道。与仅 GPS 时代产品体系对照阅读更有帮助。收录前已 HTTP 核验可访问。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "多系统扩展",
+    "markers": [
+      "routine-2026-09-24i"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924i",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "IGS Multi-GNSS 工作组：多系统扩展与 MGEX 协同入口",
+    "registration": "open",
+    "registration_zh": "工作组/门户页面公开浏览；产品下载走各自数据中心或上游条款。"
+  },
+  {
+    "name": "IGS-Antenna-WG",
+    "url": "https://igs.org/wg/antenna/",
+    "desc_zh": "IGS 天线工作组：ANTEX/天线相位中心模型入口",
+    "analysis_zh": "面向接收机与卫星天线校准、ANTEX 发布与相位中心变化（PCV/PCO）议题。精密定位与轨道确定对天线模型敏感，此页可快速定位工作组文档与发布说明。实际 atx 文件仍从 IGS 产品目录获取。收录前已 HTTP 核验；使用请对照最新 ANTEX 版本。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-data",
+    "subcategory": "天线模型",
+    "markers": [
+      "routine-2026-09-24i"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924i",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "IGS 天线工作组：ANTEX/天线相位中心模型入口",
+    "registration": "open",
+    "registration_zh": "工作组/门户页面公开浏览；产品下载走各自数据中心或上游条款。"
+  },
+  {
+    "name": "IGS-Reference-Frame-WG",
+    "url": "https://igs.org/wg/reference-frame/",
+    "desc_zh": "IGS 参考框架工作组：测站坐标与框架一致性入口",
+    "analysis_zh": "说明 IGS 参考框架工作组在测站坐标、框架对齐与相关产品一致性方面的职责。对长期时间序列、速度场与框架转换用户有指引价值。页面不直接提供 SINEX 下载，产品仍走 IGS 产品中心。收录前已 HTTP 核验可访问；引用请遵循 IGS 框架产品说明。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "参考框架",
+    "markers": [
+      "routine-2026-09-24i"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924i",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "IGS 参考框架工作组：测站坐标与框架一致性入口",
+    "registration": "open",
+    "registration_zh": "工作组/门户页面公开浏览；产品下载走各自数据中心或上游条款。"
+  },
+  {
+    "name": "NRCan-TRX",
+    "url": "https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/trx.php",
+    "desc_zh": "加拿大 NRCan TRX：在线大地坐标/高程转换工具",
+    "analysis_zh": "自然资源部 CSRS 在线工具，支持加拿大常用大地基准与高程系统之间的坐标转换，常与 CSRS-PPP 成果后处理衔接。面向工程与科研用户的浏览器表单，无需自建 PROJ 管线即可完成官方参数转换。参数与历元选择会影响结果，跨海或旧历元需核对说明。收录前已 HTTP 200 核验；请遵守 NRCan 服务条款。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "tools-learning",
+    "subcategory": "坐标转换",
+    "markers": [
+      "routine-2026-09-24i"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924i",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "加拿大 NRCan TRX：在线大地坐标/高程转换工具",
+    "registration": "open",
+    "registration_zh": "在线表单公开使用；请遵守 NRCan/CSRS 服务条款与引用说明。"
+  },
+  {
+    "name": "BIPM-Time-FTP",
+    "url": "https://www.bipm.org/en/time-ftp",
+    "desc_zh": "BIPM 时间 FTP：UTC/UTCr/TT(BIPM) 等时标产品入口",
+    "analysis_zh": "国际计量局时间部门提供的 FTP/产品入口，涵盖 UTC、快速 UTC 与 TT(BIPM) 等时标文件，是 GNSS 时间比对、CGGTTS 与实验室钟差溯源的常用上游。页面说明访问方式与目录结构，实际文件经 FTP 拉取。时标修订与通告需对照 BIPM Circular T。收录前已 HTTP 核验；使用请遵守 BIPM 数据政策。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "orbit-clock",
+    "subcategory": "时标产品",
+    "markers": [
+      "routine-2026-09-24i"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924i",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "BIPM 时间 FTP：UTC/UTCr/TT(BIPM) 等时标产品入口",
+    "registration": "open",
+    "registration_zh": "产品入口公开；FTP 访问与引用请遵循 BIPM 说明。"
+  },
+  {
+    "name": "LANS-AFS-SIM",
+    "url": "https://github.com/osqzss/LANS-AFS-SIM",
+    "desc_zh": "LunaNet LANS AFS 基带信号发生器（月面导航仿真）",
+    "analysis_zh": "按 LunaNet 互操作规范生成月球增强导航服务（LANS）AFS 基带，可直接喂给软件接收机或经 bladeRF/LimeSDR 上变频。与 PocketSDR-AFS 等接收端配套，用于算法验证与导航性能评估。属月面/深空导航前端，而非地球 GNSS 星座仿真；信号参数需对照 NASA LunaNet 规范。BSD-2-Clause；近年仍有提交。",
+    "language": "C",
+    "license": "BSD-2-Clause",
+    "category": "gnss-sdr",
+    "subcategory": "月面导航仿真",
+    "markers": [
+      "routine-2026-09-24i"
+    ],
+    "stars_approx": 9,
+    "source": "routine-finds-20260924i",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "LunaNet LANS AFS 基带信号发生器（月面导航仿真）"
+  },
+  {
+    "name": "PocketSDR-AFS",
+    "url": "https://github.com/osqzss/PocketSDR-AFS",
+    "desc_zh": "基于 PocketSDR 的 LunaNet LANS AFS 软件接收机",
+    "analysis_zh": "在 PocketSDR 基础上扩展的 LANS AFS 软件定义接收机，用于处理月球增强导航前向信号。仓库 LICENSE 声明沿用 PocketSDR 的 BSD 2-clause，并注明额外版权。适合与 LANS-AFS-SIM 联调；地球 GNSS 通道能力仍以原版 PocketSDR 为准。前端硬件与采样率配置需自行匹配。GitHub license API 可能显示 NOASSERTION，以仓库 LICENSE.txt 为准。",
+    "language": "C",
+    "license": "BSD-2-Clause",
+    "category": "gnss-sdr",
+    "subcategory": "月面软件接收机",
+    "markers": [
+      "routine-2026-09-24i"
+    ],
+    "stars_approx": 18,
+    "source": "routine-finds-20260924i",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "基于 PocketSDR 的 LunaNet LANS AFS 软件接收机"
+  },
+  {
+    "name": "namuru-gps",
+    "url": "https://github.com/osqzss/namuru-gps",
+    "desc_zh": "Verilog 实现的 GPS C/A 跟踪通道（Namuru 风格）",
+    "analysis_zh": "用 Verilog 描述 GPS L1 C/A 码跟踪通道，面向 FPGA/ASIC 教学与相关器前端实验，许可证为 LGPL-2.1。体量小、星数有限，但补齐了开源 GNSS 硬件相关器描述这一薄点。需自备射频前端与位宽/时钟约束；不提供完整 PVT 解算链。近年仍有维护痕迹，适合与 gps-sdr-sim 等基带源联调。",
+    "language": "Verilog",
+    "license": "LGPL-2.1",
+    "category": "gnss-sdr",
+    "subcategory": "FPGA相关器",
+    "markers": [
+      "routine-2026-09-24i"
+    ],
+    "stars_approx": 6,
+    "source": "routine-finds-20260924i",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "Verilog 实现的 GPS C/A 跟踪通道（Namuru 风格）"
+  },
+  {
+    "name": "rt-navi",
+    "url": "https://github.com/nav-solutions/rt-navi",
+    "desc_zh": "Rust 实时导航演示：U-Blox 原始观测 + gnss-rtk 解算",
+    "analysis_zh": "nav-solutions 框架下的实时 PoC：以 U-Blox 原始/手动模式作测量源，喂给同组织的 PVT 解算器并与接收机固件解对比。MPL-2.0；当前单串口单接收机。偏工程验证而非测地级 PPP-AR 产品，外参、时间同步与对流层模型需使用者自理。与已收录的 gnss-rtk/rinex 等 crate 同一生态。",
+    "language": "Rust",
+    "license": "MPL-2.0",
+    "category": "gnss-positioning",
+    "subcategory": "实时PVT",
+    "markers": [
+      "routine-2026-09-24i"
+    ],
+    "stars_approx": 12,
+    "source": "routine-finds-20260924i",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "Rust 实时导航演示：U-Blox 原始观测 + gnss-rtk 解算"
+  },
+  {
+    "name": "nav-solutions-gnss",
+    "url": "https://github.com/nav-solutions/gnss",
+    "desc_zh": "Rust GNSS 星座/信号等基础定义 crate（nav-solutions）",
+    "analysis_zh": "为 nav-solutions 生态提供星座、信号与相关枚举/定义的 Rust crate，供 rinex、gnss-rtk、rt-navi 等库复用。MPL-2.0；本身不做解算，但减少各 crate 重复定义。命名刻意加前缀以免与泛名“gnss”冲突。API 随生态演进，接入前请核对 crates.io 版本与 MSRV。适合 Rust GNSS 工具链开发者。",
+    "language": "Rust",
+    "license": "MPL-2.0",
+    "category": "gnss-data",
+    "subcategory": "Rust定义",
+    "markers": [
+      "routine-2026-09-24i"
+    ],
+    "stars_approx": 11,
+    "source": "routine-finds-20260924i",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "Rust GNSS 星座/信号等基础定义 crate（nav-solutions）"
+  },
+  {
+    "name": "piksi_tools",
+    "url": "https://github.com/swift-nav/piksi_tools",
+    "desc_zh": "Swift Navigation Piksi 接收机工具集（Python）",
+    "analysis_zh": "面向 Swift Navigation Piksi 系列的 Python 工具，覆盖配置、日志与常见现场操作，许可证 LGPL-3.0。与 libsbp 消息生态配合，适合已有 Piksi/SBP 设备的工程调试。非通用多品牌 RTK 套件；协议与固件版本需匹配。仓库仍可访问且许可证明确，补齐厂商工具链条目。",
+    "language": "Python",
+    "license": "LGPL-3.0",
+    "category": "tools-learning",
+    "subcategory": "接收机工具",
+    "markers": [
+      "routine-2026-09-24i"
+    ],
+    "stars_approx": 36,
+    "source": "routine-finds-20260924i",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "Swift Navigation Piksi 接收机工具集（Python）"
+  },
+  {
+    "name": "swift-nav-pygnss",
+    "url": "https://github.com/swift-nav/pygnss",
+    "desc_zh": "Swift Navigation 的 Python GNSS 实用库（pygnss）",
+    "analysis_zh": "Swift Navigation 维护的 Python GNSS 实用集合，MIT 许可，近年仍有推送。与同组织的 libsbp、piksi_tools 互补，侧重脚本化处理而非完整 PPP 引擎。名称在目录中写作 swift-nav-pygnss，避免与 pygnssutils 等已收录项目混淆。接口随 SBP/固件演进出变更，集成前请读示例与版本说明。",
+    "language": "Python",
+    "license": "MIT",
+    "category": "tools-learning",
+    "subcategory": "Python工具",
+    "markers": [
+      "routine-2026-09-24i"
+    ],
+    "stars_approx": 24,
+    "source": "routine-finds-20260924i",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "Swift Navigation 的 Python GNSS 实用库（pygnss）"
+  }
+]

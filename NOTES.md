@@ -339,3 +339,10 @@
 - 当前条目：**842**
 - 分类计数：{'ionosphere': 244, 'troposphere': 39, 'gnss-data': 126, 'gnss-positioning': 97, 'orbit-clock': 16, 'navigation-ins': 64, 'gnss-sdr': 62, 'mobile-apps': 22, 'tools-learning': 47, 'gnss-datasets': 125}
 - 详见 `research/routine_finds_20260924h.json`
+
+## 例行检索补录（2026-09-24i）
+
+- 新增 **14** 条（IGS Tropo/Bias/MGEX/Antenna/RF WG、NRCan-TRX、BIPM-Time-FTP、LANS-AFS-SIM/PocketSDR-AFS、rt-navi 等）
+- 当前条目：**856**
+- 分类计数：{'ionosphere': 244, 'troposphere': 40, 'gnss-data': 128, 'gnss-positioning': 98, 'orbit-clock': 18, 'navigation-ins': 64, 'gnss-sdr': 65, 'mobile-apps': 22, 'tools-learning': 50, 'gnss-datasets': 127}
+- 详见 `research/routine_finds_20260924i.json`

@@ -1,5 +1,5 @@
 # 学习资源与工具 / Tools & Learning
-> **47** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **50** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
@@ -396,6 +396,7 @@ Rokubun 编写的 GNSS 数据处理 Jupyter 教程，覆盖从观测到基础解
 | [Geodesy.jl](https://github.com/JuliaGeo/Geodesy.jl) | Geodesy.jl：Julia 坐标与大地测量变换库 | Julia | 114 | 🏷️ 个人社区 |
 | [ncat-lib](https://github.com/noaa-ngs/ncat-lib) | NGS NCAT Java 库：离线坐标/基准转换 | Java | 21 | 🏷️ 官方 |
 | [NGS-NCAT](https://geodesy.noaa.gov/NCAT/) | NOAA/NGS NCAT：大地坐标与参考框架转换工具 | web/service | — | 🏷️ 官方 |
+| [NRCan-TRX](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/trx.php) | 加拿大 NRCan TRX：在线大地坐标/高程转换工具 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -426,6 +427,13 @@ NGS 公开的 NCAT（NGS Coordinate Conversion and Transformation Tool）底层 
 语言：web/service · 许可：USGov public resource · 星标约：— · 宿主：official_site
 
 国家大地测量局坐标转换与变换工具，支持多种美国大地基准与框架之间的点位转换。以 Web/服务形式提供，便于把 GNSS 成果归算到所需基准。不是观测处理软件；与 HTDP、VDATUM 等 NGS 工具链互补，做美国测区成果交付时常一起查阅。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
+
+#### [NRCan-TRX](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/trx.php)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+自然资源部 CSRS 在线工具，支持加拿大常用大地基准与高程系统之间的坐标转换，常与 CSRS-PPP 成果后处理衔接。面向工程与科研用户的浏览器表单，无需自建 PROJ 管线即可完成官方参数转换。参数与历元选择会影响结果，跨海或旧历元需核对说明。收录前已 HTTP 200 核验；请遵守 NRCan 服务条款。
 
 ## 认证/完好性
 
@@ -518,3 +526,33 @@ GSC 关于 Galileo Open Service Navigation Message Authentication（OSNMA）的�
 语言：Java/app · 许可：USGov public resource · 星标约：— · 宿主：official_site
 
 NOAA 垂直基准转换软件与服务，连接椭球高、大地水准面与潮汐等垂直基准，海岸带与 GNSS 高程应用中常用。以官方发布包与 Web 服务为准；与水平框架工具 HTDP、NCAT 分工不同，高程与平面归算请分别选用对应工具。使用前请核验上游页面与许可条款。
+
+## 接收机工具
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [piksi_tools](https://github.com/swift-nav/piksi_tools) | Swift Navigation Piksi 接收机工具集（Python） | Python | 36 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [piksi_tools](https://github.com/swift-nav/piksi_tools)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：LGPL-3.0 · 星标约：36 · 宿主：github
+
+面向 Swift Navigation Piksi 系列的 Python 工具，覆盖配置、日志与常见现场操作，许可证 LGPL-3.0。与 libsbp 消息生态配合，适合已有 Piksi/SBP 设备的工程调试。非通用多品牌 RTK 套件；协议与固件版本需匹配。仓库仍可访问且许可证明确，补齐厂商工具链条目。
+
+## Python工具
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [swift-nav-pygnss](https://github.com/swift-nav/pygnss) | Swift Navigation 的 Python GNSS 实用库（pygnss） | Python | 24 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [swift-nav-pygnss](https://github.com/swift-nav/pygnss)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：24 · 宿主：github
+
+Swift Navigation 维护的 Python GNSS 实用集合，MIT 许可，近年仍有推送。与同组织的 libsbp、piksi_tools 互补，侧重脚本化处理而非完整 PPP 引擎。名称在目录中写作 swift-nav-pygnss，避免与 pygnssutils 等已收录项目混淆。接口随 SBP/固件演进出变更，集成前请读示例与版本说明。

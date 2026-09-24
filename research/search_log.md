@@ -357,3 +357,13 @@
 - Method: quality-first dig (ROS2 fusion, RTK base forks, SBF/RTCM/SPARTN parsers, LEO FGO, ENRI/ICAO PBN); avoided just-added orbit/Navipedia/bladeGPS/RAIM/Larson extras; `gh api`+`curl`; dedup vs PROJECTS.json and all `routine_finds_*.json`
 - Skipped: MSAS/GAGAN/beidou.gov.cn unreachable, midgard pre-alpha, PPP_AR no license, cceremuga/ionosphere (APRS misnomer), FLAT (GPS attack demo), thin NLOS toys, SuperSID fork duplicate, maidenhead/grwave weak GNSS fit
 - Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
+
+## Routine pass 2026-09-24i
+
+- Catalog size before: **842**; after merge: **856** (+14)
+- Finds file: `research/routine_finds_20260924i.json`
+- Method: quality-first dig — IGS WG portals still missing (Tropo/Bias/Multi-GNSS/Antenna/Reference-Frame), NRCan TRX + BIPM Time FTP, LunaNet LANS SDR pair, namuru Verilog channel, nav-solutions rt-navi/gnss defs, Swift Nav piksi_tools/pygnss; `gh api`+`curl`; dedup vs PROJECTS.json and all `routine_finds_*.json`
+- Avoided: fusioncore/ELT_RTKBase/pysbf*/libnmea/geodesy-js/go-gnss-*/GraphGNSSLib_LEO/ENRI/ICAO-PBN/pyubxutils just added in 24h
+- Skipped: RECTAS domain squatted, SANHO empty, PocketSDR-AFS license API NOASSERTION (kept via LICENSE.txt BSD-2), peregrine/libswiftnav-legacy archived, RtkGps archived, RTKlibDroid thin stale, gps-fpga ★4 filler, geniuss-place website-only, GIPP non-GNSS instrument pool, CSRS-PPP URL variant already listed, NOAA CORS alternate host already listed, cycle-slip-correction/tec_forecast/iri2016 already cataloged
+- Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
+

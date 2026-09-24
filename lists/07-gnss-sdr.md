@@ -1,5 +1,5 @@
 # 软件接收机与信号 / GNSS-SDR
-> **62** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **65** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。
 
@@ -554,3 +554,48 @@ OreSat 开源卫星项目的 SDR GPS 接收及相关硬件设计文件，服务�
 语言：Python · 许可：GPL-3.0 · 星标约：22 · 宿主：github
 
 OreSat 项目 GPS 接收机软件部分，与 oresat-gps-hardware 配套，覆盖星上接收相关流程与接口。适合立方星载荷软件与开源航天参考。面向特定硬件与任务约束，不是通用多星座精密定位或 RTK 引擎。星上算力与存储配额会限制可开日志级别。星上存储配额会限制可长期开启的日志等级。选用前建议先跑通作者提供的最小示例。
+
+## 月面导航仿真
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [LANS-AFS-SIM](https://github.com/osqzss/LANS-AFS-SIM) | LunaNet LANS AFS 基带信号发生器（月面导航仿真） | C | 9 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [LANS-AFS-SIM](https://github.com/osqzss/LANS-AFS-SIM)  
+*🏷️ 个人社区*
+
+语言：C · 许可：BSD-2-Clause · 星标约：9 · 宿主：github
+
+按 LunaNet 互操作规范生成月球增强导航服务（LANS）AFS 基带，可直接喂给软件接收机或经 bladeRF/LimeSDR 上变频。与 PocketSDR-AFS 等接收端配套，用于算法验证与导航性能评估。属月面/深空导航前端，而非地球 GNSS 星座仿真；信号参数需对照 NASA LunaNet 规范。BSD-2-Clause；近年仍有提交。
+
+## 月面软件接收机
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [PocketSDR-AFS](https://github.com/osqzss/PocketSDR-AFS) | 基于 PocketSDR 的 LunaNet LANS AFS 软件接收机 | C | 18 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [PocketSDR-AFS](https://github.com/osqzss/PocketSDR-AFS)  
+*🏷️ 个人社区*
+
+语言：C · 许可：BSD-2-Clause · 星标约：18 · 宿主：github
+
+在 PocketSDR 基础上扩展的 LANS AFS 软件定义接收机，用于处理月球增强导航前向信号。仓库 LICENSE 声明沿用 PocketSDR 的 BSD 2-clause，并注明额外版权。适合与 LANS-AFS-SIM 联调；地球 GNSS 通道能力仍以原版 PocketSDR 为准。前端硬件与采样率配置需自行匹配。GitHub license API 可能显示 NOASSERTION，以仓库 LICENSE.txt 为准。
+
+## FPGA相关器
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [namuru-gps](https://github.com/osqzss/namuru-gps) | Verilog 实现的 GPS C/A 跟踪通道（Namuru 风格） | Verilog | 6 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [namuru-gps](https://github.com/osqzss/namuru-gps)  
+*🏷️ 个人社区*
+
+语言：Verilog · 许可：LGPL-2.1 · 星标约：6 · 宿主：github
+
+用 Verilog 描述 GPS L1 C/A 码跟踪通道，面向 FPGA/ASIC 教学与相关器前端实验，许可证为 LGPL-2.1。体量小、星数有限，但补齐了开源 GNSS 硬件相关器描述这一薄点。需自备射频前端与位宽/时钟约束；不提供完整 PVT 解算链。近年仍有维护痕迹，适合与 gps-sdr-sim 等基带源联调。
