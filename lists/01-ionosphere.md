@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> **249** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **254** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -2258,3 +2258,78 @@ International Service of Geomagnetic Indices（ISGI）门户，汇集 IAGA 认�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 Community Coordinated Modeling Center 主门户，汇总模型目录、即时/申请运行与可视化等服务。已收录的 IRI/SAMI3 等 CCMC 模型页可由此导航发现。偏模型与仿真编排，不直接提供 GNSS 观测下载。收录前已 HTTP 核验；运行申请与输出使用请遵守 CCMC 政策。
+
+## 电离层HF
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SWS-HF-Systems](https://www.sws.bom.gov.au/HF_Systems) | 澳大利亚 SWS 高频系统：电离层图、电离图与 HF 条件 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [SWS-HF-Systems](https://www.sws.bom.gov.au/HF_Systems)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+BOM 太空天气服务 HF Systems 专题，提供澳大利亚及周边电离层图、电离图查看、T 指数与 HF 传播相关产品。对理解电离层状态及 GNSS/HF 可用性有参考价值。偏区域监测产品导航，而非全球 IONEX 归档。收录前已 HTTP 核验；引用请遵守 SWS/BOM 条款。
+
+## 地磁地球物理
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SWS-Geophysical](https://www.sws.bom.gov.au/Geophysical) | SWS 地球物理：地磁图、指数与宇宙线警报 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [SWS-Geophysical](https://www.sws.bom.gov.au/Geophysical)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+SWS Geophysical 专题汇总地磁图、指数、宇宙线及警报预警信息，为 GNSS 扰动分析提供地磁背景。与 Satellite/HF 专题互补，覆盖不同空间天气侧面。页面为产品导航。收录前已 HTTP 核验；使用请注明 SWS 产品名与时间。
+
+## D区吸收
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SWPC-D-RAP](https://www.swpc.noaa.gov/products/d-region-absorption-predictions-d-rap) | NOAA SWPC D-RAP：D 区吸收预报（HF/GPS 影响相关） | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [SWPC-D-RAP](https://www.swpc.noaa.gov/products/d-region-absorption-predictions-d-rap)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Space Weather Prediction Center 的 D Region Absorption Predictions（D-RAP）产品页，给出太阳爆发后 D 区吸收对高频通信等的影响预估，并在影响说明中关联 GPS/通信系统。对评估强扰动期 GNSS 可用性有辅助意义。非 TEC 图本身。收录前已 HTTP 核验；请遵守 NOAA 产品使用说明。
+
+## 太阳风预报
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SWPC-WSA-Enlil](https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction) | NOAA SWPC WSA-Enlil：太阳风到达与 CME 传播预报 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [SWPC-WSA-Enlil](https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+WSA-Enlil 太阳风与日冕物质抛射（CME）传播预报产品入口，提供扰动到达地球的时效估计，常作为 GNSS 电离层/磁暴扰动的上游空间天气背景。模型输出存在不确定性，需与实测地磁指数及 TEC/闪烁产品对照使用。收录前已 HTTP 核验；引用请遵循 SWPC 产品说明与数据政策。
+
+## 国家空间天气
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SpaceWeather-Canada](https://www.spaceweather.gc.ca/index-en.php) | 加拿大太空天气主站：预报与产品总入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [SpaceWeather-Canada](https://www.spaceweather.gc.ca/index-en.php)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+加拿大 Space Weather Canada 英文主页，汇总太阳、地磁与电离层相关预报入口；已收录的太阳射电流量页可由此导航。对北美 GNSS 用户了解区域空间天气有帮助。部分产品有英法文版本。收录前已 HTTP 核验；请遵守 NRCan 条款与引用要求。

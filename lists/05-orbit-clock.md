@@ -1,5 +1,5 @@
 # 轨道与钟差 / Orbit & Clock
-> **20** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **21** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。
 
@@ -239,3 +239,18 @@ Tudatpy 是 TU Delft Tudat 的 Python 接口，面向轨道传播、天体动力
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 IERS EOP Product Center 门户，面向地球定向参数序列与相关说明，由巴黎天文台维护。与 IERS Datacenter 互补：本站偏 EOP 产品中心视角。精密 GNSS/VLBI/SLR 联合分析常用其序列。收录前已 HTTP 核验；选用哪套 EOP 产品需对照分析策略与时效。
+
+## 轨道根数
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [CelesTrak-NORAD-GP](https://celestrak.org/NORAD/elements/) | CelesTrak 当前 NORAD/GP 轨道根数下载入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [CelesTrak-NORAD-GP](https://celestrak.org/NORAD/elements/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+CelesTrak 提供的现行 GP（原 TLE）轨道根数获取页，含查询与专题数据说明，广泛用于卫星可见性与简易轨道预报。与已收录的 SpaceData 页互补：本页偏 GP 元素集。根数精度有限，不替代精密星历。收录前已 HTTP 核验；请遵守 CelesTrak 使用条款。

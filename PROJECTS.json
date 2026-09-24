@@ -5,18 +5,18 @@
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
   "generated": "2026-09-24",
-  "project_count": 884,
+  "project_count": 898,
   "counts_by_category": {
-    "ionosphere": 249,
+    "ionosphere": 254,
     "troposphere": 41,
     "gnss-data": 130,
     "gnss-positioning": 101,
-    "orbit-clock": 20,
-    "navigation-ins": 67,
-    "gnss-sdr": 67,
-    "mobile-apps": 24,
-    "tools-learning": 55,
-    "gnss-datasets": 130
+    "orbit-clock": 21,
+    "navigation-ins": 69,
+    "gnss-sdr": 68,
+    "mobile-apps": 27,
+    "tools-learning": 56,
+    "gnss-datasets": 131
   },
   "projects": [
     {
@@ -17339,12 +17339,308 @@
       "one_liner_zh": "NASA CCMC 主页：空间天气模型目录与运行服务入口",
       "registration": "open",
       "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+    },
+    {
+      "name": "NeoGPS",
+      "url": "https://github.com/SlashDevin/NeoGPS",
+      "desc_zh": "Arduino 低内存 NMEA/u-blox GPS 解析库",
+      "analysis_zh": "面向 Arduino 的可配置 NMEA 与 u-blox 报文解析库，强调极低 RAM（可低至约 10 字节量级配置），GPL-3.0。适合资源受限嵌入式定位日志与简易导航，而非测地级解算。需按目标板裁剪消息集；与 TinyGPS 类库相比更偏可配置与 UBX。星数高、许可证明确，补齐移动/嵌入式解析薄点。",
+      "language": "C++",
+      "license": "GPL-3.0",
+      "category": "mobile-apps",
+      "subcategory": "Arduino解析",
+      "markers": [
+        "routine-2026-09-24l"
+      ],
+      "stars_approx": 750,
+      "source": "routine-finds-20260924l",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "Arduino 低内存 NMEA/u-blox GPS 解析库"
+    },
+    {
+      "name": "UbxGps",
+      "url": "https://github.com/loginov-rocks/UbxGps",
+      "desc_zh": "Arduino 轻量 u-blox UBX 通信库（MIT）",
+      "analysis_zh": "以简单、快速为目标的 Arduino u-blox UBX 通信库，MIT 许可。适合读取原始 UBX 导航/观测类消息做嵌入式实验。协议字段随模块固件变化，接入前需核对消息类与波特率。不覆盖 NTRIP/RTK 全栈，可与更高层解算或日志工具组合使用。",
+      "language": "C++",
+      "license": "MIT",
+      "category": "mobile-apps",
+      "subcategory": "UBX通信",
+      "markers": [
+        "routine-2026-09-24l"
+      ],
+      "stars_approx": 152,
+      "source": "routine-finds-20260924l",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "Arduino 轻量 u-blox UBX 通信库（MIT）"
+    },
+    {
+      "name": "bolderflight-ublox",
+      "url": "https://github.com/bolderflight/ublox",
+      "desc_zh": "Bolder Flight uBlox 接收机 Arduino/CMake 库",
+      "analysis_zh": "Bolder Flight 维护的 uBlox GNSS 通信库，同时支持 Arduino 与 CMake 构建，MIT 许可。面向无人机/航空电子常用接收机接口，偏驱动与报文读写。命名加前缀以免与泛名 ublox 冲突。固件与消息集需匹配具体型号；非 PPP/RTK 引擎。",
+      "language": "C++",
+      "license": "MIT",
+      "category": "mobile-apps",
+      "subcategory": "uBlox驱动",
+      "markers": [
+        "routine-2026-09-24l"
+      ],
+      "stars_approx": 115,
+      "source": "routine-finds-20260924l",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "Bolder Flight uBlox 接收机 Arduino/CMake 库"
+    },
+    {
+      "name": "fixposition_driver",
+      "url": "https://github.com/Fixposition/fixposition_driver",
+      "desc_zh": "Fixposition Vision-RTK/PBx ROS 驱动（视觉惯性 GNSS）",
+      "analysis_zh": "Fixposition 官方 Linux ROS 驱动，对接 Vision-RTK 2、PBx-A1 等视觉惯性 GNSS 定位传感器，MIT 许可。面向机器人/自动驾驶紧组合定位话题，而非测地后处理。依赖厂商硬件与时间同步配置；与纯 GNSS RTK 方案选型不同。适合评估视觉辅助 RTK 的 ROS 集成。",
+      "language": "C++",
+      "license": "MIT",
+      "category": "navigation-ins",
+      "subcategory": "视觉RTK",
+      "markers": [
+        "routine-2026-09-24l"
+      ],
+      "stars_approx": 66,
+      "source": "routine-finds-20260924l",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "Fixposition Vision-RTK/PBx ROS 驱动（视觉惯性 GNSS）"
+    },
+    {
+      "name": "SoftGNSS-octave",
+      "url": "https://github.com/kristianpaul/SoftGNSS",
+      "desc_zh": "SoftGNSS 的 Octave 移植（基于 Borre/Akos 教材代码）",
+      "analysis_zh": "将经典 SoftGNSS（Borre/Akos）教学接收机代码移植到 Octave 的 GPL-2.0 版本，便于无 MATLAB 许可环境下学习 GPS 软件接收机流程。与已收录的 SoftGNSS/ SoftGNSS-python 同源不同实现，目录名加 octave 后缀区分。偏教学演示，实时性与多星座能力有限；采样数据与前端需自备。",
+      "language": "Objective-C",
+      "license": "GPL-2.0",
+      "category": "gnss-sdr",
+      "subcategory": "教学SDR",
+      "markers": [
+        "routine-2026-09-24l"
+      ],
+      "stars_approx": 74,
+      "source": "routine-finds-20260924l",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "SoftGNSS 的 Octave 移植（基于 Borre/Akos 教材代码）"
+    },
+    {
+      "name": "python-openimu",
+      "url": "https://github.com/Aceinna/python-openimu",
+      "desc_zh": "Aceinna OpenIMU Python 驱动、日志与 WebSocket 服务",
+      "analysis_zh": "Aceinna OpenIMU 的 Python 驱动，支持数据记录与 WebSocket 服务，Apache-2.0。常与 GNSS/INS 组合导航仿真（如 gnss-ins-sim）配合做惯性侧采集。偏 IMU 接口而非 GNSS 解算；坐标系与标定需使用者处理。适合低成本 INS 实验与传感器融合原型。",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "category": "navigation-ins",
+      "subcategory": "IMU驱动",
+      "markers": [
+        "routine-2026-09-24l"
+      ],
+      "stars_approx": 53,
+      "source": "routine-finds-20260924l",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "Aceinna OpenIMU Python 驱动、日志与 WebSocket 服务"
+    },
+    {
+      "name": "SWS-HF-Systems",
+      "url": "https://www.sws.bom.gov.au/HF_Systems",
+      "desc_zh": "澳大利亚 SWS 高频系统：电离层图、电离图与 HF 条件",
+      "analysis_zh": "BOM 太空天气服务 HF Systems 专题，提供澳大利亚及周边电离层图、电离图查看、T 指数与 HF 传播相关产品。对理解电离层状态及 GNSS/HF 可用性有参考价值。偏区域监测产品导航，而非全球 IONEX 归档。收录前已 HTTP 核验；引用请遵守 SWS/BOM 条款。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "电离层HF",
+      "markers": [
+        "routine-2026-09-24l"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924l",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "澳大利亚 SWS 高频系统：电离层图、电离图与 HF 条件",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+    },
+    {
+      "name": "SWS-World-Data-Centre",
+      "url": "https://www.sws.bom.gov.au/World_Data_Centre",
+      "desc_zh": "SWS 世界数据中心：地磁与电离层数据下载入口",
+      "analysis_zh": "澳大利亚 SWS World Data Centre 页面，提供磁强计、电离层等 STP 数据的展示与下载入口。可补充南半球区域空间天气与电离层序列。具体数据集权限与格式见子页说明。收录前已 HTTP 核验；再分发请遵循 WDC/SWS 政策。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "WDC数据",
+      "markers": [
+        "routine-2026-09-24l"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924l",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "SWS 世界数据中心：地磁与电离层数据下载入口",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+    },
+    {
+      "name": "SWS-Geophysical",
+      "url": "https://www.sws.bom.gov.au/Geophysical",
+      "desc_zh": "SWS 地球物理：地磁图、指数与宇宙线警报",
+      "analysis_zh": "SWS Geophysical 专题汇总地磁图、指数、宇宙线及警报预警信息，为 GNSS 扰动分析提供地磁背景。与 Satellite/HF 专题互补，覆盖不同空间天气侧面。页面为产品导航。收录前已 HTTP 核验；使用请注明 SWS 产品名与时间。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "地磁地球物理",
+      "markers": [
+        "routine-2026-09-24l"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924l",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "SWS 地球物理：地磁图、指数与宇宙线警报",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+    },
+    {
+      "name": "SWPC-D-RAP",
+      "url": "https://www.swpc.noaa.gov/products/d-region-absorption-predictions-d-rap",
+      "desc_zh": "NOAA SWPC D-RAP：D 区吸收预报（HF/GPS 影响相关）",
+      "analysis_zh": "Space Weather Prediction Center 的 D Region Absorption Predictions（D-RAP）产品页，给出太阳爆发后 D 区吸收对高频通信等的影响预估，并在影响说明中关联 GPS/通信系统。对评估强扰动期 GNSS 可用性有辅助意义。非 TEC 图本身。收录前已 HTTP 核验；请遵守 NOAA 产品使用说明。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "D区吸收",
+      "markers": [
+        "routine-2026-09-24l"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924l",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NOAA SWPC D-RAP：D 区吸收预报（HF/GPS 影响相关）",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+    },
+    {
+      "name": "SWPC-WSA-Enlil",
+      "url": "https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction",
+      "desc_zh": "NOAA SWPC WSA-Enlil：太阳风到达与 CME 传播预报",
+      "analysis_zh": "WSA-Enlil 太阳风与日冕物质抛射（CME）传播预报产品入口，提供扰动到达地球的时效估计，常作为 GNSS 电离层/磁暴扰动的上游空间天气背景。模型输出存在不确定性，需与实测地磁指数及 TEC/闪烁产品对照使用。收录前已 HTTP 核验；引用请遵循 SWPC 产品说明与数据政策。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "太阳风预报",
+      "markers": [
+        "routine-2026-09-24l"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924l",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NOAA SWPC WSA-Enlil：太阳风到达与 CME 传播预报",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+    },
+    {
+      "name": "CelesTrak-NORAD-GP",
+      "url": "https://celestrak.org/NORAD/elements/",
+      "desc_zh": "CelesTrak 当前 NORAD/GP 轨道根数下载入口",
+      "analysis_zh": "CelesTrak 提供的现行 GP（原 TLE）轨道根数获取页，含查询与专题数据说明，广泛用于卫星可见性与简易轨道预报。与已收录的 SpaceData 页互补：本页偏 GP 元素集。根数精度有限，不替代精密星历。收录前已 HTTP 核验；请遵守 CelesTrak 使用条款。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "orbit-clock",
+      "subcategory": "轨道根数",
+      "markers": [
+        "routine-2026-09-24l"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924l",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "CelesTrak 当前 NORAD/GP 轨道根数下载入口",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+    },
+    {
+      "name": "ESA-Satellite-Navigation",
+      "url": "https://www.esa.int/Applications/Satellite_navigation",
+      "desc_zh": "ESA 卫星导航应用总入口：Galileo/EGNOS/NAVISP 等",
+      "analysis_zh": "欧洲航天局卫星导航应用门户，汇总 Galileo、EGNOS、NAVISP、月球导航等项目新闻与介绍。偏政策与工程进展导航，具体 ICD/服务细节仍走 GSC 等站点。与已收录的 GSC 产品页形成官方叙事互补。收录前已 HTTP 核验；引用请注明 ESA 页面与日期。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "tools-learning",
+      "subcategory": "ESA导航",
+      "markers": [
+        "routine-2026-09-24l"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924l",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "ESA 卫星导航应用总入口：Galileo/EGNOS/NAVISP 等",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+    },
+    {
+      "name": "SpaceWeather-Canada",
+      "url": "https://www.spaceweather.gc.ca/index-en.php",
+      "desc_zh": "加拿大太空天气主站：预报与产品总入口",
+      "analysis_zh": "加拿大 Space Weather Canada 英文主页，汇总太阳、地磁与电离层相关预报入口；已收录的太阳射电流量页可由此导航。对北美 GNSS 用户了解区域空间天气有帮助。部分产品有英法文版本。收录前已 HTTP 核验；请遵守 NRCan 条款与引用要求。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "国家空间天气",
+      "markers": [
+        "routine-2026-09-24l"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924l",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "加拿大太空天气主站：预报与产品总入口",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
     }
   ],
   "provenance_counts": {
-    "official": 258,
+    "official": 266,
     "academic_lab": 316,
-    "personal_community": 310
+    "personal_community": 316
   },
   "updated": "2026-09-24"
 }

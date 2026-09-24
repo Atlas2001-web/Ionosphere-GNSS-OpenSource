@@ -23,7 +23,7 @@
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
 - 列表文件：[`lists/01-ionosphere.md`](../lists/01-ionosphere.md)
-- 当前条目数：**249**
+- 当前条目数：**254**
 
 ## `troposphere` — 对流层
 
@@ -51,42 +51,42 @@ SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现
 精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。
 
 - 列表文件：[`lists/05-orbit-clock.md`](../lists/05-orbit-clock.md)
-- 当前条目数：**20**
+- 当前条目数：**21**
 
 ## `navigation-ins` — 导航
 
 GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 
 - 列表文件：[`lists/06-navigation-ins.md`](../lists/06-navigation-ins.md)
-- 当前条目数：**67**
+- 当前条目数：**69**
 
 ## `gnss-sdr` — 软件接收机与信号
 
 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。
 
 - 列表文件：[`lists/07-gnss-sdr.md`](../lists/07-gnss-sdr.md)
-- 当前条目数：**67**
+- 当前条目数：**68**
 
 ## `mobile-apps` — 移动与嵌入式应用
 
 手机/嵌入式上的 GNSS 测试、原始测量记录与简易定位。
 
 - 列表文件：[`lists/08-mobile-apps.md`](../lists/08-mobile-apps.md)
-- 当前条目数：**24**
+- 当前条目数：**27**
 
 ## `tools-learning` — 学习资源与工具
 
 awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
 - 列表文件：[`lists/09-tools-learning.md`](../lists/09-tools-learning.md)
-- 当前条目数：**55**
+- 当前条目数：**56**
 
 ## `gnss-datasets` — GNSS 数据源
 
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
 - 列表文件：[`lists/10-gnss-datasets.md`](../lists/10-gnss-datasets.md)
-- 当前条目数：**130**
+- 当前条目数：**131**
 
 ## 与用户仓库的关系标记
 

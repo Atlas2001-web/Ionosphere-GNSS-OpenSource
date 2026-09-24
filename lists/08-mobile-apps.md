@@ -1,5 +1,5 @@
 # 移动与嵌入式应用 / Mobile Apps
-> **24** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **27** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 手机/嵌入式上的 GNSS 测试、原始测量记录与简易定位。
 
@@ -236,3 +236,48 @@ MIT 许可的 Java 库，高效解析 Android GNSS Logger 导出的原始测量�
 语言：C++ · 许可：MIT · 星标约：22 · 宿主：github
 
 面向 Jimmy Paputto GNSS HAT 的驱动库，覆盖 u-blox UBX，并提供 C++/C/Python API 与 Flask 实时仪表盘（天空图、RF、RTK 相对图等），MIT 许可。虽绑定厂商板卡，但对通用 UBX 串口/SPI 仍有参考价值。RTK 固定与厘米级显示依赖改正流与天线环境。适合树莓派现场演示与低成本监测。
+
+## Arduino解析
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [NeoGPS](https://github.com/SlashDevin/NeoGPS) | Arduino 低内存 NMEA/u-blox GPS 解析库 | C++ | 750 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [NeoGPS](https://github.com/SlashDevin/NeoGPS)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：GPL-3.0 · 星标约：750 · 宿主：github
+
+面向 Arduino 的可配置 NMEA 与 u-blox 报文解析库，强调极低 RAM（可低至约 10 字节量级配置），GPL-3.0。适合资源受限嵌入式定位日志与简易导航，而非测地级解算。需按目标板裁剪消息集；与 TinyGPS 类库相比更偏可配置与 UBX。星数高、许可证明确，补齐移动/嵌入式解析薄点。
+
+## UBX通信
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [UbxGps](https://github.com/loginov-rocks/UbxGps) | Arduino 轻量 u-blox UBX 通信库（MIT） | C++ | 152 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [UbxGps](https://github.com/loginov-rocks/UbxGps)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：MIT · 星标约：152 · 宿主：github
+
+以简单、快速为目标的 Arduino u-blox UBX 通信库，MIT 许可。适合读取原始 UBX 导航/观测类消息做嵌入式实验。协议字段随模块固件变化，接入前需核对消息类与波特率。不覆盖 NTRIP/RTK 全栈，可与更高层解算或日志工具组合使用。
+
+## uBlox驱动
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [bolderflight-ublox](https://github.com/bolderflight/ublox) | Bolder Flight uBlox 接收机 Arduino/CMake 库 | C++ | 115 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [bolderflight-ublox](https://github.com/bolderflight/ublox)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：MIT · 星标约：115 · 宿主：github
+
+Bolder Flight 维护的 uBlox GNSS 通信库，同时支持 Arduino 与 CMake 构建，MIT 许可。面向无人机/航空电子常用接收机接口，偏驱动与报文读写。命名加前缀以免与泛名 ublox 冲突。固件与消息集需匹配具体型号；非 PPP/RTK 引擎。

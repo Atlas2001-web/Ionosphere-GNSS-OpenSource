@@ -1,5 +1,5 @@
 # 软件接收机与信号 / GNSS-SDR
-> **67** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **68** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。
 
@@ -429,10 +429,18 @@ GPS 与 Galileo 卫星信号模拟相关实现，说明中提及与 RTKLIB 能�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [SoftGNSS-octave](https://github.com/kristianpaul/SoftGNSS) | SoftGNSS 的 Octave 移植（基于 Borre/Akos 教材代码） | Objective-C | 74 | 🏷️ 个人社区 |
 | [CCAR-GNSS-SDR-Book](https://ccar.colorado.edu/gnss/) | CCAR-GNSS-SDR-Book：SoftGPS 教材已知问题与配套说明站 | MATLAB | — | 🏷️ 高校实验室 |
 | [SoftGPS-CU-Boulder](https://www.colorado.edu/lab/rf-satnav/resources/original-open-source-gpsgnss-sdr) | SoftGPS-CU-Boulder：CU 软 GNSS 教材配套与 GN3S 前端资源页 | MATLAB | — | 🏷️ 高校实验室 |
 
 ### 详细说明
+
+#### [SoftGNSS-octave](https://github.com/kristianpaul/SoftGNSS)  
+*🏷️ 个人社区*
+
+语言：Objective-C · 许可：GPL-2.0 · 星标约：74 · 宿主：github
+
+将经典 SoftGNSS（Borre/Akos）教学接收机代码移植到 Octave 的 GPL-2.0 版本，便于无 MATLAB 许可环境下学习 GPS 软件接收机流程。与已收录的 SoftGNSS/ SoftGNSS-python 同源不同实现，目录名加 octave 后缀区分。偏教学演示，实时性与多星座能力有限；采样数据与前端需自备。
 
 #### [CCAR-GNSS-SDR-Book](https://ccar.colorado.edu/gnss/)  
 *🏷️ 高校实验室*

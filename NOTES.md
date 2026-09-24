@@ -360,3 +360,10 @@
 - 当前条目：**884**
 - 分类计数：{'ionosphere': 249, 'troposphere': 41, 'gnss-data': 130, 'gnss-positioning': 101, 'orbit-clock': 20, 'navigation-ins': 67, 'gnss-sdr': 67, 'mobile-apps': 24, 'tools-learning': 55, 'gnss-datasets': 130}
 - 详见 `research/routine_finds_20260924k.json`
+
+## 例行检索补录（2026-09-24l）
+
+- 新增 **14** 条（NeoGPS/UbxGps/bolderflight-ublox、fixposition、SoftGNSS-octave、OpenIMU、SWS/SWPC/CelesTrak/ESA/Canada 等）
+- 当前条目：**898**
+- 分类计数：{'ionosphere': 254, 'troposphere': 41, 'gnss-data': 130, 'gnss-positioning': 101, 'orbit-clock': 21, 'navigation-ins': 69, 'gnss-sdr': 68, 'mobile-apps': 27, 'tools-learning': 56, 'gnss-datasets': 131}
+- 详见 `research/routine_finds_20260924l.json`

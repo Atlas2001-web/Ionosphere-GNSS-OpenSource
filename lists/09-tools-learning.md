@@ -1,5 +1,5 @@
 # 学习资源与工具 / Tools & Learning
-> **55** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **56** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
@@ -631,3 +631,18 @@ Satellite Situation Center Web（SSCWeb）提供航天器轨道、星下点与�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 SWPC 对外提供的服务根目录，索引 experimental、json、netcdf、products 等机器可读空间天气产品路径。便于脚本拉取指数、通量与相关产品，与已收录的 GloTEC 等具体产品页互补。目录本身无文档正文，具体端点以子路径为准。收录前已 HTTP 核验；高频抓取请遵守 NOAA 使用政策。
+
+## ESA导航
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [ESA-Satellite-Navigation](https://www.esa.int/Applications/Satellite_navigation) | ESA 卫星导航应用总入口：Galileo/EGNOS/NAVISP 等 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [ESA-Satellite-Navigation](https://www.esa.int/Applications/Satellite_navigation)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+欧洲航天局卫星导航应用门户，汇总 Galileo、EGNOS、NAVISP、月球导航等项目新闻与介绍。偏政策与工程进展导航，具体 ICD/服务细节仍走 GSC 等站点。与已收录的 GSC 产品页形成官方叙事互补。收录前已 HTTP 核验；引用请注明 ESA 页面与日期。

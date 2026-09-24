@@ -385,3 +385,12 @@
 - Skipped: IonoMoni no SPDX, nrlmsis2.0 archived, LWPC weak GNSS fit, LEOGPS already listed, DIDBase/GIRO/SWPC-GloTEC/CCMC-model near-dups, GOES-proton thin product page, GFZ kp near-dup of kp.gfz-potsdam.de/en
 - Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
 
+## Routine pass 2026-09-24l
+
+- Catalog size before: **884**; after merge: **898** (+14)
+- Finds file: `research/routine_finds_20260924l.json`
+- Method: quality dig — Arduino/u-blox libs (NeoGPS/UbxGps/bolderflight), Fixposition Vision-RTK ROS, SoftGNSS Octave port, Aceinna OpenIMU; SWS HF/WDC/Geophysical + SWPC D-RAP/Enlil; CelesTrak NORAD GP; ESA nav hub; Space Weather Canada; `gh api`+`curl`; dedup vs PROJECTS.json and all `routine_finds_*.json`
+- Avoided: entire 24k set (novatel_*, max2771, GNSS-Correction-RTKLIB, pysatNASA, swiftnav-ros2, gnssvod, SWS-Satellite, ISGI, CDAWeb/SSCWeb, UKSSDC, SWPC-Services, CCMC-Home) and earlier 24h batches
+- Skipped: TinyGPSPlus no SPDX, SIM7000 LTE-primary, Aceinna ublox_decoder no license, kalman_filter_localization_ros2 NOASSERTION, SoftGNSS TMBOC already listed, GSC-europa home near-dup of specific GSC pages, CelesTrak root near SpaceData
+- Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
+

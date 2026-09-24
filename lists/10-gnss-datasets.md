@@ -1,5 +1,5 @@
 # GNSS 数据源 / GNSS Datasets
-> **130** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **131** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
@@ -1231,3 +1231,18 @@ Coordinated Data Analysis Web（CDAWeb）提供多航天任务空间物理数据
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 UK Solar System Data Centre（UKSSDC）兼世界日地物理数据中心职能，归档太阳、电离层与相关 STP 数据。对电离层历史序列与太阳活动背景有价值。部分数据需注册后检索。收录前已 HTTP 核验；使用请遵守 STFC/RAL 与 WDC 条款。
+
+## WDC数据
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SWS-World-Data-Centre](https://www.sws.bom.gov.au/World_Data_Centre) | SWS 世界数据中心：地磁与电离层数据下载入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [SWS-World-Data-Centre](https://www.sws.bom.gov.au/World_Data_Centre)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+澳大利亚 SWS World Data Centre 页面，提供磁强计、电离层等 STP 数据的展示与下载入口。可补充南半球区域空间天气与电离层序列。具体数据集权限与格式见子页说明。收录前已 HTTP 核验；再分发请遵循 WDC/SWS 政策。

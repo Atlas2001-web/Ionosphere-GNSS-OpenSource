@@ -1,5 +1,5 @@
 # 导航 / Navigation & INS
-> **67** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **69** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 
@@ -692,3 +692,33 @@ Hexagon/NovAtel 维护的 OEM7 系列 GNSS/SPAN 官方 ROS 驱动，MIT 许可�
 语言：C++ · 许可：MIT · 星标约：15 · 宿主：github
 
 Swift Navigation 官方 ROS 2 驱动，通过 Swift Binary Protocol（SBP）接入其 GNSS/INS 接收机，MIT 许可。与 libsbp、piksi_tools 等同栈，面向机器人实时定位话题。固件与 SBP 版本需匹配；不覆盖非 Swift 品牌接收机。适合 ROS 2 车载/机器人集成评估。
+
+## 视觉RTK
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [fixposition_driver](https://github.com/Fixposition/fixposition_driver) | Fixposition Vision-RTK/PBx ROS 驱动（视觉惯性 GNSS） | C++ | 66 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [fixposition_driver](https://github.com/Fixposition/fixposition_driver)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：MIT · 星标约：66 · 宿主：github
+
+Fixposition 官方 Linux ROS 驱动，对接 Vision-RTK 2、PBx-A1 等视觉惯性 GNSS 定位传感器，MIT 许可。面向机器人/自动驾驶紧组合定位话题，而非测地后处理。依赖厂商硬件与时间同步配置；与纯 GNSS RTK 方案选型不同。适合评估视觉辅助 RTK 的 ROS 集成。
+
+## IMU驱动
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [python-openimu](https://github.com/Aceinna/python-openimu) | Aceinna OpenIMU Python 驱动、日志与 WebSocket 服务 | Python | 53 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [python-openimu](https://github.com/Aceinna/python-openimu)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：Apache-2.0 · 星标约：53 · 宿主：github
+
+Aceinna OpenIMU 的 Python 驱动，支持数据记录与 WebSocket 服务，Apache-2.0。常与 GNSS/INS 组合导航仿真（如 gnss-ins-sim）配合做惯性侧采集。偏 IMU 接口而非 GNSS 解算；坐标系与标定需使用者处理。适合低成本 INS 实验与传感器融合原型。
