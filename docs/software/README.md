@@ -66,7 +66,7 @@
 | 39 | [gps-measurement-tools.md](./gps-measurement-tools.md) | Google GNSS Logger + MATLAB 伪距/WLS | 203 | **已短硬** · tip `ab1aebb`；demo→android_rinex→georinex 223 历元；MATLAB 环境受限 · **质检复跑通过** |
 | 40 | [pygpsclient.md](./pygpsclient.md) | NMEA/UBX/RTCM/NTRIP 桌面 GUI | 224 | **已短硬** · 本机 **1.7.6**/`69b84cf`；pyrinexconv O1677/N55037；无 tkinter GUI 受限 · **质检复跑通过** |
 | 41 | [gdds.md](./gdds.md) | IGS/CORS/产品/时序多模块 GUI 下载 | 239 | **已短硬** · tip `2a8543c`；无 CLI；NOAA brdc/p041 + ITRF PSD 实拉；WHU FTP 425；CDDIS 401；Earthdata 硬编码须自换 |
-| 41 | [geospacelab.md](./geospacelab.md) | 日地数据管理/可视化（OMNI·指数·TEC map） | 256 | **已短硬** · 本机 **0.14.8**；OMNI SYM_H min=-234；Madrigal TEC 13×180×360 @06:30 max=114；需 cartopy+config |
+| 42 | [geospacelab.md](./geospacelab.md) | 日地数据管理/可视化（OMNI·指数·TEC map） | 256 | **已短硬** · 本机 **0.14.8**；OMNI SYM_H min=-234；Madrigal TEC 13×180×360 @06:30 max=114；需 cartopy+config |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -112,6 +112,8 @@
 | 手机 GnssLogger → RINEX | [android_rinex.md](./android_rinex.md) |
 | Google Logger 套件 / 手机原始测量规范 | [gps-measurement-tools.md](./gps-measurement-tools.md) |
 | 板卡 GUI 联调 / NTRIP（tkinter） | [pygpsclient.md](./pygpsclient.md) |
+| 教学 SPP/PPP / 误差项拆解（UPC gLAB） | [glab-upc.md](./glab-upc.md) |
+| NMEA 0183 编解码（Python） | [pynmeagps.md](./pynmeagps.md) |
 | 空间天气多源拉取/作图（OMNI·TEC map） | [geospacelab.md](./geospacelab.md) |
 | GENESIS COSMIC-1 **大气** L2→netCDF（非 ionPrf） | [cosmic-crunch.md](./cosmic-crunch.md) |
 | AWS GNSS-RO 查/下（**calibratedPhase** / 大气三型） | [awsgnssroutils.md](./awsgnssroutils.md) |
@@ -132,7 +134,7 @@
 
 ### C · 实时差分 / 实验室 CORS
 
-[pygnssutils](./pygnssutils.md) / [pygpsclient](./pygpsclient.md) 或 [bnc](./bnc.md) →（可选 [bkg-ntripcaster](./bkg-ntripcaster.md)）→ [rtklib](./rtklib.md)；落盘后再走 A/B；手机 Logger 见 [gps-measurement-tools](./gps-measurement-tools.md)+[android_rinex](./android_rinex.md)
+[pygnssutils](./pygnssutils.md) / [pynmeagps](./pynmeagps.md) / [pygpsclient](./pygpsclient.md) 或 [bnc](./bnc.md) →（可选 [bkg-ntripcaster](./bkg-ntripcaster.md)）→ [rtklib](./rtklib.md)；落盘后再走 A/B；手机 Logger 见 [gps-measurement-tools](./gps-measurement-tools.md)+[android_rinex](./android_rinex.md)
 
 ### D · 发表级坐标 / ZTD
 
@@ -165,7 +167,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 3. 路径 A：[pytecgg](./pytecgg.md) + 教程 02/16
 4. 路径 B：[oasis-roti](./oasis-roti.md) 或 [ionomoni](./ionomoni.md) + 教程 05
 5. 需要定位再 [rtklib](./rtklib.md)/[pride-pppar](./pride-pppar.md)
-6. 实时课再 [pygnssutils](./pygnssutils.md)/[pygpsclient](./pygpsclient.md)/[bnc](./bnc.md)
+6. 实时课再 [pygnssutils](./pygnssutils.md)/[pynmeagps](./pynmeagps.md)/[pygpsclient](./pygpsclient.md)/[bnc](./bnc.md)；教学定位拆解见 [glab-upc](./glab-upc.md)
 7. GIM 课 [ionex-gim](./ionex-gim.md)；SH-GIM 仅边界
 
 ---
@@ -215,6 +217,8 @@ data-access
    ├─ msise00 (NRLMSISE-00 中性大气)
    ├─ gps-measurement-tools (GnssLogger 采集；→ android_rinex)
    ├─ pygpsclient (板卡 GUI / NTRIP；捆 pygnssutils)
+   ├─ pynmeagps (NMEA 编解码；pygpsclient/pygnssutils 底层)
+   ├─ glab-upc (教学 SPP/PPP；官方 UPC gLAB)
    ├─ pygnssutils / bnc / bkg-ntripcaster (路径 C)
    └─ cssrlib / haslib / laika / rtklib / pride-pppar (路径 D)
 sh-gim：仅路径 E 边界，不串进 A/B 主链
@@ -231,7 +235,7 @@ iono-scintillation：概念/仿真旁路，不替代实测 ROTI
 | 03 / 10 / 18 | ionex-gim · diffionmap · sh-gim(边界) · pyglow |
 | 04 | iri2016 · pyglow · pyiri · pyirtam · apexpy · msise00 · nequickg |
 | 05 / 13 / 21 | oasis-roti · ionomoni · iono-scintillation · geospacelab |
-| 06 / 20 | cssrlib · haslib · laika · gnss_lib_py · android_rinex · gps-measurement-tools · pygpsclient · rtklib · pride-pppar · ionomoni |
+| 06 / 20 | cssrlib · haslib · laika · gnss_lib_py · android_rinex · gps-measurement-tools · pygpsclient · pynmeagps · glab-upc · rtklib · pride-pppar · ionomoni |
 | 09 | pytecgg |
 
 ---
