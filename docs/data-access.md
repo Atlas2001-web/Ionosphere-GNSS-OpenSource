@@ -366,6 +366,56 @@ curl -s "https://data.gnss.ga.gov.au/api/rinexFiles?stationId=ALIC&startDate=202
 
 **账号/配额坑**：开放站匿名可查；签名 URL 会过期，勿写死 `fileLocation`；旧 `ga.gov.au` 深链勿用；批量礼貌限速。
 
+### 区域 CORS：ERGNSS（西班牙）
+
+**我要什么**：西班牙国家网事后 RINEX（日 30 s；亦有小时树）。
+
+**去哪**：[datos-geodesia ERGNSS](https://datos-geodesia.ign.es/ERGNSS/) · 日文件 `diario_30s/` · 小时 `horario_30s/` / `horario_1s/`。
+
+**怎么下**：
+
+```bash
+# 路径：diario_30s/YYYY/YYYYMMDD/<站长名>_…MO.crx.gz（日历日，非年积日）
+curl -L -C - -O \
+  "https://datos-geodesia.ign.es/ERGNSS/diario_30s/2023/20230218/ACOR00ESP_R_20230490000_01D_30S_MO.crx.gz"
+```
+
+**账号/配额坑**：开放匿名；目录用 `YYYYMMDD`，文件名里仍带年积日；礼貌限速；小时树按 `HH/` 再下钻，勿与日目录混用。
+
+### 区域 CORS：BEV APOS（奥地利 STAC）
+
+**我要什么**：奥地利 APOS 事后 30 s RINEX（CC BY 4.0）。
+
+**去哪**：[BEV Geoportal](https://data.bev.gv.at/) · STAC [`…/RINEX/RDH1/30S/stac/by_date/catalog.json`](https://data.bev.gv.at/download/RINEX/RDH1/30S/stac/by_date/catalog.json) · 直链树 `…/rinex3/YYYY/DDD/<站>/`。
+
+**怎么下**：
+
+```bash
+# A) STAC：catalog → 年 collection → 年积日 collection → 站 item → assets.href
+curl -s "https://data.bev.gv.at/download/RINEX/RDH1/30S/stac/by_date/30S_date_2024/30S_date_2024_280/30S_date_2024_280_GRAZ.json"
+# B) 已知站/日时直链（例 GRAZ，2024-280）
+curl -L -C - -O \
+  "https://data.bev.gv.at/download/RINEX/RDH1/30S/rinex3/2024/280/GRAZ/GRAZ00AUT_R_20242800000_01D_30S_MO.crx.gz"
+```
+
+**账号/配额坑**：`data.bev.gv.at` 匿名可下；`bev.gv.at` 英文产品深链常进 403 页——用 Geoportal/STAC/上述直链；APOS-PP 免费条款见门户。
+
+### 对流层格网（VMF）
+
+**我要什么**：VMF1/VMF3 格网（PPP / 对流层延迟）。
+
+**去哪**：[VMF](https://vmf.geo.tuwien.ac.at/) → [`trop_products/`](https://vmf.geo.tuwien.ac.at/trop_products/) · 常用 `GRID/1x1/VMF3/VMF3_OP/` 或 `GRID/2.5x2/VMF1/`。
+
+**怎么下**：
+
+```bash
+# VMF3 业务产品：GRID/1x1/VMF3/VMF3_OP/YYYY/VMF3_YYYYMMDD.H{00|06|12|18}
+curl -L -C - -O \
+  "https://vmf.geo.tuwien.ac.at/trop_products/GRID/1x1/VMF3/VMF3_OP/2023/VMF3_20230218.H00"
+```
+
+**账号/配额坑**：多开放；文件名是**日历日**不是年积日；先分清 VMF1 vs VMF3、OP vs FC/EI；站文件在 `GNSS/` 子树，勿与 GRID 混用。
+
 ---
 
 ## 其他门户快查（未展开菜谱）
@@ -377,15 +427,15 @@ curl -s "https://data.gnss.ga.gov.au/api/rinexFiles?stationId=ALIC&startDate=202
 | **EarthScope** | [GAGE archive](https://gage-data.earthscope.org/archive/gnss) · [earthscope-sdk](https://gitlab.com/earthscope/public/earthscope-sdk) | SDK（PyPI）拉 API | EarthScope / GAGE | 原 UNAVCO 页仍可开，新工作以 GAGE + SDK 为准 |
 | **GA GNSS** | [data.gnss.ga.gov.au](https://data.gnss.ga.gov.au/) · [RINEX API](https://data.gnss.ga.gov.au/docs/rinex-file-query/v1.0/web-api-access.html) | 见上节「区域 CORS：GA」 | 多开放；个别 API 视密钥 | 签名 URL 短时有效；勿用旧 ga.gov.au 深链 |
 | **NRCan CACS** | [CACS 选站页](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/data-donnees/cacs-scca.php) | 网页选站 → 打包 | 多开放 | 旧 `webapp.csrs.nrcan.gc.ca` 会跳转 |
-| **Japan MIRAI** | [miraiarchive](https://go.gnss.go.jp/mirai/miraiarchive/) | 年积日 RINEX 3/4；页内有 wget/curl 例 | GO!GNSS 注册 + HTTPS 基本认证 | 含 QZSS；相对传统 GEONET 更易脚本化 |
-| **Korea GNSS** | [gnssdata.or.kr](https://www.gnssdata.or.kr/) | 登录 → 选站/时段 → ZIP | 网页注册 | 单次跨度常有上限 |
-| **BEV APOS** | [Geoportal](https://data.bev.gv.at/) | STAC：[`…/RINEX/RDH1/30S/stac/by_date/catalog.json`](https://data.bev.gv.at/download/RINEX/RDH1/30S/stac/by_date/catalog.json) | APOS-PP 免费（CC BY 4.0） | `bev.gv.at` 英文产品深链常进 403 页；用 Geoportal/STAC |
-| **Spain ERGNSS** | [datos-geodesia ERGNSS](https://datos-geodesia.ign.es/ERGNSS/) | HTTPS 公开目录树 | 开放 | 限速 |
-| **RENAG** | [renag.resif.fr](https://renag.resif.fr/) | 站网/政策/产品（DOI `10.15778/resif.rg`） | 视 RESIF | 先读数据政策 |
-| **SWEPOS** | [RINEX DOI 页](https://www.lantmateriet.se/en/geodata/gps-geodesy-and-swepos/lantmateriets-doi-objects/swepos-rinex-data/) | FTP/SFTP 日文件（DOI `10.23701/c5tc-ew52`，CC0） | 按站方说明 | 实时权限另见条款 |
-| **HK SatRef** | [RINEX 说明](https://www.geodetic.gov.hk/en/rinex/rinex.htm) | 网页选站下载（无稳定匿名文件树） | 多开放 | 旧 downv/geodex 根路径不可靠；注意采样率与保留期 |
+| **Japan MIRAI** | [miraiarchive](https://go.gnss.go.jp/mirai/miraiarchive/) | 路径 `/rinex/daily/YYYY/DOY/yyd|yyp/`（页内 curl 例）；匿名拉文件/list → **401** | GO!GNSS 注册 + Basic Auth | 含 QZSS；无账号勿写菜谱步骤；本轮未验证持账下载 |
+| **Korea GNSS** | [gnssdata.or.kr](https://www.gnssdata.or.kr/) | 登录 → 选站/时段 → ZIP | 网页注册 | 须登录；无匿名文件树，本轮未展开菜谱 |
+| **BEV APOS** | [Geoportal](https://data.bev.gv.at/) · STAC catalog | 见上节「区域 CORS：BEV」 | APOS-PP 免费（CC BY 4.0） | `bev.gv.at` 英文深链常 403；用 `data.bev.gv.at` |
+| **Spain ERGNSS** | [datos-geodesia ERGNSS](https://datos-geodesia.ign.es/ERGNSS/) | 见上节「区域 CORS：ERGNSS」 | 开放 | 目录 `YYYYMMDD`；礼貌限速 |
+| **RENAG** | [renag.resif.fr](https://renag.resif.fr/) | 站网/政策/产品（DOI `10.15778/resif.rg`） | 视 RESIF | 门户可开；无稳定匿名文件树，本轮未验证直链 |
+| **SWEPOS** | [RINEX DOI 页](https://www.lantmateriet.se/en/geodata/gps-geodesy-and-swepos/lantmateriets-doi-objects/swepos-rinex-data/) | FTP/SFTP 日文件（DOI `10.23701/c5tc-ew52`，CC0） | 按站方说明 | DOI 页可开；FTP 凭证/主机本轮未核到可复现 200 |
+| **HK SatRef** | [RINEX 说明](https://www.geodetic.gov.hk/en/rinex/rinex.htm) | 网页选站下载（无稳定匿名文件树） | 多开放 | 说明页 200；无脚本直链可核，勿猜旧 downv/geodex |
 | **EPOS / GLASS / M3G** | [EPOS GNSS](https://gnss-epos.eu/) · [GLASS](https://gnssdata-epos.oca.eu/GlassFramework/) · [M3G](https://gnss-metadata.eu/landing/m3g) | GLASS JSON；M3G REST | 视节点 | 欧洲程序化优先 GLASS |
-| **VMF** | [vmf.geo.tuwien.ac.at](https://vmf.geo.tuwien.ac.at/) | [`trop_products/`](https://vmf.geo.tuwien.ac.at/trop_products/) | 多开放 | 选对 VMF1/VMF3 |
+| **VMF** | [vmf.geo.tuwien.ac.at](https://vmf.geo.tuwien.ac.at/) | 见上节「对流层格网（VMF）」 | 多开放 | 日历日文件名；分清 OP/FC |
 | **GIRO / DIDBase** | [giro.uml.edu/didbase](https://giro.uml.edu/didbase/) | 查询站/时段 → 图 | 网页注册 | 旧 quick-request URL 已 404 |
 | **INTERMAGNET** | [intermagnet.org](https://intermagnet.org/) | Data → 准实时/存档 | 视产品 | 先读条件再脚本 |
 | **SuperMAG** | [supermag.jhuapl.edu](https://supermag.jhuapl.edu/) | 界面 / API | 网页注册 | 引用含原始台站 |
