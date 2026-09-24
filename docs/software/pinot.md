@@ -215,11 +215,18 @@ Quality check failed files: bjfs1730.18o
 python ~/iono_ops/run_pinot.py ~/iono_ops/pinot/subnet.py \
   -cfg ~/iono_ops/pinot/_subnet.yml -k -out subnets \
   bjfs1730.18o shao1730.18o chan1730.18o
-# 本机：bjfs→net1+net3，shao→net2，chan→net1
+# 本机 stdout：
+# bjfs1730.18o => subnets/net1
+# bjfs1730.18o => subnets/net3
+# shao1730.18o => subnets/net2
+# chan1730.18o => subnets/net1
 
 # 文件名小写→大写（无 YAML）
 python ~/iono_ops/pinot/low2upper.py -k -out uppered bjfs1730.18o
-# => BJFS1730.18O
+# 本机 stdout：
+# Start processing: bjfs1730.18o
+# 1 files have been processed.
+# BJFS1730.18O
 ```
 
 ## 4. 输入 / 输出速查

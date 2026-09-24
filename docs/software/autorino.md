@@ -173,7 +173,20 @@ autorino_check_rnx -i /tmp/aro_rnx_demo -t '<SITE_ID9>/%Y/%j' \
   -s 2018-06-22 -e 2018-06-22 -o /tmp/aro_check_out -l SITE00FRA
 ```
 
-**本机截断：** 先打印完整性表（猜到 `…_MO.crx.gz`，本地无匹配 → 完备率 0），随后因当前 **geodezyx 5.2.0** 缺 `utils.figure_saver` 在写图阶段报错退出。表已出来；出图需 geodezyx/autorino 版本对齐或等上游修。**禁止当作转换成功。**
+**本机截断 stdout（autorino 2.4.2 + geodezyx 5.2.0，2026-09-24 ET）：**
+
+```text
+...|I|guess_local_rnx|nbr local RINEX files guessed: 1
+...|I|print_table    |CheckGnss SITE00FRA/...
+  fname  site      epoch_srt         epoch_end  ok_inp  ok_out  ...
+0   NaN  SITE00FRA 18-06-22 00:00:00 18-06-22 23:59:59   False   False  ..._MO.crx.gz
+...|I|check_rnx      |Check:
+| epoch_srt   |   SITE |
+| 2018-173    |      0 |
+AttributeError: module 'geodezyx.utils' has no attribute 'figure_saver'. Did you mean: 'pickle_saver'?
+```
+
+表（完备率 0）先出来，再在写图阶段炸。出图需 geodezyx/autorino 版本对齐或等上游修。**禁止当作转换成功。**
 
 ## 4. 输入 / 输出速查
 
@@ -212,7 +225,7 @@ autorino_check_rnx -i /tmp/aro_rnx_demo -t '<SITE_ID9>/%Y/%j' \
 | 5 | Trimble 键名混淆 | 键 `t0xconvert` vs 值 `t0xConvert` | 对照 `autorino_env_default.yml`；官方大小写敏感 |
 | 6 | 头被改“错了” | 设计上**以外源元数据覆盖** | 先改 sitelog/站 YAML；看 convert 后 firmware/SN 警告 |
 | 7 | `gfzrnx` 例行跑被质询 | 许可限制 | 换 Converto/其它 handle；有许可再写进 YAML |
-| 8 | `check_rnx` 表有了但 traceback `figure_saver` | geodezyx API 漂移 | 钉版本或跳过出图；先用表 |
+| 8 | `check_rnx` 表有了但 `AttributeError: ... figure_saver` | geodezyx 5.2.0 无该符号（提示 `pickle_saver`） | 钉兼容 geodezyx 或跳过出图；先用表 |
 | 9 | docker `trm2rinex:cli-light` 拉不起 | 未装 Docker / 无镜像 | 改 `trimble_default_software: t0xconvert` 并用官方 Linux 转换器 |
 | 10 | 多站同时 FTP 打满链路 | 同 `datalink` 并发 | 站配置里设不同 `datalink` 标签或错峰 `-si` |
 | 11 | 把 Pinot/`teqc` 当 RINEX3/4 主链 | 工具年代不同 | RINEX3/4 用 autorino；旧 2.11 批壳用 [pinot](./pinot.md) |
