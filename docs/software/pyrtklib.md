@@ -1,6 +1,6 @@
 # pyrtklib · RTKLIB Python 绑定操作手册
 
-目录：[`PROJECTS.json` → `pyrtklib`](../../PROJECTS.json) · 上游 <https://github.com/IPNL-POLYU/pyrtklib> · 许可 **MIT** · tip **`1c468db`**（2025-10-03）· PyPI **`pyrtklib` 0.2.7** · 捆 **RTKLIB 2.4.3**（`VER_RTKLIB`）· 本机：pip 轮子 + 仓内 F9P OBS/`BRDC` → `readrnx` **56934** 测值 · 首历元 `pntpos` **ok=1 / Q=5 / ns=4** → **22.320106847°N 114.211129029°E h=22.700 m** · 前 60 历元 `pntpos_ok=23` · **2026-09-24 06:25 EDT**
+目录：[`PROJECTS.json` → `pyrtklib`](../../PROJECTS.json) · 上游 <https://github.com/IPNL-POLYU/pyrtklib> · 许可 **MIT** · tip **`1c468db`**（2025-10-03）· PyPI **`pyrtklib` 0.2.7** · 捆 **RTKLIB 2.4.3**（`VER_RTKLIB`）· 本机：pip 轮子 + 仓内 F9P OBS/`BRDC` → `readrnx` **56934** 测值 · 首历元 `pntpos` **ok=1 / Q=5 / ns=4** → **22.320106847°N 114.211129029°E h=22.700 m** · 前 60 历元 `pntpos_ok=21` · **2026-09-24 06:25 EDT** · **质检复跑** 2026-09-24 06:32 EDT（tip **`1c468db`**/PyPI **0.2.7**/`VER_RTKLIB` **2.4.3**；`readrnx` OBS **56934**/NAV n=**11530**/ng=**1152**；首历元 n=**24**/`time.time`=**1638515280**；`pntpos` ok=**1**/Q=**5**/ns=**4** → **22.320106847°N 114.211129029°E h=22.700 m**；前60 `pntpos_ok`=**21**（修正原稿 23）；交叉 [rtklib](./rtklib.md)；**未改** [rtklib](./rtklib.md)）
 
 > 岗位：在 Python 脚本里直接调 RTKLIB **C 核心**（`readrnx` / `pntpos` / `postpos` / RTCM…），做批量后处理与 DL 紧耦合试验。冲突时：**仓内 `readme.md` / `.pyi` / 本机函数签名 > 本文**。日常 CLI → [rtklib](./rtklib.md)；纯 Python NavData/WLS → [gnss_lib_py](./gnss_lib_py.md)；ROS 因子图 → [graphgnsslib](./graphgnsslib.md)。
 
@@ -92,7 +92,7 @@ print(f'{pos[0]*180/math.pi:.9f} {pos[1]*180/math.pi:.9f} {pos[2]:.3f}')
 PY
 ```
 
-**本机结果（2026-09-24 06:25 EDT）：**
+**本机结果（2026-09-24 06:25 EDT；质检复跑 06:32 EDT，`pntpos_ok` 已改为 21）：**
 
 | 项 | 值 |
 | --- | --- |
@@ -101,7 +101,7 @@ PY
 | 首历元星数 | **24**（`time.time`=1638515280） |
 | `pntpos` | **ok=1**，`stat`=**5**（single），`ns`=**4** |
 | LLH | **22.320106847°N 114.211129029°E**，h=**22.700** m |
-| 前 60 历元 | `pntpos_ok`=**23**（城市峡谷/可视不足属正常；勿当固定率） |
+| 前 60 历元 | `pntpos_ok`=**21**（城市峡谷/可视不足属正常；勿当固定率） |
 
 ### 3.1 官方 `postpos` 示例（本机未跑完整基线）
 
