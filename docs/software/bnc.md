@@ -49,7 +49,6 @@ bnc --conf /opt/bnc/lab.bnc
 | 无头立刻退出 | 未给 conf | 必须 `--conf`；先 GUI 生成 |
 | 旧 `.bnc` 打不开 | 大版本不兼容 | 新 GUI 重建关键页 |
 
-
 ---
 
 ## 3A. 端到端（推荐冒烟）：离线 REQC 拼接四段 15 min → 1 h / 30 s
@@ -113,14 +112,15 @@ BRUX_MARK                                                   MARKER NAME
 安装验收也可用：
 
 ```bash
-./bnc-2.13.7 --version   # → BNC 2.13.7
+./bnc-2.13.7 --version   # 本机：BNC 2.13.7
 ./bnc-2.13.7 --help | head -n 12
 ```
 
 `--help` 开头真输出：`Usage:` / `--nw` / `--version` / `--conf` / `--key`。
 
-
 ## 3. 端到端：一个挂载点录成 RINEX
+
+> **I/O 标签：** §3A REQC = **本机 2.13.7 实跑**（日志/头/120 历元）。本节 NTRIP 订流 = **操作步骤**（需你的账号与可达 caster）；质检机不伪造公网流 stdout。先 §3A 验收二进制，再来本节。
 
 目标：订 **一个** OBS 流，写出 RINEX，用 shell 确认字节与头。公开资源目录见 <https://igs.bkg.bund.de/ntrip/#rtcm-obs>。示例账户仅用于官方 Example_Configs（`Example`/`Configs`）——生产请用你自己的注册账号。
 
@@ -257,6 +257,8 @@ BNC 维护三层选项：
 | 12 | Windows 休眠断流 | 电源策略 | 录制机禁止休眠 |
 | 13 | 把 BNC 当 TEC 引擎 | 链选错 | 落盘后 [pytecgg](./pytecgg.md)（viventriglia） |
 | 14 | 口令进了 git | conf 误提交 | `chmod 600`；gitignore；轮换口令 |
+| 15 | `bnc: command not found` | 解压名是 `bnc-2.13.7` 未入 PATH | `ln -s`/`mv` 或写绝对路径；`command -v bnc-2.13.7` |
+| 16 | 只跑 GUI 从未 REQC | 二进制/依赖未验证 | 先 §3A；`--version` 必须打印 `BNC 2.13.7` |
 
 ## 8. 选型
 
