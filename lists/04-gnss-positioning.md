@@ -110,7 +110,7 @@ CLAS 测试库解码 Compact SSR（RTCM MT4073），提供 SSR2OSR、SSR2OBS 与
 |---|---|---|---:|---|
 | [cssrlib](https://github.com/hirokawa/cssrlib) | cssrlib：Python PPP/PPP-RTK 工具包 | Jupyter Notebook | 211 | 🏷️ 高校实验室 核心 |
 | [PPP-RTK-Beechan](https://github.com/MichaelBeechan/PPP-RTK) | PPP-RTK（Beechan）：C 版 SPP/RTD/PPP/RTK/PPP-RTK | C | 26 | 🏷️ 个人社区 |
-| [Easy4PTK](https://github.com/alxanderjiang/Easy4PTK) | 易移植的多星座 PPP-RTK Python 工具箱 | Jupyter Notebook | 5 | 🏷️ 个人社区 |
+| [Easy4PTK](https://github.com/alxanderjiang/Easy4PTK) | Easy4PTK：易移植多星座 PPP-RTK Python/Jupyter 试验箱 | Jupyter Notebook | 5 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -185,7 +185,7 @@ Glenn MacGougan 等维护的 Essential GNSS Project，提供 RINEX 2.x 解码、
 | [PPPH-UAV](https://github.com/BerkayBahadur/PPPH-UAV) | PPPH-UAV：无人机摄影测量向 GNSS PPP（MATLAB） | MATLAB | 14 | 🏷️ 高校实验室 |
 | [RTPPP_B2b](https://github.com/floating0516/RTPPP_B2b) | RTPPP_B2b：B2b 改正实时 PPP 接口 | C | 10 | 🏷️ 个人社区 核心 |
 | [PyGNSSFix](https://github.com/rodrigo-moliveira/PyGNSSFix) | Python SPP/PPP 工具箱（WLS/EKF，GPS+GAL） | Python | 7 | 🏷️ 个人社区 |
-| [ppp_rtklib](https://github.com/mulin33/ppp_rtklib) | 从 RTKLIB 抽出的独立 PPP 模块，便于精读源码 | C | 4 | 🏷️ 个人社区 |
+| [ppp_rtklib](https://github.com/mulin33/ppp_rtklib) | ppp_rtklib：自 RTKLIB 抽出的独立 PPP 模块 | C | 4 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -388,7 +388,7 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnss-ppp-matlab-toolbox](https://github.com/hvandermarel/gnss-ppp-matlab-toolbox) | 代尔夫特理工 MATLAB 工具：合并 NRCan CSRS-PPP 多日解并做统计检验 | MATLAB | 4 | 🏷️ 高校实验室 |
+| [gnss-ppp-matlab-toolbox](https://github.com/hvandermarel/gnss-ppp-matlab-toolbox) | gnss-ppp-matlab-toolbox：合并 NRCan CSRS-PPP 多日解 | MATLAB | 4 | 🏷️ 高校实验室 |
 
 ### 详细说明
 

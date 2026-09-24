@@ -78,7 +78,7 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 |---|---|---|---:|---|
 | [ge-gnss-visibility](https://github.com/taroz/ge-gnss-visibility) | ge-gnss-visibility：Google Earth 可见性分析 | MATLAB | 137 | 🏷️ 个人社区 |
 | [gnss_timeseries_viewers](https://github.com/kmaterna/gnss_timeseries_viewers) | gnss_timeseries_viewers：PBO/UNR 坐标时序分析绘图 | Python | 36 | 🏷️ 高校实验室 |
-| [EasyGNSS](https://github.com/whigg/EasyGNSS) | 面向低成本 GNSS 的图形界面辅助工具 | Python | 4 | 🏷️ 高校实验室 |
+| [EasyGNSS](https://github.com/whigg/EasyGNSS) | EasyGNSS：低成本 GNSS 图形界面辅助工具 | Python | 4 | 🏷️ 高校实验室 |
 | [GPS-Velocity-Viewer](https://www.unavco.org/software/visualization/GPS-Velocity-Viewer/GPS-Velocity-Viewer.html) | UNAVCO GPS 速度场在线可视化查看器 | web | — | 🏷️ 官方 |
 
 ### 详细说明
@@ -339,7 +339,7 @@ Rokubun 编写的 GNSS 数据处理 Jupyter 教程，覆盖从观测到基础解
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Muf_Muncher](https://github.com/mooxle/Muf_Muncher) | 自托管欧洲 HF 传播看板（测高仪 MUF/foF2、空间天气与 POTA） | HTML | 5 | 🏷️ 个人社区 |
+| [Muf_Muncher](https://github.com/mooxle/Muf_Muncher) | Muf_Muncher：自托管欧洲 HF 传播看板（MUF/foF2/POTA） | HTML | 5 | 🏷️ 个人社区 |
 
 ### 详细说明
 

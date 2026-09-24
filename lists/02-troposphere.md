@@ -96,7 +96,7 @@ BME 大地测量组发布的开源 Python 层析工具箱，由 ZWD/梯度、SP3
 | [GIRAS-GPS-Solutions](https://github.com/cemalialtuntas/GIRAS-GPS-Solutions) | GIRAS：MATLAB 开源 GNSS-IR 分析（GPS Solutions 配套） | MATLAB | 13 | 🏷️ 高校实验室 |
 | [FresnelMaps](https://github.com/kristinemlarson/FresnelMaps) | FresnelMaps：GNSS-IR 菲涅耳区地图生成工具 | Python | 9 | 🏷️ 高校实验室 |
 | [gnssr4river](https://github.com/lroineau/gnssr4river) | gnssr4river：面向河流水文的 GNSS-R Python 工具箱 | Python | 8 | 🏷️ 高校实验室 |
-| [gpssnrpy](https://github.com/kristinemlarson/gpssnrpy) | RINEX SNR 提取与高度角工具 | Python | 6 | 🏷️ 高校实验室 |
+| [gpssnrpy](https://github.com/kristinemlarson/gpssnrpy) | gpssnrpy：RINEX SNR 提取与高度角/方位角 | Python | 6 | 🏷️ 高校实验室 |
 | [NearRealTimeGNSSIR](https://github.com/cemalialtuntas/NearRealTimeGNSSIR) | NearRealTimeGNSSIR：近实时 GNSS-IR 软件原型 | HTML | 5 | 🏷️ 高校实验室 |
 | [FindSnowOutliers](https://github.com/kristinemlarson/FindSnowOutliers) | FindSnowOutliers：SNR 检测天线积雪异常 | MATLAB | 4 | 🏷️ 高校实验室 |
 | [gnssr-raspberry](https://github.com/ITC-Water-Resources/gnssr-raspberry) | 树莓派上的 GNSS 反射测量（ITC 水资源） | Python | 3 | 🏷️ 高校实验室 |

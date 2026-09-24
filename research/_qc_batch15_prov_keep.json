@@ -1,0 +1,162 @@
+{
+  "upgrades": [
+    {
+      "name": "geoveil-cn0",
+      "from": "personal_community",
+      "to": "academic_lab",
+      "detail": "miluta7 company National CEnter for Cartography (Bucharest); public mapping agency → academic_lab"
+    }
+  ],
+  "keeps": [
+    {
+      "name": "sp3",
+      "owner": "nav-solutions",
+      "provenance": "personal_community",
+      "detail": "community org; keep personal_community (same as batch14)"
+    },
+    {
+      "name": "RNXQCE",
+      "owner": "cuizilu",
+      "provenance": "personal_community",
+      "detail": "empty bio/company → keep personal_community"
+    },
+    {
+      "name": "BDS-3-PPP-B2b_IMU_LiDAR",
+      "owner": "xdinav",
+      "provenance": "personal_community",
+      "detail": "empty bio/company → keep personal_community"
+    },
+    {
+      "name": "EGNOS_SDK_Core",
+      "owner": "EpsilonRTD",
+      "provenance": "personal_community",
+      "detail": "EPSILON Group commercial → keep personal_community"
+    },
+    {
+      "name": "Easy4PTK",
+      "owner": "alxanderjiang",
+      "provenance": "personal_community",
+      "detail": "empty bio/company → keep personal_community"
+    },
+    {
+      "name": "Muf_Muncher",
+      "owner": "mooxle",
+      "provenance": "personal_community",
+      "detail": "empty bio/company → keep personal_community"
+    },
+    {
+      "name": "GRID",
+      "owner": "mmurrian",
+      "provenance": "personal_community",
+      "detail": "empty bio/company → keep personal_community"
+    },
+    {
+      "name": "gnss-protos",
+      "owner": "nav-solutions",
+      "provenance": "personal_community",
+      "detail": "community org → keep personal_community"
+    },
+    {
+      "name": "ppp_rtklib",
+      "owner": "mulin33",
+      "provenance": "personal_community",
+      "detail": "no university/agency company → keep personal_community"
+    },
+    {
+      "name": "ntcmg",
+      "owner": "lguldur",
+      "provenance": "personal_community",
+      "detail": "empty bio/company → keep personal_community"
+    },
+    {
+      "name": "rtcm2ionex",
+      "owner": "d-roma",
+      "provenance": "personal_community",
+      "detail": "empty bio/company → keep personal_community"
+    },
+    {
+      "name": "MyIonosphere_Library",
+      "owner": "mguerra96",
+      "provenance": "personal_community",
+      "detail": "empty bio/company → keep personal_community"
+    },
+    {
+      "name": "AETHER",
+      "owner": "LiZhengXiao99",
+      "provenance": "academic_lab",
+      "detail": "already academic_lab; company 长安大学硕士研究生 — confirmed"
+    },
+    {
+      "name": "COSMIC-IONPRF-Ne-TEC",
+      "owner": "HassanNooreldeen",
+      "provenance": "academic_lab",
+      "detail": "already academic_lab; Egyptian Space Agency + Space Weather bio — confirmed"
+    },
+    {
+      "name": "t-fors",
+      "owner": "viventriglia",
+      "provenance": "academic_lab",
+      "detail": "already academic_lab; company @INGV — confirmed"
+    },
+    {
+      "name": "gpssnrpy",
+      "owner": "kristinemlarson",
+      "provenance": "academic_lab",
+      "detail": "already academic_lab; GPS/GNSS geodesist bio — confirmed"
+    },
+    {
+      "name": "clkcomb",
+      "owner": "YuanxinPan",
+      "provenance": "academic_lab",
+      "detail": "already academic_lab; company ETH Zurich — confirmed"
+    },
+    {
+      "name": "gnss-ppp-matlab-toolbox",
+      "owner": "hvandermarel",
+      "provenance": "academic_lab",
+      "detail": "already academic_lab; Delft University of Technology — confirmed"
+    },
+    {
+      "name": "TEC-MoLLM",
+      "owner": "PANXIONG-CN",
+      "provenance": "academic_lab",
+      "detail": "already academic_lab; Tsinghua University — confirmed"
+    },
+    {
+      "name": "pynasonde",
+      "owner": "shibaji7",
+      "provenance": "academic_lab",
+      "detail": "already academic_lab; Research Associate ERAU — confirmed"
+    },
+    {
+      "name": "SAMI2",
+      "owner": "NRL-Plasma-Physics-Division",
+      "provenance": "official",
+      "detail": "already official — confirmed"
+    },
+    {
+      "name": "IPE",
+      "owner": "NOAA-SWPC",
+      "provenance": "official",
+      "detail": "already official — confirmed"
+    },
+    {
+      "name": "gcmprocpy",
+      "owner": "NCAR",
+      "provenance": "official",
+      "detail": "already official — confirmed"
+    },
+    {
+      "name": "Kamodo-core",
+      "owner": "nasa",
+      "provenance": "official",
+      "detail": "already official — confirmed"
+    },
+    {
+      "name": "EarthScope-gnsstools",
+      "owner": "earthscope",
+      "provenance": "official",
+      "detail": "already official — confirmed"
+    }
+  ]
+}

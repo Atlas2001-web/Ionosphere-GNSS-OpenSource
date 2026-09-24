@@ -342,8 +342,8 @@ BKG/RTCM 维护的 NTRIP 开源软件 Trac 门户，集中入口含 BNC、Profes
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [pinot](https://github.com/purpleskyfall/pinot) | pinot：开源 GNSS 质检预处理工具 | Python | 25 | 🏷️ 个人社区 核心 |
-| [RNXQCE](https://github.com/cuizilu/RNXQCE) | RINEX 2/3 质量检查工具包，定位为 TEQC 停更后的替代取向 | Fortran | 6 | 🏷️ 个人社区 |
-| [geoveil-cn0](https://github.com/miluta7/geoveil-cn0) | Rust/Python：RINEX CN0 质量评分与干扰/欺骗/干扰检测 | Rust | 3 | 🏷️ 个人社区 |
+| [RNXQCE](https://github.com/cuizilu/RNXQCE) | RNXQCE：RINEX 2/3 质检 Fortran 工具（TEQC 替代取向） | Fortran | 6 | 🏷️ 个人社区 |
+| [geoveil-cn0](https://github.com/miluta7/geoveil-cn0) | geoveil-cn0：RINEX CN0 质量评分与干扰/欺骗检测 | Rust | 3 | 🏷️ 高校实验室 |
 | [grinq](https://github.com/PJarrin/grinq) | RINEX 镜像与 Anubis QC 的 Python 工具箱 | Python | 1 | 🏷️ 个人社区 |
 | [Anubis](https://gnutsoftware.com/software/anubis/) | G-Nut/Anubis：多 GNSS RINEX/RTCM 质量检查（Free 开源） | C++ | — | 🏷️ 个人社区 核心 |
 | [Anubis-Free-Download](https://gnutsoftware.com/software/anubis/download) | G-Nut/Anubis Free 下载：GPL 源码与 Linux 预编译（Pro 为商业） | C++ | — | 🏷️ 个人社区 |
@@ -368,7 +368,7 @@ BKG/RTCM 维护的 NTRIP 开源软件 Trac 门户，集中入口含 BNC、Profes
 Fortran 编写的 GNSS 观测预处理与质量检查工具，宣称支持 RINEX 2/3，定位为 TEQC 停更后的替代取向之一。适合测站运维与数据入库前检查。社区体量小于 Anubis；质控指标与历史 TEQC 输出未必逐项相同，切换时要重训阈值阈值。
 
 #### [geoveil-cn0](https://github.com/miluta7/geoveil-cn0)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：Rust · 许可：MIT · 星标约：3 · 宿主：github
 
@@ -498,7 +498,7 @@ GSI 公布的 RNXCMP 许可文本，基于地理院网站条款并要求修改�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [cycle-slip-correction](https://github.com/embrace-inpe/cycle-slip-correction) | cycle-slip-correction：周跳探测改正命令行工具 | Python | 14 | 🏷️ 官方 |
-| [DRCycleSlip](https://github.com/Jin-Whu/DRCycleSlip) | 周跳探测与修复的 Python 实现 | Python | 4 | 🏷️ 高校实验室 |
+| [DRCycleSlip](https://github.com/Jin-Whu/DRCycleSlip) | DRCycleSlip：GNSS 周跳探测与修复 Python 实现 | Python | 4 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -520,7 +520,7 @@ GSI 公布的 RNXCMP 许可文本，基于地理院网站条款并要求修改�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [EarthScope-gnsstools](https://gitlab.com/earthscope/gnsstools) | EarthScope 官方 Go 库：RINEX/RTCM/BINEX 编解码与处理流水线 | Go | 6 | 🏷️ 官方 |
+| [EarthScope-gnsstools](https://gitlab.com/earthscope/gnsstools) | EarthScope-gnsstools：官方 Go 编解码与 SPP/NTRIP 流水线 | Go | 6 | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -826,7 +826,7 @@ MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实�
 | [pysbf](https://github.com/jashandeep-sohi/pysbf) | pysbf：Septentrio SBF 文件 Python 解析模块 | Python | 16 | 🏷️ 个人社区 |
 | [pysbf2](https://github.com/semuconsulting/pysbf2) | pysbf2：Septentrio SBF 消息的 Python 编解码库 | Python | 8 | 🏷️ 个人社区 |
 | [pyubxutils](https://github.com/semuconsulting/pyubxutils) | pyubxutils：UBX 接收机 Python 命令行工具 | Python | 5 | 🏷️ 个人社区 |
-| [gnss-protos](https://github.com/nav-solutions/gnss-protos) | GNSS 广播协议编解码的 Rust 库 | Rust | 4 | 🏷️ 个人社区 |
+| [gnss-protos](https://github.com/nav-solutions/gnss-protos) | gnss-protos：GNSS 广播协议编解码 Rust 库 | Rust | 4 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -1160,7 +1160,7 @@ Leibniz Universität Hannover 地球测量研究所工具，批量修正 RINEX �
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [sp3](https://github.com/nav-solutions/sp3) | Rust 高精度 SP3 精密轨道/钟差文件解析、分析与写出库 | Rust | 7 | 🏷️ 个人社区 |
+| [sp3](https://github.com/nav-solutions/sp3) | sp3：Rust 高精度 SP3 轨道/钟差解析与写出 | Rust | 7 | 🏷️ 个人社区 |
 
 ### 详细说明
 

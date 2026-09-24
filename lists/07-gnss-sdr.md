@@ -38,7 +38,7 @@
 | [multi-channel-gnss](https://github.com/dasdboot/multi-channel-gnss) | multi-channel-gnss：LimeSDR 多通道 GNSS 实验仓 | — | 12 | 🏷️ 个人社区 |
 | [gnss-sdr-rs](https://github.com/kewei/gnss-sdr-rs) | gnss-sdr-rs：Rust 语言 GNSS 软件接收机实验 | Rust | 9 | 🏷️ 个人社区 |
 | [GPSMAXIM2769b-](https://github.com/vaidhyamookiah/GPSMAXIM2769b-) | Maxim 2769b GNSS 前端 PCB（Papilio FPGA） | Eagle | 4 | 🏷️ 个人社区 |
-| [GRID](https://github.com/mmurrian/GRID) | 灵活可扩展的 GNSS/GPS 软件定义接收机 | — | 4 | 🏷️ 个人社区 |
+| [GRID](https://github.com/mmurrian/GRID) | GRID：灵活可扩展 GNSS/GPS 软件定义接收机 | — | 4 | 🏷️ 个人社区 |
 | [BDSSDR](https://github.com/nkyang/BDS_SDR) | 北斗/GNSS 软件接收实验代码（文档较少） | MATLAB | 2 | 🏷️ 个人社区 |
 | [FlyCat-SDR-GPS](https://github.com/flydog-sdr/FlyCat_SDR_GPS) | FlyCat：Orange Pi 用 16-bit 宽带 SDR+GPS 扩展 | C++ | 2 | 🏷️ 个人社区 |
 

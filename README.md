@@ -55,7 +55,7 @@
 | **数据源门户** | [10](./lists/10-gnss-datasets.md) | 125 |
 | **合计** | [PROJECTS.json](./PROJECTS.json) | **842** |
 
-标记：🏷️ 官方 / 高校实验室 / 个人社区 · 官方 238 · 高校 313 · 社区 291 · 细则 [categories.md](./docs/categories.md)
+标记：🏷️ 官方 / 高校实验室 / 个人社区 · 官方 238 · 高校 314 · 社区 290 · 细则 [categories.md](./docs/categories.md)
 
 ---
 

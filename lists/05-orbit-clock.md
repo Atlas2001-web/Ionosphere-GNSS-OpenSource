@@ -22,7 +22,7 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [clkcomb](https://github.com/YuanxinPan/clkcomb) | 多 GNSS 钟差与相位偏差产品合成程序（IGS repro3 相关实践） | C++ | 3 | 🏷️ 高校实验室 |
+| [clkcomb](https://github.com/YuanxinPan/clkcomb) | clkcomb：多 GNSS 钟差与相位偏差产品合成 | C++ | 3 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
