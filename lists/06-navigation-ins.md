@@ -128,6 +128,7 @@ HKUST Aerial Robotics 发布的优化式多传感器状态估计器，在 VINS-M
 | [imugpslocalization](https://github.com/ydsf16/imu_gps_localization) | imu_gps_localization：ESKF 融合 IMU 与 GPS（C++） | C++ | 734 | 🏷️ 高校实验室 |
 | [OB_GINS](https://github.com/i2Nav-WHU/OB_GINS) | OB_GINS：基于优化的 GNSS/INS 组合导航 | C++ | 647 | 🏷️ 高校实验室 ★ 核心 |
 | [ignav](https://github.com/Erensu/ignav) | ignav：轻量 INS/GNSS 组合导航（C） | C | 472 | 🏷️ 个人社区 ★ |
+| [fusioncore](https://github.com/manankharwar/fusioncore) | fusioncore：户外机器人 IMU/轮速/GPS 的 UKF 融合 | C++ | 366 | 🏷️ 个人社区 |
 | [GINav](https://github.com/kaichen686/GINav) | MATLAB GNSS/INS 松紧组合常用算法实现 | MATLAB | 309 | 🏷️ 个人社区 ★ 核心 |
 | [EKF_IMU_GPS](https://github.com/balamuruganky/EKF_IMU_GPS) | EKF_IMU_GPS：IMU 预测 GNSS 的 EKF 融合示例 | C++ | 212 | 🏷️ 个人社区 |
 | [Loose-GNSS-IMU](https://github.com/aaronboda24/Loose-GNSS-IMU) | Loose-GNSS-IMU：经典 GNSS/IMU 松组合卡尔曼 | C++ | 187 | 🏷️ 高校实验室 |
@@ -177,6 +178,13 @@ HKUST Aerial Robotics 发布的优化式多传感器状态估计器，在 VINS-M
 语言：C · 许可：— · 星标约：472 · 宿主：github
 
 代码轻量、易读，适合固件向开发者移植。功能广度不及现代因子图方案；上线前务必核对状态模型与坐标系约定。
+
+#### [fusioncore](https://github.com/manankharwar/fusioncore)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：Apache-2.0 · 星标约：366 · 宿主：github
+
+面向户外机器人的 23 状态 UKF，融合 IMU、轮速编码器与 GPS（亦可接视觉 SLAM），约 100 Hz，并尝试报告哪路传感器导致发散。Apache-2.0；提供无 ROS 依赖的 C++ 滤波库与 ROS 2 包。偏移动机器人定位而非测地 PPP；部署需自备外参与时间同步标定。
 
 #### [GINav](https://github.com/kaichen686/GINav)  
 *🏷️ 个人社区 ★ 核心*
