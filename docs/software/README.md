@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **14 篇**操作手册（合计约 3930 行）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **14 篇**操作手册（合计 **3930** 行，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -8,24 +8,39 @@
 
 ---
 
-## 全部手册（点开即用）
+## 并行写作状态（持续 QC 中）
 
-| # | 手册 | 做什么 | 行数 |
-| ---: | --- | --- | ---: |
-| 1 | [georinex.md](./georinex.md) | RINEX → xarray / Python | 272 |
-| 2 | [gfzrnx.md](./gfzrnx.md) | RINEX 检查 / 拼接 / 抽稀 | 414 |
-| 3 | [anubis.md](./anubis.md) | 观测 QC → XTR/XML | 239 |
-| 4 | [pytecgg.md](./pytecgg.md) | 校准 sTEC/vTEC（作者 viventriglia） | 468 |
-| 5 | [ionomoni.md](./ionomoni.md) | STEC / ROTI / AATR（C++） | 219 |
-| 6 | [oasis-roti.md](./oasis-roti.md) | ROTI / ΔTEC / SIDX（Python） | 224 |
-| 7 | [ionex-gim.md](./ionex-gim.md) | 读 IONEX GIM | 200 |
-| 8 | [sh-gim.md](./sh-gim.md) | 维护者球谐仓**边界**（求解器未开源） | 124 |
-| 9 | [pygnssutils.md](./pygnssutils.md) | NTRIP CLI / 小 caster | 361 |
-| 10 | [bnc.md](./bnc.md) | BKG 多流客户端 | 272 |
-| 11 | [bkg-ntripcaster.md](./bkg-ntripcaster.md) | BKG Caster 播发 | 379 |
-| 12 | [rtklib.md](./rtklib.md) | RTK / PPP CLI | 272 |
-| 13 | [pride-pppar.md](./pride-pppar.md) | PPP-AR | 289 |
-| 14 | [iono-scintillation.md](./iono-scintillation.md) | MATLAB 闪烁仿真 | 197 |
+| 角色 | 负责 | 勿抢 |
+| --- | --- | --- |
+| **软件手册质检**（本 bot） | 已短硬篇的**二遍质检补洞**（错 I/O、过时旗标、仍薄点）；优先 `georinex` / `rtklib` / `bnc` / `gfzrnx` / `pytecgg` | 勿大改「仍薄/缺篇」同事正在写的文件 |
+| **软件用法讲解**（并行） | 写 **尚未短硬 / 缺篇** 新手册 | 勿重写下表已标「已短硬」全文（补丁可协调） |
+
+**下一优先（质检二遍，按弱→强）：** `gfzrnx`（登记受限·无本机二进制）→ `georinex` / `rtklib` / `bnc` / `pytecgg`（已短硬，查 stale/薄点）→ 其余「已短硬·受限」仅能做 guide 对齐，**不臆造 stdout**。  
+**sh-gim：** 保持短边界，禁止注水扩写。  
+**停写条件：** 剩余皆 PASS，或仅剩 sh-gim 边界 / 登记受限且无进一步真实 I/O 增益。
+
+---
+
+## 全部手册 + 质检状态
+
+| # | 手册 | 做什么 | 行数 | 状态 |
+| ---: | --- | --- | ---: | --- |
+| 1 | [georinex.md](./georinex.md) | RINEX → xarray / Python | 272 | **已短硬** R2 [`246103d`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/246103d) · 本机 1.16.2 |
+| 2 | [gfzrnx.md](./gfzrnx.md) | RINEX 检查 / 拼接 / 抽稀 | 414 | **已短硬** R1 [`939f0d6`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/939f0d6) · **登记受限**（无本机官方二进制；**禁臆造 stdout**） |
+| 3 | [anubis.md](./anubis.md) | 观测 QC → XTR/XML | 239 | **已短硬** R6 [`8fe8b6d`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/8fe8b6d) · **登记受限**（Free 需注册；无本机 Linux 二进制） |
+| 4 | [pytecgg.md](./pytecgg.md) | 校准 sTEC/vTEC（作者 viventriglia） | 468 | **已短硬** R1 [`939f0d6`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/939f0d6) · 本机 1.3.0 |
+| 5 | [ionomoni.md](./ionomoni.md) | STEC / ROTI / AATR（C++） | 219 | **已短硬** R3 [`f5845f7`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/f5845f7) · **登记受限**（官方主推 Win；Linux 无开箱二进制） |
+| 6 | [oasis-roti.md](./oasis-roti.md) | ROTI / ΔTEC / SIDX（Python） | 224 | **已短硬** R3 [`f5845f7`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/f5845f7) · 本机 pyOASIS 1.0.3 |
+| 7 | [ionex-gim.md](./ionex-gim.md) | 读 IONEX GIM | 200 | **已短硬** R3 [`f5845f7`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/f5845f7) · 本机 ionex 0.2 |
+| 8 | [sh-gim.md](./sh-gim.md) | 维护者球谐仓**边界**（求解器未开源） | 124 | **边界** · 保持短；禁止扩写成端到端求解教程 |
+| 9 | [pygnssutils.md](./pygnssutils.md) | NTRIP CLI / 小 caster | 361 | **已短硬** R5 [`37ac39b`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/37ac39b) · 本机 1.2.7 |
+| 10 | [bnc.md](./bnc.md) | BKG 多流客户端 | 272 | **已短硬** R2 [`246103d`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/246103d) · 本机 BNC 2.13.7 |
+| 11 | [bkg-ntripcaster.md](./bkg-ntripcaster.md) | BKG Caster 播发 | 379 | **已短硬** R4 [`bfcd626`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/bfcd626) · 本机 2.0.49 |
+| 12 | [rtklib.md](./rtklib.md) | RTK / PPP CLI | 272 | **已短硬** R1 [`939f0d6`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/939f0d6) · explorer EX 2.5.1 |
+| 13 | [pride-pppar.md](./pride-pppar.md) | PPP-AR | 289 | **已短硬** R6 [`8fe8b6d`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/8fe8b6d) · 本机 3.2.11（`-V`/`-H`/会话头实跑；WUM FTPS 未出解） |
+| 14 | [iono-scintillation.md](./iono-scintillation.md) | MATLAB 闪烁仿真 | 197 | **已短硬** R2 [`246103d`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/246103d) · **环境受限**（质检机无 MATLAB；不臆造控制台） |
+
+**状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
 每篇结构：**用途边界 → 安装 → 逐步命令+期望输出 → I/O 字段 → 参数 → 接到哪步 → ≥8 坑 → 选型**。
 
@@ -87,8 +102,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
-
-最近质检（ops）：Round6 已按 short-hard 重写 **anubis**（Free；官网下载需注册，本机未获官方 Linux 二进制——命令/XTR 以官方 PDF+pecny+样例为准，不伪造 stdout）与 **pride-pppar**（本机编装 **3.2.11**：实跑 `-V`/`-H` 与 example 会话头；WUM FTPS TLS 失败未出解，`pos_`/`amb_` 头摘自上游 `results_ref`）；**sh-gim 未改**。Round5：**pygnssutils**（1.2.7）；Round4：**bkg-ntripcaster**（2.0.49）；Round3：**ionex-gim** / **oasis-roti** / **ionomoni**；Round2：**bnc** / **georinex** / **iono-scintillation**；Round1：**gfzrnx** / **rtklib** / **pytecgg**。行数以本表 `wc -l` 为准。
+最近质检（ops）：**README 状态表**已挂（并行协调用）。Round6：**anubis**（登记受限）+ **pride-pppar**（3.2.11 实跑头；FTPS 未出解）；**sh-gim 未扩**。Round5：**pygnssutils**；Round4：**bkg-ntripcaster**；Round3：**ionex-gim** / **oasis-roti** / **ionomoni**；Round2：**bnc** / **georinex** / **iono-scintillation**；Round1：**gfzrnx** / **rtklib** / **pytecgg**。行数以本表 `wc -l` 为准。
 
 ## 推荐阅读顺序（新人）
 
@@ -112,6 +126,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 - 不要把 Free/Pro、公开/专有功能写混。
 - 不要把口令提交进 git。
 - 参数冲突时以上游帮助为准。
+- 并行写作者：勿同时全文重写同一 `docs/software/*.md`；先改本页状态再动手。
 
 ---
 
@@ -149,8 +164,8 @@ iono-scintillation：概念/仿真旁路，不替代实测 ROTI
 
 - 常规工具文：稠密操作优先；已全面 QUALITY 改写，多数 120–450 行
 - SH-GIM：短边界说明优先（准确 > 凑行）
-- 本索引：先列全手册，再写路径
-- 禁止问答注水、禁止为凑行数复读
+- 本索引：先列全手册 + 状态，再写路径
+- 禁止问答注水、禁止为凑行数复读、禁止臆造未捕获的 stdout
 
 ---
 
