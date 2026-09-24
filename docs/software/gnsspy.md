@@ -1,6 +1,6 @@
 # gnsspy · Python GNSS 读写/分析操作手册
 
-目录：[`PROJECTS.json` → `gnsspy`](../../PROJECTS.json) · 上游 <https://github.com/GNSSpy-Project/gnsspy> · 许可 **MIT** · 本机验证 **3.0.1**（`pip`/`git` tip `e6879bf`，2026-09-24 04:37 EDT）· **PyPI 无发行**（`pip install gnsspy` → No matching distribution）
+目录：[`PROJECTS.json` → `gnsspy`](../../PROJECTS.json) · 上游 <https://github.com/GNSSpy-Project/gnsspy> · 许可 **MIT** · 本机验证 **3.0.1**（`pip`/`git` tip `e6879bf`，2026-09-24 04:37 EDT）· **质检复跑通过**（2026-09-24 04:41 EDT；demo.10o→22×9 / 2 历元 / 14 SV；G07 L1=118767195.326；converter 2→3 OK；无 PyPI）· **PyPI 无发行**（`pip install gnsspy` → No matching distribution）
 
 > 岗位：RINEX OBS/NAV + SP3/CLK/IONEX → **pandas**；RINEX 2↔3 转换；可选 CDDIS 下载 / 可视化 / BRDC–SP3 比对。冲突时：**上游 README / `python -m gnsspy.io.rinex.converter -h` > 本文**。对照读库 → [georinex](./georinex.md)。
 
@@ -122,10 +122,12 @@ head -n 16 out/demo_r3.rnx
 OK: data/demo.10o -> out/demo_r3.rnx
 ```
 
-头节选（本机）：`3.04` / `M: MIXED`；`G 7 L1W L2W C1W C2W C1C S1W S2W`；`INTERVAL 30.000`。再 `read_obsFile("out/demo_r3.rnx")` → `version 3.04`，列变为 `C1C/C1W/L1W/…`，shape `(22, 13)`。
+头节选（本机）：`3.04` / `M: MIXED`；`G 7 L1W L2W C1W C2W C1C S1W S2W`；`INTERVAL 30.000`。再 `read_obsFile("out/demo_r3.rnx")` → `version 3.04`，`approx_position [4789028.47, 0.0, 0.0]`，列 `C1C C1W C2W L1C L1P L1W L2W S1C S1P S1W S2W epoch SYSTEM`，shape `(22, 13)`。
 
-**注意：** 本 `demo.10o` 头里 XYZ 列宽非标准；转换后本机曾见  
+**注意：** 本 `demo.10o` 头里 XYZ 列宽非标准；转换后本机复现  
 `APPROX POSITION XYZ` → `4789028.4700  0.0000  0.0000`（Y/Z 丢失）。`mini` 类标准 14.4 头则 XYZ 保持。转换后务必核对近似坐标。
+
+**注意 2：** 再 `converter … --target 2.11`（默认 `--keep GR`）写出成功，但本机 `read_obsFile` 对该回写文件报 `ValueError: Length of values (…) does not match length of index (…)`（`--keep GRES/GRECJIS` 同败）。2→3 可读；3→2 回写勿当自洽读写环。
 
 ### 3.3 对照：同一文件 + georinex 探活
 
@@ -170,7 +172,7 @@ python -m gnsspy.io.rinex.converter [-h] [--target TARGET] [--keep KEEP] input o
 | --- | --- |
 | `input` / `output` | 源 / 目标 OBS 路径 |
 | `--target` | 如 `2.11` / `3.04`；省略则取「对面」主版本 |
-| `--keep` | 写 RINEX 2 时保留系统，默认 `GR`；可 `GRES` / `GRECJIS` |
+| `--keep` | 写 RINEX 2 时保留系统；**CLI 默认 `GR`**（`convert_file` API 默认 `GRES`）；可 `GRES` / `GRECJIS` |
 
 入口脚本：`gnsspy`（菜单 1–6）、`gnsspy-download`、`gnsspy-visualize`、`gnsspy-convert-rinex`（后三者偏交互；**不要**对 `gnsspy-convert-rinex` 指望 argparse `-h`）。
 
@@ -202,11 +204,13 @@ data-access / 可选 fast·gdds 下载
 5. **转换后 XYZ 可能被写烂**：非标准列宽头（如本 `demo.10o`）→ Y/Z=0；转换后重读 `approx_position`。
 6. **`obs.epoch` 只是 `datetime.date`**：完整时间在 MultiIndex `Epoch` 层，不要当历元列表。
 7. **v2 `observation_types[0]` 是计数 `'7'`**：不是观测量名；过滤列用 `L1`/`C1` 等。
-8. **Hatanaka**：converter **拒绝** `.crx/.d`；先 `CRX2RNX` / `crx2rnx()` / [hatanaka](./hatanaka.md)。
+8. **Hatanaka**：converter **不认** `.crx/.d`（无解压）；本机 → `ValueError: … first line is not 'RINEX VERSION / TYPE'`。先 `CRX2RNX` / `crx2rnx()` / [hatanaka](./hatanaka.md)。
 9. **CDDIS 下载 / 轨道比对**：要 Earthdata；`credentials.txt` 勿提交 git。
 10. **`[products]`/`[workflows]` 依赖 georinex**：装了不等于读路径变成 xarray；两套 API 并存，别混返回类型。
 11. **写 RINEX 2 `--keep` 默认 `GR`**：BDS/QZSS/IRNSS 会被丢掉；需要时显式 `GRECJIS`（仍受 R2 体系限制）。
 12. **轨道比对范围**：菜单工作流当前主比 GPS/Galileo/BDS；别默认「全星座 SP3 已覆盖」。
+13. **3→2 回写 ≠ 可再读**：`converter` 写 RINEX 2 成功，但本机 `read_obsFile` 对 demo 回写报 Length mismatch（混合星座 / 类型折叠）。下游用 georinex 或只做 2→3。
+14. **CLI `--keep` ≠ API**：命令行默认 `GR`；`convert_file(..., keep_systems=)` 默认 `GRES`。脚本化勿混。
 
 ## 8. 选型
 
