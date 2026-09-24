@@ -1,6 +1,6 @@
 # ntripcaster-libev · libev NTRIP Broadcaster 操作手册
 
-目录：[`PROJECTS.json` → `ntripcaster-libev`](../../PROJECTS.json) · 上游 <https://github.com/tisyang/ntripcaster> · tip **`cc17929`** · 源码 `VERSION`=**`1.1.0`** · **BSD-3-Clause** · NTRIP **1.0** · 依赖 **libev** + **cmake** · 本机验证（2026-09-24 06:15 EDT）：`cmake`/`make` → `./ntripcaster`；监听 **2101**；空源表 → 在线 **STR;LAB1**；源端 `ICY 200` / `ERROR - Bad Password`；客户端 `ICY 200` / `401`；字节透传（**未臆造 RTCM 帧体**）
+目录：[`PROJECTS.json` → `ntripcaster-libev`](../../PROJECTS.json) · 上游 <https://github.com/tisyang/ntripcaster> · tip **`cc17929`** · 源码 `VERSION`=**`1.1.0`** · **BSD-3-Clause** · NTRIP **1.0** · 依赖 **libev** + **cmake** · 本机验证（2026-09-24 06:15 EDT）：`cmake`/`make` → `./ntripcaster`；监听 **2101**；空源表 → 在线 **STR;LAB1**；源端 `ICY 200` / `ERROR - Bad Password`；客户端 `ICY 200` / `401`；字节透传（**未臆造 RTCM 帧体**） · **质检复跑** 2026-09-24 06:21 EDT（tip **`cc17929`**/`VERSION`=**1.1.0**；二进制 **74152** B；口 **2101**；空表 CL=**16**；在线 **STR;LAB1** CL=**111**；源 `ICY 200 OK\r\n`=**12** B / `ERROR - Bad Password` / `ERROR - Bad Mountpoint`；客 `ICY 200`=**12** B / **401**；未知挂载→源表；占位串透传 **match**；**未臆造 RTCM**；交叉 [cors-relay](./cors-relay.md)/[bkg-ntripcaster](./bkg-ntripcaster.md)/[pygnssutils](./pygnssutils.md)/[data-access](../data-access.md)）
 
 > 岗位：本机/实验室 **自建播发**（SOURCE 推流 → 动态源表 → CLIENT 订流）。JSON 配置；**无** `-h`/`--help`（多余参数当配置文件名）。冲突时：**上游 README / 源码 > 本文**。  
 > 公网源表/订流入口 → [data-access](../data-access.md)「实时 NTRIP」；同作者 **帐号池中继** → [cors-relay](./cors-relay.md)；生产多用户播发 → [bkg-ntripcaster](./bkg-ntripcaster.md)；脚本客户端 → [pygnssutils](./pygnssutils.md)。
@@ -41,7 +41,7 @@ git rev-parse --short HEAD   # 本机：cc17929
 mkdir -p build && cd build
 cmake ..
 make -j"$(nproc)"
-ls -la ntripcaster          # 本机约 74 KB
+ls -la ntripcaster          # 本机 **74152** B
 cp ../ntripcaster.json .
 ```
 
@@ -64,7 +64,7 @@ cd ~/iono_ops/ntripcaster/build
 stdbuf -oL -eL ./ntripcaster ntripcaster.json
 ```
 
-**本机启动横幅 + 日志（2026-09-24 06:15 EDT，ANSI 已剥）：**
+**本机启动横幅 + 日志（2026-09-24 06:15 EDT，ANSI 已剥；质检复跑 06:21 EDT 进程仍在听 2101）：**
 
 ```text
 ntripcaster ver 1.1.0
@@ -93,7 +93,7 @@ print(s.recv(4096).decode('latin-1'))
 PY
 ```
 
-**本机真实响应（Content-Length: 16 = `ENDSOURCETABLE\r\n`；Date 为 UTC）：**
+**本机真实响应（Content-Length: 16 = `ENDSOURCETABLE\r\n`；Date 为 UTC；质检复跑 06:21 EDT 同 CL=16）：**
 
 ```text
 SOURCETABLE 200 OK
@@ -145,7 +145,7 @@ STR;LAB1;LAB1;RTCM3X;1005(10),1074-1084-1124(1);2;GNSS;NET;CHN;0.00;0.00;1;1;Non
 ENDSOURCETABLE
 ```
 
-STR 字段由源码**硬编码模板**生成（非真实站元数据）；末段 `0` 为当时 `in_bps`。源表缓存约 **3 s**。
+STR 字段由源码**硬编码模板**生成（非真实站元数据）；末段 `0` 为当时 `in_bps`。源表缓存约 **3 s**。质检复跑：在线 body **111** B；未知挂载 `/NOPE`（带合法 Basic）→ **仍回源表**非 401；SOURCE 挂断后 ≥3 s → 空表 CL=**16**。
 
 客户端（挂载**必须已有 SOURCE**，否则仍回源表，**不会**先 401）：
 
@@ -165,14 +165,14 @@ for label,t in [('bad',bad),('ok',tok)]:
 PY
 ```
 
-**本机：**
+**本机（质检复跑 06:21 EDT：握手段均恰 **12** B/`\r\n` 结尾）：**
 
 ```text
 bad → HTTP/1.0 401 Unauthorized
 ok  → ICY 200 OK
 ```
 
-随后 SOURCE 侧写入的字节会原样到 CLIENT。本机用占位串 `LAB-BYTES-0123456789\n` 验证透传成功——**这不是 RTCM**；有真接收机/文件源后再对接 [pyrtcm](./pyrtcm.md) / [bnc](./bnc.md)。
+随后 SOURCE 侧写入的字节会原样到 CLIENT。本机用占位串 `LAB-BYTES-0123456789\n` 验证透传成功（质检复跑 **match=True**）——**这不是 RTCM**；有真接收机/文件源后再对接 [pyrtcm](./pyrtcm.md) / [bnc](./bnc.md)。
 
 联调客户端示例（有真源后）：
 
@@ -224,7 +224,7 @@ ok  → ICY 200 OK
 ## 6. 坑（≥8）
 
 1. **无 `-h`**：`./ntripcaster -h` 会把 `-h` 当配置文件名并尝试启动。  
-2. **无源订挂载 = 源表**：`GET /LAB1` 在无 SOURCE 时回 `SOURCETABLE`，**不是** 401——先起源再测鉴权。  
+2. **无源订挂载 = 源表**：`GET /LAB1` 在无 SOURCE 时回 `SOURCETABLE`，**不是** 401（质检复跑挂断后带 Basic 亦然）——先起源再测鉴权；未知挂载同理。  
 3. **必须带 Agent 头**：CLIENT 要 `User-Agent:`，SOURCE 要 `Source-Agent:`，否则静默失败。  
 4. **同挂载单源**：第二路 SOURCE → `ERROR - Bad Mountpoint`（占用中）。  
 5. **`max_pending` 笔误**：`caster_init_config` 用 `cJSON_IsNumber(max_source)` / `max_source->valueint` 写 pending；JSON `max_source:0` 时 pending 被改成 **0**（日志可见）。  
