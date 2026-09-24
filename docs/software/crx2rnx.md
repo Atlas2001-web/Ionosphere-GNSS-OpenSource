@@ -1,6 +1,8 @@
 # crx2rnx · Rust Hatanaka CRX→RNX 操作手册
 
-目录：[`PROJECTS.json` → `crx2rnx`](../../PROJECTS.json) · 上游 <https://github.com/nav-solutions/crx2rnx> · crates.io **`crx2rnx` 2.7.0** · tip **`765ddeb`**（release tag `v2.7.0` / `4c49ba6`）· **MPL-2.0** · 基于 GeoRust/`rinex` **0.22.0** · 本机验证 **rustc 1.98.1** + `cargo install crx2rnx`（2026-09-24 05:07 EDT）：AJAC/ACOR/ESBC `.crx(.gz)` 实解；ACOR 与 GSI 观测值字节级一致；AJAC V2 丢星已记
+目录：[`PROJECTS.json` → `crx2rnx`](../../PROJECTS.json) · 上游 <https://github.com/nav-solutions/crx2rnx> · crates.io **`crx2rnx` 2.7.0** · tip **`765ddeb`**（release tag `v2.7.0` / `4c49ba6`）· **MPL-2.0** · 基于 GeoRust/`rinex` **0.22.0** · 本机验证 **rustc 1.98.1** + `cargo install crx2rnx`（2026-09-24 05:07 EDT）：AJAC/ACOR/ESBC `.crx(.gz)` 实解；ACOR 与 GSI 观测值字节级一致；AJAC V2 丢星已记 · **质检复跑通过**（2026-09-24 05:19 EDT；AJAC 9185→9620、nsat 26→17；ACOR C1C G07/G08=GSI；ESBC 4032656→34573249；tip `765ddeb`/2.7.0）
+
+**质检边界：** 仅 CRX→RNX 解压 CLI；**不做** RNX→CRX（见 `rnx2crx`）；V2 CRINEX 可能丢星；写出头 `PGM` 变为 `rs-rinex`，与 GSI 整文件字节不必相同。
 
 > 岗位：把 Compact RINEX（`.crx` / `.##d` / `.crx.gz`）解成明文 OBS，便于 Rust/现代 CLI 流水线。冲突时：**本机 `crx2rnx -h` / 上游 README > 本文**。  
 > **同名陷阱：** PATH 里的 `crx2rnx` 经常是 [hatanaka](./hatanaka.md) 捆绑的 **GSI RNXCMP** 二进制（旗标 `-f/-s/-d`），**不是**本文 Rust CLI。官方可引用压缩/恢复 → [rnxcmp](./rnxcmp.md)；Python 封装 → [hatanaka](./hatanaka.md)。
