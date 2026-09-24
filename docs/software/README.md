@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **34 篇**操作手册（合计 **8409** 行，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **37 篇**操作手册（合计 **8933** 行，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -58,6 +58,7 @@
 | 31 | [pyirtam.md](./pyirtam.md) | 纯 Python IRTAM 系数→网格 Ne（对接 PyIRI） | 177 | **已短硬** · 本机 PyIRTAM **0.0.7**；LGDC 2024-06-01 02:15 四系数 + run_PyIRTAM 实跑 |
 | 32 | [fast.md](./fast.md) | GNSS 下载 / QC / 广播星历 SPP / 选站 | 215 | **已短硬** · 本机 tip **3.01.01**；ABPO satNum + 1h SPP Δ≈0.69 m；FTP 下载本机失败已记 |
 | 33 | [apexpy.md](./apexpy.md) | Apex / 准偶极磁坐标（Apex/QD/MLT） | 174 | **已短硬** · 本机 2.1.1/`eed96cf`；geo2apex(40N,80W,250km)→alat≈50.70；CLI 14 位时间坑 |
+| 34 | [msise00.md](./msise00.md) | NRLMSISE-00 中性大气 → xarray | 166 | **已短硬** · 本机 **1.11.1**/`e4ab457`；Tn@250km=1009.87 K；CLI `-w` 需 netCDF4 |
 | 33 | [pysatcdaac.md](./pysatcdaac.md) | pysat 生态 CDAAC/COSMIC（ionPrf/ionPhs） | 293 | **已短硬** · 本机 0.0.5；ionprf 2019-01-01 59→53；ionphs 下 144、load 维冲突改 netCDF4 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
@@ -192,6 +193,7 @@ data-access
    ├─ iri2016 (IRI-2016 → xarray)
    ├─ pyiri / pyirtam (纯 Python IRI / IRTAM)
    ├─ apexpy (Apex/QD/MLT 磁坐标)
+   ├─ msise00 (NRLMSISE-00 中性大气)
    ├─ pygnssutils / bnc / bkg-ntripcaster (路径 C)
    └─ cssrlib / haslib / laika / rtklib / pride-pppar (路径 D)
 sh-gim：仅路径 E 边界，不串进 A/B 主链
@@ -206,7 +208,7 @@ iono-scintillation：概念/仿真旁路，不替代实测 ROTI
 | --- | --- |
 | 02 / 16 | georinex · hatanaka · gnss-tec · pytecgg |
 | 03 / 10 / 18 | ionex-gim · sh-gim(边界) · pyglow |
-| 04 | iri2016 · pyglow · pyiri · pyirtam · apexpy · nequickg |
+| 04 | iri2016 · pyglow · pyiri · pyirtam · apexpy · msise00 · nequickg |
 | 05 / 13 / 21 | oasis-roti · ionomoni · iono-scintillation |
 | 06 / 20 | cssrlib · haslib · laika · gnss_lib_py · android_rinex · rtklib · pride-pppar · ionomoni |
 | 09 | pytecgg |
