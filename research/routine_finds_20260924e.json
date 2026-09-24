@@ -1,0 +1,282 @@
+[
+  {
+    "name": "VINS-Fusion",
+    "url": "https://github.com/HKUST-Aerial-Robotics/VINS-Fusion",
+    "desc_zh": "港科大：多传感器优化式视觉-惯性状态估计（可融 GNSS）",
+    "analysis_zh": "HKUST Aerial Robotics 发布的优化式多传感器状态估计器，在 VINS-Mono 基础上扩展双目/立体与多传感器融合，社区常接 GNSS 作户外约束。GPL-3.0；与 OpenVINS、GVINS、IC-GVINS 形成 VIO/GVINS 谱系对照。偏机器人/无人机，非测地级 PPP；标定与时间同步要求高，文档与星标均很成熟。",
+    "language": "C++",
+    "license": "GPL-3.0",
+    "category": "navigation-ins",
+    "subcategory": "GNSS/INS/视觉",
+    "host": "github",
+    "provenance": "academic_lab",
+    "one_liner_zh": "VINS-Fusion：港科大多传感器视觉惯性估计器",
+    "stars_approx": 4728,
+    "markers": [
+      "routine-2026-09-24e"
+    ],
+    "source": "routine-finds-20260924e",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "VINS-Mono",
+    "url": "https://github.com/HKUST-Aerial-Robotics/VINS-Mono",
+    "desc_zh": "港科大：单目视觉-惯性状态估计经典开源实现",
+    "analysis_zh": "VINS 系列奠基之作，单目视觉与 IMU 紧耦合优化估计，衍生大量 GNSS/轮速扩展（如 VINS-GPS-Wheel）。GPL-3.0，教学与二次开发引用极高。本身不含 GNSS，但是目录中 GVINS/融合工作的重要上游；部署需注意标定、曝光与回环，代码以 ROS1 生态为主。",
+    "language": "C++",
+    "license": "GPL-3.0",
+    "category": "navigation-ins",
+    "subcategory": "GNSS/INS/视觉",
+    "host": "github",
+    "provenance": "academic_lab",
+    "one_liner_zh": "VINS-Mono：经典单目视觉惯性状态估计器",
+    "stars_approx": 6044,
+    "markers": [
+      "routine-2026-09-24e"
+    ],
+    "source": "routine-finds-20260924e",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "TouchRTKStation",
+    "url": "https://github.com/taroz/TouchRTKStation",
+    "desc_zh": "基于 RTKLIB 的单频 RTK 流动站/基准站触摸方案",
+    "analysis_zh": "taroz 维护的单频 RTK-GNSS 流动/基准站方案，底层依托 RTKLIB，面向可触摸终端与野外快速架站。MIT 许可；与纯命令行 RTKLIB 相比更偏整机与交互体验。适合教学与低成本单频实验，多频与完好性能力有限，硬件串口与电台配置见仓库说明。",
+    "language": "C",
+    "license": "MIT",
+    "category": "gnss-positioning",
+    "subcategory": "RTK客户端",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "TouchRTKStation：RTKLIB 单频流动/基准站方案",
+    "stars_approx": 99,
+    "markers": [
+      "routine-2026-09-24e"
+    ],
+    "source": "routine-finds-20260924e",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "gsdc2023",
+    "url": "https://github.com/taroz/gsdc2023",
+    "desc_zh": "Google 智能手机十米级挑战 2023：解算与基线代码",
+    "analysis_zh": "taroz 针对 Google Smartphone Decimeter Challenge 2023 的公开代码与思路，处理手机原始 GNSS 测量与轨迹评估。MIT 许可；衔接 Android 原始观测与低成本定位研究。竞赛规则与数据版本绑定，复现需自备挑战数据集与官方评价指标脚本。",
+    "language": "Python",
+    "license": "MIT",
+    "category": "mobile-apps",
+    "subcategory": "原始测量",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "gsdc2023：手机十米级挑战 2023 解算代码",
+    "stars_approx": 114,
+    "markers": [
+      "routine-2026-09-24e"
+    ],
+    "source": "routine-finds-20260924e",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "ITU-Rpy",
+    "url": "https://github.com/inigodelportillo/ITU-Rpy",
+    "desc_zh": "ITU-R P 系列大气衰减建议的 Python 实现",
+    "analysis_zh": "将 ITU-R P. 系列大气衰减与传播建议实现为 Python 库，用于雨衰、气体衰减等链路预算，常与卫星/GNSS 相关传播分析对照。MIT 许可；目录已有 ITU-R 软件索引页，本条补齐可脚本化的 P 系列工具包。注意建议书版本与适用频段，它不是 GNSS 观测解算器。",
+    "language": "Python",
+    "license": "MIT",
+    "category": "troposphere",
+    "subcategory": "大气延迟/InSAR",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "ITU-Rpy：ITU-R 大气衰减建议的 Python 库",
+    "stars_approx": 172,
+    "markers": [
+      "routine-2026-09-24e"
+    ],
+    "source": "routine-finds-20260924e",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "LimeGPS",
+    "url": "https://github.com/osqzss/LimeGPS",
+    "desc_zh": "面向 LimeSDR 的实时 GPS 信号模拟器（osqzss）",
+    "analysis_zh": "osqzss 家族中针对 LimeSDR 的实时 GPS 射频模拟前端，由 gps-sdr-sim 思路扩展。MIT 许可，仓库已 archived，但仍是 Lime 硬件联调常用参考。与 pluto-gps-sim、multi-sdr-gps-sim 互补；仅供实验室或授权环境使用，务必遵守当地无线电法规。",
+    "language": "C",
+    "license": "MIT",
+    "category": "gnss-sdr",
+    "subcategory": "信号仿真",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "LimeGPS：LimeSDR 实时 GPS 信号模拟器",
+    "stars_approx": 134,
+    "markers": [
+      "routine-2026-09-24e"
+    ],
+    "source": "routine-finds-20260924e",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "pluto-gps-sim",
+    "url": "https://github.com/Mictronics/pluto-gps-sim",
+    "desc_zh": "ADALM-Pluto 用 GPS 基带 IQ 生成与发射工具",
+    "analysis_zh": "Mictronics 维护的 PlutoSDR GPS 基带 IQ 生成与发射工具，把模拟中频流送至 ADALM-Pluto。MIT，仓库已 archived，但仍是低成本 SDR 仿真常用入口。与 multi-sdr-gps-sim、gps-sdr-sim 同族；仅限屏蔽室或授权试验，遵守频谱管理规定，勿对空非法发射。",
+    "language": "C",
+    "license": "MIT",
+    "category": "gnss-sdr",
+    "subcategory": "信号仿真",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "pluto-gps-sim：PlutoSDR GPS IQ 仿真发射工具",
+    "stars_approx": 119,
+    "markers": [
+      "routine-2026-09-24e"
+    ],
+    "source": "routine-finds-20260924e",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "EKF_IMU_GPS",
+    "url": "https://github.com/balamuruganky/EKF_IMU_GPS",
+    "desc_zh": "用 IMU 预测 GNSS 量测的扩展卡尔曼融合示例",
+    "analysis_zh": "balamuruganky 的 C++ EKF 示例：以 IMU 传播预测 GNSS 量测，演示松组合思路。MIT 许可；与目录中 IndirectEKFIMUGPS 为不同实现。适合教学与原型验证，非工业级 INS；过程噪声、量测噪声与坐标系约定需按自有传感器重新标定。",
+    "language": "C++",
+    "license": "MIT",
+    "category": "navigation-ins",
+    "subcategory": "GNSS/INS",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "EKF_IMU_GPS：IMU 预测 GNSS 的 EKF 融合示例",
+    "stars_approx": 212,
+    "markers": [
+      "routine-2026-09-24e"
+    ],
+    "source": "routine-finds-20260924e",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "FresnelMaps",
+    "url": "https://github.com/kristinemlarson/FresnelMaps",
+    "desc_zh": "地基 GNSS 反射实验的菲涅耳区地图生成",
+    "analysis_zh": "Kristine Larson 团队工具，为地基 GNSS-IR/反射测量绘制菲涅耳区地图，辅助选址与几何解释。MIT 许可；与 gnssSNR、gnssrefl 同谱系前置工具。输入站坐标与天线高需准确，输出服务实验设计，本身不做水位或雪深反演。",
+    "language": "Python",
+    "license": "MIT",
+    "category": "troposphere",
+    "subcategory": "GNSS-IR",
+    "host": "github",
+    "provenance": "academic_lab",
+    "one_liner_zh": "FresnelMaps：GNSS-IR 菲涅耳区地图生成工具",
+    "stars_approx": 9,
+    "markers": [
+      "routine-2026-09-24e"
+    ],
+    "source": "routine-finds-20260924e",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "Orekit",
+    "url": "https://github.com/CS-SI/Orekit",
+    "desc_zh": "Apache-2.0 太空动力学库（轨道/姿态/力模型，Java）",
+    "analysis_zh": "CS-SI 维护的底层太空动力学库，覆盖轨道传播、力模型、姿态与时间尺度等，GNSS 精密轨道分析中常作基础组件。Apache-2.0；议题追踪多在 gitlab.orekit.org。质量高但非专用 GNSS POD 套件，观测模型需自建；主语言为 Java，Python 绑定需另寻社区包装。",
+    "language": "Java",
+    "license": "Apache-2.0",
+    "category": "orbit-clock",
+    "subcategory": "轨道确定/基础库",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "Orekit：开源太空动力学与轨道传播基础库",
+    "stars_approx": 298,
+    "markers": [
+      "routine-2026-09-24e"
+    ],
+    "source": "routine-finds-20260924e",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "FAA-WAAS",
+    "url": "https://www.faa.gov/about/office_org/headquarters_offices/ato/service_units/techops/navservices/gnss/waas",
+    "desc_zh": "美国 FAA：广域增强系统 WAAS 官方介绍页",
+    "analysis_zh": "联邦航空局关于 WAAS 的官方导航页，说明广域增强架构、服务与相关 GNSS 导航服务入口。portal-terms；与 NSTB 测试数据页互补。偏航空完好性与服务说明，不是 RINEX 下载站；技术细节与运行状态请再循 FAA/NAVCEN 相关链接核实。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "tools-learning",
+    "subcategory": "SBAS",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "FAA WAAS：美国广域增强系统官方介绍",
+    "stars_approx": null,
+    "markers": [
+      "routine-2026-09-24e"
+    ],
+    "source": "routine-finds-20260924e",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "EGNOS-GSC-User-Support",
+    "url": "https://egnos.gsc-europa.eu/",
+    "desc_zh": "欧洲 GSC：EGNOS 用户支持与服务信息门户",
+    "analysis_zh": "欧洲 GNSS 服务中心（GSC）EGNOS 用户支持站点，汇总服务状态、文档与用户资源（原 ESSP 入口现多导向此域）。官方 portal；与 EGNOS SDK/Toolkit 代码条目互补。适合 SBAS 服务调研，EDAS 等实时数据接口往往需要注册，条款以站内说明为准。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "tools-learning",
+    "subcategory": "SBAS",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "EGNOS GSC：欧洲静地导航重叠系统用户支持",
+    "stars_approx": null,
+    "markers": [
+      "routine-2026-09-24e"
+    ],
+    "source": "routine-finds-20260924e",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "NSTB-WAAS-Test-Team",
+    "url": "https://www.nstb.tc.faa.gov/",
+    "desc_zh": "FAA NSTB：WAAS 测试团队数据与工具门户",
+    "analysis_zh": "William J. Hughes 技术中心 WAAS Test Team 站点，提供测试数据与工具入口；旧 FTP 已弃用，数据改由站内新链分发。官方 portal；实验室工具偶有维护窗口导致暂时不可用。适合 WAAS 性能评估与研究对照，下载前先看页面公告与镜像说明。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "空间天气辅助",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "NSTB：FAA WAAS 测试团队数据与工具门户",
+    "stars_approx": null,
+    "markers": [
+      "routine-2026-09-24e"
+    ],
+    "source": "routine-finds-20260924e",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "GLONASS-IAC",
+    "url": "https://glonass-iac.ru/en/",
+    "desc_zh": "俄罗斯 GLONASS 信息分析中心（IAC）英文门户",
+    "analysis_zh": "GLONASS IAC 英文站，提供星座状态、产品与系统介绍入口，是获取 GLONASS 官方信息服务的常用起点。portal-terms；具体星历/钟差产品路径与是否需注册以站内栏目为准。适合多星座产品对照，跨境访问时注意镜像可用性与页面语言切换。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "轨道钟差",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "GLONASS IAC：官方星座与产品信息服务门户",
+    "stars_approx": null,
+    "markers": [
+      "routine-2026-09-24e"
+    ],
+    "source": "routine-finds-20260924e",
+    "featured": false,
+    "user_relation": "none"
+  }
+]

@@ -1,5 +1,5 @@
 # 对流层 / Troposphere
-> **35** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **37** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
@@ -94,6 +94,7 @@ BME 大地测量组发布的开源 Python 层析工具箱，由 ZWD/梯度、SP3
 |---|---|---|---:|---|
 | [gnssSNR](https://github.com/kristinemlarson/gnssSNR) | gnssSNR：RINEX→SNR/几何角，GNSS-IR 前置工具 | Fortran | 15 | 🏷️ 高校实验室 |
 | [GIRAS-GPS-Solutions](https://github.com/cemalialtuntas/GIRAS-GPS-Solutions) | GIRAS：MATLAB 开源 GNSS-IR 分析软件（GPS Solutions 论文配套） | MATLAB | 13 | 🏷️ 高校实验室 |
+| [FresnelMaps](https://github.com/kristinemlarson/FresnelMaps) | FresnelMaps：GNSS-IR 菲涅耳区地图生成工具 | Python | 9 | 🏷️ 高校实验室 |
 | [gnssr4river](https://github.com/lroineau/gnssr4river) | 面向河流水文的 GNSS-R Python 工具箱 | Python | 8 | 🏷️ 个人社区 |
 | [gpssnrpy](https://github.com/kristinemlarson/gpssnrpy) | RINEX SNR 提取与高度角工具 | Python | 6 | 🏷️ 高校实验室 |
 | [NearRealTimeGNSSIR](https://github.com/cemalialtuntas/NearRealTimeGNSSIR) | 近实时 GNSS-IR 软件原型 | HTML | 5 | 🏷️ 个人社区 |
@@ -114,6 +115,13 @@ Kristine Larson 团队工具，从 RINEX 剥离 SNR 及卫星方位角、高度�
 语言：MATLAB · 许可：MIT · 星标约：13 · 宿主：github
 
 Altuntas 与 Tunalioglu 发布的 MATLAB GNSS-IR 工具，可读 RINEX 2/3 与广播/精密星历，支持多星座，含第一菲涅耳区计算与基于 SNR 的反射体高度估计及可视化。适合教学与站点级反射测量试验。依赖 MATLAB 环境；大规模业务化反演可对照 Kristen Larson 的 gnssrefl。
+
+#### [FresnelMaps](https://github.com/kristinemlarson/FresnelMaps)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：MIT · 星标约：9 · 宿主：github
+
+Kristine Larson 团队工具，为地基 GNSS-IR/反射测量绘制菲涅耳区地图，辅助选址与几何解释。MIT 许可；与 gnssSNR、gnssrefl 同谱系前置工具。输入站坐标与天线高需准确，输出服务实验设计，本身不做水位或雪深反演。
 
 #### [gnssr4river](https://github.com/lroineau/gnssr4river)  
 *🏷️ 个人社区*
@@ -254,10 +262,18 @@ GNSS 干涉反射测量（GNSS-IR）主流开源工具，用反射信号估水�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [ITU-Rpy](https://github.com/inigodelportillo/ITU-Rpy) | ITU-Rpy：ITU-R 大气衰减建议的 Python 库 | Python | 172 | 🏷️ 个人社区 |
 | [PyAPS](https://github.com/insarlab/PyAPS) | PyAPS：全球模式大气相位屏（APS） | Python | 86 | 🏷️ 高校实验室 |
 | [ICAMS](https://github.com/ymcmrs/ICAMS) | ICAMS：InSAR 对流层改正（全球大气模式） | Python | 44 | 🏷️ 高校实验室 |
 
 ### 详细说明
+
+#### [ITU-Rpy](https://github.com/inigodelportillo/ITU-Rpy)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：172 · 宿主：github
+
+将 ITU-R P. 系列大气衰减与传播建议实现为 Python 库，用于雨衰、气体衰减等链路预算，常与卫星/GNSS 相关传播分析对照。MIT 许可；目录已有 ITU-R 软件索引页，本条补齐可脚本化的 P 系列工具包。注意建议书版本与适用频段，它不是 GNSS 观测解算器。
 
 #### [PyAPS](https://github.com/insarlab/PyAPS)  
 *🏷️ 高校实验室*

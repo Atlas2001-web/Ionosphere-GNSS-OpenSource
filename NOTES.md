@@ -311,3 +311,10 @@
 - 当前条目：**788**
 - 分类计数：{'ionosphere': 240, 'troposphere': 35, 'gnss-data': 117, 'gnss-positioning': 88, 'orbit-clock': 13, 'navigation-ins': 60, 'gnss-sdr': 59, 'mobile-apps': 20, 'tools-learning': 34, 'gnss-datasets': 122}
 - 详见 `research/routine_finds_20260924d.json`
+
+## 例行检索补录（2026-09-24e）
+
+- 新增 **14** 条（VINS-Fusion/LimeGPS/Orekit/FAA-WAAS/EGNOS-GSC/ITU-Rpy 等）
+- 当前条目：**802**
+- 分类计数：{'ionosphere': 240, 'troposphere': 37, 'gnss-data': 117, 'gnss-positioning': 89, 'orbit-clock': 14, 'navigation-ins': 63, 'gnss-sdr': 61, 'mobile-apps': 21, 'tools-learning': 36, 'gnss-datasets': 124}
+- 详见 `research/routine_finds_20260924e.json`

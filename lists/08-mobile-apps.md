@@ -1,5 +1,5 @@
 # 移动与嵌入式应用 / Mobile Apps
-> **20** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **21** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 手机/嵌入式上的 GNSS 测试、原始测量记录与简易定位。
 
@@ -164,11 +164,19 @@ Cryologger Glacier Velocity Tracker 以 Arduino/MicroMod 与 SparkFun ZED-F9P �
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [gsdc2023](https://github.com/taroz/gsdc2023) | gsdc2023：手机十米级挑战 2023 解算代码 | Python | 114 | 🏷️ 个人社区 |
 | [GNSS_MobileCalculator](https://github.com/RogerioDoCarmo/GNSS_MobileCalculator) | Android 原始伪距 SPS 示例 | Java | 15 | 🏷️ 个人社区 |
 | [androidGnss](https://github.com/AILocAR/androidGnss) | Android 原始 GNSS 伪距定位 MATLAB 代码 | MATLAB | 14 | 🏷️ 高校实验室 |
 | [google-gnss-logger](https://github.com/gscatto/google-gnss-logger) | google-gnss-logger：GNSS Logger 原始测量 Java 解析库 | Java | 8 | 🏷️ 个人社区 |
 
 ### 详细说明
+
+#### [gsdc2023](https://github.com/taroz/gsdc2023)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：114 · 宿主：github
+
+taroz 针对 Google Smartphone Decimeter Challenge 2023 的公开代码与思路，处理手机原始 GNSS 测量与轨迹评估。MIT 许可；衔接 Android 原始观测与低成本定位研究。竞赛规则与数据版本绑定，复现需自备挑战数据集与官方评价指标脚本。
 
 #### [GNSS_MobileCalculator](https://github.com/RogerioDoCarmo/GNSS_MobileCalculator)  
 *🏷️ 个人社区*

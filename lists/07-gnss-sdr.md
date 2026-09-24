@@ -1,5 +1,5 @@
 # 软件接收机与信号 / GNSS-SDR
-> **59** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **61** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。
 
@@ -289,6 +289,8 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 | [gps-sdr-sim](https://github.com/osqzss/gps-sdr-sim) | gps-sdr-sim：GPS L1 基带信号仿真（SDR 回放） | C | 3466 | 🏷️ 个人社区 核心 |
 | [multi-sdr-gps-sim](https://github.com/Mictronics/multi-sdr-gps-sim) | HackRF/Pluto 等平台上的 GPS L1 实时仿真 | C | 264 | 🏷️ 个人社区 |
 | [SignalSim](https://github.com/globsky/SignalSim) | 覆盖多阶段链路的 GNSS 信号/数据仿真 | C++ | 208 | 🏷️ 个人社区 |
+| [LimeGPS](https://github.com/osqzss/LimeGPS) | LimeGPS：LimeSDR 实时 GPS 信号模拟器 | C | 134 | 🏷️ 个人社区 |
+| [pluto-gps-sim](https://github.com/Mictronics/pluto-gps-sim) | pluto-gps-sim：PlutoSDR GPS IQ 仿真发射工具 | C | 119 | 🏷️ 个人社区 |
 | [gps-sdr-sim-assistant](https://github.com/frank-pian/gps-sdr-sim-assistant) | gps-sdr-sim-assistant：仿真参数图形助手 | JavaScript | 63 | 🏷️ 个人社区 |
 | [galileo-sdr-sim](https://github.com/harshadms/galileo-sdr-sim) | galileo-sdr-sim：Galileo E1B/C 信号生成器 | C++ | 62 | 🏷️ 个人社区 |
 | [BeiDou_B1C](https://github.com/lnexenl/BeiDou_B1C) | 北斗 B1C 信号生成与捕获（MATLAB） | MATLAB | 38 | 🏷️ 个人社区 |
@@ -323,6 +325,20 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 语言：C++ · 许可：— · 星标约：208 · 宿主：github
 
 相对单一 L1 IQ sim，更接近科研用多星座、多阶段信号与数据仿真链，便于算法验证与场景复现。适合接收机基带/测量层试验。配置项多、文档需耐心研读；实时射频合规发射另论。
+
+#### [LimeGPS](https://github.com/osqzss/LimeGPS)  
+*🏷️ 个人社区*
+
+语言：C · 许可：MIT · 星标约：134 · 宿主：github
+
+osqzss 家族中针对 LimeSDR 的实时 GPS 射频模拟前端，由 gps-sdr-sim 思路扩展。MIT 许可，仓库已 archived，但仍是 Lime 硬件联调常用参考。与 pluto-gps-sim、multi-sdr-gps-sim 互补；仅供实验室或授权环境使用，务必遵守当地无线电法规。
+
+#### [pluto-gps-sim](https://github.com/Mictronics/pluto-gps-sim)  
+*🏷️ 个人社区*
+
+语言：C · 许可：MIT · 星标约：119 · 宿主：github
+
+Mictronics 维护的 PlutoSDR GPS 基带 IQ 生成与发射工具，把模拟中频流送至 ADALM-Pluto。MIT，仓库已 archived，但仍是低成本 SDR 仿真常用入口。与 multi-sdr-gps-sim、gps-sdr-sim 同族；仅限屏蔽室或授权试验，遵守频谱管理规定，勿对空非法发射。
 
 #### [gps-sdr-sim-assistant](https://github.com/frank-pian/gps-sdr-sim-assistant)  
 *🏷️ 个人社区*

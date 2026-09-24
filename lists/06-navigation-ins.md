@@ -1,5 +1,5 @@
 # 导航 / Navigation & INS
-> **60** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **63** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 
@@ -22,6 +22,8 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [VINS-Mono](https://github.com/HKUST-Aerial-Robotics/VINS-Mono) | VINS-Mono：经典单目视觉惯性状态估计器 | C++ | 6044 | 🏷️ 高校实验室 |
+| [VINS-Fusion](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion) | VINS-Fusion：港科大多传感器视觉惯性估计器 | C++ | 4728 | 🏷️ 高校实验室 |
 | [gici-open](https://github.com/chichengcn/gici-open) | GICI：GNSS/INS/相机紧组合开源库 | C++ | 667 | 🏷️ 高校实验室 核心 |
 | [VINS-GPS-Wheel](https://github.com/Wallong/VINS-GPS-Wheel) | VINS-GPS-Wheel：VINS-Mono+轮速+GNSS | C++ | 280 | 🏷️ 个人社区 |
 | [RTK-Visual-Inertial-Navigation](https://github.com/xiaohong-huang/RTK-Visual-Inertial-Navigation) | RTK-VIN：滑窗滤波 RTK 视觉惯性导航 | C++ | 136 | 🏷️ 高校实验室 |
@@ -30,6 +32,20 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 | [GVINS-WHU](https://github.com/zhangwhu/GVINS) | 武大相关：PPP-RTK/INS/视觉组合导航（勿与港科大 GVINS-HKUST 混淆） | C++ | 12 | 🏷️ 高校实验室 |
 
 ### 详细说明
+
+#### [VINS-Mono](https://github.com/HKUST-Aerial-Robotics/VINS-Mono)  
+*🏷️ 高校实验室*
+
+语言：C++ · 许可：GPL-3.0 · 星标约：6044 · 宿主：github
+
+VINS 系列奠基之作，单目视觉与 IMU 紧耦合优化估计，衍生大量 GNSS/轮速扩展（如 VINS-GPS-Wheel）。GPL-3.0，教学与二次开发引用极高。本身不含 GNSS，但是目录中 GVINS/融合工作的重要上游；部署需注意标定、曝光与回环，代码以 ROS1 生态为主。
+
+#### [VINS-Fusion](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion)  
+*🏷️ 高校实验室*
+
+语言：C++ · 许可：GPL-3.0 · 星标约：4728 · 宿主：github
+
+HKUST Aerial Robotics 发布的优化式多传感器状态估计器，在 VINS-Mono 基础上扩展双目/立体与多传感器融合，社区常接 GNSS 作户外约束。GPL-3.0；与 OpenVINS、GVINS、IC-GVINS 形成 VIO/GVINS 谱系对照。偏机器人/无人机，非测地级 PPP；标定与时间同步要求高，文档与星标均很成熟。
 
 #### [gici-open](https://github.com/chichengcn/gici-open)  
 *🏷️ 高校实验室 核心*
@@ -113,6 +129,7 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 | [OB_GINS](https://github.com/i2Nav-WHU/OB_GINS) | OB_GINS：基于优化的 GNSS/INS 组合导航 | C++ | 647 | 🏷️ 高校实验室 ★ 核心 |
 | [ignav](https://github.com/Erensu/ignav) | ignav：轻量 INS/GNSS 组合导航（C） | C | 472 | 🏷️ 个人社区 ★ |
 | [GINav](https://github.com/kaichen686/GINav) | MATLAB GNSS/INS 松紧组合常用算法实现 | MATLAB | 309 | 🏷️ 个人社区 ★ 核心 |
+| [EKF_IMU_GPS](https://github.com/balamuruganky/EKF_IMU_GPS) | EKF_IMU_GPS：IMU 预测 GNSS 的 EKF 融合示例 | C++ | 212 | 🏷️ 个人社区 |
 | [Loose-GNSS-IMU](https://github.com/aaronboda24/Loose-GNSS-IMU) | Loose-GNSS-IMU：经典 GNSS/IMU 松组合卡尔曼 | C++ | 187 | 🏷️ 高校实验室 |
 | [KF-GINS-Matlab](https://github.com/i2Nav-WHU/KF-GINS-Matlab) | KF-GINS-Matlab：EKF 松/紧组合 MATLAB 版 | MATLAB | 137 | 🏷️ 高校实验室 核心 |
 | [ublox_dgnss](https://github.com/aussierobots/ublox_dgnss) | ublox_dgnss：ROS2 u-blox UBX 驱动 | C++ | 86 | 🏷️ 个人社区 |
@@ -167,6 +184,13 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 语言：MATLAB · 许可：BSD-2-Clause · 星标约：309 · 宿主：github
 
 以 MATLAB 实现 GNSS 定位及松/紧组合常用滤波与方程，便于改模型、画残差，研究生入门友好。适合课程作业与论文原型。实时嵌入式或高吞吐现场部署需移植到 C/C++ 或其他引擎。
+
+#### [EKF_IMU_GPS](https://github.com/balamuruganky/EKF_IMU_GPS)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：MIT · 星标约：212 · 宿主：github
+
+balamuruganky 的 C++ EKF 示例：以 IMU 传播预测 GNSS 量测，演示松组合思路。MIT 许可；与目录中 IndirectEKFIMUGPS 为不同实现。适合教学与原型验证，非工业级 INS；过程噪声、量测噪声与坐标系约定需按自有传感器重新标定。
 
 #### [Loose-GNSS-IMU](https://github.com/aaronboda24/Loose-GNSS-IMU)  
 *🏷️ 高校实验室*

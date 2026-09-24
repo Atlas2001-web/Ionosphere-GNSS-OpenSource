@@ -1,5 +1,5 @@
 # 学习资源与工具 / Tools & Learning
-> **34** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **36** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
@@ -115,9 +115,18 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [EGNOS-GSC-User-Support](https://egnos.gsc-europa.eu/) | EGNOS GSC：欧洲静地导航重叠系统用户支持 | data-portal | — | 🏷️ 官方 |
 | [EGNOS-Toolkit](https://sourceforge.net/projects/libegnos/) | SourceForge EGNOS Toolkit：SBAS/EGNOS 消息与接收算法工具 | C/C++ | — | 🏷️ 个人社区 |
+| [FAA-WAAS](https://www.faa.gov/about/office_org/headquarters_offices/ato/service_units/techops/navservices/gnss/waas) | FAA WAAS：美国广域增强系统官方介绍 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
+
+#### [EGNOS-GSC-User-Support](https://egnos.gsc-europa.eu/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+欧洲 GNSS 服务中心（GSC）EGNOS 用户支持站点，汇总服务状态、文档与用户资源（原 ESSP 入口现多导向此域）。官方 portal；与 EGNOS SDK/Toolkit 代码条目互补。适合 SBAS 服务调研，EDAS 等实时数据接口往往需要注册，条款以站内说明为准。
 
 #### [EGNOS-Toolkit](https://sourceforge.net/projects/libegnos/)  
 *🏷️ 个人社区*
@@ -125,6 +134,13 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 语言：C/C++ · 许可：EUPL · 星标约：— · 宿主：sourceforge
 
 基于 EGNOS SDK 的 Linux/UNIX 移植，处理 SISNET、EMS 文件并实现用户端 SBAS 算法，许可 EUPL。托管于 SourceForge，更新偏旧。现代多星座 SBAS/HAS 研究需结合新文档与其他开源栈。
+
+#### [FAA-WAAS](https://www.faa.gov/about/office_org/headquarters_offices/ato/service_units/techops/navservices/gnss/waas)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+联邦航空局关于 WAAS 的官方导航页，说明广域增强架构、服务与相关 GNSS 导航服务入口。portal-terms；与 NSTB 测试数据页互补。偏航空完好性与服务说明，不是 RINEX 下载站；技术细节与运行状态请再循 FAA/NAVCEN 相关链接核实。
 
 ## 机构软件门户
 
@@ -357,7 +373,7 @@ NGS 公开的 NCAT（NGS Coordinate Conversion and Transformation Tool）底层 
 daniestevez 维护的 Galileo OSNMA 协议 Rust 库，校验导航电文密码学签名，支持 no_std 与静态栈分配，并有嵌入式演示 crate。与 Algafix/OSNMA（EUPL、偏仿真/工具链）互补，侧重可嵌入接收机路径。Apache-2.0/MIT；需自备公钥/ Merkle 材料与实时电文源，星级与文档见 crates.io/docs.rs。
 
 #### [OSNMA](https://github.com/Algafix/OSNMA)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：Python · 许可：EUPL-1.2 · 星标约：52 · 宿主：github
 

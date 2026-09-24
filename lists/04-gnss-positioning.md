@@ -1,5 +1,5 @@
 # 精密定位 / Precise Positioning
-> **88** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **89** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
@@ -676,7 +676,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 ### 详细说明
 
 #### [HASPPP](https://github.com/ZhangRunzhi20/HASPPP)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：44 · 宿主：github
 
@@ -861,7 +861,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 面向多 GNSS 的 PPP-AR 开源软件，科研引用多，模糊度固定与产品接口成熟。适合高精度事后 PPP、地壳形变、气象 ZTD。实时 PPP-RTK 与图形界面非重点；学习曲线陡于 RTKLIB。
 
 #### [PPP_AR](https://github.com/heiwa0519/PPP_AR)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：C · 许可：— · 星标约：40 · 宿主：github
 
@@ -969,9 +969,17 @@ TU Delft 开源 IGP（MATLAB，Apache-2.0）：以 Space-Time Matrix 统一 GNSS
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [TouchRTKStation](https://github.com/taroz/TouchRTKStation) | TouchRTKStation：RTKLIB 单频流动/基准站方案 | C | 99 | 🏷️ 个人社区 |
 | [rtk_client](https://github.com/tobiasnix/rtk_client) | Python 终端 RTK：NTRIP + 串口 GNSS 客户端 | Python | 0 | 🏷️ 个人社区 |
 
 ### 详细说明
+
+#### [TouchRTKStation](https://github.com/taroz/TouchRTKStation)  
+*🏷️ 个人社区*
+
+语言：C · 许可：MIT · 星标约：99 · 宿主：github
+
+taroz 维护的单频 RTK-GNSS 流动/基准站方案，底层依托 RTKLIB，面向可触摸终端与野外快速架站。MIT 许可；与纯命令行 RTKLIB 相比更偏整机与交互体验。适合教学与低成本单频实验，多频与完好性能力有限，硬件串口与电台配置见仓库说明。
 
 #### [rtk_client](https://github.com/tobiasnix/rtk_client)  
 *🏷️ 个人社区*

@@ -322,3 +322,12 @@
 - Focus after portal-heavy 24c: C/JS/MicroPython/.NET NMEA-RTCM, OSNMA sim, gnssSNR, deep_gnss/snapshot/ICE, hwm93, TUSAGA-Aktif, ISRO NavIC, pcc-explorer/atx-scanner
 - Skipped: TrigNet/AFREF/SAPOS, SOI CORS 404, REDNAP (leveling not GNSS CORS), HAS-decoding no SPDX, midgard pre-alpha, pi-rtk-optimizer (not GNSS), rinex-adapter thin 0★ optional, libnmea (overlap minmea this pass)
 - Merge safety: append-only; `_merge_fields` + explicit keep-old-if-blank; UPDATED=0; full-scan blanking=0
+
+## Routine pass 2026-09-24e
+
+- Catalog size before: **788**; after merge: **802** (+14)
+- Finds file: `research/routine_finds_20260924e.json`
+- Method: software-first searches (VINS/SDR-sim/GNSS-IR/Orekit/ITU-Rpy) + SBAS agency portals (FAA WAAS/EGNOS GSC/NSTB/GLONASS IAC); `gh api`+`curl` live checks; dedup vs PROJECTS.json and all `routine_finds_*.json`
+- Focus after NMEA/portal-heavy 24d: navigation-ins (VINS-Fusion/Mono, EKF_IMU_GPS), gnss-sdr (LimeGPS/pluto-gps-sim), troposphere (ITU-Rpy/FresnelMaps), orbit-clock (Orekit), mobile (gsdc2023), RTK (TouchRTKStation), SBAS portals
+- Skipped: TrigNet/AFREF/SAPOS/SOI 404, NMEA libs just added, multi-GNSS-FCB no LICENSE, GNSS-Radar no license, bladeGPS (LimeGPS enough), tudatpy (Orekit covers orbit niche), beidou.gov.cn unreachable from box
+- Merge safety: append-only from HEAD; UPDATED=0; blanking vs HEAD=0
