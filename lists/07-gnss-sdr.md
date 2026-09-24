@@ -429,7 +429,7 @@ GPS 与 Galileo 卫星信号模拟相关实现，说明中提及与 RTKLIB 能�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [SoftGNSS-octave](https://github.com/kristianpaul/SoftGNSS) | SoftGNSS 的 Octave 移植（基于 Borre/Akos 教材代码） | Objective-C | 74 | 🏷️ 个人社区 |
+| [SoftGNSS-octave](https://github.com/kristianpaul/SoftGNSS) | SoftGNSS-octave：Borre/Akos SoftGNSS 的 Octave 教学移植 | Objective-C | 74 | 🏷️ 个人社区 |
 | [CCAR-GNSS-SDR-Book](https://ccar.colorado.edu/gnss/) | CCAR-GNSS-SDR-Book：SoftGPS 教材已知问题与配套说明站 | MATLAB | — | 🏷️ 高校实验室 |
 | [SoftGPS-CU-Boulder](https://www.colorado.edu/lab/rf-satnav/resources/original-open-source-gpsgnss-sdr) | SoftGPS-CU-Boulder：CU 软 GNSS 教材配套与 GN3S 前端资源页 | MATLAB | — | 🏷️ 高校实验室 |
 

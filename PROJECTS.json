@@ -1410,7 +1410,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
+      "provenance": "academic_lab",
       "one_liner_zh": "RinexReader：C++ RINEX 2/3 读取库"
     },
     {
@@ -5792,7 +5792,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community"
+      "provenance": "academic_lab"
     },
     {
       "name": "DLR-IMPC",
@@ -12611,7 +12611,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
+      "provenance": "academic_lab",
       "one_liner_zh": "geoveil-mp：Rust/Python 的 RINEX 多路径 MP 与周跳质控库"
     },
     {
@@ -12817,7 +12817,7 @@
       "featured": true,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
+      "provenance": "academic_lab",
       "one_liner_zh": "批量下载 CDDIS 高采样 GNSS 数据"
     },
     {
@@ -14757,7 +14757,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
+      "provenance": "academic_lab",
       "one_liner_zh": "lowtran：LOWTRAN7 大气消光模型的 Python 封装"
     },
     {
@@ -15257,7 +15257,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
+      "provenance": "academic_lab",
       "one_liner_zh": "snapshot-gnss-algorithms：短快照 GNSS 定位算法集"
     },
     {
@@ -17143,7 +17143,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
+      "provenance": "academic_lab",
       "one_liner_zh": "pysatNASA：pysat 的 NASA 空间科学仪器数据扩展（BSD-3）"
     },
     {
@@ -17343,7 +17343,7 @@
     {
       "name": "NeoGPS",
       "url": "https://github.com/SlashDevin/NeoGPS",
-      "desc_zh": "Arduino 低内存 NMEA/u-blox GPS 解析库",
+      "desc_zh": "可裁到约 10 字节 RAM；嵌入式日志向，非测地解算",
       "analysis_zh": "面向 Arduino 的可配置 NMEA 与 u-blox 报文解析库，强调极低 RAM（可低至约 10 字节量级配置），GPL-3.0。适合资源受限嵌入式定位日志与简易导航，而非测地级解算。需按目标板裁剪消息集；与 TinyGPS 类库相比更偏可配置与 UBX。星数高、许可证明确，补齐移动/嵌入式解析薄点。",
       "language": "C++",
       "license": "GPL-3.0",
@@ -17358,12 +17358,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Arduino 低内存 NMEA/u-blox GPS 解析库"
+      "one_liner_zh": "NeoGPS：Arduino 低内存 NMEA/u-blox GPS 解析库"
     },
     {
       "name": "UbxGps",
       "url": "https://github.com/loginov-rocks/UbxGps",
-      "desc_zh": "Arduino 轻量 u-blox UBX 通信库（MIT）",
+      "desc_zh": "读原始 UBX 导航/观测做嵌入式实验；固件消息类需核对",
       "analysis_zh": "以简单、快速为目标的 Arduino u-blox UBX 通信库，MIT 许可。适合读取原始 UBX 导航/观测类消息做嵌入式实验。协议字段随模块固件变化，接入前需核对消息类与波特率。不覆盖 NTRIP/RTK 全栈，可与更高层解算或日志工具组合使用。",
       "language": "C++",
       "license": "MIT",
@@ -17378,12 +17378,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Arduino 轻量 u-blox UBX 通信库（MIT）"
+      "one_liner_zh": "UbxGps：Arduino 轻量 u-blox UBX 通信库（MIT）"
     },
     {
       "name": "bolderflight-ublox",
       "url": "https://github.com/bolderflight/ublox",
-      "desc_zh": "Bolder Flight uBlox 接收机 Arduino/CMake 库",
+      "desc_zh": "无人机/航电常用接口；偏报文读写，不是 PPP/RTK 引擎",
       "analysis_zh": "Bolder Flight 维护的 uBlox GNSS 通信库，同时支持 Arduino 与 CMake 构建，MIT 许可。面向无人机/航空电子常用接收机接口，偏驱动与报文读写。命名加前缀以免与泛名 ublox 冲突。固件与消息集需匹配具体型号；非 PPP/RTK 引擎。",
       "language": "C++",
       "license": "MIT",
@@ -17398,12 +17398,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Bolder Flight uBlox 接收机 Arduino/CMake 库"
+      "one_liner_zh": "bolderflight-ublox：Bolder Flight uBlox Arduino/CMake 驱动"
     },
     {
       "name": "fixposition_driver",
       "url": "https://github.com/Fixposition/fixposition_driver",
-      "desc_zh": "Fixposition Vision-RTK/PBx ROS 驱动（视觉惯性 GNSS）",
+      "desc_zh": "厂商 Linux ROS 话题集成；依赖硬件与时间同步，非测地后处理",
       "analysis_zh": "Fixposition 官方 Linux ROS 驱动，对接 Vision-RTK 2、PBx-A1 等视觉惯性 GNSS 定位传感器，MIT 许可。面向机器人/自动驾驶紧组合定位话题，而非测地后处理。依赖厂商硬件与时间同步配置；与纯 GNSS RTK 方案选型不同。适合评估视觉辅助 RTK 的 ROS 集成。",
       "language": "C++",
       "license": "MIT",
@@ -17418,12 +17418,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Fixposition Vision-RTK/PBx ROS 驱动（视觉惯性 GNSS）"
+      "one_liner_zh": "fixposition_driver：Vision-RTK/PBx 视觉惯性 GNSS 的 ROS 驱动"
     },
     {
       "name": "SoftGNSS-octave",
       "url": "https://github.com/kristianpaul/SoftGNSS",
-      "desc_zh": "SoftGNSS 的 Octave 移植（基于 Borre/Akos 教材代码）",
+      "desc_zh": "无 MATLAB 许可也能跑经典软件接收机流程；偏教学非实时多星座",
       "analysis_zh": "将经典 SoftGNSS（Borre/Akos）教学接收机代码移植到 Octave 的 GPL-2.0 版本，便于无 MATLAB 许可环境下学习 GPS 软件接收机流程。与已收录的 SoftGNSS/ SoftGNSS-python 同源不同实现，目录名加 octave 后缀区分。偏教学演示，实时性与多星座能力有限；采样数据与前端需自备。",
       "language": "Objective-C",
       "license": "GPL-2.0",
@@ -17438,12 +17438,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "SoftGNSS 的 Octave 移植（基于 Borre/Akos 教材代码）"
+      "one_liner_zh": "SoftGNSS-octave：Borre/Akos SoftGNSS 的 Octave 教学移植"
     },
     {
       "name": "python-openimu",
       "url": "https://github.com/Aceinna/python-openimu",
-      "desc_zh": "Aceinna OpenIMU Python 驱动、日志与 WebSocket 服务",
+      "desc_zh": "IMU 采集/日志向；可配 gnss-ins-sim，本身不做 GNSS 解算",
       "analysis_zh": "Aceinna OpenIMU 的 Python 驱动，支持数据记录与 WebSocket 服务，Apache-2.0。常与 GNSS/INS 组合导航仿真（如 gnss-ins-sim）配合做惯性侧采集。偏 IMU 接口而非 GNSS 解算；坐标系与标定需使用者处理。适合低成本 INS 实验与传感器融合原型。",
       "language": "Python",
       "license": "Apache-2.0",
@@ -17458,7 +17458,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Aceinna OpenIMU Python 驱动、日志与 WebSocket 服务"
+      "one_liner_zh": "python-openimu：Aceinna OpenIMU Python 驱动与 WebSocket 服务"
     },
     {
       "name": "SWS-HF-Systems",
@@ -17639,8 +17639,8 @@
   ],
   "provenance_counts": {
     "official": 266,
-    "academic_lab": 316,
-    "personal_community": 316
+    "academic_lab": 323,
+    "personal_community": 309
   },
   "updated": "2026-09-24"
 }

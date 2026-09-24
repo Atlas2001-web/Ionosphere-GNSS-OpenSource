@@ -697,7 +697,7 @@ Swift Navigation 官方 ROS 2 驱动，通过 Swift Binary Protocol（SBP）接�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [fixposition_driver](https://github.com/Fixposition/fixposition_driver) | Fixposition Vision-RTK/PBx ROS 驱动（视觉惯性 GNSS） | C++ | 66 | 🏷️ 个人社区 |
+| [fixposition_driver](https://github.com/Fixposition/fixposition_driver) | fixposition_driver：Vision-RTK/PBx 视觉惯性 GNSS 的 ROS 驱动 | C++ | 66 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -712,7 +712,7 @@ Fixposition 官方 Linux ROS 驱动，对接 Vision-RTK 2、PBx-A1 等视觉惯�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [python-openimu](https://github.com/Aceinna/python-openimu) | Aceinna OpenIMU Python 驱动、日志与 WebSocket 服务 | Python | 53 | 🏷️ 个人社区 |
+| [python-openimu](https://github.com/Aceinna/python-openimu) | python-openimu：Aceinna OpenIMU Python 驱动与 WebSocket 服务 | Python | 53 | 🏷️ 个人社区 |
 
 ### 详细说明
 

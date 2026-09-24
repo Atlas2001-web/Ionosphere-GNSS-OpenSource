@@ -407,14 +407,14 @@ UNB 系列中性大气经验模型，无实测气象时给天顶延迟粗值。�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [lowtran](https://github.com/space-physics/lowtran) | lowtran：LOWTRAN7 大气消光模型的 Python 封装 | Python | 118 | 🏷️ 个人社区 |
+| [lowtran](https://github.com/space-physics/lowtran) | lowtran：LOWTRAN7 大气消光模型的 Python 封装 | Python | 118 | 🏷️ 高校实验室 |
 | [msise00](https://github.com/space-physics/msise00) | NRLMSISE-00 的 Python/Matlab 封装 | Python | 63 | 🏷️ 高校实验室 |
 | [hwm14](https://github.com/gemini3d/hwm14) | hwm14：NRL 水平风场模型开源 CMake 构建 | Fortran | 7 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
 #### [lowtran](https://github.com/space-physics/lowtran)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：Python · 许可：MIT · 星标约：118 · 宿主：github
 

@@ -241,7 +241,7 @@ MIT 许可的 Java 库，高效解析 Android GNSS Logger 导出的原始测量�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [NeoGPS](https://github.com/SlashDevin/NeoGPS) | Arduino 低内存 NMEA/u-blox GPS 解析库 | C++ | 750 | 🏷️ 个人社区 |
+| [NeoGPS](https://github.com/SlashDevin/NeoGPS) | NeoGPS：Arduino 低内存 NMEA/u-blox GPS 解析库 | C++ | 750 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -256,7 +256,7 @@ MIT 许可的 Java 库，高效解析 Android GNSS Logger 导出的原始测量�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [UbxGps](https://github.com/loginov-rocks/UbxGps) | Arduino 轻量 u-blox UBX 通信库（MIT） | C++ | 152 | 🏷️ 个人社区 |
+| [UbxGps](https://github.com/loginov-rocks/UbxGps) | UbxGps：Arduino 轻量 u-blox UBX 通信库（MIT） | C++ | 152 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -271,7 +271,7 @@ MIT 许可的 Java 库，高效解析 Android GNSS Logger 导出的原始测量�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [bolderflight-ublox](https://github.com/bolderflight/ublox) | Bolder Flight uBlox 接收机 Arduino/CMake 库 | C++ | 115 | 🏷️ 个人社区 |
+| [bolderflight-ublox](https://github.com/bolderflight/ublox) | bolderflight-ublox：Bolder Flight uBlox Arduino/CMake 驱动 | C++ | 115 | 🏷️ 个人社区 |
 
 ### 详细说明
 

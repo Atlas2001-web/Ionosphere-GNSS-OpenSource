@@ -606,7 +606,7 @@ EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RT
 |---|---|---|---:|---|
 | [georinex](https://github.com/geospace-code/georinex) | georinex：高速 Python RINEX 读写 | Python | 269 | 🏷️ 高校实验室 🔀 ★ 核心 |
 | [rinex](https://github.com/nav-solutions/rinex) | rinex：Rust RINEX 解析与 RINEX-Cli | Rust | 126 | 🏷️ 个人社区 核心 |
-| [RinexReader](https://github.com/aaronboda24/RinexReader) | RinexReader：C++ RINEX 2/3 读取库 | C++ | 38 | 🏷️ 个人社区 |
+| [RinexReader](https://github.com/aaronboda24/RinexReader) | RinexReader：C++ RINEX 2/3 读取库 | C++ | 38 | 🏷️ 高校实验室 |
 | [READ_GNSS](https://github.com/dzd9798/READ_GNSS) | READ_GNSS：MATLAB 读 RINEX/IONEX 等 GNSS 文件 | MATLAB | 10 | 🏷️ 个人社区 |
 | [GNSSNexus-rinex](https://github.com/GNSSNexus/rinex) | GNSSNexus-rinex：Rust RINEX 读写组件 | Rust | — | 🏷️ 个人社区 |
 
@@ -627,7 +627,7 @@ Python 里最常用的 RINEX 读写库之一，覆盖观测/导航/SP3，可批�
 GeoRust/nav-solutions 系 RINEX 库，附 RINEX-Cli，可做质检、SPP/PPP、CGGTTS 等，社区常把它比作 teqc/Anubis/gLAB 的开源组合拳。适合要强类型与高性能 IO 的人。学习曲线比 Python 陡；生态仍在演进。
 
 #### [RinexReader](https://github.com/aaronboda24/RinexReader)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：C++ · 许可：MIT · 星标约：38 · 宿主：github
 
@@ -771,7 +771,7 @@ Leibniz Universität Hannover 地球测量研究所开源工具，量化 GNSS �
 | [MAPS](https://github.com/GCCLib/MAPS) | MAPS：MATLAB GNSS 多路径分析与处理 | MATLAB | 35 | 🏷️ 高校实验室 |
 | [gnss-multipath-detector](https://github.com/EvgeniiMunin/gnss-multipath-detector) | gnss-multipath-detector：L1 C/A 多路径 ML 探测 notebook | Jupyter Notebook | 28 | 🏷️ 个人社区 |
 | [PyRINEX](https://github.com/geumjin99/PyRINEX) | PyRINEX：多用途 Python RINEX 读写与质量分析 | Python | 16 | 🏷️ 高校实验室 |
-| [geoveil-mp](https://github.com/miluta7/geoveil-mp) | geoveil-mp：Rust/Python 的 RINEX 多路径 MP 与周跳质控库 | Rust | 0 | 🏷️ 个人社区 |
+| [geoveil-mp](https://github.com/miluta7/geoveil-mp) | geoveil-mp：Rust/Python 的 RINEX 多路径 MP 与周跳质控库 | Rust | 0 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -804,7 +804,7 @@ MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实�
 面向 RINEX 2/3 的 Python 包，支持批处理、多路径与周跳等质量相关分析，可作为 TEQC/Anubis 之外的脚本化 QC 选项。适合自动化质控流水线。指标定义与报告格式因版本而异，正式归档前请与 Anubis/GFZRNX 交叉核对。
 
 #### [geoveil-mp](https://github.com/miluta7/geoveil-mp)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：Rust · 许可：MIT · 星标约：0 · 宿主：github
 
@@ -1205,12 +1205,12 @@ nav-solutions 生态下的 DORIS RINEX 解析 crate（MPL-2.0），把多普勒�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [cddis-highrate-downloader](https://github.com/cemalialtuntas/cddis-highrate-downloader) | 批量下载 CDDIS 高采样 GNSS 数据 | Python | 14 | 🏷️ 个人社区 核心 |
+| [cddis-highrate-downloader](https://github.com/cemalialtuntas/cddis-highrate-downloader) | 批量下载 CDDIS 高采样 GNSS 数据 | Python | 14 | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
 
 #### [cddis-highrate-downloader](https://github.com/cemalialtuntas/cddis-highrate-downloader)  
-*🏷️ 个人社区 核心*
+*🏷️ 高校实验室 核心*
 
 语言：Python · 许可：MIT · 星标约：14 · 宿主：github
 

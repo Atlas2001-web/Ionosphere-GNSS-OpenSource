@@ -1,0 +1,140 @@
+[
+  {
+    "name": "lowtran",
+    "provenance": "academic_lab",
+    "action": "FLIP",
+    "reason": "space-physics org bio \"Space Physics modeling and analysis\"; 11/12 sibling repos already academic_lab"
+  },
+  {
+    "name": "DiffIonMap",
+    "provenance": "academic_lab",
+    "action": "FLIP",
+    "reason": "Jin-Whu (Wuhan Univ naming); siblings DRCycleSlip/gstream/IonMap already academic_lab"
+  },
+  {
+    "name": "pysatNASA",
+    "provenance": "academic_lab",
+    "action": "FLIP",
+    "reason": "pysat org; siblings pysat/pysatCDAAC/pysatModels/pysatSpaceWeather already academic_lab (overrides batch20 keep)"
+  },
+  {
+    "name": "cddis-highrate-downloader",
+    "provenance": "academic_lab",
+    "action": "FLIP",
+    "reason": "cemalialtuntas company=Yildiz Technical University; siblings GIRAS-GPS-Solutions/NearRealTimeGNSSIR already academic_lab"
+  },
+  {
+    "name": "RinexReader",
+    "provenance": "academic_lab",
+    "action": "FLIP",
+    "reason": "aaronboda24 company=York University; sibling Loose-GNSS-IMU already academic_lab"
+  },
+  {
+    "name": "snapshot-gnss-algorithms",
+    "provenance": "academic_lab",
+    "action": "FLIP",
+    "reason": "JonasBchrt company=UK Centre for Ecology & Hydrology; Cardiff University; sibling raw-gnss-fusion already academic_lab"
+  },
+  {
+    "name": "geoveil-mp",
+    "provenance": "academic_lab",
+    "action": "FLIP",
+    "reason": "miluta7 company=National CEnter for Cartography (Bucharest); same evidence as geoveil-cn0 batch15 flip"
+  },
+  {
+    "name": "ignav",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "Erensu loc=WHU only (weak) — prior batch6/7 keep"
+  },
+  {
+    "name": "novatel_gps_driver",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "SWRI community ROS driver; vendor-adjacent OSS (batch20)"
+  },
+  {
+    "name": "pygnsslab",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "PyGnssLab org is community \"software lab\" branding, not univ/agency"
+  },
+  {
+    "name": "GDDS",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "LECUT personal user L_ECUT; no lab/univ bio"
+  },
+  {
+    "name": "Geodesy.jl",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "JuliaGeo community org of spatial-data users, not a single lab"
+  },
+  {
+    "name": "gnatss",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "seafloor-geodesy community org"
+  },
+  {
+    "name": "SpatioTECformer",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "research1011 personal user"
+  },
+  {
+    "name": "GNSSRMERRByS",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "pjalesSSTL company=Surrey Satellite Technology Ltd (vendor); leave personal_community"
+  },
+  {
+    "name": "gpsd",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "gpsd community project"
+  },
+  {
+    "name": "ntrip-core",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "commercial GreenForge Labs company"
+  },
+  {
+    "name": "NeoGPS",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "SlashDevin personal Arduino library"
+  },
+  {
+    "name": "UbxGps",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "loginov-rocks personal Arduino library"
+  },
+  {
+    "name": "bolderflight-ublox",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "Bolder Flight vendor OSS (community driver)"
+  },
+  {
+    "name": "fixposition_driver",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "Fixposition vendor ROS driver (同 libsbp/novatel 政策)"
+  },
+  {
+    "name": "SoftGNSS-octave",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "kristianpaul personal SoftGNSS octave port"
+  },
+  {
+    "name": "python-openimu",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "Aceinna vendor OpenIMU Python driver"
+  }
+]
