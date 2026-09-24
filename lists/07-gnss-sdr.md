@@ -635,7 +635,7 @@ SystemVerilog 描述的单通道 GPS L1 C/A FPGA 相关器，经 AXI4-Lite 控�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [SoapySDR](https://github.com/pothosware/SoapySDR) | 厂商无关的 SDR 抽象库（SoapySDR） | C++ | 1513 | 🏷️ 个人社区 |
+| [SoapySDR](https://github.com/pothosware/SoapySDR) | SoapySDR：厂商无关的 SDR 硬件抽象库 | C++ | 1513 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -650,7 +650,7 @@ Pothos/Soapy 生态的核心：厂商与平台中立的软件无线电抽象层�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [SoapyHackRF](https://github.com/pothosware/SoapyHackRF) | SoapySDR 的 HackRF 支持模块 | C++ | 171 | 🏷️ 个人社区 |
+| [SoapyHackRF](https://github.com/pothosware/SoapyHackRF) | SoapyHackRF：SoapySDR 的 HackRF One 支持模块 | C++ | 171 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -665,7 +665,7 @@ Pothos/Soapy 生态的核心：厂商与平台中立的软件无线电抽象层�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [SoapyPlutoSDR](https://github.com/pothosware/SoapyPlutoSDR) | SoapySDR 的 ADALM-Pluto 支持插件 | C++ | 90 | 🏷️ 个人社区 |
+| [SoapyPlutoSDR](https://github.com/pothosware/SoapyPlutoSDR) | SoapyPlutoSDR：SoapySDR 的 ADALM-Pluto 插件 | C++ | 90 | 🏷️ 个人社区 |
 
 ### 详细说明
 

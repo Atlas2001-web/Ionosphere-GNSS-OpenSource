@@ -1,0 +1,56 @@
+[
+  {
+    "name": "SWxTREC/pymsis",
+    "provenance": "academic_lab",
+    "action": "ALREADY",
+    "reason": "CU Boulder Space Weather TREC org; blog colorado.edu/spaceweather"
+  },
+  {
+    "name": "DeepHorizons/Python-NRLMSISE-00",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "personal user Joshua Milas; company/bio null"
+  },
+  {
+    "name": "pothosware/SoapySDR",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "Pothosware community FOSS org; not univ/lab"
+  },
+  {
+    "name": "pothosware/SoapyHackRF",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "same community org"
+  },
+  {
+    "name": "pothosware/SoapyPlutoSDR",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "same community org"
+  },
+  {
+    "name": "Erensu/ignav",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "loc=WHU only (batch6/7/21/22/23)"
+  },
+  {
+    "name": "pjalesSSTL/GNSSRMERRByS",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "company=SSTL vendor (batch21)"
+  },
+  {
+    "name": "daniestevez/galileo-osnma",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "company/bio null; personal researcher Madrid"
+  },
+  {
+    "name": "swri-robotics",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "prior vendor-adjacent keep (batch22)"
+  }
+]

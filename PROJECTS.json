@@ -18225,7 +18225,7 @@
     {
       "name": "pymsis",
       "url": "https://github.com/SWxTREC/pymsis",
-      "desc_zh": "Python 接口：NRLMSIS 中性大气密度与成分（卫星高度）",
+      "desc_zh": "科罗拉多大学 SWxTREC 维护；面向卫星高度密度/成分，GNSS/LEO 阻力与空间天气背景常用，非 TEC/IRI 电离层模型",
       "analysis_zh": "SWxTREC 维护的 NRLMSIS Python 接口，用于计算卫星高度中性大气密度与成分，MIT 许可。服务低轨大气阻力与空间天气背景，与 GNSS/LEO 精密定轨相关。依赖上游 MSIS 系数与输入太阳/地磁指数。适合科研脚本，而非 GNSS 观测解算。",
       "language": "Python",
       "license": "MIT",
@@ -18240,12 +18240,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "Python 接口：NRLMSIS 中性大气密度与成分（卫星高度）"
+      "one_liner_zh": "pymsis：NRLMSIS 中性大气的现代 Python 接口"
     },
     {
       "name": "Python-NRLMSISE-00",
       "url": "https://github.com/DeepHorizons/Python-NRLMSISE-00",
-      "desc_zh": "NRLMSISE-00 经验大气模型的 Python 移植",
+      "desc_zh": "DeepHorizons 社区移植；无 Fortran 包装时可对照 msise00/pymsis，注意适用高度与太阳/地磁输入",
       "analysis_zh": "NRLMSISE-00（2001）经验中性大气模型的 Python 移植，MIT 许可。与已收录 msise00/pymsis 形成不同实现对照，便于无 Fortran 包装环境下估算密度。输出依赖历元与地磁/太阳输入；模型有适用高度范围。适合轨道与空间环境教学试验。",
       "language": "Python",
       "license": "MIT",
@@ -18260,12 +18260,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "NRLMSISE-00 经验大气模型的 Python 移植"
+      "one_liner_zh": "Python-NRLMSISE-00：NRLMSISE-00 经验大气的纯 Python 移植"
     },
     {
       "name": "SoapySDR",
       "url": "https://github.com/pothosware/SoapySDR",
-      "desc_zh": "厂商无关的 SDR 抽象库（SoapySDR）",
+      "desc_zh": "Pothosware 生态核心；统一 API 对接多品牌前端，GNSS-SDR 等软件接收机常作设备层，本身不解算观测",
       "analysis_zh": "Pothos/Soapy 生态的核心：厂商与平台中立的软件无线电抽象层，Boost Software License，星数高。GNSS-SDR 等软件接收机常通过 Soapy 对接多种前端。本身不做 GNSS 解算，只提供设备 I/O 与流接口。驱动插件需另行安装。",
       "language": "C++",
       "license": "BSL-1.0",
@@ -18280,12 +18280,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "厂商无关的 SDR 抽象库（SoapySDR）"
+      "one_liner_zh": "SoapySDR：厂商无关的 SDR 硬件抽象库"
     },
     {
       "name": "SoapyHackRF",
       "url": "https://github.com/pothosware/SoapyHackRF",
-      "desc_zh": "SoapySDR 的 HackRF 支持模块",
+      "desc_zh": "把 HackRF 接到 Soapy 设备树；需配合 SoapySDR 主机库，偏射频前端而非 GNSS 基带解算",
       "analysis_zh": "为 SoapySDR 提供 Great Scott Gadgets HackRF 后端的插件，MIT 许可。便于在统一 Soapy API 下用 HackRF 采集 GNSS 射频样本。带宽/前端噪声需按应用选型；不替代基带 GNSS 处理链。与 gps-sdr-sim/GNSS-SDR 联调常见。",
       "language": "C++",
       "license": "MIT",
@@ -18300,12 +18300,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "SoapySDR 的 HackRF 支持模块"
+      "one_liner_zh": "SoapyHackRF：SoapySDR 的 HackRF One 支持模块"
     },
     {
       "name": "SoapyPlutoSDR",
       "url": "https://github.com/pothosware/SoapyPlutoSDR",
-      "desc_zh": "SoapySDR 的 ADALM-Pluto 支持插件",
+      "desc_zh": "Analog Pluto 的 Soapy 适配；教学/低成本 SDR 前端常见，定位解算仍依赖上层 GNSS-SDR 流水线",
       "analysis_zh": "Soapy SDR 插件，对接 Analog Devices ADALM-Pluto，LGPL-2.1。适合低成本 Pluto 前端接入 GNSS 软件接收机实验。驱动与固件版本需匹配；动态范围有限。与已收录 pluto-gps-sim 等仿真工具可互补。",
       "language": "C++",
       "license": "LGPL-2.1",
@@ -18320,7 +18320,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "SoapySDR 的 ADALM-Pluto 支持插件"
+      "one_liner_zh": "SoapyPlutoSDR：SoapySDR 的 ADALM-Pluto 插件"
     },
     {
       "name": "ASG-EUPOS",

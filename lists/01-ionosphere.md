@@ -2503,7 +2503,7 @@ pysat 生态的任务/仪器规划工具包，BSD-3-Clause，便于把卫星任�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [pymsis](https://github.com/SWxTREC/pymsis) | Python 接口：NRLMSIS 中性大气密度与成分（卫星高度） | Python | 39 | 🏷️ 高校实验室 |
+| [pymsis](https://github.com/SWxTREC/pymsis) | pymsis：NRLMSIS 中性大气的现代 Python 接口 | Python | 39 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -2518,7 +2518,7 @@ SWxTREC 维护的 NRLMSIS Python 接口，用于计算卫星高度中性大气�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Python-NRLMSISE-00](https://github.com/DeepHorizons/Python-NRLMSISE-00) | NRLMSISE-00 经验大气模型的 Python 移植 | Python | 14 | 🏷️ 个人社区 |
+| [Python-NRLMSISE-00](https://github.com/DeepHorizons/Python-NRLMSISE-00) | Python-NRLMSISE-00：NRLMSISE-00 经验大气的纯 Python 移植 | Python | 14 | 🏷️ 个人社区 |
 
 ### 详细说明
 
