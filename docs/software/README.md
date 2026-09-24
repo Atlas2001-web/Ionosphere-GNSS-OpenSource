@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **51 篇**操作手册（合计 **11965** 行，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **51 篇**操作手册（合计 **11967** 行，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -15,7 +15,7 @@
 | **软件手册质检**（本 bot） | 已短硬篇的**二遍质检补洞**（错 I/O、过时旗标、仍薄点）；优先 `georinex` / `rtklib` / `bnc` / `gfzrnx` / `pytecgg` | 勿大改「仍薄/缺篇」同事正在写的文件 |
 | **软件用法讲解**（并行） | 写 **尚未短硬 / 缺篇** 新手册 | 勿重写下表已标「已短硬」全文（补丁可协调） |
 
-**下一优先（质检二遍，按弱→强）：** **用法讲解新入库** `pyubx2`（1.3.6/`4abbfa6`；UBX 编解码；CFG-MSG/NAV-PVT/ACK 往返；上游 NAV 样例+mon_span 109 帧；**无 CLI**→gnssstreamer；交叉 pygnssutils/pygpsclient/pynmeagps）。 停写门槛已近——剩余主要是 **登记/环境受限**（`anubis` / `ionomoni` / `iono-scintillation` / `gfzrnx`）无本机真实 I/O 可补；**sh-gim** 保持边界。**已短硬入库 `pyglow` + `iri2016` + `apexpy` + `msise00`**。**用法讲解已入库** `ionex-rs` + `madocalib` + `glab-upc` + `pynmeagps` + `gdds` + `gps-measurement-tools` + `pygpsclient`+ `cycle-slip-correction` + `diffionmap` + `cddis-highrate-downloader`。**已质检复跑** `glab-upc` + `pynmeagps` + `gdds` + `gps-measurement-tools` + `pygpsclient` + `gnss_lib_py` + `pyiri` + `pyirtam`+ `fast` + `diffionmap` + `cddis-highrate-downloader`（stdout 对齐；CDDIS LIST 425 已记）。**质检新短硬** `geospacelab`（0.14.8；OMNI SYM_H=-234 + Madrigal TEC max=114）。**用法讲解新入库** `gnsspy`（3.0.1；demo.10o→pandas G07 L1=118767195.326；converter 2→3；无 PyPI）。**已质检复跑** `gnsspy`（3.0.1/`e6879bf`；22×9/2×14；converter 2→3 OK；3→2 回写 Length mismatch 坑已补）。**用法讲解新入库** `gnsstools`（0.0.1/`e496093`；OBS/NAV/SP3 真 I/O；无 PyPI）。**用法讲解/原理课加厚入库** `aacgmv2`（2.7.1；mlat≈50.53 / mlon≈−4.09 / mlt≈10.09 @40N80W 250km）。**用法讲解新入库** `rinexmod`（4.2.1；demo.10o→demo064a.10o MARKER MRKR→DEMO / AGENCY→IPGP；长名 DEMO00FRA…rnx.gz；hatanaka 时钟偏移坑已记）。
+**下一优先（质检二遍，按弱→强）：** **用法讲解新入库** `pyubx2`（1.3.6/`4abbfa6`；UBX 编解码；**无接收机**构造/样例；CFG-MSG/NAV-PVT/ACK 往返；上游 NAV 样例+mon_span 109 帧；**无 CLI**→gnssstreamer；交叉 pygnssutils/pygpsclient/pynmeagps/pyrtcm）。 停写门槛已近——剩余主要是 **登记/环境受限**（`anubis` / `ionomoni` / `iono-scintillation` / `gfzrnx`）无本机真实 I/O 可补；**sh-gim** 保持边界。**已短硬入库 `pyglow` + `iri2016` + `apexpy` + `msise00`**。**用法讲解已入库** `ionex-rs` + `madocalib` + `glab-upc` + `pynmeagps` + `gdds` + `gps-measurement-tools` + `pygpsclient`+ `cycle-slip-correction` + `diffionmap` + `cddis-highrate-downloader`。**已质检复跑** `glab-upc` + `pynmeagps` + `gdds` + `gps-measurement-tools` + `pygpsclient` + `gnss_lib_py` + `pyiri` + `pyirtam`+ `fast` + `diffionmap` + `cddis-highrate-downloader`（stdout 对齐；CDDIS LIST 425 已记）。**质检新短硬** `geospacelab`（0.14.8；OMNI SYM_H=-234 + Madrigal TEC max=114）。**用法讲解新入库** `gnsspy`（3.0.1；demo.10o→pandas G07 L1=118767195.326；converter 2→3；无 PyPI）。**已质检复跑** `gnsspy`（3.0.1/`e6879bf`；22×9/2×14；converter 2→3 OK；3→2 回写 Length mismatch 坑已补）。**用法讲解新入库** `gnsstools`（0.0.1/`e496093`；OBS/NAV/SP3 真 I/O；无 PyPI）。**用法讲解/原理课加厚入库** `aacgmv2`（2.7.1；mlat≈50.53 / mlon≈−4.09 / mlt≈10.09 @40N80W 250km）。**用法讲解新入库** `rinexmod`（4.2.1；demo.10o→demo064a.10o MARKER MRKR→DEMO / AGENCY→IPGP；长名 DEMO00FRA…rnx.gz；hatanaka 时钟偏移坑已记）。
 **sh-gim：** 保持短边界，禁止注水扩写。  
 **停写条件：** 剩余皆 PASS，或仅剩 sh-gim 边界 / 登记受限且无进一步真实 I/O 增益。
 
@@ -75,7 +75,7 @@
 | 48 | [aacgmv2.md](./aacgmv2.md) | AACGM-v2 地磁坐标（mlat/mlon/MLT） | 209 | **已短硬** · 本机 **2.7.1**/`5f85579`；geo(40N,80W,250km)→mlat≈50.53 mlon≈−4.09 mlt≈10.09；交叉 [apexpy](./apexpy.md) · [`49f8786`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/49f8786) |
 | 49 | [gnsstools.md](./gnsstools.md) | 轻量 Python：RINEX/SP3 → pandas / 轨道壳 | 253 | **已短硬** · tip **`e496093`** / **0.0.1**；OBS E7 C1=28344990.66=georinex；SP3 G01 xyz km；**无 PyPI**；对照 [georinex](./georinex.md)/[gnsspy](./gnsspy.md) |
 | 50 | [rinexmod.md](./rinexmod.md) | RINEX 头/元数据修改与长短名规范化 | 241 | **已短硬** · 本机 **4.2.1**；demo.10o→demo064a.10o MARKER/AGENCY/REC/ANT 实改；长名+gz；默认 Hatanaka 样例时钟坑；交叉 [georinex](./georinex.md)/[autorino](./autorino.md)/[hatanaka](./hatanaka.md) |
-| 51 | [pyubx2.md](./pyubx2.md) | u-blox UBX 编解码库 | 242 | **已短硬** · 本机 **1.3.6**/`4abbfa6`；CFG-MSG/NAV-PVT POLL/ACK 往返；上游 NAV-PVT lat=53.4507228；mon_span 109 帧；**无 CLI**→[pygnssutils](./pygnssutils.md)；交叉 [pygpsclient](./pygpsclient.md)/[pynmeagps](./pynmeagps.md) |
+| 51 | [pyubx2.md](./pyubx2.md) | u-blox UBX 编解码库 | 244 | **已短硬** · 本机 **1.3.6**/`4abbfa6`；**无接收机**用构造/样例；CFG-MSG/NAV-PVT POLL/ACK 往返；上游 NAV-PVT lat=53.4507228；mon_span 109 帧；**无 CLI**→[pygnssutils](./pygnssutils.md)；交叉 [pygpsclient](./pygpsclient.md)/[pynmeagps](./pynmeagps.md)/`pyrtcm` |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 

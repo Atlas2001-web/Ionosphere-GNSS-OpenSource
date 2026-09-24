@@ -1,6 +1,6 @@
 # pyubx2 · u-blox UBX 编解码库操作手册
 
-目录：[`PROJECTS.json` → `pyubx2`](../../PROJECTS.json) · 上游 <https://github.com/semuconsulting/pyubx2> · 文档 <https://www.semuconsulting.com/pyubx2/> · PyPI **`pyubx2` 1.3.6** · tip **`4abbfa6`** · BSD-3-Clause · Python ≥3.10 · 本机验证 1.3.6（CFG-MSG / NAV-PVT POLL / ACK-ACK 往返；上游 `tests/pygpsdata-NAV.log` NAV-PVT；`examples/mon_span.ubx` 109 帧）· 2026-09-24 04:45 EDT
+目录：[`PROJECTS.json` → `pyubx2`](../../PROJECTS.json) · 上游 <https://github.com/semuconsulting/pyubx2> · 文档 <https://www.semuconsulting.com/pyubx2/> · PyPI **`pyubx2` 1.3.6** · tip **`4abbfa6`** · BSD-3-Clause · Python ≥3.10 · 本机验证 1.3.6（**本机无接收机，用构造/样例字节**；CFG-MSG / NAV-PVT POLL / ACK-ACK 往返；上游 `tests/pygpsdata-NAV.log` NAV-PVT；`examples/mon_span.ubx` 109 帧）· 2026-09-24 04:47 EDT
 
 > 岗位：纯 Python **解析/生成 UBX**（GET/SET/POLL + Gen9 `CFG-VAL*`）。冲突时：**上游 README / Sphinx / 本机 `help(UBXReader)` > 本文**。串口/NTRIP/录流 CLI → [pygnssutils](./pygnssutils.md)；桌面 GUI → [pygpsclient](./pygpsclient.md)；NMEA 姐妹库 → [pynmeagps](./pynmeagps.md)。**本包无 CLI entry point**（上游 README 的 “CLI” 指向 pygnssutils，旧名 `gnssdump` → 现 `gnssstreamer`）。
 
@@ -18,7 +18,7 @@
 
 - **不是** NTRIP/串口运维 CLI → [pygnssutils](./pygnssutils.md)（对比：pyubx2 = **编解码**；pygnssutils = **拉流/录盘/小 caster**）
 - **不是** 桌面监视/改板卡 GUI → [pygpsclient](./pygpsclient.md)
-- **不是** RTCM3 专职库 → `pyrtcm`（本目录未单列时见上游；本库可透传混流）
+- **不是** RTCM3 专职库 → [`pyrtcm`](https://github.com/semuconsulting/pyrtcm)（本目录**尚未**短硬手册，预告同作者栈；本库可透传混流）
 - **不是** 定位滤波 / PPP / TEC → [rtklib](./rtklib.md) / [pytecgg](./pytecgg.md)；原始量测落盘后另转 RINEX
 
 一句话：pyubx2 = **UBX 二进制的结构化读写**；电离层产品在「录 RAW → RINEX/观测」之后。
@@ -52,6 +52,8 @@ conda：`conda install -c conda-forge pyubx2`。
 | 与文档 API 不符 | 钉死了旧版 | `pip install -U 'pyubx2>=1.3.6'` |
 
 ## 3. 端到端（本机 1.3.6 真跑）
+
+**本机无 u-blox 接收机 / 无 `/dev/ttyACM*`**：下列全部用 `UBXMessage` 构造字节 + 上游仓内样例日志/`.ubx` 真跑编解码，**禁止**臆造 stdout。有串口时见 §3.5。
 
 ### 3.1 构造 → 回读（SET / POLL / ACK）
 
@@ -180,7 +182,7 @@ with Serial("/dev/ttyACM0", 38400, timeout=3) as stream:
     print(parsed)
 ```
 
-无头自动化优先 [pygnssutils](./pygnssutils.md) `gnssstreamer`；本库适合嵌进自有脚本与单元测试桩。
+**本机无串口设备**，上段未实跑。无头自动化优先 [pygnssutils](./pygnssutils.md) `gnssstreamer`；本库适合嵌进自有脚本与单元测试桩。
 
 ## 4. I/O 与关键参数
 
@@ -211,7 +213,7 @@ u-blox UART/TCP/.ubx 日志
   → RAW→RINEX（pyrinexconv / 厂商工具）→ georinex / pytecgg / rtklib
 ```
 
-同系交叉：[pygnssutils](./pygnssutils.md) · [pygpsclient](./pygpsclient.md) · [pynmeagps](./pynmeagps.md)。RTCM 专职见上游 `pyrtcm`。
+同系交叉：[pygnssutils](./pygnssutils.md) · [pygpsclient](./pygpsclient.md) · [pynmeagps](./pynmeagps.md) · [`pyrtcm`](https://github.com/semuconsulting/pyrtcm)（手册预告）。
 
 ## 6. 坑（现象 → 原因 → 一条修复）
 
@@ -236,7 +238,7 @@ u-blox UART/TCP/.ubx 日志
 | 同栈 CLI 拉流/NTRIP/录盘 | [pygnssutils](./pygnssutils.md) |
 | 桌面监视/配置板卡 | [pygpsclient](./pygpsclient.md) |
 | NMEA 句子 | [pynmeagps](./pynmeagps.md) |
-| RTCM3 报文 | `pyrtcm`（上游同作者） |
+| RTCM3 报文 | [`pyrtcm`](https://github.com/semuconsulting/pyrtcm)（上游同作者；本目录手册预告） |
 | 多流录盘 / 生产 caster | [bnc](./bnc.md) / [bkg-ntripcaster](./bkg-ntripcaster.md) |
 
 相关：上游 README · Sphinx · [pygnssutils](./pygnssutils.md) · [pygpsclient](./pygpsclient.md) · [pynmeagps](./pynmeagps.md) · 教程 [06](../tutorials/06-iono-positioning.md)
