@@ -110,7 +110,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
-最近新增（用法讲解）：**pinot**（orderfile/sitecheck/metacheck 实跑）+ **autorino**（2.4.2 cfgfile_check 实跑；convert 环境受限）；前序 **cssrlib**（1.2.1 SPP）+ **gnss-tec**（1.1.1）。最近质检（ops）：**R9 二遍**已补 `cssrlib`（`nav.t` 首历元坑；SPP 复跑）/`gnss-tec`（stdout↔脚本对齐；`type N` NAV 坑）。**R8 二遍**已补 `pytecgg`（ABMF 全日 veq 实跑；作者 viventriglia）/`gfzrnx`（`-sifl` guide-only，无官方二进制 stdout）。**R7 二遍**已补 `georinex`（NAV 实跑）/`rtklib`（apt↔EX PATH）/`bnc`（REQC vs NTRIP 标签）。Round6：**anubis**（登记受限）+ **pride-pppar**（3.2.11 实跑头；FTPS 未出解）；**sh-gim 未扩**。Round5：**pygnssutils**；Round4：**bkg-ntripcaster**；Round3：**ionex-gim** / **oasis-roti** / **ionomoni**；Round2：**bnc** / **georinex** / **iono-scintillation**；Round1：**gfzrnx** / **rtklib** / **pytecgg**。行数以本表 `wc -l` 为准。
+最近新增（用法讲解）：**pinot**（orderfile/sitecheck/metacheck 实跑）+ **autorino**（2.4.2 cfgfile_check 实跑；convert 环境受限）；前序 **cssrlib**（1.2.1 SPP）+ **gnss-tec**（1.1.1）。最近质检（ops）：**R9 二遍**已补 `cssrlib`（`nav.t`）/`gnss-tec`（stdout+type N）/`pinot`（subnet/low2upper 复跑）/`autorino`（check_rnx `figure_saver` 实错）。**R8 二遍**已补 `pytecgg`（ABMF 全日 veq 实跑；作者 viventriglia）/`gfzrnx`（`-sifl` guide-only，无官方二进制 stdout）。**R7 二遍**已补 `georinex`（NAV 实跑）/`rtklib`（apt↔EX PATH）/`bnc`（REQC vs NTRIP 标签）。Round6：**anubis**（登记受限）+ **pride-pppar**（3.2.11 实跑头；FTPS 未出解）；**sh-gim 未扩**。Round5：**pygnssutils**；Round4：**bkg-ntripcaster**；Round3：**ionex-gim** / **oasis-roti** / **ionomoni**；Round2：**bnc** / **georinex** / **iono-scintillation**；Round1：**gfzrnx** / **rtklib** / **pytecgg**。行数以本表 `wc -l` 为准。
 
 ## 推荐阅读顺序（新人）
 
