@@ -1,6 +1,6 @@
 # NeQuick2-ICTP · ICTP NeQuick 2 源码申请页操作手册
 
-目录：[`PROJECTS.json` → `NeQuick2-ICTP`](../../PROJECTS.json) · 源码申请页 <https://t-ict4d.ictp.it/nequick2/source-code> · 模型简介 <https://t-ict4d.ictp.it/nequick2/nequick-model> · Web 试算 <https://t-ict4d.ictp.it/nequick2/nequick-2-web-model> · 许可 **scientific distribution（邮件申请）** · 语言 **Fortran**（官方包描述）· 本机验证：**源码页无匿名下载链**；确认联系人 **bnava@ictp.it** / **yenca@ictp.it**；**未获包 → 未编译、未臆造 TEC**；公开 Web 表单可达（端点坐标 + R12/F10.7）· 2026-09-24 06:12 EDT
+目录：[`PROJECTS.json` → `NeQuick2-ICTP`](../../PROJECTS.json) · 源码申请页 <https://t-ict4d.ictp.it/nequick2/source-code> · 模型简介 <https://t-ict4d.ictp.it/nequick2/nequick-model> · Web 试算 <https://t-ict4d.ictp.it/nequick2/nequick-2-web-model> · 许可 **scientific distribution（邮件申请）** · 语言 **Fortran**（官方包描述）· 本机验证：**源码页无匿名下载链**；确认联系人 **bnava@ictp.it** / **yenca@ictp.it**；**未获包 → 未编译、未臆造 TEC**；公开 Web 表单可达（端点坐标 + R12/F10.7）· 2026-09-24 06:12 EDT · **质检复跑** 2026-09-24 06:15 EDT（申请页再拉：正文含 FORTRAN/ITU/modip；mailto **bnava@ictp.it** / **yenca@ictp.it**；**无** `.zip`/`.tar` 匿名链；Web 表单 lat/lon/elev + R12∈[0,150]/F10.7∈[63,193]；Terms 可达；**仍无包 → 未编译、未臆造 TEC stdout**；≠ [nequickg](./nequickg.md)）
 
 > 岗位：拿 **ITU 气候态 NeQuick 2**（穿电离层路径 Ne + TEC）做科研对照。冲突时：**ICTP 页 / 获批包内 README > 本文**。Galileo **广播三系数**改正 → 已短硬 [nequickg](./nequickg.md)（社区 Python）或 GSC/JRC **NeQuick-G C**（登记）。概念课 [04](../tutorials/04-iri-nequick.md)。
 
@@ -73,7 +73,7 @@ mkdir -p ~/iono_ops/nequick2-ictp
 | 邮箱无回复数日 | 人工分发 | 礼貌跟催一次；同时用 Web / [nequickg](./nequickg.md) 推进其它工作 |
 | 把 GitHub 上不明 “NeQuick2” 当官网 | 镜像/改写未经验证 | 以 ICTP 邮件包为准 |
 
-**本机（2026-09-24 EDT）：** `rg` 命中 `bnava@ictp.it` / `yenca@ictp.it`；**无**可下载归档 → **停止在申请步骤**。
+**本机（2026-09-24 06:12 EDT；质检复跑 06:15 EDT 对齐）：** `rg` 命中 `bnava@ictp.it` / `yenca@ictp.it` + FORTRAN/ITU/modip；href 扫描**无** zip/tar；→ **停止在申请步骤**（勿编造 `gfortran` 日志）。
 
 ## 4. 无源码时的公开替代：Web Model（可达，非本地 E2E）
 
@@ -143,8 +143,9 @@ cd ~/iono_ops/nequick2-ictp
 
 | 检查项 | 结果 |
 | --- | --- |
-| 申请页可达 | 是（2026-09-24 EDT） |
-| 匿名源码下载 | **否** |
+| 申请页可达 | 是（2026-09-24 06:12 EDT；质检复跑 06:15 EDT） |
+| 匿名源码下载 | **否**（无 zip/tar href） |
 | 本地 `gfortran` 构建 | **未执行**（无包） |
 | 可引用的本机 TEC stdout | **无**（故意不编造） |
-| 可公开替代 | Web Model 表单；开源对照 [nequickg](./nequickg.md) |
+| Web 表单字段 | lat/lon/elev；R12 **[0,150]** / F10.7 **[63,193]**（页上 ITU-R P.1239） |
+| 可公开替代 | Web Model；开源对照 [nequickg](./nequickg.md)（ai0/ai1/ai2；**勿**逐行比） |

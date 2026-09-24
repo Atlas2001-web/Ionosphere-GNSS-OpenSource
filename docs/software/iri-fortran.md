@@ -1,6 +1,6 @@
 # IRI-Fortran · 官方 IRI Fortran（irimodel.org）操作手册
 
-目录：[`PROJECTS.json` → `IRI-Fortran`](../../PROJECTS.json) · 门户 <https://irimodel.org/> · 本篇验版 **IRI-2026**（目录标注 **07/31/2026**；包内 `iritest.for` 注释 **2026.02**）· 许可 **AS IS + attribution**（包内 `00_iri2016-License.txt`）· 本机验证：拉 `IRI-2026.zip`（**1 823 544** B，sha256₁₂=`2377b0c07a43`）+ `indices/{apf107,ig_rz}.dat` → **gfortran 14.2** 链出 `iri` → `iritest` 管道驱动 → `fort.7`：**(40°N, 80°W)** 2015-03-23 **15.5 UT**，100–500 km / 50 km → NmF2=**893124.7** cm⁻³ / hmF2=**259.16** km / Ne@250=**886713** / TEC(60–2000)=**25.8** TECU · 2026-09-24 06:12 EDT
+目录：[`PROJECTS.json` → `IRI-Fortran`](../../PROJECTS.json) · 门户 <https://irimodel.org/> · 本篇验版 **IRI-2026**（目录标注 **07/31/2026**；包内 `iritest.for` 注释 **2026.02**）· 许可 **AS IS + attribution**（包内 `00_iri2016-License.txt`）· 本机验证：拉 `IRI-2026.zip`（**1 823 544** B，sha256₁₂=`2377b0c07a43`）+ `indices/{apf107,ig_rz}.dat` → **gfortran 14.2** 链出 `iri` → `iritest` 管道驱动 → `fort.7`：**(40°N, 80°W)** 2015-03-23 **15.5 UT**，100–500 km / 50 km → NmF2=**893124.7** cm⁻³ / hmF2=**259.16** km / Ne@250=**886713** / TEC(60–2000)=**25.8** TECU · 2026-09-24 06:12 EDT · **质检复跑** 2026-09-24 06:15 EDT（zip **1823544**/sha₁₂=`2377b0c07a43`；`apf107` **1402576**/`ig_rz` **10559**；ccir+ursi **24**；gfortran **14.2**→`iri` **1631368** B；fort.7 NmF2=**893124.7**/hmF2=**259.16**/Ne@250=**886713**/Ne@100=**113860**/Ne@500=**207921**/TEC=**25.8**/F10.7=**127.2**；门户目录 **2026-07-31**；`iritest` 注释 **2026.02**/Te-TBPS-2026）
 
 > 岗位：装 **COSPAR/URSI 官方 Fortran 金标准**，作论文复现 / 包装对照。冲突时：**`00readme.txt` / irisub 注释 / 门户 FAQ > 本文**。Python 快捷：已短硬 [iri2016](./iri2016.md)（IRI-2016 驱动）/ [pyiri](./pyiri.md)（纯 Python）/ [pyirtam](./pyirtam.md)（同化）/ [pyglow](./pyglow.md)。概念课 [04](../tutorials/04-iri-nequick.md)。
 
@@ -98,20 +98,21 @@ printf '%s\n' \
 sed -n '1,55p' fort.7
 ```
 
-**本机 `fort.7` 要点（2026-09-24 06:12 EDT，IRI-2026 / gfortran 14.2）：**
+**本机 `fort.7` 要点（2026-09-24 06:12 EDT，IRI-2026 / gfortran 14.2；质检复跑 06:15 EDT 对齐）：**
 
 ```text
 yyyy/mmdd(or -ddd)/hh.h):2015/ 323/15.5UT  geog Lat/Long/Alt= 40.0/ 280.0/ 250.0
+… Shubin2015 … hmF2；TBPS2026 … Te …
 Peak Densities/cm-3: NmF2= 893124.7   NmF1= 254768.3   NmE= 140870.7
 Peak Heights/km:     hmF2=   259.16   hmF1=   153.38   hmE=   110.00
 Solar radio flux F10.7 (daily)                        127.2
 TEC … from    60.0 to  2000.0 km …
-  100.0 113860 …
-  250.0 886713 …
-  500.0 207921 …
+  100.0 113860 …   25.8  70
+  250.0 886713 …   25.8  70
+  500.0 207921 …   25.8  70
 ```
 
-对照：同点 [iri2016](./iri2016.md)（IRI-**2016** 包装）NmF2≈**893124.7** cm⁻³ 对齐，但 hmF2/Ne 剖面因版本与默认 `JF`（本包 Shubin + COR2 topside + TBPS-2026 Te）而**不必**逐层相等——写论文请写明 **IRI-2026 + 默认开关**。
+对照：同点 [iri2016](./iri2016.md)（IRI-**2016** 包装，15:30）NmF2=**893124.674** cm⁻³ 与本树对齐，但 hmF2 **271.48**（包装）vs 本树 **259.16**（Shubin2015）+ Ne 剖面因版本/`JF`（COR2 topside + TBPS-2026 Te）而**不必**逐层相等——写论文请写明 **IRI-2026 + 默认开关**；纯 Python 快捷见 [pyiri](./pyiri.md)，勿在本篇复述其 API。
 
 ### 4.1 最小自写驱动长什么样（结构示意，勿抄虚假数值）
 
