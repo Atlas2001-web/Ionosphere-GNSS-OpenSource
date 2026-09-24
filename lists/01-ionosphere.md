@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> **262** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **265** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -2453,3 +2453,48 @@ BOM SWS Solar 专题页，提供太阳条件、活动区、太阳风等区域监
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 GFZ 官方 Kp 指数数据入口，支持用户定制下载、HTTPS/FTP 与 Web Service API，并提供图件与文档链接。现势 Kp/地磁活动分析应优先使用此服务，而非仅依赖历史镜像站。收录前已 HTTP 核验；脚本抓取请遵循 GFZ 使用与引用政策。
+
+## 区域TEC
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [TEC-Maps-of-Nepal](https://github.com/Binabh/TEC-Maps-of-Nepal) | 利用 UNAVCO CORS 生成尼泊尔区域 TEC 图 | Python | 12 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [TEC-Maps-of-Nepal](https://github.com/Binabh/TEC-Maps-of-Nepal)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：12 · 宿主：github
+
+用 UNAVCO 可获取的 CORS 观测生成尼泊尔区域 TEC 图的 MIT 许可脚本，面向区域电离层制图示例。依赖上游 CORS 可用性与预处理质量；方法偏教学/区域试验，非全球 GIM 产品。补齐区域 TEC 开源示例薄点。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证与引用要求。
+
+## 气辉模型
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [NCAR-GLOW](https://github.com/space-physics/NCAR-GLOW) | NCAR GLOW 气辉模型的 CMake/Python/Matlab 构建扩展 | Python | 11 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [NCAR-GLOW](https://github.com/space-physics/NCAR-GLOW)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：Apache-2.0 · 星标约：11 · 宿主：github
+
+为 NCAR GLOW（气辉/电离层相关）基线代码补充 CMake、Meson、Matlab、Python 构建与封装，Apache-2.0。与已收录 pyglow 互补：本仓偏构建与上游对接。运行仍依赖 GLOW 科学代码与输入大气/太阳条件。适合上层大气/气辉与 GNSS 闪烁背景对照实验。
+
+## 任务规划
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [pysatMissions](https://github.com/pysat/pysatMissions) | pysat 任务规划与仪器工具扩展 | Python | 14 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [pysatMissions](https://github.com/pysat/pysatMissions)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：BSD-3-Clause · 星标约：14 · 宿主：github
+
+pysat 生态的任务/仪器规划工具包，BSD-3-Clause，便于把卫星任务几何与空间天气数据流接到统一分析框架。非 GNSS 解算库，但对星载 GNSS 接收或电离层探测任务规划有辅助价值。依赖 pysat 核心版本。适合科研脚本化任务仿真。

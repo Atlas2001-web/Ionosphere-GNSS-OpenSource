@@ -1,5 +1,5 @@
 # 轨道与钟差 / Orbit & Clock
-> **21** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **26** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。
 
@@ -254,3 +254,78 @@ IERS EOP Product Center 门户，面向地球定向参数序列与相关说明�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 CelesTrak 提供的现行 GP（原 TLE）轨道根数获取页，含查询与专题数据说明，广泛用于卫星可见性与简易轨道预报。与已收录的 SpaceData 页互补：本页偏 GP 元素集。根数精度有限，不替代精密星历。收录前已 HTTP 核验；请遵守 CelesTrak 使用条款。
+
+## SGP4传播
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [python-sgp4](https://github.com/brandon-rhodes/python-sgp4) | Python SGP4：由 TLE/OMM 传播卫星位置 | Python | 472 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [python-sgp4](https://github.com/brandon-rhodes/python-sgp4)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：472 · 宿主：github
+
+经典 SGP4 的 Python 实现，MIT 许可，广泛用于由 TLE/OMM 传播卫星位置与速度。服务可见性、简易碰撞预警与教学，精度不及精密星历。与 CelesTrak GP 数据常配合使用。星数高、维护活跃，是 Python 轨道传播常用依赖。
+
+## SGP4-JS
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [satellite-js](https://github.com/shashwatak/satellite-js) | JavaScript/TypeScript SGP4/SDP4 轨道传播库 | TypeScript | 1091 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [satellite-js](https://github.com/shashwatak/satellite-js)  
+*🏷️ 个人社区*
+
+语言：TypeScript · 许可：MIT · 星标约：1091 · 宿主：github
+
+模块化 JS/TS 实现的 SGP4/SDP4，用于浏览器或 Node 中传播 TLE/OMM，MIT 许可，星数很高。适合 Web 可见性可视化与前端演示，非测地精密轨道。输入根数时效与来源影响结果。补齐前端 GNSS/卫星几何工具链缺口。
+
+## 可微SGP4
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [dSGP4](https://github.com/esa/dSGP4) | ESA dSGP4：可微分 SGP4，支持机器学习集成 | Python | 97 | 🏷️ 高校实验室 |
+
+### 详细说明
+
+#### [dSGP4](https://github.com/esa/dSGP4)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：GPL-3.0 · 星标约：97 · 宿主：github
+
+欧洲航天局相关开源的可微分 SGP4（dSGP4），GPL-3.0，支持自动微分与机器学习集成，便于把轨道传播嵌入优化/学习管线。偏研究原型，需理解可微约束与数值稳定。学术实验室属性强，补齐可微轨道传播缺口。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证与引用要求。
+
+## SGP4-Rust
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [sgp4-rs](https://github.com/neuromorphicsystems/sgp4) | Rust 实现的 SGP4 卫星轨道传播算法 | Rust | 120 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [sgp4-rs](https://github.com/neuromorphicsystems/sgp4)  
+*🏷️ 个人社区*
+
+语言：Rust · 许可：MIT · 星标约：120 · 宿主：github
+
+Rust 语言的 SGP4 传播实现，MIT 许可，便于嵌入式或高性能服务中做 TLE 传播。与 python-sgp4/satellite-js 形成多语言对照。协议与模型版本需与输入根数一致。适合 Rust GNSS/航天工具链开发者集成。
+
+## 时标FTP
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [BIPM-WebTAI-FTP](https://webtai.bipm.org/ftp/) | BIPM 时间部门 WebTAI FTP：时标文件目录入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [BIPM-WebTAI-FTP](https://webtai.bipm.org/ftp/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+BIPM Time Department 的 FTP 索引页，指向 pub 等时标相关目录，是 UTC/TAI 等文件的机器可达入口。与已收录 BIPM-Time-FTP 说明页互补：本页偏目录浏览。使用请遵守 BIPM 数据政策与引用要求。

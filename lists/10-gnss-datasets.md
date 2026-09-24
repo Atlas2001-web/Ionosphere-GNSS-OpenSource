@@ -1,5 +1,5 @@
 # GNSS 数据源 / GNSS Datasets
-> **131** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **134** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
@@ -1246,3 +1246,48 @@ UK Solar System Data Centre（UKSSDC）兼世界日地物理数据中心职能�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 澳大利亚 SWS World Data Centre 页面，提供磁强计、电离层等 STP 数据的展示与下载入口。可补充南半球区域空间天气与电离层序列。具体数据集权限与格式见子页说明。收录前已 HTTP 核验；再分发请遵循 WDC/SWS 政策。
+
+## 国家GNSS门户
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [ROB-GNSS-be](https://gnss.be/) | 比利时皇家天文台 GNSS.be：开放数据与产品服务总入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [ROB-GNSS-be](https://gnss.be/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+GNSS.be 为 ROB 的 GNSS 开放数据与产品门户，提供活动介绍、开放数据与服务入口；已收录的欧洲 TEC/IONEX 产品页可由此导航。新近通报含 GNSS-DCAT-AP 与 RINEX API 等更新。下载请遵守 ROB 开放数据条款。
+
+## 测站地图
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [UNR-GPSNetMap](https://geodesy.unr.edu/NGLStationPages/gpsnetmap/GPSNetMap.html) | 内华达大地测量实验室：全球 GPS 网交互地图 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [UNR-GPSNetMap](https://geodesy.unr.edu/NGLStationPages/gpsnetmap/GPSNetMap.html)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+NGL GPS Networks Map，可点击站点查看站信息，便于浏览 MAGNET 与全球 GPS 网分布。与 UNR 主站/时间序列产品互补，偏可视化入口。数据引用请遵循 NGL 说明。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证与引用要求。
+
+## OMNI查询
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [OMNIWeb-Data-Explorer](https://omniweb.gsfc.nasa.gov/form/dx1.html) | NASA OMNIWeb 数据浏览器：绘图/列表/导出接口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [OMNIWeb-Data-Explorer](https://omniweb.gsfc.nasa.gov/form/dx1.html)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+OMNIWeb Data Explorer 表单页，可对 OMNI 太阳风/地磁等参数绘图、列表或导出文件，并支持命令行获取说明。与 OMNIWeb 主站互补，偏交互查询。引用请遵循 NASA SPDF/OMNI 规范。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证与引用要求。

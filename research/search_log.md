@@ -403,3 +403,12 @@
 - Skipped: SparkFun/Adafruit NOASSERTION, gps_umd no license, ros2-ublox-zedf9p no license, TinyGPSPlus no SPDX, ublox_dgnss already listed, celestial-nav non-GNSS, NGS CORS data.shtml near-dup of geodesy.noaa.gov CORS data
 - Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
 
+## Routine pass 2026-09-24n
+
+- Catalog size before: **912**; after merge: **926** (+14)
+- Finds file: `research/routine_finds_20260924n.json`
+- Method: quality dig — geospace coords (pymap3d), regional TEC (Nepal), NCAR-GLOW/pysat*, multi-lang SGP4 (python/js/rust) + ESA dSGP4; portals ROB gnss.be, BIPM WebTAI FTP, UNR GPSNetMap, NGDC geomag, OMNIWeb explorer; `gh api`+`curl`; dedup vs PROJECTS.json and all `routine_finds_*.json`
+- Avoided: entire 24m set (ublox-ros/nmea_navsat/MicroNMEA/107-Arduino/gpsdo/ublox-rs, SIDC/SILSO, Kyoto Dst/Kp, SWPC GOES/Solar-Cycle, SWS-Solar, GFZ-Kp-Data) and earlier 24h batches
+- Skipped: aaronjridley/GITM near GITMCode, archived GOESplot/geo2mag, rtklibros no SPDX, files.igs.org/pub & IERS eop.php & ISGI Dst near-dups, SWS Aurora/Educational (SWS-heavy), CDDIS daily/GAGE rinex path near archive hubs, orbit-predictor redundant with SGP4 set
+- Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
+

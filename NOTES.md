@@ -374,3 +374,10 @@
 - 当前条目：**912**
 - 分类计数：{'ionosphere': 262, 'troposphere': 41, 'gnss-data': 131, 'gnss-positioning': 101, 'orbit-clock': 21, 'navigation-ins': 71, 'gnss-sdr': 68, 'mobile-apps': 29, 'tools-learning': 57, 'gnss-datasets': 131}
 - 详见 `research/routine_finds_20260924m.json`
+
+## 例行检索补录（2026-09-24n）
+
+- 新增 **14** 条（pymap3d、TEC-Maps-of-Nepal、NCAR-GLOW、pysat*、SGP4 多语言、dSGP4、ROB/BIPM/UNR/NGDC/OMNIWeb 等）
+- 当前条目：**926**
+- 分类计数：{'ionosphere': 265, 'troposphere': 41, 'gnss-data': 132, 'gnss-positioning': 101, 'orbit-clock': 26, 'navigation-ins': 71, 'gnss-sdr': 68, 'mobile-apps': 29, 'tools-learning': 59, 'gnss-datasets': 134}
+- 详见 `research/routine_finds_20260924n.json`

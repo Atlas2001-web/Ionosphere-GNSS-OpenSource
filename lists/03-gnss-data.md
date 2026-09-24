@@ -1,5 +1,5 @@
 # GNSS 数据与格式 / GNSS Data I/O
-> **131** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **132** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
@@ -1358,3 +1358,18 @@ MIT 许可的 Python 脚本，从 gnss.osi.ie 批量下载爱尔兰 Active GNSS 
 语言：Rust · 许可：MIT · 星标约：84 · 宿主：github
 
 用 Rust 实现的 UBX 协议编解码 crate，MIT 许可，便于嵌入式或主机侧与 u-blox 模块对话。偏协议与消息层，不含完整 PVT/RTK 引擎。特性随模块代际与固件变化，接入前需核对支持的消息类。补齐 Rust GNSS 设备接口这一薄点，可与 nav-solutions 生态对照使用。
+
+## CDF读取
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [pysatCDF](https://github.com/pysat/pysatCDF) | NASA CDF 格式的 Python 读取器（pysat） | Python | 13 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [pysatCDF](https://github.com/pysat/pysatCDF)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：BSD-3-Clause · 星标约：13 · 宿主：github
+
+为 pysat 提供 NASA Common Data Format（CDF）读取支持，BSD-3-Clause。空间物理与部分 GNSS/电离层衍生产品常以 CDF 分发，可与 CDAWeb/SPDF 下载流程衔接。适合把官方 CDF 拉进 Python 分析管线。

@@ -1,5 +1,5 @@
 # 学习资源与工具 / Tools & Learning
-> **57** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **59** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
@@ -393,6 +393,7 @@ Rokubun 编写的 GNSS 数据处理 Jupyter 教程，覆盖从观测到基础解
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [geodesy-js](https://github.com/chrisveness/geodesy) | geodesy-js：浏览器/Node 可用的 JS 大地测量库 | JavaScript | 1227 | 🏷️ 个人社区 |
+| [pymap3d](https://github.com/geospace-code/pymap3d) | 纯 Python 三维坐标转换：ECEF/ENU/ECI 等（geospace） | Python | 445 | 🏷️ 个人社区 |
 | [Geodesy.jl](https://github.com/JuliaGeo/Geodesy.jl) | Geodesy.jl：Julia 坐标与大地测量变换库 | Julia | 114 | 🏷️ 个人社区 |
 | [ncat-lib](https://github.com/noaa-ngs/ncat-lib) | NGS NCAT Java 库：离线坐标/基准转换 | Java | 21 | 🏷️ 官方 |
 | [NGS-NCAT](https://geodesy.noaa.gov/NCAT/) | NGS-NCAT：NOAA/NGS 大地坐标与参考框架在线转换 | web/service | — | 🏷️ 官方 |
@@ -406,6 +407,13 @@ Rokubun 编写的 GNSS 数据处理 Jupyter 教程，覆盖从观测到基础解
 语言：JavaScript · 许可：MIT · 星标约：1227 · 宿主：github
 
 chrisveness 维护的 JS 大地测量工具集，覆盖常见椭球上的距离、方位与坐标变换，浏览器与 Node 可用。MIT 许可；填补 Web 前端坐标计算缺口。偏通用大地测量，不处理 RINEX/RTK 观测；高精度应用请核对方位约定与椭球参数。
+
+#### [pymap3d](https://github.com/geospace-code/pymap3d)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：BSD-2-Clause · 星标约：445 · 宿主：github
+
+geospace-code 维护的纯 Python（可选 Numpy）三维坐标转换库，覆盖 ECEF、ENU、ECI 等常用地空坐标系，BSD-2-Clause，星数高、文档清晰。服务 GNSS/轨道/空间天气几何计算，不做观测解算。API 稳定、依赖少，适合脚本与教学。与精密测地库（如 PROJ）分工不同，偏空间物理常用约定。
 
 #### [Geodesy.jl](https://github.com/JuliaGeo/Geodesy.jl)  
 *🏷️ 个人社区*
@@ -661,3 +669,18 @@ SWPC 对外提供的服务根目录，索引 experimental、json、netcdf、prod
 语言：C++ · 许可：MIT · 星标约：44 · 宿主：github
 
 基于 Arduino 的 GPS Disciplined Oscillator 项目，输出 10 MHz 等参考频率，MIT 许可。服务实验室时间/频率同步，属 GNSS 定时应用而非定位解算。硬件锁相与天线质量决定稳定度。适合业余无线电与测试台时钟源。
+
+## 地磁门户
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [NGDC-Geomagnetism](https://www.ngdc.noaa.gov/geomag/geomag.shtml) | NOAA NCEI 地磁学门户：模型、数据与服务入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [NGDC-Geomagnetism](https://www.ngdc.noaa.gov/geomag/geomag.shtml)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+NCEI Geomagnetism 主页，汇总地磁模型、数据、制图与监测服务入口；已收录 WMM 门户可由此发现更多地磁产品。对磁航向与部分电离层/空间天气应用有关。请遵守 NOAA 数据使用说明。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证与引用要求。

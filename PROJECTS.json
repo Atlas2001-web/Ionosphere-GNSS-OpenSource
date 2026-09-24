@@ -5,18 +5,18 @@
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
   "generated": "2026-09-24",
-  "project_count": 912,
+  "project_count": 926,
   "counts_by_category": {
-    "ionosphere": 262,
+    "ionosphere": 265,
     "troposphere": 41,
-    "gnss-data": 131,
+    "gnss-data": 132,
     "gnss-positioning": 101,
-    "orbit-clock": 21,
+    "orbit-clock": 26,
     "navigation-ins": 71,
     "gnss-sdr": 68,
     "mobile-apps": 29,
-    "tools-learning": 57,
-    "gnss-datasets": 131
+    "tools-learning": 59,
+    "gnss-datasets": 134
   },
   "projects": [
     {
@@ -17931,12 +17931,302 @@
       "one_liner_zh": "GFZ Kp 指数数据页：下载、HTTPS/FTP 与 Web API",
       "registration": "open",
       "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+    },
+    {
+      "name": "pymap3d",
+      "url": "https://github.com/geospace-code/pymap3d",
+      "desc_zh": "纯 Python 三维坐标转换：ECEF/ENU/ECI 等（geospace）",
+      "analysis_zh": "geospace-code 维护的纯 Python（可选 Numpy）三维坐标转换库，覆盖 ECEF、ENU、ECI 等常用地空坐标系，BSD-2-Clause，星数高、文档清晰。服务 GNSS/轨道/空间天气几何计算，不做观测解算。API 稳定、依赖少，适合脚本与教学。与精密测地库（如 PROJ）分工不同，偏空间物理常用约定。",
+      "language": "Python",
+      "license": "BSD-2-Clause",
+      "category": "tools-learning",
+      "subcategory": "坐标转换",
+      "markers": [
+        "routine-2026-09-24n"
+      ],
+      "stars_approx": 445,
+      "source": "routine-finds-20260924n",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "纯 Python 三维坐标转换：ECEF/ENU/ECI 等（geospace）"
+    },
+    {
+      "name": "TEC-Maps-of-Nepal",
+      "url": "https://github.com/Binabh/TEC-Maps-of-Nepal",
+      "desc_zh": "利用 UNAVCO CORS 生成尼泊尔区域 TEC 图",
+      "analysis_zh": "用 UNAVCO 可获取的 CORS 观测生成尼泊尔区域 TEC 图的 MIT 许可脚本，面向区域电离层制图示例。依赖上游 CORS 可用性与预处理质量；方法偏教学/区域试验，非全球 GIM 产品。补齐区域 TEC 开源示例薄点。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证与引用要求。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "区域TEC",
+      "markers": [
+        "routine-2026-09-24n"
+      ],
+      "stars_approx": 12,
+      "source": "routine-finds-20260924n",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "利用 UNAVCO CORS 生成尼泊尔区域 TEC 图"
+    },
+    {
+      "name": "NCAR-GLOW",
+      "url": "https://github.com/space-physics/NCAR-GLOW",
+      "desc_zh": "NCAR GLOW 气辉模型的 CMake/Python/Matlab 构建扩展",
+      "analysis_zh": "为 NCAR GLOW（气辉/电离层相关）基线代码补充 CMake、Meson、Matlab、Python 构建与封装，Apache-2.0。与已收录 pyglow 互补：本仓偏构建与上游对接。运行仍依赖 GLOW 科学代码与输入大气/太阳条件。适合上层大气/气辉与 GNSS 闪烁背景对照实验。",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "category": "ionosphere",
+      "subcategory": "气辉模型",
+      "markers": [
+        "routine-2026-09-24n"
+      ],
+      "stars_approx": 11,
+      "source": "routine-finds-20260924n",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "NCAR GLOW 气辉模型的 CMake/Python/Matlab 构建扩展"
+    },
+    {
+      "name": "pysatMissions",
+      "url": "https://github.com/pysat/pysatMissions",
+      "desc_zh": "pysat 任务规划与仪器工具扩展",
+      "analysis_zh": "pysat 生态的任务/仪器规划工具包，BSD-3-Clause，便于把卫星任务几何与空间天气数据流接到统一分析框架。非 GNSS 解算库，但对星载 GNSS 接收或电离层探测任务规划有辅助价值。依赖 pysat 核心版本。适合科研脚本化任务仿真。",
+      "language": "Python",
+      "license": "BSD-3-Clause",
+      "category": "ionosphere",
+      "subcategory": "任务规划",
+      "markers": [
+        "routine-2026-09-24n"
+      ],
+      "stars_approx": 14,
+      "source": "routine-finds-20260924n",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "pysat 任务规划与仪器工具扩展"
+    },
+    {
+      "name": "pysatCDF",
+      "url": "https://github.com/pysat/pysatCDF",
+      "desc_zh": "NASA CDF 格式的 Python 读取器（pysat）",
+      "analysis_zh": "为 pysat 提供 NASA Common Data Format（CDF）读取支持，BSD-3-Clause。空间物理与部分 GNSS/电离层衍生产品常以 CDF 分发，可与 CDAWeb/SPDF 下载流程衔接。适合把官方 CDF 拉进 Python 分析管线。",
+      "language": "Python",
+      "license": "BSD-3-Clause",
+      "category": "gnss-data",
+      "subcategory": "CDF读取",
+      "markers": [
+        "routine-2026-09-24n"
+      ],
+      "stars_approx": 13,
+      "source": "routine-finds-20260924n",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "NASA CDF 格式的 Python 读取器（pysat）"
+    },
+    {
+      "name": "python-sgp4",
+      "url": "https://github.com/brandon-rhodes/python-sgp4",
+      "desc_zh": "Python SGP4：由 TLE/OMM 传播卫星位置",
+      "analysis_zh": "经典 SGP4 的 Python 实现，MIT 许可，广泛用于由 TLE/OMM 传播卫星位置与速度。服务可见性、简易碰撞预警与教学，精度不及精密星历。与 CelesTrak GP 数据常配合使用。星数高、维护活跃，是 Python 轨道传播常用依赖。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "orbit-clock",
+      "subcategory": "SGP4传播",
+      "markers": [
+        "routine-2026-09-24n"
+      ],
+      "stars_approx": 472,
+      "source": "routine-finds-20260924n",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "Python SGP4：由 TLE/OMM 传播卫星位置"
+    },
+    {
+      "name": "satellite-js",
+      "url": "https://github.com/shashwatak/satellite-js",
+      "desc_zh": "JavaScript/TypeScript SGP4/SDP4 轨道传播库",
+      "analysis_zh": "模块化 JS/TS 实现的 SGP4/SDP4，用于浏览器或 Node 中传播 TLE/OMM，MIT 许可，星数很高。适合 Web 可见性可视化与前端演示，非测地精密轨道。输入根数时效与来源影响结果。补齐前端 GNSS/卫星几何工具链缺口。",
+      "language": "TypeScript",
+      "license": "MIT",
+      "category": "orbit-clock",
+      "subcategory": "SGP4-JS",
+      "markers": [
+        "routine-2026-09-24n"
+      ],
+      "stars_approx": 1091,
+      "source": "routine-finds-20260924n",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "JavaScript/TypeScript SGP4/SDP4 轨道传播库"
+    },
+    {
+      "name": "dSGP4",
+      "url": "https://github.com/esa/dSGP4",
+      "desc_zh": "ESA dSGP4：可微分 SGP4，支持机器学习集成",
+      "analysis_zh": "欧洲航天局相关开源的可微分 SGP4（dSGP4），GPL-3.0，支持自动微分与机器学习集成，便于把轨道传播嵌入优化/学习管线。偏研究原型，需理解可微约束与数值稳定。学术实验室属性强，补齐可微轨道传播缺口。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证与引用要求。",
+      "language": "Python",
+      "license": "GPL-3.0",
+      "category": "orbit-clock",
+      "subcategory": "可微SGP4",
+      "markers": [
+        "routine-2026-09-24n"
+      ],
+      "stars_approx": 97,
+      "source": "routine-finds-20260924n",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "ESA dSGP4：可微分 SGP4，支持机器学习集成"
+    },
+    {
+      "name": "sgp4-rs",
+      "url": "https://github.com/neuromorphicsystems/sgp4",
+      "desc_zh": "Rust 实现的 SGP4 卫星轨道传播算法",
+      "analysis_zh": "Rust 语言的 SGP4 传播实现，MIT 许可，便于嵌入式或高性能服务中做 TLE 传播。与 python-sgp4/satellite-js 形成多语言对照。协议与模型版本需与输入根数一致。适合 Rust GNSS/航天工具链开发者集成。",
+      "language": "Rust",
+      "license": "MIT",
+      "category": "orbit-clock",
+      "subcategory": "SGP4-Rust",
+      "markers": [
+        "routine-2026-09-24n"
+      ],
+      "stars_approx": 120,
+      "source": "routine-finds-20260924n",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "Rust 实现的 SGP4 卫星轨道传播算法"
+    },
+    {
+      "name": "ROB-GNSS-be",
+      "url": "https://gnss.be/",
+      "desc_zh": "比利时皇家天文台 GNSS.be：开放数据与产品服务总入口",
+      "analysis_zh": "GNSS.be 为 ROB 的 GNSS 开放数据与产品门户，提供活动介绍、开放数据与服务入口；已收录的欧洲 TEC/IONEX 产品页可由此导航。新近通报含 GNSS-DCAT-AP 与 RINEX API 等更新。下载请遵守 ROB 开放数据条款。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "国家GNSS门户",
+      "markers": [
+        "routine-2026-09-24n"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924n",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "比利时皇家天文台 GNSS.be：开放数据与产品服务总入口",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+    },
+    {
+      "name": "BIPM-WebTAI-FTP",
+      "url": "https://webtai.bipm.org/ftp/",
+      "desc_zh": "BIPM 时间部门 WebTAI FTP：时标文件目录入口",
+      "analysis_zh": "BIPM Time Department 的 FTP 索引页，指向 pub 等时标相关目录，是 UTC/TAI 等文件的机器可达入口。与已收录 BIPM-Time-FTP 说明页互补：本页偏目录浏览。使用请遵守 BIPM 数据政策与引用要求。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "orbit-clock",
+      "subcategory": "时标FTP",
+      "markers": [
+        "routine-2026-09-24n"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924n",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "BIPM 时间部门 WebTAI FTP：时标文件目录入口",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+    },
+    {
+      "name": "UNR-GPSNetMap",
+      "url": "https://geodesy.unr.edu/NGLStationPages/gpsnetmap/GPSNetMap.html",
+      "desc_zh": "内华达大地测量实验室：全球 GPS 网交互地图",
+      "analysis_zh": "NGL GPS Networks Map，可点击站点查看站信息，便于浏览 MAGNET 与全球 GPS 网分布。与 UNR 主站/时间序列产品互补，偏可视化入口。数据引用请遵循 NGL 说明。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证与引用要求。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "测站地图",
+      "markers": [
+        "routine-2026-09-24n"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924n",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "内华达大地测量实验室：全球 GPS 网交互地图",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+    },
+    {
+      "name": "NGDC-Geomagnetism",
+      "url": "https://www.ngdc.noaa.gov/geomag/geomag.shtml",
+      "desc_zh": "NOAA NCEI 地磁学门户：模型、数据与服务入口",
+      "analysis_zh": "NCEI Geomagnetism 主页，汇总地磁模型、数据、制图与监测服务入口；已收录 WMM 门户可由此发现更多地磁产品。对磁航向与部分电离层/空间天气应用有关。请遵守 NOAA 数据使用说明。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证与引用要求。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "tools-learning",
+      "subcategory": "地磁门户",
+      "markers": [
+        "routine-2026-09-24n"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924n",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NOAA NCEI 地磁学门户：模型、数据与服务入口",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+    },
+    {
+      "name": "OMNIWeb-Data-Explorer",
+      "url": "https://omniweb.gsfc.nasa.gov/form/dx1.html",
+      "desc_zh": "NASA OMNIWeb 数据浏览器：绘图/列表/导出接口",
+      "analysis_zh": "OMNIWeb Data Explorer 表单页，可对 OMNI 太阳风/地磁等参数绘图、列表或导出文件，并支持命令行获取说明。与 OMNIWeb 主站互补，偏交互查询。引用请遵循 NASA SPDF/OMNI 规范。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证与引用要求。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "OMNI查询",
+      "markers": [
+        "routine-2026-09-24n"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924n",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NASA OMNIWeb 数据浏览器：绘图/列表/导出接口",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
     }
   ],
   "provenance_counts": {
-    "official": 274,
-    "academic_lab": 327,
-    "personal_community": 311
+    "official": 279,
+    "academic_lab": 328,
+    "personal_community": 319
   },
   "updated": "2026-09-24"
 }
