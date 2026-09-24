@@ -8,9 +8,9 @@ RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [PyGPSClient](https://github.com/semuconsulting/PyGPSClient) | PyGPSClient：NMEA/UBX/RTCM/NTRIP 图形客户端 | Python | 839 | 🏷️ 个人社区 核心 |
-| [ntrip-cpp](https://github.com/ybzwyrcld/ntrip) | NTRIP 2.0 的 C++ caster/client/server 示例 | C++ | 177 | 🏷️ 个人社区 |
+| [ntrip-cpp](https://github.com/ybzwyrcld/ntrip) | ntrip-cpp：NTRIP 2.0 C++ 示例 | C++ | 177 | 🏷️ 个人社区 |
 | [pygnssutils](https://github.com/semuconsulting/pygnssutils) | pygnssutils：NMEA/UBX/RTCM/NTRIP CLI 工具集 | Python | 143 | 🏷️ 个人社区 |
-| [ntripcaster-docker-bkg](https://github.com/goblimey/ntripcaster) | 容器化构建与运行 BKG NTRIP Caster 的 Docker 方案 | C | 139 | 🏷️ 个人社区 |
+| [ntripcaster-docker-bkg](https://github.com/goblimey/ntripcaster) | ntripcaster-docker：BKG Caster 容器方案 | C | 139 | 🏷️ 个人社区 |
 | [ntripclient](https://software.rtcm-ntrip.org/wiki/ntripclient) | BKG POSIX ntripclient：命令行拉取 NTRIP 数据流 | C | 129 | 🏷️ 官方 |
 | [pyrtcm](https://github.com/semuconsulting/pyrtcm) | pyrtcm：RTCM3 报文编解码库 | Python | 115 | 🏷️ 个人社区 |
 | [ntripserver](https://software.rtcm-ntrip.org/wiki/ntripserver) | BKG POSIX ntripserver：把本地 GNSS 流推到 NTRIP 播发器 | C | 74 | 🏷️ 官方 |
@@ -36,13 +36,13 @@ RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品�
 | [ntrip-core](https://github.com/greenforge-labs/ntrip-core) | Rust 异步 NTRIP 客户端（v1/v2 + TLS） | Rust | 4 | 🏷️ 个人社区 |
 | [corshub](https://github.com/peinser/corshub) | 可自托管的 Python NTRIP v2 Caster（CORS 汇聚） | Python | 1 | 🏷️ 个人社区 |
 | [ntrip-caster-go](https://github.com/symysak/ntrip-caster) | Go 实现的 NTRIP v1/v2 Caster：就近基站切换、挂载点认证与热重载 | Go | 1 | 🏷️ 个人社区 |
-| [BKG-NtripCaster](https://igs.bkg.bund.de/ntrip/bkgcaster) | BKG 专业 NtripCaster：GPL 开源实时 GNSS 流播发服务器 | C | — | 🏷️ 官方 核心 |
+| [BKG-NtripCaster](https://igs.bkg.bund.de/ntrip/bkgcaster) | BKG-NtripCaster：专业 NTRIP 播发服务器 | C | — | 🏷️ 官方 核心 |
 | [BNC](https://igs.bkg.bund.de/ntrip/bnc) | BKG 开源多流 Ntrip 客户端：收 RTCM 并可做实时 PPP | C++ | — | 🏷️ 官方 核心 |
 | [BNC-source-FTP](https://igs.bkg.bund.de/root_ftp/NTRIP/software/BNC/) | BKG FTP：BNC 源码与多平台二进制直接下载目录 | C++ | — | 🏷️ 官方 |
 | [BNS](https://software.rtcm-ntrip.org/wiki/BNS) | BKG Ntrip State Space Server：实时状态空间改正播发相关工具 | C++ | — | 🏷️ 官方 |
 | [Caster-source-FTP](https://igs.bkg.bund.de/root_ftp/NTRIP/software/caster/) | BKG FTP：Professional NtripCaster 源码包直接下载 | C | — | 🏷️ 官方 |
 | [EUREF-IP-Ntrip-overview](https://igs.bkg.bund.de/ntrip/index) | BKG/IGS NTRIP 数据与工具总览：流列表、BNC 与 Caster 入口 | various | — | 🏷️ 官方 |
-| [RTCM-Ntrip-Software](https://software.rtcm-ntrip.org/) | RTCM-Ntrip 官方软件门户：BNC/Caster/POSIX 工具源码与文档 | C/C++ | — | 🏷️ 官方 核心 |
+| [RTCM-Ntrip-Software](https://software.rtcm-ntrip.org/) | RTCM-Ntrip：BNC/Caster 官方软件门户 | C/C++ | — | 🏷️ 官方 核心 |
 
 ### 详细说明
 
@@ -333,7 +333,7 @@ BKG/RTCM 维护的 NTRIP 开源软件 Trac 门户，集中入口含 BNC、Profes
 | [Anubis-Free-Download](https://gnutsoftware.com/software/anubis/download) | G-Nut/Anubis Free 下载：GPL 源码与 Linux 预编译（Pro 为商业） | C++ | — | 🏷️ 个人社区 |
 | [plot-Anubis](https://www.pecny.cz/sw/plots/anubis/) | GOP/Pecny 提供的 Anubis XTR 质检结果静态绘图脚本 | Perl | — | 🏷️ 高校实验室 |
 | [RINGO](https://terras.gsi.go.jp/software/ringo/en/) | GSI 官方 RINGO：多系统 RINEX 预处理/质检 CLI | Go | — | 🏷️ 官方 |
-| [TEQC](https://www.unavco.org/software/data-processing/teqc/teqc.html) | UNAVCO/GAGE 经典 TEQC：翻译/编辑/质检（已 EOL，闭源免费） | binary (closed) | — | 🏷️ 官方 核心 |
+| [TEQC](https://www.unavco.org/software/data-processing/teqc/teqc.html) | TEQC：经典 GNSS 翻译/编辑/质检工具 | binary (closed) | — | 🏷️ 官方 核心 |
 
 ### 详细说明
 
@@ -404,7 +404,7 @@ Anubis 免费档下载入口，提供 Linux 预编译与 GPL-3 源码，覆盖�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [autorino](https://github.com/IPGP/autorino) | IPGP 开源：自动拉取主流厂商接收机原始数据并转为 RINEX3/4 | Python | 11 | 🏷️ 高校实验室 核心 |
+| [autorino](https://github.com/IPGP/autorino) | autorino：接收机原始数据自动转 RINEX | Python | 11 | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
 
@@ -666,7 +666,7 @@ GFZ 官方用户指南，详述 RINEX 2/3/4 检查、拼接、抽样、元数据
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [HASlib](https://github.com/nlsfi/HASlib) | 芬兰国家土地测量局开源 Galileo HAS 解码库（SBF/BINEX→SSR） | Python | 65 | 🏷️ 官方 核心 |
+| [HASlib](https://github.com/nlsfi/HASlib) | HASlib：Galileo HAS 改正解码库 | Python | 65 | 🏷️ 官方 核心 |
 | [GHASP-HAS-decoding](https://github.com/borioda/HAS-decoding) | Galileo HAS 解析器 GHASP：E6B 二进制流转 CSV 轨道钟差等改正 | Python | 20 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -719,7 +719,7 @@ ION GNSS SDR Metadata Working Group 定义原始采样/前端配置的元数据�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GNSS_Multipath_Analysis_Software](https://github.com/paarnes/GNSS_Multipath_Analysis_Software) | GNSS 观测多路径分析 Python 软件 | Python | 141 | 🏷️ 个人社区 核心 |
+| [GNSS_Multipath_Analysis_Software](https://github.com/paarnes/GNSS_Multipath_Analysis_Software) | GNSS-MP：观测多路径分析软件 | Python | 141 | 🏷️ 个人社区 核心 |
 | [MAPS](https://github.com/GCCLib/MAPS) | MATLAB GNSS 多路径分析软件 | MATLAB | 35 | 🏷️ 个人社区 |
 | [gnss-multipath-detector](https://github.com/EvgeniiMunin/gnss-multipath-detector) | gnss-multipath-detector：L1 C/A 多路径 ML 探测 notebook | Jupyter Notebook | 28 | 🏷️ 个人社区 |
 | [PyRINEX](https://github.com/geumjin99/PyRINEX) | 多用途 Python RINEX 读写与质量分析包 | Python | 16 | 🏷️ 高校实验室 |
@@ -769,7 +769,7 @@ MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实�
 | [pynmea2](https://github.com/Knio/pynmea2) | pynmea2：高星标 Python NMEA 0183 解析库 | Python | 681 | 🏷️ 个人社区 |
 | [pyubx2](https://github.com/semuconsulting/pyubx2) | pyubx2：u-blox UBX 协议 Python 编解码库 | Python | 254 | 🏷️ 个人社区 |
 | [gnsstk](https://github.com/SGL-UT/gnsstk) | gnsstk：C++ GNSS 基础库（原 GPSTk） | C++ | 183 | 🏷️ 高校实验室 核心 |
-| [pynmeagps](https://github.com/semuconsulting/pynmeagps) | 解析/生成 NMEA 0183 语句的 Python 库，与 pyubx2 同系 | Python | 106 | 🏷️ 个人社区 核心 |
+| [pynmeagps](https://github.com/semuconsulting/pynmeagps) | pynmeagps：NMEA 0183 编解码库 | Python | 106 | 🏷️ 个人社区 核心 |
 | [nmea-parser](https://github.com/zaari/nmea-parser) | nmea-parser：Rust 版 AIS/GNSS NMEA 0183 解析 | Rust | 51 | 🏷️ 个人社区 |
 | [navsu](https://github.com/stanford-gps-lab/navsu) | navsu：斯坦福 GPS Lab MATLAB GNSS/IGS 工具箱 | MATLAB | 24 | 🏷️ 高校实验室 |
 | [gnss-protos](https://github.com/nav-solutions/gnss-protos) | GNSS 广播协议编解码的 Rust 库 | Rust | 4 | 🏷️ 个人社区 |

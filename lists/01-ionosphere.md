@@ -300,7 +300,7 @@ Space Weather Modeling Framework 组件之一，描述高纬电离层电动力�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnss-tec](https://github.com/gnss-lab/gnss-tec) | 由 RINEX 载波/伪距重建斜路径 TEC | Python | 54 | 🏷️ 高校实验室 核心 |
+| [gnss-tec](https://github.com/gnss-lab/gnss-tec) | gnss-tec：RINEX 斜路径 TEC 重建 | Python | 54 | 🏷️ 高校实验室 核心 |
 | [PyGPS](https://github.com/gregstarr/PyGPS) | 读 RINEX、算 TEC/卫星位置与偏差的工具箱 | Python | 47 | 🏷️ 个人社区 |
 | [TEC-calculation-MATLAB](https://github.com/cssrg-kmitl/TEC-calculation-MATLAB) | MATLAB 双频 RINEX 2.11 TEC 计算 | MATLAB | 33 | 🏷️ 高校实验室 |
 | [PyTECGg](https://github.com/viventriglia/PyTECGg) | 多星座 GNSS TEC 重建与校准（Python+Rust） | Python | 29 | 🏷️ 个人社区 🔀 ★ 核心 |
@@ -1230,7 +1230,7 @@ Wakkanai、Kokubunji、Yamagawa、Okinawa 等日本测高仪数字化资料入�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [pyglow](https://github.com/timduly4/pyglow) | Python 上层大气气候态库，包装 IRI-2012/2016 等（irimodel 官网推荐） | Python/Fortran | 117 | 🏷️ 个人社区 核心 |
+| [pyglow](https://github.com/timduly4/pyglow) | pyglow：上层大气气候态 Python 库 | Python/Fortran | 117 | 🏷️ 个人社区 核心 |
 | [pyIRI2016](https://github.com/rilma/pyIRI2016) | IRI-2016 Fortran 的 f2py 包装（pyiri2016，与 space-physics/iri2016 不同仓） | Python/Fortran | 21 | 🏷️ 个人社区 |
 | [PyIRTAM](https://github.com/victoriyaforsythe/PyIRTAM) | IRTAM 系数下载与全球网格电子密度重建（纯 Python，对接 PyIRI） | Python | 4 | 🏷️ 高校实验室 核心 |
 | [iricore](https://github.com/MIST-Experiment/iricore) | ctypes 包装 IRI-2016/2020，可算 VTEC/STEC 并更新指数文件 | Python/Fortran | 2 | 🏷️ 个人社区 |
@@ -1672,7 +1672,7 @@ SWPC 官方 HTTP 产品树，提供 geojson_2d_urt 与 netcdf_2d_urt 等目录�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Galileo-NeQuick-G](https://www.gsc-europa.eu/support-to-developers/ionospheric-correction-algorithms/galileo-nequick-g-source-code) | 欧盟 GSC 发布的 Galileo 单频电离层改正 NeQuick G 官方 C 源码 | C | — | 🏷️ 官方 核心 |
+| [Galileo-NeQuick-G](https://www.gsc-europa.eu/support-to-developers/ionospheric-correction-algorithms/galileo-nequick-g-source-code) | NeQuick G：Galileo 单频电离层改正 | C | — | 🏷️ 官方 核心 |
 | [NeQuickG-ESSR](https://essr.esa.int/project/nequickg-galileo-ionospheric-correction-model) | ESA ESSR 登记的 NeQuick G 伽利略电离层改正实现（需注册） | C | — | 🏷️ 官方 |
 
 ### 详细说明
@@ -1991,7 +1991,7 @@ Victoriya Forsythe 等发布的 HF 射线工具，从电子密度剖面计算虚
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [IRI-2020-package](https://irimodel.org/IRI-2020/) | IRI-2020 官方目录：Fortran 源码、系数、许可证与 zip/tar 包 | Fortran | — | 🏷️ 官方 |
-| [IRI-Fortran](https://irimodel.org/) | COSPAR/URSI 官方 IRI 经验电离层模型 Fortran 源码与系数包 | Fortran | — | 🏷️ 官方 核心 |
+| [IRI-Fortran](https://irimodel.org/) | IRI：国际参考电离层官方 Fortran | Fortran | — | 🏷️ 官方 核心 |
 
 ### 详细说明
 

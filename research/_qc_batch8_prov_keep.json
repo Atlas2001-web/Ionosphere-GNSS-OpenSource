@@ -1,0 +1,58 @@
+[
+  {
+    "name": "CU-SDR-Collection",
+    "detail": "gnsscusdr — empty bio/company — keep personal_community"
+  },
+  {
+    "name": "imu_x_fusion",
+    "detail": "cggos / CGSAI company Beijing — keep personal_community"
+  },
+  {
+    "name": "TightlyCoupledINSGNSS",
+    "detail": "benzenemo — empty bio/company — keep personal_community"
+  },
+  {
+    "name": "syncgpslidarimucam",
+    "detail": "nkliuhui — empty bio/company — keep personal_community"
+  },
+  {
+    "name": "ge-gnss-visibility",
+    "detail": "taroz — personal researcher (no university org) — keep personal_community"
+  },
+  {
+    "name": "GNSS-GPS-SDR",
+    "detail": "JiaoXianjun — no university affiliation — keep personal_community"
+  },
+  {
+    "name": "GNSS-DSP-tools",
+    "detail": "pmonta — California personal — keep personal_community"
+  },
+  {
+    "name": "SignalSim",
+    "detail": "globsky — empty — keep personal_community"
+  },
+  {
+    "name": "Full_Stack_GPS_Receiver",
+    "detail": "hamsternz / Hamsterworks company — keep personal_community"
+  },
+  {
+    "name": "rtkbase",
+    "detail": "Stefal — empty — keep personal_community"
+  },
+  {
+    "name": "ahrs",
+    "detail": "Mayitzin / Neeno company Munich — keep personal_community"
+  },
+  {
+    "name": "gps-sdr-sim",
+    "detail": "osqzss — Japan personal (Takuji Ebinuma) — keep personal_community"
+  },
+  {
+    "name": "RTKLIB-explorer",
+    "detail": "rtklibexplorer / RTK Consultants LLC — keep personal_community"
+  },
+  {
+    "name": "gnss_gpu",
+    "detail": "rsasaki0109 / MAP IV company (batch7 keep pattern) — keep personal_community"
+  }
+]

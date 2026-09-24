@@ -8,7 +8,7 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [UrbanNavDataset](https://github.com/IPNL-POLYU/UrbanNavDataset) | 香港/东京等城市峡谷 GNSS/INS/视觉基准集 | Python | 606 | 🏷️ 高校实验室 |
-| [awesome-gins-datasets](https://github.com/i2Nav-WHU/awesome-gins-datasets) | 武大 i2Nav 整理的车载 GNSS/INS 融合公开数据集列表 | — | 280 | 🏷️ 高校实验室 核心 |
+| [awesome-gins-datasets](https://github.com/i2Nav-WHU/awesome-gins-datasets) | awesome-gins-datasets：车载 GNSS/INS 数据集列表 | — | 280 | 🏷️ 高校实验室 核心 |
 | [gnss2tws-green](https://github.com/jzshhh/gnss2tws_green) | 由 GNSS 垂直位移反演陆地水储量 GNSS2TWS | MATLAB | 33 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -38,7 +38,7 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [awesome-gnss-barbeau](https://github.com/barbeau/awesome-gnss) | Sean Barbeau 维护的开源 GNSS 软件与资源 awesome 列表 | — | 599 | 🏷️ 个人社区 核心 |
+| [awesome-gnss-barbeau](https://github.com/barbeau/awesome-gnss) | awesome-gnss：GNSS 开源资源列表 | — | 599 | 🏷️ 个人社区 核心 |
 | [awesome-gnss-hdkarimi](https://github.com/hdkarimi/awesome-gnss) | hdkarimi：GNSS/RNSS 开源工具、数据与慕课的 awesome 列表 | — | 50 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -76,7 +76,7 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [ge-gnss-visibility](https://github.com/taroz/ge-gnss-visibility) | Google Earth 鱼眼可见性分析 | MATLAB | 137 | 🏷️ 个人社区 |
+| [ge-gnss-visibility](https://github.com/taroz/ge-gnss-visibility) | ge-gnss-visibility：Google Earth 可见性分析 | MATLAB | 137 | 🏷️ 个人社区 |
 | [gnss_timeseries_viewers](https://github.com/kmaterna/gnss_timeseries_viewers) | gnss_timeseries_viewers：PBO/UNR 坐标时序分析绘图 | Python | 36 | 🏷️ 高校实验室 |
 | [EasyGNSS](https://github.com/whigg/EasyGNSS) | 面向低成本 GNSS 的图形界面辅助工具 | Python | 4 | 🏷️ 高校实验室 |
 | [GPS-Velocity-Viewer](https://www.unavco.org/software/visualization/GPS-Velocity-Viewer/GPS-Velocity-Viewer.html) | UNAVCO GPS 速度场在线可视化查看器 | web | — | 🏷️ 官方 |
@@ -236,14 +236,14 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning) | 导航定位开源项目解读与学习笔记（中文） | — | 2417 | 🏷️ 个人社区 ★ 核心 |
-| [learning_rtklib](https://github.com/libing64/learning_rtklib) | RTKLIB 学习相关材料 | — | 163 | 🏷️ 个人社区 |
+| [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning) | Navigation-Learning：导航开源项目中文笔记 | — | 2417 | 🏷️ 高校实验室 ★ 核心 |
+| [learning_rtklib](https://github.com/libing64/learning_rtklib) | learning_rtklib：RTKLIB 学习笔记 | — | 163 | 🏷️ 个人社区 |
 | [RTKLIB-Manual-CN](https://github.com/salmoshu/RTKLIB-Manual-CN) | RTKLIB 中文手册解读与源码解析笔记 | — | 54 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
 #### [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning)  
-*🏷️ 个人社区 ★ 核心*
+*🏷️ 高校实验室 ★ 核心*
 
 语言：— · 许可：— · 星标约：2417 · 宿主：github
 

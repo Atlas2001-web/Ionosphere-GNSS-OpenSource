@@ -14,7 +14,7 @@
 | [FGI-GSRx](https://github.com/nlsfi/FGI-GSRx) | FGI-GSRx：多星座 MATLAB 软件接收机 | MATLAB | 192 | 🏷️ 官方 核心 |
 | [Full_Stack_GPS_Receiver](https://github.com/hamsternz/Full_Stack_GPS_Receiver) | 1-bit ADC 到 PVT 的开源 GPS 软件接收机示例 | C | 168 | 🏷️ 个人社区 |
 | [Analog-GPS-data-receiver](https://github.com/leaningktower/Analog-GPS-data-receiver) | Analog-GPS-data-receiver：分立射频+FPGA GPS 教学接收 | C | 164 | 🏷️ 高校实验室 |
-| [GNSS-GPS-SDR](https://github.com/JiaoXianjun/GNSS-GPS-SDR) | GPS 录回放、接收与测试相关实验代码 | Python | 157 | 🏷️ 个人社区 |
+| [GNSS-GPS-SDR](https://github.com/JiaoXianjun/GNSS-GPS-SDR) | GNSS-GPS-SDR：GPS 录回放实验代码 | Python | 157 | 🏷️ 个人社区 |
 | [GNSS-DSP-tools](https://github.com/pmonta/GNSS-DSP-tools) | GNSS-DSP-tools：码生成/捕获/跟踪 DSP 积木 | Python | 141 | 🏷️ 个人社区 |
 | [gps-sdr](https://github.com/gps-sdr/gps-sdr) | 基于 USRP/GN3S 的早期开源 GPS 接收机 | C++ | 107 | 🏷️ 个人社区 |
 | [SoftGNSS](https://github.com/TMBOC/SoftGNSS) | SoftGNSS：经典 GPS 软件接收机教学版 | MATLAB | 90 | 🏷️ 高校实验室 |

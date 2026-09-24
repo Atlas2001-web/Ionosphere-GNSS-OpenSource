@@ -284,7 +284,7 @@ GNSS 干涉反射测量（GNSS-IR）主流开源工具，用反射信号估水�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [mpsim](https://github.com/ufrgs-gnss-lab/mpsim) | UFRGS 开源 GNSS 多路径前向仿真器（Matlab/Octave，近地表反射测量） | MATLAB | 48 | 🏷️ 高校实验室 核心 |
+| [mpsim](https://github.com/ufrgs-gnss-lab/mpsim) | mpsim：GNSS 多路径前向仿真器 | MATLAB | 48 | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
 
@@ -299,7 +299,7 @@ Nievinski 与 Larson 发表于 GPS Solutions 的开源多路径仿真器，用�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [RADIATE](https://github.com/TUW-VieVS/RADIATE) | 维也纳科技大学 VieVS 开源对流层射线追踪（微波/光学，基于数值天气模式） | Fortran | 23 | 🏷️ 高校实验室 核心 |
+| [RADIATE](https://github.com/TUW-VieVS/RADIATE) | RADIATE：对流层射线追踪程序 | Fortran | 23 | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
 

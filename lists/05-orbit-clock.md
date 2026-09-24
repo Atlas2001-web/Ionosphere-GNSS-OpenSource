@@ -39,7 +39,7 @@ Yuanxin Pan 开源的钟差/相位偏差合成工具，源于学位论文并应�
 |---|---|---|---:|---|
 | [GFZ-SPOCC-news](https://www.gfz.de/en/section/space-geodetic-techniques/overview/details-section-news/veroeffentlichung-der-software-for-precise-orbit-and-clock-combination-spocc-1) | GFZ 发布 SPOCC 的新闻说明：多 GNSS 轨道钟差综合开源 | Python | — | 🏷️ 官方 |
 | [IGSMAIL-SPOCC](https://lists.igs.org/pipermail/igsmail/2025/008556.html) | IGSmail：SPOCC 轨道钟差综合软件向社区发布的公告 | text | — | 🏷️ 官方 |
-| [SPOCC](https://gnss.gfz.de/services/spocc) | GFZ SPOCC：多 GNSS 精密轨道与钟差加权综合软件 | Python | — | 🏷️ 官方 核心 |
+| [SPOCC](https://gnss.gfz.de/services/spocc) | SPOCC：多分析中心轨道钟差综合 | Python | — | 🏷️ 官方 核心 |
 
 ### 详细说明
 
@@ -68,12 +68,12 @@ GFZ 发布的 Software for Precise Orbit and Clock Combination，用方差分量
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Gkit-Bias](https://github.com/LiZhengXiao99/Gkit-Bias) | 面向全频点 PPP-AR 的开源卫星端偏差估计（DCB/UPD/IFCB 与 OSB 转换） | C++ | 8 | 🏷️ 个人社区 核心 |
+| [Gkit-Bias](https://github.com/LiZhengXiao99/Gkit-Bias) | Gkit-Bias：全频点卫星端偏差估计 | C++ | 8 | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
 
 #### [Gkit-Bias](https://github.com/LiZhengXiao99/Gkit-Bias)  
-*🏷️ 个人社区 核心*
+*🏷️ 高校实验室 核心*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：8 · 宿主：github
 

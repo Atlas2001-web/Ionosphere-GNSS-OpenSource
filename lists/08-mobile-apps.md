@@ -63,7 +63,7 @@ PRIDE 团队面向智能手机的多频 GNSS 与 IMU 采集工具，便于把手
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [ubxlib](https://github.com/u-blox/ubxlib) | u-blox 官方嵌入式 C 库（GNSS/蜂窝 API） | C | 358 | 🏷️ 官方 |
-| [GNSSTimeServer](https://github.com/Montecri/GNSSTimeServer) | ESP8266/ESP32 的 GNSS 授时 NTP/PTP 服务器 | C | 232 | 🏷️ 个人社区 |
+| [GNSSTimeServer](https://github.com/Montecri/GNSSTimeServer) | GNSSTimeServer：ESP 系 GNSS 授时服务器 | C | 232 | 🏷️ 个人社区 |
 | [esp32-xbee](https://github.com/nebkat/esp32-xbee) | ESP32 NTRIP/UART 桥接固件（Ardusimple） | C | 119 | 🏷️ 个人社区 |
 | [STM32-GNSS](https://github.com/SimpleMethod/STM32-GNSS) | STM32 u-blox GNSS 库（UBX，含 DMA） | C | 89 | 🏷️ 个人社区 |
 | [satpulse](https://github.com/jclark/satpulse) | 跨平台 GNSS 授时、定位与接收机配置 GUI | Go | 63 | 🏷️ 个人社区 |

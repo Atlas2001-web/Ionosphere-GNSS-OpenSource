@@ -23,7 +23,7 @@ Automatic PPP Analysis Software-Türkiye（APAS-TR）处理 GPS/GLONASS/Galileo/
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [ginan](https://github.com/GeoscienceAustralia/ginan) | ginan：精密定位与改正数工具包 | C++ | 343 | 🏷️ 官方 核心 |
-| [RTKLIB-B2b](https://github.com/UCAS-Liuchunbo/RTKLIB-B2b) | 基于 RTKLIB 的北斗 PPP-B2b 解码与定位工具包 | C | 74 | 🏷️ 高校实验室 核心 |
+| [RTKLIB-B2b](https://github.com/UCAS-Liuchunbo/RTKLIB-B2b) | RTKLIB-B2b：北斗 PPP-B2b 解码定位包 | C | 74 | 🏷️ 高校实验室 核心 |
 | [PPP-BayesTree](https://github.com/wvu-navLab/PPP-BayesTree) | PPP-BayesTree：增量图优化 PPP 收敛研究代码 | C++ | 57 | 🏷️ 高校实验室 |
 | [Virtual-Network-DGNSS](https://github.com/Azurehappen/Virtual-Network-DGNSS-Project) | VN-DGNSS：PPP/SSR 驱动的开源虚拟基站差分 | C++ | 39 | 🏷️ 高校实验室 |
 | [NavDecoder](https://github.com/NavSesne/NavDecoder) | 解码 PPP-B2b 与 Galileo HAS 并做校验的工具 | Python | 37 | 🏷️ 个人社区 核心 |
@@ -93,7 +93,7 @@ JPL Near Earth Tracking 维护的 GipsyX 门户，提供软件发行说明、轨
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [CLASLIB](https://github.com/QZSS-Strategy-Office/claslib) | 日本内阁府 QZSS 官方 CLAS 厘米级增强测试库（Compact SSR/PPP-RTK） | C | 56 | 🏷️ 官方 核心 |
+| [CLASLIB](https://github.com/QZSS-Strategy-Office/claslib) | CLASLIB：QZSS CLAS 厘米级增强库 | C | 56 | 🏷️ 官方 核心 |
 
 ### 详细说明
 
@@ -272,7 +272,7 @@ Geoscience Australia 对开源 GNSS 分析中心软件 Ginan 的官方说明，�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [gLAB-Download](https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite-links/glab-download) | gLAB 官方下载页：Linux 源码包与 Windows/Cygwin 安装包 | C/Python | — | 🏷️ 高校实验室 |
-| [gLAB-UPC](https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite) | UPC gAGE 官方 gLAB：ESA 合同支持的 GNSS 处理与教学套件 | C/Python | — | 🏷️ 高校实验室 核心 |
+| [gLAB-UPC](https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite) | gLAB：GNSS 处理与教学套件 | C/Python | — | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
 
@@ -331,7 +331,7 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 | [GNSS-Explorer](https://github.com/brucezhcw/GNSS-Explorer) | 基于 RTKLIB 的 SPP 算法优化探索 | C | 21 | 🏷️ 个人社区 |
 | [GNSSPositioning](https://github.com/bitecc/GNSSPositioning) | SPP 教学程序（含电离层/对流层延迟改正） | C++ | 12 | 🏷️ 个人社区 |
 | [SPP_SPV](https://github.com/GYH-WHU/SPP_SPV) | 武大相关 GPS/BDS 单点定位与测速（C++/MATLAB）教学实现 | C++ | 7 | 🏷️ 高校实验室 |
-| [GSILIB](https://terras.gsi.go.jp/geo_info/gsilib/gsilib.html) | 日本国土地理院公开的多 GNSS 基线/PPP 解析库（RTKLIB 衍生，含 IFB/ISB） | C | — | 🏷️ 官方 核心 |
+| [GSILIB](https://terras.gsi.go.jp/geo_info/gsilib/gsilib.html) | GSILIB：多 GNSS 基线/PPP 解析库 | C | — | 🏷️ 官方 核心 |
 
 ### 详细说明
 
@@ -526,7 +526,7 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [goGPS_Java](https://github.com/goGPS-Project/goGPS_Java) | goGPS Java 观测处理库 | Java | 66 | 🏷️ 高校实验室 |
+| [goGPS_Java](https://github.com/goGPS-Project/goGPS_Java) | goGPS Java：JVM 版 GNSS 观测处理 | Java | 66 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -662,8 +662,8 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [MALIB](https://github.com/JAXA-SNU/MALIB) | JAXA/SNU 的 MADOCA-PPP 库：支持 L6E 的实时/事后 PPP（RTKLIB 衍生） | C | 77 | 🏷️ 官方 |
-| [MADOCALIB](https://github.com/QZSS-Strategy-Office/madocalib) | 日本内阁府 QZSS 官方 MADOCA-PPP 测试库（事后 PPP 参考实现） | C | 59 | 🏷️ 官方 核心 |
+| [MALIB](https://github.com/JAXA-SNU/MALIB) | MALIB：MADOCA-PPP L6E 定位库 | C | 77 | 🏷️ 官方 |
+| [MADOCALIB](https://github.com/QZSS-Strategy-Office/madocalib) | MADOCALIB：QZSS MADOCA-PPP 参考实现 | C | 59 | 🏷️ 官方 核心 |
 
 ### 详细说明
 
@@ -739,7 +739,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [MRTKLIB](https://github.com/h-shiono/MRTKLIB) | 面向 PPP/PPP-AR/PPP-RTK（CLAS/MADOCA）的现代 GNSS 定位库 | C | 78 | 🏷️ 高校实验室 核心 |
+| [MRTKLIB](https://github.com/h-shiono/MRTKLIB) | MRTKLIB：现代 PPP/PPP-RTK 定位库 | C | 78 | 🏷️ 高校实验室 核心 |
 | [pygnsslab](https://github.com/PyGnssLab/pygnsslab) | Python 模块化 RINEX/PPP/PPP-AR 与实时流 | Python | 34 | 🏷️ 个人社区 |
 | [Urban-RTKLIB](https://github.com/MayHarryWang/Urban-RTKLIB) | 面向城市导航的 RTKLIB 改版，侧重 PPP/PPP-RTK | C | 25 | 🏷️ 高校实验室 |
 | [mrtklib-docker-ui](https://github.com/h-shiono/mrtklib-docker-ui) | MRTKLIB 的 Docker/Web 界面，方便后处理与实时演示 | TypeScript | 10 | 🏷️ 高校实验室 |

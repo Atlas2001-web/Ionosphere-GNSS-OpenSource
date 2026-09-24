@@ -116,7 +116,7 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 | [Loose-GNSS-IMU](https://github.com/aaronboda24/Loose-GNSS-IMU) | Loose-GNSS-IMU：经典 GNSS/IMU 松组合卡尔曼 | C++ | 187 | 🏷️ 高校实验室 |
 | [KF-GINS-Matlab](https://github.com/i2Nav-WHU/KF-GINS-Matlab) | KF-GINS-Matlab：EKF 松/紧组合 MATLAB 版 | MATLAB | 137 | 🏷️ 高校实验室 核心 |
 | [ublox_dgnss](https://github.com/aussierobots/ublox_dgnss) | ROS2 u-blox UBX 驱动（F9P/F9R/X20P 差分与移动基站） | C++ | 86 | 🏷️ 个人社区 |
-| [GIOW-release](https://github.com/i2Nav-WHU/GIOW-release) | 全轮角/里程计辅助的 GNSS/INS/ODO 组合导航算法发布版 | C++ | 75 | 🏷️ 高校实验室 核心 |
+| [GIOW-release](https://github.com/i2Nav-WHU/GIOW-release) | GIOW：GNSS/INS/ODO 轮速辅助组合导航 | C++ | 75 | 🏷️ 高校实验室 核心 |
 | [Wheel-GINS](https://github.com/i2Nav-WHU/Wheel-GINS) | 轮式惯导与 GNSS 组合的导航系统（IEEE TITS 相关） | C++ | 47 | 🏷️ 高校实验室 |
 | [GNSS_IMU](https://github.com/rtklibexplorer/GNSS_IMU) | rtklibexplorer 系松组合 GNSS/IMU 的 Python 实现 | Python | 35 | 🏷️ 个人社区 |
 | [GINS](https://github.com/zhangwhu/GINS) | PPP-RTK 与惯导组合的 GINS 实现（武大相关） | C | 21 | 🏷️ 高校实验室 |
@@ -421,7 +421,7 @@ OKVIS2-X 在经典 OKVIS 视觉惯性框架上扩展稠密深度或 LiDAR，并�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GraphRTK-INS](https://github.com/GREAT-WHU/GraphRTK-INS) | 武大 GREAT 因子图模块：RTK 与惯导紧组合 | C++ | 83 | 🏷️ 高校实验室 核心 |
+| [GraphRTK-INS](https://github.com/GREAT-WHU/GraphRTK-INS) | GraphRTK-INS：RTK/INS 因子图紧组合 | C++ | 83 | 🏷️ 高校实验室 核心 |
 | [GREAT-PIFGO](https://github.com/GREAT-WHU/GREAT-PIFGO) | GREAT 软件中的因子图优化模块（PIFGO） | C++ | 18 | 🏷️ 高校实验室 |
 | [tightly-coupled-gnss-imu-fgo](https://github.com/inuex35/tightly-coupled-gnss-imu-fgo) | tightly-coupled-gnss-imu-fgo：FGO 路线 RTK+IMU 原型 | Python | 17 | 🏷️ 个人社区 |
 
@@ -559,7 +559,7 @@ JuliaGNSS 生态中的滤波库，实现经典 KF、UKF、AUKF 及其方根形�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [rtklib_ros_bridge](https://github.com/MapIV/rtklib_ros_bridge) | MapIV 开源：将 RTKLIB v2.4.3 b34 解算结果桥接到 ROS 的中间件 | C++ | 121 | 🏷️ 个人社区 |
+| [rtklib_ros_bridge](https://github.com/MapIV/rtklib_ros_bridge) | rtklib_ros_bridge：RTKLIB 结果桥接 ROS | C++ | 121 | 🏷️ 个人社区 |
 
 ### 详细说明
 
