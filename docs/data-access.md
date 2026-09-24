@@ -17,8 +17,8 @@
 | 区域 CORS（美/新西兰/巴西） | [NOAA CORS](https://geodesy.noaa.gov/CORS/) · [CORS AWS](https://noaa-cors-pds.s3.amazonaws.com/index.html) · [GeoNet API](https://data.geonet.org.nz/) · [IBGE RBMC](https://geoftp.ibge.gov.br/informacoes_sobre_posicionamento_geodesico/rbmc/) · [EarthScope GAGE](https://gage-data.earthscope.org/archive/gnss) | 视网络 |
 | 区域 CORS（欧/亚太/加） | [EPN `/pub/obs/`](https://epncb.oma.be/pub/obs/) · [GA](https://data.gnss.ga.gov.au/) · [CACS](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/data-donnees/cacs-scca.php) · [MIRAI](https://go.gnss.go.jp/mirai/miraiarchive/) · [韩国](https://www.gnssdata.or.kr/) · [BEV Geoportal](https://data.bev.gv.at/) | 开放 / 网页注册 |
 | 欧洲站元数据 / 程序化 | [EPOS GNSS](https://gnss-epos.eu/) · [GLASS API](https://gnssdata-epos.oca.eu/GlassFramework/) · [M3G](https://gnss-metadata.eu/landing/m3g) | 视节点 |
-| 实时 RTCM / SSR | BKG / IGS RTS（NTRIP；[igs-ip.net](https://www.igs-ip.net/) 偶发超时） | 账号或挂载点 |
-| 掩星 RO | [CDAAC](https://cdaac-www.cosmic.ucar.edu/) · [ROM SAF](https://rom-saf.eumetsat.int/) · [awsgnssroutils](https://github.com/gnss-ro/aws-opendata) | 账号 / 开放 |
+| 实时 RTCM / SSR | `products.igs-ip.net:2101` · [igs-ip.net](https://www.igs-ip.net/)（NTRIP；后者偶发超时） · [注册](https://register.rtcm-ntrip.org/cgi-bin/registration.cgi) | 挂载点账号 |
+| 掩星 RO | [CDAAC](https://cdaac-www.cosmic.ucar.edu/) · [data.cosmic](https://data.cosmic.ucar.edu/gnss-ro/) · [ROM SAF](https://rom-saf.eumetsat.int/) · [awsgnssroutils](https://github.com/gnss-ro/aws-opendata) | 开放 / 视源 |
 | 地磁 / 空间天气 | [Kyoto WDC](https://wdc.kugi.kyoto-u.ac.jp/) · [INTERMAGNET](https://intermagnet.org/) · [SuperMAG](https://supermag.jhuapl.edu/) · [GFZ Kp](https://kp.gfz.de/en/) · [SWPC](https://www.spaceweather.gov/) | 开放 / 注册 |
 | 区域 TEC 现报 | [eSWua TEC](http://www.eswua.ingv.it/ewphp/landing.php?doi=tec) · [IONORING](http://ionos.ingv.it/ionoring/ionoring.htm) | 开放（CC BY） |
 | 闪烁 ISMR | [ISMR Query Tool](https://ismrquerytool.fct.unesp.br/) · [`ismr_downloader`](https://github.com/GEGE-UNESP/ismr_downloader) | 网页注册 |
@@ -58,6 +58,8 @@ chmod 600 ~/.netrc
 ```
 
 若下到的是 HTML 登录页而不是 `.gz`/`.rnx`：重走步骤 2，确认应用已授权。
+
+**浏览器 cookie ≠ 脚本凭证**：网页登录只服务浏览器；`curl`/`wget`/批量脚本须用同一 Earthdata 账号写进 `~/.netrc`（或工具支持的 token），不能指望 cookie 自动带上。
 
 ---
 
@@ -189,57 +191,87 @@ curl -L -C - -O \
 
 **去哪**：
 
-- EPN：[中央局](https://epncb.oma.be/) · 观测 [`/pub/obs/`](https://epncb.oma.be/pub/obs/)（按站；旧 `/ftp/obs/` 会跳转）
+- EPN：[中央局](https://epncb.oma.be/) · 观测 [`/pub/obs/`](https://epncb.oma.be/pub/obs/)（现为 `YYYY/DDD/`，会落到 `/pub/RINEX/`；旧 `/ftp/obs/` 会跳转）
 - IBGE：[geoftp RBMC](https://geoftp.ibge.gov.br/informacoes_sobre_posicionamento_geodesico/rbmc/) · [API 文档](https://servicodados.ibge.gov.br/api/docs/rbmc?versao=1)
 
 **怎么下**：
 
 ```bash
-# EPN：进 /pub/obs/<STATION>/ 复制日文件 URL 后
-curl -L -C - -O "https://epncb.oma.be/pub/obs/...."
-
-# IBGE：geoftp 目录树，或按 API 文档的 rinex2/rinex3/1s 端点（用 GET）
+# EPN：路径 /pub/obs/YYYY/DDD/ → 实际落到 /pub/RINEX/YYYY/DDD/（站长名 RINEX 3）
 curl -L -C - -O \
-  "https://geoftp.ibge.gov.br/informacoes_sobre_posicionamento_geodesico/rbmc/...."
+  "https://epncb.oma.be/pub/obs/2023/049/ACOR00ESP_R_20230490000_01D_30S_MO.crx.gz"
+
+# IBGE geoftp：dados_RINEX3/YYYY/DDD/<站长名>...
+curl -L -C - -O \
+  "https://geoftp.ibge.gov.br/informacoes_sobre_posicionamento_geodesico/rbmc/dados_RINEX3/2023/049/ALMA00BRA_R_20230490000_01D_15S_MO.crx.gz"
+
+# IBGE API（HEAD 常 405，用 GET；站四字码小写 + 年 + 年积日）
+curl -L -C - -o alma_2022_001.crx.gz \
+  "https://servicodados.ibge.gov.br/api/v1/rbmc/dados/rinex3/alma/2022/1"
 ```
 
-**账号/配额坑**：EPN 事后多开放，批量前对照中央局站状态；IBGE API 文档页对 HEAD 可能 405，用 GET；礼貌限速；NTRIP 实时另见 EUREF-IP，勿与事后 `/pub/obs/` 混用。
+**账号/配额坑**：EPN 事后多开放，批量前对照中央局站状态；旧按站目录 `/pub/obs/<STATION>/` 已不存在（404）；IBGE API 文档/接口对 HEAD 可能 405，用 GET；礼貌限速；NTRIP 实时另见 EUREF-IP，勿与事后 `/pub/obs/` 混用。
 
 ### 实时 NTRIP（BKG / IGS RTS）
 
 **我要什么**：实时 RTCM 观测流或 SSR 改正（IGS RTS）。
 
-**去哪**：NTRIP 源表与账号入口优先 [igs-ip.net](https://www.igs-ip.net/)（本环境探测偶发超时）· BKG / IGS RTS 挂载点 · 归档侧 [BKG root_ftp](https://igs.bkg.bund.de/root_ftp/) 不是实时流。客户端可用 BKG NtripClient、[`pygnssutils`](./software/pygnssutils.md) 等。
+**去哪**：
+
+| 角色 | caster（文档/实测） | 端口 | 说明 |
+|---|---|---|---|
+| IGS RTS **产品**（SSR） | `products.igs-ip.net` | **2101**（亦常见 **443** TLS） | 挂载点例：`SSRA02IGS0`、`BCEP00BKG0` |
+| IGS **观测** | `igs-ip.net` / `www.igs-ip.net` | 2101 / 443 | **偶发超时**；换时段或区域 relay |
+| EUREF 区域 | `euref-ip.net` | 2101 / 443 | 欧洲站网实时；≠ 事后 EPN `/pub/obs/` |
+
+注册：[BKG 表单](https://register.rtcm-ntrip.org/cgi-bin/registration.cgi) · 总览 [IGS RTS User Access](https://igs.org/rts/user-access/)（含 CDDIS/CAS/GA/UCAR 等区域 caster）。归档 [BKG root_ftp](https://igs.bkg.bund.de/root_ftp/) **不是**实时流。客户端 → [`bnc`](./software/bnc.md) · [`pygnssutils`](./software/pygnssutils.md) · [`rtklib`](./software/rtklib.md)（勿在本页重写操作）。
 
 **怎么下**：
 
 ```bash
-# 1) 在 caster 网页或源表取得：host、port、mountpoint、user、password
-# 2) 示例（占位符须换成你的挂载点；勿把密码写进仓库）
-# ntripclient / BKG 工具：
-#   ntripclient -h <caster> -p <port> -m <MOUNT> -u USER -c PASS -D out.rtcm
-# pygnssutils 等：按软件短文配置 NTRIP 源后写盘或转发
+# 0) 拉源表（无需账号；确认 caster 可达）
+curl -s --max-time 15 "http://products.igs-ip.net:2101/" | head
+# 期望：以 CAS; / NET; / STR; 开头的 NTRIP 源表行；HTTPS 根路径对普通浏览器常 501
+
+# 1) 注册后取得 user/password；在源表选挂载点（例 SSRA02IGS0）
+# 2) 客户端（口令用环境变量；勿写进仓库）
+# BNC GUI：Host=products.igs-ip.net  Port=2101  Mountpoint=SSRA02IGS0  → 见 docs/software/bnc.md
+# pygnssutils：
+#   gnssntripclient --server products.igs-ip.net --port 2101 --https 0 \
+#     --mountpoint SSRA02IGS0 --ntripuser "$NTRIP_USER" --ntrippassword "$NTRIP_PASS" \
+#     --datatype RTCM --ntripversion 2.0
+# RTKLIB str2str / RTKNAVI：ntrip://USER:PASS@products.igs-ip.net:2101/SSRA02IGS0
 ```
 
-**账号/配额坑**：多数挂载点要账号或机构权限；`igs-ip.net` 偶发超时 → 换时段或 BKG 备用 caster；裸打开 `igs.bkg.bund.de/` 常 404，归档用 `root_ftp`；实时流 ≠ 事后 RINEX 归档。
+**账号/配额坑**：无账号订受保护挂载点 → 401/403；`igs-ip.net` 超时 → 换 `products.igs-ip.net`（只做产品）或 [RTS User Access](https://igs.org/rts/user-access/) 列出的区域 relay；源表空/连不上 = 网络或 caster 维护，不是挂载点名写错的唯一解释；裸开 `igs.bkg.bund.de/` 常 404，归档用 `root_ftp`；实时流 ≠ 事后 RINEX。
 
 ### 掩星 RO（CDAAC / AWS）
 
 **我要什么**：掩星 excess phase / 电子密度剖面等 Level-1b/2。
 
-**去哪**：[CDAAC](https://cdaac-www.cosmic.ucar.edu/)（ionPhs / ionPrf 等）· [ROM SAF](https://rom-saf.eumetsat.int/) · 开放桶工具 [awsgnssroutils](https://github.com/gnss-ro/aws-opendata)。
+**去哪**：[CDAAC 门户](https://cdaac-www.cosmic.ucar.edu/) · **直链树** [data.cosmic.ucar.edu/gnss-ro](https://data.cosmic.ucar.edu/gnss-ro/)（COSMIC-1/2 等，**无需登录**）· [ROM SAF](https://rom-saf.eumetsat.int/) · AWS 工具 [awsgnssroutils](https://github.com/gnss-ro/aws-opendata)（PyPI 同名）。
 
 **怎么下**：
 
 ```bash
-# AWS 公开数据（推荐脚本化；勿依赖 registry.opendata.aws/gnss* 深链，常 404）
-pip install awsgnssroutils
-# 按仓库 README：查询任务/中心 → 下载 Level-1b/2
+# A) CDAAC 公开目录（例：COSMIC-1 事后 Level-1b ionPhs 日包）
+curl -L -C - -O \
+  "https://data.cosmic.ucar.edu/gnss-ro/cosmic1/postProc/level1b/2019/049/ionPhs_postProc_2019_049.tar.gz"
+# 路径模式：…/<mission>/{postProc|nrt}/level1b|level2/YYYY/DDD/<product>_….tar.gz
 
-# CDAAC：浏览器登录后选任务与产品类型再下（账号制）
+# B) AWS Registry（推荐批量；勿依赖 registry.opendata.aws/gnss* 深链，常 404）
+pip install awsgnssroutils
+python - <<'PY'
+from awsgnssroutils.database import RODatabaseClient, setdefaults
+setdefaults(metadata_root="./ro_meta", data_root="./ro_out", version="v1.1")
+rodb = RODatabaseClient()
+occs = rodb.query(missions="cosmic2", datetimerange=("2021-02-18","2021-02-19"))
+# 类型仅 {ucar|jpl|romsaf}_{calibratedPhase|refractivityRetrieval|atmosphericRetrieval}
+occs.download("ucar_calibratedPhase", data_root="./ro_out", keep_aws_structure=False)
+PY
 ```
 
-**账号/配额坑**：CDAAC / 多数 ROM SAF 要注册；AWS 路径开放但 API 以工具为准；处理包 ROPP 与产品页分开找。
+**账号/配额坑**：`data.cosmic` 匿名开放（ionPhs/ionPrf 等）；旧「必须 CDAAC 网页账号」已过时；ROM SAF 多数仍要注册；AWS 工具**没有** `ionPhs` 文件名——电离层 excess phase 用 CDAAC 直链，AWS 侧重 `calibratedPhase` 等三型；勿把 registry 深链写进脚本；处理包 ROPP 与产品页分开找。
 
 ### 地磁 / 空间天气（Kp / SWPC）
 
@@ -279,14 +311,14 @@ curl -s "https://kp.gfz.de/app/json/?start=2023-02-18T00:00:00Z&end=2023-02-19T0
 
 | 门户 | 入口 | 路径或下一步 | 注册 | 注意 |
 |---|---|---|---|---|
-| **BKG IGS** | [root_ftp](https://igs.bkg.bund.de/root_ftp/) | 归档目录树；裸域名常 404 | 归档多开放；NTRIP 视挂载点 | 实时见上节 NTRIP |
+| **BKG IGS** | [root_ftp](https://igs.bkg.bund.de/root_ftp/) | 归档目录树；裸域名常 404 | 归档多开放；NTRIP 视挂载点 | 实时：`products.igs-ip.net:2101` 等，见上节 NTRIP |
 | **ESA GSSC** | [gssc.esa.int](https://gssc.esa.int/) | 门户检索 → 数据集页 | 门户账号；部分集合另申请 | 勿假设全站开放 |
 | **EarthScope** | [GAGE archive](https://gage-data.earthscope.org/archive/gnss) · [earthscope-sdk](https://gitlab.com/earthscope/public/earthscope-sdk) | SDK（PyPI）拉 API | EarthScope / GAGE | 原 UNAVCO 页仍可开，新工作以 GAGE + SDK 为准 |
 | **GA GNSS** | [data.gnss.ga.gov.au](https://data.gnss.ga.gov.au/) | 门户 / 官方 API | 多开放；个别 API 视密钥 | 勿用旧 ga.gov.au 深链 |
 | **NRCan CACS** | [CACS 选站页](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/data-donnees/cacs-scca.php) | 网页选站 → 打包 | 多开放 | 旧 `webapp.csrs.nrcan.gc.ca` 会跳转 |
 | **Japan MIRAI** | [miraiarchive](https://go.gnss.go.jp/mirai/miraiarchive/) | 年积日 RINEX 3/4；页内有 wget/curl 例 | GO!GNSS 注册 + HTTPS 基本认证 | 含 QZSS；相对传统 GEONET 更易脚本化 |
 | **Korea GNSS** | [gnssdata.or.kr](https://www.gnssdata.or.kr/) | 登录 → 选站/时段 → ZIP | 网页注册 | 单次跨度常有上限 |
-| **BEV APOS** | [产品说明](https://www.bev.gv.at/en/Services/Products/Austrian-POsitioning-Service.html) · [Geoportal](https://data.bev.gv.at/) | STAC：`/download/RINEX/RDH1/30S/stac/by_date/catalog.json` | APOS-PP 免费（CC BY 4.0） | 德语深链 `…/APOS.html` 常 403 |
+| **BEV APOS** | [Geoportal](https://data.bev.gv.at/) | STAC：[`…/RINEX/RDH1/30S/stac/by_date/catalog.json`](https://data.bev.gv.at/download/RINEX/RDH1/30S/stac/by_date/catalog.json) | APOS-PP 免费（CC BY 4.0） | `bev.gv.at` 英文产品深链常进 403 页；用 Geoportal/STAC |
 | **Spain ERGNSS** | [datos-geodesia ERGNSS](https://datos-geodesia.ign.es/ERGNSS/) | HTTPS 公开目录树 | 开放 | 限速 |
 | **RENAG** | [renag.resif.fr](https://renag.resif.fr/) | 站网/政策/产品（DOI `10.15778/resif.rg`） | 视 RESIF | 先读数据政策 |
 | **SWEPOS** | [RINEX DOI 页](https://www.lantmateriet.se/en/geodata/gps-geodesy-and-swepos/lantmateriets-doi-objects/swepos-rinex-data/) | FTP/SFTP 日文件（DOI `10.23701/c5tc-ew52`，CC0） | 按站方说明 | 实时权限另见条款 |
