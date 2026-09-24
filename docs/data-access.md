@@ -13,7 +13,7 @@
 | 全球 RINEX / 广播星历 | [CDDIS](https://cddis.nasa.gov/archive/gnss/) · [BKG root_ftp](https://igs.bkg.bund.de/root_ftp/) · [GFZ ISDC HTTPS](https://isdc-data.gfz.de/gnss/) · [ESA GSSC](https://gssc.esa.int/) | Earthdata / 视中心 |
 | SP3 / CLK / 偏差 | CDDIS `gnss/products/` · [IGS files](https://files.igs.org/pub/) · GFZ ISDC · [CODE HTTPS](https://www.aiub.unibe.ch/download/) · [CAS `pub/`](https://data.bdsmart.cn/pub/) | 同左 / 多开放 |
 | GIM / IONEX | CDDIS `gnss/products/ionex/` · CODE · [CAS ionex](https://data.bdsmart.cn/pub/product/iono/ionex/) · [UPC rapid](https://chapman.upc.es/tomion/rapid/) · JPL | 视源（后两者常匿名） |
-| 高采样率（闪烁 / 同震） | [CDDIS high-rate](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/high-rate_data.html) · GFZ `/gnss/highrate/` · `cddis-highrate-downloader` | Earthdata / 开放 |
+| 高采样率（闪烁 / 同震） | [CDDIS high-rate](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/high-rate_data.html) · GFZ `/gnss/data/highrate/` · `cddis-highrate-downloader` | Earthdata / 开放 |
 | 区域 CORS（美/新西兰/巴西） | [NOAA CORS](https://geodesy.noaa.gov/CORS/) · [CORS AWS](https://noaa-cors-pds.s3.amazonaws.com/index.html) · [GeoNet API](https://data.geonet.org.nz/) · [IBGE RBMC](https://geoftp.ibge.gov.br/informacoes_sobre_posicionamento_geodesico/rbmc/) · [EarthScope GAGE](https://gage-data.earthscope.org/archive/gnss) | 视网络 |
 | 区域 CORS（欧/亚太/加） | [EPN `/pub/obs/`](https://epncb.oma.be/pub/obs/) · [GA](https://data.gnss.ga.gov.au/) · [CACS](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/data-donnees/cacs-scca.php) · [MIRAI](https://go.gnss.go.jp/mirai/miraiarchive/) · [韩国](https://www.gnssdata.or.kr/) · [BEV Geoportal](https://data.bev.gv.at/) | 开放 / 网页注册 |
 | 欧洲站元数据 / 程序化 | [EPOS GNSS](https://gnss-epos.eu/) · [GLASS API](https://gnssdata-epos.oca.eu/GlassFramework/) · [M3G](https://gnss-metadata.eu/landing/m3g) | 视节点 |
@@ -21,7 +21,7 @@
 | 掩星 RO | [CDAAC](https://cdaac-www.cosmic.ucar.edu/) · [data.cosmic](https://data.cosmic.ucar.edu/gnss-ro/) · [ROM SAF](https://rom-saf.eumetsat.int/) · [awsgnssroutils](https://github.com/gnss-ro/aws-opendata) | 开放 / 视源 |
 | 地磁 / 空间天气 | [Kyoto WDC](https://wdc.kugi.kyoto-u.ac.jp/) · [INTERMAGNET](https://intermagnet.org/) · [SuperMAG](https://supermag.jhuapl.edu/) · [GFZ Kp](https://kp.gfz.de/en/) · [SWPC](https://www.spaceweather.gov/) | 开放 / 注册 |
 | 区域 TEC 现报 | [eSWua TEC](http://www.eswua.ingv.it/ewphp/landing.php?doi=tec) · [IONORING](http://ionos.ingv.it/ionoring/ionoring.htm) | 开放（CC BY） |
-| 闪烁 ISMR | [ISMR Query Tool](https://ismrquerytool.fct.unesp.br/) · [`ismr_downloader`](https://github.com/GEGE-UNESP/ismr_downloader) | 网页注册 |
+| 闪烁 ISMR | [`ismr_downloader`](https://github.com/GEGE-UNESP/ismr_downloader)（主）· [Query Tool](https://ismrquerytool.fct.unesp.br/)（辅，常超时） | 网页注册 |
 | 测高仪 | [GIRO / DIDBase](https://giro.uml.edu/didbase/) | 网页注册 |
 | 对流层格网 | [VMF](https://vmf.geo.tuwien.ac.at/) → `trop_products/` | 多开放 |
 
@@ -101,9 +101,10 @@ curl -L -n -C - -o igs.sp3.gz \
   "https://cddis.nasa.gov/archive/gnss/products/2250/IGS0OPSFIN_20230490000_01D_15M_ORB.SP3.gz"
 # bias / DCB 常在 gnss/products/bias/ 等子树（以当日目录为准）
 
-# 开放镜像示例（无需 Earthdata）
-curl -L -C - -o code.sp3 \
-  "https://www.aiub.unibe.ch/download/CODE/..."   # 在 S3 列表点选具体对象后替换
+# CODE 开放镜像（无需 Earthdata；须带年份子目录）
+curl -L -C - -o COD0OPSFIN_20230490000_01D_05M_ORB.SP3.gz \
+  "https://www.aiub.unibe.ch/download/CODE/2023/COD0OPSFIN_20230490000_01D_05M_ORB.SP3.gz"
+# 目录：https://code.aiub.unibe.ch/s3_script/aiub_s3_bucket_listing.php?path=CODE/2023
 ```
 
 **账号/配额坑**：CDDIS 同 Earthdata；CODE/CAS/GFZ HTTPS 多开放；勿用已停的 CODE 旧 FTP；`files.igs.org` 大文件可能限速；长/短文件名混用时以目录列表为准。对照 [IGS Products](https://igs.org/products/) · [Data Access](https://igs.org/data-access/)。
@@ -121,8 +122,9 @@ curl -L -C - -o code.sp3 \
 curl -L -n -C - -o igs.INX.gz \
   "https://cddis.nasa.gov/archive/gnss/products/ionex/2023/049/IGS0OPSFIN_20230490000_01D_02H_GIM.INX.gz"
 
-# CAS 开放最终产品（示例：进目录后复制具体文件 URL）
-curl -L -C - -O "https://data.bdsmart.cn/pub/product/iono/ionex/..."
+# CAS 开放最终产品（年/年积日；长名 IONEX）
+curl -L -C - -O \
+  "https://data.bdsmart.cn/pub/product/iono/ionex/2023/049/CAS0OPSFIN_20230490000_01D_30M_GIM.INX.gz"
 
 # UPC 快速格网：按年目录匿名拉
 curl -L -C - -O "https://chapman.upc.es/tomion/rapid/..."
@@ -136,7 +138,7 @@ curl -L -C - -O "https://chapman.upc.es/tomion/rapid/..."
 
 **我要什么**：1 Hz 或更高采样 RINEX（非日采样 30 s）。
 
-**去哪**：[CDDIS high-rate 说明](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/high-rate_data.html)（实体在 archive）· GFZ [`/gnss/highrate/`](https://isdc-data.gfz.de/gnss/) · 工具 `cddis-highrate-downloader`。
+**去哪**：[CDDIS high-rate 说明](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/high-rate_data.html)（实体在 archive）· GFZ [`/gnss/data/highrate/`](https://isdc-data.gfz.de/gnss/data/highrate/) · 工具 `cddis-highrate-downloader`。
 
 **怎么下**：
 
@@ -291,19 +293,78 @@ curl -s "https://kp.gfz.de/app/json/?start=2023-02-18T00:00:00Z&end=2023-02-19T0
 
 ### 开放产品镜像快径（CODE / GFZ / CAS）
 
-**我要什么**：少账号摩擦的 SP3/CLK/IONEX/日文件备份。
+**我要什么**：少账号摩擦的 SP3/CLK/IONEX/日文件备份（免 Earthdata）。
 
 **去哪**：
 
-| 源 | 入口 | 典型内容 |
+| 源 | 列表入口 | 文件名模式（例，2023-049） |
 |---|---|---|
-| CODE | [aiub download](https://www.aiub.unibe.ch/download/) → [S3 列表](https://code.aiub.unibe.ch/s3_script/aiub_s3_bucket_listing.php) | `CODE/`、`ionex/`、`CODE_MGEX/` |
-| GFZ ISDC | [isdc-data.gfz.de/gnss/](https://isdc-data.gfz.de/gnss/) | `/data/daily/`、`/highrate/`、产品树 |
-| CAS BDsmart | [pub 根](https://data.bdsmart.cn/pub/) | [ionex](https://data.bdsmart.cn/pub/product/iono/ionex/) · [rts/iono](https://data.bdsmart.cn/pub/product/rts/iono/) · bias/SSR |
+| CODE | [S3 列表 `CODE/2023`](https://code.aiub.unibe.ch/s3_script/aiub_s3_bucket_listing.php?path=CODE/2023) | `CODE/YYYY/COD0OPSFIN_<YYYYDDD>0000_01D_05M_ORB.SP3.gz` |
+| GFZ ISDC | [data/daily](https://isdc-data.gfz.de/gnss/data/daily/) · [products/final](https://isdc-data.gfz.de/gnss/products/final/) | `…/YYYY/DDD/<站>_…MO.crx.gz`；`…/final/wWWWW/GFZ0OPSFIN_…ORB.SP3.gz` |
+| CAS BDsmart | [ionex](https://data.bdsmart.cn/pub/product/iono/ionex/) · [rts/iono](https://data.bdsmart.cn/pub/product/rts/iono/) | `…/ionex/YYYY/DDD/CAS0OPSFIN_<YYYYDDD>0000_01D_30M_GIM.INX.gz` |
 
-**怎么下**：浏览器打开上表目录 → 复制对象 URL → `curl -L -C - -O "<url>"`（均无需 Earthdata）。
+**怎么下**：
 
-**账号/配额坑**：CODE 旧 FTP 已停；GFZ 旧 FTP 已迁 HTTPS；CAS RTS 仅近实时试验；门户说明 [isdc.gfz.de](https://isdc.gfz.de/)（`gfz-potsdam.de` 会跳转）。
+```bash
+# CODE SP3（须含年份目录；www.aiub → download.aiub → Switch S3）
+curl -L -C - -O \
+  "https://www.aiub.unibe.ch/download/CODE/2023/COD0OPSFIN_20230490000_01D_05M_ORB.SP3.gz"
+
+# GFZ 日观测（匿名 HTTPS）
+curl -L -C - -O \
+  "https://isdc-data.gfz.de/gnss/data/daily/2023/049/POTS00DEU_R_20230490000_01D_30S_MO.crx.gz"
+# GFZ 精密轨道（2023-049 → GPS 周 w2249）
+curl -L -C - -O \
+  "https://isdc-data.gfz.de/gnss/products/final/w2249/GFZ0OPSFIN_20230490000_01D_15M_ORB.SP3.gz"
+
+# CAS 最终 GIM
+curl -L -C - -O \
+  "https://data.bdsmart.cn/pub/product/iono/ionex/2023/049/CAS0OPSFIN_20230490000_01D_30M_GIM.INX.gz"
+```
+
+**账号/配额坑**：均无需 Earthdata；CODE 旧 FTP 已停，裸 `…/CODE/<文件>`（无年份）→ 404；GFZ 产品在 `products/final|rapid|iono/wWWWW/`，不是扁平 `products/WWWW/`；CAS RTS 仅近实时试验；门户说明 [isdc.gfz.de](https://isdc.gfz.de/)（`gfz-potsdam.de` 会跳转）。
+
+### 闪烁 ISMR（`ismr_downloader` 优先）
+
+**我要什么**：低纬 GNSS 闪烁监测（ISMR）指标/相关观测。
+
+**去哪**：[`ismr_downloader`](https://github.com/GEGE-UNESP/ismr_downloader)（PyPI：`ismr-downloader`）· 网页辅：[ISMR Query Tool](https://ismrquerytool.fct.unesp.br/)（常超时/证书失败，勿当主路径）。
+
+**怎么下**：
+
+```bash
+# 1) 在 Query Tool 网页注册，取得邮箱/密码（勿写入仓库）
+# 2) 安装
+pip install ismr-downloader
+# 3) 拉取（证书异常时加 --insecure；类型 ismr|ismr1min|sbf|rinex）
+ismr-downloader \
+  --email "$ISMR_EMAIL" --password "$ISMR_PASSWORD" \
+  --stations PRU2 \
+  --start 2023-02-18 --end 2023-02-18 \
+  --data-type ismr \
+  --insecure
+# 亦可用 .env：ISMR_EMAIL / ISMR_PASSWORD / ISMR_STATIONS / ISMR_START / ISMR_END / DATA_TYPE
+# ismr-downloader --env .env --insecure
+```
+
+**账号/配额坑**：须先网页注册；Query Tool 打不开时仍用本脚本（同一 API）；`--insecure` 仅作证书急救；工具自带限流；缺数据写入 `logs/no_data_*.csv`。
+
+### 区域 CORS：GA（澳大利亚，可选）
+
+**我要什么**：澳大利亚（及 APREF 相关）事后 RINEX，可脚本化。
+
+**去哪**：[GA GNSS Data Centre](https://data.gnss.ga.gov.au/) · API：[RINEX File Query](https://data.gnss.ga.gov.au/docs/rinex-file-query/v1.0/web-api-access.html)。
+
+**怎么下**：
+
+```bash
+# 按站+时段查文件（JSON 含限时签名 fileLocation）
+curl -s "https://data.gnss.ga.gov.au/api/rinexFiles?stationId=ALIC&startDate=2023-02-18T00:00:00Z&endDate=2023-02-19T00:00:00Z&filePeriod=01D&fileType=obs&rinexVersion=3"
+# 再：curl -L -C - -OJ "<fileLocation>"
+# 对象键示意：…/ALIC00AUS_R_20230490000_01D_30S_MO.crx.gz
+```
+
+**账号/配额坑**：开放站匿名可查；签名 URL 会过期，勿写死 `fileLocation`；旧 `ga.gov.au` 深链勿用；批量礼貌限速。
 
 ---
 
@@ -314,7 +375,7 @@ curl -s "https://kp.gfz.de/app/json/?start=2023-02-18T00:00:00Z&end=2023-02-19T0
 | **BKG IGS** | [root_ftp](https://igs.bkg.bund.de/root_ftp/) | 归档目录树；裸域名常 404 | 归档多开放；NTRIP 视挂载点 | 实时：`products.igs-ip.net:2101` 等，见上节 NTRIP |
 | **ESA GSSC** | [gssc.esa.int](https://gssc.esa.int/) | 门户检索 → 数据集页 | 门户账号；部分集合另申请 | 勿假设全站开放 |
 | **EarthScope** | [GAGE archive](https://gage-data.earthscope.org/archive/gnss) · [earthscope-sdk](https://gitlab.com/earthscope/public/earthscope-sdk) | SDK（PyPI）拉 API | EarthScope / GAGE | 原 UNAVCO 页仍可开，新工作以 GAGE + SDK 为准 |
-| **GA GNSS** | [data.gnss.ga.gov.au](https://data.gnss.ga.gov.au/) | 门户 / 官方 API | 多开放；个别 API 视密钥 | 勿用旧 ga.gov.au 深链 |
+| **GA GNSS** | [data.gnss.ga.gov.au](https://data.gnss.ga.gov.au/) · [RINEX API](https://data.gnss.ga.gov.au/docs/rinex-file-query/v1.0/web-api-access.html) | 见上节「区域 CORS：GA」 | 多开放；个别 API 视密钥 | 签名 URL 短时有效；勿用旧 ga.gov.au 深链 |
 | **NRCan CACS** | [CACS 选站页](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/data-donnees/cacs-scca.php) | 网页选站 → 打包 | 多开放 | 旧 `webapp.csrs.nrcan.gc.ca` 会跳转 |
 | **Japan MIRAI** | [miraiarchive](https://go.gnss.go.jp/mirai/miraiarchive/) | 年积日 RINEX 3/4；页内有 wget/curl 例 | GO!GNSS 注册 + HTTPS 基本认证 | 含 QZSS；相对传统 GEONET 更易脚本化 |
 | **Korea GNSS** | [gnssdata.or.kr](https://www.gnssdata.or.kr/) | 登录 → 选站/时段 → ZIP | 网页注册 | 单次跨度常有上限 |
@@ -322,14 +383,14 @@ curl -s "https://kp.gfz.de/app/json/?start=2023-02-18T00:00:00Z&end=2023-02-19T0
 | **Spain ERGNSS** | [datos-geodesia ERGNSS](https://datos-geodesia.ign.es/ERGNSS/) | HTTPS 公开目录树 | 开放 | 限速 |
 | **RENAG** | [renag.resif.fr](https://renag.resif.fr/) | 站网/政策/产品（DOI `10.15778/resif.rg`） | 视 RESIF | 先读数据政策 |
 | **SWEPOS** | [RINEX DOI 页](https://www.lantmateriet.se/en/geodata/gps-geodesy-and-swepos/lantmateriets-doi-objects/swepos-rinex-data/) | FTP/SFTP 日文件（DOI `10.23701/c5tc-ew52`，CC0） | 按站方说明 | 实时权限另见条款 |
-| **HK SatRef** | [RINEX 说明](https://www.geodetic.gov.hk/en/rinex/rinex.htm) | 按页取事后 RINEX | 多开放 | 注意采样率与保留期 |
+| **HK SatRef** | [RINEX 说明](https://www.geodetic.gov.hk/en/rinex/rinex.htm) | 网页选站下载（无稳定匿名文件树） | 多开放 | 旧 downv/geodex 根路径不可靠；注意采样率与保留期 |
 | **EPOS / GLASS / M3G** | [EPOS GNSS](https://gnss-epos.eu/) · [GLASS](https://gnssdata-epos.oca.eu/GlassFramework/) · [M3G](https://gnss-metadata.eu/landing/m3g) | GLASS JSON；M3G REST | 视节点 | 欧洲程序化优先 GLASS |
 | **VMF** | [vmf.geo.tuwien.ac.at](https://vmf.geo.tuwien.ac.at/) | [`trop_products/`](https://vmf.geo.tuwien.ac.at/trop_products/) | 多开放 | 选对 VMF1/VMF3 |
 | **GIRO / DIDBase** | [giro.uml.edu/didbase](https://giro.uml.edu/didbase/) | 查询站/时段 → 图 | 网页注册 | 旧 quick-request URL 已 404 |
 | **INTERMAGNET** | [intermagnet.org](https://intermagnet.org/) | Data → 准实时/存档 | 视产品 | 先读条件再脚本 |
 | **SuperMAG** | [supermag.jhuapl.edu](https://supermag.jhuapl.edu/) | 界面 / API | 网页注册 | 引用含原始台站 |
 | **eSWua / IONORING** | [eSWua TEC](http://www.eswua.ingv.it/ewphp/landing.php?doi=tec) · [IONORING](http://ionos.ingv.it/ionoring/ionoring.htm) | Download Tool / REST；近实时地图 | 开放（CC BY；DOI `10.13127/eswua/tec`） | 区域 TEC，非 GNSS 原始归档 |
-| **ISMR** | [Query Tool](https://ismrquerytool.fct.unesp.br/) · [`ismr_downloader`](https://github.com/GEGE-UNESP/ismr_downloader) | 网页或脚本 | 网页注册 | 站点偶发超时/证书问题 |
+| **ISMR** | [`ismr_downloader`](https://github.com/GEGE-UNESP/ismr_downloader) · [Query Tool](https://ismrquerytool.fct.unesp.br/) | 见上节「闪烁 ISMR」 | 网页注册 | Query Tool 常超时；脚本为主 |
 | **CSNO TARC** | [csno-tarc.cn](https://www.csno-tarc.cn/) · [差分英文页](https://www.csno-tarc.cn/en/data/differential) | 测试评估 / 差分 | 浏览多开放 | 与 IGS OSB 基准可能不同 |
 | **SOPAC**（可选镜像） | [sopac-csrc.ucsd.edu](https://sopac-csrc.ucsd.edu/) · [garner `/pub/`](https://garner.ucsd.edu/pub/) | 历史 IGS DC / 产品树 | 多开放 | **探测常超时**；关键周与 CDDIS/BKG/GFZ 交叉校验 |
 
