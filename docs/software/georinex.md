@@ -35,8 +35,6 @@ python -m georinex.read -h | head -n 25
 
 下面用本机造的 **3 历元 / 2 星 / RINEX 2.11** 文件跑通。数值为 **真实 georinex 1.16.2 输出**（不是示意）。
 
-
-
 ### 3.0 备选样本：上游 demo.10o（本机 1.16.2 真跑）
 
 ```bash
@@ -218,7 +216,40 @@ ds.close()
 PY
 ```
 
-### 3.6 接到下游
+### 3.6 NAV 探活（本机 1.16.2 真跑）
+
+```bash
+# 可用 georinex 测试 NAV，或你的 BRDC
+curl -fsSL -o data/14601736.18n \
+  https://raw.githubusercontent.com/geospace-code/georinex/main/src/georinex/tests/data/14601736.18n
+python -m georinex.time data/14601736.18n
+```
+
+**真实 stdout：**
+
+```text
+filename: start, stop, number of times, interval
+14601736.18n: 2018-06-22T08:00:00 2018-06-22T08:00:00 1
+['2018-06-22T08:00:00.000']
+```
+
+```bash
+python - <<'PY'
+import georinex as gr
+nav = gr.load("data/14601736.18n")
+print(dict(nav.sizes))
+print("sv", list(map(str, nav.sv.values)))
+print("vars_head", list(nav.data_vars)[:6])
+print("rinextype", nav.attrs.get("rinextype"), "svtype", nav.attrs.get("svtype"))
+print("SVclockBias G03", float(nav["SVclockBias"].sel(sv="G03")))
+PY
+```
+
+**真实结果（截断）：** `sizes {'time': 1, 'sv': 7}`；`sv ['G03','G07',…]`；变量含 `SVclockBias` / `IODE` / `TGD` 等；`rinextype=nav`。  
+**边界：** georinex **不算**卫星 ECEF 轨迹——只要星历表；轨道/几何交给 [pytecgg](./pytecgg.md) / [rtklib](./rtklib.md)。
+
+### 3.7 接到下游
+
 
 - 校准 TEC：把**原始 RINEX**（不是 nc）交给 [pytecgg](./pytecgg.md)（viventriglia）
 - 清洗/抽稀：先 [gfzrnx](./gfzrnx.md)，再回来探活
@@ -257,6 +288,8 @@ NAV：`nav = gr.load("brdc.rnx")` → **先 `print(nav)`** 再取字段；georin
 | 12 | Windows 路径炸 | 反斜杠进普通字符串 | `pathlib.Path` 或原始字符串 |
 | 13 | CLI `No module named georinex.gtime` | 旧文档模块名 | 用 `python -m georinex.time` |
 | 14 | `gr.load("*.nc")` ValueError | 该版本不把 nc 当 RINEX | `xr.open_dataset` |
+| 15 | `FutureWarning` … `join='outer'`→`'exact'`（`obs2.py` merge） | 新 xarray 将改默认 join | 先记下警告；升 georinex/xarray 后复测；勿当数据错 |
+| 16 | NAV `interval` 空 / times=1 | 广播星历稀疏 | 正常；不要用 NAV 的 interval 当 OBS 采样 |
 
 ## 6. 选型（一行）
 
@@ -269,4 +302,4 @@ NAV：`nav = gr.load("brdc.rnx")` → **先 `print(nav)`** 再取字段；georin
 
 ## 7. 相关
 
-[gfzrnx](./gfzrnx.md) · [anubis](./anubis.md) · [pytecgg](./pytecgg.md) · [rtklib](./rtklib.md) · [oasis-roti](./oasis-roti.md) · [ionomoni](./ionomoni.md) · [ionex-gim](./ionex-gim.md)
+[gfzrnx](./gfzrnx.md) · [anubis](./anubis.md) · [pytecgg](./pytecgg.md) · [rtklib](./rtklib.md) · [oasis-roti](./oasis-roti.md) · [ionomoni](./ionomoni.md) · [ionex-gim](./ionex-gim.md) · [data-access](../data-access.md) · [README](./README.md)
