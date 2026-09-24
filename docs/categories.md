@@ -37,7 +37,7 @@
 RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
 - 列表文件：[`lists/03-gnss-data.md`](../lists/03-gnss-data.md)
-- 当前条目数：**132**
+- 当前条目数：**133**
 
 ## `gnss-positioning` — 精密定位
 

@@ -521,6 +521,7 @@ GSI 公布的 RNXCMP 许可文本，基于地理院网站条款并要求修改�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [EarthScope-gnsstools](https://gitlab.com/earthscope/gnsstools) | EarthScope-gnsstools：官方 Go 编解码与 SPP/NTRIP 流水线 | Go | 6 | 🏷️ 官方 |
+| [rinex2bin](https://github.com/nav-solutions/rinex2bin) | rinex2bin：RINEX→BINEX 命令行序列化（nav-solutions） | Rust | 1 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -530,6 +531,13 @@ GSI 公布的 RNXCMP 许可文本，基于地理院网站条款并要求修改�
 语言：Go · 许可：— · 星标约：6 · 宿主：gitlab
 
 EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RTCM/BINEX/SBF 等编解码、NTRIP 客户端、SPP/TDCP 流水线及可选 TileDB 地理数据模块。适合构建现代数据管道；定位算法深度不及专用 PPP 套件。星数不高但机构背书明确。
+
+#### [rinex2bin](https://github.com/nav-solutions/rinex2bin)  
+*🏷️ 个人社区*
+
+语言：Rust · 许可：MPL-2.0 · 星标约：1 · 宿主：github
+
+nav-solutions / rtk-rs 生态的 RINEX→BINEX CLI（MPL-2.0，Rust）。便于紧凑分发或写 I/O；crates 0.1.0 在输入流结束后会忙等，脚本侧请加 timeout。OBS 路径仍属 WIP，生产前用样例回归。与同组织 rinex / ubx2rinex 互补，不做定位解算。
 
 ## 下载/处理
 
@@ -1064,7 +1072,6 @@ gpsd 社区官网，提供安装文档、兼容硬件列表与发布信息。源
 | [rtcm3torinex](https://software.rtcm-ntrip.org/wiki/rtcm3torinex) | BKG rtcm3torinex：RTCM3 流转 RINEX 的官方小工具 | C | 65 | 🏷️ 官方 |
 | [prx](https://github.com/jtec/prx) | prx：RINEX 3.05 观测→CSV 小工具 | Python | 23 | 🏷️ 个人社区 |
 | [ubx2rinex](https://github.com/nav-solutions/ubx2rinex) | ubx2rinex：Rust 实现 UBX 到 RINEX 转换/采集 | Rust | 12 | 🏷️ 个人社区 |
-| [rinex2bin](https://github.com/nav-solutions/rinex2bin) | rinex2bin：RINEX→BINEX 命令行序列化（nav-solutions） | Rust | 1 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -1088,13 +1095,6 @@ RTCM-Ntrip 项目提供的 RTCM 3 到 RINEX 转换工具，便于把实时流转
 语言：Rust · 许可：MPL-2.0 · 星标约：12 · 宿主：github
 
 Rust 实现的 u-blox UBX 原始观测反序列化与 RINEX 采集工具，方便把低成本板卡数据送进经典后处理软件。适合外场脚本化采集与自动化。与 android_rinex、georinex 互补；天线高、观测码映射与时钟处理要按接收机配置核对，转换后建议跑质检工具。
-
-#### [rinex2bin](https://github.com/nav-solutions/rinex2bin)  
-*🏷️ 个人社区*
-
-语言：Rust · 许可：MPL-2.0 · 星标约：1 · 宿主：github
-
-把 RINEX（优先 NAV）序列化成 BINEX 二进制流/`.bin` 文件，便于紧凑分发或写 I/O。与同组织 rinex / ubx2rinex 互补。crates 0.1.0 流尽后忙等须 timeout；OBS 仍 WIP，生产前用样例回归。本身不做定位解算。
 
 ## 掩星/CDAAC解析
 
