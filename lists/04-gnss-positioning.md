@@ -7,7 +7,7 @@ SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [APAS-TR](https://github.com/Birinci-S/APAS_TR) | 土耳其高校 MATLAB 多星座 PPP：强电离层下用 ROTI 阈值周跳门限 | MATLAB | 19 | 🏷️ 高校实验室 |
+| [APAS-TR](https://github.com/Birinci-S/APAS_TR) | APAS-TR：土耳其高校 MATLAB 多星座 PPP | MATLAB | 19 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -181,8 +181,8 @@ Glenn MacGougan 等维护的 Essential GNSS Project，提供 RINEX 2.x 解码、
 | [GAMP_PPPH](https://github.com/zhufengGNSS/GAMP_PPPH) | GAMP_PPPH：多星座 PPP 学习源码 | — | 78 | 🏷️ 高校实验室 ★ |
 | [GPSPACE](https://github.com/CGS-GIS/GPSPACE) | GPSPACE：加拿大 NRCan 开源 PPP Fortran 程序 | Fortran | 58 | 🏷️ 官方 |
 | [PPPLib](https://github.com/yxw027/PPPLib) | PPPLib：开源精密单点定位库 | — | 49 | 🏷️ 高校实验室 |
-| [PPP](https://github.com/XiaoGongWei/PPP) | 静态 PPP 相关 C++ 实现（MG-APP 作者相关） | C++ | 23 | 🏷️ 高校实验室 |
-| [PPPH-UAV](https://github.com/BerkayBahadur/PPPH-UAV) | 面向无人机摄影测量的 GNSS PPP 处理（MATLAB） | MATLAB | 14 | 🏷️ 个人社区 |
+| [PPP](https://github.com/XiaoGongWei/PPP) | PPP：静态精密单点定位 C++ 练习实现 | C++ | 23 | 🏷️ 高校实验室 |
+| [PPPH-UAV](https://github.com/BerkayBahadur/PPPH-UAV) | PPPH-UAV：无人机摄影测量向 GNSS PPP（MATLAB） | MATLAB | 14 | 🏷️ 高校实验室 |
 | [RTPPP_B2b](https://github.com/floating0516/RTPPP_B2b) | RTPPP_B2b：B2b 改正实时 PPP 接口 | C | 10 | 🏷️ 个人社区 核心 |
 | [PyGNSSFix](https://github.com/rodrigo-moliveira/PyGNSSFix) | Python SPP/PPP 工具箱（WLS/EKF，GPS+GAL） | Python | 7 | 🏷️ 个人社区 |
 | [ppp_rtklib](https://github.com/mulin33/ppp_rtklib) | 从 RTKLIB 抽出的独立 PPP 模块，便于精读源码 | C | 4 | 🏷️ 个人社区 |
@@ -225,7 +225,7 @@ VieVS（TU Wien）精密单点定位模块，MATLAB 实现，便于与 VLBI/大�
 偏静态精密单点定位流程的 C++ 练习/研究代码，作者与 MG-APP 系列相关，便于对照阅读观测方程与参数估计骨架。适合理解 PPP 基本流程。工程完整度、多星座产品与模糊度固定支持有限；生产级 PPP-AR 请优先使用 PRIDE-PPPAR、Ginan 或 MRTKLIB 等更完整套件。
 
 #### [PPPH-UAV](https://github.com/BerkayBahadur/PPPH-UAV)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：MATLAB · 许可：— · 星标约：14 · 宿主：github
 
@@ -456,7 +456,7 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnssgo](https://github.com/FengXuebin/gnssgo) | Go 语言移植的 RTKLIB 2.4.3 b34（便于云原生/服务化部署试验） | Go | 22 | 🏷️ 个人社区 |
+| [gnssgo](https://github.com/FengXuebin/gnssgo) | gnssgo：Go 语言移植的 RTKLIB 2.4.3 b34 | Go | 22 | 🏷️ 个人社区 |
 
 ### 详细说明
 

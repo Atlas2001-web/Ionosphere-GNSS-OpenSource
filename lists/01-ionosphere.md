@@ -109,7 +109,7 @@ yujieqing 仓库：为电离层层析准备几何/射线矩阵相关代码，可
 | [TIE-GCM](https://github.com/NCAR/tiegcm) | TIE-GCM：NCAR 热层-电离层-电动力学环流模式 | Fortran | 27 | 🏷️ 官方 |
 | [LongwaveModePropagator.jl](https://github.com/fgasdia/LongwaveModePropagator.jl) | LongwaveModePropagator.jl：VLF 长波模传播 Julia 模型 | Julia | 26 | 🏷️ 高校实验室 |
 | [hwm93](https://github.com/space-physics/hwm93) | hwm93：HWM93 水平风模型 Python/Matlab 接口 | Python | 23 | 🏷️ 高校实验室 |
-| [sami2py](https://github.com/sami2py/sami2py) | NRL SAMI2 二维电离层模式的 Python 封装（运行/读档/绘图） | Python/Fortran | 21 | 🏷️ 高校实验室 |
+| [sami2py](https://github.com/sami2py/sami2py) | sami2py：NRL SAMI2 二维电离层模式的 Python 封装 | Python/Fortran | 21 | 🏷️ 高校实验室 |
 | [sami3_gitm](https://github.com/jdhuba/sami3_gitm) | Huba 公开的 SAMI3/GITM 基础耦合 vanilla 代码 | Fortran | 7 | 🏷️ 官方 |
 | [transcar](https://github.com/space-physics/transcar) | Transcar 一维沉降电离层模式 | Fortran | 7 | 🏷️ 高校实验室 |
 | [mat_gemini](https://github.com/gemini3d/mat_gemini) | GEMINI 三维电离层模式的核心 MATLAB 脚本 | MATLAB | 6 | 🏷️ 高校实验室 |
@@ -331,7 +331,7 @@ Space Weather Modeling Framework 组件之一，描述高纬电离层电动力�
 | [ALBUS_ionosphere](https://github.com/twillis449/ALBUS_ionosphere) | ALBUS_ionosphere：GPS 估计 TEC 与法拉第旋转量 RM | Python | 26 | 🏷️ 个人社区 |
 | [tec-suite](https://github.com/gnss-lab/tec-suite) | tec-suite：SIMuRG 团队 TEC 重建软件套件 | Python | 23 | 🏷️ 高校实验室 |
 | [pygnss-tec](https://github.com/eureka-0/pygnss-tec) | RINEX 读取与 TEC 计算（Rust 加速） | Python | 16 | 🏷️ 个人社区 |
-| [VARION](https://github.com/giorgiosavastano/VARION) | Sapienza 变分法实时电离层：由 RINEX 估计 sTEC 变化（海啸扰动等） | Python | 15 | 🏷️ 高校实验室 |
+| [VARION](https://github.com/giorgiosavastano/VARION) | VARION：Sapienza 变分法实时电离层监测 | Python | 15 | 🏷️ 高校实验室 |
 | [gsit](https://github.com/aldebaran1/gsit) | GSIT：TEC/ROTI/IPP 与光学磁力计 Python 工具 | Python | 10 | 🏷️ 个人社区 |
 | [tidd](https://github.com/vc1492a/tidd) | 用在轨 GPS sTEC 变化率异常检测海啸信号 | Jupyter Notebook | 10 | 🏷️ 高校实验室 |
 | [TEC_calculation_RINEX3](https://github.com/cssrg-kmitl/TEC_calculation_RINEX3) | MATLAB 从 RINEX 3.04 双频观测计算 TEC/ROTI | MATLAB | 6 | 🏷️ 高校实验室 |
@@ -802,7 +802,7 @@ C++ 工具面向 GNSS 电离层掩星数据处理与分析，适合理解 LEO—
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [INX_Editor](https://github.com/1acheng/INX_Editor) | 跨平台 IONEX 文件编辑工具 | — | 16 | 🏷️ 个人社区 ★ |
-| [INPE-TEC-Maps-IONEX](https://github.com/Hollweg/INPE-TEC-Maps-IONEX) | INPE TEC 图与 IONEX 生成工具 | Python | 15 | 🏷️ 个人社区 ★ |
+| [INPE-TEC-Maps-IONEX](https://github.com/Hollweg/INPE-TEC-Maps-IONEX) | INPE-TEC-Maps-IONEX：INPE TEC 图与 IONEX 生成 | Python | 15 | 🏷️ 高校实验室 ★ |
 | [ionex](https://github.com/gnss-lab/ionex) | ionex：Python IONEX 读入 | Python | 12 | 🏷️ 高校实验室 核心 |
 | [ionex-rs](https://github.com/nav-solutions/ionex) | ionex-rs：Rust IONEX 解析库 | Rust | 7 | 🏷️ 个人社区 核心 |
 | [IonMap](https://github.com/Jin-Whu/IonMap) | 由 IONEX 绘制电离层 TEC 地图 | Python | 4 | 🏷️ 高校实验室 |
@@ -832,7 +832,7 @@ C++ 工具面向 GNSS 电离层掩星数据处理与分析，适合理解 LEO—
 面向 IONEX 的桌面编辑与检查，改网格、头信息或局部 TEC 值时比手改文本省事。适合产品质检与教学演示。不是 TEC 估计算法库；重建 TEC 仍需 PyTECGg/gnss-tec 等。
 
 #### [INPE-TEC-Maps-IONEX](https://github.com/Hollweg/INPE-TEC-Maps-IONEX)  
-*🏷️ 个人社区 ★*
+*🏷️ 高校实验室 ★*
 
 语言：Python · 许可：— · 星标约：15 · 宿主：github
 
@@ -1892,8 +1892,8 @@ INGV/ESA INTENS 的 Swarm 顶部电离层湍流指数工具（Python）：从 La
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [SH-GIM](https://github.com/Atlas2001-web/SH-GIM) | 球谐展开全球电离层图（GIM）MATLAB 实现（维护者自有，此处不展开） | MATLAB | 104 | 🏷️ 个人社区 🚩 核心 |
-| [M_GIM-zcytju](https://github.com/zcytju/M_GIM) | zcytju：多系统全球/区域电离层 GIM 建模 MATLAB 软件 | MATLAB | 23 | 🏷️ 个人社区 ★ |
-| [mosgim2](https://github.com/PadArt/mosgim2) | 相位差法构建 GNSS 全球电离层图 | Python | 17 | 🏷️ 个人社区 ★ |
+| [M_GIM-zcytju](https://github.com/zcytju/M_GIM) | M_GIM：多系统全球/区域电离层 GIM 建模（MATLAB） | MATLAB | 23 | 🏷️ 个人社区 ★ |
+| [mosgim2](https://github.com/PadArt/mosgim2) | mosgim2：相位差法构建 GNSS 全球电离层图 | Python | 17 | 🏷️ 个人社区 ★ |
 | [mosgim](https://github.com/gnss-lab/mosgim) | Padokhin 早期 MosGIM GIM 技术实现 | Python | 6 | 🏷️ 高校实验室 |
 | [real-time-ionospheric-maps-Kalman](https://github.com/AlexandraKoulouri/real-time-ionospheric-maps-using-Kalman) | 南美区域实时电离层图（集合卡尔曼）MATLAB 代码 | MATLAB | 3 | 🏷️ 高校实验室 |
 | [m_gim-PANXIONG](https://github.com/PANXIONG-CN/m_gim) | PANXIONG：小体量 MATLAB GIM 脚本草稿 | MATLAB | 1 | 🏷️ 个人社区 ★ |

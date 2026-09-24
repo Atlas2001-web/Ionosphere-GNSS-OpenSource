@@ -136,7 +136,7 @@ HKUST Aerial Robotics 发布的优化式多传感器状态估计器，在 VINS-M
 | [GIOW-release](https://github.com/i2Nav-WHU/GIOW-release) | GIOW：GNSS/INS/ODO 轮速辅助组合导航 | C++ | 75 | 🏷️ 高校实验室 核心 |
 | [Wheel-GINS](https://github.com/i2Nav-WHU/Wheel-GINS) | Wheel-GINS：轮式 IMU+GNSS 组合导航 | C++ | 47 | 🏷️ 高校实验室 |
 | [GNSS_IMU](https://github.com/rtklibexplorer/GNSS_IMU) | GNSS_IMU：松组合 GNSS/IMU 的 Python 实现 | Python | 35 | 🏷️ 个人社区 |
-| [GINS](https://github.com/zhangwhu/GINS) | PPP-RTK 与惯导组合的 GINS 实现（武大相关） | C | 21 | 🏷️ 高校实验室 |
+| [GINS](https://github.com/zhangwhu/GINS) | GINS：PPP-RTK 与惯导组合导航实现 | C | 21 | 🏷️ 高校实验室 |
 | [ImuGpsGuiding](https://github.com/JackJu-HIT/ImuGpsGuiding) | ImuGpsGuiding：ROS 下 IMU+GPS 点到点导引示例 | C++ | 20 | 🏷️ 高校实验室 |
 | [KF-GINS-Py](https://github.com/salmoshu/KF-GINS-Py) | KF-GINS 思路的 Python 移植，便于读 EKF 组合导航 | Python | 13 | 🏷️ 高校实验室 |
 | [Smart-UAV-Return-GNSS-Station](https://github.com/citec-spbu/Smart-UAV-Return-GNSS-Station) | GNSS/链路丢失时无人机智能返航相关代码 | C | 3 | 🏷️ 个人社区 |
@@ -358,7 +358,7 @@ GREAT 组多传感器融合系统，支持 PPP/RTK 与 INS 等组合。适合已
 | [OKVIS2-X](https://github.com/ethz-mrl/OKVIS2-X) | OKVIS2-X：可融 GNSS 的开源视觉-惯性 SLAM | C++ | 410 | 🏷️ 高校实验室 |
 | [gnss_comm](https://github.com/HKUST-Aerial-Robotics/gnss_comm) | gnss_comm：ROS GNSS 原始测量消息与工具 | C++ | 164 | 🏷️ 高校实验室 |
 | [ublox_driver](https://github.com/HKUST-Aerial-Robotics/ublox_driver) | ublox_driver：ZED-F9P 向 ROS u-blox 驱动 | C++ | 159 | 🏷️ 高校实验室 |
-| [msckfvioGPS](https://github.com/loveforeverLi/msckf_vio_GPS) | MSCKF 视觉惯性里程计与 GPS 融合 | C++ | 31 | 🏷️ 个人社区 |
+| [msckfvioGPS](https://github.com/loveforeverLi/msckf_vio_GPS) | msckfvioGPS：MSCKF 视觉惯性里程计与 GPS 融合 | C++ | 31 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -430,7 +430,7 @@ OKVIS2-X 在经典 OKVIS 视觉惯性框架上扩展稠密深度或 LiDAR，并�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnss_ros_standardization](https://github.com/DaikiNiimi/gnss_ros_standardization) | ROS 2 标准化 GNSS 原始观测/星历话题（u-blox/Septentrio/NovAtel/RTCM3） | C++ | 21 | 🏷️ 个人社区 |
+| [gnss_ros_standardization](https://github.com/DaikiNiimi/gnss_ros_standardization) | gnss_ros_standardization：ROS 2 标准化 GNSS 话题 | C++ | 21 | 🏷️ 个人社区 |
 
 ### 详细说明
 

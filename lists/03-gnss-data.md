@@ -25,7 +25,7 @@ RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品�
 | [ntripbrowser](https://github.com/emlid/ntripbrowser) | CLI 查询 NTRIP caster 源表与挂载点 | Python | 32 | 🏷️ 个人社区 |
 | [rtcm-rs](https://github.com/martinhakansson/rtcm-rs) | rtcm-rs：RTCM v3 编解码 Rust crate | Rust | 32 | 🏷️ 个人社区 |
 | [asv-gnss](https://github.com/asv-soft/asv-gnss) | asv-gnss：.NET 下 RTCM/NMEA 与接收机控制库 | C# | 29 | 🏷️ 个人社区 |
-| [gstream](https://github.com/Jin-Whu/gstream) | 面向 GNSS 的开源数据流客户端库 | C++ | 20 | 🏷️ 高校实验室 |
+| [gstream](https://github.com/Jin-Whu/gstream) | gstream：面向 GNSS 的开源数据流客户端库 | C++ | 20 | 🏷️ 高校实验室 |
 | [NTRIPcaster-python](https://github.com/Rampump/NTRIPcaster) | 轻量 Python NTRIP Caster | Python | 20 | 🏷️ 个人社区 |
 | [Caster_Project](https://github.com/KOROyo123/Caster_Project) | Libevent+Redis 跨平台 NTRIP Caster | C++ | 19 | 🏷️ 个人社区 |
 | [ntripstreams](https://github.com/stenseng/ntripstreams) | ntripstreams：Python NTRIP 客户端/读写接口 | Python | 16 | 🏷️ 个人社区 |
@@ -33,14 +33,14 @@ RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品�
 | [pyspartn](https://github.com/semuconsulting/pyspartn) | 解析 SPARTN 精密改正电文的 Python 库 | Python | 12 | 🏷️ 个人社区 |
 | [AgOpenNtripCaster](https://github.com/AgOpenGPS-Official/AgOpenNtripCaster) | AgOpenNtripCaster：AgOpenGPS 生态 NTRIP 播发端 | C# | 10 | 🏷️ 个人社区 |
 | [ntripCaster-go](https://github.com/xk1yan/ntripCaster) | Go 高性能 NTRIP Caster | Go | 9 | 🏷️ 个人社区 |
-| [ntrip-client](https://github.com/nav-solutions/ntrip-client) | 纯 Rust 的简单 NTRIP 客户端对象 | Rust | 4 | 🏷️ 个人社区 |
+| [ntrip-client](https://github.com/nav-solutions/ntrip-client) | ntrip-client：纯 Rust 轻量 NTRIP 客户端对象 | Rust | 4 | 🏷️ 个人社区 |
 | [ntrip-core](https://github.com/greenforge-labs/ntrip-core) | Rust 异步 NTRIP 客户端（v1/v2 + TLS） | Rust | 4 | 🏷️ 个人社区 |
 | [corshub](https://github.com/peinser/corshub) | 可自托管的 Python NTRIP v2 Caster（CORS 汇聚） | Python | 1 | 🏷️ 个人社区 |
-| [ntrip-caster-go](https://github.com/symysak/ntrip-caster) | Go 实现的 NTRIP v1/v2 Caster：就近基站切换、挂载点认证与热重载 | Go | 1 | 🏷️ 个人社区 |
+| [ntrip-caster-go](https://github.com/symysak/ntrip-caster) | ntrip-caster-go：Go 实现的 NTRIP v1/v2 Caster | Go | 1 | 🏷️ 个人社区 |
 | [BKG-NtripCaster](https://igs.bkg.bund.de/ntrip/bkgcaster) | BKG-NtripCaster：专业 NTRIP 播发服务器 | C | — | 🏷️ 官方 核心 |
 | [BNC](https://igs.bkg.bund.de/ntrip/bnc) | BKG 开源多流 Ntrip 客户端：收 RTCM 并可做实时 PPP | C++ | — | 🏷️ 官方 核心 |
-| [BNC-source-FTP](https://igs.bkg.bund.de/root_ftp/NTRIP/software/BNC/) | BKG FTP：BNC 源码与多平台二进制直接下载目录 | C++ | — | 🏷️ 官方 |
-| [BNS](https://software.rtcm-ntrip.org/wiki/BNS) | BKG Ntrip State Space Server：实时状态空间改正播发相关工具 | C++ | — | 🏷️ 官方 |
+| [BNC-source-FTP](https://igs.bkg.bund.de/root_ftp/NTRIP/software/BNC/) | BNC-source-FTP：BKG FTP 上的 BNC 源码与二进制目录 | C++ | — | 🏷️ 官方 |
+| [BNS](https://software.rtcm-ntrip.org/wiki/BNS) | BNS：BKG Ntrip 状态空间改正播发服务端 | C++ | — | 🏷️ 官方 |
 | [Caster-source-FTP](https://igs.bkg.bund.de/root_ftp/NTRIP/software/caster/) | BKG FTP：Professional NtripCaster 源码包直接下载 | C | — | 🏷️ 官方 |
 | [EUREF-IP-Ntrip-overview](https://igs.bkg.bund.de/ntrip/index) | BKG/IGS NTRIP 数据与工具总览：流列表、BNC 与 Caster 入口 | various | — | 🏷️ 官方 |
 | [RTCM-Ntrip-Software](https://software.rtcm-ntrip.org/) | RTCM-Ntrip：BNC/Caster 官方软件门户 | C/C++ | — | 🏷️ 官方 核心 |
@@ -311,7 +311,7 @@ BKG/RTCM 维护的 NTRIP 开源软件 Trac 门户，集中入口含 BNC、Profes
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [android_rinex](https://github.com/rokubun/android_rinex) | android_rinex：手机 GNSS 日志转 RINEX | Python | 104 | 🏷️ 个人社区 |
-| [BUAA-RINEX-Convertor](https://github.com/Jia-le-wang/BUAA-RINEX-Convertor) | 北航：GnssLogger 文本转 RINEX 3.04 | C++ | 20 | 🏷️ 个人社区 |
+| [BUAA-RINEX-Convertor](https://github.com/Jia-le-wang/BUAA-RINEX-Convertor) | BUAA-RINEX-Convertor：GnssLogger 文本转 RINEX 3.04 | C++ | 20 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -683,7 +683,7 @@ GFZ 官方用户指南，详述 RINEX 2/3/4 检查、拼接、抽样、元数据
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [HASlib](https://github.com/nlsfi/HASlib) | HASlib：Galileo HAS 改正解码库 | Python | 65 | 🏷️ 官方 核心 |
-| [GHASP-HAS-decoding](https://github.com/borioda/HAS-decoding) | Galileo HAS 解析器 GHASP：E6B 二进制流转 CSV 轨道钟差等改正 | Python | 20 | 🏷️ 个人社区 |
+| [GHASP-HAS-decoding](https://github.com/borioda/HAS-decoding) | GHASP：Galileo HAS E6B 二进制流转 CSV 改正 | Python | 20 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -746,7 +746,7 @@ Leibniz Universität Hannover 地球测量研究所开源工具，量化 GNSS �
 | [GNSS_Multipath_Analysis_Software](https://github.com/paarnes/GNSS_Multipath_Analysis_Software) | GNSS-MP：观测多路径分析软件 | Python | 141 | 🏷️ 个人社区 核心 |
 | [MAPS](https://github.com/GCCLib/MAPS) | MAPS：MATLAB GNSS 多路径分析与处理 | MATLAB | 35 | 🏷️ 高校实验室 |
 | [gnss-multipath-detector](https://github.com/EvgeniiMunin/gnss-multipath-detector) | gnss-multipath-detector：L1 C/A 多路径 ML 探测 notebook | Jupyter Notebook | 28 | 🏷️ 个人社区 |
-| [PyRINEX](https://github.com/geumjin99/PyRINEX) | 多用途 Python RINEX 读写与质量分析包 | Python | 16 | 🏷️ 高校实验室 |
+| [PyRINEX](https://github.com/geumjin99/PyRINEX) | PyRINEX：多用途 Python RINEX 读写与质量分析 | Python | 16 | 🏷️ 高校实验室 |
 | [geoveil-mp](https://github.com/miluta7/geoveil-mp) | Rust/Python：RINEX 逐码多路径 MP 组合、周跳检测与 SNR 序列导出 | Rust | 0 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -1074,12 +1074,12 @@ Leibniz Universität Hannover 地球测量研究所工具，批量修正 RINEX �
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [RTStreamHub](https://github.com/ZhangRunzhi20/RTStreamHub) | 无界面 GNSS 实时流转发枢纽（基于 RTKLIB，支持 NTRIP TLS） | C | 14 | 🏷️ 个人社区 |
+| [RTStreamHub](https://github.com/ZhangRunzhi20/RTStreamHub) | RTStreamHub：无界面 GNSS 实时流转发枢纽 | C | 14 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
 #### [RTStreamHub](https://github.com/ZhangRunzhi20/RTStreamHub)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：C · 许可：GPL-3.0 · 星标约：14 · 宿主：github
 

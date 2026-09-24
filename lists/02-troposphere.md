@@ -31,7 +31,7 @@ Surrey TechDemoSat-1（MERRByS）星载 GNSS-R 的 Python/Jupyter 示例，演�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [geodezyx](https://github.com/IPGP/geodezyx) | geodezyx：IPGP 大地测量/地球物理 Python 工具箱 | Python | 33 | 🏷️ 高校实验室 |
-| [PW_from_GPS](https://github.com/ZiskinZiv/PW_from_GPS) | GPS 可降水量（PWV）分析与 ML 应用工具 | Python | 22 | 🏷️ 个人社区 |
+| [PW_from_GPS](https://github.com/ZiskinZiv/PW_from_GPS) | PW_from_GPS：GPS 可降水量（PWV）分析与 ML 工具 | Python | 22 | 🏷️ 个人社区 |
 | [pwv_kpno](https://github.com/mwvgroup/pwv_kpno) | 基于 SuomiNet GPS 的可定制站点 PWV 大气透过率模型 | Python | 11 | 🏷️ 高校实验室 |
 | [OpATOM](https://github.com/benceturak/GeoPack/tree/GPSTomographyToolbox/GPSTomographyToolbox) | 布达佩斯理工 OpATOM：Python GNSS 对流层湿折射率层析（MART）工具箱 | Python | 3 | 🏷️ 高校实验室 |
 | [ATom-TUWien](https://github.com/GregorMoeller/ATom) | TU Wien MATLAB：GNSS 大气层析与湿折射率三维重建（含 GUI） | MATLAB | 2 | 🏷️ 高校实验室 |
@@ -200,7 +200,7 @@ ITC Water Resources 在树莓派上运行的 GNSS 反射测量实验工程，面
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GNSSRMERRByS](https://github.com/pjalesSSTL/GNSSR_MERRByS) | TechDemoSat-1 GNSS-R 数据处理示例（SSTL） | MATLAB | 34 | 🏷️ 个人社区 |
+| [GNSSRMERRByS](https://github.com/pjalesSSTL/GNSSR_MERRByS) | GNSSRMERRByS：TechDemoSat-1 星载 GNSS-R 示例（SSTL） | MATLAB | 34 | 🏷️ 个人社区 |
 | [gnssIR-matlab-v3](https://github.com/kristinemlarson/gnssIR_matlab_v3) | gnssIR-matlab-v3：Larson 实验室 GNSS-IR MATLAB | MATLAB | 30 | 🏷️ 高校实验室 |
 | [gnssIR-python](https://github.com/kristinemlarson/gnssIR_python) | gnssIR_python：Larson 实验室 GNSS-IR Python 脚本 | Python | 26 | 🏷️ 高校实验室 |
 | [gnssrlowcost](https://github.com/purnelldj/gnssr_lowcost) | 低成本 GNSS 反射测量分析（MATLAB/Python） | MATLAB | 14 | 🏷️ 个人社区 |

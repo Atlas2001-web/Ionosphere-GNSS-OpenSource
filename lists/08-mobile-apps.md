@@ -13,7 +13,7 @@
 | [GNSS_Compare](https://github.com/TheGalfins/GNSS_Compare) | 手机原始测量定位框架（GPS/Galileo 等） | Java | 73 | 🏷️ 个人社区 |
 | [positional](https://github.com/mtrewartha/positional) | positional：Android 位置与卫星信息简易 App | Kotlin | 61 | 🏷️ 个人社区 |
 | [GalileoHack](https://github.com/griush/GalileoHack) | GalileoHack：多星座 GNSS 可见性 Android 演示 App | Kotlin | 34 | 🏷️ 个人社区 |
-| [PRIDE-GeoDataLogger](https://github.com/PrideLab/PRIDE-GeoDataLogger) | PRIDE 团队手机多频 GNSS 与 IMU 采集工具 | — | 22 | 🏷️ 高校实验室 |
+| [PRIDE-GeoDataLogger](https://github.com/PrideLab/PRIDE-GeoDataLogger) | PRIDE-GeoDataLogger：手机多频 GNSS+IMU 采集工具 | — | 22 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -76,7 +76,7 @@ PRIDE 团队面向智能手机的多频 GNSS 与 IMU 采集工具，便于把手
 | [esp32-xbee](https://github.com/nebkat/esp32-xbee) | ESP32 NTRIP/UART 桥接固件（Ardusimple） | C | 119 | 🏷️ 个人社区 |
 | [STM32-GNSS](https://github.com/SimpleMethod/STM32-GNSS) | STM32-GNSS：STM32 上的 UBX 库 | C | 89 | 🏷️ 个人社区 |
 | [satpulse](https://github.com/jclark/satpulse) | satpulse：跨平台 GNSS 授时与接收机 GUI | Go | 63 | 🏷️ 个人社区 |
-| [STM32Primer2-GNSS-Tracker](https://github.com/nemuisan/STM32Primer2_GNSS_Tracker) | STM32 Primer2 平台的 GNSS 轨迹记录器 | C | 31 | 🏷️ 个人社区 |
+| [STM32Primer2-GNSS-Tracker](https://github.com/nemuisan/STM32Primer2_GNSS_Tracker) | STM32Primer2-GNSS-Tracker：Primer2 平台 GNSS 轨迹记录 | C | 31 | 🏷️ 个人社区 |
 | [esp32-gps](https://github.com/mrichar1/esp32-gps) | ESP32 上整合 GPS、蓝牙与 NTRIP/RTK 转发 | Python | 23 | 🏷️ 个人社区 |
 | [Cryologger-GVT](https://github.com/cryologger/glacier-velocity-tracker) | Cryologger GVT：面向 PPP 的开源冰川 GNSS 测速仪 | C++ | 19 | 🏷️ 个人社区 |
 | [GNSSClock](https://github.com/stevemarple/GNSS_Clock) | 基于 GNSS NMEA/PPS 的 Arduino 时钟 | C++ | 2 | 🏷️ 个人社区 |

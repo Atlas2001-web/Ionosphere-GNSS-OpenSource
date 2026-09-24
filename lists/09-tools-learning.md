@@ -39,7 +39,7 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [awesome-gnss-barbeau](https://github.com/barbeau/awesome-gnss) | awesome-gnss：GNSS 开源资源列表 | — | 599 | 🏷️ 个人社区 核心 |
-| [awesome-gnss-hdkarimi](https://github.com/hdkarimi/awesome-gnss) | hdkarimi：GNSS/RNSS 开源工具、数据与慕课的 awesome 列表 | — | 50 | 🏷️ 个人社区 |
+| [awesome-gnss-hdkarimi](https://github.com/hdkarimi/awesome-gnss) | awesome-gnss-hdkarimi：GNSS/RNSS 开源与慕课策展列表 | — | 50 | 🏷️ 个人社区 |
 
 ### 详细说明
 

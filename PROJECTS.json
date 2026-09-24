@@ -179,7 +179,7 @@
     {
       "name": "BNC-source-FTP",
       "url": "https://igs.bkg.bund.de/root_ftp/NTRIP/software/BNC/",
-      "desc_zh": "BKG FTP：BNC 源码与多平台二进制直接下载目录",
+      "desc_zh": "与产品介绍页互补，便于脚本拉取固定版本做复现构建",
       "analysis_zh": "BKG 提供的 BNC 发行目录，含 GPL-3 源码包、各发行版二进制与变更说明，与产品介绍页互补，便于脚本化拉取固定版本做复现。使用时注意版本与依赖库匹配；功能说明与 PPP 选项仍以 BNC 主页文档为准。使用前请核验上游页面与许可条款。",
       "language": "C++",
       "license": "GPL-3.0",
@@ -190,14 +190,14 @@
       "source": "web/official verified 2026-09-14",
       "featured": false,
       "user_relation": "none",
-      "one_liner_zh": "BKG FTP：BNC 源码与多平台二进制直接下载目录",
+      "one_liner_zh": "BNC-source-FTP：BKG FTP 上的 BNC 源码与二进制目录",
       "provenance": "official",
       "host": "official_site"
     },
     {
       "name": "BNS",
       "url": "https://software.rtcm-ntrip.org/wiki/BNS",
-      "desc_zh": "BKG Ntrip State Space Server：实时状态空间改正播发相关工具",
+      "desc_zh": "RTCM-Ntrip 发行包内的 SSR/改正实时播发相关工具条目",
       "analysis_zh": "BKG 的 Ntrip 状态空间服务器条目，面向实时 SSR/改正信息播发场景，源码与说明见 RTCM-Ntrip 发行包。适合研究实时 PPP/SSR 链路搭建；现代部署更常见 BNC 与 Professional Caster 组合，本工具偏专用或历史工作流，接入前请对照当前 trunk 文档。",
       "language": "C++",
       "license": "GPL",
@@ -208,14 +208,14 @@
       "source": "web/official verified 2026-09-14",
       "featured": false,
       "user_relation": "none",
-      "one_liner_zh": "BKG Ntrip State Space Server：实时状态空间改正播发相关工具",
+      "one_liner_zh": "BNS：BKG Ntrip 状态空间改正播发服务端",
       "provenance": "official",
       "host": "official_site"
     },
     {
       "name": "BUAA-RINEX-Convertor",
       "url": "https://github.com/Jia-le-wang/BUAA-RINEX-Convertor",
-      "desc_zh": "北航：GnssLogger 文本转 RINEX 3.04",
+      "desc_zh": "面向安卓原始观测科研的北航相关转换工具",
       "analysis_zh": "将 Google GnssLogger 文本日志转为 RINEX 3.04，面向安卓原始观测科研。可与 android_rinex 对照输出差异。维护与星座覆盖需实测。",
       "language": "C++",
       "license": "",
@@ -228,7 +228,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "北航：GnssLogger 文本转 RINEX 3.04"
+      "one_liner_zh": "BUAA-RINEX-Convertor：GnssLogger 文本转 RINEX 3.04"
     },
     {
       "name": "caster",
@@ -551,7 +551,7 @@
     {
       "name": "GHASP-HAS-decoding",
       "url": "https://github.com/borioda/HAS-decoding",
-      "desc_zh": "Galileo HAS 解析器 GHASP：E6B 二进制流转 CSV 轨道钟差等改正",
+      "desc_zh": "社区解析器输出轨道钟差等四类 CSV，便于 PPP 试验加载",
       "analysis_zh": "社区 Python 工具将接收机记录的 E6B/HAS 相关二进制流转为四类 CSV 改正，便于科研语言加载与 PPP 试验。面向解析与分析而非完整定位引擎。更新节奏与许可条款以仓库为准；生产接入可对照官方 HASlib 或嵌入式 HASPPP。",
       "language": "Python",
       "license": "see upstream README",
@@ -566,7 +566,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Galileo HAS 解析器 GHASP：E6B 二进制流转 CSV 轨道钟差等改正"
+      "one_liner_zh": "GHASP：Galileo HAS E6B 二进制流转 CSV 改正"
     },
     {
       "name": "gLAB",
@@ -871,7 +871,7 @@
     {
       "name": "gstream",
       "url": "https://github.com/Jin-Whu/gstream",
-      "desc_zh": "面向 GNSS 的开源数据流客户端库",
+      "desc_zh": "把 NTRIP/串口等多源观测收成可编程接口，便于录包转发",
       "analysis_zh": "面向 GNSS 实时试验的开源数据流客户端库，可把 NTRIP、串口等多源观测收成可编程接口。适合自建监听、转发与录包原型。相对 BKG BNC 或商业 caster 客户端，功能面与运维工具更窄；协议边界、断线重连与鉴权要实测，关键链路建议加监控指标与原始流回放。",
       "language": "C++",
       "license": "MIT",
@@ -884,7 +884,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "面向 GNSS 的开源数据流客户端库"
+      "one_liner_zh": "gstream：面向 GNSS 的开源数据流客户端库"
     },
     {
       "name": "HASlib",
@@ -964,7 +964,7 @@
     {
       "name": "ntrip-client",
       "url": "https://github.com/nav-solutions/ntrip-client",
-      "desc_zh": "纯 Rust 的简单 NTRIP 客户端对象",
+      "desc_zh": "便于嵌进 nav-solutions 工具链做差分/SSR 拉流原型",
       "analysis_zh": "纯 Rust 实现的轻量 NTRIP 客户端对象，便于嵌进 nav-solutions 或其他 Rust GNSS 工具链做实时拉流。适合自建差分/SSR 管道原型。功能少于 BNC 与专业运维客户端；TLS、NTRIPv2、挂载点列表与重连策略使用前应读文档，并用断网、鉴权失败等用例做回归。",
       "language": "Rust",
       "license": "MPL-2.0",
@@ -977,7 +977,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "纯 Rust 的简单 NTRIP 客户端对象"
+      "one_liner_zh": "ntrip-client：纯 Rust 轻量 NTRIP 客户端对象"
     },
     {
       "name": "ntrip-cpp",
@@ -1246,7 +1246,7 @@
     {
       "name": "PyRINEX",
       "url": "https://github.com/geumjin99/PyRINEX",
-      "desc_zh": "多用途 Python RINEX 读写与质量分析包",
+      "desc_zh": "批处理多路径/周跳等 QC，可作为 TEQC/Anubis 外的脚本选项",
       "analysis_zh": "面向 RINEX 2/3 的 Python 包，支持批处理、多路径与周跳等质量相关分析，可作为 TEQC/Anubis 之外的脚本化 QC 选项。适合自动化质控流水线。指标定义与报告格式因版本而异，正式归档前请与 Anubis/GFZRNX 交叉核对。",
       "language": "Python",
       "license": "",
@@ -1261,7 +1261,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "多用途 Python RINEX 读写与质量分析包"
+      "one_liner_zh": "PyRINEX：多用途 Python RINEX 读写与质量分析"
     },
     {
       "name": "pyrtcm",
@@ -1546,7 +1546,7 @@
     {
       "name": "RTStreamHub",
       "url": "https://github.com/ZhangRunzhi20/RTStreamHub",
-      "desc_zh": "无界面 GNSS 实时流转发枢纽（基于 RTKLIB，支持 NTRIP TLS）",
+      "desc_zh": "基于 RTKLIB 增强 NTRIP（含 TLS），适合台站到 Caster 分发",
       "analysis_zh": "面向 Linux 服务器的无头 C/C++ 流转发与缓存工具，在 RTKLIB 基础上增强 NTRIP（含 TLS）接收/推送，适合台站 DTU→Caster 或产品流分发试验。强调保密传输场景下的用户侧接入。部署与证书配置需运维自理；完整 PPP 引擎仍依赖上游 RTKLIB 或其他解算软件。",
       "language": "C",
       "license": "GPL-3.0",
@@ -1560,8 +1560,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "无界面 GNSS 实时流转发枢纽（基于 RTKLIB，支持 NTRIP TLS）"
+      "provenance": "academic_lab",
+      "one_liner_zh": "RTStreamHub：无界面 GNSS 实时流转发枢纽"
     },
     {
       "name": "septentrio_gnss_driver",
@@ -2949,7 +2949,7 @@
     {
       "name": "APAS-TR",
       "url": "https://github.com/Birinci-S/APAS_TR",
-      "desc_zh": "土耳其高校 MATLAB 多星座 PPP：强电离层下用 ROTI 阈值周跳门限",
+      "desc_zh": "强电离层下用 ROTI 自适应周跳门限的 Automatic PPP 软件",
       "analysis_zh": "Automatic PPP Analysis Software-Türkiye（APAS-TR）处理 GPS/GLONASS/Galileo/BDS/QZSS，提供统计图与分析选项。论文强调地磁暴期用 ROTI 自适应门限降低周跳误判，并在 IGS MGEX 测站上验证多星座收敛。适合教学与电离层扰动场景的 PPP 方法复现；需 MATLAB 环境，非实时引擎。",
       "language": "MATLAB",
       "license": "GPL-3.0",
@@ -2964,7 +2964,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "土耳其高校 MATLAB 多星座 PPP：强电离层下用 ROTI 阈值周跳门限"
+      "one_liner_zh": "APAS-TR：土耳其高校 MATLAB 多星座 PPP"
     },
     {
       "name": "B2bLIB",
@@ -3316,7 +3316,7 @@
     {
       "name": "gnssgo",
       "url": "https://github.com/FengXuebin/gnssgo",
-      "desc_zh": "Go 语言移植的 RTKLIB 2.4.3 b34（便于云原生/服务化部署试验）",
+      "desc_zh": "面向云原生/微服务部署试验；算法世代停在 b34 分支",
       "analysis_zh": "将经典 RTKLIB 2.4.3 核心用 Go 重写，便于在微服务与云环境中部署 GNSS 定位组件。示例数据需另行从原版 RTKLIB 获取。算法世代停在 b34；需要新信号/新改正时应评估上游活跃 RTKLIB 分支或 MRTKLIB，而非仅依赖本移植。",
       "language": "Go",
       "license": "GPL-3.0",
@@ -3331,7 +3331,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Go 语言移植的 RTKLIB 2.4.3 b34（便于云原生/服务化部署试验）"
+      "one_liner_zh": "gnssgo：Go 语言移植的 RTKLIB 2.4.3 b34"
     },
     {
       "name": "GNSSPositioning",
@@ -3848,7 +3848,7 @@
     {
       "name": "PPP",
       "url": "https://github.com/XiaoGongWei/PPP",
-      "desc_zh": "静态 PPP 相关 C++ 实现（MG-APP 作者相关）",
+      "desc_zh": "MG-APP 作者相关：对照阅读观测方程与参数估计骨架",
       "analysis_zh": "偏静态精密单点定位流程的 C++ 练习/研究代码，作者与 MG-APP 系列相关，便于对照阅读观测方程与参数估计骨架。适合理解 PPP 基本流程。工程完整度、多星座产品与模糊度固定支持有限；生产级 PPP-AR 请优先使用 PRIDE-PPPAR、Ginan 或 MRTKLIB 等更完整套件。",
       "language": "C++",
       "license": "GPL-3.0",
@@ -3861,7 +3861,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "静态 PPP 相关 C++ 实现（MG-APP 作者相关）"
+      "one_liner_zh": "PPP：静态精密单点定位 C++ 练习实现"
     },
     {
       "name": "PPP-RTK-Beechan",
@@ -3961,7 +3961,7 @@
     {
       "name": "PPPH-UAV",
       "url": "https://github.com/BerkayBahadur/PPPH-UAV",
-      "desc_zh": "面向无人机摄影测量的 GNSS PPP 处理（MATLAB）",
+      "desc_zh": "Hacettepe 方向：处理 UAV 原始 GNSS 服务测图轨迹增强",
       "analysis_zh": "在 PPPH 思路上处理无人机原始 GNSS，服务摄影测量轨迹与产品生成，MATLAB 实现便于改流程与出图。做 UAV 测图轨迹增强、POS 辅助时可作参考。通用多星座 PPP-AR、模糊度固定与实时能力不如 PRIDE、Ginan；许可未显著标明，使用与再分发前请阅读仓库说明。影像时间戳与 GNSS 历元对齐是摄影测量成败关键。",
       "language": "MATLAB",
       "license": "",
@@ -3973,8 +3973,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "面向无人机摄影测量的 GNSS PPP 处理（MATLAB）"
+      "provenance": "academic_lab",
+      "one_liner_zh": "PPPH-UAV：无人机摄影测量向 GNSS PPP（MATLAB）"
     },
     {
       "name": "PPPLib",
@@ -4614,7 +4614,7 @@
     {
       "name": "FlyDog-SDR-GPS",
       "url": "https://github.com/flydog-sdr/FlyDog_SDR_GPS",
-      "desc_zh": "FlyDog：改进 ADC 的 KiwiSDR 衍生固件",
+      "desc_zh": "树莓派宽频 SDR+GPS 帽板固件树，面向更高位数 ADC 硬件",
       "analysis_zh": "从 Beagle_SDR_GPS/KiwiSDR 分出的固件树，配合专用附加板（如更高位数 ADC）使用。适合已有 FlyDog 硬件或研究 Kiwi 衍生的开发者。与原版 Kiwi 配置、帽板不完全互通；社区规模与长期支持需自评后再投入。刷机前备份原 Kiwi 配置，避免变砖后难恢复。刷写镜像前确认帽板硬件修订号一致。",
       "language": "C++",
       "license": "",
@@ -4627,7 +4627,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "FlyDog：改进 ADC 的 KiwiSDR 衍生固件"
+      "one_liner_zh": "FlyDog-SDR-GPS：改进 ADC 的 KiwiSDR 衍生固件"
     },
     {
       "name": "Full_Stack_GPS_Receiver",
@@ -4796,7 +4796,7 @@
     {
       "name": "gnss-sdr-1pps",
       "url": "https://github.com/oscimp/gnss-sdr-1pps",
-      "desc_zh": "gnss-sdr 的 1-PPS 支持扩展材料",
+      "desc_zh": "补丁与说明包：把软件接收机接到时频设备输出秒脉冲",
       "analysis_zh": "围绕为 gnss-sdr 增加 1-PPS 秒脉冲能力的补丁、说明与相关文件，方便把软件接收机接到时频设备。适合已部署 gnss-sdr、需要硬件秒脉冲的用户。须与主项目具体版本对齐合并；本仓库不是独立接收机发行版。硬件 PPS 输出电平与线缆延迟要纳入系统标定。PPS 线缆长度引入的延迟应写入系统时延表。",
       "language": "",
       "license": "",
@@ -4809,7 +4809,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "gnss-sdr 的 1-PPS 支持扩展材料"
+      "one_liner_zh": "gnss-sdr-1pps：为 gnss-sdr 增加 1-PPS 的扩展材料"
     },
     {
       "name": "gnss-sdr-monitor",
@@ -4868,7 +4868,7 @@
     {
       "name": "gnss-signal-simulator-rs",
       "url": "https://github.com/danusha2345/gnss-signal-simulator-rs",
-      "desc_zh": "Rust 多星座 GNSS 信号仿真器（含 GPS L1/L5 等）",
+      "desc_zh": "覆盖 GPS L1/L5 等频点，偏内存安全与可嵌入工具链试验",
       "analysis_zh": "用 Rust 实现的多星座 GNSS 信号仿真，覆盖 GPS L1/L5 等常见频点，服务接收机算法与 SDR 试验。适合看重内存安全与可嵌入工具链的开发者。相对 gps-sdr-sim、gnss-sdr 仿真生态仍较新；载波相位一致性与接收机动态轨迹模型需用已知算例校验。",
       "language": "Rust",
       "license": "",
@@ -4881,7 +4881,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Rust 多星座 GNSS 信号仿真器（含 GPS L1/L5 等）"
+      "one_liner_zh": "gnss-signal-simulator-rs：Rust 多星座 GNSS 信号仿真"
     },
     {
       "name": "GNSS-VHDL",
@@ -4922,7 +4922,7 @@
     {
       "name": "gnsssdrgui",
       "url": "https://github.com/UHaider/gnss_sdr_gui",
-      "desc_zh": "GNSS-SDR 图形配置与监视界面",
+      "desc_zh": "降低纯文本配置门槛，便于演示与选择信号链",
       "analysis_zh": "为开源 gnss-sdr 提供图形界面，降低编写配置文件、选择信号链与查看运行状态的门槛。适合不想纯文本配置的 gnss-sdr 用户与演示场合。本身不替代信号处理核心，功能随主项目版本变化；复杂自定义流图仍常需手写配置。安装路径与 gnss-sdr 编译选项需保持一致。大改流图前先备份可工作的配置文件。",
       "language": "C++",
       "license": "GPL-3.0",
@@ -4934,13 +4934,13 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "GNSS-SDR 图形配置与监视界面"
+      "provenance": "academic_lab",
+      "one_liner_zh": "gnsssdrgui：GNSS-SDR 图形配置与监视界面"
     },
     {
       "name": "GNSSSDRHACKRF",
       "url": "https://github.com/jdesbonnet/GNSS_SDR_HACKRF",
-      "desc_zh": "HackRF One 上运行 GNSS-SDR 的实验记录",
+      "desc_zh": "配置片段与踩坑笔记，面向手头已有 HackRF 的软件接收试验",
       "analysis_zh": "整理如何把 GNSS-SDR 接到 HackRF One 做卫星信号接收实验，含配置片段与常见踩坑。面向手头已有 HackRF、想试软件 GNSS 接收的人。仓库偏实验笔记而非产品级接收机；HackRF 带宽与噪声系数相对专用前端有限，弱信号捕获需要耐心调增益与天线。天线与低噪放选择往往比软件参数更关键。",
       "language": "",
       "license": "MIT",
@@ -4953,7 +4953,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "HackRF One 上运行 GNSS-SDR 的实验记录"
+      "one_liner_zh": "GNSSSDRHACKRF：HackRF One 跑 GNSS-SDR 的实验记录"
     },
     {
       "name": "gps",
@@ -5068,7 +5068,7 @@
     {
       "name": "GPSGALSSS",
       "url": "https://github.com/domonforyou/GPS_GAL_SSS",
-      "desc_zh": "GPS/Galileo 卫星信号模拟器（关联 RTKLIB）",
+      "desc_zh": "关联 RTKLIB 思路的多星座基带仿真，服务接收机输入测试",
       "analysis_zh": "GPS 与 Galileo 卫星信号模拟相关实现，说明中提及与 RTKLIB 能力结合，用于产生测试用信号/数据。适合多星座接收机输入测试与教学。可发射前端、星历接口与完整度以仓库为准；实发同样受法规约束。Galileo 与 GPS 时间系统差异要在仿真里显式处理。多星座仿真要显式处理 GPS/Galileo 时间差。",
       "language": "C++",
       "license": "",
@@ -5081,7 +5081,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "GPS/Galileo 卫星信号模拟器（关联 RTKLIB）"
+      "one_liner_zh": "GPSGALSSS：GPS/Galileo 卫星信号模拟器"
     },
     {
       "name": "GPSL1-DPEmodule",
@@ -5196,7 +5196,7 @@
     {
       "name": "meta-gnss-sdr",
       "url": "https://github.com/carlesfernandez/meta-gnss-sdr",
-      "desc_zh": "GNSS-SDR 的 OpenEmbedded/Yocto 层",
+      "desc_zh": "CTTC 维护者相关：把软件接收机打进嵌入式 Linux 镜像",
       "analysis_zh": "把 gnss-sdr 集成进嵌入式 Linux 镜像的 OpenEmbedded layer（meta-gnss-sdr），方便在定制发行版或板卡上部署软件接收机。适合 Yocto/OE 系统集成者。不改变算法本身；配方版本需与上游 gnss-sdr 发布对齐，构建时间与依赖较大。层优先级与其它 radio/SDR 层冲突时需调整 BB 文件。",
       "language": "C",
       "license": "MIT",
@@ -5208,8 +5208,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "GNSS-SDR 的 OpenEmbedded/Yocto 层"
+      "provenance": "academic_lab",
+      "one_liner_zh": "meta-gnss-sdr：GNSS-SDR 的 OpenEmbedded/Yocto 层"
     },
     {
       "name": "Microsat-gps-sim",
@@ -5286,7 +5286,7 @@
     {
       "name": "oresat-gps-software",
       "url": "https://github.com/oresat/oresat-gps-software",
-      "desc_zh": "OreSat 立方星 GPS 接收机软件",
+      "desc_zh": "与配套硬件仓一起覆盖星上接收流程与接口",
       "analysis_zh": "OreSat 项目 GPS 接收机软件部分，与 oresat-gps-hardware 配套，覆盖星上接收相关流程与接口。适合立方星载荷软件与开源航天参考。面向特定硬件与任务约束，不是通用多星座精密定位或 RTK 引擎。星上算力与存储配额会限制可开日志级别。星上存储配额会限制可长期开启的日志等级。选用前建议先跑通作者提供的最小示例。",
       "language": "Python",
       "license": "GPL-3.0",
@@ -5299,7 +5299,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "OreSat 立方星 GPS 接收机软件"
+      "one_liner_zh": "oresat-gps-software：OreSat 立方星 GPS 接收机软件"
     },
     {
       "name": "PocketSDR",
@@ -5325,7 +5325,7 @@
     {
       "name": "pylgrim",
       "url": "https://github.com/kirienko/pylgrim",
-      "desc_zh": "Python 编写的 GNSS 软件接收机",
+      "desc_zh": "便于阅读捕获跟踪与观测量生成；并触及 RINEX/IONEX/VMF1",
       "analysis_zh": "用 Python 实现软件接收机链路，并触及 RINEX、IONEX、VMF1 等接口，便于阅读捕获跟踪与观测量生成流程。适合 SDR/GNSS 课程与算法原型。实时性能与多星座完备性远不及 gnss-sdr、FGI-GSRx；研究级射频仿真请配合 gps-sdr-sim 或 SoftGNSS-python 对照。",
       "language": "Python",
       "license": "GPL-3.0",
@@ -5338,7 +5338,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Python 编写的 GNSS 软件接收机"
+      "one_liner_zh": "pylgrim：Python 实现的 GNSS 软件接收机"
     },
     {
       "name": "SignalSim",
@@ -6720,7 +6720,7 @@
     {
       "name": "INPE-TEC-Maps-IONEX",
       "url": "https://github.com/Hollweg/INPE-TEC-Maps-IONEX",
-      "desc_zh": "INPE TEC 图与 IONEX 生成工具",
+      "desc_zh": "把区域预报/分析输出整理成可交换 IONEX 与 TEC 图",
       "analysis_zh": "把电离层预报/分析系统输出整理成 TEC 图和 IONEX，方便与国际产品格式对齐。适合需要 IONEX 交换或南美区域 TEC 图的用户。对全球多分析中心产品融合支持有限；格式细节建议对照 IONEX 标准与 INX_Editor 一起核。",
       "language": "Python",
       "license": "",
@@ -6734,8 +6734,8 @@
       "featured": false,
       "user_relation": "starred",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "INPE TEC 图与 IONEX 生成工具"
+      "provenance": "academic_lab",
+      "one_liner_zh": "INPE-TEC-Maps-IONEX：INPE TEC 图与 IONEX 生成"
     },
     {
       "name": "INX_Editor",
@@ -7973,7 +7973,7 @@
     {
       "name": "M_GIM-zcytju",
       "url": "https://github.com/zcytju/M_GIM",
-      "desc_zh": "zcytju：多系统全球/区域电离层 GIM 建模 MATLAB 软件",
+      "desc_zh": "zcytju 开源：从 GNSS 观测建全球与区域电离层图的试验软件",
       "analysis_zh": "面向多系统全球与区域电离层建模的 MATLAB 工具（仓库描述：Multi-system global and regional ionospheric modeling）。适合已有 MATLAB 电离层工作流的人试用。请自行核验 IONEX/球谐输入输出约定；与 PANXIONG 的 m_gim-PANXIONG 小脚本不是同一项目。",
       "language": "MATLAB",
       "license": "",
@@ -7988,7 +7988,7 @@
       "user_relation": "starred",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "zcytju：多系统全球/区域电离层 GIM 建模 MATLAB 软件"
+      "one_liner_zh": "M_GIM：多系统全球/区域电离层 GIM 建模（MATLAB）"
     },
     {
       "name": "M_ISSION",
@@ -8109,7 +8109,7 @@
     {
       "name": "mosgim2",
       "url": "https://github.com/PadArt/mosgim2",
-      "desc_zh": "相位差法构建 GNSS 全球电离层图",
+      "desc_zh": "MosGIM 第二代 Python 实现，便于接到现有 GNSS 流水线试算",
       "analysis_zh": "MosGIM 系第二代实现，侧重相位差思路从 GNSS 观测建 GIM，Python 栈便于接到现有数据流水线。适合研究组快速试算区域/全球 TEC 图。文档与工程化程度不如商业或大机构产品；球谐/网格参数需自行调，可与 gnss-tec、同类 GIM 工具做方法对比。",
       "language": "Python",
       "license": "MIT",
@@ -8124,7 +8124,7 @@
       "user_relation": "starred",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "相位差法构建 GNSS 全球电离层图"
+      "one_liner_zh": "mosgim2：相位差法构建 GNSS 全球电离层图"
     },
     {
       "name": "MyIonosphere_Library",
@@ -9135,8 +9135,8 @@
     {
       "name": "sami2py",
       "url": "https://github.com/sami2py/sami2py",
-      "desc_zh": "NRL SAMI2 二维电离层模式的 Python 封装（运行/读档/绘图）",
-      "one_liner_zh": "NRL SAMI2 二维电离层模式的 Python 封装（运行/读档/绘图）",
+      "desc_zh": "驱动 Fortran 内核并读档绘图，偏磁力线等离子体动力学",
+      "one_liner_zh": "sami2py：NRL SAMI2 二维电离层模式的 Python 封装",
       "analysis_zh": "sami2py 把海军实验室 SAMI2 二维电离层模式包成 Python：可设置经度、年积日等驱动并运行 Fortran 内核，再把输出归档、加载与绘图。相对完整 IRI/NeQuick 气候模型，它更强调沿磁力线的等离子体动力学。输入含经度、日期、可选中性大气缩放与自定义 ExB 漂移等；输出为模式场。局限：依赖 Fortran 编译器；二维近似不覆盖全球三维结构；仓库近年更新偏少。",
       "language": "Python/Fortran",
       "license": "BSD-3-Clause",
@@ -10095,7 +10095,7 @@
     {
       "name": "PRIDE-GeoDataLogger",
       "url": "https://github.com/PrideLab/PRIDE-GeoDataLogger",
-      "desc_zh": "PRIDE 团队手机多频 GNSS 与 IMU 采集工具",
+      "desc_zh": "PRIDE 团队：把智能手机原始测量送入后续 PPP/科研流程",
       "analysis_zh": "PRIDE 团队面向智能手机的多频 GNSS 与 IMU 采集工具，便于把手机原始测量送入后续 PPP 或科学研究流程。适合手机大地测量、城市峡谷与行人导航试验。手机天线相位中心与占空比限制明显；采集前应规划时间同步、姿态记录与导出格式，以便对接 PRIDE-PPPAR 或自研脚本。",
       "language": "",
       "license": "",
@@ -10108,7 +10108,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "PRIDE 团队手机多频 GNSS 与 IMU 采集工具"
+      "one_liner_zh": "PRIDE-GeoDataLogger：手机多频 GNSS+IMU 采集工具"
     },
     {
       "name": "satpulse",
@@ -10149,7 +10149,7 @@
     {
       "name": "STM32Primer2-GNSS-Tracker",
       "url": "https://github.com/nemuisan/STM32Primer2_GNSS_Tracker",
-      "desc_zh": "STM32 Primer2 平台的 GNSS 轨迹记录器",
+      "desc_zh": "嵌入式便携固件：把卫星定位点写入介质便于回放展示",
       "analysis_zh": "运行于 STM32 Primer2 的 GNSS 轨迹记录固件/应用，把卫星定位点记下来便于回放与展示。适合嵌入式便携记录与爱好者硬件实验。硬件绑定 Primer2，功能以记录为主，不是跨平台定位 SDK，也不含 RTK 引擎。存储介质与采样间隔决定可记录轨迹时长。电池与存储容量共同限制连续记录时长。",
       "language": "C",
       "license": "",
@@ -10162,7 +10162,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "STM32 Primer2 平台的 GNSS 轨迹记录器"
+      "one_liner_zh": "STM32Primer2-GNSS-Tracker：Primer2 平台 GNSS 轨迹记录"
     },
     {
       "name": "BDS-3-PPP-B2b_IMU_LiDAR",
@@ -10283,7 +10283,7 @@
     {
       "name": "GINS",
       "url": "https://github.com/zhangwhu/GINS",
-      "desc_zh": "PPP-RTK 与惯导组合的 GINS 实现（武大相关）",
+      "desc_zh": "武大相关：遮挡环境下追求更连续的高精度导航解",
       "analysis_zh": "将 PPP-RTK 改正与惯导结合的 GINS 实现，追求遮挡环境下仍较连续的高精度导航解。适合阅读 PPP-RTK/INS 相关论文时对照工程结构。公开文档与示例数据完整度一般；与 HKUST GVINS、i2Nav KF-GINS 名称接近但路线不同，选用前核对作者与传感器组合。",
       "language": "C",
       "license": "",
@@ -10296,7 +10296,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "PPP-RTK 与惯导组合的 GINS 实现（武大相关）"
+      "one_liner_zh": "GINS：PPP-RTK 与惯导组合导航实现"
     },
     {
       "name": "GIOW-release",
@@ -10415,7 +10415,7 @@
     {
       "name": "gnss_ros_standardization",
       "url": "https://github.com/DaikiNiimi/gnss_ros_standardization",
-      "desc_zh": "ROS 2 标准化 GNSS 原始观测/星历话题（u-blox/Septentrio/NovAtel/RTCM3）",
+      "desc_zh": "统一 u-blox/Septentrio/NovAtel/RTCM3 原始观测与星历接口",
       "analysis_zh": "统一多品牌接收机原始观测与星历到 ROS 2 标准话题，降低紧组合与多传感器融合的驱动碎片化，含 RTK 演示配置说明。目标是一次开发、多机复用。侧重接口与消息层而非完整 PPP 引擎；具体消息定义、驱动覆盖与硬件接线以仓库文档和演示配置为准。",
       "language": "C++",
       "license": "MIT",
@@ -10430,7 +10430,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "ROS 2 标准化 GNSS 原始观测/星历话题（u-blox/Septentrio/NovAtel/RTCM3）"
+      "one_liner_zh": "gnss_ros_standardization：ROS 2 标准化 GNSS 话题"
     },
     {
       "name": "GPSMilemeterIMUEKFLocation",
@@ -10825,7 +10825,7 @@
     {
       "name": "msckfvioGPS",
       "url": "https://github.com/loveforeverLi/msckf_vio_GPS",
-      "desc_zh": "MSCKF 视觉惯性里程计与 GPS 融合",
+      "desc_zh": "用卫星位置约束抑制 VIO 漂移并对齐全球坐标的机器人栈",
       "analysis_zh": "在 MSCKF-VIO 上增加 GPS 融合，用卫星位置约束抑制视觉惯性漂移并对齐全球坐标，服务无人机与地面机器人。适合已有 MSCKF 栈、需要全球定位的团队。与上游 MSCKF 的同步情况需自查；城市峡谷 GNSS 质量差时收益有限，精密测地仍用专用 PPP/RTK。相机-IMU 外参标定质量往往比 GPS 权重更敏感。",
       "language": "C++",
       "license": "",
@@ -10838,7 +10838,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "MSCKF 视觉惯性里程计与 GPS 融合"
+      "one_liner_zh": "msckfvioGPS：MSCKF 视觉惯性里程计与 GPS 融合"
     },
     {
       "name": "Multi_Sensor_Fusion",
@@ -11253,7 +11253,7 @@
     {
       "name": "GREAT-IFCB",
       "url": "https://github.com/GREAT-WHU/GREAT-IFCB",
-      "desc_zh": "多 GNSS 频间钟差（IFCB）估计开源软件",
+      "desc_zh": "武大 GREAT 组小工具：服务精密钟差与偏差产品链路",
       "analysis_zh": "武大 GREAT 组开源的多星座频间钟差（IFCB）估计工具，服务于精密钟差与偏差产品链路，与 GREAT-PVT 等同一研究线。做三频 PPP、相位偏差与钟差产品的人应关注。它是独立小工具，不替代完整 POD 套件；轨道与 UPD/OSB 能力仍多见诸 Ginan、PRIDE、GROOPS 等大型系统。",
       "language": "C++",
       "license": "GPL-3.0",
@@ -11266,7 +11266,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "多 GNSS 频间钟差（IFCB）估计开源软件"
+      "one_liner_zh": "GREAT-IFCB：多 GNSS 频间钟差（IFCB）估计"
     },
     {
       "name": "GREAT-PCE",
@@ -11447,7 +11447,7 @@
     {
       "name": "awesome-gnss-hdkarimi",
       "url": "https://github.com/hdkarimi/awesome-gnss",
-      "desc_zh": "hdkarimi：GNSS/RNSS 开源工具、数据与慕课的 awesome 列表",
+      "desc_zh": "与 barbeau 列表并行的个人 awesome；偏工具/数据/课程入口",
       "analysis_zh": "策展 GNSS/RNSS 相关开源软件、数据、工具与慕课入口的 awesome 列表，帮助新人快速摸清领域版图。与 barbeau/awesome-gnss（现名 awesome-gnss-barbeau）是不同策展；链接时效性需自行点击验证。",
       "language": "",
       "license": "MIT",
@@ -11460,7 +11460,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "hdkarimi：GNSS/RNSS 开源工具、数据与慕课的 awesome 列表"
+      "one_liner_zh": "awesome-gnss-hdkarimi：GNSS/RNSS 开源与慕课策展列表"
     },
     {
       "name": "earth-gravitational-model",
@@ -12227,7 +12227,7 @@
     {
       "name": "GNSSRMERRByS",
       "url": "https://github.com/pjalesSSTL/GNSSR_MERRByS",
-      "desc_zh": "TechDemoSat-1 GNSS-R 数据处理示例（SSTL）",
+      "desc_zh": "MERRByS 任务数据处理演示材料，面向海洋/地表反射测量",
       "analysis_zh": "Surrey Satellite Technology 提供的 TechDemoSat-1（MERRByS）星载 GNSS-R 示例处理材料，演示空间反射数据的读取与初步产品步骤。面向星载 GNSS-R、海洋与地表遥感读者。这是任务示例而非通用地基 GNSS-IR 软件；地基水位/雪深请用 gnssrefl 等，两者观测几何与校正链不同。",
       "language": "MATLAB",
       "license": "",
@@ -12240,7 +12240,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "TechDemoSat-1 GNSS-R 数据处理示例（SSTL）"
+      "one_liner_zh": "GNSSRMERRByS：TechDemoSat-1 星载 GNSS-R 示例（SSTL）"
     },
     {
       "name": "gpssnrpy",
@@ -12341,7 +12341,7 @@
     {
       "name": "PW_from_GPS",
       "url": "https://github.com/ZiskinZiv/PW_from_GPS",
-      "desc_zh": "GPS 可降水量（PWV）分析与 ML 应用工具",
+      "desc_zh": "GNSS 气象入门向：区域 PWV 统计与机器学习应用示例",
       "analysis_zh": "从 GPS 相关产品做可降水量分析，并带机器学习应用示例。适合 GNSS 气象入门与区域 PWV 研究。从原始 RINEX 到 ZWD 的完整 PPP 链需另接 PRIDE/Ginan 等。",
       "language": "Python",
       "license": "MIT",
@@ -12354,7 +12354,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "GPS 可降水量（PWV）分析与 ML 应用工具"
+      "one_liner_zh": "PW_from_GPS：GPS 可降水量（PWV）分析与 ML 工具"
     },
     {
       "name": "pwv_kpno",
@@ -12517,7 +12517,7 @@
     {
       "name": "VARION",
       "url": "https://github.com/giorgiosavastano/VARION",
-      "desc_zh": "Sapienza 变分法实时电离层：由 RINEX 估计 sTEC 变化（海啸扰动等）",
+      "desc_zh": "由 RINEX 估计 sTEC 变化，用于海啸等站级扰动近实时监测",
       "analysis_zh": "罗马一大（Sapienza）开源的变分法电离层观测工具，读取 RINEX 观测/广播星历估计 slant TEC 变化，用于站级近实时扰动监测（如海啸电离层扰动）。Python+NumPy/Pandas，GPL-3。适合单站高频 TEC 扰动教学与案例复现；依赖较旧的 Python 2.7+ 生态，需自行准备导航文件与站坐标。",
       "language": "Python",
       "license": "GPL-3.0",
@@ -12532,7 +12532,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "Sapienza 变分法实时电离层：由 RINEX 估计 sTEC 变化（海啸扰动等）"
+      "one_liner_zh": "VARION：Sapienza 变分法实时电离层监测"
     },
     {
       "name": "Cube",
@@ -12637,7 +12637,7 @@
     {
       "name": "ntrip-caster-go",
       "url": "https://github.com/symysak/ntrip-caster",
-      "desc_zh": "Go 实现的 NTRIP v1/v2 Caster：就近基站切换、挂载点认证与热重载",
+      "desc_zh": "就近基站切换、挂载点认证与热重载，适合小型 CORS 自建",
       "analysis_zh": "轻量 NTRIP 播发端，支持 v1/v2 客户端拉取与基站推送、按 GGA 就近切换虚拟挂载点、账号认证与 SIGHUP 热重载。适合自建小型 CORS/农机差分播发；密码明文配置、尚无原生 TLS，公网部署需前置反向代理并自行加固。许可未在 GitHub 标明 SPDX，使用前请确认上游条款。",
       "language": "Go",
       "license": "",
@@ -12652,7 +12652,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Go 实现的 NTRIP v1/v2 Caster：就近基站切换、挂载点认证与热重载"
+      "one_liner_zh": "ntrip-caster-go：Go 实现的 NTRIP v1/v2 Caster"
     },
     {
       "name": "SparkFun_u-blox_GNSS_v3",
@@ -12835,7 +12835,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
+      "provenance": "academic_lab",
       "one_liner_zh": "预装 GNSS-SDR 的 Docker 镜像"
     },
     {
@@ -15943,8 +15943,8 @@
   ],
   "provenance_counts": {
     "official": 233,
-    "academic_lab": 284,
-    "personal_community": 299
+    "academic_lab": 290,
+    "personal_community": 293
   },
   "updated": "2026-09-24"
 }

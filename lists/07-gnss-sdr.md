@@ -25,14 +25,14 @@
 | [ESP32-SDR-GPS](https://github.com/iliasam/ESP32_SDR_GPS) | ESP32-SDR-GPS：MCU 级软件 GPS 接收实验 | C | 55 | 🏷️ 个人社区 |
 | [SoftGNSS-python](https://github.com/perrysou/SoftGNSS-python) | SoftGNSS-python：经典 SoftGNSS 的 Python 移植 | Python | 44 | 🏷️ 个人社区 |
 | [gnss-baseband](https://github.com/j-core/gnss-baseband) | gnss-baseband：GPS 类 DSSS 基带 VHDL IP | VHDL | 43 | 🏷️ 个人社区 |
-| [gnss-sdr-1pps](https://github.com/oscimp/gnss-sdr-1pps) | gnss-sdr 的 1-PPS 支持扩展材料 | — | 40 | 🏷️ 个人社区 |
-| [FlyDog-SDR-GPS](https://github.com/flydog-sdr/FlyDog_SDR_GPS) | FlyDog：改进 ADC 的 KiwiSDR 衍生固件 | C++ | 30 | 🏷️ 个人社区 |
+| [gnss-sdr-1pps](https://github.com/oscimp/gnss-sdr-1pps) | gnss-sdr-1pps：为 gnss-sdr 增加 1-PPS 的扩展材料 | — | 40 | 🏷️ 个人社区 |
+| [FlyDog-SDR-GPS](https://github.com/flydog-sdr/FlyDog_SDR_GPS) | FlyDog-SDR-GPS：改进 ADC 的 KiwiSDR 衍生固件 | C++ | 30 | 🏷️ 个人社区 |
 | [Fast_GNSS_ReceiverMATLAB](https://github.com/JohnBagshaw/Fast_GNSS_ReceiverMATLAB) | 高灵敏度快速捕获 MATLAB GNSS 接收机实验 | MATLAB | 26 | 🏷️ 个人社区 |
-| [pylgrim](https://github.com/kirienko/pylgrim) | Python 编写的 GNSS 软件接收机 | Python | 21 | 🏷️ 个人社区 |
-| [docker-gnsssdr](https://github.com/carlesfernandez/docker-gnsssdr) | 预装 GNSS-SDR 的 Docker 镜像 | Dockerfile | 19 | 🏷️ 个人社区 |
-| [GNSSSDRHACKRF](https://github.com/jdesbonnet/GNSS_SDR_HACKRF) | HackRF One 上运行 GNSS-SDR 的实验记录 | — | 19 | 🏷️ 个人社区 |
-| [gnsssdrgui](https://github.com/UHaider/gnss_sdr_gui) | GNSS-SDR 图形配置与监视界面 | C++ | 16 | 🏷️ 个人社区 |
-| [meta-gnss-sdr](https://github.com/carlesfernandez/meta-gnss-sdr) | GNSS-SDR 的 OpenEmbedded/Yocto 层 | C | 16 | 🏷️ 个人社区 |
+| [pylgrim](https://github.com/kirienko/pylgrim) | pylgrim：Python 实现的 GNSS 软件接收机 | Python | 21 | 🏷️ 个人社区 |
+| [docker-gnsssdr](https://github.com/carlesfernandez/docker-gnsssdr) | 预装 GNSS-SDR 的 Docker 镜像 | Dockerfile | 19 | 🏷️ 高校实验室 |
+| [GNSSSDRHACKRF](https://github.com/jdesbonnet/GNSS_SDR_HACKRF) | GNSSSDRHACKRF：HackRF One 跑 GNSS-SDR 的实验记录 | — | 19 | 🏷️ 个人社区 |
+| [gnsssdrgui](https://github.com/UHaider/gnss_sdr_gui) | gnsssdrgui：GNSS-SDR 图形配置与监视界面 | C++ | 16 | 🏷️ 高校实验室 |
+| [meta-gnss-sdr](https://github.com/carlesfernandez/meta-gnss-sdr) | meta-gnss-sdr：GNSS-SDR 的 OpenEmbedded/Yocto 层 | C | 16 | 🏷️ 高校实验室 |
 | [gps-sdr-simulink](https://github.com/dmiralles2009/gps-sdr-simulink) | Simulink 中的 GPS 捕获阶段模型 | MATLAB | 15 | 🏷️ 个人社区 |
 | [gnss-rcv](https://github.com/mx4/gnss-rcv) | Rust 实现的 GPS L1 C/A 软件接收机 | Rust | 14 | 🏷️ 个人社区 |
 | [multi-channel-gnss](https://github.com/dasdboot/multi-channel-gnss) | 基于 LimeSDR 的多通道 GNSS 实验项目 | — | 12 | 🏷️ 个人社区 |
@@ -199,7 +199,7 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 用 Python 实现软件接收机链路，并触及 RINEX、IONEX、VMF1 等接口，便于阅读捕获跟踪与观测量生成流程。适合 SDR/GNSS 课程与算法原型。实时性能与多星座完备性远不及 gnss-sdr、FGI-GSRx；研究级射频仿真请配合 gps-sdr-sim 或 SoftGNSS-python 对照。
 
 #### [docker-gnsssdr](https://github.com/carlesfernandez/docker-gnsssdr)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：Dockerfile · 许可：MIT · 星标约：19 · 宿主：github
 
@@ -213,14 +213,14 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 整理如何把 GNSS-SDR 接到 HackRF One 做卫星信号接收实验，含配置片段与常见踩坑。面向手头已有 HackRF、想试软件 GNSS 接收的人。仓库偏实验笔记而非产品级接收机；HackRF 带宽与噪声系数相对专用前端有限，弱信号捕获需要耐心调增益与天线。天线与低噪放选择往往比软件参数更关键。
 
 #### [gnsssdrgui](https://github.com/UHaider/gnss_sdr_gui)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：16 · 宿主：github
 
 为开源 gnss-sdr 提供图形界面，降低编写配置文件、选择信号链与查看运行状态的门槛。适合不想纯文本配置的 gnss-sdr 用户与演示场合。本身不替代信号处理核心，功能随主项目版本变化；复杂自定义流图仍常需手写配置。安装路径与 gnss-sdr 编译选项需保持一致。大改流图前先备份可工作的配置文件。
 
 #### [meta-gnss-sdr](https://github.com/carlesfernandez/meta-gnss-sdr)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：C · 许可：MIT · 星标约：16 · 宿主：github
 
@@ -296,8 +296,8 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 | [BeiDou_B1C](https://github.com/lnexenl/BeiDou_B1C) | BeiDou_B1C：北斗 B1C 信号生成与捕获（MATLAB） | MATLAB | 38 | 🏷️ 高校实验室 |
 | [gui_sdr_gps_sim](https://github.com/okiedocus/gui_sdr_gps_sim) | gui_sdr_gps_sim：HackRF 多星座 GNSS 信号仿真 GUI | Rust | 37 | 🏷️ 个人社区 |
 | [gnss-RX](https://github.com/HeryMwenegoha/gnss-RX) | gnss-RX：MATLAB GNSS 观测量仿真器 | MATLAB | 32 | 🏷️ 个人社区 |
-| [gnss-signal-simulator-rs](https://github.com/danusha2345/gnss-signal-simulator-rs) | Rust 多星座 GNSS 信号仿真器（含 GPS L1/L5 等） | Rust | 30 | 🏷️ 个人社区 |
-| [GPSGALSSS](https://github.com/domonforyou/GPS_GAL_SSS) | GPS/Galileo 卫星信号模拟器（关联 RTKLIB） | C++ | 29 | 🏷️ 个人社区 |
+| [gnss-signal-simulator-rs](https://github.com/danusha2345/gnss-signal-simulator-rs) | gnss-signal-simulator-rs：Rust 多星座 GNSS 信号仿真 | Rust | 30 | 🏷️ 个人社区 |
+| [GPSGALSSS](https://github.com/domonforyou/GPS_GAL_SSS) | GPSGALSSS：GPS/Galileo 卫星信号模拟器 | C++ | 29 | 🏷️ 个人社区 |
 | [beidou-sdr-sim](https://github.com/yangfan852219770/beidou-sdr-sim) | beidou-sdr-sim：北斗 GEO（PRN1–5）信号仿真 | C | 27 | 🏷️ 个人社区 |
 | [esp2822NMEAsim](https://github.com/michalpelka/esp2822_NMEA_sim) | 廉价 MCU 模拟 PPS 与 NMEA 同步信号 | C++ | 7 | 🏷️ 个人社区 |
 | [Microsat-gps-sim](https://github.com/niklasknoell/Microsat-gps-sim) | 微纳卫星工程向 GNSS 仿真工具（Python） | Python | 4 | 🏷️ 个人社区 |
@@ -522,7 +522,7 @@ VHDL 代码用于生成 GPS L1 C/A 以及 Galileo E1OS、E5 的 PRN 与无数据
 |---|---|---|---:|---|
 | [LEOGPS](https://github.com/sammmlow/LEOGPS) | LEOGPS：LEO 星载 GPS/相对导航 Python 包 | Python | 88 | 🏷️ 高校实验室 |
 | [hardware](https://github.com/oresat/oresat-gps-hardware) | oresat-gps-hardware：立方星 SDR GPS 接收硬件 | Makefile | 33 | 🏷️ 高校实验室 |
-| [oresat-gps-software](https://github.com/oresat/oresat-gps-software) | OreSat 立方星 GPS 接收机软件 | Python | 22 | 🏷️ 高校实验室 |
+| [oresat-gps-software](https://github.com/oresat/oresat-gps-software) | oresat-gps-software：OreSat 立方星 GPS 接收机软件 | Python | 22 | 🏷️ 高校实验室 |
 
 ### 详细说明
 

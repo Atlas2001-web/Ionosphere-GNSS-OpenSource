@@ -1,0 +1,128 @@
+[
+  {
+    "name": "FlyDog-SDR-GPS",
+    "action": "keep",
+    "detail": "community hardware org FlyDog SDR; no university/agency → keep personal_community",
+    "owner": "flydog-sdr"
+  },
+  {
+    "name": "GPSGALSSS",
+    "action": "keep",
+    "detail": "empty company; personal bio → keep personal_community",
+    "owner": "domonforyou"
+  },
+  {
+    "name": "gnss-signal-simulator-rs",
+    "action": "keep",
+    "detail": "company home; personal → keep personal_community",
+    "owner": "danusha2345"
+  },
+  {
+    "name": "msckfvioGPS",
+    "action": "keep",
+    "detail": "empty bio/company → keep personal_community",
+    "owner": "loveforeverLi"
+  },
+  {
+    "name": "STM32Primer2-GNSS-Tracker",
+    "action": "keep",
+    "detail": "hobbyist org Nijiura Maids Association → keep personal_community",
+    "owner": "nemuisan"
+  },
+  {
+    "name": "gnss-sdr-1pps",
+    "action": "keep",
+    "detail": "OscillatorIMP PIA community org; not clear university/agency class → keep",
+    "owner": "oscimp"
+  },
+  {
+    "name": "awesome-gnss-hdkarimi",
+    "action": "keep",
+    "detail": "personal FOSS curator; company empty → keep personal_community",
+    "owner": "hdkarimi"
+  },
+  {
+    "name": "ntrip-client",
+    "action": "keep",
+    "detail": "nav-solutions community org France; no agency/university → keep",
+    "owner": "nav-solutions"
+  },
+  {
+    "name": "ntrip-caster-go",
+    "action": "keep",
+    "detail": "empty bio/company → keep personal_community",
+    "owner": "symysak"
+  },
+  {
+    "name": "M_GIM-zcytju",
+    "action": "keep",
+    "detail": "empty bio/company → keep personal_community",
+    "owner": "zcytju"
+  },
+  {
+    "name": "gnssgo",
+    "action": "keep",
+    "detail": "company Explore Data Technology Ltd commercial → keep personal_community",
+    "owner": "FengXuebin"
+  },
+  {
+    "name": "PW_from_GPS",
+    "action": "keep",
+    "detail": "industry researcher; no university company → keep personal_community",
+    "owner": "ZiskinZiv"
+  },
+  {
+    "name": "pylgrim",
+    "action": "keep",
+    "detail": "company secjur commercial → keep personal_community",
+    "owner": "kirienko"
+  },
+  {
+    "name": "BUAA-RINEX-Convertor",
+    "action": "keep",
+    "detail": "empty bio/company (BUAA only in project name) → keep",
+    "owner": "Jia-le-wang"
+  },
+  {
+    "name": "GHASP-HAS-decoding",
+    "action": "keep",
+    "detail": "empty bio/company despite known researcher name → keep until org field clear",
+    "owner": "borioda"
+  },
+  {
+    "name": "GNSSRMERRByS",
+    "action": "keep",
+    "detail": "Surrey Satellite Technology Ltd commercial → keep personal_community",
+    "owner": "pjalesSSTL"
+  },
+  {
+    "name": "mosgim2",
+    "action": "keep",
+    "detail": "empty bio/company (PadArt) → keep personal_community",
+    "owner": "PadArt"
+  },
+  {
+    "name": "gnss_ros_standardization",
+    "action": "keep",
+    "detail": "empty bio/company → keep personal_community",
+    "owner": "DaikiNiimi"
+  },
+  {
+    "name": "GNSSSDRHACKRF",
+    "action": "keep",
+    "detail": "empty bio/company → keep personal_community",
+    "owner": "jdesbonnet"
+  },
+  {
+    "name": "BNS",
+    "action": "keep",
+    "detail": "already official (BKG) — confirmed",
+    "owner": "BKG"
+  },
+  {
+    "name": "BNC-source-FTP",
+    "action": "keep",
+    "detail": "already official (BKG FTP) — confirmed",
+    "owner": "BKG"
+  }
+]
