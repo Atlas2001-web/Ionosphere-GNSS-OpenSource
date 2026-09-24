@@ -1,6 +1,6 @@
 # aacgmv2 · AACGM-v2 地磁坐标操作手册
 
-目录：[`PROJECTS.json` → `aacgmv2`](../../PROJECTS.json) · 上游 <https://github.com/aburrell/aacgmv2> · 许可 **MIT** · PyPI **`aacgmv2` 2.7.1** · tip **`5f85579`**（tag `v2.7.1`）· Python **3.13** 本机编译轮子（需 `python3-dev`）；`(40°N,80°W)` 2015-03-23 15:30 UT / 250 km 实跑（2026-09-24 EDT）
+目录：[`PROJECTS.json` → `aacgmv2`](../../PROJECTS.json) · 上游 <https://github.com/aburrell/aacgmv2> · 许可 **MIT** · PyPI **`aacgmv2` 2.7.1** · tip **`5f85579`**（tag `v2.7.1`）· Python **3.13** 本机编译轮子（需 `python3-dev`）；`(40°N,80°W)` 2015-03-23 15:30 UT / 250 km 实跑（2026-09-24 EDT） · **质检复跑通过**（同 I/O，2026-09-24 04:45 EDT）
 
 > 岗位：地理坐标 ↔ **Altitude-Adjusted Corrected Geomagnetic (AACGM-v2)**，并算 **MLT**。冲突时：**上游 README / `python -m aacgmv2 -h` > 本文**。与 [apexpy](./apexpy.md)（Apex/QD）互补；**不是** TEC / 电子密度模型。
 

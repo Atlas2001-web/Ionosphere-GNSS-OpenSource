@@ -1,6 +1,6 @@
 # ionex-rs · Rust IONEX 解析库操作手册
 
-目录：[`PROJECTS.json` → `ionex-rs`](../../PROJECTS.json) · 上游 <https://github.com/nav-solutions/ionex> · crates.io **`ionex` 0.1.0** · tip **`bcb9171`** · **MPL-2.0** · MSRV 标 1.82（依赖实际常要 **≥1.88**；本机 **rustc 1.98.1**）· 本机验证：读 `CKMG0020.22I.gz` → 129575 点 / 25 图；格点 87.5°N/−180° = **9.2 TECU**；`format` 往返 807703 B · 2026-09-24 04:39 EDT
+目录：[`PROJECTS.json` → `ionex-rs`](../../PROJECTS.json) · 上游 <https://github.com/nav-solutions/ionex> · crates.io **`ionex` 0.1.0** · tip **`bcb9171`** · **MPL-2.0** · MSRV 标 1.82（依赖实际常要 **≥1.88**；本机 **rustc 1.98.1**）· 本机验证：读 `CKMG0020.22I.gz` → 129575 点 / 25 图；格点 87.5°N/−180° = **9.2 TECU**；`format` 往返 807703 B · 2026-09-24 04:39 EDT · **质检复跑通过**（同 I/O，2026-09-24 04:44 EDT）
 
 > 岗位：把 IONEX（全球/区域 TEC 格网）**解析进 Rust**，可写回 2D、可按格点索引。冲突时：**上游 README / docs.rs `ionex` / 本机 `cargo doc -p ionex` > 本文**。Python 科研读图 → [ionex-gim](./ionex-gim.md)（`gnss-lab/ionex`）；两图对照 → [diffionmap](./diffionmap.md)；GIM 边界 → [sh-gim](./sh-gim.md)。
 
@@ -88,13 +88,12 @@ use ionex::prelude::*;
 
 let ionex = IONEX::from_gzip_file(path).unwrap();
 println!("version {}.{}", ionex.header.version.major, ionex.header.version.minor);
-println!("is_2d {} n_record {} n_epochs {}",
-    ionex.is_2d(),
-    ionex.record.iter().count(),
-    ionex.record.epochs_iter().count());
+println!("n_record {}", ionex.record.iter().count());
+println!("std_name {}", ionex.generate_standardized_filename());
 let epoch = Epoch::from_str("2022-01-02T00:00:00 UTC").unwrap();
 let key = Key::from_decimal_degrees_km(epoch, 87.5, -180.0, 350.0);
 println!("tec {}", ionex.record.get(&key).unwrap().tecu());
+// format 需 BufWriter：ionex.format(&mut BufWriter::new(File::create("out.I")?))?;
 ```
 
 **本机 stdout（tip `bcb9171` + rustc 1.98.1，2026-09-24 04:39 EDT）：**

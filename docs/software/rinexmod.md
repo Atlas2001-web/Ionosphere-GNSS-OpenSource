@@ -1,6 +1,6 @@
 # rinexmod · RINEX 头/元数据批量修改操作手册
 
-目录：[`PROJECTS.json` → `rinexmod`](../../PROJECTS.json) · 上游 <https://github.com/IPGP/rinexmod> · PyPI <https://pypi.org/project/rinexmod/> · 许可 **GPL-3.0** · 本机 **`rinexmod` 4.2.1** / 依赖 **`hatanaka` 2.8.1** · georinex 样例 `demo.10o` 改头实跑（2026-09-24 EDT）
+目录：[`PROJECTS.json` → `rinexmod`](../../PROJECTS.json) · 上游 <https://github.com/IPGP/rinexmod> · PyPI <https://pypi.org/project/rinexmod/> · 许可 **GPL-3.0** · 本机 **`rinexmod` 4.2.1** / 依赖 **`hatanaka` 2.8.1** · georinex 样例 `demo.10o` 改头实跑（2026-09-24 EDT） · **质检复跑通过**（同 I/O，2026-09-24 04:48 EDT）
 
 > 岗位：**批量改 RINEX OBS 头字段、按站码重命名、长短文件名、可选 Hatanaka/gzip**。冲突时：**本机 `rinexmod_run -h` / 上游 README > 本文**。伴生台网入库 → [autorino](./autorino.md)；读进 Python → [georinex](./georinex.md)；CRX ↔ RNX → [hatanaka](./hatanaka.md)。**不是**定位 / QC / TEC。
 

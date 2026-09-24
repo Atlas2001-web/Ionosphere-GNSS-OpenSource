@@ -1,6 +1,6 @@
 # pyubx2 · u-blox UBX 编解码库操作手册
 
-目录：[`PROJECTS.json` → `pyubx2`](../../PROJECTS.json) · 上游 <https://github.com/semuconsulting/pyubx2> · 文档 <https://www.semuconsulting.com/pyubx2/> · PyPI **`pyubx2` 1.3.6** · tip **`4abbfa6`** · BSD-3-Clause · Python ≥3.10 · 本机验证 1.3.6（**本机无接收机，用构造/样例字节**；CFG-MSG / NAV-PVT POLL / ACK-ACK 往返；上游 `tests/pygpsdata-NAV.log` NAV-PVT；`examples/mon_span.ubx` 109 帧）· 2026-09-24 04:47 EDT
+目录：[`PROJECTS.json` → `pyubx2`](../../PROJECTS.json) · 上游 <https://github.com/semuconsulting/pyubx2> · 文档 <https://www.semuconsulting.com/pyubx2/> · PyPI **`pyubx2` 1.3.6** · tip **`4abbfa6`** · BSD-3-Clause · Python ≥3.10 · 本机验证 1.3.6（**本机无接收机，用构造/样例字节**；CFG-MSG / NAV-PVT POLL / ACK-ACK 往返；上游 `tests/pygpsdata-NAV.log` NAV-PVT；`examples/mon_span.ubx` 109 帧）· 2026-09-24 04:47 EDT · **质检复跑通过**（同 I/O，2026-09-24 04:48 EDT）
 
 > 岗位：纯 Python **解析/生成 UBX**（GET/SET/POLL + Gen9 `CFG-VAL*`）。冲突时：**上游 README / Sphinx / 本机 `help(UBXReader)` > 本文**。串口/NTRIP/录流 CLI → [pygnssutils](./pygnssutils.md)；桌面 GUI → [pygpsclient](./pygpsclient.md)；NMEA 姐妹库 → [pynmeagps](./pynmeagps.md)。**本包无 CLI entry point**（上游 README 的 “CLI” 指向 pygnssutils，旧名 `gnssdump` → 现 `gnssstreamer`）。
 

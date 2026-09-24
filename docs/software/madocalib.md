@@ -1,6 +1,6 @@
 # MADOCALIB · QZSS MADOCA-PPP 测试库操作手册
 
-目录：[`PROJECTS.json` → `MADOCALIB`](../../PROJECTS.json) · 上游 <https://github.com/QZSS-Strategy-Office/madocalib> · 官方门户 <https://qzss.go.jp/> · tip **`0089f7d`** · **VER_MADOCALIB 2.1**（基于 RTKLIB 2.4.3 b34）· 许可 **BSD-2-Clause + 附加条款** · 本机验证：Linux `make` → `rnx2rtkp`；样例站 **MIZU** 2025-04-01 00:00–00:59 ×30 s + L6E PRN204/206 → **118** 历元 **Q=6** PPP · 末历元 ≈ 39.135150522°N 141.132871426°E 117.20 m · 2026-09-24 04:39 EDT
+目录：[`PROJECTS.json` → `MADOCALIB`](../../PROJECTS.json) · 上游 <https://github.com/QZSS-Strategy-Office/madocalib> · 官方门户 <https://qzss.go.jp/> · tip **`0089f7d`** · **VER_MADOCALIB 2.1**（基于 RTKLIB 2.4.3 b34）· 许可 **BSD-2-Clause + 附加条款** · 本机验证：Linux `make` → `rnx2rtkp`；样例站 **MIZU** 2025-04-01 00:00–00:59 ×30 s + L6E PRN204/206 → **118** 历元 **Q=6** PPP · 末历元 ≈ 39.135150522°N 141.132871426°E 117.20 m · 2026-09-24 04:39 EDT · **质检复跑通过**（同 I/O，2026-09-24 04:42 EDT）
 
 > 岗位：内阁府 QZSS **MADOCA-PPP** 事后参考实现（Compact SSR / L6 → PPP、PPP-AR、可选电离层改正）。冲突时：**仓内 `readme.txt` / `MADOCALIB_manual_ver006.pdf` / `./rnx2rtkp -?` > 本文**。通用 RTK/PPP CLI → [rtklib](./rtklib.md)；发表级 PPP-AR → [pride-pppar](./pride-pppar.md)；Python 开放 PPP-RTK → [cssrlib](./cssrlib.md)；Galileo HAS 解码 → [haslib](./haslib.md)。
 
@@ -85,7 +85,7 @@ ANT=./data/igs20.atx
 % amb mode   : OFF
 % ionocorr   : off
 历元数：118（grep -c '^2025/' …pos）
-首解：2025/04/01 00:01:00  Q=6  ns=10  h≈117.97
+首解：2025/04/01 00:01:00  Q=6  ns=10  h≈117.97（00:00:00/00:00:30 为 Q=0，未写入 .pos）
 末解：2025/04/01 00:59:30  Q=6  ns=19
         39.135150522  141.132871426  117.2037
         sdn/sde/sdu ≈ 0.026 / 0.045 / 0.055 m
