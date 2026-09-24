@@ -21,7 +21,7 @@ RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka、质检与 IGS 产品下载。
 | [rtcm](https://github.com/Node-NTRIP/rtcm) | RTCM 3 消息编解码（至 3.3） | TypeScript | 48 | 🏷️ 个人社区 |
 | [baidu-ntripcaster](https://github.com/baidu/ntripcaster) | 百度开源的 NTRIP Caster 实现 | C | 46 | 🏷️ 个人社区 |
 | [millipede-caster](https://github.com/pbeyssac/millipede-caster) | 高性能开源 NTRIP/RTK Caster（C） | C | 43 | 🏷️ 个人社区 |
-| [nmea-msgs](https://github.com/ros-drivers/nmea_msgs) | nmea_msgs：ROS 用 NMEA 消息接口（ros-drivers） | CMake | 38 | 🏷️ 官方 |
+| [nmea-msgs](https://github.com/ros-drivers/nmea_msgs) | nmea_msgs：ROS 用 NMEA 消息接口 | CMake | 38 | 🏷️ 个人社区 |
 | [ntripbrowser](https://github.com/emlid/ntripbrowser) | CLI 查询 NTRIP caster 源表与挂载点 | Python | 32 | 🏷️ 个人社区 |
 | [rtcm-rs](https://github.com/martinhakansson/rtcm-rs) | RTCM v3 编解码的 Rust crate | Rust | 32 | 🏷️ 个人社区 |
 | [gstream](https://github.com/Jin-Whu/gstream) | 面向 GNSS 的开源数据流客户端库 | C++ | 20 | 🏷️ 高校实验室 |
@@ -145,11 +145,11 @@ RTCM-Ntrip 官方仓库中的 POSIX ntripserver，用于将接收机或文件流
 Millipede 是面向 RTK/CORS 场景的开源 NTRIP caster（C，BSD-3-Clause），强调吞吐与可运维部署，适合自建差分播发或做多基站接入试验。协议与鉴权能力需对照其文档与版本说明；公网部署仍要自行处理 TLS、账号与带宽监控。相对 BKG Professional Caster，社区文档更轻，但源码开放便于二次开发。
 
 #### [nmea-msgs](https://github.com/ros-drivers/nmea_msgs)  
-*🏷️ 官方*
+*🏷️ 个人社区*
 
 语言：CMake · 许可：— · 星标约：38 · 宿主：github
 
-ros-drivers 组织维护的 nmea_msgs，定义与 NMEA 相关的 ROS 消息，方便驱动、导航与录包节点交换 GNSS 语句。适合机器人接入 GNSS 接收机。只提供消息契约，不含语句解析与 PVT；解析需另接驱动或 nmea_navsat_driver 一类包。
+ros-drivers 维护的 nmea_msgs，定义与 NMEA 标准相关的 ROS 消息，方便驱动、导航与记录节点交换 GNSS 语句。适合 ROS 机器人接入 GNSS 接收机。只提供消息契约，不含语句解析与 PVT；解析与定位需配合 nmea_navsat_driver 等包。消息字段随 ROS 发行版可能微调，编译前核对依赖。
 
 #### [ntripbrowser](https://github.com/emlid/ntripbrowser)  
 *🏷️ 个人社区*
@@ -269,6 +269,7 @@ Peinser 发布的自托管 NTRIP v2 caster：汇聚多基站 RTCM 改正并通�
 语言：C++ · 许可：GPL-3.0 · 星标约：— · 宿主：official_site
 
 BKG 提供的 BNC 发行目录，含 GPL-3 源码包、各发行版二进制与变更说明，与产品介绍页互补，便于脚本化拉取固定版本做复现。使用时注意版本与依赖库匹配；功能说明与 PPP 选项仍以 BNC 主页文档为准。使用前请核验上游页面与许可条款。
+
 #### [BNS](https://software.rtcm-ntrip.org/wiki/BNS)  
 *🏷️ 官方*
 
@@ -302,7 +303,7 @@ BKG/RTCM 维护的 NTRIP 开源软件 Trac 门户，集中入口含 BNC、Profes
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [android_rinex](https://github.com/rokubun/android_rinex) | GnssLogger/GPSTest 日志转 RINEX | Python | 104 | 🏷️ 个人社区 |
-| [BUAA-RINEX-Convertor](https://github.com/Jia-le-wang/BUAA-RINEX-Convertor) | BUAA-RINEX-Convertor：安卓 Logger→RINEX 3.04 | C++ | 20 | 🏷️ 个人社区 |
+| [BUAA-RINEX-Convertor](https://github.com/Jia-le-wang/BUAA-RINEX-Convertor) | 北航：GnssLogger 文本转 RINEX 3.04 | C++ | 20 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -318,7 +319,7 @@ BKG/RTCM 维护的 NTRIP 开源软件 Trac 门户，集中入口含 BNC、Profes
 
 语言：C++ · 许可：— · 星标约：20 · 宿主：github
 
-将 Google GnssLogger 文本日志转为 RINEX 3.04，服务安卓原始观测科研。可与 android_rinex 对照字段与星座覆盖。手机天线/钟差特性仍须在定位端特殊处理；维护活跃度需实测。
+将 Google GnssLogger 文本日志转为 RINEX 3.04，面向安卓原始观测科研。可与 android_rinex 对照输出差异。维护与星座覆盖需实测。
 
 ## 质量检查
 
@@ -384,6 +385,7 @@ Anubis 免费档下载入口，提供 Linux 预编译与 GPL-3 源码，覆盖�
 语言：Perl · 许可：free (as-is) · 星标约：— · 宿主：official_site
 
 捷克大地测量观测台相关页面提供的 plot_anubis.pl，读取 Anubis 输出的 XTR 生成单站质检图，免费且无支持承诺。适合批量为数据中心出静态图；若需交互仪表盘或实时告警，应评估 Anubis 商业档或其他可视化栈。使用前请核验上游页面与许可条款。
+
 #### [RINGO](https://terras.gsi.go.jp/software/ringo/en/)  
 *🏷️ 官方*
 
@@ -517,16 +519,16 @@ EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RT
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [FAST](https://github.com/ChangChuntao/FAST) | FAST：GNSS 下载/质检/SPP/选站（Python） | Python | 206 | 🏷️ 高校实验室 ★ 核心 |
+| [FAST](https://github.com/ChangChuntao/FAST) | FAST：GNSS 下载/质检/SPP/选站（Python） | Python | 206 | 🏷️ 个人社区 ★ 核心 |
 
 ### 详细说明
 
 #### [FAST](https://github.com/ChangChuntao/FAST)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区 ★ 核心*
 
 语言：Python · 许可：GPL-3.0 · 星标约：206 · 宿主：github
 
-模块化 Python 工具：IGS 等数据下载、质量分析、单点定位与测站选择，中文用户较多。适合日常数据准备与教学。精密 PPP-AR、科研级轨道钟差仍需 PRIDE、Ginan 等；大批量任务请做好镜像与校验策略。
+模块化 Python 软件：IGS/数据下载、质量分析、单点定位、测站选择等，中文用户多。适合日常数据准备。精密 PPP-AR/科研级 POD 仍需 PRIDE/Ginan 等。
 
 ## 下载
 
@@ -534,7 +536,7 @@ EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RT
 |---|---|---|---:|---|
 | [GAMPII-GOOD](https://github.com/zhouforme0318/GAMPII-GOOD) | GOOD：GNSS 观测与产品下载器（GAMP II 配套） | C++ | 123 | 🏷️ 个人社区 |
 | [gnss-downloader](https://github.com/Mereithhh/gnss-downloader) | 带界面的 IGS/镜像 GNSS 数据下载器 | Python | 23 | 🏷️ 个人社区 |
-| [GDDS](https://github.com/LECUT/GDDS) | GDDS：IGS/CORS/产品/时序多模块下载器 | Python | 13 | 🏷️ 个人社区 |
+| [GDDS](https://github.com/LECUT/GDDS) | IGS/CORS/产品/时序等多模块 GNSS 下载 | Python | 13 | 🏷️ 个人社区 |
 | [swds-api-downloader](https://github.com/embrace-inpe/swds-api-downloader) | Embrace 空间天气数据服务 API 的自动下载示例 | Python | 4 | 🏷️ 官方 |
 
 ### 详细说明
@@ -552,12 +554,13 @@ EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RT
 语言：Python · 许可：— · 星标约：23 · 宿主：github
 
 图形界面对接 NASA/WHU 等常见 FTP 镜像，降低新手按站按日下载门槛。适合偶发取数与教学演示。大规模自动化、断点续传与镜像故障切换不如专用脚本或 FAST 一类工具。
+
 #### [GDDS](https://github.com/LECUT/GDDS)  
 *🏷️ 个人社区*
 
 语言：Python · 许可：— · 星标约：13 · 宿主：github
 
-把全球 IGS、后处理产品、区域 CORS 与时间序列等拆成模块下载，并带解压。适合数据中心助理式批量抓取。镜像可用性与维护节奏需自测；大规模流水线可与 FAST、GAMPII-GOOD 对照断点续传策略。
+分模块下载全球 IGS、后处理产品、区域 CORS、时间序列等，并含解压。适合数据中心助理式抓取。维护活跃度与镜像可用性需自行跟踪。
 
 #### [swds-api-downloader](https://github.com/embrace-inpe/swds-api-downloader)  
 *🏷️ 官方*
@@ -717,7 +720,7 @@ NLS/FGI（nlsfi）维护的 Galileo High Accuracy Service 解码库，支持从 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [GNSS_Multipath_Analysis_Software](https://github.com/paarnes/GNSS_Multipath_Analysis_Software) | GNSS 观测多路径分析 Python 软件 | Python | 141 | 🏷️ 个人社区 核心 |
-| [MAPS](https://github.com/GCCLib/MAPS) | MAPS：MATLAB GNSS 多路径分析工具 | MATLAB | 35 | 🏷️ 个人社区 |
+| [MAPS](https://github.com/GCCLib/MAPS) | MATLAB GNSS 多路径分析软件 | MATLAB | 35 | 🏷️ 个人社区 |
 | [gnss-multipath-detector](https://github.com/EvgeniiMunin/gnss-multipath-detector) | GPS L1 C/A 多路径异常检测模型 | Jupyter Notebook | 28 | 🏷️ 个人社区 |
 | [PyRINEX](https://github.com/geumjin99/PyRINEX) | 多用途 Python RINEX 读写与质量分析包 | Python | 16 | 🏷️ 高校实验室 |
 | [geoveil-mp](https://github.com/miluta7/geoveil-mp) | Rust/Python：RINEX 逐码多路径 MP 组合、周跳检测与 SNR 序列导出 | Rust | 0 | 🏷️ 个人社区 |
@@ -736,7 +739,7 @@ NLS/FGI（nlsfi）维护的 Galileo High Accuracy Service 解码库，支持从 
 
 语言：MATLAB · 许可：— · 星标约：35 · 宿主：github
 
-在 MATLAB 里做 GNSS 观测多路径分析，方便已有 MATLAB 流水线的实验室出图与指标。可与 paarnes 等 Python 多路径软件对照定义。不替代定位引擎；周跳与 QC 可另接 Anubis/GFZRNX。
+MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实验室。与 paarnes 的 Python 软件可对照指标定义。
 
 #### [gnss-multipath-detector](https://github.com/EvgeniiMunin/gnss-multipath-detector)  
 *🏷️ 个人社区*

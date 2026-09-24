@@ -11,7 +11,7 @@
 | [GNSS-SDRLIB](https://github.com/taroz/GNSS-SDRLIB) | GNSS-SDRLIB：C 语言 GNSS SDR 库 | C | 536 | 🏷️ 个人社区 |
 | [BeagleSDRGPS](https://github.com/jks-prv/Beagle_SDR_GPS) | KiwiSDR：BeagleBone 短波 SDR 与软件 GPS（已归档） | C++ | 521 | 🏷️ 个人社区 |
 | [PocketSDR](https://github.com/tomojitakasu/PocketSDR) | Tomoji Takasu 开源 GNSS 软件接收机（多星座多频 SDR） | C | 515 | 🏷️ 个人社区 核心 |
-| [FGI-GSRx](https://github.com/nlsfi/FGI-GSRx) | FGI-GSRx：多星座 MATLAB SDR 接收机（官方开源） | MATLAB | 192 | 🏷️ 官方 核心 |
+| [FGI-GSRx](https://github.com/nlsfi/FGI-GSRx) | 芬兰 FGI 多星座 MATLAB 软件接收机 | MATLAB | 192 | 🏷️ 官方 核心 |
 | [Full_Stack_GPS_Receiver](https://github.com/hamsternz/Full_Stack_GPS_Receiver) | 1-bit ADC 到 PVT 的开源 GPS 软件接收机示例 | C | 168 | 🏷️ 个人社区 |
 | [Analog-GPS-data-receiver](https://github.com/leaningktower/Analog-GPS-data-receiver) | 分立射频+TinyFPGA 的模拟 GPS 接收教学项目 | C | 164 | 🏷️ 个人社区 |
 | [GNSS-GPS-SDR](https://github.com/JiaoXianjun/GNSS-GPS-SDR) | GPS 录回放、接收与测试相关实验代码 | Python | 157 | 🏷️ 个人社区 |
@@ -73,11 +73,11 @@ KiwiSDR 上游核心：在 BeagleBone 上提供 Web 可访问短波接收，并�
 RTKLIB 作者推出的开源 GNSS SDR：配套 Pocket SDR FE 前端与 Python/C/C++ 应用，覆盖 GPS/GLONASS/Galileo/QZSS/BDS/NavIC/SBAS 多频信号，可做捕获、跟踪、导航电文与 PVT。适合信号层教学与前端联调。精密 PPP/RTK 解算仍常外接 RTKLIB 系；硬件前端需另行采购或自备。
 
 #### [FGI-GSRx](https://github.com/nlsfi/FGI-GSRx)  
-*🏷️ 官方*
+*🏷️ 官方 核心*
 
 语言：MATLAB · 许可：GPL-3.0 · 星标约：192 · 宿主：github
 
-芬兰 FGI（nlsfi）开源的多星座 MATLAB 软件接收机，便于改捕获/跟踪环与抗干扰试验。适合基带算法课与论文复现。实时吞吐与嵌入式部署不如 C++ gnss-sdr；射频前端与采样格式需按仓库说明配置。
+FGI 开源多星座 MATLAB 接收机，方便改基带算法与抗干扰试验。适合算法论文。实时吞吐不如 C++ gnss-sdr。
 
 #### [Full_Stack_GPS_Receiver](https://github.com/hamsternz/Full_Stack_GPS_Receiver)  
 *🏷️ 个人社区*
@@ -85,6 +85,7 @@ RTKLIB 作者推出的开源 GNSS SDR：配套 Pocket SDR FE 前端与 Python/C/
 语言：C · 许可：MIT · 星标约：168 · 宿主：github
 
 贯通原始 1-bit ADC 采样、捕获跟踪到位置解算的完整链路，教学上极利于理解接收机分层。适合自学与课程演示。工程完备性、多星座与抗干扰能力有限，不宜当作生产接收机。
+
 #### [Analog-GPS-data-receiver](https://github.com/leaningktower/Analog-GPS-data-receiver)  
 *🏷️ 个人社区*
 
@@ -214,7 +215,7 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 #### [gnsssdrgui](https://github.com/UHaider/gnss_sdr_gui)  
 *🏷️ 个人社区*
 
-语言：C++ · 许可：GPL-3.0 · 星标约：16 · 宿主：github
+语言：C++ · 许可：— · 星标约：16 · 宿主：github
 
 为开源 gnss-sdr 提供图形界面，降低编写配置文件、选择信号链与查看运行状态的门槛。适合不想纯文本配置的 gnss-sdr 用户与演示场合。本身不替代信号处理核心，功能随主项目版本变化；复杂自定义流图仍常需手写配置。安装路径与 gnss-sdr 编译选项需保持一致。大改流图前先备份可工作的配置文件。
 
@@ -285,7 +286,7 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gps-sdr-sim](https://github.com/osqzss/gps-sdr-sim) | gps-sdr-sim：GPS L1 IQ 仿真（HackRF 等回放） | C | 3466 | 🏷️ 个人社区 核心 |
+| [gps-sdr-sim](https://github.com/osqzss/gps-sdr-sim) | GPS L1 基带信号仿真（SDR 回放） | C | 3466 | 🏷️ 个人社区 核心 |
 | [multi-sdr-gps-sim](https://github.com/Mictronics/multi-sdr-gps-sim) | HackRF/Pluto 等平台上的 GPS L1 实时仿真 | C | 264 | 🏷️ 个人社区 |
 | [SignalSim](https://github.com/globsky/SignalSim) | 覆盖多阶段链路的 GNSS 信号/数据仿真 | C++ | 208 | 🏷️ 个人社区 |
 | [gps-sdr-sim-assistant](https://github.com/frank-pian/gps-sdr-sim-assistant) | gps-sdr-sim 的图形化助手工具 | JavaScript | 63 | 🏷️ 个人社区 |
@@ -303,11 +304,11 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 ### 详细说明
 
 #### [gps-sdr-sim](https://github.com/osqzss/gps-sdr-sim)  
-*🏷️ 个人社区*
+*🏷️ 个人社区 核心*
 
 语言：C · 许可：MIT · 星标约：3466 · 宿主：github
 
-按星历与轨迹生成 GPS L1 基带 IQ，供 HackRF 等 SDR 回放，安卓/接收机测试极常用。使用须遵守当地无线电法规。多星座或更高保真可对照 SignalSim、galileo-sdr-sim；它不做真实天空接收。
+生成 GPS L1 IQ 供 HackRF 等回放，研究与安卓测试极常用。注意合法合规使用。多星座高保真可用 SignalSim/galileo-sdr-sim 等。
 
 #### [multi-sdr-gps-sim](https://github.com/Mictronics/multi-sdr-gps-sim)  
 *🏷️ 个人社区*
@@ -315,12 +316,14 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 语言：C · 许可：MIT · 星标约：264 · 宿主：github
 
 在多种 SDR 上即时生成 GPS L1 基带 IQ，减少落盘中间文件，便于接收机与抗干扰实验联调。适合实验室封闭环境。对外发射须遵守无线电法规；多星座/认证级仿真请另选更完整工具链。
+
 #### [SignalSim](https://github.com/globsky/SignalSim)  
 *🏷️ 个人社区*
 
 语言：C++ · 许可：— · 星标约：208 · 宿主：github
 
 相对单一 L1 IQ sim，更接近科研用多星座、多阶段信号与数据仿真链，便于算法验证与场景复现。适合接收机基带/测量层试验。配置项多、文档需耐心研读；实时射频合规发射另论。
+
 #### [gps-sdr-sim-assistant](https://github.com/frank-pian/gps-sdr-sim-assistant)  
 *🏷️ 个人社区*
 
@@ -436,6 +439,7 @@ CU Boulder RF & SatNav 实验室维护的 SoftGNSS/教材配套页面，介绍 B
 语言：MATLAB · 许可：— · 星标约：257 · 宿主：github
 
 生成 GPS/Galileo/BeiDou 等系统的 PRN、二级码与无数据导频等，并附捕获示例与理论摘要，方便信号层仿真与教学。适合通信/导航信号课。不覆盖完整跟踪到 PVT 的接收机链路。
+
 #### [GNSS-VHDL](https://github.com/danipascual/GNSS-VHDL)  
 *🏷️ 高校实验室*
 
@@ -463,7 +467,7 @@ VHDL 代码用于生成 GPS L1 C/A 以及 Galileo E1OS、E5 的 PRN 与无数据
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [NavLab-DPE-SDR](https://github.com/Stanford-NavLab/NavLab-DPE-SDR) | 斯坦福 NavLab 直接位置估计 GPS SDR（CUDA/PyGNSS） | Cuda | 46 | 🏷️ 高校实验室 |
-| [GPSL1-DPEmodule](https://github.com/Sergio-Vicenzo/GPSL1-DPEmodule) | GPSL1-DPEmodule：MATLAB 直接位置估计（DPE）模块 | MATLAB | 33 | 🏷️ 个人社区 |
+| [GPSL1-DPEmodule](https://github.com/Sergio-Vicenzo/GPSL1-DPEmodule) | GPS L1 直接位置估计（DPE）MATLAB 插件 | MATLAB | 33 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -479,7 +483,7 @@ VHDL 代码用于生成 GPS L1 C/A 以及 Galileo E1OS、E5 的 PRN 与无数据
 
 语言：MATLAB · 许可：GPL-2.0 · 星标约：33 · 宿主：github
 
-把 Direct Position Estimation 接到 MATLAB 软件接收机流程，探索先进基带定位。适合 SDR/抗干扰与非两步法定位研究。传统捕获—跟踪—PVT 用户可作拓展阅读；实时 C++ 部署需另行移植。
+把 Direct Position Estimation 接到 MATLAB 接收机流程，适合先进基带定位研究。传统两步法接收机用户可作拓展阅读。
 
 ## 多路径抑制/直接定位
 
@@ -512,6 +516,7 @@ VHDL 代码用于生成 GPS L1 C/A 以及 Galileo E1OS、E5 的 PRN 与无数据
 语言：Python · 许可：MIT · 星标约：88 · 宿主：github
 
 面向低轨航天器的 GPS 导航与相对导航流程，场景从地面测地 PPP 明显转向星载几何与动力学约束。适合立方星/编队导航原型。精密测地 PPP-AR 与区域 CORS 工作流不是其目标。
+
 #### [hardware](https://github.com/oresat/oresat-gps-hardware)  
 *🏷️ 高校实验室*
 

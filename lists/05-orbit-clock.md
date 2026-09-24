@@ -49,12 +49,14 @@ Yuanxin Pan 开源的钟差/相位偏差合成工具，源于学位论文并应�
 语言：Python · 许可：open (GFZ release) · 星标约：— · 宿主：official_site
 
 GFZ 正式介绍 SPOCC 背景与目标的新闻页，说明从原型到可发布 Python/Docker 包的过程，并指向 gnss.gfz.de 下载。适合了解发布动机与组合策略；实际安装、配置与示例仍以软件服务页及用户文档为准。使用前请核验上游页面与许可条款。
+
 #### [IGSMAIL-SPOCC](https://lists.igs.org/pipermail/igsmail/2025/008556.html)  
 *🏷️ 官方*
 
 语言：text · 许可：n/a (announcement) · 星标约：— · 宿主：official_site
 
 国际 GNSS 服务邮件列表中关于 SPOCC 开源发布的公告，确认软件面向多星座轨道与钟差加权综合，并给出 GFZ 服务页链接。属于官方发布记录，便于引用发布时间线；获取软件请转服务页，本页本身不是代码仓。使用前请核验上游页面与许可条款。
+
 #### [SPOCC](https://gnss.gfz.de/services/spocc)  
 *🏷️ 官方 核心*
 
