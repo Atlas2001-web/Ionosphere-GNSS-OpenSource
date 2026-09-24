@@ -1,6 +1,6 @@
 # IRI-MATLAB-FileExchange · MathWorks File Exchange IRI 封装操作手册
 
-目录：[`PROJECTS.json` → `IRI-MATLAB-FileExchange`](../../PROJECTS.json) · File Exchange <https://www.mathworks.com/matlabcentral/fileexchange/34863-international-reference-ionosphere-iri-model> · irimodel.org 明确列出的 **MATLAB version** 入口 · 作者 **Drew Compston** · 页面标 **Version 2.0.0.0**（**30.4 KB**）· 发布 **2019-12-07** · 本机核页 **2026-09-24 06:18 EDT**（WebFetch 可读；本机 `curl` 对该域 **HTTP 403**）· **无 MATLAB / 无 Octave → 未下载 zip、未跑 `iri2016`/`iritest.m`（禁止臆造 Ne/TEC）**
+目录：[`PROJECTS.json` → `IRI-MATLAB-FileExchange`](../../PROJECTS.json) · File Exchange <https://www.mathworks.com/matlabcentral/fileexchange/34863-international-reference-ionosphere-iri-model> · irimodel.org 明确列出的 **MATLAB version** 入口 · 作者 **Drew Compston** · 页面标 **Version 2.0.0.0**（**30.4 KB**）· 发布 **2019-12-07** · 本机核页 **2026-09-24 06:18 EDT**（WebFetch 可读；本机 `curl` 对该域 **HTTP 403**）· **无 MATLAB / 无 Octave → 未下载 zip、未跑 `iri2016`/`iritest.m`（禁止臆造 Ne/TEC）** · **质检复跑** 2026-09-24 06:24 EDT（WebFetch 再确认 **2.0.0.0**/30.4 KB/**7 Dec 2019**/hack+`curl`；本机 `curl` **403**/body **476** B；CCMC vitmo→`IRI~2012/`/`IRI~2016/` **200**；`IRI~2020/` **200**但 FE **无**对应函数；irimodel.org 文案 **MATLAB version → IRI-2012 and IRI-2016**；**无 matlab/octave**→**未臆造 Ne/TEC**；交叉 [iri-fortran](./iri-fortran.md)/[iri-2026-package](./iri-2026-package.md)/[iri-common-files](./iri-common-files.md)/[pyiri](./pyiri.md)/[iri2016](./iri2016.md)）
 
 > 岗位：讲清这条 **官方指向的 MATLAB 入口**实际在干什么、能跟到哪一代 IRI、以及和 Fortran 金标准 / COMMON_FILES / IRI-2026 的边界。冲突时：**File Exchange 页面说明 + irimodel.org 链接文案 > 本文**。本地金标准数字只引用 [iri-fortran](./iri-fortran.md)。
 
@@ -76,12 +76,13 @@
 # 本机（无 MATLAB）只能核「入口页是否可被非浏览器抓取」：
 curl -sS -o /dev/null -w '%{http_code} %{url_effective}\n' -A 'Mozilla/5.0' -L \
   'https://www.mathworks.com/matlabcentral/fileexchange/34863-international-reference-ionosphere-iri-model'
-# 期望（本机 2026-09-24）：403 …（CDN/反爬；浏览器或 WebFetch 仍可读页面元数据）
+# 期望（本机 2026-09-24；质检复跑 06:24 EDT）：403 … body≈476 B Access Denied（CDN/反爬；浏览器或 WebFetch 仍可读页面元数据）
 
-# CCMC 旧 vitmo → 新模型页（本机）：
+# CCMC 旧 vitmo → 新模型页（本机；质检复跑同）：
 curl -sS -o /dev/null -w '%{http_code} %{url_effective}\n' -A 'Mozilla/5.0' -L \
   'https://ccmc.gsfc.nasa.gov/modelweb/models/iri2016_vitmo.php'
 # 期望：200 https://ccmc.gsfc.nasa.gov/models/IRI~2016/
+# 对照：iri2012_vitmo.php → …/IRI~2012/ ；另有 …/IRI~2020/（本 FE 无函数）
 ```
 
 **无 MATLAB 时的替代（本机已短硬）：**
@@ -102,7 +103,7 @@ curl -sS -o /dev/null -w '%{http_code} %{url_effective}\n' -A 'Mozilla/5.0' -L \
 
 ## 4. 页面事实清单（抓取，非 README 抄写）
 
-本机 WebFetch（2026-09-24）可见：
+本机 WebFetch（2026-09-24；质检复跑 06:24 EDT 再读一致）可见：
 
 | 项 | 值 |
 | --- | --- |
@@ -138,7 +139,7 @@ curl -sS -o /dev/null -w '%{http_code} %{url_effective}\n' -A 'Mozilla/5.0' -L \
 7. **Windows 缺 curl**——页面已写明；装错架构的 `curl.exe` 会静默失败。
 8. **结果随远端默认开关**——论文复现应对齐 [iri-fortran](./iri-fortran.md) 的 `JF(50)` / 指数文件，而不是一次网页输出。
 9. **许可以 File Exchange 页为准**——条目 `license` 在 PROJECTS 中为 null；再分发前读页面 License。
-10. **本机 MathWorks 域 403**——自动化 CI 勿假设 `curl` 能拉 zip；人工浏览器下载。
+10. **本机 MathWorks 域 403**——质检复跑仍 **403**/476 B；自动化 CI 勿假设 `curl` 能拉 zip；人工浏览器下载。
 11. **与 [iri2016](./iri2016.md)（space-physics）不是同一个包装**——后者走本地 Fortran；本条走 CCMC HTTP。
 12. **Octave 非官方目标**——作者写的是 MATLAB + 系统 curl；Octave 差异自行承担，本文不保证。
 

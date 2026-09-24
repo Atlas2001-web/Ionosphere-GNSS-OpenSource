@@ -1,6 +1,6 @@
 # RTCM-Ntrip-Software · 官方 RTCM NTRIP 软件门户操作手册
 
-目录：[`PROJECTS.json` → `RTCM-Ntrip-Software`](../../PROJECTS.json) · 门户 <https://software.rtcm-ntrip.org/>（HTTP 亦可）· Trac **1.6** · WikiStart **Last modified 2024-05-16 10:52:26 +02**（≈ **2024-05-16 04:52 EDT**）· 本机复抓 **2026-09-24 06:19–06:21 EDT**：首页 **9539** B / HTTP **200**；`svn info` trunk **Revision 11044**，Last Changed **r11043** @ **2026-09-23 06:03 EDT** · 许可随组件（多为 **GPL**；Professional Caster **另订**）
+目录：[`PROJECTS.json` → `RTCM-Ntrip-Software`](../../PROJECTS.json) · 门户 <https://software.rtcm-ntrip.org/>（HTTP 亦可）· Trac **1.6** · WikiStart **Last modified 2024-05-16 10:52:26 +02**（≈ **2024-05-16 04:52 EDT**）· 本机复抓 **2026-09-24 06:19–06:21 EDT**：首页 **9539** B / HTTP **200**；`svn info` trunk **Revision 11044**，Last Changed **r11043** @ **2026-09-23 06:03 EDT** · 许可随组件（多为 **GPL**；Professional Caster **另订**） · **质检复跑** 2026-09-24 06:24 EDT（首页 **9539** B/**200**/Trac **1.6**；WikiStart **May 16, 2024, 10:52:26 AM**；`svn info` **Revision 11044** / LCR **11043** / **2026-09-23 06:03:12 -0400**；BKG `bnc`/`download`/`bkgcaster` 皆 **200**（bnc⇄download 同 **22675** B）；页面 **BNC v2.13.7**；`bnchelp.html`+`/browser/.../tags` **429**；SSR **256/257/258/259**；Sourcetable **2011-12-16**；交叉 [bnc](./bnc.md)/[bkg-ntripcaster](./bkg-ntripcaster.md)/[ntripstreams](./ntripstreams.md)/[rtcm3torinex](./rtcm3torinex.md)/[ntripcaster-libev](./ntripcaster-libev.md)）
 
 > 岗位：当 **索引页**——分清门户上有什么、发行物在哪下、以及已有短硬手册该点哪篇。冲突时：**门户 WikiStart / BKG 下载页 / 各组件 `-h` > 本文**。本页 **不** 替代 [bnc](./bnc.md) / [bkg-ntripcaster](./bkg-ntripcaster.md) 的逐步操作。
 
@@ -73,7 +73,7 @@ WikiStart（2026-09-24 与 WebFetch 一致）写明：
 | `GnssCenter/` / `misc/` | 更旧；`misc` 注释含 REMOVE obsolete |
 | `tags/` | 浏览器注 **r11044**：BNC **2.13.7 → 2.13.7.1** bugfix（拼写 “bersion” 为上游 changelog 原文笔误） |
 
-反复刷新 `/browser/...` 可能 **HTTP 429**（本机 2026-09-24 出现过）——属门户限流，不是“目录消失”。
+反复刷新 `/browser/...` 可能 **HTTP 429**（写作 + 质检复跑 06:24 EDT 均出现）——属门户限流，不是“目录消失”。
 
 ## 3. 已文档化手册 vs 门户条目
 
@@ -98,10 +98,10 @@ svn checkout --username guest --password guest \
   https://software.rtcm-ntrip.org/svn/trunk
 svn info https://software.rtcm-ntrip.org/svn/trunk \
   --username guest --password guest | grep -E 'Revision|Last Changed'
-# 本机 2026-09-24 06:21 EDT：
+# 本机 2026-09-24 06:21 EDT；质检复跑 06:24 EDT 同：
 # Revision: 11044
 # Last Changed Rev: 11043
-# Last Changed Date: 2026-09-23 10:03:12 +0000  → 06:03 EDT
+# Last Changed Date: 2026-09-23 06:03:12 -0400 (EDT)
 ```
 
 只要 BNC：
@@ -112,7 +112,8 @@ svn checkout --username guest --password guest \
 ```
 
 在线帮助（BNC 手册常链到此）：  
-`https://software.rtcm-ntrip.org/export/HEAD/ntrip/trunk/BNC/src/bnchelp.html`
+`https://software.rtcm-ntrip.org/export/HEAD/ntrip/trunk/BNC/src/bnchelp.html`  
+质检复跑 06:24 EDT：该 export 与 `/browser/ntrip/tags` 均曾 **HTTP 429**（限流）——改用已落盘帮助或稍后再抓，勿当“文件消失”。
 
 ### 4.2 发行二进制（BKG，不是 Trac 附件栏）
 
@@ -122,9 +123,9 @@ svn checkout --username guest --password guest \
 
 | URL | HTTP | 页面要点 |
 | --- | --- | --- |
-| <https://igs.bkg.bund.de/ntrip/bnc> | 200 | **BNC v2.13.7**；多平台包 + Source Code C++ GPL；作者栏含 Mervart / Weber / Stürze / Stöcker |
-| <https://igs.bkg.bund.de/ntrip/download> | 200 | 本机抓取内容与 BNC 工具页高度同构（勿假设另有“总 zip”） |
-| <https://igs.bkg.bund.de/ntrip/bkgcaster> | 200 | Professional Caster：**Order and Delivery**；支持 Ntrip v1/v2；**不**做 VRS/最近站；手册/Changelog 外链 |
+| <https://igs.bkg.bund.de/ntrip/bnc> | 200 | **BNC v2.13.7**；多平台包 + Source Code C++ GPL；质检复跑页 **22675** B |
+| <https://igs.bkg.bund.de/ntrip/download> | 200 | 与 BNC 工具页同构（质检复跑同 **22675** B；勿假设另有“总 zip”） |
+| <https://igs.bkg.bund.de/ntrip/bkgcaster> | 200 | Professional Caster：**Order and Delivery**；支持 Ntrip v1/v2；**不**做 VRS/最近站；质检复跑 **20792** B |
 
 FTP 软件树（BNC 手册亦用）：`https://igs.bkg.bund.de/root_ftp/NTRIP/software/`（BNC / caster 子目录）。
 
