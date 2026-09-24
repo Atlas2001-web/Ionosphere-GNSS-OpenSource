@@ -67,7 +67,7 @@ PRIDE 团队面向智能手机的多频 GNSS 与 IMU 采集工具，便于把手
 | [GNSSTimeServer](https://github.com/Montecri/GNSSTimeServer) | GNSSTimeServer：ESP 系 GNSS 授时服务器 | C | 232 | 🏷️ 个人社区 |
 | [esp32-xbee](https://github.com/nebkat/esp32-xbee) | ESP32 NTRIP/UART 桥接固件（Ardusimple） | C | 119 | 🏷️ 个人社区 |
 | [STM32-GNSS](https://github.com/SimpleMethod/STM32-GNSS) | STM32-GNSS：STM32 上的 UBX 库 | C | 89 | 🏷️ 个人社区 |
-| [satpulse](https://github.com/jclark/satpulse) | 跨平台 GNSS 授时、定位与接收机配置 GUI | Go | 63 | 🏷️ 个人社区 |
+| [satpulse](https://github.com/jclark/satpulse) | satpulse：跨平台 GNSS 授时与接收机 GUI | Go | 63 | 🏷️ 个人社区 |
 | [STM32Primer2-GNSS-Tracker](https://github.com/nemuisan/STM32Primer2_GNSS_Tracker) | STM32 Primer2 平台的 GNSS 轨迹记录器 | C | 31 | 🏷️ 个人社区 |
 | [esp32-gps](https://github.com/mrichar1/esp32-gps) | ESP32 上整合 GPS、蓝牙与 NTRIP/RTK 转发 | Python | 23 | 🏷️ 个人社区 |
 | [Cryologger-GVT](https://github.com/cryologger/glacier-velocity-tracker) | Cryologger GVT：面向 PPP 的开源冰川 GNSS 测速仪 | C++ | 19 | 🏷️ 个人社区 |

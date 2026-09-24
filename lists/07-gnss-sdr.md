@@ -20,11 +20,11 @@
 | [SoftGNSS](https://github.com/TMBOC/SoftGNSS) | SoftGNSS：经典 GPS 软件接收机教学版 | MATLAB | 90 | 🏷️ 高校实验室 |
 | [CU-SDR-Collection](https://github.com/gnsscusdr/CU-SDR-Collection) | CU-SDR-Collection：科罗拉多大学 GNSS SDR 集 | MATLAB | 80 | 🏷️ 个人社区 |
 | [BDS-3-B1C-B2a-SDR-receiver](https://github.com/lyf8118/BDS-3-B1C-B2a-SDR-receiver) | BDS-3 B1C/B2a：开源 MATLAB 软件接收机 | MATLAB | 73 | 🏷️ 高校实验室 |
-| [gps](https://github.com/psas/gps) | PSAS 软件 GPS 相关器（Python） | Python | 71 | 🏷️ 高校实验室 |
+| [gps](https://github.com/psas/gps) | gps：PSAS 软件 GPS 相关器（Python） | Python | 71 | 🏷️ 高校实验室 |
 | [GNSSFirehose](https://github.com/pmonta/GNSS_Firehose) | GNSSFirehose：多星座宽带前端数字化 | Verilog | 68 | 🏷️ 个人社区 |
-| [ESP32-SDR-GPS](https://github.com/iliasam/ESP32_SDR_GPS) | 运行于 ESP32 的软件 GPS 接收实验 | C | 55 | 🏷️ 个人社区 |
-| [SoftGNSS-python](https://github.com/perrysou/SoftGNSS-python) | 经典 SoftGNSS 的 Python 移植工具包 | Python | 44 | 🏷️ 个人社区 |
-| [gnss-baseband](https://github.com/j-core/gnss-baseband) | GPS 类 DSSS 基带接收 IP 核（VHDL） | VHDL | 43 | 🏷️ 个人社区 |
+| [ESP32-SDR-GPS](https://github.com/iliasam/ESP32_SDR_GPS) | ESP32-SDR-GPS：MCU 级软件 GPS 接收实验 | C | 55 | 🏷️ 个人社区 |
+| [SoftGNSS-python](https://github.com/perrysou/SoftGNSS-python) | SoftGNSS-python：经典 SoftGNSS 的 Python 移植 | Python | 44 | 🏷️ 个人社区 |
+| [gnss-baseband](https://github.com/j-core/gnss-baseband) | gnss-baseband：GPS 类 DSSS 基带 VHDL IP | VHDL | 43 | 🏷️ 个人社区 |
 | [gnss-sdr-1pps](https://github.com/oscimp/gnss-sdr-1pps) | gnss-sdr 的 1-PPS 支持扩展材料 | — | 40 | 🏷️ 个人社区 |
 | [FlyDog-SDR-GPS](https://github.com/flydog-sdr/FlyDog_SDR_GPS) | FlyDog：改进 ADC 的 KiwiSDR 衍生固件 | C++ | 30 | 🏷️ 个人社区 |
 | [Fast_GNSS_ReceiverMATLAB](https://github.com/JohnBagshaw/Fast_GNSS_ReceiverMATLAB) | 高灵敏度快速捕获 MATLAB GNSS 接收机实验 | MATLAB | 26 | 🏷️ 个人社区 |
@@ -289,8 +289,8 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 | [gps-sdr-sim](https://github.com/osqzss/gps-sdr-sim) | gps-sdr-sim：GPS L1 基带信号仿真（SDR 回放） | C | 3466 | 🏷️ 个人社区 核心 |
 | [multi-sdr-gps-sim](https://github.com/Mictronics/multi-sdr-gps-sim) | HackRF/Pluto 等平台上的 GPS L1 实时仿真 | C | 264 | 🏷️ 个人社区 |
 | [SignalSim](https://github.com/globsky/SignalSim) | 覆盖多阶段链路的 GNSS 信号/数据仿真 | C++ | 208 | 🏷️ 个人社区 |
-| [gps-sdr-sim-assistant](https://github.com/frank-pian/gps-sdr-sim-assistant) | gps-sdr-sim 的图形化助手工具 | JavaScript | 63 | 🏷️ 个人社区 |
-| [galileo-sdr-sim](https://github.com/harshadms/galileo-sdr-sim) | Galileo E1B/C 信号生成器 | C++ | 62 | 🏷️ 个人社区 |
+| [gps-sdr-sim-assistant](https://github.com/frank-pian/gps-sdr-sim-assistant) | gps-sdr-sim-assistant：仿真参数图形助手 | JavaScript | 63 | 🏷️ 个人社区 |
+| [galileo-sdr-sim](https://github.com/harshadms/galileo-sdr-sim) | galileo-sdr-sim：Galileo E1B/C 信号生成器 | C++ | 62 | 🏷️ 个人社区 |
 | [BeiDou_B1C](https://github.com/lnexenl/BeiDou_B1C) | 北斗 B1C 信号生成与捕获（MATLAB） | MATLAB | 38 | 🏷️ 个人社区 |
 | [gui_sdr_gps_sim](https://github.com/okiedocus/gui_sdr_gps_sim) | gui_sdr_gps_sim：HackRF 多星座 GNSS 信号仿真 GUI | Rust | 37 | 🏷️ 个人社区 |
 | [gnss-RX](https://github.com/HeryMwenegoha/gnss-RX) | GNSS 观测量仿真器（MATLAB） | MATLAB | 32 | 🏷️ 个人社区 |
@@ -466,7 +466,7 @@ VHDL 代码用于生成 GPS L1 C/A 以及 Galileo E1OS、E5 的 PRN 与无数据
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [NavLab-DPE-SDR](https://github.com/Stanford-NavLab/NavLab-DPE-SDR) | 斯坦福 NavLab 直接位置估计 GPS SDR（CUDA/PyGNSS） | Cuda | 46 | 🏷️ 高校实验室 |
+| [NavLab-DPE-SDR](https://github.com/Stanford-NavLab/NavLab-DPE-SDR) | NavLab-DPE-SDR：斯坦福 DPE GPS 接收软件 | Cuda | 46 | 🏷️ 高校实验室 |
 | [GPSL1-DPEmodule](https://github.com/Sergio-Vicenzo/GPSL1-DPEmodule) | GPS L1 直接位置估计（DPE）MATLAB 插件 | MATLAB | 33 | 🏷️ 个人社区 |
 
 ### 详细说明

@@ -309,7 +309,7 @@ Space Weather Modeling Framework 组件之一，描述高纬电离层电动力�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [gnss-tec](https://github.com/gnss-lab/gnss-tec) | gnss-tec：RINEX 斜路径 TEC 重建 | Python | 54 | 🏷️ 高校实验室 核心 |
-| [PyGPS](https://github.com/gregstarr/PyGPS) | 读 RINEX、算 TEC/卫星位置与偏差的工具箱 | Python | 47 | 🏷️ 个人社区 |
+| [PyGPS](https://github.com/gregstarr/PyGPS) | PyGPS：RINEX→TEC/偏差研究工具箱 | Python | 47 | 🏷️ 个人社区 |
 | [TEC-calculation-MATLAB](https://github.com/cssrg-kmitl/TEC-calculation-MATLAB) | MATLAB 双频 RINEX 2.11 TEC 计算 | MATLAB | 33 | 🏷️ 高校实验室 |
 | [PyTECGg](https://github.com/viventriglia/PyTECGg) | PyTECGg：多星座 TEC 重建与校准 | Python | 29 | 🏷️ 高校实验室 🔀 ★ 核心 |
 | [ALBUS_ionosphere](https://github.com/twillis449/ALBUS_ionosphere) | 由 GPS 数据估计电离层 TEC 与旋转量 RM | Python | 26 | 🏷️ 个人社区 |
@@ -532,9 +532,9 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [pysat](https://github.com/pysat/pysat) | pysat：日地空间科学数据分析框架 | Python | 173 | 🏷️ 高校实验室 |
-| [Kamodo](https://github.com/nasa/Kamodo) | NASA CCMC Kamodo：把 GITM/TIEGCM/IRI/WACCM-X 等输出函数化分析 | Python | 58 | 🏷️ 官方 |
-| [geospacelab](https://github.com/JouleCai/geospacelab) | 日地空间数据收集/管理/可视化库，含 TEC、Swarm、EISCAT 等 | Python | 48 | 🏷️ 高校实验室 |
-| [apexpy](https://github.com/aburrell/apexpy) | Apex/准偶极地磁坐标 Python 封装（电离层坐标变换常用） | Python | 40 | 🏷️ 高校实验室 |
+| [Kamodo](https://github.com/nasa/Kamodo) | Kamodo：NASA CCMC 日地模式输出函数化套件 | Python | 58 | 🏷️ 官方 |
+| [geospacelab](https://github.com/JouleCai/geospacelab) | geospacelab：日地空间数据管理与可视化 | Python | 48 | 🏷️ 高校实验室 |
+| [apexpy](https://github.com/aburrell/apexpy) | apexpy：Apex/准偶极地磁坐标 Python 封装 | Python | 40 | 🏷️ 高校实验室 |
 | [jvierine-ionosonde](https://github.com/jvierine/ionosonde) | 开源测高仪/电离图相关 Python 软件（社区星数较高） | Python | 23 | 🏷️ 高校实验室 |
 | [Ionort-raytrace](https://github.com/blair3sat/ionosphere-rt) | 电离层三维射线追踪程序 Ionort（Azzarone 等）开源拷贝 | Fortran | 17 | 🏷️ 高校实验室 |
 | [pysatSpaceWeather](https://github.com/pysat/pysatSpaceWeather) | pysat 空间天气指数与数据集支持库 | Python | 14 | 🏷️ 高校实验室 |
@@ -1250,10 +1250,10 @@ Wakkanai、Kokubunji、Yamagawa、Okinawa 等日本测高仪数字化资料入�
 | [IRI-2007-package](https://irimodel.org/IRI-2007/) | IRI-2007 官方 Fortran 历史版本源码目录 | Fortran | — | 🏷️ 官方 |
 | [IRI-2012-package](https://irimodel.org/IRI-2012/) | IRI-2012 官方 Fortran 源码包（含轨道剖面示例程序） | Fortran | — | 🏷️ 官方 |
 | [IRI-2016-package](https://irimodel.org/IRI-2016/) | IRI-2016 官方 Fortran 源码与系数包目录 | Fortran | — | 🏷️ 官方 |
-| [IRI-2026-package](https://irimodel.org/IRI-2026/) | IRI-2026 官方 Fortran 最新源码包目录 | Fortran | — | 🏷️ 官方 核心 |
-| [IRI-COMMON-FILES](https://irimodel.org/COMMON_FILES/) | 各版 IRI 共用的系数/公共文件目录（官网明确要求另下） | Fortran | — | 🏷️ 官方 核心 |
+| [IRI-2026-package](https://irimodel.org/IRI-2026/) | IRI-2026-package：官方最新 Fortran 源码包 | Fortran | — | 🏷️ 官方 核心 |
+| [IRI-COMMON-FILES](https://irimodel.org/COMMON_FILES/) | IRI-COMMON-FILES：各版 IRI 共用系数目录 | Fortran | — | 🏷️ 官方 核心 |
 | [IRI-indices](https://irimodel.org/indices/) | IRI 运行所需太阳/地磁指数文件发布页 | — | — | 🏷️ 官方 |
-| [IRI-MATLAB-FileExchange](https://www.mathworks.com/matlabcentral/fileexchange/34863-international-reference-ionosphere-iri-model) | irimodel.org 官方指向的 IRI MATLAB 封装（File Exchange，含 2012/2016） | MATLAB | — | 🏷️ 官方 核心 |
+| [IRI-MATLAB-FileExchange](https://www.mathworks.com/matlabcentral/fileexchange/34863-international-reference-ionosphere-iri-model) | IRI-MATLAB：官方指向的 File Exchange 封装 | MATLAB | — | 🏷️ 官方 核心 |
 | [IRI-Plas-SPIM-IZMIRAN](https://www.izmiran.ru/ionosphere/weather/grif/SPIM/) | IZMIRAN IRI-Plas/SPIM：扩展至等离子体层的 IRI Fortran 源码与系数包 | Fortran | — | 🏷️ 官方 |
 | [IRTAM-Coefficient-Reader-Fortran](https://giro.uml.edu/GAMBIT/IrtamReader_Fortran_V1.0.zip) | 官方示例：IRTAM 系数 Fortran 读入器（对接 IRI 同化） | Fortran | — | 🏷️ 官方 |
 | [pyFIRI2018](https://bitbucket.org/ozolotov/pyfiri2018) | pyFIRI：FIRI-2018 非极光 D 区参考电离层的 Python3 实现（Bitbucket） | Python | — | 🏷️ 高校实验室 |
@@ -1796,7 +1796,7 @@ SpaceML 维护的电离层预报代码与笔记本，强调时间融合 Transfor
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [IonoMoni](https://github.com/qiliu2025/IonoMoni) | 多星座 ROTI/AATR/STEC/VTEC 监测 | C++ | 37 | 🏷️ 个人社区 ★ |
+| [IonoMoni](https://github.com/qiliu2025/IonoMoni) | IonoMoni：多星座 ROTI/AATR/STEC/VTEC | C++ | 37 | 🏷️ 个人社区 ★ |
 | [gnss-scintillation-simulator](https://github.com/cu-sense-lab/gnss-scintillation-simulator) | CU Boulder Sense Lab：GNSS 频段相位/幅度闪烁仿真 | MATLAB | 25 | 🏷️ 高校实验室 |
 | [OASIS](https://github.com/giorgiopicanco/OASIS) | OASIS：RINEX 扰动指标计算 | Python | 16 | 🏷️ 个人社区 核心 |
 | [scintill-ai](https://github.com/viventriglia/scintill-ai) | 用机器学习做电离层闪烁相关分析的研究项目 | Shell | 8 | 🏷️ 个人社区 |
@@ -2051,7 +2051,7 @@ irimodel.org 上 IRI-2020 的文件目录，可直接获取 00_iri.zip/tar、许
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [NeQuick2-ICTP](https://t-ict4d.ictp.it/nequick2/source-code) | ICTP 官方 NeQuick 2 电离层电子密度模型 Fortran 源码申请页 | Fortran | — | 🏷️ 官方 核心 |
+| [NeQuick2-ICTP](https://t-ict4d.ictp.it/nequick2/source-code) | NeQuick2-ICTP：ICTP 官方 NeQuick 2 源码申请页 | Fortran | — | 🏷️ 官方 核心 |
 
 ### 详细说明
 

@@ -1,0 +1,164 @@
+[
+  {
+    "name": "ntrip_client-MicroStrain",
+    "owner": "LORD-MicroStrain",
+    "action": "keep",
+    "detail": "company commercial MicroStrain → keep personal_community"
+  },
+  {
+    "name": "gps",
+    "owner": "psas",
+    "action": "keep",
+    "detail": "already academic_lab; PSAS Portland State Aerospace Society org"
+  },
+  {
+    "name": "ntripcaster-libev",
+    "owner": "tisyang",
+    "action": "keep",
+    "detail": "location Wuhan only, no university/agency → keep"
+  },
+  {
+    "name": "cors-relay",
+    "owner": "tisyang",
+    "action": "keep",
+    "detail": "same owner; no clear org → keep"
+  },
+  {
+    "name": "gps-sdr-sim-assistant",
+    "owner": "frank-pian",
+    "action": "keep",
+    "detail": "empty bio/company → keep"
+  },
+  {
+    "name": "satpulse",
+    "owner": "jclark",
+    "action": "keep",
+    "detail": "personal; no academic org → keep"
+  },
+  {
+    "name": "SatellitePosition",
+    "owner": "LStudioLoren",
+    "action": "keep",
+    "detail": "company BDStar commercial → keep personal_community"
+  },
+  {
+    "name": "galileo-sdr-sim",
+    "owner": "harshadms",
+    "action": "keep",
+    "detail": "empty bio → keep"
+  },
+  {
+    "name": "ntrip-go",
+    "owner": "go-gnss",
+    "action": "keep",
+    "detail": "community org, no agency/university → keep"
+  },
+  {
+    "name": "ESP32-SDR-GPS",
+    "owner": "iliasam",
+    "action": "keep",
+    "detail": "firmware developer personal → keep"
+  },
+  {
+    "name": "KalmanFilters.jl",
+    "owner": "JuliaGNSS",
+    "action": "keep",
+    "detail": "community Julia org → keep personal_community"
+  },
+  {
+    "name": "pyRTKLib-RINEX",
+    "owner": "alainmuls",
+    "action": "keep",
+    "detail": "company SatNavam CommV → keep"
+  },
+  {
+    "name": "PyGPS",
+    "owner": "gregstarr",
+    "action": "keep",
+    "detail": "empty bio → keep"
+  },
+  {
+    "name": "SoftGNSS-python",
+    "owner": "perrysou",
+    "action": "keep",
+    "detail": "company field is IIT spaceweather URL only; affiliation unclear → keep"
+  },
+  {
+    "name": "GGOS-Tropo-RTKLIB",
+    "owner": "tianruivpn1001",
+    "action": "keep",
+    "detail": "empty bio; thesis-style personal → keep"
+  },
+  {
+    "name": "gnss-baseband",
+    "owner": "j-core",
+    "action": "keep",
+    "detail": "community IP project / CoreSemi → keep"
+  },
+  {
+    "name": "IonoMoni",
+    "owner": "qiliu2025",
+    "action": "keep",
+    "detail": "empty bio/company → keep"
+  },
+  {
+    "name": "GNSS_IMU",
+    "owner": "rtklibexplorer",
+    "action": "keep",
+    "detail": "company RTK Consultants LLC → keep personal_community"
+  },
+  {
+    "name": "Kamodo",
+    "owner": "nasa",
+    "action": "keep",
+    "detail": "already official"
+  },
+  {
+    "name": "Wheel-GINS",
+    "owner": "i2Nav-WHU",
+    "action": "keep",
+    "detail": "already academic_lab"
+  },
+  {
+    "name": "NavLab-DPE-SDR",
+    "owner": "Stanford-NavLab",
+    "action": "keep",
+    "detail": "already academic_lab"
+  },
+  {
+    "name": "geospacelab",
+    "owner": "JouleCai",
+    "action": "keep",
+    "detail": "already academic_lab (University of Oulu)"
+  },
+  {
+    "name": "apexpy",
+    "owner": "aburrell",
+    "action": "keep",
+    "detail": "already academic_lab (NRL)"
+  },
+  {
+    "name": "PPPLib",
+    "owner": "yxw027",
+    "action": "keep",
+    "detail": "already academic_lab; empty bio — leave as-is"
+  },
+  {
+    "name": "RTKLIB-Manual-CN",
+    "owner": "salmoshu",
+    "action": "keep",
+    "detail": "already academic_lab"
+  },
+  {
+    "name": "MobileGNSS-SPP",
+    "owner": "salmoshu",
+    "action": "keep",
+    "detail": "already academic_lab"
+  },
+  {
+    "name": "GVINS-Dataset",
+    "owner": "HKUST-Aerial-Robotics",
+    "action": "keep",
+    "detail": "already academic_lab"
+  }
+]

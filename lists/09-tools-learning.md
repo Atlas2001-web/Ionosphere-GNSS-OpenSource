@@ -246,7 +246,7 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 |---|---|---|---:|---|
 | [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning) | Navigation-Learning：导航开源项目中文笔记 | — | 2417 | 🏷️ 高校实验室 ★ 核心 |
 | [learning_rtklib](https://github.com/libing64/learning_rtklib) | learning_rtklib：RTKLIB 学习笔记 | — | 163 | 🏷️ 个人社区 |
-| [RTKLIB-Manual-CN](https://github.com/salmoshu/RTKLIB-Manual-CN) | RTKLIB 中文手册解读与源码解析笔记 | — | 54 | 🏷️ 高校实验室 |
+| [RTKLIB-Manual-CN](https://github.com/salmoshu/RTKLIB-Manual-CN) | RTKLIB-Manual-CN：中文手册与源码导读 | — | 54 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -344,7 +344,7 @@ NGS 公开的 NCAT（NGS Coordinate Conversion and Transformation Tool）底层 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [galileo-osnma](https://github.com/daniestevez/galileo-osnma) | galileo-osnma：嵌入式友好的 Galileo OSNMA Rust 库 | Rust | 88 | 🏷️ 个人社区 |
-| [OSNMA](https://github.com/Algafix/OSNMA) | Galileo OSNMA 协议 Python 实现 | Python | 52 | 🏷️ 个人社区 |
+| [OSNMA](https://github.com/Algafix/OSNMA) | OSNMA：Galileo 开放业务认证 Python 实现 | Python | 52 | 🏷️ 高校实验室 |
 | [gal-osnma-sim](https://github.com/galileoz/gal-osnma-sim) | gal-osnma-sim：Galileo OSNMA 开源仿真器 | C | 31 | 🏷️ 个人社区 |
 
 ### 详细说明

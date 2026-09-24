@@ -77,7 +77,7 @@ BME 大地测量组发布的开源 Python 层析工具箱，由 ZWD/梯度、SP3
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GGOS-Tropo-RTKLIB](https://github.com/tianruivpn1001/C-project-for-solving-tropospheric-delay-using-GGOS-tropospheric-products) | 基于 GGOS/VMF 产品在 RTKLIB 中解算对流层延迟 | C | 43 | 🏷️ 个人社区 |
+| [GGOS-Tropo-RTKLIB](https://github.com/tianruivpn1001/C-project-for-solving-tropospheric-delay-using-GGOS-tropospheric-products) | GGOS-Tropo-RTKLIB：VMF 接入 RTKLIB 对流层 | C | 43 | 🏷️ 个人社区 |
 
 ### 详细说明
 

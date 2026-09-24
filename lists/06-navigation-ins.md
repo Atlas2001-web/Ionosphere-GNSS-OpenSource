@@ -117,8 +117,8 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 | [KF-GINS-Matlab](https://github.com/i2Nav-WHU/KF-GINS-Matlab) | KF-GINS-Matlab：EKF 松/紧组合 MATLAB 版 | MATLAB | 137 | 🏷️ 高校实验室 核心 |
 | [ublox_dgnss](https://github.com/aussierobots/ublox_dgnss) | ublox_dgnss：ROS2 u-blox UBX 驱动 | C++ | 86 | 🏷️ 个人社区 |
 | [GIOW-release](https://github.com/i2Nav-WHU/GIOW-release) | GIOW：GNSS/INS/ODO 轮速辅助组合导航 | C++ | 75 | 🏷️ 高校实验室 核心 |
-| [Wheel-GINS](https://github.com/i2Nav-WHU/Wheel-GINS) | 轮式惯导与 GNSS 组合的导航系统（IEEE TITS 相关） | C++ | 47 | 🏷️ 高校实验室 |
-| [GNSS_IMU](https://github.com/rtklibexplorer/GNSS_IMU) | rtklibexplorer 系松组合 GNSS/IMU 的 Python 实现 | Python | 35 | 🏷️ 个人社区 |
+| [Wheel-GINS](https://github.com/i2Nav-WHU/Wheel-GINS) | Wheel-GINS：轮式 IMU+GNSS 组合导航 | C++ | 47 | 🏷️ 高校实验室 |
+| [GNSS_IMU](https://github.com/rtklibexplorer/GNSS_IMU) | GNSS_IMU：松组合 GNSS/IMU 的 Python 实现 | Python | 35 | 🏷️ 个人社区 |
 | [GINS](https://github.com/zhangwhu/GINS) | PPP-RTK 与惯导组合的 GINS 实现（武大相关） | C | 21 | 🏷️ 高校实验室 |
 | [ImuGpsGuiding](https://github.com/JackJu-HIT/ImuGpsGuiding) | ROS 框架下 IMU+GPS 点到点导引示例 | C++ | 20 | 🏷️ 个人社区 |
 | [KF-GINS-Py](https://github.com/salmoshu/KF-GINS-Py) | KF-GINS 思路的 Python 移植，便于读 EKF 组合导航 | Python | 13 | 🏷️ 高校实验室 |
@@ -467,7 +467,7 @@ GREAT 体系内的因子图优化实现，面向精密定位与组合导航相�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GVINS-Dataset](https://github.com/HKUST-Aerial-Robotics/GVINS-Dataset) | 视觉/惯性/GNSS 原始测量同步数据集 | C++ | 262 | 🏷️ 高校实验室 |
+| [GVINS-Dataset](https://github.com/HKUST-Aerial-Robotics/GVINS-Dataset) | GVINS-Dataset：港科大视觉/惯导/GNSS 同步数据集 | C++ | 262 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -486,7 +486,7 @@ GREAT 体系内的因子图优化实现，面向精密定位与组合导航相�
 | [NaveGo](https://github.com/rodralez/NaveGo) | NaveGo：组合导航与惯导分析 MATLAB/Octave 工具箱 | MATLAB | 640 | 🏷️ 高校实验室 |
 | [nav_matlab](https://github.com/yandld/nav_matlab) | nav_matlab：MATLAB 导航与组合导航例程 | MATLAB | 276 | 🏷️ 个人社区 |
 | [INSTINCT](https://github.com/UniStuttgart-INS/INSTINCT) | 斯图加特大学导航所 INS 概念/训练工具包 | C++ | 65 | 🏷️ 高校实验室 |
-| [KalmanFilters.jl](https://github.com/JuliaGNSS/KalmanFilters.jl) | Julia 卡尔曼滤波库（KF/UKF/AUKF 及方根型） | Julia | 55 | 🏷️ 个人社区 |
+| [KalmanFilters.jl](https://github.com/JuliaGNSS/KalmanFilters.jl) | KalmanFilters.jl：Julia KF/UKF/AUKF 库 | Julia | 55 | 🏷️ 个人社区 |
 
 ### 详细说明
 

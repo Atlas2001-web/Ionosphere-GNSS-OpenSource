@@ -14,10 +14,10 @@ RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品�
 | [ntripclient](https://software.rtcm-ntrip.org/wiki/ntripclient) | BKG POSIX ntripclient：命令行拉取 NTRIP 数据流 | C | 129 | 🏷️ 官方 |
 | [pyrtcm](https://github.com/semuconsulting/pyrtcm) | pyrtcm：RTCM3 报文编解码库 | Python | 115 | 🏷️ 个人社区 |
 | [ntripserver](https://software.rtcm-ntrip.org/wiki/ntripserver) | BKG POSIX ntripserver：把本地 GNSS 流推到 NTRIP 播发器 | C | 74 | 🏷️ 官方 |
-| [ntripcaster-libev](https://github.com/tisyang/ntripcaster) | 基于 libev 的高性能 NTRIP Broadcaster（C） | C | 68 | 🏷️ 个人社区 |
-| [ntrip-go](https://github.com/go-gnss/ntrip) | Go 语言 NTRIP 客户端与服务端库 | Go | 62 | 🏷️ 个人社区 |
+| [ntripcaster-libev](https://github.com/tisyang/ntripcaster) | ntripcaster：libev 高性能 NTRIP Broadcaster | C | 68 | 🏷️ 个人社区 |
+| [ntrip-go](https://github.com/go-gnss/ntrip) | ntrip：Go 语言 NTRIP 客户端与服务端库 | Go | 62 | 🏷️ 个人社区 |
 | [caster](https://github.com/Node-NTRIP/caster) | caster：Node.js NTRIP V1/V2 库 | TypeScript | 52 | 🏷️ 个人社区 核心 |
-| [cors-relay](https://github.com/tisyang/cors-relay) | CORS/NTRIP 差分流中继与重分发 | C | 49 | 🏷️ 个人社区 |
+| [cors-relay](https://github.com/tisyang/cors-relay) | cors-relay：CORS/NTRIP 差分流中继 | C | 49 | 🏷️ 个人社区 |
 | [rtcm](https://github.com/Node-NTRIP/rtcm) | rtcm：RTCM 3（至 3.3）TypeScript 编解码 | TypeScript | 48 | 🏷️ 个人社区 |
 | [baidu-ntripcaster](https://github.com/baidu/ntripcaster) | baidu/ntripcaster：百度开源 NTRIP 播发端 | C | 46 | 🏷️ 个人社区 |
 | [millipede-caster](https://github.com/pbeyssac/millipede-caster) | 高性能开源 NTRIP/RTK Caster（C） | C | 43 | 🏷️ 个人社区 |
@@ -736,7 +736,7 @@ Leibniz Universität Hannover 地球测量研究所开源工具，量化 GNSS �
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [GNSS_Multipath_Analysis_Software](https://github.com/paarnes/GNSS_Multipath_Analysis_Software) | GNSS-MP：观测多路径分析软件 | Python | 141 | 🏷️ 个人社区 核心 |
-| [MAPS](https://github.com/GCCLib/MAPS) | MATLAB GNSS 多路径分析软件 | MATLAB | 35 | 🏷️ 个人社区 |
+| [MAPS](https://github.com/GCCLib/MAPS) | MAPS：MATLAB GNSS 多路径分析与处理 | MATLAB | 35 | 🏷️ 高校实验室 |
 | [gnss-multipath-detector](https://github.com/EvgeniiMunin/gnss-multipath-detector) | gnss-multipath-detector：L1 C/A 多路径 ML 探测 notebook | Jupyter Notebook | 28 | 🏷️ 个人社区 |
 | [PyRINEX](https://github.com/geumjin99/PyRINEX) | 多用途 Python RINEX 读写与质量分析包 | Python | 16 | 🏷️ 高校实验室 |
 | [geoveil-mp](https://github.com/miluta7/geoveil-mp) | Rust/Python：RINEX 逐码多路径 MP 组合、周跳检测与 SNR 序列导出 | Rust | 0 | 🏷️ 个人社区 |
@@ -982,7 +982,7 @@ gpsd 社区官网，提供安装文档、兼容硬件列表与发布信息。源
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [ntrip_client-MicroStrain](https://github.com/LORD-MicroStrain/ntrip_client) | LORD MicroStrain 开源 ROS/ROS2 NTRIP 客户端（收 RTCM，支持网络/VRS） | Python | 118 | 🏷️ 个人社区 |
+| [ntrip_client-MicroStrain](https://github.com/LORD-MicroStrain/ntrip_client) | ntrip_client：MicroStrain ROS/ROS2 NTRIP 客户端 | Python | 118 | 🏷️ 个人社区 |
 
 ### 详细说明
 

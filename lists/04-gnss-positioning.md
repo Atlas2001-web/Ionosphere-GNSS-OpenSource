@@ -180,7 +180,7 @@ Glenn MacGougan 等维护的 Essential GNSS Project，提供 RINEX 2.x 解码、
 | [raPPPid](https://github.com/TUW-VieVS/raPPPid) | raPPPid：维也纳 VieVS 的 PPP 模块 | MATLAB | 149 | 🏷️ 高校实验室 核心 |
 | [GAMP_PPPH](https://github.com/zhufengGNSS/GAMP_PPPH) | GAMP_PPPH：多星座 PPP 学习源码 | — | 78 | 🏷️ 高校实验室 ★ |
 | [GPSPACE](https://github.com/CGS-GIS/GPSPACE) | GPSPACE：加拿大 NRCan 开源 PPP Fortran 程序 | Fortran | 58 | 🏷️ 官方 |
-| [PPPLib](https://github.com/yxw027/PPPLib) | 精密单点定位库 PPPLib | — | 49 | 🏷️ 高校实验室 |
+| [PPPLib](https://github.com/yxw027/PPPLib) | PPPLib：开源精密单点定位库 | — | 49 | 🏷️ 高校实验室 |
 | [PPP](https://github.com/XiaoGongWei/PPP) | 静态 PPP 相关 C++ 实现（MG-APP 作者相关） | C++ | 23 | 🏷️ 高校实验室 |
 | [PPPH-UAV](https://github.com/BerkayBahadur/PPPH-UAV) | 面向无人机摄影测量的 GNSS PPP 处理（MATLAB） | MATLAB | 14 | 🏷️ 个人社区 |
 | [RTPPP_B2b](https://github.com/floating0516/RTPPP_B2b) | RTPPP_B2b：B2b 改正实时 PPP 接口 | C | 10 | 🏷️ 个人社区 核心 |
@@ -326,8 +326,8 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [libgnss++](https://github.com/rsasaki0109/gnssplusplus-library) | libgnss++：现代 C++20 GNSS 工具包（SPP/RTK/PPP/CLAS） | C++ | 189 | 🏷️ 个人社区 |
-| [SatellitePosition](https://github.com/LStudioLoren/SatellitePosition) | Python 实现卫星单点定位与 RTK 相对定位的学习项目 | Python | 62 | 🏷️ 个人社区 |
-| [MobileGNSS-SPP](https://github.com/salmoshu/MobileGNSS-SPP) | 面向智能手机的 EKF 单点定位优化实现 | C | 41 | 🏷️ 高校实验室 |
+| [SatellitePosition](https://github.com/LStudioLoren/SatellitePosition) | SatellitePosition：Python 单点/RTK 学习实现 | Python | 62 | 🏷️ 个人社区 |
+| [MobileGNSS-SPP](https://github.com/salmoshu/MobileGNSS-SPP) | MobileGNSS-SPP：手机 GNSS 的 EKF 单点定位 | C | 41 | 🏷️ 高校实验室 |
 | [GNSS-Explorer](https://github.com/brucezhcw/GNSS-Explorer) | 基于 RTKLIB 的 SPP 算法优化探索 | C | 21 | 🏷️ 个人社区 |
 | [GNSSPositioning](https://github.com/bitecc/GNSSPositioning) | SPP 教学程序（含电离层/对流层延迟改正） | C++ | 12 | 🏷️ 个人社区 |
 | [SPP_SPV](https://github.com/GYH-WHU/SPP_SPV) | 武大相关 GPS/BDS 单点定位与测速（C++/MATLAB）教学实现 | C++ | 7 | 🏷️ 高校实验室 |
@@ -671,7 +671,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [HASPPP](https://github.com/ZhangRunzhi20/HASPPP) | Galileo HAS 精密单点定位开源实现 | C++ | 44 | 🏷️ 个人社区 |
+| [HASPPP](https://github.com/ZhangRunzhi20/HASPPP) | HASPPP：Galileo HAS 嵌入式 PPP 开源包 | C++ | 44 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -849,7 +849,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [PRIDE-PPPAR](https://github.com/PrideLab/PRIDE-PPPAR) | PRIDE-PPPAR：多星座 PPP 模糊度固定 | C | 415 | 🏷️ 高校实验室 ★ 核心 |
-| [PPP_AR](https://github.com/heiwa0519/PPP_AR) | 多星座 PPP 模糊度固定（PPP-AR）相关实现 | C | 40 | 🏷️ 个人社区 |
+| [PPP_AR](https://github.com/heiwa0519/PPP_AR) | PPP_AR：多星座 PPP 模糊度固定实现 | C | 40 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -871,7 +871,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [pyRTKLib-RINEX](https://github.com/alainmuls/pyRTKLib) | Alain Muls：基于 RINEX 的 GPS/Galileo 处理与绘图（非 RTKLIB 绑定） | Python | 50 | 🏷️ 个人社区 |
+| [pyRTKLib-RINEX](https://github.com/alainmuls/pyRTKLib) | pyRTKLib：RINEX GPS/Galileo 处理与绘图 | Python | 50 | 🏷️ 个人社区 |
 
 ### 详细说明
 
