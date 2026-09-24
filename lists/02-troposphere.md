@@ -7,7 +7,7 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GNSSR_MERRByS_Python](https://github.com/pjalesSSTL/GNSSR_MERRByS_Python) | TechDemoSat-1 星载 GNSS-R Python 示例 | Jupyter Notebook | 19 | 🏷️ 高校实验室 |
+| [GNSSR_MERRByS_Python](https://github.com/pjalesSSTL/GNSSR_MERRByS_Python) | GNSSR_MERRByS_Python：TechDemoSat-1 星载 GNSS-R 示例 | Jupyter Notebook | 19 | 🏷️ 高校实验室 |
 | [DDM-Former](https://github.com/daixinzhao/DDM-Former) | GNSS-R DDM 海面风速 Transformer 模型 | Python | 10 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -93,11 +93,11 @@ BME 大地测量组发布的开源 Python 层析工具箱，由 ZWD/梯度、SP3
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [gnssSNR](https://github.com/kristinemlarson/gnssSNR) | gnssSNR：RINEX→SNR/几何角，GNSS-IR 前置工具 | Fortran | 15 | 🏷️ 高校实验室 |
-| [GIRAS-GPS-Solutions](https://github.com/cemalialtuntas/GIRAS-GPS-Solutions) | GIRAS：MATLAB 开源 GNSS-IR 分析软件（GPS Solutions 论文配套） | MATLAB | 13 | 🏷️ 高校实验室 |
+| [GIRAS-GPS-Solutions](https://github.com/cemalialtuntas/GIRAS-GPS-Solutions) | GIRAS：MATLAB 开源 GNSS-IR 分析（GPS Solutions 配套） | MATLAB | 13 | 🏷️ 高校实验室 |
 | [FresnelMaps](https://github.com/kristinemlarson/FresnelMaps) | FresnelMaps：GNSS-IR 菲涅耳区地图生成工具 | Python | 9 | 🏷️ 高校实验室 |
 | [gnssr4river](https://github.com/lroineau/gnssr4river) | 面向河流水文的 GNSS-R Python 工具箱 | Python | 8 | 🏷️ 个人社区 |
 | [gpssnrpy](https://github.com/kristinemlarson/gpssnrpy) | RINEX SNR 提取与高度角工具 | Python | 6 | 🏷️ 高校实验室 |
-| [NearRealTimeGNSSIR](https://github.com/cemalialtuntas/NearRealTimeGNSSIR) | 近实时 GNSS-IR 软件原型 | HTML | 5 | 🏷️ 个人社区 |
+| [NearRealTimeGNSSIR](https://github.com/cemalialtuntas/NearRealTimeGNSSIR) | NearRealTimeGNSSIR：近实时 GNSS-IR 软件原型 | HTML | 5 | 🏷️ 高校实验室 |
 | [FindSnowOutliers](https://github.com/kristinemlarson/FindSnowOutliers) | FindSnowOutliers：SNR 检测天线积雪异常 | MATLAB | 4 | 🏷️ 高校实验室 |
 | [gnssr-raspberry](https://github.com/ITC-Water-Resources/gnssr-raspberry) | 树莓派上的 GNSS 反射测量（ITC 水资源） | Python | 3 | 🏷️ 高校实验室 |
 | [gpsonlySNR](https://github.com/kristinemlarson/gpsonlySNR) | gpsonlySNR：GPS RINEX→SNR 提取工具 | Fortran | 2 | 🏷️ 高校实验室 |
@@ -140,7 +140,7 @@ Kristine Larson 团队工具，为地基 GNSS-IR/反射测量绘制菲涅耳区�
 从 GPS RINEX 提取 SNR，并结合导航电文算高度角/方位角，还带下载辅助。常作为 GNSS-IR 前处理积木，与 gnssrefl 生态 complementary。
 
 #### [NearRealTimeGNSSIR](https://github.com/cemalialtuntas/NearRealTimeGNSSIR)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：HTML · 许可：GPL-3.0 · 星标约：5 · 宿主：github
 
@@ -186,7 +186,7 @@ Larson 团队 Fortran 工具，翻译/读取 GPS RINEX 并提取 SNR，服务反
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GNSS-REFLECTOMETRY-PROCESSING](https://github.com/oriolcervello/GNSS-REFLECTOMETRY-PROCESSING) | GPU 加速 GNSS-R 处理 | Cuda | 17 | 🏷️ 个人社区 |
+| [GNSS-REFLECTOMETRY-PROCESSING](https://github.com/oriolcervello/GNSS-REFLECTOMETRY-PROCESSING) | GNSS-REFLECTOMETRY-PROCESSING：GPU 加速 GNSS-R 处理 | Cuda | 17 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -219,7 +219,7 @@ Larson 团队 Fortran 工具，翻译/读取 GPS RINEX 并提取 SNR，服务反
 | [GNSSRMERRByS](https://github.com/pjalesSSTL/GNSSR_MERRByS) | GNSSRMERRByS：TechDemoSat-1 星载 GNSS-R 示例（SSTL） | MATLAB | 34 | 🏷️ 个人社区 |
 | [gnssIR-matlab-v3](https://github.com/kristinemlarson/gnssIR_matlab_v3) | gnssIR-matlab-v3：Larson 实验室 GNSS-IR MATLAB | MATLAB | 30 | 🏷️ 高校实验室 |
 | [gnssIR-python](https://github.com/kristinemlarson/gnssIR_python) | gnssIR_python：Larson 实验室 GNSS-IR Python 脚本 | Python | 26 | 🏷️ 高校实验室 |
-| [gnssrlowcost](https://github.com/purnelldj/gnssr_lowcost) | 低成本 GNSS 反射测量分析（MATLAB/Python） | MATLAB | 14 | 🏷️ 个人社区 |
+| [gnssrlowcost](https://github.com/purnelldj/gnssr_lowcost) | gnssrlowcost：低成本 GNSS 反射测量分析 | MATLAB | 14 | 🏷️ 个人社区 |
 | [gnssr-synth](https://github.com/purnelldj/gnssr_synth) | GNSS-R 水位观测分析与合成 SNR 数据 | MATLAB | 11 | 🏷️ 个人社区 |
 
 ### 详细说明

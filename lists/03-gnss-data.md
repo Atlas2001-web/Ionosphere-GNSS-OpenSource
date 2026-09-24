@@ -30,7 +30,7 @@ RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品�
 | [Caster_Project](https://github.com/KOROyo123/Caster_Project) | Libevent+Redis 跨平台 NTRIP Caster | C++ | 19 | 🏷️ 个人社区 |
 | [ntripstreams](https://github.com/stenseng/ntripstreams) | ntripstreams：Python NTRIP 客户端/读写接口 | Python | 16 | 🏷️ 个人社区 |
 | [NtripCore](https://github.com/bouskdav/NtripCore) | .NET Core 轻量 NTRIP caster（rev.2） | C# | 14 | 🏷️ 个人社区 |
-| [pyspartn](https://github.com/semuconsulting/pyspartn) | 解析 SPARTN 精密改正电文的 Python 库 | Python | 12 | 🏷️ 个人社区 |
+| [pyspartn](https://github.com/semuconsulting/pyspartn) | pyspartn：解析 SPARTN 精密改正电文的 Python 库 | Python | 12 | 🏷️ 个人社区 |
 | [AgOpenNtripCaster](https://github.com/AgOpenGPS-Official/AgOpenNtripCaster) | AgOpenNtripCaster：AgOpenGPS 生态 NTRIP 播发端 | C# | 10 | 🏷️ 个人社区 |
 | [ntripCaster-go](https://github.com/xk1yan/ntripCaster) | Go 高性能 NTRIP Caster | Go | 9 | 🏷️ 个人社区 |
 | [ntrip-client](https://github.com/nav-solutions/ntrip-client) | ntrip-client：纯 Rust 轻量 NTRIP 客户端对象 | Rust | 4 | 🏷️ 个人社区 |
@@ -544,7 +544,7 @@ EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RT
 |---|---|---|---:|---|
 | [GAMPII-GOOD](https://github.com/zhouforme0318/GAMPII-GOOD) | GAMPII-GOOD：GNSS 观测与产品下载器 | C++ | 123 | 🏷️ 高校实验室 |
 | [gnss-downloader](https://github.com/Mereithhh/gnss-downloader) | 带界面的 IGS/镜像 GNSS 数据下载器 | Python | 23 | 🏷️ 个人社区 |
-| [GDDS](https://github.com/LECUT/GDDS) | IGS/CORS/产品/时序等多模块 GNSS 下载 | Python | 13 | 🏷️ 个人社区 |
+| [GDDS](https://github.com/LECUT/GDDS) | GDDS：多模块 GNSS 数据下载器 | Python | 13 | 🏷️ 个人社区 |
 | [swds-api-downloader](https://github.com/embrace-inpe/swds-api-downloader) | Embrace 空间天气数据服务 API 的自动下载示例 | Python | 4 | 🏷️ 官方 |
 
 ### 详细说明
@@ -877,7 +877,7 @@ Stanford GPS Lab 的 navsu MATLAB 工具箱，聚合 RINEX/产品解析、时间
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GNSSommelier](https://github.com/EarthScope/GNSSommelier) | EarthScope 的 IGS 产品发现与下载平台（多分析中心 SP3/CLK/BIAS 等） | Python | 14 | 🏷️ 官方 |
+| [GNSSommelier](https://github.com/EarthScope/GNSSommelier) | GNSSommelier：EarthScope IGS 产品发现与下载 | Python | 14 | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -1015,7 +1015,7 @@ gpsd 社区官网，提供安装文档、兼容硬件列表与发布信息。源
 |---|---|---|---:|---|
 | [rtcm3torinex](https://software.rtcm-ntrip.org/wiki/rtcm3torinex) | BKG rtcm3torinex：RTCM3 流转 RINEX 的官方小工具 | C | 65 | 🏷️ 官方 |
 | [prx](https://github.com/jtec/prx) | prx：RINEX 3.05 观测→CSV 小工具 | Python | 23 | 🏷️ 个人社区 |
-| [ubx2rinex](https://github.com/nav-solutions/ubx2rinex) | Rust 实现的 u-blox 原始观测到 RINEX 转换/采集工具 | Rust | 12 | 🏷️ 个人社区 |
+| [ubx2rinex](https://github.com/nav-solutions/ubx2rinex) | ubx2rinex：Rust 实现 UBX 到 RINEX 转换/采集 | Rust | 12 | 🏷️ 个人社区 |
 
 ### 详细说明
 

@@ -456,7 +456,7 @@
     {
       "name": "GDDS",
       "url": "https://github.com/LECUT/GDDS",
-      "desc_zh": "IGS/CORS/产品/时序等多模块 GNSS 下载",
+      "desc_zh": "覆盖 IGS/CORS/产品/时序并解压；镜像可用性需自行跟踪",
       "analysis_zh": "分模块下载全球 IGS、后处理产品、区域 CORS、时间序列等，并含解压。适合数据中心助理式抓取。维护活跃度与镜像可用性需自行跟踪。",
       "language": "Python",
       "license": "",
@@ -469,7 +469,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "IGS/CORS/产品/时序等多模块 GNSS 下载"
+      "one_liner_zh": "GDDS：多模块 GNSS 数据下载器"
     },
     {
       "name": "geode",
@@ -701,7 +701,7 @@
     {
       "name": "GNSSommelier",
       "url": "https://github.com/EarthScope/GNSSommelier",
-      "desc_zh": "EarthScope 的 IGS 产品发现与下载平台（多分析中心 SP3/CLK/BIAS 等）",
+      "desc_zh": "跨十余分析中心拉取 SP3/CLK/BIAS 等；与 gnsstools 格式/流工具互补",
       "analysis_zh": "EarthScope 开源的 GNSS 产品联邦工具，按日期与任务在十余个 IGS 分析中心间解析依赖并下载解压 SP3/CLK/BIAS/ERP/IONEX/ATX 等，附 CLI 与可选 PRIDE-PPPAR 流水线封装。解决 PPP 辅助产品分散与命名差异。需网络可达各 AC；与已收录的 EarthScope gnsstools（格式/流）互补。",
       "language": "Python",
       "license": "Apache-2.0",
@@ -716,7 +716,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "official",
-      "one_liner_zh": "EarthScope 的 IGS 产品发现与下载平台（多分析中心 SP3/CLK/BIAS 等）"
+      "one_liner_zh": "GNSSommelier：EarthScope IGS 产品发现与下载"
     },
     {
       "name": "gnsspy",
@@ -1304,7 +1304,7 @@
     {
       "name": "pyspartn",
       "url": "https://github.com/semuconsulting/pyspartn",
-      "desc_zh": "解析 SPARTN 精密改正电文的 Python 库",
+      "desc_zh": "对接 u-blox 等 SSR 风格改正；与 pyrtcm 分工明确",
       "analysis_zh": "补齐 SPARTN 精密改正电文解析，方便把 u-blox 等常用 SSR 风格改正接到 NTRIP 或串口流水线。适合低成本 PPP/RTK 改正数试验与协议调试。与 pyrtcm 分工明确：一个管 SPARTN，一个管 RTCM；终端固定效果取决于改正源质量与接收机配置，不能指望解析库单独提高精度。",
       "language": "Python",
       "license": "BSD-3-Clause",
@@ -1317,7 +1317,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "解析 SPARTN 精密改正电文的 Python 库"
+      "one_liner_zh": "pyspartn：解析 SPARTN 精密改正电文的 Python 库"
     },
     {
       "name": "pyubx2",
@@ -1644,7 +1644,7 @@
     {
       "name": "ubx2rinex",
       "url": "https://github.com/nav-solutions/ubx2rinex",
-      "desc_zh": "Rust 实现的 u-blox 原始观测到 RINEX 转换/采集工具",
+      "desc_zh": "把低成本板卡观测送进经典后处理；转换后建议跑质检",
       "analysis_zh": "Rust 实现的 u-blox UBX 原始观测反序列化与 RINEX 采集工具，方便把低成本板卡数据送进经典后处理软件。适合外场脚本化采集与自动化。与 android_rinex、georinex 互补；天线高、观测码映射与时钟处理要按接收机配置核对，转换后建议跑质检工具。",
       "language": "Rust",
       "license": "MPL-2.0",
@@ -1657,7 +1657,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Rust 实现的 u-blox 原始观测到 RINEX 转换/采集工具"
+      "one_liner_zh": "ubx2rinex：Rust 实现 UBX 到 RINEX 转换/采集"
     },
     {
       "name": "UNAVCO-Preprocessing",
@@ -3204,7 +3204,7 @@
     {
       "name": "gnatss",
       "url": "https://github.com/seafloor-geodesy/gnatss",
-      "desc_zh": "海底 GNSS-A 换能器测量社区软件（Python）",
+      "desc_zh": "海面 GNSS 与水声测距联合约束海底点位；非陆地 RTK/PPP",
       "analysis_zh": "海床大地测量社区维护的 GNSS-Acoustic（GNSS-A）软件：海面 GNSS 与水声测距联合约束海底换能器/点位，用于海底形变与板块边界监测。面向海洋大地测量课题组。不是陆地 RTK/PPP；依赖船舶、声学与时间同步链路，作业与数据成本远高于陆基站网。社区仓库，版本接口以上游发布说明为准。",
       "language": "Python",
       "license": "BSD-3-Clause",
@@ -3217,7 +3217,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "海底 GNSS-A 换能器测量社区软件（Python）"
+      "one_liner_zh": "gnatss：海底 GNSS-A 换能器测量社区软件"
     },
     {
       "name": "GNSS-Explorer",
@@ -3585,7 +3585,7 @@
     {
       "name": "HPRTK",
       "url": "https://github.com/yxw027/HPRTK",
-      "desc_zh": "高精度实时定位相关工程（HPRTK）",
+      "desc_zh": "可对照网络 RTK 数据流调度与改正数接入；投产前用标准基线网评估",
       "analysis_zh": "围绕高精度实时定位组织的 C++ 工程，可作为网络 RTK 与实时改正链路的结构参考。适合阅读数据流调度、改正数接入与解算线程划分方式。文档完整度与持续维护情况一般；关键精度与固定率请用标准基线网评估，并与 RTKLIB 或商业引擎交叉验证后再写进论文指标。",
       "language": "C++",
       "license": "",
@@ -3598,7 +3598,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "高精度实时定位相关工程（HPRTK）"
+      "one_liner_zh": "HPRTK：高精度实时定位 C++ 工程参考"
     },
     {
       "name": "laika",
@@ -4074,7 +4074,7 @@
     {
       "name": "pyrtklib_demo5",
       "url": "https://github.com/IPNL-POLYU/pyrtklib_demo5",
-      "desc_zh": "基于 rtklibexplorer demo5 分支的 pyrtklib 变体",
+      "desc_zh": "更贴近低成本接收机社区补丁；投产前与 demo5 命令行交叉比对",
       "analysis_zh": "在 pyrtklib 思路上对接 rtklibexplorer/demo5 补丁树，更贴近低成本接收机与社区常用改进。适合已经跟随 demo5 博客流程的用户迁移到 Python 批处理。维护节奏可能与主 pyrtklib 分叉；投产前用同一观测数据交叉比对官方 RTKLIB、demo5 命令行与本绑定输出。",
       "language": "C",
       "license": "MIT",
@@ -4087,12 +4087,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "基于 rtklibexplorer demo5 分支的 pyrtklib 变体"
+      "one_liner_zh": "pyrtklib_demo5：对接 rtklibexplorer demo5 的 pyrtklib"
     },
     {
       "name": "QuadSPP",
       "url": "https://github.com/hdkarimi/QuadSPP",
-      "desc_zh": "多星座标准单点定位（SPP）实现",
+      "desc_zh": "结构直接，便于核对广播星历与几何距离；不含模糊度固定",
       "analysis_zh": "多星座标准单点定位（SPP）实现，代码结构相对直接，便于核对广播星历、钟差与几何距离等基本模型。适合 SPP 基线实验与教学作业。不含模糊度固定与精密产品深度；进入 PPP/RTK 请换专用库，本仓库用来验证伪距定位链路与粗差剔除策略即可。",
       "language": "C",
       "license": "MIT",
@@ -4105,12 +4105,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "多星座标准单点定位（SPP）实现"
+      "one_liner_zh": "QuadSPP：多星座标准单点定位（SPP）"
     },
     {
       "name": "RAIM_PANG_NAV",
       "url": "https://github.com/MichaelBeechan/RAIM_PANG_NAV",
-      "desc_zh": "面向 PANG-NAV SPP 流程的 MATLAB RAIM 完好性监测实现",
+      "desc_zh": "在 SPP 链路上补故障探测/排除；非完整 SBAS/ARAIM 产品级软件",
       "analysis_zh": "在单点定位工具链上补充接收机自主完好性监测（RAIM），用于故障探测/排除与完好性告警相关研究与教学。适合航空等对完好性敏感的场景入门。实现深度与标准符合性需对照 DO-229 等规范自行核验；本仓并非完整 SBAS/ARAIM 产品级软件。",
       "language": "MATLAB",
       "license": "BSD-3-Clause",
@@ -4125,7 +4125,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "面向 PANG-NAV SPP 流程的 MATLAB RAIM 完好性监测实现"
+      "one_liner_zh": "RAIM_PANG_NAV：PANG-NAV 向 MATLAB RAIM 完好性监测"
     },
     {
       "name": "raPPPid",
@@ -4324,7 +4324,7 @@
     {
       "name": "sidereon",
       "url": "https://github.com/neilberkman/sidereon",
-      "desc_zh": "Rust 统一引擎：SPP/RTK/PPP + 轨道力学 + 多格式",
+      "desc_zh": "单依赖覆盖多协议与多语言绑定；精密应用需交叉比对 RTKLIB/IGS",
       "analysis_zh": "一个核心提供 SPP/RTK/PPP、SGP4/会合等与 RINEX/RTCM/SP3/NTRIP 解析，并带多语言绑定。适合想要「单依赖多协议」的新项目。相对经典库验证样本仍在积累，关键应用需交叉比对 RTKLIB/IGS。",
       "language": "Rust",
       "license": "MIT",
@@ -4337,7 +4337,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Rust 统一引擎：SPP/RTK/PPP + 轨道力学 + 多格式"
+      "one_liner_zh": "sidereon：Rust 统一 SPP/RTK/PPP 与轨道力学引擎"
     },
     {
       "name": "SPP_SPV",
@@ -4740,7 +4740,7 @@
     {
       "name": "gnss-rcv",
       "url": "https://github.com/mx4/gnss-rcv",
-      "desc_zh": "Rust 实现的 GPS L1 C/A 软件接收机",
+      "desc_zh": "展示内存安全语言实现捕获跟踪；星座面远少于 gnss-sdr",
       "analysis_zh": "用 Rust 编写的软件定义 GNSS 接收机，当前聚焦 GPS L1 C/A，展示现代语言实现捕获跟踪链路的可行性。适合关心内存安全与 Rust 生态的开发者。星座与功能远少于 gnss-sdr；适合学习实验，不宜直接当作生产多星座监控站软件。Rust 工具链与特性门控按 Cargo 清单启用即可。",
       "language": "Rust",
       "license": "MIT",
@@ -4753,7 +4753,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Rust 实现的 GPS L1 C/A 软件接收机"
+      "one_liner_zh": "gnss-rcv：Rust GPS L1 C/A 软件接收机"
     },
     {
       "name": "gnss-RX",
@@ -5050,7 +5050,7 @@
     {
       "name": "gps-sdr-simulink",
       "url": "https://github.com/dmiralles2009/gps-sdr-simulink",
-      "desc_zh": "Simulink 中的 GPS 捕获阶段模型",
+      "desc_zh": "课堂可视化相关峰搜索；完整跟踪/PVT 需接 SoftGNSS 等扩展",
       "analysis_zh": "在 Simulink 里搭建 GPS 捕获相关函数与框图，便于信号处理/通信课程可视化讲解捕获峰搜索。适合课堂教学与入门实验。覆盖偏捕获阶段，完整跟踪、电文与 PVT 需继续扩展，或改接 SoftGNSS、CU-SDR-Collection。Simulink 许可证与求解器步长设置会影响演示流畅度。",
       "language": "MATLAB",
       "license": "",
@@ -5063,7 +5063,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Simulink 中的 GPS 捕获阶段模型"
+      "one_liner_zh": "gps-sdr-simulink：Simulink GPS 捕获阶段模型"
     },
     {
       "name": "GPSGALSSS",
@@ -5104,7 +5104,7 @@
     {
       "name": "GPSL1-MMT-DPEmodule",
       "url": "https://github.com/Sergio-Vicenzo/GPSL1-MMT-DPEmodule",
-      "desc_zh": "开源 GPS L1 多路径抑制技术与直接定位估计（DPE）MATLAB 模块",
+      "desc_zh": "MATLAB 信号层抗多路径/直接定位试验；非完整软件接收机",
       "analysis_zh": "将多路径抑制（MMT）与直接定位估计结合的开源模块，面向 GPS L1 信号层定位与抗多路径研究。适合 SDR/基带算法试验。依赖 MATLAB；与完整软件接收机（如 GNSS-SDR、PocketSDR）相比，覆盖单频模块级能力，工程集成需自行对接前端。",
       "language": "MATLAB",
       "license": "GPL-2.0",
@@ -5118,8 +5118,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "开源 GPS L1 多路径抑制技术与直接定位估计（DPE）MATLAB 模块"
+      "provenance": "academic_lab",
+      "one_liner_zh": "GPSL1-MMT-DPEmodule：GPS L1 多路径抑制与 DPE 模块"
     },
     {
       "name": "GPSMAXIM2769b-",
@@ -5732,7 +5732,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community"
+      "provenance": "academic_lab"
     },
     {
       "name": "csonde-gnss-ionosphere",
@@ -5757,7 +5757,7 @@
     {
       "name": "DeepPredTEC",
       "url": "https://github.com/vtsuperdarn/DeepPredTEC",
-      "desc_zh": "深度学习预报 GPS TEC 图（SuperDARN 相关）",
+      "desc_zh": "SuperDARN 相关开源基线；业务化前需对齐 GIM 网格与评分指标",
       "analysis_zh": "面向 GPS TEC 图时空预报的深度学习开源实现（SuperDARN 相关团队），可复现论文结构并作空间天气基线。适合电离层 ML 实验。工程同化与多源融合需自建；输入网格、缺失填充与评分指标要与业务 GIM 对齐后再谈业务化。",
       "language": "Python",
       "license": "MIT",
@@ -5772,7 +5772,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "深度学习预报 GPS TEC 图（SuperDARN 相关）"
+      "one_liner_zh": "DeepPredTEC：深度学习 GPS TEC 图预报"
     },
     {
       "name": "DiffIonMap",
@@ -5863,7 +5863,7 @@
     {
       "name": "ED-AttConvLSTM",
       "url": "https://github.com/leeliangchao/ED-AttConvLSTM",
-      "desc_zh": "注意力 ConvLSTM 的 TEC 图预报模型",
+      "desc_zh": "编解码+注意力结构，便于复现相关论文；工程同化需自建",
       "analysis_zh": "编码器—解码器加注意力的 ConvLSTM，针对 TEC 图时序预报。适合复现相关论文结构。工程部署与多源同化不在范围；输入 GIM 分辨率与缺失值处理需自建。",
       "language": "Jupyter Notebook",
       "license": "",
@@ -5875,8 +5875,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "注意力 ConvLSTM 的 TEC 图预报模型"
+      "provenance": "academic_lab",
+      "one_liner_zh": "ED-AttConvLSTM：注意力 ConvLSTM 的 TEC 图预报"
     },
     {
       "name": "EGNOS_SDK_Core",
@@ -6740,7 +6740,7 @@
     {
       "name": "INX_Editor",
       "url": "https://github.com/1acheng/INX_Editor",
-      "desc_zh": "跨平台 IONEX 文件编辑工具",
+      "desc_zh": "改网格/头信息比手改文本省事；不是 TEC 估计算法库",
       "analysis_zh": "面向 IONEX 的桌面编辑与检查，改网格、头信息或局部 TEC 值时比手改文本省事。适合产品质检与教学演示。不是 TEC 估计算法库；重建 TEC 仍需 PyTECGg/gnss-tec 等。",
       "language": "",
       "license": "GPL-3.0",
@@ -6755,7 +6755,7 @@
       "user_relation": "starred",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "跨平台 IONEX 文件编辑工具"
+      "one_liner_zh": "INX_Editor：跨平台 IONEX 文件编辑工具"
     },
     {
       "name": "Ion-Phys-Toolkit",
@@ -7112,8 +7112,8 @@
     {
       "name": "Ionort-raytrace",
       "url": "https://github.com/blair3sat/ionosphere-rt",
-      "desc_zh": "电离层三维射线追踪程序 Ionort（Azzarone 等）开源拷贝",
-      "one_liner_zh": "电离层三维射线追踪程序 Ionort（Azzarone 等）开源拷贝",
+      "desc_zh": "Azzarone 等 Ionort 思路开源拷贝；电子密度场需外部 IRI/模式提供",
+      "one_liner_zh": "Ionort-raytrace：三维电离层射线追踪 Fortran 实现",
       "analysis_zh": "基于 Ionort 射线追踪思想的 Fortran 实现，用于给定电子密度背景下追踪无线电射线路径，可服务 HF/GNSS 传播与层析正演。局限：仓库较旧；电子密度场需外部提供（IRI/模式）；与商业/成熟射线库相比文档与测试不足。",
       "language": "Fortran",
       "license": "unknown",
@@ -7152,8 +7152,8 @@
     {
       "name": "ionosonde_volgatech",
       "url": "https://github.com/Vladimi-lan/ionosonde_volgatech",
-      "desc_zh": "伏尔加技术大学相关测高仪数据处理代码",
-      "one_liner_zh": "伏尔加技术大学相关测高仪数据处理代码",
+      "desc_zh": "非 GIRO 数据源参考实现；英文文档与许可需使用者自行确认",
+      "one_liner_zh": "ionosonde_volgatech：伏尔加技术大学测高仪处理代码",
       "analysis_zh": "与具体测高仪系统相关的 Python 处理代码，体量不小，可作为非 GIRO 数据源处理参考。局限：缺少清晰英文 README；通用性与许可需使用者自行确认（license 字段为空）。",
       "language": "Python",
       "license": "unknown",
@@ -7222,7 +7222,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
+      "provenance": "academic_lab",
       "one_liner_zh": "电离层闪烁成像及其对 PDOP 影响的研究代码"
     },
     {
@@ -7303,7 +7303,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community"
+      "provenance": "academic_lab"
     },
     {
       "name": "Ionospheric-VTEC-Forecasting",
@@ -7328,8 +7328,8 @@
     {
       "name": "ionotec",
       "url": "https://github.com/sylvathle/ionotec",
-      "desc_zh": "从 RINEX 计算总电子含量的 Python 库",
-      "one_liner_zh": "从 RINEX 计算总电子含量的 Python 库",
+      "desc_zh": "原 pytec 迁移；功能面小于 PyTECGg，DCB/延迟需自行核对",
+      "one_liner_zh": "ionotec：从 RINEX 计算 TEC 的轻量 Python 库",
       "analysis_zh": "面向 RINEX 观测的 TEC 计算库（原 pytec 更名/迁移至 ionotec），补齐“读观测→几何无关组合→TEC”的轻量路径。适合快速脚本化实验。功能面小于 PyTECGg/tec-suite 一类完整标定流水线；多星座 DCB/硬件延迟处理需自行核对。",
       "language": "Python",
       "license": "MIT",
@@ -7343,12 +7343,12 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community"
+      "provenance": "academic_lab"
     },
     {
       "name": "IonoTomo",
       "url": "https://github.com/Joshuaalbert/IonoTomo",
-      "desc_zh": "射电天文射线追踪与电离层层析仿真",
+      "desc_zh": "Notebook 正演电离层对射电信号影响；非 GNSS 双频 TEC 业务软件",
       "analysis_zh": "结合射线追踪与射电观测仿真做电离层层析，面向射电天文与空间天气交叉课题，Notebook 形式便于改参数。适合需要正演电离层对射电信号影响的人。不是 GNSS 双频 TEC 业务软件；地基 GNSS 体素层析可并行参考 SegmentsComputation 与 synthetic 层析仓库。仿真假设与真实射电阵几何差异需要单独评估。",
       "language": "Jupyter Notebook",
       "license": "Apache-2.0",
@@ -7360,8 +7360,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "射电天文射线追踪与电离层层析仿真"
+      "provenance": "academic_lab",
+      "one_liner_zh": "IonoTomo：射电天文射线追踪与电离层层析仿真"
     },
     {
       "name": "IonTools",
@@ -8636,7 +8636,7 @@
     {
       "name": "pygnss-tec",
       "url": "https://github.com/eureka-0/pygnss-tec",
-      "desc_zh": "RINEX 读取与 TEC 计算（Rust 加速）",
+      "desc_zh": "Python+加速核路线，适合中等规模批处理；映射/DCB 假设需核对文档",
       "analysis_zh": "Python 包读 RINEX 并算 TEC，关键路径用 Rust 加速，和 PyTECGg 同属「Py+加速核」路线。适合中等规模批处理。社区体量小于 gnss-tec；算法假设（映射、DCB）使用前要读文档核对。",
       "language": "Python",
       "license": "MIT",
@@ -8649,7 +8649,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "RINEX 读取与 TEC 计算（Rust 加速）"
+      "one_liner_zh": "pygnss-tec：RINEX 读数与 TEC 计算（Rust 加速）"
     },
     {
       "name": "PyGPS",
@@ -8730,8 +8730,8 @@
     {
       "name": "PyLap",
       "url": "https://github.com/HamSCI/PyLap",
-      "desc_zh": "HamSCI 对 PHaRLAP 的开源 Python 接口（生成电离层与射线绘图）",
-      "one_liner_zh": "HamSCI 对 PHaRLAP 的开源 Python 接口（生成电离层与射线绘图）",
+      "desc_zh": "摆脱 Matlab 门槛做 IRI/射线绘图；仍须另行申请 DSTG PHaRLAP 本体",
+      "one_liner_zh": "PyLap：HamSCI 对 PHaRLAP 的 Python 接口",
       "analysis_zh": "用 Python/C 调用 PHaRLAP Fortran 引擎，摆脱 Matlab 授权门槛，保留建 IRI 电离层、射线追踪与绘图等核心流程。业余与科研 HF 传播实验友好。安装目前偏 Ubuntu/x86，且必须先向 DSTG 申请 PHaRLAP 本体与 Intel Fortran 运行库；本身不是可独立运行的完整射线引擎。",
       "language": "Python",
       "license": "MIT",
@@ -8850,8 +8850,8 @@
     {
       "name": "pysatSpaceWeather",
       "url": "https://github.com/pysat/pysatSpaceWeather",
-      "desc_zh": "pysat 空间天气指数与数据集支持库",
-      "one_liner_zh": "pysat 空间天气指数与数据集支持库",
+      "desc_zh": "把 F10.7/地磁指数等接到统一 Instrument；本身不算 TEC 解算器",
+      "one_liner_zh": "pysatSpaceWeather：pysat 空间天气指数支持库",
       "analysis_zh": "为 pysat 生态提供空间天气指数与相关数据接口，便于把 F10.7、地磁指数等驱动接到电离层分析。输入为数据源配置；输出为统一的 pysat Instrument 对象。局限：本身不算 TEC 解算器；需与 pysat 主库配合。",
       "language": "Python",
       "license": "BSD-3-Clause",
@@ -9313,7 +9313,7 @@
     {
       "name": "scintill-ai",
       "url": "https://github.com/viventriglia/scintill-ai",
-      "desc_zh": "用机器学习做电离层闪烁相关分析的研究项目",
+      "desc_zh": "数据驱动实验原型；报告应保留 S4/σφ/ROTI 等物理基线对照",
       "analysis_zh": "探索用机器学习刻画或预测电离层闪烁相关现象的研究型仓库，偏数据驱动实验原型。适合空间天气与机器学习交叉课题入门。闪烁事件稀缺、标签噪声与跨站点泛化是主要风险；报告结果时应保留 S4、σφ、ROTI 等物理基线对照，避免只展示神经网络分数而缺少可解释性。",
       "language": "Shell",
       "license": "MIT",
@@ -9325,8 +9325,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "用机器学习做电离层闪烁相关分析的研究项目"
+      "provenance": "academic_lab",
+      "one_liner_zh": "scintill-ai：机器学习电离层闪烁分析研究项目"
     },
     {
       "name": "scintkit",
@@ -9490,8 +9490,8 @@
     {
       "name": "SuperSID",
       "url": "https://github.com/sberl/supersid",
-      "desc_zh": "突发电离层扰动（SID）监测软件（跨平台，社区维护分支）",
-      "one_liner_zh": "突发电离层扰动（SID）监测软件（跨平台，社区维护分支）",
+      "desc_zh": "社区维护分支监测 D 区吸收变化；输出幅度时序而非 GNSS TEC",
+      "one_liner_zh": "SuperSID：VLF 突发电离层扰动（SID）监测",
       "analysis_zh": "SuperSID 用简易 VLF 接收监测突发电离层扰动（太阳耀斑等引起的 D 区吸收变化），sberl 分支相对活跃。输出 SID 幅度时间序列。局限：监测的是 VLF 幅度而非 GNSS TEC；站点环境噪声影响大。",
       "language": "Python",
       "license": "MIT",
@@ -9740,8 +9740,8 @@
     {
       "name": "tec_prediction-ONERA",
       "url": "https://github.com/aboulch/tec_prediction",
-      "desc_zh": "ONERA ConvLSTM/U-Net 全球 TEC 图预报经典开源实现（Boulch 2018）",
-      "one_liner_zh": "ONERA ConvLSTM/U-Net 全球 TEC 图预报经典开源实现（Boulch 2018）",
+      "desc_zh": "ONERA/Boulch 2018 经典开源基线，后被多篇 DeepTEC 工作引用",
+      "one_liner_zh": "tec_prediction-ONERA：ConvLSTM/U-Net 全球 TEC 图预报",
       "analysis_zh": "卷积循环网络做电离层活动/TEC 图预报的早期公开代码，后被多篇 DeepTEC 类工作引用。研究非商业用途按仓库说明为 GPLv3，商业需联系 ONERA。适合当 ML TEC 基线；年代较早（约 2018），依赖与数据管道需自行适配现行 IONEX/GIM。",
       "language": "Python",
       "license": "GPL-3.0 (research); commercial contact ONERA",
@@ -10491,7 +10491,7 @@
     {
       "name": "GREAT-PIFGO",
       "url": "https://github.com/GREAT-WHU/GREAT-PIFGO",
-      "desc_zh": "GREAT 软件中的因子图优化模块（PIFGO）",
+      "desc_zh": "面向精密定位/组合导航因子组织，便于对照 GREAT 论文图优化表述",
       "analysis_zh": "GREAT 体系内的因子图优化实现，面向精密定位与组合导航相关因子组织，便于对照论文中的图优化表述。适合已经在读 GREAT-PVT/MSF 的用户深入源码。与 GraphRTK-INS、GREAT-MSF 概念有重叠，选用前仔细阅读 README 的适用场景、输入观测类型与样例数据，避免重复造轮子。",
       "language": "C++",
       "license": "",
@@ -10504,7 +10504,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "GREAT 软件中的因子图优化模块（PIFGO）"
+      "one_liner_zh": "GREAT-PIFGO：武大 GREAT 因子图优化模块"
     },
     {
       "name": "gtsam",
@@ -10771,7 +10771,7 @@
     {
       "name": "KF-GINS-Py",
       "url": "https://github.com/salmoshu/KF-GINS-Py",
-      "desc_zh": "KF-GINS 思路的 Python 移植，便于读 EKF 组合导航",
+      "desc_zh": "便于打印状态/协方差做教学原型；长航时请回归 C++ 原版",
       "analysis_zh": "把 KF-GINS 类 EKF 松组合思路落到 Python，便于逐步打印状态与协方差、快速改状态维与观测模型。适合教学与算法原型。数值性能与长航时稳健性不如 C++ 原版；外场应用请回归 KF-GINS/OB_GINS，并严格完成 IMU 噪声标定与杆臂测量后再谈精度。",
       "language": "Python",
       "license": "GPL-3.0",
@@ -10784,7 +10784,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "KF-GINS 思路的 Python 移植，便于读 EKF 组合导航"
+      "one_liner_zh": "KF-GINS-Py：KF-GINS 思路的 Python EKF 移植"
     },
     {
       "name": "libRSF",
@@ -10994,7 +10994,7 @@
     {
       "name": "salsa",
       "url": "https://github.com/yxw027/salsa",
-      "desc_zh": "GNSS+视觉+惯性状态估计相关实现",
+      "desc_zh": "室外全局定位抑制纯 VIO 漂移；价值在融合框架而非载波相位深度",
       "analysis_zh": "融合 GNSS、视觉与惯性的状态估计原型，用于机器人室外全局定位并抑制纯视觉惯性漂移。适合多传感器融合架构与外参标定实验。传感器时间同步与标定成本较高；纯测地精密定位不如专用 PPP/RTK 引擎，本仓库价值在融合框架设计而非载波相位解算深度。",
       "language": "C++",
       "license": "",
@@ -11007,7 +11007,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "GNSS+视觉+惯性状态估计相关实现"
+      "one_liner_zh": "salsa：GNSS+视觉+惯性状态估计原型"
     },
     {
       "name": "Smart-UAV-Return-GNSS-Station",
@@ -11024,7 +11024,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
+      "provenance": "academic_lab",
       "one_liner_zh": "GNSS/链路丢失时无人机智能返航相关代码"
     },
     {
@@ -11369,7 +11369,7 @@
     {
       "name": "rt-clk-service",
       "url": "https://github.com/DoubleString/rt-clk-service",
-      "desc_zh": "实时 GNSS 钟差/轨道/UPD/IFPB 服务相关",
+      "desc_zh": "贴近 PPP-AR 实时产品链；公开完整度有限，需对照 IGS 产品",
       "analysis_zh": "面向实时钟差、轨道与 UPD/IFPB 等偏差产品的服务向代码，贴近 PPP-AR 实时链。适合研究实时产品生成。公开完整度有限，需自备数据与对照 IGS 产品。",
       "language": "C++",
       "license": "",
@@ -11381,8 +11381,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "实时 GNSS 钟差/轨道/UPD/IFPB 服务相关"
+      "provenance": "academic_lab",
+      "one_liner_zh": "rt-clk-service：实时钟差/轨道/UPD/IFPB 服务代码"
     },
     {
       "name": "SPOCC",
@@ -11999,7 +11999,7 @@
     {
       "name": "GIRAS-GPS-Solutions",
       "url": "https://github.com/cemalialtuntas/GIRAS-GPS-Solutions",
-      "desc_zh": "GIRAS：MATLAB 开源 GNSS-IR 分析软件（GPS Solutions 论文配套）",
+      "desc_zh": "多星座 SNR 反射体高度与菲涅耳区可视化；大规模可对照 gnssrefl",
       "analysis_zh": "Altuntas 与 Tunalioglu 发布的 MATLAB GNSS-IR 工具，可读 RINEX 2/3 与广播/精密星历，支持多星座，含第一菲涅耳区计算与基于 SNR 的反射体高度估计及可视化。适合教学与站点级反射测量试验。依赖 MATLAB 环境；大规模业务化反演可对照 Kristen Larson 的 gnssrefl。",
       "language": "MATLAB",
       "license": "MIT",
@@ -12014,7 +12014,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "GIRAS：MATLAB 开源 GNSS-IR 分析软件（GPS Solutions 论文配套）"
+      "one_liner_zh": "GIRAS：MATLAB 开源 GNSS-IR 分析（GPS Solutions 配套）"
     },
     {
       "name": "GMR-Water",
@@ -12046,10 +12046,10 @@
       "stars": 17,
       "provenance": "personal_community",
       "host": "github",
-      "one_liner_zh": "GPU 加速 GNSS-R 处理",
+      "one_liner_zh": "GNSS-REFLECTOMETRY-PROCESSING：GPU 加速 GNSS-R 处理",
       "analysis_zh": "面向 GNSS 反射测量的 GPU/CUDA 处理实验代码，适合做吞吐或算法加速试验。硬件与驱动依赖重；业务流水线需自行封装 I/O 与质控。",
       "markers": [],
-      "desc_zh": "GPU 加速 GNSS-R 处理",
+      "desc_zh": "CUDA 吞吐/算法加速试验代码；业务 I/O 与质控需自行封装",
       "stars_approx": 17,
       "source": "similar-finds-2026-09-14",
       "featured": false,
@@ -12177,10 +12177,10 @@
       "stars": 19,
       "provenance": "academic_lab",
       "host": "github",
-      "one_liner_zh": "TechDemoSat-1 星载 GNSS-R Python 示例",
+      "one_liner_zh": "GNSSR_MERRByS_Python：TechDemoSat-1 星载 GNSS-R 示例",
       "analysis_zh": "Surrey TechDemoSat-1（MERRByS）星载 GNSS-R 的 Python/Jupyter 示例，演示空间反射数据读取与初步处理。适合星载 GNSS-R 入门。地基 GNSS-IR 请用 gnssrefl；两者几何与校正链不同。",
       "markers": [],
-      "desc_zh": "TechDemoSat-1 星载 GNSS-R Python 示例",
+      "desc_zh": "Surrey MERRByS Jupyter 读数与初处理；地基 GNSS-IR 请改用 gnssrefl",
       "stars_approx": 19,
       "source": "similar-finds-2026-09-14",
       "featured": false,
@@ -12209,7 +12209,7 @@
     {
       "name": "gnssrlowcost",
       "url": "https://github.com/purnelldj/gnssr_lowcost",
-      "desc_zh": "低成本 GNSS 反射测量分析（MATLAB/Python）",
+      "desc_zh": "MATLAB/Python 双路径，降 GNSS-R/IR 入门门槛；精度通常不及 gnssrefl",
       "analysis_zh": "面向低成本 GNSS 硬件的反射测量分析，同时给出 MATLAB 与 Python 路径，降低 GNSS-R/IR 入门与课程实验门槛。适合教学站与原型站网。测高精度与稳定性通常不及大地型天线+gnssrefl；使用前需核对天线相位中心、多路径几何与采样率是否满足干涉条纹分辨需求。场地开阔度与多路径环境会显著影响可用弧段长度。",
       "language": "MATLAB",
       "license": "MIT",
@@ -12222,7 +12222,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "低成本 GNSS 反射测量分析（MATLAB/Python）"
+      "one_liner_zh": "gnssrlowcost：低成本 GNSS 反射测量分析"
     },
     {
       "name": "GNSSRMERRByS",
@@ -12327,12 +12327,12 @@
       "language": "HTML",
       "license": "GPL-3.0",
       "stars": 5,
-      "provenance": "personal_community",
+      "provenance": "academic_lab",
       "host": "github",
-      "one_liner_zh": "近实时 GNSS-IR 软件原型",
+      "one_liner_zh": "NearRealTimeGNSSIR：近实时 GNSS-IR 软件原型",
       "analysis_zh": "朝近实时 GNSS-IR 流水线努力的实现，目标从 SNR 提取水位/雪深/土壤湿度等环境参数。适合做自动化监测原型。工程完整度与多星座支持需实测，稳定产线可对照 gnssrefl。",
       "markers": [],
-      "desc_zh": "近实时 GNSS-IR 软件原型",
+      "desc_zh": "从 SNR 抽水位/雪深等环境参数；稳定产线可对照 gnssrefl",
       "stars_approx": 5,
       "source": "similar-finds-2026-09-14",
       "featured": false,
@@ -16223,8 +16223,8 @@
   ],
   "provenance_counts": {
     "official": 236,
-    "academic_lab": 298,
-    "personal_community": 296
+    "academic_lab": 309,
+    "personal_community": 285
   },
   "updated": "2026-09-24"
 }

@@ -28,7 +28,7 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 | [VINS-GPS-Wheel](https://github.com/Wallong/VINS-GPS-Wheel) | VINS-GPS-Wheel：VINS-Mono+轮速+GNSS | C++ | 280 | 🏷️ 个人社区 |
 | [RTK-Visual-Inertial-Navigation](https://github.com/xiaohong-huang/RTK-Visual-Inertial-Navigation) | RTK-VIN：滑窗滤波 RTK 视觉惯性导航 | C++ | 136 | 🏷️ 高校实验室 |
 | [carvig](https://github.com/Erensu/carvig) | carvig：车载 INS/GNSS/视觉组合导航 | C | 120 | 🏷️ 高校实验室 |
-| [salsa](https://github.com/yxw027/salsa) | GNSS+视觉+惯性状态估计相关实现 | C++ | 14 | 🏷️ 高校实验室 |
+| [salsa](https://github.com/yxw027/salsa) | salsa：GNSS+视觉+惯性状态估计原型 | C++ | 14 | 🏷️ 高校实验室 |
 | [GVINS-WHU](https://github.com/zhangwhu/GVINS) | 武大相关：PPP-RTK/INS/视觉组合导航（勿与港科大 GVINS-HKUST 混淆） | C++ | 12 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -138,8 +138,8 @@ HKUST Aerial Robotics 发布的优化式多传感器状态估计器，在 VINS-M
 | [GNSS_IMU](https://github.com/rtklibexplorer/GNSS_IMU) | GNSS_IMU：松组合 GNSS/IMU 的 Python 实现 | Python | 35 | 🏷️ 个人社区 |
 | [GINS](https://github.com/zhangwhu/GINS) | GINS：PPP-RTK 与惯导组合导航实现 | C | 21 | 🏷️ 高校实验室 |
 | [ImuGpsGuiding](https://github.com/JackJu-HIT/ImuGpsGuiding) | ImuGpsGuiding：ROS 下 IMU+GPS 点到点导引示例 | C++ | 20 | 🏷️ 高校实验室 |
-| [KF-GINS-Py](https://github.com/salmoshu/KF-GINS-Py) | KF-GINS 思路的 Python 移植，便于读 EKF 组合导航 | Python | 13 | 🏷️ 高校实验室 |
-| [Smart-UAV-Return-GNSS-Station](https://github.com/citec-spbu/Smart-UAV-Return-GNSS-Station) | GNSS/链路丢失时无人机智能返航相关代码 | C | 3 | 🏷️ 个人社区 |
+| [KF-GINS-Py](https://github.com/salmoshu/KF-GINS-Py) | KF-GINS-Py：KF-GINS 思路的 Python EKF 移植 | Python | 13 | 🏷️ 高校实验室 |
+| [Smart-UAV-Return-GNSS-Station](https://github.com/citec-spbu/Smart-UAV-Return-GNSS-Station) | GNSS/链路丢失时无人机智能返航相关代码 | C | 3 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -256,7 +256,7 @@ rtklibexplorer 社区风格的松组合 GNSS/IMU Python 实现，便于配合 de
 把 KF-GINS 类 EKF 松组合思路落到 Python，便于逐步打印状态与协方差、快速改状态维与观测模型。适合教学与算法原型。数值性能与长航时稳健性不如 C++ 原版；外场应用请回归 KF-GINS/OB_GINS，并严格完成 IMU 噪声标定与杆臂测量后再谈精度。
 
 #### [Smart-UAV-Return-GNSS-Station](https://github.com/citec-spbu/Smart-UAV-Return-GNSS-Station)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：C · 许可：— · 星标约：3 · 宿主：github
 
@@ -446,7 +446,7 @@ OKVIS2-X 在经典 OKVIS 视觉惯性框架上扩展稠密深度或 LiDAR，并�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [GraphRTK-INS](https://github.com/GREAT-WHU/GraphRTK-INS) | GraphRTK-INS：RTK/INS 因子图紧组合 | C++ | 83 | 🏷️ 高校实验室 核心 |
-| [GREAT-PIFGO](https://github.com/GREAT-WHU/GREAT-PIFGO) | GREAT 软件中的因子图优化模块（PIFGO） | C++ | 18 | 🏷️ 高校实验室 |
+| [GREAT-PIFGO](https://github.com/GREAT-WHU/GREAT-PIFGO) | GREAT-PIFGO：武大 GREAT 因子图优化模块 | C++ | 18 | 🏷️ 高校实验室 |
 | [tightly-coupled-gnss-imu-fgo](https://github.com/inuex35/tightly-coupled-gnss-imu-fgo) | tightly-coupled-gnss-imu-fgo：FGO 路线 RTK+IMU 原型 | Python | 17 | 🏷️ 个人社区 |
 
 ### 详细说明

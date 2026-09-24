@@ -1,0 +1,170 @@
+[
+  {
+    "name": "gnatss",
+    "action": "keep",
+    "detail": "community org Seafloor Geodesy; not university/agency → keep personal_community",
+    "owner": "seafloor-geodesy"
+  },
+  {
+    "name": "sidereon",
+    "action": "keep",
+    "detail": "empty bio/company → keep personal_community",
+    "owner": "neilberkman"
+  },
+  {
+    "name": "GNSS-REFLECTOMETRY-PROCESSING",
+    "action": "keep",
+    "detail": "empty company; personal telecom bio → keep personal_community",
+    "owner": "oriolcervello"
+  },
+  {
+    "name": "INX_Editor",
+    "action": "keep",
+    "detail": "empty company; personal bio → keep personal_community",
+    "owner": "1acheng"
+  },
+  {
+    "name": "pygnss-tec",
+    "action": "keep",
+    "detail": "empty bio/company → keep personal_community",
+    "owner": "eureka-0"
+  },
+  {
+    "name": "SuperSID",
+    "action": "keep",
+    "detail": "empty company; personal hobbyist bio → keep personal_community",
+    "owner": "sberl"
+  },
+  {
+    "name": "gps-sdr-simulink",
+    "action": "keep",
+    "detail": "company Samsung Semiconductor Inc commercial → keep personal_community",
+    "owner": "dmiralles2009"
+  },
+  {
+    "name": "QuadSPP",
+    "action": "keep",
+    "detail": "empty company; personal FOSS curator → keep personal_community",
+    "owner": "hdkarimi"
+  },
+  {
+    "name": "RAIM_PANG_NAV",
+    "action": "keep",
+    "detail": "company Sichuan Jiuzhou Electric Group commercial → keep personal_community",
+    "owner": "MichaelBeechan"
+  },
+  {
+    "name": "gnss-rcv",
+    "action": "keep",
+    "detail": "empty bio/company → keep personal_community",
+    "owner": "mx4"
+  },
+  {
+    "name": "gnssrlowcost",
+    "action": "keep",
+    "detail": "empty bio/company → keep personal_community",
+    "owner": "purnelldj"
+  },
+  {
+    "name": "GDDS",
+    "action": "keep",
+    "detail": "empty bio/company → keep personal_community",
+    "owner": "LECUT"
+  },
+  {
+    "name": "pyspartn",
+    "action": "keep",
+    "detail": "semuconsulting commercial/community org; no university → keep personal_community",
+    "owner": "semuconsulting"
+  },
+  {
+    "name": "ubx2rinex",
+    "action": "keep",
+    "detail": "nav-solutions community org France; no agency/university → keep personal_community",
+    "owner": "nav-solutions"
+  },
+  {
+    "name": "HPRTK",
+    "action": "keep",
+    "detail": "already academic_lab; empty bio — confirmed keep",
+    "owner": "yxw027"
+  },
+  {
+    "name": "salsa",
+    "action": "keep",
+    "detail": "already academic_lab; empty bio — confirmed keep",
+    "owner": "yxw027"
+  },
+  {
+    "name": "GNSSommelier",
+    "action": "keep",
+    "detail": "already official (EarthScope Consortium) — confirmed",
+    "owner": "EarthScope"
+  },
+  {
+    "name": "GREAT-PIFGO",
+    "action": "keep",
+    "detail": "already academic_lab (WHU GREAT org) — confirmed",
+    "owner": "GREAT-WHU"
+  },
+  {
+    "name": "PyLap",
+    "action": "keep",
+    "detail": "already academic_lab (HamSCI citizen-science/research org) — confirmed",
+    "owner": "HamSCI"
+  },
+  {
+    "name": "pysatSpaceWeather",
+    "action": "keep",
+    "detail": "already academic_lab (pysat org) — confirmed",
+    "owner": "pysat"
+  },
+  {
+    "name": "tec_prediction-ONERA",
+    "action": "keep",
+    "detail": "already academic_lab (ONERA classic origin) — confirmed",
+    "owner": "aboulch"
+  },
+  {
+    "name": "DeepPredTEC",
+    "action": "keep",
+    "detail": "already academic_lab (VT SuperDARN org) — confirmed",
+    "owner": "vtsuperdarn"
+  },
+  {
+    "name": "pyrtklib_demo5",
+    "action": "keep",
+    "detail": "already academic_lab (PolyU IPNL) — confirmed",
+    "owner": "IPNL-POLYU"
+  },
+  {
+    "name": "KF-GINS-Py",
+    "action": "keep",
+    "detail": "already academic_lab — confirmed keep",
+    "owner": "salmoshu"
+  },
+  {
+    "name": "ionosonde_volgatech",
+    "action": "keep",
+    "detail": "already academic_lab (Volga Tech affiliation in name/analysis) — confirmed",
+    "owner": "Vladimi-lan"
+  },
+  {
+    "name": "GNSSR_MERRByS_Python",
+    "action": "keep",
+    "detail": "already academic_lab (MERRByS/TDS-1 research code path) — confirmed",
+    "owner": "pjalesSSTL"
+  },
+  {
+    "name": "Ionort-raytrace",
+    "action": "keep",
+    "detail": "already academic_lab (blair3sat HS CubeSat + Ionort academic copy) — confirmed",
+    "owner": "blair3sat"
+  },
+  {
+    "name": "GIRAS-GPS-Solutions",
+    "action": "keep",
+    "detail": "already academic_lab (Yildiz Technical University) — confirmed",
+    "owner": "cemalialtuntas"
+  }
+]

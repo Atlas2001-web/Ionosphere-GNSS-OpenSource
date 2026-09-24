@@ -33,8 +33,8 @@
 | [GNSSSDRHACKRF](https://github.com/jdesbonnet/GNSS_SDR_HACKRF) | GNSSSDRHACKRF：HackRF One 跑 GNSS-SDR 的实验记录 | — | 19 | 🏷️ 个人社区 |
 | [gnsssdrgui](https://github.com/UHaider/gnss_sdr_gui) | gnsssdrgui：GNSS-SDR 图形配置与监视界面 | C++ | 16 | 🏷️ 高校实验室 |
 | [meta-gnss-sdr](https://github.com/carlesfernandez/meta-gnss-sdr) | meta-gnss-sdr：GNSS-SDR 的 OpenEmbedded/Yocto 层 | C | 16 | 🏷️ 高校实验室 |
-| [gps-sdr-simulink](https://github.com/dmiralles2009/gps-sdr-simulink) | Simulink 中的 GPS 捕获阶段模型 | MATLAB | 15 | 🏷️ 个人社区 |
-| [gnss-rcv](https://github.com/mx4/gnss-rcv) | Rust 实现的 GPS L1 C/A 软件接收机 | Rust | 14 | 🏷️ 个人社区 |
+| [gps-sdr-simulink](https://github.com/dmiralles2009/gps-sdr-simulink) | gps-sdr-simulink：Simulink GPS 捕获阶段模型 | MATLAB | 15 | 🏷️ 个人社区 |
+| [gnss-rcv](https://github.com/mx4/gnss-rcv) | gnss-rcv：Rust GPS L1 C/A 软件接收机 | Rust | 14 | 🏷️ 个人社区 |
 | [multi-channel-gnss](https://github.com/dasdboot/multi-channel-gnss) | 基于 LimeSDR 的多通道 GNSS 实验项目 | — | 12 | 🏷️ 个人社区 |
 | [gnss-sdr-rs](https://github.com/kewei/gnss-sdr-rs) | Rust 语言 GNSS 软件接收机实验仓库 | Rust | 9 | 🏷️ 个人社区 |
 | [GPSMAXIM2769b-](https://github.com/vaidhyamookiah/GPSMAXIM2769b-) | Maxim 2769b GNSS 前端 PCB（Papilio FPGA） | Eagle | 4 | 🏷️ 个人社区 |
@@ -513,12 +513,12 @@ VHDL 代码用于生成 GPS L1 C/A 以及 Galileo E1OS、E5 的 PRN 与无数据
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GPSL1-MMT-DPEmodule](https://github.com/Sergio-Vicenzo/GPSL1-MMT-DPEmodule) | 开源 GPS L1 多路径抑制技术与直接定位估计（DPE）MATLAB 模块 | MATLAB | 9 | 🏷️ 个人社区 |
+| [GPSL1-MMT-DPEmodule](https://github.com/Sergio-Vicenzo/GPSL1-MMT-DPEmodule) | GPSL1-MMT-DPEmodule：GPS L1 多路径抑制与 DPE 模块 | MATLAB | 9 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
 #### [GPSL1-MMT-DPEmodule](https://github.com/Sergio-Vicenzo/GPSL1-MMT-DPEmodule)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：MATLAB · 许可：GPL-2.0 · 星标约：9 · 宿主：github
 

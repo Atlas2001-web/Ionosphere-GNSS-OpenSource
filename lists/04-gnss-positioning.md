@@ -296,7 +296,7 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 |---|---|---|---:|---|
 | [groops](https://github.com/groops-devs/groops) | GROOPS：重力场与 GNSS 处理（TU Graz） | C++ | 244 | 🏷️ 高校实验室 ★ 核心 |
 | [GARPOS](https://github.com/s-watanabe-jhod/garpos) | GARPOS：日本海保 GNSS-声学海底定位开源解算器 | Python | 25 | 🏷️ 官方 |
-| [gnatss](https://github.com/seafloor-geodesy/gnatss) | 海底 GNSS-A 换能器测量社区软件（Python） | Python | 17 | 🏷️ 个人社区 |
+| [gnatss](https://github.com/seafloor-geodesy/gnatss) | gnatss：海底 GNSS-A 换能器测量社区软件 | Python | 17 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -474,7 +474,7 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 | [rtkbase](https://github.com/Stefal/rtkbase) | rtkbase：树莓派自建 GNSS 基准站与 Web 管理 | Python | 769 | 🏷️ 个人社区 核心 |
 | [rtklib-py](https://github.com/rtklibexplorer/rtklib-py) | rtklib-py：demo5 思路的 Python RTKLIB（偏 PPK） | Python | 244 | 🏷️ 个人社区 |
 | [OpenRTK](https://github.com/AndreasArendt/OpenRTK) | OpenRTK：轻量开源精密 GNSS/RTK | C++ | 23 | 🏷️ 个人社区 |
-| [HPRTK](https://github.com/yxw027/HPRTK) | 高精度实时定位相关工程（HPRTK） | C++ | 17 | 🏷️ 高校实验室 |
+| [HPRTK](https://github.com/yxw027/HPRTK) | HPRTK：高精度实时定位 C++ 工程参考 | C++ | 17 | 🏷️ 高校实验室 |
 | [RTK](https://github.com/GYH-WHU/RTK) | GPS/BDS 双系统 RTK（浮点/固定）C++ 教学系统 | C++ | 11 | 🏷️ 高校实验室 |
 | [GNSSRTK](https://github.com/SupakunZ/GNSS_RTK) | AGV 用 GNSS-RTK 路径规划与车载显示（Python） | Python | 3 | 🏷️ 个人社区 |
 
@@ -751,7 +751,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 |---|---|---|---:|---|
 | [pyrtklib](https://github.com/IPNL-POLYU/pyrtklib) | pyrtklib：RTKLIB 的 Python 绑定 | C | 182 | 🏷️ 高校实验室 核心 |
 | [MatRTKLIB](https://github.com/taroz/MatRTKLIB) | MatRTKLIB：RTKLIB 的 MATLAB 封装 | MATLAB | 99 | 🏷️ 个人社区 |
-| [pyrtklib_demo5](https://github.com/IPNL-POLYU/pyrtklib_demo5) | 基于 rtklibexplorer demo5 分支的 pyrtklib 变体 | C | 13 | 🏷️ 高校实验室 |
+| [pyrtklib_demo5](https://github.com/IPNL-POLYU/pyrtklib_demo5) | pyrtklib_demo5：对接 rtklibexplorer demo5 的 pyrtklib | C | 13 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -781,7 +781,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [MG_APP](https://github.com/XiaoGongWei/MG_APP) | MG-APP：多 GNSS 精密定位应用 | C++ | 98 | 🏷️ 高校实验室 |
-| [QuadSPP](https://github.com/hdkarimi/QuadSPP) | 多星座标准单点定位（SPP）实现 | C | 14 | 🏷️ 个人社区 |
+| [QuadSPP](https://github.com/hdkarimi/QuadSPP) | QuadSPP：多星座标准单点定位（SPP） | C | 14 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -926,7 +926,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [RAIM_PANG_NAV](https://github.com/MichaelBeechan/RAIM_PANG_NAV) | 面向 PANG-NAV SPP 流程的 MATLAB RAIM 完好性监测实现 | MATLAB | 14 | 🏷️ 个人社区 |
+| [RAIM_PANG_NAV](https://github.com/MichaelBeechan/RAIM_PANG_NAV) | RAIM_PANG_NAV：PANG-NAV 向 MATLAB RAIM 完好性监测 | MATLAB | 14 | 🏷️ 个人社区 |
 | [gnss-integrity-raim](https://github.com/OrbitAR7/gnss-integrity-raim) | gnss-integrity-raim：Python RAIM 与保护级示例 | Python | 4 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -972,7 +972,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [sidereon](https://github.com/neilberkman/sidereon) | Rust 统一引擎：SPP/RTK/PPP + 轨道力学 + 多格式 | Rust | 18 | 🏷️ 个人社区 |
+| [sidereon](https://github.com/neilberkman/sidereon) | sidereon：Rust 统一 SPP/RTK/PPP 与轨道力学引擎 | Rust | 18 | 🏷️ 个人社区 |
 
 ### 详细说明
 
