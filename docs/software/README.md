@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **45 篇**操作手册（合计 **10680** 行，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **47 篇**操作手册（合计 **11016** 行，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -15,7 +15,7 @@
 | **软件手册质检**（本 bot） | 已短硬篇的**二遍质检补洞**（错 I/O、过时旗标、仍薄点）；优先 `georinex` / `rtklib` / `bnc` / `gfzrnx` / `pytecgg` | 勿大改「仍薄/缺篇」同事正在写的文件 |
 | **软件用法讲解**（并行） | 写 **尚未短硬 / 缺篇** 新手册 | 勿重写下表已标「已短硬」全文（补丁可协调） |
 
-**下一优先（质检二遍，按弱→强）：** 停写门槛已近——剩余主要是 **登记/环境受限**（`anubis` / `ionomoni` / `iono-scintillation` / `gfzrnx`）无本机真实 I/O 可补；**sh-gim** 保持边界。**已短硬入库 `pyglow` + `iri2016` + `apexpy` + `msise00`**。**用法讲解已入库** `glab-upc` + `pynmeagps` + `gdds` + `gps-measurement-tools` + `pygpsclient`+ `cycle-slip-correction` + `diffionmap` + `cddis-highrate-downloader`。**已质检复跑** `glab-upc` + `pynmeagps` + `gdds` + `gps-measurement-tools` + `pygpsclient` + `gnss_lib_py` + `pyiri` + `pyirtam`+ `fast` + `diffionmap` + `cddis-highrate-downloader`（stdout 对齐；CDDIS LIST 425 已记）。**质检新短硬** `geospacelab`（0.14.8；OMNI SYM_H=-234 + Madrigal TEC max=114）。**用法讲解新入库** `gnsspy`（3.0.1；demo.10o→pandas G07 L1=118767195.326；converter 2→3；无 PyPI）。
+**下一优先（质检二遍，按弱→强）：** 停写门槛已近——剩余主要是 **登记/环境受限**（`anubis` / `ionomoni` / `iono-scintillation` / `gfzrnx`）无本机真实 I/O 可补；**sh-gim** 保持边界。**已短硬入库 `pyglow` + `iri2016` + `apexpy` + `msise00`**。**用法讲解已入库** `ionex-rs` + `madocalib` + `glab-upc` + `pynmeagps` + `gdds` + `gps-measurement-tools` + `pygpsclient`+ `cycle-slip-correction` + `diffionmap` + `cddis-highrate-downloader`。**已质检复跑** `glab-upc` + `pynmeagps` + `gdds` + `gps-measurement-tools` + `pygpsclient` + `gnss_lib_py` + `pyiri` + `pyirtam`+ `fast` + `diffionmap` + `cddis-highrate-downloader`（stdout 对齐；CDDIS LIST 425 已记）。**质检新短硬** `geospacelab`（0.14.8；OMNI SYM_H=-234 + Madrigal TEC max=114）。**用法讲解新入库** `gnsspy`（3.0.1；demo.10o→pandas G07 L1=118767195.326；converter 2→3；无 PyPI）。
 **sh-gim：** 保持短边界，禁止注水扩写。  
 **停写条件：** 剩余皆 PASS，或仅剩 sh-gim 边界 / 登记受限且无进一步真实 I/O 增益。
 
@@ -70,6 +70,8 @@
 | 43 | [glab-upc.md](./glab-upc.md) | UPC gAGE 教学 GNSS（SPP/PPP/电离层模型） | 202 | **已短硬** · 官方 v6.0.0 `gLAB_linux`；abmf SPP 2880 历元 3D95≈4.75 m；旧 4.x gcc 链失败已记 · **质检复跑通过** |
 | 44 | [pynmeagps.md](./pynmeagps.md) | NMEA 0183 编解码库 | 213 | **已短硬** · 本机 **1.1.7**/`4322c38`；GGA 往返+文件流；交叉 [pygpsclient](./pygpsclient.md)/[pygnssutils](./pygnssutils.md) · **质检复跑通过** |
 | 45 | [gnsspy.md](./gnsspy.md) | Python GNSS 读写/分析（pandas + RINEX 2↔3） | 224 | **已短硬** · 本机 **3.0.1**/`e6879bf`；demo.10o→22×9 G07 L1=118767195.326；converter OK；**无 PyPI**；对照 [georinex](./georinex.md) |
+| 46 | [ionex-rs.md](./ionex-rs.md) | Rust IONEX 解析/写回（nav-solutions） | 171 | **已短硬** · crates.io **0.1.0**/tip `bcb9171`；CKMG0020 → 129575 点/25 图；87.5N=9.2 TECU；往返 807703 B；交叉 [ionex-gim](./ionex-gim.md) |
+| 47 | [madocalib.md](./madocalib.md) | QZSS MADOCA-PPP 官方测试库（事后 PPP） | 165 | **已短硬** · tip `0089f7d` / **VER 2.1**；Linux `rnx2rtkp`；MIZU 1 h → 118 历元 Q=6；交叉 [cssrlib](./cssrlib.md)/[haslib](./haslib.md)/[rtklib](./rtklib.md)/[pride-pppar](./pride-pppar.md) |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -101,6 +103,7 @@
 | 粗相对斜 TEC（无 DCB） | [gnss-tec.md](./gnss-tec.md) |
 | ROTI / AATR / ΔTEC | [ionomoni.md](./ionomoni.md) · [oasis-roti.md](./oasis-roti.md) |
 | 读 IONEX GIM | [ionex-gim.md](./ionex-gim.md) |
+| Rust 读/写 IONEX | [ionex-rs.md](./ionex-rs.md) |
 | 两幅 IONEX 并排对照 | [diffionmap.md](./diffionmap.md) |
 | CDDIS 高采样（1 s / 15 min）批量 | [cddis-highrate-downloader.md](./cddis-highrate-downloader.md) |
 | IGS/CORS/产品/时序 GUI 多模块下载 | [gdds.md](./gdds.md) |
@@ -110,6 +113,7 @@
 | 自建多用户 Caster | [bkg-ntripcaster.md](./bkg-ntripcaster.md) |
 | RTK / 浮点 PPP | [rtklib.md](./rtklib.md) |
 | PPP-AR | [pride-pppar.md](./pride-pppar.md) |
+| QZSS MADOCA-PPP 官方参考 | [madocalib.md](./madocalib.md) |
 | Python 开放 PPP/PPP-RTK（CLAS/HAS） | [cssrlib.md](./cssrlib.md) |
 | Galileo HAS 页 → RTCM/IGS SSR | [haslib.md](./haslib.md) |
 | 轻量 Python 观测处理 / 自写估计器 | [laika.md](./laika.md) |
@@ -142,11 +146,11 @@
 
 ### D · 发表级坐标 / ZTD
 
-QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒烟 →（开放服务教学 [cssrlib](./cssrlib.md)）→ [pride-pppar](./pride-pppar.md) + 精密产品 → 教程 [06](../tutorials/06-iono-positioning.md)
+QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒烟 →（开放服务教学 [cssrlib](./cssrlib.md)；QZSS MADOCA [madocalib](./madocalib.md)）→ [pride-pppar](./pride-pppar.md) + 精密产品 → 教程 [06](../tutorials/06-iono-positioning.md)
 
 ### E · 理解 GIM（非端到端自建）
 
-[ionex-gim](./ionex-gim.md) 读产品；[diffionmap](./diffionmap.md) 两图并排；[sh-gim](./sh-gim.md) 只看公开/专有边界；开源求解看列表里其它 GIM 工具 → 教程 [03](../tutorials/03-gim-ionex.md)/[10](../tutorials/10-build-gim-workflow.md)/[18](../tutorials/18-lab-compare-gims.md)
+[ionex-gim](./ionex-gim.md) 读产品（Rust → [ionex-rs](./ionex-rs.md)）；[diffionmap](./diffionmap.md) 两图并排；[sh-gim](./sh-gim.md) 只看公开/专有边界；开源求解看列表里其它 GIM 工具 → 教程 [03](../tutorials/03-gim-ionex.md)/[10](../tutorials/10-build-gim-workflow.md)/[18](../tutorials/18-lab-compare-gims.md)
 
 ---
 
@@ -162,7 +166,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
-最近新增（用法讲解）：**gnsspy**（3.0.1/`e6879bf`；demo.10o pandas 22×9；G07 L1=C georinex；converter 2→3；无 PyPI；`.gz` 读坑）。最近新增（质检）：**glab-upc/pynmeagps/gdds 质检复跑通过**（gLAB 2880/3D95=4.75；pynmea *5D；GDDS WHU NLST 时好时坏）+ **geospacelab**（0.14.8；OMNI/WDC/GFZ + Madrigal TEC；SYM_H=-234；TEC@06:30 max=114）+ **gps-measurement-tools/pygpsclient 质检复跑通过**。最近新增（用法讲解）：**glab-upc**（官方 v6.0.0；abmf SPP 2880 历元 3D95≈4.75 m）+ **pynmeagps**（1.1.7/；GGA 往返）+ **gdds**（`2a8543c`；无 CLI；NOAA brdc/p041+ITRF PSD；WHU FTP 425；CDDIS 401；Earthdata 硬编码）+ **gps-measurement-tools**（`ab1aebb`；demo→android_rinex 223 历元/L1C 全 0；相位样例 nonzero）+ **pygpsclient**（1.7.6；pyrinexconv O1677/N55037；无 tkinter）+ **cycle-slip-correction**（`c465dd4`；无 PyPI；BAKO 3.03 40 历元+PDF；官方 2019 pin 失败改现代钉）+ **diffionmap**（`57ceb1d`；CODG/WHUC 读路径+IGRG mean；Basemap 受限）+ **cddis-highrate-downloader**（1.0.2；FTPS SIZE 706256；RETR 425）+ **msise00**（1.11.1；Tn@250km）+ **pysatCDAAC**（0.0.5；ionprf 59→53；ionphs 144 下、load 维冲突）+ **pyirtam**（0.0.7；LGDC 四系数+IRI/IRTAM NmF2/vTEC）+ **fast**（3.01.01；ABPO satNum+1h SPP；FTP 下载失败记坑）+ **awsgnssroutils**（1.2.7；Phase 3 文件+atm 对照；S3 开放/rotcol 门禁）+ **gnss_lib_py**（1.1.0 NavData/OBS）+ **pyiri**（0.1.7 单点 NmF2/vTEC）。最近新增（质检）：**iri2016**（1.12.0；xarray 剖面+foF2/TEC；与 pyglow 同点对照）+ **pyglow**（Py3.8/`1988757`；IRI-2016/2012 剖面+IGRF/HWM14 实跑；`igrf2015` 静默退出坑）。最近新增（用法讲解）：**cosmic-crunch**（2.1.2；GENESIS L2 10 文件实拉+netCDF groups 探活；边界≠CDAAC ionPrf）。最近质检（R11）：**haslib**（1.0.2；11 HAS；RTCM/IGS 字节；`-m`/`HAS_Decoder.py` 帮助坑）+ **laika**（2880 历元/PDOP/pytest 17 复跑）。最近新增（质检）：**hatanaka**（2.8.1/`rinex-decompress`+georinex 实跑）+ **R10 质检** `rnxcmp`（gzip/CRLF/`-h`）/`nequickg`（Medium 全表 + `map`/plt 坑）。最近新增（用法讲解）：**android_rinex**（GnssLogger→RINEX；1379 历元+georinex 探活）+ **haslib**（1.0.2 SBF→RTCM 11 HAS）+ **laika**（slac1700.18o 实跑；Earthdata 未跑）；前序 **rnxcmp**（GSI RNXCMP 4.2.0 实跑）+ **nequickg**（Py3 移植后 Medium 校验行实跑；官方 C 登记受限）；前序 **pinot**（orderfile/sitecheck/metacheck 实跑）+ **autorino**（2.4.2 cfgfile_check 实跑；convert 环境受限）；前序 **cssrlib**（1.2.1 SPP）+ **gnss-tec**（1.1.1）。最近质检（ops）：**R9 二遍**已补 `cssrlib`（`nav.t`）/`gnss-tec`（stdout+type N）/`pinot`（subnet/low2upper 复跑）/`autorino`（check_rnx `figure_saver` 实错）。**R8 二遍**已补 `pytecgg`（ABMF 全日 veq 实跑；作者 viventriglia）/`gfzrnx`（`-sifl` guide-only，无官方二进制 stdout）。**R7 二遍**已补 `georinex`（NAV 实跑）/`rtklib`（apt↔EX PATH）/`bnc`（REQC vs NTRIP 标签）。Round6：**anubis**（登记受限）+ **pride-pppar**（3.2.11 实跑头；FTPS 未出解）；**sh-gim 未扩**。Round5：**pygnssutils**；Round4：**bkg-ntripcaster**；Round3：**ionex-gim** / **oasis-roti** / **ionomoni**；Round2：**bnc** / **georinex** / **iono-scintillation**；Round1：**gfzrnx** / **rtklib** / **pytecgg**。行数以本表 `wc -l` 为准。
+最近新增（用法讲解）：**gnsspy**（3.0.1/`e6879bf`；demo.10o pandas 22×9；G07 L1=C georinex；converter 2→3；无 PyPI；`.gz` 读坑）。最近新增（质检）：**glab-upc/pynmeagps/gdds 质检复跑通过**（gLAB 2880/3D95=4.75；pynmea *5D；GDDS WHU NLST 时好时坏）+ **geospacelab**（0.14.8；OMNI/WDC/GFZ + Madrigal TEC；SYM_H=-234；TEC@06:30 max=114）+ **gps-measurement-tools/pygpsclient 质检复跑通过**。最近新增（用法讲解）：**ionex-rs**（crates.io 0.1.0/`bcb9171`；CKMG 129575 点/9.2 TECU/往返）+ **madocalib**（VER 2.1/`0089f7d`；MIZU 118 历元 Q=6）+ **glab-upc**（官方 v6.0.0；abmf SPP 2880 历元 3D95≈4.75 m）+ **pynmeagps**（1.1.7/；GGA 往返）+ **gdds**（`2a8543c`；无 CLI；NOAA brdc/p041+ITRF PSD；WHU FTP 425；CDDIS 401；Earthdata 硬编码）+ **gps-measurement-tools**（`ab1aebb`；demo→android_rinex 223 历元/L1C 全 0；相位样例 nonzero）+ **pygpsclient**（1.7.6；pyrinexconv O1677/N55037；无 tkinter）+ **cycle-slip-correction**（`c465dd4`；无 PyPI；BAKO 3.03 40 历元+PDF；官方 2019 pin 失败改现代钉）+ **diffionmap**（`57ceb1d`；CODG/WHUC 读路径+IGRG mean；Basemap 受限）+ **cddis-highrate-downloader**（1.0.2；FTPS SIZE 706256；RETR 425）+ **msise00**（1.11.1；Tn@250km）+ **pysatCDAAC**（0.0.5；ionprf 59→53；ionphs 144 下、load 维冲突）+ **pyirtam**（0.0.7；LGDC 四系数+IRI/IRTAM NmF2/vTEC）+ **fast**（3.01.01；ABPO satNum+1h SPP；FTP 下载失败记坑）+ **awsgnssroutils**（1.2.7；Phase 3 文件+atm 对照；S3 开放/rotcol 门禁）+ **gnss_lib_py**（1.1.0 NavData/OBS）+ **pyiri**（0.1.7 单点 NmF2/vTEC）。最近新增（质检）：**iri2016**（1.12.0；xarray 剖面+foF2/TEC；与 pyglow 同点对照）+ **pyglow**（Py3.8/`1988757`；IRI-2016/2012 剖面+IGRF/HWM14 实跑；`igrf2015` 静默退出坑）。最近新增（用法讲解）：**cosmic-crunch**（2.1.2；GENESIS L2 10 文件实拉+netCDF groups 探活；边界≠CDAAC ionPrf）。最近质检（R11）：**haslib**（1.0.2；11 HAS；RTCM/IGS 字节；`-m`/`HAS_Decoder.py` 帮助坑）+ **laika**（2880 历元/PDOP/pytest 17 复跑）。最近新增（质检）：**hatanaka**（2.8.1/`rinex-decompress`+georinex 实跑）+ **R10 质检** `rnxcmp`（gzip/CRLF/`-h`）/`nequickg`（Medium 全表 + `map`/plt 坑）。最近新增（用法讲解）：**android_rinex**（GnssLogger→RINEX；1379 历元+georinex 探活）+ **haslib**（1.0.2 SBF→RTCM 11 HAS）+ **laika**（slac1700.18o 实跑；Earthdata 未跑）；前序 **rnxcmp**（GSI RNXCMP 4.2.0 实跑）+ **nequickg**（Py3 移植后 Medium 校验行实跑；官方 C 登记受限）；前序 **pinot**（orderfile/sitecheck/metacheck 实跑）+ **autorino**（2.4.2 cfgfile_check 实跑；convert 环境受限）；前序 **cssrlib**（1.2.1 SPP）+ **gnss-tec**（1.1.1）。最近质检（ops）：**R9 二遍**已补 `cssrlib`（`nav.t`）/`gnss-tec`（stdout+type N）/`pinot`（subnet/low2upper 复跑）/`autorino`（check_rnx `figure_saver` 实错）。**R8 二遍**已补 `pytecgg`（ABMF 全日 veq 实跑；作者 viventriglia）/`gfzrnx`（`-sifl` guide-only，无官方二进制 stdout）。**R7 二遍**已补 `georinex`（NAV 实跑）/`rtklib`（apt↔EX PATH）/`bnc`（REQC vs NTRIP 标签）。Round6：**anubis**（登记受限）+ **pride-pppar**（3.2.11 实跑头；FTPS 未出解）；**sh-gim 未扩**。Round5：**pygnssutils**；Round4：**bkg-ntripcaster**；Round3：**ionex-gim** / **oasis-roti** / **ionomoni**；Round2：**bnc** / **georinex** / **iono-scintillation**；Round1：**gfzrnx** / **rtklib** / **pytecgg**。行数以本表 `wc -l` 为准。
 
 ## 推荐阅读顺序（新人）
 
@@ -172,7 +176,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 4. 路径 B：[oasis-roti](./oasis-roti.md) 或 [ionomoni](./ionomoni.md) + 教程 05
 5. 需要定位再 [rtklib](./rtklib.md)/[pride-pppar](./pride-pppar.md)
 6. 实时课再 [pygnssutils](./pygnssutils.md)/[pynmeagps](./pynmeagps.md)/[pygpsclient](./pygpsclient.md)/[bnc](./bnc.md)；教学定位拆解见 [glab-upc](./glab-upc.md)
-7. GIM 课 [ionex-gim](./ionex-gim.md)；SH-GIM 仅边界
+7. GIM 课 [ionex-gim](./ionex-gim.md) / Rust [ionex-rs](./ionex-rs.md)；SH-GIM 仅边界；MADOCA → [madocalib](./madocalib.md)
 
 ---
 
@@ -212,6 +216,7 @@ data-access
    ├─ gnss-tec / pytecgg (路径 A；粗相对→校准)
    ├─ oasis-roti / ionomoni (路径 B)
    ├─ ionex-gim (对照)
+   ├─ ionex-rs (Rust IONEX 读写)
    ├─ diffionmap (两幅 IONEX 并排 VS)
    ├─ cddis-highrate-downloader (CDDIS high-rate 15 min)
    ├─ geospacelab (OMNI/指数/Madrigal TEC 产品图)
@@ -225,7 +230,7 @@ data-access
    ├─ pynmeagps (NMEA 编解码；pygpsclient/pygnssutils 底层)
    ├─ glab-upc (教学 SPP/PPP；官方 UPC gLAB)
    ├─ pygnssutils / bnc / bkg-ntripcaster (路径 C)
-   └─ cssrlib / haslib / laika / rtklib / pride-pppar (路径 D)
+   └─ cssrlib / haslib / madocalib / laika / rtklib / pride-pppar (路径 D)
 sh-gim：仅路径 E 边界，不串进 A/B 主链
 iono-scintillation：概念/仿真旁路，不替代实测 ROTI
 ```
@@ -237,10 +242,10 @@ iono-scintillation：概念/仿真旁路，不替代实测 ROTI
 | 教程 | 优先手册 |
 | --- | --- |
 | 02 / 16 | georinex · gnsspy · hatanaka · gnss-tec · pytecgg |
-| 03 / 10 / 18 | ionex-gim · diffionmap · sh-gim(边界) · pyglow |
+| 03 / 10 / 18 | ionex-gim · ionex-rs · diffionmap · sh-gim(边界) · pyglow |
 | 04 | iri2016 · pyglow · pyiri · pyirtam · apexpy · msise00 · nequickg |
 | 05 / 13 / 21 | oasis-roti · ionomoni · iono-scintillation · geospacelab |
-| 06 / 20 | cssrlib · haslib · laika · gnss_lib_py · android_rinex · gps-measurement-tools · pygpsclient · pynmeagps · glab-upc · rtklib · pride-pppar · ionomoni |
+| 06 / 20 | cssrlib · haslib · madocalib · laika · gnss_lib_py · android_rinex · gps-measurement-tools · pygpsclient · pynmeagps · glab-upc · rtklib · pride-pppar · ionomoni |
 | 09 | pytecgg |
 
 ---
