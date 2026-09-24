@@ -133,7 +133,7 @@ RTCM-Ntrip 官方仓库中的 POSIX ntripserver，用于将接收机或文件流
 #### [baidu-ntripcaster](https://github.com/baidu/ntripcaster)  
 *🏷️ 个人社区*
 
-语言：C · 许可：— · 星标约：46 · 宿主：github
+语言：C · 许可：NOASSERTION · 星标约：46 · 宿主：github
 
 百度 Open Source 组织公开的 NTRIP Caster，可作自建播发与协议学习的对照样本。适合对比 BKG 与社区实现。按 catalog 政策记为个人社区（公司开源档）；上线前须完成压力、安全与兼容性测试。
 
@@ -519,12 +519,12 @@ EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RT
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [FAST](https://github.com/ChangChuntao/FAST) | FAST：GNSS 下载/质检/SPP/选站（Python） | Python | 206 | 🏷️ 高校实验室 核心 |
+| [FAST](https://github.com/ChangChuntao/FAST) | FAST：GNSS 下载/质检/SPP/选站（Python） | Python | 206 | 🏷️ 高校实验室 ★ 核心 |
 
 ### 详细说明
 
 #### [FAST](https://github.com/ChangChuntao/FAST)  
-*🏷️ 高校实验室 核心*
+*🏷️ 高校实验室 ★ 核心*
 
 语言：Python · 许可：GPL-3.0 · 星标约：206 · 宿主：github
 
@@ -836,12 +836,12 @@ EarthScope 开源的 GNSS 产品联邦工具，按日期与任务在十余个 IG
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnsspy](https://github.com/GNSSpy-Project/gnsspy) | gnsspy：Python GNSS 数据读写与分析包 | Python | 209 | 🏷️ 个人社区 |
+| [gnsspy](https://github.com/GNSSpy-Project/gnsspy) | gnsspy：Python GNSS 数据读写与分析包 | Python | 209 | 🏷️ 个人社区 ★ |
 
 ### 详细说明
 
 #### [gnsspy](https://github.com/GNSSpy-Project/gnsspy)  
-*🏷️ 个人社区*
+*🏷️ 个人社区 ★*
 
 语言：Python · 许可：MIT · 星标约：209 · 宿主：github
 
