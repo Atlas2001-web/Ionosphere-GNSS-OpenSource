@@ -1,6 +1,6 @@
 # GDDS · IGS/CORS/产品/时序多模块 GNSS 下载操作手册
 
-目录：[`PROJECTS.json` → `GDDS`](../../PROJECTS.json) · 上游 <https://github.com/LECUT/GDDS> · 许可 **GPL-3.0**（`src/LICENSE`；用户手册另有非商业免责声明，冲突时以 LICENSE + 上游为准）· tip **`2a8543c`**（2024-04-11）· 界面自报 **GDDS V1.2** / ECUT · 本机验证（2026-09-24 EDT）：无 CLI；源码可解析；**开放 HTTPS** 镜像实拉 NOAA CORS brdc/`p041` + ITRF PSD；WHU FTP 登录/CWD 通、LIST/RETR **425**；CDDIS HTTPS **401**（无 Earthdata）；未起 GUI（缺 QtWebEngine/无头限制）
+目录：[`PROJECTS.json` → `GDDS`](../../PROJECTS.json) · 上游 <https://github.com/LECUT/GDDS> · 许可 **GPL-3.0**（`src/LICENSE`；用户手册另有非商业免责声明，冲突时以 LICENSE + 上游为准）· tip **`2a8543c`**（2024-04-11）· 界面自报 **GDDS V1.2** / ECUT · 本机验证（2026-09-24 EDT）：无 CLI；源码可解析；**开放 HTTPS** 镜像实拉 NOAA CORS brdc/`p041` + ITRF PSD；WHU FTP 登录/CWD 通、LIST/RETR **425**；CDDIS HTTPS **401**（无 Earthdata）；未起 GUI（缺 QtWebEngine/无头限制）· **质检复跑通过**（tip `2a8543c`；NOAA/ITRF 字节对齐；CDDIS 401；WHU login/CWD 通——本机复跑 **NLST 成功**，原文 425 为环境相关）
 
 > 岗位：点选式拉取 **全球 IGS 观测/导航、分析中心产品、区域 CORS、坐标时序**，并带 `.Z/.gz/CRINEX` 解压。冲突时：**本机界面 / 上游 README·User Manual > 本文**。无头流水线 → [fast](./fast.md) / [data-access](../data-access.md)；CDDIS 1 s 块 → [cddis-highrate-downloader](./cddis-highrate-downloader.md)。
 
@@ -145,12 +145,15 @@ curl -sI --max-time 15 'https://cddis.nasa.gov/archive/gnss/data/daily/2024/001/
 ```text
 login 230 Login successful.
 cwd 250 Directory successfully changed.
+# 写作时（同日早些）：
 nlst_fail error_temp 425 Security: Bad IP connecting.
+# 质检复跑（2026-09-24 EDT）：NLST 成功，例
+# nlst ['ABMF00GLP_R_20240010000_01D_MN.rnx.gz', 'ABPO00MDG_R_20240010000_01D_MN.rnx.gz', ...]
 
 HTTP/1.1 401 Unauthorized
 ```
 
-生产环境 WHU/IGN 常可直接 FTP；CDDIS 必须 Earthdata（见 [data-access](../data-access.md)）。GDDS 勾选 CDDIS 时走源码内 **URS 表单登录**，不是 `~/.netrc`。
+生产环境 WHU/IGN 常可直接 FTP；**NLST/RETR 的 425 随出口 IP/PASV 而变**（同机也可能时好时坏）。CDDIS 必须 Earthdata（见 [data-access](../data-access.md)）。GDDS 勾选 CDDIS 时走源码内 **URS 表单登录**，不是 `~/.netrc`。
 
 ### 3.4 鉴权（必读）
 
@@ -208,7 +211,7 @@ GDDS(GUI 下载) 或 data-access/fast(无头)
 | ---: | --- | --- | --- |
 | 1 | 无任何 CLI/`-h` | 设计为 PyQt 软件 | 脚本化改 [fast](./fast.md) 或自写 `curl` |
 | 2 | CDDIS 全失败 / Tip「maintenance」 | 硬编码 Earthdata 失效或未授权 | 换自有账号；或 WHU；或 `.netrc`+[data-access](../data-access.md) |
-| 3 | FTP `425 Bad IP` | PASV 数据通道被 NAT/防火墙改写 | 换网络/主动模式；改 HTTPS 源 |
+| 3 | FTP `425 Bad IP`（时有时无） | PASV 数据通道被 NAT/防火墙改写 | 换网络/主动模式；改 HTTPS 源；同机可复跑验证 |
 | 4 | Py3.13 `No module named cgi` | `requests_ftp` 旧 | Py3.10/3.11 或 `legacy-cgi` |
 | 5 | `QtWebEngineWidgets` 导入失败 | 缺 PyQtWebEngine / OpenGL 上下文 | 装 WebEngine；注意 `AA_ShareOpenGLContexts` |
 | 6 | 地图选站不可用 | 本地 Flask `:5000` 或百度页失败 | 改用站名列表手工输入 |

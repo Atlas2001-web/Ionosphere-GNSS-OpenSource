@@ -1,6 +1,6 @@
 # gLAB-UPC · ESA/UPC GNSS 教学处理套件操作手册
 
-目录：[`PROJECTS.json` → `gLAB-UPC`](../../PROJECTS.json) · 官网 <https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite> · 下载 <https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite-links/glab-download> · 直链 `gLAB_6.0.0_Linux.tgz`（~335 MB） · 许可 **核心/绘图 Apache-2.0；Qt GUI LGPL-3** · 本机验证 **v6.0.0**（官方预编译 `gLAB_linux`，built Nov 22 2024）+ 自编译 core（mirror tip `5d66623`）· 2026-09-24 04:30 EDT
+目录：[`PROJECTS.json` → `gLAB-UPC`](../../PROJECTS.json) · 官网 <https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite> · 下载 <https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite-links/glab-download> · 直链 `gLAB_6.0.0_Linux.tgz`（~335 MB） · 许可 **核心/绘图 Apache-2.0；Qt GUI LGPL-3** · 本机验证 **v6.0.0**（官方预编译 `gLAB_linux`，built Nov 22 2024）+ 自编译 core（mirror tip `5d66623`）· 2026-09-24 04:30 EDT · **质检复跑通过**（OUTPUT 2880；H95=2.37/V95=4.63/3D95=4.75 m；PDOP95=1.00；~0.61 s）
 
 > 岗位：教学向 **SPP/PPP/SBAS/DGNSS**、观测建模拆解、电离层模型切换（Klobuchar/NeQuick/IONEX/SBAS）。冲突时：**官方 SUM / `./gLAB_linux -help` > 本文**。生产 PPP-AR → [pride-pppar](./pride-pppar.md)；工程 RTK/PPP → [rtklib](./rtklib.md)；Python 开放 PPP → [cssrlib](./cssrlib.md)。GitHub `valgur/gLAB` 等仅为社区镜像，**许可以 UPC 发行包为准**。
 
@@ -38,7 +38,7 @@ mkdir -p ~/iono_ops/glab && cd ~/iono_ops/glab
 # 浏览器打开发布页，或直链（文件名随版本变；以下载页为准）
 curl -fL -A 'Mozilla/5.0' -o gLAB_6.0.0_Linux.tgz \
   'https://server.gage.upc.edu/gLAB/src/LINUX/gLAB_6.0.0_Linux.tgz'
-# 本机：335044237 bytes（2026-09-24）
+# 本机写作：335044237 bytes；质检复跑文件 350909925 bytes（同 URL，体积可随镜像变）
 tar -xzf gLAB_6.0.0_Linux.tgz
 cd gLAB
 ./gLAB_linux -help | head -5

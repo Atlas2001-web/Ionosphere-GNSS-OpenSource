@@ -1,6 +1,6 @@
 # pynmeagps · NMEA 0183 编解码库操作手册
 
-目录：[`PROJECTS.json` → `pynmeagps`](../../PROJECTS.json) · 上游 <https://github.com/semuconsulting/pynmeagps> · 文档 <https://www.semuconsulting.com/pynmeagps/> · PyPI **`pynmeagps` 1.1.7** · tip **`4322c38`** · BSD-3-Clause · Python ≥3.9 · 本机验证 1.1.7（生成 GGA → `NMEAReader.parse` 回读；坏校验和 / 未知专有句）· 2026-09-24 04:31 EDT
+目录：[`PROJECTS.json` → `pynmeagps`](../../PROJECTS.json) · 上游 <https://github.com/semuconsulting/pynmeagps> · 文档 <https://www.semuconsulting.com/pynmeagps/> · PyPI **`pynmeagps` 1.1.7** · tip **`4322c38`** · BSD-3-Clause · Python ≥3.9 · 本机验证 1.1.7（生成 GGA → `NMEAReader.parse` 回读；坏校验和 / 未知专有句）· 2026-09-24 04:31 EDT · **质检复跑通过**（1.1.7/`4322c38`；`$GNGGA…*5D` 往返；文件流 3×GNGGA q=1,1,2）
 
 > 岗位：纯 Python **解析/生成 NMEA 0183**（GET/SET/POLL）。冲突时：**上游 README / Sphinx / 本机 `help(NMEAReader)` > 本文**。串口/NTRIP 流 CLI → [pygnssutils](./pygnssutils.md)；桌面 GUI → [pygpsclient](./pygpsclient.md)。同系还有 `pyubx2` / `pyrtcm`（本目录未单列时见上游）。
 
