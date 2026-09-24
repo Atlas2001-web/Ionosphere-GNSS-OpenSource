@@ -132,7 +132,124 @@ Ephemeris Coverage (NAV)
    - GPS     :   7 satellites have at least an ephemeris
 ```
 
-完整校准请换一日双频站 + 混合 BRDC，走下方工作流 A。
+短样本只够冒烟解析。下方为**本机真实全日校准**（同一套 API）。
+
+### 本机真实校准（ABMF 全日 OBS + GPS NAV → stec/vtec/veq）
+
+样本来源：Anubis 发行包内公开站日 `abmf0012.19o` + `abmf0012.19n`（ABMF / 2019-01-01 / 30 s；**GPS-only NAV**）。  
+本机 **pytecgg 1.3.0**；作者 **viventriglia**。勿把下列 TECu 当气候学参考——站日/校准相关。
+
+```bash
+# 准备（路径按本机放置）
+mkdir -p data out
+# abmf0012.19o / .19n → data/
+
+python - <<'PY'
+from pathlib import Path
+from pytecgg.parsing import read_rinex_nav, read_rinex_obs
+from pytecgg import GNSSContext
+from pytecgg.satellites import prepare_ephemeris, satellite_coordinates, calculate_ipp
+from pytecgg.linear_combinations import calculate_linear_combinations
+from pytecgg.tec_calibration import (
+    extract_arcs, calculate_tec, calculate_vertical_equivalent,
+)
+from pytecgg.utils import summarise_rinex_data
+import polars as pl
+
+OBS = Path("data/abmf0012.19o")
+NAV = Path("data/abmf0012.19n")
+nav_dict = read_rinex_nav(NAV)
+df_obs, rec_pos, ver = read_rinex_obs(OBS)
+print("ver=", ver)
+print("rec_pos=", rec_pos)
+print("obs_shape=", df_obs.shape)
+summarise_rinex_data(df_obs, nav_dict)
+
+# NAV 仅 GPS → systems 必须对齐，否则坐标/弧段空
+ctx = GNSSContext(
+    receiver_pos=rec_pos, receiver_name="abmf",
+    rinex_version=ver, h_ipp=350_000, systems=["G"],
+)
+ephem = prepare_ephemeris(nav_dict, ctx)
+df_lc = calculate_linear_combinations(df_obs, ctx, selection_mode="availability")
+df_coords = satellite_coordinates(df_lc["sv"], df_lc["epoch"], ephem)
+df_arcs = extract_arcs(df_lc, ctx, min_arc_length=120).join(
+    df_coords, on=["sv", "epoch"], how="left"
+)
+df_geom = calculate_ipp(df_arcs, ctx, min_elevation=20)
+df_cal = calculate_tec(df_geom, ctx=ctx, max_polynomial_degree=3, batch_size_epochs=30)
+df_veq = calculate_vertical_equivalent(
+    df_cal, ctx=ctx, max_polynomial_degree=3, batch_size_epochs=30
+)
+want = ["epoch", "sv", "ele", "bias", "stec", "vtec", "veq"]
+# 正午窗展示（夜间/弧段边缘可能非物理负值——须对照 GIM / 滤弧）
+mid = df_veq.filter(
+    (pl.col("epoch") >= pl.datetime(2019, 1, 1, 12, 0, 0, time_zone="UTC"))
+    & (pl.col("epoch") < pl.datetime(2019, 1, 1, 12, 0, 30, time_zone="UTC"))
+    & pl.col("stec").is_not_null()
+)
+print(mid.select(want).head(6))
+print(
+    df_veq.filter(
+        (pl.col("epoch") >= pl.datetime(2019, 1, 1, 12, 0, 0, time_zone="UTC"))
+        & (pl.col("epoch") < pl.datetime(2019, 1, 1, 12, 30, 0, time_zone="UTC"))
+        & pl.col("stec").is_not_null()
+    ).select(["stec", "vtec", "veq", "bias"]).describe()
+)
+out = Path("out/abmf0012_tec.parquet")
+df_veq.write_parquet(out)
+print("calibrated_shape=", df_veq.shape)
+print("wrote", out, out.stat().st_size)
+PY
+```
+
+**本机真实 stdout（截断；pytecgg 1.3.0）：**
+
+```text
+ver= 2.11
+rec_pos= (2919786.448, -5383745.178, 1774604.734)
+obs_shape= (744358, 4)
+Temporal Coverage (OBS)
+   - Start:    2019-01-01 00:00:00+00:00
+   - End:      2019-01-01 23:59:30+00:00
+   - Sampling: 30.0s
+Constellations Breakdown (OBS)
+Sys  | SVs  | Total Records   | Available Signals
+E    | 18   | 262,680         | C1, C5, C7, C8, ... L1, L5, L7, L8, ...
+G    | 31   | 306,076         | C1, C5, ... L1, L2, L5, P2, ...
+R    | 23   | 175,602         | C1, ... L1, L2, P2, ...
+Ephemeris Coverage (NAV)
+   - GPS     :  31 satellites have at least an ephemeris
+
+# midday 12:00 UTC（同历元 veq 跨星一致 ≈ 7.03）
+epoch                   sv   ele        bias         stec       vtec      veq
+2019-01-01 12:00:00 UTC G02  58.825002  -125.825077  7.876722   6.863228  7.029813
+2019-01-01 12:00:00 UTC G05  38.483241   -56.288202  7.242082   4.854883  7.029813
+2019-01-01 12:00:00 UTC G06  21.25371    -33.299955  15.745012  7.376916  7.029813
+2019-01-01 12:00:00 UTC G13  80.526885   -57.547431  6.630081   6.548894  7.029813
+2019-01-01 12:00:00 UTC G15  55.737224  -101.827595  10.119652  8.558109  7.029813
+2019-01-01 12:00:00 UTC G29  38.971903   -64.14152   10.5795    7.150975  7.029813
+
+# midday 12:00–12:30 describe（有限浮点；非全 null）
+statistic  stec       vtec      veq       bias
+count      344.0      344.0     344.0     344.0
+mean       10.39672   7.45036   7.067332  -86.194448
+50%        9.229433   7.576288  7.070261  -64.14152
+min        6.509608   4.854099  6.963713  -146.473557
+max        23.719208  11.478164 7.132936  -33.299955
+
+calibrated_shape= (20216, 24)   # 含 bias/stec/vtec/veq
+wrote out/abmf0012_tec.parquet 2110609
+# 全日 null_stec=1698/20216；null_veq=0/20216
+```
+
+**读数要点（成功判据，勿抄数字当真值）：**
+
+1. 列齐 `bias`/`stec`/`vtec`/`veq`；同历元 `veq` 跨星相同（上表 7.029813）。  
+2. 正午窗 `stec/vtec/veq` 为正有限浮点；全日 parquet 非空。  
+3. **GPS-only NAV** → `systems=["G"]`；OBS 里的 E/R 被丢掉是预期。要多系统换混合 BRDC。  
+4. 夜间/弧段边缘可能出现负 `stec`（本机全日约四成负样）——先滤 `id_arc_valid`/`ele`，再和同日 [ionex-gim](./ionex-gim.md) 对照；**禁止**把未质控数写进论文。  
+5. 无全日双频 OBS+覆盖 NAV 时：只跑上一节短文件解析，并在笔记写明「校准链未实跑」。
 
 
 ## 快速冒烟（10 分钟）
@@ -248,7 +365,7 @@ PY
 wrote out/tec_calibrated.parquet <nbytes>
 ```
 
-**成功判据：** 列含 `stec`/`vtec`/`veq`/`bias`；同历元 `veq` 跨星接近；量级通常数～数十 TECu（**站日相关，禁止照抄示例**）。全日空表 / 仅相对 `gflc_*` = 失败。短样本（如 30 s 测试文件）只够冒烟解析，不够稳定绝对 TEC。
+**成功判据：** 列含 `stec`/`vtec`/`veq`/`bias`；同历元 `veq` 跨星接近；量级通常数～数十 TECu（**站日相关，禁止照抄示例**）。全日空表 / 仅相对 `gflc_*` = 失败。短样本（如 30 s 测试文件）只够冒烟解析，不够稳定绝对 TEC。本机已用 ABMF 2019-01-01 实跑过一次（见上文「本机真实校准」）；换站日须重跑并自记 I/O。
 
 ### 工作流 B：多日连续（避免午夜假跳）
 
@@ -415,6 +532,14 @@ ROTI、S4、`.pos`、IONEX 网格、全球球谐系数。
 16. **`band_overrides` 点了站上没有的频**  
     原因：信号假设错。  
     修复：先 summarise；改 `availability`。
+
+17. **全日校准后大量负 `stec` / 与 GIM 差很多**  
+    原因：弧段边缘、低高度角、仅单系统 NAV、或未滤 `id_arc_valid`。  
+    修复：先看正午窗；滤 `ele` 与有效弧；换混合 BRDC；对照 [ionex-gim](./ionex-gim.md)。**不要**直接发表未质控数。
+
+18. **有 E/R 观测却 `systems=["G","E"]` 后坐标失败**  
+    原因：手头 NAV 只有 GPS（如本机 ABMF `.19n`）。  
+    修复：`summarise_rinex_data` 看 Ephemeris Coverage；`systems` 与 NAV 对齐，或下载混合 BRDC。
 
 ---
 
