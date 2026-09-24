@@ -90,8 +90,13 @@
 水杯类比：重叠轻，界面受扰可上涌成泡。日落后底部 F 层：陡向上梯度 + PRE 上涌 → 生长窗 → 耗空通道/羽状/泡壁陡梯度。
 
 $$
-\text{PRE 上涌} \Rightarrow F\text{ 抬高} \Rightarrow R\text{–}T\text{ 生长率↑} \Rightarrow \text{EPB 更可能}
+\mathrm{PRE}
+\Rightarrow F\uparrow
+\Rightarrow \gamma_{R\text{-}T}\uparrow
+\Rightarrow \mathrm{EPB}
 $$
+
+读法（中文在公式外）：PRE 上涌 ⇒ F 抬高 ⇒ R–T 生长率↑ ⇒ EPB 更可能。
 
 泡沿磁力线映射到南北低纬，故常成「通道/羽」。
 

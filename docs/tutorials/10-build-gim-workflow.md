@@ -260,10 +260,12 @@
 设卫星高度角为 $E$（elevation），薄壳高度为 $h_{\mathrm{ion}}$，地球半径为 $R_e$。教学里常见的单层映射函数大致长这样（形式因文献略有出入）：
 
 $$
-\mathrm{VTEC} \approx \mathrm{STEC} \times \cos z' 
-\quad\text{或等价地}\quad
+\mathrm{VTEC} \approx \mathrm{STEC} \times \cos z'
+\quad\text{or equiv.}\quad
 \mathrm{STEC} \approx \mathrm{VTEC} \times m(E,h_{\mathrm{ion}})
 $$
+
+读法（中文在公式外）：VTEC ≈ STEC × cos z'，或等价地 STEC ≈ VTEC × m(E, h_ion)。
 
 其中 $z'$ 是射线在穿刺点处与薄壳法向的夹角，由 $E$ 与 $h_{\mathrm{ion}}$ 几何决定；$m$ 是映射因子，低高度角时 $m$ 显著大于 1。
 

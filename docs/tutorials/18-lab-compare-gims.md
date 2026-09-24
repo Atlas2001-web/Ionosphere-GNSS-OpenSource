@@ -187,9 +187,11 @@ $$
 \begin{aligned}
 \mathrm{Bias} &= \overline{A-B} \\
 \mathrm{RMSE} &= \sqrt{\overline{(A-B)^2}} \\
-P_{5} &= \frac{\#\{|A-B|>5\,\mathrm{TECU}\}}{\#\{\text{有效点}\}}
+P_{5} &= \frac{\#\{|A-B|>5\,\mathrm{TECU}\}}{N_{\mathrm{valid}}}
 \end{aligned}
 $$
+
+读法（中文在公式外）：$N_{\mathrm{valid}}$ 为公共网格上的有效点数；偏置取差均值，RMSE 取差方均值的平方根，$P_5$ 为 |差| > 5 TECU 的占比。
 
 建议再算：
 
