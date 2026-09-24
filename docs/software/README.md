@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **18 篇**操作手册（合计 **5088** 行，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **20 篇**操作手册（合计 **5481** 行，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -15,7 +15,7 @@
 | **软件手册质检**（本 bot） | 已短硬篇的**二遍质检补洞**（错 I/O、过时旗标、仍薄点）；优先 `georinex` / `rtklib` / `bnc` / `gfzrnx` / `pytecgg` | 勿大改「仍薄/缺篇」同事正在写的文件 |
 | **软件用法讲解**（并行） | 写 **尚未短硬 / 缺篇** 新手册 | 勿重写下表已标「已短硬」全文（补丁可协调） |
 
-**下一优先（质检二遍，按弱→强）：** 停写门槛已近——剩余主要是 **登记/环境受限**（`anubis` / `ionomoni` / `iono-scintillation` / `gfzrnx`）无本机真实 I/O 可补；**sh-gim** 保持边界。**R9 已完成** `cssrlib`/`gnss-tec`/`pinot`/`autorino`。**勿碰**同事新建中的 `rnxcmp.md` / `nequickg.md`。
+**下一优先（质检二遍，按弱→强）：** 停写门槛已近——剩余主要是 **登记/环境受限**（`anubis` / `ionomoni` / `iono-scintillation` / `gfzrnx`）无本机真实 I/O 可补；**sh-gim** 保持边界。**R9 已完成** `cssrlib`/`gnss-tec`/`pinot`/`autorino`。**rnxcmp** / **nequickg** 已短硬入库（用法讲解）；**hatanaka** 由质检并行写——勿全文抢写。
 **sh-gim：** 保持短边界，禁止注水扩写。  
 **停写条件：** 剩余皆 PASS，或仅剩 sh-gim 边界 / 登记受限且无进一步真实 I/O 增益。
 
@@ -43,6 +43,8 @@
 | 16 | [pinot.md](./pinot.md) | “not only TEQC” QC/预处理批壳 | 287 | **已短硬** R9二遍 · orderfile/sitecheck/metacheck/subnet/low2upper 复跑；qualitycheck 无 Linux teqc |
 | 17 | [autorino.md](./autorino.md) | 厂商 RAW 拉取 → RINEX3/4 | 246 | **已短硬** R9二遍 · 本机 2.4.2 cfgfile_check 复跑；check_rnx `figure_saver` 实错已记；convert 环境受限 |
 | 18 | [iono-scintillation.md](./iono-scintillation.md) | MATLAB 闪烁仿真 | 197 | **已短硬** R2 [`246103d`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/246103d) · **环境受限**（质检机无 MATLAB；不臆造控制台） |
+| 19 | [rnxcmp.md](./rnxcmp.md) | GSI 官方 Hatanaka CRX 压缩/恢复 | 197 | **已短硬** · 本机 RNXCMP **4.2.0** `RNX2CRX`/`CRX2RNX` 实跑；Python 见 [hatanaka](./hatanaka.md) |
+| 20 | [nequickg.md](./nequickg.md) | Galileo NeQuick-G（Python 社区） | 196 | **已短硬** · 仓可 clone；本机 Py3 移植后 vTEC+Medium 校验行实跑；官方 C 登记受限 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -59,6 +61,8 @@
 | 观测 QC 报告 | [anubis.md](./anubis.md) |
 | 旧 CORS 缺站/日目录/TEQC 批壳 | [pinot.md](./pinot.md) |
 | 厂商 RAW→RINEX3/4 台网入库 | [autorino.md](./autorino.md) |
+| Hatanaka `.crx` 官方压缩/恢复 | [rnxcmp.md](./rnxcmp.md)（Python：[hatanaka.md](./hatanaka.md)） |
+| Galileo NeQuick-G 模型（脚本） | [nequickg.md](./nequickg.md) |
 | 校准 sTEC/vTEC | [pytecgg.md](./pytecgg.md) |
 | 粗相对斜 TEC（无 DCB） | [gnss-tec.md](./gnss-tec.md) |
 | ROTI / AATR / ΔTEC | [ionomoni.md](./ionomoni.md) · [oasis-roti.md](./oasis-roti.md) |
@@ -110,7 +114,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
-最近新增（用法讲解）：**pinot**（orderfile/sitecheck/metacheck 实跑）+ **autorino**（2.4.2 cfgfile_check 实跑；convert 环境受限）；前序 **cssrlib**（1.2.1 SPP）+ **gnss-tec**（1.1.1）。最近质检（ops）：**R9 二遍**已补 `cssrlib`（`nav.t`）/`gnss-tec`（stdout+type N）/`pinot`（subnet/low2upper 复跑）/`autorino`（check_rnx `figure_saver` 实错）。**R8 二遍**已补 `pytecgg`（ABMF 全日 veq 实跑；作者 viventriglia）/`gfzrnx`（`-sifl` guide-only，无官方二进制 stdout）。**R7 二遍**已补 `georinex`（NAV 实跑）/`rtklib`（apt↔EX PATH）/`bnc`（REQC vs NTRIP 标签）。Round6：**anubis**（登记受限）+ **pride-pppar**（3.2.11 实跑头；FTPS 未出解）；**sh-gim 未扩**。Round5：**pygnssutils**；Round4：**bkg-ntripcaster**；Round3：**ionex-gim** / **oasis-roti** / **ionomoni**；Round2：**bnc** / **georinex** / **iono-scintillation**；Round1：**gfzrnx** / **rtklib** / **pytecgg**。行数以本表 `wc -l` 为准。
+最近新增（用法讲解）：**rnxcmp**（GSI RNXCMP 4.2.0 实跑）+ **nequickg**（Py3 移植后 Medium 校验行实跑；官方 C 登记受限）；前序 **pinot**（orderfile/sitecheck/metacheck 实跑）+ **autorino**（2.4.2 cfgfile_check 实跑；convert 环境受限）；前序 **cssrlib**（1.2.1 SPP）+ **gnss-tec**（1.1.1）。最近质检（ops）：**R9 二遍**已补 `cssrlib`（`nav.t`）/`gnss-tec`（stdout+type N）/`pinot`（subnet/low2upper 复跑）/`autorino`（check_rnx `figure_saver` 实错）。**R8 二遍**已补 `pytecgg`（ABMF 全日 veq 实跑；作者 viventriglia）/`gfzrnx`（`-sifl` guide-only，无官方二进制 stdout）。**R7 二遍**已补 `georinex`（NAV 实跑）/`rtklib`（apt↔EX PATH）/`bnc`（REQC vs NTRIP 标签）。Round6：**anubis**（登记受限）+ **pride-pppar**（3.2.11 实跑头；FTPS 未出解）；**sh-gim 未扩**。Round5：**pygnssutils**；Round4：**bkg-ntripcaster**；Round3：**ionex-gim** / **oasis-roti** / **ionomoni**；Round2：**bnc** / **georinex** / **iono-scintillation**；Round1：**gfzrnx** / **rtklib** / **pytecgg**。行数以本表 `wc -l` 为准。
 
 ## 推荐阅读顺序（新人）
 
@@ -144,6 +148,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 data-access
    ├─ autorino (厂商 RAW→RINEX3/4 入库)
    ├─ pinot (旧 TEQC 批壳 / 缺站日目录)
+   ├─ rnxcmp (官方 Hatanaka CRX；Python 见 hatanaka)
    ├─ gfzrnx (可选清洗)
    ├─ anubis (门禁)
    ├─ georinex (探活)
