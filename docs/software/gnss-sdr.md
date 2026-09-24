@@ -1,6 +1,6 @@
 # gnss-sdr · CTTC 开源 GNSS 软件定义接收机操作手册
 
-目录：[`PROJECTS.json` → `gnss-sdr`](../../PROJECTS.json) · 上游 <https://github.com/gnss-sdr/gnss-sdr> · 站点 <https://gnss-sdr.org> · tip **`0f4dba1`** · 本机冒烟：**Debian `gnss-sdr` 0.0.20-1** · **GPL-3.0-or-later** · 本机验证（**2026-09-24 06:50 EDT**）：`gps-sdr-sim` 60 s IF（4 Msps/`ishort`）→ `PVT.positioning_mode=Single` → 首定 **41.275N / 1.98757E / H≈89.4 m**（真值 **41.275 / 1.9876 / 100**）；跟踪 **12** PRN；NMEA **870** 行；**无 RF 前端、无天空天线**；**未臆造**未跑通的天空 PVT
+目录：[`PROJECTS.json` → `gnss-sdr`](../../PROJECTS.json) · 上游 <https://github.com/gnss-sdr/gnss-sdr> · 站点 <https://gnss-sdr.org> · tip **`0f4dba1`** · 本机冒烟：**Debian `gnss-sdr` 0.0.20-1** · **GPL-3.0-or-later** · 本机验证（**2026-09-24 06:50 EDT**；质检复跑 **06:53 EDT**）：`gps-sdr-sim` 60 s IF（**958400000** B、4 Msps/`ishort`）→ `PVT.positioning_mode=Single` → 首定 **41.275N / 1.98758E / H=87.3254 m**（真值 **41.275 / 1.9876 / 100**；写作稿 H≈89.4/lon **1.98757** 为同 IF 首跑抖动）；跟踪 **12** PRN（01/07/08/10/16/21/22/23/26/27/30/32）；NMEA **870** 行；墙时 **5.983475** s（写作 **7.27** s，机器负载变）；首 `$GPGGA` 高≈**87.283** m；**无 RF 前端、无天空天线**；**未臆造**天空 PVT
 
 > 岗位：从 **IQ/IF 文件或 SDR 前端**跑捕获→跟踪→电文→观测→PVT。冲突时：**本机 `gnss-sdr --help` / 仓内 `conf/` / [gnss-sdr.org docs](https://gnss-sdr.org) > 本文**。  
 > 仿真源 → [gps-sdr-sim](https://github.com/osqzss/gps-sdr-sim)（本机联调）；轻量口袋接收机 → [pocketsdr](./pocketsdr.md)；事后 RINEX 解算 → [rtklib](./rtklib.md)；RINEX 探活 → [georinex](./georinex.md)。
@@ -75,7 +75,7 @@ cd gnss-sdr && git rev-parse --short HEAD   # 本机对照：0f4dba1
 mkdir -p ~/iono_ops/gnss-sdr-smoke && cd ~/iono_ops/gps-sdr-sim
 ./gps-sdr-sim -e brdc0010.22n -l 41.275,1.9876,100 -d 60 -s 4000000 -b 16 \
   -o ~/iono_ops/gnss-sdr-smoke/gpssim_4M_16b_60s.bin -t 2022/01/01,00:00:00
-# → ~956 MB；可见星含 G01/07/08/10/16/21/22/23/26/27/30/32
+# → 958400000 B（≈914 MiB）；可见星含 G01/07/08/10/16/21/22/23/26/27/30/32
 
 cp /usr/share/gnss-sdr/conf/File_input/GPS/gnss-sdr_GPS_L1_ishort.conf \
    ~/iono_ops/gnss-sdr-smoke/gps_l1_sim_single.conf
@@ -94,13 +94,13 @@ gnss-sdr --config_file=./gps_l1_sim_single.conf --log_dir=./logs2 -keyboard=fals
 **本机 stdout / 日志要点（0.0.20，2026-09-24 06:50 EDT）：**
 
 ```text
-Tracking of GPS L1 C/A ... PRN 01,07,08,10,16,21,22,23,26,27,30,32
-First position fix at 2022-Jan-01 00:00:24.160000 UTC is Lat = 41.275 [deg], Long = 1.98757 [deg], Height= 89.3569 [m]
-Position at 2022-Jan-01 00:00:24.500000 UTC using 7 observations is Lat = 41.275011 [deg], Long = 1.987619 [deg], Height = 96.24 [m]
-Total GNSS-SDR run time: 7.274530 [seconds]
+Tracking of GPS L1 C/A signal started … GPS PRN 01,07,08,10,16,21,22,23,26,27,30,32
+First position fix at 2022-Jan-01 00:00:24.160000 UTC is Lat = 41.275 [deg], Long = 1.98758 [deg], Height= 87.3254 [m]
+Position at 2022-Jan-01 00:00:24.500000 UTC using 6 observations is Lat = 41.275025 [deg], Long = 1.987633 [deg], Height = 92.07 [m]
+Total GNSS-SDR run time: 5.983475 [seconds]
 ```
 
-产物：`PVT_*.kml` / `.gpx` / `.geojson`、`gnss_sdr_pvt.nmea`（本机 **870** 行；首 `$GPGGA` 高度≈**87** m）、`observables.mat`。墙时 ≈7 s 吃完 60 s 仿真。
+产物：`PVT_*.kml` / `.gpx` / `.geojson`、`gnss_sdr_pvt.nmea`（本机 **870** 行；首 `$GPGGA` 高度≈**87.283** m）、`observables.mat`。墙时 ≈6 s 吃完 60 s 仿真（负载变；勿当恒定基准）。
 
 **坑对照：** 同 conf 默认 `PPP_Static` + 仅 30 s IF → 跟踪/电文有、**无**稳态 PVT（日志反复 `position solver error`）——不是仿真坏了，是模式门槛。
 

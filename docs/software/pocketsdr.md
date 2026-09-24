@@ -1,6 +1,6 @@
 # PocketSDR · Takasu 口袋式 GNSS 软件接收机操作手册
 
-目录：[`PROJECTS.json` → `PocketSDR`](../../PROJECTS.json) · 上游 <https://github.com/tomojitakasu/PocketSDR> · tip **`03787da`** · 文案 **ver. 0.20**（2026-08-08）· 许可 **BSD-2-Clause**（`LICENSE.txt`）· 本机验证（**2026-09-24 06:50 EDT**）：`lib/build`+`app` `make USE_SOAPY=0` → `bin/pocket_acq` **3115320** B；对 `gps-sdr-sim` CS16 2 s 切片：`C/N0≥40` 命中 **12** 星（G01/07/08/10/16/21–23/26/27/30/32）与仿真可见表一致；`TIME=3.153 s`；`pocket_scan` 无 FE→`USB device list get error`；**无 Pocket FE 硬件**；**未臆造**天空 PVT 坐标
+目录：[`PROJECTS.json` → `PocketSDR`](../../PROJECTS.json) · 上游 <https://github.com/tomojitakasu/PocketSDR> · tip **`03787da`** · 文案 **ver. 0.20**（2026-08-08）· 许可 **BSD-2-Clause**（`LICENSE.txt`）· 本机验证（**2026-09-24 06:50 EDT**；质检复跑 **06:53 EDT**）：`lib/build`+`app` `make USE_SOAPY=0` → `bin/pocket_acq` **3115320** B / `pocket_acq ver.0.20`；对 `gps-sdr-sim` CS16 2 s 切片：`C/N0≥40` 命中 **12** 星（G01/07/08/10/16/21–23/26/27/30/32；C/N0 与写作稿逐行对齐：G01=**47.2**/G08=**52.9**/G10=**51.3**/G27=**54.2**）；`TIME=1.851 s`（写作 **3.153 s**，墙时变）；`pocket_scan` 无 FE→`USB device list get error`；短 IF `pocket_trk`→`memory allocation error size=0`/**无** NMEA；**无 Pocket FE 硬件**；**未臆造**天空 PVT 坐标
 
 > 岗位：用 **Pocket SDR FE**（或 Soapy 前端）+ C/Python AP 做多星座捕获/跟踪/PVT 实验。冲突时：**仓内 `doc/command_ref.md` / `pocket_* -h` / 本机冒烟 > 本文**。  
 > 完整 GNU Radio 风格接收机 → [gnss-sdr](./gnss-sdr.md)；事后解算 → [rtklib](./rtklib.md)（本仓捆 `lib/RTKLIB`）；手机原始测量 → [gps-measurement-tools](./gps-measurement-tools.md)。
@@ -105,10 +105,10 @@ SIG= L1CA, PRN=   8, COFF=  0.83650 ms, DOP=  1196 Hz, C/N0= 52.9 dB-Hz
 SIG= L1CA, PRN=  10, COFF=  0.68125 ms, DOP= -1377 Hz, C/N0= 51.3 dB-Hz
 SIG= L1CA, PRN=  27, COFF=  0.06500 ms, DOP=  -902 Hz, C/N0= 54.2 dB-Hz
 ...
-TIME = 3.153 s
+TIME = 1.851 s
 ```
 
-`C/N0≥40`：**12** 颗，与 `gps-sdr-sim -v` 可见表一致。stderr 有 `tag file open error … .tag` **可忽略**（无旁路 tag 时的提示）。仓内 `sample/L1_*_12MHz_I.bin` 用 `-fmt INT8 -f 12 -fi 3`；仅 100 ms，虚警多，**勿**当灵敏度金标准。
+`C/N0≥40`：**12** 颗，与 `gps-sdr-sim` 可见表 / [gnss-sdr](./gnss-sdr.md) 跟踪集一致（质检复跑 C/N0 **逐行对齐**写作稿）。`TIME` 墙时本次 **1.851 s**（首跑曾记 **3.153 s**——勿当算法恒定耗时）。stderr 有 `tag file open error … .tag` **可忽略**（无旁路 tag 时的提示）。仓内 `sample/L1_*_12MHz_I.bin` 用 `-fmt INT8 -f 12 -fi 3`；仅 100 ms，虚警多，**勿**当灵敏度金标准。
 
 跟踪/PVT（有更长 IF + 正确 `-fo`/`-IQ` 时）：
 
@@ -119,7 +119,7 @@ pocket_trk -h | head
 #   -nmea /tmp/pocket.nmea /path/to/long.cs16
 ```
 
-本机短切片上 `pocket_trk` 曾报 `memory allocation error size=0`→**未报 NMEA 坐标**（诚实边界）。
+本机短切片上 `pocket_trk` 报 `memory allocation error size=0`→**无** `/tmp/pocket_qc.nmea`（质检 06:53 复认；诚实边界）。
 
 ## 5. 输入 / 输出
 
