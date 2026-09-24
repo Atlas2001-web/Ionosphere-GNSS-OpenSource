@@ -121,10 +121,9 @@ tic; setup = snr_setup(sett); fprintf('setup_ok t=%.2f\n', toc);
 sett fields: sat, ref, opt, ant, sfc, bias
 ref fields: height_ant, height_off, velocity, dist_arp_pivot, ignore_vec_apc_arp
 setup_ok t=0.74
-fwd_ok snr_len=250 snr_min=34.6240 snr_max=53.1458 snr_mean=45.9008  # 质检：移 MEX+.m 后通；写作 concatenation 失败未复现
+fwd_ok snr_len=250 snr_min=34.6240 snr_max=53.1458 snr_mean=45.9008
 carrier −0.0137802–0.0166744 m；code −0.289898–0.140195 m
-carrier −0.0137802–0.0166744 m；code −0.289898–0.140195 m
-→ 无 snr_db / carrier_error / code_error 数值；未臆造曲线
+→ 上列为默认 `snr_fwd` 本机真值（移无效 MEX+测试桩 `.m` 后）；**非**论文插图拷贝
 ```
 
 未移走 MEX 时更早失败：`interp2_linear_c.mex: invalid ELF header` 或 `wrong ELF class: ELFCLASS32`。
