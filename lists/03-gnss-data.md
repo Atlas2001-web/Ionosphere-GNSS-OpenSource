@@ -268,8 +268,7 @@ Peinser 发布的自托管 NTRIP v2 caster：汇聚多基站 RTCM 改正并通�
 
 语言：C++ · 许可：GPL-3.0 · 星标约：— · 宿主：official_site
 
-BKG 提供的 BNC 发行目录，含 GPL-3 源码包、各发行版二进制与变更说明，与产品介绍页互补，便于脚本化拉取固定版本做复现。使用时注意版本与依赖库匹配；功能说明与 PPP 选项仍以 BNC 主页文档为准。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。
-
+BKG 提供的 BNC 发行目录，含 GPL-3 源码包、各发行版二进制与变更说明，与产品介绍页互补，便于脚本化拉取固定版本做复现。使用时注意版本与依赖库匹配；功能说明与 PPP 选项仍以 BNC 主页文档为准。使用前请核验上游页面与许可条款。
 #### [BNS](https://software.rtcm-ntrip.org/wiki/BNS)  
 *🏷️ 官方*
 
@@ -384,8 +383,7 @@ Anubis 免费档下载入口，提供 Linux 预编译与 GPL-3 源码，覆盖�
 
 语言：Perl · 许可：free (as-is) · 星标约：— · 宿主：official_site
 
-捷克大地测量观测台相关页面提供的 plot_anubis.pl，读取 Anubis 输出的 XTR 生成单站质检图，免费且无支持承诺。适合批量为数据中心出静态图；若需交互仪表盘或实时告警，应评估 Anubis 商业档或其他可视化栈。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。
-
+捷克大地测量观测台相关页面提供的 plot_anubis.pl，读取 Anubis 输出的 XTR 生成单站质检图，免费且无支持承诺。适合批量为数据中心出静态图；若需交互仪表盘或实时告警，应评估 Anubis 商业档或其他可视化栈。使用前请核验上游页面与许可条款。
 #### [RINGO](https://terras.gsi.go.jp/software/ringo/en/)  
 *🏷️ 官方*
 
@@ -535,7 +533,7 @@ EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RT
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [GAMPII-GOOD](https://github.com/zhouforme0318/GAMPII-GOOD) | GOOD：GNSS 观测与产品下载器（GAMP II 配套） | C++ | 123 | 🏷️ 个人社区 |
-| [gnss-downloader](https://github.com/Mereithhh/gnss-downloader) | PyQt5 GUI：从 NASA/WHU FTP 下载 GNSS 数据 | Python | 23 | 🏷️ 个人社区 |
+| [gnss-downloader](https://github.com/Mereithhh/gnss-downloader) | 带界面的 IGS/镜像 GNSS 数据下载器 | Python | 23 | 🏷️ 个人社区 |
 | [GDDS](https://github.com/LECUT/GDDS) | IGS/CORS/产品/时序等多模块 GNSS 下载 | Python | 13 | 🏷️ 个人社区 |
 | [swds-api-downloader](https://github.com/embrace-inpe/swds-api-downloader) | Embrace 空间天气数据服务 API 的自动下载示例 | Python | 4 | 🏷️ 官方 |
 
@@ -553,8 +551,7 @@ EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RT
 
 语言：Python · 许可：— · 星标约：23 · 宿主：github
 
-带界面的 GNSS 数据下载器，对接常见 FTP 镜像，降低新手门槛。适合偶发下载。大规模自动化与断点策略不如专用脚本/FAST。
-
+图形界面对接 NASA/WHU 等常见 FTP 镜像，降低新手按站按日下载门槛。适合偶发取数与教学演示。大规模自动化、断点续传与镜像故障切换不如专用脚本或 FAST 一类工具。
 #### [GDDS](https://github.com/LECUT/GDDS)  
 *🏷️ 个人社区*
 
@@ -573,7 +570,7 @@ EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RT
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [geode](https://github.com/demiangomez/geode) | 自动化 GNSS 数据处理与管理框架 | Python | 61 | 🏷️ 个人社区 |
+| [geode](https://github.com/demiangomez/geode) | 下载—处理—分析—管理一体化的 GNSS 框架 | Python | 61 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -582,7 +579,7 @@ EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RT
 
 语言：Python · 许可：BSD-3-Clause · 星标约：61 · 宿主：github
 
-把下载、处理、分析、管理串成 Python 框架，减少手写胶水。适合中等规模台网运维原型。核心估计算法深度取决于所接后端。
+把数据下载、处理、分析与台网管理串成 Python 框架，减少手写胶水脚本。适合中等规模台网运维原型。核心估计算法深度取决于所接后端；不等同于完整 PPP/RTK 产品套件。
 
 ## RINEX读写
 
@@ -866,7 +863,7 @@ SGL-UT 从 GPSTk 拆出的应用程序仓，基于 gnsstk 提供命令行工具�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnsstools](https://github.com/arthurdjn/gnsstools) | Python 读 RINEX/SP3 与轨道改正工具 | Python | 39 | 🏷️ 个人社区 |
+| [gnsstools](https://github.com/arthurdjn/gnsstools) | 轻量 Python：RINEX/SP3 读取与轨道改正 | Python | 39 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -875,7 +872,7 @@ SGL-UT 从 GPSTk 拆出的应用程序仓，基于 gnsstk 提供命令行工具�
 
 语言：Python · 许可：MIT · 星标约：39 · 宿主：github
 
-读 RINEX、SP3 等并做轨道相关处理的小工具集。适合脚本原型。大规模生产建议 georinex + 专业定位引擎。
+面向脚本原型的 RINEX、SP3 读取与轨道相关处理集合，接口轻、上手快。适合快速试验。大规模生产读写建议 georinex 等成熟库，精密定位请接专业引擎。
 
 ## Android原始观测
 
@@ -913,7 +910,7 @@ Android 原始 GNSS 测量日志与桌面可视化分析工具，智能手机高
 
 语言：C · 许可：BSD · 星标约：— · 宿主：other
 
-gpsd 社区官网，提供安装文档、兼容硬件列表与发布信息。源码开发主仓在 GitLab，发行文件指向 Savannah 镜像。嵌入式或桌面定位服务集成前，建议先读本站兼容性说明，避免误用标签页上的非发行压缩包。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。
+gpsd 社区官网，提供安装文档、兼容硬件列表与发布信息。源码开发主仓在 GitLab，发行文件指向 Savannah 镜像。嵌入式或桌面定位服务集成前，建议先读本站兼容性说明，避免误用标签页上的非发行压缩包。使用前请核验上游页面与许可条款。
 
 ## 基础库(归档)
 

@@ -12,7 +12,7 @@
 | [BeagleSDRGPS](https://github.com/jks-prv/Beagle_SDR_GPS) | KiwiSDR：BeagleBone 短波 SDR 与软件 GPS（已归档） | C++ | 521 | 🏷️ 个人社区 |
 | [PocketSDR](https://github.com/tomojitakasu/PocketSDR) | Tomoji Takasu 开源 GNSS 软件接收机（多星座多频 SDR） | C | 515 | 🏷️ 个人社区 核心 |
 | [FGI-GSRx](https://github.com/nlsfi/FGI-GSRx) | 芬兰 FGI 多星座 MATLAB 软件接收机 | MATLAB | 192 | 🏷️ 官方 核心 |
-| [Full_Stack_GPS_Receiver](https://github.com/hamsternz/Full_Stack_GPS_Receiver) | 从 1-bit 采样到定位的完整 GPS 软件接收机 | C | 168 | 🏷️ 个人社区 |
+| [Full_Stack_GPS_Receiver](https://github.com/hamsternz/Full_Stack_GPS_Receiver) | 1-bit ADC 到 PVT 的开源 GPS 软件接收机示例 | C | 168 | 🏷️ 个人社区 |
 | [Analog-GPS-data-receiver](https://github.com/leaningktower/Analog-GPS-data-receiver) | 分立射频+TinyFPGA 的模拟 GPS 接收教学项目 | C | 164 | 🏷️ 个人社区 |
 | [GNSS-GPS-SDR](https://github.com/JiaoXianjun/GNSS-GPS-SDR) | GPS 录回放、接收与测试相关实验代码 | Python | 157 | 🏷️ 个人社区 |
 | [GNSS-DSP-tools](https://github.com/pmonta/GNSS-DSP-tools) | GNSS 码生成/捕获/跟踪的 Python DSP 工具集 | Python | 141 | 🏷️ 个人社区 |
@@ -84,8 +84,7 @@ FGI 开源多星座 MATLAB 接收机，方便改基带算法与抗干扰试验�
 
 语言：C · 许可：MIT · 星标约：168 · 宿主：github
 
-展示从原始 1-bit ADC 到定位的完整链路，教学价值高。适合理解接收机分层。工程完备性与多星座支持有限。
-
+贯通原始 1-bit ADC 采样、捕获跟踪到位置解算的完整链路，教学上极利于理解接收机分层。适合自学与课程演示。工程完备性、多星座与抗干扰能力有限，不宜当作生产接收机。
 #### [Analog-GPS-data-receiver](https://github.com/leaningktower/Analog-GPS-data-receiver)  
 *🏷️ 个人社区*
 
@@ -287,8 +286,8 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [gps-sdr-sim](https://github.com/osqzss/gps-sdr-sim) | GPS L1 基带信号仿真（SDR 回放） | C | 3466 | 🏷️ 个人社区 核心 |
-| [multi-sdr-gps-sim](https://github.com/Mictronics/multi-sdr-gps-sim) | 多 SDR 平台的 GPS L1 实时 IQ 仿真 | C | 264 | 🏷️ 个人社区 |
-| [SignalSim](https://github.com/globsky/SignalSim) | 多阶段 GNSS 信号与数据仿真器 | C++ | 208 | 🏷️ 个人社区 |
+| [multi-sdr-gps-sim](https://github.com/Mictronics/multi-sdr-gps-sim) | HackRF/Pluto 等平台上的 GPS L1 实时仿真 | C | 264 | 🏷️ 个人社区 |
+| [SignalSim](https://github.com/globsky/SignalSim) | 覆盖多阶段链路的 GNSS 信号/数据仿真 | C++ | 208 | 🏷️ 个人社区 |
 | [gps-sdr-sim-assistant](https://github.com/frank-pian/gps-sdr-sim-assistant) | gps-sdr-sim 的图形化助手工具 | JavaScript | 63 | 🏷️ 个人社区 |
 | [galileo-sdr-sim](https://github.com/harshadms/galileo-sdr-sim) | Galileo E1B/C 信号生成器 | C++ | 62 | 🏷️ 个人社区 |
 | [BeiDou_B1C](https://github.com/lnexenl/BeiDou_B1C) | 北斗 B1C 信号生成与捕获（MATLAB） | MATLAB | 38 | 🏷️ 个人社区 |
@@ -315,15 +314,13 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 
 语言：C · 许可：MIT · 星标约：264 · 宿主：github
 
-在多种 SDR 上即时生成 GPS L1 基带，减少中间文件。适合实验室联调。同样需遵守无线电法规。
-
+在多种 SDR 上即时生成 GPS L1 基带 IQ，减少落盘中间文件，便于接收机与抗干扰实验联调。适合实验室封闭环境。对外发射须遵守无线电法规；多星座/认证级仿真请另选更完整工具链。
 #### [SignalSim](https://github.com/globsky/SignalSim)  
 *🏷️ 个人社区*
 
 语言：C++ · 许可：— · 星标约：208 · 宿主：github
 
-多星座、多阶段信号与数据仿真，比单一 L1 sim 更接近科研仿真链。适合接收机算法验证。配置复杂，文档需耐心读。
-
+相对单一 L1 IQ sim，更接近科研用多星座、多阶段信号与数据仿真链，便于算法验证与场景复现。适合接收机基带/测量层试验。配置项多、文档需耐心研读；实时射频合规发射另论。
 #### [gps-sdr-sim-assistant](https://github.com/frank-pian/gps-sdr-sim-assistant)  
 *🏷️ 个人社区*
 
@@ -428,7 +425,7 @@ CU Boulder RF & SatNav 实验室维护的 SoftGNSS/教材配套页面，介绍 B
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GNSS-matlab](https://github.com/danipascual/GNSS-matlab) | MATLAB 生成 GNSS PRN/二级码/无数据信号 | MATLAB | 257 | 🏷️ 高校实验室 |
+| [GNSS-matlab](https://github.com/danipascual/GNSS-matlab) | MATLAB 生成 GPS/Galileo/北斗信号层码与谱 | MATLAB | 257 | 🏷️ 高校实验室 |
 | [GNSS-VHDL](https://github.com/danipascual/GNSS-VHDL) | GPS/Galileo PRN 与无数据信号 VHDL 生成 | VHDL | 34 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -438,8 +435,7 @@ CU Boulder RF & SatNav 实验室维护的 SoftGNSS/教材配套页面，介绍 B
 
 语言：MATLAB · 许可：— · 星标约：257 · 宿主：github
 
-生成各系统 PRN、二级码与无数据导频等，方便信号层仿真。适合通信/信号课。不包含完整跟踪到 PVT。
-
+生成 GPS/Galileo/BeiDou 等系统的 PRN、二级码与无数据导频等，并附捕获示例与理论摘要，方便信号层仿真与教学。适合通信/导航信号课。不覆盖完整跟踪到 PVT 的接收机链路。
 #### [GNSS-VHDL](https://github.com/danipascual/GNSS-VHDL)  
 *🏷️ 高校实验室*
 
@@ -504,7 +500,7 @@ VHDL 代码用于生成 GPS L1 C/A 以及 Galileo E1OS、E5 的 PRN 与无数据
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [LEOGPS](https://github.com/sammmlow/LEOGPS) | Python 星载 GPS/相对导航工具 | Python | 88 | 🏷️ 个人社区 |
+| [LEOGPS](https://github.com/sammmlow/LEOGPS) | 面向 LEO 星载 GPS/相对导航的 Python 包 | Python | 88 | 🏷️ 个人社区 |
 | [hardware](https://github.com/oresat/oresat-gps-hardware) | OreSat 立方星 SDR GPS 接收硬件设计 | Makefile | 33 | 🏷️ 高校实验室 |
 | [oresat-gps-software](https://github.com/oresat/oresat-gps-software) | OreSat 立方星 GPS 接收机软件 | Python | 22 | 🏷️ 高校实验室 |
 
@@ -515,8 +511,7 @@ VHDL 代码用于生成 GPS L1 C/A 以及 Galileo E1OS、E5 的 PRN 与无数据
 
 语言：Python · 许可：MIT · 星标约：88 · 宿主：github
 
-面向低轨卫星 GPS 导航与相对导航的 Python 工具，航天场景鲜明。地面测地 PPP 不是其目标。
-
+面向低轨航天器的 GPS 导航与相对导航流程，场景从地面测地 PPP 明显转向星载几何与动力学约束。适合立方星/编队导航原型。精密测地 PPP-AR 与区域 CORS 工作流不是其目标。
 #### [hardware](https://github.com/oresat/oresat-gps-hardware)  
 *🏷️ 高校实验室*
 

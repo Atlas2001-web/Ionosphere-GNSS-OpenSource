@@ -112,7 +112,7 @@ GNSS 与 IMU（及视觉）松/紧组合，车载与机器人户外定位。
 | [imugpslocalization](https://github.com/ydsf16/imu_gps_localization) | 误差状态卡尔曼滤波融合 IMU 与 GPS（C++） | C++ | 734 | 🏷️ 个人社区 |
 | [OB_GINS](https://github.com/i2Nav-WHU/OB_GINS) | 基于优化的 GNSS/INS 组合导航 | C++ | 647 | 🏷️ 高校实验室 ★ 核心 |
 | [ignav](https://github.com/Erensu/ignav) | INS 与 GNSS 组合导航实现 | C | 472 | 🏷️ 个人社区 ★ |
-| [GINav](https://github.com/kaichen686/GINav) | MATLAB GNSS 与 GNSS/INS 组合算法 | MATLAB | 309 | 🏷️ 个人社区 ★ 核心 |
+| [GINav](https://github.com/kaichen686/GINav) | MATLAB GNSS/INS 松紧组合常用算法实现 | MATLAB | 309 | 🏷️ 个人社区 ★ 核心 |
 | [Loose-GNSS-IMU](https://github.com/aaronboda24/Loose-GNSS-IMU) | GNSS 与 IMU 的松组合卡尔曼实现 | C++ | 187 | 🏷️ 个人社区 |
 | [KF-GINS-Matlab](https://github.com/i2Nav-WHU/KF-GINS-Matlab) | KF-GINS 的 MATLAB 版：EKF 松/紧组合 GNSS/INS | MATLAB | 137 | 🏷️ 高校实验室 核心 |
 | [ublox_dgnss](https://github.com/aussierobots/ublox_dgnss) | ROS2 u-blox UBX 驱动（F9P/F9R/X20P 差分与移动基站） | C++ | 86 | 🏷️ 个人社区 |
@@ -166,8 +166,7 @@ C 语言组合导航实现，轻量、易嵌入。适合固件向开发者。功
 
 语言：MATLAB · 许可：BSD-2-Clause · 星标约：309 · 宿主：github
 
-MATLAB 实现 GNSS 及松/紧组合常用算法，改方程方便。适合研究生入门。实时嵌入式部署需移植。
-
+以 MATLAB 实现 GNSS 定位及松/紧组合常用滤波与方程，便于改模型、画残差，研究生入门友好。适合课程作业与论文原型。实时嵌入式或高吞吐现场部署需移植到 C/C++ 或其他引擎。
 #### [Loose-GNSS-IMU](https://github.com/aaronboda24/Loose-GNSS-IMU)  
 *🏷️ 个人社区*
 
@@ -477,7 +476,7 @@ GREAT 体系内的因子图优化实现，面向精密定位与组合导航相�
 | [ahrs](https://github.com/Mayitzin/ahrs) | Python AHRS/IMU 姿态估计工具箱 | Python | 726 | 🏷️ 个人社区 |
 | [NaveGo](https://github.com/rodralez/NaveGo) | NaveGo：组合导航与惯导分析 MATLAB/Octave 工具箱 | MATLAB | 640 | 🏷️ 个人社区 |
 | [nav_matlab](https://github.com/yandld/nav_matlab) | MATLAB 导航科学计算与组合导航例程 | MATLAB | 276 | 🏷️ 个人社区 |
-| [INSTINCT](https://github.com/UniStuttgart-INS/INSTINCT) | 组合导航概念与训练用 INS 工具包 | C++ | 65 | 🏷️ 个人社区 |
+| [INSTINCT](https://github.com/UniStuttgart-INS/INSTINCT) | 斯图加特大学导航所 INS 概念/训练工具包 | C++ | 65 | 🏷️ 高校实验室 |
 | [KalmanFilters.jl](https://github.com/JuliaGNSS/KalmanFilters.jl) | Julia 卡尔曼滤波库（KF/UKF/AUKF 及方根型） | Julia | 55 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -504,12 +503,11 @@ GREAT 体系内的因子图优化实现，面向精密定位与组合导航相�
 汇总惯导、GNSS 与 UWB-IMU 等导航算法的 MATLAB 例程库，改公式与画误差曲线方便，中文用户较多。适合教学演示、课程设计与快速原型。实时嵌入式与大规模数据工程需移植到 C++/ROS；与 GINav、TightlyCoupledINSGNSS 等同属 MATLAB 组合导航学习线。示例数据与坐标系约定请严格按仓库说明核对。
 
 #### [INSTINCT](https://github.com/UniStuttgart-INS/INSTINCT)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：C++ · 许可：MPL-2.0 · 星标约：65 · 宿主：github
 
-斯图加特大学 INS 工具包，强调概念与训练。适合教学实验。工业车规方案需另评。
-
+斯图加特大学导航研究所（UniStuttgart-INS）开源的 INSTINCT，面向组合导航概念讲解与课程训练，MPL-2.0 许可。适合高校 INS/GNSS 松紧组合教学与算法原型。工业车规、功能安全与量产标定需另评专业方案。
 #### [KalmanFilters.jl](https://github.com/JuliaGNSS/KalmanFilters.jl)  
 *🏷️ 个人社区*
 
@@ -521,7 +519,7 @@ JuliaGNSS 生态中的滤波库，实现经典 KF、UKF、AUKF 及其方根形�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [pyins](https://github.com/nmayorov/pyins) | Python 惯性导航建模与分析 | Python | 107 | 🏷️ 个人社区 |
+| [pyins](https://github.com/nmayorov/pyins) | INS 建模与误差分析的教学向 Python 包 | Python | 107 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -530,7 +528,7 @@ JuliaGNSS 生态中的滤波库，实现经典 KF、UKF、AUKF 及其方根形�
 
 语言：Python · 许可：MIT · 星标约：107 · 宿主：github
 
-INS 机械编排与误差分析的 Python 包，教学清晰。适合先搞懂 INS 再耦合 GNSS。不是完整 GNSS/INS 产品。
+实现 INS 机械编排与误差分析，文档清晰，适合先掌握惯性导航再耦合 GNSS。面向教学与算法试验。不是完整 GNSS/INS 产品，缺实时传感器驱动与工程标定闭环。
 
 ## 原始GNSS融合
 

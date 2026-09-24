@@ -7,7 +7,7 @@ awesome 列表、源码笔记、可见性可视化、SBAS/认证等学习工具�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [UrbanNavDataset](https://github.com/IPNL-POLYU/UrbanNavDataset) | 亚洲城市峡谷多传感器定位数据集 | Python | 606 | 🏷️ 高校实验室 |
+| [UrbanNavDataset](https://github.com/IPNL-POLYU/UrbanNavDataset) | 香港/东京等城市峡谷 GNSS/INS/视觉基准集 | Python | 606 | 🏷️ 高校实验室 |
 | [awesome-gins-datasets](https://github.com/i2Nav-WHU/awesome-gins-datasets) | 武大 i2Nav 整理的车载 GNSS/INS 融合公开数据集列表 | — | 280 | 🏷️ 高校实验室 核心 |
 | [gnss2tws-green](https://github.com/jzshhh/gnss2tws_green) | 由 GNSS 垂直位移反演陆地水储量 GNSS2TWS | MATLAB | 33 | 🏷️ 个人社区 |
 
@@ -18,8 +18,7 @@ awesome 列表、源码笔记、可见性可视化、SBAS/认证等学习工具�
 
 语言：Python · 许可：— · 星标约：606 · 宿主：github
 
-香港/东京等城市峡谷多传感器数据，含真值，是 GNSS/INS/视觉算法基准常用集。适合算法评测。本身不是解算软件。
-
+香港理工 IPNL 等发布的城市峡谷多传感器数据，含真值，是 GNSS/INS/视觉融合算法常用基准。适合算法评测与论文对比。本身不是解算软件；使用请遵守数据集许可与引用要求。
 #### [awesome-gins-datasets](https://github.com/i2Nav-WHU/awesome-gins-datasets)  
 *🏷️ 高校实验室 核心*
 
@@ -109,7 +108,7 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 
 语言：web · 许可：site terms · 星标约：— · 宿主：official_site
 
-面向 GNSS 测站速度场的浏览器可视化工具，便于快速查看区域形变矢量。属于机构托管的 Web 应用而非本地库；科研制图仍常导出后用 GMT/Python。适合教学演示与数据探索，不能替代时间序列精密分析或网平差软件。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。
+面向 GNSS 测站速度场的浏览器可视化工具，便于快速查看区域形变矢量。属于机构托管的 Web 应用而非本地库；科研制图仍常导出后用 GMT/Python。适合教学演示与数据探索，不能替代时间序列精密分析或网平差软件。使用前请核验上游页面与许可条款。
 
 ## SBAS
 
@@ -141,15 +140,13 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 
 语言：various · 许可：varies · 星标约：— · 宿主：official_site
 
-澳大利亚定位项目服务总览，含 SouthPAN、GNSS 数据中心与 AUSPOS 在线处理等入口。多数为在线服务而非本地开源库，与 Ginan 开源套件互补。查找国家级数据流、改正服务与在线 PPP 时可作为官方导航页。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。
-
+澳大利亚定位项目服务总览，含 SouthPAN、GNSS 数据中心与 AUSPOS 在线处理等入口。多数为在线服务而非本地开源库，与 Ginan 开源套件互补。查找国家级数据流、改正服务与在线 PPP 时可作为官方导航页。使用前请核验上游页面与许可条款。
 #### [NGS-PC-PROD](https://geodesy.noaa.gov/PC_PROD/)  
 *🏷️ 官方*
 
 语言：various · 许可：USGov public resource · 星标约：— · 宿主：official_site
 
-NOAA/NGS 大地测量 PC 软件汇总页，链向 HTDP 等可下载程序与文档，是做美国基准与地壳运动相关计算时的官方起点。具体程序许可与源码可用性因条目而异，例如 HTDP 源码已在 GitHub noaa-ngs 组织发布。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。
-
+NOAA/NGS 大地测量 PC 软件汇总页，链向 HTDP 等可下载程序与文档，是做美国基准与地壳运动相关计算时的官方起点。具体程序许可与源码可用性因条目而异，例如 HTDP 源码已在 GitHub noaa-ngs 组织发布。使用前请核验上游页面与许可条款。
 #### [UNAVCO-Software-Portal](https://www.unavco.org/software/)  
 *🏷️ 官方*
 
@@ -170,7 +167,7 @@ GAGE/EarthScope 软件总入口，分数据处理、数据管理、可视化与�
 
 语言：various · 许可：varies · 星标约：— · 宿主：official_site
 
-gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbuntu Live 环境，是教学实验的一站式入口，便于课程统一环境。具体许可以各下载页为准；Live 镜像体积较大，需预留足够磁盘空间。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。
+gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbuntu Live 环境，是教学实验的一站式入口，便于课程统一环境。具体许可以各下载页为准；Live 镜像体积较大，需预留足够磁盘空间。使用前请核验上游页面与许可条款。
 
 ## 轨迹/航点转换
 
@@ -389,4 +386,4 @@ NGS 公开的 NCAT（NGS Coordinate Conversion and Transformation Tool）底层 
 
 语言：Java/app · 许可：USGov public resource · 星标约：— · 宿主：official_site
 
-NOAA 垂直基准转换软件与服务，连接椭球高、大地水准面与潮汐等垂直基准，海岸带与 GNSS 高程应用中常用。以官方发布包与 Web 服务为准；与水平框架工具 HTDP、NCAT 分工不同，高程与平面归算请分别选用对应工具。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。
+NOAA 垂直基准转换软件与服务，连接椭球高、大地水准面与潮汐等垂直基准，海岸带与 GNSS 高程应用中常用。以官方发布包与 Web 服务为准；与水平框架工具 HTDP、NCAT 分工不同，高程与平面归算请分别选用对应工具。使用前请核验上游页面与许可条款。

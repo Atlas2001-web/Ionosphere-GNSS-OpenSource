@@ -315,7 +315,7 @@ Space Weather Modeling Framework 组件之一，描述高纬电离层电动力�
 | [TEC-MoLLM](https://github.com/PANXIONG-CN/TEC-MoLLM) | GNN+时序 CNN+LLM（LoRA）的全球 TEC 预报研究代码 | Python | 4 | 🏷️ 高校实验室 |
 | [tec-example](https://github.com/embrace-inpe/tec-example) | INPE Embrace 相关的 TEC 处理示例 | Python | 3 | 🏷️ 官方 |
 | [CDAAC_COSMIC-TEC_Data-Research](https://github.com/haoINvinCbou/CDAAC_COSMIC-TEC_Data-Research) | 处理 CDAAC COSMIC 掩星 NetCDF 做 TEC 研究 | Jupyter Notebook | 2 | 🏷️ 个人社区 |
-| [gps-tec-cnn-lstm-attention](https://github.com/hyy-why/gps-tec-cnn-lstm-attention) | CNN-BiLSTM-Attention 的电离层 TEC 预测复现代码 | Python | 1 | 🏷️ 个人社区 |
+| [gps-tec-cnn-lstm-attention](https://github.com/hyy-why/gps-tec-cnn-lstm-attention) | 论文配套：注意力机制 TEC 时序预测示例 | Python | 1 | 🏷️ 个人社区 |
 | [ESA-UGI](https://essr.esa.int/project/unified-gnss-ionosphere) | ESA UGI：从多系统 GNSS 观测估计 vTEC/IFB/模糊度的开源包（ESSR） | unknown | — | 🏷️ 官方 |
 | [GNSS-Workshop-TEC](https://github.com/breid-phys/GNSS-Workshop) | 研讨班材料：从 GNSS 数据探索到 TEC 测量 | Python | 0 | 🏷️ 高校实验室 |
 | [Ion-Phys-Toolkit](https://github.com/PANXIONG-CN/Ion-Phys-Toolkit) | 面向 TEC 预报的物理信息学习最小可复现工具包 | Python | 0 | 🏷️ 高校实验室 |
@@ -325,7 +325,7 @@ Space Weather Modeling Framework 组件之一，描述高纬电离层电动力�
 | [PMGC-SimVP](https://github.com/OnlyYouNotInCity/PMGC-SimVP) | 参数化多尺度门控卷积 + SimVP 的全球 TEC 时空预报 | Python | 0 | 🏷️ 高校实验室 |
 | [quakeion](https://github.com/Gm015555/quakeion) | 震例目录 + CODE GIM TEC/ROT/ROTI 分析（零 API Key） | Python | 0 | 🏷️ 个人社区 |
 | [Seemala-GPS-TEC](https://seemala.blogspot.com/2026/08/gps-tec-analysis-program-version-37.html) | Gopi Seemala GPS-TEC：从 RINEX 估计 GPS TEC 的便携 Windows 程序（当前 v3.7） | Windows/Exe | — | 🏷️ 高校实验室 |
-| [TEC-forecast-F107](https://github.com/hekaixuan-atm/TEC-forecast) | 非均匀 F10.7 强迫下的全球 TEC 深度学习预报代码 | Python | 0 | 🏷️ 高校实验室 |
+| [TEC-forecast-F107](https://github.com/hekaixuan-atm/TEC-forecast) | 空间非均匀 F10.7 强迫的全球 TEC 预报代码 | Python | 0 | 🏷️ 高校实验室 |
 | [vtec](https://github.com/mfkiwl/vtec) | 垂直 TEC（VTEC）计算相关工具 | — | — | 🏷️ 个人社区 ★ |
 
 ### 详细说明
@@ -440,8 +440,7 @@ Jupyter 流程读取 CDAAC/COSMIC 掩星 NetCDF，面向 TEC 与掩星电离层�
 
 语言：Python · 许可：unknown · 星标约：1 · 宿主：github
 
-论文配套的 CNN-BiLSTM 注意力 TEC 预测代码，面向复现而非业务运行。局限：星数低；数据准备脚本完整度需检查。
-
+论文配套的 CNN-BiLSTM 注意力 TEC 预测代码，目标是复现实验而非业务运行。星标与文档有限，数据准备脚本完整度需自查。业务空间天气预报请用业务模式或同化产品。
 #### [ESA-UGI](https://essr.esa.int/project/unified-gnss-ionosphere)  
 *🏷️ 官方*
 
@@ -510,8 +509,7 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 
 语言：Python · 许可：unknown · 星标约：0 · 宿主：github
 
-强调空间非均匀 F10.7 强迫的全球 TEC 预报实验代码。局限：仓库小；复现依赖作者数据划分；非物理模式。
-
+论文配套实验：在深度学习 TEC 预报中引入空间非均匀 F10.7 强迫，探索太阳辐射空间差异的影响。适合复现与对比基线。仓库体量小、数据划分依赖作者设定，非业务级物理/同化模式。
 #### [vtec](https://github.com/mfkiwl/vtec)  
 *🏷️ 个人社区 ★*
 
@@ -538,7 +536,7 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 | [pysatModels](https://github.com/pysat/pysatModels) | pysat 生态中的模式分析与模式-数据对比接口 | Python | 9 | 🏷️ 高校实验室 |
 | [Septentrio-PyDataLink](https://github.com/septentrio-gnss/Septentrio-PyDataLink) | Septentrio 数据流可视化与互联开源工具 | Python | 8 | 🏷️ 官方 |
 | [radionopy](https://github.com/UPennEoR/radionopy) | 大尺度电离层行为计算的 Python/C 工具 | C | 7 | 🏷️ 高校实验室 |
-| [Raytrace-Model](https://github.com/kyruzic/Raytrace-Model) | 电离层中无线电波三维传播的 MATLAB 射线模型 | MATLAB | 7 | 🏷️ 个人社区 |
+| [Raytrace-Model](https://github.com/kyruzic/Raytrace-Model) | 电离层中电波三维传播的 MATLAB 射线追踪 | MATLAB | 7 | 🏷️ 个人社区 |
 | [gcmprocpy](https://github.com/NCAR/gcmprocpy) | TIE-GCM / WACCM-X 输出后处理与分析的 Python 工具 | Python | 6 | 🏷️ 官方 |
 | [SAMI3-GITM-python](https://github.com/abukowski21/SAMI3-GITM-python) | SAMI3 与 GITM 耦合输出的 Python/Jupyter 分析示例 | Python | 6 | 🏷️ 高校实验室 |
 | [Kamodo-core](https://github.com/nasa/Kamodo-core) | Kamodo 核心库：科学数据函数化 API（与 CCMC readers 配套） | Python | 5 | 🏷️ 官方 |
@@ -548,7 +546,7 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 | [SubionosphericVLFInversionAlgorithms.jl](https://github.com/fgasdia/SubionosphericVLFInversionAlgorithms.jl) | 用 VLF 信号反演低电离层的 Julia 算法集 | Julia | 4 | 🏷️ 高校实验室 |
 | [pytiegcm](https://github.com/asher-pembroke/pytiegcm) | TIE-GCM 输出的轻量 Python 读取器 | Python | 3 | 🏷️ 个人社区 |
 | [IonOccAnalysis](https://github.com/wonder2019WHU/IonOccAnalysis) | 电离层掩星（Occultation）数据分析工具（武大相关） | C++ | 2 | 🏷️ 高校实验室 |
-| [Ionosonde-Data-Downloader](https://github.com/bzossi/Ionosonde-Data-Downloader) | 从公共库自动下载测高仪数据的 Python 脚本 | Python | 2 | 🏷️ 个人社区 |
+| [Ionosonde-Data-Downloader](https://github.com/bzossi/Ionosonde-Data-Downloader) | 自动拉取公共测高仪库数据的轻量脚本 | Python | 2 | 🏷️ 个人社区 |
 | [SbfMixer](https://github.com/septentrio-gnss/SbfMixer) | 在 Node-RED 中直接使用 Septentrio 接收机 | JavaScript | 2 | 🏷️ 官方 |
 | [HamSCI-ionosonde](https://github.com/HamSCI/hamsci_ionosonde) | HamSCI 低成本啁啾测高仪的处理与验证软件 | Python | 1 | 🏷️ 高校实验室 |
 
@@ -664,8 +662,7 @@ pyDataLink 用于可视化与连接接收机数据流，便于实验教学中快
 
 语言：MATLAB · 许可：GPL-3.0 · 星标约：7 · 宿主：github
 
-MATLAB 三维射线传播模型，用于教学/研究型传播实验。局限：GPL；偏原型；输入密度模型与数值稳定性需用户把关。
-
+在给定电子密度模型下做三维射线追踪，服务传播教学与研究型实验。GPL 许可、偏原型实现。输入电离层模型与数值步长需用户自行校验；业务链路预算请对照 ITU/专业传播软件。
 #### [gcmprocpy](https://github.com/NCAR/gcmprocpy)  
 *🏷️ 官方*
 
@@ -734,8 +731,7 @@ C++ 工具面向 GNSS 电离层掩星数据处理与分析，适合理解 LEO—
 
 语言：Python · 许可：MIT · 星标约：2 · 宿主：github
 
-自动化从测高仪数据仓库拉取数据，减少手工下载。局限：依赖上游站点结构；站点变更会导致脚本失效；不做描迹反演。
-
+按站点/时间从公共测高仪仓库批量下载，减少手工翻目录。适合底部电离层档案收集。上游目录或接口变更会导致脚本失效；不做描迹反演或质量控制，需另接 Autoscala/SAO 等工具。
 #### [SbfMixer](https://github.com/septentrio-gnss/SbfMixer)  
 *🏷️ 官方*
 
@@ -1367,7 +1363,7 @@ Oleg Zolotov 等实现的 FIRI-2018（Friedrich 等更新的低电离层经验�
 |---|---|---|---:|---|
 | [csonde-gnss-ionosphere](https://github.com/csonde/gnss) | RINEX 解析 + 格网/球谐电离层建模的 C 程序集 | C | 10 | 🏷️ 高校实验室 |
 | [GIM_fusion_VLBI](https://github.com/arrueegg/GIM_fusion_VLBI) | 把 VLBI 信息同化/融合进全球电离层图（GIM）的研究代码 | Python | 1 | 🏷️ 高校实验室 |
-| [DiffIonMap](https://github.com/Jin-Whu/DiffIonMap) | 对两幅 IONEX TEC 图做差分可视化的小工具 | Python | 0 | 🏷️ 个人社区 |
+| [DiffIonMap](https://github.com/Jin-Whu/DiffIonMap) | IONEX 差分成图：对比分析中心或风暴扰动 | Python | 0 | 🏷️ 个人社区 |
 | [Ionospheric-TEC-Kriging-Turkiye](https://github.com/skaratay/Ionospheric-TEC-Kriging-Turkiye) | 土耳其区域 TEC 风暴分析的普通克里金/GPR MATLAB 代码 | MATLAB | 0 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -1391,8 +1387,7 @@ Oleg Zolotov 等实现的 FIRI-2018（Friedrich 等更新的低电离层经验�
 
 语言：Python · 许可：unknown · 星标约：0 · 宿主：github
 
-读取两个 IONEX，生成差分电离层图，便于看分析中心差异或风暴扰动相对变化。局限：极简、久未更新；不负责下载或质量控核。
-
+读入两份 IONEX，生成差分 TEC 图，便于对比分析中心产品或风暴扰动相对变化。极简、久未更新。不负责产品下载与质量控核；批量业务制图请用专业 IONEX/GIM 流水线。
 #### [Ionospheric-TEC-Kriging-Turkiye](https://github.com/skaratay/Ionospheric-TEC-Kriging-Turkiye)  
 *🏷️ 高校实验室*
 
@@ -1407,7 +1402,7 @@ Oleg Zolotov 等实现的 FIRI-2018（Friedrich 等更新的低电离层经验�
 | [tec_forecast](https://github.com/mauriciodev/tec_forecast) | 基于深度学习的全球 TEC 图预报示例 | Jupyter Notebook | 31 | 🏷️ 个人社区 ★ |
 | [DeepPredTEC](https://github.com/vtsuperdarn/DeepPredTEC) | 深度学习预报 GPS TEC 图（SuperDARN 相关） | Python | 13 | 🏷️ 高校实验室 |
 | [ED-AttConvLSTM](https://github.com/leeliangchao/ED-AttConvLSTM) | 注意力 ConvLSTM 的 TEC 图预报模型 | Jupyter Notebook | 10 | 🏷️ 个人社区 |
-| [Ionospheric-VTEC-Forecasting](https://github.com/ICCT-ML-in-geodesy/Ionospheric-VTEC-Forecasting) | 机器学习预报垂直 TEC 的示例项目 | Jupyter Notebook | 9 | 🏷️ 个人社区 ★ |
+| [Ionospheric-VTEC-Forecasting](https://github.com/ICCT-ML-in-geodesy/Ionospheric-VTEC-Forecasting) | IAG 研究组 ML 预报 VTEC 的教学示例 | Jupyter Notebook | 9 | 🏷️ 高校实验室 ★ |
 | [t-fors](https://github.com/viventriglia/t-fors) | 行进式电离层扰动（TID）预报系统 T-FORS | HTML | 7 | 🏷️ 高校实验室 |
 | [ESA-TIO-Forecast-TEC](https://swe.ssa.esa.int/tio_tcf) | ESA TIO TEC 预报图服务（约 1 小时量级电离层预报） | data-portal | — | 🏷️ 官方 |
 
@@ -1435,12 +1430,11 @@ Oleg Zolotov 等实现的 FIRI-2018（Friedrich 等更新的低电离层经验�
 编码器—解码器加注意力的 ConvLSTM，针对 TEC 图时序预报。适合复现相关论文结构。工程部署与多源同化不在范围；输入 GIM 分辨率与缺失值处理需自建。
 
 #### [Ionospheric-VTEC-Forecasting](https://github.com/ICCT-ML-in-geodesy/Ionospheric-VTEC-Forecasting)  
-*🏷️ 个人社区 ★*
+*🏷️ 高校实验室 ★*
 
 语言：Jupyter Notebook · 许可：Apache-2.0 · 星标约：9 · 宿主：github
 
-教学向示例：用机器学习预报 VTEC，Apache 许可清晰。适合课堂与入门实验。模型深度和业务指标达不到业务空间天气预报标准。
-
+IAG ICCT「大地测量中的机器学习」联合研究组示例，用公开流程演示 VTEC 机器学习预报，Apache-2.0 许可清晰。适合课堂与方法入门。模型深度与业务指标达不到业务空间天气预报标准。
 #### [t-fors](https://github.com/viventriglia/t-fors)  
 *🏷️ 高校实验室*
 
@@ -1770,7 +1764,7 @@ SpaceML 维护的电离层预报代码与笔记本，强调时间融合 Transfor
 | [scintill-ai](https://github.com/viventriglia/scintill-ai) | 用机器学习做电离层闪烁相关分析的研究项目 | Shell | 8 | 🏷️ 个人社区 |
 | [TITIPy](https://github.com/pignalberi/TITIPy) | Swarm 顶部电离层 RODI/ROTI/ROTEI（Python） | Python | 8 | 🏷️ 高校实验室 |
 | [Ionospheric-Scintillation-Maps-and-PDOP](https://github.com/AlexandraKoulouri/Ionospheric-Scintillation-Maps-and-PDOP) | 电离层闪烁成像及其对 PDOP 影响的研究代码 | MATLAB | 5 | 🏷️ 个人社区 |
-| [gnssutils](https://github.com/ljlamarche/gnssutils) | 地基 GNSS 闪烁数据处理工具 | Python | 3 | 🏷️ 个人社区 ★ |
+| [gnssutils](https://github.com/ljlamarche/gnssutils) | 地基 GNSS 闪烁数据清洗与指标计算工具 | Python | 3 | 🏷️ 个人社区 ★ |
 | [OASIS-ohm1122](https://github.com/ohm1122/OASIS) | OASIS 用户星标副本/相关仓库 | — | — | 🏷️ 个人社区 ★ |
 | [Okoh-MATLAB-ROT-ROTI](https://doi.org/10.5281/zenodo.7913105) | Daniel Okoh：由 TEC 序列计算 30 s ROT 与 5 min ROTI 的 MATLAB 函数 | MATLAB | — | 🏷️ 高校实验室 |
 
@@ -1823,8 +1817,7 @@ INGV/ESA INTENS 的 Swarm 顶部电离层湍流指数工具（Python）：从 La
 
 语言：Python · 许可：GPL-3.0 · 星标约：3 · 宿主：github
 
-处理地基 GNSS 闪烁观测的实用函数，适合已有闪烁接收机数据流的课题组。不替代通用 TEC/GIM 流水线；GPL 许可留意。
-
+面向地基 GNSS 闪烁接收机数据流的实用函数集，便于清洗与指标计算。适合已有 ISMR/闪烁观测的课题组。GPL 许可需留意；不替代通用 TEC/GIM 或业务闪烁预警系统。
 #### [OASIS-ohm1122](https://github.com/ohm1122/OASIS)  
 *🏷️ 个人社区 ★*
 
@@ -2013,7 +2006,7 @@ irimodel.org 上 IRI-2020 的文件目录，可直接获取 00_iri.zip/tar、许
 
 语言：various · 许可：ITU terms · 星标约：— · 宿主：official_site
 
-国际电联无线电通信部门汇总的电离层与对流层传播预测软件、数据与验证示例入口，涵盖推荐方法相关数字产品。许可与获取按 ITU 条款办理。适合传播与链路预算研究；GNSS 精密定位仍多用 IRI、NeQuick、VMF 等专用实现。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。使用前请核验上游页面与许可条款。
+国际电联无线电通信部门汇总的电离层与对流层传播预测软件、数据与验证示例入口，涵盖推荐方法相关数字产品。许可与获取按 ITU 条款办理。适合传播与链路预算研究；GNSS 精密定位仍多用 IRI、NeQuick、VMF 等专用实现。使用前请核验上游页面与许可条款。
 
 ## NeQuick官方
 

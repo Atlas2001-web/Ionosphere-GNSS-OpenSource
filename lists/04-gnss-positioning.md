@@ -270,19 +270,18 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [groops](https://github.com/groops-devs/groops) | 重力场与 GNSS 处理工具包 GROOPS | C++ | 244 | 🏷️ 个人社区 ★ 核心 |
+| [groops](https://github.com/groops-devs/groops) | GROOPS：重力场与 GNSS 处理（TU Graz） | C++ | 244 | 🏷️ 高校实验室 ★ 核心 |
 | [GARPOS](https://github.com/s-watanabe-jhod/garpos) | GARPOS：日本海保 GNSS-声学海底定位开源解算器 | Python | 25 | 🏷️ 官方 |
 | [gnatss](https://github.com/seafloor-geodesy/gnatss) | 海底 GNSS-A 换能器测量社区软件（Python） | Python | 17 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [groops](https://github.com/groops-devs/groops)  
-*🏷️ 个人社区 ★ 核心*
+*🏷️ 高校实验室 ★ 核心*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：244 · 宿主：github
 
-GRAZ 等地学机构风格的工具包，覆盖重力场恢复与 GNSS 处理，适合大地测量联合反演。学习成本高；纯导航 RTK 不是最短路径。
-
+格拉茨工业大学 ITSG 背景的 GROOPS，覆盖重力场恢复、GNSS 处理与轨道确定，含 GUI 与 MPI 并行。适合大地测量联合反演与科研计算。学习曲线陡；纯导航 RTK/PPP-AR 工程请优先专用套件。
 #### [GARPOS](https://github.com/s-watanabe-jhod/garpos)  
 *🏷️ 官方*
 
@@ -601,7 +600,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [HASlib.jl](https://github.com/feanor12/HASlib.jl) | HASlib 的 Julia 包装 | Julia | 0 | 🏷️ 个人社区 |
-| [HASlibTestSuite](https://github.com/nlsfi/HASlibTestSuite) | 官方 HASlib 测试套件 | — | 0 | 🏷️ 官方 |
+| [HASlibTestSuite](https://github.com/nlsfi/HASlibTestSuite) | 官方 HASlib 解码正确性测试套件 | — | 0 | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -617,7 +616,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 语言：— · 许可：— · 星标约：0 · 宿主：github
 
-配套官方 HASlib 的测试套件，用于回归解码正确性。集成 HAS 前应用它核对版本兼容。
+配套 nlsfi/HASlib 的官方测试套件，用固定样例回归 Galileo HAS 解码与接口兼容性。集成或升级 HAS 库前应用它核对版本差异。本身不是定位引擎；解算仍依赖 HASlib 与下游 PPP 实现。
 
 ## PPP/HAS
 

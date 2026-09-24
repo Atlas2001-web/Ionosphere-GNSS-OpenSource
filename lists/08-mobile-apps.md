@@ -10,7 +10,7 @@
 | [GPSTest](https://github.com/barbeau/gpstest) | 开源 Android GNSS 测试与原始测量记录 | Kotlin | 2402 | 🏷️ 个人社区 ★ 核心 |
 | [GPSLogger](https://github.com/BasicAirData/GPSLogger) | Android 开源 GPS 轨迹记录器 | Java | 504 | 🏷️ 个人社区 |
 | [bluetooth_gnss](https://github.com/ykasidit/bluetooth_gnss) | Android 蓝牙外接 GNSS/RTK 与 NTRIP 应用 | Java | 123 | 🏷️ 个人社区 |
-| [GNSS_Compare](https://github.com/TheGalfins/GNSS_Compare) | 安卓端用原始测量做定位的框架 | Java | 73 | 🏷️ 个人社区 |
+| [GNSS_Compare](https://github.com/TheGalfins/GNSS_Compare) | 手机原始测量定位框架（GPS/Galileo 等） | Java | 73 | 🏷️ 个人社区 |
 | [PRIDE-GeoDataLogger](https://github.com/PrideLab/PRIDE-GeoDataLogger) | PRIDE 团队手机多频 GNSS 与 IMU 采集工具 | — | 22 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -41,8 +41,7 @@
 
 语言：Java · 许可：Apache-2.0 · 星标约：73 · 宿主：github
 
-在手机上从原始测量解算位置，支持 GPS/Galileo 等，便于算法上机。维护节奏一般；采数仍常用 GPSTest。
-
+在 Android 上从原始测量解算位置，支持 GPS/Galileo 等，便于算法上机对比。适合教学与原型 App。维护节奏一般；长期采数与设备兼容性测试仍常搭配 GPSTest 等工具。
 #### [PRIDE-GeoDataLogger](https://github.com/PrideLab/PRIDE-GeoDataLogger)  
 *🏷️ 高校实验室*
 
@@ -60,7 +59,7 @@ PRIDE 团队面向智能手机的多频 GNSS 与 IMU 采集工具，便于把手
 | [STM32-GNSS](https://github.com/SimpleMethod/STM32-GNSS) | STM32 u-blox GNSS 库（UBX，含 DMA） | C | 89 | 🏷️ 个人社区 |
 | [satpulse](https://github.com/jclark/satpulse) | 跨平台 GNSS 授时、定位与接收机配置 GUI | Go | 63 | 🏷️ 个人社区 |
 | [STM32Primer2-GNSS-Tracker](https://github.com/nemuisan/STM32Primer2_GNSS_Tracker) | STM32 Primer2 平台的 GNSS 轨迹记录器 | C | 31 | 🏷️ 个人社区 |
-| [esp32-gps](https://github.com/mrichar1/esp32-gps) | ESP32 GPS 控制：串口/蓝牙/RTK/NTRIP | Python | 23 | 🏷️ 个人社区 |
+| [esp32-gps](https://github.com/mrichar1/esp32-gps) | ESP32 上整合 GPS、蓝牙与 NTRIP/RTK 转发 | Python | 23 | 🏷️ 个人社区 |
 | [GNSSClock](https://github.com/stevemarple/GNSS_Clock) | 基于 GNSS NMEA/PPS 的 Arduino 时钟 | C++ | 2 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -112,8 +111,7 @@ Go 实现的跨平台 GNSS 工具，强调 PPS/PTP/NTP 授时、RINEX/RTCM 与�
 
 语言：Python · 许可：— · 星标约：23 · 宿主：github
 
-在 ESP32 上整合 GPS 与 NTRIP/RTK 改正转发，适合物联网终端原型。
-
+在 ESP32 上把 GNSS 模块、串口/蓝牙与 NTRIP 客户端/Caster/转发串起来，方便做物联网终端或农机差分原型。适合嵌入式联调与野外低成本试验。吞吐、天线与长期稳定性弱于工业板卡；公网播发需自行处理账号与安全。
 #### [GNSSClock](https://github.com/stevemarple/GNSS_Clock)  
 *🏷️ 个人社区*
 
