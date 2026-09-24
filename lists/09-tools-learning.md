@@ -1,5 +1,5 @@
 # 学习资源与工具 / Tools & Learning
-> **36** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **39** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
@@ -263,6 +263,7 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 | [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning) | Navigation-Learning：导航开源项目中文笔记 | — | 2417 | 🏷️ 高校实验室 ★ 核心 |
 | [learning_rtklib](https://github.com/libing64/learning_rtklib) | learning_rtklib：RTKLIB 学习笔记 | — | 163 | 🏷️ 个人社区 |
 | [RTKLIB-Manual-CN](https://github.com/salmoshu/RTKLIB-Manual-CN) | RTKLIB-Manual-CN：中文手册与源码导读 | — | 54 | 🏷️ 高校实验室 |
+| [gnss_tutorials](https://github.com/rokubun/gnss_tutorials) | gnss_tutorials：Rokubun Python/Jupyter GNSS 教程 | Jupyter Notebook | 13 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -286,6 +287,13 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 语言：— · 许可：— · 星标约：54 · 宿主：github
 
 系统梳理 RTKLIB 工具使用、算法要点与工程阅读路径的中文笔记，降低中文读者入门与源码导读成本。适合自学、培训与课题组内部分享。不是可执行定位库；内容可能落后于最新 RTKLIB 或 demo5 分支，关键公式与编译选项请回对官方手册与当前源码。
+
+#### [gnss_tutorials](https://github.com/rokubun/gnss_tutorials)  
+*🏷️ 个人社区*
+
+语言：Jupyter Notebook · 许可：MIT · 星标约：13 · 宿主：github
+
+Rokubun 编写的 GNSS 数据处理 Jupyter 教程，覆盖从观测到基础解算的示范流程。MIT 许可；与 android_rinex 同机构，适合入门与课堂教学演示。内容随课程版本变化，生产流水线请改用仍在维护的库，并补齐自有质控步骤。
 
 ## HF传播态势
 
@@ -362,6 +370,8 @@ NGS 公开的 NCAT（NGS Coordinate Conversion and Transformation Tool）底层 
 | [galileo-osnma](https://github.com/daniestevez/galileo-osnma) | galileo-osnma：嵌入式友好的 Galileo OSNMA Rust 库 | Rust | 88 | 🏷️ 个人社区 |
 | [OSNMA](https://github.com/Algafix/OSNMA) | OSNMA：Galileo 开放业务认证 Python 实现 | Python | 52 | 🏷️ 高校实验室 |
 | [gal-osnma-sim](https://github.com/galileoz/gal-osnma-sim) | gal-osnma-sim：Galileo OSNMA 开源仿真器 | C | 31 | 🏷️ 个人社区 |
+| [GSC-OSNMA-Service](https://www.gsc-europa.eu/galileo/services/galileo-open-service-navigation-message-authentication-osnma) | GSC OSNMA：Galileo 导航电文认证官方服务页 | data-portal | — | 🏷️ 官方 |
+| [GSC-Programme-Reference-Documents](https://www.gsc-europa.eu/electronic-library/programme-reference-documents) | GSC 参考文件：Galileo/EGNOS ICD 与计划文档 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -385,6 +395,20 @@ daniestevez 维护的 Galileo OSNMA 协议 Rust 库，校验导航电文密码�
 语言：C · 许可：MIT · 星标约：31 · 宿主：github
 
 galileoz 的 Galileo OSNMA 仿真工具，用于生成/演练开放服务导航电文认证场景，便于测试认证链路。MIT 许可；与 Algafix/OSNMA、daniestevez/galileo-osnma 形成仿真—实现互补。偏研究与联调，非飞行级密钥管理；密钥材料与配置步骤以仓库文档为准，勿与生产公钥混用。
+
+#### [GSC-OSNMA-Service](https://www.gsc-europa.eu/galileo/services/galileo-open-service-navigation-message-authentication-osnma)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+GSC 关于 Galileo Open Service Navigation Message Authentication（OSNMA）的官方服务页，说明认证服务目标、状态与开发者资源入口。与 Algafix/OSNMA、galileo-osnma 代码条目互补；密钥与测试向量获取路径以站内指引为准，实施须遵循 GSC 条款。
+
+#### [GSC-Programme-Reference-Documents](https://www.gsc-europa.eu/electronic-library/programme-reference-documents)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+欧洲 GNSS 服务中心电子图书馆中的 Programme Reference Documents，集中链向 Galileo/EGNOS 接口控制文件与计划级参考文档。官方 portal；做接收机/OSNMA/HAS 开发前的权威文档入口。具体 PDF 版本与下载条款以页面为准，需遵守欧盟文件分发条件。
 
 ## RTK网络客户端
 

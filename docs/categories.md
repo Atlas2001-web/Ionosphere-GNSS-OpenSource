@@ -23,7 +23,7 @@
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
 - 列表文件：[`lists/01-ionosphere.md`](../lists/01-ionosphere.md)
-- 当前条目数：**240**
+- 当前条目数：**242**
 
 ## `troposphere` — 对流层
 
@@ -37,14 +37,14 @@
 RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
 - 列表文件：[`lists/03-gnss-data.md`](../lists/03-gnss-data.md)
-- 当前条目数：**117**
+- 当前条目数：**119**
 
 ## `gnss-positioning` — 精密定位
 
 SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
 - 列表文件：[`lists/04-gnss-positioning.md`](../lists/04-gnss-positioning.md)
-- 当前条目数：**89**
+- 当前条目数：**94**
 
 ## `orbit-clock` — 轨道与钟差
 
@@ -72,21 +72,21 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 手机/嵌入式上的 GNSS 测试、原始测量记录与简易定位。
 
 - 列表文件：[`lists/08-mobile-apps.md`](../lists/08-mobile-apps.md)
-- 当前条目数：**21**
+- 当前条目数：**22**
 
 ## `tools-learning` — 学习资源与工具
 
 awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
 - 列表文件：[`lists/09-tools-learning.md`](../lists/09-tools-learning.md)
-- 当前条目数：**36**
+- 当前条目数：**39**
 
 ## `gnss-datasets` — GNSS 数据源
 
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
 - 列表文件：[`lists/10-gnss-datasets.md`](../lists/10-gnss-datasets.md)
-- 当前条目数：**124**
+- 当前条目数：**125**
 
 ## 与用户仓库的关系标记
 

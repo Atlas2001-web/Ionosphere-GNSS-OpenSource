@@ -318,3 +318,10 @@
 - 当前条目：**802**
 - 分类计数：{'ionosphere': 240, 'troposphere': 37, 'gnss-data': 117, 'gnss-positioning': 89, 'orbit-clock': 14, 'navigation-ins': 63, 'gnss-sdr': 61, 'mobile-apps': 21, 'tools-learning': 36, 'gnss-datasets': 124}
 - 详见 `research/routine_finds_20260924e.json`
+
+## 例行检索补录（2026-09-24f）
+
+- 新增 **14** 条（RobustGNSS/PrNet/igrf/rinex-adapter/GSC-OSNMA/Earthdata-MGEX 等）
+- 当前条目：**816**
+- 分类计数：{'ionosphere': 242, 'troposphere': 37, 'gnss-data': 119, 'gnss-positioning': 94, 'orbit-clock': 14, 'navigation-ins': 63, 'gnss-sdr': 61, 'mobile-apps': 22, 'tools-learning': 39, 'gnss-datasets': 125}
+- 详见 `research/routine_finds_20260924f.json`

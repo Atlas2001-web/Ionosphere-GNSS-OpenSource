@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> **240** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **242** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -101,7 +101,9 @@ yujieqing 仓库：为电离层层析准备几何/射线矩阵相关代码，可
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [igrf](https://github.com/space-physics/igrf) | igrf：IGRF13 地磁模型 Python/Matlab 接口 | Python | 77 | 🏷️ 高校实验室 |
 | [GEMINI3D](https://github.com/gemini3d/gemini3d) | GEMINI3D：三维电离层物理模式 | Fortran | 69 | 🏷️ 高校实验室 |
+| [wmm2020](https://github.com/space-physics/wmm2020) | wmm2020：世界磁模型 WMM2020 Python 接口 | Python | 29 | 🏷️ 高校实验室 |
 | [GITM](https://github.com/GITMCode/GITM) | GITM：全球电离层-热层模式社区 Fortran 源码 | Fortran | 28 | 🏷️ 高校实验室 |
 | [Aether-IT-model](https://github.com/AetherModel/Aether) | Aether：热层-电离层耦合物理模式（非 PPP-RTK AETHER） | C++ | 27 | 🏷️ 高校实验室 |
 | [TIE-GCM](https://github.com/NCAR/tiegcm) | TIE-GCM：NCAR 热层-电离层-电动力学环流模式 | Fortran | 27 | 🏷️ 官方 |
@@ -129,12 +131,26 @@ yujieqing 仓库：为电离层层析准备几何/射线矩阵相关代码，可
 
 ### 详细说明
 
+#### [igrf](https://github.com/space-physics/igrf)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：MIT · 星标约：77 · 宿主：github
+
+space-physics 对 IGRF13 的 Python/Matlab 接口，常用于电离层/磁层研究与 GNSS 相关地磁校正对照。MIT 许可；与 hwm93、msise00、ocbpy 等空间物理工具互补。模型系数随 IGRF 代际更新，请核对仓库绑定的世代与引用方式。
+
 #### [GEMINI3D](https://github.com/gemini3d/gemini3d)  
 *🏷️ 高校实验室*
 
 语言：Fortran · 许可：Apache-2.0 · 星标约：69 · 宿主：github
 
 GEMINI3D 是面向电离层的三维流体电动力学数值模式，用 Fortran 求解等离子体密度、速度与电场等，常用于极光区、不规则体和无线电传播相关的物理仿真。输入通常包括中性大气背景、太阳/地磁驱动与网格配置；输出为三维电子密度与相关场量的时序场。对 GNSS 用户而言，它不是直接从 RINEX 算 TEC 的工具，而是提供物理一致性的电子密度场，可再投影为 STEC/VTEC 做对比实验。局限：需要编译与并行计算资源，参数调校门槛高，不适合当作日常 GIM 生产流水线。
+
+#### [wmm2020](https://github.com/space-physics/wmm2020)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：public-domain · 星标约：29 · 宿主：github
+
+space-physics 对 NOAA/NGA World Magnetic Model 2020 的 Python 封装，用于磁偏角/磁倾角等计算，辅助导航与电离层相关研究。上游 WMM 源码为美国政府公有领域；封装层许可见仓库。注意模型有效年代，过期后应换用更新的 WMM 世代。
 
 #### [GITM](https://github.com/GITMCode/GITM)  
 *🏷️ 高校实验室*

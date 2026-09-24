@@ -331,3 +331,12 @@
 - Focus after NMEA/portal-heavy 24d: navigation-ins (VINS-Fusion/Mono, EKF_IMU_GPS), gnss-sdr (LimeGPS/pluto-gps-sim), troposphere (ITU-Rpy/FresnelMaps), orbit-clock (Orekit), mobile (gsdc2023), RTK (TouchRTKStation), SBAS portals
 - Skipped: TrigNet/AFREF/SAPOS/SOI 404, NMEA libs just added, multi-GNSS-FCB no LICENSE, GNSS-Radar no license, bladeGPS (LimeGPS enough), tudatpy (Orekit covers orbit niche), beidou.gov.cn unreachable from box
 - Merge safety: append-only from HEAD; UPDATED=0; blanking vs HEAD=0
+
+## Routine pass 2026-09-24f
+
+- Catalog size before: **802**; after merge: **816** (+14)
+- Finds file: `research/routine_finds_20260924f.json`
+- Method: deep software dig (robust/neural PVT, RINEX QC edit, IGRF/WMM, Rokubun tutorials) + GSC ICD/OSNMA + Earthdata MGEX; `gh api`+`curl`; dedup vs PROJECTS.json and all `routine_finds_*.json`
+- Avoided: NMEA libs, VINS*, LimeGPS/pluto, WAAS/EGNOS/GLONASS-IAC, Orekit, saturated major portals
+- Skipped: TrigNet/AFREF/SAPOS/beidou.gov.cn, NavDecoder no license, Spectre (non-GNSS RF), PyGeodesy no SPDX, general geodesy JS (weak GNSS fit), bladeGPS (SDR family just covered), IGAC deep CORS pages unreachable
+- Merge safety: append-only; UPDATED=0; blanking vs HEAD=0

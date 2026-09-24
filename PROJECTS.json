@@ -5,18 +5,18 @@
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
   "generated": "2026-09-24",
-  "project_count": 802,
+  "project_count": 816,
   "counts_by_category": {
-    "gnss-data": 117,
-    "gnss-datasets": 124,
-    "gnss-positioning": 89,
-    "gnss-sdr": 61,
-    "ionosphere": 240,
-    "mobile-apps": 21,
-    "navigation-ins": 63,
+    "ionosphere": 242,
+    "troposphere": 37,
+    "gnss-data": 119,
+    "gnss-positioning": 94,
     "orbit-clock": 14,
-    "tools-learning": 36,
-    "troposphere": 37
+    "navigation-ins": 63,
+    "gnss-sdr": 61,
+    "mobile-apps": 22,
+    "tools-learning": 39,
+    "gnss-datasets": 125
   },
   "projects": [
     {
@@ -15659,12 +15659,292 @@
       "host": "official_site",
       "provenance": "official",
       "one_liner_zh": "GLONASS IAC：官方星座与产品信息服务门户"
+    },
+    {
+      "name": "RobustGNSS",
+      "url": "https://github.com/wvu-navLab/RobustGNSS",
+      "desc_zh": "WVU navLab：因子图稳健 GNSS 处理研究代码",
+      "analysis_zh": "西弗吉尼亚大学导航实验室公开的稳健 GNSS 处理实现，基于因子图框架抑制粗差与非高斯噪声。MIT 许可；与同实验室 PPP-BayesTree、ICE 形成系列。偏论文复现与方法对照，非开箱测地生产链；依赖与示例数据见仓库，部署前需核对编译环境。",
+      "language": "C++",
+      "license": "MIT",
+      "category": "gnss-positioning",
+      "subcategory": "因子图",
+      "markers": [
+        "routine-2026-09-24f"
+      ],
+      "stars_approx": 149,
+      "source": "routine-finds-20260924f",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "RobustGNSS：因子图稳健 GNSS 处理研究代码"
+    },
+    {
+      "name": "PrNet",
+      "url": "https://github.com/AILocAR/PrNet",
+      "desc_zh": "神经网络伪距改正（智能手机 GNSS 场景）",
+      "analysis_zh": "AILocAR 提出的 Neural Pseudorange Correction，用学习模型改正手机等低成本 GNSS 伪距偏差。Apache-2.0；衔接 Android 原始观测与城市峡谷定位研究。训练数据与推理配置见仓库；非物理完好性替代，生产需独立质控与完好性设计。",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "category": "gnss-positioning",
+      "subcategory": "PVT",
+      "markers": [
+        "routine-2026-09-24f"
+      ],
+      "stars_approx": 30,
+      "source": "routine-finds-20260924f",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "PrNet：神经网络伪距改正（手机 GNSS）"
+    },
+    {
+      "name": "E2EPrNet",
+      "url": "https://github.com/AILocAR/E2EPrNet",
+      "desc_zh": "端到端神经伪距改正网络（PrNet 后续）",
+      "analysis_zh": "AILocAR 在 PrNet 之后的端到端神经伪距改正实现，把改正与定位环节更紧耦合。Apache-2.0；星级不高但与 PrNet/NeRC 同谱系，便于对照实验。依赖与复现脚本见仓库 README，适合学习型定位研究而非工程级 RTK/PPP 替代。",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "category": "gnss-positioning",
+      "subcategory": "PVT",
+      "markers": [
+        "routine-2026-09-24f"
+      ],
+      "stars_approx": 6,
+      "source": "routine-finds-20260924f",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "E2EPrNet：端到端神经伪距改正实现"
+    },
+    {
+      "name": "positional",
+      "url": "https://github.com/mtrewartha/positional",
+      "desc_zh": "Android 当前位置与卫星信息展示开源 App",
+      "analysis_zh": "轻量 Android 应用，展示当前位置、坐标与相关卫星/定位信息，适合教学演示与野外快速查看。GPL-3.0；与 GPSTest、GNSS_Compare 相比功能更简洁。非原始测量记录器，科研级 RINEX/原始观测量请另用 GnssLogger 类工具。",
+      "language": "Kotlin",
+      "license": "GPL-3.0",
+      "category": "mobile-apps",
+      "subcategory": "Android",
+      "markers": [
+        "routine-2026-09-24f"
+      ],
+      "stars_approx": 61,
+      "source": "routine-finds-20260924f",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "positional：Android 位置与卫星信息简易 App"
+    },
+    {
+      "name": "pynex",
+      "url": "https://github.com/swift-nav/pynex",
+      "desc_zh": "Swift Navigation：Python RINEX 实用工具（已归档）",
+      "analysis_zh": "Swift Navigation 的 pyNEX，提供 Python RINEX 实用库与命令行工具，仓库已 archived 但仍可作历史参考与脚本改造起点。LGPL-3.0；与 georinex、nav-solutions/rinex 等活跃库对照。新项目优先选仍维护的解析器，本条保留归档溯源价值。",
+      "language": "Python",
+      "license": "LGPL-3.0",
+      "category": "gnss-data",
+      "subcategory": "RINEX工具",
+      "markers": [
+        "routine-2026-09-24f"
+      ],
+      "stars_approx": 21,
+      "source": "routine-finds-20260924f",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "pynex：Swift 归档的 Python RINEX 工具集"
+    },
+    {
+      "name": "igrf",
+      "url": "https://github.com/space-physics/igrf",
+      "desc_zh": "国际地磁参考场 IGRF13 的 Python/Matlab 封装",
+      "analysis_zh": "space-physics 对 IGRF13 的 Python/Matlab 接口，常用于电离层/磁层研究与 GNSS 相关地磁校正对照。MIT 许可；与 hwm93、msise00、ocbpy 等空间物理工具互补。模型系数随 IGRF 代际更新，请核对仓库绑定的世代与引用方式。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "routine-2026-09-24f"
+      ],
+      "stars_approx": 77,
+      "source": "routine-finds-20260924f",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "igrf：IGRF13 地磁模型 Python/Matlab 接口"
+    },
+    {
+      "name": "wmm2020",
+      "url": "https://github.com/space-physics/wmm2020",
+      "desc_zh": "世界磁模型 WMM2020 的 Python 封装",
+      "analysis_zh": "space-physics 对 NOAA/NGA World Magnetic Model 2020 的 Python 封装，用于磁偏角/磁倾角等计算，辅助导航与电离层相关研究。上游 WMM 源码为美国政府公有领域；封装层许可见仓库。注意模型有效年代，过期后应换用更新的 WMM 世代。",
+      "language": "Python",
+      "license": "public-domain",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "routine-2026-09-24f"
+      ],
+      "stars_approx": 29,
+      "source": "routine-finds-20260924f",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "wmm2020：世界磁模型 WMM2020 Python 接口"
+    },
+    {
+      "name": "rinex-adapter",
+      "url": "https://github.com/J-kroeger/rinex-adapter",
+      "desc_zh": "批量修正 RINEX 头、裁剪时段与重采样（汉诺威大学）",
+      "analysis_zh": "Leibniz Universität Hannover 地球测量研究所工具，批量修正 RINEX 头、裁剪时间窗并改变采样间隔，服务质检与预处理流水线。LICENSE 为 GPL-3.0（GitHub 常显示 NOASSERTION）。与 pcc-explorer/atx-scanner 同系列；星级低但填补批处理编辑缺口。",
+      "language": "Python",
+      "license": "GPL-3.0",
+      "category": "gnss-data",
+      "subcategory": "RINEX头编辑/重命名",
+      "markers": [
+        "routine-2026-09-24f"
+      ],
+      "stars_approx": 0,
+      "source": "routine-finds-20260924f",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "rinex-adapter：RINEX 头修正/裁剪/重采样批处理"
+    },
+    {
+      "name": "Robust-GNSS-FG-GMM-TD",
+      "url": "https://github.com/TMBOC/Robust-GNSS-Estimation-using-FG-GMM-TD",
+      "desc_zh": "因子图+改进高斯混合+变换域的稳健 GNSS 估计代码",
+      "analysis_zh": "配套 ION ITM 2020 论文的开源实现：因子图、改进高斯混合模型与变换域方法做稳健 GNSS 估计。MIT 许可；适合粗差/非高斯场景方法对照。偏学术复现，工程集成需自行整理接口与数据格式，星级不高但主题与 RobustGNSS 互补。",
+      "language": "MATLAB",
+      "license": "MIT",
+      "category": "gnss-positioning",
+      "subcategory": "因子图",
+      "markers": [
+        "routine-2026-09-24f"
+      ],
+      "stars_approx": 10,
+      "source": "routine-finds-20260924f",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "FG-GMM-TD：因子图与混合模型稳健 GNSS 估计"
+    },
+    {
+      "name": "gnss_tutorials",
+      "url": "https://github.com/rokubun/gnss_tutorials",
+      "desc_zh": "Rokubun：Python/Jupyter GNSS 数据处理教程集",
+      "analysis_zh": "Rokubun 编写的 GNSS 数据处理 Jupyter 教程，覆盖从观测到基础解算的示范流程。MIT 许可；与 android_rinex 同机构，适合入门与课堂教学演示。内容随课程版本变化，生产流水线请改用仍在维护的库，并补齐自有质控步骤。",
+      "language": "Jupyter Notebook",
+      "license": "MIT",
+      "category": "tools-learning",
+      "subcategory": "课程笔记",
+      "markers": [
+        "routine-2026-09-24f"
+      ],
+      "stars_approx": 13,
+      "source": "routine-finds-20260924f",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "gnss_tutorials：Rokubun Python/Jupyter GNSS 教程"
+    },
+    {
+      "name": "GSC-Programme-Reference-Documents",
+      "url": "https://www.gsc-europa.eu/electronic-library/programme-reference-documents",
+      "desc_zh": "欧洲 GSC：Galileo/EGNOS 计划参考文件与 ICD 入口",
+      "analysis_zh": "欧洲 GNSS 服务中心电子图书馆中的 Programme Reference Documents，集中链向 Galileo/EGNOS 接口控制文件与计划级参考文档。官方 portal；做接收机/OSNMA/HAS 开发前的权威文档入口。具体 PDF 版本与下载条款以页面为准，需遵守欧盟文件分发条件。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "tools-learning",
+      "subcategory": "认证/完好性",
+      "markers": [
+        "routine-2026-09-24f"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924f",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "GSC 参考文件：Galileo/EGNOS ICD 与计划文档"
+    },
+    {
+      "name": "GSC-OSNMA-Service",
+      "url": "https://www.gsc-europa.eu/galileo/services/galileo-open-service-navigation-message-authentication-osnma",
+      "desc_zh": "欧洲 GSC：Galileo OSNMA 开放服务认证官方说明",
+      "analysis_zh": "GSC 关于 Galileo Open Service Navigation Message Authentication（OSNMA）的官方服务页，说明认证服务目标、状态与开发者资源入口。与 Algafix/OSNMA、galileo-osnma 代码条目互补；密钥与测试向量获取路径以站内指引为准，实施须遵循 GSC 条款。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "tools-learning",
+      "subcategory": "认证/完好性",
+      "markers": [
+        "routine-2026-09-24f"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924f",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "GSC OSNMA：Galileo 导航电文认证官方服务页"
+    },
+    {
+      "name": "Earthdata-MGEX",
+      "url": "https://www.earthdata.nasa.gov/data/space-geodesy-techniques/gnss/mgex-data-product",
+      "desc_zh": "NASA Earthdata：IGS MGEX 多 GNSS 试验数据产品页",
+      "analysis_zh": "CDDIS/Earthdata 上的 MGEX 数据产品说明与获取入口，对应 IGS Multi-GNSS Experiment 观测与产品。官方 portal；与 igs.org/mgex 介绍页互补，侧重 NASA 侧下载路径与 Earthdata 账号体系。批量下载常需 Earthdata Login，政策以页面为准。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "IGS产品下载",
+      "markers": [
+        "routine-2026-09-24f"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924f",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "Earthdata MGEX：NASA 侧多 GNSS 试验数据入口"
+    },
+    {
+      "name": "NeRC",
+      "url": "https://github.com/AILocAR/NeRC",
+      "desc_zh": "可微移动地平线定位中的神经测距改正",
+      "analysis_zh": "AILocAR 的 Neural Ranging Correction，结合可微移动地平线定位做测距改正，面向学习型 GNSS 定位链条。Apache-2.0；与 PrNet/E2EPrNet 同组，便于读论文复现。星级低、偏研究原型，工程部署需自备数据管线与评估指标。",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "category": "gnss-positioning",
+      "subcategory": "PVT",
+      "markers": [
+        "routine-2026-09-24f"
+      ],
+      "stars_approx": 6,
+      "source": "routine-finds-20260924f",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "NeRC：可微地平线定位中的神经测距改正"
     }
   ],
   "provenance_counts": {
-    "official": 230,
-    "academic_lab": 276,
-    "personal_community": 296
+    "official": 233,
+    "academic_lab": 284,
+    "personal_community": 299
   },
   "updated": "2026-09-24"
 }

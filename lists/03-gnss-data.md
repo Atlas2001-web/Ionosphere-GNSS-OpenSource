@@ -1,5 +1,5 @@
 # GNSS 数据与格式 / GNSS Data I/O
-> **117** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **119** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
@@ -643,11 +643,19 @@ GNSSNexus 下的 RINEX 组件，适合特定工具链内使用。选型时与 ge
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [pynex](https://github.com/swift-nav/pynex) | pynex：Swift 归档的 Python RINEX 工具集 | Python | 21 | 🏷️ 个人社区 |
 | [uNavTools](https://github.com/IvAn190/uNavTools) | u-blox→RINEX 工具集，内置基于 CSSRlib 的 RTK/PPP | Python | 10 | 🏷️ 个人社区 |
 | [GFZRNX](https://www.gfz.de/en/section/space-geodetic-techniques/data-products-services/gfzrnx-gnss-toolbox) | GFZ 的 RINEX 检查/拼接/抽样工具箱（科研非商用免费） | binary toolkit | — | 🏷️ 官方 |
 | [GFZRNX-UserGuide](https://gnss.git-pages.gfz-potsdam.de/gfzrnx/) | GFZRNX 2.2 用户手册：任务、EULA 与 Hatanaka/统计等操作说明 | docs | — | 🏷️ 官方 |
 
 ### 详细说明
+
+#### [pynex](https://github.com/swift-nav/pynex)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：LGPL-3.0 · 星标约：21 · 宿主：github
+
+Swift Navigation 的 pyNEX，提供 Python RINEX 实用库与命令行工具，仓库已 archived 但仍可作历史参考与脚本改造起点。LGPL-3.0；与 georinex、nav-solutions/rinex 等活跃库对照。新项目优先选仍维护的解析器，本条保留归档溯源价值。
 
 #### [uNavTools](https://github.com/IvAn190/uNavTools)  
 *🏷️ 个人社区*
@@ -1044,6 +1052,7 @@ Rust 实现的 u-blox UBX 原始观测反序列化与 RINEX 采集工具，方�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [rinexmod](https://github.com/IPGP/rinexmod) | IPGP 批量修改 RINEX 头信息与长/短文件名（支持 Hatanaka 与 RINEX 2/3/4） | Python | 11 | 🏷️ 高校实验室 |
+| [rinex-adapter](https://github.com/J-kroeger/rinex-adapter) | rinex-adapter：RINEX 头修正/裁剪/重采样批处理 | Python | 0 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -1053,6 +1062,13 @@ Rust 实现的 u-blox UBX 原始观测反序列化与 RINEX 采集工具，方�
 语言：Python · 许可：GPL-3.0 · 星标约：11 · 宿主：github
 
 与 autorino 配套的元数据工具：批量改头、按站码重命名、支持压缩/非压缩及长短文件名约定，元数据可来自 sitelog、GeodesyML 或命令行。提供 PyPI 安装与 teqc+meta 类头信息速查辅助。专攻头文件与命名规范化，不做观测质量检核或定位。
+
+#### [rinex-adapter](https://github.com/J-kroeger/rinex-adapter)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：GPL-3.0 · 星标约：0 · 宿主：github
+
+Leibniz Universität Hannover 地球测量研究所工具，批量修正 RINEX 头、裁剪时间窗并改变采样间隔，服务质检与预处理流水线。LICENSE 为 GPL-3.0（GitHub 常显示 NOASSERTION）。与 pcc-explorer/atx-scanner 同系列；星级低但填补批处理编辑缺口。
 
 ## NTRIP/实时流转发
 

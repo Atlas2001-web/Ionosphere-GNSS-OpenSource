@@ -1,5 +1,5 @@
 # 精密定位 / Precise Positioning
-> **89** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **94** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
@@ -558,7 +558,10 @@ goGPS 的 Java 实现，便于嵌进 JVM 应用。功能气质同 MATLAB 版但�
 |---|---|---|---:|---|
 | [deep_gnss](https://github.com/Stanford-NavLab/deep_gnss) | deep_gnss：NavLab 深度学习 GNSS 定位实验代码 | Python | 127 | 🏷️ 高校实验室 |
 | [snapshot-gnss-algorithms](https://github.com/JonasBchrt/snapshot-gnss-algorithms) | snapshot-gnss-algorithms：短快照 GNSS 定位算法集 | Python | 36 | 🏷️ 个人社区 |
+| [PrNet](https://github.com/AILocAR/PrNet) | PrNet：神经网络伪距改正（手机 GNSS） | Python | 30 | 🏷️ 高校实验室 |
+| [E2EPrNet](https://github.com/AILocAR/E2EPrNet) | E2EPrNet：端到端神经伪距改正实现 | Python | 6 | 🏷️ 高校实验室 |
 | [gps_pvt](https://github.com/fenrir-naru/gps_pvt) | gps_pvt：Ruby 可控 PVT + RINEX/SP3/UBX 解析 | C++ | 6 | 🏷️ 个人社区 |
+| [NeRC](https://github.com/AILocAR/NeRC) | NeRC：可微地平线定位中的神经测距改正 | Python | 6 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -576,12 +579,33 @@ Stanford NavLab 公开的基于深度神经网络的 GNSS 位置估计仓库，�
 
 面向短时 GNSS snapshot 观测的定位估计算法实现，适用于功耗受限或间歇采样场景。ISC 许可，Python 为主。与连续跟踪接收机流水线不同；算法假设与样例数据见仓库，可与 SoftGNSS、PocketSDR 等 SDR 前端组合做快照定位试验，注意历元与辅助数据对齐。
 
+#### [PrNet](https://github.com/AILocAR/PrNet)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：Apache-2.0 · 星标约：30 · 宿主：github
+
+AILocAR 提出的 Neural Pseudorange Correction，用学习模型改正手机等低成本 GNSS 伪距偏差。Apache-2.0；衔接 Android 原始观测与城市峡谷定位研究。训练数据与推理配置见仓库；非物理完好性替代，生产需独立质控与完好性设计。
+
+#### [E2EPrNet](https://github.com/AILocAR/E2EPrNet)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：Apache-2.0 · 星标约：6 · 宿主：github
+
+AILocAR 在 PrNet 之后的端到端神经伪距改正实现，把改正与定位环节更紧耦合。Apache-2.0；星级不高但与 PrNet/NeRC 同谱系，便于对照实验。依赖与复现脚本见仓库 README，适合学习型定位研究而非工程级 RTK/PPP 替代。
+
 #### [gps_pvt](https://github.com/fenrir-naru/gps_pvt)  
 *🏷️ 个人社区*
 
 语言：C++ · 许可：— · 星标约：6 · 宿主：github
 
 提供可在 Ruby 下控制的 PVT，并解析 RINEX/SP3/ANTEX/UBX。适合脚本自动化爱好者。小众语言生态限制社区体量；精密 PPP-AR 请看专用引擎。
+
+#### [NeRC](https://github.com/AILocAR/NeRC)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：Apache-2.0 · 星标约：6 · 宿主：github
+
+AILocAR 的 Neural Ranging Correction，结合可微移动地平线定位做测距改正，面向学习型 GNSS 定位链条。Apache-2.0；与 PrNet/E2EPrNet 同组，便于读论文复现。星级低、偏研究原型，工程部署需自备数据管线与评估指标。
 
 ## 因子图RTK
 
@@ -617,11 +641,20 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [RobustGNSS](https://github.com/wvu-navLab/RobustGNSS) | RobustGNSS：因子图稳健 GNSS 处理研究代码 | C++ | 149 | 🏷️ 高校实验室 |
 | [gtsam_gnss](https://github.com/taroz/gtsam_gnss) | gtsam_gnss：GTSAM GNSS 因子 + MATLAB 包装 | C++ | 136 | 🏷️ 个人社区 |
 | [ICE-Incremental-Covariance](https://github.com/wvu-navLab/ICE) | ICE：增量协方差估计稳健定位研究代码 | Shell | 60 | 🏷️ 高校实验室 |
 | [GraphGNSSLib_LEO](https://github.com/PolyU-TASLAB/GraphGNSSLib_LEO) | GraphGNSSLib_LEO：GNSS+LEO 因子图定位开源包 | C++ | 18 | 🏷️ 高校实验室 |
+| [Robust-GNSS-FG-GMM-TD](https://github.com/TMBOC/Robust-GNSS-Estimation-using-FG-GMM-TD) | FG-GMM-TD：因子图与混合模型稳健 GNSS 估计 | MATLAB | 10 | 🏷️ 高校实验室 |
 
 ### 详细说明
+
+#### [RobustGNSS](https://github.com/wvu-navLab/RobustGNSS)  
+*🏷️ 高校实验室*
+
+语言：C++ · 许可：MIT · 星标约：149 · 宿主：github
+
+西弗吉尼亚大学导航实验室公开的稳健 GNSS 处理实现，基于因子图框架抑制粗差与非高斯噪声。MIT 许可；与同实验室 PPP-BayesTree、ICE 形成系列。偏论文复现与方法对照，非开箱测地生产链；依赖与示例数据见仓库，部署前需核对编译环境。
 
 #### [gtsam_gnss](https://github.com/taroz/gtsam_gnss)  
 *🏷️ 个人社区*
@@ -643,6 +676,13 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 语言：C++ · 许可：MIT · 星标约：18 · 宿主：github
 
 香港理工 TASLab 在 GraphGNSSLib 基础上扩展的 GNSS–LEO 耦合定位包，用因子图融合 GNSS 实测与 LEO 仿真伪距/多普勒，并与 SPP 对比。面向城市峡谷等场景研究，依赖 ROS/Ceres 与 RTKLIB 读 RINEX。LEO 观测量多为仿真，实网可用性取决于数据准备。
+
+#### [Robust-GNSS-FG-GMM-TD](https://github.com/TMBOC/Robust-GNSS-Estimation-using-FG-GMM-TD)  
+*🏷️ 高校实验室*
+
+语言：MATLAB · 许可：MIT · 星标约：10 · 宿主：github
+
+配套 ION ITM 2020 论文的开源实现：因子图、改进高斯混合模型与变换域方法做稳健 GNSS 估计。MIT 许可；适合粗差/非高斯场景方法对照。偏学术复现，工程集成需自行整理接口与数据格式，星级不高但主题与 RobustGNSS 互补。
 
 ## PPP-RTK/HAS
 

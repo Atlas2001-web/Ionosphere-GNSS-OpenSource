@@ -1,5 +1,5 @@
 # GNSS 数据源 / GNSS Datasets
-> **124** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **125** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
@@ -441,6 +441,7 @@ GLONASS IAC 英文站，提供星座状态、产品与系统介绍入口，是�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [CODE-AIUB-Product-Download](https://www.aiub.unibe.ch/download/) | AIUB/CODE 产品 HTTPS 下载浏览器（含 CODE/ionex/ionosphere 等目录） | data-portal | — | 🏷️ 官方 |
+| [Earthdata-MGEX](https://www.earthdata.nasa.gov/data/space-geodesy-techniques/gnss/mgex-data-product) | Earthdata MGEX：NASA 侧多 GNSS 试验数据入口 | data-portal | — | 🏷️ 官方 |
 | [JPL-GPS-Time-Series](https://sideshow.jpl.nasa.gov/post/series.html) | JPL GPS 时序：sideshow 全球站坐标序列入口 | data-portal | — | 🏷️ 官方 |
 | [UNR-NGL](https://geodesy.unr.edu/) | UNR NGL：全球 GPS 时序与形变产品门户 | data-portal | — | 🏷️ 高校实验室 |
 
@@ -452,6 +453,13 @@ GLONASS IAC 英文站，提供星座状态、产品与系统介绍入口，是�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 伯尔尼大学天文研究所 CODE 分析中心的官方产品文件浏览器。可进入 CODE、CODE_MGEX、ionex、ionosphere 等目录获取最终/快速/超快速轨道钟差与 IONEX 等。FTP 已弃用，请改用本 HTTPS 入口；与已收录的 CODE AC 介绍页互补，本条聚焦可下载产品树。
+
+#### [Earthdata-MGEX](https://www.earthdata.nasa.gov/data/space-geodesy-techniques/gnss/mgex-data-product)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+CDDIS/Earthdata 上的 MGEX 数据产品说明与获取入口，对应 IGS Multi-GNSS Experiment 观测与产品。官方 portal；与 igs.org/mgex 介绍页互补，侧重 NASA 侧下载路径与 Earthdata 账号体系。批量下载常需 Earthdata Login，政策以页面为准。
 
 #### [JPL-GPS-Time-Series](https://sideshow.jpl.nasa.gov/post/series.html)  
 *🏷️ 官方*
