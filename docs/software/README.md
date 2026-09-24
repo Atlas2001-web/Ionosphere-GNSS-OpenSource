@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **14 篇**操作手册（合计 **3980** 行，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **16 篇**操作手册（合计 **4413** 行，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -15,7 +15,7 @@
 | **软件手册质检**（本 bot） | 已短硬篇的**二遍质检补洞**（错 I/O、过时旗标、仍薄点）；优先 `georinex` / `rtklib` / `bnc` / `gfzrnx` / `pytecgg` | 勿大改「仍薄/缺篇」同事正在写的文件 |
 | **软件用法讲解**（并行） | 写 **尚未短硬 / 缺篇** 新手册 | 勿重写下表已标「已短硬」全文（补丁可协调） |
 
-**下一优先（质检二遍，按弱→强）：** `gfzrnx`（登记受限·禁臆造 stdout）→ `pytecgg`（校准链仍缺全日实跑 veq）→ 其余受限篇仅 guide 对齐。**勿碰**同事认领的 `cssrlib.md` / `gnss-tec.md`。  
+**下一优先（质检二遍，按弱→强）：** `gfzrnx`（登记受限·禁臆造 stdout）→ `pytecgg`（校准链仍缺全日实跑 veq）→ 其余受限篇仅 guide 对齐。新缺篇 **cssrlib** / **gnss-tec** 已短硬入库（用法讲解）；质检二遍可排期。  
 **sh-gim：** 保持短边界，禁止注水扩写。  
 **停写条件：** 剩余皆 PASS，或仅剩 sh-gim 边界 / 登记受限且无进一步真实 I/O 增益。
 
@@ -38,7 +38,9 @@
 | 11 | [bkg-ntripcaster.md](./bkg-ntripcaster.md) | BKG Caster 播发 | 379 | **已短硬** R4 [`bfcd626`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/bfcd626) · 本机 2.0.49 |
 | 12 | [rtklib.md](./rtklib.md) | RTK / PPP CLI | 287 | **已短硬** R1+R7二遍 · apt 2.4.3 b34 / EX 2.5.1（PATH 陷阱已写清） |
 | 13 | [pride-pppar.md](./pride-pppar.md) | PPP-AR | 289 | **已短硬** R6 [`8fe8b6d`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/8fe8b6d) · 本机 3.2.11（`-V`/`-H`/会话头实跑；WUM FTPS 未出解） |
-| 14 | [iono-scintillation.md](./iono-scintillation.md) | MATLAB 闪烁仿真 | 197 | **已短硬** R2 [`246103d`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/246103d) · **环境受限**（质检机无 MATLAB；不臆造控制台） |
+| 14 | [cssrlib.md](./cssrlib.md) | Python PPP / PPP-RTK（CLAS/HAS/BDS） | 239 | **已短硬** · 本机 1.2.1 + cssrlib-data SPP 60 历元实跑（CLAS/HAS 未跑完） |
+| 15 | [gnss-tec.md](./gnss-tec.md) | RINEX → 相对斜 TEC | 194 | **已短硬** · 本机 1.1.1 + `14601736.18o` 实跑 |
+| 16 | [iono-scintillation.md](./iono-scintillation.md) | MATLAB 闪烁仿真 | 197 | **已短硬** R2 [`246103d`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/246103d) · **环境受限**（质检机无 MATLAB；不臆造控制台） |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -54,6 +56,7 @@
 | 改/拼/抽稀 RINEX | [gfzrnx.md](./gfzrnx.md) |
 | 观测 QC 报告 | [anubis.md](./anubis.md) |
 | 校准 sTEC/vTEC | [pytecgg.md](./pytecgg.md) |
+| 粗相对斜 TEC（无 DCB） | [gnss-tec.md](./gnss-tec.md) |
 | ROTI / AATR / ΔTEC | [ionomoni.md](./ionomoni.md) · [oasis-roti.md](./oasis-roti.md) |
 | 读 IONEX GIM | [ionex-gim.md](./ionex-gim.md) |
 | 球谐 GIM 边界说明 | [sh-gim.md](./sh-gim.md) |
@@ -62,6 +65,7 @@
 | 自建多用户 Caster | [bkg-ntripcaster.md](./bkg-ntripcaster.md) |
 | RTK / 浮点 PPP | [rtklib.md](./rtklib.md) |
 | PPP-AR | [pride-pppar.md](./pride-pppar.md) |
+| Python 开放 PPP/PPP-RTK（CLAS/HAS） | [cssrlib.md](./cssrlib.md) |
 | 闪烁仿真（MATLAB） | [iono-scintillation.md](./iono-scintillation.md) |
 
 ---
@@ -70,7 +74,7 @@
 
 ### A · 一日 TEC
 
-[data-access](../data-access.md) → [georinex](./georinex.md) →（可选 [anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [pytecgg](./pytecgg.md) → [ionex-gim](./ionex-gim.md) 对照 → 教程 [02](../tutorials/02-gnss-dualfreq-tec.md)/[09](../tutorials/09-dcb-biases-deep.md)/[16](../tutorials/16-practice-one-day-tec.md)
+[data-access](../data-access.md) → [georinex](./georinex.md) →（可选 [anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)/[gnss-tec](./gnss-tec.md) 粗相对 TEC）→ [pytecgg](./pytecgg.md) → [ionex-gim](./ionex-gim.md) 对照 → 教程 [02](../tutorials/02-gnss-dualfreq-tec.md)/[09](../tutorials/09-dcb-biases-deep.md)/[16](../tutorials/16-practice-one-day-tec.md)
 
 ### B · 不规则体 / 磁暴
 
@@ -82,7 +86,7 @@ RINEX → [ionomoni](./ionomoni.md) 或 [oasis-roti](./oasis-roti.md) → 教程
 
 ### D · 发表级坐标 / ZTD
 
-QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒烟 → [pride-pppar](./pride-pppar.md) + 精密产品 → 教程 [06](../tutorials/06-iono-positioning.md)
+QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒烟 →（开放服务教学 [cssrlib](./cssrlib.md)）→ [pride-pppar](./pride-pppar.md) + 精密产品 → 教程 [06](../tutorials/06-iono-positioning.md)
 
 ### E · 理解 GIM（非端到端自建）
 
@@ -102,7 +106,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
-最近质检（ops）：**R7 二遍**已补 `georinex`（NAV 实跑）/`rtklib`（apt↔EX PATH）/`bnc`（REQC vs NTRIP 标签）。Round6：**anubis**（登记受限）+ **pride-pppar**（3.2.11 实跑头；FTPS 未出解）；**sh-gim 未扩**。Round5：**pygnssutils**；Round4：**bkg-ntripcaster**；Round3：**ionex-gim** / **oasis-roti** / **ionomoni**；Round2：**bnc** / **georinex** / **iono-scintillation**；Round1：**gfzrnx** / **rtklib** / **pytecgg**。行数以本表 `wc -l` 为准。
+最近新增（用法讲解）：**cssrlib**（1.2.1 SPP 实跑）+ **gnss-tec**（1.1.1 相对 TEC 实跑）。最近质检（ops）：**R7 二遍**已补 `georinex`（NAV 实跑）/`rtklib`（apt↔EX PATH）/`bnc`（REQC vs NTRIP 标签）。Round6：**anubis**（登记受限）+ **pride-pppar**（3.2.11 实跑头；FTPS 未出解）；**sh-gim 未扩**。Round5：**pygnssutils**；Round4：**bkg-ntripcaster**；Round3：**ionex-gim** / **oasis-roti** / **ionomoni**；Round2：**bnc** / **georinex** / **iono-scintillation**；Round1：**gfzrnx** / **rtklib** / **pytecgg**。行数以本表 `wc -l` 为准。
 
 ## 推荐阅读顺序（新人）
 
@@ -137,11 +141,11 @@ data-access
    ├─ gfzrnx (可选清洗)
    ├─ anubis (门禁)
    ├─ georinex (探活)
-   ├─ pytecgg (路径 A)
+   ├─ gnss-tec / pytecgg (路径 A；粗相对→校准)
    ├─ oasis-roti / ionomoni (路径 B)
    ├─ ionex-gim (对照)
    ├─ pygnssutils / bnc / bkg-ntripcaster (路径 C)
-   └─ rtklib / pride-pppar (路径 D)
+   └─ cssrlib / rtklib / pride-pppar (路径 D)
 sh-gim：仅路径 E 边界，不串进 A/B 主链
 iono-scintillation：概念/仿真旁路，不替代实测 ROTI
 ```
@@ -152,10 +156,10 @@ iono-scintillation：概念/仿真旁路，不替代实测 ROTI
 
 | 教程 | 优先手册 |
 | --- | --- |
-| 02 / 16 | georinex · pytecgg |
+| 02 / 16 | georinex · gnss-tec · pytecgg |
 | 03 / 10 / 18 | ionex-gim · sh-gim(边界) |
 | 05 / 13 / 21 | oasis-roti · ionomoni · iono-scintillation |
-| 06 / 20 | rtklib · pride-pppar · ionomoni |
+| 06 / 20 | cssrlib · rtklib · pride-pppar · ionomoni |
 | 09 | pytecgg |
 
 ---
