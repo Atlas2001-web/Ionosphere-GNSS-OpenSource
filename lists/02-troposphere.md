@@ -33,7 +33,7 @@ Surrey TechDemoSat-1（MERRByS）星载 GNSS-R 的 Python/Jupyter 示例，演�
 | [geodezyx](https://github.com/IPGP/geodezyx) | geodezyx：IPGP 大地测量/地球物理 Python 工具箱 | Python | 33 | 🏷️ 高校实验室 |
 | [PW_from_GPS](https://github.com/ZiskinZiv/PW_from_GPS) | PW_from_GPS：GPS 可降水量（PWV）分析与 ML 工具 | Python | 22 | 🏷️ 个人社区 |
 | [pwv_kpno](https://github.com/mwvgroup/pwv_kpno) | pwv_kpno：SuomiNet GPS PWV 驱动的透过率模型 | Python | 11 | 🏷️ 高校实验室 |
-| [OpATOM](https://github.com/benceturak/GeoPack/tree/GPSTomographyToolbox/GPSTomographyToolbox) | 布达佩斯理工 OpATOM：Python GNSS 对流层湿折射率层析（MART）工具箱 | Python | 3 | 🏷️ 高校实验室 |
+| [OpATOM](https://github.com/benceturak/GeoPack/tree/GPSTomographyToolbox/GPSTomographyToolbox) | OpATOM：BME GNSS 对流层湿折射率 MART 层析工具箱 | Python | 3 | 🏷️ 高校实验室 |
 | [ATom-TUWien](https://github.com/GregorMoeller/ATom) | TU Wien MATLAB：GNSS 大气层析与湿折射率三维重建（含 GUI） | MATLAB | 2 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -392,7 +392,7 @@ Python 包生成斜路径干/湿延迟（STD/SWD）以及基于 GPT/VMF 的模�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [UNB3m](https://github.com/ohm1122/UNB3m) | UNB3m 中性大气延迟模型 | — | 3 | 🏷️ 个人社区 ★ |
+| [UNB3m](https://github.com/ohm1122/UNB3m) | UNB3m：UNB 中性大气延迟模型实现 | — | 3 | 🏷️ 个人社区 ★ |
 
 ### 详细说明
 

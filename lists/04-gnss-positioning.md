@@ -139,8 +139,8 @@ Python/Jupyter 多星座 PPP-RTK 试验箱，强调可读与易移植，便于�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Easy4B2b](https://github.com/alxanderjiang/Easy4B2b) | Python 易移植 PPP-B2b 工具箱 | Jupyter Notebook | 0 | 🏷️ 个人社区 |
-| [RTKNAVI-BH](https://github.com/cigit001/RTKNAVI-BH) | RTKNAVI 扩展：实时 PPP-B2b + HAS | — | 0 | 🏷️ 个人社区 |
+| [Easy4B2b](https://github.com/alxanderjiang/Easy4B2b) | Easy4B2b：易移植 Python PPP-B2b 工具箱 | Jupyter Notebook | 0 | 🏷️ 个人社区 |
+| [RTKNAVI-BH](https://github.com/cigit001/RTKNAVI-BH) | RTKNAVI-BH：RTKNAVI 扩展实时 PPP-B2b 与 HAS | — | 0 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -476,7 +476,7 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 | [OpenRTK](https://github.com/AndreasArendt/OpenRTK) | OpenRTK：轻量开源精密 GNSS/RTK | C++ | 23 | 🏷️ 个人社区 |
 | [HPRTK](https://github.com/yxw027/HPRTK) | HPRTK：高精度实时定位 C++ 工程参考 | C++ | 17 | 🏷️ 高校实验室 |
 | [RTK](https://github.com/GYH-WHU/RTK) | RTK：GPS/BDS 双系统浮点/固定 RTK 教学实现 | C++ | 11 | 🏷️ 高校实验室 |
-| [GNSSRTK](https://github.com/SupakunZ/GNSS_RTK) | AGV 用 GNSS-RTK 路径规划与车载显示（Python） | Python | 3 | 🏷️ 个人社区 |
+| [GNSSRTK](https://github.com/SupakunZ/GNSS_RTK) | GNSSRTK：AGV 路径规划与车载显示的 GNSS-RTK 程序 | Python | 3 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -696,7 +696,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [HASlib.jl](https://github.com/feanor12/HASlib.jl) | HASlib 的 Julia 包装 | Julia | 0 | 🏷️ 个人社区 |
+| [HASlib.jl](https://github.com/feanor12/HASlib.jl) | HASlib.jl：Galileo HAS 库的 Julia 包装 | Julia | 0 | 🏷️ 个人社区 |
 | [HASlibTestSuite](https://github.com/nlsfi/HASlibTestSuite) | 官方 HASlib 解码正确性测试套件 | — | 0 | 🏷️ 官方 |
 
 ### 详细说明

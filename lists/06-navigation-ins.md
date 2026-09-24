@@ -140,7 +140,7 @@ HKUST Aerial Robotics 发布的优化式多传感器状态估计器，在 VINS-M
 | [GINS](https://github.com/zhangwhu/GINS) | GINS：PPP-RTK 与惯导组合导航实现 | C | 21 | 🏷️ 高校实验室 |
 | [ImuGpsGuiding](https://github.com/JackJu-HIT/ImuGpsGuiding) | ImuGpsGuiding：ROS 下 IMU+GPS 点到点导引示例 | C++ | 20 | 🏷️ 高校实验室 |
 | [KF-GINS-Py](https://github.com/salmoshu/KF-GINS-Py) | KF-GINS-Py：KF-GINS 思路的 Python EKF 移植 | Python | 13 | 🏷️ 高校实验室 |
-| [Smart-UAV-Return-GNSS-Station](https://github.com/citec-spbu/Smart-UAV-Return-GNSS-Station) | GNSS/链路丢失时无人机智能返航相关代码 | C | 3 | 🏷️ 高校实验室 |
+| [Smart-UAV-Return-GNSS-Station](https://github.com/citec-spbu/Smart-UAV-Return-GNSS-Station) | Smart-UAV-Return-GNSS-Station：失联/失锁时 UAV 智能返航 | C | 3 | 🏷️ 高校实验室 |
 
 ### 详细说明
 

@@ -1,0 +1,222 @@
+{
+  "keeps": [
+    {
+      "name": "Microsat-gps-sim",
+      "owner": "niklasknoell",
+      "provenance": "personal_community",
+      "note": "empty bio/company → keep personal_community"
+    },
+    {
+      "name": "MyIonosphere_Library",
+      "owner": "mguerra96",
+      "provenance": "personal_community",
+      "note": "empty bio/company → keep personal_community"
+    },
+    {
+      "name": "NeQuickJRC",
+      "owner": "mgfernan",
+      "provenance": "personal_community",
+      "note": "GNSS expert / tech transfer personal → keep personal_community"
+    },
+    {
+      "name": "Nequick-ITUR",
+      "owner": "tpl2go",
+      "provenance": "personal_community",
+      "note": "empty bio/company → keep personal_community"
+    },
+    {
+      "name": "SubionosphericVLFInversionAlgorithms.jl",
+      "owner": "fgasdia",
+      "provenance": "academic_lab",
+      "note": "already academic_lab — keep"
+    },
+    {
+      "name": "iono-tomography",
+      "owner": "brianbreitsch",
+      "provenance": "academic_lab",
+      "note": "already academic_lab — keep"
+    },
+    {
+      "name": "ionopy",
+      "owner": "spaceml-org",
+      "provenance": "academic_lab",
+      "note": "SpaceML org — already academic_lab — keep"
+    },
+    {
+      "name": "mitiono",
+      "owner": "sabrinastronomy",
+      "provenance": "academic_lab",
+      "note": "U Melbourne location — already academic_lab — keep"
+    },
+    {
+      "name": "GNSSRTK",
+      "owner": "SupakunZ",
+      "provenance": "personal_community",
+      "note": "personal fullstack @home → keep personal_community"
+    },
+    {
+      "name": "OpATOM",
+      "owner": "benceturak",
+      "provenance": "academic_lab",
+      "note": "BME company — already academic_lab — keep"
+    },
+    {
+      "name": "UNB3m",
+      "owner": "ohm1122",
+      "provenance": "personal_community",
+      "note": "empty bio/company → keep personal_community"
+    },
+    {
+      "name": "Smart-UAV-Return-GNSS-Station",
+      "owner": "citec-spbu",
+      "provenance": "academic_lab",
+      "note": "SPbU org — already academic_lab — keep"
+    },
+    {
+      "name": "pysatCDAAC",
+      "owner": "pysat",
+      "provenance": "academic_lab",
+      "note": "pysat org — already academic_lab — keep"
+    },
+    {
+      "name": "pytiegcm",
+      "owner": "asher-pembroke",
+      "provenance": "personal_community",
+      "note": "no company; NASA alum not current → keep personal_community"
+    },
+    {
+      "name": "real-time-ionospheric-maps-Kalman",
+      "owner": "AlexandraKoulouri",
+      "provenance": "academic_lab",
+      "note": "Tampere University — already academic_lab — keep"
+    },
+    {
+      "name": "roti-gnss-ml",
+      "owner": "NeelayS",
+      "provenance": "personal_community",
+      "note": "ML engineer personal → keep personal_community"
+    },
+    {
+      "name": "GPSMAXIM2769b-",
+      "owner": "vaidhyamookiah",
+      "provenance": "personal_community",
+      "note": "HCLTech employment ≠ lab for PCB repo → keep personal_community"
+    },
+    {
+      "name": "AURORA",
+      "owner": "egavazzi",
+      "provenance": "academic_lab",
+      "note": "UiT Space Physics — already academic_lab — keep"
+    },
+    {
+      "name": "Ionospheric-Scintillation-Maps-and-PDOP",
+      "owner": "AlexandraKoulouri",
+      "provenance": "academic_lab",
+      "note": "Tampere University — already academic_lab — keep"
+    },
+    {
+      "name": "Ionospheric-TEC-ROTI-Interactives",
+      "owner": "Tesfay-Tesfu",
+      "provenance": "academic_lab",
+      "note": "UNIVAP/NASA — already academic_lab — keep"
+    },
+    {
+      "name": "swds-api-downloader",
+      "owner": "embrace-inpe",
+      "provenance": "official",
+      "note": "INPE Embrace — already official — keep"
+    },
+    {
+      "name": "BiScEF",
+      "owner": "kartverket",
+      "provenance": "official",
+      "note": "Norwegian Mapping Authority org — already official — keep"
+    },
+    {
+      "name": "Drift-X",
+      "owner": "ulcar.uml.edu",
+      "provenance": "academic_lab",
+      "note": "UML Digisonde — already academic_lab — keep"
+    },
+    {
+      "name": "CARP-Average-Profile",
+      "owner": "ulcar.uml.edu",
+      "provenance": "academic_lab",
+      "note": "UML Digisonde — already academic_lab — keep"
+    },
+    {
+      "name": "317Lab-tomography",
+      "owner": "317Lab",
+      "provenance": "academic_lab",
+      "note": "Lynch lab org — already academic_lab — keep"
+    },
+    {
+      "name": "FIRI-2018",
+      "owner": "AlexT1983",
+      "provenance": "academic_lab",
+      "note": "already academic_lab — keep"
+    },
+    {
+      "name": "GNSS_TOM",
+      "owner": "sailvssea",
+      "provenance": "academic_lab",
+      "note": "already academic_lab — keep"
+    },
+    {
+      "name": "plot-Anubis",
+      "owner": "pecny.cz",
+      "provenance": "academic_lab",
+      "note": "GOP/Pecny — already academic_lab — keep"
+    },
+    {
+      "name": "Easy4B2b",
+      "owner": "alxanderjiang",
+      "provenance": "personal_community",
+      "note": "empty company → keep personal_community"
+    },
+    {
+      "name": "HASlib.jl",
+      "owner": "feanor12",
+      "provenance": "personal_community",
+      "note": "personal test engineer → keep personal_community"
+    },
+    {
+      "name": "RTKNAVI-BH",
+      "owner": "cigit001",
+      "provenance": "personal_community",
+      "note": "empty bio → keep personal_community"
+    },
+    {
+      "name": "gps-qzss-sdr-sim",
+      "owner": "iGNSS",
+      "provenance": "personal_community",
+      "note": "community org empty bio → keep personal_community"
+    },
+    {
+      "name": "Get_IPP",
+      "owner": "Chenjiajun01",
+      "provenance": "personal_community",
+      "note": "empty bio → keep personal_community"
+    },
+    {
+      "name": "gri-iono",
+      "owner": "geosol-foss",
+      "provenance": "personal_community",
+      "note": "GitLab foss group; keep personal_community"
+    },
+    {
+      "name": "cosmic-crunch",
+      "owner": "ErickShepherd",
+      "provenance": "personal_community",
+      "note": "NASA GSFC alum / available for hire → keep personal_community"
+    }
+  ],
+  "fixes": [
+    {
+      "name": "EGNOSTools",
+      "from": "personal_community",
+      "to": "academic_lab",
+      "reason": "DfAC company = EC Joint Research Centre (JRC) E.2"
+    }
+  ]
+}

@@ -347,7 +347,7 @@ BKG/RTCM 维护的 NTRIP 开源软件 Trac 门户，集中入口含 BNC、Profes
 | [grinq](https://github.com/PJarrin/grinq) | RINEX 镜像与 Anubis QC 的 Python 工具箱 | Python | 1 | 🏷️ 个人社区 |
 | [Anubis](https://gnutsoftware.com/software/anubis/) | G-Nut/Anubis：多 GNSS RINEX/RTCM 质量检查（Free 开源） | C++ | — | 🏷️ 个人社区 核心 |
 | [Anubis-Free-Download](https://gnutsoftware.com/software/anubis/download) | G-Nut/Anubis Free 下载：GPL 源码与 Linux 预编译（Pro 为商业） | C++ | — | 🏷️ 个人社区 |
-| [plot-Anubis](https://www.pecny.cz/sw/plots/anubis/) | GOP/Pecny 提供的 Anubis XTR 质检结果静态绘图脚本 | Perl | — | 🏷️ 高校实验室 |
+| [plot-Anubis](https://www.pecny.cz/sw/plots/anubis/) | plot-Anubis：Anubis XTR 质检结果静态绘图脚本 | Perl | — | 🏷️ 高校实验室 |
 | [RINGO](https://terras.gsi.go.jp/software/ringo/en/) | GSI 官方 RINGO：多系统 RINEX 预处理/质检 CLI | Go | — | 🏷️ 官方 |
 | [TEQC](https://www.unavco.org/software/data-processing/teqc/teqc.html) | TEQC：经典 GNSS 翻译/编辑/质检工具 | binary (closed) | — | 🏷️ 官方 核心 |
 
@@ -435,7 +435,7 @@ Anubis 免费档下载入口，提供 Linux 预编译与 GPL-3 源码，覆盖�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [cosmic-crunch](https://github.com/ErickShepherd/cosmic-crunch) | 批量下载 JPL GENESIS COSMIC-1 掩星剖面并转 netCDF4 | Python | 0 | 🏷️ 个人社区 |
+| [cosmic-crunch](https://github.com/ErickShepherd/cosmic-crunch) | cosmic-crunch：批量下载 GENESIS COSMIC-1 剖面并转 netCDF4 | Python | 0 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -553,7 +553,7 @@ EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RT
 | [GAMPII-GOOD](https://github.com/zhouforme0318/GAMPII-GOOD) | GAMPII-GOOD：GNSS 观测与产品下载器 | C++ | 123 | 🏷️ 高校实验室 |
 | [gnss-downloader](https://github.com/Mereithhh/gnss-downloader) | 带界面的 IGS/镜像 GNSS 数据下载器 | Python | 23 | 🏷️ 个人社区 |
 | [GDDS](https://github.com/LECUT/GDDS) | GDDS：多模块 GNSS 数据下载器 | Python | 13 | 🏷️ 个人社区 |
-| [swds-api-downloader](https://github.com/embrace-inpe/swds-api-downloader) | Embrace 空间天气数据服务 API 的自动下载示例 | Python | 4 | 🏷️ 官方 |
+| [swds-api-downloader](https://github.com/embrace-inpe/swds-api-downloader) | swds-api-downloader：Embrace SWDS API 自动下载示例 | Python | 4 | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -1092,7 +1092,7 @@ Rust 实现的 u-blox UBX 原始观测反序列化与 RINEX 采集工具，方�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [pysatCDAAC](https://github.com/pysat/pysatCDAAC) | pysat 生态的 CDAAC/COSMIC 仪器插件（含 ionPhs 等标签） | Python | 3 | 🏷️ 高校实验室 |
+| [pysatCDAAC](https://github.com/pysat/pysatCDAAC) | pysatCDAAC：pysat 的 CDAAC/COSMIC 仪器插件 | Python | 3 | 🏷️ 高校实验室 |
 
 ### 详细说明
 

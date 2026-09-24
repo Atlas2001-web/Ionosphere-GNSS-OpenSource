@@ -37,7 +37,7 @@
 | [gnss-rcv](https://github.com/mx4/gnss-rcv) | gnss-rcv：Rust GPS L1 C/A 软件接收机 | Rust | 14 | 🏷️ 个人社区 |
 | [multi-channel-gnss](https://github.com/dasdboot/multi-channel-gnss) | multi-channel-gnss：LimeSDR 多通道 GNSS 实验仓 | — | 12 | 🏷️ 个人社区 |
 | [gnss-sdr-rs](https://github.com/kewei/gnss-sdr-rs) | gnss-sdr-rs：Rust 语言 GNSS 软件接收机实验 | Rust | 9 | 🏷️ 个人社区 |
-| [GPSMAXIM2769b-](https://github.com/vaidhyamookiah/GPSMAXIM2769b-) | Maxim 2769b GNSS 前端 PCB（Papilio FPGA） | Eagle | 4 | 🏷️ 个人社区 |
+| [GPSMAXIM2769b-](https://github.com/vaidhyamookiah/GPSMAXIM2769b-) | GPSMAXIM2769b-：Maxim 2769b GNSS 前端 PCB（Papilio） | Eagle | 4 | 🏷️ 个人社区 |
 | [GRID](https://github.com/mmurrian/GRID) | GRID：灵活可扩展 GNSS/GPS 软件定义接收机 | — | 4 | 🏷️ 个人社区 |
 | [BDSSDR](https://github.com/nkyang/BDS_SDR) | 北斗/GNSS 软件接收实验代码（文档较少） | MATLAB | 2 | 🏷️ 个人社区 |
 | [FlyCat-SDR-GPS](https://github.com/flydog-sdr/FlyCat_SDR_GPS) | FlyCat：Orange Pi 用 16-bit 宽带 SDR+GPS 扩展 | C++ | 2 | 🏷️ 个人社区 |
@@ -301,8 +301,8 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 | [GPSGALSSS](https://github.com/domonforyou/GPS_GAL_SSS) | GPSGALSSS：GPS/Galileo 卫星信号模拟器 | C++ | 29 | 🏷️ 个人社区 |
 | [beidou-sdr-sim](https://github.com/yangfan852219770/beidou-sdr-sim) | beidou-sdr-sim：北斗 GEO（PRN1–5）信号仿真 | C | 27 | 🏷️ 个人社区 |
 | [esp2822NMEAsim](https://github.com/michalpelka/esp2822_NMEA_sim) | esp2822NMEAsim：廉价 MCU 模拟 PPS 与 NMEA | C++ | 7 | 🏷️ 个人社区 |
-| [Microsat-gps-sim](https://github.com/niklasknoell/Microsat-gps-sim) | 微纳卫星工程向 GNSS 仿真工具（Python） | Python | 4 | 🏷️ 个人社区 |
-| [gps-qzss-sdr-sim](https://github.com/iGNSS/gps-qzss-sdr-sim) | 软件定义 GPS/QZSS 信号仿真器 | — | 1 | 🏷️ 个人社区 |
+| [Microsat-gps-sim](https://github.com/niklasknoell/Microsat-gps-sim) | Microsat-gps-sim：微纳卫星工程向 GNSS 仿真（Python） | Python | 4 | 🏷️ 个人社区 |
+| [gps-qzss-sdr-sim](https://github.com/iGNSS/gps-qzss-sdr-sim) | gps-qzss-sdr-sim：软件定义 GPS/QZSS 信号仿真器 | — | 1 | 🏷️ 个人社区 |
 
 ### 详细说明
 
