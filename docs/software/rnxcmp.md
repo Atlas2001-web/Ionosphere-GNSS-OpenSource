@@ -1,6 +1,6 @@
 # RNXCMP · Hatanaka Compact RINEX 操作手册
 
-目录：[`PROJECTS.json` → `RNXCMP`](../../PROJECTS.json) · 官网 <https://terras.gsi.go.jp/ja/crx2rnx.html> · 许可 [LICENSE.txt](https://terras.gsi.go.jp/ja/crx2rnx/LICENSE.txt)（GSI Website Terms；改/再分发须引用 Hatanaka 2008）· 本机验证 **RNXCMP 4.2.0** Linux gcc 64-bit（2026-09-24 ET）：`RNX2CRX`/`CRX2RNX` 对 georinex 样例 `14601736.18o` 压缩→恢复实跑
+目录：[`PROJECTS.json` → `RNXCMP`](../../PROJECTS.json) · 官网 <https://terras.gsi.go.jp/ja/crx2rnx.html> · 许可 [LICENSE.txt](https://terras.gsi.go.jp/ja/crx2rnx/LICENSE.txt)（GSI Website Terms；改/再分发须引用 Hatanaka 2008）· 本机验证 **RNXCMP 4.2.0** Linux gcc 64-bit（2026-09-24 ET）：`RNX2CRX`/`CRX2RNX` 对 georinex 样例 `14601736.18o` 压缩→恢复实跑；**质检复跑**确认 body 相等、`gzip`≈1830 B、`-h` exit 1
 
 > 岗位：IGS/台网 **观测文件 ASCII 差分压缩**（`.yyo`/`.rnx` ↔ `.yyd`/`.crx`），常再套 `gzip` 成 `.crx.gz` / `.yyd.gz`。冲突时：**本机 `RNX2CRX -h` / 包内 `docs/RNXCMP.txt` > 本文**。
 
@@ -91,14 +91,15 @@ wc -c 14601736.18o 14601736.18d
 ```text
 # head -n 3 14601736.18d
 1.0                 COMPACT RINEX FORMAT                    CRINEX VERS   / TYPE
-RNX2CRX ver.4.2.0                       24-Sep-26 07:54     CRINEX PROG / DATE
+RNX2CRX ver.4.2.0                       24-Sep-26 07:57     CRINEX PROG / DATE
      2.11           OBSERVATION DATA    Mixed(MIXED)        RINEX VERSION / TYPE
+# （CRINEX PROG / DATE 时间戳随本机时钟变；版本串须含 ver.4.2.0）
 
 # wc -c
 7386 14601736.18o
 5522 14601736.18d
 # 再 gzip（IGS 常见落盘形态）
-# gzip -c 14601736.18d > 14601736.18d.gz  → 本机 1833 bytes
+# gzip -c 14601736.18d > 14601736.18d.gz  → 本机 1830 bytes（gzip 头含 mtime，勿钉死绝对字节）
 ```
 
 | 参数 | 作用 |
@@ -177,11 +178,13 @@ gunzip -c 14601736.18d.gz | CRX2RNX > from_gz.18o
 | 1 | `The file xxx already exists. Overwrite?(n)` 后挂起 | 缺 `-f`，等交互 | `RNX2CRX in.yyo -f` |
 | 2 | RINEX 4.02 压完丢失 pico-second / 旧工具拒读 | 应用了 &lt;4.2.0 或 CRINEX 3.1 | 换 **4.2.0+**；全链路统一版本 |
 | 3 | `Permission denied` 执行二进制 | tar 未带 +x | `chmod +x RNX2CRX CRX2RNX` |
-| 4 | `cmp` 原文件≠恢复文件 | 头行尾空格/换行 CRLF↔LF | 比 `END OF HEADER` 后 body，或两侧 `rstrip` |
+| 4 | `cmp` 原文件≠恢复文件（本机原 7386 B → 管道恢复 6423 B） | 头行尾空格 / **CRLF→LF**（样例含 `\r`） | 比 `END OF HEADER` 后 body（本机 `obs_body_equal True nlines 92`）；或两侧 `rstrip` + 统一换行 |
 | 5 | 中间缺历元后数据全废 | 差分依赖连续弧 | 压缩用 `-e N`；恢复用 `-s`；并确认观测类型列表未变 |
 | 6 | `RNX2CRZ` 直接失败 | 无 `csh` / 不在 PATH | `apt install csh`；或 `RNX2CRX`+`gzip -c` |
 | 7 | 把 `.yyo.gz` 直接丢给 `RNX2CRX` | 核心工具吃明文 | `gzip -dc f.yyo.gz \| RNX2CRX > f.yyd` |
 | 8 | 脚本里想直接读 `.crx` | 本工具是 CLI 二进制 | Python：[hatanaka](./hatanaka.md) / [georinex](./georinex.md)；钉版本时先 `CRX2RNX` |
+| 9 | `RNX2CRX -h` 后脚本当失败 | 帮助路径 **exit 1**（本机确认） | 查版本用 `RNX2CRX -h \| tail` 并忽略该 exit；自动化勿把 `-h` 当冒烟成功条件 |
+| 10 | 只装了 `pip install hatanaka`（捆 4.1.0）就处理 RINEX 4.02 | 捆绑 RNXCMP 可能落后 GSI | 4.02 / CRINEX 3.1 → 用本文 **4.2.0** 二进制；见 [hatanaka](./hatanaka.md) |
 
 ## 6. 选型与链接
 

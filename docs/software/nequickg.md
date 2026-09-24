@@ -1,6 +1,6 @@
 # NequickG · Galileo NeQuick-G（Python）操作手册
 
-目录：[`PROJECTS.json` → `NequickG`](../../PROJECTS.json) · 上游 <https://github.com/tpl2go/NequickG>（本机 clone 可访问；末提交 `1d17834` 2017-12-01）· **无 SPDX 许可字段**（使用前自核 README/引用 Galileo ICD）· 本机验证：对源码做 **Python 3 最小语法移植** 后跑通 `vTEC` + ESA Medium 校验表第 1 行（2026-09-24 ET）。上游原文为 **Python 2**（`print` 语句）
+目录：[`PROJECTS.json` → `NequickG`](../../PROJECTS.json) · 上游 <https://github.com/tpl2go/NequickG>（本机 clone 可访问；末提交 `1d17834` 2017-12-01）· **无 SPDX 许可字段**（使用前自核 README/引用 Galileo ICD）· 本机验证：对源码做 **Python 3 最小语法移植** 后跑通 `vTEC` + ESA Medium 校验表第 1 行；**质检复跑**确认数值一致并补 Medium 全表 36 行统计（2026-09-24 ET）。上游原文为 **Python 2**（`print` 语句）
 
 > 岗位：用 **Galileo 广播 ai0/ai1/ai2** 算本地电子密度廓线、垂直/斜 TEC，对照 ESA 校验表。冲突时：**仓内 `tasks/` / `Validation.py` > 本文**。生产接收机改正优先官方 C 实现（见 §6）。
 
@@ -54,6 +54,8 @@ for p in pathlib.Path(".").rglob("*.py"):
     t2 = re.sub(r"\bfile\(", "open(", t2)
     t2 = re.sub(r"\bxrange\(", "range(", t2)
     t2 = re.sub(r"except\s+(\w+)\s*,\s*(\w+)\s*:", r"except \1 as \2:", t2)
+    # Py3: map 返回迭代器，Validation.py 的 row[0] 会 TypeError
+    t2 = t2.replace("row = map(float, row)", "row = list(map(float, row))")
     if t2 != t: p.write_text(t2)
 print("py3_patch_done")
 PY
@@ -65,6 +67,7 @@ python -c "from NequickG import NEQTime; print('import_ok', NEQTime)"
 | `SyntaxError: Missing parentheses in call to 'print'` | 源码是 Py2 | 按上表移植；或找仍带 Py2 的环境（不推荐） |
 | `ModuleNotFoundError: numpy` | 未装 | `pip install numpy` |
 | `No module named NequickG` | 不在仓根 | `cd` 到含 `NequickG.py` 的目录再跑 |
+| `TypeError: 'map' object is not subscriptable` | 只改了 `print`，未改 `map` | §2 补丁含 `list(map(...))`；或手改 `Validation.py` |
 | Basemap 安装失败 | 依赖已死 | 跳过 `tasks/parameter_maps.py` 绘图；算 TEC 不需要 |
 
 ## 3. 端到端：vTEC + Medium 校验第 1 行（本机真跑）
@@ -130,7 +133,9 @@ row0 ['4', '0', '40.19', '-3.00', '-23.32', '76.65', '-41.43', '20157673.93', '1
 expected_TECU=18.26 got_TECU=19.0635 rel_err_pct=4.40
 ```
 
-全表：`python Validation.py`（移植后；耗时长，会写 `Validation/*_output.dat`）。高/低活动表系数在脚本内硬编码。
+**Medium 全表 36 行（同系数循环，本机质检复跑）：** `max_rel%=9.45` · `mean_rel%=1.59`（前三行 rel% ≈ 4.40 / 1.32 / 3.60）。
+
+勿指望最小 `print` 移植后直接 `python Validation.py`：即便加了 `list(map(...))`，脚本末尾默认跑 **Low** 表并 `plt.show()`（要 matplotlib，且会阻塞）。产品验收用上面的行循环，或改脚本只 `run('Medium')` 并去掉绘图。高/低活动 `GalileoBroadcast` 系数见仓内 `Validation.py`。
 
 ### 3.3 API / 旗标（类参数）
 
@@ -170,6 +175,8 @@ expected_TECU=18.26 got_TECU=19.0635 rel_err_pct=4.40
 | 6 | `import CCIR_MoDIP...` 失败 | 工作目录不对 | 在仓根运行；`PYTHONPATH=.` |
 | 7 | `overflow` / `invalid value` RuntimeWarning | 廓线指数溢出 | `python -W ignore`；检查 Az 与纬度是否极端 |
 | 8 | 当接收机认证模型 | 非 JRC/GSC 发布 | 改用 §6 官方源码并按其测试向量验收 |
+| 9 | `Validation.py` → `map` TypeError | Py2 `map`→list，Py3 是迭代器 | §2 补丁；或 `row = list(map(float, row))` |
+| 10 | `Validation.py` 卡住 / 要 GUI | 末尾 `compare`→`plt.show()` | 注释绘图；或只用 §3.2 行循环（本机 Medium 36 行 ~1 min） |
 
 ## 6. 官方 C 回退（登记下载）
 

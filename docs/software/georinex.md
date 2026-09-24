@@ -278,7 +278,7 @@ NAV：`nav = gr.load("brdc.rnx")` → **先 `print(nav)`** 再取字段；georin
 | 2 | `sizes time:0 sv:0` | 空窗 / 坏文件 / 滤光过狠 | `python -m georinex.time FILE`；放宽 `tlim`/`use` |
 | 3 | `KeyError: system type {'G'}` | 头里无该系统的 `SYS / # / OBS TYPES` | 查头；或不要 `use=` 先全量 |
 | 4 | OOM / 被 kill | 1 Hz 全日进内存 | 加 `use`/`tlim`/`meas`；或 `gfzrnx -smp 30` |
-| 5 | `.crx` 读失败 | 无 hatanaka | `pip install hatanaka` 或 `CRX2RNX in.crx` |
+| 5 | `.crx` 读失败 | 无 hatanaka | `pip install hatanaka`（见 [hatanaka](./hatanaka.md)）；或官方 `CRX2RNX`（见 [rnxcmp](./rnxcmp.md)） |
 | 6 | `head` 见 `<html` | 下载成登录页 | 重走 Earthdata/CDDIS 鉴权 |
 | 7 | `gunzip: not in gzip format` | 扩展名假 `.gz` | 改名或直接当明文 RINEX 读 |
 | 8 | nc 与源不一致 | 源更新后未重建 | `rm data/*.nc` 后重跑 read |
@@ -302,4 +302,4 @@ NAV：`nav = gr.load("brdc.rnx")` → **先 `print(nav)`** 再取字段；georin
 
 ## 7. 相关
 
-[gfzrnx](./gfzrnx.md) · [anubis](./anubis.md) · [pytecgg](./pytecgg.md) · [rtklib](./rtklib.md) · [oasis-roti](./oasis-roti.md) · [ionomoni](./ionomoni.md) · [ionex-gim](./ionex-gim.md) · [data-access](../data-access.md) · [README](./README.md)
+[hatanaka](./hatanaka.md) · [rnxcmp](./rnxcmp.md) · [gfzrnx](./gfzrnx.md) · [anubis](./anubis.md) · [pytecgg](./pytecgg.md) · [rtklib](./rtklib.md) · [oasis-roti](./oasis-roti.md) · [ionomoni](./ionomoni.md) · [ionex-gim](./ionex-gim.md) · [data-access](../data-access.md) · [README](./README.md)
