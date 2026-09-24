@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **140 篇**操作手册（合计 **30636 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **142 篇**操作手册（合计 **31032 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -168,6 +168,8 @@
 | 137 | [gnssanalysis.md](./gnssanalysis.md) | GA 官方 Python：SINEX/SP3/CLK/Bias-SINEX 读写与比较 | 201 | **已短硬** · PyPI **0.0.60**/tag **`d0c3642`**/★**43**；`orbq` G01 3D=**0.06236**/AVG **0.01553**；`clkq` G RMS=**0.6915** m；`sp3merge` **192** 历元/**474205** B；BIA G01 C1C=**9.8409** ns；交叉 [clkcomb](./clkcomb.md)/[spocc](./spocc.md)/[gkit-bias](./gkit-bias.md)/[sp3](./sp3.md)/[data-access](../data-access.md) |
 | 138 | [radiate.md](./radiate.md) | VieVS 对流层射线追踪（NWM→斜/天顶延迟；Fortran） | 195 | **已短硬** · tip **`7e81779`**/GPL-3.0/★**23**/`radiate` **540976** B；`-createUniAzel` **60** obs/ABPO ZTD=**2.1061**/STD@5°=**21.4995**；交叉 [gnssrefl](./gnssrefl.md)/[mpsim](./mpsim.md)/[pride-pppar](./pride-pppar.md)/[groops](./groops.md) |
 | 139 | [rtklib-py.md](./rtklib-py.md) | demo5 思路纯 Python PPK（rtklibexplorer；无 PyPI） | 171 | **已短硬** · tip **`5d8968d`**/MIT/★**247**；u-blox **40** 历元 Q1=**10**/首fix **40.097023872°N** ratio=**3.4**；交叉 [rtklib](./rtklib.md)/[rtklib-explorer](./rtklib-explorer.md)/[pyrtklib](./pyrtklib.md)/[mrtklib](./mrtklib.md) |
+| 140 | [viresclient.md](./viresclient.md) | ESA VirES Python 客户端（Swarm/Aeolus→xarray） | 208 | **已短硬** · PyPI **0.16.0**/tip **`c00f81d`**/★**23**；无 token → **AuthenticationError**/WPS **403**；测量名陷阱 `TEC`≠`Absolute_VTEC`；**无真实 token 未落盘**；交叉 [ionosonde-data-downloader](./ionosonde-data-downloader.md)/[geospacelab](./geospacelab.md)/[data-access](../data-access.md) |
+| 141 | [ionosonde-data-downloader.md](./ionosonde-data-downloader.md) | 澳/日/GIRO 测高仪 foF2 等年度下载 | 188 | **已短硬** · tip **`ea80896`**/★**2**/无 PyPI；Townsville 2010 **(8760,5)** fof2=**5.3**；Kokubunji 2020 auto **(35136,4)** fof2=**2.86**；需 **lxml**；OMNI2 pandas `delim_whitespace` 坑；交叉 [viresclient](./viresclient.md)/[geospacelab](./geospacelab.md)/[iri2016](./iri2016.md) |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -306,6 +308,8 @@
 | AWS GNSS-RO 查/下（**calibratedPhase** / 大气三型） | [awsgnssroutils.md](./awsgnssroutils.md) |
 | CDAAC **ionPrf / ionPhs**（pysat） | [pysatcdaac.md](./pysatcdaac.md) |
 | 闪烁 ISMR（UNESP API 批量） | [ismr-downloader.md](./ismr-downloader.md) |
+| Swarm/Aeolus 按需切片（须 token） | [viresclient.md](./viresclient.md) |
+| 测高仪 foF2/hmF2 年度（澳/日/GIRO） | [ionosonde-data-downloader.md](./ionosonde-data-downloader.md) |
 | Septentrio SBF 块解析（官方 Cython） | [sbfparser.md](./sbfparser.md) |
 | Septentrio SBF 编解码（纯 Python，同 pyubx2 栈） | [pysbf2.md](./pysbf2.md) |
 | Swift SBP 多语言客户端（PyPI `sbp` / `sbp2json`） | [libsbp.md](./libsbp.md) |
@@ -549,6 +553,8 @@ iono-scintillation：概念/仿真旁路，不替代实测 ROTI
 ---
 
 最近新增（用法讲解）：**gnssrefl**+**mpsim**（2026-09-24 07:14 EDT；gnssrefl **4.2.3**/`e8d9cd0`/★**219**/mchl RH **1.6916** m/**111** 弧；mpsim **`61be627`**/★**48**/`.m` **1615**/Octave setup OK、fwd 失败；未臆造 SNR；交叉 georinex/gfzrnx/rtklib/gnss-multipath-analysis）。
+
+最近新增（用法讲解）：**viresclient**+**ionosonde-data-downloader**（2026-09-24 07:26 EDT；viresclient **0.16.0**/`c00f81d`/★**23**/无 token **403**；Ionosonde tip **`ea80896`**/Townsville **8760**/fof2=**5.3**/Kokubunji auto **35136**/fof2=**2.86**；交叉 geospacelab/data-access）。
 
 最近新增（用法讲解）：**radiate**+**rtklib-py**（2026-09-24 07:22 EDT；RADIATE **`7e81779`**/★**23**/60 obs/ABPO ZTD=**2.1061**；rtklib-py **`5d8968d`**/★**247**/Q1=**10**）。
 
