@@ -1,5 +1,5 @@
 # 精密定位 / Precise Positioning
-> **98** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **100** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
@@ -1066,3 +1066,33 @@ Python 终端 RTK 客户端（AGPL-3.0）：经 NTRIP 拉取 RTCM3 改正并注�
 语言：Rust · 许可：MPL-2.0 · 星标约：12 · 宿主：github
 
 nav-solutions 框架下的实时 PoC：以 U-Blox 原始/手动模式作测量源，喂给同组织的 PVT 解算器并与接收机固件解对比。MPL-2.0；当前单串口单接收机。偏工程验证而非测地级 PPP-AR 产品，外参、时间同步与对流层模型需使用者自理。与已收录的 gnss-rtk/rinex 等 crate 同一生态。
+
+## GNSS算法库
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [libswiftnav](https://github.com/swift-nav/libswiftnav) | Swift Navigation 可移植 C 库：GNSS 公用算法与工具函数 | C | 23 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [libswiftnav](https://github.com/swift-nav/libswiftnav)  
+*🏷️ 个人社区*
+
+语言：C · 许可：LGPL-3.0 · 星标约：23 · 宿主：github
+
+标准 C 实现的平台无关 GNSS 工具库（libswiftnav），LGPL-3.0，面向软件接收机或需 GNSS 数值例程的嵌入式/主机程序。不负责与 Swift 接收机通信（那是 libsbp）；本库偏算法与公用函数。构建需 CMake；API 随版本演进，接入前请对照文档与测试。与已收录的 libsbp/piksi_tools 同属厂商开源栈。
+
+## 多路径AI
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [NavAI](https://github.com/AlvaroTena/NavAI) | GNSS 多路径缓解与自适应观测加权的 AI 研究代码 | Python | 6 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [NavAI](https://github.com/AlvaroTena/NavAI)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：6 · 宿主：github
+
+博士课题开源：将机器学习用于 GNSS 观测可靠性与多路径抑制，并含仿真与加权实验代码，MIT 许可。星数不多但补齐多路径/AI 交叉这一薄点。结果依赖训练数据与场景，不能直接当作通用测地产品。适合算法对照与复现实验；部署需自备观测与标签管线。

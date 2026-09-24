@@ -367,3 +367,12 @@
 - Skipped: RECTAS domain squatted, SANHO empty, PocketSDR-AFS license API NOASSERTION (kept via LICENSE.txt BSD-2), peregrine/libswiftnav-legacy archived, RtkGps archived, RTKlibDroid thin stale, gps-fpga ★4 filler, geniuss-place website-only, GIPP non-GNSS instrument pool, CSRS-PPP URL variant already listed, NOAA CORS alternate host already listed, cycle-slip-correction/tec_forecast/iri2016 already cataloged
 - Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
 
+## Routine pass 2026-09-24j
+
+- Catalog size before: **856**; after merge: **870** (+14)
+- Finds file: `research/routine_finds_20260924j.json`
+- Method: quality dig — QZSS DCR (azarashi/QZQSM), multipath AI (NavAI), ionFR Faraday, libswiftnav/gps-fpga/gnsshat, ESSP EGNOS user support, LINZ geodetic, IERS EOP/datacenter, NOAA WMM portal; `gh api`+`curl`; dedup vs PROJECTS.json and all `routine_finds_*.json`
+- Avoided: entire 24i set (IGS WGs, NRCan-TRX, BIPM-Time-FTP, LANS/PocketSDR-AFS/namuru, rt-navi, nav-solutions-gnss, piksi_tools, swift-nav-pygnss) and prior 24h batches
+- Skipped: kass.or.kr (wrong org), MLIT aviation safety mis-hit, archived plover, albatross (generic GP weak GNSS fit), WHU-Smartphone-Dataset no SPDX, micropython-gnssl76l thin, BIPM/SWPC/IMPC/GeoNet near-dups already listed, GAGAN/SDCM/KASS official hosts unreachable from box
+- Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
+

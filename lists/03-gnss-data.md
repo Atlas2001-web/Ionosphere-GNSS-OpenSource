@@ -1,5 +1,5 @@
 # GNSS 数据与格式 / GNSS Data I/O
-> **128** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **130** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
@@ -1313,3 +1313,33 @@ MIT 许可的 Python 脚本，从 gnss.osi.ie 批量下载爱尔兰 Active GNSS 
 语言：Rust · 许可：MPL-2.0 · 星标约：11 · 宿主：github
 
 为 nav-solutions 生态提供星座、信号与相关枚举/定义的 Rust crate，供 rinex、gnss-rtk、rt-navi 等库复用。MPL-2.0；本身不做解算，但减少各 crate 重复定义。命名刻意加前缀以免与泛名“gnss”冲突。API 随生态演进，接入前请核对 crates.io 版本与 MSRV。适合 Rust GNSS 工具链开发者。
+
+## QZSS-DCR
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [azarashi](https://github.com/nbtk/azarashi) | QZSS 灾害危机报告（DCR）解码器（Python） | Python | 44 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [azarashi](https://github.com/nbtk/azarashi)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：44 · 宿主：github
+
+解析准天顶卫星系统（QZSS）灾害与危机管理（DCR）电文的 Python 工具，MIT 许可。面向日本及周边区域的灾情预警链路验证，与普通 NMEA/UBX 定位库互补。电文格式随 QZSS 规范演进，解码前需核对官方 ICD 与样本。适合灾情接收演示与消息字段研究，不替代测地级定位引擎。
+
+## 历书转换
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [ublox8-qzss-almanac-converter](https://github.com/jkivilin/ublox8-gps-qzss-yuma-almanac-converter) | QZSS/GPS 官方历书转 u-blox 8/M8 UBX-MGA 历书消息 | Python | 12 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [ublox8-qzss-almanac-converter](https://github.com/jkivilin/ublox8-gps-qzss-yuma-almanac-converter)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：12 · 宿主：github
+
+把官方 YUMA 类历书转换为 u-blox 8/M8 的 UBX-MGA 历书消息，MIT 许可，便于冷启动辅助与实验室回放。体量小、用途专一，填补 QZSS 历书到接收机协议的缝隙。输出需与固件协议版本匹配；不替代精密星历。适合嵌入式与接收机配置脚本作者。

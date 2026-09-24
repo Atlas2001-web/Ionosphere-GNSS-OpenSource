@@ -1,5 +1,5 @@
 # 移动与嵌入式应用 / Mobile Apps
-> **22** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **24** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 手机/嵌入式上的 GNSS 测试、原始测量记录与简易定位。
 
@@ -206,3 +206,33 @@ taroz 针对 Google Smartphone Decimeter Challenge 2023 的公开代码与思路
 语言：Java · 许可：MIT · 星标约：8 · 宿主：github
 
 MIT 许可的 Java 库，高效解析 Android GNSS Logger 导出的原始测量与传感器事件文本格式，可配置只读所需字段。适合手机原始观测后处理管线。仓库偏库而非 App；上游 Logger 格式若变更需跟进。与已收录 GPSTest 等采集工具互补。
+
+## QZSS嵌入式
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [QZQSM](https://github.com/baggio63446333/QZQSM) | Arduino 库：QZSS 灾害危机管理（DC Report）报文 | C++ | 21 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [QZQSM](https://github.com/baggio63446333/QZQSM)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：BSD-3-Clause · 星标约：21 · 宿主：github
+
+面向嵌入式的 QZSS DC Report 报文 Arduino 库，BSD-3-Clause。可在带 GNSS 模块的 MCU 上解析灾情类广播，与桌面端 azarashi 形成软硬互补。依赖具体接收机是否输出原始 DCR/相关 NMEA；天线与区域覆盖会影响可用性。适合创客与应急原型，非航空认证实现。
+
+## 树莓派GNSS
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [gnsshat](https://github.com/jimmypaputto/gnsshat) | 树莓派 GNSS HAT 驱动：UBX/C++/Python 与实时 Web 面板 | C++ | 22 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [gnsshat](https://github.com/jimmypaputto/gnsshat)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：MIT · 星标约：22 · 宿主：github
+
+面向 Jimmy Paputto GNSS HAT 的驱动库，覆盖 u-blox UBX，并提供 C++/C/Python API 与 Flask 实时仪表盘（天空图、RF、RTK 相对图等），MIT 许可。虽绑定厂商板卡，但对通用 UBX 串口/SPI 仍有参考价值。RTK 固定与厘米级显示依赖改正流与天线环境。适合树莓派现场演示与低成本监测。

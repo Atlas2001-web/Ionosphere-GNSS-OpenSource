@@ -1,5 +1,5 @@
 # GNSS 数据源 / GNSS Datasets
-> **127** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **128** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
@@ -1186,3 +1186,18 @@ EarthScope（原 UNAVCO）整理的 GPS/GNSS 数据访问方法页，对比 Web�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 说明 IGS 参考框架工作组在测站坐标、框架对齐与相关产品一致性方面的职责。对长期时间序列、速度场与框架转换用户有指引价值。页面不直接提供 SINEX 下载，产品仍走 IGS 产品中心。收录前已 HTTP 核验可访问；引用请遵循 IGS 框架产品说明。
+
+## 国家大地测量
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [LINZ-Geodetic](https://www.linz.govt.nz/products-services/geodetic) | 新西兰 LINZ 大地测量产品与服务入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [LINZ-Geodetic](https://www.linz.govt.nz/products-services/geodetic)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Toitū Te Whenua LINZ 大地测量业务入口，汇总新西兰大地基准、控制网与相关产品服务说明，可衔接 PositioNZ 等 GNSS 连续站数据。适合查找官方大地成果与服务路径，而非直接批量下 RINEX。与已收录的 PositioNZ FTP 互补：本页偏导航与业务说明。收录前已 HTTP 核验；下载与引用请遵守 LINZ 条款。

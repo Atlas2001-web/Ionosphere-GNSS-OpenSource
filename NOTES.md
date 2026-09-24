@@ -346,3 +346,10 @@
 - 当前条目：**856**
 - 分类计数：{'ionosphere': 244, 'troposphere': 40, 'gnss-data': 128, 'gnss-positioning': 98, 'orbit-clock': 18, 'navigation-ins': 64, 'gnss-sdr': 65, 'mobile-apps': 22, 'tools-learning': 50, 'gnss-datasets': 127}
 - 详见 `research/routine_finds_20260924i.json`
+
+## 例行检索补录（2026-09-24j）
+
+- 新增 **14** 条（azarashi/QZQSM/libswiftnav/NavAI/ionFR/gps-fpga/gnsshat、ESSP-EGNOS、LINZ、IERS、NOAA-WMM 等）
+- 当前条目：**870**
+- 分类计数：{'ionosphere': 245, 'troposphere': 40, 'gnss-data': 130, 'gnss-positioning': 100, 'orbit-clock': 20, 'navigation-ins': 64, 'gnss-sdr': 66, 'mobile-apps': 24, 'tools-learning': 53, 'gnss-datasets': 128}
+- 详见 `research/routine_finds_20260924j.json`

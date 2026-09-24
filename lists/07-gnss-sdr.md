@@ -1,5 +1,5 @@
 # 软件接收机与信号 / GNSS-SDR
-> **65** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **66** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。
 
@@ -590,6 +590,7 @@ OreSat 项目 GPS 接收机软件部分，与 oresat-gps-hardware 配套，覆�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [namuru-gps](https://github.com/osqzss/namuru-gps) | namuru-gps：Verilog GPS C/A 跟踪通道（Namuru 风格） | Verilog | 6 | 🏷️ 个人社区 |
+| [gps-fpga](https://github.com/osqzss/gps-fpga) | GPS L1 C/A 单通道 FPGA 相关器（AXI4-Lite 控制） | SystemVerilog | 4 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -599,3 +600,10 @@ OreSat 项目 GPS 接收机软件部分，与 oresat-gps-hardware 配套，覆�
 语言：Verilog · 许可：LGPL-2.1 · 星标约：6 · 宿主：github
 
 用 Verilog 描述 GPS L1 C/A 码跟踪通道，面向 FPGA/ASIC 教学与相关器前端实验，许可证为 LGPL-2.1。体量小、星数有限，但补齐了开源 GNSS 硬件相关器描述这一薄点。需自备射频前端与位宽/时钟约束；不提供完整 PVT 解算链。近年仍有维护痕迹，适合与 gps-sdr-sim 等基带源联调。
+
+#### [gps-fpga](https://github.com/osqzss/gps-fpga)  
+*🏷️ 个人社区*
+
+语言：SystemVerilog · 许可：MIT · 星标约：4 · 宿主：github
+
+SystemVerilog 描述的单通道 GPS L1 C/A FPGA 相关器，经 AXI4-Lite 控制，MIT 许可。与 namuru-gps 等同属硬件相关器薄点补齐；星数低但许可证清晰、接口明确。需自备射频前端与 FPGA 工程约束，不提供完整 PVT。适合教学与相关器前端联调，而非现成接收机产品。

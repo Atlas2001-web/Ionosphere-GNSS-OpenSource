@@ -1,5 +1,5 @@
 # 轨道与钟差 / Orbit & Clock
-> **18** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **20** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。
 
@@ -209,3 +209,33 @@ Tudatpy 是 TU Delft Tudat 的 Python 接口，面向轨道传播、天体动力
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 国际计量局时间部门提供的 FTP/产品入口，涵盖 UTC、快速 UTC 与 TT(BIPM) 等时标文件，是 GNSS 时间比对、CGGTTS 与实验室钟差溯源的常用上游。页面说明访问方式与目录结构，实际文件经 FTP 拉取。时标修订与通告需对照 BIPM Circular T。收录前已 HTTP 核验；使用请遵守 BIPM 数据政策。
+
+## EOP与参考系
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [IERS-Datacenter](https://datacenter.iers.org/) | IERS 数据中心：EOP、地球物理流体与公报入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [IERS-Datacenter](https://datacenter.iers.org/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+国际地球自转与参考系统服务（IERS）数据中心，提供地球定向参数（EOP）、地球物理流体、参考系相关下载、公报与简易分析工具。GNSS 精密定位与轨道确定常需对齐 EOP/时标。页面为目录与工具入口，具体文件按产品说明获取。收录前已 HTTP 核验；请遵守 IERS 数据政策与引用格式。
+
+## EOP产品
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [IERS-EOP-PC](https://hpiers.obspm.fr/eop-pc/) | IERS 地球定向参数产品中心（巴黎天文台） | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [IERS-EOP-PC](https://hpiers.obspm.fr/eop-pc/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+IERS EOP Product Center 门户，面向地球定向参数序列与相关说明，由巴黎天文台维护。与 IERS Datacenter 互补：本站偏 EOP 产品中心视角。精密 GNSS/VLBI/SLR 联合分析常用其序列。收录前已 HTTP 核验；选用哪套 EOP 产品需对照分析策略与时效。

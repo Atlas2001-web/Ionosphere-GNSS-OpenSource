@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> **244** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **245** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -2183,3 +2183,18 @@ space-physics 维护的地磁指数读写工具，常为电离层/空间天气�
 语言：Fortran · 许可：academic research (as-is) · 星标约：— · 宿主：official_site
 
 日置幸一郎课题组公开的 Fortran 工具页：rdrnx/rdrnx3 从 RINEX 生成几何无关 L4、rdeph 算卫星位置、tomo 做三维电子密度层析，并含 CID 仿真与 GEONET 荷载示例。学术研究常用。许可为研究用公开源码（非 SPDX）；社区镜像见 yu-0124/GNSS-TEC_tools。编译与坐标系约定需对照说明书。
+
+## 法拉第旋转
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [ionFR](https://github.com/csobey/ionFR) | 基于 IGRF 与 IONEX 的电离层法拉第旋转预测 | Python | 12 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [ionFR](https://github.com/csobey/ionFR)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：GPL-3.0 · 星标约：12 · 宿主：github
+
+给定视线、地理位置与历元，结合 IGRF 地磁场与 IONEX TEC 图估计电离层法拉第旋转（FR），GPL-3.0。服务射电天文与极化校正，也与 GNSS 电离层产品消费相关。依赖外部 IONEX/IGRF 文件质量；输出是 FR 估计而非 STEC 重建。适合电离层传播旁路分析，而非 PPP 改正生成。

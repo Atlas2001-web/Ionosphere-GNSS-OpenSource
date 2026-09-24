@@ -1,5 +1,5 @@
 # 学习资源与工具 / Tools & Learning
-> **50** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **53** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
@@ -556,3 +556,48 @@ NOAA 垂直基准转换软件与服务，连接椭球高、大地水准面与潮
 语言：Python · 许可：MIT · 星标约：24 · 宿主：github
 
 Swift Navigation 维护的 Python GNSS 实用集合，MIT 许可，近年仍有推送。与同组织的 libsbp、piksi_tools 互补，侧重脚本化处理而非完整 PPP 引擎。名称在目录中写作 swift-nav-pygnss，避免与 pygnssutils 等已收录项目混淆。接口随 SBP/固件演进出变更，集成前请读示例与版本说明。
+
+## SBAS用户支持
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [ESSP-EGNOS-User-Support](https://egnos-user-support.essp-sas.eu/) | ESSP EGNOS 用户支持站：状态、历史与帮助台入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [ESSP-EGNOS-User-Support](https://egnos-user-support.essp-sas.eu/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+欧洲卫星服务商（ESSP）运营的 EGNOS 用户支持门户，提供系统介绍、实时/历史状态、订阅与 7×24 帮助台。与已收录的 EGNOS GSC 门户互补：GSC 偏官方产品与文档，本站偏运行支持与用户服务。登录后可管理订阅；公开页亦可浏览状态摘要。收录前已 HTTP 核验；使用请遵守 ESSP/EUSPA 条款。
+
+## 基准与框架
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [LINZ-Geodetic-System](https://www.linz.govt.nz/guidance/geodetic-system) | LINZ 大地测量系统指南：NZGD 等基准与框架说明 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [LINZ-Geodetic-System](https://www.linz.govt.nz/guidance/geodetic-system)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+LINZ 关于新西兰大地测量系统的指导页，解释基准、框架与使用注意，服务测绘与 GNSS 成果归算用户。偏文档与概念，不替代 PositioNZ 观测下载。与 LINZ-Geodetic 产品页成对：一为服务入口，一为系统说明。收录前已 HTTP 核验；工程采用请对照最新官方通告。
+
+## 地磁模型
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [NOAA-WMM-Portal](https://www.ngdc.noaa.gov/geomag/WMM/) | NOAA/NCEI 世界磁场模型（WMM）官方门户 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [NOAA-WMM-Portal](https://www.ngdc.noaa.gov/geomag/WMM/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+美国 NCEI 发布的 World Magnetic Model 官方页，提供模型说明、系数与计算入口，支撑磁航向、磁偏角及部分电离层/地磁应用。与已收录的 wmm2020 软件包装互补：本页为权威发布与文档源头。模型有年限与更新周期，工程中勿混用过期系数。收录前已 HTTP 核验；请遵守 NOAA 数据使用说明。

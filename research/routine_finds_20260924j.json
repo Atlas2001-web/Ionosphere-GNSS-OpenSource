@@ -1,0 +1,294 @@
+[
+  {
+    "name": "azarashi",
+    "url": "https://github.com/nbtk/azarashi",
+    "desc_zh": "QZSS 灾害危机报告（DCR）解码器（Python）",
+    "analysis_zh": "解析准天顶卫星系统（QZSS）灾害与危机管理（DCR）电文的 Python 工具，MIT 许可。面向日本及周边区域的灾情预警链路验证，与普通 NMEA/UBX 定位库互补。电文格式随 QZSS 规范演进，解码前需核对官方 ICD 与样本。适合灾情接收演示与消息字段研究，不替代测地级定位引擎。",
+    "language": "Python",
+    "license": "MIT",
+    "category": "gnss-data",
+    "subcategory": "QZSS-DCR",
+    "markers": [
+      "routine-2026-09-24j"
+    ],
+    "stars_approx": 44,
+    "source": "routine-finds-20260924j",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "QZSS 灾害危机报告（DCR）解码器（Python）"
+  },
+  {
+    "name": "QZQSM",
+    "url": "https://github.com/baggio63446333/QZQSM",
+    "desc_zh": "Arduino 库：QZSS 灾害危机管理（DC Report）报文",
+    "analysis_zh": "面向嵌入式的 QZSS DC Report 报文 Arduino 库，BSD-3-Clause。可在带 GNSS 模块的 MCU 上解析灾情类广播，与桌面端 azarashi 形成软硬互补。依赖具体接收机是否输出原始 DCR/相关 NMEA；天线与区域覆盖会影响可用性。适合创客与应急原型，非航空认证实现。",
+    "language": "C++",
+    "license": "BSD-3-Clause",
+    "category": "mobile-apps",
+    "subcategory": "QZSS嵌入式",
+    "markers": [
+      "routine-2026-09-24j"
+    ],
+    "stars_approx": 21,
+    "source": "routine-finds-20260924j",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "Arduino 库：QZSS 灾害危机管理（DC Report）报文"
+  },
+  {
+    "name": "libswiftnav",
+    "url": "https://github.com/swift-nav/libswiftnav",
+    "desc_zh": "Swift Navigation 可移植 C 库：GNSS 公用算法与工具函数",
+    "analysis_zh": "标准 C 实现的平台无关 GNSS 工具库（libswiftnav），LGPL-3.0，面向软件接收机或需 GNSS 数值例程的嵌入式/主机程序。不负责与 Swift 接收机通信（那是 libsbp）；本库偏算法与公用函数。构建需 CMake；API 随版本演进，接入前请对照文档与测试。与已收录的 libsbp/piksi_tools 同属厂商开源栈。",
+    "language": "C",
+    "license": "LGPL-3.0",
+    "category": "gnss-positioning",
+    "subcategory": "GNSS算法库",
+    "markers": [
+      "routine-2026-09-24j"
+    ],
+    "stars_approx": 23,
+    "source": "routine-finds-20260924j",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "Swift Navigation 可移植 C 库：GNSS 公用算法与工具函数"
+  },
+  {
+    "name": "NavAI",
+    "url": "https://github.com/AlvaroTena/NavAI",
+    "desc_zh": "GNSS 多路径缓解与自适应观测加权的 AI 研究代码",
+    "analysis_zh": "博士课题开源：将机器学习用于 GNSS 观测可靠性与多路径抑制，并含仿真与加权实验代码，MIT 许可。星数不多但补齐多路径/AI 交叉这一薄点。结果依赖训练数据与场景，不能直接当作通用测地产品。适合算法对照与复现实验；部署需自备观测与标签管线。",
+    "language": "Python",
+    "license": "MIT",
+    "category": "gnss-positioning",
+    "subcategory": "多路径AI",
+    "markers": [
+      "routine-2026-09-24j"
+    ],
+    "stars_approx": 6,
+    "source": "routine-finds-20260924j",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "GNSS 多路径缓解与自适应观测加权的 AI 研究代码"
+  },
+  {
+    "name": "ionFR",
+    "url": "https://github.com/csobey/ionFR",
+    "desc_zh": "基于 IGRF 与 IONEX 的电离层法拉第旋转预测",
+    "analysis_zh": "给定视线、地理位置与历元，结合 IGRF 地磁场与 IONEX TEC 图估计电离层法拉第旋转（FR），GPL-3.0。服务射电天文与极化校正，也与 GNSS 电离层产品消费相关。依赖外部 IONEX/IGRF 文件质量；输出是 FR 估计而非 STEC 重建。适合电离层传播旁路分析，而非 PPP 改正生成。",
+    "language": "Python",
+    "license": "GPL-3.0",
+    "category": "ionosphere",
+    "subcategory": "法拉第旋转",
+    "markers": [
+      "routine-2026-09-24j"
+    ],
+    "stars_approx": 12,
+    "source": "routine-finds-20260924j",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "基于 IGRF 与 IONEX 的电离层法拉第旋转预测"
+  },
+  {
+    "name": "gps-fpga",
+    "url": "https://github.com/osqzss/gps-fpga",
+    "desc_zh": "GPS L1 C/A 单通道 FPGA 相关器（AXI4-Lite 控制）",
+    "analysis_zh": "SystemVerilog 描述的单通道 GPS L1 C/A FPGA 相关器，经 AXI4-Lite 控制，MIT 许可。与 namuru-gps 等同属硬件相关器薄点补齐；星数低但许可证清晰、接口明确。需自备射频前端与 FPGA 工程约束，不提供完整 PVT。适合教学与相关器前端联调，而非现成接收机产品。",
+    "language": "SystemVerilog",
+    "license": "MIT",
+    "category": "gnss-sdr",
+    "subcategory": "FPGA相关器",
+    "markers": [
+      "routine-2026-09-24j"
+    ],
+    "stars_approx": 4,
+    "source": "routine-finds-20260924j",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "GPS L1 C/A 单通道 FPGA 相关器（AXI4-Lite 控制）"
+  },
+  {
+    "name": "gnsshat",
+    "url": "https://github.com/jimmypaputto/gnsshat",
+    "desc_zh": "树莓派 GNSS HAT 驱动：UBX/C++/Python 与实时 Web 面板",
+    "analysis_zh": "面向 Jimmy Paputto GNSS HAT 的驱动库，覆盖 u-blox UBX，并提供 C++/C/Python API 与 Flask 实时仪表盘（天空图、RF、RTK 相对图等），MIT 许可。虽绑定厂商板卡，但对通用 UBX 串口/SPI 仍有参考价值。RTK 固定与厘米级显示依赖改正流与天线环境。适合树莓派现场演示与低成本监测。",
+    "language": "C++",
+    "license": "MIT",
+    "category": "mobile-apps",
+    "subcategory": "树莓派GNSS",
+    "markers": [
+      "routine-2026-09-24j"
+    ],
+    "stars_approx": 22,
+    "source": "routine-finds-20260924j",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "树莓派 GNSS HAT 驱动：UBX/C++/Python 与实时 Web 面板"
+  },
+  {
+    "name": "ublox8-qzss-almanac-converter",
+    "url": "https://github.com/jkivilin/ublox8-gps-qzss-yuma-almanac-converter",
+    "desc_zh": "QZSS/GPS 官方历书转 u-blox 8/M8 UBX-MGA 历书消息",
+    "analysis_zh": "把官方 YUMA 类历书转换为 u-blox 8/M8 的 UBX-MGA 历书消息，MIT 许可，便于冷启动辅助与实验室回放。体量小、用途专一，填补 QZSS 历书到接收机协议的缝隙。输出需与固件协议版本匹配；不替代精密星历。适合嵌入式与接收机配置脚本作者。",
+    "language": "Python",
+    "license": "MIT",
+    "category": "gnss-data",
+    "subcategory": "历书转换",
+    "markers": [
+      "routine-2026-09-24j"
+    ],
+    "stars_approx": 12,
+    "source": "routine-finds-20260924j",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "QZSS/GPS 官方历书转 u-blox 8/M8 UBX-MGA 历书消息"
+  },
+  {
+    "name": "ESSP-EGNOS-User-Support",
+    "url": "https://egnos-user-support.essp-sas.eu/",
+    "desc_zh": "ESSP EGNOS 用户支持站：状态、历史与帮助台入口",
+    "analysis_zh": "欧洲卫星服务商（ESSP）运营的 EGNOS 用户支持门户，提供系统介绍、实时/历史状态、订阅与 7×24 帮助台。与已收录的 EGNOS GSC 门户互补：GSC 偏官方产品与文档，本站偏运行支持与用户服务。登录后可管理订阅；公开页亦可浏览状态摘要。收录前已 HTTP 核验；使用请遵守 ESSP/EUSPA 条款。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "tools-learning",
+    "subcategory": "SBAS用户支持",
+    "markers": [
+      "routine-2026-09-24j"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924j",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "ESSP EGNOS 用户支持站：状态、历史与帮助台入口",
+    "registration": "open",
+    "registration_zh": "公开浏览为主；部分订阅/工单功能需注册登录。"
+  },
+  {
+    "name": "LINZ-Geodetic",
+    "url": "https://www.linz.govt.nz/products-services/geodetic",
+    "desc_zh": "新西兰 LINZ 大地测量产品与服务入口",
+    "analysis_zh": "Toitū Te Whenua LINZ 大地测量业务入口，汇总新西兰大地基准、控制网与相关产品服务说明，可衔接 PositioNZ 等 GNSS 连续站数据。适合查找官方大地成果与服务路径，而非直接批量下 RINEX。与已收录的 PositioNZ FTP 互补：本页偏导航与业务说明。收录前已 HTTP 核验；下载与引用请遵守 LINZ 条款。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "国家大地测量",
+    "markers": [
+      "routine-2026-09-24j"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924j",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "新西兰 LINZ 大地测量产品与服务入口",
+    "registration": "open",
+    "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+  },
+  {
+    "name": "LINZ-Geodetic-System",
+    "url": "https://www.linz.govt.nz/guidance/geodetic-system",
+    "desc_zh": "LINZ 大地测量系统指南：NZGD 等基准与框架说明",
+    "analysis_zh": "LINZ 关于新西兰大地测量系统的指导页，解释基准、框架与使用注意，服务测绘与 GNSS 成果归算用户。偏文档与概念，不替代 PositioNZ 观测下载。与 LINZ-Geodetic 产品页成对：一为服务入口，一为系统说明。收录前已 HTTP 核验；工程采用请对照最新官方通告。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "tools-learning",
+    "subcategory": "基准与框架",
+    "markers": [
+      "routine-2026-09-24j"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924j",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "LINZ 大地测量系统指南：NZGD 等基准与框架说明",
+    "registration": "open",
+    "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+  },
+  {
+    "name": "IERS-Datacenter",
+    "url": "https://datacenter.iers.org/",
+    "desc_zh": "IERS 数据中心：EOP、地球物理流体与公报入口",
+    "analysis_zh": "国际地球自转与参考系统服务（IERS）数据中心，提供地球定向参数（EOP）、地球物理流体、参考系相关下载、公报与简易分析工具。GNSS 精密定位与轨道确定常需对齐 EOP/时标。页面为目录与工具入口，具体文件按产品说明获取。收录前已 HTTP 核验；请遵守 IERS 数据政策与引用格式。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "orbit-clock",
+    "subcategory": "EOP与参考系",
+    "markers": [
+      "routine-2026-09-24j"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924j",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "IERS 数据中心：EOP、地球物理流体与公报入口",
+    "registration": "open",
+    "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+  },
+  {
+    "name": "IERS-EOP-PC",
+    "url": "https://hpiers.obspm.fr/eop-pc/",
+    "desc_zh": "IERS 地球定向参数产品中心（巴黎天文台）",
+    "analysis_zh": "IERS EOP Product Center 门户，面向地球定向参数序列与相关说明，由巴黎天文台维护。与 IERS Datacenter 互补：本站偏 EOP 产品中心视角。精密 GNSS/VLBI/SLR 联合分析常用其序列。收录前已 HTTP 核验；选用哪套 EOP 产品需对照分析策略与时效。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "orbit-clock",
+    "subcategory": "EOP产品",
+    "markers": [
+      "routine-2026-09-24j"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924j",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "IERS 地球定向参数产品中心（巴黎天文台）",
+    "registration": "open",
+    "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+  },
+  {
+    "name": "NOAA-WMM-Portal",
+    "url": "https://www.ngdc.noaa.gov/geomag/WMM/",
+    "desc_zh": "NOAA/NCEI 世界磁场模型（WMM）官方门户",
+    "analysis_zh": "美国 NCEI 发布的 World Magnetic Model 官方页，提供模型说明、系数与计算入口，支撑磁航向、磁偏角及部分电离层/地磁应用。与已收录的 wmm2020 软件包装互补：本页为权威发布与文档源头。模型有年限与更新周期，工程中勿混用过期系数。收录前已 HTTP 核验；请遵守 NOAA 数据使用说明。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "tools-learning",
+    "subcategory": "地磁模型",
+    "markers": [
+      "routine-2026-09-24j"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924j",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "NOAA/NCEI 世界磁场模型（WMM）官方门户",
+    "registration": "open",
+    "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+  }
+]
