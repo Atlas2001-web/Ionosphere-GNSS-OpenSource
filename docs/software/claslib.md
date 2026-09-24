@@ -1,6 +1,6 @@
 # CLASLIB · QZSS CLAS 厘米级增强（Compact SSR）操作手册
 
-目录：[`PROJECTS.json` → `CLASLIB`](../../PROJECTS.json) · 上游 <https://github.com/QZSS-Strategy-Office/claslib> · 官方门户 <https://qzss.go.jp/en/technical/dod/clas/clas_test-library.html> · tip **`1e3a75d`** / tag **`084`**（README 记 **0.8.4**，2026-09-10）· 源自 RTKLIB 2.4.2p13 + GSILIB · 许可 **BSD-2-Clause + 附加条款**（≤0.6.0 明确；其后见仓内 LICENSE）· 本机验证：Linux `ssr2osr`（无 LAPACK）· `-dump` → Compact SSR 分型 CSV（header **3601** 行）· `make test1` → **3580** `$GPGGA` · ≈36.1036°N 140.0863°E · 2026-09-24 04:54 EDT
+目录：[`PROJECTS.json` → `CLASLIB`](../../PROJECTS.json) · 上游 <https://github.com/QZSS-Strategy-Office/claslib> · 官方门户 <https://qzss.go.jp/en/technical/dod/clas/clas_test-library.html> · tip **`1e3a75d`** / tag **`084`**（README 记 **0.8.4**，2026-09-10）· 源自 RTKLIB 2.4.2p13 + GSILIB · 许可 **BSD-2-Clause + 附加条款**（≤0.6.0 明确；其后见仓内 LICENSE）· 本机验证：Linux `ssr2osr`（无 LAPACK）· `-dump` → Compact SSR 分型 CSV（header **3601** 行）· `make test1` → **3580** `$GPGGA` · ≈36.1036°N 140.0863°E · 2026-09-24 04:54 EDT · **质检复跑通过**（header 3601 / type 行数对齐；test1 3580 GGA → 36.1036°N 140.0863°E；tip `1e3a75d`/084；2026-09-24 04:58 EDT）
 
 > 岗位：日本内阁府 QZSS **CLAS**（Centimeter-Level Augmentation Service）参考实现——解码 **Compact SSR（RTCM MT4073）**，做 **SSR→OSR / SSR→虚拟观测**，以及事后 **PPP-RTK / VRS-RTK**（`rnx2rtkp`）。冲突时：**仓内 README / `doc/` 手册 / `./ssr2osr -?` > 本文**。Python 试验 → [cssrlib](./cssrlib.md)；QZSS **MADOCA-PPP**（另一服务）→ [madocalib](./madocalib.md)；通用 CLI → [rtklib](./rtklib.md)。
 
@@ -85,6 +85,7 @@ head -2 parse_cssr_header.csv
 ```text
 CSSR frame first recieve: tow=377538.7
 start CSSR decoding: week=2437, tow=377538.7
+# 质检复跑：同文件 week=2437 稳定；首帧 tow 可漂移（见 377880.8 等）——以 CSV 行数为准
 
 parse_cssr_header.csv     3601
 parse_cssr_type1.csv      1859
@@ -161,6 +162,7 @@ rg '^\$GPGGA' 0627239Q.nmea | tail -1
 | 8 | 期望 cm 级固定解却只有 NMEA q=1 | `ssr2osr` 主责 OSR；PPP-RTK 在 `rnx2rtkp` | 编/跑 `util/rnx2rtkp` 的 `test_L6` |
 | 9 | `.trace` 数 GB | `-x` 过高 | 日常 `-x 0`；调试再 `-x 2` |
 | 10 | 业务区在日本境外无改正 | CLAS 服务区/网格有限 | 换服务区数据或改用 [cssrlib](./cssrlib.md)/IGS SSR |
+| 11 | 同 L6 多次 `-dump` 首帧 `tow` 不一致 | 未钉 `-l6w` / 解码入口帧不同 | 以 `week` + CSV 行数为准；跨周加 `-l6w` |
 
 ## 7. 选型
 

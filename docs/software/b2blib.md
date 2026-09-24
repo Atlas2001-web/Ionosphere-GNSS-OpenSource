@@ -1,6 +1,6 @@
 # B2bLIB · 北斗 PPP-B2b C/C++ 解码库操作手册
 
-目录：[`PROJECTS.json` → `B2bLIB`](../../PROJECTS.json) · 上游 <https://github.com/GCCLib/B2bLIB> · tip **`fe7c4c0`**（2025-05 上传）· 同济相关 **GCC**（GNSS+ under Complex Conditions）· 嵌入 **RTKLIB 2.4.3 b34** · 许可**未 SPDX 标明**（商用先联系作者）· 本机验证：Linux 自写 `gcc/makefile` → `rnx2rtkp`；WUH2 2024-08-24 00:00–00:05 ×30 s + MT1–4 → **9** 历元 **Q=6** PPP · 末 ECEF ≈ (−2267750.19, 5009154.81, 3221294.23) m · 相对头近似坐标 Δ≈4.5 m · 2026-09-24 04:54 EDT
+目录：[`PROJECTS.json` → `B2bLIB`](../../PROJECTS.json) · 上游 <https://github.com/GCCLib/B2bLIB> · tip **`fe7c4c0`**（2025-05 上传）· 同济相关 **GCC**（GNSS+ under Complex Conditions）· 嵌入 **RTKLIB 2.4.3 b34** · 许可**未 SPDX 标明**（商用先联系作者）· 本机验证：Linux 自写 `gcc/makefile` → `rnx2rtkp`；WUH2 2024-08-24 00:00–00:05 ×30 s + MT1–4 → **9** 历元 **Q=6** PPP · 末 ECEF ≈ (−2267750.19, 5009154.81, 3221294.23) m · 相对头近似坐标 Δ≈4.5 m · 2026-09-24 04:54 EDT · **质检复跑通过**（WUH2 5 min → 9×Q=6；首/末 ECEF 对齐；tip `fe7c4c0`；2026-09-24 04:58 EDT）
 
 > 岗位：把北斗 **PPP-B2b** 广播改正（掩码/轨道/DCB/钟差）接到 RTKLIB 系事后 PPP。冲突时：**仓内 `manual/B2bLIB User manual.pdf` / 源码路径 > 本文**。Galileo HAS → [haslib](./haslib.md)；Python Compact SSR/BDS → [cssrlib](./cssrlib.md)；双增强对照 → PROJECTS `NavDecoder`；通用 CLI → [rtklib](./rtklib.md)；QZSS MADOCA → [madocalib](./madocalib.md)。
 
@@ -109,12 +109,13 @@ tail -3 /tmp/b2b_ppp.pos
 % program   : RTKLIB ver.2.4.3
 % pos mode  : PPP Static
 % navi sys  : GPS BDS
-processing … Q=0 → Q=6（约 00:01:30 起）
+processing … 状态行 Q=0 → Q=6（约 00:01:30 起显示）
 
-9 条 Q=6 解（30 s 间隔，UTC）
+9 条 Q=6 解（`-ti 30`；观测时刻落在 :42）
 首：2024/08/24 00:00:42  -2267752.5891  5009150.8753  3221299.2815  Q=6  ns=17
 末：2024/08/24 00:04:42  -2267750.1948  5009154.8089  3221294.2304  Q=6  ns=16
 头近似坐标：(-2267749, 5009154, 3221290)；末历元 ECEF Δ≈4.5 m（短弧浮点，正常）
+# 质检复跑同数；`rg -c '   6  '` → 9
 ```
 
 | 输入 | 说明 |
