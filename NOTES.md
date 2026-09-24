@@ -290,3 +290,10 @@
 - Language fills: **0** (null/quirky only); HTTPS upgrades: **0** (6 leftovers still fail)
 - Entries touched: **43**; `project_count` **747**; provenance_counts official=205 academic_lab=227 personal_community=315
 - Audit: `research/qc-audit-20260924-batch5.md`
+
+## 例行检索补录（2026-09-24b）
+
+- 新增 **13** 条（IGN-RGP/OS-Net/PositioNZ/NSGI/OKVIS2-X/lowtran 等）
+- 当前条目：**760**
+- 分类计数：{'ionosphere': 239, 'troposphere': 34, 'gnss-data': 111, 'gnss-positioning': 83, 'orbit-clock': 13, 'navigation-ins': 60, 'gnss-sdr': 59, 'mobile-apps': 19, 'tools-learning': 31, 'gnss-datasets': 111}
+- 详见 `research/routine_finds_20260924b.json`

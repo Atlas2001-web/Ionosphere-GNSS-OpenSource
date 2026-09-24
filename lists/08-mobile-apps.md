@@ -1,5 +1,5 @@
 # 移动与嵌入式应用 / Mobile Apps
-> **18** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **19** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 手机/嵌入式上的 GNSS 测试、原始测量记录与简易定位。
 
@@ -11,6 +11,7 @@
 | [GPSLogger](https://github.com/BasicAirData/GPSLogger) | GPSLogger：安卓开源轨迹与传感器记录器 | Java | 504 | 🏷️ 个人社区 |
 | [bluetooth_gnss](https://github.com/ykasidit/bluetooth_gnss) | Android 蓝牙外接 GNSS/RTK 与 NTRIP 应用 | Java | 123 | 🏷️ 个人社区 |
 | [GNSS_Compare](https://github.com/TheGalfins/GNSS_Compare) | 手机原始测量定位框架（GPS/Galileo 等） | Java | 73 | 🏷️ 个人社区 |
+| [GalileoHack](https://github.com/griush/GalileoHack) | GalileoHack：多星座 GNSS 可见性 Android 演示 App | Kotlin | 34 | 🏷️ 个人社区 |
 | [PRIDE-GeoDataLogger](https://github.com/PrideLab/PRIDE-GeoDataLogger) | PRIDE 团队手机多频 GNSS 与 IMU 采集工具 | — | 22 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -42,6 +43,13 @@
 语言：Java · 许可：Apache-2.0 · 星标约：73 · 宿主：github
 
 在 Android 上从原始测量解算位置，支持 GPS/Galileo 等，便于算法上机对比。适合教学与原型 App。维护节奏一般；长期采数与设备兼容性测试仍常搭配 GPSTest 等工具。
+
+#### [GalileoHack](https://github.com/griush/GalileoHack)  
+*🏷️ 个人社区*
+
+语言：Kotlin · 许可：MIT · 星标约：34 · 宿主：github
+
+HackUPC 2024 ESA 挑战获奖的开源 Android GNSS Tracker，展示手机所见各星座卫星并对比 GNSS 与网络定位。MIT，有 Play 商店包。偏教学演示与可视化，非精密定位或原始测量导出工具；芯片与 Android 版本影响可见卫星。
 
 #### [PRIDE-GeoDataLogger](https://github.com/PrideLab/PRIDE-GeoDataLogger)  
 *🏷️ 高校实验室*

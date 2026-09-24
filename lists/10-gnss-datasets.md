@@ -1,5 +1,5 @@
 # GNSS 数据源 / GNSS Datasets
-> **102** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **111** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
@@ -478,6 +478,7 @@ COSMIC/FORMOSAT 等任务的无线电掩星数据中心门户，提供中性大�
 | [HongKong-SatRef](https://www.geodetic.gov.hk/en/satref/satref.htm) | 香港 SatRef：卫星定位参考站网介绍 | data-portal | — | 🏷️ 官方 |
 | [HongKong-SatRef-RINEX](https://www.geodetic.gov.hk/en/rinex/rinex.htm) | 香港 SatRef RINEX 数据说明与下载 | data-portal | — | 🏷️ 官方 |
 | [IGN-Geodesie](https://geodesie.ign.fr/) | 法国 IGN 大地测量门户（RGP 等相关入口） | data-portal | — | 🏷️ 官方 |
+| [IGN-RGP-Data](https://rgpdata.ign.fr/) | IGN RGP：法国永久 GNSS 网开放 RINEX/产品服务 | data-portal | — | 🏷️ 官方 |
 | [NOAA-CORS-AWS](https://noaa-cors-pds.s3.amazonaws.com/index.html) | NOAA CORS on AWS：NCN RINEX 的 S3/NODD 分发 | data-portal | — | 🏷️ 官方 |
 | [NOAA-CORS-Data-Tree](https://geodesy.noaa.gov/corsdata/) | NOAA CORS 数据目录树 | data-portal | — | 🏷️ 官方 |
 | [NOAA-NCN-API](https://geodesy.noaa.gov/web_services/ncn-api.shtml) | NOAA NCN API：CORS 站元数据与最近站查询 | data-portal | — | 🏷️ 官方 |
@@ -551,6 +552,13 @@ GA 将校验后的 CORS RINEX（含 Hatanaka/gzip）放到公开 S3 桶 ga-gnss-
 
 法国国家地理与森林信息研究所大地测量站点，导向国家 GNSS 连续运行网与产品信息，可作为欧洲区域网的补充数据源。历史上 IGS 数据中心 FTP 主机可能不稳定，获取文件时优先使用本页给出的当前方式与镜像说明。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
 
+#### [IGN-RGP-Data](https://rgpdata.ign.fr/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：Licence Ouverte · 星标约：— · 宿主：official_site
+
+法国国家地理院（IGN）Réseau GNSS Permanent 的数据服务器入口（rgpdata.ign.fr），提供小时/日 RINEX 等观测与产品，匿名 FTP/HTTP 访问，数据按 Licence Ouverte 分发。适合欧洲区域网与科研对照。现代浏览器常拦 FTP，请用客户端；站级可用性以 RGP 站点说明为准。
+
 #### [NOAA-CORS-AWS](https://noaa-cors-pds.s3.amazonaws.com/index.html)  
 *🏷️ 官方*
 
@@ -605,6 +613,7 @@ SIRGAS 官方网站介绍拉丁美洲及周边大地参考框架与 GNSS 站网�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [IGS-RTS](https://igs.org/rts/) | IGS 实时服务（RTS）：实时轨道钟差/SSR 流说明 | data-portal | — | 🏷️ 官方 核心 |
+| [NSGI-NTRIP](https://www.nsgi.nl/referentiepunten-en-gnss-data/gnss-data/real-time-streams) | NSGI NTRIP：荷兰 CORS 免费/付费实时流入口 | data-portal | — | 🏷️ 官方 |
 | [SouthPAN](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/about-the-program/southpan) | SouthPAN：澳新 SBAS/精密定位增强官方项目页 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
@@ -615,6 +624,13 @@ SIRGAS 官方网站介绍拉丁美洲及周边大地参考框架与 GNSS 站网�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 说明 IGS 实时轨道钟差及 SSR 播发框架、参与分析中心与应用场景，面向实时 PPP 与完整性监测。本页通常不直接推送数据流，需经 BKG 等 NTRIP caster 接入。流可用性与消息版本会更新，上线前应核对挂载点表和解码库兼容性。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+
+#### [NSGI-NTRIP](https://www.nsgi.nl/referentiepunten-en-gnss-data/gnss-data/real-time-streams)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+NSGI 实时数据页，说明 AGRS 等站免费 RTCM 流与 NETPOS 付费流，经 ntrip.kadaster.nl（2101/443）分发。科研与测绘可匿名取免费 mountpoint。与 RINEX 归档互补；付费 NETPOS 需按站方订购，sourcetable 以 caster 为准。
 
 #### [SouthPAN](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/about-the-program/southpan)  
 *🏷️ 官方*
@@ -745,9 +761,13 @@ JHU/APL SuperMAG 汇集全球地磁台站并提供统一坐标与多种指数/�
 | [Korea-GNSS-Data](https://www.gnssdata.or.kr/) | 韩国多机构 CORS 事后 RINEX 门户 | data-portal | — | 🏷️ 官方 |
 | [NOAA-UFCORS](https://geodesy.noaa.gov/UFCORS/) | NGS UFCORS：按需裁剪美国 CORS RINEX | data-portal | — | 🏷️ 官方 |
 | [NRCan-CACS](https://webapp.csrs.nrcan.gc.ca/geod/data-donnees/cacs-scca.php) | 加拿大 CACS 连续 GNSS 网 RINEX 门户 | data-portal | — | 🏷️ 官方 |
+| [NSGI-RINEX](https://www.nsgi.nl/referentiepunten-en-gnss-data/gnss-data/rinex-data) | NSGI RINEX：荷兰公开 CORS 日/时/高采样观测 | data-portal | — | 🏷️ 官方 |
+| [OS-Net-DataHub](https://osdatahub.os.uk/data/positioning/osnet) | OS Net Data Hub：英国 GNSS 基准站 RINEX 产品入口 | data-portal | — | 🏷️ 官方 |
+| [PositioNZ](https://apps.linz.govt.nz/ftp/positionz/) | PositioNZ：新西兰国家 GNSS 网 RINEX FTP 入口 | data-portal | — | 🏷️ 官方 |
 | [RENAG](https://renag.resif.fr/) | RENAG：法国国家永久 GNSS 网数据与元数据门户 | data-portal | — | 🏷️ 官方 |
 | [Spain-IGN-ERGNSS](https://datos-geodesia.ign.es/ERGNSS/) | 西班牙 IGN ERGNSS 公开 GNSS 数据目录 | data-portal | — | 🏷️ 官方 |
 | [SWEPOS-RINEX](https://www.lantmateriet.se/en/geodata/gps-geodesy-and-swepos/lantmateriets-doi-objects/swepos-rinex-data/) | SWEPOS：瑞典国家 GNSS 参考网 RINEX 开放数据 | data-portal | — | 🏷️ 官方 |
+| [TU-Delft-GNSS-Data](https://gnss1.tudelft.nl/) | TU Delft GNSS：高校大地测量项目观测数据服务器 | data-portal | — | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -814,6 +834,27 @@ IBGE 服务数据文档中的 RBMC API（v1），提供 rinex2/rinex3 及 1 秒�
 
 加拿大自然资源部 CSRS 门户提供的 Canadian Active Control System 数据入口，可按站选取并下载 RINEX 观测与元数据，亦分发部分精密星历/钟差选项。北美高纬与极区电离层、地壳形变研究常用。收录前已 HTTP 核验页面可访问；批量下载请遵守 NRCan 礼貌访问与引用要求。
 
+#### [NSGI-RINEX](https://www.nsgi.nl/referentiepunten-en-gnss-data/gnss-data/rinex-data)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+荷兰国家地理信息基础设施（NSGI）公开的 GNSS RINEX 下载说明：日文件、小时与高采样经 HTTPS 按年积日组织，覆盖 AGRS.NL、北海与 BES 等站，文件免费开放。适合西欧区域网与教学。实时流权限另见 NTRIP 页；命名遵循 RINEX3 长文件名。
+
+#### [OS-Net-DataHub](https://osdatahub.os.uk/data/positioning/osnet)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Ordnance Survey Data Hub 的 OS Net 产品页，汇总大不列颠 GNSS 基准站事后 RINEX 与定位数据获取入口。注册免费 OpenData Plan 后可下载或经 API 拉取。与 API 文档互补；部分页面需登录后可见完整清单。
+
+#### [PositioNZ](https://apps.linz.govt.nz/ftp/positionz/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Land Information New Zealand 的 PositioNZ 连续运行参考站观测 FTP/HTTPS 浏览树，提供国家网 RINEX 等文件按目录组织下载。适合澳新区域对照与科研。部分 LINZ 门户页对外网 403，本 FTP 树可直达；使用请遵守 LINZ 数据条款。
+
 #### [RENAG](https://renag.resif.fr/)  
 *🏷️ 官方*
 
@@ -834,6 +875,13 @@ IBGE 服务数据文档中的 RBMC API（v1），提供 rinex2/rinex3 及 1 秒�
 语言：data-portal · 许可：CC0-1.0 · 星标约：— · 宿主：official_site
 
 瑞典测绘局 Lantmäteriet 运营的 SWEPOS 连续运行参考站观测数据门户（DOI 10.23701/c5tc-ew52），提供日文件 RINEX 2/3，FTP/SFTP 开放获取并标注 CC0。需按站方说明注册后访问。适合北欧区域网与科研对照；实时流/精密产品权限另见 SWEPOS 服务条款。
+
+#### [TU-Delft-GNSS-Data](https://gnss1.tudelft.nl/)  
+*🏷️ 高校实验室*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+TU Delft 地球科学与遥感系维护的 GNSS 数据服务器，托管该校大地测量与遥感相关项目的观测文件及说明页面。面向教学实验与合作研究下载样例/项目数据。内容随课题更新，并非国家级 CORS 全网镜像；引用与访问权限以各子目录说明为准。
 
 ## 闪烁/ISMR
 
@@ -902,6 +950,7 @@ NGS Online Positioning User Service：用户上传双频静态观测，由 NGS �
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [M3G](https://gnss-metadata.eu/landing/m3g) | EUREF/EPOS M3G：多网 GNSS 站元数据与 API | data-portal | — | 🏷️ 官方 |
+| [Swisstopo-PNAC](https://pnac.swisstopo.admin.ch/) | swisstopo PNAC：瑞士永久 GNSS 站网信息查询 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -911,6 +960,13 @@ NGS Online Positioning User Service：用户上传双频静态观测，由 NGS �
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 比利时皇家天文台（ROB）为 EPOS/EPN 及加密网维护的 Metadata Management and Distribution System for Multiple GNSS Networks。支持 IGS 风格站点日志上传校验、网络/DOI/名义数据供给与许可等元数据分发；公开 REST API（文档见 gnss-metadata.eu 与 m3g-rob.github.io）。科研侧常用来程序化拉取欧洲参考站元数据。系统本体未必整仓开源；数据访问遵循站方声明许可。DOI: 10.24414/ROB-GNSS-M3G。
+
+#### [Swisstopo-PNAC](https://pnac.swisstopo.admin.ch/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+瑞士联邦地形局永久 GNSS 网信息前端（ELFI/PNAC），用于查询 AGNES 等站元数据与坐标相关信息。测绘与科研可先在此定位瑞士参考站。RINEX 本体多经 swipos 许可渠道获取；本页侧重站网检索，而非匿名大流量观测下载。请对照上游页面核实最新访问方式与许可。
 
 ## 国际联盟
 
@@ -941,6 +997,8 @@ EPOS GNSS Thematic Core Service 官方门户，汇总欧洲 GNSS 观测、坐标
 |---|---|---|---:|---|
 | [EPOS-GLASS-API](https://gnssdata-epos.oca.eu/GlassFramework/) | EPOS GLASS API：欧洲 GNSS RINEX/元数据 REST | data-portal | — | 🏷️ 官方 |
 | [GA-GNSS-RINEX-API](https://data.gnss.ga.gov.au/docs/rinex-file-query/v1.0/web-api-access.html) | GA RINEX API：澳 GNSS 数据中心文件查询接口 | data-portal | — | 🏷️ 官方 |
+| [OS-Net-API](https://docs.os.uk/os-apis/accessing-os-apis/os-net-api/getting-started) | OS Net API：英国 CORS RINEX 程序化下载接口 | data-portal | — | 🏷️ 官方 |
+| [UNAVCO-Data-Access-Methods](https://www.unavco.org/data/gps-gnss/data-access-methods/data-access-methods.html) | UNAVCO 访问指南：GNSS 数据多通道拉取说明 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -957,6 +1015,20 @@ EPOS GNSS Thematic Core Service 官方门户，汇总欧洲 GNSS 观测、坐标
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 GA GNSS Data Centre 的 RINEX 查询 API 说明：可按站名、时间窗、文件周期/类型与 RINEX 版本检索，返回含下载链接的 JSON。匿名可取开放数据，鉴权可取受限站。适合脚本化拉取澳新/APREF 相关观测；与已收录的门户首页互补，侧重程序化接口。
+
+#### [OS-Net-API](https://docs.os.uk/os-apis/accessing-os-apis/os-net-api/getting-started)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+OS Net API 入门文档，说明如何用 API Key 列出并下载大不列颠 CORS 的 RINEX v3 小时文件。需在 OS Data Hub 注册免费 OpenData Plan。适合脚本化拉取英国参考站；窗口与时效有产品限制，实时改正另见 OS 商业/服务条款。
+
+#### [UNAVCO-Data-Access-Methods](https://www.unavco.org/data/gps-gnss/data-access-methods/data-access-methods.html)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+EarthScope（原 UNAVCO）整理的 GPS/GNSS 数据访问方法页，对比 Web、FTP/HTTPS、API 等拉取途径与适用场景。新用户可据此选择 GAGE 归档或工具链入口。具体数据集许可与账号要求以各通道为准；与已收录的数据首页互补。
 
 ## IGS数据中心
 

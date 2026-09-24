@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> **238** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **239** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -953,6 +953,7 @@ University of Warmia and Mazury（Olsztyn）承担 IGS 电离层图组合与验�
 | [igs-roti](https://github.com/jonathanblade/igs-roti) | IGS ROTI Maps 产品的 Web 可视化小工具 | Python | 2 | 🏷️ 个人社区 |
 | [ionospheric-scintillation-mitigation](https://github.com/fengjie0325/ionospheric-scintillation-mitigation) | 电离层闪烁抑制算法的原始计算机代码 | MATLAB | 2 | 🏷️ 个人社区 |
 | [FARR](https://gitlab.com/longleywj/farr) | FARR：磁化碰撞等离子体中电波传播的三维 FDTD 开源代码（GitLab） | C++ | 1 | 🏷️ 高校实验室 |
+| [gnss-vector-scintillation](https://github.com/DTUSWx/gnss-vector-scintillation) | 矢量闪烁：Jones–Stokes GNSS 闪烁 MATLAB 参考码 | MATLAB | 1 | 🏷️ 高校实验室 |
 | [scintkit](https://github.com/qwsae10/scintkit) | scintkit：ScintPi/GNSS 闪烁快看工具集 | Jupyter Notebook | 1 | 🏷️ 个人社区 |
 | [IBP-Model](https://igit.iap-kborn.de/ibp/ibp-model) | IAP Kühlungsborn IBP：低纬赤道等离子体泡发生概率经验/ML 模型（机构 GitLab） | Python | 0 | 🏷️ 高校实验室 |
 | [M_ISSION](https://github.com/wulide4/M_ISSION) | 多 GNSS 电离层闪烁指数计算软件 | C++ | 0 | 🏷️ 个人社区 |
@@ -1023,6 +1024,13 @@ Notebook 实验：对 GNSS 导出的 ROTI 做深度学习时序预报。局限�
 语言：C++ · 许可：GPL-3.0 · 星标约：1 · 宿主：gitlab
 
 NJIT/Boston University 的三维 FDTD 开源码（GitLab，GPL-3.0），仿真磁化碰撞等离子体中的电波传播与闪烁。提供 CMake/Docker/Python 辅助。面向传播机理研究，不是 GNSS 观测解算或 GIM 产品工具。
+
+#### [gnss-vector-scintillation](https://github.com/DTUSWx/gnss-vector-scintillation)  
+*🏷️ 高校实验室*
+
+语言：MATLAB · 许可：MIT · 星标约：1 · 宿主：github
+
+配套 Radio Science 投稿的 MATLAB 参考代码，用统一 Jones–Stokes 表述把幅度、相位闪烁扩展到极化观测量，并覆盖地基、掩星与反射几何。面向科研复现而非业务接收机。星标少但有 DOI；不替代 S4/σφ 业务处理流水线。
 
 #### [scintkit](https://github.com/qwsae10/scintkit)  
 *🏷️ 个人社区*
@@ -1420,7 +1428,7 @@ Oleg Zolotov 等实现的 FIRI-2018（Friedrich 等更新的低电离层经验�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [tec_forecast](https://github.com/mauriciodev/tec_forecast) | 基于深度学习的全球 TEC 图预报示例 | Jupyter Notebook | 31 | 🏷️ 个人社区 |
+| [tec_forecast](https://github.com/mauriciodev/tec_forecast) | 基于深度学习的全球 TEC 图预报示例 | Jupyter Notebook | 31 | 🏷️ 个人社区 ★ |
 | [DeepPredTEC](https://github.com/vtsuperdarn/DeepPredTEC) | 深度学习预报 GPS TEC 图（SuperDARN 相关） | Python | 13 | 🏷️ 高校实验室 |
 | [ED-AttConvLSTM](https://github.com/leeliangchao/ED-AttConvLSTM) | 注意力 ConvLSTM 的 TEC 图预报模型 | Jupyter Notebook | 10 | 🏷️ 个人社区 |
 | [Ionospheric-VTEC-Forecasting](https://github.com/ICCT-ML-in-geodesy/Ionospheric-VTEC-Forecasting) | IAG 研究组 ML 预报 VTEC 的教学示例 | Jupyter Notebook | 9 | 🏷️ 高校实验室 ★ |
@@ -1430,7 +1438,7 @@ Oleg Zolotov 等实现的 FIRI-2018（Friedrich 等更新的低电离层经验�
 ### 详细说明
 
 #### [tec_forecast](https://github.com/mauriciodev/tec_forecast)  
-*🏷️ 个人社区*
+*🏷️ 个人社区 ★*
 
 语言：Jupyter Notebook · 许可：MIT · 星标约：31 · 宿主：github
 

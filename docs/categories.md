@@ -23,14 +23,14 @@
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
 - 列表文件：[`lists/01-ionosphere.md`](../lists/01-ionosphere.md)
-- 当前条目数：**238**
+- 当前条目数：**239**
 
 ## `troposphere` — 对流层
 
 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
 - 列表文件：[`lists/02-troposphere.md`](../lists/02-troposphere.md)
-- 当前条目数：**33**
+- 当前条目数：**34**
 
 ## `gnss-data` — GNSS 数据与格式
 
@@ -58,7 +58,7 @@ SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现
 GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 
 - 列表文件：[`lists/06-navigation-ins.md`](../lists/06-navigation-ins.md)
-- 当前条目数：**59**
+- 当前条目数：**60**
 
 ## `gnss-sdr` — 软件接收机与信号
 
@@ -72,7 +72,7 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 手机/嵌入式上的 GNSS 测试、原始测量记录与简易定位。
 
 - 列表文件：[`lists/08-mobile-apps.md`](../lists/08-mobile-apps.md)
-- 当前条目数：**18**
+- 当前条目数：**19**
 
 ## `tools-learning` — 学习资源与工具
 
@@ -86,7 +86,7 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
 - 列表文件：[`lists/10-gnss-datasets.md`](../lists/10-gnss-datasets.md)
-- 当前条目数：**102**
+- 当前条目数：**111**
 
 ## 与用户仓库的关系标记
 

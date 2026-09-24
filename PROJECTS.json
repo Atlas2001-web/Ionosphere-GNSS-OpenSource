@@ -5,18 +5,18 @@
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
   "generated": "2026-09-24",
-  "project_count": 747,
+  "project_count": 760,
   "counts_by_category": {
+    "ionosphere": 239,
+    "troposphere": 34,
     "gnss-data": 111,
-    "gnss-datasets": 102,
     "gnss-positioning": 83,
-    "gnss-sdr": 59,
-    "ionosphere": 238,
-    "mobile-apps": 18,
-    "navigation-ins": 59,
     "orbit-clock": 13,
+    "navigation-ins": 60,
+    "gnss-sdr": 59,
+    "mobile-apps": 19,
     "tools-learning": 31,
-    "troposphere": 33
+    "gnss-datasets": 111
   },
   "projects": [
     {
@@ -14559,12 +14559,272 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "Cryologger GVT：面向 PPP 的开源冰川 GNSS 测速仪"
+    },
+    {
+      "name": "IGN-RGP-Data",
+      "url": "https://rgpdata.ign.fr/",
+      "desc_zh": "法国 IGN 永久 GNSS 网 RGP：开放许可的 RINEX/产品 HTTP 与 FTP 入口",
+      "analysis_zh": "法国国家地理院（IGN）Réseau GNSS Permanent 的数据服务器入口（rgpdata.ign.fr），提供小时/日 RINEX 等观测与产品，匿名 FTP/HTTP 访问，数据按 Licence Ouverte 分发。适合欧洲区域网与科研对照。现代浏览器常拦 FTP，请用客户端；站级可用性以 RGP 站点说明为准。",
+      "language": "data-portal",
+      "license": "Licence Ouverte",
+      "category": "gnss-datasets",
+      "subcategory": "CORS区域网",
+      "markers": [
+        "routine-2026-09-24b"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "IGN RGP：法国永久 GNSS 网开放 RINEX/产品服务"
+    },
+    {
+      "name": "OS-Net-API",
+      "url": "https://docs.os.uk/os-apis/accessing-os-apis/os-net-api/getting-started",
+      "desc_zh": "英国 Ordnance Survey OS Net：RINEX 程序化下载 API 文档",
+      "analysis_zh": "OS Net API 入门文档，说明如何用 API Key 列出并下载大不列颠 CORS 的 RINEX v3 小时文件。需在 OS Data Hub 注册免费 OpenData Plan。适合脚本化拉取英国参考站；窗口与时效有产品限制，实时改正另见 OS 商业/服务条款。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "数据接口",
+      "markers": [
+        "routine-2026-09-24b"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "OS Net API：英国 CORS RINEX 程序化下载接口"
+    },
+    {
+      "name": "OS-Net-DataHub",
+      "url": "https://osdatahub.os.uk/data/positioning/osnet",
+      "desc_zh": "OS Data Hub 上的 OS Net 定位/RINEX 产品入口",
+      "analysis_zh": "Ordnance Survey Data Hub 的 OS Net 产品页，汇总大不列颠 GNSS 基准站事后 RINEX 与定位数据获取入口。注册免费 OpenData Plan 后可下载或经 API 拉取。与 API 文档互补；部分页面需登录后可见完整清单。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "区域CORS",
+      "markers": [
+        "routine-2026-09-24b"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "OS Net Data Hub：英国 GNSS 基准站 RINEX 产品入口"
+    },
+    {
+      "name": "PositioNZ",
+      "url": "https://apps.linz.govt.nz/ftp/positionz/",
+      "desc_zh": "新西兰 LINZ PositioNZ：国家 GNSS 参考网 RINEX FTP 浏览",
+      "analysis_zh": "Land Information New Zealand 的 PositioNZ 连续运行参考站观测 FTP/HTTPS 浏览树，提供国家网 RINEX 等文件按目录组织下载。适合澳新区域对照与科研。部分 LINZ 门户页对外网 403，本 FTP 树可直达；使用请遵守 LINZ 数据条款。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "区域CORS",
+      "markers": [
+        "routine-2026-09-24b"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "PositioNZ：新西兰国家 GNSS 网 RINEX FTP 入口"
+    },
+    {
+      "name": "NSGI-RINEX",
+      "url": "https://www.nsgi.nl/referentiepunten-en-gnss-data/gnss-data/rinex-data",
+      "desc_zh": "荷兰 NSGI/Kadaster：AGRS 等站免费日/时/高采样 RINEX",
+      "analysis_zh": "荷兰国家地理信息基础设施（NSGI）公开的 GNSS RINEX 下载说明：日文件、小时与高采样经 HTTPS 按年积日组织，覆盖 AGRS.NL、北海与 BES 等站，文件免费开放。适合西欧区域网与教学。实时流权限另见 NTRIP 页；命名遵循 RINEX3 长文件名。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "区域CORS",
+      "markers": [
+        "routine-2026-09-24b"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NSGI RINEX：荷兰公开 CORS 日/时/高采样观测"
+    },
+    {
+      "name": "NSGI-NTRIP",
+      "url": "https://www.nsgi.nl/referentiepunten-en-gnss-data/gnss-data/real-time-streams",
+      "desc_zh": "荷兰 NSGI：免费/付费 GNSS 实时 NTRIP 流说明",
+      "analysis_zh": "NSGI 实时数据页，说明 AGRS 等站免费 RTCM 流与 NETPOS 付费流，经 ntrip.kadaster.nl（2101/443）分发。科研与测绘可匿名取免费 mountpoint。与 RINEX 归档互补；付费 NETPOS 需按站方订购，sourcetable 以 caster 为准。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "实时流",
+      "markers": [
+        "routine-2026-09-24b"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NSGI NTRIP：荷兰 CORS 免费/付费实时流入口"
+    },
+    {
+      "name": "TU-Delft-GNSS-Data",
+      "url": "https://gnss1.tudelft.nl/",
+      "desc_zh": "代尔夫特理工 GNSS 数据服务器：课题组项目观测分发",
+      "analysis_zh": "TU Delft 地球科学与遥感系维护的 GNSS 数据服务器，托管该校大地测量与遥感相关项目的观测文件及说明页面。面向教学实验与合作研究下载样例/项目数据。内容随课题更新，并非国家级 CORS 全网镜像；引用与访问权限以各子目录说明为准。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "区域CORS",
+      "markers": [
+        "routine-2026-09-24b"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "academic_lab",
+      "one_liner_zh": "TU Delft GNSS：高校大地测量项目观测数据服务器"
+    },
+    {
+      "name": "Swisstopo-PNAC",
+      "url": "https://pnac.swisstopo.admin.ch/",
+      "desc_zh": "瑞士 swisstopo PNAC/ELFI：永久 GNSS 站网信息查询",
+      "analysis_zh": "瑞士联邦地形局永久 GNSS 网信息前端（ELFI/PNAC），用于查询 AGNES 等站元数据与坐标相关信息。测绘与科研可先在此定位瑞士参考站。RINEX 本体多经 swipos 许可渠道获取；本页侧重站网检索，而非匿名大流量观测下载。请对照上游页面核实最新访问方式与许可。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "元数据",
+      "markers": [
+        "routine-2026-09-24b"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "swisstopo PNAC：瑞士永久 GNSS 站网信息查询"
+    },
+    {
+      "name": "UNAVCO-Data-Access-Methods",
+      "url": "https://www.unavco.org/data/gps-gnss/data-access-methods/data-access-methods.html",
+      "desc_zh": "EarthScope/UNAVCO：GPS/GNSS 数据访问方式一览",
+      "analysis_zh": "EarthScope（原 UNAVCO）整理的 GPS/GNSS 数据访问方法页，对比 Web、FTP/HTTPS、API 等拉取途径与适用场景。新用户可据此选择 GAGE 归档或工具链入口。具体数据集许可与账号要求以各通道为准；与已收录的数据首页互补。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "数据接口",
+      "markers": [
+        "routine-2026-09-24b"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "UNAVCO 访问指南：GNSS 数据多通道拉取说明"
+    },
+    {
+      "name": "lowtran",
+      "url": "https://github.com/space-physics/lowtran",
+      "desc_zh": "Python/Matlab 封装的 LOWTRAN7 大气透过与消光模型",
+      "analysis_zh": "space-physics 维护的 LOWTRAN7 现代封装，用 f2py/CMake 在 Python 中直接传 xarray，避免读写文本卡。用于大气透过率、消光与辐照度估算，可服务 GNSS 气象/传播仿真周边。需 Fortran 编译器；不是对流层 ZTD 映射官方库。MIT。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "troposphere",
+      "subcategory": "大气模型",
+      "markers": [
+        "routine-2026-09-24b"
+      ],
+      "stars_approx": 118,
+      "source": "routine-finds-20260924b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "lowtran：LOWTRAN7 大气消光模型的 Python 封装"
+    },
+    {
+      "name": "GalileoHack",
+      "url": "https://github.com/griush/GalileoHack",
+      "desc_zh": "HackUPC 获奖 Android：多星座可见性与定位对比演示 App",
+      "analysis_zh": "HackUPC 2024 ESA 挑战获奖的开源 Android GNSS Tracker，展示手机所见各星座卫星并对比 GNSS 与网络定位。MIT，有 Play 商店包。偏教学演示与可视化，非精密定位或原始测量导出工具；芯片与 Android 版本影响可见卫星。",
+      "language": "Kotlin",
+      "license": "MIT",
+      "category": "mobile-apps",
+      "subcategory": "Android",
+      "markers": [
+        "routine-2026-09-24b"
+      ],
+      "stars_approx": 34,
+      "source": "routine-finds-20260924b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "GalileoHack：多星座 GNSS 可见性 Android 演示 App"
+    },
+    {
+      "name": "OKVIS2-X",
+      "url": "https://github.com/ethz-mrl/OKVIS2-X",
+      "desc_zh": "TUM/ETH：可配置深度/LiDAR/GNSS 的开源视觉-惯性 SLAM",
+      "analysis_zh": "OKVIS2-X 在经典 OKVIS 视觉惯性框架上扩展稠密深度或 LiDAR，并支持融合 GNSS，面向机器人户外定位。BSD-3 风格许可，附 TRO/arXiv 论文。构建依赖较重；GNSS 为可选传感器，不是独立 PPP/RTK 引擎。",
+      "language": "C++",
+      "license": "BSD-3-Clause",
+      "category": "navigation-ins",
+      "subcategory": "GNSS/视觉/INS",
+      "markers": [
+        "routine-2026-09-24b"
+      ],
+      "stars_approx": 410,
+      "source": "routine-finds-20260924b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "OKVIS2-X：可融 GNSS 的开源视觉-惯性 SLAM"
+    },
+    {
+      "name": "gnss-vector-scintillation",
+      "url": "https://github.com/DTUSWx/gnss-vector-scintillation",
+      "desc_zh": "Jones–Stokes 矢量框架：GNSS 幅度/相位/极化闪烁 MATLAB 参考实现",
+      "analysis_zh": "配套 Radio Science 投稿的 MATLAB 参考代码，用统一 Jones–Stokes 表述把幅度、相位闪烁扩展到极化观测量，并覆盖地基、掩星与反射几何。面向科研复现而非业务接收机。星标少但有 DOI；不替代 S4/σφ 业务处理流水线。",
+      "language": "MATLAB",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "闪烁",
+      "markers": [
+        "routine-2026-09-24b"
+      ],
+      "stars_approx": 1,
+      "source": "routine-finds-20260924b",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "矢量闪烁：Jones–Stokes GNSS 闪烁 MATLAB 参考码"
     }
   ],
   "provenance_counts": {
-    "official": 205,
-    "academic_lab": 227,
-    "personal_community": 315
+    "official": 213,
+    "academic_lab": 230,
+    "personal_community": 317
   },
   "updated": "2026-09-24"
 }

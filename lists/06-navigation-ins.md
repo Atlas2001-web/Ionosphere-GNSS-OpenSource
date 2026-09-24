@@ -1,7 +1,7 @@
 # 导航 / Navigation & INS
-> **59** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **60** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
-GNSS 与 IMU（及视觉）松/紧组合，车载与机器人户外定位。
+GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 
 ## B2b组合导航
 
@@ -331,6 +331,7 @@ MATLAB 仿真仓库：用间接法卡尔曼滤波融合 IMU 与 GPS，传感器�
 | [OpenVINS](https://github.com/rpng/open_vins) | OpenVINS：RPNG 视觉-惯性导航开源研究平台 | C++ | 3115 | 🏷️ 高校实验室 |
 | [GVINS-HKUST](https://github.com/HKUST-Aerial-Robotics/GVINS) | GVINS：港科大紧耦合 GNSS-视觉-惯性系统 | C++ | 1160 | 🏷️ 高校实验室 |
 | [IC-GVINS](https://github.com/i2Nav-WHU/IC-GVINS) | IC-GVINS：INS 中心的实时 GNSS-VIO 组合导航 | C++ | 690 | 🏷️ 高校实验室 |
+| [OKVIS2-X](https://github.com/ethz-mrl/OKVIS2-X) | OKVIS2-X：可融 GNSS 的开源视觉-惯性 SLAM | C++ | 410 | 🏷️ 高校实验室 |
 | [gnss_comm](https://github.com/HKUST-Aerial-Robotics/gnss_comm) | GNSS 原始测量处理的 ROS 基础定义与工具 | C++ | 164 | 🏷️ 高校实验室 |
 | [ublox_driver](https://github.com/HKUST-Aerial-Robotics/ublox_driver) | 面向 ZED-F9P 的 ROS u-blox 驱动 | C++ | 159 | 🏷️ 高校实验室 |
 | [msckfvioGPS](https://github.com/loveforeverLi/msckf_vio_GPS) | MSCKF 视觉惯性里程计与 GPS 融合 | C++ | 31 | 🏷️ 个人社区 |
@@ -357,6 +358,13 @@ HKUST Aerial Robotics 把 GNSS 因子织进 VIO，改善长航时全局一致性
 语言：C++ · 许可：GPL-3.0 · 星标约：690 · 宿主：github
 
 i2Nav 开源的 INS 中心多传感器组合，把 GNSS 与视觉约束进惯性状态，强调实时稳健。适合户外机器人与自动驾驶定位研究。标定、时间同步与数据集质量要求高；纯测地事后 PPP 请另选 PRIDE/Ginan。
+
+#### [OKVIS2-X](https://github.com/ethz-mrl/OKVIS2-X)  
+*🏷️ 高校实验室*
+
+语言：C++ · 许可：BSD-3-Clause · 星标约：410 · 宿主：github
+
+OKVIS2-X 在经典 OKVIS 视觉惯性框架上扩展稠密深度或 LiDAR，并支持融合 GNSS，面向机器人户外定位。BSD-3 风格许可，附 TRO/arXiv 论文。构建依赖较重；GNSS 为可选传感器，不是独立 PPP/RTK 引擎。
 
 #### [gnss_comm](https://github.com/HKUST-Aerial-Robotics/gnss_comm)  
 *🏷️ 高校实验室*

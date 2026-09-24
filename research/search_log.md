@@ -297,3 +297,11 @@
 - Focus after 20260923b: AU agency portals (AUSPOS/APREF/RINEX API/S3/SouthPAN), CDDIS DCB Earthdata page, NRCan F10.7, NGDC iono dir, RMextract/ocbpy/hwm14, VN-DGNSS, phone/embedded GNSS (google-gnss-logger, Cryologger-GVT)
 - Skipped: TrigNet (egress unreachable), MG_APP (unclear/mixed licence + stale), RawMeaLogger/PyScint (no license), GalileoHack (optional hackathon), gpredict (sat tracking), ppp-tools already listed, SONEL/scintkit/OASIS already listed, ntrip.data.gnss.ga.gov.au HTTP 501 from box
 
+## Routine pass 2026-09-24b
+
+- Catalog size before: **747**; after merge: **760** (+13)
+- Finds file: `research/routine_finds_20260924b.json`
+- Method: WebSearch (EU/UK/NL/NZ/CH CORS) + `gh api search/repositories` + `curl -sI -L` live checks; dedup vs PROJECTS.json and prior 20260923/24 finds
+- Focus: IGN RGP data, OS Net API/Data Hub, PositioNZ, NSGI RINEX/NTRIP, TU Delft GNSS server, swisstopo PNAC, UNAVCO access methods; software OKVIS2-X, lowtran, GalileoHack, vector scintillation
+- Skipped: TrigNet/swipos API (unreachable or license-gated), SAPOS commercial, FAST/scintill-ai/gri-iono/ntripclient already listed, RawMeaLogger/Lambda no license, piradar archived, pulselab (medical PWV not GNSS)
+

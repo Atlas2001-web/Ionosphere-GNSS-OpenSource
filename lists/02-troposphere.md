@@ -1,5 +1,5 @@
 # 对流层 / Troposphere
-> **33** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **34** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
@@ -367,10 +367,18 @@ UNB 系列中性大气经验模型，无实测气象时给天顶延迟粗值。�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [lowtran](https://github.com/space-physics/lowtran) | lowtran：LOWTRAN7 大气消光模型的 Python 封装 | Python | 118 | 🏷️ 个人社区 |
 | [msise00](https://github.com/space-physics/msise00) | NRLMSISE-00 的 Python/Matlab 封装 | Python | 63 | 🏷️ 高校实验室 |
 | [hwm14](https://github.com/gemini3d/hwm14) | hwm14：NRL 水平风场模型开源 CMake 构建 | Fortran | 7 | 🏷️ 高校实验室 |
 
 ### 详细说明
+
+#### [lowtran](https://github.com/space-physics/lowtran)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：118 · 宿主：github
+
+space-physics 维护的 LOWTRAN7 现代封装，用 f2py/CMake 在 Python 中直接传 xarray，避免读写文本卡。用于大气透过率、消光与辐照度估算，可服务 GNSS 气象/传播仿真周边。需 Fortran 编译器；不是对流层 ZTD 映射官方库。MIT。
 
 #### [msise00](https://github.com/space-physics/msise00)  
 *🏷️ 高校实验室*
