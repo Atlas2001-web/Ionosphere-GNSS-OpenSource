@@ -753,9 +753,9 @@ def regenerate_lists(projects):
 
         lines = []
         lines.append(f"# {meta['title']}")
-        lines.append(f"> 共 **{len(items)}** 个已收录项目。本文件为链接索引，不含第三方源码。")
+        lines.append(f"> **{len(items)}** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区")
         lines.append("")
-        lines.append(f"**这类做什么？** {meta['blurb']}")
+        lines.append(meta["blurb"])
         lines.append("")
 
         for sc in sub_order:

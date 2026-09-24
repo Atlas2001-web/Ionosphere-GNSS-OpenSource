@@ -450,11 +450,9 @@ def regenerate_lists(projects):
 
         lines = [
             f"# {meta['title']}",
-            f"> 共 **{len(items)}** 个已收录项目。本文件为链接索引，不含第三方源码。",
+            f"> **{len(items)}** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区",
             "",
-            f"**这类做什么？** {meta['blurb']}",
-            "",
-            "来源标记：🏷️ 官方 = 机构/国家实验室；🏷️ 高校实验室 = 大学课题组；🏷️ 个人社区 = 个人或小团队。",
+            meta["blurb"],
             "",
         ]
 
@@ -508,23 +506,13 @@ def regenerate_lists(projects):
 
 def regenerate_categories(counts):
     cat_doc = [
-        "# 分类说明（写给初学者）",
+        "# 分类说明",
         "",
-        "本索引按「你要解决什么问题」划分，而不是按编程语言。下面用白话说明每一类在 GNSS 工作流里的位置。",
+        "按「要解决什么问题」划分，不按编程语言。",
         "",
-        "```",
-        "数据下载/格式(RINEX,RTCM) ──► 质量检查",
-        "         │",
-        "         ├─► 电离层 TEC/GIM / 闪烁指标",
-        "         ├─► 对流层 ZTD/PWV / VMF",
-        "         └─► 精密定位 RTK/PPP ──► 轨道钟差产品",
-        "                    │",
-        "                    └─► GNSS/INS / 视觉组合导航",
+        "典型路径：数据/格式（RINEX/RTCM）→ 质检 → 电离层 TEC/GIM/闪烁、对流层 ZTD/PWV，或精密定位 RTK/PPP（常配合轨道钟差）；车载/机器人再接 GNSS/INS。另线：GNSS-SDR、手机原始测量 App。",
         "",
-        "另线：GNSS-SDR（从无线电采样到伪距/相位）；手机 App（原始测量采集）",
-        "```",
-        "",
-        "## 来源 / 维护方标记（provenance）",
+        "## 来源标记（provenance）",
         "",
         "每条项目在 `PROJECTS.json` 中带有 `provenance` 字段，列表里显示为徽章：",
         "",

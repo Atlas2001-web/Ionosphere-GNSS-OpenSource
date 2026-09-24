@@ -481,11 +481,9 @@ def main() -> None:
         lines.append(f"# {meta['title'].split(' / ')[0]} / {meta['title'].split(' / ')[-1] if ' / ' in meta['title'] else meta['title']}")
         # simpler title from file naming
         lines = [f"# {meta['title']}"]
-        lines.append(f"> 共 **{len(items)}** 个已收录项目。本文件为链接索引，不含第三方源码。")
+        lines.append(f"> **{len(items)}** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区")
         lines.append("")
-        lines.append(f"**这类做什么？** {meta['blurb']}")
-        lines.append("")
-        lines.append("来源标记：🏷️ 官方 = 机构/国家实验室；🏷️ 高校实验室 = 大学课题组；🏷️ 个人社区 = 个人或小团队。")
+        lines.append(meta["blurb"])
         lines.append("")
 
         for sub in sorted(by_sub.keys()):
@@ -522,23 +520,13 @@ def main() -> None:
 
     # --- categories.md ---
     cat_doc = []
-    cat_doc.append("# 分类说明（写给初学者）")
+    cat_doc.append("# 分类说明")
     cat_doc.append("")
-    cat_doc.append("本索引按「你要解决什么问题」划分，而不是按编程语言。下面用白话说明每一类在 GNSS 工作流里的位置。")
+    cat_doc.append("按「要解决什么问题」划分，不按编程语言。")
     cat_doc.append("")
-    cat_doc.append("```")
-    cat_doc.append("数据下载/格式(RINEX,RTCM) ──► 质量检查")
-    cat_doc.append("         │")
-    cat_doc.append("         ├─► 电离层 TEC/GIM / 闪烁指标")
-    cat_doc.append("         ├─► 对流层 ZTD/PWV / VMF")
-    cat_doc.append("         └─► 精密定位 RTK/PPP ──► 轨道钟差产品")
-    cat_doc.append("                    │")
-    cat_doc.append("                    └─► GNSS/INS / 视觉组合导航")
+    cat_doc.append("典型路径：数据/格式（RINEX/RTCM）→ 质检 → 电离层 TEC/GIM/闪烁、对流层 ZTD/PWV，或精密定位 RTK/PPP（常配合轨道钟差）；车载/机器人再接 GNSS/INS。另线：GNSS-SDR、手机原始测量 App。")
     cat_doc.append("")
-    cat_doc.append("另线：GNSS-SDR（从无线电采样到伪距/相位）；手机 App（原始测量采集）")
-    cat_doc.append("```")
-    cat_doc.append("")
-    cat_doc.append("## 来源 / 维护方标记（provenance）")
+    cat_doc.append("## 来源标记（provenance）")
     cat_doc.append("")
     cat_doc.append("每条项目在 `PROJECTS.json` 中带有 `provenance` 字段，列表里显示为徽章：")
     cat_doc.append("")
