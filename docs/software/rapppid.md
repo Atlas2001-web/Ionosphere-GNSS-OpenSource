@@ -1,6 +1,6 @@
 # raPPPid · VieVS MATLAB PPP 操作手册
 
-目录：[`PROJECTS.json` → `raPPPid`](../../PROJECTS.json) · 上游 <https://github.com/TUW-VieVS/raPPPid> · Wiki <https://vievswiki.geo.tuwien.ac.at/en/raPPPid> · 许可 **GPL-3.0** · tip **`28fd517`** / tag **v5.1**（2026-07-29）· `DEF.ver='5.1'` · 本机验证：clone 树 **633** 个 `.m`；`WORK/PARAMETERS` **9** 个预设 `.mat`；`Path.m` / `raPPPid.m` / `PPP_main.m`（476 行）齐全 · **无 MATLAB/Octave → 未跑 GUI/PPP 解算**（禁止臆造坐标/固定率）· 2026-09-24 05:27 EDT
+目录：[`PROJECTS.json` → `raPPPid`](../../PROJECTS.json) · 上游 <https://github.com/TUW-VieVS/raPPPid> · Wiki <https://vievswiki.geo.tuwien.ac.at/en/raPPPid> · 许可 **GPL-3.0** · tip **`28fd517`** / tag **v5.1**（2026-07-29）· `DEF.ver='5.1'` · 本机验证：`find CODE -name '*.m'` → **633**（整树含 WORK → **635**）；`WORK/PARAMETERS` **9** 个预设 `.mat`；`WORK/Path.m` / `WORK/raPPPid.m` / `CODE/PPP_main.m`（**476** 行）；`DATA/OceanLoading.blq` **339510** B · `which matlab`/`octave` 皆空 → **未跑 GUI/PPP**（禁止臆造坐标/固定率）· **质检复跑** 2026-09-24 05:33 EDT
 
 > 岗位：TU Wien **VieVS PPP** 模块——GUI 驱动、多模型/多产品精密单点（浮点与 PPP-AR、手机/实时扩展）。冲突时：**Wiki + 仓内 `DEF.m` / `Path.m` > 本文**。无 MATLAB 时换 [pride-pppar](./pride-pppar.md) / [great-pvt](./great-pvt.md) / [rtklib](./rtklib.md)。
 
@@ -49,7 +49,7 @@ cd raPPPid && git rev-parse --short HEAD && git describe --tags --always
 # 28fd517 / v5.1
 rg -n "ver\s*=" CODE/COMMON/DEF.m
 # ver = '5.1'
-find CODE -name '*.m' | wc -l          # 633
+find CODE -name '*.m' | wc -l          # 633（整树 635）
 ls WORK/PARAMETERS
 ls DATA                                 # ANTEX BIASES … OBS ORBIT TROPO …
 ```
@@ -61,7 +61,7 @@ cd('.../raPPPid/WORK')   % 必须 WORK，不是仓库根
 raPPPid                  % 或 raPPPid()
 ```
 
-期望命令窗打印版本横幅（含 `DEF.version`）并打开 GUI。若不在 `WORK/`：`Please change the Matlab work folder to raPPPid/WORK/`。
+期望命令窗打印版本横幅（含 `DEF.ver`）并打开 GUI。若不在 `WORK/`：`Please change the Matlab work folder to raPPPid/WORK/`。
 
 ## 3. 端到端（上游 Wiki 流程；本机未解算）
 
@@ -150,6 +150,8 @@ wc -c DATA/OceanLoading.blq         # 本机 339510
 | 10 | 期望出 STEC | 软件是 PPP | TEC→[pytecgg](./pytecgg.md) |
 | 11 | Octave 跑挂 | 非官方支持 | 装正版 MATLAB；或换 [rtklib](./rtklib.md) |
 | 12 | 旧 clone 怪 bug | 未拉 v5.1 | `git pull`；仍坏则寄 `settings.mat`+RINEX 到 rapppid@geo.tuwien.ac.at |
+| 13 | 说「633 个 .m」对不上 | `find .` 含 `WORK/*.m`（+2） | 以 `find CODE -name '*.m'` 为准（**633**）；整树 **635** |
+
 
 ## 7. 选型
 

@@ -1,7 +1,6 @@
 # GROOPS · TU Graz 重力场 + GNSS 处理操作手册
 
-目录：[`PROJECTS.json` → `groops`](../../PROJECTS.json) · 上游 <https://github.com/groops-devs/groops> · 文档 <https://groops-devs.github.io/groops/html/index.html> · 数据 <https://ftp.tugraz.at/pub/ITSG/groops> · 许可 **GPL-3.0** · tip **`7e1bd6d`** / 发布标签 **2025-11-15** · 本机验证：CMake Release 编装 `bin/groops`（Compiled: Sep 24 2026 05:25:48）；`scenarioGnssPPP` 上 **Sp3Format2Orbit** G01 → **289** 历元 / 300 s / gaps=0；**OrbitAddVelocityAndAcceleration** 同窗；**GnssClockRinex2InstrumentClock** 写出 `*.G01.G01.dat`；样例 CRX→RNX + georinex GRAZ **2880** 历元 / **30** GPS · **未**跑全日 `02groopsGnssProcessing`（缺完整 `groopsDataDir`，`data.zip`≈23 G）· 2026-09-24 05:27 EDT
-
+目录：[`PROJECTS.json` → `groops`](../../PROJECTS.json) · 上游 <https://github.com/groops-devs/groops> · 文档 <https://groops-devs.github.io/groops/html/index.html> · 数据 <https://ftp.tugraz.at/pub/ITSG/groops> · 许可 **GPL-3.0** · tip **`7e1bd6d`** / 发布标签 **2025-11-15** · 本机验证：CMake Release 编装 `bin/groops`（Compiled: Sep 24 2026 05:25:48）；`scenarioGnssPPP` 上 **Sp3Format2Orbit** G01 → **289** 历元 / 300 s / gaps=0；**OrbitAddVelocityAndAcceleration** 同窗；**GnssClockRinex2InstrumentClock** 写出 `*.G01.G01.dat`；样例 CRX→RNX + georinex GRAZ **2880** 历元 / **30** GPS · **未**跑全日 `02groopsGnssProcessing`（缺完整 `groopsDataDir`，`data.zip`≈23 G）· **质检复跑** 2026-09-24 05:33 EDT（重跑 Sp3/OrbitAdd/Clock+georinex 数一致；`01`/`02` 在 `--global groopsDataDir=` 后仍缺 `gnss/transmitter/transmitterList.*.txt` 与 `tides/earthAnelastic2003.xml`；`--help` Compiled 在**末行**；有 `--settings`、无 `--version`）
 > 岗位：大地测量向 **GNSS 网解 / PPP / POD / 重力场恢复**（XML 程序链 + 可选 GUI/MPI）。冲突时：**本机 `groops --help` / 官方 cookbook / `INSTALL.md` > 本文**。轻量 CLI → [rtklib](./rtklib.md)；发表级 PPP-AR → [pride-pppar](./pride-pppar.md)；GA YAML → [ginan](./ginan.md)。
 
 ## 1. 用途与边界
@@ -46,7 +45,7 @@ export PATH="$HOME/iono_ops/groops/bin:$PATH"
 groops --help | head -n 20
 ```
 
-**本机结果：** Usage 含 `--log` / `--global` / `--xsd` / `--doc`；头行含 Compiled 时间戳。
+**本机结果（质检复跑）：** `groops --help` Usage **首行**含 `--log` / `--settings` / `--silent` / `--global`；另有 `--write-settings` / `--xsd` / `--doc`；**(Compiled: Sep 24 2026 05:25:48)** 在帮助**末行**（不是头行）；**无** `--version`。
 
 ### 2.2 数据目录（正式 PPP 必需）
 
@@ -114,7 +113,7 @@ XML
 groops -l /tmp/sp3.log /tmp/sp3_G01.xml
 ```
 
-**本机结果（`7e1bd6d`，2026-09-24 05:26 EDT）：**
+**本机结果（`7e1bd6d`；写作 05:26 / **质检复跑** 05:33 EDT；orbit **25494** B；clock **69182** B）：**
 
 ```text
 --- Sp3Format2Orbit ---
@@ -166,11 +165,15 @@ PY
 | 项 | 作用 |
 | --- | --- |
 | `groops cfg.xml` | 跑配置（可多个） |
-| `--global name=value` | 覆盖/追加全局变量（如 `timeStart`） |
-| `--xsd out.xsd` | 导出完整配置 schema（本机 ≈1.1 MB） |
-| `--log file` | 追加日志；目录则按脚本分文件 |
-| `--silent` | 安静模式 |
-| `DISABLE_NETCDF` 等 | CMake 关掉外部源（见 `INSTALL.md`） |
+| `-g` / `--global name=value` | 覆盖/追加全局变量（如 `groopsDataDir`、`timeStart`） |
+| `-c` / `--settings file` | 读常量（默认搜 `groopsDefaults.xml`） |
+| `-x` / `--xsd out.xsd` | 导出完整配置 schema（本机 **1126420** B ≈1.1 MB） |
+| `-l` / `--log file` | 追加日志；目录则按脚本分文件 |
+| `-s` / `--silent` | 安静模式 |
+| `-C` / `--write-settings` | 写出当前用户 settings |
+| `-d` / `--doc` | 生成文档树 |
+| **无** `--version` | 版本看 `--help` 末行 Compiled / `git rev-parse` |
+| `-DDISABLE_NETCDF=TRUE` | **CMake** 关掉 netCDF（不是运行时旗标） |
 | `OPENBLAS_NUM_THREADS=1` | 与 MPI 同开时建议钉 1 |
 
 ## 5. 接到哪步
