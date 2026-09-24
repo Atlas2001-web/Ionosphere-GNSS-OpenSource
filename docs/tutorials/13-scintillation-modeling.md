@@ -280,8 +280,9 @@ $$
 
 $$
 U\uparrow\ \Rightarrow\ \mathrm{S4}\uparrow
-\quad\text{（弱闪烁、未饱和）}.
 $$
+
+（上式仅在弱闪烁、未饱和时成立。）
 
 相位屏仿真里，你调的「scintillation strength / $C_s$ / 屏相位方差」一类参数，最终要通过传播算子落到 $U$ 上；**不要**以为输入栏写 0.3 就等于输出 S4=0.3——以仿真器文档与自测窗口为准。
 
