@@ -37,8 +37,8 @@ Yuanxin Pan 开源的钟差/相位偏差合成工具，源于学位论文并应�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GFZ-SPOCC-news](https://www.gfz.de/en/section/space-geodetic-techniques/overview/details-section-news/veroeffentlichung-der-software-for-precise-orbit-and-clock-combination-spocc-1) | GFZ 发布 SPOCC 的新闻说明：多 GNSS 轨道钟差综合开源 | Python | — | 🏷️ 官方 |
-| [IGSMAIL-SPOCC](https://lists.igs.org/pipermail/igsmail/2025/008556.html) | IGSmail：SPOCC 轨道钟差综合软件向社区发布的公告 | text | — | 🏷️ 官方 |
+| [GFZ-SPOCC-news](https://www.gfz.de/en/section/space-geodetic-techniques/overview/details-section-news/veroeffentlichung-der-software-for-precise-orbit-and-clock-combination-spocc-1) | GFZ-SPOCC-news：GFZ 发布 SPOCC 多 GNSS 轨道钟差综合的新闻页 | Python | — | 🏷️ 官方 |
+| [IGSMAIL-SPOCC](https://lists.igs.org/pipermail/igsmail/2025/008556.html) | IGSMAIL-SPOCC：IGSmail 上 SPOCC 开源发布的社区公告 | text | — | 🏷️ 官方 |
 | [SPOCC](https://gnss.gfz.de/services/spocc) | SPOCC：多分析中心轨道钟差综合 | Python | — | 🏷️ 官方 核心 |
 
 ### 详细说明

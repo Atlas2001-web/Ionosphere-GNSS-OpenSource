@@ -370,7 +370,7 @@ Python 包生成斜路径干/湿延迟（STD/SWD）以及基于 GPT/VMF 的模�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [TU-Wien-VMF-GPT-codes](https://vmf.geo.tuwien.ac.at/codes) | TU Wien 官方 VMF1/VMF3/GPT/GMF 源码与格网目录 | Fortran/MATLAB/C++ | — | 🏷️ 官方 核心 |
-| [VMF-TUWien-Home](https://vmf.geo.tuwien.ac.at/) | TU Wien VMF 主页：对流层映射函数产品与代码入口 | Fortran/MATLAB | — | 🏷️ 官方 |
+| [VMF-TUWien-Home](https://vmf.geo.tuwien.ac.at/) | VMF-TUWien-Home：TU Wien VMF/GPT 对流层产品与代码门户 | Fortran/MATLAB | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -453,7 +453,7 @@ gemini3d 维护的 NRL Horizontal Wind Model 2014 可构建库，用 CMake 生�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnssvod](https://github.com/vincenthumphrey/gnssvod) | 从 GNSS 接收机输出估计植被光学厚度（VOD） | Python | 7 | 🏷️ 个人社区 |
+| [gnssvod](https://github.com/vincenthumphrey/gnssvod) | gnssvod：由 GNSS 接收机输出估计植被光学厚度 VOD（MIT） | Python | 7 | 🏷️ 个人社区 |
 
 ### 详细说明
 

@@ -1,0 +1,122 @@
+[
+  {
+    "name": "novatel_oem7_driver",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "Hexagon/NovAtel vendor OSS; same policy as libsbp/libswiftnav"
+  },
+  {
+    "name": "novatel_gps_driver",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "SWRI community ROS driver; not agency official_site"
+  },
+  {
+    "name": "max2771_fx2lp",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "personal research GitHub (jmfriedt) GPL front-end"
+  },
+  {
+    "name": "GNSS-Correction-RTKLIB",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "personal tutorial/scripts repo"
+  },
+  {
+    "name": "pysatNASA",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "pysat community org extension package"
+  },
+  {
+    "name": "swiftnav-ros2",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "Swift Navigation vendor ROS2; same policy as libsbp"
+  },
+  {
+    "name": "gnssvod",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "personal MIT research tool"
+  },
+  {
+    "name": "ginan",
+    "provenance": "official",
+    "action": "KEEP",
+    "reason": "GeoscienceAustralia GitHub agency OSS"
+  },
+  {
+    "name": "Ginan-GA-portal",
+    "provenance": "official",
+    "action": "KEEP",
+    "reason": "Geoscience Australia official program page"
+  },
+  {
+    "name": "GPSPACE",
+    "provenance": "official",
+    "action": "KEEP",
+    "reason": "NRCan/CGS-GIS agency GitHub"
+  },
+  {
+    "name": "VMF-TUWien-Home",
+    "provenance": "official",
+    "action": "KEEP",
+    "reason": "TU Wien VMF official service"
+  },
+  {
+    "name": "CCMC-IRI-online",
+    "provenance": "official",
+    "action": "KEEP",
+    "reason": "NASA CCMC official model page"
+  },
+  {
+    "name": "NRCan-TRX",
+    "provenance": "official",
+    "action": "KEEP",
+    "reason": "NRCan CSRS official web tool"
+  },
+  {
+    "name": "NGS-PC-PROD",
+    "provenance": "official",
+    "action": "KEEP",
+    "reason": "NOAA/NGS PC_PROD portal"
+  },
+  {
+    "name": "GIRO-IRTAM",
+    "provenance": "academic_lab",
+    "action": "KEEP",
+    "reason": "UMass Lowell GIRO academic service"
+  },
+  {
+    "name": "UMLCAR-Downloads",
+    "provenance": "academic_lab",
+    "action": "KEEP",
+    "reason": "UMass Lowell UMLCAR lab downloads"
+  },
+  {
+    "name": "gAGE-Software-Tools",
+    "provenance": "academic_lab",
+    "action": "KEEP",
+    "reason": "UPC gAGE academic lab tools page"
+  },
+  {
+    "name": "Zenodo-VTEC-map-generation-SBAS",
+    "provenance": "academic_lab",
+    "action": "KEEP",
+    "reason": "Tampere University Zenodo supplement"
+  },
+  {
+    "name": "goGPS_MATLAB",
+    "provenance": "academic_lab",
+    "action": "KEEP",
+    "reason": "goGPS-Project academic MATLAB suite"
+  },
+  {
+    "name": "ITU-R-iono-tropo-software",
+    "provenance": "official",
+    "action": "KEEP",
+    "reason": "ITU-R official digital products page"
+  }
+]

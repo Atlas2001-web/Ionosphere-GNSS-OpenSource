@@ -794,7 +794,7 @@ C++ 工具面向 GNSS 电离层掩星数据处理与分析，适合理解 LEO—
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Autoscala-INGV](http://iononet.ingv.it/index.php/download/software) | INGV Autoscala 测高仪自动缩放及相关分析软件入口 | various | — | 🏷️ 官方 |
+| [Autoscala-INGV](http://iononet.ingv.it/index.php/download/software) | Autoscala-INGV：INGV Autoscala 测高仪自动缩放软件入口 | various | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -1121,7 +1121,7 @@ KNMI 在 Swarm-VIP-Dynamic（UiO/Birmingham/INGV/DLR/KNMI）合作中的代码�
 | [NICT-Ionosonde-Data](https://wdc.nict.go.jp/Ionosphere/index.html) | NICT 日本测高仪（ionosonde）观测数据入口 | data-portal | — | 🏷️ 官方 |
 | [SAO-Explorer](https://ulcar.uml.edu/SAO-X/) | GIRO/Digisonde 测高仪缩放与 DIDBase 访问工具（免费二进制） | Java | — | 🏷️ 官方 |
 | [swarm-vip-dynamic-models](https://gitlab.com/KNMI-OSS/spaceweather/libs/swarm-vip-dynamic-models) | swarm-vip-dynamic-models：Swarm 原位 Ne/RODI 的 GLM 经验模型包 | Python | 0 | 🏷️ 官方 |
-| [UMLCAR-Downloads](https://ulcar.uml.edu/downloads.html) | UMass Lowell UMLCAR 电离层软件下载中心（SAO-X/Drift-X/NHPC/DCART 等） | data-portal | — | 🏷️ 高校实验室 |
+| [UMLCAR-Downloads](https://ulcar.uml.edu/downloads.html) | UMLCAR-Downloads：UML Digisonde 工具下载总目录（SAO-X 等） | data-portal | — | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -1266,17 +1266,17 @@ Wakkanai、Kokubunji、Yamagawa、Okinawa 等日本测高仪数字化资料入�
 | [pyIRI2016](https://github.com/rilma/pyIRI2016) | IRI-2016 Fortran 的 f2py 包装（pyiri2016，与 space-physics/iri2016 不同仓） | Python/Fortran | 21 | 🏷️ 个人社区 |
 | [PyIRTAM](https://github.com/victoriyaforsythe/PyIRTAM) | IRTAM 系数下载与全球网格电子密度重建（纯 Python，对接 PyIRI） | Python | 4 | 🏷️ 高校实验室 核心 |
 | [iricore](https://github.com/MIST-Experiment/iricore) | ctypes 包装 IRI-2016/2020，可算 VTEC/STEC 并更新指数文件 | Python/Fortran | 2 | 🏷️ 个人社区 |
-| [CCMC-IRI-online](https://ccmc.gsfc.nasa.gov/models/IRI~2020/) | NASA CCMC 在线运行与说明页（IRI-2020） | — | — | 🏷️ 官方 |
+| [CCMC-IRI-online](https://ccmc.gsfc.nasa.gov/models/IRI~2020/) | CCMC-IRI-online：NASA CCMC 的 IRI-2020 在线运行与说明 | — | — | 🏷️ 官方 |
 | [GAMBIT-Database-Reader-Java](https://giro.uml.edu/GAMBIT/GambitReader_Java_V0.1.zip) | 官方示例：GAMBIT 数据库 Java 读入/解包（拉 IRTAM 系数） | Java | — | 🏷️ 官方 |
-| [GIRO-GAMBIT](https://giro.uml.edu/GAMBIT/) | GIRO GAMBIT：底部电离层时间线全球同化模型门户与系数服务 | data-portal | — | 🏷️ 高校实验室 |
-| [GIRO-IRTAM](https://giro.uml.edu/IRTAM/) | GIRO IRTAM：基于全球测高仪的 IRI 实时同化 foF2/hmF2 等映射 | data-portal | — | 🏷️ 高校实验室 |
+| [GIRO-GAMBIT](https://giro.uml.edu/GAMBIT/) | GIRO-GAMBIT：底部电离层时间线全球同化（GAMBIT）门户 | data-portal | — | 🏷️ 高校实验室 |
+| [GIRO-IRTAM](https://giro.uml.edu/IRTAM/) | GIRO-IRTAM：测高仪同化 IRI 的 foF2/hmF2 近实时映射服务 | data-portal | — | 🏷️ 高校实验室 |
 | [IRI-2001-package](https://irimodel.org/IRI-2001/) | IRI-2001-package：官方 Fortran 历史版源码目录 | Fortran | — | 🏷️ 官方 |
 | [IRI-2007-package](https://irimodel.org/IRI-2007/) | IRI-2007-package：官方 Fortran 历史版源码目录 | Fortran | — | 🏷️ 官方 |
 | [IRI-2012-package](https://irimodel.org/IRI-2012/) | IRI-2012-package：官方 Fortran 包（含轨道剖面示例） | Fortran | — | 🏷️ 官方 |
 | [IRI-2016-package](https://irimodel.org/IRI-2016/) | IRI-2016-package：官方 Fortran 源码与系数目录 | Fortran | — | 🏷️ 官方 |
 | [IRI-2026-package](https://irimodel.org/IRI-2026/) | IRI-2026-package：官方最新 Fortran 源码包 | Fortran | — | 🏷️ 官方 核心 |
 | [IRI-COMMON-FILES](https://irimodel.org/COMMON_FILES/) | IRI-COMMON-FILES：各版 IRI 共用系数目录 | Fortran | — | 🏷️ 官方 核心 |
-| [IRI-indices](https://irimodel.org/indices/) | IRI 运行所需太阳/地磁指数文件发布页 | — | — | 🏷️ 官方 |
+| [IRI-indices](https://irimodel.org/indices/) | IRI-indices：IRI 官方太阳/地磁指数文件发布页 | — | — | 🏷️ 官方 |
 | [IRI-MATLAB-FileExchange](https://www.mathworks.com/matlabcentral/fileexchange/34863-international-reference-ionosphere-iri-model) | IRI-MATLAB：官方指向的 File Exchange 封装 | MATLAB | — | 🏷️ 官方 核心 |
 | [IRI-Plas-SPIM-IZMIRAN](https://www.izmiran.ru/ionosphere/weather/grif/SPIM/) | IRI-Plas/SPIM：IZMIRAN 等离子体层扩展 IRI Fortran | Fortran | — | 🏷️ 官方 |
 | [IRTAM-Coefficient-Reader-Fortran](https://giro.uml.edu/GAMBIT/IrtamReader_Fortran_V1.0.zip) | 官方示例：IRTAM 系数 Fortran 读入器（对接 IRI 同化） | Fortran | — | 🏷️ 官方 |
@@ -1906,7 +1906,7 @@ INGV/ESA INTENS 的 Swarm 顶部电离层湍流指数工具（Python）：从 La
 | [real-time-ionospheric-maps-Kalman](https://github.com/AlexandraKoulouri/real-time-ionospheric-maps-using-Kalman) | real-time-ionospheric-maps-Kalman：南美区域集合卡尔曼电离层图 | MATLAB | 3 | 🏷️ 高校实验室 |
 | [m_gim-PANXIONG](https://github.com/PANXIONG-CN/m_gim) | m_gim-PANXIONG：小体量 MATLAB GIM 脚本草稿 | MATLAB | 1 | 🏷️ 高校实验室 ★ |
 | [GNSS.IonosphereMaps](https://github.com/gurkanguldas/GNSS.IonosphereMaps) | GNSS.IonosphereMaps：Java 电离层图工具 | Java | — | 🏷️ 个人社区 ★ |
-| [Zenodo-VTEC-map-generation-SBAS](https://doi.org/10.5281/zenodo.10058636) | Zenodo：支持星基导航误差模型的 VTEC 图生成补充材料 | — | 0 | 🏷️ 高校实验室 |
+| [Zenodo-VTEC-map-generation-SBAS](https://doi.org/10.5281/zenodo.10058636) | Zenodo-VTEC-map-generation-SBAS：SBAS 误差模型用 VTEC 图生成补充包 | — | 0 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -2060,7 +2060,7 @@ irimodel.org 上 IRI-2020 的文件目录，可直接获取 00_iri.zip/tar、许
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [ITU-R-iono-tropo-software](https://www.itu.int/en/ITU-R/study-groups/rsg3/rwp3m/Pages/digprod.aspx) | ITU-R 电离层/对流层电波传播软件与验证数据入口 | various | — | 🏷️ 官方 |
+| [ITU-R-iono-tropo-software](https://www.itu.int/en/ITU-R/study-groups/rsg3/rwp3m/Pages/digprod.aspx) | ITU-R-iono-tropo-software：ITU-R 电离层/对流层传播软件与验证数据 | various | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -2203,7 +2203,7 @@ space-physics 维护的地磁指数读写工具，常为电离层/空间天气�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [pysatNASA](https://github.com/pysat/pysatNASA) | pysat 的 NASA 空间科学仪器数据接口扩展 | Python | 25 | 🏷️ 个人社区 |
+| [pysatNASA](https://github.com/pysat/pysatNASA) | pysatNASA：pysat 的 NASA 空间科学仪器数据扩展（BSD-3） | Python | 25 | 🏷️ 个人社区 |
 
 ### 详细说明
 

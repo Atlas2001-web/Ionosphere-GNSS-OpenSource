@@ -256,7 +256,7 @@ VieVS（TU Wien）精密单点定位模块，MATLAB 实现，便于与 VLBI/大�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Ginan-GA-portal](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/about-the-program/analysis-centre-software) | 澳大利亚地球科学署 Ginan 分析中心软件官方介绍页 | C++ | — | 🏷️ 官方 |
+| [Ginan-GA-portal](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/about-the-program/analysis-centre-software) | Ginan-GA-portal：GA 对 Ginan 分析中心软件的官方介绍页 | C++ | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -1101,7 +1101,7 @@ nav-solutions 框架下的实时 PoC：以 U-Blox 原始/手动模式作测量�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GNSS-Correction-RTKLIB](https://github.com/bpurinton/GNSS-Correction-RTKLIB) | 差分 GNSS 采集与 RTKLIB PPK 后处理教程及批处理脚本 | Python | 24 | 🏷️ 个人社区 |
+| [GNSS-Correction-RTKLIB](https://github.com/bpurinton/GNSS-Correction-RTKLIB) | GNSS-Correction-RTKLIB：dGPS/PPK 教程与 RTKLIB 批处理脚本 | Python | 24 | 🏷️ 个人社区 |
 
 ### 详细说明
 

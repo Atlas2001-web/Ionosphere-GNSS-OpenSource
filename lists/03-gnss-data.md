@@ -43,7 +43,7 @@ RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品�
 | [BNC-source-FTP](https://igs.bkg.bund.de/root_ftp/NTRIP/software/BNC/) | BNC-source-FTP：BKG FTP 上的 BNC 源码与二进制目录 | C++ | — | 🏷️ 官方 |
 | [BNS](https://software.rtcm-ntrip.org/wiki/BNS) | BNS：BKG Ntrip 状态空间改正播发服务端 | C++ | — | 🏷️ 官方 |
 | [Caster-source-FTP](https://igs.bkg.bund.de/root_ftp/NTRIP/software/caster/) | Caster-source-FTP：BKG Professional NtripCaster 源码 FTP 目录 | C | — | 🏷️ 官方 |
-| [EUREF-IP-Ntrip-overview](https://igs.bkg.bund.de/ntrip/index) | BKG/IGS NTRIP 数据与工具总览：流列表、BNC 与 Caster 入口 | various | — | 🏷️ 官方 |
+| [EUREF-IP-Ntrip-overview](https://igs.bkg.bund.de/ntrip/index) | EUREF-IP-Ntrip-overview：BKG/IGS NTRIP 流与 BNC/Caster 总览 | various | — | 🏷️ 官方 |
 | [RTCM-Ntrip-Software](https://software.rtcm-ntrip.org/) | RTCM-Ntrip：BNC/Caster 官方软件门户 | C/C++ | — | 🏷️ 官方 核心 |
 
 ### 详细说明
@@ -1009,7 +1009,7 @@ Android 原始 GNSS 测量日志与桌面可视化分析工具，智能手机高
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [gpsd](https://gitlab.com/gpsd/gpsd) | gpsd：跨平台 GNSS/AIS 守护进程 | C | 104 | 🏷️ 个人社区 |
-| [gpsd-website](https://gpsd.io/) | gpsd 项目官网：文档、兼容接收机列表与发行说明 | C | — | 🏷️ 个人社区 |
+| [gpsd-website](https://gpsd.io/) | gpsd-website：gpsd 官网（文档、兼容机列表与发行说明） | C | — | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -1175,7 +1175,7 @@ nav-solutions 生态的 SP3 crate，按 IGS 精密轨道格式做解析、分析
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [UNAVCO-Preprocessing](https://www.unavco.org/software/data-processing/preprocessing/preprocessing.html) | UNAVCO/GAGE GNSS 预处理工具索引（Hatanaka、GNSSTK、厂商转换等） | various | — | 🏷️ 官方 |
+| [UNAVCO-Preprocessing](https://www.unavco.org/software/data-processing/preprocessing/preprocessing.html) | UNAVCO-Preprocessing：GNSS 预处理工具索引（Hatanaka/GNSSTK 等） | various | — | 🏷️ 官方 |
 
 ### 详细说明
 

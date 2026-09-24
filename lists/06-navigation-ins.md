@@ -659,8 +659,8 @@ ROS 包用于连接 NTRIP caster、接收 RTCM，并服务于 u-blox ZED-F9P 一
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [novatel_gps_driver](https://github.com/swri-robotics/novatel_gps_driver) | SWRI 社区 ROS 驱动：NovAtel GPS/GNSS 接收机 | C++ | 175 | 🏷️ 个人社区 |
-| [novatel_oem7_driver](https://github.com/novatel/novatel_oem7_driver) | NovAtel 官方 ROS 驱动：OEM7 GNSS/SPAN 接收机 | C++ | 123 | 🏷️ 个人社区 |
+| [novatel_gps_driver](https://github.com/swri-robotics/novatel_gps_driver) | novatel_gps_driver：SWRI 社区 NovAtel GNSS ROS 驱动（BSD-3） | C++ | 175 | 🏷️ 个人社区 |
+| [novatel_oem7_driver](https://github.com/novatel/novatel_oem7_driver) | novatel_oem7_driver：NovAtel OEM7/SPAN 官方 ROS 驱动（MIT） | C++ | 123 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -682,7 +682,7 @@ Hexagon/NovAtel 维护的 OEM7 系列 GNSS/SPAN 官方 ROS 驱动，MIT 许可�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [swiftnav-ros2](https://github.com/swift-nav/swiftnav-ros2) | Swift Navigation ROS 2 SBP 驱动 | C++ | 15 | 🏷️ 个人社区 |
+| [swiftnav-ros2](https://github.com/swift-nav/swiftnav-ros2) | swiftnav-ros2：Swift Navigation 官方 ROS 2 SBP 驱动（MIT） | C++ | 15 | 🏷️ 个人社区 |
 
 ### 详细说明
 

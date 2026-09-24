@@ -158,8 +158,8 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 | [GA-Positioning-Services](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/services-and-tools) | Geoscience Australia 定位服务与工具门户（SouthPAN/AUSPOS/数据中心） | various | — | 🏷️ 官方 |
 | [GPS.gov](https://www.gps.gov/) | GPS.gov：美国 GPS 系统官方公众信息站 | data-portal | — | 🏷️ 官方 |
 | [ISRO-IRNSS-NavIC](https://www.isro.gov.in/IRNSS_Programme.html) | ISRO NavIC：印度区域导航系统官方计划页 | data-portal | — | 🏷️ 官方 |
-| [NGS-PC-PROD](https://geodesy.noaa.gov/PC_PROD/) | NGS PC Software 门户：HTDP 等大地测量桌面程序入口 | various | — | 🏷️ 官方 |
-| [UNAVCO-Software-Portal](https://www.unavco.org/software/) | UNAVCO/EarthScope 软件门户：TEQC、预处理、GAMIT 链接与可视化 | various | — | 🏷️ 官方 |
+| [NGS-PC-PROD](https://geodesy.noaa.gov/PC_PROD/) | NGS-PC-PROD：NOAA/NGS 大地测量 PC 软件门户（含 HTDP 等） | various | — | 🏷️ 官方 |
+| [UNAVCO-Software-Portal](https://www.unavco.org/software/) | UNAVCO-Software-Portal：EarthScope/GAGE 软件总入口（TEQC 等） | various | — | 🏷️ 官方 |
 | [USCG-NAVCEN](https://www.navcen.uscg.gov/) | NAVCEN：美国海岸警卫队导航与 GNSS 门户 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
@@ -217,7 +217,7 @@ USCG Navigation Center 官网，发布航海航标、差分 GPS/导航服务公�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gAGE-Software-Tools](https://gage.upc.edu/en/learning-materials/software-tools) | UPC gAGE 软件工具页：gLAB 套件与 gAGEbuntu 入口 | various | — | 🏷️ 高校实验室 |
+| [gAGE-Software-Tools](https://gage.upc.edu/en/learning-materials/software-tools) | gAGE-Software-Tools：UPC gAGE 教学工具页（gLAB / gAGEbuntu） | various | — | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -396,7 +396,7 @@ Rokubun 编写的 GNSS 数据处理 Jupyter 教程，覆盖从观测到基础解
 | [Geodesy.jl](https://github.com/JuliaGeo/Geodesy.jl) | Geodesy.jl：Julia 坐标与大地测量变换库 | Julia | 114 | 🏷️ 个人社区 |
 | [ncat-lib](https://github.com/noaa-ngs/ncat-lib) | NGS NCAT Java 库：离线坐标/基准转换 | Java | 21 | 🏷️ 官方 |
 | [NGS-NCAT](https://geodesy.noaa.gov/NCAT/) | NGS-NCAT：NOAA/NGS 大地坐标与参考框架在线转换 | web/service | — | 🏷️ 官方 |
-| [NRCan-TRX](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/trx.php) | 加拿大 NRCan TRX：在线大地坐标/高程转换工具 | data-portal | — | 🏷️ 官方 |
+| [NRCan-TRX](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/trx.php) | NRCan-TRX：加拿大 CSRS 在线大地坐标/高程转换 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
