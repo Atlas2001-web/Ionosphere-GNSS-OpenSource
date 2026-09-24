@@ -297,3 +297,10 @@
 - 当前条目：**760**
 - 分类计数：{'ionosphere': 239, 'troposphere': 34, 'gnss-data': 111, 'gnss-positioning': 83, 'orbit-clock': 13, 'navigation-ins': 60, 'gnss-sdr': 59, 'mobile-apps': 19, 'tools-learning': 31, 'gnss-datasets': 111}
 - 详见 `research/routine_finds_20260924b.json`
+
+## 例行检索补录（2026-09-24c）
+
+- 新增 **14** 条（RAMSAC/QZSS/GSI-SFTP/INEGI/UNR-NGL/GipsyX/galileo-osnma 等）
+- 当前条目：**774**
+- 分类计数：{'ionosphere': 239, 'troposphere': 34, 'gnss-data': 112, 'gnss-positioning': 85, 'orbit-clock': 13, 'navigation-ins': 60, 'gnss-sdr': 59, 'mobile-apps': 19, 'tools-learning': 32, 'gnss-datasets': 121}
+- 详见 `research/routine_finds_20260924c.json`

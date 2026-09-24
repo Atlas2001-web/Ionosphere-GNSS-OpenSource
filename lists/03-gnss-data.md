@@ -1,7 +1,7 @@
 # GNSS 数据与格式 / GNSS Data I/O
-> **111** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **112** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
-RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka、质检与 IGS 产品下载。
+RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
 ## RTCM/NTRIP
 
@@ -51,7 +51,7 @@ RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka、质检与 IGS 产品下载。
 
 语言：Python · 许可：BSD-3-Clause · 星标约：839 · 宿主：github
 
-桌面 GUI 同时消化 NMEA、u-blox UBX、SBF、RTCM3、NTRIP 与 SPARTN，便于配置接收机、看星空图与差分链路。适合硬件联调、教学演示与低成本 RTK 调试。它是协议与可视化客户端，不是精密 PPP/RTK 解算引擎；底层解析依赖同作者的 pyubx2、pyrtcm、pygnssutils，深度算法请接 RTKLIB 或科研 PPP。
+一站式查看星空图、配置接收机并走 NTRIP/SPARTN 等差分链路。适合调试 F9P 一类模块。不是精密解算引擎；解算请接 RTKLIB/厂商固件。
 
 #### [ntrip-cpp](https://github.com/ybzwyrcld/ntrip)  
 *🏷️ 个人社区*
@@ -582,7 +582,7 @@ EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RT
 
 语言：Python · 许可：BSD-3-Clause · 星标约：61 · 宿主：github
 
-把数据下载、处理、分析与台网管理串成 Python 框架，减少手写胶水脚本。适合中等规模台网运维原型。核心估计算法深度取决于所接后端；不等同于完整 PPP/RTK 产品套件。
+把数据获取到分析管理串成流程，偏科研工作流。适合实验室批处理。具体模块覆盖面以仓库文档为准；不是单一 PPP 引擎替代。
 
 ## RINEX读写
 
@@ -770,6 +770,7 @@ MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实�
 | [pyubx2](https://github.com/semuconsulting/pyubx2) | pyubx2：u-blox UBX 协议 Python 编解码库 | Python | 254 | 🏷️ 个人社区 |
 | [gnsstk](https://github.com/SGL-UT/gnsstk) | 原 GPSTk 演进来的 C++ GNSS 基础库 | C++ | 183 | 🏷️ 高校实验室 核心 |
 | [pynmeagps](https://github.com/semuconsulting/pynmeagps) | 解析/生成 NMEA 0183 语句的 Python 库，与 pyubx2 同系 | Python | 106 | 🏷️ 个人社区 核心 |
+| [nmea-parser](https://github.com/zaari/nmea-parser) | nmea-parser：Rust 版 AIS/GNSS NMEA 0183 解析 | Rust | 51 | 🏷️ 个人社区 |
 | [navsu](https://github.com/stanford-gps-lab/navsu) | navsu：斯坦福 GPS Lab MATLAB GNSS/IGS 工具箱 | MATLAB | 24 | 🏷️ 高校实验室 |
 | [gnss-protos](https://github.com/nav-solutions/gnss-protos) | GNSS 广播协议编解码的 Rust 库 | Rust | 4 | 🏷️ 个人社区 |
 
@@ -787,7 +788,7 @@ MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实�
 
 语言：Python · 许可：BSD-3-Clause · 星标约：254 · 宿主：github
 
-纯 Python 解析与生成 UBX 消息，覆盖配置、原始观测与导航输出，是连接 F9P 等模块的常用积木。嵌入式上位机、自动化测试与数据记录脚本都会用到。不处理 NMEA/RTCM（见 pygnssutils/pyrtcm），也不做定位滤波；若只要串口读星历伪距，它比完整 GUI 更轻，也比直接啃厂商二进制协议省事。
+连接 F9P 等模块的常用积木，便于上位机与自动化测试。只负责协议层；定位解算与 NTRIP 需搭配固件或其他库。
 
 #### [gnsstk](https://github.com/SGL-UT/gnsstk)  
 *🏷️ 高校实验室 核心*
@@ -802,6 +803,13 @@ MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实�
 语言：Python · 许可：BSD-3-Clause · 星标约：106 · 宿主：github
 
 semuconsulting 协议栈中专责 NMEA 0183 解析与生成的 Python 库，常与 PyGPSClient、pyubx2、pyrtcm 组合使用。适合日志解析、测试桩、桌面监控与自动化脚本。不做精密定位解算；字段完整性随接收机方言与专有语句变化，遇到厂商扩展语句时需要自行补充定义再解析。
+
+#### [nmea-parser](https://github.com/zaari/nmea-parser)  
+*🏷️ 个人社区*
+
+语言：Rust · 许可：Apache-2.0 · 星标约：51 · 宿主：github
+
+zaari 的 nmea-parser crate，面向 AIS Class A/B 与常用 GNSS NMEA 0183 语句解析，可嵌入海事与定位流水线。与 Python 侧 pynmea2/pynmeagps 形成语言互补；Apache-2.0，文档在 docs.rs。适合需要强类型与性能的 Rust 服务；句子覆盖以 crate 版本说明为准，冷门 proprietary 语句可能未支持。
 
 #### [navsu](https://github.com/stanford-gps-lab/navsu)  
 *🏷️ 高校实验室*

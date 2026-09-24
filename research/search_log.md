@@ -305,3 +305,11 @@
 - Focus: IGN RGP data, OS Net API/Data Hub, PositioNZ, NSGI RINEX/NTRIP, TU Delft GNSS server, swisstopo PNAC, UNAVCO access methods; software OKVIS2-X, lowtran, GalileoHack, vector scintillation
 - Skipped: TrigNet/swipos API (unreachable or license-gated), SAPOS commercial, FAST/scintill-ai/gri-iono/ntripclient already listed, RawMeaLogger/Lambda no license, piradar archived, pulselab (medical PWV not GNSS)
 
+## Routine pass 2026-09-24c
+
+- Catalog size before: **760**; after merge: **774** (+14)
+- Finds file: `research/routine_finds_20260924c.json`
+- Method: niche probes (JP QZSS/GSI SFTP, LatAm RAMSAC/INEGI/IBGE FTP, UNR NGL, JPL sideshow/GipsyX, NOAA NCN data page) + `gh api` for galileo-osnma/nmea-parser/PPP-BayesTree; `curl -sI -L` live checks; strict URL/name dedup vs PROJECTS.json and prior 20260923–24b batches
+- Focus after EU/GA/NOAA-packed passes: South America CORS, Japan beyond RINGO/MIRAI, Mexico RGNA, academic GPS time series, OSNMA Rust + NMEA Rust + PPP graph research code
+- Skipped: TrigNet/AFREF empty IIS/SAPOS commercial, midgard pre-alpha, Where (VLBI-only), IGM Chile thin, Korean NGII without open CORS path beyond existing gnssdata.or.kr, TEC-Maps-of-Nepal thin, micropyGPS/GPS.js/minmea (NMEA already covered by pynmea2/pynmeagps this pass), GSI English pages egress fail, sys.qzss thin root
+- Merge safety: append-only by norm_url; `_merge_fields` + explicit `if old and not new: keep old` guard; full-scan confirmed no blanking of existing license/provenance/zh fields

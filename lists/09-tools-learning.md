@@ -1,7 +1,7 @@
 # 学习资源与工具 / Tools & Learning
-> **31** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **32** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
-awesome 列表、源码笔记、可见性可视化、SBAS/认证等学习工具。
+awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
 ## 数据集
 
@@ -335,9 +335,17 @@ NGS 公开的 NCAT（NGS Coordinate Conversion and Transformation Tool）底层 
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [galileo-osnma](https://github.com/daniestevez/galileo-osnma) | galileo-osnma：嵌入式友好的 Galileo OSNMA Rust 库 | Rust | 88 | 🏷️ 个人社区 |
 | [OSNMA](https://github.com/Algafix/OSNMA) | Galileo OSNMA 协议 Python 实现 | Python | 52 | 🏷️ 个人社区 |
 
 ### 详细说明
+
+#### [galileo-osnma](https://github.com/daniestevez/galileo-osnma)  
+*🏷️ 个人社区*
+
+语言：Rust · 许可：Apache-2.0 · 星标约：88 · 宿主：github
+
+daniestevez 维护的 Galileo OSNMA 协议 Rust 库，校验导航电文密码学签名，支持 no_std 与静态栈分配，并有嵌入式演示 crate。与 Algafix/OSNMA（EUPL、偏仿真/工具链）互补，侧重可嵌入接收机路径。Apache-2.0/MIT；需自备公钥/ Merkle 材料与实时电文源，星级与文档见 crates.io/docs.rs。
 
 #### [OSNMA](https://github.com/Algafix/OSNMA)  
 *🏷️ 个人社区*

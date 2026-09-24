@@ -1,5 +1,5 @@
 # GNSS 数据源 / GNSS Datasets
-> **111** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **121** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
@@ -374,6 +374,8 @@ TARC 面向国际用户的差分与相关数据说明页面，便于获取北斗
 | [GFZ-ISDC-GNSS-Products](https://isdc.gfz-potsdam.de/gnss-products/) | GFZ ISDC GNSS 产品专页 | data-portal | — | 🏷️ 官方 |
 | [IGS-MGEX](https://igs.org/mgex/) | IGS MGEX：多 GNSS 试验网与多星座产品介绍 | data-portal | — | 🏷️ 官方 |
 | [IGS-Products](https://igs.org/products/) | IGS 产品页：轨道、钟差、ERP、偏差、电离层等规范说明 | data-portal | — | 🏷️ 官方 核心 |
+| [QZSS-Official](https://qzss.go.jp/en/) | QZSS 官网：日本准天顶系统服务与产品入口 | data-portal | — | 🏷️ 官方 |
+| [QZSS-Public-Archives](https://sys.qzss.go.jp/dod/en/archives.html) | QZSS 公开档案：运营信息与可下载归档入口 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -412,11 +414,27 @@ TARC 面向国际用户的差分与相关数据说明页面，便于获取北斗
 
 定义 IGS 轨道、钟差、ERP、偏差与大气等产品类型、时延等级以及长文件名规则，是科研引用与脚本命名的权威参考。文件本体存放在各数据中心。务必注意约 GPS 周 2238 前后的命名切换，旧流水线需要同步适配新模式。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
 
+#### [QZSS-Official](https://qzss.go.jp/en/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+日本内阁府 QZSS 英文门户，汇总服务概览、公告、GNSS View、产品与下载链接，是 CLAS/MADOCA 等增强与官方文档的起点。与 MIRAI 归档、CLASLIB/MADOCALIB 代码互补；运营状态与公开档案另见 sys.qzss.go.jp。适合亚太多星座与日本区域增强调研，条款以官网为准。
+
+#### [QZSS-Public-Archives](https://sys.qzss.go.jp/dod/en/archives.html)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+准天顶系统运营信息/档案英文页，集中提供公开归档与状态相关入口，便于回溯服务公告与可下载产品。区别于 MIRAI 用户观测归档；面向增强服务研究与多星座完好性对照。具体文件清单与下载权限以页面及关联 Notices/Downloads 为准，可能随运营变更。
+
 ## IGS产品下载
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [CODE-AIUB-Product-Download](https://www.aiub.unibe.ch/download/) | AIUB/CODE 产品 HTTPS 下载浏览器（含 CODE/ionex/ionosphere 等目录） | data-portal | — | 🏷️ 官方 |
+| [JPL-GPS-Time-Series](https://sideshow.jpl.nasa.gov/post/series.html) | JPL GPS 时序：sideshow 全球站坐标序列入口 | data-portal | — | 🏷️ 官方 |
+| [UNR-NGL](https://geodesy.unr.edu/) | UNR NGL：全球 GPS 时序与形变产品门户 | data-portal | — | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -426,6 +444,20 @@ TARC 面向国际用户的差分与相关数据说明页面，便于获取北斗
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 伯尔尼大学天文研究所 CODE 分析中心的官方产品文件浏览器。可进入 CODE、CODE_MGEX、ionex、ionosphere 等目录获取最终/快速/超快速轨道钟差与 IONEX 等。FTP 已弃用，请改用本 HTTPS 入口；与已收录的 CODE AC 介绍页互补，本条聚焦可下载产品树。
+
+#### [JPL-GPS-Time-Series](https://sideshow.jpl.nasa.gov/post/series.html)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+JPL sideshow 上的 GPS Time Series 入口，提供全球站坐标时间序列浏览与相关产品链接，常与 GipsyX/轨道钟差产品一并使用。与 IONEX_rapid 等同域不同路径；引用与更新策略见页面说明。适合形变、参考框架与 PPP 结果对照，原始观测请仍走 CDDIS/区域 CORS。
+
+#### [UNR-NGL](https://geodesy.unr.edu/)  
+*🏷️ 高校实验室*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Nevada Geodetic Laboratory 主页，发布全球 GPS 站时序、应变率、垂直运动与 MAGNET 等网络信息，是学术界常用的开放坐标时间序列来源之一。配套站列表/地图与出版物入口；处理策略与引用方式见站内说明。适合形变与参考框架研究，非官方 CORS 原始 RINEX 替代，原始观测仍应回 IGS/区域网。
 
 ## 掩星
 
@@ -475,14 +507,19 @@ COSMIC/FORMOSAT 等任务的无线电掩星数据中心门户，提供中性大�
 | [EUREF-EPN-Obs-FTP](https://epncb.oma.be/ftp/obs/) | EPN 观测数据 FTP/Web 目录 | data-portal | — | 🏷️ 官方 |
 | [GA-GNSS-Data](https://data.gnss.ga.gov.au/) | Geoscience Australia GNSS 数据门户（AUSCORS 等） | data-portal | — | 🏷️ 官方 核心 |
 | [GA-GNSS-RINEX-S3](https://ga-gnss-data-rinex-v1.s3.amazonaws.com/index.html) | GA RINEX S3：澳大利亚 CORS 观测的对象存储浏览 | data-portal | — | 🏷️ 官方 |
+| [GSI-GEONET-SFTP](https://terras.gsi.go.jp/ftp_about.html) | GSI SFTP 说明：GEONET 观测/坐标/对流层获取须知 | data-portal | — | 🏷️ 官方 |
 | [HongKong-SatRef](https://www.geodetic.gov.hk/en/satref/satref.htm) | 香港 SatRef：卫星定位参考站网介绍 | data-portal | — | 🏷️ 官方 |
 | [HongKong-SatRef-RINEX](https://www.geodetic.gov.hk/en/rinex/rinex.htm) | 香港 SatRef RINEX 数据说明与下载 | data-portal | — | 🏷️ 官方 |
+| [IBGE-RBMC-FTP](https://geoftp.ibge.gov.br/informacoes_sobre_posicionamento_geodesico/rbmc/) | IBGE RBMC FTP：巴西连续 GNSS 网公开目录 | data-portal | — | 🏷️ 官方 |
 | [IGN-Geodesie](https://geodesie.ign.fr/) | 法国 IGN 大地测量门户（RGP 等相关入口） | data-portal | — | 🏷️ 官方 |
 | [IGN-RGP-Data](https://rgpdata.ign.fr/) | IGN RGP：法国永久 GNSS 网开放 RINEX/产品服务 | data-portal | — | 🏷️ 官方 |
+| [INEGI-RGNA](https://www.inegi.org.mx/app/geo2/rgna/) | 墨西哥 RGNA：INEGI 主动大地网 RINEX 下载 | data-portal | — | 🏷️ 官方 |
 | [NOAA-CORS-AWS](https://noaa-cors-pds.s3.amazonaws.com/index.html) | NOAA CORS on AWS：NCN RINEX 的 S3/NODD 分发 | data-portal | — | 🏷️ 官方 |
 | [NOAA-CORS-Data-Tree](https://geodesy.noaa.gov/corsdata/) | NOAA CORS 数据目录树 | data-portal | — | 🏷️ 官方 |
 | [NOAA-NCN-API](https://geodesy.noaa.gov/web_services/ncn-api.shtml) | NOAA NCN API：CORS 站元数据与最近站查询 | data-portal | — | 🏷️ 官方 |
+| [NOAA-NCN-Data-Products](https://geodesy.noaa.gov/CORS/data.shtml) | NGS NCN Data/Products：CORS 数据产品导航页 | data-portal | — | 🏷️ 官方 |
 | [NOAA-NGS-CORS](https://geodesy.noaa.gov/CORS/) | NOAA NGS CORS：美国连续运行参考站网数据门户 | data-portal | — | 🏷️ 官方 核心 |
+| [RAMSAC-RINEX](https://www.ign.gob.ar/NuestrasActividades/Geodesia/Ramsac/DescargaRinex) | 阿根廷 RAMSAC：IGN 永久 GNSS 网 RINEX 下载 | data-portal | — | 🏷️ 官方 |
 | [SIRGAS-Home](https://www.sirgas.org/en/) | SIRGAS：拉丁美洲大地参考架与 GNSS 网门户 | data-portal | — | 🏷️ 官方 |
 | [SONEL](https://www.sonel.org/) | SONEL：全球海平面观测网（含 GNSS 并址站） | data-portal | — | 🏷️ 官方 |
 | [UNAVCO-GPS-GNSS-Data](https://www.unavco.org/data/gps-gnss/gps-gnss.html) | UNAVCO 遗留 GNSS 数据页（导向 EarthScope/GAGE） | data-portal | — | 🏷️ 官方 |
@@ -531,6 +568,13 @@ EPN 测站观测文件目录，便于按站名直接下载 RINEX，是欧洲区�
 
 GA 将校验后的 CORS RINEX（含 Hatanaka/gzip）放到公开 S3 桶 ga-gnss-data-rinex-v1，提供网页对象浏览与云端批量拉取。与 SFTP/Web API 同源产品、不同通道。大流量注意对象键约定与开放/受限站权限；不是实时 NTRIP。
 
+#### [GSI-GEONET-SFTP](https://terras.gsi.go.jp/ftp_about.html)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+GSI terras 站点上关于 SFTP 获取电子基准点观测、日坐标、IGS 精密星历与对流层延迟估计值的使用说明页。RINGO/RNXCMP/GSILIB 之外的数据通道文档；实际传输需按站内流程完成 SFTP 用户登记。日文为主，适合已掌握日文或借助翻译访问 GEONET 批量数据的用户。
+
 #### [HongKong-SatRef](https://www.geodetic.gov.hk/en/satref/satref.htm)  
 *🏷️ 官方*
 
@@ -545,6 +589,13 @@ GA 将校验后的 CORS RINEX（含 Hatanaka/gzip）放到公开 S3 桶 ga-gnss-
 
 说明如何获取 SatRef 事后 RINEX 观测数据，是区域电离层与对流层案例研究的便捷来源。需注意采样率、文件保留期限与站名规则。若进行大量自动下载，应遵守网站礼貌访问规范并优先在本地缓存。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
 
+#### [IBGE-RBMC-FTP](https://geoftp.ibge.gov.br/informacoes_sobre_posicionamento_geodesico/rbmc/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+IBGE geoftp 下 RBMC 连续监测网公共文件树，可直接浏览/下载公开 GNSS 相关数据，与官网 HTML 介绍页、RBMC API 互补。南美高频使用的批量取数通道之一；目录结构与保留策略以 IBGE 为准。浏览器直链较大文件时注意超时，建议用 wget/curl 或 FTP 客户端。
+
 #### [IGN-Geodesie](https://geodesie.ign.fr/)  
 *🏷️ 官方*
 
@@ -558,6 +609,13 @@ GA 将校验后的 CORS RINEX（含 Hatanaka/gzip）放到公开 S3 桶 ga-gnss-
 语言：data-portal · 许可：Licence Ouverte · 星标约：— · 宿主：official_site
 
 法国国家地理院（IGN）Réseau GNSS Permanent 的数据服务器入口（rgpdata.ign.fr），提供小时/日 RINEX 等观测与产品，匿名 FTP/HTTP 访问，数据按 Licence Ouverte 分发。适合欧洲区域网与科研对照。现代浏览器常拦 FTP，请用客户端；站级可用性以 RGP 站点说明为准。
+
+#### [INEGI-RGNA](https://www.inegi.org.mx/app/geo2/rgna/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+墨西哥国家统计地理院（INEGI）主动大地测量网（RGNA）RINEX 取数应用，可按固定站与起止时刻选择 RINEX 2.11/3.04。拉美除巴西 RBMC 外的重要国家 CORS 入口；站点覆盖与缺数说明以页面提示为准。适合区域网形变、电离层与相对定位试验，使用须遵守 INEGI 开放数据条款。
 
 #### [NOAA-CORS-AWS](https://noaa-cors-pds.s3.amazonaws.com/index.html)  
 *🏷️ 官方*
@@ -580,12 +638,26 @@ CORS 观测文件目录树入口，便于按测站、年份与年积日批量抓
 
 美国国家大地测量局提供的 NOAA CORS Network（NCN）Web API，可按站名取属性、或按 ECEF 坐标查最近参考站，服务 Data Explorer 等应用。返回元数据而非 RINEX 本体；下载观测请配合 corsdata/AWS NODD/UFCORS。须遵守 NGS 服务条款与合理访问频率。
 
+#### [NOAA-NCN-Data-Products](https://geodesy.noaa.gov/CORS/data.shtml)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+美国 NGS 国家 CORS 网（NCN）「Data and Products」说明页，汇总观测、产品与获取途径说明，衔接 corsdata 树、AWS NODD 与 NCN API。适合首次弄清 NGS 多入口关系；实际批量下载仍走目录/API/云。本条收录导航页而非重复文件树 URL，政策以 NGS 条款为准。
+
 #### [NOAA-NGS-CORS](https://geodesy.noaa.gov/CORS/)  
 *🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 美国国家大地测量局 CORS 官方入口，提供测站元数据、RINEX 观测与相关产品链接，是北美高精度定位与电离层研究常用网络。站点数量多、跨度长。处理前务必核对天线变更日志与站点活跃状态，避免使用已关闭测站而未更新元数据。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+
+#### [RAMSAC-RINEX](https://www.ign.gob.ar/NuestrasActividades/Geodesia/Ramsac/DescargaRinex)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+阿根廷国家地理院（IGN）RAMSAC 连续运行参考站网的 RINEX 下载页，可按站与时段取观测文件，配套站状态、地图与技术文档。南美除 IBGE/SIRGAS 外的重要国家网入口；实时改正另见同站 RAMSAC-NTRIP。访问政策与可用性以 IGN 页面为准，部分服务可能需账号或本地时段限制。
 
 #### [SIRGAS-Home](https://www.sirgas.org/en/)  
 *🏷️ 官方*
@@ -644,6 +716,7 @@ Geoscience Australia 对 Southern Positioning Augmentation Network 的官方说�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [ntrip-catalog](https://github.com/Pix4D/ntrip-catalog) | Pix4D 开源 NTRIP 服务商目录（含坐标参考系 CRS 元数据，CC0） | Python | 14 | 🏷️ 个人社区 |
+| [RAMSAC-NTRIP](https://www.ign.gob.ar/NuestrasActividades/Geodesia/RamsacNtrip) | 阿根廷 RAMSAC-NTRIP：国家 CORS 实时流门户 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -653,6 +726,13 @@ Geoscience Australia 对 Southern Positioning Augmentation Network 的官方说�
 语言：Python · 许可：CC0-1.0 · 星标约：14 · 宿主：github
 
 以 JSON 维护多家 NTRIP 服务的挂载点与 CRS 信息，站点 ntrip-catalog.org 提供检索。解决 RTCM/NTRIP 握手不携带参考框架信息的问题，便于应用按位置匹配改正坐标系。属开放数据目录而非 caster 实现；条目完整性依赖社区贡献与服务商变更。
+
+#### [RAMSAC-NTRIP](https://www.ign.gob.ar/NuestrasActividades/Geodesia/RamsacNtrip)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+IGN 为 RAMSAC 提供的 NTRIP 实时服务门户，含站网地图、用户注册与技术说明，面向差分定位与监测用户。与 RINEX 事后下载互补；Caster 端点、mountpoint 与资费/开放范围以登记页为准。南美实时 CORS 公开入口之一，便于与 SIRGAS 区域网对照试验。
 
 ## 对流层
 

@@ -17,11 +17,11 @@
 ### 详细说明
 
 #### [GPSTest](https://github.com/barbeau/gpstest)  
-*🏷️ 个人社区 核心*
+*🏷️ 个人社区 ★ 核心*
 
 语言：Kotlin · 许可：Apache-2.0 · 星标约：2402 · 宿主：github
 
-支持多星座双频、SBAS、精度评估与 NMEA/原始测量日志，和 Google 分析工具兼容，是手机 GNSS 测试事实标准之一。适合设备能力摸底与采数。不是精密定位解算器。
+多星座双频、SBAS、精度评估与 NMEA/原始测量日志，常与 Google 分析套件联用，是手机 GNSS 测试常用入口。适合设备能力摸底与采集。不是测地接收机替代品；原始测量可用性随芯片/ROM 而异。
 
 #### [GPSLogger](https://github.com/BasicAirData/GPSLogger)  
 *🏷️ 个人社区*

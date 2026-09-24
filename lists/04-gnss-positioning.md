@@ -1,5 +1,5 @@
 # 精密定位 / Precise Positioning
-> **83** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **85** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
@@ -24,10 +24,12 @@ Automatic PPP Analysis Software-Türkiye（APAS-TR）处理 GPS/GLONASS/Galileo/
 |---|---|---|---:|---|
 | [ginan](https://github.com/GeoscienceAustralia/ginan) | Geoscience Australia 精密定位与改正数工具包 | C++ | 343 | 🏷️ 官方 核心 |
 | [RTKLIB-B2b](https://github.com/UCAS-Liuchunbo/RTKLIB-B2b) | 基于 RTKLIB 的北斗 PPP-B2b 解码与定位工具包 | C | 74 | 🏷️ 高校实验室 核心 |
+| [PPP-BayesTree](https://github.com/wvu-navLab/PPP-BayesTree) | PPP-BayesTree：增量图优化 PPP 收敛研究代码 | C++ | 57 | 🏷️ 高校实验室 |
 | [Virtual-Network-DGNSS](https://github.com/Azurehappen/Virtual-Network-DGNSS-Project) | VN-DGNSS：PPP/SSR 驱动的开源虚拟基站差分 | C++ | 39 | 🏷️ 高校实验室 |
 | [NavDecoder](https://github.com/NavSesne/NavDecoder) | 解码 PPP-B2b 与 Galileo HAS 并做校验的工具 | Python | 37 | 🏷️ 个人社区 核心 |
 | [B2bLIB](https://github.com/GCCLib/B2bLIB) | 北斗 PPP-B2b 服务研究用的 C/C++ 库 | C | 26 | 🏷️ 个人社区 核心 |
 | [CSSR-tool](https://github.com/MayHarryWang/CSSR-tool) | 多源协同 CSSR-PPP 改正数预处理工具 | C | 7 | 🏷️ 高校实验室 |
+| [GipsyX-JPL](https://gipsy-oasis.jpl.nasa.gov/) | JPL GipsyX：授权精密定位软件与产品门户 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -44,6 +46,13 @@ Automatic PPP Analysis Software-Türkiye（APAS-TR）处理 GPS/GLONASS/Galileo/
 语言：C · 许可：— · 星标约：74 · 宿主：github
 
 基于 RTKLIB 改造的北斗 PPP-B2b 解码与定位工具包，填补开源社区在 B2b 实操链路上的缺口。适合对照 ICD 评估收敛、精度与可用性。可与 floating0516/RTPPP_B2b、GCCLib/B2bLIB、NavDecoder 并列试验；注意电文版本、接收机原始流格式与许可声明是否满足你的使用场景。
+
+#### [PPP-BayesTree](https://github.com/wvu-navLab/PPP-BayesTree)  
+*🏷️ 高校实验室*
+
+语言：C++ · 许可：MIT · 星标约：57 · 宿主：github
+
+西弗吉尼亚大学导航实验室公开的 PPP 与增量图优化实验代码，对应论文中关于精密单点定位收敛性的评估设置。MIT 许可，偏研究复现而非开箱即用工程套件；依赖与数据路径见仓库说明。适合因子图/滑窗 PPP 方法对照，生产环境请另选 Ginan、PRIDE、raPPPid 等成熟链。
 
 #### [Virtual-Network-DGNSS](https://github.com/Azurehappen/Virtual-Network-DGNSS-Project)  
 *🏷️ 高校实验室*
@@ -72,6 +81,13 @@ Automatic PPP Analysis Software-Türkiye（APAS-TR）处理 GPS/GLONASS/Galileo/
 语言：C · 许可：GPL-3.0 · 星标约：7 · 宿主：github
 
 面向多源协同 CSSR-PPP 的改正数预处理工具，把区域增强类电文整理成后续引擎可用的形式。适合 PPP-RTK/CSSR 试验的数据准备环节。本身不完成完整定位；电文版本、星座与测站网格定义要按样例核验，再接到 MRTKLIB 或自研解算器。
+
+#### [GipsyX-JPL](https://gipsy-oasis.jpl.nasa.gov/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+JPL Near Earth Tracking 维护的 GipsyX 门户，提供软件发行说明、轨道钟差与 PPP 产品、论坛与文档入口。软件面向获授权科研/教育用户下载，非纯 OSI 开源；产品与公告对 PPP 社区仍有高频参考价值。许可与账号以站内 download area 为准，勿与完全开源套件混用条款。
 
 ## QZSS CLAS PPP-RTK
 
@@ -192,7 +208,7 @@ VieVS（TU Wien）精密单点定位模块，MATLAB 实现，便于与 VLBI/大�
 
 语言：Fortran · 许可：— · 星标约：58 · 宿主：github
 
-NRCan 公开的 PPP Fortran 代码，历史与官方 CSRS-PPP 服务同源脉络。适合研究官方级 PPP 模型细节。编译与依赖偏传统；日常用户更多用在线 CSRS-PPP。
+官方背景的 Fortran PPP，便于对照国家机构处理流程。适合研究与教学对照。现代多星座实时服务请结合 CSRS-PPP 网页与其他开源引擎。
 
 #### [PPPLib](https://github.com/yxw027/PPPLib)  
 *🏷️ 高校实验室*
@@ -324,7 +340,7 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 
 语言：C++ · 许可：MIT · 星标约：189 · 宿主：github
 
-C++20 风格的 SPP/RTK/PPP/CLAS 工具包，含 Python 绑定、Docker、ROS2 支持。适合新架构嵌入式/机器人项目。测地学事后高精度产品力需与 PRIDE 等对比评估。
+含 Python 绑定、Docker 与 ROS2 支持，架构较新。适合嵌入式/机器人集成试验。精密产品级完整性与多星座策略仍需自测。
 
 #### [SatellitePosition](https://github.com/LStudioLoren/SatellitePosition)  
 *🏷️ 个人社区*
@@ -469,14 +485,14 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 
 语言：Python · 许可：AGPL-3.0 · 星标约：769 · 宿主：github
 
-把 u-blox、Septentrio 等接收机、RTKLIB str2str、NTRIP 与 Web GUI 捆成可部署的基准站方案，适合野外站、农场与 DIY CORS。运维人员与低成本 RTK 爱好者最常用。精度与完好性取决于接收机、天线与网络质量，不是测地级网平差软件；与 BNC、商业 caster 相比更偏单站自建与易用性。
+把 u-blox/Septentrio、str2str、NTRIP 与网页管理捆成可部署基站。适合爱好者与小型台站。天线环境、电源与网络安全决定可用性；不是国家级 CORS 替代。
 
 #### [rtklib-py](https://github.com/rtklibexplorer/rtklib-py)  
 *🏷️ 个人社区*
 
 语言：Python · 许可：MIT · 星标约：244 · 宿主：github
 
-把 rtklibexplorer/demo5 思路迁到 Python，当前以事后 PPK 为主，便于阅读算法与改实验脚本。适合不想编译 C 版、又要贴近 RTKLIB 流程的人。实时 RTK、完整 GUI 与全部信号支持仍以 C 版 RTKLIB/explorer 为准；与 laika 相比更贴近经典差分定位公式，和 goGPS_MATLAB 可对照语言栈。
+便于阅读算法与改实验脚本，当前侧重事后 PPK。适合不想编译 C 的教学。实时性能与完整性不及原生 RTKLIB/厂商方案。
 
 #### [OpenRTK](https://github.com/AndreasArendt/OpenRTK)  
 *🏷️ 个人社区*
@@ -787,7 +803,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 语言：C++ · 许可：GPL-3.0 · 星标约：116 · 宿主：github
 
-中文导航学习社区常见的 C++ 开源定位软件，便于对照 Navigation-Learning 等笔记读源码。定位模式与产品支持以仓库文档为准；精密 PPP-AR/业务化能力通常弱于 PRIDE、Ginan。
+面向定位算法实验与二次开发的 C++ 仓。适合跟进图优化/组合导航课程作业。成熟度与文档因版本而异，引用前请自备回归数据。
 
 ## PPP脚本
 
@@ -867,18 +883,18 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 ### 详细说明
 
 #### [RTKLIB](https://github.com/tomojitakasu/RTKLIB)  
-*🏷️ 个人社区 核心*
+*🏷️ 个人社区 ★ 核心*
 
 语言：C · 许可：— · 星标约：3128 · 宿主：github
 
-Takasu 的 RTKLIB 是开源 RTK/PPP 事实标准之一，窗口工具与嵌入式移植极广。适合入门精密定位与低成本接收机。默认版本对部分新信号/PPP-AR 不如专用科研软件；社区常用 rtklibexplorer 分支。
+窗口工具与嵌入式移植极广，是开源 RTK/PPP 入门与生产原型的常见底座。适合低成本接收机与教学实验。默认分支对部分多星座/低成本场景需配合 demo5 等社区分支；实时链路与模糊度策略要因机型验证。
 
 #### [RTKLIB-explorer](https://github.com/rtklibexplorer/RTKLIB)  
 *🏷️ 个人社区 核心*
 
 语言：C · 许可：— · 星标约：971 · 宿主：github
 
-基于 2.4.3、针对 u-blox 等低成本设备优化的活跃分支，文档与讨论区（博客）丰富。适合手持/无人机 RTK。官方声明无担保，实时关键应用需自测；PPP-AR 科研可并行看 PRIDE/Ginan。
+针对低成本 GNSS 的活跃社区分支，博客与讨论丰富。适合手持/无人机 RTK 试验。非官方担保；升级与实时安全策略请自行回归。
 
 ## 多功能引擎
 

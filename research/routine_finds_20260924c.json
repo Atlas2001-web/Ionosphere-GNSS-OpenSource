@@ -1,0 +1,282 @@
+[
+  {
+    "name": "RAMSAC-RINEX",
+    "url": "https://www.ign.gob.ar/NuestrasActividades/Geodesia/Ramsac/DescargaRinex",
+    "desc_zh": "阿根廷 IGN RAMSAC 永久站：开放 RINEX 观测下载入口",
+    "analysis_zh": "阿根廷国家地理院（IGN）RAMSAC 连续运行参考站网的 RINEX 下载页，可按站与时段取观测文件，配套站状态、地图与技术文档。南美除 IBGE/SIRGAS 外的重要国家网入口；实时改正另见同站 RAMSAC-NTRIP。访问政策与可用性以 IGN 页面为准，部分服务可能需账号或本地时段限制。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "CORS区域网",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "阿根廷 RAMSAC：IGN 永久 GNSS 网 RINEX 下载",
+    "stars_approx": null,
+    "markers": [
+      "routine-2026-09-24c"
+    ],
+    "source": "routine-finds-20260924c",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "RAMSAC-NTRIP",
+    "url": "https://www.ign.gob.ar/NuestrasActividades/Geodesia/RamsacNtrip",
+    "desc_zh": "阿根廷 RAMSAC-NTRIP：国家 CORS 实时差分流注册与文档",
+    "analysis_zh": "IGN 为 RAMSAC 提供的 NTRIP 实时服务门户，含站网地图、用户注册与技术说明，面向差分定位与监测用户。与 RINEX 事后下载互补；Caster 端点、mountpoint 与资费/开放范围以登记页为准。南美实时 CORS 公开入口之一，便于与 SIRGAS 区域网对照试验。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "NTRIP服务商/CRS",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "阿根廷 RAMSAC-NTRIP：国家 CORS 实时流门户",
+    "stars_approx": null,
+    "markers": [
+      "routine-2026-09-24c"
+    ],
+    "source": "routine-finds-20260924c",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "QZSS-Official",
+    "url": "https://qzss.go.jp/en/",
+    "desc_zh": "日本内阁府准天顶卫星系统（QZSS）英文官网：服务与产品入口",
+    "analysis_zh": "日本内阁府 QZSS 英文门户，汇总服务概览、公告、GNSS View、产品与下载链接，是 CLAS/MADOCA 等增强与官方文档的起点。与 MIRAI 归档、CLASLIB/MADOCALIB 代码互补；运营状态与公开档案另见 sys.qzss.go.jp。适合亚太多星座与日本区域增强调研，条款以官网为准。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "轨道钟差",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "QZSS 官网：日本准天顶系统服务与产品入口",
+    "stars_approx": null,
+    "markers": [
+      "routine-2026-09-24c"
+    ],
+    "source": "routine-finds-20260924c",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "QZSS-Public-Archives",
+    "url": "https://sys.qzss.go.jp/dod/en/archives.html",
+    "desc_zh": "QZSS 公开运营信息与档案数据（Cabinet Office DOD）",
+    "analysis_zh": "准天顶系统运营信息/档案英文页，集中提供公开归档与状态相关入口，便于回溯服务公告与可下载产品。区别于 MIRAI 用户观测归档；面向增强服务研究与多星座完好性对照。具体文件清单与下载权限以页面及关联 Notices/Downloads 为准，可能随运营变更。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "轨道钟差",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "QZSS 公开档案：运营信息与可下载归档入口",
+    "stars_approx": null,
+    "markers": [
+      "routine-2026-09-24c"
+    ],
+    "source": "routine-finds-20260924c",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "GSI-GEONET-SFTP",
+    "url": "https://terras.gsi.go.jp/ftp_about.html",
+    "desc_zh": "日本国土地理院：电子基准点等数据的 SFTP 获取说明",
+    "analysis_zh": "GSI terras 站点上关于 SFTP 获取电子基准点观测、日坐标、IGS 精密星历与对流层延迟估计值的使用说明页。RINGO/RNXCMP/GSILIB 之外的数据通道文档；实际传输需按站内流程完成 SFTP 用户登记。日文为主，适合已掌握日文或借助翻译访问 GEONET 批量数据的用户。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "CORS区域网",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "GSI SFTP 说明：GEONET 观测/坐标/对流层获取须知",
+    "stars_approx": null,
+    "markers": [
+      "routine-2026-09-24c"
+    ],
+    "source": "routine-finds-20260924c",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "INEGI-RGNA",
+    "url": "https://www.inegi.org.mx/app/geo2/rgna/",
+    "desc_zh": "墨西哥 INEGI RGNA：国家主动大地网 RINEX 查询下载",
+    "analysis_zh": "墨西哥国家统计地理院（INEGI）主动大地测量网（RGNA）RINEX 取数应用，可按固定站与起止时刻选择 RINEX 2.11/3.04。拉美除巴西 RBMC 外的重要国家 CORS 入口；站点覆盖与缺数说明以页面提示为准。适合区域网形变、电离层与相对定位试验，使用须遵守 INEGI 开放数据条款。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "CORS区域网",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "墨西哥 RGNA：INEGI 主动大地网 RINEX 下载",
+    "stars_approx": null,
+    "markers": [
+      "routine-2026-09-24c"
+    ],
+    "source": "routine-finds-20260924c",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "UNR-NGL",
+    "url": "https://geodesy.unr.edu/",
+    "desc_zh": "内华达大学 Reno 大地测量实验室（NGL）：全球 GPS 时序与产品",
+    "analysis_zh": "Nevada Geodetic Laboratory 主页，发布全球 GPS 站时序、应变率、垂直运动与 MAGNET 等网络信息，是学术界常用的开放坐标时间序列来源之一。配套站列表/地图与出版物入口；处理策略与引用方式见站内说明。适合形变与参考框架研究，非官方 CORS 原始 RINEX 替代，原始观测仍应回 IGS/区域网。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "IGS产品下载",
+    "host": "official_site",
+    "provenance": "academic_lab",
+    "one_liner_zh": "UNR NGL：全球 GPS 时序与形变产品门户",
+    "stars_approx": null,
+    "markers": [
+      "routine-2026-09-24c"
+    ],
+    "source": "routine-finds-20260924c",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "JPL-GPS-Time-Series",
+    "url": "https://sideshow.jpl.nasa.gov/post/series.html",
+    "desc_zh": "NASA JPL GPS 站坐标时间序列（sideshow）公开页",
+    "analysis_zh": "JPL sideshow 上的 GPS Time Series 入口，提供全球站坐标时间序列浏览与相关产品链接，常与 GipsyX/轨道钟差产品一并使用。与 IONEX_rapid 等同域不同路径；引用与更新策略见页面说明。适合形变、参考框架与 PPP 结果对照，原始观测请仍走 CDDIS/区域 CORS。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "IGS产品下载",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "JPL GPS 时序：sideshow 全球站坐标序列入口",
+    "stars_approx": null,
+    "markers": [
+      "routine-2026-09-24c"
+    ],
+    "source": "routine-finds-20260924c",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "GipsyX-JPL",
+    "url": "https://gipsy-oasis.jpl.nasa.gov/",
+    "desc_zh": "NASA JPL GipsyX：精密定位软件与轨道/钟差/PPP 产品门户",
+    "analysis_zh": "JPL Near Earth Tracking 维护的 GipsyX 门户，提供软件发行说明、轨道钟差与 PPP 产品、论坛与文档入口。软件面向获授权科研/教育用户下载，非纯 OSI 开源；产品与公告对 PPP 社区仍有高频参考价值。许可与账号以站内 download area 为准，勿与完全开源套件混用条款。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-positioning",
+    "subcategory": "PPP/改正数",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "JPL GipsyX：授权精密定位软件与产品门户",
+    "stars_approx": null,
+    "markers": [
+      "routine-2026-09-24c"
+    ],
+    "source": "routine-finds-20260924c",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "NOAA-NCN-Data-Products",
+    "url": "https://geodesy.noaa.gov/CORS/data.shtml",
+    "desc_zh": "NOAA/NGS NCN：CORS 数据与产品导航页（非目录树本身）",
+    "analysis_zh": "美国 NGS 国家 CORS 网（NCN）「Data and Products」说明页，汇总观测、产品与获取途径说明，衔接 corsdata 树、AWS NODD 与 NCN API。适合首次弄清 NGS 多入口关系；实际批量下载仍走目录/API/云。本条收录导航页而非重复文件树 URL，政策以 NGS 条款为准。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "CORS区域网",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "NGS NCN Data/Products：CORS 数据产品导航页",
+    "stars_approx": null,
+    "markers": [
+      "routine-2026-09-24c"
+    ],
+    "source": "routine-finds-20260924c",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "IBGE-RBMC-FTP",
+    "url": "https://geoftp.ibge.gov.br/informacoes_sobre_posicionamento_geodesico/rbmc/",
+    "desc_zh": "巴西 IBGE RBMC：geoftp 上公开 GNSS 观测目录树",
+    "analysis_zh": "IBGE geoftp 下 RBMC 连续监测网公共文件树，可直接浏览/下载公开 GNSS 相关数据，与官网 HTML 介绍页、RBMC API 互补。南美高频使用的批量取数通道之一；目录结构与保留策略以 IBGE 为准。浏览器直链较大文件时注意超时，建议用 wget/curl 或 FTP 客户端。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "CORS区域网",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "IBGE RBMC FTP：巴西连续 GNSS 网公开目录",
+    "stars_approx": null,
+    "markers": [
+      "routine-2026-09-24c"
+    ],
+    "source": "routine-finds-20260924c",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "galileo-osnma",
+    "url": "https://github.com/daniestevez/galileo-osnma",
+    "desc_zh": "Rust 实现的 Galileo OSNMA 导航电文认证库（可 no_std）",
+    "analysis_zh": "daniestevez 维护的 Galileo OSNMA 协议 Rust 库，校验导航电文密码学签名，支持 no_std 与静态栈分配，并有嵌入式演示 crate。与 Algafix/OSNMA（EUPL、偏仿真/工具链）互补，侧重可嵌入接收机路径。Apache-2.0/MIT；需自备公钥/ Merkle 材料与实时电文源，星级与文档见 crates.io/docs.rs。",
+    "language": "Rust",
+    "license": "Apache-2.0",
+    "category": "tools-learning",
+    "subcategory": "认证/完好性",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "galileo-osnma：嵌入式友好的 Galileo OSNMA Rust 库",
+    "stars_approx": 88,
+    "markers": [
+      "routine-2026-09-24c"
+    ],
+    "source": "routine-finds-20260924c",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "nmea-parser",
+    "url": "https://github.com/zaari/nmea-parser",
+    "desc_zh": "Rust NMEA 0183 解析库：覆盖 AIS 与主要 GNSS 语句",
+    "analysis_zh": "zaari 的 nmea-parser crate，面向 AIS Class A/B 与常用 GNSS NMEA 0183 语句解析，可嵌入海事与定位流水线。与 Python 侧 pynmea2/pynmeagps 形成语言互补；Apache-2.0，文档在 docs.rs。适合需要强类型与性能的 Rust 服务；句子覆盖以 crate 版本说明为准，冷门 proprietary 语句可能未支持。",
+    "language": "Rust",
+    "license": "Apache-2.0",
+    "category": "gnss-data",
+    "subcategory": "基础库",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "nmea-parser：Rust 版 AIS/GNSS NMEA 0183 解析",
+    "stars_approx": 51,
+    "markers": [
+      "routine-2026-09-24c"
+    ],
+    "source": "routine-finds-20260924c",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "PPP-BayesTree",
+    "url": "https://github.com/wvu-navLab/PPP-BayesTree",
+    "desc_zh": "WVU navLab：增量图优化视角下的 PPP 收敛评估代码",
+    "analysis_zh": "西弗吉尼亚大学导航实验室公开的 PPP 与增量图优化实验代码，对应论文中关于精密单点定位收敛性的评估设置。MIT 许可，偏研究复现而非开箱即用工程套件；依赖与数据路径见仓库说明。适合因子图/滑窗 PPP 方法对照，生产环境请另选 Ginan、PRIDE、raPPPid 等成熟链。",
+    "language": "C++",
+    "license": "MIT",
+    "category": "gnss-positioning",
+    "subcategory": "PPP/改正数",
+    "host": "github",
+    "provenance": "academic_lab",
+    "one_liner_zh": "PPP-BayesTree：增量图优化 PPP 收敛研究代码",
+    "stars_approx": 57,
+    "markers": [
+      "routine-2026-09-24c"
+    ],
+    "source": "routine-finds-20260924c",
+    "featured": false,
+    "user_relation": "none"
+  }
+]
