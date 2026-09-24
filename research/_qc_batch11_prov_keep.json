@@ -1,0 +1,164 @@
+[
+  {
+    "name": "pygnsslab",
+    "owner": "PyGnssLab",
+    "action": "keep",
+    "detail": "org bio open-source software lab; no university/agency → keep personal_community"
+  },
+  {
+    "name": "polaris",
+    "owner": "PointOneNav",
+    "action": "keep",
+    "detail": "Point One Navigation commercial org → keep personal_community"
+  },
+  {
+    "name": "rtcm-rs",
+    "owner": "martinhakansson",
+    "action": "keep",
+    "detail": "empty bio/company → keep"
+  },
+  {
+    "name": "hatanaka",
+    "owner": "valgur",
+    "action": "keep",
+    "detail": "empty bio/company → keep"
+  },
+  {
+    "name": "beidou-sdr-sim",
+    "owner": "yangfan852219770",
+    "action": "keep",
+    "detail": "empty bio/company → keep"
+  },
+  {
+    "name": "gnss-RX",
+    "owner": "HeryMwenegoha",
+    "action": "keep",
+    "detail": "empty bio/company → keep"
+  },
+  {
+    "name": "ALBUS_ionosphere",
+    "owner": "twillis449",
+    "action": "keep",
+    "detail": "personal radio astronomer; no university/agency field → keep"
+  },
+  {
+    "name": "PPP-RTK-Beechan",
+    "owner": "MichaelBeechan",
+    "action": "keep",
+    "detail": "company Sichuan Jiuzhou Electric Group commercial → keep personal_community"
+  },
+  {
+    "name": "M_GIM-zcytju",
+    "owner": "zcytju",
+    "action": "keep",
+    "detail": "empty bio/company → keep"
+  },
+  {
+    "name": "FlyDog-SDR-GPS",
+    "owner": "flydog-sdr",
+    "action": "keep",
+    "detail": "community hardware org → keep personal_community"
+  },
+  {
+    "name": "GPSGALSSS",
+    "owner": "domonforyou",
+    "action": "keep",
+    "detail": "personal blog; no university → keep"
+  },
+  {
+    "name": "gnss-signal-simulator-rs",
+    "owner": "danusha2345",
+    "action": "keep",
+    "detail": "personal; company home → keep"
+  },
+  {
+    "name": "msckfvioGPS",
+    "owner": "loveforeverLi",
+    "action": "keep",
+    "detail": "empty bio/company → keep"
+  },
+  {
+    "name": "STM32Primer2-GNSS-Tracker",
+    "owner": "nemuisan",
+    "action": "keep",
+    "detail": "personal hobbyist → keep"
+  },
+  {
+    "name": "tec_forecast",
+    "owner": "mauriciodev",
+    "action": "keep",
+    "detail": "PhD in bio but no company/org affiliation field → keep"
+  },
+  {
+    "name": "awesome-gnss-hdkarimi",
+    "owner": "hdkarimi",
+    "action": "keep",
+    "detail": "personal FOSS curator → keep"
+  },
+  {
+    "name": "ntrip-client",
+    "owner": "nav-solutions",
+    "action": "keep",
+    "detail": "community org France; no agency/university → keep"
+  },
+  {
+    "name": "ntrip-catalog",
+    "owner": "Pix4D",
+    "action": "keep",
+    "detail": "Pix4D commercial → keep personal_community"
+  },
+  {
+    "name": "ntrip-caster-go",
+    "owner": "symysak",
+    "action": "keep",
+    "detail": "empty bio/company → keep"
+  },
+  {
+    "name": "GNSSRMERRByS",
+    "owner": "pjalesSSTL",
+    "action": "keep",
+    "detail": "Surrey Satellite Technology Ltd commercial → keep"
+  },
+  {
+    "name": "gnss-sdr-1pps",
+    "owner": "oscimp",
+    "action": "keep",
+    "detail": "OscillatorIMP PIA community org; affiliation not a clear university/agency catalog class → keep"
+  },
+  {
+    "name": "gnssgo",
+    "owner": "FengXuebin",
+    "action": "keep",
+    "detail": "company Explore Data Technology Ltd commercial → keep"
+  },
+  {
+    "name": "PW_from_GPS",
+    "owner": "ZiskinZiv",
+    "action": "keep",
+    "detail": "industry researcher; no university company → keep"
+  },
+  {
+    "name": "pylgrim",
+    "owner": "kirienko",
+    "action": "keep",
+    "detail": "company secjur commercial → keep"
+  },
+  {
+    "name": "BUAA-RINEX-Convertor",
+    "owner": "Jia-le-wang",
+    "action": "keep",
+    "detail": "empty bio/company (BUAA only in project name) → keep"
+  },
+  {
+    "name": "GHASP-HAS-decoding",
+    "owner": "borioda",
+    "action": "keep",
+    "detail": "empty bio/company despite known researcher name → keep until org field clear"
+  },
+  {
+    "name": "GPSBabel",
+    "owner": "gpsbabel (web)",
+    "action": "keep",
+    "detail": "long-running community software; not university/agency → keep personal_community"
+  }
+]

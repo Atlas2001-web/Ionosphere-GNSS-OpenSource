@@ -9,7 +9,7 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 |---|---|---|---:|---|
 | [UrbanNavDataset](https://github.com/IPNL-POLYU/UrbanNavDataset) | 香港/东京等城市峡谷 GNSS/INS/视觉基准集 | Python | 606 | 🏷️ 高校实验室 |
 | [awesome-gins-datasets](https://github.com/i2Nav-WHU/awesome-gins-datasets) | awesome-gins-datasets：车载 GNSS/INS 数据集列表 | — | 280 | 🏷️ 高校实验室 核心 |
-| [gnss2tws-green](https://github.com/jzshhh/gnss2tws_green) | 由 GNSS 垂直位移反演陆地水储量 GNSS2TWS | MATLAB | 33 | 🏷️ 个人社区 |
+| [gnss2tws-green](https://github.com/jzshhh/gnss2tws_green) | gnss2tws-green：GNSS 垂直位移反演陆地水储量 | MATLAB | 33 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -28,7 +28,7 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 汇总适合车载 GNSS/INS 组合导航评测的公开数据集与说明入口，减少四处搜数据的时间成本。适合写论文基线、算法对比与课程大作业选题。本身不是解算软件；引用各数据集时要核对许可协议、传感器时间同步与标定文件是否齐全，缺失标定会严重扭曲融合精度结论。
 
 #### [gnss2tws-green](https://github.com/jzshhh/gnss2tws_green)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：MATLAB · 许可：GPL-3.0 · 星标约：33 · 宿主：github
 
@@ -200,7 +200,7 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GPSBabel](https://www.gpsbabel.org/) | GPSBabel：多品牌接收机航点/轨迹/路线格式互转与过滤 | C++ | — | 🏷️ 个人社区 |
+| [GPSBabel](https://www.gpsbabel.org/) | GPSBabel：航点/轨迹/路线多格式互转与过滤 | C++ | — | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -215,7 +215,7 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [HTDP](https://github.com/noaa-ngs/HTDP) | NOAA/NGS HTDP：跨历元与参考框架的水平时变坐标变换 | Fortran | 33 | 🏷️ 官方 |
+| [HTDP](https://github.com/noaa-ngs/HTDP) | HTDP：NOAA/NGS 水平时变坐标与框架变换 | Fortran | 33 | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -390,7 +390,7 @@ galileoz 的 Galileo OSNMA 仿真工具，用于生成/演练开放服务导航�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [polaris](https://github.com/PointOneNav/polaris) | Point One RTK 网络服务通信软件 | — | 33 | 🏷️ 个人社区 |
+| [polaris](https://github.com/PointOneNav/polaris) | polaris：Point One RTK 网络服务通信客户端 | — | 33 | 🏷️ 个人社区 |
 
 ### 详细说明
 

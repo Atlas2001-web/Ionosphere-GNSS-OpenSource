@@ -293,12 +293,12 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 | [pluto-gps-sim](https://github.com/Mictronics/pluto-gps-sim) | pluto-gps-sim：PlutoSDR GPS IQ 仿真发射工具 | C | 119 | 🏷️ 个人社区 |
 | [gps-sdr-sim-assistant](https://github.com/frank-pian/gps-sdr-sim-assistant) | gps-sdr-sim-assistant：仿真参数图形助手 | JavaScript | 63 | 🏷️ 个人社区 |
 | [galileo-sdr-sim](https://github.com/harshadms/galileo-sdr-sim) | galileo-sdr-sim：Galileo E1B/C 信号生成器 | C++ | 62 | 🏷️ 个人社区 |
-| [BeiDou_B1C](https://github.com/lnexenl/BeiDou_B1C) | 北斗 B1C 信号生成与捕获（MATLAB） | MATLAB | 38 | 🏷️ 个人社区 |
+| [BeiDou_B1C](https://github.com/lnexenl/BeiDou_B1C) | BeiDou_B1C：北斗 B1C 信号生成与捕获（MATLAB） | MATLAB | 38 | 🏷️ 高校实验室 |
 | [gui_sdr_gps_sim](https://github.com/okiedocus/gui_sdr_gps_sim) | gui_sdr_gps_sim：HackRF 多星座 GNSS 信号仿真 GUI | Rust | 37 | 🏷️ 个人社区 |
-| [gnss-RX](https://github.com/HeryMwenegoha/gnss-RX) | GNSS 观测量仿真器（MATLAB） | MATLAB | 32 | 🏷️ 个人社区 |
+| [gnss-RX](https://github.com/HeryMwenegoha/gnss-RX) | gnss-RX：MATLAB GNSS 观测量仿真器 | MATLAB | 32 | 🏷️ 个人社区 |
 | [gnss-signal-simulator-rs](https://github.com/danusha2345/gnss-signal-simulator-rs) | Rust 多星座 GNSS 信号仿真器（含 GPS L1/L5 等） | Rust | 30 | 🏷️ 个人社区 |
 | [GPSGALSSS](https://github.com/domonforyou/GPS_GAL_SSS) | GPS/Galileo 卫星信号模拟器（关联 RTKLIB） | C++ | 29 | 🏷️ 个人社区 |
-| [beidou-sdr-sim](https://github.com/yangfan852219770/beidou-sdr-sim) | 北斗 GEO（PRN1–5）信号仿真与 LimeSDR 发射 | C | 27 | 🏷️ 个人社区 |
+| [beidou-sdr-sim](https://github.com/yangfan852219770/beidou-sdr-sim) | beidou-sdr-sim：北斗 GEO（PRN1–5）信号仿真 | C | 27 | 🏷️ 个人社区 |
 | [esp2822NMEAsim](https://github.com/michalpelka/esp2822_NMEA_sim) | 廉价 MCU 模拟 PPS 与 NMEA 同步信号 | C++ | 7 | 🏷️ 个人社区 |
 | [Microsat-gps-sim](https://github.com/niklasknoell/Microsat-gps-sim) | 微纳卫星工程向 GNSS 仿真工具（Python） | Python | 4 | 🏷️ 个人社区 |
 | [gps-qzss-sdr-sim](https://github.com/iGNSS/gps-qzss-sdr-sim) | 软件定义 GPS/QZSS 信号仿真器 | — | 1 | 🏷️ 个人社区 |
@@ -355,7 +355,7 @@ Mictronics 维护的 PlutoSDR GPS 基带 IQ 生成与发射工具，把模拟中
 专门生成 Galileo E1B/C，补齐 gps-sdr-sim 偏 GPS 的空白。适合 Galileo 基带试验。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
 
 #### [BeiDou_B1C](https://github.com/lnexenl/BeiDou_B1C)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：MATLAB · 许可：MIT · 星标约：38 · 宿主：github
 
@@ -445,7 +445,7 @@ CU Boulder RF & SatNav 实验室维护的 SoftGNSS/教材配套页面，介绍 B
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [GNSS-matlab](https://github.com/danipascual/GNSS-matlab) | MATLAB 生成 GPS/Galileo/北斗信号层码与谱 | MATLAB | 257 | 🏷️ 高校实验室 |
-| [GNSS-VHDL](https://github.com/danipascual/GNSS-VHDL) | GPS/Galileo PRN 与无数据信号 VHDL 生成 | VHDL | 34 | 🏷️ 高校实验室 |
+| [GNSS-VHDL](https://github.com/danipascual/GNSS-VHDL) | GNSS-VHDL：GPS/Galileo PRN 与无数据信号 VHDL | VHDL | 34 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -483,7 +483,7 @@ VHDL 代码用于生成 GPS L1 C/A 以及 Galileo E1OS、E5 的 PRN 与无数据
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [NavLab-DPE-SDR](https://github.com/Stanford-NavLab/NavLab-DPE-SDR) | NavLab-DPE-SDR：斯坦福 DPE GPS 接收软件 | Cuda | 46 | 🏷️ 高校实验室 |
-| [GPSL1-DPEmodule](https://github.com/Sergio-Vicenzo/GPSL1-DPEmodule) | GPS L1 直接位置估计（DPE）MATLAB 插件 | MATLAB | 33 | 🏷️ 个人社区 |
+| [GPSL1-DPEmodule](https://github.com/Sergio-Vicenzo/GPSL1-DPEmodule) | GPSL1-DPEmodule：GPS L1 直接位置估计 MATLAB 插件 | MATLAB | 33 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -495,7 +495,7 @@ VHDL 代码用于生成 GPS L1 C/A 以及 Galileo E1OS、E5 的 PRN 与无数据
 斯坦福导航实验室开源的直接位置估计（DPE）GPS 接收软件，含 CUDARecv 与 PyGNSS，在位置域直接估计而非传统标量跟踪环。适合研究强多径/抗干扰新体制的算法群体。依赖 CUDA 与较大算力；部署与调参成本高于常规 gnss-sdr 跟踪环路线。GPU 驱动与 CUDA 工具链版本需与编译说明严格一致。
 
 #### [GPSL1-DPEmodule](https://github.com/Sergio-Vicenzo/GPSL1-DPEmodule)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：MATLAB · 许可：GPL-2.0 · 星标约：33 · 宿主：github
 
@@ -521,7 +521,7 @@ VHDL 代码用于生成 GPS L1 C/A 以及 Galileo E1OS、E5 的 PRN 与无数据
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [LEOGPS](https://github.com/sammmlow/LEOGPS) | LEOGPS：LEO 星载 GPS/相对导航 Python 包 | Python | 88 | 🏷️ 高校实验室 |
-| [hardware](https://github.com/oresat/oresat-gps-hardware) | OreSat 立方星 SDR GPS 接收硬件设计 | Makefile | 33 | 🏷️ 高校实验室 |
+| [hardware](https://github.com/oresat/oresat-gps-hardware) | oresat-gps-hardware：立方星 SDR GPS 接收硬件 | Makefile | 33 | 🏷️ 高校实验室 |
 | [oresat-gps-software](https://github.com/oresat/oresat-gps-software) | OreSat 立方星 GPS 接收机软件 | Python | 22 | 🏷️ 高校实验室 |
 
 ### 详细说明

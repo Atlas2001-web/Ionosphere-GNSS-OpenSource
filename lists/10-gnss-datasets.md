@@ -494,7 +494,7 @@ COSMIC/FORMOSAT 等任务的无线电掩星数据中心门户，提供中性大�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [cssrlib-data](https://github.com/hirokawa/cssrlib-data) | CSSRlib 配套样例脚本与数据集 | Python | 44 | 🏷️ 高校实验室 |
+| [cssrlib-data](https://github.com/hirokawa/cssrlib-data) | cssrlib-data：CSSRlib 配套样例脚本与数据 | Python | 44 | 🏷️ 高校实验室 |
 
 ### 详细说明
 

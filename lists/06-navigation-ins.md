@@ -137,7 +137,7 @@ HKUST Aerial Robotics 发布的优化式多传感器状态估计器，在 VINS-M
 | [Wheel-GINS](https://github.com/i2Nav-WHU/Wheel-GINS) | Wheel-GINS：轮式 IMU+GNSS 组合导航 | C++ | 47 | 🏷️ 高校实验室 |
 | [GNSS_IMU](https://github.com/rtklibexplorer/GNSS_IMU) | GNSS_IMU：松组合 GNSS/IMU 的 Python 实现 | Python | 35 | 🏷️ 个人社区 |
 | [GINS](https://github.com/zhangwhu/GINS) | PPP-RTK 与惯导组合的 GINS 实现（武大相关） | C | 21 | 🏷️ 高校实验室 |
-| [ImuGpsGuiding](https://github.com/JackJu-HIT/ImuGpsGuiding) | ROS 框架下 IMU+GPS 点到点导引示例 | C++ | 20 | 🏷️ 个人社区 |
+| [ImuGpsGuiding](https://github.com/JackJu-HIT/ImuGpsGuiding) | ImuGpsGuiding：ROS 下 IMU+GPS 点到点导引示例 | C++ | 20 | 🏷️ 高校实验室 |
 | [KF-GINS-Py](https://github.com/salmoshu/KF-GINS-Py) | KF-GINS 思路的 Python 移植，便于读 EKF 组合导航 | Python | 13 | 🏷️ 高校实验室 |
 | [Smart-UAV-Return-GNSS-Station](https://github.com/citec-spbu/Smart-UAV-Return-GNSS-Station) | GNSS/链路丢失时无人机智能返航相关代码 | C | 3 | 🏷️ 个人社区 |
 
@@ -242,7 +242,7 @@ rtklibexplorer 社区风格的松组合 GNSS/IMU Python 实现，便于配合 de
 将 PPP-RTK 改正与惯导结合的 GINS 实现，追求遮挡环境下仍较连续的高精度导航解。适合阅读 PPP-RTK/INS 相关论文时对照工程结构。公开文档与示例数据完整度一般；与 HKUST GVINS、i2Nav KF-GINS 名称接近但路线不同，选用前核对作者与传感器组合。
 
 #### [ImuGpsGuiding](https://github.com/JackJu-HIT/ImuGpsGuiding)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：C++ · 许可：— · 星标约：20 · 宿主：github
 

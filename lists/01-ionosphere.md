@@ -102,10 +102,10 @@ yujieqing 仓库：为电离层层析准备几何/射线矩阵相关代码，可
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [GEMINI3D](https://github.com/gemini3d/gemini3d) | GEMINI3D：三维电离层物理模式 | Fortran | 69 | 🏷️ 高校实验室 |
-| [GITM](https://github.com/GITMCode/GITM) | 全球电离层-热层模式 GITM 官方社区源码（Fortran） | Fortran | 28 | 🏷️ 高校实验室 |
-| [Aether-IT-model](https://github.com/AetherModel/Aether) | 热层-电离层耦合物理模式 Aether（勿与 PPP-RTK 的 AETHER 混淆） | C++ | 27 | 🏷️ 高校实验室 |
-| [TIE-GCM](https://github.com/NCAR/tiegcm) | NCAR 官方热层-电离层-电动力学环流模式 TIE-GCM v3 源码 | Fortran | 27 | 🏷️ 官方 |
-| [LongwaveModePropagator.jl](https://github.com/fgasdia/LongwaveModePropagator.jl) | 地球-电离层波导中 VLF 长波模传播的 Julia 模型 | Julia | 26 | 🏷️ 高校实验室 |
+| [GITM](https://github.com/GITMCode/GITM) | GITM：全球电离层-热层模式社区 Fortran 源码 | Fortran | 28 | 🏷️ 高校实验室 |
+| [Aether-IT-model](https://github.com/AetherModel/Aether) | Aether：热层-电离层耦合物理模式（非 PPP-RTK AETHER） | C++ | 27 | 🏷️ 高校实验室 |
+| [TIE-GCM](https://github.com/NCAR/tiegcm) | TIE-GCM：NCAR 热层-电离层-电动力学环流模式 | Fortran | 27 | 🏷️ 官方 |
+| [LongwaveModePropagator.jl](https://github.com/fgasdia/LongwaveModePropagator.jl) | LongwaveModePropagator.jl：VLF 长波模传播 Julia 模型 | Julia | 26 | 🏷️ 高校实验室 |
 | [hwm93](https://github.com/space-physics/hwm93) | hwm93：HWM93 水平风模型 Python/Matlab 接口 | Python | 23 | 🏷️ 高校实验室 |
 | [sami2py](https://github.com/sami2py/sami2py) | NRL SAMI2 二维电离层模式的 Python 封装（运行/读档/绘图） | Python/Fortran | 21 | 🏷️ 高校实验室 |
 | [sami3_gitm](https://github.com/jdhuba/sami3_gitm) | Huba 公开的 SAMI3/GITM 基础耦合 vanilla 代码 | Fortran | 7 | 🏷️ 官方 |
@@ -310,10 +310,10 @@ Space Weather Modeling Framework 组件之一，描述高纬电离层电动力�
 |---|---|---|---:|---|
 | [gnss-tec](https://github.com/gnss-lab/gnss-tec) | gnss-tec：RINEX 斜路径 TEC 重建 | Python | 54 | 🏷️ 高校实验室 核心 |
 | [PyGPS](https://github.com/gregstarr/PyGPS) | PyGPS：RINEX→TEC/偏差研究工具箱 | Python | 47 | 🏷️ 个人社区 |
-| [TEC-calculation-MATLAB](https://github.com/cssrg-kmitl/TEC-calculation-MATLAB) | MATLAB 双频 RINEX 2.11 TEC 计算 | MATLAB | 33 | 🏷️ 高校实验室 |
+| [TEC-calculation-MATLAB](https://github.com/cssrg-kmitl/TEC-calculation-MATLAB) | TEC-calculation-MATLAB：双频 RINEX 2.11 TEC | MATLAB | 33 | 🏷️ 高校实验室 |
 | [PyTECGg](https://github.com/viventriglia/PyTECGg) | PyTECGg：多星座 TEC 重建与校准 | Python | 29 | 🏷️ 高校实验室 🔀 ★ 核心 |
-| [ALBUS_ionosphere](https://github.com/twillis449/ALBUS_ionosphere) | 由 GPS 数据估计电离层 TEC 与旋转量 RM | Python | 26 | 🏷️ 个人社区 |
-| [tec-suite](https://github.com/gnss-lab/tec-suite) | SIMuRG 团队 TEC 重建套件 | Python | 23 | 🏷️ 高校实验室 |
+| [ALBUS_ionosphere](https://github.com/twillis449/ALBUS_ionosphere) | ALBUS_ionosphere：GPS 估计 TEC 与法拉第旋转量 RM | Python | 26 | 🏷️ 个人社区 |
+| [tec-suite](https://github.com/gnss-lab/tec-suite) | tec-suite：SIMuRG 团队 TEC 重建软件套件 | Python | 23 | 🏷️ 高校实验室 |
 | [pygnss-tec](https://github.com/eureka-0/pygnss-tec) | RINEX 读取与 TEC 计算（Rust 加速） | Python | 16 | 🏷️ 个人社区 |
 | [VARION](https://github.com/giorgiosavastano/VARION) | Sapienza 变分法实时电离层：由 RINEX 估计 sTEC 变化（海啸扰动等） | Python | 15 | 🏷️ 高校实验室 |
 | [gsit](https://github.com/aldebaran1/gsit) | GSIT：TEC/ROTI/IPP 与光学磁力计 Python 工具 | Python | 10 | 🏷️ 个人社区 |
@@ -332,7 +332,7 @@ Space Weather Modeling Framework 组件之一，描述高纬电离层电动力�
 | [Okoh-MATLAB-TEC-from-RINEX](https://doi.org/10.5281/zenodo.7711905) | Daniel Okoh：从 GNSS RINEX 提取 TEC 的 MATLAB 脚本集（Zenodo） | MATLAB | — | 🏷️ 高校实验室 |
 | [PMGC-SimVP](https://github.com/OnlyYouNotInCity/PMGC-SimVP) | 参数化多尺度门控卷积 + SimVP 的全球 TEC 时空预报 | Python | 0 | 🏷️ 高校实验室 |
 | [quakeion](https://github.com/Gm015555/quakeion) | 震例目录 + CODE GIM TEC/ROT/ROTI 分析（零 API Key） | Python | 0 | 🏷️ 个人社区 |
-| [Seemala-GPS-TEC](https://seemala.blogspot.com/2026/08/gps-tec-analysis-program-version-37.html) | Gopi Seemala GPS-TEC：从 RINEX 估计 GPS TEC 的便携 Windows 程序（当前 v3.7） | Windows/Exe | — | 🏷️ 高校实验室 |
+| [Seemala-GPS-TEC](https://seemala.blogspot.com/2026/08/gps-tec-analysis-program-version-37.html) | Seemala GPS-TEC：RINEX 估计 GPS TEC（Windows） | Windows/Exe | — | 🏷️ 高校实验室 |
 | [TEC-forecast-F107](https://github.com/hekaixuan-atm/TEC-forecast) | 空间非均匀 F10.7 强迫的全球 TEC 预报代码 | Python | 0 | 🏷️ 高校实验室 |
 | [vtec](https://github.com/mfkiwl/vtec) | 垂直 TEC（VTEC）计算相关工具 | — | — | 🏷️ 个人社区 ★ |
 
@@ -535,7 +535,7 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 | [Kamodo](https://github.com/nasa/Kamodo) | Kamodo：NASA CCMC 日地模式输出函数化套件 | Python | 58 | 🏷️ 官方 |
 | [geospacelab](https://github.com/JouleCai/geospacelab) | geospacelab：日地空间数据管理与可视化 | Python | 48 | 🏷️ 高校实验室 |
 | [apexpy](https://github.com/aburrell/apexpy) | apexpy：Apex/准偶极地磁坐标 Python 封装 | Python | 40 | 🏷️ 高校实验室 |
-| [jvierine-ionosonde](https://github.com/jvierine/ionosonde) | 开源测高仪/电离图相关 Python 软件（社区星数较高） | Python | 23 | 🏷️ 高校实验室 |
+| [jvierine-ionosonde](https://github.com/jvierine/ionosonde) | ionosonde（jvierine）：开源测高仪/电离图 Python 软件 | Python | 23 | 🏷️ 高校实验室 |
 | [Ionort-raytrace](https://github.com/blair3sat/ionosphere-rt) | 电离层三维射线追踪程序 Ionort（Azzarone 等）开源拷贝 | Fortran | 17 | 🏷️ 高校实验室 |
 | [pysatSpaceWeather](https://github.com/pysat/pysatSpaceWeather) | pysat 空间天气指数与数据集支持库 | Python | 14 | 🏷️ 高校实验室 |
 | [ionosonde_volgatech](https://github.com/Vladimi-lan/ionosonde_volgatech) | 伏尔加技术大学相关测高仪数据处理代码 | Python | 13 | 🏷️ 高校实验室 |
@@ -1436,7 +1436,7 @@ Oleg Zolotov 等实现的 FIRI-2018（Friedrich 等更新的低电离层经验�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [tec_forecast](https://github.com/mauriciodev/tec_forecast) | 基于深度学习的全球 TEC 图预报示例 | Jupyter Notebook | 31 | 🏷️ 个人社区 ★ |
+| [tec_forecast](https://github.com/mauriciodev/tec_forecast) | tec_forecast：深度学习全球 TEC 图预报示例 | Jupyter Notebook | 31 | 🏷️ 个人社区 ★ |
 | [DeepPredTEC](https://github.com/vtsuperdarn/DeepPredTEC) | 深度学习预报 GPS TEC 图（SuperDARN 相关） | Python | 13 | 🏷️ 高校实验室 |
 | [ED-AttConvLSTM](https://github.com/leeliangchao/ED-AttConvLSTM) | 注意力 ConvLSTM 的 TEC 图预报模型 | Jupyter Notebook | 10 | 🏷️ 个人社区 |
 | [Ionospheric-VTEC-Forecasting](https://github.com/ICCT-ML-in-geodesy/Ionospheric-VTEC-Forecasting) | IAG 研究组 ML 预报 VTEC 的教学示例 | Jupyter Notebook | 9 | 🏷️ 高校实验室 ★ |
@@ -1797,7 +1797,7 @@ SpaceML 维护的电离层预报代码与笔记本，强调时间融合 Transfor
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [IonoMoni](https://github.com/qiliu2025/IonoMoni) | IonoMoni：多星座 ROTI/AATR/STEC/VTEC | C++ | 37 | 🏷️ 个人社区 ★ |
-| [gnss-scintillation-simulator](https://github.com/cu-sense-lab/gnss-scintillation-simulator) | CU Boulder Sense Lab：GNSS 频段相位/幅度闪烁仿真 | MATLAB | 25 | 🏷️ 高校实验室 |
+| [gnss-scintillation-simulator](https://github.com/cu-sense-lab/gnss-scintillation-simulator) | gnss-scintillation-simulator：GNSS 闪烁相位/幅度仿真 | MATLAB | 25 | 🏷️ 高校实验室 |
 | [OASIS](https://github.com/giorgiopicanco/OASIS) | OASIS：RINEX 扰动指标计算 | Python | 16 | 🏷️ 个人社区 核心 |
 | [scintill-ai](https://github.com/viventriglia/scintill-ai) | 用机器学习做电离层闪烁相关分析的研究项目 | Shell | 8 | 🏷️ 个人社区 |
 | [TITIPy](https://github.com/pignalberi/TITIPy) | Swarm 顶部电离层 RODI/ROTI/ROTEI（Python） | Python | 8 | 🏷️ 高校实验室 |
@@ -2096,7 +2096,7 @@ Joe Huba（Syntek/NRL）在 Zenodo 以 software 类型存档的 SAMI3-3.22 官�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [viresclient](https://github.com/ESA-VirES/VirES-Python-Client) | ESA VirES Python 客户端：Swarm Langmuir/TEC 等产品转 xarray | Python | 23 | 🏷️ 官方 |
+| [viresclient](https://github.com/ESA-VirES/VirES-Python-Client) | viresclient：ESA VirES Python 客户端（Swarm） | Python | 23 | 🏷️ 官方 |
 
 ### 详细说明
 

@@ -23,7 +23,7 @@ RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品�
 | [millipede-caster](https://github.com/pbeyssac/millipede-caster) | 高性能开源 NTRIP/RTK Caster（C） | C | 43 | 🏷️ 个人社区 |
 | [nmea-msgs](https://github.com/ros-drivers/nmea_msgs) | nmea_msgs：ROS 用 NMEA 消息接口（ros-drivers） | CMake | 38 | 🏷️ 官方 |
 | [ntripbrowser](https://github.com/emlid/ntripbrowser) | CLI 查询 NTRIP caster 源表与挂载点 | Python | 32 | 🏷️ 个人社区 |
-| [rtcm-rs](https://github.com/martinhakansson/rtcm-rs) | RTCM v3 编解码的 Rust crate | Rust | 32 | 🏷️ 个人社区 |
+| [rtcm-rs](https://github.com/martinhakansson/rtcm-rs) | rtcm-rs：RTCM v3 编解码 Rust crate | Rust | 32 | 🏷️ 个人社区 |
 | [asv-gnss](https://github.com/asv-soft/asv-gnss) | asv-gnss：.NET 下 RTCM/NMEA 与接收机控制库 | C# | 29 | 🏷️ 个人社区 |
 | [gstream](https://github.com/Jin-Whu/gstream) | 面向 GNSS 的开源数据流客户端库 | C++ | 20 | 🏷️ 高校实验室 |
 | [NTRIPcaster-python](https://github.com/Rampump/NTRIPcaster) | 轻量 Python NTRIP Caster | Python | 20 | 🏷️ 个人社区 |
@@ -442,7 +442,7 @@ Anubis 免费档下载入口，提供 Linux 预编译与 GPL-3 源码，覆盖�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [hatanaka](https://github.com/valgur/hatanaka) | Python 调用的 Hatanaka 压缩/解压 | C | 26 | 🏷️ 个人社区 |
+| [hatanaka](https://github.com/valgur/hatanaka) | hatanaka：Python 调用的 RINEX Hatanaka 压缩 | C | 26 | 🏷️ 个人社区 |
 | [crz2rnx](https://github.com/zhufengGNSS/crz2rnx) | Hatanaka RNX2CRX/CRX2RNX 相关程序整理（v4 系） | C | 9 | 🏷️ 高校实验室 |
 | [crx2rnx](https://github.com/nav-solutions/crx2rnx) | crx2rnx：Rust 实现的 CRX→RNX 命令行工具 | Rust | 8 | 🏷️ 个人社区 |
 | [RNXCMP](https://terras.gsi.go.jp/ja/crx2rnx.html) | 日本地理院官方 Hatanaka/CompactRINEX 压缩与恢复工具 | C | — | 🏷️ 官方 核心 |

@@ -109,7 +109,7 @@ CLAS 测试库解码 Compact SSR（RTCM MT4073），提供 SSR2OSR、SSR2OBS 与
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [cssrlib](https://github.com/hirokawa/cssrlib) | cssrlib：Python PPP/PPP-RTK 工具包 | Jupyter Notebook | 211 | 🏷️ 高校实验室 核心 |
-| [PPP-RTK-Beechan](https://github.com/MichaelBeechan/PPP-RTK) | C 实现的 SPP/RTD/PPP/RTK/PPP-RTK 与 RAIM 试验库 | C | 26 | 🏷️ 个人社区 |
+| [PPP-RTK-Beechan](https://github.com/MichaelBeechan/PPP-RTK) | PPP-RTK（Beechan）：C 版 SPP/RTD/PPP/RTK/PPP-RTK | C | 26 | 🏷️ 个人社区 |
 | [Easy4PTK](https://github.com/alxanderjiang/Easy4PTK) | 易移植的多星座 PPP-RTK Python 工具箱 | Jupyter Notebook | 5 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -328,7 +328,7 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 | [libgnss++](https://github.com/rsasaki0109/gnssplusplus-library) | libgnss++：现代 C++20 GNSS 工具包（SPP/RTK/PPP/CLAS） | C++ | 189 | 🏷️ 个人社区 |
 | [SatellitePosition](https://github.com/LStudioLoren/SatellitePosition) | SatellitePosition：Python 单点/RTK 学习实现 | Python | 62 | 🏷️ 个人社区 |
 | [MobileGNSS-SPP](https://github.com/salmoshu/MobileGNSS-SPP) | MobileGNSS-SPP：手机 GNSS 的 EKF 单点定位 | C | 41 | 🏷️ 高校实验室 |
-| [GNSS-Explorer](https://github.com/brucezhcw/GNSS-Explorer) | 基于 RTKLIB 的 SPP 算法优化探索 | C | 21 | 🏷️ 个人社区 |
+| [GNSS-Explorer](https://github.com/brucezhcw/GNSS-Explorer) | GNSS-Explorer：基于 RTKLIB 的 SPP 算法优化探索 | C | 21 | 🏷️ 高校实验室 |
 | [GNSSPositioning](https://github.com/bitecc/GNSSPositioning) | SPP 教学程序（含电离层/对流层延迟改正） | C++ | 12 | 🏷️ 个人社区 |
 | [SPP_SPV](https://github.com/GYH-WHU/SPP_SPV) | 武大相关 GPS/BDS 单点定位与测速（C++/MATLAB）教学实现 | C++ | 7 | 🏷️ 高校实验室 |
 | [GSILIB](https://terras.gsi.go.jp/geo_info/gsilib/gsilib.html) | GSILIB：多 GNSS 基线/PPP 解析库 | C | — | 🏷️ 官方 核心 |
@@ -357,7 +357,7 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 针对智能手机 GNSS 原始测量设计的 EKF 单点定位实现，意在改善消费级轨迹连续性与噪声表现。适合手机导航算法原型与课程项目。精度达不到载波相位 RTK/PPP；天线相位中心、占空比与多路径仍在，可与 android_rinex、PRIDE-GeoDataLogger 采集链衔接做进一步研究。
 
 #### [GNSS-Explorer](https://github.com/brucezhcw/GNSS-Explorer)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：C · 许可：— · 星标约：21 · 宿主：github
 
@@ -764,8 +764,8 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [MRTKLIB](https://github.com/h-shiono/MRTKLIB) | MRTKLIB：现代 PPP/PPP-RTK 定位库 | C | 78 | 🏷️ 高校实验室 核心 |
-| [pygnsslab](https://github.com/PyGnssLab/pygnsslab) | Python 模块化 RINEX/PPP/PPP-AR 与实时流 | Python | 34 | 🏷️ 个人社区 |
-| [Urban-RTKLIB](https://github.com/MayHarryWang/Urban-RTKLIB) | 面向城市导航的 RTKLIB 改版，侧重 PPP/PPP-RTK | C | 25 | 🏷️ 高校实验室 |
+| [pygnsslab](https://github.com/PyGnssLab/pygnsslab) | pygnsslab：纯 Python 模块化 RINEX/PPP/PPP-AR | Python | 34 | 🏷️ 个人社区 |
+| [Urban-RTKLIB](https://github.com/MayHarryWang/Urban-RTKLIB) | Urban-RTKLIB：面向城市峡谷的 RTKLIB 改版 | C | 25 | 🏷️ 高校实验室 |
 | [mrtklib-docker-ui](https://github.com/h-shiono/mrtklib-docker-ui) | MRTKLIB 的 Docker/Web 界面，方便后处理与实时演示 | TypeScript | 10 | 🏷️ 高校实验室 |
 | [PPP-Wizard](http://www.ppp-wizard.net/) | PPP-Wizard：CNES 整数模糊度 PPP-AR | C++ | — | 🏷️ 官方 核心 |
 

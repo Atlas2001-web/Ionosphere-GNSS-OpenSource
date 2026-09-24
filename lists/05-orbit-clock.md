@@ -83,7 +83,7 @@ C++ 实现三套偏差模式：DCB（码偏差与 VTEC 球谐联立）、UPD 与
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Cube](https://github.com/liush18/Cube) | 中科院精密测量院：GPS 卫星钟/解耦钟估计与 PPP-AR（RTKLIB 二次开发） | C | 30 | 🏷️ 高校实验室 |
+| [Cube](https://github.com/liush18/Cube) | Cube：精密测量院 GPS 钟差/PPP-AR（RTKLIB 二次开发） | C | 30 | 🏷️ 高校实验室 |
 | [GREAT-UPD](https://github.com/GREAT-WHU/GREAT-UPD) | GREAT-UPD：多星座 UPD 估计 | C++ | 19 | 🏷️ 高校实验室 核心 |
 | [GREAT_PODFLT](https://github.com/GREAT-WHU/GREAT_PODFLT) | GREAT_PODFLT：实时滤波精密定轨 | C++ | 17 | 🏷️ 高校实验室 核心 |
 | [GREAT-IFCB](https://github.com/GREAT-WHU/GREAT-IFCB) | 多 GNSS 频间钟差（IFCB）估计开源软件 | C++ | 15 | 🏷️ 高校实验室 |
