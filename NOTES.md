@@ -280,3 +280,13 @@
 - 当前条目：**747**
 - 分类计数：{'ionosphere': 238, 'troposphere': 33, 'gnss-data': 111, 'gnss-positioning': 83, 'orbit-clock': 13, 'navigation-ins': 59, 'gnss-sdr': 59, 'mobile-apps': 18, 'tools-learning': 31, 'gnss-datasets': 102}
 - 详见 `research/routine_finds_20260924.json`
+
+## 2026-09-24 — Catalog QC batch 5
+
+- Commit landing catalog edits: `dd221d6` (also bundled docs/software pinot+autorino manuals from parallel work)
+- SPDX license fills: **11** (9 restore after routine-merge wipe + tec_forecast MIT, VINS-GPS-Wheel GPL-3.0)
+- Provenance: **6** upgrades (nmea-msgs/FAST restore; GraphGNSSLib, Net_Diff, GNSS-Metadata-Standard, raPPPid); Baidu/AgOpenGPS kept `personal_community` per categories.md
+- Chinese rewrites: **31** short human blurbs (`desc_zh` ≠ `one_liner_zh`)
+- Language fills: **0** (null/quirky only); HTTPS upgrades: **0** (6 leftovers still fail)
+- Entries touched: **43**; `project_count` **747**; provenance_counts official=205 academic_lab=227 personal_community=315
+- Audit: `research/qc-audit-20260924-batch5.md`
