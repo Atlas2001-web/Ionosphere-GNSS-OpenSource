@@ -1,6 +1,6 @@
 # RTPPP_B2b · 北斗 PPP-B2b 实时改正接口（BNC/SBF）操作手册
 
-目录：[`PROJECTS.json` → `RTPPP_B2b`](../../PROJECTS.json) · 上游 <https://github.com/floating0516/RTPPP_B2b> · tip **`9864c66`**（2025-12-12 merge master→main）· **无 SPDX / 无 LICENSE**（商用先联系作者）· 依赖 **Qt5 + BNC 头**（`bnccore.h` / `GPSDecoder.h` / `satObs.h` / `clock_orbit_rtcm.h` / `bnctime.h` / `rtkdefine.h`）· 本机验证：clone 深 1；源 **~5.0 k** LOC（`PPPB2bDecoder` 979 + `SBFDecoder` 370 + `SBFcoDecoder` 336 + `bncsate` 504 + 头/`rtklib.h`）；自检 CRC-16-CCITT 空缓冲→**0**、`01 02 03`→**0x6131**；MT **1–7**；**缺 BNC/Qt 工程 → 未链接可执行文件、未喂二进制 SBF** · 2026-09-24 05:45 EDT
+目录：[`PROJECTS.json` → `RTPPP_B2b`](../../PROJECTS.json) · 上游 <https://github.com/floating0516/RTPPP_B2b> · tip **`9864c66`**（2025-12-12 merge master→main）· **无 SPDX / 无 LICENSE**（商用先联系作者）· 依赖 **Qt5 + BNC 头**（`bnccore.h` / `GPSDecoder.h` / `satObs.h` / `clock_orbit_rtcm.h` / `bnctime.h` / `rtkdefine.h`）· 本机验证：clone 深 1；源 **~5.0 k** LOC（`PPPB2bDecoder` 979 + `SBFDecoder` 370 + `SBFcoDecoder` 336 + `bncsate` 504 + 头/`rtklib.h`）；自检 CRC-16-CCITT 空缓冲→**0**、`01 02 03`→**0x6131**；MT **1–7**；**缺 BNC/Qt 工程 → 未链接可执行文件、未喂二进制 SBF** · 2026-09-24 05:45 EDT · **质检复跑** 2026-09-24 06:12 EDT（tip **`9864c66`**；九文件 LOC **5030**；CRC 空/**0**、`01 02 03`→**0x6131**；MT **1–7**；MISSING +`clock_orbit_rtcm.h`（`# include` 空格形式）；**无 LICENSE**；**未嵌 BNC/未喂 SBF**）
 
 > 岗位：把 Septentrio **SBF 块 4242（BDSRawB2b）** 解成 RTCM 风格轨道/钟差，嵌入 **BNC** 类实时 PPP 管线。冲突时：**仓内 `README_zh.md` / `README_en.md` / 源码路径 > 本文**。嵌 RTKLIB 事后 B2b → [b2blib](./b2blib.md)；Python 明文/导出 → [navdecoder](./navdecoder.md)；HAS → [haslib](./haslib.md)；Python CSSR → [cssrlib](./cssrlib.md)；QZSS → [madocalib](./madocalib.md)。
 
@@ -60,11 +60,11 @@ from pathlib import Path
 import re
 need=set(); local={p.name for p in Path('.').iterdir()}
 for p in list(Path('.').glob('*.h'))+list(Path('.').glob('*.cpp')):
-    need |= set(re.findall(r'#include\s*"([^"]+)"', p.read_text(errors='replace')))
+    need |= set(re.findall(r'#\s*include\s*"([^"]+)"', p.read_text(errors='replace')))
 print('MISSING', sorted(need-local))
 PY
-# 期望 MISSING 含：GPSDecoder.h bnccore.h bnctime.h rtkdefine.h satObs.h
-# （PPPB2bDecoder.h 另 extern "C" #include "clock_orbit_rtcm.h"）
+# 期望 MISSING：GPSDecoder.h bnccore.h bnctime.h clock_orbit_rtcm.h rtkdefine.h satObs.h
+# （`clock_orbit_rtcm.h` 在 PPPB2bDecoder.h 写成 `# include`——正则须允许 # 后空格）
 ```
 
 ### 2.3 嵌进 BNC（上游意图；路径以你的 BNC 树为准）
@@ -102,17 +102,17 @@ PY
 
 ### 3.1 源码/API 探针（本机已跑）
 
-**结果（tip `9864c66`，2026-09-24 05:45 EDT）：**
+**结果（tip `9864c66`，2026-09-24 05:45 EDT；质检复跑 06:12 EDT 对齐）：**
 
 | 探针 | 值 |
 | --- | --- |
 | tip | **`9864c66`**（2025-12-12 +0800） |
-| LOC（四 `.cpp`+头/`rtklib.h`） | ≈ **5030** 行 |
+| LOC（四 `.cpp`+头/`rtklib.h`） | **5030** 行（`wc -l`；质检复跑一致） |
 | SBF sync | `0x24 0x40`（`$` `@`） |
 | B2b 块类型 | **4242** |
 | CRC 空 / `01 02 03` | **0** / **0x6131** |
 | `case` MT | **1–7** |
-| 缺头 | `GPSDecoder.h` `bnccore.h` `bnctime.h` `rtkdefine.h` `satObs.h` + `clock_orbit_rtcm.h` |
+| 缺头 | `GPSDecoder.h` `bnccore.h` `bnctime.h` `clock_orbit_rtcm.h` `rtkdefine.h` `satObs.h` |
 | 可执行 PPP 解 | **无**（未嵌 BNC） |
 
 ### 3.2 有 BNC + SBF 回放时（推荐路径；本机无流）

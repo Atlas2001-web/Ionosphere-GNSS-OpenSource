@@ -1,6 +1,6 @@
 # GSILIB · 国土地理院多 GNSS 基线/PPP 操作手册
 
-目录：[`PROJECTS.json` → `GSILIB`](../../PROJECTS.json) · 门户 <https://terras.gsi.go.jp/geo_info/gsilib/gsilib.html> · 下载 <https://terras.gsi.go.jp/geo_info/gsilib/gsilib_download.html> · **ver.1.0.3**（`VER_RTKLIB`/`PROGRAM_NAME_VER`；2016-12-28 闰秒；2017-10-10 包内版本串补记）· 基线 **RTKLIB 2.4.2** + ANTTOOL · 许可 **BSD-2-Clause**（**ANTApp = GPL-3.0**）· 本机验证：拉 `GSILIB_ver.1.0.3.zip`（7 555 587 B，sha256₁₂=`63bea948a98b`）+ `ifb_correction.zip`；源码 **50**×`.c`（含 `isb.c` **377** 行）；Win PE `gsipost_gui.exe`/`gsiplot.exe` 为 **MZ**；**无 Wine32 / 无 Linux GUI 二进制 → 未跑基线固定解**；样例 IFB：georinex 读 `tr022562.14o` **1921** 历元 / **30** SV，G01 C1C=**24070092.563** · 2026-09-24 05:45 EDT
+目录：[`PROJECTS.json` → `GSILIB`](../../PROJECTS.json) · 门户 <https://terras.gsi.go.jp/geo_info/gsilib/gsilib.html> · 下载 <https://terras.gsi.go.jp/geo_info/gsilib/gsilib_download.html> · **ver.1.0.3**（`VER_RTKLIB`/`PROGRAM_NAME_VER`；2016-12-28 闰秒；2017-10-10 包内版本串补记）· 基线 **RTKLIB 2.4.2** + ANTTOOL · 许可 **BSD-2-Clause**（**ANTApp = GPL-3.0**）· 本机验证：拉 `GSILIB_ver.1.0.3.zip`（7 555 587 B，sha256₁₂=`63bea948a98b`）+ `ifb_correction.zip`；源码 **50**×`.c`（含 `isb.c` **377** 行）；Win PE `gsipost_gui.exe`/`gsiplot.exe` 为 **MZ**；**无 Wine32 / 无 Linux GUI 二进制 → 未跑基线固定解**；样例 IFB：georinex 读 `tr022562.14o` **1921** 历元 / **30** SV，G01 C1C=**24070092.563** · 2026-09-24 05:45 EDT · **质检复跑** 2026-09-24 06:12 EDT（zip **7555587**/sha₁₂=`63bea948a98b`；`.c` 含 `rcv/` **50**/顶层 **40**/`isb.c` **377**；MZ OK；IFB rover/base **1921**；G01 C1C=**24070092.563**/**24070770.680**；gloifb L1 **−0.0531**/L2 **−0.0877**；**无 Wine32 未跑基线解**）
 
 > 岗位：GSI **异机种多星座短基线**（IFB/ISB、L2P–L2C ¼ 周、可选 photomask）与 RTKLIB 衍生后处理 GUI。冲突时：**门户 / `GSILIB_manual.pdf` / 包内 `readme_gsilib.txt` > 本文**。通用 CLI → [rtklib](./rtklib.md)；发表级 PPP-AR → [pride-pppar](./pride-pppar.md)；GA YAML → [ginan](./ginan.md)。
 
@@ -58,7 +58,7 @@ rg -n 'VER_RTKLIB|PROGRAM_NAME_VER' GSILIB/src/rtklib.h | head
 | `bin/gsipost_gui.exe` | **8 180 224** B · MZ · 串含 `GSILIB 1.0.3` |
 | `bin/gsiplot.exe` | **8 371 712** B · MZ |
 | 伴生 DLL | `libblas`/`liblapack` + MinGW `libgcc`/`libgfortran`/`libquadmath` |
-| `src/*.c` | **50** 个；新增向 `isb.c` / `H23func.c` / `mbs.c` 等 |
+| `src/**/*.c` | 含 `rcv/` **50**（顶层 `src/*.c`=**40**）；新增向 `isb.c` / `H23func.c` / `mbs.c` 等 |
 
 ### 2.2 Windows 运行（上游意图）
 
@@ -101,7 +101,7 @@ print('REC', (h.get('REC # / TYPE / VERS') or '')[:48])
 PY
 ```
 
-**本机结果（2026-09-24 05:45 EDT）：**
+**本机结果（2026-09-24 05:45 EDT；质检复跑 06:12 EDT 对齐）：**
 
 | 文件 | 探针 |
 | --- | --- |
