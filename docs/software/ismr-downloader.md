@@ -1,6 +1,6 @@
 # ismr_downloader · ISMR 闪烁监测数据 CLI 下载操作手册
 
-目录：[`PROJECTS.json` → `ismr_downloader`](../../PROJECTS.json) · 上游 <https://github.com/GEGE-UNESP/ismr_downloader> · PyPI **`ismr-downloader`** · 许可 **MIT** · 本机 **0.2.0**（tip `cca68e4`）· 验证：`pip install` → `--help`；无凭证拒下；假账号 `--insecure` 打到 `api-ismrquerytool…/user/token` → **HTTP 400**；无 `--insecure` → **SSLCertVerificationError**；网页 `curl -sk` **200**（2026-09-24 EDT）· **全量落盘需网页注册账号（本机未持凭证，不臆造成功 stdout）**
+目录：[`PROJECTS.json` → `ismr_downloader`](../../PROJECTS.json) · 上游 <https://github.com/GEGE-UNESP/ismr_downloader> · PyPI **`ismr-downloader`** · 许可 **MIT** · 本机 **0.2.0**（tip `cca68e4`）· 验证：`pip install` → `--help`；无凭证拒下；假账号 `--insecure` 打到 `api-ismrquerytool…/user/token` → **HTTP 400**；无 `--insecure` → **SSLCertVerificationError**；网页 `curl -sk` **200**（2026-09-24 EDT）· **全量落盘需网页注册账号（本机未持凭证，不臆造成功 stdout）** · **质检复跑通过**（`--help`；缺邮箱/缺站 exit **1**；SSL `CERTIFICATE_VERIFY_FAILED`；`--insecure` 假账号 token **400**；curl token JSON `User not found…`；tip `cca68e4`；2026-09-24 05:03 EDT）
 
 > 岗位：从 **ISMR Query Tool API** 按站/时段批量拉 **ISMR / 1min-ISMR / SBF / RINEX**。冲突时：**上游 README / 本机 `-h` > [data-access](../data-access.md) 配方 > 本文**。网页 Query Tool 常超时/证书翻车——**以本 CLI 为主路径**。
 
@@ -95,7 +95,7 @@ ismr-downloader --email a@b.com --password 'Notreal1!' --start 2025-01-01 --end 
 # At least one station must be provided (via CLI or .env).
 ```
 
-### 3.3 TLS 与假账号鉴权（本机真跑；API 可达）
+### 3.3 TLS 与假账号鉴权（本机真跑；API 可达；质检复跑 2026-09-24 05:03 EDT）
 
 ```bash
 # 无 --insecure：证书校验失败（节选）
