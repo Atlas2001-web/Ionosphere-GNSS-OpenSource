@@ -394,3 +394,12 @@
 - Skipped: TinyGPSPlus no SPDX, SIM7000 LTE-primary, Aceinna ublox_decoder no license, kalman_filter_localization_ros2 NOASSERTION, SoftGNSS TMBOC already listed, GSC-europa home near-dup of specific GSC pages, CelesTrak root near SpaceData
 - Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
 
+## Routine pass 2026-09-24m
+
+- Catalog size before: **898**; after merge: **912** (+14)
+- Finds file: `research/routine_finds_20260924m.json`
+- Method: quality dig — ROS GNSS drivers (KumarRobotics ublox, nmea_navsat_driver), Arduino NMEA (MicroNMEA/107-Arduino), gpsdo timing, ublox-rs; space-weather portals (SIDC/SILSO, Kyoto Dst/Kp, SWPC GOES X-ray/solar cycle, SWS Solar, GFZ Kp data API); `gh api`+`curl`; dedup vs PROJECTS.json and all `routine_finds_*.json`
+- Avoided: entire 24l set (NeoGPS/UbxGps/bolderflight/fixposition/SoftGNSS-octave/openimu, SWS-HF/WDC/Geophysical, SWPC D-RAP/Enlil, CelesTrak NORAD, ESA nav, SpaceWeather-Canada) and earlier 24h batches
+- Skipped: SparkFun/Adafruit NOASSERTION, gps_umd no license, ros2-ublox-zedf9p no license, TinyGPSPlus no SPDX, ublox_dgnss already listed, celestial-nav non-GNSS, NGS CORS data.shtml near-dup of geodesy.noaa.gov CORS data
+- Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
+

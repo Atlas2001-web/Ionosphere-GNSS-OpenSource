@@ -367,3 +367,10 @@
 - 当前条目：**898**
 - 分类计数：{'ionosphere': 254, 'troposphere': 41, 'gnss-data': 130, 'gnss-positioning': 101, 'orbit-clock': 21, 'navigation-ins': 69, 'gnss-sdr': 68, 'mobile-apps': 27, 'tools-learning': 56, 'gnss-datasets': 131}
 - 详见 `research/routine_finds_20260924l.json`
+
+## 例行检索补录（2026-09-24m）
+
+- 新增 **14** 条（ublox-ros/nmea_navsat、MicroNMEA/107-Arduino、gpsdo/ublox-rs、SIDC/SILSO、Kyoto Dst/Kp、SWPC/SWS/GFZ Kp 等）
+- 当前条目：**912**
+- 分类计数：{'ionosphere': 262, 'troposphere': 41, 'gnss-data': 131, 'gnss-positioning': 101, 'orbit-clock': 21, 'navigation-ins': 71, 'gnss-sdr': 68, 'mobile-apps': 29, 'tools-learning': 57, 'gnss-datasets': 131}
+- 详见 `research/routine_finds_20260924m.json`

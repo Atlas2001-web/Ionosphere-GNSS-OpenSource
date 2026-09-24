@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> **254** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **262** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -2333,3 +2333,123 @@ WSA-Enlil 太阳风与日冕物质抛射（CME）传播预报产品入口，提�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 加拿大 Space Weather Canada 英文主页，汇总太阳、地磁与电离层相关预报入口；已收录的太阳射电流量页可由此导航。对北美 GNSS 用户了解区域空间天气有帮助。部分产品有英法文版本。收录前已 HTTP 核验；请遵守 NRCan 条款与引用要求。
+
+## 太阳空间天气
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SIDC](https://www.sidc.be/) | 比利时 SIDC：太阳影响数据中心与空间天气观测入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [SIDC](https://www.sidc.be/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Solar Influences Data Analysis Center（SIDC，比利时皇家天文台）门户，汇集空间/地基太阳成像、射电、日总辐照及预报公报等。为 GNSS 扰动研究提供太阳活动上游。具体产品下载走各服务子页。收录前已 HTTP 核验；请遵守 ROB/SIDC 条款。
+
+## 太阳黑子指数
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SILSO](https://www.sidc.be/SILSO/home) | SILSO：世界数据中心太阳黑子指数与太阳活动长期序列 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [SILSO](https://www.sidc.be/SILSO/home)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+SIDC 下 SILSO（Sunspot Index and Long-term Solar Observations）主页，提供国际太阳黑子指数等长期序列，广泛用于太阳周与空间天气背景。与瞬时闪烁/TEC 产品互补。数据用于科研时请按 SILSO 引用说明。收录前已 HTTP 核验。
+
+## Dst指数
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [Kyoto-Dst-Realtime](https://wdc.kugi.kyoto-u.ac.jp/dst_realtime/index.html) | 京都大学 WDC：实时/Quicklook Dst 指数 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [Kyoto-Dst-Realtime](https://wdc.kugi.kyoto-u.ac.jp/dst_realtime/index.html)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+京都 WDC Geomagnetism 提供的实时（Quicklook）Dst 指数页，用于监测磁暴强度；注明 raw 未校核、仅非商业监测用途。GNSS 电离层暴分析常用 Dst 作背景。最终定标序列请改用正式产品。收录前已 HTTP 核验；遵守 WDC 使用声明。
+
+## Kp历史
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [Kyoto-Kp-Index](https://wdc.kugi.kyoto-u.ac.jp/kp/index.html) | 京都 WDC：历史 Kp/ap/Ap 指数说明与列表入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [Kyoto-Kp-Index](https://wdc.kugi.kyoto-u.ac.jp/kp/index.html)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+京都 WDC 的 Kp（及 ap、Ap）指数页面，含历史序列与 Bartels 图说明；1997 年后指数衍生与分发转至德国 GFZ。本页可作历史查询与文献追溯入口，现势业务下载应优先 GFZ Kp 数据服务。收录前已 HTTP 核验；引用请注明来源台站、版本与非商业条款。
+
+## GOES-X射线
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SWPC-GOES-Xray](https://www.swpc.noaa.gov/products/goes-x-ray-flux) | NOAA SWPC：GOES X 射线通量（耀斑监测） | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [SWPC-GOES-Xray](https://www.swpc.noaa.gov/products/goes-x-ray-flux)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+SWPC GOES X-ray Flux 产品页，监测太阳软 X 射线耀斑等级；耀斑常与 D 区吸收、短波中断以及 GPS/通信影响窗口相关，页面亦链到空间天气影响说明。非 TEC 图，但常作扰动时段标注。收录前已 HTTP 核验；请遵守 NOAA/SWPC 产品使用政策。
+
+## 太阳周
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SWPC-Solar-Cycle](https://www.swpc.noaa.gov/products/solar-cycle-progression) | NOAA SWPC：太阳周进程与黑子数进展图 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [SWPC-Solar-Cycle](https://www.swpc.noaa.gov/products/solar-cycle-progression)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Solar Cycle Progression 产品展示当前太阳周进展与预测对照曲线，便于把握长期空间天气背景与太阳活动位相。非实时 TEC/闪烁产品，但常与电离层气候态及太阳周研究一并引用。收录前已 HTTP 核验；引用请注明 SWPC 产品名与访问日期。
+
+## 太阳活动
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SWS-Solar](https://www.sws.bom.gov.au/Solar) | 澳大利亚 SWS 太阳专题：太阳活动与太阳风条件 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [SWS-Solar](https://www.sws.bom.gov.au/Solar)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+BOM SWS Solar 专题页，提供太阳条件、活动区、太阳风等区域监测产品导航，与已收录的 Satellite/HF/Geophysical 专题互补，覆盖南半球业务视角。页面为导航入口而非全球 IONEX 归档。收录前已 HTTP 核验；使用请遵守 SWS/BOM 条款。
+
+## Kp数据API
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [GFZ-Kp-Data](https://kp.gfz-potsdam.de/en/data) | GFZ Kp 指数数据页：下载、HTTPS/FTP 与 Web API | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [GFZ-Kp-Data](https://kp.gfz-potsdam.de/en/data)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+GFZ 官方 Kp 指数数据入口，支持用户定制下载、HTTPS/FTP 与 Web Service API，并提供图件与文档链接。现势 Kp/地磁活动分析应优先使用此服务，而非仅依赖历史镜像站。收录前已 HTTP 核验；脚本抓取请遵循 GFZ 使用与引用政策。

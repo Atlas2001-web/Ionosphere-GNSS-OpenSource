@@ -1,5 +1,5 @@
 # 学习资源与工具 / Tools & Learning
-> **56** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **57** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
@@ -646,3 +646,18 @@ SWPC 对外提供的服务根目录，索引 experimental、json、netcdf、prod
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 欧洲航天局卫星导航应用门户，汇总 Galileo、EGNOS、NAVISP、月球导航等项目新闻与介绍。偏政策与工程进展导航，具体 ICD/服务细节仍走 GSC 等站点。与已收录的 GSC 产品页形成官方叙事互补。收录前已 HTTP 核验；引用请注明 ESA 页面与日期。
+
+## GPS驯服钟
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [gpsdo](https://github.com/dfannin/gpsdo) | Arduino GPS 驯服振荡器（10 MHz/1 MHz/10 kHz） | C++ | 44 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [gpsdo](https://github.com/dfannin/gpsdo)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：MIT · 星标约：44 · 宿主：github
+
+基于 Arduino 的 GPS Disciplined Oscillator 项目，输出 10 MHz 等参考频率，MIT 许可。服务实验室时间/频率同步，属 GNSS 定时应用而非定位解算。硬件锁相与天线质量决定稳定度。适合业余无线电与测试台时钟源。

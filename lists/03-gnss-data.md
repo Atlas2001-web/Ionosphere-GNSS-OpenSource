@@ -1,5 +1,5 @@
 # GNSS 数据与格式 / GNSS Data I/O
-> **130** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **131** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
@@ -1343,3 +1343,18 @@ MIT 许可的 Python 脚本，从 gnss.osi.ie 批量下载爱尔兰 Active GNSS 
 语言：Python · 许可：MIT · 星标约：12 · 宿主：github
 
 把官方 YUMA 类历书转换为 u-blox 8/M8 的 UBX-MGA 历书消息，MIT 许可，便于冷启动辅助与实验室回放。体量小、用途专一，填补 QZSS 历书到接收机协议的缝隙。输出需与固件协议版本匹配；不替代精密星历。适合嵌入式与接收机配置脚本作者。
+
+## UBX-Rust
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [ublox-rs](https://github.com/ublox-rs/ublox) | Rust UBX 协议 crate：与 u-blox GPS 设备通信 | Rust | 84 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [ublox-rs](https://github.com/ublox-rs/ublox)  
+*🏷️ 个人社区*
+
+语言：Rust · 许可：MIT · 星标约：84 · 宿主：github
+
+用 Rust 实现的 UBX 协议编解码 crate，MIT 许可，便于嵌入式或主机侧与 u-blox 模块对话。偏协议与消息层，不含完整 PVT/RTK 引擎。特性随模块代际与固件变化，接入前需核对支持的消息类。补齐 Rust GNSS 设备接口这一薄点，可与 nav-solutions 生态对照使用。

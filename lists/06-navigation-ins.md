@@ -1,5 +1,5 @@
 # 导航 / Navigation & INS
-> **69** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **71** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 
@@ -659,10 +659,18 @@ ROS 包用于连接 NTRIP caster、接收 RTCM，并服务于 u-blox ZED-F9P 一
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [ublox-ros](https://github.com/KumarRobotics/ublox) | ROS1 经典 u-blox GPS 驱动（KumarRobotics） | C++ | 537 | 🏷️ 个人社区 |
 | [novatel_gps_driver](https://github.com/swri-robotics/novatel_gps_driver) | novatel_gps_driver：SWRI 社区 NovAtel GNSS ROS 驱动（BSD-3） | C++ | 175 | 🏷️ 个人社区 |
 | [novatel_oem7_driver](https://github.com/novatel/novatel_oem7_driver) | novatel_oem7_driver：NovAtel OEM7/SPAN 官方 ROS 驱动（MIT） | C++ | 123 | 🏷️ 个人社区 |
 
 ### 详细说明
+
+#### [ublox-ros](https://github.com/KumarRobotics/ublox)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：BSD-3-Clause · 星标约：537 · 宿主：github
+
+KumarRobotics 维护的 ROS 驱动，解析 u-blox 接收机消息并发布导航/传感器话题，BSD-3-Clause，社区星数高。面向机器人定位栈，而非测地后处理。消息集与固件版本需匹配；ROS2 场景可另评 ublox_dgnss 等。目录名 ublox-ros 以免与其他 ublox 条目混淆。
 
 #### [novatel_gps_driver](https://github.com/swri-robotics/novatel_gps_driver)  
 *🏷️ 个人社区*
@@ -722,3 +730,18 @@ Fixposition 官方 Linux ROS 驱动，对接 Vision-RTK 2、PBx-A1 等视觉惯�
 语言：Python · 许可：Apache-2.0 · 星标约：53 · 宿主：github
 
 Aceinna OpenIMU 的 Python 驱动，支持数据记录与 WebSocket 服务，Apache-2.0。常与 GNSS/INS 组合导航仿真（如 gnss-ins-sim）配合做惯性侧采集。偏 IMU 接口而非 GNSS 解算；坐标系与标定需使用者处理。适合低成本 INS 实验与传感器融合原型。
+
+## ROS-NMEA
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [nmea_navsat_driver](https://github.com/ros-drivers/nmea_navsat_driver) | ROS NMEA NavSat 驱动：GPS/GLONASS 等 NMEA 设备 | Python | 287 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [nmea_navsat_driver](https://github.com/ros-drivers/nmea_navsat_driver)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：BSD-3-Clause · 星标约：287 · 宿主：github
+
+ros-drivers 组织下的 NMEA 卫星导航设备驱动，将 GGA/RMC 等语句转为 ROS NavSatFix 等消息，BSD-3-Clause。适合通用 NMEA 接收机接入，不解析 UBX 私有协议。串口配置与语句选择影响延迟与完整性。与厂商专用驱动互补。

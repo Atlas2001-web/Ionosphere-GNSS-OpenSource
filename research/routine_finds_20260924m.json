@@ -1,0 +1,298 @@
+[
+  {
+    "name": "ublox-ros",
+    "url": "https://github.com/KumarRobotics/ublox",
+    "desc_zh": "ROS1 经典 u-blox GPS 驱动（KumarRobotics）",
+    "analysis_zh": "KumarRobotics 维护的 ROS 驱动，解析 u-blox 接收机消息并发布导航/传感器话题，BSD-3-Clause，社区星数高。面向机器人定位栈，而非测地后处理。消息集与固件版本需匹配；ROS2 场景可另评 ublox_dgnss 等。目录名 ublox-ros 以免与其他 ublox 条目混淆。",
+    "language": "C++",
+    "license": "BSD-3-Clause",
+    "category": "navigation-ins",
+    "subcategory": "ROS驱动",
+    "markers": [
+      "routine-2026-09-24m"
+    ],
+    "stars_approx": 537,
+    "source": "routine-finds-20260924m",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "ROS1 经典 u-blox GPS 驱动（KumarRobotics）"
+  },
+  {
+    "name": "nmea_navsat_driver",
+    "url": "https://github.com/ros-drivers/nmea_navsat_driver",
+    "desc_zh": "ROS NMEA NavSat 驱动：GPS/GLONASS 等 NMEA 设备",
+    "analysis_zh": "ros-drivers 组织下的 NMEA 卫星导航设备驱动，将 GGA/RMC 等语句转为 ROS NavSatFix 等消息，BSD-3-Clause。适合通用 NMEA 接收机接入，不解析 UBX 私有协议。串口配置与语句选择影响延迟与完整性。与厂商专用驱动互补。",
+    "language": "Python",
+    "license": "BSD-3-Clause",
+    "category": "navigation-ins",
+    "subcategory": "ROS-NMEA",
+    "markers": [
+      "routine-2026-09-24m"
+    ],
+    "stars_approx": 287,
+    "source": "routine-finds-20260924m",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "ROS NMEA NavSat 驱动：GPS/GLONASS 等 NMEA 设备"
+  },
+  {
+    "name": "MicroNMEA",
+    "url": "https://github.com/stevemarple/MicroNMEA",
+    "desc_zh": "紧凑 Arduino NMEA 语句解析库（LGPL-2.1）",
+    "analysis_zh": "面向资源受限 MCU 的紧凑 NMEA 解析库，LGPL-2.1，强调小体积与可移植。适合嵌入式日志与简易定位，功能少于 NeoGPS 的 UBX 深度支持。需自行处理串口与语句过滤。补齐 SPDX 明确的 Arduino NMEA 选项。",
+    "language": "C++",
+    "license": "LGPL-2.1",
+    "category": "mobile-apps",
+    "subcategory": "Arduino-NMEA",
+    "markers": [
+      "routine-2026-09-24m"
+    ],
+    "stars_approx": 111,
+    "source": "routine-finds-20260924m",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "紧凑 Arduino NMEA 语句解析库（LGPL-2.1）"
+  },
+  {
+    "name": "107-Arduino-NMEA-Parser",
+    "url": "https://github.com/107-systems/107-Arduino-NMEA-Parser",
+    "desc_zh": "107-systems Arduino 多星座 NMEA 解析库（MIT）",
+    "analysis_zh": "可对接 GPS/GLONASS/Galileo/GNSS 模块并解释 NMEA 的 Arduino 库，MIT 许可。API 面向现代 Arduino 核心，适合创客与原型。不覆盖差分改正与精密解算。与 MicroNMEA/NeoGPS 并列时按许可证与 API 偏好选择。",
+    "language": "C++",
+    "license": "MIT",
+    "category": "mobile-apps",
+    "subcategory": "Arduino-NMEA",
+    "markers": [
+      "routine-2026-09-24m"
+    ],
+    "stars_approx": 24,
+    "source": "routine-finds-20260924m",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "107-systems Arduino 多星座 NMEA 解析库（MIT）"
+  },
+  {
+    "name": "gpsdo",
+    "url": "https://github.com/dfannin/gpsdo",
+    "desc_zh": "Arduino GPS 驯服振荡器（10 MHz/1 MHz/10 kHz）",
+    "analysis_zh": "基于 Arduino 的 GPS Disciplined Oscillator 项目，输出 10 MHz 等参考频率，MIT 许可。服务实验室时间/频率同步，属 GNSS 定时应用而非定位解算。硬件锁相与天线质量决定稳定度。适合业余无线电与测试台时钟源。",
+    "language": "C++",
+    "license": "MIT",
+    "category": "tools-learning",
+    "subcategory": "GPS驯服钟",
+    "markers": [
+      "routine-2026-09-24m"
+    ],
+    "stars_approx": 44,
+    "source": "routine-finds-20260924m",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "Arduino GPS 驯服振荡器（10 MHz/1 MHz/10 kHz）"
+  },
+  {
+    "name": "ublox-rs",
+    "url": "https://github.com/ublox-rs/ublox",
+    "desc_zh": "Rust UBX 协议 crate：与 u-blox GPS 设备通信",
+    "analysis_zh": "用 Rust 实现的 UBX 协议编解码 crate，MIT 许可，便于嵌入式或主机侧与 u-blox 模块对话。偏协议与消息层，不含完整 PVT/RTK 引擎。特性随模块代际与固件变化，接入前需核对支持的消息类。补齐 Rust GNSS 设备接口这一薄点，可与 nav-solutions 生态对照使用。",
+    "language": "Rust",
+    "license": "MIT",
+    "category": "gnss-data",
+    "subcategory": "UBX-Rust",
+    "markers": [
+      "routine-2026-09-24m"
+    ],
+    "stars_approx": 84,
+    "source": "routine-finds-20260924m",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "Rust UBX 协议 crate：与 u-blox GPS 设备通信"
+  },
+  {
+    "name": "SIDC",
+    "url": "https://www.sidc.be/",
+    "desc_zh": "比利时 SIDC：太阳影响数据中心与空间天气观测入口",
+    "analysis_zh": "Solar Influences Data Analysis Center（SIDC，比利时皇家天文台）门户，汇集空间/地基太阳成像、射电、日总辐照及预报公报等。为 GNSS 扰动研究提供太阳活动上游。具体产品下载走各服务子页。收录前已 HTTP 核验；请遵守 ROB/SIDC 条款。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "subcategory": "太阳空间天气",
+    "markers": [
+      "routine-2026-09-24m"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924m",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "比利时 SIDC：太阳影响数据中心与空间天气观测入口",
+    "registration": "open",
+    "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+  },
+  {
+    "name": "SILSO",
+    "url": "https://www.sidc.be/SILSO/home",
+    "desc_zh": "SILSO：世界数据中心太阳黑子指数与太阳活动长期序列",
+    "analysis_zh": "SIDC 下 SILSO（Sunspot Index and Long-term Solar Observations）主页，提供国际太阳黑子指数等长期序列，广泛用于太阳周与空间天气背景。与瞬时闪烁/TEC 产品互补。数据用于科研时请按 SILSO 引用说明。收录前已 HTTP 核验。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "subcategory": "太阳黑子指数",
+    "markers": [
+      "routine-2026-09-24m"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924m",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "SILSO：世界数据中心太阳黑子指数与太阳活动长期序列",
+    "registration": "open",
+    "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+  },
+  {
+    "name": "Kyoto-Dst-Realtime",
+    "url": "https://wdc.kugi.kyoto-u.ac.jp/dst_realtime/index.html",
+    "desc_zh": "京都大学 WDC：实时/Quicklook Dst 指数",
+    "analysis_zh": "京都 WDC Geomagnetism 提供的实时（Quicklook）Dst 指数页，用于监测磁暴强度；注明 raw 未校核、仅非商业监测用途。GNSS 电离层暴分析常用 Dst 作背景。最终定标序列请改用正式产品。收录前已 HTTP 核验；遵守 WDC 使用声明。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "subcategory": "Dst指数",
+    "markers": [
+      "routine-2026-09-24m"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924m",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "京都大学 WDC：实时/Quicklook Dst 指数",
+    "registration": "open",
+    "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+  },
+  {
+    "name": "Kyoto-Kp-Index",
+    "url": "https://wdc.kugi.kyoto-u.ac.jp/kp/index.html",
+    "desc_zh": "京都 WDC：历史 Kp/ap/Ap 指数说明与列表入口",
+    "analysis_zh": "京都 WDC 的 Kp（及 ap、Ap）指数页面，含历史序列与 Bartels 图说明；1997 年后指数衍生与分发转至德国 GFZ。本页可作历史查询与文献追溯入口，现势业务下载应优先 GFZ Kp 数据服务。收录前已 HTTP 核验；引用请注明来源台站、版本与非商业条款。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "subcategory": "Kp历史",
+    "markers": [
+      "routine-2026-09-24m"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924m",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "京都 WDC：历史 Kp/ap/Ap 指数说明与列表入口",
+    "registration": "open",
+    "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+  },
+  {
+    "name": "SWPC-GOES-Xray",
+    "url": "https://www.swpc.noaa.gov/products/goes-x-ray-flux",
+    "desc_zh": "NOAA SWPC：GOES X 射线通量（耀斑监测）",
+    "analysis_zh": "SWPC GOES X-ray Flux 产品页，监测太阳软 X 射线耀斑等级；耀斑常与 D 区吸收、短波中断以及 GPS/通信影响窗口相关，页面亦链到空间天气影响说明。非 TEC 图，但常作扰动时段标注。收录前已 HTTP 核验；请遵守 NOAA/SWPC 产品使用政策。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "subcategory": "GOES-X射线",
+    "markers": [
+      "routine-2026-09-24m"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924m",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "NOAA SWPC：GOES X 射线通量（耀斑监测）",
+    "registration": "open",
+    "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+  },
+  {
+    "name": "SWPC-Solar-Cycle",
+    "url": "https://www.swpc.noaa.gov/products/solar-cycle-progression",
+    "desc_zh": "NOAA SWPC：太阳周进程与黑子数进展图",
+    "analysis_zh": "Solar Cycle Progression 产品展示当前太阳周进展与预测对照曲线，便于把握长期空间天气背景与太阳活动位相。非实时 TEC/闪烁产品，但常与电离层气候态及太阳周研究一并引用。收录前已 HTTP 核验；引用请注明 SWPC 产品名与访问日期。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "subcategory": "太阳周",
+    "markers": [
+      "routine-2026-09-24m"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924m",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "NOAA SWPC：太阳周进程与黑子数进展图",
+    "registration": "open",
+    "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+  },
+  {
+    "name": "SWS-Solar",
+    "url": "https://www.sws.bom.gov.au/Solar",
+    "desc_zh": "澳大利亚 SWS 太阳专题：太阳活动与太阳风条件",
+    "analysis_zh": "BOM SWS Solar 专题页，提供太阳条件、活动区、太阳风等区域监测产品导航，与已收录的 Satellite/HF/Geophysical 专题互补，覆盖南半球业务视角。页面为导航入口而非全球 IONEX 归档。收录前已 HTTP 核验；使用请遵守 SWS/BOM 条款。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "subcategory": "太阳活动",
+    "markers": [
+      "routine-2026-09-24m"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924m",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "澳大利亚 SWS 太阳专题：太阳活动与太阳风条件",
+    "registration": "open",
+    "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+  },
+  {
+    "name": "GFZ-Kp-Data",
+    "url": "https://kp.gfz-potsdam.de/en/data",
+    "desc_zh": "GFZ Kp 指数数据页：下载、HTTPS/FTP 与 Web API",
+    "analysis_zh": "GFZ 官方 Kp 指数数据入口，支持用户定制下载、HTTPS/FTP 与 Web Service API，并提供图件与文档链接。现势 Kp/地磁活动分析应优先使用此服务，而非仅依赖历史镜像站。收录前已 HTTP 核验；脚本抓取请遵循 GFZ 使用与引用政策。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "ionosphere",
+    "subcategory": "Kp数据API",
+    "markers": [
+      "routine-2026-09-24m"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260924m",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "GFZ Kp 指数数据页：下载、HTTPS/FTP 与 Web API",
+    "registration": "open",
+    "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+  }
+]

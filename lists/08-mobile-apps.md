@@ -1,5 +1,5 @@
 # 移动与嵌入式应用 / Mobile Apps
-> **27** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **29** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 手机/嵌入式上的 GNSS 测试、原始测量记录与简易定位。
 
@@ -281,3 +281,26 @@ MIT 许可的 Java 库，高效解析 Android GNSS Logger 导出的原始测量�
 语言：C++ · 许可：MIT · 星标约：115 · 宿主：github
 
 Bolder Flight 维护的 uBlox GNSS 通信库，同时支持 Arduino 与 CMake 构建，MIT 许可。面向无人机/航空电子常用接收机接口，偏驱动与报文读写。命名加前缀以免与泛名 ublox 冲突。固件与消息集需匹配具体型号；非 PPP/RTK 引擎。
+
+## Arduino-NMEA
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [MicroNMEA](https://github.com/stevemarple/MicroNMEA) | 紧凑 Arduino NMEA 语句解析库（LGPL-2.1） | C++ | 111 | 🏷️ 个人社区 |
+| [107-Arduino-NMEA-Parser](https://github.com/107-systems/107-Arduino-NMEA-Parser) | 107-systems Arduino 多星座 NMEA 解析库（MIT） | C++ | 24 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [MicroNMEA](https://github.com/stevemarple/MicroNMEA)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：LGPL-2.1 · 星标约：111 · 宿主：github
+
+面向资源受限 MCU 的紧凑 NMEA 解析库，LGPL-2.1，强调小体积与可移植。适合嵌入式日志与简易定位，功能少于 NeoGPS 的 UBX 深度支持。需自行处理串口与语句过滤。补齐 SPDX 明确的 Arduino NMEA 选项。
+
+#### [107-Arduino-NMEA-Parser](https://github.com/107-systems/107-Arduino-NMEA-Parser)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：MIT · 星标约：24 · 宿主：github
+
+可对接 GPS/GLONASS/Galileo/GNSS 模块并解释 NMEA 的 Arduino 库，MIT 许可。API 面向现代 Arduino 核心，适合创客与原型。不覆盖差分改正与精密解算。与 MicroNMEA/NeoGPS 并列时按许可证与 API 偏好选择。
