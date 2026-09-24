@@ -264,7 +264,7 @@ data-access
    ├─ pyspartn (SPARTN 编解码；pygpsclient/pygnssutils 底层；无 CLI)
    ├─ glab-upc (教学 SPP/PPP；官方 UPC gLAB)
    ├─ pygnssutils / ntripstreams / bnc / bkg-ntripcaster (路径 C)
-   └─ cssrlib / haslib / madocalib / laika / rtklib / pride-pppar (路径 D)
+   └─ cssrlib / claslib / b2blib / haslib / madocalib / laika / rtklib / pride-pppar (路径 D)
 sh-gim：仅路径 E 边界，不串进 A/B 主链
 iono-scintillation：概念/仿真旁路，不替代实测 ROTI
 ```
