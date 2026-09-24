@@ -4,6 +4,7 @@
 import json
 from collections import OrderedDict, defaultdict
 from pathlib import Path
+from sync_readme_counts import sync_readme_counts
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -815,140 +816,8 @@ def readme_preview_rows(projects, cat, limit=7):
 
 
 def regenerate_readme(projects, counts):
-    total = len(projects)
-    lines = []
-    lines.append("# Ionosphere-GNSS-OpenSource")
-    lines.append("")
-    lines.append("**电离层 · 对流层 · GNSS · 导航（PNT）开源软件精选索引**  ")
-    lines.append("Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation")
-    lines.append("")
-    lines.append(f"[![Projects](https://img.shields.io/badge/verified%20projects-{total}-blue.svg)](./PROJECTS.json)")
-    lines.append("[![License: CC0](https://img.shields.io/badge/catalog%20license-CC0--1.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)")
-    lines.append("")
-    lines.append("> **这是链接索引（curated index），不是代码大合集。**  ")
-    lines.append("> 所有条目均为已核对的公开 URL；需要时请前往**上游仓库**克隆并遵守其许可证。")
-    lines.append("")
-    lines.append("---")
-    lines.append("")
-    lines.append("## 亮点：自有项目 SH-GIM")
-    lines.append("")
-    lines.append("| | |")
-    lines.append("|---|---|")
-    lines.append("| **项目** | [Atlas2001-web/SH-GIM](https://github.com/Atlas2001-web/SH-GIM) |")
-    lines.append("| **一句话** | 基于球谐展开的全球电离层映射（GIM）MATLAB 源码 |")
-    lines.append("| **语言 / 许可** | MATLAB · MIT |")
-    lines.append("| **定位** | 本索引「电离层 / GIM」类别下的**旗舰自有项目** |")
-    lines.append("")
-    lines.append("从事 GIM / TEC 球谐建模时，建议优先阅读 SH-GIM，并对照 MosGIM2、PyTECGg、gnss-tec、tec-suite 与 IONEX 工具。")
-    lines.append("")
-    lines.append("---")
-    lines.append("")
-    lines.append("## 如何使用")
-    lines.append("")
-    lines.append("1. 先读 [分类说明](./docs/categories.md)，弄清自己处在数据→改正→定位→组合导航的哪一段  ")
-    lines.append("2. 打开下方对应的 `lists/*.md`，里面有**表格 + 每条项目的详细中文分析**  ")
-    lines.append("3. 机器可读清单：[`PROJECTS.json`](./PROJECTS.json) · 扩充研究稿：[`research/expanded_projects.json`](./research/expanded_projects.json)  ")
-    lines.append("4. 克隆上游，不要把第三方源码拷进本仓库")
-    lines.append("")
-    lines.append("### 标记")
-    lines.append("")
-    lines.append("| 标记 | 含义 |")
-    lines.append("|:---:|---|")
-    lines.append("| 🚩 | Atlas2001-web 自有公开仓库 |")
-    lines.append("| 🔀 | 维护者已 fork（表中列上游；fork 地址见项目页） |")
-    lines.append("| ★ | 维护者 GitHub 星标种子 |")
-    lines.append("| 核心 | 建议优先阅读 |")
-    lines.append("")
-    lines.append("---")
-    lines.append("")
-    lines.append("## 分类一览")
-    lines.append("")
-    lines.append("| 分类 | 适合谁 | 列表 | 数量 |")
-    lines.append("|---|---|---|---:|")
-    for cat in CAT_ORDER:
-        m = CAT_META[cat]
-        cn = m["title"].split(" / ")[0].replace("导航 / GNSS-INS", "导航 / GNSS-INS")
-        # short name for table
-        short = {
-            "ionosphere": "**电离层** `ionosphere`",
-            "troposphere": "**对流层** `troposphere`",
-            "gnss-data": "**GNSS 数据与格式** `gnss-data`",
-            "gnss-positioning": "**精密定位** `gnss-positioning`",
-            "orbit-clock": "**轨道与钟差** `orbit-clock`",
-            "navigation-ins": "**导航 / GNSS-INS** `navigation-ins`",
-            "gnss-sdr": "**软件接收机与信号** `gnss-sdr`",
-            "mobile-apps": "**移动与嵌入式应用** `mobile-apps`",
-            "tools-learning": "**学习资源与工具** `tools-learning`",
-        }[cat]
-        lines.append(f"| {short} | {m['who']} | [{m['file']}](./lists/{m['file']}) | {counts[cat]} |")
-    lines.append(f"| **合计** | | [`PROJECTS.json`](./PROJECTS.json) | **{total}** |")
-    lines.append("")
-    lines.append("---")
-    lines.append("")
-
-    section_heads = {
-        "ionosphere": ("## 电离层 / Ionosphere", CAT_META["ionosphere"]["blurb"]),
-        "troposphere": ("## 对流层 / Troposphere", CAT_META["troposphere"]["blurb"]),
-        "gnss-data": ("## GNSS 数据与格式 / GNSS Data I/O", CAT_META["gnss-data"]["blurb"]),
-        "gnss-positioning": ("## 精密定位 / Precise Positioning", CAT_META["gnss-positioning"]["blurb"]),
-        "orbit-clock": ("## 轨道与钟差 / Orbit & Clock", "精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。"),
-        "navigation-ins": ("## 导航 / GNSS-INS / Navigation & INS", CAT_META["navigation-ins"]["blurb"]),
-        "gnss-sdr": ("## 软件接收机与信号 / GNSS-SDR", CAT_META["gnss-sdr"]["blurb"]),
-        "mobile-apps": ("## 移动与嵌入式应用 / Mobile Apps", CAT_META["mobile-apps"]["blurb"]),
-        "tools-learning": ("## 学习资源与工具 / Learning & Tools", CAT_META["tools-learning"]["blurb"]),
-    }
-
-    for cat in CAT_ORDER:
-        head, blurb = section_heads[cat]
-        m = CAT_META[cat]
-        lines.append(head)
-        lines.append("")
-        lines.append(blurb)
-        lines.append("")
-        lines.append(f"完整列表与逐项分析 → [{m['file']}](./lists/{m['file']})")
-        lines.append("")
-        lines.append("| 项目 | 简介 | 标记 |")
-        lines.append("|---|---|---|")
-        for p in readme_preview_rows(projects, cat):
-            ml = marker_label(p)
-            lines.append(f"| [{p['name']}]({p['url']}) | {p['desc_zh']} | {ml} |")
-        lines.append("")
-
-    lines.append("---")
-    lines.append("")
-    lines.append("## 与 Atlas2001-web 的关系")
-    lines.append("")
-    lines.append("- 🚩 **[SH-GIM](https://github.com/Atlas2001-web/SH-GIM)**：自有旗舰（GIM）")
-    lines.append("- 🔀 Fork：[PyTECGg](https://github.com/viventriglia/PyTECGg) → [Atlas2001-web/PyTECGg](https://github.com/Atlas2001-web/PyTECGg)；[georinex](https://github.com/geospace-code/georinex) → [Atlas2001-web/georinex](https://github.com/Atlas2001-web/georinex)")
-    lines.append("- ★ 大量电离层/GNSS 星标已作为种子纳入")
-    lines.append("- 私有 `SH-GIM-proprietary` **不收录**")
-    lines.append("")
-    lines.append("## 仓库结构")
-    lines.append("")
-    lines.append("```")
-    lines.append("Ionosphere-GNSS-OpenSource/")
-    lines.append("├── README.md")
-    lines.append("├── PROJECTS.json")
-    lines.append("├── NOTES.md / CONTRIBUTING.md")
-    lines.append("├── docs/categories.md")
-    lines.append("├── lists/01–09-*.md")
-    lines.append("└── research/")
-    lines.append("    ├── expanded_projects.json")
-    lines.append("    ├── category_plan.md")
-    lines.append("    ├── missing_meta.json")
-    lines.append("    └── new_finds.json")
-    lines.append("```")
-    lines.append("")
-    lines.append("## 贡献")
-    lines.append("")
-    lines.append("见 [CONTRIBUTING.md](./CONTRIBUTING.md)。提交新链接前请确认上游可公开访问，并写清分类与一句话用途。")
-    lines.append("")
-    lines.append("## 免责声明")
-    lines.append("")
-    lines.append("本目录仅供信息汇总，不构成对任何项目的背书。无线电信号仿真与发射请遵守当地法规。使用第三方软件的风险由用户自行承担。")
-    lines.append("")
-
-    (ROOT / "README.md").write_text("\n".join(lines), encoding="utf-8")
+    """Sync counts into navigational README; never rebuild the old catalog wall."""
+    sync_readme_counts(ROOT)
 
 
 def update_categories_md(counts):

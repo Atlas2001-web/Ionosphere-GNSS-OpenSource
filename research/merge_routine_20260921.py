@@ -7,6 +7,7 @@ import json
 from collections import Counter, defaultdict
 from datetime import date
 from pathlib import Path
+from sync_readme_counts import sync_readme_counts
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECTS_PATH = ROOT / "PROJECTS.json"
@@ -254,92 +255,8 @@ def regenerate_categories(counts):
 
 
 def regenerate_readme(projects, counts, prov_counts):
-    total = len(projects)
-    readme = [
-        "# Ionosphere-GNSS-OpenSource",
-        "",
-        "**电离层 · 对流层 · GNSS · 导航（PNT）开源软件精选索引**  ",
-        "Curated open-source catalog for Ionosphere / Troposphere / GNSS / Navigation",
-        "",
-        f"[![Projects](https://img.shields.io/badge/verified%20projects-{total}-blue.svg)](./PROJECTS.json)",
-        "[![License: CC0](https://img.shields.io/badge/catalog%20license-CC0--1.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)",
-        "",
-        "> **这是链接索引（curated index），不是代码大合集。**  ",
-        "> 所有条目均为已核对的公开 URL；需要时请前往**上游仓库**克隆并遵守其许可证。",
-        "",
-        "---",
-        "",
-        "## 如何使用",
-        "",
-        "1. 先读 [分类说明](./docs/categories.md)，弄清自己处在数据→改正→定位→组合导航的哪一段  ",
-        "2. 打开下方对应的 `lists/*.md`，里面有**表格 + 每条项目的详细中文分析**  ",
-        "3. 机器可读清单：[`PROJECTS.json`](./PROJECTS.json) · 例行检索：[`research/routine_finds_20260921.json`](./research/routine_finds_20260921.json)  ",
-        "4. 克隆上游，不要把第三方源码拷进本仓库",
-        "",
-        "### 标记",
-        "",
-        "| 标记 | 含义 |",
-        "|:---:|---|",
-        "| 🏷️ 官方 | 政府/机构/联盟官方发行 |",
-        "| 🏷️ 高校实验室 | 大学课题组维护 |",
-        "| 🏷️ 个人社区 | 个人或小团队/社区 |",
-        "| 🚩 | 维护者自有公开仓库（仅收录链接，不写详细介绍） |",
-        "| 🔀 | 维护者已 fork（表中列上游；fork 地址见项目页） |",
-        "| ★ | 维护者 GitHub 星标种子 |",
-        "| 核心 | 建议优先阅读 |",
-        "",
-        f"来源统计：官方 **{prov_counts.get('official',0)}** · 高校实验室 **{prov_counts.get('academic_lab',0)}** · 个人社区 **{prov_counts.get('personal_community',0)}**",
-        "",
-        "---",
-        "",
-        "## 分类一览",
-        "",
-        "| 分类 | 适合谁 | 列表 | 数量 |",
-        "|---|---|---|---:|",
-    ]
-    for cat, meta in CAT_META.items():
-        short = meta["title"].split(" / ")[0]
-        readme.append(
-            f"| **{short}** `{cat}` | {meta['who']} | [{meta['file']}](./lists/{meta['file']}) | {counts.get(cat, 0)} |"
-        )
-    readme.append(f"| **合计** | | [`PROJECTS.json`](./PROJECTS.json) | **{total}** |")
-    readme.append("")
-    readme.append("---")
-    readme.append("")
-
-    for cat, meta in CAT_META.items():
-        items = [p for p in projects if p["category"] == cat]
-        featured = [p for p in items if "core" in (p.get("markers") or []) or p.get("featured")]
-        if not featured:
-            featured = sorted(items, key=lambda x: (-(x.get("stars_approx") or x.get("stars") or 0), x["name"]))[:6]
-        else:
-            if cat == "ionosphere":
-                featured = sorted(
-                    featured,
-                    key=lambda p: (0 if p["name"] == "SH-GIM" else 1, 0 if "core" in (p.get("markers") or []) else 1),
-                )
-            featured = featured[:8]
-        readme.append(f"## {meta['title']}")
-        readme.append("")
-        readme.append(meta["blurb"])
-        readme.append("")
-        readme.append(f"完整列表与逐项分析 → [{meta['file']}](./lists/{meta['file']})")
-        readme.append("")
-        readme.append("| 项目 | 简介 | 标记 |")
-        readme.append("|---|---|---|")
-        for p in featured:
-            readme.append(f"| [{p['name']}]({p['url']}) | {one_liner(p)} | {marker_text(p)} |")
-        readme.append("")
-
-    readme += [
-        "---",
-        "",
-        "## 许可",
-        "",
-        "本**目录**以 [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) 贡献；各上游软件许可证以其仓库为准。",
-        "",
-    ]
-    (ROOT / "README.md").write_text("\n".join(readme), encoding="utf-8")
+    """Sync counts into navigational README; never rebuild the old catalog wall."""
+    sync_readme_counts(ROOT)
 
 
 def main():
