@@ -1,6 +1,6 @@
 # HASlib · Galileo HAS 解码（SBF/BINEX → SSR）操作手册
 
-目录：[`PROJECTS.json` → `HASlib`](../../PROJECTS.json) · 上游 <https://github.com/nlsfi/HASlib> · 许可 **EUPL-1.2** · PyPI 包名 **`galileo_has_decoder` 1.0.2** · 本机验证：`Tests/galileo_ssr003.sbf` → RTCM SSR，`-x 3000 -v 1` 解出 **11** 条 HAS（2026-09-24 EDT）
+目录：[`PROJECTS.json` → `HASlib`](../../PROJECTS.json) · 上游 <https://github.com/nlsfi/HASlib> · 许可 **EUPL-1.2** · PyPI 包名 **`galileo_has_decoder` 1.0.2** · 本机验证：`Tests/galileo_ssr003.sbf` → RTCM SSR，`-x 3000 -v 1` 解出 **11** 条 HAS；IGS 同条件 **9800** bytes；质检复跑一致（2026-09-24 EDT，R11）
 
 > 岗位：把 E6 能力接收机录到的 **Galileo C/Nav 页**（SBF / BINEX；文件 / 串口 / TCP）收齐、解码成 HAS PPP 改正，再写成 **RTCM3 SSR** 或 **IGS SSR**（文件 / TCP / PPP Wizard）。冲突时：**本机 `python HAS_Converter.py -h` / 仓内 README > 本文**。
 
@@ -96,7 +96,7 @@ nbytes 9780 n_D3_preamble 32 head d302034213671890
 | `Creating Orbit/Code Bias/Clock` | 正在生成对应 SSR 子消息（`-v≥1`） |
 | 文件头 `0xD3` | RTCM3 帧前导；本机 32 次 ≈ 多帧串联 |
 
-IGS 格式同法：`-f IGS -t /tmp/haslib_igs.out`（本机同 `-x 3000` → **9800** bytes）。
+IGS 格式同法：`-f IGS -t /tmp/haslib_igs.out`（本机同 `-x 3000 -v 1` → 同样摘要行；文件 **9800** bytes）。
 
 ### 3.2 库 API（等价）
 
@@ -130,7 +130,7 @@ PY
 | `-p` | TCP 输出端口（默认 6947） |
 | `-b` | 串口波特率（默认 115200） |
 | `--skip` | 跳过文件开头比例（0–1） |
-| `-m` / `--mute` | 抑制与 verbose 无关的设置横幅 |
+| `-m` / `--mute` | 抑制与 verbose 无关的设置横幅；**短选项 `-m` 在 getopt 里写成取值形**，行末光秃 `-m` 会 `GetoptError` → 用 `--mute` 或 `-m 1` |
 | `convertX` 的 `compact`/`HRclk`/`lowerUDI` | SSR 打包细节（库级；CLI 未暴露） |
 
 ## 4. 接到哪步
@@ -151,6 +151,9 @@ PY
 | 6 | `No module named 'serial'` | 依赖名是 pyserial | `pip install pyserial` |
 | 7 | 下游 PPP 改正符号反 | SSR 内存是 HAS 符号约定 | 用库自带 writer；自写转换对照 README 1.0.2 说明 |
 | 8 | 当定位引擎用 | 本库只解码 | 接 [cssrlib](./cssrlib.md) / [rtklib](./rtklib.md) |
+| 9 | `-h` 写 `HAS_Decoder.py`，仓内脚本是 `HAS_Converter.py` | 上游帮助文案未改名 | 实际调用 `python HAS_Converter.py …`；`-h` 文案可忽略 |
+| 10 | `-h` 详细列表无 `-x` 说明，但 Usage 有 | 帮助不全 | `-x N` 限制读取导航消息数（本机已验证）；省略则 `convertAll` |
+| 11 | 行末光秃 `-m` → `GetoptError: option -m requires argument` | 短选项被写成 `m:` | 改 `--mute` 或 `-m 1` |
 
 ## 6. 选型与链接
 

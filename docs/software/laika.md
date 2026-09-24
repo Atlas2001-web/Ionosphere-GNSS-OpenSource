@@ -1,6 +1,6 @@
 # laika · comma.ai Python GNSS 操作手册
 
-目录：[`PROJECTS.json` → `laika`](../../PROJECTS.json) · 上游 <https://github.com/commaai/laika> · 许可 **MIT** · 包版本 **0.0.1**（仓内 `pyproject.toml`）· 本机验证：读 `examples/slac1700.18o` → 2880 历元 + DOP 烟测；`pytest` time/dop/prns **17 passed**（2026-09-24 EDT）。**完整星历/改正下载需 Earthdata `.netrc`**（本机未配账号，未跑 CORS 定位）
+目录：[`PROJECTS.json` → `laika`](../../PROJECTS.json) · 上游 <https://github.com/commaai/laika> · 许可 **MIT** · 包版本 **0.0.1**（仓内 `pyproject.toml`）· 本机验证：读 `examples/slac1700.18o` → 2880 历元 + DOP 烟测；`pytest` time/dop/prns **17 passed**；质检复跑 stdout 一致（2026-09-24 EDT，R11）。**完整星历/改正下载需 Earthdata `.netrc`**（本机未配账号，未跑 CORS 定位）
 
 > 岗位：把原始 GNSS 观测整理成「伪距 + 卫星位置」供自写 WLS/卡尔曼；`AstroDog` 负责拉 CDDIS 等产品并缓存。冲突时：**仓内 README / `examples/Walkthrough.ipynb` > 本文**。
 
@@ -122,7 +122,7 @@ recv_llh [  37.4        -122.15         60.00009007]
 | `prn` / `recv_time` | 卫星 PRN；接收时刻 `GPSTime` |
 | `observables['C1C']` | 伪距 (m)；RINEX2 `C1` 被映射为 `C1C` 等 |
 | `sat_pos == nan` | **尚未** `process_measurements`；无星历前正常 |
-| `PDOP` | 位置精度因子（几何；与定位解无关） |
+| `PDOP` | 位置精度因子（几何；与定位解无关）。**同组卫星**在 `tests/test_dop` 用接收机 `(0,0,0)` → PDOP≈**2.196**；本文用 SLAC 近似坐标 → **3.298…**（勿混） |
 
 ### 3.2 AstroDog 冒烟 + 定位链（需账号）
 
@@ -176,6 +176,8 @@ PY
 | 6 | 定位偏差大 / 仅 WLS | 未用动态滤波器 | 跟 `examples/Kalman.ipynb`；或换 [rtklib](./rtklib.md) |
 | 7 | `hatanaka` 解压失败 | 旧 CRX / 缺二进制 | 官方工具见 [rnxcmp](./rnxcmp.md) |
 | 8 | 当 HAS/SSR 解码器 | 能力不在此 | [haslib](./haslib.md) + [cssrlib](./cssrlib.md) |
+| 9 | PDOP 与 `tests/test_dop` 对不上 | 接收机坐标不同（测试用 `(0,0,0)`） | 对照时同步 `geodetic2ecef` 参数；本文 SLAC 近似得 3.298… |
+| 10 | `pyproject` 写 `target-version=py311`，本机 3.13 可 import | 上游声明偏 3.11 | 冒烟可用 3.13；遇编译型依赖失败再换 3.11 |
 
 ## 6. 选型与链接
 
