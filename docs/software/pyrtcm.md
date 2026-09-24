@@ -1,6 +1,6 @@
 # pyrtcm · RTCM3 编解码库操作手册
 
-目录：[`PROJECTS.json` → `pyrtcm`](../../PROJECTS.json) · 上游 <https://github.com/semuconsulting/pyrtcm> · 文档 <https://www.semuconsulting.com/pyrtcm/> · PyPI **`pyrtcm` 1.2.0** · tip **`5d66c7a`** · BSD-3-Clause · Python ≥3.10 · 本机验证 1.2.0（README 1005 帧往返；上游 `tests/pygpsdata-RTCM3.log` 11 帧；`pygpsdata-RTCMMSM3.log` MSM `parse_msm`；`msgfilter`/`PARSE_META`）· 2026-09-24 04:48 EDT
+目录：[`PROJECTS.json` → `pyrtcm`](../../PROJECTS.json) · 上游 <https://github.com/semuconsulting/pyrtcm> · 文档 <https://www.semuconsulting.com/pyrtcm/> · PyPI **`pyrtcm` 1.2.0** · tip **`5d66c7a`** · BSD-3-Clause · Python ≥3.10 · 本机验证 1.2.0（README 1005 帧往返；上游 `tests/pygpsdata-RTCM3.log` 11 帧；`pygpsdata-RTCMMSM3.log` MSM `parse_msm`；`msgfilter`/`PARSE_META`）· 2026-09-24 04:48 EDT · **质检复跑通过**（同 I/O，2026-09-24 04:50 EDT）
 
 > 岗位：纯 Python **解析/生成 RTCM3**（含 MSM / 常见 SSR）。冲突时：**上游 README / Sphinx / 本机 `help(RTCMReader)` > 本文**。NTRIP/串口/录流 CLI → [pygnssutils](./pygnssutils.md)；桌面 GUI → [pygpsclient](./pygpsclient.md)；NMEA / UBX 姐妹库 → [pynmeagps](./pynmeagps.md) / [pyubx2](./pyubx2.md)。实时源注册与挂载点 → [data-access NTRIP](../data-access.md#实时-rtcm--ssr--ntrip)。**本包无 CLI entry point**（上游 “CLI” 指向 pygnssutils `gnssstreamer`）。
 

@@ -1,6 +1,6 @@
 # GNSSTK · C++ GNSS 基础库操作手册
 
-目录：[`PROJECTS.json` → `gnsstk`](../../PROJECTS.json) · 库 <https://github.com/SGL-UT/gnsstk> · 配套 CLI <https://github.com/SGL-UT/gnsstk-apps> · 归档前身 [GPSTk](https://github.com/SGL-UT/GPSTk) · **LGPL-3.0** · 本机：**库 v15.3.1** tip `55ea334` + **apps v15.1.1** tip `1aeb7d2` · `RinSum` BAHR → **120** 历元；`timeconvert` → GPS week **2437** · 2026-09-24 04:45 EDT
+目录：[`PROJECTS.json` → `gnsstk`](../../PROJECTS.json) · 库 <https://github.com/SGL-UT/gnsstk> · 配套 CLI <https://github.com/SGL-UT/gnsstk-apps> · 归档前身 [GPSTk](https://github.com/SGL-UT/GPSTk) · **LGPL-3.0** · 本机：**库 v15.3.1** tip `55ea334` + **apps v15.1.1** tip `1aeb7d2` · `RinSum` BAHR → **120** 历元；`timeconvert` → GPS week **2437** · 2026-09-24 04:45 EDT · **质检复跑通过**（同 I/O，2026-09-24 04:50 EDT）
 
 > 岗位：UT ARL/SGL 的 **C++ GNSS 核**（时间、坐标、RINEX、星历、大气延迟、PPP 数据流等）+ 可选 **gnsstk-apps** CLI。冲突时：**仓内 `INSTALL.md` / `./build.sh -h` / 本机 `RinSum --help` > 本文**。老文档里的 **GPSTk** 一律改指向本页两仓；日常 Python 读 RINEX → [georinex](./georinex.md)；QC 批处理 → [anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)/[teqc](./teqc.md)。
 

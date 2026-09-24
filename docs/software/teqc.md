@@ -1,6 +1,6 @@
 # TEQC · Translate / Edit / Quality Check 操作手册
 
-目录：[`PROJECTS.json` → `TEQC`](../../PROJECTS.json) · 官网 <https://www.unavco.org/software/data-processing/teqc/teqc.html> · 教程 HTML <https://www.unavco.org/software/data-processing/teqc/tutorial/tutorial.html> · PDF <https://www.unavco.org/software/data-processing/teqc/doc/UNAVCO_Teqc_Tutorial.pdf> · **闭源免费二进制** · **EOL：终版 2019Feb25** · 本机：CentOS x86_64 **静态**包 → `teqc +qc` demo.18o → **3** 历元 / MP12≈**0.20** m · 2026-09-24 04:42 EDT
+目录：[`PROJECTS.json` → `TEQC`](../../PROJECTS.json) · 官网 <https://www.unavco.org/software/data-processing/teqc/teqc.html> · 教程 HTML <https://www.unavco.org/software/data-processing/teqc/tutorial/tutorial.html> · PDF <https://www.unavco.org/software/data-processing/teqc/doc/UNAVCO_Teqc_Tutorial.pdf> · **闭源免费二进制** · **EOL：终版 2019Feb25** · 本机：CentOS x86_64 **静态**包 → `teqc +qc` demo.18o → **3** 历元 / MP12≈**0.20** m · 2026-09-24 04:42 EDT · **质检复跑通过**（同 I/O，2026-09-24 04:50 EDT）
 
 > 岗位：经典 **翻译 / 编辑 / 质检** 三合一 CLI（读厂商二进制与 RINEX 2.x）。冲突时：**本机 `teqc +help` / 官方 Tutorial > 本文**。**新工程优先** [gfzrnx](./gfzrnx.md)（切拼抽）+ [anubis](./anubis.md)（现代 QC）+ [rnxcmp](./rnxcmp.md)/[hatanaka](./hatanaka.md)（CRX）；批壳仍绑 TEQC 时见 [pinot](./pinot.md)。
 
@@ -21,6 +21,8 @@
 - **不是** Hatanaka 官方实现 → [rnxcmp](./rnxcmp.md)
 
 一句话：TEQC = **历史标准预处理瑞士军刀**；新站用它读旧档可以，建新流水线请并行迁移。
+
+质检确认：EOL/RINEX3 边界与后继选型（[gfzrnx](./gfzrnx.md)/[anubis](./anubis.md)/[rnxcmp](./rnxcmp.md)/[hatanaka](./hatanaka.md)/[pinot](./pinot.md)）已在 §1/§6/§7 写清；本机仅复跑 RINEX2 `+qc`。
 
 | 术语 | 含义 |
 | --- | --- |
