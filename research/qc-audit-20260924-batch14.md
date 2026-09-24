@@ -124,9 +124,10 @@ Keep audits: `research/_qc_batch14_prov_keep.json`.
 7. More professor/lab personal-account spot-audits only when org/bio is clear (e.g. known researchers with empty GitHub bio left untouched this batch: borioda/PadArt).
 
 ## Correction note
-Commit `adc81ec` briefly included **+12** concurrent `routine-2026-09-24h` finds
-(ELT_RTKBase, ENRI-Japan, GraphGNSSLib_LEO_V1.2, ICAO-PBN, fusioncore, geodesy-js,
-go-gnss-rtcm, go-gnss-spartn, libnmea, pysbf, pysbf2, pyubxutils) due to a race with
-another agent. Follow-up commit strips them so this QC batch stays **830** / no-new-projects.
-Those finds remain in `research/routine_finds_20260924h.json` for a dedicated routine merge.
+Commit `adc81ec` raced with concurrent `routine-2026-09-24h` and briefly carried those
+**+12** finds inside the QC commit (count 842) despite the message saying 830.
+`80e859f` then landed the routine research artifacts (merge script + finds JSON + NOTES).
+Follow-up `702daf5` strips the 12 entries from PROJECTS/lists/README so batch14 stays
+QC-only at **830**. Re-apply via `research/merge_routine_20260924h.py` /
+`research/routine_finds_20260924h.json` when ready for a dedicated routine merge.
 
