@@ -1,6 +1,6 @@
 # PPP-Wizard · CNES 整数零差 PPP-AR 操作手册
 
-目录：[`PROJECTS.json` → `PPP-Wizard`](../../PROJECTS.json) · 门户 <http://www.ppp-wizard.net/> · 实时产品 <http://www.ppp-wizard.net/products/REAL_TIME/> · 联系 `contact_ppp@cnes.fr` · 许可 **上游未在门户明示（历史包为研究/非商业）** · **PROJECTS.json 无 GitHub 镜像** · 本机验证：`package.html` **404**（客户端需向 CNES 索取；本机**未**获包、**未**跑 PPP 解）；REAL_TIME **`cnt24373`**（2026-09-23）SP3/CLK/BIA 可下：SP3 **288** 历元 / **109** 星（G31+R19+E27+C32）；CLK `AS` **1 883 520** 行；BIA ≈**2.27 M** 行（`SOFTWARE PPP-Wizard`）· 2026-09-24 05:36 EDT
+目录：[`PROJECTS.json` → `PPP-Wizard`](../../PROJECTS.json) · 门户 <http://www.ppp-wizard.net/> · 实时产品 <http://www.ppp-wizard.net/products/REAL_TIME/> · 联系 `contact_ppp@cnes.fr` · 许可 **上游未在门户明示（历史包为研究/非商业）** · **PROJECTS.json 无 GitHub 镜像** · 本机验证：`package.html` **404**（客户端需向 CNES 索取；本机**未**获包、**未**跑 PPP 解）；REAL_TIME **`cnt24373`**（2026-09-23）SP3/CLK/BIA 可下：SP3 **288** 历元 / **109** 星（G31+R19+E27+C32）；CLK `AS` **1 883 520** 行；BIA ≈**2.27 M** 行（`SOFTWARE PPP-Wizard`）· 2026-09-24 05:36 EDT · **质检复跑** 2026-09-24 05:41 EDT（`package.html` **404**；SP3 **288**/109=G31+R19+E27+C32/`ORBIT IGS20 IGU CNES`；CLK `AS` **1883520**；BIA **2268516** 行/`SOFTWARE PPP-Wizard`；解压大小 SP3≈**1.9 MB**/CLK≈**144 MB**/BIA≈**200 MB**；**无客户端包**未跑 PPP）
 
 > 岗位：CNES **零差整数模糊度 PPP-AR** 示范（SSR 计算 + IGS-RTS 播发 + 用户端）。冲突时：**门户页 / IGS RTS 说明 / 你手中的 CNES 包 README > 本文**。发表级事后 PPP-AR → [pride-pppar](./pride-pppar.md)；轻量 CLI → [rtklib](./rtklib.md)；GA YAML → [ginan](./ginan.md)；武大 XML → [great-pvt](./great-pvt.md)。
 
@@ -58,13 +58,13 @@ head -n 25 cnt24373.sp3
 rg -n "SOFTWARE|CONTACT|%=BIA" cnt24373.bia | head
 ```
 
-**本机结果（2026-09-24 05:36 EDT）：**
+**本机结果（写作 2026-09-24 05:36 EDT；质检复跑 05:41 EDT，字节以复跑为准）：**
 
 | 文件 | 大小（解压后） | 探针 |
 | --- | ---: | --- |
-| `cnt24373.sp3` | ≈3.3 MB | **288** 历元 / **109** 星；`*  2026  9 23  0  0` → `23 55`；`ORBIT IGS20 IGU CNES` |
+| `cnt24373.sp3` | ≈1.9 MB | **288** 历元 / **109** 星；`*  2026  9 23  0  0` → `23 55`；`ORBIT IGS20 IGU CNES` |
 | `cnt24373.clk` | ≈144 MB | `AS` **1 883 520** 行 |
-| `cnt24373.bia` | ≈170 MB | Bias-SINEX；`SOFTWARE PPP-Wizard`；`CONTACT contact_ppp@cnes.fr` |
+| `cnt24373.bia` | ≈200 MB | Bias-SINEX **2 268 516** 行；`SOFTWARE PPP-Wizard`；`CONTACT contact_ppp@cnes.fr` |
 
 目录内仍有旧前缀 `c2t*`（如 2018 归档）与 `*_backup`；选文件先 `head` SP3 纪元，勿按文件名排序当“最新科学日”。
 

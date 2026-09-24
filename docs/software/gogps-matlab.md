@@ -1,6 +1,6 @@
 # goGPS_MATLAB · 低成本/多星座 GNSS 处理操作手册
 
-目录：[`PROJECTS.json` → `goGPS_MATLAB`](../../PROJECTS.json) · 上游 <https://github.com/goGPS-Project/goGPS_MATLAB> · 站点 <https://gogps-project.github.io> · 许可 **GPL-3.0**（`source/LICENSE.txt`）· tip **`a990ed0`**（2025-05-28）· `Core.APP_VERSION = '1.0.1'` · 本机验证：clone 后 **824** 个 `.m`（`source/` 排除 thirdParty **427**）；`lambda_v3/` **仅** README（须自向 Curtin 申请 LAMBDA 3.0）；默认工程 ZIM3 RINEX3 day1 **2880** 历元；首见 G01 `C1C=25131594.344` @ 00:25:30 · **无 MATLAB → 未跑 GUI/PPP/NET**（禁止臆造坐标/固定率）· 2026-09-24 05:36 EDT
+目录：[`PROJECTS.json` → `goGPS_MATLAB`](../../PROJECTS.json) · 上游 <https://github.com/goGPS-Project/goGPS_MATLAB> · 站点 <https://gogps-project.github.io> · 许可 **GPL-3.0**（`source/LICENSE.txt`）· tip **`a990ed0`**（2025-05-28）· `Core.APP_VERSION = '1.0.1'` · 本机验证：clone 后 **824** 个 `.m`（`source/` 排除 thirdParty **427**）；`lambda_v3/` **仅** README（须自向 Curtin 申请 LAMBDA 3.0）；默认工程 ZIM3 RINEX3 day1 **2880** 历元；首见 G01 `C1C=25131594.344` @ 00:25:30 · **无 MATLAB → 未跑 GUI/PPP/NET**（禁止臆造坐标/固定率）· 2026-09-24 05:36 EDT · **质检复跑** 2026-09-24 05:41 EDT（tip **`a990ed0`**/`APP_VERSION=1.0.1`；824 `.m`/427 非 thirdParty；`lambda_v3` 仅 README；ZIM3 day1 **2880** 历元/`MARKER ZIM3`/`TRIMBLE NETR9`；G01 首见 C1C=**25131594.344** @ 00:25:30；`which matlab` 空→**未跑 GUI/PPP/NET**）
 
 > 岗位：GReD / goGPS Project 的 **MATLAB** 观测处理——组合/非组合 LS、**PPP** 与 **NET**、永久站与低成本接收机。冲突时：**Wiki Installation/Command-language + 仓内 `goGPS.m` > 本文**。无 MATLAB → [rtklib](./rtklib.md) / [graphgnsslib](./graphgnsslib.md)；发表级 PPP-AR → [pride-pppar](./pride-pppar.md)。
 
@@ -123,7 +123,7 @@ PY
 # 期望：epochs 2880；first G01 @ 00:25:30；C1C=25131594.344
 ```
 
-**本机结果：** day1 **2880** 历元（30 s）；`MARKER ZIM3`；`REC TRIMBLE NETR9`；G01 首见 `C1C=25131594.344`。同目录另有 `zim2*.21o` / `zimm*.21o` 短名日文件。
+**本机结果（质检复跑 2026-09-24 05:41 EDT）：** day1 **2880** 历元（30 s；文件 **18271978** B）；`MARKER ZIM3`；`REC TRIMBLE NETR9`；G01 首见 `C1C=25131594.344` @ `> 2021  1  1  0 25 30`。同目录另有 `zim2*.21o` / `zimm*.21o` 短名日文件。
 
 可选：用 [georinex](./georinex.md) 再探 —— 本机曾读 ZIM3 GPS **2880** 历元 / **31** SV（全量读较慢，CI 可用上面纯解析）。
 
