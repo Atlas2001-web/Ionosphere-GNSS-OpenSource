@@ -7,6 +7,10 @@ import json
 from collections import Counter, defaultdict
 from datetime import date
 from pathlib import Path
+# Ensure research/ is importable for sync_readme_counts (root or -m invocation).
+import sys
+if str(Path(__file__).resolve().parent) not in sys.path:
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
 from sync_readme_counts import sync_readme_counts
 
 ROOT = Path(__file__).resolve().parents[1]

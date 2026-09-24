@@ -1,6 +1,6 @@
 batch_iono_models 汇总 2026-09-17
 新增条目数: 55
-输出: /workspace/ionosphere-gnss-catalog/research/batch_iono_models.json
+输出: research/batch_iono_models.json
 
 按子类:
   模型 (19): GEMINI3D, Aether-IT-model, sami2py, GITM, IPE, TIE-GCM, ntcmg, gri-iono, NeQuick2-MLF2, SAMI3-4.00, SAMI3-3.22-CCMC-mirror, sami3_gitm, CCMC-SAMI3, FIRI-2018, LongwaveModePropagator.jl, IRI_TID, RIM, Klobuchar-study-code, HAO-TGCM-portal

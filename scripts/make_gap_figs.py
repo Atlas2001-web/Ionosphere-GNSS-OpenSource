@@ -83,7 +83,7 @@ def fig_catalog_nav() -> None:
         (3.5, 4.6, 3.0, 1.5, "lists/04-positioning", "RTKLIB · PPP · IF/GF", TEAL),
         (6.7, 4.6, 3.0, 1.5, "lists/10-datasets", "RINEX · IONEX · portals", ORANGE),
         (0.3, 2.7, 3.0, 1.5, "docs/categories.md", "category boundaries", PURPLE),
-        (3.5, 2.7, 3.0, 1.5, "PROJECTS.json", "~611 machine entries", RED),
+        (3.5, 2.7, 3.0, 1.5, "PROJECTS.json", "~733 machine entries", RED),
         (6.7, 2.7, 3.0, 1.5, "docs/software/", "install · minimal run", GREEN),
         (0.3, 0.8, 4.6, 1.5, "docs/tutorials/ 01–23", "classroom: mechanism → formula → signature", LIGHT_BLUE),
         (5.2, 0.8, 4.5, 1.5, "CONTRIBUTING.md", "add a link entry — do not vendor code", GREY),

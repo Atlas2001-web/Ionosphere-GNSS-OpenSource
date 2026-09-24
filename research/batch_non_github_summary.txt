@@ -1,6 +1,6 @@
 batch_non_github 汇总 2026-09-17
 新增条目数: 16
-输出: /workspace/ionosphere-gnss-catalog/research/batch_non_github.json
+输出: research/batch_non_github.json
 
 按 host:
   gitlab (5): swarm-vip-dynamic-models, Swarm-VIP-Dynamic, FARR, pypride, nleht-fdtd-ionosphere

@@ -1,6 +1,6 @@
 batch_gapfill_20260917 汇总
 新增条目数: 36
-输出: /workspace/ionosphere-gnss-catalog/research/batch_gapfill_20260917.json
+输出: research/batch_gapfill_20260917.json
 
 按子类:
   工具 (9): SubionosphericVLFInversionAlgorithms.jl, Septentrio-PyDataLink, SbfMixer, IonOccAnalysis, mitiono, MyIonosphere_Library, pysatSpaceWeather, radionopy, COSMIC-IONPRF-Ne-TEC
