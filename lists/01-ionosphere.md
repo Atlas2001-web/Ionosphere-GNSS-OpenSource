@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> **242** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **244** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -103,6 +103,7 @@ yujieqing 仓库：为电离层层析准备几何/射线矩阵相关代码，可
 |---|---|---|---:|---|
 | [igrf](https://github.com/space-physics/igrf) | igrf：IGRF13 地磁模型 Python/Matlab 接口 | Python | 77 | 🏷️ 高校实验室 |
 | [GEMINI3D](https://github.com/gemini3d/gemini3d) | GEMINI3D：三维电离层物理模式 | Fortran | 69 | 🏷️ 高校实验室 |
+| [aacgmv2](https://github.com/aburrell/aacgmv2) | aacgmv2：AACGM-v2 地磁坐标 Python 库 | Python | 35 | 🏷️ 高校实验室 |
 | [wmm2020](https://github.com/space-physics/wmm2020) | wmm2020：世界磁模型 WMM2020 Python 接口 | Python | 29 | 🏷️ 高校实验室 |
 | [GITM](https://github.com/GITMCode/GITM) | GITM：全球电离层-热层模式社区 Fortran 源码 | Fortran | 28 | 🏷️ 高校实验室 |
 | [Aether-IT-model](https://github.com/AetherModel/Aether) | Aether：热层-电离层耦合物理模式（非 PPP-RTK AETHER） | C++ | 27 | 🏷️ 高校实验室 |
@@ -144,6 +145,13 @@ space-physics 对 IGRF13 的 Python/Matlab 接口，常用于电离层/磁层研
 语言：Fortran · 许可：Apache-2.0 · 星标约：69 · 宿主：github
 
 GEMINI3D 是面向电离层的三维流体电动力学数值模式，用 Fortran 求解等离子体密度、速度与电场等，常用于极光区、不规则体和无线电传播相关的物理仿真。输入通常包括中性大气背景、太阳/地磁驱动与网格配置；输出为三维电子密度与相关场量的时序场。对 GNSS 用户而言，它不是直接从 RINEX 算 TEC 的工具，而是提供物理一致性的电子密度场，可再投影为 STEC/VTEC 做对比实验。局限：需要编译与并行计算资源，参数调校门槛高，不适合当作日常 GIM 生产流水线。
+
+#### [aacgmv2](https://github.com/aburrell/aacgmv2)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：MIT · 星标约：35 · 宿主：github
+
+aburrell 维护的 AACGM-v2 Python 库，在地理坐标与高度调整校正地磁坐标间转换，电离层/极光研究常用。MIT 许可；引用需同时给出包 DOI 与 Shepherd 2014 论文。与 apexpy、igrf 互补，它本身不是 GNSS 观测解算器。
 
 #### [wmm2020](https://github.com/space-physics/wmm2020)  
 *🏷️ 高校实验室*
@@ -2127,9 +2135,17 @@ Joe Huba（Syntek/NRL）在 Zenodo 以 software 类型存档的 SAMI3-3.22 官�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [geomagindices](https://github.com/space-physics/geomagindices) | geomagindices：地磁指数 Python 读写工具 | Python | 17 | 🏷️ 高校实验室 |
 | [madrigalWeb](https://github.com/MITHaystack/madrigalWeb) | OpenMadrigal/CEDAR Python 数据客户端 | Python | 4 | 🏷️ 高校实验室 |
 
 ### 详细说明
+
+#### [geomagindices](https://github.com/space-physics/geomagindices)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：MIT · 星标约：17 · 宿主：github
+
+space-physics 维护的地磁指数读写工具，常为电离层/空间天气研究提供 Kp 等辅助输入。MIT 许可；与 igrf、iri2016 等模型接口互补。数据源与更新频率见仓库说明，使用时注意指数时效性与规范引用。 细节以官方页面或仓库 README 为准。
 
 #### [madrigalWeb](https://github.com/MITHaystack/madrigalWeb)  
 *🏷️ 高校实验室*

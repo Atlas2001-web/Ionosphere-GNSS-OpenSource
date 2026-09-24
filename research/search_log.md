@@ -340,3 +340,12 @@
 - Avoided: NMEA libs, VINS*, LimeGPS/pluto, WAAS/EGNOS/GLONASS-IAC, Orekit, saturated major portals
 - Skipped: TrigNet/AFREF/SAPOS/beidou.gov.cn, NavDecoder no license, Spectre (non-GNSS RF), PyGeodesy no SPDX, general geodesy JS (weak GNSS fit), bladeGPS (SDR family just covered), IGAC deep CORS pages unreachable
 - Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
+
+## Routine pass 2026-09-24g
+
+- Catalog size before: **816**; after merge: **830** (+14)
+- Finds file: `research/routine_finds_20260924g.json`
+- Method: thin-niche dig (orbit OD, RAIM, GNSS-IR snow/SNR, RINEX mask, AACGM) + official portals (Navipedia/NAVCEN/GPS.gov); `gh api`+`curl`; dedup vs PROJECTS.json and all `routine_finds_*.json`
+- Avoided: RobustGNSS/PrNet/NeRC, igrf/wmm2020, GSC-OSNMA, VINS*, LimeGPS, Orekit, WAAS/EGNOS, NMEA libs, saturated national CORS
+- Skipped: midgard pre-alpha, InGVIO no license, NavDecoder no license, NovAtel OEM page soft-404, Open-Water-Level (ultrasonic not GNSS-IR), PyGeodesy no SPDX, TrigNet/AFREF/SAPOS
+- Merge safety: append-only; UPDATED=0; blanking vs HEAD=0

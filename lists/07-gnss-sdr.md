@@ -1,5 +1,5 @@
 # 软件接收机与信号 / GNSS-SDR
-> **61** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **62** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。
 
@@ -289,6 +289,7 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 | [gps-sdr-sim](https://github.com/osqzss/gps-sdr-sim) | gps-sdr-sim：GPS L1 基带信号仿真（SDR 回放） | C | 3466 | 🏷️ 个人社区 核心 |
 | [multi-sdr-gps-sim](https://github.com/Mictronics/multi-sdr-gps-sim) | HackRF/Pluto 等平台上的 GPS L1 实时仿真 | C | 264 | 🏷️ 个人社区 |
 | [SignalSim](https://github.com/globsky/SignalSim) | 覆盖多阶段链路的 GNSS 信号/数据仿真 | C++ | 208 | 🏷️ 个人社区 |
+| [bladeGPS](https://github.com/osqzss/bladeGPS) | bladeGPS：bladeRF 实时 GPS 信号模拟器 | C | 157 | 🏷️ 个人社区 |
 | [LimeGPS](https://github.com/osqzss/LimeGPS) | LimeGPS：LimeSDR 实时 GPS 信号模拟器 | C | 134 | 🏷️ 个人社区 |
 | [pluto-gps-sim](https://github.com/Mictronics/pluto-gps-sim) | pluto-gps-sim：PlutoSDR GPS IQ 仿真发射工具 | C | 119 | 🏷️ 个人社区 |
 | [gps-sdr-sim-assistant](https://github.com/frank-pian/gps-sdr-sim-assistant) | gps-sdr-sim-assistant：仿真参数图形助手 | JavaScript | 63 | 🏷️ 个人社区 |
@@ -325,6 +326,13 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 语言：C++ · 许可：— · 星标约：208 · 宿主：github
 
 相对单一 L1 IQ sim，更接近科研用多星座、多阶段信号与数据仿真链，便于算法验证与场景复现。适合接收机基带/测量层试验。配置项多、文档需耐心研读；实时射频合规发射另论。
+
+#### [bladeGPS](https://github.com/osqzss/bladeGPS)  
+*🏷️ 个人社区*
+
+语言：C · 许可：MIT · 星标约：157 · 宿主：github
+
+osqzss 家族中针对 bladeRF 的实时 GPS 射频模拟前端。MIT，仓库已 archived；与 LimeGPS、pluto-gps-sim 形成不同硬件后端。仅限实验室或授权环境使用，务必遵守无线电法规，切勿对空非法发射。 细节以官方页面或仓库 README 为准。
 
 #### [LimeGPS](https://github.com/osqzss/LimeGPS)  
 *🏷️ 个人社区*

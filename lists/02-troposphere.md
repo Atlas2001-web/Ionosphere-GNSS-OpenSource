@@ -1,5 +1,5 @@
 # 对流层 / Troposphere
-> **37** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **39** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
@@ -98,7 +98,9 @@ BME 大地测量组发布的开源 Python 层析工具箱，由 ZWD/梯度、SP3
 | [gnssr4river](https://github.com/lroineau/gnssr4river) | 面向河流水文的 GNSS-R Python 工具箱 | Python | 8 | 🏷️ 个人社区 |
 | [gpssnrpy](https://github.com/kristinemlarson/gpssnrpy) | RINEX SNR 提取与高度角工具 | Python | 6 | 🏷️ 高校实验室 |
 | [NearRealTimeGNSSIR](https://github.com/cemalialtuntas/NearRealTimeGNSSIR) | 近实时 GNSS-IR 软件原型 | HTML | 5 | 🏷️ 个人社区 |
+| [FindSnowOutliers](https://github.com/kristinemlarson/FindSnowOutliers) | FindSnowOutliers：SNR 检测天线积雪异常 | MATLAB | 4 | 🏷️ 高校实验室 |
 | [gnssr-raspberry](https://github.com/ITC-Water-Resources/gnssr-raspberry) | 树莓派上的 GNSS 反射测量（ITC 水资源） | Python | 3 | 🏷️ 高校实验室 |
+| [gpsonlySNR](https://github.com/kristinemlarson/gpsonlySNR) | gpsonlySNR：GPS RINEX→SNR 提取工具 | Fortran | 2 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -144,12 +146,26 @@ Kristine Larson 团队工具，为地基 GNSS-IR/反射测量绘制菲涅耳区�
 
 朝近实时 GNSS-IR 流水线努力的实现，目标从 SNR 提取水位/雪深/土壤湿度等环境参数。适合做自动化监测原型。工程完整度与多星座支持需实测，稳定产线可对照 gnssrefl。
 
+#### [FindSnowOutliers](https://github.com/kristinemlarson/FindSnowOutliers)  
+*🏷️ 高校实验室*
+
+语言：MATLAB · 许可：MIT · 星标约：4 · 宿主：github
+
+Kristine Larson 团队 Matlab 工具：利用 SNR 判断天线积雪何时污染 GPS 坐标解。MIT 许可；属 GNSS-IR/多路径谱系的质控辅助。输入需匹配的 SNR 与坐标时序，真正雪深或水位反演请接 gnssrefl 等下游工具完成。
+
 #### [gnssr-raspberry](https://github.com/ITC-Water-Resources/gnssr-raspberry)  
 *🏷️ 高校实验室*
 
 语言：Python · 许可：— · 星标约：3 · 宿主：github
 
 ITC Water Resources 在树莓派上运行的 GNSS 反射测量实验工程，面向低成本水文监测站。适合野外原型与教学演示。仓库星标较少、文档随版本变化；水位/土壤湿度产品建议对照 gnssrefl 与大地型天线结果。
+
+#### [gpsonlySNR](https://github.com/kristinemlarson/gpsonlySNR)  
+*🏷️ 高校实验室*
+
+语言：Fortran · 许可：MIT · 星标约：2 · 宿主：github
+
+Larson 团队 Fortran 工具，翻译/读取 GPS RINEX 并提取 SNR，服务反射测量流水线。MIT 许可；与 gnssSNR、gpssnrpy 同谱系、更偏 GPS-only 路径。RINEX 版本支持以说明为准，完整 GNSS-IR 反演需再接 gnssrefl 处理。
 
 ## GNSS-IR水位
 

@@ -1,5 +1,5 @@
 # GNSS 数据与格式 / GNSS Data I/O
-> **119** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **120** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
@@ -647,6 +647,7 @@ GNSSNexus 下的 RINEX 组件，适合特定工具链内使用。选型时与 ge
 | [uNavTools](https://github.com/IvAn190/uNavTools) | u-blox→RINEX 工具集，内置基于 CSSRlib 的 RTK/PPP | Python | 10 | 🏷️ 个人社区 |
 | [GFZRNX](https://www.gfz.de/en/section/space-geodetic-techniques/data-products-services/gfzrnx-gnss-toolbox) | GFZ 的 RINEX 检查/拼接/抽样工具箱（科研非商用免费） | binary toolkit | — | 🏷️ 官方 |
 | [GFZRNX-UserGuide](https://gnss.git-pages.gfz-potsdam.de/gfzrnx/) | GFZRNX 2.2 用户手册：任务、EULA 与 Hatanaka/统计等操作说明 | docs | — | 🏷️ 官方 |
+| [rinex-masker](https://github.com/J-kroeger/rinex-masker) | rinex-masker：RINEX 遮挡掩膜与 DOP 影响分析 | Python | 0 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -677,6 +678,13 @@ Swift Navigation 的 pyNEX，提供 Python RINEX 实用库与命令行工具，�
 语言：docs · 许可：proprietary-freeware (see EULA) · 星标约：— · 宿主：official_site
 
 GFZ 官方用户指南，详述 RINEX 2/3/4 检查、拼接、抽样、元数据与 Hatanaka 相关操作，并区分科研免费与商业许可。配合 gfzrnx 下载页使用。不是开源源码文档，但对正确理解闭源工具箱能力边界与 EULA 非常关键。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
+
+#### [rinex-masker](https://github.com/J-kroeger/rinex-masker)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：GPL-3.0 · 星标约：0 · 宿主：github
+
+汉诺威大学地球测量研究所工具：把障碍物掩膜应用到 RINEX，并展示对卫星可见性与 DOP 的影响。GPL-3.0（GitHub SPDX 常为 NOASSERTION）；与 rinex-adapter/atx-scanner 配套。适合测站选址与遮挡评估，星级低但主题缺口明确。
 
 ## Galileo HAS
 

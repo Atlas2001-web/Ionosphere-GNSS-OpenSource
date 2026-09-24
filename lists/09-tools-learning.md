@@ -1,5 +1,5 @@
 # 学习资源与工具 / Tools & Learning
-> **39** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **44** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
@@ -147,9 +147,11 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [GA-Positioning-Services](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/services-and-tools) | Geoscience Australia 定位服务与工具门户（SouthPAN/AUSPOS/数据中心） | various | — | 🏷️ 官方 |
+| [GPS.gov](https://www.gps.gov/) | GPS.gov：美国 GPS 系统官方公众信息站 | data-portal | — | 🏷️ 官方 |
 | [ISRO-IRNSS-NavIC](https://www.isro.gov.in/IRNSS_Programme.html) | ISRO NavIC：印度区域导航系统官方计划页 | data-portal | — | 🏷️ 官方 |
 | [NGS-PC-PROD](https://geodesy.noaa.gov/PC_PROD/) | NGS PC Software 门户：HTDP 等大地测量桌面程序入口 | various | — | 🏷️ 官方 |
 | [UNAVCO-Software-Portal](https://www.unavco.org/software/) | UNAVCO/EarthScope 软件门户：TEQC、预处理、GAMIT 链接与可视化 | various | — | 🏷️ 官方 |
+| [USCG-NAVCEN](https://www.navcen.uscg.gov/) | NAVCEN：美国海岸警卫队导航与 GNSS 门户 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -159,6 +161,13 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 语言：various · 许可：varies · 星标约：— · 宿主：official_site
 
 澳大利亚定位项目服务总览，含 SouthPAN、GNSS 数据中心与 AUSPOS 在线处理等入口。多数为在线服务而非本地开源库，与 Ginan 开源套件互补。查找国家级数据流、改正服务与在线 PPP 时可作为官方导航页。使用前请核验上游页面与许可条款。
+
+#### [GPS.gov](https://www.gps.gov/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+GPS.gov 是美国面向公众的 GPS 系统官方站点，汇总政策、现代化进展与用户资源入口。官方 portal；与 FAA WAAS、NAVCEN 等互补。技术 ICD 细节多链向其他 .gov 文档，下载、引用与再分发请遵循各目标页条款。
 
 #### [ISRO-IRNSS-NavIC](https://www.isro.gov.in/IRNSS_Programme.html)  
 *🏷️ 官方*
@@ -180,6 +189,13 @@ NOAA/NGS 大地测量 PC 软件汇总页，链向 HTDP 等可下载程序与文�
 语言：various · 许可：varies · 星标约：— · 宿主：official_site
 
 GAGE/EarthScope 软件总入口，分数据处理、数据管理、可视化与大地测量工具。可找到 TEQC、Hatanaka/GNSSTK 预处理说明、GAMIT 链接及 GPS Velocity Viewer 等。多数条目指向外部维护方；GAMIT 等为学术许可而非宽松 OSS，下载前请仔细阅读许可条款。
+
+#### [USCG-NAVCEN](https://www.navcen.uscg.gov/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+USCG Navigation Center 官网，发布航海航标、差分 GPS/导航服务公告与相关 GNSS 用户信息入口。官方 portal；偏海事与公共导航服务，不是 CORS RINEX 下载站。运行状态、用户通告与服务变更以站内最新公告为准。
 
 ## 高校工具门户
 
@@ -264,6 +280,7 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 | [learning_rtklib](https://github.com/libing64/learning_rtklib) | learning_rtklib：RTKLIB 学习笔记 | — | 163 | 🏷️ 个人社区 |
 | [RTKLIB-Manual-CN](https://github.com/salmoshu/RTKLIB-Manual-CN) | RTKLIB-Manual-CN：中文手册与源码导读 | — | 54 | 🏷️ 高校实验室 |
 | [gnss_tutorials](https://github.com/rokubun/gnss_tutorials) | gnss_tutorials：Rokubun Python/Jupyter GNSS 教程 | Jupyter Notebook | 13 | 🏷️ 个人社区 |
+| [DD-cycle-slip-lab](https://github.com/VimsRocz/Double_difference_relative_positioning) | DD-cycle-slip-lab：双差定位与周跳教学实验 | MATLAB | 7 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -294,6 +311,13 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 语言：Jupyter Notebook · 许可：MIT · 星标约：13 · 宿主：github
 
 Rokubun 编写的 GNSS 数据处理 Jupyter 教程，覆盖从观测到基础解算的示范流程。MIT 许可；与 android_rinex 同机构，适合入门与课堂教学演示。内容随课程版本变化，生产流水线请改用仍在维护的库，并补齐自有质控步骤。
+
+#### [DD-cycle-slip-lab](https://github.com/VimsRocz/Double_difference_relative_positioning)  
+*🏷️ 高校实验室*
+
+语言：MATLAB · 许可：MIT · 星标约：7 · 宿主：github
+
+面向双差（DD）相对定位与周跳探测的 Matlab 练习，附带城市环境静态多站 GPS 样例。MIT 许可；适合课程实验理解周跳与相对定位基础。非生产 RTK 引擎，数据与习题步骤绑定仓库说明文档。 细节以官方页面或仓库 README 为准。
 
 ## HF传播态势
 
@@ -329,9 +353,17 @@ Rokubun 编写的 GNSS 数据处理 Jupyter 教程，覆盖从观测到基础解
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [Navipedia](https://gssc.esa.int/navipedia/index.php/Main_Page) | Navipedia：ESA GSSC 的 GNSS 参考百科 | data-portal | — | 🏷️ 官方 |
 | [NGS-GPS-Toolbox](https://geodesy.noaa.gov/gps-toolbox/) | NOAA/NGS《GPS Toolbox》专栏历史代码索引（源码已改向作者索取） | various | — | 🏷️ 官方 |
 
 ### 详细说明
+
+#### [Navipedia](https://gssc.esa.int/navipedia/index.php/Main_Page)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+欧洲 GNSS 服务中心维护的 Navipedia，按主题整理卫星导航概念、系统与算法条目，是公开可编辑风格的 GNSS 参考 Wiki。官方 portal；适合教学查阅与概念对照，条目深度不一，工程实施与接口开发仍应回到 ICD 与正式标准原文核对。
 
 #### [NGS-GPS-Toolbox](https://geodesy.noaa.gov/gps-toolbox/)  
 *🏷️ 官方*
@@ -344,10 +376,18 @@ Rokubun 编写的 GNSS 数据处理 Jupyter 教程，覆盖从观测到基础解
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [Geodesy.jl](https://github.com/JuliaGeo/Geodesy.jl) | Geodesy.jl：Julia 坐标与大地测量变换库 | Julia | 114 | 🏷️ 个人社区 |
 | [ncat-lib](https://github.com/noaa-ngs/ncat-lib) | NGS NCAT Java 库：离线坐标/基准转换 | Java | 21 | 🏷️ 官方 |
 | [NGS-NCAT](https://geodesy.noaa.gov/NCAT/) | NOAA/NGS NCAT：大地坐标与参考框架转换工具 | web/service | — | 🏷️ 官方 |
 
 ### 详细说明
+
+#### [Geodesy.jl](https://github.com/JuliaGeo/Geodesy.jl)  
+*🏷️ 个人社区*
+
+语言：Julia · 许可：MIT · 星标约：114 · 宿主：github
+
+JuliaGeo 的坐标系统与点位变换库，支持常见大地测量坐标转换。MIT 许可；填补目录 Julia 生态缺口。偏通用大地测量而非 GNSS 观测处理，完整解算请另接 Julia 或其他语言的 GNSS 专用库。 细节以官方页面或仓库 README 为准。
 
 #### [ncat-lib](https://github.com/noaa-ngs/ncat-lib)  
 *🏷️ 官方*

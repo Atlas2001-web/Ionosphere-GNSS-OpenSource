@@ -1,5 +1,5 @@
 # 轨道与钟差 / Orbit & Clock
-> **14** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **16** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。
 
@@ -154,6 +154,8 @@ C++ 实现三套偏差模式：DCB（码偏差与 VTEC 球谐联立）、UPD 与
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [Orekit](https://github.com/CS-SI/Orekit) | Orekit：开源太空动力学与轨道传播基础库 | Java | 298 | 🏷️ 个人社区 |
+| [orbdetpy](https://github.com/ut-astria/orbdetpy) | orbdetpy：Python/Java 轨道确定开源工具 | Java | 129 | 🏷️ 高校实验室 |
+| [tudatpy](https://github.com/tudat-team/tudatpy) | tudatpy：TU Delft 天体动力学 Python 工具箱 | Python | 91 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -163,3 +165,17 @@ C++ 实现三套偏差模式：DCB（码偏差与 VTEC 球谐联立）、UPD 与
 语言：Java · 许可：Apache-2.0 · 星标约：298 · 宿主：github
 
 CS-SI 维护的底层太空动力学库，覆盖轨道传播、力模型、姿态与时间尺度等，GNSS 精密轨道分析中常作基础组件。Apache-2.0；议题追踪多在 gitlab.orekit.org。质量高但非专用 GNSS POD 套件，观测模型需自建；主语言为 Java，Python 绑定需另寻社区包装。
+
+#### [orbdetpy](https://github.com/ut-astria/orbdetpy)  
+*🏷️ 高校实验室*
+
+语言：Java · 许可：GPL-3.0 · 星标约：129 · 宿主：github
+
+德州大学 ASTRIA 实验室的 Orbit Determination with Python，面向空间目标轨道确定与相关仿真。GPL-3.0；填补目录中小型 OD 工具缺口，与 tudatpy/Orekit 可对照。偏空间态势感知场景，GNSS 测地级 POD 请另选 Ginan、GROOPS 等专用处理链。
+
+#### [tudatpy](https://github.com/tudat-team/tudatpy)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：BSD-3-Clause · 星标约：91 · 宿主：github
+
+Tudatpy 是 TU Delft Tudat 的 Python 接口，面向轨道传播、天体动力学仿真与教学。BSD-3-Clause；与 Orekit 互补（Python/C++ 绑定 vs Java）。非专用 GNSS POD 套件，但可作精密轨道/力模型实验底座；推荐用 conda 发行包，完整文档与示例见 tudat.space。

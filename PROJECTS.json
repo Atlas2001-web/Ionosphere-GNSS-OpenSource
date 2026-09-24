@@ -5,17 +5,17 @@
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
   "generated": "2026-09-24",
-  "project_count": 816,
+  "project_count": 830,
   "counts_by_category": {
-    "ionosphere": 242,
-    "troposphere": 37,
-    "gnss-data": 119,
-    "gnss-positioning": 94,
-    "orbit-clock": 14,
+    "ionosphere": 244,
+    "troposphere": 39,
+    "gnss-data": 120,
+    "gnss-positioning": 95,
+    "orbit-clock": 16,
     "navigation-ins": 63,
-    "gnss-sdr": 61,
+    "gnss-sdr": 62,
     "mobile-apps": 22,
-    "tools-learning": 39,
+    "tools-learning": 44,
     "gnss-datasets": 125
   },
   "projects": [
@@ -15939,12 +15939,292 @@
       "host": "github",
       "provenance": "academic_lab",
       "one_liner_zh": "NeRC：可微地平线定位中的神经测距改正"
+    },
+    {
+      "name": "tudatpy",
+      "url": "https://github.com/tudat-team/tudatpy",
+      "desc_zh": "TU Delft：Python 天体动力学与轨道仿真工具箱",
+      "analysis_zh": "Tudatpy 是 TU Delft Tudat 的 Python 接口，面向轨道传播、天体动力学仿真与教学。BSD-3-Clause；与 Orekit 互补（Python/C++ 绑定 vs Java）。非专用 GNSS POD 套件，但可作精密轨道/力模型实验底座；推荐用 conda 发行包，完整文档与示例见 tudat.space。",
+      "language": "Python",
+      "license": "BSD-3-Clause",
+      "category": "orbit-clock",
+      "subcategory": "轨道确定/基础库",
+      "markers": [
+        "routine-2026-09-24g"
+      ],
+      "stars_approx": 91,
+      "source": "routine-finds-20260924g",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "tudatpy：TU Delft 天体动力学 Python 工具箱"
+    },
+    {
+      "name": "orbdetpy",
+      "url": "https://github.com/ut-astria/orbdetpy",
+      "desc_zh": "UT ASTRIA：Python 轨道确定（OD）开源工具",
+      "analysis_zh": "德州大学 ASTRIA 实验室的 Orbit Determination with Python，面向空间目标轨道确定与相关仿真。GPL-3.0；填补目录中小型 OD 工具缺口，与 tudatpy/Orekit 可对照。偏空间态势感知场景，GNSS 测地级 POD 请另选 Ginan、GROOPS 等专用处理链。",
+      "language": "Java",
+      "license": "GPL-3.0",
+      "category": "orbit-clock",
+      "subcategory": "轨道确定/基础库",
+      "markers": [
+        "routine-2026-09-24g"
+      ],
+      "stars_approx": 129,
+      "source": "routine-finds-20260924g",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "orbdetpy：Python/Java 轨道确定开源工具"
+    },
+    {
+      "name": "Navipedia",
+      "url": "https://gssc.esa.int/navipedia/index.php/Main_Page",
+      "desc_zh": "ESA GSSC Navipedia：GNSS 百科与参考 Wiki",
+      "analysis_zh": "欧洲 GNSS 服务中心维护的 Navipedia，按主题整理卫星导航概念、系统与算法条目，是公开可编辑风格的 GNSS 参考 Wiki。官方 portal；适合教学查阅与概念对照，条目深度不一，工程实施与接口开发仍应回到 ICD 与正式标准原文核对。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "tools-learning",
+      "subcategory": "教材与工具索引",
+      "markers": [
+        "routine-2026-09-24g"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924g",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "Navipedia：ESA GSSC 的 GNSS 参考百科"
+    },
+    {
+      "name": "USCG-NAVCEN",
+      "url": "https://www.navcen.uscg.gov/",
+      "desc_zh": "美国海岸警卫队 Navigation Center：航海导航与 GNSS 信息门户",
+      "analysis_zh": "USCG Navigation Center 官网，发布航海航标、差分 GPS/导航服务公告与相关 GNSS 用户信息入口。官方 portal；偏海事与公共导航服务，不是 CORS RINEX 下载站。运行状态、用户通告与服务变更以站内最新公告为准。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "tools-learning",
+      "subcategory": "机构软件门户",
+      "markers": [
+        "routine-2026-09-24g"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924g",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NAVCEN：美国海岸警卫队导航与 GNSS 门户"
+    },
+    {
+      "name": "GPS.gov",
+      "url": "https://www.gps.gov/",
+      "desc_zh": "美国 GPS.gov：全球定位系统官方公众信息站",
+      "analysis_zh": "GPS.gov 是美国面向公众的 GPS 系统官方站点，汇总政策、现代化进展与用户资源入口。官方 portal；与 FAA WAAS、NAVCEN 等互补。技术 ICD 细节多链向其他 .gov 文档，下载、引用与再分发请遵循各目标页条款。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "tools-learning",
+      "subcategory": "机构软件门户",
+      "markers": [
+        "routine-2026-09-24g"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924g",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "GPS.gov：美国 GPS 系统官方公众信息站"
+    },
+    {
+      "name": "FindSnowOutliers",
+      "url": "https://github.com/kristinemlarson/FindSnowOutliers",
+      "desc_zh": "用 SNR 检测天线积雪导致的 GPS 坐标异常",
+      "analysis_zh": "Kristine Larson 团队 Matlab 工具：利用 SNR 判断天线积雪何时污染 GPS 坐标解。MIT 许可；属 GNSS-IR/多路径谱系的质控辅助。输入需匹配的 SNR 与坐标时序，真正雪深或水位反演请接 gnssrefl 等下游工具完成。",
+      "language": "MATLAB",
+      "license": "MIT",
+      "category": "troposphere",
+      "subcategory": "GNSS-IR",
+      "markers": [
+        "routine-2026-09-24g"
+      ],
+      "stars_approx": 4,
+      "source": "routine-finds-20260924g",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "FindSnowOutliers：SNR 检测天线积雪异常"
+    },
+    {
+      "name": "gpsonlySNR",
+      "url": "https://github.com/kristinemlarson/gpsonlySNR",
+      "desc_zh": "从 GPS RINEX 提取 SNR（GNSS-IR 前置）",
+      "analysis_zh": "Larson 团队 Fortran 工具，翻译/读取 GPS RINEX 并提取 SNR，服务反射测量流水线。MIT 许可；与 gnssSNR、gpssnrpy 同谱系、更偏 GPS-only 路径。RINEX 版本支持以说明为准，完整 GNSS-IR 反演需再接 gnssrefl 处理。",
+      "language": "Fortran",
+      "license": "MIT",
+      "category": "troposphere",
+      "subcategory": "GNSS-IR",
+      "markers": [
+        "routine-2026-09-24g"
+      ],
+      "stars_approx": 2,
+      "source": "routine-finds-20260924g",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "gpsonlySNR：GPS RINEX→SNR 提取工具"
+    },
+    {
+      "name": "rinex-masker",
+      "url": "https://github.com/J-kroeger/rinex-masker",
+      "desc_zh": "对 RINEX 施加遮挡掩膜并查看可见性/DOP 影响",
+      "analysis_zh": "汉诺威大学地球测量研究所工具：把障碍物掩膜应用到 RINEX，并展示对卫星可见性与 DOP 的影响。GPL-3.0（GitHub SPDX 常为 NOASSERTION）；与 rinex-adapter/atx-scanner 配套。适合测站选址与遮挡评估，星级低但主题缺口明确。",
+      "language": "Python",
+      "license": "GPL-3.0",
+      "category": "gnss-data",
+      "subcategory": "RINEX工具",
+      "markers": [
+        "routine-2026-09-24g"
+      ],
+      "stars_approx": 0,
+      "source": "routine-finds-20260924g",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "rinex-masker：RINEX 遮挡掩膜与 DOP 影响分析"
+    },
+    {
+      "name": "aacgmv2",
+      "url": "https://github.com/aburrell/aacgmv2",
+      "desc_zh": "AACGM-v2 地磁坐标转换的 Python 封装",
+      "analysis_zh": "aburrell 维护的 AACGM-v2 Python 库，在地理坐标与高度调整校正地磁坐标间转换，电离层/极光研究常用。MIT 许可；引用需同时给出包 DOI 与 Shepherd 2014 论文。与 apexpy、igrf 互补，它本身不是 GNSS 观测解算器。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "routine-2026-09-24g"
+      ],
+      "stars_approx": 35,
+      "source": "routine-finds-20260924g",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "aacgmv2：AACGM-v2 地磁坐标 Python 库"
+    },
+    {
+      "name": "gnss-integrity-raim",
+      "url": "https://github.com/OrbitAR7/gnss-integrity-raim",
+      "desc_zh": "Python RAIM：故障探测/排除与保护级示例",
+      "analysis_zh": "实用的 Receiver Autonomous Integrity Monitoring 教学实现，含卡方故障探测、排除与 HPL/VPL，并提供 Stanford 图等可视化。MIT 许可；填补目录中开源 RAIM 示例缺口。偏演示与课程，航空级认证请遵循相应 DO 标准与审定流程。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "gnss-positioning",
+      "subcategory": "RAIM/完好性",
+      "markers": [
+        "routine-2026-09-24g"
+      ],
+      "stars_approx": 4,
+      "source": "routine-finds-20260924g",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "gnss-integrity-raim：Python RAIM 与保护级示例"
+    },
+    {
+      "name": "DD-cycle-slip-lab",
+      "url": "https://github.com/VimsRocz/Double_difference_relative_positioning",
+      "desc_zh": "双差相对定位与周跳探测教学实验（城市场景）",
+      "analysis_zh": "面向双差（DD）相对定位与周跳探测的 Matlab 练习，附带城市环境静态多站 GPS 样例。MIT 许可；适合课程实验理解周跳与相对定位基础。非生产 RTK 引擎，数据与习题步骤绑定仓库说明文档。 细节以官方页面或仓库 README 为准。",
+      "language": "MATLAB",
+      "license": "MIT",
+      "category": "tools-learning",
+      "subcategory": "课程笔记",
+      "markers": [
+        "routine-2026-09-24g"
+      ],
+      "stars_approx": 7,
+      "source": "routine-finds-20260924g",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "DD-cycle-slip-lab：双差定位与周跳教学实验"
+    },
+    {
+      "name": "bladeGPS",
+      "url": "https://github.com/osqzss/bladeGPS",
+      "desc_zh": "面向 bladeRF 的实时 GPS 信号模拟器（osqzss）",
+      "analysis_zh": "osqzss 家族中针对 bladeRF 的实时 GPS 射频模拟前端。MIT，仓库已 archived；与 LimeGPS、pluto-gps-sim 形成不同硬件后端。仅限实验室或授权环境使用，务必遵守无线电法规，切勿对空非法发射。 细节以官方页面或仓库 README 为准。",
+      "language": "C",
+      "license": "MIT",
+      "category": "gnss-sdr",
+      "subcategory": "信号仿真",
+      "markers": [
+        "routine-2026-09-24g"
+      ],
+      "stars_approx": 157,
+      "source": "routine-finds-20260924g",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "bladeGPS：bladeRF 实时 GPS 信号模拟器"
+    },
+    {
+      "name": "Geodesy.jl",
+      "url": "https://github.com/JuliaGeo/Geodesy.jl",
+      "desc_zh": "Julia：多坐标系统点位与大地测量变换",
+      "analysis_zh": "JuliaGeo 的坐标系统与点位变换库，支持常见大地测量坐标转换。MIT 许可；填补目录 Julia 生态缺口。偏通用大地测量而非 GNSS 观测处理，完整解算请另接 Julia 或其他语言的 GNSS 专用库。 细节以官方页面或仓库 README 为准。",
+      "language": "Julia",
+      "license": "MIT",
+      "category": "tools-learning",
+      "subcategory": "坐标转换",
+      "markers": [
+        "routine-2026-09-24g"
+      ],
+      "stars_approx": 114,
+      "source": "routine-finds-20260924g",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "Geodesy.jl：Julia 坐标与大地测量变换库"
+    },
+    {
+      "name": "geomagindices",
+      "url": "https://github.com/space-physics/geomagindices",
+      "desc_zh": "地磁指数（Kp 等）获取与处理的 Python 小工具",
+      "analysis_zh": "space-physics 维护的地磁指数读写工具，常为电离层/空间天气研究提供 Kp 等辅助输入。MIT 许可；与 igrf、iri2016 等模型接口互补。数据源与更新频率见仓库说明，使用时注意指数时效性与规范引用。 细节以官方页面或仓库 README 为准。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "数据接口",
+      "markers": [
+        "routine-2026-09-24g"
+      ],
+      "stars_approx": 17,
+      "source": "routine-finds-20260924g",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "geomagindices：地磁指数 Python 读写工具"
     }
   ],
   "provenance_counts": {
-    "official": 233,
-    "academic_lab": 290,
-    "personal_community": 293
+    "official": 236,
+    "academic_lab": 298,
+    "personal_community": 296
   },
   "updated": "2026-09-24"
 }

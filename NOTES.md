@@ -325,3 +325,10 @@
 - 当前条目：**816**
 - 分类计数：{'ionosphere': 242, 'troposphere': 37, 'gnss-data': 119, 'gnss-positioning': 94, 'orbit-clock': 14, 'navigation-ins': 63, 'gnss-sdr': 61, 'mobile-apps': 22, 'tools-learning': 39, 'gnss-datasets': 125}
 - 详见 `research/routine_finds_20260924f.json`
+
+## 例行检索补录（2026-09-24g）
+
+- 新增 **14** 条（tudatpy/orbdetpy/Navipedia/NAVCEN/RAIM/rinex-masker/aacgmv2 等）
+- 当前条目：**830**
+- 分类计数：{'ionosphere': 244, 'troposphere': 39, 'gnss-data': 120, 'gnss-positioning': 95, 'orbit-clock': 16, 'navigation-ins': 63, 'gnss-sdr': 62, 'mobile-apps': 22, 'tools-learning': 44, 'gnss-datasets': 125}
+- 详见 `research/routine_finds_20260924g.json`

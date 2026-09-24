@@ -1,5 +1,5 @@
 # 精密定位 / Precise Positioning
-> **94** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **95** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
@@ -927,6 +927,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [RAIM_PANG_NAV](https://github.com/MichaelBeechan/RAIM_PANG_NAV) | 面向 PANG-NAV SPP 流程的 MATLAB RAIM 完好性监测实现 | MATLAB | 14 | 🏷️ 个人社区 |
+| [gnss-integrity-raim](https://github.com/OrbitAR7/gnss-integrity-raim) | gnss-integrity-raim：Python RAIM 与保护级示例 | Python | 4 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -936,6 +937,13 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 语言：MATLAB · 许可：BSD-3-Clause · 星标约：14 · 宿主：github
 
 在单点定位工具链上补充接收机自主完好性监测（RAIM），用于故障探测/排除与完好性告警相关研究与教学。适合航空等对完好性敏感的场景入门。实现深度与标准符合性需对照 DO-229 等规范自行核验；本仓并非完整 SBAS/ARAIM 产品级软件。
+
+#### [gnss-integrity-raim](https://github.com/OrbitAR7/gnss-integrity-raim)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：4 · 宿主：github
+
+实用的 Receiver Autonomous Integrity Monitoring 教学实现，含卡方故障探测、排除与 HPL/VPL，并提供 Stanford 图等可视化。MIT 许可；填补目录中开源 RAIM 示例缺口。偏演示与课程，航空级认证请遵循相应 DO 标准与审定流程。
 
 ## RTK/PPP
 
