@@ -1,6 +1,6 @@
 # IRI-2026-package · 官方 IRI-2026 zip 包操作手册
 
-目录：[`PROJECTS.json` → `IRI-2026-package`](../../PROJECTS.json) · 门户目录 <https://irimodel.org/IRI-2026/> · 许可 **AS IS + attribution**（包内 `00_iri2016-License.txt`）· 本机复拉 **2026-09-24 06:15 EDT**：`IRI-2026.zip` **1 823 544** B，sha256=`2377b0c07a4332c441cf010dc50b26dde8cfd4928d0335fb9a6560dced6a8f82`（sha₁₂=`2377b0c07a43`）· 编译/跑数 **见** [iri-fortran](./iri-fortran.md)（勿在本篇重跑 `iritest`）
+目录：[`PROJECTS.json` → `IRI-2026-package`](../../PROJECTS.json) · 门户目录 <https://irimodel.org/IRI-2026/> · 许可 **AS IS + attribution**（包内 `00_iri2016-License.txt`）· 本机复拉 **2026-09-24 06:15 EDT**：`IRI-2026.zip` **1 823 544** B，sha256=`2377b0c07a4332c441cf010dc50b26dde8cfd4928d0335fb9a6560dced6a8f82`（sha₁₂=`2377b0c07a43`）· 编译/跑数 **见** [iri-fortran](./iri-fortran.md)（勿在本篇重跑 `iritest`）· **质检复跑** 2026-09-24 06:19 EDT（复拉 zip **1823544**/sha₁₂=`2377b0c07a43` 与本地 **byte 一致**；`unzip -l` **69** 条目/解压 **68** 文件/合计 **5974782** B；ccir+ursi **24**；包内无 `apf107`/`ig_rz`；`apf107` **1402576**/`ig_rz` **10559** 仍对齐；HEAD tar **CL=6025728**/zip mtime **2026-08-07**；与 [iri-common-files](./iri-common-files.md) `cmp` **24/24**；**未重跑** `iritest`/`fort.7`→引用 [iri-fortran](./iri-fortran.md)）
 
 > 岗位：核对 **IRI-2026 发行物**里有什么、没有什么，以及和 **INDICES / COMMON_FILES / 旧版目录** 的边界。冲突时：**`00readme.txt` / irimodel 目录页 > 本文**。端到端 gfortran→`fort.7` 金标准数字只引用 [iri-fortran](./iri-fortran.md)。
 
@@ -31,7 +31,7 @@
 
 ## 2. 包内有什么 vs 没有什么
 
-本机 `unzip -l IRI-2026.zip`：**69** 条目（含 `IRI-zip/` 目录），解压后 **68** 个文件。
+本机 `unzip -l IRI-2026.zip`：**69** 条目（含 `IRI-zip/` 目录），解压后 **68** 个文件；质检复跑合计解压 **5974782** B。
 
 | 组 | 本机 zip 内 | 说明 |
 | --- | --- | --- |
@@ -93,7 +93,7 @@ ls -la apf107.dat ig_rz.dat
 # 期望量级：apf107 ≈1.3–1.4 MB；ig_rz ≈10 KB（门户会随日期改 mtime）
 
 unzip -l IRI-2026.zip | tail -3
-# 期望末行附近：69 files / 解压合计约 5.97 MB
+# 期望末行附近：69 files / 解压合计 5974782 B（≈5.97 MB）
 unzip -qo IRI-2026.zip
 ls IRI-zip/ccir*.asc IRI-zip/ursi*.asc | wc -l   # 期望：24
 ls IRI-zip/apf107.dat IRI-zip/ig_rz.dat 2>&1 | head -2
@@ -101,7 +101,7 @@ ls IRI-zip/apf107.dat IRI-zip/ig_rz.dat 2>&1 | head -2
 cp -a apf107.dat ig_rz.dat IRI-zip/
 ```
 
-**门户并行体积（HEAD，同日）：** `IRI-2026.tar` **Content-Length=6 025 728**；zip 仍是日常首选。
+**门户并行体积（质检复跑 HEAD）：** `IRI-2026.tar` **CL=6025728**（Last-Modified **2026-08-07**）；zip **CL=1823544** 同日；zip 仍是日常首选。
 
 编译与 `iritest`→`fort.7` **整段命令与金标准数字** → [iri-fortran §3–4](./iri-fortran.md)（本机曾得 NmF2=**893124.7** / hmF2=**259.16** / Ne@250=**886713** / TEC=**25.8**；本文不重跑、不另造剖面）。
 

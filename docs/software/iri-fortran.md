@@ -39,7 +39,7 @@
 | 太阳/地磁指数 | [indices](https://irimodel.org/indices/) | **必下且常更新** | **同上**（本机 `apf107.dat` **1 402 576** B / `ig_rz.dat` **10 559** B） |
 | 日更镜像（可选） | ECHAIM `apf107.dat` / `ig_rz.dat` | 业务复现建议 | 业务复现建议 |
 
-目录对照（`PROJECTS.json`）：门户总入口 **`IRI-Fortran`**；单版 **`IRI-2026-package`**；公共系数 **`IRI-COMMON-FILES`**；指数 **`IRI-indices`**。本手册覆盖总入口，验跑落在 **2026** 包。
+目录对照（`PROJECTS.json`）：门户总入口 **`IRI-Fortran`**；单版 **`IRI-2026-package`** → 短硬 [iri-2026-package](./iri-2026-package.md)；公共系数 **`IRI-COMMON-FILES`** → [iri-common-files](./iri-common-files.md)；指数 **`IRI-indices`**。本手册覆盖总入口，验跑落在 **2026** 包。
 
 ## 3. 安装 / 获取（本机已通）
 
@@ -179,6 +179,8 @@ c OUTF(1,*)=Ne[m-3]；OARR(1)=NmF2 … 细节见门户 IRI-output-arrays
 
 ## 7. 接到哪步
 
+- 官方 2026 发行物清单 / checksum → [iri-2026-package](./iri-2026-package.md)
+- ≤2016 另下 CCIR/URSI → [iri-common-files](./iri-common-files.md)
 - 气候态对照实测 TEC/GIM：[ionex-gim](./ionex-gim.md) · [pytecgg](./pytecgg.md) · 教程 [04](../tutorials/04-iri-nequick.md)
 - 快速 Python：[iri2016](./iri2016.md) · [pyiri](./pyiri.md) · [pyglow](./pyglow.md)；同化 [pyirtam](./pyirtam.md)
 - 在线点算（无本地 Fortran）：CCMC IRI 页面（门户链出）；本地金标准仍以本树为准
@@ -186,7 +188,7 @@ c OUTF(1,*)=Ne[m-3]；OARR(1)=NmF2 … 细节见门户 IRI-output-arrays
 
 ## 8. 工作流（短）
 
-1. 下 **IRI-2026.zip** + **indices**（≤2016 再加 COMMON_FILES）→ 解压并把指数拷进源码目录  
+1. 下 **IRI-2026.zip** + **indices**（清单见 [iri-2026-package](./iri-2026-package.md)；≤2016 再加 [iri-common-files](./iri-common-files.md)）→ 解压并把指数拷进源码目录  
 2. `gfortran … -o iri`（九个 `.for`）  
 3. `printf` 管道跑 `iritest` → 读 **`fort.7`**  
 4. 写进论文/对照脚本时锁定 **版本日期 + JF 默认**；需要 xarray 再桥 [iri2016](./iri2016.md)/自写读 `OUTF`

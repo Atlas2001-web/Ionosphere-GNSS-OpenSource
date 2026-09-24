@@ -1,6 +1,6 @@
 # IRI-COMMON-FILES · 官方公共 CCIR/URSI 系数目录操作手册
 
-目录：[`PROJECTS.json` → `IRI-COMMON-FILES`](../../PROJECTS.json) · 门户 <https://irimodel.org/COMMON_FILES/> · 本机复拉 **2026-09-24 06:15 EDT**：`00_ccir-ursi.zip` **351 482** B，sha256=`5427353c578f7cdae9d6f3041ba9a8f3a1ce855732c70f64f77ec5f81963466a`（sha₁₂=`5427353c578f`）· **24** 文件：`ccir11–22.asc` + `ursi11–22.asc` · 与 IRI-2026 包内同名文件本机 **byte 一致**
+目录：[`PROJECTS.json` → `IRI-COMMON-FILES`](../../PROJECTS.json) · 门户 <https://irimodel.org/COMMON_FILES/> · 本机复拉 **2026-09-24 06:15 EDT**：`00_ccir-ursi.zip` **351 482** B，sha256=`5427353c578f7cdae9d6f3041ba9a8f3a1ce855732c70f64f77ec5f81963466a`（sha₁₂=`5427353c578f`）· **24** 文件：`ccir11–22.asc` + `ursi11–22.asc` · 与 IRI-2026 包内同名文件本机 **byte 一致** · **质检复跑** 2026-09-24 06:19 EDT（复拉 zip **351482**/sha₁₂=`5427353c578f` 与本地 **byte 一致**；`unzip -l` **24** 文件/无子目录；`cmp` vs [iri-2026-package](./iri-2026-package.md) 内同名 **24/24**；HEAD zip **CL=351482**/门户索引 mtime **2023-10-29**；tar **CL=921600**；散 `.asc` 索引多标 **2013-04**；**未臆造** Ne/TEC→[iri-fortran](./iri-fortran.md)）
 
 > 岗位：讲清 **何时必须另下** 这套公共系数、文件放哪、以及 **混年版** 的坑。冲突时：**irimodel 说明 / 目标版本 `00readme.txt` > 本文**。编译跑数见 [iri-fortran](./iri-fortran.md)；2026 整包清单见 [iri-2026-package](./iri-2026-package.md)。
 
@@ -36,7 +36,7 @@
 | IRI-**2020** / **2026** | 已在版本 zip（24×`.asc`） | 仍必下 | 见 [iri-2026-package](./iri-2026-package.md) |
 | 只克隆 GitHub 包装 | 包装可能自带旧副本 | 常自带或另拉 | 以包装 README 为准 |
 
-本机交叉核验（2026-09-24）：COMMON_FILES 的 `ccir11.asc` / `ursi11.asc` 与 `IRI-2026.zip` 内同名文件 **`cmp` 一致**——说明 2026 捆的是同一套公共系数，不是“另一代秘密文件”。因此对 2026 用户：缺文件时优先查是否漏解压 zip，而不是先怀疑 COMMON 页过期。
+本机交叉核验（2026-09-24；质检复跑 06:19 EDT **24/24 `cmp -s`**）：COMMON_FILES 全部 `ccir%%.asc`/`ursi%%.asc` 与 `IRI-2026.zip` 内同名文件 **byte 一致**——说明 2026 捆的是同一套公共系数，不是“另一代秘密文件”。因此对 2026 用户：缺文件时优先查是否漏解压 zip，而不是先怀疑 COMMON 页过期。
 
 
 ## 2.1 与兄弟手册分工
@@ -90,7 +90,7 @@ ls "$SRC"/ccir*.asc "$SRC"/ursi*.asc | wc -l   # 期望：24
 
 **接到 IRI-2026：** 一般 **不必**再拷；若误删系数，可从本 zip 补回，或重新解 [IRI-2026.zip](./iri-2026-package.md)。完整编译→`fort.7` → [iri-fortran](./iri-fortran.md)。
 
-门户散挂的同名 `ccir%%.asc` / `ursi%%.asc` 与打包 zip 同源；日常用 zip 一次拉齐即可。`00_ccir-ursi.tar` HEAD **Content-Length=921 600**（可选）。
+门户散挂的同名 `ccir%%.asc` / `ursi%%.asc` 与打包 zip 同源；日常用 zip 一次拉齐即可。质检复跑 HEAD：`00_ccir-ursi.tar` **CL=921600**（可选）；zip **CL=351482**。
 
 ## 4. 文件放哪（对照）
 
