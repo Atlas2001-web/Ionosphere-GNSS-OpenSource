@@ -1,6 +1,6 @@
 # SPOCC · GFZ 多 AC 轨道/钟差综合操作手册
 
-目录：[`PROJECTS.json` → `SPOCC`](../../PROJECTS.json) · 服务页 <https://gnss.gfz.de/services/spocc> · 仓 <https://git.gfz-potsdam.de/gnss/spocc>（**登记后**）· 新闻 <https://www.gfz.de/en/section/space-geodetic-techniques/overview/details-section-news/veroeffentlichung-der-software-for-precise-orbit-and-clock-combination-spocc-1> · IGSmail-8560 <https://lists.igs.org/pipermail/igsmail/2025/008556.html> · 许可 **SPOCC Scientific License v1.0**（2024-11-07；非正式 OSI 开源）· 语言 **Python**（YAML 配置；新闻/IGSmail 另提 **Docker**）· IGS Workshop 2024 海报 <https://files.igs.org/pub/resource/pubs/workshop/2024/IGSWS-2024-PS0210-Mansur-SPOCC_-_a_GFZ_Software_Tool_for_a_Multi-GNSS_Orbit_and_Clock_Combination.pdf> · 本机验证（**2026-09-24 07:02 EDT**）：服务页 Inertia `auth.user=None` / `is_subscribed=False`；公开 PDF 许可 **441441** B（sha₁₂=`d70eeefc667a`）+ GDPR **192047** B（sha₁₂=`faa0c1676f57`）；`git ls-remote` → **EXIT 128**（需登录）；`info/refs` **HTTP 401**；PyPI `spocc` **404**；Docker Hub `gfz/spocc` **404**；**无仓 → 未装未跑 → 未臆造 SP3/CLK 综合产品**。
+目录：[`PROJECTS.json` → `SPOCC`](../../PROJECTS.json) · 服务页 <https://gnss.gfz.de/services/spocc> · 仓 <https://git.gfz-potsdam.de/gnss/spocc>（**登记后**）· 新闻 <https://www.gfz.de/en/section/space-geodetic-techniques/overview/details-section-news/veroeffentlichung-der-software-for-precise-orbit-and-clock-combination-spocc-1> · IGSmail-8560 <https://lists.igs.org/pipermail/igsmail/2025/008556.html> · 许可 **SPOCC Scientific License v1.0**（2024-11-07；非正式 OSI 开源）· 语言 **Python**（YAML 配置；新闻/IGSmail 另提 **Docker**）· IGS Workshop 2024 海报 <https://files.igs.org/pub/resource/pubs/workshop/2024/IGSWS-2024-PS0210-Mansur-SPOCC_-_a_GFZ_Software_Tool_for_a_Multi-GNSS_Orbit_and_Clock_Combination.pdf> · 本机验证（**2026-09-24 07:02 EDT**；质检复跑 **07:12 EDT**：Inertia `auth.user=None`/`is_subscribed=False`；License **441441** B/sha₁₂=`d70eeefc667a`；GDPR **192047** B/sha₁₂=`faa0c1676f57`；`git ls-remote` **EXIT 128**/`info/refs` **401**；PyPI/Docker Hub **404**；海报 **1682069** B/sha₁₂=`cedac7fb36d5`；**无仓未臆造** SP3/CLK）：服务页 Inertia `auth.user=None` / `is_subscribed=False`；公开 PDF 许可 **441441** B（sha₁₂=`d70eeefc667a`）+ GDPR **192047** B（sha₁₂=`faa0c1676f57`）；`git ls-remote` → **EXIT 128**（需登录）；`info/refs` **HTTP 401**；PyPI `spocc` **404**；Docker Hub `gfz/spocc` **404**；**无仓 → 未装未跑 → 未臆造 SP3/CLK 综合产品**。
 
 > 岗位：**多分析中心（AC）精密轨道（SP3）+ 钟差（RINEX CLK）加权综合**（VCE）→ 多星座一致产品试验 / IGS Combination Taskforce 工具箱之一。冲突时：**服务页 / Scientific License / 获批仓 README·YAML > 本文**。  
 > 公开可跑旁路：[clkcomb](./clkcomb.md)（钟/偏差合成）· 偏差链 [gkit-bias](./gkit-bias.md)/[mcosb](./mcosb.md)/[great-upd](./great-upd.md) · 产品门户 [data-access](../data-access.md)「SP3 / CLK / bias」。**≠** PPP 引擎；**≠** 官方 IGS 最终产品本身。
@@ -196,7 +196,7 @@ git rev-parse --short HEAD
 
 | 检查项 | 结果 |
 | --- | --- |
-| 服务页可达 | 是（2026-09-24 07:02 EDT） |
+| 服务页可达 | 是（2026-09-24 07:12 EDT 复跑） |
 | 匿名源码 / PyPI / 官方 Docker Hub | **否**（GitLab 401/128；PyPI 404；`gfz/spocc` 404） |
 | 公开 License + GDPR PDF | 是（441441 / 192047 B） |
 | 海报 / IGSmail | 是（1682069 B；2025-01-24 公告） |
