@@ -1,6 +1,6 @@
 # rinex · Rust RINEX 解析/生成库（nav-solutions）操作手册
 
-目录：[`PROJECTS.json` → `rinex`](../../PROJECTS.json) · 上游 <https://github.com/nav-solutions/rinex> · crates.io **`rinex` 0.22.0**（**tip 超前** → 仓内 **`0.23.0`**）· tip **`25ca197`**（2026-09-10；RINEX **4.02** NAV）· **MPL-2.0** · MSRV **1.89**（本机 **rustc 1.98.1**）· 本机验证（**2026-09-24 06:36 EDT**）：`cargo build --release`（features 默认+`obs`）；ACOR V3.4 **25** 历元 / G07 **C1C=23818653.24** / **L1C=125167854.812** / 信号 **9036** / `format` **182225** B；同站 `.crx` → `is_crinex` + 同观测；delf V2.11 **105** 历元
+目录：[`PROJECTS.json` → `rinex`](../../PROJECTS.json) · 上游 <https://github.com/nav-solutions/rinex> · crates.io **`rinex` 0.22.0**（**tip 超前** → 仓内 **`0.23.0`**）· tip **`25ca197`**（2026-09-10；RINEX **4.02** NAV）· **MPL-2.0** · MSRV **1.89**（本机 **rustc 1.98.1**）· 本机验证（**2026-09-24 06:36 EDT**）：`cargo build --release`（features 默认+`obs`）；ACOR V3.4 **25** 历元 / G07 **C1C=23818653.24** / **L1C=125167854.812** / 信号 **9036** / `format` **182225** B；同站 `.crx` → `is_crinex` + 同观测；delf V2.11 **105** 历元 · **质检复跑** 2026-09-24 06:40 EDT（tip **`25ca197`**/仓内 **0.23.0**/rustc **1.98.1**；ACOR RNX **25**/C1C=**23818653.24**/L1C=**125167854.812**/信号 **9036**/format **182225** B；`data/CRNX/V3` 同站 `.crx` → `is_crinex` + 同值 / format **77603** B；delf **105**/format **252130** B；交叉 [rinex-cli](./rinex-cli.md)/[georinex](./georinex.md)/[crx2rnx](./crx2rnx.md)/[ionex-rs](./ionex-rs.md)；**未改** 对照页；**未臆造** NAV/IONEX stdout）
 
 > 岗位：把 OBS/NAV/MET/CLK/ANTEX 等 **RINEX 解析进 Rust**，可写回、可 CRX、可挂预处理/QC feature。冲突时：**docs.rs `rinex` / 仓内 README / 本机 binary > 本文**。  
 > **CLI QC** → [rinex-cli](./rinex-cli.md)；Python xarray → [georinex](./georinex.md)；C++ 核 → [gnsstk](./gnsstk.md)；IONEX 另库 → [ionex-rs](./ionex-rs.md)；Hatanaka 官方/Python → [rnxcmp](./rnxcmp.md)/[hatanaka](./hatanaka.md)；仅解压 CLI → [crx2rnx](./crx2rnx.md)；改头 → [rinexmod](./rinexmod.md)；清洗 → [gfzrnx](./gfzrnx.md)。
@@ -97,7 +97,7 @@ let mut out = BufWriter::new(Vec::new());
 rnx.format(&mut out)?;
 ```
 
-**本机 stdout（tip `25ca197`，2026-09-24 06:36 EDT）：**
+**本机 stdout（tip `25ca197`，2026-09-24 06:36 EDT；质检复跑 06:40 EDT 对齐）：**
 
 ```text
 # ACOR …MO.rnx
@@ -106,7 +106,7 @@ n_epochs 25  epoch_first 2021-12-21T00:00:00 GPST  last …T00:12:00 GPST
 n_signal_obs 9036  G07_C1C 23818653.24  G07_L1C 125167854.812
 format_bytes 182225
 
-# 同站 ACOR…MO.crx → is_crinex true；C1C/L1C/历元数一致；format_bytes 77603
+# data/CRNX/V3/ACOR…MO.crx → is_crinex true；C1C/L1C/历元数一致；format_bytes 77603
 # data/OBS/V2/delf0010.21o → version 2.11；n_epochs 105；format_bytes 252130
 ```
 

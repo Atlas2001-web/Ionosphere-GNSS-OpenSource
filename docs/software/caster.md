@@ -1,6 +1,6 @@
 # Node-NTRIP caster · `@ntrip/caster`（Node.js NTRIP 库）操作手册
 
-目录：[`PROJECTS.json` → `caster`](../../PROJECTS.json) · 上游 <https://github.com/Node-NTRIP/caster> · npm **`@ntrip/caster` 0.3.2** · tip **`176e5cf`**（2022-12-24）· **GPL-3.0-or-later** · `Caster.NAME`=**`NodeNtripCaster/0.0.1`** · 本机验证（**2026-09-24 06:35 EDT**）：**Node v16.20.2** + `tsc` 产物；口 **18711**；空源表 body **`ENDSOURCETABLE\r\n`**（**16** B）；在线 **`STR;LAB1`**；客 `HTTP/1.1 200` + `gnss/data` 分块透传占位 **33** B（帧面 **39** B）；`POST /LAB2`→**200**；V1 `SOURCE`→**`ICY 200 OK`**；未知挂载→**500**；**未臆造 RTCM**
+目录：[`PROJECTS.json` → `caster`](../../PROJECTS.json) · 上游 <https://github.com/Node-NTRIP/caster> · npm **`@ntrip/caster` 0.3.2** · tip **`176e5cf`**（2022-12-24）· **GPL-3.0-or-later** · `Caster.NAME`=**`NodeNtripCaster/0.0.1`** · 本机验证（**2026-09-24 06:35 EDT**）：**Node v16.20.2** + `tsc` 产物；口 **18711**；空源表 body **`ENDSOURCETABLE\r\n`**（**16** B）；在线 **`STR;LAB1`**；客 `HTTP/1.1 200` + `gnss/data` 分块透传占位 **33** B（帧面 **39** B）；`POST /LAB2`→**200**；V1 `SOURCE`→**`ICY 200 OK`**；未知挂载→**500**；**未臆造 RTCM** · **质检复跑** 2026-09-24 06:40 EDT（tip **`176e5cf`**/npm **0.3.2**/`Caster.NAME`=**`NodeNtripCaster/0.0.1`**/Node **v16.20.2**；口 **18711**；空表 body **16** B；在线 **`STR;LAB1`**；客 **200**/chunk **39** B/占位 **33** B；`POST` **200**/`ICY 200`；未知 **500**；交叉 [bkg-ntripcaster](./bkg-ntripcaster.md)/[ntripcaster-libev](./ntripcaster-libev.md)/[ntrip-go](./ntrip-go.md)/[ntripstreams](./ntripstreams.md)/[pygnssutils](./pygnssutils.md)；**未改** 对照页；**未臆造 RTCM**）
 
 > 岗位：用 **TypeScript/Node** 嵌 NTRIP **V1/V2** caster（HTTP/可选 RTSP/RTP）、推拉远端、串口/文件/流传输与可插拔鉴权。冲突时：**上游 README / `src/` / 本机冒烟 > 本文**。  
 > 公网源表/订流 → [data-access](../data-access.md)；生产多用户 → [bkg-ntripcaster](./bkg-ntripcaster.md)；实验室 JSON **1.0** → [ntripcaster-libev](./ntripcaster-libev.md)；Go 嵌入 → [ntrip-go](./ntrip-go.md)；门户地图 → [rtcm-ntrip-software](./rtcm-ntrip-software.md)；台站 Web → [rtkbase](./rtkbase.md)；订流脚本 → [ntrip-client](./ntrip-client.md)/[bnc](./bnc.md)。
@@ -109,7 +109,7 @@ body(chunked): 21\r\nSMOKE-PLACEHOLDER-BYTES-NOT-RTCM\n\r\n   ← 占位 33 B
 # GET /NOSUCH                     → HTTP/1.1 500 Internal Server Error
 ```
 
-**本机（2026-09-24 06:35 EDT，Node 16.20.2，tip `176e5cf`）：** 上表状态码与 body 均已复现；占位串**不是** RTCM。
+**本机（2026-09-24 06:35 EDT，Node 16.20.2，tip `176e5cf`）：** 上表状态码与 body 均已复现；占位串**不是** RTCM。· **质检复跑** 2026-09-24 06:40 EDT 对齐。
 
 ## 4. I/O 与参数
 
@@ -164,4 +164,4 @@ body(chunked): 21\r\nSMOKE-PLACEHOLDER-BYTES-NOT-RTCM\n\r\n   ← 占位 33 B
 
 ## 8. 相关
 
-[bkg-ntripcaster](./bkg-ntripcaster.md) · [ntripcaster-libev](./ntripcaster-libev.md) · [ntrip-go](./ntrip-go.md) · [ntrip-cpp](./ntrip-cpp.md) · [ntrip-client](./ntrip-client.md) · [bnc](./bnc.md) · [rtkbase](./rtkbase.md) · [rtcm-ntrip-software](./rtcm-ntrip-software.md) · [pygnssutils](./pygnssutils.md) · [data-access](../data-access.md) · [README](./README.md)
+[bkg-ntripcaster](./bkg-ntripcaster.md) · [ntripcaster-libev](./ntripcaster-libev.md) · [ntrip-go](./ntrip-go.md) · [ntripstreams](./ntripstreams.md) · [ntrip-cpp](./ntrip-cpp.md) · [ntrip-client](./ntrip-client.md) · [bnc](./bnc.md) · [rtkbase](./rtkbase.md) · [rtcm-ntrip-software](./rtcm-ntrip-software.md) · [pygnssutils](./pygnssutils.md) · [data-access](../data-access.md) · [README](./README.md)
