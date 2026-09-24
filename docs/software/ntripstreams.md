@@ -1,6 +1,6 @@
 # ntripstreams · NTRIP 协议通信操作手册
 
-目录：[`PROJECTS.json` → `ntripstreams`](../../PROJECTS.json) · 上游 <https://github.com/stenseng/ntripstreams> · PyPI **`ntripstreams` 0.3.5** · tip **`889ffb9`** · MIT · Python ≥3.10 · 依赖 `bitstring`≥4.4 · 本机验证 0.3.5（CLI 拉 **rtk2go** / **igs-ip** 公开 sourcetable；`NtripStream.requestSourcetable` API；无订户时未订流；`Rtcm3` 解上游 `tests/data` 样帧 + `AgPartner_2.rtcm3` 251 帧；1029 编码；`crc24q`/`crcNmea`）· 2026-09-24 04:53 EDT
+目录：[`PROJECTS.json` → `ntripstreams`](../../PROJECTS.json) · 上游 <https://github.com/stenseng/ntripstreams> · PyPI **`ntripstreams` 0.3.5** · tip **`889ffb9`** · MIT · Python ≥3.10 · 依赖 `bitstring`≥4.4 · 本机验证 0.3.5（CLI 拉 **rtk2go** / **igs-ip** 公开 sourcetable；`NtripStream.requestSourcetable` API；无订户时未订流；`Rtcm3` 解上游 `tests/data` 样帧 + `AgPartner_2.rtcm3` 251 帧；1029 编码；`crc24q`/`crcNmea`）· 2026-09-24 04:53 EDT · **质检复跑通过**（rtk2go **767**/STR**765**；igs-ip **391**/STR**384**/status **200**；无订户订流 `ConnectionError` HTTP **400**；AgPartner_2 **251** 帧/nTypes **19**；1005/1077 CRC；`nmea_crc 47`；tip `889ffb9`；2026-09-24 04:59 EDT）
 
 > 岗位：Python **asyncio NTRIP 客户/服务端握手** + 内置 **RTCM 3 帧编解码（部分消息）**。冲突时：**上游 README / `ntripstreams -h` / 本机 `help(NtripStream)` > 本文**。更完整 CLI/多协议录流 → [pygnssutils](./pygnssutils.md)；生产多用户 caster → [bkg-ntripcaster](./bkg-ntripcaster.md)；多流 GUI 录盘 → [bnc](./bnc.md)；NMEA 专用编解码 → [pynmeagps](./pynmeagps.md)；深度 RTCM3/MSM → [pyrtcm](./pyrtcm.md)。
 
@@ -56,7 +56,7 @@ python -c "from ntripstreams import NtripStream, Rtcm3; print(NtripStream, Rtcm3
 | `bitstring` 报 `=name` 标签错 | 旧 bitstring | 钉 `ntripstreams==0.3.5`（要求 `bitstring>=4.4,<5`） |
 | CLI 无输出 / 卡住 | caster 拒连或慢 | 先 `ntripstreams http://igs-ip.net:2101`；超时用 `timeout 30` |
 
-## 3. 端到端（本机 0.3.5 真跑，2026-09-24 04:53 EDT）
+## 3. 端到端（本机 0.3.5 真跑；质检复跑 2026-09-24 04:59 EDT）
 
 本机**无 NTRIP 订户口令**：下列含 **公开 sourcetable** + **本地 API/样帧**；订流在无认证时会 400（见 §3.4 / 坑表）。stdout **摘自实跑**，挂载点数随 caster 变化，勿当金样。
 
@@ -64,10 +64,13 @@ python -c "from ntripstreams import NtripStream, Rtcm3; print(NtripStream, Rtcm3
 
 ```bash
 source ~/iono_ops/ntripstreams-demo/.venv/bin/activate
+# 摘前几行可 head；精确计数请整表落盘（避免 BrokenPipe，见坑 #13）
 ntripstreams http://rtk2go.com:2101 | head -5
-ntripstreams http://rtk2go.com:2101 | wc -l
+ntripstreams http://rtk2go.com:2101 > /tmp/rtk2go_st.txt
+wc -l /tmp/rtk2go_st.txt; grep -c '^STR;' /tmp/rtk2go_st.txt
 ntripstreams http://igs-ip.net:2101 | head -8
-ntripstreams http://igs-ip.net:2101 | grep -c '^STR;'
+ntripstreams http://igs-ip.net:2101 > /tmp/igsip_st.txt
+wc -l /tmp/igsip_st.txt; grep -c '^STR;' /tmp/igsip_st.txt
 ```
 
 **本机 stdout（摘录）：**
@@ -265,6 +268,7 @@ ntripstreams http://rtk2go.com:2101 -m aamakinen -u "$NTRIP_USER" -p "$NTRIP_PAS
 | 10 | 口令进 git / 进手册 | 环境变量未隔离 | 只用 env/`chmod 600` conf；示例用占位符 |
 | 11 | 与 pygnssutils 行为不一致 | 两套栈（asyncio 轻量 vs semuconsulting 全家桶） | 选型见 §7；勿混期望同一旗标 |
 | 12 | 期望本库出固定解 / TEC | 职责仅协议+部分 RTCM | 改正进接收机或 PPP；TEC → [georinex](./georinex.md)/[pytecgg](./pytecgg.md) |
+| 13 | `| head` 后 stderr `Broken pipe` / `BrokenPipeError` | CLI 写满 stdout 被 `head` 关管道 | 计数用重定向：`ntripstreams URL > /tmp/st.txt` 再 `wc`/`grep`；或 `… 2>/dev/null | head` |
 
 ## 7. 选型
 

@@ -1,6 +1,6 @@
 # GAMPII-GOOD · GNSS 观测与产品下载器（GOOD）操作手册
 
-目录：[`PROJECTS.json` → `GAMPII-GOOD`](../../PROJECTS.json) · 上游 <https://github.com/zhouforme0318/GAMPII-GOOD> · 许可 **GPL-3.0**（`LICENSE`）· tip **`479aa14`**（2024-02-25，README「version 3.1」）· 二进制入口 **`run_GOOD`** · 本机验证（2026-09-24 EDT）：CMake Release 编译通过；无参用法 exit **255**；WHU FTP `mixed3` BRDC + HTTPS ANTEX 实拉成功 · ★≈124
+目录：[`PROJECTS.json` → `GAMPII-GOOD`](../../PROJECTS.json) · 上游 <https://github.com/zhouforme0318/GAMPII-GOOD> · 许可 **GPL-3.0**（`LICENSE`）· tip **`479aa14`**（2024-02-25，README「version 3.1」）· 二进制入口 **`run_GOOD`** · 本机验证（2026-09-24 EDT）：CMake Release 编译通过；无参用法 exit **255**；WHU FTP `mixed3` BRDC + HTTPS ANTEX 实拉成功 · ★≈124 · **质检复跑通过**（无参 Usage exit **255**；缺 YAML exit **0**；BRDC/brdm **11371068** B；`igs14.atx` **23412643** / `igs20.atx` **61300492**；重跑 `has existed!`；tip `479aa14`；2026-09-24 04:59 EDT）
 
 > 岗位：用 **一份 YAML** 批量拉 IGS/MGEX/CORS 观测、广播星历、精密 sp3/clk、EOP、ORBEX、DCB/OSB、SINEX、GIM/ROTI、对流层、ANTEX——专为 **GAMP II / PPP 流水线备数**。冲突时：**仓内 `README` / `doc/GOOD v3.1 Users Guide.pdf` / 本机 stdout > 本文**。门户总表 → [data-access](../data-access.md)；GUI 多模块 → [gdds](./gdds.md)；下载+QC+粗 SPP → [fast](./fast.md)。
 
@@ -59,7 +59,7 @@ ls -la ../bin/run_GOOD
 | 观测下完仍是 `.crx` | `3partyDir/crx2rnx` 缺失或无执行位 | `chmod +x …/crx2rnx`；可用 [rnxcmp](./rnxcmp.md)/[hatanaka](./hatanaka.md) 补 |
 | Windows | 需 MSVC + VS Code CMake 套件 | 见上游 README §1.4；跑 `.\bin\Release\run_GOOD.exe .\dataset_Win\GOOD_cfg.yaml` |
 
-## 3. 端到端：用法 → YAML → 真下载（本机实跑）
+## 3. 端到端：用法 → YAML → 真下载（本机实跑；质检复跑 2026-09-24 04:59 EDT）
 
 ### 3.1 无参 / 坏配置（期望输出）
 
@@ -164,7 +164,7 @@ GAMP II: intelliGent Analysis system for Multi-sensor integrated navigation and 
 | `tbl/igs20.atx` | 61300492 | 同上；ANTEX 1.4 |
 | `log/log.txt` | （小） | `url -> local OK` 审计行 |
 
-重跑同一 YAML：
+重跑同一 YAML（质检复跑同文；字节未变）：
 
 ```text
 *** INFO(FtpUtil::GetNav): broadcast ephemeris file BRDC00IGS_R_20240010000_01D_MN.rnx or brdm0010.24p has existed!
