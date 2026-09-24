@@ -10,6 +10,7 @@ if str(Path(__file__).resolve().parent) not in sys.path:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
 from sync_readme_counts import sync_readme_counts
 from _idempotent_io import append_notes_section, write_json_if_changed, write_text_if_changed
+from _merge_fields import merge_project_fields
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -854,15 +855,21 @@ def update_categories_md(counts):
 def main():
     with open(ROOT / "PROJECTS.json", encoding="utf-8") as f:
         cat = json.load(f)
-    existing_urls = {p["url"].rstrip("/").lower() for p in cat["projects"]}
+    by_url = {p["url"].rstrip("/").lower(): p for p in cat["projects"]}
     existing_names = {p["name"] for p in cat["projects"]}
 
     added = []
+    updated = []
     for raw in NEW_ENTRIES:
         e = finalize_entry(raw)
         u = e["url"].rstrip("/").lower()
-        if u in existing_urls:
-            print("SKIP dup url", e["name"], e["url"])
+        if u in by_url:
+            changed = merge_project_fields(by_url[u], e)
+            if changed:
+                updated.append((e["name"], changed))
+                print("UPDATE", e["name"], ",".join(changed))
+            else:
+                print("SKIP dup url", e["name"], e["url"])
             continue
         if e["name"] in existing_names:
             print("SKIP dup name", e["name"], e["url"])
@@ -872,12 +879,13 @@ def main():
         if nchars < 150 or nchars > 300:
             print(f"WARN length {e['name']}: {nchars}")
         cat["projects"].append(e)
-        existing_urls.add(u)
+        by_url[u] = e
         existing_names.add(e["name"])
         added.append(e)
 
-    if not added:
+    if not added and not updated:
         print("ADDED", 0)
+        print("UPDATED", 0)
         print("TOTAL", len(cat["projects"]))
         print("SKIP_WRITE (no new entries; leave lists/categories/NOTES/PROJECTS/README untouched)")
         return
@@ -905,6 +913,7 @@ def main():
     )
 
     print("ADDED", len(added))
+    print("UPDATED", len(updated))
     print("TOTAL", cat["project_count"])
     print("COUNTS", cat["counts_by_category"])
     for a in added:

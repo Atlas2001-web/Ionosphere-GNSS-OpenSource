@@ -13,6 +13,7 @@ if str(Path(__file__).resolve().parent) not in sys.path:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
 from sync_readme_counts import sync_readme_counts
 from _idempotent_io import append_notes_section, write_json_if_changed, write_text_if_changed
+from _merge_fields import merge_project_fields
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECTS_PATH = ROOT / "PROJECTS.json"
@@ -268,15 +269,31 @@ def main() -> None:
     portals = json.loads(PORTALS_PATH.read_text(encoding="utf-8"))
     projects = catalog["projects"]
 
-    existing_urls = {norm_url(p["url"]) for p in projects}
+    by_url = {norm_url(p["url"]): p for p in projects}
     existing_names = {p["name"] for p in projects}
 
     added = []
+    updated = []
     skipped = []
     for f in portals:
         nu = norm_url(f["url"])
-        if nu in existing_urls:
-            skipped.append((f["name"], "dup_url", f["url"]))
+        if nu in by_url:
+            incoming = {
+                "license": f.get("license") or "",
+                "language": f.get("language") or "",
+                "provenance": f.get("provenance") or "",
+                "desc_zh": f.get("one_liner_zh") or f.get("desc_zh") or "",
+                "one_liner_zh": f.get("one_liner_zh") or "",
+                "analysis_zh": f.get("analysis_zh") or "",
+                "host": f.get("host") or "",
+            }
+            changed = merge_project_fields(by_url[nu], incoming)
+            if changed:
+                updated.append((f["name"], changed))
+                print("UPDATE", f["name"], ",".join(changed))
+                skipped.append((f["name"], "dup_url_enriched", f["url"]))
+            else:
+                skipped.append((f["name"], "dup_url", f["url"]))
             continue
         if f["name"] in existing_names:
             skipped.append((f["name"], "dup_name", f["url"]))
@@ -307,12 +324,13 @@ def main() -> None:
             "registration_zh": f.get("registration_zh") or "",
         }
         projects.append(entry)
-        existing_urls.add(nu)
+        by_url[nu] = entry
         existing_names.add(entry["name"])
         added.append(entry["name"])
 
-    if not added:
+    if not added and not updated:
         print("ADDED", 0)
+        print("UPDATED", 0)
         print("SKIPPED", len(skipped))
         print("TOTAL", len(projects))
         print("SKIP_WRITE (no new portals; leave lists/categories/NOTES/PROJECTS/README untouched)")
@@ -420,6 +438,7 @@ def main() -> None:
     )
 
     print("ADDED", len(added))
+    print("UPDATED", len(updated))
     print("SKIPPED", len(skipped))
     print("TOTAL", total)
     print("GNSS_DATASETS", counts.get("gnss-datasets", 0))

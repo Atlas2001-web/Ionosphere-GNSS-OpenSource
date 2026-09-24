@@ -18,6 +18,7 @@ from _idempotent_io import (
     write_json_if_changed,
     write_text_if_changed,
 )
+from _merge_fields import merge_project_fields
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECTS_PATH = ROOT / "PROJECTS.json"
@@ -576,17 +577,24 @@ def main():
     for p in projects:
         normalize_incomplete(p)
 
-    existing_urls = {norm_url(p["url"]) for p in projects}
+    by_url = {norm_url(p["url"]): p for p in projects}
     existing_names = {p["name"] for p in projects}
 
     added = []
+    updated = []
     for raw in NEW_ENTRIES:
         # forbid 旨在/赋能
         assert "旨在" not in raw["analysis_zh"] and "赋能" not in raw["analysis_zh"]
         assert "旨在" not in raw["one_liner_zh"] and "赋能" not in raw["one_liner_zh"]
         nu = norm_url(raw["url"])
-        if nu in existing_urls:
-            print("SKIP url", raw["name"], raw["url"])
+        if nu in by_url:
+            incoming = finalize_new(raw)
+            changed = merge_project_fields(by_url[nu], incoming)
+            if changed:
+                updated.append((raw["name"], changed))
+                print("UPDATE", raw["name"], ",".join(changed))
+            else:
+                print("SKIP url", raw["name"], raw["url"])
             continue
         if raw["name"] in existing_names:
             print("SKIP name", raw["name"])
@@ -596,13 +604,14 @@ def main():
         if nchars < 120 or nchars > 320:
             print(f"WARN length {e['name']}: {nchars}")
         projects.append(e)
-        existing_urls.add(nu)
+        by_url[nu] = e
         existing_names.add(e["name"])
         added.append(e)
 
     normalized_only = (not added) and not projects_substantively_equal(projects, original_projects)
-    if not added and not normalized_only:
+    if not added and not updated and not normalized_only:
         print("ADDED", 0)
+        print("UPDATED", 0)
         print("TOTAL", len(projects))
         print("SKIP_WRITE (no new entries / no normalize changes)")
         return
@@ -655,6 +664,7 @@ def main():
     )
 
     print("ADDED", len(added))
+    print("UPDATED", len(updated))
     print("TOTAL", catalog["project_count"])
     print("COUNTS", dict(catalog["counts_by_category"]))
     for a in added:

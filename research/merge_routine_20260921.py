@@ -13,6 +13,7 @@ if str(Path(__file__).resolve().parent) not in sys.path:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
 from sync_readme_counts import sync_readme_counts
 from _idempotent_io import append_notes_section, write_json_if_changed, write_text_if_changed
+from _merge_fields import merge_project_fields
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECTS_PATH = ROOT / "PROJECTS.json"
@@ -269,16 +270,23 @@ def main():
     projects = catalog["projects"]
     finds = json.loads(FINDS_PATH.read_text(encoding="utf-8"))
 
-    existing_urls = {norm_url(p["url"]) for p in projects}
+    by_url = {norm_url(p["url"]): p for p in projects}
     existing_names = {p["name"] for p in projects}
 
     added = []
+    updated = []
     for raw in finds:
         assert "旨在" not in raw["analysis_zh"] and "赋能" not in raw["analysis_zh"]
         assert "旨在" not in raw["one_liner_zh"] and "赋能" not in raw["one_liner_zh"]
         nu = norm_url(raw["url"])
-        if nu in existing_urls:
-            print("SKIP url", raw["name"], raw["url"])
+        if nu in by_url:
+            incoming = finalize_new(raw)
+            changed = merge_project_fields(by_url[nu], incoming)
+            if changed:
+                updated.append((raw["name"], changed))
+                print("UPDATE", raw["name"], ",".join(changed))
+            else:
+                print("SKIP url", raw["name"], raw["url"])
             continue
         if raw["name"] in existing_names:
             print("SKIP name", raw["name"])
@@ -288,14 +296,15 @@ def main():
         if nchars < 120 or nchars > 320:
             print(f"WARN length {e['name']}: {nchars}")
         projects.append(e)
-        existing_urls.add(nu)
+        by_url[nu] = e
         existing_names.add(e["name"])
         added.append(e)
 
-    if not added:
+    if not added and not updated:
         print("ADDED", 0)
+        print("UPDATED", 0)
         print("TOTAL", len(projects))
-        print("SKIP_WRITE (no new entries; leave lists/categories/NOTES/PROJECTS/README untouched)")
+        print("SKIP_WRITE (no new entries / no enrichment updates; leave lists/categories/NOTES/PROJECTS/README untouched)")
         return
 
     counts = Counter(p["category"] for p in projects)
@@ -317,13 +326,15 @@ def main():
     regenerate_categories(counts)
     regenerate_readme(projects, counts, prov_counts)
 
-    append_notes_section(
-        ROOT / "NOTES.md",
-        "## 例行检索补录（2026-09-21）",
-        f"- 新增 **{len(added)}** 条（earthscope-sdk/gnssanalysis/PyGNSSFix/ntrip-core/esp32-xbee/Heki/gnssFGO/UFCORS/OPUS 等）\n" + f"- 当前条目：**{catalog['project_count']}**\n" + f"- 分类计数：{dict(catalog['counts_by_category'])}\n" + f"- 详见 `research/routine_finds_20260921.json`\n",
-    )
+    if added:
+        append_notes_section(
+            ROOT / "NOTES.md",
+            "## 例行检索补录（2026-09-21）",
+            f"- 新增 **{len(added)}** 条（earthscope-sdk/gnssanalysis/PyGNSSFix/ntrip-core/esp32-xbee/Heki/gnssFGO/UFCORS/OPUS 等）\n" + f"- 当前条目：**{catalog['project_count']}**\n" + f"- 分类计数：{dict(catalog['counts_by_category'])}\n" + f"- 详见 `research/routine_finds_20260921.json`\n",
+        )
 
     print("ADDED", len(added))
+    print("UPDATED", len(updated))
     print("TOTAL", catalog["project_count"])
     print("COUNTS", dict(catalog["counts_by_category"]))
     print("PROV_NEW", Counter(a["provenance"] for a in added))

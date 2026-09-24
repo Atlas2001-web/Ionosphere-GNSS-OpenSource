@@ -18,6 +18,7 @@ from _idempotent_io import (
     write_json_if_changed,
     write_text_if_changed,
 )
+from _merge_fields import merge_project_fields
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECTS_PATH = ROOT / "PROJECTS.json"
@@ -361,14 +362,12 @@ def main() -> None:
     for f in finds:
         nu = norm_url(f["url"])
         if nu in existing:
-            # enrich existing if same URL
+            # enrich existing if same URL — never let empty/weak wipe QC fields
             ep = existing[nu]
-            for k in ("provenance", "host", "license", "language"):
-                if f.get(k) and not ep.get(k):
-                    ep[k] = f[k]
-            if f.get("one_liner_zh") and not ep.get("one_liner_zh"):
-                ep["one_liner_zh"] = f["one_liner_zh"]
-            skipped.append((f["name"], "dup_url", f["url"]))
+            changed = merge_project_fields(ep, f)
+            if changed:
+                print("UPDATE", f["name"], ",".join(changed))
+            skipped.append((f["name"], "dup_url_enriched" if changed else "dup_url", f["url"]))
             continue
         # name collision with different URL → keep both if truly different; skip thin meta if name exists
         if f["name"] in by_name:
