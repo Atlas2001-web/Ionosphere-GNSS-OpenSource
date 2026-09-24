@@ -232,6 +232,7 @@ gfzrnx -finp out/SITE0010.24o -fout out/::RX3::00,CHN -vo 3 -sei in -f
 | `-q` | 安静 | |
 | `-errlog` | 日志文件 | 多次运行会追加；按任务分文件 |
 | `-direct` | 逐历元直通 | 省内存、少统计 |
+| `-sifl` / `-single_file` | 多 `-finp` 时按**单文件**处理 | 默认多文件=**拼接**；要批量抽稀/检查勿漏此开关 |
 
 ### 采样 / 时间
 
@@ -364,6 +365,14 @@ gfzrnx -finp out/SITE0010.24o -fout out/::RX3::00,CHN -vo 3 -sei in -f
 16. **下游脚本只认短名**  
     原因：突然改 R3 长名。  
     修复：统一命名策略或保留短名副本。
+
+17. **多文件 `-finp` 被意外拼成一天**  
+    原因：列表输入默认走 **splice**（官方 `-h`）。  
+    修复：要对每个文件单独 `-chk`/`-smp` 时加 `-sifl`（`-single_file`）；真要拼日才省略。
+
+18. **把第三方包里的 `gfzrnx.exe` 当 Linux 官方二进制**  
+    原因：部分 Windows 工具链会附带 exe；本 QC 环境**无**已登记的 Linux `gfzrnx`。  
+    修复：从 GFZ 下载页按许可取对应平台包并改名为 `gfzrnx`；**不要**臆造本机 stdout。
 
 ---
 
