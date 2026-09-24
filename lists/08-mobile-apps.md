@@ -9,7 +9,7 @@
 |---|---|---|---:|---|
 | [GPSTest](https://github.com/barbeau/gpstest) | GPSTest：Android GNSS 测试与原始测量记录 | Kotlin | 2402 | 🏷️ 个人社区 ★ 核心 |
 | [GPSLogger](https://github.com/BasicAirData/GPSLogger) | GPSLogger：安卓开源轨迹与传感器记录器 | Java | 504 | 🏷️ 个人社区 |
-| [bluetooth_gnss](https://github.com/ykasidit/bluetooth_gnss) | Android 蓝牙外接 GNSS/RTK 与 NTRIP 应用 | Java | 123 | 🏷️ 个人社区 |
+| [bluetooth_gnss](https://github.com/ykasidit/bluetooth_gnss) | bluetooth_gnss：蓝牙外接 GNSS/RTK Android 应用 | Java | 123 | 🏷️ 个人社区 |
 | [GNSS_Compare](https://github.com/TheGalfins/GNSS_Compare) | 手机原始测量定位框架（GPS/Galileo 等） | Java | 73 | 🏷️ 个人社区 |
 | [GalileoHack](https://github.com/griush/GalileoHack) | GalileoHack：多星座 GNSS 可见性 Android 演示 App | Kotlin | 34 | 🏷️ 个人社区 |
 | [PRIDE-GeoDataLogger](https://github.com/PrideLab/PRIDE-GeoDataLogger) | PRIDE 团队手机多频 GNSS 与 IMU 采集工具 | — | 22 | 🏷️ 高校实验室 |

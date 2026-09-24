@@ -22,7 +22,7 @@ Automatic PPP Analysis Software-Türkiye（APAS-TR）处理 GPS/GLONASS/Galileo/
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [ginan](https://github.com/GeoscienceAustralia/ginan) | Geoscience Australia 精密定位与改正数工具包 | C++ | 343 | 🏷️ 官方 核心 |
+| [ginan](https://github.com/GeoscienceAustralia/ginan) | ginan：精密定位与改正数工具包 | C++ | 343 | 🏷️ 官方 核心 |
 | [RTKLIB-B2b](https://github.com/UCAS-Liuchunbo/RTKLIB-B2b) | 基于 RTKLIB 的北斗 PPP-B2b 解码与定位工具包 | C | 74 | 🏷️ 高校实验室 核心 |
 | [PPP-BayesTree](https://github.com/wvu-navLab/PPP-BayesTree) | PPP-BayesTree：增量图优化 PPP 收敛研究代码 | C++ | 57 | 🏷️ 高校实验室 |
 | [Virtual-Network-DGNSS](https://github.com/Azurehappen/Virtual-Network-DGNSS-Project) | VN-DGNSS：PPP/SSR 驱动的开源虚拟基站差分 | C++ | 39 | 🏷️ 高校实验室 |
@@ -108,7 +108,7 @@ CLAS 测试库解码 Compact SSR（RTCM MT4073），提供 SSR2OSR、SSR2OBS 与
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [cssrlib](https://github.com/hirokawa/cssrlib) | Python 开源 PPP/PPP-RTK 工具包（CLAS/HAS/BDS PPP/IGS SSR） | Jupyter Notebook | 211 | 🏷️ 高校实验室 核心 |
+| [cssrlib](https://github.com/hirokawa/cssrlib) | cssrlib：Python PPP/PPP-RTK 工具包 | Jupyter Notebook | 211 | 🏷️ 高校实验室 核心 |
 | [PPP-RTK-Beechan](https://github.com/MichaelBeechan/PPP-RTK) | C 实现的 SPP/RTD/PPP/RTK/PPP-RTK 与 RAIM 试验库 | C | 26 | 🏷️ 个人社区 |
 | [Easy4PTK](https://github.com/alxanderjiang/Easy4PTK) | 易移植的多星座 PPP-RTK Python 工具箱 | Jupyter Notebook | 5 | 🏷️ 个人社区 |
 
@@ -441,7 +441,7 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnss_lib_py](https://github.com/Stanford-NavLab/gnss_lib_py) | Stanford NAV Lab：GNSS 解析、分析与可视化 | Python | 266 | 🏷️ 高校实验室 核心 |
+| [gnss_lib_py](https://github.com/Stanford-NavLab/gnss_lib_py) | gnss_lib_py：GNSS 解析、分析与可视化 | Python | 266 | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
 
@@ -586,7 +586,7 @@ goGPS 的 Java 实现，便于嵌进 JVM 应用。功能气质同 MATLAB 版但�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GREAT-PVT](https://github.com/GREAT-WHU/GREAT-PVT) | 武汉大学 GREAT 组精密定位与导航软件 | C++ | 279 | 🏷️ 高校实验室 ★ 核心 |
+| [GREAT-PVT](https://github.com/GREAT-WHU/GREAT-PVT) | GREAT-PVT：武大 GREAT 精密 PVT 软件 | C++ | 279 | 🏷️ 高校实验室 ★ 核心 |
 
 ### 详细说明
 
@@ -685,7 +685,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [pyrtklib](https://github.com/IPNL-POLYU/pyrtklib) | 港理工 IPNL 的 RTKLIB Python 绑定（勿与 alainmuls/pyRTKLib-RINEX 混淆） | C | 182 | 🏷️ 高校实验室 核心 |
+| [pyrtklib](https://github.com/IPNL-POLYU/pyrtklib) | pyrtklib：RTKLIB 的 Python 绑定 | C | 182 | 🏷️ 高校实验室 核心 |
 | [MatRTKLIB](https://github.com/taroz/MatRTKLIB) | RTKLIB 的 MATLAB 封装与分析辅助 | MATLAB | 99 | 🏷️ 个人社区 |
 | [pyrtklib_demo5](https://github.com/IPNL-POLYU/pyrtklib_demo5) | 基于 rtklibexplorer demo5 分支的 pyrtklib 变体 | C | 13 | 🏷️ 高校实验室 |
 
@@ -716,7 +716,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [MG_APP](https://github.com/XiaoGongWei/MG_APP) | MG-APP 多 GNSS 精密定位应用（论文配套） | C++ | 98 | 🏷️ 高校实验室 |
+| [MG_APP](https://github.com/XiaoGongWei/MG_APP) | MG-APP：多 GNSS 精密定位应用 | C++ | 98 | 🏷️ 高校实验室 |
 | [QuadSPP](https://github.com/hdkarimi/QuadSPP) | 多星座标准单点定位（SPP）实现 | C | 14 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -824,7 +824,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [PRIDE-PPPAR](https://github.com/PrideLab/PRIDE-PPPAR) | 武汉大学 PRIDELab 多星座 PPP 模糊度固定 | C | 415 | 🏷️ 高校实验室 ★ 核心 |
+| [PRIDE-PPPAR](https://github.com/PrideLab/PRIDE-PPPAR) | PRIDE-PPPAR：多星座 PPP 模糊度固定 | C | 415 | 🏷️ 高校实验室 ★ 核心 |
 | [PPP_AR](https://github.com/heiwa0519/PPP_AR) | 多星座 PPP 模糊度固定（PPP-AR）相关实现 | C | 40 | 🏷️ 个人社区 |
 
 ### 详细说明

@@ -231,7 +231,7 @@ MATLAB 工具：获取并分析 GNSS-R 水位观测，同时可生成合成 SNR�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnssrefl](https://github.com/kristinemlarson/gnssrefl) | GNSS-IR：反射信号估水位/土壤湿度/雪深 | Python | 217 | 🏷️ 高校实验室 核心 |
+| [gnssrefl](https://github.com/kristinemlarson/gnssrefl) | gnssrefl：GNSS-IR 反射测量工具 | Python | 217 | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
 
@@ -246,7 +246,7 @@ GNSS 干涉反射测量（GNSS-IR）主流开源工具，用反射信号估水�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [PyAPS](https://github.com/insarlab/PyAPS) | 基于全球大气模式的大气相位屏（APS） | Python | 86 | 🏷️ 高校实验室 |
+| [PyAPS](https://github.com/insarlab/PyAPS) | PyAPS：全球模式大气相位屏（APS） | Python | 86 | 🏷️ 高校实验室 |
 | [ICAMS](https://github.com/ymcmrs/ICAMS) | ICAMS：InSAR 对流层改正（全球大气模式） | Python | 44 | 🏷️ 高校实验室 |
 
 ### 详细说明

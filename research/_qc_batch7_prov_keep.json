@@ -1,0 +1,50 @@
+[
+  {
+    "name": "GINav",
+    "detail": "kaichen686 — no company/bio academic clarity — keep personal_community"
+  },
+  {
+    "name": "VINS-GPS-Wheel",
+    "detail": "Wallong — empty bio/company — keep personal_community"
+  },
+  {
+    "name": "nav_matlab",
+    "detail": "yandld — industry (外企) Beijing — keep personal_community"
+  },
+  {
+    "name": "GNSS_Multipath_Analysis_Software",
+    "detail": "paarnes — no org/bio — keep personal_community"
+  },
+  {
+    "name": "pyglow",
+    "detail": "timduly4 / Spire Global — company — keep personal_community"
+  },
+  {
+    "name": "eagleye",
+    "detail": "MapIV org — company OSS — keep personal_community"
+  },
+  {
+    "name": "gnss-ins-sim",
+    "detail": "Aceinna org — company OSS — keep personal_community"
+  },
+  {
+    "name": "carvig",
+    "detail": "Erensu loc=WHU only (weak) — keep personal_community"
+  },
+  {
+    "name": "libgnss++",
+    "detail": "rsasaki0109 / MAP IV — company — keep personal_community"
+  },
+  {
+    "name": "rinex",
+    "detail": "nav-solutions org — not clear university lab — keep personal_community"
+  },
+  {
+    "name": "android_rinex",
+    "detail": "rokubun — company — keep personal_community"
+  },
+  {
+    "name": "learning_rtklib",
+    "detail": "libing64 / 元戎启行 — company — keep personal_community"
+  }
+]

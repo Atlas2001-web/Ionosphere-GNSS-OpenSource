@@ -11,11 +11,11 @@
 | [GNSS-SDRLIB](https://github.com/taroz/GNSS-SDRLIB) | GNSS-SDRLIB：C 语言 GNSS SDR 库 | C | 536 | 🏷️ 个人社区 |
 | [BeagleSDRGPS](https://github.com/jks-prv/Beagle_SDR_GPS) | KiwiSDR/BeagleSDR：BeagleBone 短波 SDR（含软件 GPS，已归档） | C++ | 521 | 🏷️ 个人社区 |
 | [PocketSDR](https://github.com/tomojitakasu/PocketSDR) | PocketSDR：Takasu 开源多星座多频 GNSS SDR | C | 515 | 🏷️ 个人社区 核心 |
-| [FGI-GSRx](https://github.com/nlsfi/FGI-GSRx) | 芬兰 FGI 多星座 MATLAB 软件接收机 | MATLAB | 192 | 🏷️ 官方 核心 |
+| [FGI-GSRx](https://github.com/nlsfi/FGI-GSRx) | FGI-GSRx：多星座 MATLAB 软件接收机 | MATLAB | 192 | 🏷️ 官方 核心 |
 | [Full_Stack_GPS_Receiver](https://github.com/hamsternz/Full_Stack_GPS_Receiver) | 1-bit ADC 到 PVT 的开源 GPS 软件接收机示例 | C | 168 | 🏷️ 个人社区 |
-| [Analog-GPS-data-receiver](https://github.com/leaningktower/Analog-GPS-data-receiver) | 分立射频+TinyFPGA 的模拟 GPS 接收教学项目 | C | 164 | 🏷️ 个人社区 |
+| [Analog-GPS-data-receiver](https://github.com/leaningktower/Analog-GPS-data-receiver) | Analog-GPS-data-receiver：分立射频+FPGA GPS 教学接收 | C | 164 | 🏷️ 高校实验室 |
 | [GNSS-GPS-SDR](https://github.com/JiaoXianjun/GNSS-GPS-SDR) | GPS 录回放、接收与测试相关实验代码 | Python | 157 | 🏷️ 个人社区 |
-| [GNSS-DSP-tools](https://github.com/pmonta/GNSS-DSP-tools) | GNSS 码生成/捕获/跟踪的 Python DSP 工具集 | Python | 141 | 🏷️ 个人社区 |
+| [GNSS-DSP-tools](https://github.com/pmonta/GNSS-DSP-tools) | GNSS-DSP-tools：码生成/捕获/跟踪 DSP 积木 | Python | 141 | 🏷️ 个人社区 |
 | [gps-sdr](https://github.com/gps-sdr/gps-sdr) | 基于 USRP/GN3S 的早期开源 GPS 接收机 | C++ | 107 | 🏷️ 个人社区 |
 | [SoftGNSS](https://github.com/TMBOC/SoftGNSS) | SoftGNSS：经典 GPS 软件接收机教学版 | MATLAB | 90 | 🏷️ 高校实验室 |
 | [CU-SDR-Collection](https://github.com/gnsscusdr/CU-SDR-Collection) | 科罗拉多大学开源 GNSS SDR 代码与数据集合 | MATLAB | 80 | 🏷️ 个人社区 |
@@ -87,7 +87,7 @@ FGI 开源多星座 MATLAB 接收机，方便改基带算法与抗干扰试验�
 贯通原始 1-bit ADC 采样、捕获跟踪到位置解算的完整链路，教学上极利于理解接收机分层。适合自学与课程演示。工程完备性、多星座与抗干扰能力有限，不宜当作生产接收机。
 
 #### [Analog-GPS-data-receiver](https://github.com/leaningktower/Analog-GPS-data-receiver)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：C · 许可：MIT · 星标约：164 · 宿主：github
 

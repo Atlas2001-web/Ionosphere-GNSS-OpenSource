@@ -523,7 +523,7 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [pysat](https://github.com/pysat/pysat) | 日地空间科学通用数据分析框架（多载荷一致接口） | Python | 173 | 🏷️ 高校实验室 |
+| [pysat](https://github.com/pysat/pysat) | pysat：日地空间科学数据分析框架 | Python | 173 | 🏷️ 高校实验室 |
 | [Kamodo](https://github.com/nasa/Kamodo) | NASA CCMC Kamodo：把 GITM/TIEGCM/IRI/WACCM-X 等输出函数化分析 | Python | 58 | 🏷️ 官方 |
 | [geospacelab](https://github.com/JouleCai/geospacelab) | 日地空间数据收集/管理/可视化库，含 TEC、Swarm、EISCAT 等 | Python | 48 | 🏷️ 高校实验室 |
 | [apexpy](https://github.com/aburrell/apexpy) | Apex/准偶极地磁坐标 Python 封装（电离层坐标变换常用） | Python | 40 | 🏷️ 高校实验室 |
