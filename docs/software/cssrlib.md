@@ -95,6 +95,7 @@ G23 C1C  23919537.649  C2W  23919538.295  ...  L1C 125698028.321  L2W  97946535.
 | `decode_obsh` / `decode_obs` | 头 + 逐历元观测 |
 | `autoSubstituteSignals()` | 缺测时自动替信号 |
 | `stdpos(nav, rnx.pos, log)` | 单点定位滤波器；`nav.pmode=1` 动态 |
+| `nav.t = obs.t`（首历元） | 对齐滤波器时间；**漏写则 ENU 千米级发散** |
 | `nav.elmin` | 高度截止（弧度）；示例 `5°` |
 | `ecef2enu(pos_ref, dx)` | ECEF 残差 → 站心 ENU（需真值） |
 
@@ -129,6 +130,8 @@ while t_start > obs.t and obs.t.time != 0:
     obs = dec.decode_obs()
 print('start', time2str(obs.t), 'eph', len(nav.eph), 'geph', len(nav.geph))
 for ne in range(60):
+    if ne == 0:
+        nav.t = obs.t   # 必须：首历元对齐滤波器时间，否则 tt 巨大→发散
     std.process(obs, cs=None)
     enu = ecef2enu(pos_ref, nav.x[0:3] - xyz_ref)
     d2 = float(np.sqrt(enu[0]**2 + enu[1]**2))
@@ -143,7 +146,7 @@ if nav.fout: nav.fout.close()
 PY
 ```
 
-**本机截断 stdout（同环境，60 历元）：**
+**本机截断 stdout（cssrlib 1.2.1，含 `nav.t=obs.t`，60 历元，2026-09-24 ET）：**
 
 ```text
 start 2025-02-15 17:00:01 eph 313 geph 36
@@ -212,17 +215,18 @@ start 2025-02-15 17:00:01 eph 313 geph 36
 | # | 现象 | 原因 | 修复 |
 | --- | --- | --- | --- |
 | 1 | `import cssrlib.pntpos` 要 pandas | 传递依赖未声明全 | `pip install pandas` |
-| 2 | PPP 脚本固体潮警告/炸 | 缺或旧 `pysolid` | `pip install -U pysolid` |
-| 3 | `test_eph.py` 找不到 brdc | 未下 IGS / 无 `data/brdc` | `cd samples && python igs_download.py` |
-| 4 | cartopy 安装失败 | 缺 GEOS | `sudo apt-get install -y libgeos++-dev` |
-| 5 | 几乎无星 / 全 `invalid PR` | `sigs` 与接收机观测量不匹配 | 对照 `test_rnx.py` 打印改 `rSigRnx` |
-| 6 | ENU 几十米不收敛 | 当真值的坐标错日/错站 | 用样例 `xyz_ref`；或先 SPP 估近似 |
-| 7 | CLAS 无解 | L6 通道/PRN/时段不对 | 核对 `config_ppprtk.yml` 与 `decode_msg` 的 `prn_ref` |
-| 8 | cssrlib 与 data 行为不一致 | 主从分支漂移 | 两边都 pin `@main` 或同 tag |
-| 9 | 无头机弹 GUI | matplotlib 默认后端 | `export MPLBACKEND=Agg` |
-| 10 | 把 SPP 2D 写成 HAS/CLAS 精度 | 未跑改正链 | 只引用对应 `test_ppp*` 真日志 |
-| 11 | RINEX 4 头读失败 | 旧 cssrlib | `pip install -U cssrlib` |
-| 12 | `leap second table` mild warning | 闰秒表过期 | `pip install -U pysolid` |
+| 2 | 首历元后 ENU 千米级发散 / `too few satellites` | 未设 `nav.t = obs.t`，`timediff(obs.t, nav.t)` 巨大 | 循环首步：`if ne==0: nav.t = obs.t`（见 §3.3） |
+| 3 | PPP 脚本固体潮警告/炸 | 缺或旧 `pysolid` | `pip install -U pysolid` |
+| 4 | `test_eph.py` 找不到 brdc | 未下 IGS / 无 `data/brdc` | `cd samples && python igs_download.py` |
+| 5 | cartopy 安装失败 | 缺 GEOS | `sudo apt-get install -y libgeos++-dev` |
+| 6 | 几乎无星 / 全 `invalid PR` | `sigs` 与接收机观测量不匹配 | 对照 `test_rnx.py` 打印改 `rSigRnx` |
+| 7 | ENU 几十米不收敛 | 当真值的坐标错日/错站 | 用样例 `xyz_ref`；或先 SPP 估近似 |
+| 8 | CLAS 无解 | L6 通道/PRN/时段不对 | 核对 `config_ppprtk.yml` 与 `decode_msg` 的 `prn_ref` |
+| 9 | cssrlib 与 data 行为不一致 | 主从分支漂移 | 两边都 pin `@main` 或同 tag |
+| 10 | 无头机弹 GUI | matplotlib 默认后端 | `export MPLBACKEND=Agg` |
+| 11 | 把 SPP 2D 写成 HAS/CLAS 精度 | 未跑改正链 | 只引用对应 `test_ppp*` 真日志 |
+| 12 | RINEX 4 头读失败 | 旧 cssrlib | `pip install -U cssrlib` |
+| 13 | `leap second table` mild warning | 闰秒表过期 | `pip install -U pysolid` |
 
 ## 7. 选型
 

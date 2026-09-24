@@ -59,9 +59,9 @@ python -c "import gnss_tec; print(gnss_tec.__version__, gnss_tec.__file__)"
 mkdir -p ~/iono_ops/data && cd ~/iono_ops/data
 curl -fsSL -o 14601736.18o \
   https://raw.githubusercontent.com/geospace-code/georinex/main/src/georinex/tests/data/14601736.18o
-# 可选：同站导航（GLO 频点）；本短样以 GPS 为主
-curl -fsSL -o 14601736.18n \
-  https://raw.githubusercontent.com/geospace-code/georinex/main/src/georinex/tests/data/14601736.18n
+# 可选：同站 GPS NAV（探活用；**不能**喂给 collect_freq_nums——type N 不支持）
+# curl -fsSL -o 14601736.18n \
+#   https://raw.githubusercontent.com/geospace-code/georinex/main/src/georinex/tests/data/14601736.18n
 head -n 3 14601736.18o
 # 期望：RINEX VERSION / TYPE；绝不是 <!DOCTYPE html
 ```
@@ -74,8 +74,8 @@ python - <<'PY'
 from gnss_tec import rnx
 from gnss_tec.glo import collect_freq_nums
 
-# GLO 时取消注释（混合 NAV / .yyG）：
-# glo = collect_freq_nums('14601736.18n')
+# GLO：须 .yyG 或混合 NAV（含 R）；GPS-only .yyN 会 NavMessageFileError: type N unsupported
+# glo = collect_freq_nums('14601736.18g')
 glo = {}
 
 n = n_phase = n_pr = 0
@@ -98,24 +98,27 @@ PY
 | 参数 | 作用 |
 | --- | --- |
 | `obs_file` | 已打开的文本 OBS（`rnx` 会先 `next` 读版本行） |
-| `glo_freq_nums` | `collect_freq_nums(nav)` 的返回值；GLO 缺则告警并跳过该星 |
+| `glo_freq_nums` | `collect_freq_nums(glo_nav)`；要 **GLO/混合** NAV，不是 GPS `.yyN`；缺则告警并跳过 R 星 |
 | `band_priority` | 默认 `BAND_PRIORITY`；改频对时传入自定义 dict |
 
-**本机截断 stdout（gnss-tec 1.1.1，2026-09-24 ET）：**
+**本机截断 stdout（gnss-tec 1.1.1，2026-09-24 ET；stderr 另见 GLO 警告）：**
 
 ```text
-... UserWarning: Can't find slot 7 in the glo_freq_nums dict.
-===（有 GLO 行且未传频点时出现；可忽略或补 NAV）===
-2018-06-22 06:17:30 E07: phase_tec=None p_range_tec=None codes={1: 'L1', 2: 'L8'}/{1: 'C1', 2: 'C8'}
-2018-06-22 06:17:30 E19: phase_tec=None p_range_tec=None ...
-2018-06-22 06:17:30 G03: phase_tec=3.2993148613398913 p_range_tec=24.755677912400678 codes={1: 'L1', 2: 'L2'}/{1: 'C1', 2: 'C2'}
-2018-06-22 06:17:30 G07: phase_tec=-21.21545247449915 p_range_tec=1.2277902603563675 ...
-2018-06-22 06:17:30 G09: phase_tec=-2.227435204140415 p_range_tec=26.097681238372537 ...
-2018-06-22 06:17:30 G23: phase_tec=11.835532364343285 p_range_tec=None ...
-2018-06-22 06:17:30 G30: phase_tec=64.67108634940517 p_range_tec=21.300733227106164 ...
-2018-06-22 06:17:45 G03: phase_tec=3.1958065072429647 p_range_tec=37.14779351066705 ...
-2018-06-22 06:17:45 G07: phase_tec=-21.36236842813084 p_range_tec=3.9784211119348014 ...
-2018-06-22 06:17:45 G09: phase_tec=-2.2415321354618234 p_range_tec=26.354660582822802 ...
+.../gnss_tec/rinex.py:331: UserWarning: Can't find slot 7 in the glo_freq_nums dict.
+  warnings.warn(str(err))
+（同理 slot 8–11；有 R 星且 glo={} 时出现，可忽略或补 GLO NAV）
+2018-06-22 06:17:30 E07: phase_tec=None p_range_tec=None phase_code={1: 'L1', 2: 'L8'} p_range_code={1: 'C1', 2: 'C8'}
+2018-06-22 06:17:30 E19: phase_tec=None p_range_tec=None phase_code={1: 'L1', 2: 'L8'} p_range_code={1: 'C1', 2: 'C8'}
+2018-06-22 06:17:30 G03: phase_tec=3.2993148613398913 p_range_tec=24.755677912400678 phase_code={1: 'L1', 2: 'L2'} p_range_code={1: 'C1', 2: 'C2'}
+2018-06-22 06:17:30 G07: phase_tec=-21.21545247449915 p_range_tec=1.2277902603563675 phase_code={1: 'L1', 2: 'L2'} p_range_code={1: 'C1', 2: 'C2'}
+2018-06-22 06:17:30 G09: phase_tec=-2.227435204140415 p_range_tec=26.097681238372537 phase_code={1: 'L1', 2: 'L2'} p_range_code={1: 'C1', 2: 'C2'}
+2018-06-22 06:17:30 G23: phase_tec=11.835532364343285 p_range_tec=None phase_code={1: 'L1', 2: 'L2'} p_range_code={1: 'C1', 2: 'C2'}
+2018-06-22 06:17:30 G30: phase_tec=64.67108634940517 p_range_tec=21.300733227106164 phase_code={1: 'L1', 2: 'L2'} p_range_code={1: 'C1', 2: 'C2'}
+2018-06-22 06:17:45 E07: phase_tec=None p_range_tec=None phase_code={1: 'L1', 2: 'L8'} p_range_code={1: 'C1', 2: 'C8'}
+2018-06-22 06:17:45 E19: phase_tec=None p_range_tec=None phase_code={1: 'L1', 2: 'L8'} p_range_code={1: 'C1', 2: 'C8'}
+2018-06-22 06:17:45 G03: phase_tec=3.1958065072429647 p_range_tec=37.14779351066705 phase_code={1: 'L1', 2: 'L2'} p_range_code={1: 'C1', 2: 'C2'}
+2018-06-22 06:17:45 G07: phase_tec=-21.36236842813084 p_range_tec=3.9784211119348014 phase_code={1: 'L1', 2: 'L2'} p_range_code={1: 'C1', 2: 'C2'}
+2018-06-22 06:17:45 G09: phase_tec=-2.2415321354618234 p_range_tec=26.354660582822802 phase_code={1: 'L1', 2: 'L2'} p_range_code={1: 'C1', 2: 'C2'}
 total_tec_objects=23 with_phase=15 with_prange=12
 ```
 
@@ -143,7 +146,7 @@ total_tec_objects=23 with_phase=15 with_prange=12
 | 输入 | 要求 |
 | --- | --- |
 | RINEX OBS 2.x / 3.0–3.03 | 文本；双频相位或伪距 |
-| GLO NAV（可选） | `collect_freq_nums`；混合 NAV 亦可 |
+| GLO / 混合 NAV（可选） | `collect_freq_nums`；**不要**喂 GPS-only `.yyN`（type N） |
 | RINEX 4 | **不支持** → 先转 3.xx |
 
 | 输出 | 下游 |
@@ -169,15 +172,16 @@ total_tec_objects=23 with_phase=15 with_prange=12
 | 1 | `Unknown RINEX version: 4.02` | 版本表只到 3.03 | `gfzrnx` 转 RINEX 3 后再跑 |
 | 2 | `phase_tec is None` | 第二频相位为 0 / 未读到 | `print(tec.phase, tec.phase_code)`；换双频站或改 `BAND_PRIORITY` |
 | 3 | GLO `Can't find slot N` | 未传频点号 | `glo=collect_freq_nums('site.yyg'); rnx(f, glo_freq_nums=glo)` |
-| 4 | `TecError: GLO frequency number must be provided` | 有 R 星但 `glo_freq_nums` 空 | 同上补 NAV |
-| 5 | 把 `phase_tec` 当绝对 TEC | 无 DCB/leveling | 转 [pytecgg](./pytecgg.md) `calculate_tec` |
-| 6 | Galileo `None` 而 GPS 有值 | 选中的 Lx 列空（本样 E07 `phase[2]==0`） | 查 OBS 该星双频是否非空；或调频对优先级 |
-| 7 | `rnx: Not an observation file` | 喂了 NAV/HTML | `head` 确认 `OBSERVATION DATA` |
-| 8 | 伪距 TEC 跳几十 TECU | 多路径/DCB，属预期 | 相位做相对；绝对走校准链 |
-| 9 | EOF 时 `RuntimeError: generator raised StopIteration` | 旧迭代器 + 新 Python 边界 | 用 `for tec in rnx(f):`；升级到 ≥1.1.1（已修 PEP-479） |
-| 10 | 与 PyTECGg 数值差巨大 | 定义不同（相对 GF vs 校准） | **只比形态**；笔记写清产品 |
-| 11 | 空文件 `rnx: Empty input file` | 0 字节 / 下成登录页 | 重下；`wc -c` / `head` |
-| 12 | 1 Hz 全日内存涨 | 全进 list | 流式写 CSV：`for tec in rnx(f): ...` |
+| 4 | `NavMessageFileError: type N is unsupported` | 把 GPS `.yyN` 喂给 `collect_freq_nums` | 换 `.yyG` / 混合 NAV（含 R 星历） |
+| 5 | `TecError: GLO frequency number must be provided` | 有 R 星但 `glo_freq_nums` 空 | 同上补 GLO/混合 NAV |
+| 6 | 把 `phase_tec` 当绝对 TEC | 无 DCB/leveling | 转 [pytecgg](./pytecgg.md) `calculate_tec` |
+| 7 | Galileo `None` 而 GPS 有值 | 选中的 Lx 列空（本样 E07 `phase[2]==0`） | 查 OBS 该星双频是否非空；或调频对优先级 |
+| 8 | `rnx: Not an observation file` | 喂了 NAV/HTML | `head` 确认 `OBSERVATION DATA` |
+| 9 | 伪距 TEC 跳几十 TECU | 多路径/DCB，属预期 | 相位做相对；绝对走校准链 |
+| 10 | EOF 时 `RuntimeError: generator raised StopIteration` | 旧迭代器 + 新 Python 边界 | 用 `for tec in rnx(f):`；升级到 ≥1.1.1（已修 PEP-479） |
+| 11 | 与 PyTECGg 数值差巨大 | 定义不同（相对 GF vs 校准） | **只比形态**；笔记写清产品 |
+| 12 | 空文件 `rnx: Empty input file` | 0 字节 / 下成登录页 | 重下；`wc -c` / `head` |
+| 13 | 1 Hz 全日内存涨 | 全进 list | 流式写 CSV：`for tec in rnx(f): ...` |
 
 ## 7. 选型
 
