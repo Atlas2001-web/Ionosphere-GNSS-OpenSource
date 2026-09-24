@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **33 篇**操作手册（合计 **8234** 行，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **34 篇**操作手册（合计 **8409** 行，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -15,7 +15,7 @@
 | **软件手册质检**（本 bot） | 已短硬篇的**二遍质检补洞**（错 I/O、过时旗标、仍薄点）；优先 `georinex` / `rtklib` / `bnc` / `gfzrnx` / `pytecgg` | 勿大改「仍薄/缺篇」同事正在写的文件 |
 | **软件用法讲解**（并行） | 写 **尚未短硬 / 缺篇** 新手册 | 勿重写下表已标「已短硬」全文（补丁可协调） |
 
-**下一优先（质检二遍，按弱→强）：** 停写门槛已近——剩余主要是 **登记/环境受限**（`anubis` / `ionomoni` / `iono-scintillation` / `gfzrnx`）无本机真实 I/O 可补；**sh-gim** 保持边界。**R9 已完成** `cssrlib`/`gnss-tec`/`pinot`/`autorino`。**R10** 已质检 `rnxcmp`/`nequickg` 并短硬入库 `hatanaka`（Python；官方二进制见 rnxcmp）。**R11** 已质检 `haslib`/`laika`。**已短硬入库 `pyglow` + `iri2016`**（IRI 气候态两条路径）。**用法讲解已入库** `gnss_lib_py` + `PyIRI`（Stanford NavData / 纯 Python IRI）。**用法讲解已入库** `pyirtam` + `fast`（IRTAM 系数重建 / GNSS 下载·QC·SPP）。**用法讲解已入库** `pysatCDAAC`（CDAAC ionPrf 实拉；ionPhs load 坑）+ `awsgnssroutils`（AWS RO；calibratedPhase 实拉）+ `android_rinex`（GnssLogger→RINEX；仓内样例+georinex 实跑）+ **`cosmic-crunch`**（GENESIS 大气 L2→netCDF；非 CDAAC ionPrf）。
+**下一优先（质检二遍，按弱→强）：** 停写门槛已近——剩余主要是 **登记/环境受限**（`anubis` / `ionomoni` / `iono-scintillation` / `gfzrnx`）无本机真实 I/O 可补；**sh-gim** 保持边界。**已短硬入库 `pyglow` + `iri2016` + `apexpy`**。**已质检复跑** `gnss_lib_py` + `pyiri` + `pyirtam` + `fast`（stdout 对齐；LGDC 429 已记）。**勿抢** DiffIonMap / cddis-highrate-downloader（用法讲解下一组）。**用法讲解已入库** `awsgnssroutils` + `android_rinex` + `cosmic-crunch`。
 **sh-gim：** 保持短边界，禁止注水扩写。  
 **停写条件：** 剩余皆 PASS，或仅剩 sh-gim 边界 / 登记受限且无进一步真实 I/O 增益。
 
@@ -57,6 +57,7 @@
 | 30 | [awsgnssroutils.md](./awsgnssroutils.md) | AWS Open Data GNSS-RO 查询/下载（calibratedPhase 等） | 245 | **已短硬** · 本机 1.2.7；cosmic1 Phase 2636→3 文件；cosmic2 仅 atm 对照；开放 S3 / rotcol 门禁 |
 | 31 | [pyirtam.md](./pyirtam.md) | 纯 Python IRTAM 系数→网格 Ne（对接 PyIRI） | 177 | **已短硬** · 本机 PyIRTAM **0.0.7**；LGDC 2024-06-01 02:15 四系数 + run_PyIRTAM 实跑 |
 | 32 | [fast.md](./fast.md) | GNSS 下载 / QC / 广播星历 SPP / 选站 | 215 | **已短硬** · 本机 tip **3.01.01**；ABPO satNum + 1h SPP Δ≈0.69 m；FTP 下载本机失败已记 |
+| 33 | [apexpy.md](./apexpy.md) | Apex / 准偶极磁坐标（Apex/QD/MLT） | 174 | **已短硬** · 本机 2.1.1/`eed96cf`；geo2apex(40N,80W,250km)→alat≈50.70；CLI 14 位时间坑 |
 | 33 | [pysatcdaac.md](./pysatcdaac.md) | pysat 生态 CDAAC/COSMIC（ionPrf/ionPhs） | 293 | **已短硬** · 本机 0.0.5；ionprf 2019-01-01 59→53；ionphs 下 144、load 维冲突改 netCDF4 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
@@ -190,6 +191,7 @@ data-access
    ├─ pyglow (IRI 气候态对照)
    ├─ iri2016 (IRI-2016 → xarray)
    ├─ pyiri / pyirtam (纯 Python IRI / IRTAM)
+   ├─ apexpy (Apex/QD/MLT 磁坐标)
    ├─ pygnssutils / bnc / bkg-ntripcaster (路径 C)
    └─ cssrlib / haslib / laika / rtklib / pride-pppar (路径 D)
 sh-gim：仅路径 E 边界，不串进 A/B 主链
@@ -204,7 +206,7 @@ iono-scintillation：概念/仿真旁路，不替代实测 ROTI
 | --- | --- |
 | 02 / 16 | georinex · hatanaka · gnss-tec · pytecgg |
 | 03 / 10 / 18 | ionex-gim · sh-gim(边界) · pyglow |
-| 04 | iri2016 · pyglow · pyiri · pyirtam · nequickg |
+| 04 | iri2016 · pyglow · pyiri · pyirtam · apexpy · nequickg |
 | 05 / 13 / 21 | oasis-roti · ionomoni · iono-scintillation |
 | 06 / 20 | cssrlib · haslib · laika · gnss_lib_py · android_rinex · rtklib · pride-pppar · ionomoni |
 | 09 | pytecgg |

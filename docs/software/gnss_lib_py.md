@@ -1,6 +1,6 @@
 # gnss_lib_py · Stanford NAV Lab GNSS 解析/分析操作手册
 
-目录：[`PROJECTS.json` → `gnss_lib_py`](../../PROJECTS.json) · 上游 <https://github.com/Stanford-NavLab/gnss_lib_py> · 许可 **MIT** · PyPI **`gnss-lib-py` 1.1.0** · 本机验证：`RinexObs` 读仓内混合 OBS → **126** 测值 / **5** 历元；`RinexNav` + `AndroidDerived2023` 冒烟（2026-09-24 EDT）
+目录：[`PROJECTS.json` → `gnss_lib_py`](../../PROJECTS.json) · 上游 <https://github.com/Stanford-NavLab/gnss_lib_py> · 许可 **MIT** · PyPI **`gnss-lib-py` 1.1.0** · 本机验证：`RinexObs` 读仓内混合 OBS → **126** 测值 / **5** 历元；`RinexNav` + `AndroidDerived2023` 冒烟（2026-09-24 EDT） · **质检复跑通过**（同 I/O）
 
 > 岗位：把 Android/原始测量、RINEX、SP3/CLK 等收进统一 **`NavData`**，再跑快照 WLS、残差、可视化。冲突时：**仓内 README / ReadTheDocs > 本文**。
 

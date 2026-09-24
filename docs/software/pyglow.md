@@ -18,7 +18,7 @@
 - **不是** 从 RINEX 校准实测 sTEC/vTEC → [pytecgg](./pytecgg.md)（作者 viventriglia）
 - **不是** 球谐 GIM 求解 → [sh-gim](./sh-gim.md)（求解器未开源，仅边界）
 - **不是** Galileo 广播 NeQuick-G → [nequickg](./nequickg.md)
-- **不是** 官方 IRI-2016 的现代 pip 封装 → [iri2016](./iri2016.md)（`space-physics/iri2016`）；**勿与用法讲解正在写的 `PyIRI` 抢篇**
+- **不是** 官方 IRI-2016 的现代 pip 封装 → [iri2016](./iri2016.md)（`space-physics/iri2016`）；纯 Python IRI → [pyiri](./pyiri.md)
 - 默认绑 **IRI-2012/2016**，与官网最新 IRI-2020/2026 可能不同步
 
 一句话：pyglow = **irimodel 社区常用的 Python 气候态包装**（Fortran 模型 + `Point` API）。
@@ -170,7 +170,7 @@ f107 127.2 ap 15.0 kp 3.0
 
 - 气候态 Ne/TEC 背景 ↔ 单站校准 TEC：[pytecgg](./pytecgg.md)；粗相对 TEC：[gnss-tec](./gnss-tec.md)
 - 与分析中心 GIM 图对照：[ionex-gim](./ionex-gim.md)；球谐自建边界：[sh-gim](./sh-gim.md)
-- 只要官方 IRI-2016 Fortran 的现代封装 → [iri2016](./iri2016.md)（撰写中）；纯 Python IRI → 用法讲解的 `PyIRI`（**勿抢写**）
+- 只要官方 IRI-2016 Fortran 的现代封装 → [iri2016](./iri2016.md)；纯 Python IRI → [pyiri](./pyiri.md)
 - Galileo 单频模型对照 → [nequickg](./nequickg.md)
 - 教程 [04 IRI/NeQuick](../tutorials/04-iri-nequick.md) · [01 基础](../tutorials/01-ionosphere-tec-basics.md) · [03 GIM](../tutorials/03-gim-ionex.md)
 

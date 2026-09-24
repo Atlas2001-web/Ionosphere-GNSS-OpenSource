@@ -1,6 +1,6 @@
 # FAST · GNSS 下载 / QC / SPP 操作手册
 
-目录：[`PROJECTS.json` → `FAST`](../../PROJECTS.json) · 上游 <https://github.com/ChangChuntao/FAST> · 许可 **GPL-3.0**（`LICENSE`；README 徽章写 MIT **以 LICENSE 为准**）· 源码 tip **3.01.01**（`2026-08-03`）· 本机验证：`sample_data/abpo0010.25o` → satNum 全日 SYS + 首小时 SPP，MEAN XYZ 相对约坐标 Δ≈0.69 m（2026-09-24 EDT）
+目录：[`PROJECTS.json` → `FAST`](../../PROJECTS.json) · 上游 <https://github.com/ChangChuntao/FAST> · 许可 **GPL-3.0**（`LICENSE`；README 徽章写 MIT **以 LICENSE 为准**）· 源码 tip **3.01.01**（`2026-08-03`）· 本机验证：`sample_data/abpo0010.25o` → satNum 全日 SYS + 首小时 SPP，MEAN XYZ 相对约坐标 Δ≈0.69 m（2026-09-24 EDT）· **质检复跑通过**（satNum+1h SPP 同 I/O）
 
 > 岗位：日常 **IGS/分析中心产品拉取、观测 QC、广播星历 SPP、选站抽稀**。精密 PPP-AR → [pride-pppar](./pride-pppar.md)；读 RINEX 进 xarray → [georinex](./georinex.md)。冲突时：**仓内 `README`/`README_CN` / `manual/*.pdf` > 本文**。
 

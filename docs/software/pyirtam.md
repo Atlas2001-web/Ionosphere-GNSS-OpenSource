@@ -1,6 +1,6 @@
 # PyIRTAM · 纯 Python IRTAM 同化电离层操作手册
 
-目录：[`PROJECTS.json` → `PyIRTAM`](../../PROJECTS.json) · 上游 <https://github.com/victoriyaforsythe/PyIRTAM> · 许可 **MIT** · PyPI **`PyIRTAM` 0.0.7** · 本机验证：LGDC 下 2024-06-01 02:15 四系数 → `run_PyIRTAM` 20° 网格，0°E/10°N 处 IRTAM NmF2≈3.00e11、hmF2≈294 km（相对同点 PyIRI 气候态升高）（2026-09-24 EDT）
+目录：[`PROJECTS.json` → `PyIRTAM`](../../PROJECTS.json) · 上游 <https://github.com/victoriyaforsythe/PyIRTAM> · 许可 **MIT** · PyPI **`PyIRTAM` 0.0.7** · 本机验证：LGDC 下 2024-06-01 02:15 四系数 → `run_PyIRTAM` 20° 网格，0°E/10°N 处 IRTAM NmF2≈3.00e11、hmF2≈294 km（相对同点 PyIRI 气候态升高）（2026-09-24 EDT）· **质检复跑通过**（同 I/O；LGDC 429 已记）
 
 > 岗位：把 **GIRO/GAMBIT IRTAM 系数** 接到 Python，与气候态 **PyIRI** 同网格同日对照 foF2/hmF2/EDP。冲突时：**仓内 `docs/tutorials/*.ipynb` / ReadTheDocs > 本文**。
 
@@ -14,7 +14,7 @@
 
 **不做：**
 
-- **不是** 气候态 IRI 本体 → 兄弟 **[pyiri](./pyiri.md)**（纯 Python）/ **[iri2016](./iri2016.md)**（QA，Fortran）/ **[pyglow](./pyglow.md)**（QA，多模型）
+- **不是** 气候态 IRI 本体 → 兄弟 **[pyiri](./pyiri.md)**（纯 Python）/ **[iri2016](./iri2016.md)**（已短硬，Fortran）/ **[pyglow](./pyglow.md)**（已短硬，多模型）
 - **不是** 官方 `irirtam.for` 逐行移植；金标准对照请走 IRI-2020 包内 IRTAM 子程序
 - **不** 替代当日 GIM TEC 产品 → [ionex-gim](./ionex-gim.md)；概念课 [04](../tutorials/04-iri-nequick.md)
 - LGDC 接口有访问节奏；勿高频扫全日所有 15 min 槽
@@ -143,7 +143,7 @@ IRTAM_F2_keys ['B0', 'B1', 'B_top', 'Nm', 'hm']
 
 ## 4. 接到哪步
 
-- 只要气候态背景 → [pyiri](./pyiri.md)；要 Fortran IRI-2016 → [iri2016](./iri2016.md)（QA）；多模型上层 → [pyglow](./pyglow.md)（QA）
+- 只要气候态背景 → [pyiri](./pyiri.md)；要 Fortran IRI-2016 → [iri2016](./iri2016.md)；多模型上层 → [pyglow](./pyglow.md)
 - 同化 vs 气候对照 → **本文**；当日 TEC 图 → [ionex-gim](./ionex-gim.md)
 - 教程 [04](../tutorials/04-iri-nequick.md)
 
@@ -159,6 +159,7 @@ IRTAM_F2_keys ['B0', 'B1', 'B_top', 'Nm', 'hm']
 | 6 | `VTEC`/`MUF3000` 下载失败 | LGDC 声称支持但实测挂 | 只用 `foF2/hmF2/B0/B1` |
 | 7 | 把 IRTAM 当「全球真值 TEC」 | 同化仍依赖测高仪覆盖 | 并列 [ionex-gim](./ionex-gim.md)/双频 TEC |
 | 8 | 与官方 irirtam 差一截 | 非逐行移植 + EDP 跟 PyIRI 架构 | 论文对比写明软件版本；金标准走 Fortran |
+| 9 | `429 Too Many Requests` / `downloaded=False` | LGDC 限流 | 退避重试；缓存系数目录；勿扫全日 96 槽 |
 
 ## 6. 选型与链接
 
@@ -166,12 +167,12 @@ IRTAM_F2_keys ['B0', 'B1', 'B_top', 'Nm', 'hm']
 | --- | --- |
 | IRTAM 系数 + 同化 EDP（纯 Python） | **本文 PyIRTAM** |
 | 纯 Python 气候 IRI | [pyiri](./pyiri.md) |
-| Fortran IRI-2016 → xarray | [iri2016](./iri2016.md)（QA） |
-| 多模型上层大气 | [pyglow](./pyglow.md)（QA） |
+| Fortran IRI-2016 → xarray | [iri2016](./iri2016.md) |
+| 多模型上层大气 | [pyglow](./pyglow.md) |
 | 读 IONEX GIM | [ionex-gim](./ionex-gim.md) |
 
 - 文档：<https://pyirtam.readthedocs.io/>
 - 教程：<https://github.com/victoriyaforsythe/PyIRTAM/tree/main/docs/tutorials>
 - DOI：<https://doi.org/10.5281/zenodo.10844521>
 - LGDC：<https://lgdc.uml.edu/rix/gambit-coeffs>
-- 兄弟：[pyiri](./pyiri.md) · [iri2016](./iri2016.md) · [pyglow](./pyglow.md) · [ionex-gim](./ionex-gim.md) · 教程 [04](../tutorials/04-iri-nequick.md)
+- 兄弟：[pyiri](./pyiri.md) · [iri2016](./iri2016.md) · [pyglow](./pyglow.md) · [apexpy](./apexpy.md) · [ionex-gim](./ionex-gim.md) · 教程 [04](../tutorials/04-iri-nequick.md)

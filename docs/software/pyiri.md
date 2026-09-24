@@ -1,6 +1,6 @@
 # PyIRI · 纯 Python IRI 气候模型操作手册
 
-目录：[`PROJECTS.json` → `PyIRI`](../../PROJECTS.json) · 上游 <https://github.com/victoriyaforsythe/PyIRI> · 许可 **MIT**（`LICENSE`；`pyproject` classifier 误写 BSD，以 LICENSE 为准）· PyPI **`PyIRI` 0.1.7** · 本机验证：`sh.IRI_density_1day` 单点 2020-04-01 / F10.7=100 → UT12 NmF2≈1.942e12、vTEC≈43.2 TECU（2026-09-24 EDT）
+目录：[`PROJECTS.json` → `PyIRI`](../../PROJECTS.json) · 上游 <https://github.com/victoriyaforsythe/PyIRI> · 许可 **MIT**（`LICENSE`；`pyproject` classifier 误写 BSD，以 LICENSE 为准）· PyPI **`PyIRI` 0.1.7** · 本机验证：`sh.IRI_density_1day` 单点 2020-04-01 / F10.7=100 → UT12 NmF2≈1.942e12、vTEC≈43.2 TECU（2026-09-24 EDT） · **质检复跑通过**（同 I/O）
 
 > 岗位：不绑 Fortran，在 Python 里算 IRI 气候态 **Nm/hm/fo、EDP、近似 vTEC**，作 GNSS TEC/GIM 对照背景。冲突时：**仓内 `docs/tutorials/*.py` / ReadTheDocs > 本文**。
 
