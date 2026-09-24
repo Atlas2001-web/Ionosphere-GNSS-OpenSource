@@ -1,6 +1,6 @@
 # ionex · 读 IONEX GIM 操作手册
 
-目录：[`PROJECTS.json` → `ionex`](../../PROJECTS.json) · 上游 <https://github.com/gnss-lab/ionex> · MIT · 本文件 [`ionex-gim.md`](./ionex-gim.md) · 本机验证 **ionex 0.2**（包内 `tests/test_data/ionex_file.00i`）
+目录：[`PROJECTS.json` → `ionex`](../../PROJECTS.json) · 上游 <https://github.com/gnss-lab/ionex> · MIT · 本文件 [`ionex-gim.md`](./ionex-gim.md) · **新短硬同包** → [ionex.md](./ionex.md) · 本机验证 **ionex 0.2**（包内 `tests/test_data/ionex_file.00i`）
 
 > 岗位：用 Python 包 **`ionex`** 读分析中心 IONEX（IGS/CODE/UPC/ESA…）VTEC 图。**只读**，不生成 GIM。球谐求解边界见 [sh-gim](./sh-gim.md)。绝对 TEC 校准见 [pytecgg](./pytecgg.md)（**viventriglia**）。API 以已安装包为准。
 
@@ -197,4 +197,4 @@ done
 
 ## 8. 相关
 
-[sh-gim](./sh-gim.md) · [pytecgg](./pytecgg.md) · [georinex](./georinex.md) · [oasis-roti](./oasis-roti.md) · [ionomoni](./ionomoni.md) · [data-access](../data-access.md) · [README](./README.md)
+[ionex.md](./ionex.md) · [ionex-rs](./ionex-rs.md) · [sh-gim](./sh-gim.md) · [pytecgg](./pytecgg.md) · [georinex](./georinex.md) · [oasis-roti](./oasis-roti.md) · [ionomoni](./ionomoni.md) · [data-access](../data-access.md) · [README](./README.md)

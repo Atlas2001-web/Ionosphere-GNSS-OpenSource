@@ -1,9 +1,9 @@
 # ionex · gnss-lab Python IONEX 读入操作手册
 
-目录：[`PROJECTS.json` → `ionex`](../../PROJECTS.json) · 上游 <https://github.com/gnss-lab/ionex> · tip **`8783a71`**（tag 文案 **ionex-v0.2**，2020-07-25）· **MIT** · **无 PyPI 发行**（须 git/`pip install git+…`）· 本机验证（**2026-09-24 06:42 EDT**）：venv + `pip install git+https://github.com/gnss-lab/ionex.git` → **0.2**；`tests/test_data/ionex_file.00i` → **12** 图；首 **2000-01-01 01:00:00** / 末 **23:00:00**；壳高 **450** km；网格 **71×73**（`tec_len` **5183**）；`tec0`=**9.8** / mid=**31.8**；`tec` 含 **287** 个 `None`；`m.rms`→**NotImplementedError**；**未臆造生产 GIM TEC**
+目录：[`PROJECTS.json` → `ionex`](../../PROJECTS.json) · 上游 <https://github.com/gnss-lab/ionex> · tip **`8783a71`**（tag 文案 **ionex-v0.2**，2020-07-25）· **MIT** · **无 PyPI 发行**（须 git/`pip install git+…`）· 本机验证（**2026-09-24 06:42 EDT**；质检复跑 **06:47 EDT** stdout 逐行对齐）：venv + `pip install git+https://github.com/gnss-lab/ionex.git` → **0.2**；`tests/test_data/ionex_file.00i` → **12** 图；首 **2000-01-01 01:00:00** / 末 **23:00:00**；壳高 **450** km；网格 **71×73**（`tec_len` **5183**）；`tec0`=**9.8** / mid=**31.8**；`tec` 含 **287** 个 `None`；`m.rms`→**NotImplementedError**；**未臆造生产 GIM TEC**
 
 > 岗位：用轻量 Python 包 **`ionex`** 读分析中心 IONEX（IGS/CODE/UPC…）壳层 VTEC 图。冲突时：**已安装包 API / 仓内 `tests/` / 本机冒烟 > 本文**。  
-> 早期 R3 短硬同包另见 [ionex-gim](./ionex-gim.md)（**勿改**）；Rust 读写 → [ionex-rs](./ionex-rs.md)；RINEX → [georinex](./georinex.md)；粗斜 TEC → [gnss-tec](./gnss-tec.md)。
+> 同包旧手册 [ionex-gim](./ionex-gim.md)（**勿改其正文**；数字应对齐本文）；Rust 读写 → [ionex-rs](./ionex-rs.md)；RINEX → [georinex](./georinex.md)；粗斜 TEC → [gnss-tec](./gnss-tec.md)。
 
 ## 1. 用途与边界
 
@@ -83,7 +83,7 @@ print("tec_min", min(finite), "tec_max", max(finite), "n_none", len(tec) - len(f
 PY
 ```
 
-**本机 stdout（0.2 / tip `8783a71`，2026-09-24 06:42 EDT）：**
+**本机 stdout（0.2 / tip `8783a71`，2026-09-24 06:42 EDT；质检复跑 06:47 EDT 对齐）：**
 
 ```text
 n_maps 12

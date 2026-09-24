@@ -184,7 +184,7 @@ expected_TECU=18.26 got_TECU=19.0635 rel_err_pct=4.40
 
 | 条目 | URL | 说明 |
 | --- | --- | --- |
-| **Galileo-NeQuick-G**（GSC） | <https://www.gsc-europa.eu/support-to-developers/ionospheric-correction-algorithms/galileo-nequick-g-source-code> | 官方 C11 + 测试；**注册/接受 EUPL** 后下加密包。本机**未**跑（无账号） |
+| **Galileo-NeQuick-G**（GSC） | 手册 [galileo-nequick-g](./galileo-nequick-g.md) · <https://www.gsc-europa.eu/support-to-developers/ionospheric-correction-algorithms/galileo-nequick-g-source-code> | 官方 C11 + 测试；**注册/接受 EUPL-1.2** 后下加密包。本机**未**跑（无账号）；细节/门禁以专页为准，**勿在此复制** |
 | ESA ESSR | <https://essr.esa.int/project/nequickg-galileo-ionospheric-correction-model> | 登记页；许可 ESA Community License |
 | NeQuickJRC 镜像 | <https://github.com/mgfernan/NeQuickJRC> | 社区整理；非权威托管 |
 
@@ -200,4 +200,4 @@ expected_TECU=18.26 got_TECU=19.0635 rel_err_pct=4.40
 | 实测双频 TEC | [pytecgg](./pytecgg.md) / [gnss-tec](./gnss-tec.md) |
 
 - ICD：<https://www.gsc-europa.eu/system/files/galileo_documents/Galileo_Ionospheric_Model.pdf>
-- 兄弟：[ionex-gim](./ionex-gim.md) · [pytecgg](./pytecgg.md) · [gnss-tec](./gnss-tec.md) · [sh-gim](./sh-gim.md) · [data-access](../data-access.md)
+- 兄弟：[galileo-nequick-g](./galileo-nequick-g.md)（官方 C 门禁）· [ionex-gim](./ionex-gim.md) · [pytecgg](./pytecgg.md) · [gnss-tec](./gnss-tec.md) · [sh-gim](./sh-gim.md) · [data-access](../data-access.md)

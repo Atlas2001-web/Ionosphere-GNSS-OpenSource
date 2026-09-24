@@ -1,8 +1,8 @@
 # Galileo-NeQuick-G · GSC 官方 NeQuick-G C 源码操作手册
 
-目录：[`PROJECTS.json` → `Galileo-NeQuick-G`](../../PROJECTS.json) · GSC 源码页 <https://www.gsc-europa.eu/support-to-developers/ionospheric-correction-algorithms/galileo-nequick-g-source-code> · 条款/下载闸 <https://www.gsc-europa.eu/support-to-developers/ionospheric-correction-algorithms/nequick-g-source-code/nequick-g-terms-and> · 许可 **EUPL-1.2**（条款页全文）· 语言 **C11** · ICD PDF 公开可达（本机 **8461196** B，`%PDF-1.7`）· 本机验证（**2026-09-24 06:42 EDT**）：源码页 **无** `.zip`/`.tar` 匿名链；条款写明 **登录 → 接受 EUPL → 密码加密 zip → ≤7 日邮件口令**；**无账号 → 未下载、未编译、未臆造 TEC**；≠ [nequickg](./nequickg.md)（社区 Python）≠ [nequick2-ictp](./nequick2-ictp.md)（ICTP NeQuick **2**）
+目录：[`PROJECTS.json` → `Galileo-NeQuick-G`](../../PROJECTS.json) · GSC 源码页 <https://www.gsc-europa.eu/support-to-developers/ionospheric-correction-algorithms/galileo-nequick-g-source-code> · 条款/下载闸 <https://www.gsc-europa.eu/support-to-developers/ionospheric-correction-algorithms/nequick-g-source-code/nequick-g-terms-and> · 许可 **EUPL-1.2**（条款页：European Union Public Licence v. 1.2）（条款页全文）· 语言 **C11** · ICD PDF 公开可达（本机 **8461196** B，`%PDF-1.7`）· 本机验证（**2026-09-24 06:42 EDT**；质检复跑 **06:47 EDT**：ICD **8461196** B/`%PDF-1.7`；源码页 archive href **0**；条款页 EUPL×**9**/encrypted×**1**/password×**4**）：源码页 **无** `.zip`/`.tar` 匿名链；条款写明 **登录 → 接受 EUPL → 密码加密 zip → ≤7 日邮件口令**；**无账号 → 未下载、未编译、未臆造 TEC**；≠ [nequickg](./nequickg.md)（社区 Python）≠ [nequick2-ictp](./nequick2-ictp.md)（ICTP NeQuick **2**）
 
-> 岗位：拿 **Galileo 单频电离层改正**的 **JRC 参考 C 实现**做产品/认证向量。冲突时：**GSC 页 / 获批包 README / ICD > 本文**。脚本教学先走已短硬 [nequickg](./nequickg.md)；气候态 NeQuick2 → [nequick2-ictp](./nequick2-ictp.md)；IRI 金标准 → [iri-fortran](./iri-fortran.md)。
+> 岗位：拿 **Galileo 单频电离层改正**的 **JRC 参考 C 实现**做产品/认证向量。冲突时：**GSC 页 / 获批包 README / ICD > 本文**。脚本教学先走已短硬 [nequickg](./nequickg.md)（**勿复制**其 Medium 表/TEC stdout；官方 C≠社区 Python）；气候态 NeQuick2 → [nequick2-ictp](./nequick2-ictp.md)；IRI 金标准 → [iri-fortran](./iri-fortran.md)。
 
 ## 1. 用途与边界
 
@@ -140,7 +140,7 @@ cd ~/iono_ops/galileo-nequick-g
 | 匿名源码下载 | **否**（0 zip/tar href） |
 | 条款：EUPL + 加密 zip + 邮件口令 | 是（须登录勾选） |
 | ICD PDF | **8461196** B / PDF-1.7 |
-| 本地 `make`/TEC stdout | **无**（故意不编造） |
+| 本地 `make`/TEC stdout | **无**（故意不编造；质检复跑确认） |
 | 可公开替代 | ICD；[nequickg](./nequickg.md)（**勿** bit 级对齐） |
 | 同栏目 NTCM-G | GSC 另有 NTCM-G 源码页（**不是**本文）；勿点错下载 |
 
