@@ -805,6 +805,6 @@ $$
 
 **版本说明**：本文件按「机制 → 公式拆解 → 观测签名 → 分析步骤」与 01–05 课同深度重写；嵌入延迟–频率、频段、双频组合、IPP、映射、薄壳、梯度、宁静/扰动残差、气泡与 DCB 等自制 CC0 图；引用项目名均来自 `PROJECTS.json` 核验。现象课 19–23 保持独立短文，不回灌成长文墙。
 
-**相关软件 / 数据入口**：[`rtklib`](../software/rtklib.md) · [`pride-pppar`](../software/pride-pppar.md) · [`data-access`](../data-access.md)
+**相关软件 / 数据入口**：[`rtklib`](../software/rtklib.md) · [`pride-pppar`](../software/pride-pppar.md) · [`bnc`](../software/bnc.md) · [`pygnssutils`](../software/pygnssutils.md) · [`data-access`](../data-access.md)
 
 （完）

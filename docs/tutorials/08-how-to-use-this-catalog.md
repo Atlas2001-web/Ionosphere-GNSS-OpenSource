@@ -176,7 +176,7 @@
 |---|---|
 | 门户与注册 | [`docs/data-access.md`](../data-access.md) |
 | 条目表 | [`lists/10-gnss-datasets.md`](../../lists/10-gnss-datasets.md) |
-| 读数/拉流短文 | [`georinex`](../software/georinex.md)、[`BNC`](../software/bnc.md)、[`pygnssutils`](../software/pygnssutils.md) → [`docs/software/`](../software/README.md) |
+| 读数/拉流短文 | [`georinex`](../software/georinex.md)、[`BNC`](../software/bnc.md)、[`pygnssutils`](../software/pygnssutils.md)、[`BKG NtripCaster`](../software/bkg-ntripcaster.md) → [`docs/software/`](../software/README.md) |
 | 例 | 观测：`CDDIS-GNSS-Archive`；GIM：`CDDIS-IONEX`；掩星：`COSMIC-CDAAC`；测高：`GIRO-DIDBase` |
 
 **工作例：**  
@@ -479,3 +479,5 @@
 1. 听到 storm/EIA/TID/闪烁任一词，能指出教程编号与 list 文件。  
 2. 能写出最小证据集与确认等级，而不是只有软件名。  
 3. 能把现象路由与场景 A–G 拼成一条不绕路的开题路径。
+
+**下一步 / 相关链接**：一日实战 [16](./16-practice-one-day-tec.md) · 路线图 [17](./17-roadmap-beginner-to-expert.md) · DCB [09](./09-dcb-biases-deep.md) · 数据门户 [`data-access`](../data-access.md) · 软件索引 [`docs/software/README.md`](../software/README.md)

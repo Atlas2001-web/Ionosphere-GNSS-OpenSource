@@ -398,7 +398,7 @@ $$
 
 | 需求 | 真实 `name`（示例） | 列表 / 短文 |
 |---|---|---|
-| RINEX→STEC | `gnss-tec`、`pygnss-tec`、`tec-suite`、`Seemala-GPS-TEC`、`Okoh-MATLAB-TEC-from-RINEX`、`IONOLAB-TEC-Software` | [`lists/01-ionosphere.md`](../../lists/01-ionosphere.md) |
+| RINEX→STEC | `gnss-tec`、`pygnss-tec`、`tec-suite`、`Seemala-GPS-TEC`、`Okoh-MATLAB-TEC-from-RINEX`、`IONOLAB-TEC-Software`、`PyTECGg` | [`lists/01-ionosphere.md`](../../lists/01-ionosphere.md)；校准短文 [`pytecgg`](../software/pytecgg.md) |
 | 读数 / QC | `georinex`、`Anubis`、`TEQC`、`GFZRNX` | [`lists/03-gnss-data.md`](../../lists/03-gnss-data.md)；短文 [`georinex`](../software/georinex.md)、[`Anubis`](../software/anubis.md)、[`GFZRNX`](../software/gfzrnx.md) |
 | 偏差线索 | `Gkit-Bias`、`MCOSB` | 交叉检索；用前读上游 README |
 | 读 IONEX | `ionex`、`ionex-rs`、`ionex_reader`、`ionex-analyzer`、`ionex-downloader` | [`ionex-gim`](../software/ionex-gim.md) |
@@ -546,5 +546,7 @@ $$
 **终句**：先问绝对还是相对，再问码对与基准，最后才打开画图软件。零点未宣，结论勿发。
 
 **版本说明**：本文件按「机制 → 公式拆解 → 观测签名 → 分析步骤」与 01–07 课同深度重写；嵌入 `fig-bias-dcb`、`fig-dualfreq-geometry-free`、`fig-dualfreq-tec`、`fig-stec-vtec-shell` 等自制 CC0 图；引用项目名均来自 `PROJECTS.json` 核验。现象课 19–23 保持独立短文，不回灌成长文墙。
+
+**相关软件 / 数据入口**：[`pytecgg`](../software/pytecgg.md) · [`georinex`](../software/georinex.md) · [`anubis`](../software/anubis.md) · [`pride-pppar`](../software/pride-pppar.md) · [`data-access`](../data-access.md) · 目录课 [08](./08-how-to-use-this-catalog.md)
 
 （完）
