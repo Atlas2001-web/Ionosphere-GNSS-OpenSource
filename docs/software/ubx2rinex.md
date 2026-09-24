@@ -1,6 +1,6 @@
 # ubx2rinex · U-Blox UBX→RINEX 采集/反序列化操作手册
 
-目录：[`PROJECTS.json` → `ubx2rinex`](../../PROJECTS.json) · 上游 <https://github.com/nav-solutions/ubx2rinex> · crates.io **`ubx2rinex` 0.3.0** · tip **`3b67fd0`**（`v0.3.0-6-g3b67fd0`；仓内仍标 0.3.0）· **MPL-2.0** · 默认 feature **UBX V23** · 本机验证 **rustc 1.98.1** + `cargo install ubx2rinex --locked`（需 **libudev-dev**；2026-09-24 05:36 EDT）：被动 `-f` 上游 `F9T-L2-5min.ubx.gz` → OBS **298** 历元 G01 L1C/C1C/D1C；coldstart → OBS **561** + NAV **9** 星历；pyubx2 无 RAWX 样例 **0** 文件
+目录：[`PROJECTS.json` → `ubx2rinex`](../../PROJECTS.json) · 上游 <https://github.com/nav-solutions/ubx2rinex> · crates.io **`ubx2rinex` 0.3.0** · tip **`3b67fd0`**（`v0.3.0-6-g3b67fd0`；仓内仍标 0.3.0）· **MPL-2.0** · 默认 feature **UBX V23** · 本机验证 **rustc 1.98.1** + `cargo install ubx2rinex --locked`（需 **libudev-dev**；2026-09-24 05:36 EDT）：被动 `-f` 上游 `F9T-L2-5min.ubx.gz` → OBS **298** 历元 G01 L1C/C1C/D1C；coldstart → OBS **561** + NAV **9** 星历；pyubx2 无 RAWX 样例 **0** 文件 · **质检复跑** 2026-09-24 05:39 EDT（F9T `--gps` **298**/georinex `{time:298,sv:12}` G01 L1C/C1C/D1C 对齐；coldstart OBS **561**+NAV **9**/5662 B；混星短名可出但缺 `TIME OF FIRST OBS` 时 georinex 抛 KeyError）
 
 > 岗位：nav-solutions **UBX 流/快照 → RINEX OBS（默认）/NAV（可选）** CLI。冲突时：**本机 `ubx2rinex -h` / 上游 README > 本文**。  
 > UBX 编解码库（无 CLI）→ [pyubx2](./pyubx2.md)；串口/NTRIP/录流 CLI → [pygnssutils](./pygnssutils.md)；桌面 GUI → [pygpsclient](./pygpsclient.md)；手机 Logger→RINEX → [android_rinex](./android_rinex.md)/[gps-measurement-tools](./gps-measurement-tools.md)；读进 xarray → [georinex](./georinex.md)；同生态 Rust RINEX QC → [rinex-cli](./rinex-cli.md)。
@@ -294,6 +294,8 @@ u-blox .ubx / .ubx.gz（含 RXM-RAWX）
 | 12 | `--all-features` | 上游：UBX 协议 feature 互斥 | 只选 `ubx23`（默认）或其一 |
 | 13 | 当 UBX 百科 / GUI | 职责仅转 RINEX | pyubx2 / pygpsclient |
 | 14 | 混星时 `no available capacity` / `channel closed` | 内部通道背压 | 用 `--gps` 收窄；检查是否仍写出完整历元 |
+| 15 | 混星/部分头缺 `TIME OF FIRST OBS` → georinex `KeyError` | 写出头不完整 | 先 `--gps` 单星座；或补头/`rinexmod`；以明文历元为准 |
+| 16 | `--nav` 日志 `Galileo constellation not handled yet` | NAV 解码偏 GPS(+QZSS) | 勿指望 GAL 星历；OBS 混星仍可能写出 |
 
 ## 7. 选型
 

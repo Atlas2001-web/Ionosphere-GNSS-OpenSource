@@ -1,6 +1,6 @@
 # libswiftnav · Swift GNSS 数值算法 C 库操作手册
 
-目录：[`PROJECTS.json` → `libswiftnav`](../../PROJECTS.json) · 上游 <https://github.com/swift-nav/libswiftnav> · **URL 已核** · tip **`19331e0`**（2025-08-27；无近期 semver tag，仓内最新 tag 仍为 **v2.4.2**）· 许可 **LGPL-3.0** · 本机：CMake **3.31.6** + GCC **14.2.0** → `libswiftnav.a`；`make do-all-tests` → **250 PASSED** / 24 suites；迷你链 `calc_ionosphere` **7.202448** m · **无 PyPI / 无 CLI** · 2026-09-24 05:36 EDT
+目录：[`PROJECTS.json` → `libswiftnav`](../../PROJECTS.json) · 上游 <https://github.com/swift-nav/libswiftnav> · **URL 已核** · tip **`19331e0`**（2025-08-27；无近期 semver tag，仓内最新 tag 仍为 **v2.4.2**）· 许可 **LGPL-3.0** · 本机：CMake **3.31.6** + GCC **14.2.0** → `libswiftnav.a`；`make do-all-tests` → **250 PASSED** / 24 suites；迷你链 `calc_ionosphere` **7.202448** m · **无 PyPI / 无 CLI** · 2026-09-24 05:36 EDT · **质检复跑** 2026-09-24 05:39 EDT（`test-swiftnav-common` **250 PASSED**/24；`calc_ionosphere` **7.202448** m；`wgsecef2llh` **37.42864123 −122.17234450 h=100.211**；install prefix **37** 头 / `libswiftnav.a` ≈4.6 M；googletest 须 HTTPS submodule）
 
 > 岗位：给软件接收机或自研 C/C++ 提供 **平台无关 GNSS 数值例程**（星历、Klobuchar 电离层、对流层、坐标、时间、单历元求解等）。冲突时：**上游 README / 头文件注释 / 本机 `tests/` > 本文**。  
 > **对照：** [libsbp](./libsbp.md) = **SBP 通信协议**；本库 = **数学/算法**，**不**与 Swift 接收机通信。现场壳 → [piksi-tools](./piksi-tools.md)；ROS 2 → [swiftnav-ros2](./swiftnav-ros2.md)。更重的 C++ 底座 → [gnsstk](./gnsstk.md)。
