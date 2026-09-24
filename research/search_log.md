@@ -436,3 +436,11 @@
 - Avoided: ROMPOS/HEPOS/TrigNet/AFREF unreachable or 403; OPUS/CORS/IERS-EOP near-dups; SILSO datafiles near SILSO home; CDDIS MGEX→Earthdata already listed; INEGI geodesia dead; saturated PPP/pyrtklib/Soapy stacks; gr-satellites weak GNSS fit
 - Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
 
+## Routine pass 2026-09-24r
+
+- Catalog size before: **969**; after merge: **983** (+14)
+- Finds file: `research/routine_finds_20260924r.json`
+- Method: Czech CZEPOS + Korea KASI GDC + GA GNSS networks overview + EPN stationlist/coordinates + SIRGAS weekly + Earthdata GNSS hub/daily-30s + ILRS/IVSCC + GLOSS/IOC sea-level + CCMC ISWA + ESA OPS-GN; curl+redirect canonicalization; dedup vs PROJECTS.json and all `routine_finds_*.json`
+- Avoided: get.igs.org→igs.org home; NGS CORS near geodesy.noaa.gov/CORS/data; ROMPOS/HEPOS/SKPOS/AFREF down; more SWPC product pages; saturated Soapy/PPP/pyrtklib/nav-solutions; celestial-nav thin; IGP Peru agency-weak; NLSC/NGII weak GNSS specificity
+- Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
+

@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> **281** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **282** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -2710,3 +2710,18 @@ SWPC GOES Proton Flux 产品页，监测太阳高能质子事件（SPE）。质�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 NCEI Enhanced Magnetic Model（EMM）产品页，提供比 WMM 更精细的地壳/岩石圈磁场模型入口。与已收录 WMM 门户互补，服务航向/磁偏与空间天气地磁背景。模型系数与计算器见页内链接。收录前已 HTTP 核验；遵守 NOAA 公共域/引用惯例。
+
+## 空间天气分析
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [CCMC-ISWA](https://ccmc.gsfc.nasa.gov/tools/ISWA/) | CCMC ISWA：集成空间天气分析系统 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [CCMC-ISWA](https://ccmc.gsfc.nasa.gov/tools/ISWA/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Community Coordinated Modeling Center 的 Integrated Space Weather Analysis（ISWA）工具入口，聚合模型与观测可视化，服务空间天气态势感知。与 DONKI、OMNI、SWPC 产品互补，偏综合分析台。收录前已核验（iswa.ccmc 会转到本 URL）。

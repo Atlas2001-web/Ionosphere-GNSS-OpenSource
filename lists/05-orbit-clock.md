@@ -1,5 +1,5 @@
 # 轨道与钟差 / Orbit & Clock
-> **29** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **32** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。
 
@@ -335,6 +335,7 @@ BIPM Time Department 的 FTP 索引页，指向 pub 等时标相关目录，是 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [CDDIS-Orbit-Clock-Products](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/orbit_and_clock_products.html) | NASA CDDIS：GNSS 轨道与钟差产品说明页 | data-portal | — | 🏷️ 官方 |
+| [ESA-Navigation-Support-Office](https://navigation-office.esa.int/) | ESA OPS-GN：导航支持办公室门户 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -345,11 +346,19 @@ BIPM Time Department 的 FTP 索引页，指向 pub 等时标相关目录，是 
 
 CDDIS 对 IGS 等精密轨道（SP3）与钟差（CLK）产品的说明入口；站点提示已向 earthdata.nasa.gov 迁移。与已收录 CDDIS 大气/IONEX/高采样页互补，本页专指轨道钟差派生产品文档。下载现多走 Earthdata；需遵守 NASA 账号与引用条款。收录前已 HTTP 核验页面可达。
 
+#### [ESA-Navigation-Support-Office](https://navigation-office.esa.int/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+ESA Navigation Support Office（OPS-GN）公开门户，介绍导航支持活动、产品与出版物入口。面向 GNSS 精密产品与任务支持用户，与 GSSC/Navipedia 等 ESA 导航资源互补。页面偏 JS 应用；收录前已 HTTP 核验可达。
+
 ## VLBI/EOP
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [IVS-IVSOPAR](https://ivsopar.obspm.fr/) | 巴黎天文台 IVS 分析中心：大地测量 VLBI 产品门户 | data-portal | — | 🏷️ 官方 |
+| [IVSCC](https://ivscc.gsfc.nasa.gov/) | IVS 协调中心：国际 VLBI 服务主站 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -359,6 +368,13 @@ CDDIS 对 IGS 等精密轨道（SP3）与钟差（CLK）产品的说明入口；
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 Observatoire de Paris 托管的 IVS 大地测量 VLBI 分析服务门户，提供 VLBI 解算与地球定向相关产品入口。轨道/参考框架与 EOP 用户可与 IERS EOP、GNSS 框架联合使用。收录前已 HTTP 核验；产品级别与引用见 IVS/巴黎天文台说明。
+
+#### [IVSCC](https://ivscc.gsfc.nasa.gov/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+International VLBI Service 协调中心门户，介绍观测计划、台站网、数据产品与技术文件。与已收录巴黎 IVSOPAR 分析中心互补，本站偏服务协调与总入口。EOP/TRF 与 GNSS 框架联合用户常用。收录前已 HTTP 核验。
 
 ## 轨道动力学
 
@@ -374,3 +390,18 @@ Observatoire de Paris 托管的 IVS 大地测量 VLBI 分析服务门户，提�
 语言：Rust · 许可：AGPL-3.0 · 星标约：490 · 宿主：github
 
 nyx-space 维护的 Rust 宇航动力学工具包，AGPL-3.0，星标近五百。覆盖轨道传播、定轨与任务分析等，可与 GNSS 精密轨道/钟差产品对照或做仿真前端。偏航天动力学而非 GNSS 观测解算；许可证对闭源集成有约束。收录前已 gh api 核验。
+
+## SLR
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [ILRS](https://ilrs.gsfc.nasa.gov/) | ILRS：国际激光测距服务主站（IAG） | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [ILRS](https://ilrs.gsfc.nasa.gov/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+International Laser Ranging Service 官方门户，组织 SLR 网络、产品与会议信息，服务地球动力学与精密轨道。与 GNSS 精密定轨/参考框架联合解算相关，可补 IVS/IGS 空间大地测量链条。收录前已 HTTP 核验（政府停摆时可能暂停更新）。

@@ -402,3 +402,10 @@
 - 当前条目：**969**
 - 分类计数：{'ionosphere': 281, 'troposphere': 44, 'gnss-data': 133, 'gnss-positioning': 101, 'orbit-clock': 29, 'navigation-ins': 71, 'gnss-sdr': 76, 'mobile-apps': 29, 'tools-learning': 59, 'gnss-datasets': 146}
 - 详见 `research/routine_finds_20260924q.json`
+
+## 例行检索补录（2026-09-24r）
+
+- 新增 **14** 条（CZEPOS/KASI/GA networks、EPN stationlist/coordinates、SIRGAS weekly、Earthdata GNSS/30s、ILRS/IVSCC、GLOSS/IOC、ISWA、ESA OPS-GN 等）
+- 当前条目：**983**
+- 分类计数：{'ionosphere': 282, 'troposphere': 44, 'gnss-data': 133, 'gnss-positioning': 101, 'orbit-clock': 32, 'navigation-ins': 71, 'gnss-sdr': 76, 'mobile-apps': 29, 'tools-learning': 59, 'gnss-datasets': 156}
+- 详见 `research/routine_finds_20260924r.json`
