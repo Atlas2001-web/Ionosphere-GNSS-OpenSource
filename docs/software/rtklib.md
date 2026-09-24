@@ -41,6 +41,19 @@ rnx2rtkp -p 0 -sys G -m 5 -t -e -o out_spp.pos 14601736.18o 14601736.18n
 
 期望：`Q=5`（single）。教学/完整旗标仍推荐 §2.2 explorer。
 
+**PATH 陷阱（本机复核 2026-09-24 ET）：** `which rnx2rtkp` 常指向 apt **`/usr/bin/rnx2rtkp`** → `.pos` 头写 `ver.2.4.3 b34`。explorer 编出的是 **`rnx2rtkp RTKLIB EX 2.5.1`**（`--version` 直接打印该行；apt 的 `--version` 往往只回 usage）。两套并存时：
+
+```bash
+which -a rnx2rtkp
+/usr/bin/rnx2rtkp -p 0 -sys G -m 5 -t -e -o /tmp/apt.pos 14601736.18o 14601736.18n
+head -n 1 /tmp/apt.pos   # % program   : rnx2rtkp ver.2.4.3 b34
+# EX（路径按你的 build）：
+# /path/to/RTKLIB/app/consapp/rnx2rtkp/gcc/rnx2rtkp --version
+# → rnx2rtkp RTKLIB EX 2.5.1
+```
+
+归档实验时在笔记写清二进制路径与 `% program` 行，勿混贴旗标。
+
 ### 2.1 Windows 预编译
 
 1. 打开 <https://github.com/rtklibexplorer/RTKLIB/releases>
@@ -254,9 +267,11 @@ rnx2rtkp -k conf/my_rtk.conf -o out/exp.pos rover.obs base.obs rover.nav
 | 9 | GUI 勾选与 CLI conf 不一致 | 两套来源 | 只信磁盘上的 `-k` 文件 |
 | 10 | 旧 `.pos` 被追加弄脏 | 同名输出 | 跑前 `rm` 或换 `-o` |
 | 11 | 列解析脚本升级后错位 | 头注释变了 | 重读 `%` 头；按列名解析 |
-| 12 | `no common satellites` | 时间/系统无交集 | georinex 对两端 `gtime`/time；`-sys` 对齐 |
+| 12 | `no common satellites` | 时间/系统无交集 | `python -m georinex.time` 对两端 OBS；`-sys` 对齐 |
 | 13 | PATH 里官方与 EX 混用 | 两个 `rnx2rtkp` | `which -a`；删旧或改顺序 |
 | 14 | 磁暴对照却同时改了全部参数 | 实验不干净 | 只留电离层相关旋钮 |
+| 15 | 进度行曾闪 `Q=0` 以为失败 | 尚未形成解的过渡显示 | 看 `.pos` 数据行的 Q；SPP 正常为 5 |
+| 16 | apt `--version`「没输出版本」 | 旧包把 `--version` 当未知旗标打 usage | 读 `.pos` 的 `% program` 行；或改用 EX `--version` |
 
 ## 7. 选型
 
