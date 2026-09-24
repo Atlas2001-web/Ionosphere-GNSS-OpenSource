@@ -1265,7 +1265,7 @@ Wakkanai、Kokubunji、Yamagawa、Okinawa 等日本测高仪数字化资料入�
 | [pyglow](https://github.com/timduly4/pyglow) | pyglow：上层大气气候态 Python 库 | Python/Fortran | 117 | 🏷️ 个人社区 核心 |
 | [pyIRI2016](https://github.com/rilma/pyIRI2016) | IRI-2016 Fortran 的 f2py 包装（pyiri2016，与 space-physics/iri2016 不同仓） | Python/Fortran | 21 | 🏷️ 个人社区 |
 | [PyIRTAM](https://github.com/victoriyaforsythe/PyIRTAM) | IRTAM 系数下载与全球网格电子密度重建（纯 Python，对接 PyIRI） | Python | 4 | 🏷️ 高校实验室 核心 |
-| [iricore](https://github.com/MIST-Experiment/iricore) | ctypes 包装 IRI-2016/2020，可算 VTEC/STEC 并更新指数文件 | Python/Fortran | 2 | 🏷️ 个人社区 |
+| [iricore](https://github.com/MIST-Experiment/iricore) | ctypes 包装 IRI-2016/2020，可算 VTEC/STEC 并更新指数文件 | Python/Fortran | 2 | 🏷️ 高校实验室 |
 | [CCMC-IRI-online](https://ccmc.gsfc.nasa.gov/models/IRI~2020/) | CCMC-IRI-online：NASA CCMC 的 IRI-2020 在线运行与说明 | — | — | 🏷️ 官方 |
 | [GAMBIT-Database-Reader-Java](https://giro.uml.edu/GAMBIT/GambitReader_Java_V0.1.zip) | 官方示例：GAMBIT 数据库 Java 读入/解包（拉 IRTAM 系数） | Java | — | 🏷️ 官方 |
 | [GIRO-GAMBIT](https://giro.uml.edu/GAMBIT/) | GIRO-GAMBIT：底部电离层时间线全球同化（GAMBIT）门户 | data-portal | — | 🏷️ 高校实验室 |
@@ -1306,7 +1306,7 @@ Wakkanai、Kokubunji、Yamagawa、Okinawa 等日本测高仪数字化资料入�
 面向 GIRO/IRTAM 同化产物：可读/下载 IRTAM 系数，在给定全球网格与全日时间轴上同时评估 foF2/hmF2 等并重建 Ne。适合把实时同化电离层接到 Python 科研流水线，与气候态 PyIRI 对照。系数来自 LGDC/GAMBIT 接口，需遵守站点访问节奏；不是官方 Fortran irirtam.for 的逐行移植，数值对比请以 IRI-2020 包内 irirtam 子程序为参照。
 
 #### [iricore](https://github.com/MIST-Experiment/iricore)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：Python/Fortran · 许可：see upstream · 星标约：2 · 宿主：github
 
@@ -2458,7 +2458,7 @@ GFZ 官方 Kp 指数数据入口，支持用户定制下载、HTTPS/FTP 与 Web 
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [TEC-Maps-of-Nepal](https://github.com/Binabh/TEC-Maps-of-Nepal) | 利用 UNAVCO CORS 生成尼泊尔区域 TEC 图 | Python | 12 | 🏷️ 个人社区 |
+| [TEC-Maps-of-Nepal](https://github.com/Binabh/TEC-Maps-of-Nepal) | TEC-Maps-of-Nepal：UNAVCO CORS 生成尼泊尔区域 TEC 图 | Python | 12 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -2473,12 +2473,12 @@ GFZ 官方 Kp 指数数据入口，支持用户定制下载、HTTPS/FTP 与 Web 
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [NCAR-GLOW](https://github.com/space-physics/NCAR-GLOW) | NCAR GLOW 气辉模型的 CMake/Python/Matlab 构建扩展 | Python | 11 | 🏷️ 个人社区 |
+| [NCAR-GLOW](https://github.com/space-physics/NCAR-GLOW) | NCAR-GLOW：气辉模型 CMake/Python/Matlab 构建扩展 | Python | 11 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
 #### [NCAR-GLOW](https://github.com/space-physics/NCAR-GLOW)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：Python · 许可：Apache-2.0 · 星标约：11 · 宿主：github
 
@@ -2488,12 +2488,12 @@ GFZ 官方 Kp 指数数据入口，支持用户定制下载、HTTPS/FTP 与 Web 
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [pysatMissions](https://github.com/pysat/pysatMissions) | pysat 任务规划与仪器工具扩展 | Python | 14 | 🏷️ 个人社区 |
+| [pysatMissions](https://github.com/pysat/pysatMissions) | pysatMissions：pysat 任务规划与仪器工具扩展 | Python | 14 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
 #### [pysatMissions](https://github.com/pysat/pysatMissions)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：Python · 许可：BSD-3-Clause · 星标约：14 · 宿主：github
 

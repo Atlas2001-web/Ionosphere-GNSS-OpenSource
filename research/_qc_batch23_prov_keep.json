@@ -1,0 +1,50 @@
+[
+  {
+    "name": "brandon-rhodes/python-sgp4",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "hobbyist astronomy maintainer; company null"
+  },
+  {
+    "name": "shashwatak/satellite-js",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "company=@waymo commercial"
+  },
+  {
+    "name": "Binabh/TEC-Maps-of-Nepal",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "personal user; no univ/lab signal"
+  },
+  {
+    "name": "Erensu/ignav",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "loc=WHU only (batch6/7/21/22)"
+  },
+  {
+    "name": "perrysou/SoftGNSS-python",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "IIT spaceweather URL only (batch22)"
+  },
+  {
+    "name": "PyGnssLab",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "community software-lab branding (batch21/22)"
+  },
+  {
+    "name": "cryologger",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "community research hardware org; not univ lab"
+  },
+  {
+    "name": "TheGalfins/GNSS_Compare",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "org description empty; no clear univ on gh"
+  }
+]

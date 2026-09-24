@@ -259,7 +259,7 @@ CelesTrak 提供的现行 GP（原 TLE）轨道根数获取页，含查询与专
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [python-sgp4](https://github.com/brandon-rhodes/python-sgp4) | Python SGP4：由 TLE/OMM 传播卫星位置 | Python | 472 | 🏷️ 个人社区 |
+| [python-sgp4](https://github.com/brandon-rhodes/python-sgp4) | python-sgp4：Python SGP4/SDP4 由 TLE/OMM 传播位置 | Python | 472 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -274,7 +274,7 @@ CelesTrak 提供的现行 GP（原 TLE）轨道根数获取页，含查询与专
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [satellite-js](https://github.com/shashwatak/satellite-js) | JavaScript/TypeScript SGP4/SDP4 轨道传播库 | TypeScript | 1091 | 🏷️ 个人社区 |
+| [satellite-js](https://github.com/shashwatak/satellite-js) | satellite-js：JavaScript/TypeScript SGP4/SDP4 轨道传播 | TypeScript | 1091 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -289,7 +289,7 @@ CelesTrak 提供的现行 GP（原 TLE）轨道根数获取页，含查询与专
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [dSGP4](https://github.com/esa/dSGP4) | ESA dSGP4：可微分 SGP4，支持机器学习集成 | Python | 97 | 🏷️ 高校实验室 |
+| [dSGP4](https://github.com/esa/dSGP4) | dSGP4：ESA 可微分 SGP4（机器学习友好） | Python | 97 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -304,12 +304,12 @@ CelesTrak 提供的现行 GP（原 TLE）轨道根数获取页，含查询与专
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [sgp4-rs](https://github.com/neuromorphicsystems/sgp4) | Rust 实现的 SGP4 卫星轨道传播算法 | Rust | 120 | 🏷️ 个人社区 |
+| [sgp4-rs](https://github.com/neuromorphicsystems/sgp4) | sgp4-rs：Rust SGP4 卫星轨道传播（crates.io） | Rust | 120 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
 #### [sgp4-rs](https://github.com/neuromorphicsystems/sgp4)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：Rust · 许可：MIT · 星标约：120 · 宿主：github
 

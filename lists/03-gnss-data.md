@@ -1363,12 +1363,12 @@ MIT 许可的 Python 脚本，从 gnss.osi.ie 批量下载爱尔兰 Active GNSS 
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [pysatCDF](https://github.com/pysat/pysatCDF) | NASA CDF 格式的 Python 读取器（pysat） | Python | 13 | 🏷️ 个人社区 |
+| [pysatCDF](https://github.com/pysat/pysatCDF) | pysatCDF：NASA CDF 格式 Python 读取器（pysat） | Python | 13 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
 #### [pysatCDF](https://github.com/pysat/pysatCDF)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：Python · 许可：BSD-3-Clause · 星标约：13 · 宿主：github
 

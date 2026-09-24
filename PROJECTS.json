@@ -7732,7 +7732,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
+      "provenance": "academic_lab",
       "one_liner_zh": "ctypes 包装 IRI-2016/2020，可算 VTEC/STEC 并更新指数文件"
     },
     {
@@ -17653,7 +17653,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
+      "provenance": "academic_lab",
       "one_liner_zh": "ublox-ros：KumarRobotics ROS1 经典 u-blox GPS 驱动"
     },
     {
@@ -17935,7 +17935,7 @@
     {
       "name": "pymap3d",
       "url": "https://github.com/geospace-code/pymap3d",
-      "desc_zh": "纯 Python 三维坐标转换：ECEF/ENU/ECI 等（geospace）",
+      "desc_zh": "geospace-code 维护；无依赖 NumPy 可选加速，面向地球空间脚本而非精密定位引擎",
       "analysis_zh": "geospace-code 维护的纯 Python（可选 Numpy）三维坐标转换库，覆盖 ECEF、ENU、ECI 等常用地空坐标系，BSD-2-Clause，星数高、文档清晰。服务 GNSS/轨道/空间天气几何计算，不做观测解算。API 稳定、依赖少，适合脚本与教学。与精密测地库（如 PROJ）分工不同，偏空间物理常用约定。",
       "language": "Python",
       "license": "BSD-2-Clause",
@@ -17949,13 +17949,13 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "纯 Python 三维坐标转换：ECEF/ENU/ECI 等（geospace）"
+      "provenance": "academic_lab",
+      "one_liner_zh": "pymap3d：纯 Python 三维坐标转换（ECEF/ENU/ECI）"
     },
     {
       "name": "TEC-Maps-of-Nepal",
       "url": "https://github.com/Binabh/TEC-Maps-of-Nepal",
-      "desc_zh": "利用 UNAVCO CORS 生成尼泊尔区域 TEC 图",
+      "desc_zh": "区域演示管线；依赖上游 CORS 可用性，非全球 GIM 产品替代",
       "analysis_zh": "用 UNAVCO 可获取的 CORS 观测生成尼泊尔区域 TEC 图的 MIT 许可脚本，面向区域电离层制图示例。依赖上游 CORS 可用性与预处理质量；方法偏教学/区域试验，非全球 GIM 产品。补齐区域 TEC 开源示例薄点。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证与引用要求。",
       "language": "Python",
       "license": "MIT",
@@ -17970,12 +17970,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "利用 UNAVCO CORS 生成尼泊尔区域 TEC 图"
+      "one_liner_zh": "TEC-Maps-of-Nepal：UNAVCO CORS 生成尼泊尔区域 TEC 图"
     },
     {
       "name": "NCAR-GLOW",
       "url": "https://github.com/space-physics/NCAR-GLOW",
-      "desc_zh": "NCAR GLOW 气辉模型的 CMake/Python/Matlab 构建扩展",
+      "desc_zh": "space-physics 对 NCAR GLOW 的现代构建与脚本封装；需理解上游气辉物理假定",
       "analysis_zh": "为 NCAR GLOW（气辉/电离层相关）基线代码补充 CMake、Meson、Matlab、Python 构建与封装，Apache-2.0。与已收录 pyglow 互补：本仓偏构建与上游对接。运行仍依赖 GLOW 科学代码与输入大气/太阳条件。适合上层大气/气辉与 GNSS 闪烁背景对照实验。",
       "language": "Python",
       "license": "Apache-2.0",
@@ -17989,13 +17989,13 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "NCAR GLOW 气辉模型的 CMake/Python/Matlab 构建扩展"
+      "provenance": "academic_lab",
+      "one_liner_zh": "NCAR-GLOW：气辉模型 CMake/Python/Matlab 构建扩展"
     },
     {
       "name": "pysatMissions",
       "url": "https://github.com/pysat/pysatMissions",
-      "desc_zh": "pysat 任务规划与仪器工具扩展",
+      "desc_zh": "卫星过境/仪器配置辅助；与 pysat 核心数据模型配合，非独立定轨软件",
       "analysis_zh": "pysat 生态的任务/仪器规划工具包，BSD-3-Clause，便于把卫星任务几何与空间天气数据流接到统一分析框架。非 GNSS 解算库，但对星载 GNSS 接收或电离层探测任务规划有辅助价值。依赖 pysat 核心版本。适合科研脚本化任务仿真。",
       "language": "Python",
       "license": "BSD-3-Clause",
@@ -18009,13 +18009,13 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "pysat 任务规划与仪器工具扩展"
+      "provenance": "academic_lab",
+      "one_liner_zh": "pysatMissions：pysat 任务规划与仪器工具扩展"
     },
     {
       "name": "pysatCDF",
       "url": "https://github.com/pysat/pysatCDF",
-      "desc_zh": "NASA CDF 格式的 Python 读取器（pysat）",
+      "desc_zh": "面向空间物理 CDF 文件 I/O；常作 pysat 生态依赖，非 GNSS 专有格式库",
       "analysis_zh": "为 pysat 提供 NASA Common Data Format（CDF）读取支持，BSD-3-Clause。空间物理与部分 GNSS/电离层衍生产品常以 CDF 分发，可与 CDAWeb/SPDF 下载流程衔接。适合把官方 CDF 拉进 Python 分析管线。",
       "language": "Python",
       "license": "BSD-3-Clause",
@@ -18029,13 +18029,13 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "NASA CDF 格式的 Python 读取器（pysat）"
+      "provenance": "academic_lab",
+      "one_liner_zh": "pysatCDF：NASA CDF 格式 Python 读取器（pysat）"
     },
     {
       "name": "python-sgp4",
       "url": "https://github.com/brandon-rhodes/python-sgp4",
-      "desc_zh": "Python SGP4：由 TLE/OMM 传播卫星位置",
+      "desc_zh": "Brandon Rhodes 维护的经典传播库；两行根数级精度，非精密轨道产品",
       "analysis_zh": "经典 SGP4 的 Python 实现，MIT 许可，广泛用于由 TLE/OMM 传播卫星位置与速度。服务可见性、简易碰撞预警与教学，精度不及精密星历。与 CelesTrak GP 数据常配合使用。星数高、维护活跃，是 Python 轨道传播常用依赖。",
       "language": "Python",
       "license": "MIT",
@@ -18050,12 +18050,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Python SGP4：由 TLE/OMM 传播卫星位置"
+      "one_liner_zh": "python-sgp4：Python SGP4/SDP4 由 TLE/OMM 传播位置"
     },
     {
       "name": "satellite-js",
       "url": "https://github.com/shashwatak/satellite-js",
-      "desc_zh": "JavaScript/TypeScript SGP4/SDP4 轨道传播库",
+      "desc_zh": "浏览器/Node 向传播实现；适合可视化与前端工具，非精密定轨",
       "analysis_zh": "模块化 JS/TS 实现的 SGP4/SDP4，用于浏览器或 Node 中传播 TLE/OMM，MIT 许可，星数很高。适合 Web 可见性可视化与前端演示，非测地精密轨道。输入根数时效与来源影响结果。补齐前端 GNSS/卫星几何工具链缺口。",
       "language": "TypeScript",
       "license": "MIT",
@@ -18070,12 +18070,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "JavaScript/TypeScript SGP4/SDP4 轨道传播库"
+      "one_liner_zh": "satellite-js：JavaScript/TypeScript SGP4/SDP4 轨道传播"
     },
     {
       "name": "dSGP4",
       "url": "https://github.com/esa/dSGP4",
-      "desc_zh": "ESA dSGP4：可微分 SGP4，支持机器学习集成",
+      "desc_zh": "支持自动微分的 SGP4；用于学习/优化集成，仍属两行根数传播族",
       "analysis_zh": "欧洲航天局相关开源的可微分 SGP4（dSGP4），GPL-3.0，支持自动微分与机器学习集成，便于把轨道传播嵌入优化/学习管线。偏研究原型，需理解可微约束与数值稳定。学术实验室属性强，补齐可微轨道传播缺口。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证与引用要求。",
       "language": "Python",
       "license": "GPL-3.0",
@@ -18090,12 +18090,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "ESA dSGP4：可微分 SGP4，支持机器学习集成"
+      "one_liner_zh": "dSGP4：ESA 可微分 SGP4（机器学习友好）"
     },
     {
       "name": "sgp4-rs",
       "url": "https://github.com/neuromorphicsystems/sgp4",
-      "desc_zh": "Rust 实现的 SGP4 卫星轨道传播算法",
+      "desc_zh": "Western Sydney ICNS 实现；高性能嵌入/服务向，精度同 SGP4 族",
       "analysis_zh": "Rust 语言的 SGP4 传播实现，MIT 许可，便于嵌入式或高性能服务中做 TLE 传播。与 python-sgp4/satellite-js 形成多语言对照。协议与模型版本需与输入根数一致。适合 Rust GNSS/航天工具链开发者集成。",
       "language": "Rust",
       "license": "MIT",
@@ -18109,8 +18109,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "Rust 实现的 SGP4 卫星轨道传播算法"
+      "provenance": "academic_lab",
+      "one_liner_zh": "sgp4-rs：Rust SGP4 卫星轨道传播（crates.io）"
     },
     {
       "name": "ROB-GNSS-be",
@@ -18225,8 +18225,8 @@
   ],
   "provenance_counts": {
     "official": 279,
-    "academic_lab": 328,
-    "personal_community": 319
+    "academic_lab": 335,
+    "personal_community": 312
   },
   "updated": "2026-09-24"
 }
