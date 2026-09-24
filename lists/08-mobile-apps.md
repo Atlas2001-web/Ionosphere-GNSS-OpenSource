@@ -286,8 +286,8 @@ Bolder Flight 维护的 uBlox GNSS 通信库，同时支持 Arduino 与 CMake �
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [MicroNMEA](https://github.com/stevemarple/MicroNMEA) | 紧凑 Arduino NMEA 语句解析库（LGPL-2.1） | C++ | 111 | 🏷️ 个人社区 |
-| [107-Arduino-NMEA-Parser](https://github.com/107-systems/107-Arduino-NMEA-Parser) | 107-systems Arduino 多星座 NMEA 解析库（MIT） | C++ | 24 | 🏷️ 个人社区 |
+| [MicroNMEA](https://github.com/stevemarple/MicroNMEA) | MicroNMEA：紧凑 Arduino NMEA 解析库（LGPL-2.1） | C++ | 111 | 🏷️ 个人社区 |
+| [107-Arduino-NMEA-Parser](https://github.com/107-systems/107-Arduino-NMEA-Parser) | 107-Arduino-NMEA-Parser：多星座 Arduino NMEA 库（MIT） | C++ | 24 | 🏷️ 个人社区 |
 
 ### 详细说明
 

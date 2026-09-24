@@ -344,7 +344,7 @@ BKG/RTCM 维护的 NTRIP 开源软件 Trac 门户，集中入口含 BNC、Profes
 | [pinot](https://github.com/purpleskyfall/pinot) | pinot：开源 GNSS 质检预处理工具 | Python | 25 | 🏷️ 个人社区 核心 |
 | [RNXQCE](https://github.com/cuizilu/RNXQCE) | RNXQCE：RINEX 2/3 质检 Fortran 工具（TEQC 替代取向） | Fortran | 6 | 🏷️ 个人社区 |
 | [geoveil-cn0](https://github.com/miluta7/geoveil-cn0) | geoveil-cn0：RINEX CN0 质量评分与干扰/欺骗检测 | Rust | 3 | 🏷️ 高校实验室 |
-| [grinq](https://github.com/PJarrin/grinq) | RINEX 镜像与 Anubis QC 的 Python 工具箱 | Python | 1 | 🏷️ 个人社区 |
+| [grinq](https://github.com/PJarrin/grinq) | RINEX 镜像与 Anubis QC 的 Python 工具箱 | Python | 1 | 🏷️ 高校实验室 |
 | [Anubis](https://gnutsoftware.com/software/anubis/) | G-Nut/Anubis：多 GNSS RINEX/RTCM 质量检查（Free 开源） | C++ | — | 🏷️ 个人社区 核心 |
 | [Anubis-Free-Download](https://gnutsoftware.com/software/anubis/download) | Anubis-Free-Download：G-Nut Anubis Free 的 GPL 源码与 Linux 包 | C++ | — | 🏷️ 个人社区 |
 | [plot-Anubis](https://www.pecny.cz/sw/plots/anubis/) | plot-Anubis：Anubis XTR 质检结果静态绘图脚本 | Perl | — | 🏷️ 高校实验室 |
@@ -375,7 +375,7 @@ Fortran 编写的 GNSS 观测预处理与质量检查工具，宣称支持 RINEX
 GNSS 信号质量分析库，输出 0–100 综合评分、星空图与时序，并检测 jamming/spoofing/interference；支持 RINEX 2/3/4 与 Hatanaka。MIT，PyPI。适合 CORS 台站健康度与干扰监测；欺骗检测依赖导航文件可见性对比，算法阈值非认证级威胁情报。
 
 #### [grinq](https://github.com/PJarrin/grinq)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：Python · 许可：MIT · 星标约：1 · 宿主：github
 
@@ -1348,7 +1348,7 @@ MIT 许可的 Python 脚本，从 gnss.osi.ie 批量下载爱尔兰 Active GNSS 
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [ublox-rs](https://github.com/ublox-rs/ublox) | Rust UBX 协议 crate：与 u-blox GPS 设备通信 | Rust | 84 | 🏷️ 个人社区 |
+| [ublox-rs](https://github.com/ublox-rs/ublox) | ublox-rs：Rust UBX 协议编解码 crate（MIT） | Rust | 84 | 🏷️ 个人社区 |
 
 ### 详细说明
 

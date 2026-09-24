@@ -651,7 +651,7 @@ SWPC 对外提供的服务根目录，索引 experimental、json、netcdf、prod
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gpsdo](https://github.com/dfannin/gpsdo) | Arduino GPS 驯服振荡器（10 MHz/1 MHz/10 kHz） | C++ | 44 | 🏷️ 个人社区 |
+| [gpsdo](https://github.com/dfannin/gpsdo) | gpsdo：Arduino GPS 驯服振荡器（10 MHz 等） | C++ | 44 | 🏷️ 个人社区 |
 
 ### 详细说明
 

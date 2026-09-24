@@ -1,0 +1,92 @@
+[
+  {
+    "name": "ErickShepherd/cosmic-crunch",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "NASA GSFC alum (bio) — not current Lab/Univ affiliation"
+  },
+  {
+    "name": "ajayraghASL/Ionex_Parser",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "Augsense Lab commercial (batch17)"
+  },
+  {
+    "name": "oscimp/gnss-sdr-1pps",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "OscillatorIMP PIA community org (batch11/12)"
+  },
+  {
+    "name": "aldebaran1/gsit",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "bio research interest only; company null — weak"
+  },
+  {
+    "name": "perrysou/SoftGNSS-python",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "company field is IIT spaceweather URL only; no clear current univ title"
+  },
+  {
+    "name": "Gm015555/quakeion",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "company=Habib Rafiq Ltd commercial; MS IST is alum signal"
+  },
+  {
+    "name": "timduly4/pyglow",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "company=Spire Global commercial"
+  },
+  {
+    "name": "nav-solutions/*",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "community org France (prior batches)"
+  },
+  {
+    "name": "Erensu/ignav",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "loc=WHU only (batch6/7/21)"
+  },
+  {
+    "name": "PyGnssLab",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "community software-lab branding (batch21)"
+  },
+  {
+    "name": "seafloor-geodesy",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "community org (batch21)"
+  },
+  {
+    "name": "swri-robotics/novatel_gps_driver",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "SWRI community ROS (batch20/21)"
+  },
+  {
+    "name": "CS-SI/Orekit",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "CS GROUP commercial OSS org"
+  },
+  {
+    "name": "SkydelSolutions/NeQuick2-MLF2",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "Safran Trusted 4D vendor OSS"
+  },
+  {
+    "name": "inigodelportillo/ITU-Rpy",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "company=SES Satellites commercial"
+  }
+]

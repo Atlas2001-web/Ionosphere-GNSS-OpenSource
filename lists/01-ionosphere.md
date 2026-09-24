@@ -128,7 +128,7 @@ yujieqing 仓库：为电离层层析准备几何/射线矩阵相关代码，可
 | [Klobuchar-study-code](https://github.com/KaijingZheng/Klobuchar-ionosphere-model-in-global-navigation-satellite-systems) | Klobuchar-study-code：广播八参数模型评估 MATLAB | MATLAB | 0 | 🏷️ 个人社区 |
 | [NeQuick2-MLF2](https://github.com/SkydelSolutions/nequick2-mlf2) | NeQuick2-MLF2：NeQuick-G 思路改写（Gustave Eiffel/Safran） | C | 0 | 🏷️ 个人社区 |
 | [RIM](https://github.com/SWMFsoftware/RIM) | RIM：SWMF 体系中的 Ridley 高纬电离层模式 | Fortran | 0 | 🏷️ 官方 |
-| [SAMI3-3.22-CCMC-mirror](https://github.com/sylee918/SAMI3) | SAMI3-3.22-CCMC-mirror：SAMI3-3.22 Fortran 个人 git 镜像 | Fortran | 0 | 🏷️ 个人社区 |
+| [SAMI3-3.22-CCMC-mirror](https://github.com/sylee918/SAMI3) | SAMI3-3.22-CCMC-mirror：SAMI3-3.22 Fortran 个人 git 镜像 | Fortran | 0 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -322,7 +322,7 @@ HAO 上的 TIE-GCM/TIME-GCM 家族说明、用户指南与发布历史入口，�
 Space Weather Modeling Framework 组件之一，描述高纬电离层电动力学等，常与全球磁层模式耦合。局限：通常作为 SWMF 整体使用；单独跑与输入耦合复杂；许可字段不清晰。
 
 #### [SAMI3-3.22-CCMC-mirror](https://github.com/sylee918/SAMI3)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：Fortran · 许可：unknown · 星标约：0 · 宿主：github
 
@@ -817,7 +817,7 @@ C++ 工具面向 GNSS 电离层掩星数据处理与分析，适合理解 LEO—
 | [rtcm2ionex](https://github.com/d-roma/rtcm2ionex) | rtcm2ionex：RTCM VTEC 消息转 IONEX | Python | 3 | 🏷️ 个人社区 |
 | [ionex_formatter](https://github.com/gnss-lab/ionex_formatter) | gnss-lab IONEX 写出/格式化模块（与 ionex 读取库配套） | Python | 2 | 🏷️ 高校实验室 |
 | [Ionex_Parser](https://github.com/ajayraghASL/Ionex_Parser) | Ionex_Parser：读取 IONEX 返回网格 TEC 的脚本 | Jupyter Notebook | 2 | 🏷️ 个人社区 |
-| [ionex_reader](https://github.com/bbrawar/ionex_reader) | IONEX→xarray 读取与可视化（支持 JPL/CODE/ESA 等产品） | Python | 2 | 🏷️ 个人社区 |
+| [ionex_reader](https://github.com/bbrawar/ionex_reader) | IONEX→xarray 读取与可视化（支持 JPL/CODE/ESA 等产品） | Python | 2 | 🏷️ 高校实验室 |
 | [mgfernan-pygnss](https://github.com/mgfernan/pygnss) | Python GNSS 工具集：IONEX/GIM、Hatanaka、与 NeQuick 对比 CLI | Python | 2 | 🏷️ 个人社区 |
 | [Beihang-Ionosphere-CN](http://ionosphere.cn/) | 北航 ionosphere.cn：全球 GNSS TEC 图与空间天气研究产品门户 | data-portal | — | 🏷️ 高校实验室 |
 | [ESA-IONMON](https://swe.ssa.esa.int/ionmon) | ESA IONMON：电离层监测最新全球 TEC/RMS 等产品应用 | data-portal | — | 🏷️ 官方 |
@@ -889,7 +889,7 @@ GeoRust/nav-solutions 生态下的 IONEX 库，强调类型安全与可嵌入 ri
 轻量解析 IONEX，取出各历元 TEC 格网，适合作业与快速画图。输入为 IONEX 文件；输出为 TEC 数组/表格。局限：功能覆盖面小于完整读写库；大文件与 RMS 图支持需自测。
 
 #### [ionex_reader](https://github.com/bbrawar/ionex_reader)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：Python · 许可：MIT · 星标约：2 · 宿主：github
 

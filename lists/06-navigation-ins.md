@@ -659,7 +659,7 @@ ROS 包用于连接 NTRIP caster、接收 RTCM，并服务于 u-blox ZED-F9P 一
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [ublox-ros](https://github.com/KumarRobotics/ublox) | ROS1 经典 u-blox GPS 驱动（KumarRobotics） | C++ | 537 | 🏷️ 个人社区 |
+| [ublox-ros](https://github.com/KumarRobotics/ublox) | ublox-ros：KumarRobotics ROS1 经典 u-blox GPS 驱动 | C++ | 537 | 🏷️ 个人社区 |
 | [novatel_gps_driver](https://github.com/swri-robotics/novatel_gps_driver) | novatel_gps_driver：SWRI 社区 NovAtel GNSS ROS 驱动（BSD-3） | C++ | 175 | 🏷️ 个人社区 |
 | [novatel_oem7_driver](https://github.com/novatel/novatel_oem7_driver) | novatel_oem7_driver：NovAtel OEM7/SPAN 官方 ROS 驱动（MIT） | C++ | 123 | 🏷️ 个人社区 |
 
@@ -735,7 +735,7 @@ Aceinna OpenIMU 的 Python 驱动，支持数据记录与 WebSocket 服务，Apa
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [nmea_navsat_driver](https://github.com/ros-drivers/nmea_navsat_driver) | ROS NMEA NavSat 驱动：GPS/GLONASS 等 NMEA 设备 | Python | 287 | 🏷️ 个人社区 |
+| [nmea_navsat_driver](https://github.com/ros-drivers/nmea_navsat_driver) | nmea_navsat_driver：ROS NMEA→NavSatFix 通用驱动 | Python | 287 | 🏷️ 个人社区 |
 
 ### 详细说明
 

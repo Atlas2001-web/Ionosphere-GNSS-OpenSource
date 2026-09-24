@@ -6926,7 +6926,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
+      "provenance": "academic_lab",
       "one_liner_zh": "IONEX→xarray 读取与可视化（支持 JPL/CODE/ESA 等产品）"
     },
     {
@@ -9170,7 +9170,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community"
+      "provenance": "academic_lab"
     },
     {
       "name": "SAMI3-3.22-Zenodo",
@@ -13551,7 +13551,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
+      "provenance": "academic_lab",
       "one_liner_zh": "RINEX 镜像与 Anubis QC 的 Python 工具箱"
     },
     {
@@ -17103,7 +17103,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
+      "provenance": "academic_lab",
       "one_liner_zh": "max2771_fx2lp：MAX2771 多通道射频前端 + FX2LP USB 采集"
     },
     {
@@ -17639,7 +17639,7 @@
     {
       "name": "ublox-ros",
       "url": "https://github.com/KumarRobotics/ublox",
-      "desc_zh": "ROS1 经典 u-blox GPS 驱动（KumarRobotics）",
+      "desc_zh": "解析 UBX 并发布导航/传感器话题；机器人栈向，非测地后处理",
       "analysis_zh": "KumarRobotics 维护的 ROS 驱动，解析 u-blox 接收机消息并发布导航/传感器话题，BSD-3-Clause，社区星数高。面向机器人定位栈，而非测地后处理。消息集与固件版本需匹配；ROS2 场景可另评 ublox_dgnss 等。目录名 ublox-ros 以免与其他 ublox 条目混淆。",
       "language": "C++",
       "license": "BSD-3-Clause",
@@ -17654,12 +17654,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "ROS1 经典 u-blox GPS 驱动（KumarRobotics）"
+      "one_liner_zh": "ublox-ros：KumarRobotics ROS1 经典 u-blox GPS 驱动"
     },
     {
       "name": "nmea_navsat_driver",
       "url": "https://github.com/ros-drivers/nmea_navsat_driver",
-      "desc_zh": "ROS NMEA NavSat 驱动：GPS/GLONASS 等 NMEA 设备",
+      "desc_zh": "转 GGA/RMC 等为 NavSatFix；不解析 UBX 私有协议",
       "analysis_zh": "ros-drivers 组织下的 NMEA 卫星导航设备驱动，将 GGA/RMC 等语句转为 ROS NavSatFix 等消息，BSD-3-Clause。适合通用 NMEA 接收机接入，不解析 UBX 私有协议。串口配置与语句选择影响延迟与完整性。与厂商专用驱动互补。",
       "language": "Python",
       "license": "BSD-3-Clause",
@@ -17674,12 +17674,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "ROS NMEA NavSat 驱动：GPS/GLONASS 等 NMEA 设备"
+      "one_liner_zh": "nmea_navsat_driver：ROS NMEA→NavSatFix 通用驱动"
     },
     {
       "name": "MicroNMEA",
       "url": "https://github.com/stevemarple/MicroNMEA",
-      "desc_zh": "紧凑 Arduino NMEA 语句解析库（LGPL-2.1）",
+      "desc_zh": "小体积 MCU 向；功能少于 NeoGPS 的 UBX 深度支持",
       "analysis_zh": "面向资源受限 MCU 的紧凑 NMEA 解析库，LGPL-2.1，强调小体积与可移植。适合嵌入式日志与简易定位，功能少于 NeoGPS 的 UBX 深度支持。需自行处理串口与语句过滤。补齐 SPDX 明确的 Arduino NMEA 选项。",
       "language": "C++",
       "license": "LGPL-2.1",
@@ -17694,12 +17694,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "紧凑 Arduino NMEA 语句解析库（LGPL-2.1）"
+      "one_liner_zh": "MicroNMEA：紧凑 Arduino NMEA 解析库（LGPL-2.1）"
     },
     {
       "name": "107-Arduino-NMEA-Parser",
       "url": "https://github.com/107-systems/107-Arduino-NMEA-Parser",
-      "desc_zh": "107-systems Arduino 多星座 NMEA 解析库（MIT）",
+      "desc_zh": "GPS/GLONASS/Galileo 语句解析；创客原型向，非差分/精密解",
       "analysis_zh": "可对接 GPS/GLONASS/Galileo/GNSS 模块并解释 NMEA 的 Arduino 库，MIT 许可。API 面向现代 Arduino 核心，适合创客与原型。不覆盖差分改正与精密解算。与 MicroNMEA/NeoGPS 并列时按许可证与 API 偏好选择。",
       "language": "C++",
       "license": "MIT",
@@ -17714,12 +17714,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "107-systems Arduino 多星座 NMEA 解析库（MIT）"
+      "one_liner_zh": "107-Arduino-NMEA-Parser：多星座 Arduino NMEA 库（MIT）"
     },
     {
       "name": "gpsdo",
       "url": "https://github.com/dfannin/gpsdo",
-      "desc_zh": "Arduino GPS 驯服振荡器（10 MHz/1 MHz/10 kHz）",
+      "desc_zh": "实验室时频参考输出；定时应用，非定位解算",
       "analysis_zh": "基于 Arduino 的 GPS Disciplined Oscillator 项目，输出 10 MHz 等参考频率，MIT 许可。服务实验室时间/频率同步，属 GNSS 定时应用而非定位解算。硬件锁相与天线质量决定稳定度。适合业余无线电与测试台时钟源。",
       "language": "C++",
       "license": "MIT",
@@ -17734,12 +17734,12 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Arduino GPS 驯服振荡器（10 MHz/1 MHz/10 kHz）"
+      "one_liner_zh": "gpsdo：Arduino GPS 驯服振荡器（10 MHz 等）"
     },
     {
       "name": "ublox-rs",
       "url": "https://github.com/ublox-rs/ublox",
-      "desc_zh": "Rust UBX 协议 crate：与 u-blox GPS 设备通信",
+      "desc_zh": "消息层通信接口；不含完整 PVT/RTK 引擎",
       "analysis_zh": "用 Rust 实现的 UBX 协议编解码 crate，MIT 许可，便于嵌入式或主机侧与 u-blox 模块对话。偏协议与消息层，不含完整 PVT/RTK 引擎。特性随模块代际与固件变化，接入前需核对支持的消息类。补齐 Rust GNSS 设备接口这一薄点，可与 nav-solutions 生态对照使用。",
       "language": "Rust",
       "license": "MIT",
@@ -17754,7 +17754,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Rust UBX 协议 crate：与 u-blox GPS 设备通信"
+      "one_liner_zh": "ublox-rs：Rust UBX 协议编解码 crate（MIT）"
     },
     {
       "name": "SIDC",
@@ -17935,8 +17935,8 @@
   ],
   "provenance_counts": {
     "official": 274,
-    "academic_lab": 323,
-    "personal_community": 315
+    "academic_lab": 327,
+    "personal_community": 311
   },
   "updated": "2026-09-24"
 }
