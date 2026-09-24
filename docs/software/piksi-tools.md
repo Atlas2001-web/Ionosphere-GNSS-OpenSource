@@ -1,8 +1,8 @@
 # piksi_tools · Swift/Piksi 现场 SBP 工具操作手册
 
-目录：[`PROJECTS.json` → `piksi_tools`](../../PROJECTS.json) · 上游 <https://github.com/swift-nav/piksi_tools> · **URL 已核** · PyPI **`piksi-tools` / `piksi_tools` 4.0.0**（元数据名 `piksi-tools`）· tip **`02f1532`**（2023-09-25）· 仓内脚本自报 **`v3.1.1.dev14+g27d57f0`** · 许可 **LGPL-3.0**（`LICENSE`；`setup.cfg` 写 BSD 为陈旧元数据）· 本机：`pip install --no-deps` + `sbp` 6.5.2（Py3.13 上 `libsettings` 编不过）· 无 console_scripts · **无 Swift 接收机硬件** · 2026-09-24 05:28 EDT
+目录：[`PROJECTS.json` → `piksi_tools`](../../PROJECTS.json) · 上游 <https://github.com/swift-nav/piksi_tools> · **URL 已核** · PyPI **`piksi-tools` / `piksi_tools` 4.0.0**（元数据名 `piksi-tools`）· tip **`02f1532`**（2023-09-25）· 仓内脚本自报 **`v3.1.1.dev14+g27d57f0`** · 许可 **LGPL-3.0**（`LICENSE`；`setup.cfg` 写 BSD 为陈旧元数据）· 本机：`pip install --no-deps` + `sbp` 6.5.2（Py3.13 上 `libsettings` 编不过）· 无 console_scripts · **无 Swift 接收机硬件** · 2026-09-24 05:28 EDT · **质检复跑** 2026-09-24 05:42 EDT（重跑 `--no-deps`/`serial_link -h`/`--file` JSON **61599**/PosLLH **4686**/nonzero tow **4276**/roundtrip n_sats=**15**；无 Rx 默认口 **exit 1**；`Position saved` 在 **stdout**）
 
-> 岗位：配 [libsbp](./libsbp.md) 做 **Piksi/Swift 现场**：串口日志、离线 SBP→JSON/CSV、配置读写、刷机、机内文件。冲突时：**本机 `serial_link.py -h` / 上游 README > 本文**。协议编解码细节 → [libsbp](./libsbp.md)；ROS 2 → 列表 `swiftnav-ros2`（尚未短硬）；数值例程 → 列表 `libswiftnav`。
+> 岗位：配 [libsbp](./libsbp.md) 做 **Piksi/Swift 现场**：串口日志、离线 SBP→JSON/CSV、配置读写、刷机、机内文件。冲突时：**本机 `serial_link.py -h` / 上游 README > 本文**。协议编解码细节 → [libsbp](./libsbp.md)；ROS 2 → [swiftnav-ros2](./swiftnav-ros2.md)；数值例程 → [libswiftnav](./libswiftnav.md)。
 
 ## 1. 用途与边界
 
@@ -91,7 +91,7 @@ The following serial devices were detected:
 	/dev/ttyS0 (n/a)
 ```
 
-（exit 0——**勿当联机成功**。）
+（**exit 1**——**勿当联机成功**；stderr 仍列检测到的口如 `/dev/ttyS0`。）
 
 ### 3.3 `sbp_msg_2_csv`：仓内大日志 → PosLLH CSV
 
@@ -138,7 +138,7 @@ sender,length,tow,lat,lon,height,h_accuracy,v_accuracy,n_sats,flags
 python -m piksi_tools.serial_link --file \
   -p $PT/tests/data/20170513-180207.1.1.26.bin \
   --timeout 5 -l -o /tmp/piksi-out --logfilename large_replay --skip-metadata
-# stderr 可出现：
+# stdout 可出现：
 # INFO Position saved [37.7734, -122.4179, 14.6]
 wc -l /tmp/piksi-out/large_replay
 head -1 /tmp/piksi-out/large_replay
@@ -170,7 +170,7 @@ python $PKG/bootload_v3.py -p /dev/ttyUSB0 firmware.image_set.bin
 Swift Rx UART/TCP 或 .bin/.sbp 日志
   → piksi_tools serial_link / sbp_msg_2_csv（本文）
   → 精细编解码 / sbp2json → [libsbp](./libsbp.md)
-  →（ROS2）swiftnav-ros2（列表；尚未短硬）
+  →（ROS2）[swiftnav-ros2](./swiftnav-ros2.md)
   → 落盘观测/位置 → georinex / rtklib / 电离层链
 ```
 
@@ -181,7 +181,7 @@ Swift Rx UART/TCP 或 .bin/.sbp 日志
 | 1 | `pip install piksi_tools` 编 `libsettings` 失败 | 缺 libsbp C 头 / 新 Python | `--no-deps`+手装；或 Py3.10/3.11 |
 | 2 | `serial_link: command not found` | 无 console_scripts | `python -m piksi_tools.serial_link` |
 | 3 | `No module named 'future'` | fileio 隐式依赖 | `pip install future` |
-| 4 | 默认口报错仍 exit 0 | 无 `/dev/ttyUSB0` | 看 stderr；无 Rx 用 `--file` |
+| 4 | 默认口报错且 **exit 1** | 无 `/dev/ttyUSB0` | 看 stderr；无 Rx 用 `--file` |
 | 5 | `MsgPosLLH` 大量 0 | 日志含未收敛历元 | `awk '$3>0'` 滤 tow；或换 roundtrip.sbp |
 | 6 | `BaselineNED` 全 0 | 无基线解 | 看 PosLLH；有基线再滤 n\|e\|d |
 | 7 | `SBP dispatch error: 'NoneType'…` | 旧帧/未知类型 vs 新 `sbp` | 警告可忽略；钉匹配的 `sbp` 版本 |
@@ -197,14 +197,15 @@ Swift Rx UART/TCP 或 .bin/.sbp 日志
 | --- | --- |
 | Swift 现场日志/配置/刷机 | **本文 piksi_tools** |
 | SBP 编解码 / `sbp2json` | [libsbp](./libsbp.md) |
-| Swift → ROS 2 | 列表 **`swiftnav-ros2`**（高优先缺篇） |
+| Swift → ROS 2 | [swiftnav-ros2](./swiftnav-ros2.md) |
+| Swift 数值（非通信） | [libswiftnav](./libswiftnav.md) |
 | Septentrio ROS | [septentrio-gnss-driver](./septentrio-gnss-driver.md) |
 | u-blox / RTCM3 | [pyubx2](./pyubx2.md) / [pyrtcm](./pyrtcm.md) |
 | 定位/PPP | [rtklib](./rtklib.md) / [ginan](./ginan.md) |
 
 ## 7. 相关
 
-[libsbp](./libsbp.md) · [septentrio-gnss-driver](./septentrio-gnss-driver.md) · [pyubx2](./pyubx2.md) · [pyrtcm](./pyrtcm.md) · [pysbf2](./pysbf2.md) · [pygnssutils](./pygnssutils.md) · [rtkbase](./rtkbase.md) · [README](./README.md)
+[libsbp](./libsbp.md) · [swiftnav-ros2](./swiftnav-ros2.md) · [libswiftnav](./libswiftnav.md) · [septentrio-gnss-driver](./septentrio-gnss-driver.md) · [pyubx2](./pyubx2.md) · [pyrtcm](./pyrtcm.md) · [pysbf2](./pysbf2.md) · [pygnssutils](./pygnssutils.md) · [rtkbase](./rtkbase.md) · [README](./README.md)
 
 - 上游：<https://github.com/swift-nav/piksi_tools>
 - PyPI：<https://pypi.org/project/piksi-tools/>

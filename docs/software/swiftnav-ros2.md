@@ -1,6 +1,6 @@
 # swiftnav-ros2 · Swift Navigation 官方 ROS 2 SBP 驱动操作手册
 
-目录：[`PROJECTS.json` → `swiftnav-ros2`](../../PROJECTS.json) · 上游 <https://github.com/swift-nav/swiftnav-ros2> · **URL 已核** · ROS 包名 **`swiftnav_ros2_driver`**（≠ 仓库名连字符）· 版本 **1.0.0** · tip **`c35c6ef`**（2024-07-22；tag **`v1.0.0`**）· 许可 **MIT** · 可执行文件 **`sbp-to-ros`** · 本机验证：clone + `package.xml` / `launch/start.py` / `config/settings.yaml` / `msg/Baseline.msg` 清单；**无 `/opt/ros`、无 Swift 接收机 → 未 `colcon`、未 `ros2 launch`、无 topic echo** · 2026-09-24 05:32 EDT
+目录：[`PROJECTS.json` → `swiftnav-ros2`](../../PROJECTS.json) · 上游 <https://github.com/swift-nav/swiftnav-ros2> · **URL 已核** · ROS 包名 **`swiftnav_ros2_driver`**（≠ 仓库名连字符）· 版本 **1.0.0** · tip **`c35c6ef`**（2024-07-22；**main tip，比 tag `v1.0.0`=`5c82573` 超前 4 commit**；`package.xml` 仍 **1.0.0**）· 许可 **MIT** · 可执行文件 **`sbp-to-ros`** · 本机验证：clone + `package.xml` / `launch/start.py` / `config/settings.yaml` / `msg/Baseline.msg` 清单；**无 `/opt/ros`、无 Swift 接收机 → 未 `colcon`、未 `ros2 launch`、无 topic echo** · 2026-09-24 05:32 EDT · **质检复跑** 2026-09-24 05:42 EDT（tip/`package.xml`/launch×1/config×1/msg×1/`sbp-to-ros`/`settings.yaml` 键一致；Docker 文档仍写 `params.yaml`；**NO_ROS**）
 
 > 岗位：把 **Piksi Multi / Duro / PGM EVK / Starling** 等 Swift GNSS（及 INS）经 **SBP**（TCP / 串口 / `.sbp` 回放）接入 **ROS 2**，发导航与专有 baseline 话题。冲突时：**上游 README / 仓内 `config/settings.yaml` / 本机 `ros2 pkg` > 本文**。协议编解码 → [libsbp](./libsbp.md)；现场串口/刷机 → [piksi-tools](./piksi-tools.md)；Septentrio ROS 对照 → [septentrio-gnss-driver](./septentrio-gnss-driver.md)。**不是** 电离层 TEC/闪烁流水线。
 
@@ -83,7 +83,7 @@ test -d /opt/ros && echo HAS_ROS || echo NO_ROS
 #   ros2 launch swiftnav_ros2_driver start.py --show-args
 ```
 
-**本机结果（tip `c35c6ef` / 1.0.0，2026-09-24 05:32 EDT）：** clone OK；`package.xml` name=`swiftnav_ros2_driver` version=`1.0.0` license=MIT；launch×**1**（`start.py`）、config×**1**（`settings.yaml`）、msg×**1**（`Baseline.msg`）；可执行名 **`sbp-to-ros`**。**`which ros2` / `/opt/ros` 不存在** → 未 `colcon`、未 launch、未连 `192.168.0.222:55556`、仓内**无** `.sbp`/`.bag` 样例 → **硬件/ROS 门禁**；下列话题表来自上游 README + `settings.yaml` + `publisher_factory.cpp`，**非本机 echo**。
+**本机结果（tip `c35c6ef` / 1.0.0，写作 05:32 / **质检复跑** 05:42 EDT）：** clone OK；`package.xml` name=`swiftnav_ros2_driver` version=`1.0.0` license=MIT；launch×**1**（`start.py`）、config×**1**（`settings.yaml`）、msg×**1**（`Baseline.msg`）；可执行名 **`sbp-to-ros`**；`git rev-parse v1.0.0` → **`5c82573`**（tip 超前 4 commit：Galactic 编译修复等）。**`which ros2` / `/opt/ros` 不存在** → 未 `colcon`、未 launch、未连 `192.168.0.222:55556`、仓内**无** `.sbp`/`.bag` 样例 → **硬件/ROS 门禁**；下列话题表来自上游 README + `settings.yaml` + `publisher_factory.cpp`，**非本机 echo**。
 
 ## 3. 配置与启动
 
@@ -206,12 +206,12 @@ swiftnav_ros2_driver (sbp-to-ros) ──ROS 话题──► 机器人 / robot_lo
 | SBP 编解码 / `sbp2json`（无 ROS） | [libsbp](./libsbp.md) |
 | Piksi 现场日志·配置·刷机 | [piksi-tools](./piksi-tools.md) |
 | Septentrio 实时进 ROS1/ROS2 | [septentrio-gnss-driver](./septentrio-gnss-driver.md) |
-| u-blox ROS2 | 列表 `ublox_dgnss`（尚未短硬） |
-| Swift 数值例程（非通信） | 列表 `libswiftnav`（尚未短硬） |
+| u-blox ROS2 | [ublox-dgnss](./ublox-dgnss.md) |
+| Swift 数值例程（非通信） | [libswiftnav](./libswiftnav.md) |
 
 ## 9. 相关
 
-[libsbp](./libsbp.md) · [piksi-tools](./piksi-tools.md) · [septentrio-gnss-driver](./septentrio-gnss-driver.md) · [ntripstreams](./ntripstreams.md) · [pygnssutils](./pygnssutils.md) · [rtkbase](./rtkbase.md) · [bnc](./bnc.md) · [README](./README.md)
+[libsbp](./libsbp.md) · [piksi-tools](./piksi-tools.md) · [libswiftnav](./libswiftnav.md) · [septentrio-gnss-driver](./septentrio-gnss-driver.md) · [ublox-dgnss](./ublox-dgnss.md) · [ntripstreams](./ntripstreams.md) · [pygnssutils](./pygnssutils.md) · [rtkbase](./rtkbase.md) · [bnc](./bnc.md) · [README](./README.md)
 
 - 上游：<https://github.com/swift-nav/swiftnav-ros2>
 - 支持：<https://support.swiftnav.com/>（需登录提单）
