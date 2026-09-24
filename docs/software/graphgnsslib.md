@@ -1,8 +1,10 @@
 # GraphGNSSLib · FGO 风格 GNSS/RTK 操作手册
 
-目录：[`PROJECTS.json` → `GraphGNSSLib`](../../PROJECTS.json) · 上游 <https://github.com/weisongwen/GraphGNSSLib> · 许可 **GPL-3.0** · tip **`d861802`**（2022-12-29）· 捆 **RTKLIB 2.4.3 b33** + **Ceres** · 本机验证：仓内 TST 数据 **georinex** 可读；同数据 **rnx2rtkp** SPP 5 min **251** 历元 Q=5、RTK 浮点窗约 **24**×Q=2；**无 ROS/无 Docker → 未跑 FGO 节点** · 2026-09-24 05:17 EDT
+目录：[`PROJECTS.json` → `GraphGNSSLib`](../../PROJECTS.json) · 上游 <https://github.com/weisongwen/GraphGNSSLib> · 许可 **GPL-3.0** · tip **`d861802`**（2022-12-29）· 捆 **RTKLIB 2.4.3 b33** + **Ceres** · 本机验证：仓内 TST 数据 **georinex 1.16.2** 可读；同数据 **rnx2rtkp**（apt 2.4.3 b34）SPP 5 min **251** 历元全 Q=5、RTK 写出 **94**×Q=2；**无 ROS/无 Docker → 未跑 FGO 节点** · 2026-09-24 05:17 EDT · **质检复跑通过**（2026-09-24 05:21 EDT；去错误 `-s 1`；launch 子目录；tip `d861802`）
 
 > 岗位：伪距/多普勒（及 RTK 双差相位）进 **因子图（FGO）** 事后定位，对照 WLS/EKF。冲突时：**仓内 README / launch / 本机 `roslaunch` > 本文**。经典 RTK/PPP → [rtklib](./rtklib.md)；Python NavData/WLS → [gnss_lib_py](./gnss_lib_py.md)。
+
+**质检边界：** 本机无 ROS/Docker → **未** `catkin_make` / 未跑 FGO；§3.1–3.2 为可复现冒烟。`rnx2rtkp -s` = **字段分隔符**（不是解格式）；勿写 `-s 1`。
 
 ## 1. 用途与边界
 
@@ -89,10 +91,10 @@ PY
 
 ```bash
 DS=global_fusion/dataset
-rnx2rtkp -p 0 -s 1 -ts 2019/04/28 12:44:00 -te 2019/04/28 12:50:00 \
+rnx2rtkp -p 0 -ts 2019/04/28 12:44:00 -te 2019/04/28 12:50:00 \
   $DS/gps_solution_TST/COM3_190428_124409.obs \
   $DS/gps_solution_TST/hksc1180.19n -o /tmp/graphgnss_spp.pos
-rnx2rtkp -p 2 -s 1 -ts 2020/06/03 03:02:00 -te 2020/06/03 03:10:00 \
+rnx2rtkp -p 2 -ts 2020/06/03 03:02:00 -te 2020/06/03 03:10:00 \
   $DS/gps_solution_TST2/2020_06_03_TST_03.obs \
   $DS/gps_solution_TST2/hksc155d.20o \
   $DS/gps_solution_TST2/hksc155d.20n \
@@ -101,20 +103,21 @@ grep -v '^%' /tmp/graphgnss_spp.pos | awk 'NF>=8' | wc -l
 grep -v '^%' /tmp/graphgnss_rtk.pos | awk 'NF>=8{c[$6]++}END{for(k in c)print k,c[k]}'
 ```
 
-**本机结果：** SPP **251** 历元 Q=**5**，末点约 `22.30460°N 114.18601°E`；RTK 窗约 **24**×Q=**2**（浮点），其余回落单点——城市数据正常，**勿**当固定率。
+**本机结果（质检复跑）：** SPP **251** 历元全 Q=**5**，末点 `22.304600872°N 114.186009268°E`；RTK 写出 **94** 历元全 Q=**2**（浮点；处理过程大量 Q=0 未落盘）——城市峡谷正常，**勿**当固定率。
 
 ### 3.3 官方 FGO（需 ROS；本机未跑）
 
 ```bash
 # 定位：rtklib.h 中 RTK_FGO=0 后编译
 source ~/GraphGNSSLib/devel/setup.bash
-roslaunch global_fusion dataublox_TST20190428.launch
-roslaunch global_fusion psr_doppler_fusion.launch
+# 上游 README 写扁平名；仓内实际在子目录（ROS 需相对 launch/ 路径）
+roslaunch global_fusion gnss_preprocessor/dataublox_TST20190428.launch
+roslaunch global_fusion gnss_estimator/psr_doppler_fusion.launch
 # CSV：~/GraphGNSSLib/trajectory_psr_dop_fusion.csv
 
 # RTK：#define RTK_FGO 1 → 重编
-roslaunch global_fusion dataublox_TST20200603.launch
-roslaunch global_fusion psr_doppler_car_rtk.launch
+roslaunch global_fusion gnss_preprocessor/dataublox_TST20200603.launch
+roslaunch global_fusion gnss_estimator/psr_doppler_car_rtk.launch
 # CSV：~/GraphGNSSLib/FGO_trajectoryllh_pdrtk.csv
 ```
 
@@ -161,6 +164,8 @@ roslaunch global_fusion psr_doppler_car_rtk.launch
 | 10 | 期望出 STEC | 本仓是定位 | TEC→[pytecgg](./pytecgg.md) |
 | 11 | CMake 指向 Melodic | 与 README Kinetic 不一致 | `echo $ROS_DISTRO` 后对齐 |
 | 12 | launch 找不到 dataset | clone 不在 catkin `src/` | 按 §2.1 工作空间布局 |
+| 13 | `.pos` 字段粘成 `20511 45874.0001…` | 误用 `rnx2rtkp -s 1`（`-s`=分隔符）| 去掉 `-s`；要 XYZ 用 `-e` |
+| 14 | `roslaunch … dataublox_….launch` 找不到 | 文件在 `launch/gnss_preprocessor/` 等子目录 | `roslaunch global_fusion gnss_preprocessor/dataublox_TST20190428.launch` |
 
 ## 7. 选型
 

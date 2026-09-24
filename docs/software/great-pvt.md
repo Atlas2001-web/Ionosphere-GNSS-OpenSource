@@ -1,8 +1,10 @@
 # GREAT-PVT · 武大 GREAT 精密 PVT 操作手册
 
-目录：[`PROJECTS.json` → `GREAT-PVT`](../../PROJECTS.json) · 上游 <https://github.com/GREAT-WHU/GREAT-PVT> · 许可 **GPL-3.0** · tip **`8bd3d23`** / tag **v1.4.0** · 预编译 Linux `GREAT_PVT` 自称 **`$Ver: 1.1$`**（2024-11-04）· 本机验证：样例 `PPPFLT_2023305` **GODN** 静态双频浮点 **1 h** → **120** 历元 `.flt`；末历元 XYZ=`(1130760.6978,-4831298.6741,3994155.2036)`，3D RMS≈**0.006 m**；与样例参考首末历元 **逐字段一致** · 2026-09-24 05:15 EDT
+目录：[`PROJECTS.json` → `GREAT-PVT`](../../PROJECTS.json) · 上游 <https://github.com/GREAT-WHU/GREAT-PVT> · 许可 **GPL-3.0** · tip **`8bd3d23`** / tag **v1.4.0** · 预编译 Linux `GREAT_PVT` 自称 **`$Ver: 1.1$`**（2024-11-04）· 本机验证：样例 `PPPFLT_2023305` **GODN** 静态双频浮点 **1 h** → **120** 历元 `.flt`；末历元 XYZ=`(1130760.6978,-4831298.6741,3994155.2036)`，RMS≈(0.0043,0.0034,0.0028)→3D≈**0.0062 m**；NSat=**29** Quality=**2**；与同 XML 冒烟备份首末 **逐字段一致** · 2026-09-24 05:15 EDT · **质检复跑通过**（2026-09-24 05:21 EDT；tip `8bd3d23`/v1.4.0；`-h` → `GRAET-PVT [$Ver: 1.1 $]`）
 
 > 岗位：多系统 **PPP / PPP-AR / RTK** 滤波精密 PVT（XML 驱动）。冲突时：**本机 `GREAT_PVT -h` / `doc/*.xml` / PDF > 本文**。轻量 CLI → [rtklib](./rtklib.md)；发表级 PPP-AR → [pride-pppar](./pride-pppar.md)；GA YAML 工具箱 → [ginan](./ginan.md)。
+
+**质检边界：** 冒烟为 **1 h 浮点**（非全日、未开 UPD 固定）；预编译 Linux 二进制即可，**无需** GPU/许可证。RTK 样例包未复跑（体积大）。
 
 ## 1. 用途与边界
 
@@ -102,17 +104,17 @@ wc -l result/GODN-PPP_sta_DF_Float.flt
 tail -n 3 result/GODN-PPP_sta_DF_Float.flt
 ```
 
-### 3.3 本机结果（v1.4.0 / tip `8bd3d23`，2026-09-24 05:15 EDT）
+### 3.3 本机结果（质检复跑 · v1.4.0 / tip `8bd3d23`，2026-09-24 05:21 EDT）
 
 ```text
 GREAT_PVT -h → GRAET-PVT [$Ver: 1.1 $] … -x file
-GODN 2023-11-01 00:00–01:00  进度至 100%
-Forward filter … duration ~3 s
+GODN 2023-11-01 00:00–01:00  进度至 100%；Forward filter duration ~3 s
 result/GODN-PPP_sta_DF_Float.flt ：122 行（2 行头 + 120 历元）
-首历元 sow=259230 XYZ≈(1130760.079,-4831296.673,3994154.205) Amb=Float
-末历元 sow=262800 XYZ≈(1130760.6978,-4831298.6741,3994155.2036)
-  RMS≈(0.0043,0.0034,0.0028) m → 3D RMS≈0.006 m；NSat≈29；Quality=2
-与样例备份首末历元 XYZ 一致（同 XML 同产品）
+首历元 sow=259230 XYZ=(1130760.0786,-4831296.6734,3994154.2047)
+  RMS≈(0.8745,2.5145,1.9945)；NSat=30；Amb=Float；Quality=6
+末历元 sow=262800 XYZ=(1130760.6978,-4831298.6741,3994155.2036)
+  RMS=(0.0043,0.0034,0.0028)→3D≈0.0062 m；NSat=29；Amb=Float；Quality=2
+与同 XML 冒烟备份首末历元逐字段一致（≠样例包全日 result_ref）
 ```
 
 | 输入 | 说明 |
@@ -164,6 +166,7 @@ result/GODN-PPP_sta_DF_Float.flt ：122 行（2 行头 + 120 历元）
 | 10 | RTK 样例巨大 IO | `RTKFLT_2020351.zip` ~400 MB 解压 | 磁盘预留；先 PPP 冒烟 |
 | 11 | 期望直接出 STEC | 软件是 PVT | TEC→[pytecgg](./pytecgg.md) |
 | 12 | CMake 编过但运行链到旧 `.so` | `LD_LIBRARY_PATH` 指向 bin 预编译 | `ldd $(which GREAT_PVT)` 核对 |
+| 13 | 1 h 冒烟末历元 ≠ `result_ref_bak` 全日末 | 参考是全日解 | 只与同窗同 XML 自备份比；或扩 `<end>` |
 
 ## 7. 选型
 
