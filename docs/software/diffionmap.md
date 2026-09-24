@@ -1,6 +1,6 @@
 # DiffIonMap · 两幅 IONEX 并排对照操作手册
 
-目录：[`PROJECTS.json` → `DiffIonMap`](../../PROJECTS.json) · 上游 <https://github.com/Jin-Whu/DiffIonMap> · 许可 **unknown** · tip **`57ceb1d`**（2016-08-31，README 仍写 IonMap）· 本机验证：Py3 轻移植后读 `CODG0010.00I`/`WHUC0010.00I`（ionex 测试文件改名）→ 同 DOY 成组、12 张图、TEC mean≈24.84；另读 RTKLIB `IGRG3380.10I` → 13 张、mean≈13.367 TECU（2026-09-24 EDT）
+目录：[`PROJECTS.json` → `DiffIonMap`](../../PROJECTS.json) · 上游 <https://github.com/Jin-Whu/DiffIonMap> · 许可 **unknown** · tip **`57ceb1d`**（2016-08-31，README 仍写 IonMap）· 本机验证：Py3 轻移植后读 `CODG0010.00I`/`WHUC0010.00I`（ionex 测试文件改名）→ 同 DOY 成组、12 张图、TEC mean≈24.84；另读 RTKLIB `IGRG3380.10I` → 13 张、mean≈13.367 TECU（2026-09-24 EDT）· **质检复跑通过**（同 I/O）
 
 > 岗位：把**两家分析中心 / 两套产品**的同 DOY IONEX 拉齐，**并排**画全球/区域 VTEC 图做肉眼对照。冲突时：**仓内源码 / `configure.ini` > 本文**。读单文件进 Python → [ionex-gim](./ionex-gim.md)；下载入口 → [data-access](../data-access.md)。
 

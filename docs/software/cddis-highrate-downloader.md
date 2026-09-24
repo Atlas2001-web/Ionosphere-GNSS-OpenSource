@@ -1,6 +1,6 @@
 # cddis-highrate-downloader · CDDIS 高采样 GNSS 批量下载操作手册
 
-目录：[`PROJECTS.json` → `cddis-highrate-downloader`](../../PROJECTS.json) · 上游 <https://github.com/cemalialtuntas/cddis-highrate-downloader> · 许可 **MIT** · 版本 **1.0.2**（tip `ad648ea`）· 本机验证：`pip install -e` → `cddis-download`；FTPS 登录 `gdc.cddis.eosdis.nasa.gov` 成功；`CWD /gnss/data/highrate/2026/260/26d/00` 成功；`SIZE BRST00FRA_S_20262600000_15M_01S_MO.crx.gz` = **706256**；`LIST`/`RETR` 本机 **425 Bad IP**（PASV 数据通道受限，未落盘）（2026-09-24 EDT）
+目录：[`PROJECTS.json` → `cddis-highrate-downloader`](../../PROJECTS.json) · 上游 <https://github.com/cemalialtuntas/cddis-highrate-downloader> · 许可 **MIT** · 版本 **1.0.2**（tip `ad648ea`）· 本机验证：`pip install -e` → `cddis-download`；FTPS 登录 `gdc.cddis.eosdis.nasa.gov` 成功；`CWD /gnss/data/highrate/2026/260/26d/00` 成功；`SIZE BRST00FRA_S_20262600000_15M_01S_MO.crx.gz` = **706256**；`LIST`/`RETR` 本机 **425 Bad IP**（PASV 数据通道受限，未落盘）（2026-09-24 EDT）· **质检复跑通过**（validate+FTPS SIZE=706256；LIST 425）
 
 > 岗位：按站 / DOY / 小时批量拉 CDDIS **1 s 高采样**（15 min 块）观测。冲突时：**上游 README / Earthdata 路径说明 > 本文**。日采样 30 s → [data-access](../data-access.md) + [fast](./fast.md)；CRX→RNX → [rnxcmp](./rnxcmp.md)/[hatanaka](./hatanaka.md)。
 
@@ -156,7 +156,7 @@ GFZ 匿名 HTTPS 备份：`https://isdc-data.gfz.de/gnss/data/highrate/`。
 | ---: | --- | --- | --- |
 | 1 | `No hour subfolders` 但网页有数 | `subfolder` 填成旧年的 `24d` | 年 2026 用 **`26d`**（`YY`+`d`） |
 | 2 | 半年前日期永远空 | 已收成 **tar**，无 `YYt/HH` | 改下 `*.tar`（HTTPS）或换近 6 个月 DOY |
-| 3 | `425 Bad IP connecting` | FTPS PASV 数据通道被 NAT/防火墙改写 | 换网络；或改 **HTTPS+`.netrc`** |
+| 3 | `425 Security: Bad IP connecting` | FTPS PASV 数据通道被 NAT/防火墙改写 | 换网络；或改 **HTTPS+`.netrc`** |
 | 4 | `550 Failed to change directory` | DOY/子目录不存在 | 先 `CWD` 探 `/gnss/data/highrate/YYYY/DDD/YYt` |
 | 5 | Linux 无法转 RNX | 仅捆 `CRX2RNX.exe` | `CRX2RNX` 出自 [rnxcmp](./rnxcmp.md)；或 `pip` [hatanaka](./hatanaka.md) |
 | 6 | 站过滤为空 | 短名 `BRST` 对不上长名 | 用完整 `BRST00FRA`（`startswith`） |
