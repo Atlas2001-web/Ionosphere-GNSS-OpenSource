@@ -313,3 +313,12 @@
 - Focus after EU/GA/NOAA-packed passes: South America CORS, Japan beyond RINGO/MIRAI, Mexico RGNA, academic GPS time series, OSNMA Rust + NMEA Rust + PPP graph research code
 - Skipped: TrigNet/AFREF empty IIS/SAPOS commercial, midgard pre-alpha, Where (VLBI-only), IGM Chile thin, Korean NGII without open CORS path beyond existing gnssdata.or.kr, TEC-Maps-of-Nepal thin, micropyGPS/GPS.js/minmea (NMEA already covered by pynmea2/pynmeagps this pass), GSI English pages egress fail, sys.qzss thin root
 - Merge safety: append-only by norm_url; `_merge_fields` + explicit `if old and not new: keep old` guard; full-scan confirmed no blanking of existing license/provenance/zh fields
+
+## Routine pass 2026-09-24d
+
+- Catalog size before: **774**; after merge: **788** (+14)
+- Finds file: `research/routine_finds_20260924d.json`
+- Method: software-first `gh api search/repositories` (NMEA/OSNMA/GNSS-IR/ANTEX/DNN-PVT) + Zenodo PCC/ANTEX suite + agency probes (TUSAGA/ISRO/SOI); `curl`/`gh api` live checks; dedup vs PROJECTS.json and all prior `routine_finds_*.json`
+- Focus after portal-heavy 24c: C/JS/MicroPython/.NET NMEA-RTCM, OSNMA sim, gnssSNR, deep_gnss/snapshot/ICE, hwm93, TUSAGA-Aktif, ISRO NavIC, pcc-explorer/atx-scanner
+- Skipped: TrigNet/AFREF/SAPOS, SOI CORS 404, REDNAP (leveling not GNSS CORS), HAS-decoding no SPDX, midgard pre-alpha, pi-rtk-optimizer (not GNSS), rinex-adapter thin 0★ optional, libnmea (overlap minmea this pass)
+- Merge safety: append-only; `_merge_fields` + explicit keep-old-if-blank; UPDATED=0; full-scan blanking=0

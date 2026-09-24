@@ -1,0 +1,282 @@
+[
+  {
+    "name": "minmea",
+    "url": "https://github.com/kosma/minmea",
+    "desc_zh": "轻量纯 C 的 GPS/NMEA 0183 语句解析库",
+    "analysis_zh": "kosma 维护的嵌入式友好 NMEA 0183 解析库，无动态分配、接口精简，广泛用于 MCU/车载日志解析。许可为 WTFPL；与 Rust nmea-parser、Python pynmea2 形成语言互补。适合资源受限环境，不覆盖 AIS 全语句集；句子支持以头文件与测试为准，复杂专有扩展请自行加钩子。",
+    "language": "C",
+    "license": "WTFPL",
+    "category": "gnss-data",
+    "subcategory": "基础库",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "minmea：嵌入式友好的纯 C NMEA 0183 解析库",
+    "stars_approx": 966,
+    "markers": [
+      "routine-2026-09-24d"
+    ],
+    "source": "routine-finds-20260924d",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "GPS.js",
+    "url": "https://github.com/rawify/GPS.js",
+    "desc_zh": "Node/浏览器端 NMEA 0183 解析与导航状态库",
+    "analysis_zh": "rawify 的 JavaScript NMEA 0183 解析器，可处理语句流并维护导航状态，适用于 Web 与 Node 工具链。MIT 许可，npm 生态友好。与后端 Python/Rust 解析器互补；对专有扩展句支持有限，上线前请用目标接收机日志做回归，注意浏览器与 Node 打包体积。",
+    "language": "JavaScript",
+    "license": "MIT",
+    "category": "gnss-data",
+    "subcategory": "基础库",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "GPS.js：浏览器/Node 可用的 NMEA 0183 解析库",
+    "stars_approx": 270,
+    "markers": [
+      "routine-2026-09-24d"
+    ],
+    "source": "routine-finds-20260924d",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "micropyGPS",
+    "url": "https://github.com/inmcm/micropyGPS",
+    "desc_zh": "面向 MicroPython/PyBoard 的 NMEA 0183 解析器",
+    "analysis_zh": "inmcm 的 MicroPython NMEA 解析库，面向 PyBoard 等嵌入式板，支持常见 GNSS 语句与状态提取。MIT 许可，适合教学与低成本物联网定位原型。非桌面级全功能解析器；内存与句子覆盖以仓库说明为准，复杂差分或原始观测量请另选链路处理。",
+    "language": "Python",
+    "license": "MIT",
+    "category": "mobile-apps",
+    "subcategory": "嵌入式",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "micropyGPS：MicroPython 板载 NMEA 0183 解析",
+    "stars_approx": 391,
+    "markers": [
+      "routine-2026-09-24d"
+    ],
+    "source": "routine-finds-20260924d",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "asv-gnss",
+    "url": "https://github.com/asv-soft/asv-gnss",
+    "desc_zh": ".NET GNSS 库：RTCM v2/v3、NMEA 与接收机控制协议",
+    "analysis_zh": "asv-soft 的 .NET 库，解析 RTCMv2/v3 与 NMEA，并支持经 SBF/ComNav/UBX 等协议控制接收机，面向测绘/无人系统流水线。MIT 许可，填补目录中 C# 实时链路缺口。协议覆盖与设备兼容性以仓库与示例为准；它不是跨语言通用 RTCM 核心库，跨平台请评估运行时。",
+    "language": "C#",
+    "license": "MIT",
+    "category": "gnss-data",
+    "subcategory": "RTCM/NTRIP",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "asv-gnss：.NET 下 RTCM/NMEA 与接收机控制库",
+    "stars_approx": 29,
+    "markers": [
+      "routine-2026-09-24d"
+    ],
+    "source": "routine-finds-20260924d",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "gal-osnma-sim",
+    "url": "https://github.com/galileoz/gal-osnma-sim",
+    "desc_zh": "Galileo OSNMA 仿真器（开源）",
+    "analysis_zh": "galileoz 的 Galileo OSNMA 仿真工具，用于生成/演练开放服务导航电文认证场景，便于测试认证链路。MIT 许可；与 Algafix/OSNMA、daniestevez/galileo-osnma 形成仿真—实现互补。偏研究与联调，非飞行级密钥管理；密钥材料与配置步骤以仓库文档为准，勿与生产公钥混用。",
+    "language": "C",
+    "license": "MIT",
+    "category": "tools-learning",
+    "subcategory": "认证/完好性",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "gal-osnma-sim：Galileo OSNMA 开源仿真器",
+    "stars_approx": 31,
+    "markers": [
+      "routine-2026-09-24d"
+    ],
+    "source": "routine-finds-20260924d",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "gnssSNR",
+    "url": "https://github.com/kristinemlarson/gnssSNR",
+    "desc_zh": "从 RINEX 提取 SNR 与卫星高度角/方位角（GNSS-IR 前置）",
+    "analysis_zh": "Kristine Larson 团队工具，从 RINEX 剥离 SNR 及卫星方位角、高度角，常作为 gnssrefl / GNSS-IR 反射测量流水线前置。MIT 许可，Fortran 实现。适合反射测高与多路径研究；RINEX 版本支持以说明为准，完整反射反演与站点元数据请接 gnssrefl 等下游工具。",
+    "language": "Fortran",
+    "license": "MIT",
+    "category": "troposphere",
+    "subcategory": "GNSS-IR",
+    "host": "github",
+    "provenance": "academic_lab",
+    "one_liner_zh": "gnssSNR：RINEX→SNR/几何角，GNSS-IR 前置工具",
+    "stars_approx": 15,
+    "markers": [
+      "routine-2026-09-24d"
+    ],
+    "source": "routine-finds-20260924d",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "deep_gnss",
+    "url": "https://github.com/Stanford-NavLab/deep_gnss",
+    "desc_zh": "斯坦福 NavLab：深度网络 GNSS 定位估计实验代码",
+    "analysis_zh": "Stanford NavLab 公开的基于深度神经网络的 GNSS 位置估计仓库，用于学习型定位与传统模型对照实验。MIT 许可，偏论文复现与教学演示。数据划分与训练配置见仓库 README；非工程级 PPP/RTK 替代品，生产部署需配合物理模型、完备质控与完好性设计。",
+    "language": "Python",
+    "license": "MIT",
+    "category": "gnss-positioning",
+    "subcategory": "PVT",
+    "host": "github",
+    "provenance": "academic_lab",
+    "one_liner_zh": "deep_gnss：NavLab 深度学习 GNSS 定位实验代码",
+    "stars_approx": 127,
+    "markers": [
+      "routine-2026-09-24d"
+    ],
+    "source": "routine-finds-20260924d",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "snapshot-gnss-algorithms",
+    "url": "https://github.com/JonasBchrt/snapshot-gnss-algorithms",
+    "desc_zh": "短快照 GNSS 定位估计算法集合",
+    "analysis_zh": "面向短时 GNSS snapshot 观测的定位估计算法实现，适用于功耗受限或间歇采样场景。ISC 许可，Python 为主。与连续跟踪接收机流水线不同；算法假设与样例数据见仓库，可与 SoftGNSS、PocketSDR 等 SDR 前端组合做快照定位试验，注意历元与辅助数据对齐。",
+    "language": "Python",
+    "license": "ISC",
+    "category": "gnss-positioning",
+    "subcategory": "PVT",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "snapshot-gnss-algorithms：短快照 GNSS 定位算法集",
+    "stars_approx": 36,
+    "markers": [
+      "routine-2026-09-24d"
+    ],
+    "source": "routine-finds-20260924d",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "hwm93",
+    "url": "https://github.com/space-physics/hwm93",
+    "desc_zh": "NASA HWM93 水平风模型的 Python/Matlab 封装",
+    "analysis_zh": "space-physics 对经典 NASA Horizontal Wind Model 93 的 Python/Matlab 封装，常与电离层/热层研究及 GNSS 相关大气分析联用。MIT 许可；目录已有 hwm14，本条补齐仍被文献引用的 HWM93 基线接口。模型年代较早，现代工作请对照 HWM14 或其他再分析风场产品验证。",
+    "language": "Python",
+    "license": "MIT",
+    "category": "ionosphere",
+    "subcategory": "模型",
+    "host": "github",
+    "provenance": "academic_lab",
+    "one_liner_zh": "hwm93：HWM93 水平风模型 Python/Matlab 接口",
+    "stars_approx": 23,
+    "markers": [
+      "routine-2026-09-24d"
+    ],
+    "source": "routine-finds-20260924d",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "ICE-Incremental-Covariance",
+    "url": "https://github.com/wvu-navLab/ICE",
+    "desc_zh": "WVU navLab：增量协方差估计稳健定位论文配套代码",
+    "analysis_zh": "西弗吉尼亚大学导航实验室发布的 Incremental Covariance Estimation 稳健定位软件，对应测量误差协方差自适应相关论文。MIT 许可；与同实验室 PPP-BayesTree 互补，偏方法复现而非测地生产套件。依赖、数据路径与 Shell 入口脚本见仓库说明，跑通前先核对环境。",
+    "language": "Shell",
+    "license": "MIT",
+    "category": "gnss-positioning",
+    "subcategory": "因子图",
+    "host": "github",
+    "provenance": "academic_lab",
+    "one_liner_zh": "ICE：增量协方差估计稳健定位研究代码",
+    "stars_approx": 60,
+    "markers": [
+      "routine-2026-09-24d"
+    ],
+    "source": "routine-finds-20260924d",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "TUSAGA-Aktif",
+    "url": "https://www.tusaga-aktif.gov.tr/",
+    "desc_zh": "土耳其 TUSAGA-Aktif：国家主动 GNSS 网实时定位服务门户",
+    "analysis_zh": "土耳其国家固定 GNSS 主动网（TUSAGA-Aktif）用户门户，提供注册、Web 指南与实时厘米级定位服务说明，覆盖本土及北塞区域通讯可达处。中东/西亚少有的国家级 CORS/RTK 公开入口；账号审批、资费与数据政策以用户协议为准，不能当作匿名全球 RINEX 镜像使用。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "gnss-datasets",
+    "subcategory": "NTRIP服务商/CRS",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "TUSAGA-Aktif：土耳其国家主动 GNSS 网服务门户",
+    "stars_approx": null,
+    "markers": [
+      "routine-2026-09-24d"
+    ],
+    "source": "routine-finds-20260924d",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "ISRO-IRNSS-NavIC",
+    "url": "https://www.isro.gov.in/IRNSS_Programme.html",
+    "desc_zh": "ISRO IRNSS/NavIC：印度区域导航卫星系统计划页",
+    "analysis_zh": "印度空间研究组织关于 IRNSS（NavIC）区域导航系统的官方计划页，说明服务区、系统目标与计划背景，是了解 NavIC 信号与服务范围的起点。本页不是观测数据下载站；接收机 ICD、开放数据与授权渠道需另循 ISRO 文档。适合多星座与南亚 PNT 调研索引。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "tools-learning",
+    "subcategory": "机构软件门户",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "ISRO NavIC：印度区域导航系统官方计划页",
+    "stars_approx": null,
+    "markers": [
+      "routine-2026-09-24d"
+    ],
+    "source": "routine-finds-20260924d",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "pcc-explorer",
+    "url": "https://github.com/J-kroeger/pcc-explorer",
+    "desc_zh": "汉诺威大学：评估天线相位中心改正（PCC）对大地参数影响",
+    "analysis_zh": "Leibniz Universität Hannover 地球测量研究所开源工具，量化 GNSS 天线相位中心改正差异对坐标与对流层等参数的传播影响，有配套论文与 Zenodo 发行。LICENSE 文本为 GPL-3.0（GitHub SPDX 常显示 NOASSERTION）。星级低但专业缺口明显；Windows 包见发行页，适合天线校准影响分析。",
+    "language": "Python",
+    "license": "GPL-3.0",
+    "category": "gnss-data",
+    "subcategory": "元数据/SDR",
+    "host": "github",
+    "provenance": "academic_lab",
+    "one_liner_zh": "pcc-explorer：天线 PCC 对大地参数影响评估工具",
+    "stars_approx": 2,
+    "markers": [
+      "routine-2026-09-24d"
+    ],
+    "source": "routine-finds-20260924d",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "atx-scanner",
+    "url": "https://github.com/J-kroeger/atx-scanner",
+    "desc_zh": "批量扫描 ANTEX 目录并检索天线校准记录",
+    "analysis_zh": "同研究所 ATX-Scanner：读取文件夹内全部 ANTEX 校准并汇成可检索表，便于查询某天线是否具备机器人校准及所在文件。GPL-3.0；填补目录中 ANTEX 工具空白，可与 pcc-explorer / PCC-Suite 配套使用。批处理示例与依赖见仓库及 GPS Solutions 相关文档，适合台站天线元数据治理。",
+    "language": "Python",
+    "license": "GPL-3.0",
+    "category": "gnss-data",
+    "subcategory": "RINEX/工具包",
+    "host": "github",
+    "provenance": "academic_lab",
+    "one_liner_zh": "atx-scanner：ANTEX 目录批量扫描与校准检索",
+    "stars_approx": 0,
+    "markers": [
+      "routine-2026-09-24d"
+    ],
+    "source": "routine-finds-20260924d",
+    "featured": false,
+    "user_relation": "none"
+  }
+]

@@ -1,5 +1,5 @@
 # GNSS 数据源 / GNSS Datasets
-> **121** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **122** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
@@ -717,6 +717,7 @@ Geoscience Australia 对 Southern Positioning Augmentation Network 的官方说�
 |---|---|---|---:|---|
 | [ntrip-catalog](https://github.com/Pix4D/ntrip-catalog) | Pix4D 开源 NTRIP 服务商目录（含坐标参考系 CRS 元数据，CC0） | Python | 14 | 🏷️ 个人社区 |
 | [RAMSAC-NTRIP](https://www.ign.gob.ar/NuestrasActividades/Geodesia/RamsacNtrip) | 阿根廷 RAMSAC-NTRIP：国家 CORS 实时流门户 | data-portal | — | 🏷️ 官方 |
+| [TUSAGA-Aktif](https://www.tusaga-aktif.gov.tr/) | TUSAGA-Aktif：土耳其国家主动 GNSS 网服务门户 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -733,6 +734,13 @@ Geoscience Australia 对 Southern Positioning Augmentation Network 的官方说�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 IGN 为 RAMSAC 提供的 NTRIP 实时服务门户，含站网地图、用户注册与技术说明，面向差分定位与监测用户。与 RINEX 事后下载互补；Caster 端点、mountpoint 与资费/开放范围以登记页为准。南美实时 CORS 公开入口之一，便于与 SIRGAS 区域网对照试验。
+
+#### [TUSAGA-Aktif](https://www.tusaga-aktif.gov.tr/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+土耳其国家固定 GNSS 主动网（TUSAGA-Aktif）用户门户，提供注册、Web 指南与实时厘米级定位服务说明，覆盖本土及北塞区域通讯可达处。中东/西亚少有的国家级 CORS/RTK 公开入口；账号审批、资费与数据政策以用户协议为准，不能当作匿名全球 RINEX 镜像使用。
 
 ## 对流层
 

@@ -1,5 +1,5 @@
 # 学习资源与工具 / Tools & Learning
-> **32** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **34** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
@@ -131,6 +131,7 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [GA-Positioning-Services](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/services-and-tools) | Geoscience Australia 定位服务与工具门户（SouthPAN/AUSPOS/数据中心） | various | — | 🏷️ 官方 |
+| [ISRO-IRNSS-NavIC](https://www.isro.gov.in/IRNSS_Programme.html) | ISRO NavIC：印度区域导航系统官方计划页 | data-portal | — | 🏷️ 官方 |
 | [NGS-PC-PROD](https://geodesy.noaa.gov/PC_PROD/) | NGS PC Software 门户：HTDP 等大地测量桌面程序入口 | various | — | 🏷️ 官方 |
 | [UNAVCO-Software-Portal](https://www.unavco.org/software/) | UNAVCO/EarthScope 软件门户：TEQC、预处理、GAMIT 链接与可视化 | various | — | 🏷️ 官方 |
 
@@ -142,6 +143,13 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 语言：various · 许可：varies · 星标约：— · 宿主：official_site
 
 澳大利亚定位项目服务总览，含 SouthPAN、GNSS 数据中心与 AUSPOS 在线处理等入口。多数为在线服务而非本地开源库，与 Ginan 开源套件互补。查找国家级数据流、改正服务与在线 PPP 时可作为官方导航页。使用前请核验上游页面与许可条款。
+
+#### [ISRO-IRNSS-NavIC](https://www.isro.gov.in/IRNSS_Programme.html)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+印度空间研究组织关于 IRNSS（NavIC）区域导航系统的官方计划页，说明服务区、系统目标与计划背景，是了解 NavIC 信号与服务范围的起点。本页不是观测数据下载站；接收机 ICD、开放数据与授权渠道需另循 ISRO 文档。适合多星座与南亚 PNT 调研索引。
 
 #### [NGS-PC-PROD](https://geodesy.noaa.gov/PC_PROD/)  
 *🏷️ 官方*
@@ -337,6 +345,7 @@ NGS 公开的 NCAT（NGS Coordinate Conversion and Transformation Tool）底层 
 |---|---|---|---:|---|
 | [galileo-osnma](https://github.com/daniestevez/galileo-osnma) | galileo-osnma：嵌入式友好的 Galileo OSNMA Rust 库 | Rust | 88 | 🏷️ 个人社区 |
 | [OSNMA](https://github.com/Algafix/OSNMA) | Galileo OSNMA 协议 Python 实现 | Python | 52 | 🏷️ 个人社区 |
+| [gal-osnma-sim](https://github.com/galileoz/gal-osnma-sim) | gal-osnma-sim：Galileo OSNMA 开源仿真器 | C | 31 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -353,6 +362,13 @@ daniestevez 维护的 Galileo OSNMA 协议 Rust 库，校验导航电文密码�
 语言：Python · 许可：EUPL-1.2 · 星标约：52 · 宿主：github
 
 实现 Galileo 开放业务消息认证（OSNMA），用于抗欺骗研究与接收机试验。适合安全/完好性方向。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
+
+#### [gal-osnma-sim](https://github.com/galileoz/gal-osnma-sim)  
+*🏷️ 个人社区*
+
+语言：C · 许可：MIT · 星标约：31 · 宿主：github
+
+galileoz 的 Galileo OSNMA 仿真工具，用于生成/演练开放服务导航电文认证场景，便于测试认证链路。MIT 许可；与 Algafix/OSNMA、daniestevez/galileo-osnma 形成仿真—实现互补。偏研究与联调，非飞行级密钥管理；密钥材料与配置步骤以仓库文档为准，勿与生产公钥混用。
 
 ## RTK网络客户端
 

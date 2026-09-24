@@ -1,5 +1,5 @@
 # GNSS 数据与格式 / GNSS Data I/O
-> **112** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **117** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
@@ -24,6 +24,7 @@ RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品�
 | [nmea-msgs](https://github.com/ros-drivers/nmea_msgs) | nmea_msgs：ROS 用 NMEA 消息接口（ros-drivers） | CMake | 38 | 🏷️ 官方 |
 | [ntripbrowser](https://github.com/emlid/ntripbrowser) | CLI 查询 NTRIP caster 源表与挂载点 | Python | 32 | 🏷️ 个人社区 |
 | [rtcm-rs](https://github.com/martinhakansson/rtcm-rs) | RTCM v3 编解码的 Rust crate | Rust | 32 | 🏷️ 个人社区 |
+| [asv-gnss](https://github.com/asv-soft/asv-gnss) | asv-gnss：.NET 下 RTCM/NMEA 与接收机控制库 | C# | 29 | 🏷️ 个人社区 |
 | [gstream](https://github.com/Jin-Whu/gstream) | 面向 GNSS 的开源数据流客户端库 | C++ | 20 | 🏷️ 高校实验室 |
 | [NTRIPcaster-python](https://github.com/Rampump/NTRIPcaster) | 轻量 Python NTRIP Caster | Python | 20 | 🏷️ 个人社区 |
 | [Caster_Project](https://github.com/KOROyo123/Caster_Project) | Libevent+Redis 跨平台 NTRIP Caster | C++ | 19 | 🏷️ 个人社区 |
@@ -164,6 +165,13 @@ Emlid 发布的 CLI，用于拉取并浏览 NTRIP caster 的 source table，快�
 语言：Rust · 许可：Apache-2.0 · 星标约：32 · 宿主：github
 
 专注 RTCM v3 消息编解码的 Rust crate，便于在服务端或嵌入式旁路处理差分与 SSR 流。适合自建 NTRIP 管道与协议测试。消息类型覆盖随版本增加；与 nav-solutions、pyrtcm 互操作时注意可选字段、端序与厂商扩展。
+
+#### [asv-gnss](https://github.com/asv-soft/asv-gnss)  
+*🏷️ 个人社区*
+
+语言：C# · 许可：MIT · 星标约：29 · 宿主：github
+
+asv-soft 的 .NET 库，解析 RTCMv2/v3 与 NMEA，并支持经 SBF/ComNav/UBX 等协议控制接收机，面向测绘/无人系统流水线。MIT 许可，填补目录中 C# 实时链路缺口。协议覆盖与设备兼容性以仓库与示例为准；它不是跨语言通用 RTCM 核心库，跨平台请评估运行时。
 
 #### [gstream](https://github.com/Jin-Whu/gstream)  
 *🏷️ 高校实验室*
@@ -705,6 +713,7 @@ NLS/FGI（nlsfi）维护的 Galileo High Accuracy Service 解码库，支持从 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [GNSS-Metadata-Standard](https://github.com/IonMetadataWorkingGroup/GNSS-Metadata-Standard) | GNSS-Metadata-Standard：SDR IQ 元数据 XML 标准 | C++ | 59 | 🏷️ 官方 |
+| [pcc-explorer](https://github.com/J-kroeger/pcc-explorer) | pcc-explorer：天线 PCC 对大地参数影响评估工具 | Python | 2 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -714,6 +723,13 @@ NLS/FGI（nlsfi）维护的 Galileo High Accuracy Service 解码库，支持从 
 语言：C++ · 许可：LGPL-3.0 · 星标约：59 · 宿主：github
 
 ION GNSS SDR Metadata Working Group 定义原始采样/前端配置的元数据交换标准并提供工具。做 GNSS-SDR 或自研接收机时很有用。与 RINEX 观测生态互补而非替代。
+
+#### [pcc-explorer](https://github.com/J-kroeger/pcc-explorer)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：GPL-3.0 · 星标约：2 · 宿主：github
+
+Leibniz Universität Hannover 地球测量研究所开源工具，量化 GNSS 天线相位中心改正差异对坐标与对流层等参数的传播影响，有配套论文与 Zenodo 发行。LICENSE 文本为 GPL-3.0（GitHub SPDX 常显示 NOASSERTION）。星级低但专业缺口明显；Windows 包见发行页，适合天线校准影响分析。
 
 ## 多路径/QC
 
@@ -766,7 +782,9 @@ MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [minmea](https://github.com/kosma/minmea) | minmea：嵌入式友好的纯 C NMEA 0183 解析库 | C | 966 | 🏷️ 个人社区 |
 | [pynmea2](https://github.com/Knio/pynmea2) | pynmea2：高星标 Python NMEA 0183 解析库 | Python | 681 | 🏷️ 个人社区 |
+| [GPS.js](https://github.com/rawify/GPS.js) | GPS.js：浏览器/Node 可用的 NMEA 0183 解析库 | JavaScript | 270 | 🏷️ 个人社区 |
 | [pyubx2](https://github.com/semuconsulting/pyubx2) | pyubx2：u-blox UBX 协议 Python 编解码库 | Python | 254 | 🏷️ 个人社区 |
 | [gnsstk](https://github.com/SGL-UT/gnsstk) | gnsstk：C++ GNSS 基础库（原 GPSTk） | C++ | 183 | 🏷️ 高校实验室 核心 |
 | [pynmeagps](https://github.com/semuconsulting/pynmeagps) | pynmeagps：NMEA 0183 编解码库 | Python | 106 | 🏷️ 个人社区 核心 |
@@ -776,12 +794,26 @@ MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实�
 
 ### 详细说明
 
+#### [minmea](https://github.com/kosma/minmea)  
+*🏷️ 个人社区*
+
+语言：C · 许可：WTFPL · 星标约：966 · 宿主：github
+
+kosma 维护的嵌入式友好 NMEA 0183 解析库，无动态分配、接口精简，广泛用于 MCU/车载日志解析。许可为 WTFPL；与 Rust nmea-parser、Python pynmea2 形成语言互补。适合资源受限环境，不覆盖 AIS 全语句集；句子支持以头文件与测试为准，复杂专有扩展请自行加钩子。
+
 #### [pynmea2](https://github.com/Knio/pynmea2)  
 *🏷️ 个人社区*
 
 语言：Python · 许可：MIT · 星标约：681 · 宿主：github
 
 轻量 Python 库，解析 GPS/GNSS 设备输出的 NMEA 0183 语句（GGA/RMC 等），星标高、API 简单，适合日志回放与嵌入式串口数据管道。只处理文本协议，不含 RTCM/RINEX，也不做定位解算；与已收录的 pynmeagps 互补（生态不同）。
+
+#### [GPS.js](https://github.com/rawify/GPS.js)  
+*🏷️ 个人社区*
+
+语言：JavaScript · 许可：MIT · 星标约：270 · 宿主：github
+
+rawify 的 JavaScript NMEA 0183 解析器，可处理语句流并维护导航状态，适用于 Web 与 Node 工具链。MIT 许可，npm 生态友好。与后端 Python/Rust 解析器互补；对专有扩展句支持有限，上线前请用目标接收机日志做回归，注意浏览器与 Node 打包体积。
 
 #### [pyubx2](https://github.com/semuconsulting/pyubx2)  
 *🏷️ 个人社区*
@@ -845,6 +877,7 @@ EarthScope 开源的 GNSS 产品联邦工具，按日期与任务在十余个 IG
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [gnsspy](https://github.com/GNSSpy-Project/gnsspy) | gnsspy：Python GNSS 数据读写与分析包 | Python | 209 | 🏷️ 个人社区 ★ |
+| [atx-scanner](https://github.com/J-kroeger/atx-scanner) | atx-scanner：ANTEX 目录批量扫描与校准检索 | Python | 0 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -854,6 +887,13 @@ EarthScope 开源的 GNSS 产品联邦工具，按日期与任务在十余个 IG
 语言：Python · 许可：MIT · 星标约：209 · 宿主：github
 
 读 GNSS 观测、做基础分析较方便，适合教学与中小脚本。功能深度不及 gnsstk/Ginan；精密定位请接专用引擎。
+
+#### [atx-scanner](https://github.com/J-kroeger/atx-scanner)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：GPL-3.0 · 星标约：0 · 宿主：github
+
+同研究所 ATX-Scanner：读取文件夹内全部 ANTEX 校准并汇成可检索表，便于查询某天线是否具备机器人校准及所在文件。GPL-3.0；填补目录中 ANTEX 工具空白，可与 pcc-explorer / PCC-Suite 配套使用。批处理示例与依赖见仓库及 GPS Solutions 相关文档，适合台站天线元数据治理。
 
 ## 基础库应用
 

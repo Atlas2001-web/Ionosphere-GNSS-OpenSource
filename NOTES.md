@@ -304,3 +304,10 @@
 - 当前条目：**774**
 - 分类计数：{'ionosphere': 239, 'troposphere': 34, 'gnss-data': 112, 'gnss-positioning': 85, 'orbit-clock': 13, 'navigation-ins': 60, 'gnss-sdr': 59, 'mobile-apps': 19, 'tools-learning': 32, 'gnss-datasets': 121}
 - 详见 `research/routine_finds_20260924c.json`
+
+## 例行检索补录（2026-09-24d）
+
+- 新增 **14** 条（minmea/GPS.js/asv-gnss/gnssSNR/deep_gnss/TUSAGA/pcc-explorer 等）
+- 当前条目：**788**
+- 分类计数：{'ionosphere': 240, 'troposphere': 35, 'gnss-data': 117, 'gnss-positioning': 88, 'orbit-clock': 13, 'navigation-ins': 60, 'gnss-sdr': 59, 'mobile-apps': 20, 'tools-learning': 34, 'gnss-datasets': 122}
+- 详见 `research/routine_finds_20260924d.json`

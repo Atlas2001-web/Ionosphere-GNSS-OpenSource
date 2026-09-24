@@ -1,5 +1,5 @@
 # 对流层 / Troposphere
-> **34** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **35** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
@@ -92,6 +92,7 @@ BME 大地测量组发布的开源 Python 层析工具箱，由 ZWD/梯度、SP3
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [gnssSNR](https://github.com/kristinemlarson/gnssSNR) | gnssSNR：RINEX→SNR/几何角，GNSS-IR 前置工具 | Fortran | 15 | 🏷️ 高校实验室 |
 | [GIRAS-GPS-Solutions](https://github.com/cemalialtuntas/GIRAS-GPS-Solutions) | GIRAS：MATLAB 开源 GNSS-IR 分析软件（GPS Solutions 论文配套） | MATLAB | 13 | 🏷️ 高校实验室 |
 | [gnssr4river](https://github.com/lroineau/gnssr4river) | 面向河流水文的 GNSS-R Python 工具箱 | Python | 8 | 🏷️ 个人社区 |
 | [gpssnrpy](https://github.com/kristinemlarson/gpssnrpy) | RINEX SNR 提取与高度角工具 | Python | 6 | 🏷️ 高校实验室 |
@@ -99,6 +100,13 @@ BME 大地测量组发布的开源 Python 层析工具箱，由 ZWD/梯度、SP3
 | [gnssr-raspberry](https://github.com/ITC-Water-Resources/gnssr-raspberry) | 树莓派上的 GNSS 反射测量（ITC 水资源） | Python | 3 | 🏷️ 高校实验室 |
 
 ### 详细说明
+
+#### [gnssSNR](https://github.com/kristinemlarson/gnssSNR)  
+*🏷️ 高校实验室*
+
+语言：Fortran · 许可：MIT · 星标约：15 · 宿主：github
+
+Kristine Larson 团队工具，从 RINEX 剥离 SNR 及卫星方位角、高度角，常作为 gnssrefl / GNSS-IR 反射测量流水线前置。MIT 许可，Fortran 实现。适合反射测高与多路径研究；RINEX 版本支持以说明为准，完整反射反演与站点元数据请接 gnssrefl 等下游工具。
 
 #### [GIRAS-GPS-Solutions](https://github.com/cemalialtuntas/GIRAS-GPS-Solutions)  
 *🏷️ 高校实验室*

@@ -1,5 +1,5 @@
 # 移动与嵌入式应用 / Mobile Apps
-> **19** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **20** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 手机/嵌入式上的 GNSS 测试、原始测量记录与简易定位。
 
@@ -62,6 +62,7 @@ PRIDE 团队面向智能手机的多频 GNSS 与 IMU 采集工具，便于把手
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [micropyGPS](https://github.com/inmcm/micropyGPS) | micropyGPS：MicroPython 板载 NMEA 0183 解析 | Python | 391 | 🏷️ 个人社区 |
 | [ubxlib](https://github.com/u-blox/ubxlib) | u-blox 官方嵌入式 C 库（GNSS/蜂窝 API） | C | 358 | 🏷️ 官方 |
 | [GNSSTimeServer](https://github.com/Montecri/GNSSTimeServer) | GNSSTimeServer：ESP 系 GNSS 授时服务器 | C | 232 | 🏷️ 个人社区 |
 | [esp32-xbee](https://github.com/nebkat/esp32-xbee) | ESP32 NTRIP/UART 桥接固件（Ardusimple） | C | 119 | 🏷️ 个人社区 |
@@ -73,6 +74,13 @@ PRIDE 团队面向智能手机的多频 GNSS 与 IMU 采集工具，便于把手
 | [GNSSClock](https://github.com/stevemarple/GNSS_Clock) | 基于 GNSS NMEA/PPS 的 Arduino 时钟 | C++ | 2 | 🏷️ 个人社区 |
 
 ### 详细说明
+
+#### [micropyGPS](https://github.com/inmcm/micropyGPS)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：391 · 宿主：github
+
+inmcm 的 MicroPython NMEA 解析库，面向 PyBoard 等嵌入式板，支持常见 GNSS 语句与状态提取。MIT 许可，适合教学与低成本物联网定位原型。非桌面级全功能解析器；内存与句子覆盖以仓库说明为准，复杂差分或原始观测量请另选链路处理。
 
 #### [ubxlib](https://github.com/u-blox/ubxlib)  
 *🏷️ 官方*

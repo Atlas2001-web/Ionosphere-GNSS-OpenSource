@@ -1,5 +1,5 @@
 # 精密定位 / Precise Positioning
-> **85** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **88** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
@@ -556,9 +556,25 @@ goGPS 的 Java 实现，便于嵌进 JVM 应用。功能气质同 MATLAB 版但�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [deep_gnss](https://github.com/Stanford-NavLab/deep_gnss) | deep_gnss：NavLab 深度学习 GNSS 定位实验代码 | Python | 127 | 🏷️ 高校实验室 |
+| [snapshot-gnss-algorithms](https://github.com/JonasBchrt/snapshot-gnss-algorithms) | snapshot-gnss-algorithms：短快照 GNSS 定位算法集 | Python | 36 | 🏷️ 个人社区 |
 | [gps_pvt](https://github.com/fenrir-naru/gps_pvt) | gps_pvt：Ruby 可控 PVT + RINEX/SP3/UBX 解析 | C++ | 6 | 🏷️ 个人社区 |
 
 ### 详细说明
+
+#### [deep_gnss](https://github.com/Stanford-NavLab/deep_gnss)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：MIT · 星标约：127 · 宿主：github
+
+Stanford NavLab 公开的基于深度神经网络的 GNSS 位置估计仓库，用于学习型定位与传统模型对照实验。MIT 许可，偏论文复现与教学演示。数据划分与训练配置见仓库 README；非工程级 PPP/RTK 替代品，生产部署需配合物理模型、完备质控与完好性设计。
+
+#### [snapshot-gnss-algorithms](https://github.com/JonasBchrt/snapshot-gnss-algorithms)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：ISC · 星标约：36 · 宿主：github
+
+面向短时 GNSS snapshot 观测的定位估计算法实现，适用于功耗受限或间歇采样场景。ISC 许可，Python 为主。与连续跟踪接收机流水线不同；算法假设与样例数据见仓库，可与 SoftGNSS、PocketSDR 等 SDR 前端组合做快照定位试验，注意历元与辅助数据对齐。
 
 #### [gps_pvt](https://github.com/fenrir-naru/gps_pvt)  
 *🏷️ 个人社区*
@@ -602,6 +618,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [gtsam_gnss](https://github.com/taroz/gtsam_gnss) | gtsam_gnss：GTSAM GNSS 因子 + MATLAB 包装 | C++ | 136 | 🏷️ 个人社区 |
+| [ICE-Incremental-Covariance](https://github.com/wvu-navLab/ICE) | ICE：增量协方差估计稳健定位研究代码 | Shell | 60 | 🏷️ 高校实验室 |
 | [GraphGNSSLib_LEO](https://github.com/PolyU-TASLAB/GraphGNSSLib_LEO) | GraphGNSSLib_LEO：GNSS+LEO 因子图定位开源包 | C++ | 18 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -612,6 +629,13 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 语言：C++ · 许可：MIT · 星标约：136 · 宿主：github
 
 在因子图框架里拼伪距/相位/IMU 等 GNSS 因子，并提供 MATLAB 包装。适合算法研究。完整测地产品链与模糊度策略需自配。
+
+#### [ICE-Incremental-Covariance](https://github.com/wvu-navLab/ICE)  
+*🏷️ 高校实验室*
+
+语言：Shell · 许可：MIT · 星标约：60 · 宿主：github
+
+西弗吉尼亚大学导航实验室发布的 Incremental Covariance Estimation 稳健定位软件，对应测量误差协方差自适应相关论文。MIT 许可；与同实验室 PPP-BayesTree 互补，偏方法复现而非测地生产套件。依赖、数据路径与 Shell 入口脚本见仓库说明，跑通前先核对环境。
 
 #### [GraphGNSSLib_LEO](https://github.com/PolyU-TASLAB/GraphGNSSLib_LEO)  
 *🏷️ 高校实验室*

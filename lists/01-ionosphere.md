@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> **239** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **240** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -106,6 +106,7 @@ yujieqing 仓库：为电离层层析准备几何/射线矩阵相关代码，可
 | [Aether-IT-model](https://github.com/AetherModel/Aether) | 热层-电离层耦合物理模式 Aether（勿与 PPP-RTK 的 AETHER 混淆） | C++ | 27 | 🏷️ 高校实验室 |
 | [TIE-GCM](https://github.com/NCAR/tiegcm) | NCAR 官方热层-电离层-电动力学环流模式 TIE-GCM v3 源码 | Fortran | 27 | 🏷️ 官方 |
 | [LongwaveModePropagator.jl](https://github.com/fgasdia/LongwaveModePropagator.jl) | 地球-电离层波导中 VLF 长波模传播的 Julia 模型 | Julia | 26 | 🏷️ 高校实验室 |
+| [hwm93](https://github.com/space-physics/hwm93) | hwm93：HWM93 水平风模型 Python/Matlab 接口 | Python | 23 | 🏷️ 高校实验室 |
 | [sami2py](https://github.com/sami2py/sami2py) | NRL SAMI2 二维电离层模式的 Python 封装（运行/读档/绘图） | Python/Fortran | 21 | 🏷️ 高校实验室 |
 | [sami3_gitm](https://github.com/jdhuba/sami3_gitm) | Huba 公开的 SAMI3/GITM 基础耦合 vanilla 代码 | Fortran | 7 | 🏷️ 官方 |
 | [transcar](https://github.com/space-physics/transcar) | Transcar 一维沉降电离层模式 | Fortran | 7 | 🏷️ 高校实验室 |
@@ -162,6 +163,13 @@ TIE-GCM 是 NCAR HAO 发展的三维耦合热层-电离层-电动力学 GCM，Gi
 语言：Julia · 许可：MIT · 星标约：26 · 宿主：github
 
 用 Julia 模拟 VLF 在地球-电离层波导中的模态传播，服务低电离层与远距 VLF 研究，和 GNSS L 波段 TEC 工具链互补。局限：领域偏 VLF；对 GNSS 测地用户直接用途有限。
+
+#### [hwm93](https://github.com/space-physics/hwm93)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：MIT · 星标约：23 · 宿主：github
+
+space-physics 对经典 NASA Horizontal Wind Model 93 的 Python/Matlab 封装，常与电离层/热层研究及 GNSS 相关大气分析联用。MIT 许可；目录已有 hwm14，本条补齐仍被文献引用的 HWM93 基线接口。模型年代较早，现代工作请对照 HWM14 或其他再分析风场产品验证。
 
 #### [sami2py](https://github.com/sami2py/sami2py)  
 *🏷️ 高校实验室*
