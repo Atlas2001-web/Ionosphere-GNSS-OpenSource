@@ -5,18 +5,18 @@
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
   "generated": "2026-09-24",
-  "project_count": 954,
+  "project_count": 955,
   "counts_by_category": {
-    "ionosphere": 278,
-    "troposphere": 41,
-    "gnss-data": 132,
+    "gnss-data": 133,
+    "gnss-datasets": 140,
     "gnss-positioning": 101,
-    "orbit-clock": 27,
-    "navigation-ins": 71,
     "gnss-sdr": 76,
+    "ionosphere": 278,
     "mobile-apps": 29,
+    "navigation-ins": 71,
+    "orbit-clock": 27,
     "tools-learning": 59,
-    "gnss-datasets": 140
+    "troposphere": 41
   },
   "projects": [
     {
@@ -11190,6 +11190,26 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "CGGTTS 共视/全视时间比对解析库"
+    },
+    {
+      "name": "rinex2bin",
+      "url": "https://github.com/nav-solutions/rinex2bin",
+      "desc_zh": "Rust：RINEX→BINEX 序列化 CLI（nav-solutions / rtk-rs）",
+      "analysis_zh": "把 RINEX 导航/观测序列化为 BINEX 文件或可写流。crates 0.1.0 流尽后忙等须 timeout；OBS 仍 WIP。",
+      "language": "Rust",
+      "license": "MPL-2.0",
+      "category": "gnss-data",
+      "subcategory": "格式编解码",
+      "markers": [
+        "routine-2026-09-24"
+      ],
+      "stars_approx": 1,
+      "source": "crates.io + github 2026-09-24",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "rinex2bin：RINEX→BINEX CLI（nav-solutions）"
     },
     {
       "name": "clkcomb",
