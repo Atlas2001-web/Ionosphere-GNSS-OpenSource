@@ -122,3 +122,11 @@ Keep audits: `research/_qc_batch14_prov_keep.json`.
 5. **`core` vs `featured` drift** — decide policy before bulk flip; SH-GIM stays owned special.
 6. Guard against routine-merge overwrites (SPDX / provenance / Chinese) — `_merge_fields.py` preserve path.
 7. More professor/lab personal-account spot-audits only when org/bio is clear (e.g. known researchers with empty GitHub bio left untouched this batch: borioda/PadArt).
+
+## Correction note
+Commit `adc81ec` briefly included **+12** concurrent `routine-2026-09-24h` finds
+(ELT_RTKBase, ENRI-Japan, GraphGNSSLib_LEO_V1.2, ICAO-PBN, fusioncore, geodesy-js,
+go-gnss-rtcm, go-gnss-spartn, libnmea, pysbf, pysbf2, pyubxutils) due to a race with
+another agent. Follow-up commit strips them so this QC batch stays **830** / no-new-projects.
+Those finds remain in `research/routine_finds_20260924h.json` for a dedicated routine merge.
+

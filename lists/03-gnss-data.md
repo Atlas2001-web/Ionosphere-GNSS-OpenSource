@@ -25,7 +25,6 @@ RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品�
 | [ntripbrowser](https://github.com/emlid/ntripbrowser) | CLI 查询 NTRIP caster 源表与挂载点 | Python | 32 | 🏷️ 个人社区 |
 | [rtcm-rs](https://github.com/martinhakansson/rtcm-rs) | rtcm-rs：RTCM v3 编解码 Rust crate | Rust | 32 | 🏷️ 个人社区 |
 | [asv-gnss](https://github.com/asv-soft/asv-gnss) | asv-gnss：.NET 下 RTCM/NMEA 与接收机控制库 | C# | 29 | 🏷️ 个人社区 |
-| [go-gnss-rtcm](https://github.com/go-gnss/rtcm) | go-gnss/rtcm：Go 语言 RTCM 差分电文解析库 | Go | 26 | 🏷️ 个人社区 |
 | [gstream](https://github.com/Jin-Whu/gstream) | gstream：面向 GNSS 的开源数据流客户端库 | C++ | 20 | 🏷️ 高校实验室 |
 | [NTRIPcaster-python](https://github.com/Rampump/NTRIPcaster) | 轻量 Python NTRIP Caster | Python | 20 | 🏷️ 个人社区 |
 | [Caster_Project](https://github.com/KOROyo123/Caster_Project) | Libevent+Redis 跨平台 NTRIP Caster | C++ | 19 | 🏷️ 个人社区 |
@@ -173,13 +172,6 @@ Emlid 发布的 CLI，用于拉取并浏览 NTRIP caster 的 source table，快�
 语言：C# · 许可：MIT · 星标约：29 · 宿主：github
 
 asv-soft 的 .NET 库，解析 RTCMv2/v3 与 NMEA，并支持经 SBF/ComNav/UBX 等协议控制接收机，面向测绘/无人系统流水线。MIT 许可，填补目录中 C# 实时链路缺口。协议覆盖与设备兼容性以仓库与示例为准；它不是跨语言通用 RTCM 核心库，跨平台请评估运行时。
-
-#### [go-gnss-rtcm](https://github.com/go-gnss/rtcm)  
-*🏷️ 个人社区*
-
-语言：Go · 许可：Apache-2.0 · 星标约：26 · 宿主：github
-
-go-gnss 组织的 RTCM 解析库，便于在 Go 服务中解码差分电文。Apache-2.0；与同组织 ntrip（已收录）配套，适合云原生差分网关。消息类型覆盖以仓库测试为准，生产需补齐版本协商与错误处理。 细节以仓库或官方页面说明为准。
 
 #### [gstream](https://github.com/Jin-Whu/gstream)  
 *🏷️ 高校实验室*
@@ -700,7 +692,6 @@ GFZ 官方用户指南，详述 RINEX 2/3/4 检查、拼接、抽样、元数据
 |---|---|---|---:|---|
 | [HASlib](https://github.com/nlsfi/HASlib) | HASlib：Galileo HAS 改正解码库 | Python | 65 | 🏷️ 官方 核心 |
 | [GHASP-HAS-decoding](https://github.com/borioda/HAS-decoding) | GHASP：Galileo HAS E6B 二进制流转 CSV 改正 | Python | 20 | 🏷️ 个人社区 |
-| [go-gnss-spartn](https://github.com/go-gnss/spartn) | go-gnss/spartn：Go 语言 SPARTN 改正流解析库 | Go | 5 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -717,13 +708,6 @@ NLS/FGI（nlsfi）维护的 Galileo High Accuracy Service 解码库，支持从 
 语言：Python · 许可：see upstream README · 星标约：20 · 宿主：github
 
 社区 Python 工具将接收机记录的 E6B/HAS 相关二进制流转为四类 CSV 改正，便于科研语言加载与 PPP 试验。面向解析与分析而非完整定位引擎。更新节奏与许可条款以仓库为准；生产接入可对照官方 HASlib 或嵌入式 HASPPP。
-
-#### [go-gnss-spartn](https://github.com/go-gnss/spartn)  
-*🏷️ 个人社区*
-
-语言：Go · 许可：Apache-2.0 · 星标约：5 · 宿主：github
-
-go-gnss 的 SPARTN 解析库，面向 PPP-RTK/高精度改正流格式。Apache-2.0；与 Python pyspartn 互补，便于 Go 侧对接 SPARTN 服务。协议演进快，请核对支持的消息子集与密钥/授权要求（若接商用流）。
 
 ## 处理/教学
 
@@ -816,16 +800,12 @@ MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实�
 |---|---|---|---:|---|
 | [minmea](https://github.com/kosma/minmea) | minmea：嵌入式友好的纯 C NMEA 0183 解析库 | C | 966 | 🏷️ 个人社区 |
 | [pynmea2](https://github.com/Knio/pynmea2) | pynmea2：高星标 Python NMEA 0183 解析库 | Python | 681 | 🏷️ 个人社区 |
-| [libnmea](https://github.com/jacketizer/libnmea) | libnmea：轻量纯 C 的 NMEA 0183 解析库 | C | 326 | 🏷️ 个人社区 |
 | [GPS.js](https://github.com/rawify/GPS.js) | GPS.js：浏览器/Node 可用的 NMEA 0183 解析库 | JavaScript | 270 | 🏷️ 个人社区 |
 | [pyubx2](https://github.com/semuconsulting/pyubx2) | pyubx2：u-blox UBX 协议 Python 编解码库 | Python | 254 | 🏷️ 个人社区 |
 | [gnsstk](https://github.com/SGL-UT/gnsstk) | gnsstk：C++ GNSS 基础库（原 GPSTk） | C++ | 183 | 🏷️ 高校实验室 核心 |
 | [pynmeagps](https://github.com/semuconsulting/pynmeagps) | pynmeagps：NMEA 0183 编解码库 | Python | 106 | 🏷️ 个人社区 核心 |
 | [nmea-parser](https://github.com/zaari/nmea-parser) | nmea-parser：Rust 版 AIS/GNSS NMEA 0183 解析 | Rust | 51 | 🏷️ 个人社区 |
 | [navsu](https://github.com/stanford-gps-lab/navsu) | navsu：斯坦福 GPS Lab MATLAB GNSS/IGS 工具箱 | MATLAB | 24 | 🏷️ 高校实验室 |
-| [pysbf](https://github.com/jashandeep-sohi/pysbf) | pysbf：Septentrio SBF 文件 Python 解析模块 | Python | 16 | 🏷️ 个人社区 |
-| [pysbf2](https://github.com/semuconsulting/pysbf2) | pysbf2：Septentrio SBF 消息的 Python 编解码库 | Python | 8 | 🏷️ 个人社区 |
-| [pyubxutils](https://github.com/semuconsulting/pyubxutils) | pyubxutils：UBX 接收机 Python 命令行工具 | Python | 5 | 🏷️ 个人社区 |
 | [gnss-protos](https://github.com/nav-solutions/gnss-protos) | GNSS 广播协议编解码的 Rust 库 | Rust | 4 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -843,13 +823,6 @@ kosma 维护的嵌入式友好 NMEA 0183 解析库，无动态分配、接口精
 语言：Python · 许可：MIT · 星标约：681 · 宿主：github
 
 轻量 Python 库，解析 GPS/GNSS 设备输出的 NMEA 0183 语句（GGA/RMC 等），星标高、API 简单，适合日志回放与嵌入式串口数据管道。只处理文本协议，不含 RTCM/RINEX，也不做定位解算；与已收录的 pynmeagps 互补（生态不同）。
-
-#### [libnmea](https://github.com/jacketizer/libnmea)  
-*🏷️ 个人社区*
-
-语言：C · 许可：MIT · 星标约：326 · 宿主：github
-
-jacketizer 的纯 C NMEA 0183 解析库，接口精简，适合嵌入式与资源受限环境。MIT 许可；与 minmea、nmea-parser 等形成多语言对照。句子覆盖以头文件为准，复杂专有扩展需自行扩展解析表。 细节以仓库或官方页面说明为准。
 
 #### [GPS.js](https://github.com/rawify/GPS.js)  
 *🏷️ 个人社区*
@@ -892,27 +865,6 @@ zaari 的 nmea-parser crate，面向 AIS Class A/B 与常用 GNSS NMEA 0183 语�
 语言：MATLAB · 许可：MIT · 星标约：24 · 宿主：github
 
 Stanford GPS Lab 的 navsu MATLAB 工具箱，聚合 RINEX/产品解析、时间函数、IGS 轨道钟差下载与若干估计示例。适合教学与快速原型，依赖 MATLAB 环境与网络拉取 IGS。不是完整 PPP/RTK 商业级引擎，功能随仓库 examples 演进。
-
-#### [pysbf](https://github.com/jashandeep-sohi/pysbf)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：GPL-3.0 · 星标约：16 · 宿主：github
-
-较早的 Septentrio SBF 文件解析 Python 模块，GPL-3.0。与较新的 pysbf2（BSD）可对照；若无许可传染顾虑可优先 pysbf2。适合离线日志分析，维护活跃度以提交历史为准。 细节以仓库或官方页面说明为准。 细节以仓库或官方页面说明为准。
-
-#### [pysbf2](https://github.com/semuconsulting/pysbf2)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：BSD-3-Clause · 星标约：8 · 宿主：github
-
-semuconsulting 维护的 Septentrio Binary Format（SBF）Python 库，可解析与生成接收机二进制消息。BSD-3-Clause；与 pyubx2、pyrtcm、pyspartn 同生态，填补 SBF 侧缺口。适合日志解码与测试注入；完整驱动亦可对照官方 ROS septentrio_gnss_driver。
-
-#### [pyubxutils](https://github.com/semuconsulting/pyubxutils)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：BSD-3-Clause · 星标约：5 · 宿主：github
-
-semuconsulting 提供的 UBX 设备命令行工具，基于 pyubx2 生态做配置、查询与调试。BSD-3-Clause；适合实验室批量改配置与回归测试。星级不高，功能随 pyubx2 版本演进，复杂自动化可直接调用库 API。 细节以仓库或官方页面说明为准。
 
 #### [gnss-protos](https://github.com/nav-solutions/gnss-protos)  
 *🏷️ 个人社区*
