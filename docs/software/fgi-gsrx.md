@@ -1,6 +1,6 @@
 # FGI-GSRx · 芬兰 FGI 多星座 MATLAB 软件接收机操作手册
 
-目录：[`PROJECTS.json` → `FGI-GSRx`](../../PROJECTS.json) · 上游 <https://github.com/nlsfi/FGI-GSRx> · tip **`91a40a8`**（2026-07-10）· ★**192** · 文案版本 **v2.1.3**（`param` 内 `sys,versionNumber`）· 许可 **GPL-3.0**（`LICENSE`）· 本机验证（**2026-09-24 06:53 EDT**）：clone → **224** 个 `.m`；入口 `main/gsrx.m`；`param/*.txt` **16**；Chapter2 GPSL1：`samplingFreq=26e6` / `sampleSize=8` / `complexData=false` / `centerFrequency=1.56903e9`；ReleaseNotes PDF×**4** + User Manual **463173** B；样例 IF 门户返回 **Request Rejected**（246 B）；`which matlab` 空 → **未跑** acq/track/PVT；**禁止臆造** 坐标/固定率
+目录：[`PROJECTS.json` → `FGI-GSRx`](../../PROJECTS.json) · 上游 <https://github.com/nlsfi/FGI-GSRx> · tip **`91a40a8`**（2026-07-10）· ★**192** · 文案版本 **v2.1.3**（`param` 内 `sys,versionNumber`）· 许可 **GPL-3.0**（`LICENSE`）· 本机验证（**2026-09-24 06:53 EDT**；质检复跑 **06:58 EDT**）：clone → **224** 个 `.m`；入口 `main/gsrx.m`；`param/*.txt` **16**；Chapter2 GPSL1：`samplingFreq=26e6` / `sampleSize=8` / `complexData=false` / `centerFrequency=1.56903e9`；ReleaseNotes PDF×**4** + User Manual **463173** B；样例 IF 门户仍 **Request Rejected**（**246** B）；`which matlab` 空；本机有 **Octave 9.4.0**：`gsrx('param/default_param_GPSL1_Chapter2.txt')` 打印欢迎横幅 + `gpsl1 enabled` 后因默认 `D:\Raw IQ datasets\…Chapters2_4.dat` **Unable to open RF data file** → **无** acq/track/PVT 数字；**禁止臆造** 坐标/固定率
 
 > 岗位：对 **原始 IF 文件**做事后捕获→跟踪→电文→伪距→PVT（可出 RINEX 3.04）；服务干扰/欺骗、OSNMA、新信号算法实验。冲突时：**仓内 `User Manual FGI-GSRx_v2.1.0.pdf` / `param/default_param_*.txt` / `main/gsrx.m` > 本文**。  
 > C++ 接收机 → [gnss-sdr](./gnss-sdr.md)；口袋 SDR → [pocketsdr](./pocketsdr.md)；基带源 → [gps-sdr-sim](./gps-sdr-sim.md)；事后 RINEX → [rtklib](./rtklib.md)。
@@ -52,7 +52,7 @@
 | 匹配 IF | 采样率 / 中心频 / 实·复 / 位宽必须与 param 一致 |
 | 用户手册 PDF | 仓内 `User Manual FGI-GSRx_v2.1.0.pdf`（**463173** B） |
 
-本机：`which matlab` → 空；**未安装 Octave 作为替代**。
+本机：`which matlab` → 空；有 **Octave 9.4.0**（`/usr/bin/octave`）——**≠** 官方运行时（PCT / 工具箱 / 部分对象语法）；质检仅用其冒烟入口，**未**当正式解算。
 
 ### 3.2 Clone（本机已做）
 
@@ -112,9 +112,11 @@ for k in ('versionNumber','samplingFreq','sampleSize','complexData',
 PY
 ```
 
-**本机结果（2026-09-24 06:53 EDT）：** `kv=80`；sections `sys=28` / `nav=7` / `osnma=4` / `gpsl1=41`；`versionNumber=v2.1.3`；`samplingFreq=26e6`；`sampleSize=8`；`complexData=false`；`centerFrequency=1569030000`；`PCTenabled=true`；`elevationMask=5`；`snrMask=5`。
+**本机结果（2026-09-24 06:53 EDT；质检复跑 06:58 EDT）：** `kv=80`；sections `sys=28` / `nav=7` / `osnma=4` / `gpsl1=41`；`versionNumber=v2.1.3`；`samplingFreq=26e6`；`sampleSize=8`；`complexData=false`；`centerFrequency=1569030000`；`PCTenabled=true`；`elevationMask=5`；`snrMask=5`。
 
 样例下载探针：`curl` 门户 → **HTTP 200** 但体为 WAF **Request Rejected**（**246** B）→ **未落盘 IF**。
+
+**Octave 9.4.0 冒烟（非官方；2026-09-24 06:58 EDT）：** `addpath(genpath(pwd)); gsrx('param/default_param_GPSL1_Chapter2.txt')` → 欢迎横幅 *FGI-GSRx software GNSS receiver* → `gpsl1 enabled` → **`Unable to open RF data file 'D:\Raw IQ datasets\GNSS Software Receivers\rawData_GPSL1GalileoE1B_Chapters2_4.dat'`**（×2）→ 抛错退出。**无** 捕获峰 / 跟踪 / 坐标 stdout——路径仍是 Windows 样例盘符 + 无 IF；**勿**把横幅当成解算成功。
 
 ## 5. 输入 / 输出
 
@@ -158,7 +160,7 @@ PY
 | 5 | 并行 bat 只在 Win | `runGNSSSingleSatelliteTracking.bat` | Linux 用 PCT 模式或串行 |
 | 6 | 无 RINEX | 旧流程 / 非 GPS·GAL | 升 v2.1.2+；查信号支持表 |
 | 7 | 样例下不来 | WAF / 地区门禁 | 换网络或邮件问 FGI；勿臆造 |
-| 8 | Octave 跑挂 | 非支持运行时 | 用正版 MATLAB |
+| 8 | Octave 仅读到横幅后因 `D:\…dat` 退出 | 非官方运行时 + 未改路径/无 IF | 改 `rfFileName`；正式跑用 MATLAB；**禁止**把横幅当 PVT |
 | 9 | 与 gnss-sdr 坐标比飞 | 前端/算法/历元不同 | 分表；同 IF 再比 |
 | 10 | `msToProcess` 过大 | 磁盘/内存爆 | 先短 `msToProcess` 冒烟 |
 | 11 | 忽略 `trackingMode` | 1 ms vs 20 ms 数据不匹配 | 与数据文件发行说明一致 |

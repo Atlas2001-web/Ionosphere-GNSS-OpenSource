@@ -1,6 +1,6 @@
 # gps-sdr-sim · GPS L1 基带信号仿真操作手册
 
-目录：[`PROJECTS.json` → `gps-sdr-sim`](../../PROJECTS.json) · 上游 <https://github.com/osqzss/gps-sdr-sim> · tip **`28ca29a`** · ★**3468** · 许可 **MIT**（`LICENSE`，Copyright 2015–2025 Takuji Ebinuma）· 本机验证（**2026-09-24 06:53 EDT**）：`make` → `gps-sdr-sim` **64016** B；`-e brdc0010.22n -l 41.275,1.9876,100 -d 2 -s 2600000 -b 16` → **19760000** B；可见 **12** 星（G01/07/08/10/16/21/22/23/26/27/30/32）；墙时 **0.1** s；东京 `-b 8` 1 s → **4680000** B / **11** 星；同生成器已联调 [gnss-sdr](./gnss-sdr.md) 60 s PVT / [pocketsdr](./pocketsdr.md) `pocket_acq`；**无 SDR 发射、无天空天线**；**禁止户外放仿真 RF**
+目录：[`PROJECTS.json` → `gps-sdr-sim`](../../PROJECTS.json) · 上游 <https://github.com/osqzss/gps-sdr-sim> · tip **`28ca29a`** · ★**3466**（PROJECTS；写作 ★3468）· 许可 **MIT**（`LICENSE`，Copyright 2015–2025 Takuji Ebinuma）· 本机验证（**2026-09-24 06:53 EDT**；质检复跑 **06:58 EDT**）：`make` → `gps-sdr-sim` **64016** B；`-e brdc0010.22n -l 41.275,1.9876,100 -d 2 -s 2600000 -b 16` → **19760000** B；可见 **12** 星（G01/07/08/10/16/21/22/23/26/27/30/32）；`Process time = 0.2 [sec]`（写作 0.1）；东京 `-b 8` 1 s → **4680000** B / **11** 星（G05/10/12–15/18/20/23/24/28；`Process time = 0.1`）；同生成器已联调 [gnss-sdr](./gnss-sdr.md) 60 s PVT / [pocketsdr](./pocketsdr.md) `pocket_acq`；**无 SDR 发射、无天空天线**；**禁止户外放仿真 RF**
 
 > 岗位：从 **RINEX NAV + 静态/动态轨迹**生成 GPS L1 C/A **I/Q 基带文件**，供文件回放接收机或 SDR 播放器。冲突时：**本机 `./gps-sdr-sim`（无参看 Usage）/ 仓内 README / `player/` > 本文**。  
 > 完整接收机 → [gnss-sdr](./gnss-sdr.md)；口袋捕获 → [pocketsdr](./pocketsdr.md)；事后 RINEX → [rtklib](./rtklib.md)；数据礼仪 → [data-access](../data-access.md)。
@@ -78,7 +78,7 @@ cd ~/iono_ops/gps-sdr-sim
   -t 2022/01/01,00:00:00 -v
 ```
 
-**本机 stdout 要点（2026-09-24 06:53 EDT）：**
+**本机 stdout 要点（2026-09-24 06:53 EDT；质检复跑 06:58 EDT）：**
 
 ```text
 xyz =   4797686.3,    166499.3,   4185490.2
@@ -90,7 +90,7 @@ Duration = 2.0 [sec]
 27   89.7  72.9  20417433.1   1.5
 ...
 Done!
-Process time = 0.1 [sec]
+Process time = 0.2 [sec]   # 质检复跑；写作 0.1
 ```
 
 产物：**19760000** B ≈ `2 × 2.6e6 × 2 × 2`（秒×采样×I/Q×int16）。可见表 **12** 星与 gnss-sdr/PocketSDR 联调一致。
