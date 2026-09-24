@@ -1,6 +1,6 @@
 # GNSS-MP · GNSS Multipath Analysis（gnssmultipath）操作手册
 
-目录：[`PROJECTS.json` → `GNSS_Multipath_Analysis_Software`](../../PROJECTS.json) · 上游 <https://github.com/paarnes/GNSS_Multipath_Analysis_Software> · PyPI **`gnssmultipath` 2.2.0** · tip **`806c3d9`** · 许可 **MIT** · 要求 **Python ≥3.10** · 本机验证：NMBUS Samsung S20 OBS + 匹配 SP3 → GPS **C1C RMS MP≈1.273 m** / 加权 **≈1.093 m**；周跳 **47**；**293** 历元；写出 Report/CSV/pkl · 2026-09-24 05:03 EDT
+目录：[`PROJECTS.json` → `GNSS_Multipath_Analysis_Software`](../../PROJECTS.json) · 上游 <https://github.com/paarnes/GNSS_Multipath_Analysis_Software> · PyPI **`gnssmultipath` 2.2.0** · tip **`806c3d9`** · 许可 **MIT** · 要求 **Python ≥3.10** · 本机验证：NMBUS Samsung S20 OBS + 匹配 SP3 → GPS **C1C RMS MP≈1.273 m** / 加权 **≈1.093 m**；周跳 **47**；**293** 历元；写出 Report/CSV/pkl · 2026-09-24 05:03 EDT · **质检复跑通过**（C1C RMS **1.273**/wRMS **1.093**/周跳 **47**/nEpochs **293**；tip `806c3d9`；2026-09-24 05:09 EDT）
 
 > 岗位：从 **一份 RINEX OBS + 星历（广播 NAV 或 SP3）** 估计各系统各码的 **伪距多路径**、电离层延迟序列、周跳统计与 SNR/天空图，并可选伪距最小二乘粗定位。冲突时：**本机 `import gnssmultipath; help(GNSS_MultipathAnalysis)` / 上游 README > 本文**。读 RINEX → [georinex](./georinex.md)；改/抽稀 → [gfzrnx](./gfzrnx.md)；经典 MP 指标 → [teqc](./teqc.md)；定位引擎 → [rtklib](./rtklib.md)。
 
@@ -77,7 +77,7 @@ print('nEpochs', res['ExtraOutputInfo']['nEpochs'])
 PY
 ```
 
-**本机结果（2.2.0 / tip `806c3d9`，2026-09-24 05:03 EDT）：**
+**本机结果（2.2.0 / tip `806c3d9`，2026-09-24 05:03 EDT；质检复跑 05:09 EDT 同数）：**
 
 ```text
 系统：GPS + GLONASS + Galileo + BeiDou

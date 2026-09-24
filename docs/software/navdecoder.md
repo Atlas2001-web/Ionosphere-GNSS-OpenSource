@@ -1,6 +1,6 @@
 # NavDecoder · PPP-B2b + Galileo HAS 电文解码操作手册
 
-目录：[`PROJECTS.json` → `NavDecoder`](../../PROJECTS.json) · 上游 <https://github.com/NavSesne/NavDecoder>（org 拼写 **NavSesne**）· tip **`7947333`** · **无 SPDX / 无 LICENSE**（商用先联系 `lwzhao@nuist.edu.cn`）· 依赖 **Python3 + numpy + bitstruct + tqdm + galois + python-dateutil**；Septentrio B2b 另需仓内 **`libldpc.so_lx`（Linux ELF）** · 本机验证：截短 SEPT DOY135/2024 样例 → HAS 页解码 **801**×`data collected` + log **1.1 MB**（含轨道改正表）；B2b → **`.ssr` 532** 行 CLOCK/ORBIT + **`.log` 7346** 行 + stub 导航下仍写出 `.sp3` 头 · 2026-09-24 05:03 EDT
+目录：[`PROJECTS.json` → `NavDecoder`](../../PROJECTS.json) · 上游 <https://github.com/NavSesne/NavDecoder>（org 拼写 **NavSesne**）· tip **`7947333`** · **无 SPDX / 无 LICENSE**（商用先联系 `lwzhao@nuist.edu.cn`）· 依赖 **Python3 + numpy + bitstruct + tqdm + galois + python-dateutil**；Septentrio B2b 另需仓内 **`libldpc.so_lx`（Linux ELF）** · 本机验证：截短 SEPT DOY135/2024 样例 → HAS 页解码 **801**×`data collected` + log **1.1 MB**（含轨道改正表）；B2b → **`.ssr` 532** 行 CLOCK/ORBIT + **`.log` 7346** 行 + stub 导航下仍写出 `.sp3` 头 · 2026-09-24 05:03 EDT · **质检复跑通过**（HAS `data collected` **801** + log **48288** 行/**1075698** B + `.sp3` **0** B/`IndexError`；B2b log **7346** / `.ssr` **532** / `.sp3` **277**；`libldpc.so` loaded；tip `7947333`；2026-09-24 05:10 EDT）
 
 > 岗位：把接收机落盘的 **北斗 PPP-B2b** / **Galileo HAS** 原始电文解成可检视的改正日志，并可导出 **BNC 风格 SSR** 与 **SP3/CLK**（有真实广播星历时）。冲突时：**仓内 `ReadMe.md` / 脚本顶栏配置 > 本文**。嵌 RTKLIB 的 B2b C 库 → [b2blib](./b2blib.md)；Galileo HAS→RTCM/IGS → [haslib](./haslib.md)；Python Compact SSR 教学 → [cssrlib](./cssrlib.md)；QZSS MADOCA → [madocalib](./madocalib.md)。
 
@@ -77,7 +77,7 @@ python decode_HAS_sept.py
 # stub NAV 时 write_sp3 可能 IndexError——页解码已完成
 ```
 
-**本机结果（tip `7947333`，截短 50 k 行，2026-09-24 05:03 EDT）：**
+**本机结果（tip `7947333`，截短 50 k 行，2026-09-24 05:03 EDT；质检复跑 05:09–05:10 EDT 同数）：**
 
 ```text
 =============Saving sp3/ssr/log to dir: …/test_data/SEPT2024135_HAS
@@ -119,7 +119,7 @@ python decode_B2B_sept.py
 # 跑完后：mv …FULL …BDSRawB2b.txt
 ```
 
-**本机结果（2 万行截短，同 tip）：**
+**本机结果（2 万行截短，同 tip；质检复跑 05:10 EDT 同数）：**
 
 ```text
 libldpc.so loaded successfully from: …/libldpc.so_lx
