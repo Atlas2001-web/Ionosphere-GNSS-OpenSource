@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **14 篇**操作手册（合计约 4235 行）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **14 篇**操作手册（合计约 3930 行）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -14,7 +14,7 @@
 | ---: | --- | --- | ---: |
 | 1 | [georinex.md](./georinex.md) | RINEX → xarray / Python | 272 |
 | 2 | [gfzrnx.md](./gfzrnx.md) | RINEX 检查 / 拼接 / 抽稀 | 414 |
-| 3 | [anubis.md](./anubis.md) | 观测 QC → XTR/XML | 393 |
+| 3 | [anubis.md](./anubis.md) | 观测 QC → XTR/XML | 239 |
 | 4 | [pytecgg.md](./pytecgg.md) | 校准 sTEC/vTEC（作者 viventriglia） | 468 |
 | 5 | [ionomoni.md](./ionomoni.md) | STEC / ROTI / AATR（C++） | 219 |
 | 6 | [oasis-roti.md](./oasis-roti.md) | ROTI / ΔTEC / SIDX（Python） | 224 |
@@ -24,7 +24,7 @@
 | 10 | [bnc.md](./bnc.md) | BKG 多流客户端 | 272 |
 | 11 | [bkg-ntripcaster.md](./bkg-ntripcaster.md) | BKG Caster 播发 | 379 |
 | 12 | [rtklib.md](./rtklib.md) | RTK / PPP CLI | 272 |
-| 13 | [pride-pppar.md](./pride-pppar.md) | PPP-AR | 440 |
+| 13 | [pride-pppar.md](./pride-pppar.md) | PPP-AR | 289 |
 | 14 | [iono-scintillation.md](./iono-scintillation.md) | MATLAB 闪烁仿真 | 197 |
 
 每篇结构：**用途边界 → 安装 → 逐步命令+期望输出 → I/O 字段 → 参数 → 接到哪步 → ≥8 坑 → 选型**。
@@ -88,7 +88,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 ---
 
 
-最近质检（ops）：Round5 已按 short-hard 重写 **pygnssutils**（本机 **1.2.7**：rtk2go 源表 + Closest `Piggy-BJ-DX2`；文件/`gnssserver` TCP 回环；本机 NTRIP caster 源表+订流；anon 订公网 400 需邮箱；`pyrinexconv` 0.2.0 Beta 对 NMEA 记录数 0）；Round4：**bkg-ntripcaster**（2.0.49）；Round3：**ionex-gim** / **oasis-roti** / **ionomoni**；Round2：**bnc** / **georinex** / **iono-scintillation**；Round1：**gfzrnx** / **rtklib** / **pytecgg**。行数以本表 `wc -l` 为准。
+最近质检（ops）：Round6 已按 short-hard 重写 **anubis**（Free；官网下载需注册，本机未获官方 Linux 二进制——命令/XTR 以官方 PDF+pecny+样例为准，不伪造 stdout）与 **pride-pppar**（本机编装 **3.2.11**：实跑 `-V`/`-H` 与 example 会话头；WUM FTPS TLS 失败未出解，`pos_`/`amb_` 头摘自上游 `results_ref`）；**sh-gim 未改**。Round5：**pygnssutils**（1.2.7）；Round4：**bkg-ntripcaster**（2.0.49）；Round3：**ionex-gim** / **oasis-roti** / **ionomoni**；Round2：**bnc** / **georinex** / **iono-scintillation**；Round1：**gfzrnx** / **rtklib** / **pytecgg**。行数以本表 `wc -l` 为准。
 
 ## 推荐阅读顺序（新人）
 
