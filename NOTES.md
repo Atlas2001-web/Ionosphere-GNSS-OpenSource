@@ -381,3 +381,10 @@
 - 当前条目：**926**
 - 分类计数：{'ionosphere': 265, 'troposphere': 41, 'gnss-data': 132, 'gnss-positioning': 101, 'orbit-clock': 26, 'navigation-ins': 71, 'gnss-sdr': 68, 'mobile-apps': 29, 'tools-learning': 59, 'gnss-datasets': 134}
 - 详见 `research/routine_finds_20260924n.json`
+
+## 例行检索补录（2026-09-24o）
+
+- 新增 **14** 条（pymsis/NRLMSISE、SoapySDR 族、ASG-EUPOS/CROPOS/SWEPOS/Terras、ACE/LISIRD/BGS/GOES 等）
+- 当前条目：**940**
+- 分类计数：{'ionosphere': 271, 'troposphere': 41, 'gnss-data': 132, 'gnss-positioning': 101, 'orbit-clock': 26, 'navigation-ins': 71, 'gnss-sdr': 71, 'mobile-apps': 29, 'tools-learning': 59, 'gnss-datasets': 139}
+- 详见 `research/routine_finds_20260924o.json`

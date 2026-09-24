@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> **265** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **271** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -2498,3 +2498,93 @@ GFZ 官方 Kp 指数数据入口，支持用户定制下载、HTTPS/FTP 与 Web 
 语言：Python · 许可：BSD-3-Clause · 星标约：14 · 宿主：github
 
 pysat 生态的任务/仪器规划工具包，BSD-3-Clause，便于把卫星任务几何与空间天气数据流接到统一分析框架。非 GNSS 解算库，但对星载 GNSS 接收或电离层探测任务规划有辅助价值。依赖 pysat 核心版本。适合科研脚本化任务仿真。
+
+## 中性大气
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [pymsis](https://github.com/SWxTREC/pymsis) | Python 接口：NRLMSIS 中性大气密度与成分（卫星高度） | Python | 39 | 🏷️ 高校实验室 |
+
+### 详细说明
+
+#### [pymsis](https://github.com/SWxTREC/pymsis)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：MIT · 星标约：39 · 宿主：github
+
+SWxTREC 维护的 NRLMSIS Python 接口，用于计算卫星高度中性大气密度与成分，MIT 许可。服务低轨大气阻力与空间天气背景，与 GNSS/LEO 精密定轨相关。依赖上游 MSIS 系数与输入太阳/地磁指数。适合科研脚本，而非 GNSS 观测解算。
+
+## NRLMSISE
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [Python-NRLMSISE-00](https://github.com/DeepHorizons/Python-NRLMSISE-00) | NRLMSISE-00 经验大气模型的 Python 移植 | Python | 14 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [Python-NRLMSISE-00](https://github.com/DeepHorizons/Python-NRLMSISE-00)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：14 · 宿主：github
+
+NRLMSISE-00（2001）经验中性大气模型的 Python 移植，MIT 许可。与已收录 msise00/pymsis 形成不同实现对照，便于无 Fortran 包装环境下估算密度。输出依赖历元与地磁/太阳输入；模型有适用高度范围。适合轨道与空间环境教学试验。
+
+## 太阳风实时
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SWPC-ACE-RTSW](https://www.swpc.noaa.gov/products/ace-real-time-solar-wind) | NOAA SWPC：ACE 实时太阳风产品 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [SWPC-ACE-RTSW](https://www.swpc.noaa.gov/products/ace-real-time-solar-wind)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+SWPC ACE Real-Time Solar Wind 产品页，提供 ACE 卫星太阳风实时监测，是磁暴/电离层扰动的上游空间天气输入之一，并在影响说明中关联 GPS 等系统。与 OMNI 历史序列互补，偏实时监测。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。
+
+## 太阳辐照
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [LISIRD](https://lasp.colorado.edu/lisird/) | LASP LISIRD：交互式太阳辐照数据中心 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [LISIRD](https://lasp.colorado.edu/lisird/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+科罗拉多大学 LASP 的 Interactive Solar Irradiance Datacenter，汇集太阳光谱/辐照等数据浏览与获取。为电离层/中性大气模型提供太阳输入参考。非 GNSS 观测站。使用请遵守 LASP 数据政策。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。
+
+## 地磁数据
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [BGS-INTERMAGNET-Data](https://imag-data.bgs.ac.uk/) | BGS INTERMAGNET 数据服务：可视化与下载 Web 服务 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [BGS-INTERMAGNET-Data](https://imag-data.bgs.ac.uk/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+英国地质调查局提供的 INTERMAGNET 数据服务站，含可视化、统计与数据/产品下载 Web 服务说明。与 INTERMAGNET 主站互补，偏数据获取实现。应用代码有开源声明（页面说明）。地磁指数研究常用。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。
+
+## GOES存档
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [NGDC-GOES-Satellite](https://www.ngdc.noaa.gov/stp/satellite/goes/) | NOAA NCEI：GOES 卫星空间天气数据入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [NGDC-GOES-Satellite](https://www.ngdc.noaa.gov/stp/satellite/goes/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+NCEI 的 GOES 卫星空间天气数据门户，汇总 GOES 相关存档与产品入口。可与 SWPC GOES X 射线实时产品对照使用。偏数据目录而非单一文件下载。请遵守 NOAA 使用政策。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。

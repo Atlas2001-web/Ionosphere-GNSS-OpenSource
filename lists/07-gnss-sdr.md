@@ -1,5 +1,5 @@
 # 软件接收机与信号 / GNSS-SDR
-> **68** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **71** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。
 
@@ -630,3 +630,48 @@ SystemVerilog 描述的单通道 GPS L1 C/A FPGA 相关器，经 AXI4-Lite 控�
 语言：C · 许可：GPL-3.0 · 星标约：65 · 宿主：github
 
 基于 Maxim MAX2771 的多星座 GNSS 射频前端与 Cypress FX2LP USB 采集方案，GPL-3.0。面向软件接收机实验，可输出基带采样供 GNSS-SDR 等处理。硬件原理图/固件以仓库为准，焊接与时钟质量影响噪声底。适合 SDR 教学与前端联调，不提供完整 PVT 产品链。
+
+## SDR抽象
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SoapySDR](https://github.com/pothosware/SoapySDR) | 厂商无关的 SDR 抽象库（SoapySDR） | C++ | 1513 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [SoapySDR](https://github.com/pothosware/SoapySDR)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：BSL-1.0 · 星标约：1513 · 宿主：github
+
+Pothos/Soapy 生态的核心：厂商与平台中立的软件无线电抽象层，Boost Software License，星数高。GNSS-SDR 等软件接收机常通过 Soapy 对接多种前端。本身不做 GNSS 解算，只提供设备 I/O 与流接口。驱动插件需另行安装。
+
+## HackRF插件
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SoapyHackRF](https://github.com/pothosware/SoapyHackRF) | SoapySDR 的 HackRF 支持模块 | C++ | 171 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [SoapyHackRF](https://github.com/pothosware/SoapyHackRF)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：MIT · 星标约：171 · 宿主：github
+
+为 SoapySDR 提供 Great Scott Gadgets HackRF 后端的插件，MIT 许可。便于在统一 Soapy API 下用 HackRF 采集 GNSS 射频样本。带宽/前端噪声需按应用选型；不替代基带 GNSS 处理链。与 gps-sdr-sim/GNSS-SDR 联调常见。
+
+## Pluto插件
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SoapyPlutoSDR](https://github.com/pothosware/SoapyPlutoSDR) | SoapySDR 的 ADALM-Pluto 支持插件 | C++ | 90 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [SoapyPlutoSDR](https://github.com/pothosware/SoapyPlutoSDR)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：LGPL-2.1 · 星标约：90 · 宿主：github
+
+Soapy SDR 插件，对接 Analog Devices ADALM-Pluto，LGPL-2.1。适合低成本 Pluto 前端接入 GNSS 软件接收机实验。驱动与固件版本需匹配；动态范围有限。与已收录 pluto-gps-sim 等仿真工具可互补。

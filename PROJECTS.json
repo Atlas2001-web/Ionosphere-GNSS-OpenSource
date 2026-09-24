@@ -5,18 +5,18 @@
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
   "generated": "2026-09-24",
-  "project_count": 926,
+  "project_count": 940,
   "counts_by_category": {
-    "ionosphere": 265,
+    "ionosphere": 271,
     "troposphere": 41,
     "gnss-data": 132,
     "gnss-positioning": 101,
     "orbit-clock": 26,
     "navigation-ins": 71,
-    "gnss-sdr": 68,
+    "gnss-sdr": 71,
     "mobile-apps": 29,
     "tools-learning": 59,
-    "gnss-datasets": 134
+    "gnss-datasets": 139
   },
   "projects": [
     {
@@ -18221,12 +18221,310 @@
       "one_liner_zh": "NASA OMNIWeb 数据浏览器：绘图/列表/导出接口",
       "registration": "open",
       "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+    },
+    {
+      "name": "pymsis",
+      "url": "https://github.com/SWxTREC/pymsis",
+      "desc_zh": "Python 接口：NRLMSIS 中性大气密度与成分（卫星高度）",
+      "analysis_zh": "SWxTREC 维护的 NRLMSIS Python 接口，用于计算卫星高度中性大气密度与成分，MIT 许可。服务低轨大气阻力与空间天气背景，与 GNSS/LEO 精密定轨相关。依赖上游 MSIS 系数与输入太阳/地磁指数。适合科研脚本，而非 GNSS 观测解算。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "中性大气",
+      "markers": [
+        "routine-2026-09-24o"
+      ],
+      "stars_approx": 39,
+      "source": "routine-finds-20260924o",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "Python 接口：NRLMSIS 中性大气密度与成分（卫星高度）"
+    },
+    {
+      "name": "Python-NRLMSISE-00",
+      "url": "https://github.com/DeepHorizons/Python-NRLMSISE-00",
+      "desc_zh": "NRLMSISE-00 经验大气模型的 Python 移植",
+      "analysis_zh": "NRLMSISE-00（2001）经验中性大气模型的 Python 移植，MIT 许可。与已收录 msise00/pymsis 形成不同实现对照，便于无 Fortran 包装环境下估算密度。输出依赖历元与地磁/太阳输入；模型有适用高度范围。适合轨道与空间环境教学试验。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "NRLMSISE",
+      "markers": [
+        "routine-2026-09-24o"
+      ],
+      "stars_approx": 14,
+      "source": "routine-finds-20260924o",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "NRLMSISE-00 经验大气模型的 Python 移植"
+    },
+    {
+      "name": "SoapySDR",
+      "url": "https://github.com/pothosware/SoapySDR",
+      "desc_zh": "厂商无关的 SDR 抽象库（SoapySDR）",
+      "analysis_zh": "Pothos/Soapy 生态的核心：厂商与平台中立的软件无线电抽象层，Boost Software License，星数高。GNSS-SDR 等软件接收机常通过 Soapy 对接多种前端。本身不做 GNSS 解算，只提供设备 I/O 与流接口。驱动插件需另行安装。",
+      "language": "C++",
+      "license": "BSL-1.0",
+      "category": "gnss-sdr",
+      "subcategory": "SDR抽象",
+      "markers": [
+        "routine-2026-09-24o"
+      ],
+      "stars_approx": 1513,
+      "source": "routine-finds-20260924o",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "厂商无关的 SDR 抽象库（SoapySDR）"
+    },
+    {
+      "name": "SoapyHackRF",
+      "url": "https://github.com/pothosware/SoapyHackRF",
+      "desc_zh": "SoapySDR 的 HackRF 支持模块",
+      "analysis_zh": "为 SoapySDR 提供 Great Scott Gadgets HackRF 后端的插件，MIT 许可。便于在统一 Soapy API 下用 HackRF 采集 GNSS 射频样本。带宽/前端噪声需按应用选型；不替代基带 GNSS 处理链。与 gps-sdr-sim/GNSS-SDR 联调常见。",
+      "language": "C++",
+      "license": "MIT",
+      "category": "gnss-sdr",
+      "subcategory": "HackRF插件",
+      "markers": [
+        "routine-2026-09-24o"
+      ],
+      "stars_approx": 171,
+      "source": "routine-finds-20260924o",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "SoapySDR 的 HackRF 支持模块"
+    },
+    {
+      "name": "SoapyPlutoSDR",
+      "url": "https://github.com/pothosware/SoapyPlutoSDR",
+      "desc_zh": "SoapySDR 的 ADALM-Pluto 支持插件",
+      "analysis_zh": "Soapy SDR 插件，对接 Analog Devices ADALM-Pluto，LGPL-2.1。适合低成本 Pluto 前端接入 GNSS 软件接收机实验。驱动与固件版本需匹配；动态范围有限。与已收录 pluto-gps-sim 等仿真工具可互补。",
+      "language": "C++",
+      "license": "LGPL-2.1",
+      "category": "gnss-sdr",
+      "subcategory": "Pluto插件",
+      "markers": [
+        "routine-2026-09-24o"
+      ],
+      "stars_approx": 90,
+      "source": "routine-finds-20260924o",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "SoapySDR 的 ADALM-Pluto 支持插件"
+    },
+    {
+      "name": "ASG-EUPOS",
+      "url": "https://www.asgeupos.pl/",
+      "desc_zh": "波兰 ASG-EUPOS：国家 GNSS 增强/参考站网门户",
+      "analysis_zh": "GUGiK 运营的波兰 ASG-EUPOS 系统门户，介绍参考站网、管理中心与服务，并提供站网地图与系统消息。面向测量与导航用户的国家 CORS/NRTK 入口。部分服务需登录。与 system.asgeupos.pl 服务页互补。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "国家CORS",
+      "markers": [
+        "routine-2026-09-24o"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924o",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "波兰 ASG-EUPOS：国家 GNSS 增强/参考站网门户",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；部分服务需注册；请遵守上游条款。"
+    },
+    {
+      "name": "ASG-EUPOS-Services",
+      "url": "https://system.asgeupos.pl/",
+      "desc_zh": "ASG-EUPOS 系统服务页：含电离层等专题入口",
+      "analysis_zh": "ASG-EUPOS 服务站点，汇总站网服务入口，并含电离层（I95、IRIM/GRIM 等）相关链接与登录注册。偏业务服务导航而非原始 RINEX 全量镜像。使用前请核对服务条款与计费。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "NRTK服务",
+      "markers": [
+        "routine-2026-09-24o"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924o",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "ASG-EUPOS 系统服务页：含电离层等专题入口",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；部分服务需注册；请遵守上游条款。"
+    },
+    {
+      "name": "CROPOS",
+      "url": "https://www.cropos.hr/",
+      "desc_zh": "克罗地亚 CROPOS：国家 GNSS 参考站网与实时服务",
+      "analysis_zh": "CROatian POsitioning System 门户，介绍国家参考站网概念、差分/高精度实时服务与资费说明。南欧区域 CORS/NRTK 代表性系统。注册与服务开通按站点流程。收录前已核验可访问。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "国家CORS",
+      "markers": [
+        "routine-2026-09-24o"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924o",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "克罗地亚 CROPOS：国家 GNSS 参考站网与实时服务",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；部分服务需注册；请遵守上游条款。"
+    },
+    {
+      "name": "SWEPOS-Portal",
+      "url": "https://swepos.lantmateriet.se/",
+      "desc_zh": "瑞典 SWEPOS 服务门户（Lantmäteriet）",
+      "analysis_zh": "Lantmäteriet 的 SWEPOS 服务门户，面向瑞典 GNSS 增强服务用户入口。与已收录的 SWEPOS RINEX DOI 数据页互补：本页偏服务登录与业务导航。Cookie/同意条可能影响首次访问体验。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "国家CORS",
+      "markers": [
+        "routine-2026-09-24o"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924o",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "瑞典 SWEPOS 服务门户（Lantmäteriet）",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；部分服务需注册；请遵守上游条款。"
+    },
+    {
+      "name": "GSI-Terras-GEONET",
+      "url": "https://terras.gsi.go.jp/",
+      "desc_zh": "国土地理院 Terras：GEONET 电子基准点数据提供门户",
+      "analysis_zh": "日本 GSI 电子基准点（GEONET）观测与解析成果的互联网提供门户，含站点移设/停用公告。与已收录 SFTP 说明、RNXCMP、RINGO 等互补，本页为数据服务主入口。日文界面为主，有英语入口提示。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "国家CORS",
+      "markers": [
+        "routine-2026-09-24o"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924o",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "国土地理院 Terras：GEONET 电子基准点数据提供门户",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；部分服务需注册；请遵守上游条款。"
+    },
+    {
+      "name": "SWPC-ACE-RTSW",
+      "url": "https://www.swpc.noaa.gov/products/ace-real-time-solar-wind",
+      "desc_zh": "NOAA SWPC：ACE 实时太阳风产品",
+      "analysis_zh": "SWPC ACE Real-Time Solar Wind 产品页，提供 ACE 卫星太阳风实时监测，是磁暴/电离层扰动的上游空间天气输入之一，并在影响说明中关联 GPS 等系统。与 OMNI 历史序列互补，偏实时监测。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "太阳风实时",
+      "markers": [
+        "routine-2026-09-24o"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924o",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NOAA SWPC：ACE 实时太阳风产品",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；部分服务需注册；请遵守上游条款。"
+    },
+    {
+      "name": "LISIRD",
+      "url": "https://lasp.colorado.edu/lisird/",
+      "desc_zh": "LASP LISIRD：交互式太阳辐照数据中心",
+      "analysis_zh": "科罗拉多大学 LASP 的 Interactive Solar Irradiance Datacenter，汇集太阳光谱/辐照等数据浏览与获取。为电离层/中性大气模型提供太阳输入参考。非 GNSS 观测站。使用请遵守 LASP 数据政策。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "太阳辐照",
+      "markers": [
+        "routine-2026-09-24o"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924o",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "LASP LISIRD：交互式太阳辐照数据中心",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；部分服务需注册；请遵守上游条款。"
+    },
+    {
+      "name": "BGS-INTERMAGNET-Data",
+      "url": "https://imag-data.bgs.ac.uk/",
+      "desc_zh": "BGS INTERMAGNET 数据服务：可视化与下载 Web 服务",
+      "analysis_zh": "英国地质调查局提供的 INTERMAGNET 数据服务站，含可视化、统计与数据/产品下载 Web 服务说明。与 INTERMAGNET 主站互补，偏数据获取实现。应用代码有开源声明（页面说明）。地磁指数研究常用。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "地磁数据",
+      "markers": [
+        "routine-2026-09-24o"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924o",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "BGS INTERMAGNET 数据服务：可视化与下载 Web 服务",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；部分服务需注册；请遵守上游条款。"
+    },
+    {
+      "name": "NGDC-GOES-Satellite",
+      "url": "https://www.ngdc.noaa.gov/stp/satellite/goes/",
+      "desc_zh": "NOAA NCEI：GOES 卫星空间天气数据入口",
+      "analysis_zh": "NCEI 的 GOES 卫星空间天气数据门户，汇总 GOES 相关存档与产品入口。可与 SWPC GOES X 射线实时产品对照使用。偏数据目录而非单一文件下载。请遵守 NOAA 使用政策。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "GOES存档",
+      "markers": [
+        "routine-2026-09-24o"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924o",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NOAA NCEI：GOES 卫星空间天气数据入口",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；部分服务需注册；请遵守上游条款。"
     }
   ],
   "provenance_counts": {
-    "official": 279,
-    "academic_lab": 335,
-    "personal_community": 312
+    "official": 288,
+    "academic_lab": 336,
+    "personal_community": 316
   },
   "updated": "2026-09-24"
 }

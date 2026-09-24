@@ -23,7 +23,7 @@
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
 - 列表文件：[`lists/01-ionosphere.md`](../lists/01-ionosphere.md)
-- 当前条目数：**265**
+- 当前条目数：**271**
 
 ## `troposphere` — 对流层
 
@@ -65,7 +65,7 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。
 
 - 列表文件：[`lists/07-gnss-sdr.md`](../lists/07-gnss-sdr.md)
-- 当前条目数：**68**
+- 当前条目数：**71**
 
 ## `mobile-apps` — 移动与嵌入式应用
 
@@ -86,7 +86,7 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
 - 列表文件：[`lists/10-gnss-datasets.md`](../lists/10-gnss-datasets.md)
-- 当前条目数：**134**
+- 当前条目数：**139**
 
 ## 与用户仓库的关系标记
 

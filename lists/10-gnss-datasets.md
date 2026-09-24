@@ -1,5 +1,5 @@
 # GNSS 数据源 / GNSS Datasets
-> **134** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **139** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
@@ -1291,3 +1291,57 @@ NGL GPS Networks Map，可点击站点查看站信息，便于浏览 MAGNET 与�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 OMNIWeb Data Explorer 表单页，可对 OMNI 太阳风/地磁等参数绘图、列表或导出文件，并支持命令行获取说明。与 OMNIWeb 主站互补，偏交互查询。引用请遵循 NASA SPDF/OMNI 规范。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证与引用要求。
+
+## 国家CORS
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [ASG-EUPOS](https://www.asgeupos.pl/) | 波兰 ASG-EUPOS：国家 GNSS 增强/参考站网门户 | data-portal | — | 🏷️ 官方 |
+| [CROPOS](https://www.cropos.hr/) | 克罗地亚 CROPOS：国家 GNSS 参考站网与实时服务 | data-portal | — | 🏷️ 官方 |
+| [GSI-Terras-GEONET](https://terras.gsi.go.jp/) | 国土地理院 Terras：GEONET 电子基准点数据提供门户 | data-portal | — | 🏷️ 官方 |
+| [SWEPOS-Portal](https://swepos.lantmateriet.se/) | 瑞典 SWEPOS 服务门户（Lantmäteriet） | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [ASG-EUPOS](https://www.asgeupos.pl/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+GUGiK 运营的波兰 ASG-EUPOS 系统门户，介绍参考站网、管理中心与服务，并提供站网地图与系统消息。面向测量与导航用户的国家 CORS/NRTK 入口。部分服务需登录。与 system.asgeupos.pl 服务页互补。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。
+
+#### [CROPOS](https://www.cropos.hr/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+CROatian POsitioning System 门户，介绍国家参考站网概念、差分/高精度实时服务与资费说明。南欧区域 CORS/NRTK 代表性系统。注册与服务开通按站点流程。收录前已核验可访问。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。
+
+#### [GSI-Terras-GEONET](https://terras.gsi.go.jp/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+日本 GSI 电子基准点（GEONET）观测与解析成果的互联网提供门户，含站点移设/停用公告。与已收录 SFTP 说明、RNXCMP、RINGO 等互补，本页为数据服务主入口。日文界面为主，有英语入口提示。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。
+
+#### [SWEPOS-Portal](https://swepos.lantmateriet.se/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Lantmäteriet 的 SWEPOS 服务门户，面向瑞典 GNSS 增强服务用户入口。与已收录的 SWEPOS RINEX DOI 数据页互补：本页偏服务登录与业务导航。Cookie/同意条可能影响首次访问体验。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。
+
+## NRTK服务
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [ASG-EUPOS-Services](https://system.asgeupos.pl/) | ASG-EUPOS 系统服务页：含电离层等专题入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [ASG-EUPOS-Services](https://system.asgeupos.pl/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+ASG-EUPOS 服务站点，汇总站网服务入口，并含电离层（I95、IRIM/GRIM 等）相关链接与登录注册。偏业务服务导航而非原始 RINEX 全量镜像。使用前请核对服务条款与计费。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。

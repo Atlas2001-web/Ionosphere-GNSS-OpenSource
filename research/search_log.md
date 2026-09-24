@@ -412,3 +412,11 @@
 - Skipped: aaronjridley/GITM near GITMCode, archived GOESplot/geo2mag, rtklibros no SPDX, files.igs.org/pub & IERS eop.php & ISGI Dst near-dups, SWS Aurora/Educational (SWS-heavy), CDDIS daily/GAGE rinex path near archive hubs, orbit-predictor redundant with SGP4 set
 - Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
 
+## Routine pass 2026-09-24o
+
+- Catalog size before: **926**; after merge: **940** (+14)
+- Finds file: `research/routine_finds_20260924o.json`
+- Method: regional CORS portals (ASG-EUPOS/CROPOS/SWEPOS/GSI Terras) + MSIS Python (pymsis/NRLMSISE-00) + SoapySDR frontend stack + space-weather distinct from OMNI (ACE RTSW, LISIRD, BGS INTERMAGNET data, NGDC GOES); `gh api`+`curl`; dedup vs PROJECTS.json and all `routine_finds_*.json`
+- Avoided: SGP4 set from 24n, Kp/Dst/SWS/SWPC near-dups, VMF/INTERMAGNET homes already listed, latpos.lv/estpos.ee squats, NLS/maanmittaus WAF blocks, TrigNet/AFREF unreachable, i2Nav suites already cataloged
+- Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
+
