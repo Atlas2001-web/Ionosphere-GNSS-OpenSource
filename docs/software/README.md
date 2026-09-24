@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **16 篇**操作手册（合计 **4413** 行，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **16 篇**操作手册（合计 **4547** 行，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -15,7 +15,7 @@
 | **软件手册质检**（本 bot） | 已短硬篇的**二遍质检补洞**（错 I/O、过时旗标、仍薄点）；优先 `georinex` / `rtklib` / `bnc` / `gfzrnx` / `pytecgg` | 勿大改「仍薄/缺篇」同事正在写的文件 |
 | **软件用法讲解**（并行） | 写 **尚未短硬 / 缺篇** 新手册 | 勿重写下表已标「已短硬」全文（补丁可协调） |
 
-**下一优先（质检二遍，按弱→强）：** `gfzrnx`（登记受限·禁臆造 stdout）→ `pytecgg`（校准链仍缺全日实跑 veq）→ 其余受限篇仅 guide 对齐。新缺篇 **cssrlib** / **gnss-tec** 已短硬入库（用法讲解）；质检二遍可排期。  
+**下一优先（质检二遍，按弱→强）：** 受限篇 guide 对齐（`anubis` / `ionomoni` / `iono-scintillation`；**禁臆造 stdout**）→ 可选二遍 `cssrlib` / `gnss-tec`。**R8 已完成** `pytecgg`（ABMF 全日 veq 实跑）+ `gfzrnx`（`-sifl` guide-only）。**勿碰**同事新建中的 `pinot.md` / `autorino.md`。  
 **sh-gim：** 保持短边界，禁止注水扩写。  
 **停写条件：** 剩余皆 PASS，或仅剩 sh-gim 边界 / 登记受限且无进一步真实 I/O 增益。
 
@@ -26,9 +26,9 @@
 | # | 手册 | 做什么 | 行数 | 状态 |
 | ---: | --- | --- | ---: | --- |
 | 1 | [georinex.md](./georinex.md) | RINEX → xarray / Python | 305 | **已短硬** R2+R7二遍 · 本机 1.16.2（补 NAV 实跑 I/O） |
-| 2 | [gfzrnx.md](./gfzrnx.md) | RINEX 检查 / 拼接 / 抽稀 | 414 | **已短硬** R1 [`939f0d6`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/939f0d6) · **登记受限**（无本机官方二进制；**禁臆造 stdout**） |
+| 2 | [gfzrnx.md](./gfzrnx.md) | RINEX 检查 / 拼接 / 抽稀 | 423 | **已短硬** R1+R8 guide [`099bf63`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/099bf63) · **登记受限**（无本机官方二进制；`-sifl` 坑已补；**禁臆造 stdout**） |
 | 3 | [anubis.md](./anubis.md) | 观测 QC → XTR/XML | 239 | **已短硬** R6 [`8fe8b6d`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/8fe8b6d) · **登记受限**（Free 需注册；无本机 Linux 二进制） |
-| 4 | [pytecgg.md](./pytecgg.md) | 校准 sTEC/vTEC（作者 viventriglia） | 468 | **已短硬** R1 [`939f0d6`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/939f0d6) · 本机 1.3.0 |
+| 4 | [pytecgg.md](./pytecgg.md) | 校准 sTEC/vTEC（作者 viventriglia） | 593 | **已短硬** R1+R8二遍 [`ff674b4`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/ff674b4) · 本机 1.3.0（ABMF 全日 `calculate_tec`/`veq` 实跑） |
 | 5 | [ionomoni.md](./ionomoni.md) | STEC / ROTI / AATR（C++） | 219 | **已短硬** R3 [`f5845f7`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/f5845f7) · **登记受限**（官方主推 Win；Linux 无开箱二进制） |
 | 6 | [oasis-roti.md](./oasis-roti.md) | ROTI / ΔTEC / SIDX（Python） | 224 | **已短硬** R3 [`f5845f7`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/f5845f7) · 本机 pyOASIS 1.0.3 |
 | 7 | [ionex-gim.md](./ionex-gim.md) | 读 IONEX GIM | 200 | **已短硬** R3 [`f5845f7`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/f5845f7) · 本机 ionex 0.2 |
@@ -106,7 +106,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
-最近新增（用法讲解）：**cssrlib**（1.2.1 SPP 实跑）+ **gnss-tec**（1.1.1 相对 TEC 实跑）。最近质检（ops）：**R7 二遍**已补 `georinex`（NAV 实跑）/`rtklib`（apt↔EX PATH）/`bnc`（REQC vs NTRIP 标签）。Round6：**anubis**（登记受限）+ **pride-pppar**（3.2.11 实跑头；FTPS 未出解）；**sh-gim 未扩**。Round5：**pygnssutils**；Round4：**bkg-ntripcaster**；Round3：**ionex-gim** / **oasis-roti** / **ionomoni**；Round2：**bnc** / **georinex** / **iono-scintillation**；Round1：**gfzrnx** / **rtklib** / **pytecgg**。行数以本表 `wc -l` 为准。
+最近新增（用法讲解）：**cssrlib**（1.2.1 SPP 实跑）+ **gnss-tec**（1.1.1 相对 TEC 实跑）。最近质检（ops）：**R8 二遍**已补 `pytecgg`（ABMF 全日 veq 实跑；作者 viventriglia）/`gfzrnx`（`-sifl` guide-only，无官方二进制 stdout）。**R7 二遍**已补 `georinex`（NAV 实跑）/`rtklib`（apt↔EX PATH）/`bnc`（REQC vs NTRIP 标签）。Round6：**anubis**（登记受限）+ **pride-pppar**（3.2.11 实跑头；FTPS 未出解）；**sh-gim 未扩**。Round5：**pygnssutils**；Round4：**bkg-ntripcaster**；Round3：**ionex-gim** / **oasis-roti** / **ionomoni**；Round2：**bnc** / **georinex** / **iono-scintillation**；Round1：**gfzrnx** / **rtklib** / **pytecgg**。行数以本表 `wc -l` 为准。
 
 ## 推荐阅读顺序（新人）
 
