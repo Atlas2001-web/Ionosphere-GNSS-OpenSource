@@ -1,6 +1,6 @@
 # PyGPSClient · GNSS 协议桌面 GUI 操作手册
 
-目录：[`PROJECTS.json` → `PyGPSClient`](../../PROJECTS.json) · 上游 <https://github.com/semuconsulting/PyGPSClient> · 文档 <https://www.semuconsulting.com/pygpsclient> · PyPI **`PyGPSClient` 1.7.6** · tip **`69b84cf`** · BSD-3-Clause · Python ≥3.10 + **tkinter ≥8.6** · 本机：`pip install` → 捆 CLI `gnssstreamer`/`pyrinexconv`；仓内 `tests/pygpsdata_rinextest.log` → RINEX O/N；**无 tkinter / 无显示，GUI 未起窗**（2026-09-24 EDT）
+目录：[`PROJECTS.json` → `PyGPSClient`](../../PROJECTS.json) · 上游 <https://github.com/semuconsulting/PyGPSClient> · 文档 <https://www.semuconsulting.com/pygpsclient> · PyPI **`PyGPSClient` 1.7.6** · tip **`69b84cf`** · BSD-3-Clause · Python ≥3.10 + **tkinter ≥8.6** · 本机：`pip install` → 捆 CLI `gnssstreamer`/`pyrinexconv`；仓内 `tests/pygpsdata_rinextest.log` → RINEX O/N；**无 tkinter / 无显示，GUI 未起窗**（2026-09-24 EDT）· **质检复跑通过**（1.7.6；gnssstreamer 3×GNGGA；pyrinexconv O1677/N55037；georinex 5min time=1/sv=20）
 
 > 岗位：串口/TCP/文件上的 **NMEA·UBX·RTCM·SPARTN** 监视、接收机配置、NTRIP 客户/简易基站。冲突时：**上游 README / `pygpsclient -h` / 捆 `gnssstreamer -h` > 本文**。纯 CLI 自动化 → [pygnssutils](./pygnssutils.md)；多流运维 → [bnc](./bnc.md)。
 

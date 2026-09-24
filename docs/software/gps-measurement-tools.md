@@ -1,6 +1,6 @@
 # gps-measurement-tools · Google GNSS Logger 套件操作手册
 
-目录：[`PROJECTS.json` → `gps-measurement-tools`](../../PROJECTS.json) · 上游 <https://github.com/google/gps-measurement-tools> · 许可 **Apache-2.0** · tip **`ab1aebb`** · 本机验证：clone 仓内 `demoFiles` → [android_rinex](./android_rinex.md) → RINEX3 → [georinex](./georinex.md) 探活（2026-09-24 EDT）。**无本机 MATLAB/Octave**，MATLAB WLS 路径标操作步骤、不臆造图窗。
+目录：[`PROJECTS.json` → `gps-measurement-tools`](../../PROJECTS.json) · 上游 <https://github.com/google/gps-measurement-tools> · 许可 **Apache-2.0** · tip **`ab1aebb`** · 本机验证：clone 仓内 `demoFiles` → [android_rinex](./android_rinex.md) → RINEX3 → [georinex](./georinex.md) 探活（2026-09-24 EDT）。**无本机 MATLAB/Octave**，MATLAB WLS 路径标操作步骤、不臆造图窗。· **质检复跑通过**（demo→android_rinex `8ea7ab7`→georinex 223/L1C_zeros=1379；相位样例 zeros=775/nonzero=1709）
 
 > 岗位：手机 **GnssLogger** 落盘原始测量 +（可选）桌面 MATLAB 伪距/WLS 分析。冲突时：**上游 README / `LOGGING_FORMAT.md` / 本机 `gnsslogger_to_rnx -h` > 本文**。转 RINEX 主力 → [android_rinex](./android_rinex.md)；教学 NavData → [gnss_lib_py](./gnss_lib_py.md)。
 
