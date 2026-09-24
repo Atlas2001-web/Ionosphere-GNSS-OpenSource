@@ -1,6 +1,6 @@
 # rt-clk-service · 实时钟差/轨道/UPD/IFPB NTRIP 客户端操作手册
 
-目录：[`PROJECTS.json` → `rt-clk-service`](../../PROJECTS.json) · 上游 <https://github.com/DoubleString/rt-clk-service> · tip **`1f44c36`**（`update application;` 2022-08-13 +0800）· **无 tag** · GitHub **license=null** · ★**12** · C++11/CMake · 本机验证（2026-09-24 07:13–07:16 EDT）：`g++ 14.2.0` + `cmake 3.31.6` → `/tmp/rtclk-build/ssr_acq` **539928** B（sha₁₂=`d5985dc96f1d`）；仓内预置 `ssr_acq` **1187984** B（≠本机重编）；**无** `-h`/`--help`（`argc` 未用）；硬编码 NTRIP `usr:psd@103.143.19.54:2101/RTCM32SSR-COM`；本机 `timeout 10 ./ssr_acq` → exit **124**、stdout/stderr **0** B；TCP `103.143.19.54:2101` **超时**；**未连通 caster → 未臆造** ORBCLK/PHASEBIAS/CODEBIAS/IFPB 数值
+目录：[`PROJECTS.json` → `rt-clk-service`](../../PROJECTS.json) · 上游 <https://github.com/DoubleString/rt-clk-service> · tip **`1f44c36`**（`update application;` 2022-08-13 +0800）· **无 tag** · GitHub **license=null** · ★**12** · C++11/CMake · 本机验证（2026-09-24 07:13–07:16 EDT；**质检复跑 07:25 EDT**：`ssr_acq` **539928** B/sha₁₂=`d5985dc96f1d`；仓内预置 **1187984** B；`timeout 10` exit **124**/stdout+stderr **0** B；TCP `103.143.19.54:2101` **超时**；**未臆造** SSR）：`g++ 14.2.0` + `cmake 3.31.6` → `/tmp/rtclk-build/ssr_acq` **539928** B（sha₁₂=`d5985dc96f1d`）；仓内预置 `ssr_acq` **1187984** B（≠本机重编）；**无** `-h`/`--help`（`argc` 未用）；硬编码 NTRIP `usr:psd@103.143.19.54:2101/RTCM32SSR-COM`；本机 `timeout 10 ./ssr_acq` → exit **124**、stdout/stderr **0** B；TCP `103.143.19.54:2101` **超时**；**未连通 caster → 未臆造** ORBCLK/PHASEBIAS/CODEBIAS/IFPB 数值
 
 > 岗位：**RTCM3 SSR 实时流解码演示**（NTRIP 客户端 + 捆版 RTKLIB `input_rtcm3`）→ stdout 打印轨道钟差 / 相位·码偏差 / IFPB。冲突时：**本机源码 `main.cpp` / 上游 README > 本文**。  
 > 同链事后钟差 → [great-pce](./great-pce.md)；UPD/IFCB → [great-upd](./great-upd.md)/[great-ifcb](./great-ifcb.md)；滤波定轨 → [great-podflt](./great-podflt.md)；多 AC 综合 → [clkcomb](./clkcomb.md)/[spocc](./spocc.md)；产品门户 → [data-access](../data-access.md)。下游 PPP → [great-pvt](./great-pvt.md)/[pride-pppar](./pride-pppar.md)。**≠** 精密产品生成器，**≠** 终端定位引擎。
@@ -79,7 +79,7 @@ sha256sum ssr_acq | cut -c1-12  # 本机：d5985dc96f1d
 | 跑起来无任何输出 | caster 超时/重连；源码无连接失败 printf | 先测 TCP；改硬编码路径 |
 | 想换挂载点无效 | **`argc` 未解析**，路径写死在 `main` | 改 `main.cpp` 字符串后重编 |
 
-## 3. 端到端（本机真跑）
+## 3. 端到端（本机真跑；质检复跑 2026-09-24 07:25 EDT）
 
 ### 3.1 无帮助 / 无参数（本机）
 

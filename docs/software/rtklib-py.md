@@ -1,6 +1,6 @@
 # rtklib-py · demo5 思路纯 Python PPK 操作手册
 
-目录：[`PROJECTS.json` → `rtklib-py`](../../PROJECTS.json) · 上游 <https://github.com/rtklibexplorer/rtklib-py> · tip **`5d8968d`**（2023-10-07）· ★**247** · 许可 **MIT** · **无 PyPI** · 本机验证（**2026-09-24 07:20 EDT**）：Python **3.13.5** / numpy **2.5.3**；仓内 `data/u-blox`（rover **6638661** B/**2163** 历元，base `tmg23590.obs` **17379469** B/**7200** 历元，`rover.nav` **63633** B）；`src/run_ppk.py` + `maxepoch=40` → `rover.pos` **5493** B/**40** 历元；Q：**30**×float(2)+**10**×fix(1)；首 fix **2137 425310.005** → **40.097023872°N −105.147249846°E h=1578.1212** m ratio=**3.4**；末历元 ratio=**3.8**；对照仓内 `py_0315f.pos` 同行近 tow **40.097024085°N … h=1578.1589**（ns 字段本机冒烟写 **0**，参考全日解为 **11–13**）
+目录：[`PROJECTS.json` → `rtklib-py`](../../PROJECTS.json) · 上游 <https://github.com/rtklibexplorer/rtklib-py> · tip **`5d8968d`**（2023-10-07）· ★**247** · 许可 **MIT** · **无 PyPI** · 本机验证（**2026-09-24 07:20 EDT**；**质检复跑 07:27 EDT**：Python **3.13.15**/numpy **2.5.3**；maxepoch=**40**→`rover.pos` **5493** B；Q **30**×2+**10**×1；首 fix **40.097023872°N** ratio=**3.4**）：Python **3.13.15** / numpy **2.5.3**；仓内 `data/u-blox`（rover **6638661** B/**2163** 历元，base `tmg23590.obs` **17379469** B/**7200** 历元，`rover.nav` **63633** B）；`src/run_ppk.py` + `maxepoch=40` → `rover.pos` **5493** B/**40** 历元；Q：**30**×float(2)+**10**×fix(1)；首 fix **2137 425310.005** → **40.097023872°N −105.147249846°E h=1578.1212** m ratio=**3.4**；末历元 ratio=**3.8**；对照仓内 `py_0315f.pos` 同行近 tow **40.097024085°N … h=1578.1589**（ns 字段本机冒烟写 **0**，参考全日解为 **11–13**）
 
 > 岗位：用 **纯 Python** 复现 rtklibexplorer **demo5** 风格的**事后 PPK**，便于读算法/改实验后迁回 C。冲突时：**仓内 `README.md` / `config_*.py` / 本机 `.pos` > 本文**。  
 > CLI 主力 → [rtklib](./rtklib.md)；demo5/EX 二进制 → [rtklib-explorer](./rtklib-explorer.md)；C 扩展绑定 → [pyrtklib](./pyrtklib.md)；CLAS/MADOCA/HAS 现代树 → [mrtklib](./mrtklib.md)。
@@ -84,7 +84,7 @@ ls -la ../data/u-blox/rover.pos ../data/u-blox/rover.pos.stat ../data/u-blox/rov
 | `rovfile` / `basefile` / `navfile` | `rover.obs` / `tmg23590.obs` / `rover.nav` |
 | `cfgfile` | `config_f9p.py` |
 
-**本机结果（maxepoch=40，2026-09-24 07:20 EDT）：**
+**本机结果（maxepoch=40，2026-09-24 07:20 EDT；质检复跑 07:27 EDT）：**
 
 ```text
 Reading rover/base/nav … Calculating solution …

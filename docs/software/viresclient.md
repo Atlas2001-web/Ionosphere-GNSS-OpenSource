@@ -1,6 +1,6 @@
 # viresclient · ESA VirES Python 客户端操作手册
 
-目录：[`PROJECTS.json` → `viresclient`](../../PROJECTS.json) · 上游 <https://github.com/ESA-VirES/VirES-Python-Client> · PyPI **`viresclient`** · 许可 **MIT** · 本机 **0.16.0**（tip `c00f81d` / ★**23**）· 验证：`pip install` → CLI `--help` / `show_configuration`；无凭证 `SwarmRequest("https://vires.services/ows")` → **AuthenticationError**（WPS **403**）；假 token 写入后可构造请求，**无真实账号未落盘 xarray**（2026-09-24 07:22 EDT）
+目录：[`PROJECTS.json` → `viresclient`](../../PROJECTS.json) · 上游 <https://github.com/ESA-VirES/VirES-Python-Client> · PyPI **`viresclient`** · 许可 **MIT** · 本机 **0.16.0**（tip `c00f81d` / ★**23**）· 验证（2026-09-24 07:22 EDT；**质检复跑 07:28 EDT**）：`pip`→CLI `--help`；无 ini → `show_configuration` **ERROR**；`SwarmRequest()`→**ValueError**（缺 URL）；`SwarmRequest(ows)` 可构造且 `available_collections` 通；`get_between`→**AuthenticationError**（WPS **403**）；`available_measurements("TEC")` 含 **Absolute_VTEC**；裸名 `TEC`→Exception；**无真实账号未落盘 xarray**
 
 > 岗位：从 **VirES for Swarm**（及 Aeolus）按需拉测值/模型/辅助量 → `pandas` / `xarray`。冲突时：**上游 README / ReadTheDocs > 本机 `viresclient -h` > 本文**。网页 GUI → <https://vires.services>；配方笔记本 → <https://notebooks.vires.services>。
 
@@ -62,7 +62,7 @@ python -m pip install -e .
 | `Configuration file … does not exist` | 尚未 `set_token` | 先配 token（下节） |
 | `No matching distribution` | Python 过旧 | 用 3.9+（本机 3.13 OK） |
 
-## 3. 端到端：token → 探测 → 拉取（本机部分真跑）
+## 3. 端到端：token → 探测 → 拉取（本机部分真跑；质检复跑 2026-09-24 07:28 EDT）
 
 ### 3.1 注册与写入 token（必须）
 

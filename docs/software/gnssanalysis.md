@@ -1,6 +1,6 @@
 # gnssanalysis · GA SP3/CLK/Bias-SINEX 产品工具箱操作手册
 
-目录：[`PROJECTS.json` → `gnssanalysis`](../../PROJECTS.json) · 上游 <https://github.com/GeoscienceAustralia/gnssanalysis> · PyPI **`gnssanalysis 0.0.60`** · tag **`0.0.60`=`d0c3642`**（main tip **`95116fd`** / **0.0.61.dev1** 未发 PyPI）· **Apache-2.0** · ★**43** · Python 3 · 本机验证（2026-09-24 07:21–07:23 EDT）：`pip install gnssanalysis`→**0.0.60**；CLI `diffutil`/`orbq`/`clkq`/`sp3merge`/`gnss-filename`/`snxmap`/`log2snx`/`trace2mongo`；仓内 fixture + clkcomb `example/products` 真 I/O；`pytest tests/test_clk.py tests/test_sp3.py` **32 passed**；**未臆造** 新产品日 SP3/CLK/Bias 数
+目录：[`PROJECTS.json` → `gnssanalysis`](../../PROJECTS.json) · 上游 <https://github.com/GeoscienceAustralia/gnssanalysis> · PyPI **`gnssanalysis 0.0.60`** · tag **`0.0.60`=`d0c3642`**（main tip **`95116fd`** / **0.0.61.dev1** 未发 PyPI）· **Apache-2.0** · ★**43** · Python 3 · 本机验证（2026-09-24 07:21–07:23 EDT；**质检复跑 07:29 EDT**：`orbq` G01 3D_RMS=**0.06236**/AVG 3D=**0.01553**；`clkq` G01 RMS=**0.6795** m；`igs_merged.sp3` **474205** B/sha₁₂=`ef2d95ceb516`；`pytest` **32 passed**）：`pip install gnssanalysis`→**0.0.60**；CLI `diffutil`/`orbq`/`clkq`/`sp3merge`/`gnss-filename`/`snxmap`/`log2snx`/`trace2mongo`；仓内 fixture + clkcomb `example/products` 真 I/O；`pytest tests/test_clk.py tests/test_sp3.py` **32 passed**；**未臆造** 新产品日 SP3/CLK/Bias 数
 
 > 岗位：Geoscience Australia 开源 **Python 产品 I/O + 比较/合并 CLI**（SINEX / SP3 / CLK / IONEX / BSX·BIA / ERP / RINEX / TROP + Ginan 专有 TRACE 等）。冲突时：**上游 README / `--help` / 源码 > 本文**。  
 > 多 AC 钟差合成 → [clkcomb.md](./clkcomb.md)；GFZ 综合登记墙 → [spocc.md](./spocc.md)；码 OSB 网解 → [gkit-bias.md](./gkit-bias.md)/[mcosb.md](./mcosb.md)；Rust SP3 库 → [sp3.md](./sp3.md)；产品下载门禁 → [data-access.md](../data-access.md)。**库+CLI ≠ POD/PPP 引擎；≠ 实时 SSR 解码** → [great-podflt.md](./great-podflt.md)/[rt-clk-service.md](./rt-clk-service.md)/[ginan.md](./ginan.md)。
@@ -47,7 +47,7 @@ which diffutil orbq clkq sp3merge gnss-filename
 | PyPI | **0.0.60**（依赖含 `click`/`pandas`/`hatanaka`/`plotly`/`boto3` 等） |
 | 源码对照 | clone tip **`95116fd`**；发版 tag **`d0c3642`** |
 
-## 3. 端到端（本机真跑）
+## 3. 端到端（本机真跑）（质检复跑 2026-09-24 07:29 EDT）
 
 数据：① 包内 `tests/test_datasets/*_test_data.py` 抽出的短 fixture；② [clkcomb](./clkcomb.md) 仓 `example/products/`（`igs20863`/`cod20863` SP3+CLK）；③ [mcosb](./mcosb.md) 样例 `ECU0MGXFIN_20240180000_01D_01D_OSB.BIA`。
 

@@ -1,6 +1,6 @@
 # sp3 · IGS SP3 精密轨道解析库操作手册
 
-目录：[`PROJECTS.json` → `sp3`](../../PROJECTS.json) · 上游 <https://github.com/nav-solutions/sp3> · crates.io **`sp3` 1.4.1** · tip tag **`v1.4.1`=`0ac81cf`**（main 仓内已 **1.5.0**/`12fba37`，**未**发 crates）· **MPL-2.0** · ★**7** · **无 [[bin]]**（纯库）· MSRV **1.82** · 本机验证 **rustc 1.98.1**（2026-09-24 07:18 EDT）：`cargo add sp3@1.4`→**1.4.1**；[rnx2cggtts](./rnx2cggtts.md) 同源 GRG `…20201770000…ORB.SP3` → epochs **96**/SV **75**/keys **7200**/G15@00:00 xyz=**(5550.690261, −21648.534281, 13744.298178) km**/clock=**−221.978679 µs**；`.gz` 须 `from_gzip_file`（`from_file`→UTF-8 `FileIo`）；Lagrange@12:07:30 order11 ≈**(−5993.440743, 20635.006918, 15048.636189) km**；写回 96→96；Rev A `NonSupportedRevision`；缺路径 **panic**
+目录：[`PROJECTS.json` → `sp3`](../../PROJECTS.json) · 上游 <https://github.com/nav-solutions/sp3> · crates.io **`sp3` 1.4.1** · tip tag **`v1.4.1`=`0ac81cf`**（main 仓内已 **1.5.0**/`12fba37`，**未**发 crates）· **MPL-2.0** · ★**7** · **无 [[bin]]**（纯库）· MSRV **1.82** · 本机验证 **rustc 1.98.1**（2026-09-24 07:18 EDT；**质检复跑 07:25 EDT**：`cargo add sp3@1.4`→**1.4.1**；GRG **96**/75/7200；G15 clock=**−221.978679 µs**；Lagrange11=(**−5993.440743463601**, **20635.00691799316**, **15048.636189188246**) km；gz/`from_gzip_file`；ESA RAP **96**/ESOC/ITRF2/week**2277**；Rev A `NonSupportedRevision`；空/垃圾 `Ok` 空壳；缺路径 panic；写回 dx=**0**）：`cargo add sp3@1.4`→**1.4.1**；[rnx2cggtts](./rnx2cggtts.md) 同源 GRG `…20201770000…ORB.SP3` → epochs **96**/SV **75**/keys **7200**/G15@00:00 xyz=**(5550.690261, −21648.534281, 13744.298178) km**/clock=**−221.978679 µs**；`.gz` 须 `from_gzip_file`（`from_file`→UTF-8 `FileIo`）；Lagrange@12:07:30 order11 ≈**(−5993.440743, 20635.006918, 15048.636189) km**；写回 96→96；Rev A `NonSupportedRevision`；缺路径 **panic**
 
 > 岗位：nav-solutions **IGS SP3** 精密轨道（+可选星钟）文件的 **解析 / 写出 / 拉格朗日插值** Rust 库。冲突时：**上游 README / docs.rs / 本机 `cargo doc -p sp3` > 本文**。  
 > 消费本库的共视 CLI → [rnx2cggtts.md](./rnx2cggtts.md)；CGGTTS → [cggtts.md](./cggtts.md)；RINEX → [rinex.md](./rinex.md)/[rinex-cli.md](./rinex-cli.md)；多 AC 钟差合成 → [clkcomb.md](./clkcomb.md)；GFZ 综合登记墙 → [spocc.md](./spocc.md)；Python 轻量 SP3 → [gnsstools.md](./gnsstools.md)。**库 ≠ POD/定位；SP3 ≠ 独立 CLK 产品（本库可读 SP3 内嵌钟列，不是 RINEX CLK 解析器）。**
@@ -68,7 +68,7 @@ cargo add sp3@1.4
 | 缺文件 | `File::open` unwrap | **panic**（非 Result） |
 | 跟 tip 1.5.0 | 未发 crates | 生产钉 **1.4.1** |
 
-## 3. 端到端（本机 1.4.1 真跑；2026-09-24 07:18 EDT）
+## 3. 端到端（本机 1.4.1 真跑；2026-09-24 07:18 EDT；质检复跑 07:25 EDT）
 
 样例：[rnx2cggtts.md](./rnx2cggtts.md) 同源 `GRG0MGXFIN_20201770000_01D_15M_ORB.SP3`（明文 **443618 B** / `.gz` **198794 B**）；官方 submodule `ESA0OPSRAP_20232390000_01D_15M_ORB.SP3.gz`。
 
@@ -157,7 +157,7 @@ let sample = sp3.data.get(&SP3Key { epoch: noon, sv }).unwrap();
 
 | 输入 | 本机 |
 | --- | --- |
-| `.SP3.gz` + `from_file` | `Err(FileIo(… InvalidData … valid UTF-8))` |
+| `.SP3.gz` + `from_file` | `Err(File i/o error: stream did not contain valid UTF-8)` |
 | Rev A `sio06492.sp3` | `Err(ParsingError(NonSupportedRevision))` |
 | 空文件 / `"not an sp3\n"` | **`Ok` 空壳**：version=**D** / epochs=**0** / keys=**0**（不报错） |
 | 仅 `#\n` | `Err(ParsingError(MalformedH1))` |

@@ -1,6 +1,6 @@
 # Ionosonde-Data-Downloader · 公共测高仪参数下载操作手册
 
-目录：[`PROJECTS.json` → `Ionosonde-Data-Downloader`](../../PROJECTS.json) · 上游 <https://github.com/bzossi/Ionosonde-Data-Downloader> · 许可 **MIT** · tip **`ea80896`**（★**2**）· **无 PyPI** · 本机验证：克隆后 `import iono_data_downloader`；澳大利亚 Townsville **2010** → shape **(8760, 5)** / foF2 首值 **5.3**；日本 Kokubunji **2020** auto → **(35136, 4)** / foF2 首值 **2.86**；依赖 **pandas + lxml + openpyxl**；OMNI2 在 pandas≥2.2 触 `delim_whitespace` 坑（见下）（2026-09-24 07:22 EDT）
+目录：[`PROJECTS.json` → `Ionosonde-Data-Downloader`](../../PROJECTS.json) · 上游 <https://github.com/bzossi/Ionosonde-Data-Downloader> · 许可 **MIT** · tip **`ea80896`**（★**2**）· **无 PyPI** · 本机验证（2026-09-24 07:22 EDT；**质检复跑 07:28 EDT**：`station=13` Townsville **2010**→**(8760, 5)**/fof2 **[5.3, 6.1, 7.8]**；`station=3` Kokubunji **2020** auto→**(35136, 4)**/fof2 **[2.86, 2.82, 2.82]**；manual **(8784, 4)**；Aus **15** 站）：克隆后 `import iono_data_downloader`；澳大利亚 Townsville **2010** → shape **(8760, 5)** / foF2 首值 **5.3**；日本 Kokubunji **2020** auto → **(35136, 4)** / foF2 首值 **2.86**；依赖 **pandas + lxml + openpyxl**；OMNI2 在 pandas≥2.2 触 `delim_whitespace` 坑（见下）
 
 > 岗位：从 **澳大利亚 SWS / 日本 NICT / GIRO DIDBase** 拉一年份 foF2·hmF2(hpF2)·foE·hmE·M3000F2 等到 **pandas**。冲突时：**上游 README / 各库 Rules of the Road > 本文**。使用须致谢各数据源。
 
@@ -50,7 +50,7 @@ python -c "import iono_data_downloader as idd; print('import OK', idd)"
 | `No module named 'Australia'` | 把单文件拷走 | 保留仓内同级 `.py`；或把仓根加 `PYTHONPATH` |
 | 无 CLI 入口 | 设计如此 | 用 `single_use.py` 或 `import iono_data_downloader` |
 
-## 3. 端到端（本机真跑）
+## 3. 端到端（本机真跑；质检复跑 2026-09-24 07:28 EDT）
 
 ### 3.1 澳大利亚 SWS（Townsville 2010）
 

@@ -1,6 +1,6 @@
 # RADIATE · 对流层射线追踪操作手册
 
-目录：[`PROJECTS.json` → `RADIATE`](../../PROJECTS.json) · 上游 <https://github.com/TUW-VieVS/RADIATE> · tip **`7e81779`**（2025-07-04）· ★**23** · 许可 **GPL-3.0** · 语言 **Fortran** · 本机验证（**2026-09-24 07:19–07:22 EDT**）：`gfortran 14.2.0`；`FUN_TEXT` **55**×`.f90`；`./compile_RADIATE.sh` 多遍 → `radiate` **540976** B；`Version: 2.0_Fortran` / `Sub-version: global_limit`；HTTPS 拉 `gnss.ell` **31110** B/**660** 行、`vlbi.ell` **11308** B/**264** 行；解压 undulation **149402880** B；样例 GRIB **83079619** B×2（`2018010400/06`）；`-createUniAzel` + `smoke.ell`（ABPO/ALIC/BJFS/GRAZ/POTS）→ `2018010400_UNI.radiate` **20350** B/**60** 观测 / `.trp` **17878** B；墙时 **9.484** s；ABPO ZTD=**2.1061** m（ZHD **1.9235**/ZWD **0.1826**）STD@5°=**21.4995** m/@30°=**4.1986** m；sha₁₂ `.radiate`=`64608d6510b8` / `.trp`=`b5d98fa30ca9`
+目录：[`PROJECTS.json` → `RADIATE`](../../PROJECTS.json) · 上游 <https://github.com/TUW-VieVS/RADIATE> · tip **`7e81779`**（2025-07-04）· ★**23** · 许可 **GPL-3.0** · 语言 **Fortran** · 本机验证（**2026-09-24 07:19–07:22 EDT**；**质检复跑 07:27 EDT**：`radiate` **540976** B；`-createUniAzel`→**60** obs/ABPO ZTD=**2.1061**/STD@5°=**21.4995**；墙时 **8.861** s；sha₁₂ `.radiate`=`bfa73a9a1484` / `.trp`=`0721790dd5f7`）：`gfortran 14.2.0`；`FUN_TEXT` **55**×`.f90`；`./compile_RADIATE.sh` 多遍 → `radiate` **540976** B；`Version: 2.0_Fortran` / `Sub-version: global_limit`；HTTPS 拉 `gnss.ell` **31110** B/**660** 行、`vlbi.ell` **11308** B/**264** 行；解压 undulation **149402880** B；样例 GRIB **83079619** B×2（`2018010400/06`）；`-createUniAzel` + `smoke.ell`（ABPO/ALIC/BJFS/GRAZ/POTS）→ `2018010400_UNI.radiate` **20350** B/**60** 观测 / `.trp` **17878** B；墙时 **8.861** s（写作 9.484；复跑）；ABPO ZTD=**2.1061** m（ZHD **1.9235**/ZWD **0.1826**）STD@5°=**21.4995** m/@30°=**4.1986** m；sha₁₂ `.radiate`=`bfa73a9a1484` / `.trp`=`0721790dd5f7`（写作 64608d6510b8/b5d98fa30ca9）
 
 > 岗位：用 **NWM 格网**做微波/光学射线追踪，产斜路径与天顶干/湿延迟及映射因子（VLBI/GNSS/SLR/DORIS）。冲突时：**仓内 README / `FUN_TEXT/RADIATE_readme.txt` / 本机 stdout > 本文**。  
 > GNSS-IR 反演 → [gnssrefl](./gnssrefl.md)；多路径前向 → [mpsim](./mpsim.md)；精密 PPP → [pride-pppar](./pride-pppar.md)；网解/对流层模块生态 → [groops](./groops.md)；定位 CLI → [rtklib](./rtklib.md)。
@@ -99,13 +99,13 @@ cd FUN_TEXT
 ./radiate azel_2018010400_UNI.txt smoke.ell -createUniAzel -one_epoch_per_obs
 ```
 
-**本机结果（2026-09-24 07:21–07:22 EDT）：**
+**本机结果（2026-09-24 07:21–07:22 EDT；质检复跑 07:27 EDT）：**
 
 ```text
 Version: 2.0_Fortran / Sub-version: global_limit
 Session: 2018010400_UNI
 Stations: ABPO ALIC BJFS GRAZ POTS × 4 az × 3 elev = 60 obs
-Ray-tracing … Finished!  Total elapsed … 9.484 s
+Ray-tracing … Finished!  Total elapsed … 8.861 s（复跑；写作 9.484）
 RESULTS/RADIATE/2018010400_UNI.radiate  20350 B / 60 obs
 RESULTS/TRP/2018010400_UNI.trp          17878 B
 No .err-file (no errors)
