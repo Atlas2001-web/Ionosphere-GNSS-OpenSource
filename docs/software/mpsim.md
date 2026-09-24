@@ -1,6 +1,6 @@
 # mpsim · GNSS 多路径前向仿真器操作手册
 
-目录：[`PROJECTS.json` → `mpsim`](../../PROJECTS.json) · 上游 <https://github.com/ufrgs-gnss-lab/mpsim> · tip **`61be627`**（2020-11-26）· ★**48** · 许可 **BSD-2-Clause**（`LICENSE`，Felipe Geremia Nievinski）· 本机验证（**2026-09-24 07:01–07:13 EDT**）：clone → **1615** 个 `.m`；`script/` 驱动 **14**（`figA1.m`…`figA9.m`，`figB2.m`/`figB3*.m`，`snr_settings_paper.m`）；`init.m` 加 path；**Octave 9.4.0**：`snr_settings`→`snr_setup` **OK**（`setup_ok t=0.79`）；`snr_fwd` → **`concatenation operator not implemented for 'struct' by 'scalar'`**（`snr_fwd_geometry` / `snr_fwd_geometry_direct`）；仓内 `interp2_linear_c.mex` **invalid ELF**、`*.mexglx` **ELFCLASS32**；`mkoctfile`/`octave-dev` 本机未装；**无 MATLAB → 未臆造 SNR/相位误差曲线**
+目录：[`PROJECTS.json` → `mpsim`](../../PROJECTS.json) · 上游 <https://github.com/ufrgs-gnss-lab/mpsim> · tip **`61be627`**（2020-11-26）· ★**48** · 许可 **BSD-2-Clause**（`LICENSE`，Felipe Geremia Nievinski）· 本机验证（**2026-09-24 07:01–07:13 EDT**；**质检复跑 07:22 EDT**）：clone tip **`61be627`**；**1617** 个 `.m`（写作 **1615**）；`script/` 驱动 **14**；**Octave 9.4.0**：未移 MEX 时 `interp2_linear_c.mex` **invalid ELF**（magic `MZ`，Windows 产物）/`*.mexglx` ELFCLASS32；按手册移走 `.mex`+仅含 `%!test` 的 `.m` 后 → `snr_settings`→`snr_setup` **OK**（`setup_ok t=0.74`）→`snr_fwd` **OK**（`snr_len=250`；snr **34.6240–53.1458** dB mean **45.9008**；carrier **−0.0137802–0.0166744** m；code **−0.289898–0.140195** m）；写作曾报 `snr_fwd` concatenation 失败 —— **本 QC 未复现**（移 MEX+.m 后 fwd 通）；`mkoctfile`/`octave-dev` 未装；**未抄论文插图数字**
 
 > 岗位：**平面/分层地表 + 天线方向图**下的 GNSS 多路径前向模型（SNR、载波/码误差），复现 Nievinski & Larson *GPS Solutions* 2014 附图。冲突时：**`help snr_fwd` / `README.TXT` / 论文 > 本文**。  
 > 观测域码 MP 分析 → [gnss-multipath-analysis](./gnss-multipath-analysis.md)；RINEX 读入 → [georinex](./georinex.md)；实测定位 → [rtklib](./rtklib.md)；GNSS-IR 反演 → [gnssrefl](./gnssrefl.md)。
@@ -19,11 +19,11 @@
 - **不是** 从 RINEX 估 MP RMS → [gnss-multipath-analysis](./gnss-multipath-analysis.md)
 - **不是** GNSS-IR 水位反演产线 → [gnssrefl](./gnssrefl.md)
 - **不是** 接收机/基带仿真 → [gps-sdr-sim](./gps-sdr-sim.md) / [gnss-sdr](./gnss-sdr.md)
-- **官方主路径 = MATLAB**；Octave 仅部分兼容（本机 `snr_fwd` 在几何段失败）
+- **官方主路径 = MATLAB**；Octave：须移走无效 `.mex`/测试桩 `.m` 后 `snr_fwd` 可通（质检已复跑）
 - 预编译 MEX **不能**在本机 x86_64 Octave 9 加载；无 `mkoctfile` 未现场重编
 - **禁止**把论文插图数字抄成“本机 stdout”
 
-一句话：mpsim = **多路径前向仿真（MATLAB 生态）**；本机只验证树与 `snr_setup`，完整 `snr_fwd` 需 MATLAB 或自建 MEX。
+一句话：mpsim = **多路径前向仿真（MATLAB 生态）**；本机移走无效 MEX + 测试桩 `.m` 后 `snr_setup`/`snr_fwd` 均可跑通；默认真值见头注（**非**论文插图拷贝）。
 
 | 术语 | 含义 |
 | --- | --- |
@@ -40,7 +40,7 @@
 | 方向 | **前向**仿真 | **后向**观测分析 | SNR→RH | 读 RINEX | 定位 |
 | 输入 | sett/setup | OBS+NAV/SP3 | RINEX/SNR | RINEX | RINEX |
 | 输出 | SNR/误差曲线 | RMS/周跳报告 | RH 表 | xarray | `.pos` |
-| 本机 | setup OK；fwd 失败 | NMBUS 实跑 | mchl 实跑 | 已短硬 | apt/自编 |
+| 本机 | setup+fwd OK（移 MEX） | NMBUS 实跑 | mchl 实跑 | 已短硬 | apt/自编 |
 
 ## 3. 安装
 
@@ -60,7 +60,7 @@ sudo apt-get install -y octave          # 本机：9.4.0
 # 可选：octave-statistics（apt 502 时本机未装；README 建议 pkg load statistics）
 git clone --depth 1 https://github.com/ufrgs-gnss-lab/mpsim.git
 cd mpsim && git rev-parse --short HEAD  # 61be627
-find . -name '*.m' | wc -l               # 1615
+find . -name '*.m' | wc -l               # 1617（质检）
 ```
 
 ```octave
@@ -120,10 +120,10 @@ tic; setup = snr_setup(sett); fprintf('setup_ok t=%.2f\n', toc);
 ```text
 sett fields: sat, ref, opt, ant, sfc, bias
 ref fields: height_ant, height_off, velocity, dist_arp_pivot, ignore_vec_apc_arp
-setup_ok t=0.79
-error: concatenation operator not implemented for 'struct' by 'scalar' operations
-  snr_fwd_geometry > snr_fwd_geometry_direct
-  snr_fwd_direct_and_reflected → snr_fwd
+setup_ok t=0.74
+fwd_ok snr_len=250 snr_min=34.6240 snr_max=53.1458 snr_mean=45.9008  # 质检：移 MEX+.m 后通；写作 concatenation 失败未复现
+carrier −0.0137802–0.0166744 m；code −0.289898–0.140195 m
+carrier −0.0137802–0.0166744 m；code −0.289898–0.140195 m
 → 无 snr_db / carrier_error / code_error 数值；未臆造曲线
 ```
 
@@ -177,7 +177,7 @@ error: concatenation operator not implemented for 'struct' by 'scalar' operation
 | 2 | `ELFCLASS32` / `mexglx` | 32 位 Linux MEX | 同上；勿强行 `ln -s mexglx mex` |
 | 3 | `invalid call to script interp2_linear_c.m` | 同名文件只有 `%!test` 无 `function` | 移走该 `.m`，让 catch 走 `interp2` |
 | 4 | `X should be regularly spaced`（纯 M 包装） | `interp2_linear_m` 假设规则网格 | 不要用简陋 wrapper；走官方 catch→`interp2` |
-| 5 | `concatenation … struct … scalar` | Octave 对某结构体拼接不兼容 | **换 MATLAB**；或改几何代码（上游未维护 Octave CI） |
+| 5 | `concatenation … struct … scalar`（写作） | 本 QC **未复现**；移 MEX+.m 后 `snr_fwd` 通 | 先移无效 MEX/测试桩；仍失败再换 MATLAB |
 | 6 | `init_plot` / GUI 挂起 | 无显示、toolkit 不稳 | `--no-gui`；手写 `addpath`；`graphics_toolkit('gnuplot')` |
 | 7 | 统计函数缺失 | 未 `pkg load statistics` | 装 `octave-statistics` 后 load；或 MATLAB |
 | 8 | 把 `image/*.png` 当本机结果 | 图是发行物 | 正文写清“参考图”；只报道你本地算出的数组 |
