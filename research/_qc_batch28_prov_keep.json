@@ -1,0 +1,12 @@
+{
+  "batch": 28,
+  "date": "2026-09-24",
+  "flips": [],
+  "keep": [
+    {"owner": "nyx-space", "names": ["nyx"], "provenance": "personal_community", "reason": "Org bio FOSS astrodynamics toolkit; company=null; not Lab/Univ/Agency"},
+    {"owner": "nav-solutions", "action": "KEEP", "note": "batch27; not re-opened"},
+    {"owner": "pothosware", "action": "KEEP", "note": "batch27; not re-opened"},
+    {"owner": "Erensu", "action": "KEEP mixed", "note": "batch25+; insufficient for ignav flip"},
+    {"owner": "pjalesSSTL", "action": "KEEP mixed", "note": "vendor SSTL; PC under vendor policy"}
+  ]
+}

@@ -19127,7 +19127,7 @@
     {
       "name": "nyx",
       "url": "https://github.com/nyx-space/nyx",
-      "desc_zh": "Nyx：高保真快验的 Rust 宇航动力学工具库",
+      "desc_zh": "轨道传播/定轨与任务分析；可对照 GNSS 精密轨道钟差做仿真前端；偏航天动力学非观测解算，AGPL 约束闭源集成",
       "analysis_zh": "nyx-space 维护的 Rust 宇航动力学工具包，AGPL-3.0，星标近五百。覆盖轨道传播、定轨与任务分析等，可与 GNSS 精密轨道/钟差产品对照或做仿真前端。偏航天动力学而非 GNSS 观测解算；许可证对闭源集成有约束。收录前已 gh api 核验。",
       "language": "Rust",
       "license": "AGPL-3.0",
