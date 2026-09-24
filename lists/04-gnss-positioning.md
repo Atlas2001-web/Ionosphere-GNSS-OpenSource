@@ -163,7 +163,7 @@ Glenn MacGougan 等维护的 Essential GNSS Project，提供 RINEX 2.x 解码、
 |---|---|---|---:|---|
 | [raPPPid](https://github.com/TUW-VieVS/raPPPid) | raPPPid：维也纳 VieVS 的 PPP 模块 | MATLAB | 149 | 🏷️ 高校实验室 核心 |
 | [GAMP_PPPH](https://github.com/zhufengGNSS/GAMP_PPPH) | 多星座 PPP 源码（GAMP 相关整理） | — | 78 | 🏷️ 高校实验室 ★ |
-| [GPSPACE](https://github.com/CGS-GIS/GPSPACE) | 加拿大 NRCan GPSPACE PPP Fortran 程序 | Fortran | 58 | 🏷️ 个人社区 |
+| [GPSPACE](https://github.com/CGS-GIS/GPSPACE) | GPSPACE：加拿大 NRCan 开源 PPP Fortran 程序 | Fortran | 58 | 🏷️ 官方 |
 | [PPPLib](https://github.com/yxw027/PPPLib) | 精密单点定位库 PPPLib | — | 49 | 🏷️ 高校实验室 |
 | [PPP](https://github.com/XiaoGongWei/PPP) | 静态 PPP 相关 C++ 实现（MG-APP 作者相关） | C++ | 23 | 🏷️ 高校实验室 |
 | [PPPH-UAV](https://github.com/BerkayBahadur/PPPH-UAV) | 面向无人机摄影测量的 GNSS PPP 处理（MATLAB） | MATLAB | 14 | 🏷️ 个人社区 |
@@ -188,7 +188,7 @@ VieVS（TU Wien）精密单点定位模块，MATLAB 实现，便于与 VLBI/大�
 整理/公开的多星座 PPP 相关源码，常被中文社区当作 GAMP 学习材料。适合对照教材读流程。官方维护关系与许可需自行核实，慎直接用于生产。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
 
 #### [GPSPACE](https://github.com/CGS-GIS/GPSPACE)  
-*🏷️ 个人社区*
+*🏷️ 官方*
 
 语言：Fortran · 许可：— · 星标约：58 · 宿主：github
 
@@ -309,7 +309,7 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [libgnss++](https://github.com/rsasaki0109/gnssplusplus-library) | 现代 C++20 GNSS 工具包（SPP/RTK/PPP/CLAS） | C++ | 189 | 🏷️ 个人社区 |
+| [libgnss++](https://github.com/rsasaki0109/gnssplusplus-library) | libgnss++：现代 C++20 GNSS 工具包（SPP/RTK/PPP/CLAS） | C++ | 189 | 🏷️ 个人社区 |
 | [SatellitePosition](https://github.com/LStudioLoren/SatellitePosition) | Python 实现卫星单点定位与 RTK 相对定位的学习项目 | Python | 62 | 🏷️ 个人社区 |
 | [MobileGNSS-SPP](https://github.com/salmoshu/MobileGNSS-SPP) | 面向智能手机的 EKF 单点定位优化实现 | C | 41 | 🏷️ 高校实验室 |
 | [GNSS-Explorer](https://github.com/brucezhcw/GNSS-Explorer) | 基于 RTKLIB 的 SPP 算法优化探索 | C | 21 | 🏷️ 个人社区 |
@@ -455,8 +455,8 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [rtkbase](https://github.com/Stefal/rtkbase) | 树莓派等 SBC 上自建 GNSS 基准站与 Web 管理 | Python | 769 | 🏷️ 个人社区 核心 |
-| [rtklib-py](https://github.com/rtklibexplorer/rtklib-py) | 基于 demo5 的 RTKLIB Python 实现（侧重 PPK） | Python | 244 | 🏷️ 个人社区 |
+| [rtkbase](https://github.com/Stefal/rtkbase) | rtkbase：树莓派自建 GNSS 基准站与 Web 管理 | Python | 769 | 🏷️ 个人社区 核心 |
+| [rtklib-py](https://github.com/rtklibexplorer/rtklib-py) | rtklib-py：demo5 思路的 Python RTKLIB（偏 PPK） | Python | 244 | 🏷️ 个人社区 |
 | [OpenRTK](https://github.com/AndreasArendt/OpenRTK) | OpenRTK：轻量开源精密 GNSS/RTK | C++ | 23 | 🏷️ 个人社区 |
 | [HPRTK](https://github.com/yxw027/HPRTK) | 高精度实时定位相关工程（HPRTK） | C++ | 17 | 🏷️ 高校实验室 |
 | [RTK](https://github.com/GYH-WHU/RTK) | GPS/BDS 双系统 RTK（浮点/固定）C++ 教学系统 | C++ | 11 | 🏷️ 高校实验室 |
@@ -771,7 +771,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [Net_Diff](https://github.com/YizeZhang/Net_Diff) | Net_Diff：下载+定位+分析综合套件 | HTML | 178 | 🏷️ 高校实验室 |
-| [POSGO](https://github.com/lizhengnss/POSGO) | POSGO：C++ 开源 GNSS 定位软件 | C++ | 116 | 🏷️ 个人社区 |
+| [POSGO](https://github.com/lizhengnss/POSGO) | POSGO：C++ 开源 GNSS 定位软件 | C++ | 116 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -783,7 +783,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 张一泽等维护的综合工具，覆盖 GNSS 产品下载、多种定位模式与结果分析，中文资料与用户基础较好。适合教学演示、课程设计与中小规模科研试验。相对 PRIDE-PPPAR、Ginan 等，源码开放形态与工程依赖需按仓库说明核对；大规模业务化 PPP-AR 仍建议对照专用精密引擎。版本更新后注意示例配置与产品路径是否仍兼容。
 
 #### [POSGO](https://github.com/lizhengnss/POSGO)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：116 · 宿主：github
 
@@ -861,13 +861,13 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [RTKLIB](https://github.com/tomojitakasu/RTKLIB) | 经典开源 GNSS 定位包（RTK/PPP 等） | C | 3128 | 🏷️ 个人社区 ★ 核心 |
-| [RTKLIB-explorer](https://github.com/rtklibexplorer/RTKLIB) | 面向低成本接收机优化的 RTKLIB 分支 | C | 971 | 🏷️ 个人社区 核心 |
+| [RTKLIB](https://github.com/tomojitakasu/RTKLIB) | RTKLIB：经典开源 GNSS 定位工具箱（RTK/PPP） | C | 3128 | 🏷️ 个人社区 ★ 核心 |
+| [RTKLIB-explorer](https://github.com/rtklibexplorer/RTKLIB) | RTKLIB-explorer：面向低成本接收机的 RTKLIB 分支 | C | 971 | 🏷️ 个人社区 核心 |
 
 ### 详细说明
 
 #### [RTKLIB](https://github.com/tomojitakasu/RTKLIB)  
-*🏷️ 个人社区 ★ 核心*
+*🏷️ 个人社区 核心*
 
 语言：C · 许可：— · 星标约：3128 · 宿主：github
 

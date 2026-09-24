@@ -7,16 +7,16 @@
   "generated": "2026-09-24",
   "project_count": 760,
   "counts_by_category": {
-    "ionosphere": 239,
-    "troposphere": 34,
     "gnss-data": 111,
+    "gnss-datasets": 111,
     "gnss-positioning": 83,
-    "orbit-clock": 13,
-    "navigation-ins": 60,
     "gnss-sdr": 59,
+    "ionosphere": 239,
     "mobile-apps": 19,
+    "navigation-ins": 60,
+    "orbit-clock": 13,
     "tools-learning": 31,
-    "gnss-datasets": 111
+    "troposphere": 34
   },
   "projects": [
     {
@@ -474,8 +474,8 @@
     {
       "name": "geode",
       "url": "https://github.com/demiangomez/geode",
-      "desc_zh": "Python 框架：自动化 GNSS 数据处理与台网管理",
-      "analysis_zh": "把数据下载、处理、分析与台网管理串成 Python 框架，减少手写胶水脚本。适合中等规模台网运维原型。核心估计算法深度取决于所接后端；不等同于完整 PPP/RTK 产品套件。",
+      "desc_zh": "俄亥俄州立大学大地测量相关：一体化 GNSS 数据处理框架",
+      "analysis_zh": "把数据获取到分析管理串成流程，偏科研工作流。适合实验室批处理。具体模块覆盖面以仓库文档为准；不是单一 PPP 引擎替代。",
       "language": "Python",
       "license": "BSD-3-Clause",
       "category": "gnss-data",
@@ -486,8 +486,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "下载—处理—分析—管理一体化的 GNSS 框架"
+      "provenance": "academic_lab",
+      "one_liner_zh": "geode：下载—处理—分析—管理一体化 GNSS 框架"
     },
     {
       "name": "georinex",
@@ -1206,8 +1206,8 @@
     {
       "name": "PyGPSClient",
       "url": "https://github.com/semuconsulting/PyGPSClient",
-      "desc_zh": "NMEA/UBX/RTCM/NTRIP 等协议的 Python 图形客户端",
-      "analysis_zh": "桌面 GUI 同时消化 NMEA、u-blox UBX、SBF、RTCM3、NTRIP 与 SPARTN，便于配置接收机、看星空图与差分链路。适合硬件联调、教学演示与低成本 RTK 调试。它是协议与可视化客户端，不是精密 PPP/RTK 解算引擎；底层解析依赖同作者的 pyubx2、pyrtcm、pygnssutils，深度算法请接 RTKLIB 或科研 PPP。",
+      "desc_zh": "semuconsulting 的 Python 桌面 GNSS 协议 GUI 客户端",
+      "analysis_zh": "一站式查看星空图、配置接收机并走 NTRIP/SPARTN 等差分链路。适合调试 F9P 一类模块。不是精密解算引擎；解算请接 RTKLIB/厂商固件。",
       "language": "Python",
       "license": "BSD-3-Clause",
       "category": "gnss-data",
@@ -1221,7 +1221,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "NMEA/UBX/RTCM/NTRIP 等协议的 Python 图形客户端"
+      "one_liner_zh": "PyGPSClient：NMEA/UBX/RTCM/NTRIP 图形客户端"
     },
     {
       "name": "pynmeagps",
@@ -1322,8 +1322,8 @@
     {
       "name": "pyubx2",
       "url": "https://github.com/semuconsulting/pyubx2",
-      "desc_zh": "u-blox UBX 协议的 Python 编解码库",
-      "analysis_zh": "纯 Python 解析与生成 UBX 消息，覆盖配置、原始观测与导航输出，是连接 F9P 等模块的常用积木。嵌入式上位机、自动化测试与数据记录脚本都会用到。不处理 NMEA/RTCM（见 pygnssutils/pyrtcm），也不做定位滤波；若只要串口读星历伪距，它比完整 GUI 更轻，也比直接啃厂商二进制协议省事。",
+      "desc_zh": "纯 Python 解析/生成 UBX（配置、原始观测、导航输出）",
+      "analysis_zh": "连接 F9P 等模块的常用积木，便于上位机与自动化测试。只负责协议层；定位解算与 NTRIP 需搭配固件或其他库。",
       "language": "Python",
       "license": "BSD-3-Clause",
       "category": "gnss-data",
@@ -1335,7 +1335,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "u-blox UBX 协议的 Python 编解码库"
+      "one_liner_zh": "pyubx2：u-blox UBX 协议 Python 编解码库"
     },
     {
       "name": "READ_GNSS",
@@ -3431,8 +3431,8 @@
     {
       "name": "GPSPACE",
       "url": "https://github.com/CGS-GIS/GPSPACE",
-      "desc_zh": "加拿大 NRCan GPSPACE PPP Fortran 程序",
-      "analysis_zh": "NRCan 公开的 PPP Fortran 代码，历史与官方 CSRS-PPP 服务同源脉络。适合研究官方级 PPP 模型细节。编译与依赖偏传统；日常用户更多用在线 CSRS-PPP。",
+      "desc_zh": "加拿大自然资源部（NRCan）测地调查 CGS 发布的精密单点定位程序",
+      "analysis_zh": "官方背景的 Fortran PPP，便于对照国家机构处理流程。适合研究与教学对照。现代多星座实时服务请结合 CSRS-PPP 网页与其他开源引擎。",
       "language": "Fortran",
       "license": "",
       "category": "gnss-positioning",
@@ -3443,8 +3443,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "加拿大 NRCan GPSPACE PPP Fortran 程序"
+      "provenance": "official",
+      "one_liner_zh": "GPSPACE：加拿大 NRCan 开源 PPP Fortran 程序"
     },
     {
       "name": "GraphGNSSLib",
@@ -3623,8 +3623,8 @@
     {
       "name": "libgnss++",
       "url": "https://github.com/rsasaki0109/gnssplusplus-library",
-      "desc_zh": "现代 C++20 GNSS 工具包（SPP/RTK/PPP/CLAS）",
-      "analysis_zh": "C++20 风格的 SPP/RTK/PPP/CLAS 工具包，含 Python 绑定、Docker、ROS2 支持。适合新架构嵌入式/机器人项目。测地学事后高精度产品力需与 PRIDE 等对比评估。",
+      "desc_zh": "MAP IV 工程师维护：C++20 GNSS 定位与 CLAS 等能力",
+      "analysis_zh": "含 Python 绑定、Docker 与 ROS2 支持，架构较新。适合嵌入式/机器人集成试验。精密产品级完整性与多星座策略仍需自测。",
       "language": "C++",
       "license": "MIT",
       "category": "gnss-positioning",
@@ -3636,7 +3636,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "现代 C++20 GNSS 工具包（SPP/RTK/PPP/CLAS）"
+      "one_liner_zh": "libgnss++：现代 C++20 GNSS 工具包（SPP/RTK/PPP/CLAS）"
     },
     {
       "name": "MADOCALIB",
@@ -3830,8 +3830,8 @@
     {
       "name": "POSGO",
       "url": "https://github.com/lizhengnss/POSGO",
-      "desc_zh": "C++ 开源 GNSS 定位引擎 POSGO（教学/研究常用）",
-      "analysis_zh": "中文导航学习社区常见的 C++ 开源定位软件，便于对照 Navigation-Learning 等笔记读源码。定位模式与产品支持以仓库文档为准；精密 PPP-AR/业务化能力通常弱于 PRIDE、Ginan。",
+      "desc_zh": "武大 GNSS 中心博士生开源：C++ GNSS 定位实验平台",
+      "analysis_zh": "面向定位算法实验与二次开发的 C++ 仓。适合跟进图优化/组合导航课程作业。成熟度与文档因版本而异，引用前请自备回归数据。",
       "language": "C++",
       "license": "GPL-3.0",
       "category": "gnss-positioning",
@@ -3842,7 +3842,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
+      "provenance": "academic_lab",
       "one_liner_zh": "POSGO：C++ 开源 GNSS 定位软件"
     },
     {
@@ -4168,8 +4168,8 @@
     {
       "name": "rtkbase",
       "url": "https://github.com/Stefal/rtkbase",
-      "desc_zh": "树莓派等 SBC 上自建 GNSS 基准站与 Web 管理",
-      "analysis_zh": "把 u-blox、Septentrio 等接收机、RTKLIB str2str、NTRIP 与 Web GUI 捆成可部署的基准站方案，适合野外站、农场与 DIY CORS。运维人员与低成本 RTK 爱好者最常用。精度与完好性取决于接收机、天线与网络质量，不是测地级网平差软件；与 BNC、商业 caster 相比更偏单站自建与易用性。",
+      "desc_zh": "SBC 上捆绑接收机、RTKLIB 流转与 Web GUI 的基准站方案",
+      "analysis_zh": "把 u-blox/Septentrio、str2str、NTRIP 与网页管理捆成可部署基站。适合爱好者与小型台站。天线环境、电源与网络安全决定可用性；不是国家级 CORS 替代。",
       "language": "Python",
       "license": "AGPL-3.0",
       "category": "gnss-positioning",
@@ -4183,13 +4183,13 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "树莓派等 SBC 上自建 GNSS 基准站与 Web 管理"
+      "one_liner_zh": "rtkbase：树莓派自建 GNSS 基准站与 Web 管理"
     },
     {
       "name": "RTKLIB",
       "url": "https://github.com/tomojitakasu/RTKLIB",
-      "desc_zh": "经典开源 GNSS 定位包（RTK/PPP 等）",
-      "analysis_zh": "Takasu 的 RTKLIB 是开源 RTK/PPP 事实标准之一，窗口工具与嵌入式移植极广。适合入门精密定位与低成本接收机。默认版本对部分新信号/PPP-AR 不如专用科研软件；社区常用 rtklibexplorer 分支。",
+      "desc_zh": "Takasu 维护的开源精密定位事实标准之一（多星座 RTK/PPP）",
+      "analysis_zh": "窗口工具与嵌入式移植极广，是开源 RTK/PPP 入门与生产原型的常见底座。适合低成本接收机与教学实验。默认分支对部分多星座/低成本场景需配合 demo5 等社区分支；实时链路与模糊度策略要因机型验证。",
       "language": "C",
       "license": "",
       "category": "gnss-positioning",
@@ -4204,7 +4204,7 @@
       "user_relation": "starred",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "经典开源 GNSS 定位包（RTK/PPP 等）"
+      "one_liner_zh": "RTKLIB：经典开源 GNSS 定位工具箱（RTK/PPP）"
     },
     {
       "name": "RTKLIB-B2b",
@@ -4229,8 +4229,8 @@
     {
       "name": "RTKLIB-explorer",
       "url": "https://github.com/rtklibexplorer/RTKLIB",
-      "desc_zh": "面向低成本接收机优化的 RTKLIB 分支",
-      "analysis_zh": "基于 2.4.3、针对 u-blox 等低成本设备优化的活跃分支，文档与讨论区（博客）丰富。适合手持/无人机 RTK。官方声明无担保，实时关键应用需自测；PPP-AR 科研可并行看 PRIDE/Ginan。",
+      "desc_zh": "rtklibexplorer 维护的 demo5 系分支（u-blox 等低成本优化）",
+      "analysis_zh": "针对低成本 GNSS 的活跃社区分支，博客与讨论丰富。适合手持/无人机 RTK 试验。非官方担保；升级与实时安全策略请自行回归。",
       "language": "C",
       "license": "",
       "category": "gnss-positioning",
@@ -4244,13 +4244,13 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "面向低成本接收机优化的 RTKLIB 分支"
+      "one_liner_zh": "RTKLIB-explorer：面向低成本接收机的 RTKLIB 分支"
     },
     {
       "name": "rtklib-py",
       "url": "https://github.com/rtklibexplorer/rtklib-py",
-      "desc_zh": "基于 demo5 的 RTKLIB Python 实现（侧重 PPK）",
-      "analysis_zh": "把 rtklibexplorer/demo5 思路迁到 Python，当前以事后 PPK 为主，便于阅读算法与改实验脚本。适合不想编译 C 版、又要贴近 RTKLIB 流程的人。实时 RTK、完整 GUI 与全部信号支持仍以 C 版 RTKLIB/explorer 为准；与 laika 相比更贴近经典差分定位公式，和 goGPS_MATLAB 可对照语言栈。",
+      "desc_zh": "rtklibexplorer 系：把低成本 RTK 流程迁到可读 Python",
+      "analysis_zh": "便于阅读算法与改实验脚本，当前侧重事后 PPK。适合不想编译 C 的教学。实时性能与完整性不及原生 RTKLIB/厂商方案。",
       "language": "Python",
       "license": "MIT",
       "category": "gnss-positioning",
@@ -4262,7 +4262,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "基于 demo5 的 RTKLIB Python 实现（侧重 PPK）"
+      "one_liner_zh": "rtklib-py：demo5 思路的 Python RTKLIB（偏 PPK）"
     },
     {
       "name": "RTKNAVI-BH",
@@ -4396,8 +4396,8 @@
     {
       "name": "BDS-3-B1C-B2a-SDR-receiver",
       "url": "https://github.com/lyf8118/BDS-3-B1C-B2a-SDR-receiver",
-      "desc_zh": "BDS-3 B1C/B2a 开源 MATLAB 软件接收机",
-      "analysis_zh": "科罗拉多大学相关作者开源的 BDS-3 B1C/B2a MATLAB 软件接收机，含码生成、数据+导频捕获跟踪、电文解码、伪距生成与定位。面向北斗新信号算法教学与论文复现。当前聚焦 B1C/B2a，不是全星座通用接收机；与 SoftGNSS、FGI-GSRx、CU-SDR-Collection 并列时，重点看北斗新信号基带细节。",
+      "desc_zh": "北信科大相关：北斗三号 B1C/B2a 软件接收机教学实现",
+      "analysis_zh": "面向 B1C/B2a 信号结构的 MATLAB SDR 路径，便于读懂北斗新信号。适合课程实验。实时多通道与现场射频请看 gnss-sdr 等工程实现。",
       "language": "MATLAB",
       "license": "GPL-2.0",
       "category": "gnss-sdr",
@@ -4408,8 +4408,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "BDS-3 B1C/B2a 开源 MATLAB 软件接收机"
+      "provenance": "academic_lab",
+      "one_liner_zh": "BDS-3 B1C/B2a：开源 MATLAB 软件接收机"
     },
     {
       "name": "BDSSDR",
@@ -4432,8 +4432,8 @@
     {
       "name": "BeagleSDRGPS",
       "url": "https://github.com/jks-prv/Beagle_SDR_GPS",
-      "desc_zh": "KiwiSDR：BeagleBone 短波 SDR 与软件 GPS（已归档）",
-      "analysis_zh": "KiwiSDR 上游核心：在 BeagleBone 上提供 Web 可访问短波接收，并含软件定义 GPS 相关能力；仓库状态为归档。适合研究 Kiwi 架构或做衍生硬件参考。新功能与安全修复已停止，活跃使用请关注社区衍生板卡（如 FlyDog/FlyCat）及其分支。BeagleBone 镜像与帽板硬件版本必须匹配。",
+      "desc_zh": "归档的 BeagleBone 短波 Web SDR 核心，附带软件 GPS 能力",
+      "analysis_zh": "历史 KiwiSDR 上游核心，Web 可访问短波接收并含软件 GPS 相关能力。适合考古与教学对照。仓库已归档，新部署请评估社区分叉与硬件可用性。",
       "language": "C++",
       "license": "",
       "category": "gnss-sdr",
@@ -4445,7 +4445,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "KiwiSDR：BeagleBone 短波 SDR 与软件 GPS（已归档）"
+      "one_liner_zh": "KiwiSDR/BeagleSDR：BeagleBone 短波 SDR（含软件 GPS，已归档）"
     },
     {
       "name": "beidou-sdr-sim",
@@ -4970,7 +4970,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
+      "provenance": "academic_lab",
       "one_liner_zh": "PSAS 软件 GPS 相关器（Python）"
     },
     {
@@ -5012,8 +5012,8 @@
     {
       "name": "gps-sdr-sim",
       "url": "https://github.com/osqzss/gps-sdr-sim",
-      "desc_zh": "GPS L1 基带信号仿真（SDR 回放）",
-      "analysis_zh": "生成 GPS L1 IQ 供 HackRF 等回放，研究与安卓测试极常用。注意合法合规使用。多星座高保真可用 SignalSim/galileo-sdr-sim 等。",
+      "desc_zh": "高星标 GPS L1 C/A 基带仿真，驱动 SDR 做接收机回放测试",
+      "analysis_zh": "生成可回放的 L1 基带，广泛用于接收机与抗干扰实验。适合实验室信号源。仅仿真信号，不含真实天空；使用需遵守当地无线电与欺骗相关法规。",
       "language": "C",
       "license": "MIT",
       "category": "gnss-sdr",
@@ -5027,7 +5027,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "GPS L1 基带信号仿真（SDR 回放）"
+      "one_liner_zh": "gps-sdr-sim：GPS L1 基带信号仿真（SDR 回放）"
     },
     {
       "name": "gps-sdr-sim-assistant",
@@ -5178,8 +5178,8 @@
     {
       "name": "LEOGPS",
       "url": "https://github.com/sammmlow/LEOGPS",
-      "desc_zh": "Python：低轨卫星 GPS 导航与相对导航工具",
-      "analysis_zh": "面向低轨航天器的 GPS 导航与相对导航流程，场景从地面测地 PPP 明显转向星载几何与动力学约束。适合立方星/编队导航原型。精密测地 PPP-AR 与区域 CORS 工作流不是其目标。",
+      "desc_zh": "斯坦福相关：面向低轨航天器 GPS 与相对导航的工具包",
+      "analysis_zh": "服务 LEO 星载 GPS 与编队相对导航仿真/处理。适合航天器导航课与前期仿真。地面测地 PPP 与实时 RTK 非其主场。",
       "language": "Python",
       "license": "MIT",
       "category": "gnss-sdr",
@@ -5190,8 +5190,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "面向 LEO 星载 GPS/相对导航的 Python 包"
+      "provenance": "academic_lab",
+      "one_liner_zh": "LEOGPS：LEO 星载 GPS/相对导航 Python 包"
     },
     {
       "name": "meta-gnss-sdr",
@@ -5304,8 +5304,8 @@
     {
       "name": "PocketSDR",
       "url": "https://github.com/tomojitakasu/PocketSDR",
-      "desc_zh": "Tomoji Takasu 开源 GNSS 软件接收机（多星座多频 SDR）",
-      "analysis_zh": "RTKLIB 作者推出的开源 GNSS SDR：配套 Pocket SDR FE 前端与 Python/C/C++ 应用，覆盖 GPS/GLONASS/Galileo/QZSS/BDS/NavIC/SBAS 多频信号，可做捕获、跟踪、导航电文与 PVT。适合信号层教学与前端联调。精密 PPP/RTK 解算仍常外接 RTKLIB 系；硬件前端需另行采购或自备。",
+      "desc_zh": "RTKLIB 作者的口袋式 GNSS 软件接收机与前端配套",
+      "analysis_zh": "覆盖多星座多频捕获跟踪，配套 Pocket SDR FE 与 Python/C 应用。适合 SDR 教学与算法实验。射频前端与采样质量决定上限；不是即插即用商用接收机。",
       "language": "C",
       "license": "NOASSERTION",
       "category": "gnss-sdr",
@@ -5320,7 +5320,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Tomoji Takasu 开源 GNSS 软件接收机（多星座多频 SDR）"
+      "one_liner_zh": "PocketSDR：Takasu 开源多星座多频 GNSS SDR"
     },
     {
       "name": "pylgrim",
@@ -5361,8 +5361,8 @@
     {
       "name": "SoftGNSS",
       "url": "https://github.com/TMBOC/SoftGNSS",
-      "desc_zh": "经典 SoftGNSS 教学接收机维护版",
-      "analysis_zh": "Borre 系 SoftGNSS 的持续维护版本，适配多种前端，是 GNSS 信号课的经典入门。功能偏 GPS L1 教学；现代多星座请看 FGI-GSRx/gnss-sdr。",
+      "desc_zh": "上海交大维护的 SoftGNSS 经典教学接收机分支",
+      "analysis_zh": "从中频采样走完捕获—跟踪—导航的经典路径，教材配套友好。适合 SDR/接收机课程。现代多星座多频与实时性能请看 gnss-sdr/PocketSDR。",
       "language": "MATLAB",
       "license": "GPL-2.0",
       "category": "gnss-sdr",
@@ -5373,8 +5373,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "经典 SoftGNSS 教学接收机维护版"
+      "provenance": "academic_lab",
+      "one_liner_zh": "SoftGNSS：经典 GPS 软件接收机教学版"
     },
     {
       "name": "SoftGNSS-python",
@@ -10074,8 +10074,8 @@
     {
       "name": "GPSTest",
       "url": "https://github.com/barbeau/gpstest",
-      "desc_zh": "开源 Android GNSS 测试与原始测量记录",
-      "analysis_zh": "支持多星座双频、SBAS、精度评估与 NMEA/原始测量日志，和 Google 分析工具兼容，是手机 GNSS 测试事实标准之一。适合设备能力摸底与采数。不是精密定位解算器。",
+      "desc_zh": "Sean Barbeau 维护的开源手机 GNSS 能力与日志工具",
+      "analysis_zh": "多星座双频、SBAS、精度评估与 NMEA/原始测量日志，常与 Google 分析套件联用，是手机 GNSS 测试常用入口。适合设备能力摸底与采集。不是测地接收机替代品；原始测量可用性随芯片/ROM 而异。",
       "language": "Kotlin",
       "license": "Apache-2.0",
       "category": "mobile-apps",
@@ -10090,7 +10090,7 @@
       "user_relation": "starred",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "开源 Android GNSS 测试与原始测量记录"
+      "one_liner_zh": "GPSTest：Android GNSS 测试与原始测量记录"
     },
     {
       "name": "PRIDE-GeoDataLogger",
@@ -10222,8 +10222,8 @@
     {
       "name": "FE-GUT",
       "url": "https://github.com/zhaoqj23/FE-GUT",
-      "desc_zh": "因子图与 EKF 混合的 GNSS/UWB 紧组合（含在线时间标定，开源仿真数据）",
-      "analysis_zh": "提出将因子图优化与扩展卡尔曼滤波混合用于 GNSS/UWB 紧组合，并引入 Graphical State Space Model 做离散化与在线时间标定，附仿真数据集。适合研究 FGO/EKF 混合架构。环境以 Ubuntu 为主；真实外场与完好性声明需自行扩展验证。",
+      "desc_zh": "清华相关：GNSS/UWB 紧组合与在线时间标定（含仿真数据）",
+      "analysis_zh": "混合因子图与 EKF，并开源仿真数据，便于复现时间标定实验。适合室内外衔接与 UWB 辅助研究。实网性能取决于 UWB/GNSS 标定质量。",
       "language": "C++",
       "license": "BSD-3-Clause",
       "category": "navigation-ins",
@@ -10236,14 +10236,14 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "因子图与 EKF 混合的 GNSS/UWB 紧组合（含在线时间标定，开源仿真数据）"
+      "provenance": "academic_lab",
+      "one_liner_zh": "FE-GUT：因子图+EKF 的 GNSS/UWB 紧组合"
     },
     {
       "name": "gici-open",
       "url": "https://github.com/chichengcn/gici-open",
-      "desc_zh": "GNSS/INS/相机紧组合开源库 GICI",
-      "analysis_zh": "多传感器紧组合库，支持 GNSS（含精密定位模式）与 INS/相机，工程结构完整。适合机器人户外定位。编译与配置复杂；测地事后处理另选 PRIDE。",
+      "desc_zh": "上海交大相关：多传感器紧组合定位库（含精密 GNSS 模式）",
+      "analysis_zh": "工程结构完整，支持 GNSS 精密模式与 INS/相机紧组合。适合户外机器人定位研究。编译配置较重；事后测地 PPP-AR 另选 PRIDE/Ginan。",
       "language": "C++",
       "license": "GPL-3.0",
       "category": "navigation-ins",
@@ -10256,8 +10256,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "GNSS/INS/相机紧组合开源库 GICI"
+      "provenance": "academic_lab",
+      "one_liner_zh": "GICI：GNSS/INS/相机紧组合开源库"
     },
     {
       "name": "GINav",
@@ -10321,8 +10321,8 @@
     {
       "name": "GLIO",
       "url": "https://github.com/XikunLiu-huskit/GLIO",
-      "desc_zh": "GNSS/LiDAR/IMU 紧耦合连续定位",
-      "analysis_zh": "把 GNSS 观测与激光惯性里程计紧耦合，强调城市连续、低漂移状态估计，面向户外机器人与车载场景。适合已有 LIO 基础、想引入 GNSS 约束抑制长时间漂移的研究者。测地事后精密处理与模糊度固定不是重点；许可信息需自行确认，部署前应核对数据集、外参标定与依赖版本。城市遮挡与多路径下仍需结合场景评估可用性。",
+      "desc_zh": "港理工 IPNL 相关：GNSS 约束的激光惯性里程计",
+      "analysis_zh": "把 GNSS 观测拉进 LIO，强调城市连续、低漂移。适合已有激光惯性基础、想补绝对约束的团队。标定与时间同步要求高；纯开阔测地请用 PPP 引擎。",
       "language": "C",
       "license": "",
       "category": "navigation-ins",
@@ -10333,8 +10333,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "GNSS/LiDAR/IMU 紧耦合连续定位"
+      "provenance": "academic_lab",
+      "one_liner_zh": "GLIO：GNSS/LiDAR/IMU 紧耦合连续定位"
     },
     {
       "name": "gnss-ins-sim",
@@ -10435,8 +10435,8 @@
     {
       "name": "GPSMilemeterIMUEKFLocation",
       "url": "https://github.com/gilbertz/GPS_Milemeter_IMU_EKFLocation",
-      "desc_zh": "GPS+里程计+罗盘 EKF 融合定位（MATLAB）",
-      "analysis_zh": "MATLAB 实现：以 GPS、里程计与电子罗盘为观测，用扩展卡尔曼滤波（EKF）融合输出滤波位置，便于车载多传感器定位教学。适合课程作业与算法对比实验。观测与噪声模型相对简化；视觉紧组合或 RTK 模糊度固定需改用 KF-GINS、GraphGNSSLib 等专用库。电子罗盘磁干扰环境下需额外标定或降权。",
+      "desc_zh": "上海交大相关：多源松组合定位 MATLAB 示例",
+      "analysis_zh": "把 GPS、里程计与罗盘送进 EKF，流程直观。适合车载松组合入门。高精度车道级与视觉惯性请另选现代框架。",
       "language": "MATLAB",
       "license": "",
       "category": "navigation-ins",
@@ -10447,8 +10447,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "GPS+里程计+罗盘 EKF 融合定位（MATLAB）"
+      "provenance": "academic_lab",
+      "one_liner_zh": "GPS_Milemeter_IMU_EKF：GPS+里程计+罗盘 EKF（MATLAB）"
     },
     {
       "name": "GraphRTK-INS",
@@ -10601,8 +10601,8 @@
     {
       "name": "ignav",
       "url": "https://github.com/Erensu/ignav",
-      "desc_zh": "INS 与 GNSS 组合导航实现",
-      "analysis_zh": "C 语言组合导航实现，轻量、易嵌入。适合固件向开发者。功能广度与现代因子图方案不同，选前看清状态模型。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。",
+      "desc_zh": "面向嵌入的 C 语言惯导与 GNSS 组合实现",
+      "analysis_zh": "代码轻量、易读，适合固件向开发者移植。功能广度不及现代因子图方案；上线前务必核对状态模型与坐标系约定。",
       "language": "C",
       "license": "",
       "category": "navigation-ins",
@@ -10616,13 +10616,13 @@
       "user_relation": "starred",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "INS 与 GNSS 组合导航实现"
+      "one_liner_zh": "ignav：轻量 INS/GNSS 组合导航（C）"
     },
     {
       "name": "imu_x_fusion",
       "url": "https://github.com/cggos/imu_x_fusion",
-      "desc_zh": "基于 ESKF/IEKF/UKF 的 IMU+GNSS/里程计松组合",
-      "analysis_zh": "系统实现多种卡尔曼变体（ESKF、IEKF、UKF 族）与 MAP，把 IMU 与 GNSS 或 6DoF 里程计做松组合，公式与代码对应清晰。适合滤波路线教学和算法对比实验。不含视觉紧组合与测地 PPP-AR；要图优化路线可看 OB_GINS、GTSAM 系，要多传感器紧耦合可看 gici、Multi_Sensor_Fusion。",
+      "desc_zh": "多种卡尔曼变体对比的 IMU 与 GNSS/里程计松组合实现",
+      "analysis_zh": "同一框架里切换 ESKF、IEKF、UKF 等，公式与代码对应清晰，利于学习滤波器差异。适合课程与算法对照。工业级标定、时间同步与完整性监测需另补；纯测地 PPP 请另选专用引擎。",
       "language": "C++",
       "license": "GPL-3.0",
       "category": "navigation-ins",
@@ -10636,7 +10636,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "基于 ESKF/IEKF/UKF 的 IMU+GNSS/里程计松组合"
+      "one_liner_zh": "imu_x_fusion：ESKF/IEKF/UKF 族 IMU+GNSS 松组合"
     },
     {
       "name": "ImuGpsGuiding",
@@ -10659,8 +10659,8 @@
     {
       "name": "imugpslocalization",
       "url": "https://github.com/ydsf16/imu_gps_localization",
-      "desc_zh": "误差状态卡尔曼滤波融合 IMU 与 GPS（C++）",
-      "analysis_zh": "用误差状态卡尔曼滤波（ESKF）融合 IMU 与 GPS 的开源 C++ 实现，示例清晰、星标较高，是学习松组合与误差状态建模的常用入口。适合导航算法初学者与机器人定位原型。默认偏松组合教学场景；载波相位 RTK 或视觉紧组合不在核心范围，需另接相应模块。IMU 噪声参数要用 Allan 方差等方法实测，不宜照搬默认值。",
+      "desc_zh": "北航相关开源：误差状态卡尔曼滤波的 IMU/GPS 松组合",
+      "analysis_zh": "示例清晰的 ESKF 松组合实现，星标较高，适合第一次跑通误差状态建模。课程与原型友好。缺少完整测地产品链；高动态/遮挡需加强观测模型。",
       "language": "C++",
       "license": "",
       "category": "navigation-ins",
@@ -10671,14 +10671,14 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "误差状态卡尔曼滤波融合 IMU 与 GPS（C++）"
+      "provenance": "academic_lab",
+      "one_liner_zh": "imu_gps_localization：ESKF 融合 IMU 与 GPS（C++）"
     },
     {
       "name": "IndirectEKFIMUGPS",
       "url": "https://github.com/hgpvision/Indirect_EKF_IMU_GPS",
-      "desc_zh": "间接法卡尔曼滤波 IMU/GPS 融合仿真（MATLAB）",
-      "analysis_zh": "MATLAB 仿真仓库：用间接法卡尔曼滤波融合 IMU 与 GPS，传感器数据由仿真生成，便于推导弹、调噪声参数与画误差曲线。适合课程推导与滤波器对照。不含真实外场驱动；落地需接真实 IMU/GNSS、重做轴系与噪声标定，并评估时间同步误差。间接法状态定义与直接法不同，对照论文阅读更顺。状态维数变化时要同步改协方差初始化。",
+      "desc_zh": "哈工大相关 MATLAB：间接法卡尔曼 IMU/GPS 融合示例",
+      "analysis_zh": "经典间接法误差状态演示，适合对照直接法教材。教学友好。非生产导航栈；实车标定与传感器时延需自补。",
       "language": "MATLAB",
       "license": "MIT",
       "category": "navigation-ins",
@@ -10689,8 +10689,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "间接法卡尔曼滤波 IMU/GPS 融合仿真（MATLAB）"
+      "provenance": "academic_lab",
+      "one_liner_zh": "Indirect_EKF_IMU_GPS：间接法 EKF 的 IMU/GPS 融合仿真"
     },
     {
       "name": "INSTINCT",
@@ -10789,8 +10789,8 @@
     {
       "name": "libRSF",
       "url": "https://github.com/TUC-ProAut/libRSF",
-      "desc_zh": "面向在线定位的鲁棒传感器融合库",
-      "analysis_zh": "切姆尼茨工大维护的估计/融合库，强调鲁棒核与在线定位，可接入 GNSS 与测距类观测，示例偏机器人状态估计。适合抗野值、滑窗与因子风格实验。不是现成的测地 PPP/RTK 产品；与 GTSAM 相比更聚焦鲁棒传感器融合示例，学习曲线中等，工程集成需自行封装消息接口。二次开发前建议先跑通官方示例再替换观测模型。",
+      "desc_zh": "切姆尼茨工大 ProAut：抗野值估计与在线定位框架",
+      "analysis_zh": "强调鲁棒核与在线估计，可接入 GNSS 与测距类观测，示例偏机器人。适合抗野值/滑窗实验。不是开箱测地 PPP 产品。",
       "language": "C++",
       "license": "GPL-3.0",
       "category": "navigation-ins",
@@ -10801,14 +10801,14 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "面向在线定位的鲁棒传感器融合库"
+      "provenance": "academic_lab",
+      "one_liner_zh": "libRSF：鲁棒传感器融合与在线定位库"
     },
     {
       "name": "Loose-GNSS-IMU",
       "url": "https://github.com/aaronboda24/Loose-GNSS-IMU",
-      "desc_zh": "GNSS 与 IMU 的松组合卡尔曼实现",
-      "analysis_zh": "经典松组合示例：用 GNSS 位置/速度更新 IMU 捷联推算，代码结构直白，便于第一次跑通组合导航闭环。适合课程实验、噪声调参与坐标系对齐练习。没有紧组合伪距观测与视觉约束；进阶可转向 TightlyCoupledINSGNSS、imu_x_fusion 或 OB_GINS，工业车载还需考虑杆臂与时间同步。",
+      "desc_zh": "约克大学相关示例：GNSS 位置速度更新 IMU 捷联推算",
+      "analysis_zh": "结构直白，便于第一次跑通松组合闭环与噪声调参。适合课程实验。紧组合、模糊度固定与完整性监测需另寻方案。",
       "language": "C++",
       "license": "MIT",
       "category": "navigation-ins",
@@ -10819,8 +10819,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "GNSS 与 IMU 的松组合卡尔曼实现"
+      "provenance": "academic_lab",
+      "one_liner_zh": "Loose-GNSS-IMU：经典 GNSS/IMU 松组合卡尔曼"
     },
     {
       "name": "msckfvioGPS",
@@ -10843,8 +10843,8 @@
     {
       "name": "Multi_Sensor_Fusion",
       "url": "https://github.com/2013fangwentao/Multi_Sensor_Fusion",
-      "desc_zh": "GNSS/IMU/视觉等多源融合与 PPP/INS 紧组合",
-      "analysis_zh": "中文社区高星的多传感器融合定位仓库，覆盖 GNSS、IMU、相机，并含 PPP/INS 紧组合思路，文档与示例偏工程实践。适合车载与机器人组合导航入门到中级实现。代码风格与依赖随版本变化，完好性与测地级产品接口不如 Ginan、PRIDE；可与 imu_x_fusion、gici-open、OB_GINS 对照架构差异。",
+      "desc_zh": "武大 GNSS 中心相关：多传感器融合与 PPP/INS 紧组合示例",
+      "analysis_zh": "中文社区高星工程仓，覆盖 GNSS、IMU、相机及 PPP/INS 紧组合思路。适合车载与机器人组合导航入门。文档偏实践；生产标定与完整性需自建流程。",
       "language": "C++",
       "license": "GPL-3.0",
       "category": "navigation-ins",
@@ -10857,8 +10857,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "GNSS/IMU/视觉等多源融合与 PPP/INS 紧组合"
+      "provenance": "academic_lab",
+      "one_liner_zh": "Multi_Sensor_Fusion：GNSS/IMU/视觉多源融合"
     },
     {
       "name": "nav_matlab",
@@ -10881,8 +10881,8 @@
     {
       "name": "NaveGo",
       "url": "https://github.com/rodralez/NaveGo",
-      "desc_zh": "NaveGo：组合导航与惯导分析 MATLAB/Octave 工具箱",
-      "analysis_zh": "开源 MATLAB/GNU Octave 工具箱 NaveGo，用于处理组合导航系统并分析惯性传感器，覆盖仿真与后处理教学流程，社区认可度高。适合导航专业课与算法对照实验。相对 C++ 实时库更偏离线研究；可与 KF-GINS、GINav 等并列阅读滤波与误差建模差异。Octave 兼容性因版本而异，复杂算例优先 MATLAB。",
+      "desc_zh": "高校教学向开源工具箱：INS/GNSS 仿真与后处理分析",
+      "analysis_zh": "MATLAB/GNU Octave 下仿真与分析惯导/组合导航，流程完整、适合教学。科研快速改公式方便。实时嵌入式与测地 PPP-AR 非其主场。",
       "language": "MATLAB",
       "license": "",
       "category": "navigation-ins",
@@ -10893,7 +10893,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
+      "provenance": "academic_lab",
       "one_liner_zh": "NaveGo：组合导航与惯导分析 MATLAB/Octave 工具箱"
     },
     {
@@ -10938,8 +10938,8 @@
     {
       "name": "raw-gnss-fusion",
       "url": "https://github.com/JonasBchrt/raw-gnss-fusion",
-      "desc_zh": "原始 GNSS 与其他传感器融合的代码与数据",
-      "analysis_zh": "公开原始 GNSS 与多传感器融合的代码、数据与结果，便于复现论文设定。适合研究起步。不是开箱即用商业导航软件。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。",
+      "desc_zh": "UKCEH/Cardiff 相关：公开原始 GNSS 与融合实验代码数据",
+      "analysis_zh": "便于复现论文设定的原始测量与融合流水线。适合研究起步。不是开箱商用导航软件；依赖与数据许可以仓库为准。",
       "language": "",
       "license": "LGPL-3.0",
       "category": "navigation-ins",
@@ -10950,8 +10950,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "原始 GNSS 与其他传感器融合的代码与数据"
+      "provenance": "academic_lab",
+      "one_liner_zh": "raw-gnss-fusion：原始 GNSS 多传感器融合代码与数据"
     },
     {
       "name": "RTK-Visual-Inertial-Navigation",
@@ -11084,8 +11084,8 @@
     {
       "name": "TightlyCoupledINSGNSS",
       "url": "https://github.com/benzenemo/TightlyCoupledINSGNSS",
-      "desc_zh": "伪距/伪距率与双天线测向的 INS/GNSS 紧组合（MATLAB）",
-      "analysis_zh": "MATLAB 实现伪距、伪距率与 INS 的紧组合，并支持双天线测向观测，状态与观测方程可读性好。适合研究生改滤波模型、做双天线航向约束试验。实时嵌入式与多星座模糊度固定需另行移植；可与 Loose-GNSS-IMU、GINav、KF-GINS 对照松紧组合与观测维度差异。杆臂、时间同步与坐标系定义是复现时最易出错处。",
+      "desc_zh": "MATLAB 紧组合示例：伪距/伪距率与双天线航向约束",
+      "analysis_zh": "观测方程可读，便于研究生改滤波与测向约束。适合课程与仿真。嵌入式实时与模糊度固定需另选 C/C++ 引擎。",
       "language": "MATLAB",
       "license": "BSD-2-Clause",
       "category": "navigation-ins",
@@ -11097,7 +11097,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "伪距/伪距率与双天线测向的 INS/GNSS 紧组合（MATLAB）"
+      "one_liner_zh": "TightlyCoupledINSGNSS：伪距率+双天线测向紧组合（MATLAB）"
     },
     {
       "name": "ublox_dgnss",
@@ -13139,8 +13139,8 @@
     {
       "name": "ahrs",
       "url": "https://github.com/Mayitzin/ahrs",
-      "desc_zh": "Python AHRS 姿态估计工具箱（IMU 滤波与四元数）",
-      "analysis_zh": "纯 Python 的 Attitude and Heading Reference Systems 工具箱，实现多种 IMU 姿态滤波与四元数/旋转表征，常作为 GNSS/INS 松组合的姿态前端或教学对照。MIT，文档与示例较完整。本身不做 GNSS 观测处理；与 RTK/PPP 组合需自备传感器同步与外参。",
+      "desc_zh": "纯 Python 姿态与航向参考系统算法集合（无 GNSS 解算）",
+      "analysis_zh": "实现多种 AHRS/IMU 姿态滤波器，接口友好。适合机器人姿态课与原型。不含 GNSS 定位引擎；与 GNSS 融合需自行松/紧组合。",
       "language": "Python",
       "license": "MIT",
       "category": "navigation-ins",
@@ -13154,7 +13154,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "Python AHRS/IMU 姿态估计工具箱"
+      "one_liner_zh": "ahrs：Python AHRS/IMU 姿态估计工具箱"
     },
     {
       "name": "madrigalWeb",
@@ -14822,9 +14822,9 @@
     }
   ],
   "provenance_counts": {
-    "official": 213,
-    "academic_lab": 230,
-    "personal_community": 317
+    "official": 214,
+    "academic_lab": 247,
+    "personal_community": 299
   },
   "updated": "2026-09-24"
 }

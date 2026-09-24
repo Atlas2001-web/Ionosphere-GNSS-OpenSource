@@ -7,7 +7,7 @@ RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka、质检与 IGS 产品下载。
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [PyGPSClient](https://github.com/semuconsulting/PyGPSClient) | NMEA/UBX/RTCM/NTRIP 等协议的 Python 图形客户端 | Python | 839 | 🏷️ 个人社区 核心 |
+| [PyGPSClient](https://github.com/semuconsulting/PyGPSClient) | PyGPSClient：NMEA/UBX/RTCM/NTRIP 图形客户端 | Python | 839 | 🏷️ 个人社区 核心 |
 | [ntrip-cpp](https://github.com/ybzwyrcld/ntrip) | NTRIP 2.0 的 C++ caster/client/server 示例 | C++ | 177 | 🏷️ 个人社区 |
 | [pygnssutils](https://github.com/semuconsulting/pygnssutils) | NMEA/UBX/RTCM/NTRIP/SPARTN 的 Python CLI 工具集 | Python | 143 | 🏷️ 个人社区 |
 | [ntripcaster-docker-bkg](https://github.com/goblimey/ntripcaster) | 容器化构建与运行 BKG NTRIP Caster 的 Docker 方案 | C | 139 | 🏷️ 个人社区 |
@@ -573,12 +573,12 @@ EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RT
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [geode](https://github.com/demiangomez/geode) | 下载—处理—分析—管理一体化的 GNSS 框架 | Python | 61 | 🏷️ 个人社区 |
+| [geode](https://github.com/demiangomez/geode) | geode：下载—处理—分析—管理一体化 GNSS 框架 | Python | 61 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
 #### [geode](https://github.com/demiangomez/geode)  
-*🏷️ 个人社区*
+*🏷️ 高校实验室*
 
 语言：Python · 许可：BSD-3-Clause · 星标约：61 · 宿主：github
 
@@ -767,7 +767,7 @@ MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [pynmea2](https://github.com/Knio/pynmea2) | pynmea2：高星标 Python NMEA 0183 解析库 | Python | 681 | 🏷️ 个人社区 |
-| [pyubx2](https://github.com/semuconsulting/pyubx2) | u-blox UBX 协议的 Python 编解码库 | Python | 254 | 🏷️ 个人社区 |
+| [pyubx2](https://github.com/semuconsulting/pyubx2) | pyubx2：u-blox UBX 协议 Python 编解码库 | Python | 254 | 🏷️ 个人社区 |
 | [gnsstk](https://github.com/SGL-UT/gnsstk) | 原 GPSTk 演进来的 C++ GNSS 基础库 | C++ | 183 | 🏷️ 高校实验室 核心 |
 | [pynmeagps](https://github.com/semuconsulting/pynmeagps) | 解析/生成 NMEA 0183 语句的 Python 库，与 pyubx2 同系 | Python | 106 | 🏷️ 个人社区 核心 |
 | [navsu](https://github.com/stanford-gps-lab/navsu) | navsu：斯坦福 GPS Lab MATLAB GNSS/IGS 工具箱 | MATLAB | 24 | 🏷️ 高校实验室 |

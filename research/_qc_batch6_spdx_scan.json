@@ -1,0 +1,6 @@
+{
+  "hits": [],
+  "nulls_count": 156,
+  "errors": [],
+  "note": "Full gh api scan of empty-license GitHub repos; 0 SPDX fills (all null/NOASSERTION)."
+}
