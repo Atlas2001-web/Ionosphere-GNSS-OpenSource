@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **14 篇**操作手册（合计约 4124 行）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **14 篇**操作手册（合计约 4235 行）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -20,7 +20,7 @@
 | 6 | [oasis-roti.md](./oasis-roti.md) | ROTI / ΔTEC / SIDX（Python） | 224 |
 | 7 | [ionex-gim.md](./ionex-gim.md) | 读 IONEX GIM | 200 |
 | 8 | [sh-gim.md](./sh-gim.md) | 维护者球谐仓**边界**（求解器未开源） | 124 |
-| 9 | [pygnssutils.md](./pygnssutils.md) | NTRIP CLI / 小 caster | 250 |
+| 9 | [pygnssutils.md](./pygnssutils.md) | NTRIP CLI / 小 caster | 361 |
 | 10 | [bnc.md](./bnc.md) | BKG 多流客户端 | 272 |
 | 11 | [bkg-ntripcaster.md](./bkg-ntripcaster.md) | BKG Caster 播发 | 379 |
 | 12 | [rtklib.md](./rtklib.md) | RTK / PPP CLI | 272 |
@@ -88,7 +88,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 ---
 
 
-最近质检（ops）：Round4 已按 short-hard 重写 **bkg-ntripcaster**（BKG FTP **2.0.49** 本机 `configure`/`make install`/`ntripcaster start`；`ntripserver` 推流后动态源表出现 STR；`gnssntripclient` 订流；port 80 无 root 时跳过）；Round3：**ionex-gim** / **oasis-roti** / **ionomoni**；Round2：**bnc** / **georinex** / **iono-scintillation**；Round1：**gfzrnx** / **rtklib** / **pytecgg**。行数以本表 `wc -l` 为准。
+最近质检（ops）：Round5 已按 short-hard 重写 **pygnssutils**（本机 **1.2.7**：rtk2go 源表 + Closest `Piggy-BJ-DX2`；文件/`gnssserver` TCP 回环；本机 NTRIP caster 源表+订流；anon 订公网 400 需邮箱；`pyrinexconv` 0.2.0 Beta 对 NMEA 记录数 0）；Round4：**bkg-ntripcaster**（2.0.49）；Round3：**ionex-gim** / **oasis-roti** / **ionomoni**；Round2：**bnc** / **georinex** / **iono-scintillation**；Round1：**gfzrnx** / **rtklib** / **pytecgg**。行数以本表 `wc -l` 为准。
 
 ## 推荐阅读顺序（新人）
 
