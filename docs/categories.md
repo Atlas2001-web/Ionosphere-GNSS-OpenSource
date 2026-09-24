@@ -37,14 +37,14 @@
 RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
 - 列表文件：[`lists/03-gnss-data.md`](../lists/03-gnss-data.md)
-- 当前条目数：**120**
+- 当前条目数：**126**
 
 ## `gnss-positioning` — 精密定位
 
 SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
 - 列表文件：[`lists/04-gnss-positioning.md`](../lists/04-gnss-positioning.md)
-- 当前条目数：**95**
+- 当前条目数：**97**
 
 ## `orbit-clock` — 轨道与钟差
 
@@ -58,7 +58,7 @@ SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现
 GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 
 - 列表文件：[`lists/06-navigation-ins.md`](../lists/06-navigation-ins.md)
-- 当前条目数：**63**
+- 当前条目数：**64**
 
 ## `gnss-sdr` — 软件接收机与信号
 
@@ -79,7 +79,7 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
 - 列表文件：[`lists/09-tools-learning.md`](../lists/09-tools-learning.md)
-- 当前条目数：**44**
+- 当前条目数：**47**
 
 ## `gnss-datasets` — GNSS 数据源
 

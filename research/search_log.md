@@ -349,3 +349,11 @@
 - Avoided: RobustGNSS/PrNet/NeRC, igrf/wmm2020, GSC-OSNMA, VINS*, LimeGPS, Orekit, WAAS/EGNOS, NMEA libs, saturated national CORS
 - Skipped: midgard pre-alpha, InGVIO no license, NavDecoder no license, NovAtel OEM page soft-404, Open-Water-Level (ultrasonic not GNSS-IR), PyGeodesy no SPDX, TrigNet/AFREF/SAPOS
 - Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
+
+## Routine pass 2026-09-24h
+
+- Catalog size before: **830**; after merge: **842** (+12)
+- Finds file: `research/routine_finds_20260924h.json`
+- Method: quality-first dig (ROS2 fusion, RTK base forks, SBF/RTCM/SPARTN parsers, LEO FGO, ENRI/ICAO PBN); avoided just-added orbit/Navipedia/bladeGPS/RAIM/Larson extras; `gh api`+`curl`; dedup vs PROJECTS.json and all `routine_finds_*.json`
+- Skipped: MSAS/GAGAN/beidou.gov.cn unreachable, midgard pre-alpha, PPP_AR no license, cceremuga/ionosphere (APRS misnomer), FLAT (GPS attack demo), thin NLOS toys, SuperSID fork duplicate, maidenhead/grwave weak GNSS fit
+- Merge safety: append-only; UPDATED=0; blanking vs HEAD=0

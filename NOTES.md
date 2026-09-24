@@ -332,3 +332,10 @@
 - 当前条目：**830**
 - 分类计数：{'ionosphere': 244, 'troposphere': 39, 'gnss-data': 120, 'gnss-positioning': 95, 'orbit-clock': 16, 'navigation-ins': 63, 'gnss-sdr': 62, 'mobile-apps': 22, 'tools-learning': 44, 'gnss-datasets': 125}
 - 详见 `research/routine_finds_20260924g.json`
+
+## 例行检索补录（2026-09-24h）
+
+- 新增 **12** 条（fusioncore/ELT_RTKBase/pysbf2/libnmea/ENRI/ICAO-PBN/go-gnss-rtcm 等）
+- 当前条目：**842**
+- 分类计数：{'ionosphere': 244, 'troposphere': 39, 'gnss-data': 126, 'gnss-positioning': 97, 'orbit-clock': 16, 'navigation-ins': 64, 'gnss-sdr': 62, 'mobile-apps': 22, 'tools-learning': 47, 'gnss-datasets': 125}
+- 详见 `research/routine_finds_20260924h.json`

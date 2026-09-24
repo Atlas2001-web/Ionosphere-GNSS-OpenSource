@@ -1,0 +1,242 @@
+[
+  {
+    "name": "fusioncore",
+    "url": "https://github.com/manankharwar/fusioncore",
+    "desc_zh": "ROS 2 户外机器人：IMU/轮速/GPS 的 23 状态 UKF 融合",
+    "analysis_zh": "面向户外机器人的 23 状态 UKF，融合 IMU、轮速编码器与 GPS（亦可接视觉 SLAM），约 100 Hz，并尝试报告哪路传感器导致发散。Apache-2.0；提供无 ROS 依赖的 C++ 滤波库与 ROS 2 包。偏移动机器人定位而非测地 PPP；部署需自备外参与时间同步标定。",
+    "language": "C++",
+    "license": "Apache-2.0",
+    "category": "navigation-ins",
+    "subcategory": "GNSS/INS",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "fusioncore：户外机器人 IMU/轮速/GPS 的 UKF 融合",
+    "stars_approx": 366,
+    "markers": [
+      "routine-2026-09-24h"
+    ],
+    "source": "routine-finds-20260924h",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "ELT_RTKBase",
+    "url": "https://github.com/GNSSOEM/ELT_RTKBase",
+    "desc_zh": "树莓派 RTK 基准站软件（适配 Unicore/Bynav/Septentrio/u-blox）",
+    "analysis_zh": "基于 Stefal/rtkbase 的分支增强，面向树莓派等单板，适配 Unicore UM98x、Bynav M2x、Septentrio Mosaic X5 与 u-blox ZED-X20P 等接收机。AGPL-3.0；提供 Web GUI 自建 NTRIP 基准。许可与上游 rtkbase 一致需注意传染性；硬件接线与安装脚本见仓库。",
+    "language": "Shell",
+    "license": "AGPL-3.0",
+    "category": "gnss-positioning",
+    "subcategory": "RTK客户端",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "ELT_RTKBase：多品牌接收机的树莓派 RTK 基准站",
+    "stars_approx": 70,
+    "markers": [
+      "routine-2026-09-24h"
+    ],
+    "source": "routine-finds-20260924h",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "pysbf2",
+    "url": "https://github.com/semuconsulting/pysbf2",
+    "desc_zh": "Python 解析/生成 Septentrio SBF 协议消息",
+    "analysis_zh": "semuconsulting 维护的 Septentrio Binary Format（SBF）Python 库，可解析与生成接收机二进制消息。BSD-3-Clause；与 pyubx2、pyrtcm、pyspartn 同生态，填补 SBF 侧缺口。适合日志解码与测试注入；完整驱动亦可对照官方 ROS septentrio_gnss_driver。",
+    "language": "Python",
+    "license": "BSD-3-Clause",
+    "category": "gnss-data",
+    "subcategory": "基础库",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "pysbf2：Septentrio SBF 消息的 Python 编解码库",
+    "stars_approx": 8,
+    "markers": [
+      "routine-2026-09-24h"
+    ],
+    "source": "routine-finds-20260924h",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "libnmea",
+    "url": "https://github.com/jacketizer/libnmea",
+    "desc_zh": "轻量 C 语言 NMEA 0183 语句解析库",
+    "analysis_zh": "jacketizer 的纯 C NMEA 0183 解析库，接口精简，适合嵌入式与资源受限环境。MIT 许可；与 minmea、nmea-parser 等形成多语言对照。句子覆盖以头文件为准，复杂专有扩展需自行扩展解析表。 细节以仓库或官方页面说明为准。",
+    "language": "C",
+    "license": "MIT",
+    "category": "gnss-data",
+    "subcategory": "基础库",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "libnmea：轻量纯 C 的 NMEA 0183 解析库",
+    "stars_approx": 326,
+    "markers": [
+      "routine-2026-09-24h"
+    ],
+    "source": "routine-finds-20260924h",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "geodesy-js",
+    "url": "https://github.com/chrisveness/geodesy",
+    "desc_zh": "JavaScript 大地测量函数库（坐标/方位/距离等）",
+    "analysis_zh": "chrisveness 维护的 JS 大地测量工具集，覆盖常见椭球上的距离、方位与坐标变换，浏览器与 Node 可用。MIT 许可；填补 Web 前端坐标计算缺口。偏通用大地测量，不处理 RINEX/RTK 观测；高精度应用请核对方位约定与椭球参数。",
+    "language": "JavaScript",
+    "license": "MIT",
+    "category": "tools-learning",
+    "subcategory": "坐标转换",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "geodesy-js：浏览器/Node 可用的 JS 大地测量库",
+    "stars_approx": 1227,
+    "markers": [
+      "routine-2026-09-24h"
+    ],
+    "source": "routine-finds-20260924h",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "GraphGNSSLib_LEO_V1.2",
+    "url": "https://github.com/Gao-tech1/GraphGNSSLib_LEO_V1.2",
+    "desc_zh": "LEO+GNSS 因子图定位库（FGO，V1.2）",
+    "analysis_zh": "在 GraphGNSSLib 思路上面向 LEO 增强的因子图定位实现（FGO），MIT 许可。与 PolyU GraphGNSSLib_LEO 同主题、不同仓库版本线，便于对照 LEO-PNT/增强试验。偏研究原型，数据接口与依赖以仓库为准，非测地生产套件。",
+    "language": "C",
+    "license": "MIT",
+    "category": "gnss-positioning",
+    "subcategory": "因子图",
+    "host": "github",
+    "provenance": "academic_lab",
+    "one_liner_zh": "GraphGNSSLib_LEO_V1.2：LEO+GNSS 因子图定位",
+    "stars_approx": 18,
+    "markers": [
+      "routine-2026-09-24h"
+    ],
+    "source": "routine-finds-20260924h",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "ENRI-Japan",
+    "url": "https://www.enri.go.jp/eng/index.html",
+    "desc_zh": "日本电子航法研究所（ENRI）：航空 CNS/ATM 研究机构门户",
+    "analysis_zh": "ENRI 是日本在航空交通管理与通信导航监视（ATM/CNS）领域的国家级研究机构英文门户，涵盖电子航法与相关 GNSS/增强研究入口。官方 portal；适合查日方航空导航与完好性研究方向。具体报告与数据分发条款以各子页为准，非 CORS 下载站。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "tools-learning",
+    "subcategory": "机构软件门户",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "ENRI：日本电子航法研究所（航空 CNS）门户",
+    "stars_approx": null,
+    "markers": [
+      "routine-2026-09-24h"
+    ],
+    "source": "routine-finds-20260924h",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "ICAO-PBN",
+    "url": "https://www.icao.int/safety/pbn/Pages/Overview.aspx",
+    "desc_zh": "ICAO PBN：基于性能导航概述与文件入口",
+    "analysis_zh": "国际民航组织关于 Performance-Based Navigation（PBN）的概述页，链向航空导航性能与相关文件框架，常与 GNSS/SBAS 完好性运行要求对照。官方 portal；偏规章与运行概念，不是接收机开源代码。具体 SARPs/手册下载遵循 ICAO 分发规则。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "category": "tools-learning",
+    "subcategory": "SBAS",
+    "host": "official_site",
+    "provenance": "official",
+    "one_liner_zh": "ICAO PBN：基于性能导航官方概述入口",
+    "stars_approx": null,
+    "markers": [
+      "routine-2026-09-24h"
+    ],
+    "source": "routine-finds-20260924h",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "go-gnss-rtcm",
+    "url": "https://github.com/go-gnss/rtcm",
+    "desc_zh": "Go 语言 RTCM 解析库",
+    "analysis_zh": "go-gnss 组织的 RTCM 解析库，便于在 Go 服务中解码差分电文。Apache-2.0；与同组织 ntrip（已收录）配套，适合云原生差分网关。消息类型覆盖以仓库测试为准，生产需补齐版本协商与错误处理。 细节以仓库或官方页面说明为准。",
+    "language": "Go",
+    "license": "Apache-2.0",
+    "category": "gnss-data",
+    "subcategory": "RTCM/NTRIP",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "go-gnss/rtcm：Go 语言 RTCM 差分电文解析库",
+    "stars_approx": 26,
+    "markers": [
+      "routine-2026-09-24h"
+    ],
+    "source": "routine-finds-20260924h",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "go-gnss-spartn",
+    "url": "https://github.com/go-gnss/spartn",
+    "desc_zh": "Go 语言 SPARTN 格式解析库",
+    "analysis_zh": "go-gnss 的 SPARTN 解析库，面向 PPP-RTK/高精度改正流格式。Apache-2.0；与 Python pyspartn 互补，便于 Go 侧对接 SPARTN 服务。协议演进快，请核对支持的消息子集与密钥/授权要求（若接商用流）。",
+    "language": "Go",
+    "license": "Apache-2.0",
+    "category": "gnss-data",
+    "subcategory": "Galileo HAS",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "go-gnss/spartn：Go 语言 SPARTN 改正流解析库",
+    "stars_approx": 5,
+    "markers": [
+      "routine-2026-09-24h"
+    ],
+    "source": "routine-finds-20260924h",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "pyubxutils",
+    "url": "https://github.com/semuconsulting/pyubxutils",
+    "desc_zh": "Python UBX 接收机命令行实用工具集",
+    "analysis_zh": "semuconsulting 提供的 UBX 设备命令行工具，基于 pyubx2 生态做配置、查询与调试。BSD-3-Clause；适合实验室批量改配置与回归测试。星级不高，功能随 pyubx2 版本演进，复杂自动化可直接调用库 API。 细节以仓库或官方页面说明为准。",
+    "language": "Python",
+    "license": "BSD-3-Clause",
+    "category": "gnss-data",
+    "subcategory": "基础库",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "pyubxutils：UBX 接收机 Python 命令行工具",
+    "stars_approx": 5,
+    "markers": [
+      "routine-2026-09-24h"
+    ],
+    "source": "routine-finds-20260924h",
+    "featured": false,
+    "user_relation": "none"
+  },
+  {
+    "name": "pysbf",
+    "url": "https://github.com/jashandeep-sohi/pysbf",
+    "desc_zh": "解析 Septentrio SBF 文件的 Python 模块",
+    "analysis_zh": "较早的 Septentrio SBF 文件解析 Python 模块，GPL-3.0。与较新的 pysbf2（BSD）可对照；若无许可传染顾虑可优先 pysbf2。适合离线日志分析，维护活跃度以提交历史为准。 细节以仓库或官方页面说明为准。 细节以仓库或官方页面说明为准。",
+    "language": "Python",
+    "license": "GPL-3.0",
+    "category": "gnss-data",
+    "subcategory": "基础库",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "pysbf：Septentrio SBF 文件 Python 解析模块",
+    "stars_approx": 16,
+    "markers": [
+      "routine-2026-09-24h"
+    ],
+    "source": "routine-finds-20260924h",
+    "featured": false,
+    "user_relation": "none"
+  }
+]
