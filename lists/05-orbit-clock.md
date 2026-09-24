@@ -1,5 +1,5 @@
 # 轨道与钟差 / Orbit & Clock
-> **26** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **27** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。
 
@@ -329,3 +329,18 @@ Rust 语言的 SGP4 传播实现，MIT 许可，便于嵌入式或高性能服�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 BIPM Time Department 的 FTP 索引页，指向 pub 等时标相关目录，是 UTC/TAI 等文件的机器可达入口。与已收录 BIPM-Time-FTP 说明页互补：本页偏目录浏览。使用请遵守 BIPM 数据政策与引用要求。
+
+## 产品门户
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [CDDIS-Orbit-Clock-Products](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/orbit_and_clock_products.html) | NASA CDDIS：GNSS 轨道与钟差产品说明页 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [CDDIS-Orbit-Clock-Products](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/orbit_and_clock_products.html)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+CDDIS 对 IGS 等精密轨道（SP3）与钟差（CLK）产品的说明入口；站点提示已向 earthdata.nasa.gov 迁移。与已收录 CDDIS 大气/IONEX/高采样页互补，本页专指轨道钟差派生产品文档。下载现多走 Earthdata；需遵守 NASA 账号与引用条款。收录前已 HTTP 核验页面可达。

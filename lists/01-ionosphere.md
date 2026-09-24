@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> **271** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **278** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -2534,6 +2534,7 @@ NRLMSISE-00（2001）经验中性大气模型的 Python 移植，MIT 许可。�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [SWPC-ACE-RTSW](https://www.swpc.noaa.gov/products/ace-real-time-solar-wind) | NOAA SWPC：ACE 实时太阳风产品 | data-portal | — | 🏷️ 官方 |
+| [SWPC-Real-Time-Solar-Wind](https://www.swpc.noaa.gov/products/real-time-solar-wind) | NOAA SWPC：综合实时太阳风产品（非仅 ACE） | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -2543,6 +2544,13 @@ NRLMSISE-00（2001）经验中性大气模型的 Python 移植，MIT 许可。�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 SWPC ACE Real-Time Solar Wind 产品页，提供 ACE 卫星太阳风实时监测，是磁暴/电离层扰动的上游空间天气输入之一，并在影响说明中关联 GPS 等系统。与 OMNI 历史序列互补，偏实时监测。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。
+
+#### [SWPC-Real-Time-Solar-Wind](https://www.swpc.noaa.gov/products/real-time-solar-wind)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+SWPC Real-Time Solar Wind 产品页，汇聚多源实时太阳风监测，说明中关联 GPS 等系统影响。与已收录 ACE Real-Time Solar Wind 页互补：本页为综合实时入口，ACE 页偏单星。历史分析请改用 OMNI 等。收录前已 HTTP 核验（现多落在 spaceweather.gov）。
 
 ## 太阳辐照
 
@@ -2588,3 +2596,86 @@ SWPC ACE Real-Time Solar Wind 产品页，提供 ACE 卫星太阳风实时监测
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 NCEI 的 GOES 卫星空间天气数据门户，汇总 GOES 相关存档与产品入口。可与 SWPC GOES X 射线实时产品对照使用。偏数据目录而非单一文件下载。请遵守 NOAA 使用政策。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。
+
+## 太阳观测
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SDO-GSFC](https://sdo.gsfc.nasa.gov/) | NASA SDO：太阳动力学观测台主站（EUV 等日面驱动） | data-portal | — | 🏷️ 官方 |
+| [SOHO-NASA](https://sohowww.nascom.nasa.gov/) | NASA/ESA SOHO：日冕与太阳风成像/档案门户 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [SDO-GSFC](https://sdo.gsfc.nasa.gov/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Solar Dynamics Observatory 官方门户，提供大气成像仪等日面 EUV/磁图产品入口，是电离层/热层日侧驱动的上游太阳观测源。站点曾提示存储故障时改走 Data Access；科研请优先用 JSOC 等正式归档。与 SOHO、SWPC 产品互补，偏成像而非粒子/太阳风时序。收录前已 HTTP 核验。
+
+#### [SOHO-NASA](https://sohowww.nascom.nasa.gov/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Solar and Heliospheric Observatory 主站，含 gallery、data/archive 与任务状态。LASCO 等日冕观测常用于 CME 预警，与 GNSS 电离层暴分析的上游空间天气相关。长期任务档案成熟；具体数据级产品请跟 archive 指引。与 SDO 成像互补。收录前已 HTTP 核验页面可访问。
+
+## 空间天气事件
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [CCMC-DONKI](https://kauai.ccmc.gsfc.nasa.gov/DONKI/) | CCMC DONKI：空间天气事件通知与知识库 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [CCMC-DONKI](https://kauai.ccmc.gsfc.nasa.gov/DONKI/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Community Coordinated Modeling Center 的 DONKI（Database Of Notifications, Knowledge, Information），检索 CME、耀斑、高能粒子等事件与通知归档。便于把 GNSS 电离层扰动时段对齐到上游太阳/行星际事件。公开检索为主；模型运行另见 CCMC。收录前已 HTTP 核验。
+
+## 太阳可视化
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [Helioviewer](https://helioviewer.org/) | Helioviewer：太阳/日球层多源影像可视化与截图/电影 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [Helioviewer](https://helioviewer.org/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+开源取向的太阳影像浏览器，聚合 SDO/SOHO 等多源层，支持截图、电影与外链科学数据下载请求。适合快速目视对齐耀斑/日冕结构到 GNSS 扰动窗口，而非替代正式科学归档。与 DONKI 事件库、SWPC 产品互补。收录前已 HTTP 核验主站可访问。
+
+## AE指数
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [Kyoto-AE-Realtime](https://wdc.kugi.kyoto-u.ac.jp/ae_realtime/index.html) | 京都大学 WDC：实时/Quicklook AE 指数 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [Kyoto-AE-Realtime](https://wdc.kugi.kyoto-u.ac.jp/ae_realtime/index.html)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+京都 WDC 实时（Quicklook）AE 指数页，监测极光区地磁活动；注明非商业用途，2024 年底起数字值亦入仓可供科研。与已收录 Dst/Kp 页互补，偏亚暴时间尺度，常作 GNSS 高纬电离层扰动背景。最终定标请用正式产品。收录前已 HTTP 核验；遵守 WDC 声明。
+
+## GOES质子
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SWPC-GOES-Proton-Flux](https://www.swpc.noaa.gov/products/goes-proton-flux) | NOAA SWPC：GOES 质子通量产品 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [SWPC-GOES-Proton-Flux](https://www.swpc.noaa.gov/products/goes-proton-flux)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+SWPC GOES Proton Flux 产品页，监测太阳高能质子事件（SPE）。质子暴可影响极区 HF/GNSS 与卫星单粒子效应，是电离层/空间天气分析中与 X 射线耀斑、太阳风并列的上游输入。与已收录 GOES X-ray、NGDC GOES 归档互补，偏实时通量产品。收录前已 HTTP 核验。

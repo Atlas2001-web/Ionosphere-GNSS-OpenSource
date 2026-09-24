@@ -420,3 +420,11 @@
 - Avoided: SGP4 set from 24n, Kp/Dst/SWS/SWPC near-dups, VMF/INTERMAGNET homes already listed, latpos.lv/estpos.ee squats, NLS/maanmittaus WAF blocks, TrigNet/AFREF unreachable, i2Nav suites already cataloged
 - Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
 
+## Routine pass 2026-09-24p
+
+- Catalog size before: **940**; after merge: **954** (+14)
+- Finds file: `research/routine_finds_20260924p.json`
+- Method: SoapySDR adapter gap-fill (UHD/RTLSDR/Remote/Airspy/SDRPlay3) + Indonesia SRGI Ina-CORS + solar/ionosphere drivers (SDO/SOHO/DONKI/Helioviewer) + Kyoto AE realtime + SWPC RTSW/GOES-proton distinct from ACE/X-ray + CDDIS orbit/clock products page; `gh api`+`curl`; dedup vs PROJECTS.json and all `routine_finds_*.json`
+- Avoided: SAPOS/TrigNet unreachable pattern, IGS products near-dup (`igs.org/products`), OPUS/CODE FTP near-dups or 404, litpos/aspos/skpos/cors.ga down, scintill-ai/PyIRI/gnss_lib_py already listed, SoapyOsmo (thin ★17), NAMRIA agency home (weak GNSS specificity), SIRGAS `/es/` near EN home
+- Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
+

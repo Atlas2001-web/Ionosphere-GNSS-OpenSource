@@ -1,5 +1,5 @@
 # 软件接收机与信号 / GNSS-SDR
-> **71** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **76** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。
 
@@ -675,3 +675,78 @@ Pothos/Soapy 生态的核心：厂商与平台中立的软件无线电抽象层�
 语言：C++ · 许可：LGPL-2.1 · 星标约：90 · 宿主：github
 
 Soapy SDR 插件，对接 Analog Devices ADALM-Pluto，LGPL-2.1。适合低成本 Pluto 前端接入 GNSS 软件接收机实验。驱动与固件版本需匹配；动态范围有限。与已收录 pluto-gps-sim 等仿真工具可互补。
+
+## UHD插件
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SoapyUHD](https://github.com/pothosware/SoapyUHD) | SoapyUHD：SoapySDR 的 Ettus UHD/USRP 支持模块 | C++ | 82 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [SoapyUHD](https://github.com/pothosware/SoapyUHD)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：GPL-3.0 · 星标约：82 · 宿主：github
+
+pothosware 为 SoapySDR 提供的 Ettus/UHD（USRP）后端插件，GPL-3.0。统一 Soapy API 下驱动 USRP 采 GNSS 频段 IQ，常与 GNSS-SDR 联用。需本机安装 UHD；带宽与前端噪声按型号选型。不替代基带解算，只做射频前端适配。
+
+## RTL-SDR插件
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SoapyRTLSDR](https://github.com/pothosware/SoapyRTLSDR) | SoapyRTLSDR：SoapySDR 的 RTL-SDR 支持模块 | C++ | 154 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [SoapyRTLSDR](https://github.com/pothosware/SoapyRTLSDR)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：MIT · 星标约：154 · 宿主：github
+
+SoapySDR 的 RTL-SDR 支持模块，MIT 许可、星标较多。便于用廉价 USB 棒做 GNSS L1 教学演示与频谱摸底。动态范围与前端滤波有限，不宜当作精密观测前端。需配合宿主 SoapySDR 与基带链（如 GNSS-SDR）。收录前已核验仓库可访问。
+
+## 远程Soapy
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SoapyRemote](https://github.com/pothosware/SoapyRemote) | SoapyRemote：经网络远程使用 Soapy SDR 设备 | C++ | 151 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [SoapyRemote](https://github.com/pothosware/SoapyRemote)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：BSL-1.0 · 星标约：151 · 宿主：github
+
+SoapyRemote 允许在一台机器上挂 SDR，另一台经网络以 Soapy 客户端访问，BSL-1.0。适合实验室集中射频机、远程 GNSS-SDR 联调。延迟与带宽受网络制约；安全上需自管访问控制。与 SoapySDR 生态互补，不替代具体硬件插件。
+
+## Airspy插件
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SoapyAirspy](https://github.com/pothosware/SoapyAirspy) | SoapyAirspy：SoapySDR 的 Airspy 支持模块 | C++ | 28 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [SoapyAirspy](https://github.com/pothosware/SoapyAirspy)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：MIT · 星标约：28 · 宿主：github
+
+SoapySDR 的 Airspy 插件，MIT。Airspy 系列带宽与采样率高于普通 RTL-SDR，常用于 GNSS 频谱与多星座演示。仍属接收前端适配，不提供伪距/载波解算。依赖宿主 SoapySDR 与厂商驱动。收录前已用 gh api 核验许可与活跃状态。
+
+## SDRplay插件
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SoapySDRPlay3](https://github.com/pothosware/SoapySDRPlay3) | SoapySDRPlay3：SoapySDR 的 SDRplay APIv3 支持模块 | C++ | 122 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [SoapySDRPlay3](https://github.com/pothosware/SoapySDRPlay3)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：MIT · 星标约：122 · 宿主：github
+
+面向 SDRplay API v3 的 Soapy 插件，MIT、星标过百。RSP 系列动态范围较好，可用于 GNSS 频段监测与教学采数。需遵守 SDRplay 专有驱动许可；本仓仅为 Soapy 桥接。与 GNSS-SDR/自定义基带联用时注意采样率与天线前端匹配。

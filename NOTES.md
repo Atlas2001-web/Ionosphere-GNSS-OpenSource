@@ -388,3 +388,10 @@
 - 当前条目：**940**
 - 分类计数：{'ionosphere': 271, 'troposphere': 41, 'gnss-data': 132, 'gnss-positioning': 101, 'orbit-clock': 26, 'navigation-ins': 71, 'gnss-sdr': 71, 'mobile-apps': 29, 'tools-learning': 59, 'gnss-datasets': 139}
 - 详见 `research/routine_finds_20260924o.json`
+
+## 例行检索补录（2026-09-24p）
+
+- 新增 **14** 条（SoapyUHD/RTLSDR/Remote/Airspy/SDRPlay3、SRGI Ina-CORS、SDO/SOHO/DONKI/Helioviewer、AE/RTSW/GOES-Proton、CDDIS 轨道钟差等）
+- 当前条目：**954**
+- 分类计数：{'ionosphere': 278, 'troposphere': 41, 'gnss-data': 132, 'gnss-positioning': 101, 'orbit-clock': 27, 'navigation-ins': 71, 'gnss-sdr': 76, 'mobile-apps': 29, 'tools-learning': 59, 'gnss-datasets': 140}
+- 详见 `research/routine_finds_20260924p.json`

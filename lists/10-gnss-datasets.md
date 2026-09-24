@@ -1,5 +1,5 @@
 # GNSS 数据源 / GNSS Datasets
-> **139** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **140** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
@@ -1299,6 +1299,7 @@ OMNIWeb Data Explorer 表单页，可对 OMNI 太阳风/地磁等参数绘图、
 | [ASG-EUPOS](https://www.asgeupos.pl/) | 波兰 ASG-EUPOS：国家 GNSS 增强/参考站网门户 | data-portal | — | 🏷️ 官方 |
 | [CROPOS](https://www.cropos.hr/) | 克罗地亚 CROPOS：国家 GNSS 参考站网与实时服务 | data-portal | — | 🏷️ 官方 |
 | [GSI-Terras-GEONET](https://terras.gsi.go.jp/) | 国土地理院 Terras：GEONET 电子基准点数据提供门户 | data-portal | — | 🏷️ 官方 |
+| [SRGI-BIG-InaCORS](https://srgi.big.go.id/) | 印尼 BIG SRGI：Ina-CORS 实时/后处理与 RINEX 下载门户 | data-portal | — | 🏷️ 官方 |
 | [SWEPOS-Portal](https://swepos.lantmateriet.se/) | 瑞典 SWEPOS 服务门户（Lantmäteriet） | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
@@ -1323,6 +1324,13 @@ CROatian POsitioning System 门户，介绍国家参考站网概念、差分/高
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 日本 GSI 电子基准点（GEONET）观测与解析成果的互联网提供门户，含站点移设/停用公告。与已收录 SFTP 说明、RNXCMP、RINGO 等互补，本页为数据服务主入口。日文界面为主，有英语入口提示。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。
+
+#### [SRGI-BIG-InaCORS](https://srgi.big.go.id/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+印尼测绘局 BIG 的系统性地理参考（SRGI）门户，提供 Ina-CORS RTK、在线后处理与 RINEX 下载，并含控制网、大地水准面与 GNSS 监测（含 ZWD）等入口。东南亚国家 CORS 公开数据的重要入口，与区域地壳形变/电离层研究互补。界面以印尼语为主；服务条款与注册要求以上游为准。收录前已 HTTP 200 核验。
 
 #### [SWEPOS-Portal](https://swepos.lantmateriet.se/)  
 *🏷️ 官方*

@@ -5,18 +5,18 @@
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
   "generated": "2026-09-24",
-  "project_count": 940,
+  "project_count": 954,
   "counts_by_category": {
-    "ionosphere": 271,
+    "ionosphere": 278,
     "troposphere": 41,
     "gnss-data": 132,
     "gnss-positioning": 101,
-    "orbit-clock": 26,
+    "orbit-clock": 27,
     "navigation-ins": 71,
-    "gnss-sdr": 71,
+    "gnss-sdr": 76,
     "mobile-apps": 29,
     "tools-learning": 59,
-    "gnss-datasets": 139
+    "gnss-datasets": 140
   },
   "projects": [
     {
@@ -18519,12 +18519,310 @@
       "one_liner_zh": "NOAA NCEI：GOES 卫星空间天气数据入口",
       "registration": "open",
       "registration_zh": "门户公开浏览；部分服务需注册；请遵守上游条款。"
+    },
+    {
+      "name": "SoapyUHD",
+      "url": "https://github.com/pothosware/SoapyUHD",
+      "desc_zh": "把 Ettus UHD 设备接到 Soapy 设备树；USRP 采 GNSS 射频样本的常见桥接",
+      "analysis_zh": "pothosware 为 SoapySDR 提供的 Ettus/UHD（USRP）后端插件，GPL-3.0。统一 Soapy API 下驱动 USRP 采 GNSS 频段 IQ，常与 GNSS-SDR 联用。需本机安装 UHD；带宽与前端噪声按型号选型。不替代基带解算，只做射频前端适配。",
+      "language": "C++",
+      "license": "GPL-3.0",
+      "category": "gnss-sdr",
+      "subcategory": "UHD插件",
+      "markers": [
+        "routine-2026-09-24p"
+      ],
+      "stars_approx": 82,
+      "source": "routine-finds-20260924p",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "SoapyUHD：SoapySDR 的 Ettus UHD/USRP 支持模块"
+    },
+    {
+      "name": "SoapyRTLSDR",
+      "url": "https://github.com/pothosware/SoapyRTLSDR",
+      "desc_zh": "把 RTL-SDR 接到 Soapy；低成本 GNSS 教学/演示前端常用",
+      "analysis_zh": "SoapySDR 的 RTL-SDR 支持模块，MIT 许可、星标较多。便于用廉价 USB 棒做 GNSS L1 教学演示与频谱摸底。动态范围与前端滤波有限，不宜当作精密观测前端。需配合宿主 SoapySDR 与基带链（如 GNSS-SDR）。收录前已核验仓库可访问。",
+      "language": "C++",
+      "license": "MIT",
+      "category": "gnss-sdr",
+      "subcategory": "RTL-SDR插件",
+      "markers": [
+        "routine-2026-09-24p"
+      ],
+      "stars_approx": 154,
+      "source": "routine-finds-20260924p",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "SoapyRTLSDR：SoapySDR 的 RTL-SDR 支持模块"
+    },
+    {
+      "name": "SoapyRemote",
+      "url": "https://github.com/pothosware/SoapyRemote",
+      "desc_zh": "把任意 Soapy 设备经网络远程暴露给客户端",
+      "analysis_zh": "SoapyRemote 允许在一台机器上挂 SDR，另一台经网络以 Soapy 客户端访问，BSL-1.0。适合实验室集中射频机、远程 GNSS-SDR 联调。延迟与带宽受网络制约；安全上需自管访问控制。与 SoapySDR 生态互补，不替代具体硬件插件。",
+      "language": "C++",
+      "license": "BSL-1.0",
+      "category": "gnss-sdr",
+      "subcategory": "远程Soapy",
+      "markers": [
+        "routine-2026-09-24p"
+      ],
+      "stars_approx": 151,
+      "source": "routine-finds-20260924p",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "SoapyRemote：经网络远程使用 Soapy SDR 设备"
+    },
+    {
+      "name": "SoapyAirspy",
+      "url": "https://github.com/pothosware/SoapyAirspy",
+      "desc_zh": "把 Airspy 接到 Soapy；宽带宽前端适合 GNSS 频谱实验",
+      "analysis_zh": "SoapySDR 的 Airspy 插件，MIT。Airspy 系列带宽与采样率高于普通 RTL-SDR，常用于 GNSS 频谱与多星座演示。仍属接收前端适配，不提供伪距/载波解算。依赖宿主 SoapySDR 与厂商驱动。收录前已用 gh api 核验许可与活跃状态。",
+      "language": "C++",
+      "license": "MIT",
+      "category": "gnss-sdr",
+      "subcategory": "Airspy插件",
+      "markers": [
+        "routine-2026-09-24p"
+      ],
+      "stars_approx": 28,
+      "source": "routine-finds-20260924p",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "SoapyAirspy：SoapySDR 的 Airspy 支持模块"
+    },
+    {
+      "name": "SoapySDRPlay3",
+      "url": "https://github.com/pothosware/SoapySDRPlay3",
+      "desc_zh": "把 SDRplay APIv3 设备接到 Soapy 设备树",
+      "analysis_zh": "面向 SDRplay API v3 的 Soapy 插件，MIT、星标过百。RSP 系列动态范围较好，可用于 GNSS 频段监测与教学采数。需遵守 SDRplay 专有驱动许可；本仓仅为 Soapy 桥接。与 GNSS-SDR/自定义基带联用时注意采样率与天线前端匹配。",
+      "language": "C++",
+      "license": "MIT",
+      "category": "gnss-sdr",
+      "subcategory": "SDRplay插件",
+      "markers": [
+        "routine-2026-09-24p"
+      ],
+      "stars_approx": 122,
+      "source": "routine-finds-20260924p",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "SoapySDRPlay3：SoapySDR 的 SDRplay APIv3 支持模块"
+    },
+    {
+      "name": "SRGI-BIG-InaCORS",
+      "url": "https://srgi.big.go.id/",
+      "desc_zh": "印尼 BIG SRGI：Ina-CORS 实时/后处理与 RINEX 下载门户",
+      "analysis_zh": "印尼测绘局 BIG 的系统性地理参考（SRGI）门户，提供 Ina-CORS RTK、在线后处理与 RINEX 下载，并含控制网、大地水准面与 GNSS 监测（含 ZWD）等入口。东南亚国家 CORS 公开数据的重要入口，与区域地壳形变/电离层研究互补。界面以印尼语为主；服务条款与注册要求以上游为准。收录前已 HTTP 200 核验。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "国家CORS",
+      "markers": [
+        "routine-2026-09-24p"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924p",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "印尼 BIG SRGI：Ina-CORS 实时/后处理与 RINEX 下载门户",
+      "registration": "mixed",
+      "registration_zh": "门户可浏览；RTK/后处理/下载等服务可能需注册，请遵守上游条款。"
+    },
+    {
+      "name": "SDO-GSFC",
+      "url": "https://sdo.gsfc.nasa.gov/",
+      "desc_zh": "NASA SDO：太阳动力学观测台主站（EUV 等日面驱动）",
+      "analysis_zh": "Solar Dynamics Observatory 官方门户，提供大气成像仪等日面 EUV/磁图产品入口，是电离层/热层日侧驱动的上游太阳观测源。站点曾提示存储故障时改走 Data Access；科研请优先用 JSOC 等正式归档。与 SOHO、SWPC 产品互补，偏成像而非粒子/太阳风时序。收录前已 HTTP 核验。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "太阳观测",
+      "markers": [
+        "routine-2026-09-24p"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924p",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NASA SDO：太阳动力学观测台主站（EUV 等日面驱动）",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；科学数据下载请遵守 NASA/JSOC 条款与引用要求。"
+    },
+    {
+      "name": "SOHO-NASA",
+      "url": "https://sohowww.nascom.nasa.gov/",
+      "desc_zh": "NASA/ESA SOHO：日冕与太阳风成像/档案门户",
+      "analysis_zh": "Solar and Heliospheric Observatory 主站，含 gallery、data/archive 与任务状态。LASCO 等日冕观测常用于 CME 预警，与 GNSS 电离层暴分析的上游空间天气相关。长期任务档案成熟；具体数据级产品请跟 archive 指引。与 SDO 成像互补。收录前已 HTTP 核验页面可访问。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "太阳观测",
+      "markers": [
+        "routine-2026-09-24p"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924p",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NASA/ESA SOHO：日冕与太阳风成像/档案门户",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；档案下载与引用请遵守上游条款。"
+    },
+    {
+      "name": "CCMC-DONKI",
+      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/",
+      "desc_zh": "CCMC DONKI：空间天气事件通知与知识库",
+      "analysis_zh": "Community Coordinated Modeling Center 的 DONKI（Database Of Notifications, Knowledge, Information），检索 CME、耀斑、高能粒子等事件与通知归档。便于把 GNSS 电离层扰动时段对齐到上游太阳/行星际事件。公开检索为主；模型运行另见 CCMC。收录前已 HTTP 核验。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "空间天气事件",
+      "markers": [
+        "routine-2026-09-24p"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924p",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "CCMC DONKI：空间天气事件通知与知识库",
+      "registration": "open",
+      "registration_zh": "门户公开检索；登录功能可选；请遵守 CCMC 使用与引用要求。"
+    },
+    {
+      "name": "Helioviewer",
+      "url": "https://helioviewer.org/",
+      "desc_zh": "Helioviewer：太阳/日球层多源影像可视化与截图/电影",
+      "analysis_zh": "开源取向的太阳影像浏览器，聚合 SDO/SOHO 等多源层，支持截图、电影与外链科学数据下载请求。适合快速目视对齐耀斑/日冕结构到 GNSS 扰动窗口，而非替代正式科学归档。与 DONKI 事件库、SWPC 产品互补。收录前已 HTTP 核验主站可访问。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "太阳可视化",
+      "markers": [
+        "routine-2026-09-24p"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924p",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "Helioviewer：太阳/日球层多源影像可视化与截图/电影",
+      "registration": "open",
+      "registration_zh": "门户公开使用；外链科学数据请遵守各任务归档条款。"
+    },
+    {
+      "name": "Kyoto-AE-Realtime",
+      "url": "https://wdc.kugi.kyoto-u.ac.jp/ae_realtime/index.html",
+      "desc_zh": "京都大学 WDC：实时/Quicklook AE 指数",
+      "analysis_zh": "京都 WDC 实时（Quicklook）AE 指数页，监测极光区地磁活动；注明非商业用途，2024 年底起数字值亦入仓可供科研。与已收录 Dst/Kp 页互补，偏亚暴时间尺度，常作 GNSS 高纬电离层扰动背景。最终定标请用正式产品。收录前已 HTTP 核验；遵守 WDC 声明。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "AE指数",
+      "markers": [
+        "routine-2026-09-24p"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924p",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "京都大学 WDC：实时/Quicklook AE 指数",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；产品下载与引用请遵守上游非商业/科研条款。"
+    },
+    {
+      "name": "SWPC-Real-Time-Solar-Wind",
+      "url": "https://www.swpc.noaa.gov/products/real-time-solar-wind",
+      "desc_zh": "NOAA SWPC：综合实时太阳风产品（非仅 ACE）",
+      "analysis_zh": "SWPC Real-Time Solar Wind 产品页，汇聚多源实时太阳风监测，说明中关联 GPS 等系统影响。与已收录 ACE Real-Time Solar Wind 页互补：本页为综合实时入口，ACE 页偏单星。历史分析请改用 OMNI 等。收录前已 HTTP 核验（现多落在 spaceweather.gov）。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "太阳风实时",
+      "markers": [
+        "routine-2026-09-24p"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924p",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NOAA SWPC：综合实时太阳风产品（非仅 ACE）",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；请遵守 NOAA/SWPC 数据使用与引用要求。"
+    },
+    {
+      "name": "SWPC-GOES-Proton-Flux",
+      "url": "https://www.swpc.noaa.gov/products/goes-proton-flux",
+      "desc_zh": "NOAA SWPC：GOES 质子通量产品",
+      "analysis_zh": "SWPC GOES Proton Flux 产品页，监测太阳高能质子事件（SPE）。质子暴可影响极区 HF/GNSS 与卫星单粒子效应，是电离层/空间天气分析中与 X 射线耀斑、太阳风并列的上游输入。与已收录 GOES X-ray、NGDC GOES 归档互补，偏实时通量产品。收录前已 HTTP 核验。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "GOES质子",
+      "markers": [
+        "routine-2026-09-24p"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924p",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NOAA SWPC：GOES 质子通量产品",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；请遵守 NOAA/SWPC 数据使用与引用要求。"
+    },
+    {
+      "name": "CDDIS-Orbit-Clock-Products",
+      "url": "https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/orbit_and_clock_products.html",
+      "desc_zh": "NASA CDDIS：GNSS 轨道与钟差产品说明页",
+      "analysis_zh": "CDDIS 对 IGS 等精密轨道（SP3）与钟差（CLK）产品的说明入口；站点提示已向 earthdata.nasa.gov 迁移。与已收录 CDDIS 大气/IONEX/高采样页互补，本页专指轨道钟差派生产品文档。下载现多走 Earthdata；需遵守 NASA 账号与引用条款。收录前已 HTTP 核验页面可达。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "orbit-clock",
+      "subcategory": "产品门户",
+      "markers": [
+        "routine-2026-09-24p"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924p",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NASA CDDIS：GNSS 轨道与钟差产品说明页",
+      "registration": "mixed",
+      "registration_zh": "说明页公开；实际下载多经 Earthdata，请遵守上游条款。"
     }
   ],
   "provenance_counts": {
-    "official": 289,
+    "official": 298,
     "academic_lab": 336,
-    "personal_community": 315
+    "personal_community": 320
   },
   "updated": "2026-09-24"
 }
