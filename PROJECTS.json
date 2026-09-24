@@ -17673,7 +17673,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
+      "provenance": "official",
       "one_liner_zh": "nmea_navsat_driver：ROS NMEA→NavSatFix 通用驱动"
     },
     {
@@ -18522,9 +18522,9 @@
     }
   ],
   "provenance_counts": {
-    "official": 288,
+    "official": 289,
     "academic_lab": 336,
-    "personal_community": 316
+    "personal_community": 315
   },
   "updated": "2026-09-24"
 }

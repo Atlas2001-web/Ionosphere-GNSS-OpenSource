@@ -1,0 +1,98 @@
+[
+  {
+    "name": "gnsscusdr/CU-SDR-Collection",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "User gnsscusdr; company/blog/bio null — CU name alone insufficient"
+  },
+  {
+    "name": "SkydelSolutions/NeQuick2-MLF2",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "Safran Trusted 4D Canada Inc. vendor org"
+  },
+  {
+    "name": "AgOpenGPS-Official/AgOpenNtripCaster",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "DIY AgOpenGPS community org; not univ/lab"
+  },
+  {
+    "name": "oscimp/gnss-sdr-1pps",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "OscillatorIMP FOSS org; no univ/lab company"
+  },
+  {
+    "name": "PointOneNav/polaris",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "Point One Navigation commercial vendor"
+  },
+  {
+    "name": "seafloor-geodesy/gnatss",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "Seafloor Geodesy community org; not specific univ/lab"
+  },
+  {
+    "name": "CS-SI/Orekit",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "CS GROUP commercial aerospace vendor; vendor keep"
+  },
+  {
+    "name": "MapIV",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "MAP IV Inc. (map4.jp); company vendor"
+  },
+  {
+    "name": "rokubun",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "Rokubun commercial GNSS company Barcelona"
+  },
+  {
+    "name": "go-gnss",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "Community Go GNSS FOSS org; no univ/lab"
+  },
+  {
+    "name": "PyGnssLab",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "community software-lab branding (batch21–23)"
+  },
+  {
+    "name": "barbeau",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "Sean Barbeau; company=Google; personal user"
+  },
+  {
+    "name": "Erensu/ignav",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "loc=WHU only (batch6/7/21–24) — not re-opened"
+  },
+  {
+    "name": "pjalesSSTL/GNSSRMERRByS",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "SSTL vendor (batch21/24)"
+  },
+  {
+    "name": "swri-robotics",
+    "provenance": "personal_community",
+    "action": "KEEP",
+    "reason": "prior vendor-adjacent keep (batch22/24)"
+  },
+  {
+    "name": "ros-drivers/nmea_navsat_driver",
+    "provenance": "official",
+    "action": "FLIP",
+    "reason": "ROS device drivers SIG; sibling nmea-msgs already official"
+  }
+]

@@ -735,12 +735,12 @@ Aceinna OpenIMU 的 Python 驱动，支持数据记录与 WebSocket 服务，Apa
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [nmea_navsat_driver](https://github.com/ros-drivers/nmea_navsat_driver) | nmea_navsat_driver：ROS NMEA→NavSatFix 通用驱动 | Python | 287 | 🏷️ 个人社区 |
+| [nmea_navsat_driver](https://github.com/ros-drivers/nmea_navsat_driver) | nmea_navsat_driver：ROS NMEA→NavSatFix 通用驱动 | Python | 287 | 🏷️ 官方 |
 
 ### 详细说明
 
 #### [nmea_navsat_driver](https://github.com/ros-drivers/nmea_navsat_driver)  
-*🏷️ 个人社区*
+*🏷️ 官方*
 
 语言：Python · 许可：BSD-3-Clause · 星标约：287 · 宿主：github
 
