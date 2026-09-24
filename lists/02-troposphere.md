@@ -1,5 +1,5 @@
 # 对流层 / Troposphere
-> **40** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **41** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
@@ -448,3 +448,18 @@ gemini3d 维护的 NRL Horizontal Wind Model 2014 可构建库，用 CMake 生�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 介绍 IGS 对流层联合产品、分析中心角色及会议活动，是查找 ZTD、梯度与相关试点的入口页。页面本身不托管大容量产品文件，下载通常走 CDDIS/IGN 等数据中心。对流层产品与电离层/轨道产品解耦，引用时需核对产品版本与时延。收录前已用 HTTP 核验可访问；使用请遵守 IGS 与上游条款。
+
+## GNSS-VOD
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [gnssvod](https://github.com/vincenthumphrey/gnssvod) | 从 GNSS 接收机输出估计植被光学厚度（VOD） | Python | 7 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [gnssvod](https://github.com/vincenthumphrey/gnssvod)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：7 · 宿主：github
+
+读取 GNSS 接收机输出并分析植被光学厚度（VOD）的 Python 工具，MIT 许可。属 GNSS 反射/衰减遥感旁支，与测地定位互补。星数不高但许可证清晰、主题明确。结果依赖天线环境与预处理；不替代专用 GNSS-IR 套件如 gnssrefl。适合生态/水文遥感试验。

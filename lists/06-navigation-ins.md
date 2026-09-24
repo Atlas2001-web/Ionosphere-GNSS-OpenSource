@@ -1,5 +1,5 @@
 # 导航 / Navigation & INS
-> **64** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **67** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 
@@ -654,3 +654,41 @@ ROS 包用于连接 NTRIP caster、接收 RTCM，并服务于 u-blox ZED-F9P 一
 语言：C++ · 许可：BSD-3-Clause · 星标约：52 · 宿主：github
 
 亚琛工大 IRT 的 gnssFGO（BSD-3-Clause，ROS 2），以连续时间轨迹与因子图融合松/紧耦合 GNSS、激光/视觉里程计等，配套数据集与 Docker。原 rwth-irt 仓已归档，维护迁至本地址。适合车载多传感器研究。依赖 ROS 2 与大量子模块，工程门槛高于纯 GNSS PPP 工具。
+
+## ROS驱动
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [novatel_gps_driver](https://github.com/swri-robotics/novatel_gps_driver) | SWRI 社区 ROS 驱动：NovAtel GPS/GNSS 接收机 | C++ | 175 | 🏷️ 个人社区 |
+| [novatel_oem7_driver](https://github.com/novatel/novatel_oem7_driver) | NovAtel 官方 ROS 驱动：OEM7 GNSS/SPAN 接收机 | C++ | 123 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [novatel_gps_driver](https://github.com/swri-robotics/novatel_gps_driver)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：BSD-3-Clause · 星标约：175 · 宿主：github
+
+Southwest Research Institute 维护的 NovAtel GPS/GNSS ROS 驱动，BSD-3-Clause，在移动机器人与自动驾驶栈中使用较广。偏消息解析与话题发布，不替代 OEM7 官方新驱动的全部能力。串口/以太网连接与最佳实践见仓库文档。适合 ROS1 时代工程对照；新项目可并行评估官方 OEM7 驱动。
+
+#### [novatel_oem7_driver](https://github.com/novatel/novatel_oem7_driver)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：MIT · 星标约：123 · 宿主：github
+
+Hexagon/NovAtel 维护的 OEM7 系列 GNSS/SPAN 官方 ROS 驱动，MIT 许可，支持定位、原始观测与惯导相关话题发布。面向车载/机器人集成，而非测地后处理套件。消息定义与固件版本需匹配；多天线/SPAN 配置依赖硬件与校准。与社区旧版 novatel_gps_driver 并存时注意选型。收录前已核验仓库可访问。
+
+## ROS2驱动
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [swiftnav-ros2](https://github.com/swift-nav/swiftnav-ros2) | Swift Navigation ROS 2 SBP 驱动 | C++ | 15 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [swiftnav-ros2](https://github.com/swift-nav/swiftnav-ros2)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：MIT · 星标约：15 · 宿主：github
+
+Swift Navigation 官方 ROS 2 驱动，通过 Swift Binary Protocol（SBP）接入其 GNSS/INS 接收机，MIT 许可。与 libsbp、piksi_tools 等同栈，面向机器人实时定位话题。固件与 SBP 版本需匹配；不覆盖非 Swift 品牌接收机。适合 ROS 2 车载/机器人集成评估。

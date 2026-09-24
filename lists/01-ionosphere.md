@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> **245** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **249** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -2198,3 +2198,63 @@ space-physics 维护的地磁指数读写工具，常为电离层/空间天气�
 语言：Python · 许可：GPL-3.0 · 星标约：12 · 宿主：github
 
 给定视线、地理位置与历元，结合 IGRF 地磁场与 IONEX TEC 图估计电离层法拉第旋转（FR），GPL-3.0。服务射电天文与极化校正，也与 GNSS 电离层产品消费相关。依赖外部 IONEX/IGRF 文件质量；输出是 FR 估计而非 STEC 重建。适合电离层传播旁路分析，而非 PPP 改正生成。
+
+## 空间数据接口
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [pysatNASA](https://github.com/pysat/pysatNASA) | pysat 的 NASA 空间科学仪器数据接口扩展 | Python | 25 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [pysatNASA](https://github.com/pysat/pysatNASA)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：BSD-3-Clause · 星标约：25 · 宿主：github
+
+为 pysat 框架提供 NASA 相关仪器/任务数据支持的扩展包，BSD-3-Clause。便于把空间天气与高层大气观测拉进统一分析工作流，可与 GNSS 电离层研究对照。依赖 pysat 核心与上游数据政策；并非 GNSS 解算库。适合需要多源空间数据对齐的科研脚本。
+
+## 闪烁与TEC
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SWS-BOM-Satellite](https://www.sws.bom.gov.au/Satellite) | 澳大利亚 SWS 卫星页：闪烁、TEC 与空间天气卫星产品 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [SWS-BOM-Satellite](https://www.sws.bom.gov.au/Satellite)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+澳大利亚气象局太空天气服务（SWS）卫星专题页，提供电离层闪烁实况/事件、TEC 图以及相关卫星空间天气产品入口。对 GNSS 可用性与赤道/中纬闪烁监测有直接参考价值。页面为产品导航而非原始 ISMR 全量归档。收录前已 HTTP 核验；引用与再分发请遵守 BOM/SWS 条款。
+
+## 地磁指数
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [ISGI](https://isgi.unistra.fr/) | 国际地磁指数服务（ISGI）：Kp/Dst/aa 等权威入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [ISGI](https://isgi.unistra.fr/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+International Service of Geomagnetic Indices（ISGI）门户，汇集 IAGA 认可的地磁指数与事件（如 Kp、Dst、aa、am 等）。GNSS 电离层扰动与空间天气研究常用其指数作背景。页面提供指数说明与获取路径，具体文件格式见各产品页。收录前已 HTTP 核验；请遵守 ISGI/观测台引用要求。
+
+## 空间天气模型
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [CCMC-Home](https://ccmc.gsfc.nasa.gov/) | NASA CCMC 主页：空间天气模型目录与运行服务入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [CCMC-Home](https://ccmc.gsfc.nasa.gov/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Community Coordinated Modeling Center 主门户，汇总模型目录、即时/申请运行与可视化等服务。已收录的 IRI/SAMI3 等 CCMC 模型页可由此导航发现。偏模型与仿真编排，不直接提供 GNSS 观测下载。收录前已 HTTP 核验；运行申请与输出使用请遵守 CCMC 政策。

@@ -1,5 +1,5 @@
 # 精密定位 / Precise Positioning
-> **100** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **101** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
@@ -1096,3 +1096,18 @@ nav-solutions 框架下的实时 PoC：以 U-Blox 原始/手动模式作测量�
 语言：Python · 许可：MIT · 星标约：6 · 宿主：github
 
 博士课题开源：将机器学习用于 GNSS 观测可靠性与多路径抑制，并含仿真与加权实验代码，MIT 许可。星数不多但补齐多路径/AI 交叉这一薄点。结果依赖训练数据与场景，不能直接当作通用测地产品。适合算法对照与复现实验；部署需自备观测与标签管线。
+
+## PPK教程
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [GNSS-Correction-RTKLIB](https://github.com/bpurinton/GNSS-Correction-RTKLIB) | 差分 GNSS 采集与 RTKLIB PPK 后处理教程及批处理脚本 | Python | 24 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [GNSS-Correction-RTKLIB](https://github.com/bpurinton/GNSS-Correction-RTKLIB)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：GPL-3.0 · 星标约：24 · 宿主：github
+
+面向野外 dGPS/PPK 的开源手册与示例：Trimble 采集说明、RTKLIB 差分解算步骤，以及 Python 批处理脚本（可输出 CSV/SHP），GPL-3.0。偏教学与可复现工作流，而非新型解算引擎。配置文件与路径需按本机 RTKLIB 安装调整。适合入门 PPK 与批量点位改正。

@@ -5,18 +5,18 @@
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
   "generated": "2026-09-24",
-  "project_count": 870,
+  "project_count": 884,
   "counts_by_category": {
-    "ionosphere": 245,
-    "troposphere": 40,
+    "ionosphere": 249,
+    "troposphere": 41,
     "gnss-data": 130,
-    "gnss-positioning": 100,
+    "gnss-positioning": 101,
     "orbit-clock": 20,
-    "navigation-ins": 64,
-    "gnss-sdr": 66,
+    "navigation-ins": 67,
+    "gnss-sdr": 67,
     "mobile-apps": 24,
-    "tools-learning": 53,
-    "gnss-datasets": 128
+    "tools-learning": 55,
+    "gnss-datasets": 130
   },
   "projects": [
     {
@@ -17045,12 +17045,306 @@
       "one_liner_zh": "NOAA/NCEI 世界磁场模型（WMM）官方门户",
       "registration": "open",
       "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+    },
+    {
+      "name": "novatel_oem7_driver",
+      "url": "https://github.com/novatel/novatel_oem7_driver",
+      "desc_zh": "NovAtel 官方 ROS 驱动：OEM7 GNSS/SPAN 接收机",
+      "analysis_zh": "Hexagon/NovAtel 维护的 OEM7 系列 GNSS/SPAN 官方 ROS 驱动，MIT 许可，支持定位、原始观测与惯导相关话题发布。面向车载/机器人集成，而非测地后处理套件。消息定义与固件版本需匹配；多天线/SPAN 配置依赖硬件与校准。与社区旧版 novatel_gps_driver 并存时注意选型。收录前已核验仓库可访问。",
+      "language": "C++",
+      "license": "MIT",
+      "category": "navigation-ins",
+      "subcategory": "ROS驱动",
+      "markers": [
+        "routine-2026-09-24k"
+      ],
+      "stars_approx": 123,
+      "source": "routine-finds-20260924k",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "NovAtel 官方 ROS 驱动：OEM7 GNSS/SPAN 接收机"
+    },
+    {
+      "name": "novatel_gps_driver",
+      "url": "https://github.com/swri-robotics/novatel_gps_driver",
+      "desc_zh": "SWRI 社区 ROS 驱动：NovAtel GPS/GNSS 接收机",
+      "analysis_zh": "Southwest Research Institute 维护的 NovAtel GPS/GNSS ROS 驱动，BSD-3-Clause，在移动机器人与自动驾驶栈中使用较广。偏消息解析与话题发布，不替代 OEM7 官方新驱动的全部能力。串口/以太网连接与最佳实践见仓库文档。适合 ROS1 时代工程对照；新项目可并行评估官方 OEM7 驱动。",
+      "language": "C++",
+      "license": "BSD-3-Clause",
+      "category": "navigation-ins",
+      "subcategory": "ROS驱动",
+      "markers": [
+        "routine-2026-09-24k"
+      ],
+      "stars_approx": 175,
+      "source": "routine-finds-20260924k",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "SWRI 社区 ROS 驱动：NovAtel GPS/GNSS 接收机"
+    },
+    {
+      "name": "max2771_fx2lp",
+      "url": "https://github.com/jmfriedt/max2771_fx2lp",
+      "desc_zh": "多通道 MAX2771 GNSS 射频前端 + FX2LP 采集",
+      "analysis_zh": "基于 Maxim MAX2771 的多星座 GNSS 射频前端与 Cypress FX2LP USB 采集方案，GPL-3.0。面向软件接收机实验，可输出基带采样供 GNSS-SDR 等处理。硬件原理图/固件以仓库为准，焊接与时钟质量影响噪声底。适合 SDR 教学与前端联调，不提供完整 PVT 产品链。",
+      "language": "C",
+      "license": "GPL-3.0",
+      "category": "gnss-sdr",
+      "subcategory": "射频前端",
+      "markers": [
+        "routine-2026-09-24k"
+      ],
+      "stars_approx": 65,
+      "source": "routine-finds-20260924k",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "多通道 MAX2771 GNSS 射频前端 + FX2LP 采集"
+    },
+    {
+      "name": "GNSS-Correction-RTKLIB",
+      "url": "https://github.com/bpurinton/GNSS-Correction-RTKLIB",
+      "desc_zh": "差分 GNSS 采集与 RTKLIB PPK 后处理教程及批处理脚本",
+      "analysis_zh": "面向野外 dGPS/PPK 的开源手册与示例：Trimble 采集说明、RTKLIB 差分解算步骤，以及 Python 批处理脚本（可输出 CSV/SHP），GPL-3.0。偏教学与可复现工作流，而非新型解算引擎。配置文件与路径需按本机 RTKLIB 安装调整。适合入门 PPK 与批量点位改正。",
+      "language": "Python",
+      "license": "GPL-3.0",
+      "category": "gnss-positioning",
+      "subcategory": "PPK教程",
+      "markers": [
+        "routine-2026-09-24k"
+      ],
+      "stars_approx": 24,
+      "source": "routine-finds-20260924k",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "差分 GNSS 采集与 RTKLIB PPK 后处理教程及批处理脚本"
+    },
+    {
+      "name": "pysatNASA",
+      "url": "https://github.com/pysat/pysatNASA",
+      "desc_zh": "pysat 的 NASA 空间科学仪器数据接口扩展",
+      "analysis_zh": "为 pysat 框架提供 NASA 相关仪器/任务数据支持的扩展包，BSD-3-Clause。便于把空间天气与高层大气观测拉进统一分析工作流，可与 GNSS 电离层研究对照。依赖 pysat 核心与上游数据政策；并非 GNSS 解算库。适合需要多源空间数据对齐的科研脚本。",
+      "language": "Python",
+      "license": "BSD-3-Clause",
+      "category": "ionosphere",
+      "subcategory": "空间数据接口",
+      "markers": [
+        "routine-2026-09-24k"
+      ],
+      "stars_approx": 25,
+      "source": "routine-finds-20260924k",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "pysat 的 NASA 空间科学仪器数据接口扩展"
+    },
+    {
+      "name": "swiftnav-ros2",
+      "url": "https://github.com/swift-nav/swiftnav-ros2",
+      "desc_zh": "Swift Navigation ROS 2 SBP 驱动",
+      "analysis_zh": "Swift Navigation 官方 ROS 2 驱动，通过 Swift Binary Protocol（SBP）接入其 GNSS/INS 接收机，MIT 许可。与 libsbp、piksi_tools 等同栈，面向机器人实时定位话题。固件与 SBP 版本需匹配；不覆盖非 Swift 品牌接收机。适合 ROS 2 车载/机器人集成评估。",
+      "language": "C++",
+      "license": "MIT",
+      "category": "navigation-ins",
+      "subcategory": "ROS2驱动",
+      "markers": [
+        "routine-2026-09-24k"
+      ],
+      "stars_approx": 15,
+      "source": "routine-finds-20260924k",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "Swift Navigation ROS 2 SBP 驱动"
+    },
+    {
+      "name": "gnssvod",
+      "url": "https://github.com/vincenthumphrey/gnssvod",
+      "desc_zh": "从 GNSS 接收机输出估计植被光学厚度（VOD）",
+      "analysis_zh": "读取 GNSS 接收机输出并分析植被光学厚度（VOD）的 Python 工具，MIT 许可。属 GNSS 反射/衰减遥感旁支，与测地定位互补。星数不高但许可证清晰、主题明确。结果依赖天线环境与预处理；不替代专用 GNSS-IR 套件如 gnssrefl。适合生态/水文遥感试验。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "troposphere",
+      "subcategory": "GNSS-VOD",
+      "markers": [
+        "routine-2026-09-24k"
+      ],
+      "stars_approx": 7,
+      "source": "routine-finds-20260924k",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "从 GNSS 接收机输出估计植被光学厚度（VOD）"
+    },
+    {
+      "name": "SWS-BOM-Satellite",
+      "url": "https://www.sws.bom.gov.au/Satellite",
+      "desc_zh": "澳大利亚 SWS 卫星页：闪烁、TEC 与空间天气卫星产品",
+      "analysis_zh": "澳大利亚气象局太空天气服务（SWS）卫星专题页，提供电离层闪烁实况/事件、TEC 图以及相关卫星空间天气产品入口。对 GNSS 可用性与赤道/中纬闪烁监测有直接参考价值。页面为产品导航而非原始 ISMR 全量归档。收录前已 HTTP 核验；引用与再分发请遵守 BOM/SWS 条款。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "闪烁与TEC",
+      "markers": [
+        "routine-2026-09-24k"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924k",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "澳大利亚 SWS 卫星页：闪烁、TEC 与空间天气卫星产品",
+      "registration": "open",
+      "registration_zh": "公开浏览；部分历史或专用产品可能需按 SWS 说明获取。"
+    },
+    {
+      "name": "ISGI",
+      "url": "https://isgi.unistra.fr/",
+      "desc_zh": "国际地磁指数服务（ISGI）：Kp/Dst/aa 等权威入口",
+      "analysis_zh": "International Service of Geomagnetic Indices（ISGI）门户，汇集 IAGA 认可的地磁指数与事件（如 Kp、Dst、aa、am 等）。GNSS 电离层扰动与空间天气研究常用其指数作背景。页面提供指数说明与获取路径，具体文件格式见各产品页。收录前已 HTTP 核验；请遵守 ISGI/观测台引用要求。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "地磁指数",
+      "markers": [
+        "routine-2026-09-24k"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924k",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "国际地磁指数服务（ISGI）：Kp/Dst/aa 等权威入口",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+    },
+    {
+      "name": "NASA-CDAWeb",
+      "url": "https://cdaweb.gsfc.nasa.gov/",
+      "desc_zh": "NASA CDAWeb：多任务空间物理 CDF/数据查询门户",
+      "analysis_zh": "Coordinated Data Analysis Web（CDAWeb）提供多航天任务空间物理数据的检索、绘图与下载，格式以 CDF 等为主。可用于把太阳风/磁层观测与 GNSS 电离层响应对照。非 GNSS 专用站，但属空间天气常用上游。收录前已 HTTP 核验；下载请遵守 NASA SPDF 数据政策。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "空间物理数据",
+      "markers": [
+        "routine-2026-09-24k"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924k",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NASA CDAWeb：多任务空间物理 CDF/数据查询门户",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+    },
+    {
+      "name": "NASA-SSCWeb",
+      "url": "https://sscweb.gsfc.nasa.gov/",
+      "desc_zh": "NASA SSCWeb：航天器轨道/星下点与坐标服务",
+      "analysis_zh": "Satellite Situation Center Web（SSCWeb）提供航天器轨道、星下点与相关坐标查询，便于空间任务与地面 GNSS/电离层观测的几何对照。与 CDAWeb/SPDF 同属 NASA 空间数据体系。收录前已 HTTP 核验；查询结果用于科研时请注明服务与历元。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "tools-learning",
+      "subcategory": "航天器态势",
+      "markers": [
+        "routine-2026-09-24k"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924k",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NASA SSCWeb：航天器轨道/星下点与坐标服务",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+    },
+    {
+      "name": "UKSSDC",
+      "url": "https://www.ukssdc.ac.uk/",
+      "desc_zh": "英国太阳系数据中心：日地物理与 STP 世界数据中心入口",
+      "analysis_zh": "UK Solar System Data Centre（UKSSDC）兼世界日地物理数据中心职能，归档太阳、电离层与相关 STP 数据。对电离层历史序列与太阳活动背景有价值。部分数据需注册后检索。收录前已 HTTP 核验；使用请遵守 STFC/RAL 与 WDC 条款。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "gnss-datasets",
+      "subcategory": "日地物理归档",
+      "markers": [
+        "routine-2026-09-24k"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924k",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "英国太阳系数据中心：日地物理与 STP 世界数据中心入口",
+      "registration": "open",
+      "registration_zh": "站点公开；部分 WDC 数据检索/下载需注册。"
+    },
+    {
+      "name": "SWPC-Services",
+      "url": "https://services.swpc.noaa.gov/",
+      "desc_zh": "NOAA SWPC 机器可读服务目录（JSON/NetCDF/产品）",
+      "analysis_zh": "SWPC 对外提供的服务根目录，索引 experimental、json、netcdf、products 等机器可读空间天气产品路径。便于脚本拉取指数、通量与相关产品，与已收录的 GloTEC 等具体产品页互补。目录本身无文档正文，具体端点以子路径为准。收录前已 HTTP 核验；高频抓取请遵守 NOAA 使用政策。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "tools-learning",
+      "subcategory": "空间天气API",
+      "markers": [
+        "routine-2026-09-24k"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924k",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NOAA SWPC 机器可读服务目录（JSON/NetCDF/产品）",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
+    },
+    {
+      "name": "CCMC-Home",
+      "url": "https://ccmc.gsfc.nasa.gov/",
+      "desc_zh": "NASA CCMC 主页：空间天气模型目录与运行服务入口",
+      "analysis_zh": "Community Coordinated Modeling Center 主门户，汇总模型目录、即时/申请运行与可视化等服务。已收录的 IRI/SAMI3 等 CCMC 模型页可由此导航发现。偏模型与仿真编排，不直接提供 GNSS 观测下载。收录前已 HTTP 核验；运行申请与输出使用请遵守 CCMC 政策。",
+      "language": "data-portal",
+      "license": "portal-terms",
+      "category": "ionosphere",
+      "subcategory": "空间天气模型",
+      "markers": [
+        "routine-2026-09-24k"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924k",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "official",
+      "one_liner_zh": "NASA CCMC 主页：空间天气模型目录与运行服务入口",
+      "registration": "open",
+      "registration_zh": "门户公开浏览；产品下载与引用请遵守上游条款。"
     }
   ],
   "provenance_counts": {
-    "official": 251,
+    "official": 258,
     "academic_lab": 316,
-    "personal_community": 303
+    "personal_community": 310
   },
   "updated": "2026-09-24"
 }

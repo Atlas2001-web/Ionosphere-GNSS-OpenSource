@@ -1,5 +1,5 @@
 # GNSS 数据源 / GNSS Datasets
-> **128** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **130** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
@@ -1201,3 +1201,33 @@ EarthScope（原 UNAVCO）整理的 GPS/GNSS 数据访问方法页，对比 Web�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 Toitū Te Whenua LINZ 大地测量业务入口，汇总新西兰大地基准、控制网与相关产品服务说明，可衔接 PositioNZ 等 GNSS 连续站数据。适合查找官方大地成果与服务路径，而非直接批量下 RINEX。与已收录的 PositioNZ FTP 互补：本页偏导航与业务说明。收录前已 HTTP 核验；下载与引用请遵守 LINZ 条款。
+
+## 空间物理数据
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [NASA-CDAWeb](https://cdaweb.gsfc.nasa.gov/) | NASA CDAWeb：多任务空间物理 CDF/数据查询门户 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [NASA-CDAWeb](https://cdaweb.gsfc.nasa.gov/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Coordinated Data Analysis Web（CDAWeb）提供多航天任务空间物理数据的检索、绘图与下载，格式以 CDF 等为主。可用于把太阳风/磁层观测与 GNSS 电离层响应对照。非 GNSS 专用站，但属空间天气常用上游。收录前已 HTTP 核验；下载请遵守 NASA SPDF 数据政策。
+
+## 日地物理归档
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [UKSSDC](https://www.ukssdc.ac.uk/) | 英国太阳系数据中心：日地物理与 STP 世界数据中心入口 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [UKSSDC](https://www.ukssdc.ac.uk/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+UK Solar System Data Centre（UKSSDC）兼世界日地物理数据中心职能，归档太阳、电离层与相关 STP 数据。对电离层历史序列与太阳活动背景有价值。部分数据需注册后检索。收录前已 HTTP 核验；使用请遵守 STFC/RAL 与 WDC 条款。

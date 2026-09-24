@@ -1,5 +1,5 @@
 # 软件接收机与信号 / GNSS-SDR
-> **66** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **67** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。
 
@@ -607,3 +607,18 @@ OreSat 项目 GPS 接收机软件部分，与 oresat-gps-hardware 配套，覆�
 语言：SystemVerilog · 许可：MIT · 星标约：4 · 宿主：github
 
 SystemVerilog 描述的单通道 GPS L1 C/A FPGA 相关器，经 AXI4-Lite 控制，MIT 许可。与 namuru-gps 等同属硬件相关器薄点补齐；星数低但许可证清晰、接口明确。需自备射频前端与 FPGA 工程约束，不提供完整 PVT。适合教学与相关器前端联调，而非现成接收机产品。
+
+## 射频前端
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [max2771_fx2lp](https://github.com/jmfriedt/max2771_fx2lp) | 多通道 MAX2771 GNSS 射频前端 + FX2LP 采集 | C | 65 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [max2771_fx2lp](https://github.com/jmfriedt/max2771_fx2lp)  
+*🏷️ 个人社区*
+
+语言：C · 许可：GPL-3.0 · 星标约：65 · 宿主：github
+
+基于 Maxim MAX2771 的多星座 GNSS 射频前端与 Cypress FX2LP USB 采集方案，GPL-3.0。面向软件接收机实验，可输出基带采样供 GNSS-SDR 等处理。硬件原理图/固件以仓库为准，焊接与时钟质量影响噪声底。适合 SDR 教学与前端联调，不提供完整 PVT 产品链。

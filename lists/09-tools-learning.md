@@ -1,5 +1,5 @@
 # 学习资源与工具 / Tools & Learning
-> **53** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **55** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
@@ -601,3 +601,33 @@ LINZ 关于新西兰大地测量系统的指导页，解释基准、框架与使
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 美国 NCEI 发布的 World Magnetic Model 官方页，提供模型说明、系数与计算入口，支撑磁航向、磁偏角及部分电离层/地磁应用。与已收录的 wmm2020 软件包装互补：本页为权威发布与文档源头。模型有年限与更新周期，工程中勿混用过期系数。收录前已 HTTP 核验；请遵守 NOAA 数据使用说明。
+
+## 航天器态势
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [NASA-SSCWeb](https://sscweb.gsfc.nasa.gov/) | NASA SSCWeb：航天器轨道/星下点与坐标服务 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [NASA-SSCWeb](https://sscweb.gsfc.nasa.gov/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Satellite Situation Center Web（SSCWeb）提供航天器轨道、星下点与相关坐标查询，便于空间任务与地面 GNSS/电离层观测的几何对照。与 CDAWeb/SPDF 同属 NASA 空间数据体系。收录前已 HTTP 核验；查询结果用于科研时请注明服务与历元。
+
+## 空间天气API
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SWPC-Services](https://services.swpc.noaa.gov/) | NOAA SWPC 机器可读服务目录（JSON/NetCDF/产品） | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [SWPC-Services](https://services.swpc.noaa.gov/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+SWPC 对外提供的服务根目录，索引 experimental、json、netcdf、products 等机器可读空间天气产品路径。便于脚本拉取指数、通量与相关产品，与已收录的 GloTEC 等具体产品页互补。目录本身无文档正文，具体端点以子路径为准。收录前已 HTTP 核验；高频抓取请遵守 NOAA 使用政策。

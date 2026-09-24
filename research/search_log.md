@@ -376,3 +376,12 @@
 - Skipped: kass.or.kr (wrong org), MLIT aviation safety mis-hit, archived plover, albatross (generic GP weak GNSS fit), WHU-Smartphone-Dataset no SPDX, micropython-gnssl76l thin, BIPM/SWPC/IMPC/GeoNet near-dups already listed, GAGAN/SDCM/KASS official hosts unreachable from box
 - Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
 
+## Routine pass 2026-09-24k
+
+- Catalog size before: **870**; after merge: **884** (+14)
+- Finds file: `research/routine_finds_20260924k.json`
+- Method: quality dig — NovAtel ROS drivers, MAX2771 SDR frontend, RTKLIB PPK workflow, pysatNASA, swiftnav-ros2, gnssvod; space-weather portals with GNSS relevance (SWS scintillation/TEC, ISGI, CDAWeb/SSCWeb, UKSSDC, SWPC services, CCMC hub); `gh api`+`curl`; dedup vs PROJECTS.json and all `routine_finds_*.json`
+- Avoided: entire 24j set (azarashi/QZQSM/libswiftnav/NavAI/ionFR/gps-fpga/gnsshat/ublox8/ESSP/LINZ/IERS/WMM) and earlier 24h batches
+- Skipped: IonoMoni no SPDX, nrlmsis2.0 archived, LWPC weak GNSS fit, LEOGPS already listed, DIDBase/GIRO/SWPC-GloTEC/CCMC-model near-dups, GOES-proton thin product page, GFZ kp near-dup of kp.gfz-potsdam.de/en
+- Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
+

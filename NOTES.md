@@ -353,3 +353,10 @@
 - 当前条目：**870**
 - 分类计数：{'ionosphere': 245, 'troposphere': 40, 'gnss-data': 130, 'gnss-positioning': 100, 'orbit-clock': 20, 'navigation-ins': 64, 'gnss-sdr': 66, 'mobile-apps': 24, 'tools-learning': 53, 'gnss-datasets': 128}
 - 详见 `research/routine_finds_20260924j.json`
+
+## 例行检索补录（2026-09-24k）
+
+- 新增 **14** 条（novatel/max2771/RTKLIB-PPK/pysatNASA/swiftnav-ros2、SWS闪烁、ISGI/CDAWeb/SSCWeb/UKSSDC/SWPC/CCMC 等）
+- 当前条目：**884**
+- 分类计数：{'ionosphere': 249, 'troposphere': 41, 'gnss-data': 130, 'gnss-positioning': 101, 'orbit-clock': 20, 'navigation-ins': 67, 'gnss-sdr': 67, 'mobile-apps': 24, 'tools-learning': 55, 'gnss-datasets': 130}
+- 详见 `research/routine_finds_20260924k.json`
