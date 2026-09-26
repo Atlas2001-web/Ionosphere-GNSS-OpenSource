@@ -2,6 +2,8 @@
 
 入口：[GitHub sunipkm/digisondeindices](https://github.com/sunipkm/digisondeindices) · [PyPI 2.1.0](https://pypi.org/project/digisondeindices/) · [GIRO DIDBase](https://giro.uml.edu/didbase/) · [Rules of the Road](https://giro.uml.edu/didbase/RulesOfTheRoad.html) · 本机验证 **2026-09-26 05:01–05:07 EDT**（Python 3.13.5）
 
+> **质检复跑通过（2026-09-26 05:40 EDT）**：新建 uv venv（Python 3.13）重装 2.1.0，依次撞出 `No module named 'pytz'` → pandas 3.0.6 下 `output array is read-only`（`io.py` 第 53 行）→ `chunk manager 'dask'`，补齐三个依赖后 pandas 2.3.3、dask 2026.8.0。§3.1 的 ConnectionError URL 与 404 776 B 一致；§3.2 getbest 200 3215 B、三条 WARNING 与首行一致；`demo.py` 输出**逐行一致**（只有耗时不同），curl 核对行与月界 foF2 序列一致。`demo_now.py` 的行为一致：UTC 下 now.2 报 `'NoneType' object has no attribute 'stem'`、purge 后恢复；America/New_York 下三次都是 prediction RuntimeError（数值随当前时刻变化）。`forcedownload=True` 同样崩溃并留下孤儿 `.txt`；Python 3.11 `SyntaxError line 57`、3.12 通过；PyPI 与 master `diff -r` 只差 `p.station`/`a.station`；空集 `.nc` 14222 B。已修正：坑 8 的缺口例子（00:57 实际返回 00:00，改成问 01:00 返回 01:55）。
+>
 > 岗位：按“时间 + URSI 站码”取 Digisonde 标定参数（foF2、MUF(D)、hmF2、B0、TEC、CS…），直接拿到 `xarray.Dataset`。**结论先说：PyPI 2.1.0 原样装上就用不了**：它请求的 `lgdc.uml.edu/common/DIDBGetValues` 已 404，并且漏了两个依赖。本文给出一个不改安装包的运行时补丁（`didb_fix.py`），把请求改写到 `fastchar/getbest`；补丁后的列对齐已和 curl 原始行逐值核对过。
 > fastchar 接口本身（参数名、CS 阈值、站表、SAO 门槛、磁暴个例）见 [giro-ionosonde](./giro-ionosonde.md)，本文不重复。多国测高仪年度批量下载见 [ionosonde-data-downloader](./ionosonde-data-downloader.md)；Kp/Dst 见 [space-weather-indices](./space-weather-indices.md)。
 
@@ -237,7 +239,7 @@ for i in (1, 2, 3):
 5. **当月第二次查询、或 `forcedownload=True`：`AttributeError: 'NoneType' object has no attribute 'stem'`，之后每次都这样** → 缓存 `.nc` 过期后，库重新下 `.txt`，但 `convert_csv` 看到 `.nc` 已存在就直接 `return None`；`None` 进了文件列表，而且 `.txt` 残留，以后 `http_download` 见到它就直接跳过 → 查当月数据或强制刷新前先 `didb_fix.purge(站, 年, 月)`（同时删 `.nc` 和 `.txt`）。
 6. **本地时区在 UTC 以西时，最近几小时报 `does not allow prediction retrieval`**（EDT 下最近 4 h 都算“未来”）→ `web.downloadfile` 用本地时间的 `datetime.today()` 去和 UTC 时刻比 → 用 `TZ=UTC python …` 运行；或者只查 4 h 以前的数据。`tzaware=True` 只管把输入换算成 UTC，救不了这个比较。
 7. **跨月的时间数组：`InvalidIndexError: Reindexing only valid with uniquely valued Index objects`** → 每月请求的 toDate 取下月 1 日 00:00 且包含端点，于是月界那一刻在两个文件里各出现一次 → 按 3.4 [3] 的做法：`web.downloadfile` + `open_mfdataset` + `drop_duplicates('time')`。
-8. **返回的时刻和问的不一样** → `sel(method='nearest')` 没有容差：MHJ45 2022-01-11 有 115 min 缺口，问 00:57 照样返回 01:55 那一条 → 一定要检查返回的 `time`，或者像 [3] 那样自己加 `tolerance`。
+8. **返回的时刻和问的不一样** → `sel(method='nearest')` 没有容差：MHJ45 2022-01-11 在 00:00 与 01:55 之间有 115 min 缺口，问 01:00 照样返回 01:55 那一条（问 00:57 则返回 00:00，因为离它更近；质检复跑实测） → 一定要检查返回的 `time`，或者像 [3] 那样自己加 `tolerance`。
 9. **单个时刻也拉 1 MB+、整月文本** → 按月缓存是设计如此 → 批量时按站按月串行即可，第二次命中缓存不再请求。LGDC 是单台 Tomcat，别并发（[pyirtam](./pyirtam.md) 遇过 429）。
 10. **空数据集被缓存成“永久无数据”** → 过去月份的 `.nc`（空集约 14 KB，大于 1000 B 的有效性阈值）只在“请求时刻晚于文件 mtime”时才刷新，而过去月份永远不满足 → 怀疑数据后来补上了，就 `purge` 掉再拉。
 11. **`PermissionError` / 缓存找不到** → 缓存写死在包目录 → 装进用户自己的 venv。清理就删 `…/site-packages/digisondeindices/data/`。

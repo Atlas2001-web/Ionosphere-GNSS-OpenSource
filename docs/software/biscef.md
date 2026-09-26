@@ -2,6 +2,8 @@
 
 目录：[`PROJECTS.json` → `BiScEF`](../../PROJECTS.json) · 上游 <https://github.com/kartverket/BiScEF> · main **`90e6a2b`**（2026-06-16 09:35 EDT，“Leap seconds correction”）· 无 tag / 无 release / **不在 PyPI**（`pypi.org/pypi/biscef` 404）· **MIT** · ★2 · 本机实测 2026-09-26 04:52–05:03 EDT
 
+> **质检复跑通过（2026-09-26 05:45 EDT）**：用 partial + sparse clone（只取 `Python/`、v1.1 PDF 和 4 个样例 `.nc`，`.git` 321 MB）复核：tip `90e6a2b`，65 个 commit，最早 2023-02-27；137 个 `.nc` 分布在 8 天；PDF 18 页。自写汇总脚本复算 §4 的 4 个样例 + 3 个 Zenodo 文件（`remotezip` 只抽了 3 个，`Data.zip` 868539224 B，363 个条目，其中 NOR `.nc` 69 个）：n、epochs、各星座计数、GPS−UNIX 偏移（−9 / 0）、S4/Phi60/ROTI 的 nan、zero、中位、p99、max，以及 el≥20 的计数全部一致（TRO2 05-11 Phi60>0.3 为 2238，05-10 为 247）。超级块 7 个文件 EOF 地址均等于文件大小；三读取器 0 不一致；NOR 有 34 个数据集没挂 DIMENSION_LIST；(t, SVID) 重复 TRO2 2 条、NYA2 36 条；NYA2 仰角 167.04、方位最大 5899.5。MakeDataPlots：TRO2 出 12 张（7.9 s）、HEL0 出 9 张、QAQ3 rc 1。ISMR 往返：值比较结果一致（56 个完全相同 + 3 个 S4s#≡S4uncors#；UNIXTime −27；Lat/Lon 最大差 0.0099°/0.0314°；8 个 int64→int32；S4s1 零值 15115 = 11673 + 2974 + 468），用时 1.7 s。空输入 rc 1、TOW=`abc` 变成 0（UNIXTime 1673135982）、`KeyError` 均复现。§6 前 5 种损坏文件三读取器的反应也一致。已修正：`-h` 原文里 `--recCode` 没有 `(default: XXXX)`；§5 比较值个数是两对之和；补注 CSV 大小取决于导出格式。未复核：整仓 2.0 GB（没有完整 clone）、PR #4。
+>
 > 岗位：给高纬 GNSS 闪烁监测数据（S4、σφ、谱斜率、ROTI、TEC）定一个**跨机构交换/归档的文件约定**。仓库主体是**格式说明 PDF**，外加 ISMR→BiScEF 转换脚本和画图脚本。冲突时：**格式说明 v1.1 PDF > 本机 `-h` > 本文**。
 
 ## 1. 用途边界
@@ -38,7 +40,7 @@ usage: ismr2BiScEF.py [-h] [--config CONFIG] --recCode RECCODE
                       filename [filename ...]
   --config CONFIG       Filename of configuration file (default: Info.cfg)
   --recCode RECCODE     Receiver code for the receiver that produced the input
-                        data file(s) (default: XXXX)
+                        data file(s)
   --outputPath OUTPUTPATH  Path in which to save the output data file(s) (default: ./)
 NB: This script assumes that the file contains data from one day (or less), in
 chronological order. The output file name will be based on the first timetag
@@ -96,7 +98,7 @@ CANGIL20240511.nc ver=1.1 rx=gil n=12881 ... {G:12881}  GPS(week,tow)-UNIXTime o
 
 **画图脚本**：`MakeDataPlots.py -G --plot_ts_simple --plot_sky` 跑 NORTRO2 出 12 张 PNG，用时 8.1 s；FINHEL0 出 9 张，8.6 s；GRLQAQ3（空文件）退出码 1，`ValueError: min() iterable argument is empty`。
 
-**编码往返（ISMR→BiScEF）**：把 FINHEL0 的 62 个 Septentrio 列按默认 `Varnames` 顺序导出成 ISMR CSV（82601 行，69268138 B），再用 `ismr2BiScEF.py --config Info.cfg --recCode HEL0` 转回来，耗时 1.9 s，得到 9441926 B（gzip）。原文件是 24835596 B，**两者不逐字节一致**（写入器不同、压缩不同，本来就不该指望一致）。按值比较：
+**编码往返（ISMR→BiScEF）**：把 FINHEL0 的 62 个 Septentrio 列按默认 `Varnames` 顺序导出成 ISMR CSV（82601 行，69268138 B），再用 `ismr2BiScEF.py --config Info.cfg --recCode HEL0` 转回来，耗时 1.9 s，得到 9441926 B（gzip；导出 CSV 的数字格式不同，大小也会变：质检复跑用 pandas 默认格式导出的 CSV 是 25055743 B，转回后 9441998 B，按值比较的结果完全相同）。原文件是 24835596 B，**两者不逐字节一致**（写入器不同、压缩不同，本来就不该指望一致）。按值比较：
 
 ```text
 orig vars 65 rt vars 68   only rt ['S4uncors1','S4uncors2','S4uncors3']
@@ -115,7 +117,7 @@ S4s1 rt: zeros 15115 = u<c 11673 + u==c 2974 + 输入 NaN 468（nan_to_num 把 N
 1. **自写 struct 解析 HDF5 超级块**：读签名 `\x89HDF\r\n\x1a\n`，然后按 v0 布局 `<QQQ` 从偏移 24 读 base / free-space / EOF 三个地址。7 个真实文件（4 个样例 + 3 个 Zenodo）全部是 `sbver=0 sizeof_off=8 sizeof_len=8 base=0`，**EOF 地址 = 文件大小**。
 2. **三个互相独立的读取器逐值比较**：h5py（libhdf5）、netCDF4（libnetcdf-C）、pyfive（纯 Python，用 struct+zlib 自己解析 HDF5，不链接 libhdf5）。对每个变量逐元素比较，NaN 位置也要一致：
 
-| 文件 | 变量 | 比较的值个数 | 不一致 |
+| 文件 | 变量 | 比较的值个数（h5py↔netCDF4、h5py↔pyfive 两对合计） | 不一致 |
 | --- | ---: | ---: | ---: |
 | FINHEL020230113 | 65 | 10738130 | 0 |
 | NORNYA220230113 / NORTRO220230113 | 35 / 35 | 2963870 / 3028200 | 0 / 0 |
