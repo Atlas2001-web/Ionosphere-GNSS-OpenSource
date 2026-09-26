@@ -2,7 +2,7 @@
 
 入口：[GitHub space-physics/geomagindices](https://github.com/space-physics/geomagindices) · [PyPI 1.5.1](https://pypi.org/project/geomagindices/) · 替代源 [GFZ Kp API](https://kp.gfz.de/en/data) · 本机验证 **2026-09-26 05:09–05:13 EDT**（CPython 3.13.5 venv）
 
-> **质检复跑通过（2026-09-26 05:58 EDT）**：CPython 3.13.15 venv，pandas 3.0.6 / numpy 2.5.3 / requests 2.34.2。§3.1–3.4、§3.6 输出逐字一致：2015-03-17 返回 2015-04-01 Ap 11 / F10.7 129.05；2024-05 返回 24 / 188.37；smooth 168.42 / 15.0；45 天旧 URL 仍 404（196 B），新 URL 返回 10/95、15/110；2030 那行 73.5/12.2 两列互换；GFZ Ap 271 / Fobs 213.7。NGDC 那步 curl 报 `(9) Server denied you to change to the given directory`。§3.5 的 seed→结果映射换路径后变了，已改为实测结果并注明原因。
+> **质检复跑通过（2026-09-26 05:51–05:56 EDT，提交 `59d7961`）**：CPython 3.13.15 venv，pandas 3.0.6 / numpy 2.5.3 / requests 2.34.2。§3.1–3.4、§3.6 输出逐字一致：2015-03-17 返回 2015-04-01 Ap 11 / F10.7 129.05；2024-05 返回 24 / 188.37；smooth 168.42 / 15.0；45 天旧 URL 仍 404（196 B），新 URL 返回 10/95、15/110；2030 那行 73.5/12.2 两列互换；GFZ Ap 271 / Fobs 213.7。NGDC 那步 curl 报 `(9) Server denied you to change to the given directory`。§3.5 的 seed→结果映射换路径后变了，已改为实测结果并注明原因。
 >
 > 岗位：给模型（[msise00](./msise00.md)、IRI/HWM 类）按时刻自动喂 **Ap、F10.7（可平滑）、Kp**。**结论先说：1.5.1 原样装上能跑、不报错，但给的是错的数。** 3 h Kp/Ap 日值读的是 NGDC FTP 目录，现已下线（550）；库会**静默退回月均**，按“最近的月初”取值，Kp 列直接消失。2024-05-11（Gannon 磁暴，GFZ 定值 Ap **271**）它返回 **Ap 24 / F10.7 188.37**，都是 2024-05 的月均。
 > 指数直连下载和数据状态（def/pre）见 [space-weather-indices](./space-weather-indices.md)；PySPEDAS 一行载 OMNI/Kp 见 [pyspedas](./pyspedas.md)。本文只讲这个库本身和怎么绕开。

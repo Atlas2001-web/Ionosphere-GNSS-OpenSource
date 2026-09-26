@@ -4,7 +4,7 @@
 
 **质检边界：** 仅 CRX→RNX 解压 CLI；**不做** RNX→CRX（见 `rnx2crx`）；V2 CRINEX 可能丢星；写出头 `PGM` 变为 `rs-rinex`，与 GSI 整文件字节不必相同。
 
-> **质检复跑通过（2026-09-26 05:58 EDT）**：坑 4 按实测重写。WTZR 2024/132（GA S3，3849264 B）用 `crx2rnx` 2.7.0 解：`datime parsing` panic，rc=101。改成字母月后 rc=0，C1C 与 GSI 全等。GSI 4.2.0 和 hatanaka 2.8.1 直接可解，143370 行，两者 `cmp` 相同。hatanaka `sample.crx` 的 panic 另有原因：`TIME OF FIRST OBS` 错位。CAS 镜像不可达，环境受限。
+> **质检复跑通过（2026-09-26 05:51–05:56 EDT，提交 `59d7961`）**：坑 4 按实测重写。WTZR 2024/132（GA S3，3849264 B）用 `crx2rnx` 2.7.0 解：`datime parsing` panic，rc=101。改成字母月后 rc=0，C1C 与 GSI 全等。GSI 4.2.0 和 hatanaka 2.8.1 直接可解，143370 行，两者 `cmp` 相同。hatanaka `sample.crx` 的 panic 另有原因：`TIME OF FIRST OBS` 错位。CAS 镜像不可达，环境受限。
 >
 > 岗位：把 Compact RINEX（`.crx` / `.##d` / `.crx.gz`）解成明文 OBS，便于 Rust/现代 CLI 流水线。冲突时：**本机 `crx2rnx -h` / 上游 README > 本文**。  
 > **同名陷阱：** PATH 里的 `crx2rnx` 经常是 [hatanaka](./hatanaka.md) 捆绑的 **GSI RNXCMP** 二进制（旗标 `-f/-s/-d`），**不是**本文 Rust CLI。官方可引用压缩/恢复 → [rnxcmp](./rnxcmp.md)；Python 封装 → [hatanaka](./hatanaka.md)。

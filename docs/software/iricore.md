@@ -2,6 +2,8 @@
 
 目录：[`PROJECTS.json` → `iricore`](../../PROJECTS.json) · 上游 <https://github.com/MIST-Experiment/iricore> · 文档 <https://iricore.readthedocs.io/en/latest> · PyPI **1.9.0**（2024-10-21 06:09 EDT 上传，只有 sdist + macOS arm64 轮子）· master `92c6d8c`（2024-10-21 05:39 EDT；`git describe` = `1.8.1-9-g92c6d8c`，仓里没有 1.9.0 tag）· 许可 **MIT**（© 2022 Vadym Bidula；内含 IRI 官方 Fortran）· 本机实跑 2026-09-26 05:40–05:52 EDT（CPython 3.13.5，venv，GNU Fortran 14.2.0，CMake 3.31.6）
 
+> **质检复跑通过（2026-09-26 05:57–06:02 EDT）**：CPython 3.13.15，iricore 1.9.0，numpy 1.26.4。§3.1–3.4 在 update 前后都逐字复现：65.774 → 63.194 TECU；IRI-2016 更新后 91/91 NaN，vtec 返回 0.0 并发 warning；2026-09-20 给出 40.804；坑 3–6 的报错原样出现。writer 说的两版“逐位一致”只对 Ne/Te 成立，Ti 在 310 km 以上最多差 481 K。原因：`iri2016/` 源码是 IRI-2020 的 2021 年快照，Ti 差别来自 `jf(48)` Tru-2021，已写入 §3.1。
+>
 > 岗位：`pip install` 后一行 Python 拿到 IRI 电子密度剖面、F 层峰值参数，以及**沿视线积分的 vTEC / sTEC**（TECU）。和 [iri2016](./iri2016.md) / [iri2020](./iri2020.md) 的区别：两版 IRI 装在同一个包里；自带 `vtec()`/`stec()`；能用关键字传入实测 foF2/hmF2/F10.7。冲突时：**源码 `iri.py` / `tec.py` / `irioutput.py` 文档串 > 本文**。
 
 ## 1. 它解决什么 / 不做什么
@@ -78,7 +80,8 @@ IRI-2020: height.size=91 edens.max=2.1909e+12 m-3 at height=320 km
    stec(el=30,az=180)=136.700 TECU
 ```
 
-- 两版 IRI 在默认 `jf` 下输出完全一样。本机又试了 3 个时间地点（2020-06-01 12 UT −10°/−50°、2015-01-01 00 UT 60°/20°），`max|edens16−edens20|` 都是 0.0；每个进程只加载一个 `.so` 的结果也一样，所以不是符号冲突。iricore 给两版传的是**同一套 `jf`**（`get_jf('default')`，其中 [38,39] 选 Shubin hmF2），源码里两版 `irifun.for`/`irisub.for` 有几千行差异，但在这组开关下没有体现（为什么没体现本文未深究）
+- 默认 `jf` 下两版的 **Ne 剖面和 Te 完全相同**，所以 NmF2、hmF2、vTEC、sTEC 也相同；但**不是所有输出都相同**。质检复跑对比了全部字段：**Ti 在 310 km 以上 70/91 个高度不同**，300 km 两版都是 1187.5 K，400 km 为 1206.9 / 1298.3 K，1000 km 为 2789.5 / 2308.8 K，最大差 481 K；离子成分差 ≤0.02 个百分点；`oarr` 有 40 多项不同，大多是填充值（如 `oarr[20]`/`[21]` 1083.6/1224.3 → 0，`oarr[54]` −100 → −99）。
+- **原因（源码 + 实测）**：iricore 的 `iri2016/` 目录**其实是 IRI-2020 的早期快照**。`iri2016/irisub.for` 的修订记录停在 `2020.09 01/03/21`，`iri2016/irifun.for` 停在 `2020.09 01/12/22`；`iri2020/` 是 `irisub 2020.21 03/04/24`、`irifun 2020.15 12/04/23`。两个快照读的是同一个 `data/` 目录（ccir/ursi/igrf/mcsat），拿到的 `jf` 也是同一套。2020.10–2020.21 之间的改动包括 Tru-2021 Ti（`jf(48)`）、ROCSAT 漂移、FIRI-2018 D 区（`jf(24)=0` 才用）、COR2 顶部/等离子体层（`jf(29)`）、填充值和 `ig_rz` 数组加大，**都不影响默认开关下的 Ne**。Ti 的差别来自 `jf(48)`：iricore 默认 `jf(48)=1` 选 Tru-2021，旧快照里没有这个开关。把 `jf[47]=0` 后，`version=20` 的 Ti 与 `version=16` 最大只差 0.189 K。逐个翻转 50 个 `jf`（每个开关单独起进程）后，edens 出现差异的只有 `jf(24)`（D 区，最大 1.74e11 m⁻³）、`jf(29)`（顶部，7.4e11）、`jf(30)`（1.75e6）、`jf(46)`（NaN）
 - `oarr[36]`（TEC）不能用：IRI-2016 给 0、IRI-2020 给 −1。TEC 请用 `iricore.vtec()`
 - 136.700/65.774 = 2.08，就是 30° 仰角的倾斜放大系数
 
@@ -201,7 +204,7 @@ stec details keys=['ds', 'edens', 'h', 'lat', 'lon', 'oarr'] npoints=(1000,) IPP
 
 - 包装代码 MIT；IRI Fortran 与系数按 IRI 官方条款（AS IS + 署名，见 [iri-fortran](./iri-fortran.md)）。指数文件来自 CHAIN（`chain-new.chain-project.net/echaim_downloads/`），本机 2026-09-26 可以匿名下载。
 - **实跑**：pip 源码安装；§3.1–3.4 全部输出；`update()` 和自动更新；坑 1–7 的报错都在本机复现过。
-- **未实跑**：`refstec()`（射线追踪）、仓内 `tests/`、`jf` 的 FIRI/NeQuick 顶部等非默认组合、Windows/macOS。为什么两版 IRI 在默认 `jf` 下结果相同，没有逐行比对 Fortran 源码。
+- **未实跑**：`refstec()`（射线追踪）、仓内 `tests/`、`jf` 的 FIRI/NeQuick 顶部等非默认组合、Windows/macOS。两版在默认 `jf` 下 Ne 相同的原因已查明（§3.1：`iri2016/` 其实是 IRI-2020 的 2021 年快照），但没有逐行比对 Fortran 源码。
 - 维护：最后一次提交是 2024-10；**绑定的是 IRI-2016/2020，不是 IRI-2026**。
 
 ## 8. 链接
