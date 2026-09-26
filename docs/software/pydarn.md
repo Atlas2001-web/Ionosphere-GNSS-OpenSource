@@ -2,6 +2,7 @@
 
 目录：上游 <https://github.com/SuperDARN/pydarn> · PyPI **`pydarn` 4.3**（release v4.3 发布于 2026-06-23 17:28 EDT，develop tip `203ad04`）· **LGPL-3.0** · ★38 · 读文件靠姊妹包 **pyDARNio 2.1**（同为 LGPL-3.0）· 本机验证 **2026-09-26 03:05–03:25 EDT**：Python 3.11.16，numpy 2.4.6、matplotlib **3.11.2**、cartopy 0.26.0、aacgmv2 2.7.1，venv 约 430 MB。数据是 **真实观测**：Zenodo 记录 [10.5281/zenodo.7005203](https://doi.org/10.5281/zenodo.7005203)（pyDARN 论文配套数据）里的 PGR 雷达 FITACF 和南半球 MAP 文件。
 
+> **质检复跑通过**（2026-09-26 03:30–03:33 EDT）：新建 3.11 venv（uv 从缓存硬链接安装，目录 360 MB），版本与原文一致：pydarn 4.3、pydarnio 2.1、matplotlib 3.11.2、cartopy 0.26.0、aacgmv2 2.7.1、numpy 2.4.6。`remotezip` 抽出的两个文件 md5 和大小一致。`rd.py`、`mp.py`、`geo.py`、`plot.py` 从本文原样抽出运行，stdout **逐字相同**（1070 条记录、20784 个回波、地面散射 0.361、pot.drop 10.7/28.8/49.9 kV、08:24 UT、175 个矢量、两处经纬度）。RTI 图与 §5 的读图描述一致。坑 1–5 均复现，报错类型和行号一致（fan.py 230/292、rtp.py 419/275；`read_fitacf` 读 MAP 返回 0 条）。v4.3 发布时间 2026-06-23 17:28 EDT、develop tip `203ad04`、LGPL-3.0、★38 均核实。修正：Zenodo 压缩包含 11 个数据文件（原文写 10 个）。数据已删除。
 > 冲突时：**本机 `help(pydarn.RTP.plot_range_time)` 等 docstring > 官方文档 <https://pydarn.readthedocs.io> > 本文**。
 
 ## 1. 它解决什么
@@ -35,7 +36,7 @@ du -sh venv                                            # 430M（cartopy+shapely+
 
 | 来源 | 免账号？ | 本机结果 |
 | --- | --- | --- |
-| Zenodo 7005203 `example_data.zip`（218 MB，含 10 个真实 fitacf/rawacf/grid/map） | 是 | 用 `remotezip` HTTP Range 只抽 2 个文件，**7.1 MB** |
+| Zenodo 7005203 `example_data.zip`（218 MB，含 11 个真实数据文件：6 个 fitacf/fitacf3、2 个 rawacf、1 个 grid2、2 个 map2） | 是 | 用 `remotezip` HTTP Range 只抽 2 个文件，**7.1 MB** |
 | USask 网页 <https://superdarn.usask.ca/data-download>（加拿大雷达 FITACF 3.0） | 网页可用 | `curl` 拿到的是 JS 反爬挑战页，**脚本拉不到**；浏览器手动下 |
 | BAS / USask Globus 镜像、NSSC 镜像 <https://superdarn.nssdc.ac.cn> | 需申请/注册 | 未测 |
 | FRDR（1993–2019 RAWACF，每年一个 DOI） | 是，但文件巨大 | 未测；RAWACF 还要 RST 拟合 |

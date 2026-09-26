@@ -2,6 +2,13 @@
 
 目录：上游 <https://github.com/pignalberi/TITIPy> · 唯一分支 `master` tip **`223ace7`**（2025-02-05 11:14 EST，“User registration”）· 无 release、无 PyPI · ★8 · 作者 A. Pignalberi（INGV，ESA INTENS 项目）· **许可证：GitHub 显示 NOASSERTION，实际 `LICENSE` 是 CC BY-NC-SA 3.0**（署名-非商业-相同方式共享；不是 OSI 开源许可，商用须另行授权）· 本机验证 **2026-09-26 03:05–03:30 EDT**：Python 3.11.16，numpy 2.3.5、matplotlib 3.10.9、basemap 2.0.0、apexpy 2.1.1、cdflib 1.3.14、spacepy 0.7.0、patool 4.0.7；数据 = **Swarm A 2024-05-11（Gannon 磁暴主相次日）真实 L1b LP + L2 TEC**。
 
+> **质检复跑通过（有重要修正）**（2026-09-26 03:31–03:43 EDT）。
+> - 环境：独立 `--depth 1` 克隆 `223ace7`；LICENSE 首行确为 CC BY-NC-SA 3.0 Unported；uv 装出的 cdflib/apexpy/basemap/matplotlib 3.10.9/numpy 2.3.5 等版本与原文一致。
+> - 数据：HTTPS 免登录下载 LP zip 12205184 B（3.6 s）、TEC zip 43093068 B（8 s）。
+> - 补丁与报错：坑 1（`Ne` not found，第 60 行）、坑 2（`close`，第 66 行）逐个复现。关图时不打补丁 (c) 也能完整跑完：4m37s，LP 加上 31 颗 PRN（PRN01 在视场外），出现 `Done`，并生成 run_info。开图后坑 3 复现，打 (c) 后 LP 出 24 张图、共 20 MB。
+> - LP 统计：`lpstat` 各数逐一复现（172776 行、各纬带 RODI 中位数与 p95、最大 RODI 136680 @11:18:14、高度 468–487 km）；`Flags_T_elec` 分布一致，另有 22:71、23:283 两项。
+> - **修正：** 原版 TEC 统计用的是第 28 列 `ROT_mean`，不是 ROTI（第 27 列）。用第 28 列能逐位复现原版的 0.0112/0.2610 等数字，证实了列取错；已换成真正的 ROTI 统计。§4.4 原来“顶部 ROTI 低纬最高、高纬最低”的结论随之反转为随磁纬升高。补丁 (c) 只在出图时需要；边界说明已更新为完整跑完 31 颗 PRN。
+> - 复跑数据用完即删；质检自身峰值占用约 400 MB（venv 为 uv 硬链接）。
 > 冲突时：**仓内 `.py` 源码 > 上游 README > 本文**。本文对源码打了 3 处补丁才跑通（见第 4 节），都标了原因。
 
 ## 1. 它解决什么
@@ -69,7 +76,7 @@ VirES（[viresclient](./viresclient.md)）也能取同样的数据，但**需要
 
 ## 4. 端到端：Swarm A 2024-05-11
 
-### 4.1 必须的 3 个源码补丁（tip `223ace7` 在 2026 年的数据/库上直接跑会崩）
+### 4.1 源码补丁：(a)(b) 必须，(c) 只在出图时需要（tip `223ace7` 在 2026 年的数据和库上直接跑会崩）
 
 ```bash
 cd ~/iono_ops/titipy/TITIPy
@@ -153,21 +160,20 @@ rows 172776 valid Ne 169487 valid RODI 171524 valid Te 104453 valid ROTEI 111986
 max RODI 136680 at 11:18:14 UT lat=-12.91 lon=117.63 QD=-21.56 MLT=18.99
 ```
 
-TEC 输出统计（`tecstat.py`，PRN02–23，丢弃可能截断的 PRN24；列 21 仰角、28 ROTI）：
+TEC 输出统计。以下为质检复跑结果，替换了原版数字：原版脚本把第 28 列 `ROT_mean`（带符号）当成了 ROTI。TEC 输出共 31 列：26 为 ROT，**27 为 ROTI**（恒正），28 为 ROT_mean，29 为 TEC_grad，30 为 mean_TEC；仰角在第 21 列，单位弧度。统计范围与原版相同，取 PRN02–23：
 
 ```text
-PRN files 22 _PRN02 .. _PRN23 rows 318075
-most common dt (s): 1
-elev deg min/max 19.94 89.90; elev<30 frac 0.271
-valid ROTI 317855
-all elev |QDlat|  0-30: n=109181 ROTI median=0.0112 p95=0.2610 TECU/s
-all elev |QDlat| 30-60: n=110937 ROTI median=0.0012 p95=0.1527 TECU/s
-all elev |QDlat| 60-90: n= 97737 ROTI median=0.0028 p95=0.0732 TECU/s
-elev>=30 |QDlat|  0-30: n= 79967 ROTI median=0.0083 p95=0.2279 TECU/s
-elev>=30 |QDlat| 30-60: n= 83495 ROTI median=0.0013 p95=0.1338 TECU/s
-elev>=30 |QDlat| 60-90: n= 68469 ROTI median=0.0024 p95=0.0727 TECU/s
-max ROTI(elev>=30) 1.570 TECU/s PRN11 09:27:10 UT LEO lat=52.16 lon=141.47 QD=46.01 MLT=18.77 el=58.8
+PRN files 22 rows 318075  most common dt (s): 1  elev deg 19.94–89.90, elev<30 frac 0.271  valid ROTI 317855
+all elev |QDlat|  0-30: n=109181 ROTI median=0.0095 p95=0.0570 TECU/s
+all elev |QDlat| 30-60: n=110937 ROTI median=0.0193 p95=0.1268 TECU/s
+all elev |QDlat| 60-90: n= 97737 ROTI median=0.0350 p95=0.1567 TECU/s
+elev>=30 |QDlat|  0-30: n= 79967 ROTI median=0.0084 p95=0.0458 TECU/s
+elev>=30 |QDlat| 30-60: n= 83495 ROTI median=0.0174 p95=0.1286 TECU/s
+elev>=30 |QDlat| 60-90: n= 68469 ROTI median=0.0352 p95=0.1601 TECU/s
+max ROTI(elev>=30) 1.187 TECU/s PRN21 06:43:13 UT LEO lat=-40.32 lon=-171.71 QD=-43.46 MLT=20.03 el=46.4
 ```
+
+质检关图后完整跑完了 31 颗 PRN（PRN01 在视场外），共 463161 行。仰角 ≥30° 时，三个纬带的 ROTI 中位数为 0.0083 / 0.0173 / 0.0337 TECU/s，最大值 1.345 TECU/s，出现在 PRN25 06:03:50 UT、69.31°N 22.98°E（QD 66.45°，MLT 8.17）。
 
 ![Swarm A 2024-05-11 RODI 全球散点（TITIPy 原图缩小）](./img/titipy-swarma-rodi-20240511.png)
 
@@ -175,9 +181,9 @@ max ROTI(elev>=30) 1.570 TECU/s PRN11 09:27:10 UT LEO lat=52.16 lon=141.47 QD=46
 
 - **RODI 随磁纬升高**：中位数 1320 → 2644 → 6007 cm⁻³/s，而背景 Ne 反而从 3.5e5 降到 6.5e4 cm⁻³——高纬（极光椭圆/极盖，磁暴期扩张）相对起伏最强。图上南半球高纬的红黄段就是这个。
 - **最大 RODI 出现在 MLT≈19、QD −21.6°**（印尼以南洋面，11:18 UT）：日落后赤道异常峰附近，典型的**赤道等离子体泡（EPB）**时段/位置；与地面 GNSS 的日落后 ROTI 爆发是同一类现象（教程 [21](../tutorials/21-equatorial-anomaly-bubbles.md)）。
-- **ROTI（顶部 TEC）** 在 |QD|<30° 的 p95 最高（0.26 TECU/s），高纬反而最低——顶部 TEC 只含卫星以上 ~460 km 起的等离子体，极区顶部密度低，扰动绝对值小；想看高纬不规则体用 RODI 更直接。
-- 最大 ROTI（仰角≥30°）出现在 09:27 UT、52°N 141°E（QD 46°、MLT 18.8）的中纬黄昏侧，与磁暴期扰动向中纬扩张的图像一致；本文未用其他数据核实。
-- 仰角 ≥30° 过滤后低纬 p95 从 0.261 降到 0.228：低仰角斜路径长、放大 ROT，做统计先定仰角掩膜。
+- **ROTI（顶部 TEC）** 和 RODI 一样随磁纬升高：中位数 0.0095 → 0.0193 → 0.0350 TECU/s，p95 0.057 → 0.127 → 0.157。
+- 最大 ROTI（仰角≥30°）：只看 PRN02–23 时出现在 06:43 UT 南半球中纬（QD −43°、MLT 20）；看全部 31 颗时出现在 06:04 UT 北欧极光带（QD 66°、MLT 8）。本文未用其他数据核实。
+- 仰角 ≥30° 过滤后低纬 p95 从 0.057 降到 0.046：低仰角时斜路径长，会放大 ROT，做统计前先定好仰角掩膜。
 - 相对 vs 绝对：RODI 是绝对量，高密度区天然偏大；比较不同纬度时可以再算 `RODI/mean_Ne`（输出里有 `mean_Ne` 列）。
 
 ## 5. 输出字段（LP `…_output.txt`）
@@ -206,7 +212,7 @@ TEC `…_PRNxx_output.txt` 另有 `Abs_STEC/Abs_VTEC/Rel_STEC/Rel_STEC_RMS`、`E
    原因：cdflib 1.x 删了 `close()`（README 要求的是 0.3.x 时代）。  
    修复：`sed -i 's/^\(\s*\)cdf\.close()/\1pass/' Reading_Swarm_data_cdf.py`
 
-3. **`ValueError: setting an array element with a sequence ... inhomogeneous shape after 1 dimensions`（Functions.py 137 行，出现在 `Binning data in magnetic coordinates...` 之后）**  
+3. **`ValueError: setting an array element with a sequence ... inhomogeneous shape after 1 dimensions`（Functions.py 137 行，出现在 `Binning data in magnetic coordinates...` 之后；只在输入参数第 4 行为 `Y`（出图）时触发，因为分箱代码在 `if(FIGURE):` 里）**  
    原因：每个 MLT×磁纬箱里点数不同，numpy ≥1.24 拒绝隐式造 object 数组。  
    修复：`sed -i 's/binned=np.array(binned)$/binned=np.array(binned,dtype=object)/' Functions.py`
 
@@ -244,7 +250,7 @@ TEC `…_PRNxx_output.txt` 另有 `Abs_STEC/Abs_VTEC/Rel_STEC/Rel_STEC_RMS`、`E
 
 ## 7. 边界
 
-- 只跑了 **1 天 × Swarm A**；TEC 部分因整机磁盘写满只完成 22/31 颗有数据的 PRN，没有得到程序末尾的 `Done` 与 `TITIPy_run_info_*.txt`；LP 部分完整。
+- 只跑了 **1 天 × Swarm A**。作者那次 TEC 部分因整机磁盘写满只完成了 22/31 颗有数据的 PRN。质检复跑关图（第 4 行 `N`）后完整跑完：31 颗 PRN、`Done`，并生成了 `TITIPy_run_info_20240511A.txt`。
 - FTPS 下载模块未能实跑（无 ESA 账号）；HTTPS 免登录是 2026-09-26 的现状，不保证长期可用。
 - 补丁 (a) 选 `N_ion` 对应旧 `Ne`；若改用 `N_elec`，RODI 数值会不同，本文未比较。
 - CC BY-NC-SA 3.0：可改可再分发，但须署名、非商业、衍生作品同协议。
