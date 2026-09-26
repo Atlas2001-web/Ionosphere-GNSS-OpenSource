@@ -1,6 +1,6 @@
 # Madrigal（CEDAR / EISCAT / SRI AMISR）· 找实验与下载 操作手册
 
-目录：门户 <https://cedar.openmadrigal.org/> · 客户端 [MITHaystack/madrigalWeb](https://github.com/MITHaystack/madrigalWeb)（PyPI **madrigalWeb 3.3.8**，MIT）· 项目页 [OpenMadrigal](https://openmadrigal.org/) · 本机验证 **2026-09-26 03:15–03:25 EDT**：CPython 3.13.5 venv，`madrigalWeb 3.3.8` + `h5py 3.16.0` + `numpy 2.5.3`（venv 共 100 MB）；真实下载 CEDAR 全球 TEC 日文件（2000-01-01，**13257658 B**）与 PFISR 5 min 电子密度文件（**2817905 B**），并在服务端用 isprint 抽 2024-05-10 单格 TEC。
+目录：门户 <https://cedar.openmadrigal.org/> · 客户端 [MITHaystack/madrigalWeb](https://github.com/MITHaystack/madrigalWeb)（PyPI **madrigalWeb 3.3.8**，MIT）· 项目页 [OpenMadrigal](https://openmadrigal.org/) · 本机验证 **2026-09-26 03:15–03:25 EDT**；**质检复跑** 03:28–03:35 EDT：CPython 3.13.5 venv，`madrigalWeb 3.3.8` + `h5py 3.16.0` + `numpy 2.5.3`；TEC **13257658 B**/tec=**32.0**/dtec=**1.1**/valid=**2949**；isprint 45.06 TECU；PFISR **2817905 B**/popl **11.937** @310.6 km；`globalDownload` site **116355/134718 B**；错路径 **100 B** HTML；HEAD 2024-05-10 **155853792 B**。
 
 > 岗位：把 **MIT Haystack 全球 GNSS TEC 图**和**非相干散射雷达（ISR）剖面**从 Madrigal 拉到本地 HDF5。它**不算 TEC**、不读 RINEX，也不做 ISR 反演。  
 > 门户门槛与其它数据源的比较见 [data-access 决策表](../data-access.md#电离层与地磁门户决策表)：[E3 CEDAR](../data-access.md#dp-e3) · [E1 EISCAT](../data-access.md#dp-e1) · [E2 AMISR](../data-access.md#dp-e2)。  
@@ -80,7 +80,7 @@ https://data.amisr.com/madrigal kinst 61 n_exp 32 2 s
 
 ### 3.2 下载 GNSS TEC 文件（instrument 8000）并读一个格点
 
-要一个小样例，就挑早年的日文件：同一 kinst 下 2000-01-01 的 TEC 格网 13 MB，2010-01-01 的 24 MB，2003-10-30 的 49 MB，2024-05-10 的 **156 MB**（HEAD 取的 `Content-Length`）。
+要一个小样例，就挑早年的日文件：同一 kinst 下 2000-01-01 的 TEC 格网 13 MB，2010-01-01 的 24 MB，2003-10-30 的 49 MB，2024-05-10 的 **156 MB**（HEAD `Content-Length`=**155853792**）。
 
 ```bash
 curl -L -o gps000101g.001.hdf5 -w "%{http_code} %{size_download}\n" \

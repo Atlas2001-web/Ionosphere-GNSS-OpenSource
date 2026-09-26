@@ -1,6 +1,6 @@
 # doris-rinex · Rust DORIS RINEX 观测文件读写库（crate `doris-rs`）操作手册
 
-目录：上游 <https://github.com/nav-solutions/doris> · crates.io **`doris-rs` 0.1.0**（2025-09-04 15:53 EDT 发布；= tag `v0.1.0` → `924ae02`）· main **`336dd19`**（2026-09-08 06:07 EDT「Bump libs」，比 v0.1.0 多 5 个提交，只放宽 `Cargo.toml` 依赖区间 + 改 README，**未发版**）· **MPL-2.0** · ★**3** · 下载 **1026** · MSRV **1.82**（只写在 `[package.metadata]`，**不是** `rust-version`，cargo 不强制）· 纯库无 bin · 本机 **rustc 1.98.1**（2026-09-26 03:03–03:07 EDT 真跑）· PROJECTS 登记名 `doris-rinex`
+目录：上游 <https://github.com/nav-solutions/doris> · crates.io **`doris-rs` 0.1.0**（2025-09-04 15:53 EDT 发布；= tag `v0.1.0` → `924ae02`）· main **`336dd19`**（2026-09-08 06:07 EDT「Bump libs」，比 v0.1.0 多 5 个提交，只放宽 `Cargo.toml` 依赖区间 + 改 README，**未发版**）· **MPL-2.0** · ★**3** · 下载 **1026** · MSRV **1.82**（只写在 `[package.metadata]`，**不是** `rust-version`，cargo 不强制）· 纯库无 bin · 本机 **rustc 1.98.1**（写作 2026-09-26 03:03–03:07 EDT；**R10质检复跑** 03:28–03:35 EDT：man.rs stdout / 写回 F_zero=1198 / 错误表 / georinex `unknown file type D` 全复现）· PROJECTS 登记名 `doris-rinex`
 
 > 岗位：DORIS（法国 CNES 星载多普勒定轨系统）专用 RINEX 3 观测文件（`RINEX VERSION / TYPE` 行 `O` + `D`）的**解析与格式化**。一个文件 = 一颗 DORIS 卫星的接收机，观测对象是地面**信标站**网。冲突时：**上游源码 / docs.rs > 本文**。
 
@@ -177,8 +177,8 @@ T mean BEMB = -34.006 °C (n=119)
 | 普通 GNSS RINEX 3（ACOR `…_MO.rnx`） | `Err(InvalidDoris)` |
 | 首行把 `D` 改 `G`（合成） | `Err(InvalidDoris)` |
 | 某值 `-67x713.668`（合成） | Ok，少 1 个值（11979），**静默** |
-| 行截短到 40 列（合成） | Ok，少 3 个值，静默 |
-| 站号 `D99` 不在头里（合成） | Ok，该历元整个消失（528 历元），静默 |
+| 行截短到 40 列（合成） | Ok，**11977** 值（少 3），静默 |
+| 站号 `D99` 不在头里（合成，改**记录**行首码，勿改头 `STATION REFERENCE`） | Ok，该历元消失（**528** 历元 / **11970** 值），静默 |
 | 站号 `DXX`（合成） | `Err(StationFormat)` |
 | 星钟 `-4.32x631626`（合成） | `Err(ClockOffset)` |
 | 历元月份 13（合成） | **panic**（hifitime `invalid Gregorian date`，exit 101） |
