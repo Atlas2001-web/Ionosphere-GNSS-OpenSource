@@ -2,6 +2,7 @@
 
 > 仓库：<https://github.com/bpurinton/GNSS-Correction-RTKLIB> · 作者 Ben Purinton（Potsdam 大学）· **GPL-3.0** · ★24 · tip **`891cad8`**（2021-04-14，此后无提交）· 默认分支 `master`
 > 本页实测：2026-09-26 01:00–01:05 EDT，本机 Debian `rtklib 2.4.3.b34`（`/usr/bin/rnx2rtkp`）+ `teqc 2019Feb25` + Python 3.13。
+> **质检复跑**（2026-09-26 01:10–01:20 EDT，另起目录重 clone）：3.1 头 12 行、1156/1156/1047、trace `outlier rejected` **79578** / `large residual` **2552**；3.2 rejionno 100→**2585**、1000→**2590**/2583、timeinterp off→**1155**、sdu 中位 0.0515/最大 55.8154、17:36:08 两行；3.3 IGN `425`、NGS brdc **288538** B、**1778** 站目录；3.4 teqc 头 3 行与 MS01 **551**/521 末行；3.5 **15685801** B（仓内 `.19o` 多 62639 个 CR）+ PPK 0 行差；坑 3 sed 与 `FileNotFoundError`、坑 8 **1648.0112**、坑 10 **78** 历元，全部逐字复现。改 4 处：工作树实为 **58 MB**（含 `.git` 89 MB）；1156 历元的节奏是**每 5 s 留 2 个**（相邻间隔 1 s×675、4 s×468），trace 里没有 `gap` 行；NGS brdc 与仓内 brdc 不是同一文件，2590 行中 **35** 行末位差 1e-4（第 2000 行一致）；补坑 11 teqc 接 `| head` 被截断。耗时本机 4.6 s（负载 ≈37，不可比）。
 
 ## 1. 它是什么 / 解决什么问题
 
@@ -33,7 +34,7 @@
 sudo apt install rtklib          # 提供 rnx2rtkp / convbin / pos2kml ...
 rnx2rtkp -? 2>&1 | head -3       # 注意：-? 才是帮助，-h 是 fix-and-hold
 
-# 仓库（工作树约 85 MB：样例数据 + 手册截图）
+# 仓库（工作树约 58 MB、连 .git 约 89 MB：样例数据 + 手册截图）
 git clone --depth 1 https://github.com/bpurinton/GNSS-Correction-RTKLIB
 cd GNSS-Correction-RTKLIB
 
@@ -79,7 +80,7 @@ out/BP01_ppk.pos epochs=1156 Q2=1156 sdu<0.5m=1047
 BP01_leicaR2.pos epochs=2590 Q2=2590 sdu<0.5m=2584     # 作者 RTKPOST 2.4.2 GUI 结果（仓内）
 ```
 
-**同一配置、同一数据，Debian 2.4.3 只出了 1156 个历元，作者 GUI 出了 2590 个。** 用 `-x 2` 打 trace 看：`outlier rejected` **79578** 次、`large residual` 2552 次，典型行 `outlier rejected (sat= 27- 32 L1 v=422.070)`。解算结果呈“每 5 秒只剩 1 个历元”的规律（`gap 17:02:51 4s`…）。
+**同一配置、同一数据，Debian 2.4.3 只出了 1156 个历元，作者 GUI 出了 2590 个。** 用 `-x 2` 打 trace 看：`outlier rejected` **79578** 次、`large residual` 2552 次，典型行 `outlier rejected (sat= 27- 32 L1 v=422.070)`。解出的历元呈“每 5 秒只剩 2 个”的规律：相邻历元间隔 1 s 出现 675 次、4 s 出现 468 次（如 `17:06:51, :55, :56, 07:00, :01, :05…`）。
 
 ### 3.2 放宽创新量门限后复现作者结果
 
@@ -113,7 +114,7 @@ curl -sS -O https://geodesy.noaa.gov/corsdata/rinex/2019/057/brdc0570.19n.gz && 
 ls -l brdc0570.19n                                                   # 288538 B
 rnx2rtkp -k rej1000.conf -o ngsbrdc.pos ../BP01_leicaR2.obs \
   ../UNSA00ARG_R_20190570000_01D_30S_MO.19o brdc0570.19n ../igr20422.sp3 2>/dev/null
-grep -vc '^%' ngsbrdc.pos                                            # 2590，第 2000 历元与 3.2 逐位相同
+grep -vc '^%' ngsbrdc.pos                                            # 2590；NGS brdc 与仓内 brdc 字节不同，与 3.2 比有 35 行末位差 1e-4（如 sde 0.0641/0.0642），第 2000 行逐位相同
 ```
 
 NGS 目录 `https://geodesy.noaa.gov/corsdata/rinex/2019/057/` 当天列出 **1778** 个站目录，站文件名形如 `zdc1/zdc10570.19d.gz`（Hatanaka 压缩）。CDDIS 在本机返回 `425 Bad IP`，不要依赖。
@@ -244,6 +245,10 @@ python -c "import hatanaka;print(hatanaka.decompress_on_disk('UNSA00ARG_R_201905
 10. **teqc 提示 `data gap of 83.000 seconds`**
     → Leica 文件里有多段测量（MDB survey starts/ends），不是转换错误。
     → 需要分段时用 teqc 时间窗（实测可用，输出 78 历元）：`teqc -st 20190226151708 -e 20190226152000 +obs part.obs MS01_6610_0226_161513.m00`。
+
+11. **teqc 转出的 `.obs` 只有几十秒、PPK 只出 0 个历元**
+    → 把 teqc 的 stderr/stdout 接进 `| head` 看提示：head 退出后 teqc 被 SIGPIPE 杀掉，文件截断（复跑实测 `obs end` 停在 15:17:59、47144 B，完整应为 633 历元/957123 B）。
+    → 提示重定向到文件：`teqc +obs X.obs +nav X.nav X.m00 2> teqc.err; head teqc.err`。
 
 ## 8. 诚实的局限
 

@@ -2,6 +2,7 @@
 
 > 仓库：<https://github.com/Aceinna/gnss-ins-sim> · Aceinna · **MIT** · ★1493 · tip **`966ff27`**（2024-11-27）· `setup.py` 版本 2.1，`ins_sim.py` 内 `VERSION = '3.0.0_alpha'`
 > 本页实测：2026-09-26 01:00–01:08 EDT，Python 3.13 venv，`pip install -e .` 装到 numpy 2.5.3 / matplotlib 3.11.2，均无报错。
+> **质检复跑**（2026-09-26 01:08–01:20 EDT，重 clone `966ff27`、新 venv）：3.1 输出 13 行字段表；3.2 **从本页原样抽出** `my_motion.csv`/`run_sim.py` 跑，13 个 CSV 行数与表头、`numpy` 检查 7 行（seed 42）**逐字一致**；3.3 10 次/43 文件（LLA csv 20 + kml 20）；`demo_ins_loose`/`demo_aceinna_ins` 提示原文、`demo_allan.py` exit 0（1800 s）；坑 1 报错原文、坑 2 ValueError、坑 9 全局字典被改（reload 恢复）复现；4.2 low/mid/high 按源码 rad 值换算全部对上；`WMM.COF` 头 `WMM-2015`。说明 2 处：3.1 的 `gps-0.csv` 首行与 3.3 的 Max error 是随机数（无种子），每次不同；输出目录时间戳跟进程 `TZ`（本机 EDT 得 `2026-09-26-01-08-52`）。
 
 ## 1. 它是什么 / 和 GNSS、电离层工作的关系
 
@@ -63,7 +64,7 @@ The following results are saved:
 real	0m1.103s
 ```
 
-输出目录名是**机器本地时间**戳（本机时钟为 UTC）。这个 demo 用 `ref_frame=1`，`gps-0.csv` 第一行是 `-2.707030832668846939e+06,4.688718241078561172e+06,3.360432169515063055e+06,...`——数值是 ECEF 量级，不是“local NED”（见坑 3）。
+输出目录名是**进程本地时间**戳（跟 `TZ`；原稿进程为 UTC，复跑时 EDT）。这个 demo 用 `ref_frame=1`，`gps-0.csv` 第一行（无种子，每次不同）如 `-2.707030832668846939e+06,4.688718241078561172e+06,3.360432169515063055e+06,...`——数值是 ECEF 量级，不是“local NED”（见坑 3）。
 
 ### 3.2 自写脚本：北京出发、直行、右转 90°、GPS 中断 20 s（`ref_frame=0`）
 
