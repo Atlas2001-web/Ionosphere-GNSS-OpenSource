@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **166 篇**操作手册（合计 **36601 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **168 篇**操作手册（合计 **37051 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -191,6 +191,8 @@
 | 164 | [nmea-parser.md](./nmea-parser.md) | Rust NMEA 0183 + AIS 解析纯库（zaari；GGA/RMC/GSV/GSA/VTG… + AIVDM 1–6/9–27；≠ 定位解算器/串口/NTRIP 客户端；不编码） | 241 | **已短硬** · 2026-09-26 01:17–01:30 EDT；crates **0.11.0**（2024-06-13）/tag **`865e7e5`**/master **`bc0a89f`**（领先 2 commit 仅文档）/Apache-2.0/★**51**/下载 **513802**/无 features/未声明 MSRV；rustc **1.98.1**；gpsd 真实日志：ZED-F9P **1015** 句（GGA/RMC/VTG/GLL/ZDA 各 29、GSA 116、GSV 696→232 组、GST/GBS 58 Unsupported）与 pynmeagps **1.1.7** 逐类一致，GGA **29/29** 逐行同（−45.877567167°/170.500111333°/12 星/14.2 m）；AIS 混录 183 句：动态 **144** 与 pyais **3.2.3** 多重集合完全一致、静态 16、类型 8×6 Unsupported、孤 24A 永不输出；**UBX 混流 lossy 喂入 panic**（lib.rs:297 char boundary，PR #50 未合）→尾巴法找回 RMC 9/9；NMEA 4.10 GSV 信号 ID 当 PRN，F9P 多 **145** 假星；`$GB` talker→Other；小写校验和判坏、无/截断校验和照收（截断 lon=170.5°）；GSV 丢句静默混历元；AIS >2 片永 Incomplete；**不能编码 NMEA**；交叉 [minmea](./minmea.md)/[libnmea](./libnmea.md)/[pynmea2](./pynmea2.md)/[pynmeagps](./pynmeagps.md)/[gpsd](./gpsd.md)/[ublox](./ublox.md)/[rtcm-rs](./rtcm-rs.md)/[ubx2rinex](./ubx2rinex.md) · **质检复跑通过**（2026-09-26 01:40 EDT；0.11.0；§3.2 三份输出逐字复现、pynmeagps/pyais 交叉复现；修 UBX panic 行号 100→79/115/151/333） |
 | 165 | [graphrtk-ins.md](./graphrtk-ins.md) | 武大 GREAT 因子图 RTK / TC RTK+INS（IMU 预积分；滑窗边缘化；Ceres；XML） | 242 | **已短硬** · 2026-09-26 01:31 EDT；tip **`25cf011`**=`v1.1-beta`/PDF 称 GPL-3.0/★**84**；Linux 需自编 Ceres **1.14**（apt 2.2 删 `LocalParameterization`）+ Eigen 路径大小写 + 链接补丁 + `_set_satdata` 缺 return（原样 RTK exit **134**）；`-h` **G-Nut/PVT [0.9.0]**；FGO_20211012 RTK/TC exit **0**，自算对 GT 3D RMS **0.678/0.414** m（上游 Windows 结果 0.659/0.318）；对照 [great-msf](./great-msf.md)/[great-pvt](./great-pvt.md) |
 | 166 | [nmea-rs.md](./nmea-rs.md) | Rust NMEA 0183 解析纯库 `nmea`（AeroRust；30 句型逐句 feature/`no_std`；有状态 `Nmea` 融合 fix+卫星表；≠ 定位解算器/串口/NTRIP 客户端；不解 AIS；不编码） | 259 | **已短硬** · 2026-09-26 01:26–01:33 EDT；crates **0.8.0**（2026-08-08）/vcs **`7ab1334`**=main tip（无 `v0.8.0` tag）/Apache-2.0/★**110**/下载 **193018**（近 90 天 40131）/MSRV **1.87.0**；默认 `std`+`all-sentences`；rustc **1.98.1**；gpsd `43362cd2` 同批日志 F9P **1015**/AIS 文件 GPS **1313**/F9T **252** 句逐类 = pynmeagps **1.1.7**（GBS 除外：u-blox 真实 GBS 全 `ParsingError`）；RMC/GGA/ZDA **87/87+328/328+27/27** 逐字段同；GSV 条目 **2378**=pynmeagps（nmea-parser 2523，无假星）；`$GB`→Beidou、GSA 系统 ID 有；`satellites()` 多信号只留最后一组（C/N₀ 6/41）；无校验和/句首空格拒收、小写校验和可；UBX 62830 次 0 panic；**合成坏 GSV 毒化 `Nmea` 后 panic**、>72 GSA PRN panic；不能生成 NMEA；对照 [nmea-parser](./nmea-parser.md) |
+| 167 | [lstid-processing.md](./lstid-processing.md) | NRL LSTID 论文复现包：C/NOFS CINDI 带通+阈值识别 TID、SAMI3 磁力线扰动极值+线性拟合（**不含 GNSS TEC**） | 251 | **已短硬** · 2026-09-26 01:18–01:32 EDT；PyPI **0.0.2**/tip **`80b576d`**/MIT/★0；Py3.13 须 `numpy<2.3`+`pandas<3`+pysat `data_dirs`；NRL SAMI3 文件 32–74 GB → HTTP Range 抽 DMSP 线（nl=26,nf=58）**3332761 B**/390 s；复算 `rel_dene_d` 差 **6.9e-14**；Fig.13 流程 Δu∥ 9 条拟合 r −0.85…−0.98 ≈ **600–830 m/s 向赤道**；CINDI 2014-03-26 **71156** 行→`identify_tid` **9** 事件（02:11–02:53 含会合 02:49:59）；`clean_level='none'` ΔNi/Ni>1 **283** 行 |
+| 168 | [hamsci-lstid-detection.md](./hamsci-lstid-detection.md) | HamSCI：Madrigal 业余无线电 spot（RBN/PSK/WSPR）距离–时间热图下沿（跳距）→ 去趋势 → 1–4.5 h 正弦拟合出 LSTID 周期/振幅 | 199 | **已短硬** · 2026-09-26 01:19–01:32 EDT；tip **`8c43cd2`**/MIT/★7/无 PyPI；uv Py3.11 钉版；pytest **52 passed**；合成 01 日 T=**2.55 h**/A=**271 km**/R²=**0.91**、02 日 A=**1.1 km**/R²=**0.30**；真实 `rsd2019-12-01` **782215264 B**/**19187799** 行（Madrigal 免账号）→ Global n_spots **3171570**、CONUS **1458869**，窗口仅 1.7–1.8 h、T≈1.3 h → **不宣称检测到**；窗口写死 12–24/13–23 UTC |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -363,6 +365,8 @@
 | u-blox F9/X20P 实时 ROS 2（USB UBX；Aussie Robots） | [ublox-dgnss.md](./ublox-dgnss.md) |
 | u-blox ZED-F9P 实时 ROS 1（港科大；gnss_comm/GVINS） | [ublox-driver.md](./ublox-driver.md) |
 | 闪烁仿真（MATLAB） | [iono-scintillation.md](./iono-scintillation.md) |
+| LSTID：卫星原位（C/NOFS）/ SAMI3 模式扰动极值（NRL 论文复现） | [lstid-processing.md](./lstid-processing.md) |
+| LSTID：业余无线电 HF spot 跳距边缘正弦拟合（Madrigal 免账号） | [hamsci-lstid-detection.md](./hamsci-lstid-detection.md) |
 
 ---
 
@@ -402,6 +406,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
+最近新增（用法讲解）：**lstid-processing**+**hamsci-lstid-detection**（2026-09-26 01:18–01:32 EDT；NRL `80b576d`/PyPI 0.0.2/MIT：SAMI3 74 GB 文件 HTTP Range 抽 DMSP 磁力线 3.3 MB，复算 rel_dene_d 差 6.9e-14，Fig.13 Δu∥ 拟合 ≈600–830 m/s 向赤道；CINDI 2014-03-26 identify_tid 9 事件；坑 numpy≥2.3/pandas3/pysat data_dirs；HamSCI `8c43cd2`/MIT：pytest 52 passed，合成 LSTID 日 T=2.55 h/A=271 km，真实 Madrigal 2019-12-01 19187799 行跑通但窗口 1.7 h 不宣称检测；图 [img/](./img/)）。
 最近新增（用法讲解）：**nmea**（AeroRust，[nmea-rs.md](./nmea-rs.md)；2026-09-26 01:26–01:33 EDT；crates **0.8.0**/vcs **`7ab1334`**/Apache-2.0/★**110**/MSRV **1.87.0**；rustc **1.98.1**；纯库；与 nmea-parser 同批 gpsd 日志逐类 = pynmeagps 1.1.7（GBS 解析失败），RMC/GGA/ZDA 442 行逐字段同，GSV 无假星；有状态 `parse_for_fix` 29 历元 29 次 `Ok(Gps)`；`satellites()` 多信号 C/N₀ 被覆盖、合成坏 GSV 可致 panic；不能编码；[nmea-parser](./nmea-parser.md) 易混表改链到本篇）。
 最近新增（用法讲解）：**nmea-parser**（2026-09-26 01:17–01:30 EDT；crates **0.11.0**/tag **`865e7e5`**/master **`bc0a89f`**/Apache-2.0/★**51**；rustc **1.98.1**；纯库；gpsd F9P 1015 句/AIS 1496 句与 pynmeagps 1.1.7、pyais 3.2.3 逐类一致，GGA 29/29+164/164 逐行同；AIS 动态 144 全同；UBX 混流 panic、GSV 信号 ID 假星 145、不能编码；顺手修 [rtcm-rs](./rtcm-rs.md) 选型表 `ublox` 待写→链接 [ublox](./ublox.md)）。
 最近新增（用法讲解）：**ublox**（2026-09-26 01:11–01:15 EDT；crates **0.10.0**/tag **`284e7fb`**/master **`c9f73ab`**（领先 23 commit 未发）/MIT/★**84**/MSRV **1.88.0**；rustc **1.98.1**；纯库（examples 不随 crate 发布、只收串口）；上游 F9T `F9T-L2-5min.ubx` **3066 帧/0 错**，pyubx2 **1.3.7** 12 类计数逐类一致；NAV-PVT **44.0688095°/−121.3140302°/hMSL 1131.618 m**；RAWX **46** 观测、G01 PR **21360867.696 m**/cno **47 dBHz**；默认 `ubx_proto23` 下 NAV-POSECEF/NAV-SIG/MON-RF 落 `Unknown`，`ubx_proto31` 0 Unknown；coldstart **31176** 帧=pyubx2（SFRBX 3843）；CFG-VALSET **28 B** 与 pyubx2 逐字节相同；校验错/截断/垃圾/NMEA 行为实测，伪长度头阻塞后自动恢复；`with_fixed_buffer::<1024>` 丢 247 帧（OutOfMemory）；多 proto 并开 `Parser::default()` E0283；README Builder 导入路径过时；ubx2rinex 0.3.0 依赖 `ublox ^0.6`（tip 0.8）；下一优先 **`nmea-parser`**（zaari，crates 0.11.0，下载约 51 万，PROJECTS 已登记、无手册）→ 候选 **novatel_edie**（NovAtel 官方 OEM 解码，PyPI `novatel-edie` 2.10.11，无手册））。
@@ -551,6 +556,8 @@ data-access
    ├─ diffionmap (两幅 IONEX 并排 VS)
    ├─ cddis-highrate-downloader (CDDIS high-rate 15 min)
    ├─ geospacelab (OMNI/指数/Madrigal TEC 产品图)
+   ├─ lstid-processing (NRL LSTID：CINDI 带通+identify_tid / SAMI3 极值拟合；非 GNSS TEC)
+   ├─ hamsci-lstid-detection (Madrigal HF spot 跳距边缘→LSTID 周期/振幅；12–24 UTC)
    ├─ pyglow (IRI 气候态对照)
    ├─ iri2016 (IRI-2016 → xarray)
    ├─ iri-fortran (官方 IRI-2026 Fortran；fort.7)
@@ -612,6 +619,7 @@ iono-scintillation：概念/仿真旁路，不替代实测 ROTI
 | 03 / 10 / 18 | ionex · ionex-gim · ionex-rs · diffionmap · sh-gim(边界) · pyglow |
 | 04 | iri-fortran · iri-2026-package · iri-common-files · iri2016 · pyglow · pyiri · pyirtam · apexpy · aacgmv2 · msise00 · nequickg · galileo-nequick-g · nequick2-ictp · kamodo |
 | 05 / 13 / 21 | oasis-roti · ionomoni · iono-scintillation · geospacelab |
+| 22 | gnss-tec · pytecgg · oasis-roti · lstid-processing · hamsci-lstid-detection |
 | 06 / 20 | cssrlib · haslib · madocalib · laika · gnss_lib_py · pyrtklib · pyrtklib-demo5 · pyrtklib-rinex · ppp-rtklib · learning-rtklib · mrtklib · rtklib-explorer · rtklib-b2b · android_rinex · gps-measurement-tools · pygpsclient · pynmeagps · pyubx2 · ubx2rinex · pyrtcm · pyspartn · pysbf2 · septentrio-gnss-driver · ublox-dgnss · ublox-driver · ntripstreams · ntrip-client · ntripclient · ntripserver · cors-relay · ntripcaster-libev · ntrip-cpp · ntrip-go · caster · glab-upc · rtklib · great-pvt · groops · rapppid · ppp-wizard · gogps-matlab · gsilib · rtppp-b2b · pride-pppar · ionomoni · gnss-sdr · pocketsdr · gps-sdr-sim · fgi-gsrx · gnssrefl · mpsim |
 | 09 | pytecgg |
 
