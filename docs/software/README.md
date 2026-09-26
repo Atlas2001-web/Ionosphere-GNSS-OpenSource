@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **164 篇**操作手册（合计 **36080 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **165 篇**操作手册（合计 **36322 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -189,6 +189,7 @@
 | 162 | [learning-rtklib.md](./learning-rtklib.md) | libing64 RTKLIB 中文学习笔记 + 6 个 C++ 调用示例（**不含 RTKLIB 源码**；需自编 2.4.2 `librtklib.a`） | 227 | **已短硬** · 2026-09-26 01:06–01:09 EDT；tip **`e326a4b`**/**无 LICENSE**/★**163**；Takasu master `71db0ff` 2.4.2 p13；6 示例 exit 0；rnx2rtkp SPP **900**×Q5 / GSI RTK **115**×Q1，与 spp/rtk 示例首历元逐位一致；`sol_t sol;` 未初始化坑 · **质检复跑通过**（2026-09-26 01:40 EDT；非 fork/无源码/477+670 行成立；6 示例 exit 0、SPP 900×Q5/RTK 115×Q1 逐位复现；修 ppp 末行 X 笔误、69 个 fix、坑 3 分 2.4.3/EX） |
 | 163 | [ublox.md](./ublox.md) | Rust u-blox UBX 协议编解码纯库（ublox-rs；按协议版本 feature；≠ 驱动/配置工具/RINEX 转换） | 250 | **已短硬** · 2026-09-26 01:11–01:15 EDT；crates **0.10.0**/tag **`284e7fb`**/master **`c9f73ab`**（领先 23 commit 未发）/MIT/★**84**/MSRV **1.88.0**；rustc **1.98.1**；纯库（examples 不随 crate 发布、只收串口）；上游 F9T `F9T-L2-5min.ubx` **3066 帧/0 错**，pyubx2 **1.3.7** 12 类计数逐类一致；NAV-PVT **44.0688095°/−121.3140302°/hMSL 1131.618 m**；RAWX **46** 观测、G01 PR **21360867.696 m**/cno **47 dBHz**；默认 `ubx_proto23` 下 NAV-POSECEF/NAV-SIG/MON-RF 落 `Unknown`，`ubx_proto31` 0 Unknown；coldstart **31176** 帧=pyubx2（SFRBX 3843）；CFG-VALSET **28 B** 与 pyubx2 逐字节相同；校验错/截断/垃圾/NMEA 行为实测，伪长度头阻塞后自动恢复；`with_fixed_buffer::<1024>` 丢 247 帧（OutOfMemory）；多 proto 并开 `Parser::default()` E0283；README Builder 导入路径过时；ubx2rinex 0.3.0 依赖 `ublox ^0.6`（tip 0.8）；交叉 [pyubx2](./pyubx2.md)/[ubx2rinex](./ubx2rinex.md)/[ublox-dgnss](./ublox-dgnss.md)/[ublox-driver](./ublox-driver.md)/[gpsd](./gpsd.md)/[rtcm-rs](./rtcm-rs.md)/[binex](./binex.md)/[gnss-protos](./gnss-protos.md) |
 | 164 | [nmea-parser.md](./nmea-parser.md) | Rust NMEA 0183 + AIS 解析纯库（zaari；GGA/RMC/GSV/GSA/VTG… + AIVDM 1–6/9–27；≠ 定位解算器/串口/NTRIP 客户端；不编码） | 241 | **已短硬** · 2026-09-26 01:17–01:30 EDT；crates **0.11.0**（2024-06-13）/tag **`865e7e5`**/master **`bc0a89f`**（领先 2 commit 仅文档）/Apache-2.0/★**51**/下载 **513802**/无 features/未声明 MSRV；rustc **1.98.1**；gpsd 真实日志：ZED-F9P **1015** 句（GGA/RMC/VTG/GLL/ZDA 各 29、GSA 116、GSV 696→232 组、GST/GBS 58 Unsupported）与 pynmeagps **1.1.7** 逐类一致，GGA **29/29** 逐行同（−45.877567167°/170.500111333°/12 星/14.2 m）；AIS 混录 183 句：动态 **144** 与 pyais **3.2.3** 多重集合完全一致、静态 16、类型 8×6 Unsupported、孤 24A 永不输出；**UBX 混流 lossy 喂入 panic**（lib.rs:297 char boundary，PR #50 未合）→尾巴法找回 RMC 9/9；NMEA 4.10 GSV 信号 ID 当 PRN，F9P 多 **145** 假星；`$GB` talker→Other；小写校验和判坏、无/截断校验和照收（截断 lon=170.5°）；GSV 丢句静默混历元；AIS >2 片永 Incomplete；**不能编码 NMEA**；交叉 [minmea](./minmea.md)/[libnmea](./libnmea.md)/[pynmea2](./pynmea2.md)/[pynmeagps](./pynmeagps.md)/[gpsd](./gpsd.md)/[ublox](./ublox.md)/[rtcm-rs](./rtcm-rs.md)/[ubx2rinex](./ubx2rinex.md) · **质检复跑通过**（2026-09-26 01:40 EDT；0.11.0；§3.2 三份输出逐字复现、pynmeagps/pyais 交叉复现；修 UBX panic 行号 100→79/115/151/333） |
+| 165 | [graphrtk-ins.md](./graphrtk-ins.md) | 武大 GREAT 因子图 RTK / TC RTK+INS（IMU 预积分；滑窗边缘化；Ceres；XML） | 242 | **已短硬** · 2026-09-26 01:31 EDT；tip **`25cf011`**=`v1.1-beta`/PDF 称 GPL-3.0/★**84**；Linux 需自编 Ceres **1.14**（apt 2.2 删 `LocalParameterization`）+ Eigen 路径大小写 + 链接补丁 + `_set_satdata` 缺 return（原样 RTK exit **134**）；`-h` **G-Nut/PVT [0.9.0]**；FGO_20211012 RTK/TC exit **0**，自算对 GT 3D RMS **0.678/0.414** m（上游 Windows 结果 0.659/0.318）；对照 [great-msf](./great-msf.md)/[great-pvt](./great-pvt.md) |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -295,6 +296,7 @@
 | FGO 因子图 GNSS/RTK（ROS 研究） | [graphgnsslib.md](./graphgnsslib.md) |
 | 武大 GREAT 精密 PPP/RTK（XML） | [great-pvt.md](./great-pvt.md) |
 | 武大 GREAT GNSS+INS 松/紧耦合（PPP/RTK+IMU） | [great-msf.md](./great-msf.md) |
+| 武大 GREAT 因子图 RTK / TC RTK+INS | [graphrtk-ins.md](./graphrtk-ins.md) |
 | TU Graz 重力场 + GNSS 网解/PPP（XML） | [groops.md](./groops.md) |
 | VieVS MATLAB GUI PPP（需许可证） | [rapppid.md](./rapppid.md) |
 | Pi 基站 + Web / NTRIP 上行 | [rtkbase.md](./rtkbase.md) |
