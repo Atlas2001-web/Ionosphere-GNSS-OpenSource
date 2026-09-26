@@ -199,5 +199,5 @@ expected_TECU=18.26 got_TECU=19.0635 rel_err_pct=4.40
 | 气候态 NeQuick2 | ICTP / `Nequick-ITUR`（非 Galileo 广播入口） |
 | 实测双频 TEC | [pytecgg](./pytecgg.md) / [gnss-tec](./gnss-tec.md) |
 
-- ICD：<https://www.gsc-europa.eu/system/files/galileo_documents/Galileo_Ionospheric_Model.pdf>
+- ICD：<https://www.gsc-europa.eu/sites/default/files/sites/all/files/Galileo_Ionospheric_Model.pdf>
 - 兄弟：[galileo-nequick-g](./galileo-nequick-g.md)（官方 C 门禁）· [ionex-gim](./ionex-gim.md) · [pytecgg](./pytecgg.md) · [gnss-tec](./gnss-tec.md) · [sh-gim](./sh-gim.md) · [data-access](../data-access.md)
