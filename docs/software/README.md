@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **180 篇**操作手册（合计 **39592 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **181 篇**操作手册（合计 **39777 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -205,6 +205,7 @@
 | 178 | [satpulse.md](./satpulse.md) | GNSS 授时守护+接收机配置（Go；`satpulsed` 串口→chrony SOCK/NTP SHM，PPS→PHC→ptp4l；`satpulsetool gps/scan/replay/ubxsim`；Workbench；≠ PTP 协议栈/PPP 引擎） | 209 | **已短硬** · 2026-09-26 02:05–02:20 EDT；main **`838c9fd`**（`v0.3-pre-20260913-71`；正式版 v0.2 2026-05-07）/MIT/★64/Go ≥1.25（1.24.4 编不过，用 1.25.1）；`go test` 86 包 ok/**7381** 用例 pass；gpsd `43362cd` F9P/F9T 日志 scan→replay：F9T NAV-PVT UTC `19:33:33.999880784Z`/23 星 GPS+GAL+BDS L1+L5；socat pty→`satpulsed`→SOCK 40 B/magic `SOCK`/`pulse=0`；`ubxsim` 配置 ZED-F9P HPG 1.51；错误：错路径 exit 1、未知键/无 PHC exit 78、pty 上 `pps.pin` TIOCMGET 失败；PPS/PHC/ptp4l/chrony 真对接**未在真硬件测试** |
 | 179 | [python-sgp4.md](./python-sgp4.md) | Python SGP4/SDP4：TLE/OMM → TEME 位置速度（`Satrec`/`SatrecArray`；不做帧转换，配 astropy/skyfield 转 ITRS；km 级，非精密轨道） | 152 | **已短硬** · 2026-09-26 02:09–02:30 EDT；PyPI **2.27**/master **`8126f77`**/MIT/★472；accelerated C++；CelesTrak GP 抓取 02:09:18 EDT，ISS 历元 `26268.43198945`、PRN02 `26268.06454359`；`python -m sgp4.tests` **45 OK**（3 路 tcppver）；vs satellite.js 7.1.0 Δr **5–17 mm**（历元单/双 double，tsince 对齐后逐位同）；vs IGS ULT SP3（BKG 免登录，astropy TEME→ITRS）PRN02 24 h 3D mean **0.534**/max **0.828** km，31 星中位 **1.658** km，G13 **470** km；忘 GPST−UTC **53.5** km、TEME 当 ECEF **26974** km；截断 TLE→error 2+NaN 不抛异常；OMM vs TLE **1.39 m** |
 | 180 | [satellite-js.md](./satellite-js.md) | JS/TS SGP4/SDP4（浏览器/Node，纯 ESM）：TLE/OMM → TEME + `eciToEcf`/`eciToGeodetic`/`ecfToLookAngles`（GMST-only，可视化级） | 135 | **已短硬** · 2026-09-26 02:09–02:30 EDT；npm **7.1.0**/develop **`95e43b7`**/MIT/★1091；Node 20.19.2；`vitest --project js` **410/410**（catalog 项目 OOM 未跑、wasm 需 em++ 未跑）；对官方 `tcppver.out` **666** 态 max Δr **1.2e-4 m**；vs python-sgp4 **5–17 mm**；SP3 PRN02 mean **0.549** km/31 星中位 **1.675** km；`eciToEcf` vs astropy ITRS **53 m**；截断 TLE→error 0+NaN（非 null）；衰减→`null`+error 6 |
+| 181 | [orekit.md](./orekit.md) | Orekit 航天动力学库（Java；Python 包装 `orekit_jpype`）：TLE/SGP4→IERS 帧、SP3 读+插值、数值积分（HF 重力+日月+SRP+GR）/拟合 | 185 | **已短硬** · 2026-09-26 02:17–02:21 EDT；PyPI `orekit_jpype` **13.1.8.0**（jar 13.1.8/Hipparchus 4.0.3）/JPype 1.7.1/OpenJDK 21；orekit-data `3e376b3`（2026-09，EOP 观测到 08-27）；无数据原样 `no IERS UTC-TAI history data loaded`；PRN02 TEME vs python-sgp4 ≤22 µm、ITRF vs astropy ~3.8 m、vs SP3 535 m；SP3 留一插值 12 点 1.4 cm；SP3 初值数值积分 24 h 均值 41 m，12 h 拟合外推 24 h <3 m；坑 11 条 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -373,6 +374,7 @@
 | GNSS/LEO 轨道外推、星历文件、掩星切点 / 站星 IPP 几何（TLE 或 SP3 初值） | [gmat.md](./gmat.md) |
 | TLE/OMM → SGP4 位置速度（Python 批量；TEME→ITRS 配 astropy） | [python-sgp4.md](./python-sgp4.md) |
 | TLE/OMM → SGP4 前端可视化 / 过境（JS/TS，浏览器/Node） | [satellite-js.md](./satellite-js.md) |
+| 严格 IERS 帧 + SP3 插值 + 数值积分/拟合（Java 库，Python 走 orekit_jpype） | [orekit.md](./orekit.md) |
 | 闪烁 ISMR（UNESP API 批量） | [ismr-downloader.md](./ismr-downloader.md) |
 | Swarm/Aeolus 按需切片（须 token） | [viresclient.md](./viresclient.md) |
 | 测高仪 foF2/hmF2 年度（澳/日/GIRO） | [ionosonde-data-downloader.md](./ionosonde-data-downloader.md) |
