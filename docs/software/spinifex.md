@@ -2,6 +2,12 @@
 
 目录：上游 <https://git.astron.nl/RD/spinifex>（ASTRON + CSIRO；GitHub 镜像 lofar-astron/spinifex）· PyPI **`spinifex` 2.0**（2026-08-13 上传，= tag `v2.0` `3788d3d`；main tip `e2ca48c` 2026-09-09）· **Apache-2.0** · RMextract 的后继 · 本机验证 **2026-09-26 03:38–03:45 EDT**：CPython 3.11.16 venv，astropy 8.0.1 / ppigrf 2.1.0（IGRF-14）/ PyIRI 0.1.7 / numpy 2.4.6；LOFAR 核心看 Cas A，2024-08-22（DOY 235），CODE 终版 GIM（AIUB 下载）与 UPC UQRG（Chapman 自动下载）两套。
 
+> **质检复跑通过**（2026-09-26 03:43–03:47 EDT）。
+> - 环境：独立 uv venv，spinifex 2.0（无 casacore）；PyPI 2.0 上传 2026-08-13 13:46 UTC、`v2.0`=`3788d3d`、main `e2ca48c`（`git ls-remote`）、Apache License 均核对无误。
+> - 逐字复现：AIUB CODE DOY 235/236 字节数（355254/354652）；§3 CODE 8 行表逐位一致（00:00 RM 1.1773±0.1067，12:00 1.6112）；UQRG 变体 8 行与节选 4 行一致，自动下载 `uqrg2350.24i.Z` 1230257 B，15:00 1.5332 vs CODE 1.3676，CODE−UQRG 差 0.003–0.17；§4 `check_vtec.py` 三行一致，`apply_earth_rotation=0` 时最大差实测 2.9e−10 TECU（即“逐位一致”成立），开旋转 0.552/+0.162；`rm_iri.py` 9 行逐位一致（100 层 50–20000 km，12:00 比值 0.821）。坑 1（ImportError 原文）、4（代码默认 `server=chapman, prefix=uqr`）、5（只放当天文件报 netrc 错；`remove_midnight_jumps=False` 时 12:00 RM 1.61117527）、6（`height=350` 仍为 1.61117527；改 `DEFAULT_IONO_HEIGHT` 后为 1.44861521）、8、9 都已复现。
+> - 修正：耗时本次 4.4 s（原 2.1 s，冷启动 import 的差），§8 改为 2–5 s；其余无改动。
+> - 未复跑：casacore/CLI、MS→H5Parm、FITS 改正、`tomion`，也没和 RMextract 对比（与原文局限一致）。
+
 > 岗位：给“测站 + 时间 + 视线方向（天体坐标或高度角/方位角）”，从 **IONEX GIM** 插出穿刺点 TEC，乘 **IGRF** 地磁场视线分量，输出视线 TEC 与电离层 **RM**（rad/m²）；也能直接给 MeasurementSet 写 H5Parm、给 FITS 立方做 RM 改正。  
 > 冲突时：本机 `site-packages/spinifex/*.py` > 上游 docs（部分默认值已过时，见坑 4）> 本文。
 
@@ -240,4 +246,4 @@ API：`get_rm.get_rm_from_skycoord(loc, times, source, iono_model_name="ionex", 
 - 只测了 1 个站（近似坐标）、1 个源、1 天、`ionex`/`ionex_iri` 两个模型、CODE/UQRG 两套 GIM；`tomion`、MS/FITS CLI、H5Parm 输出未测。没有偏振观测真值，RM 绝对精度未验证。
 - 与 RMextract 的数值对比（上游有 notebook）未复跑。
 - CDDIS（上游最推荐的归档）本机不可达，只能手工放文件；`chapman` 走明文 http。
-- 本机速度：8 个时刻单层 RM + dTEC 共 2.1 s（本地文件），UQRG 需下载时 8.5 s。
+- 本机速度：8 个时刻单层 RM + dTEC 共 2–5 s（本地文件；两次实测 2.1 / 4.4 s），UQRG 需下载时 8.5 s。

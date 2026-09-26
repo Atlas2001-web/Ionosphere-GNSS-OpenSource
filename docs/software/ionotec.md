@@ -2,6 +2,12 @@
 
 目录：上游 <https://github.com/sylvathle/ionotec>（Sylvain Blunier / Chilean-Complexity-Cluster，★6）· PyPI **`ionotec` 0.0.15**（2026-03-16 上传）· **MIT** · 本机验证 **2026-09-26 03:31–03:40 EDT**：CPython 3.11.16 venv，georinex 1.16.2 / xarray 2026.7.0 / pandas 3.0.6 / numpy 2.4.6；BKG 2024-08-22（DOY 235）WTZA RINEX 2.11 全天 + CAS 日 DSB，与 CODE 终版 GIM 对比：el>30° 差 **−1.69±2.79 TECU**，补上 C1C−C1W 后 **−1.39±1.34 TECU**（§4）。
 
+> **质检复跑通过**（2026-09-26 03:43–03:47 EDT）。
+> - 环境：独立 uv venv，ionotec 0.0.15 / georinex 1.16.2 / xarray 2026.7.0 / pandas 3.0.6 / numpy 2.4.6，与原文一致；PyPI 上传日 2026-03-16、MIT（`License-Expression: MIT`，LICENSE 首行 Copyright 2022 Chilean-Complexity-Cluster）、上游 HEAD `8e54598` 均核对无误。
+> - 逐字复现：BKG 三个文件字节数（525200/53336/60593）和 CODE GIM 355254 B；§3 stdout（13221 行、30 星、`br_gps` 5.90983524013795、前 3 行逐位一致），35 个产物、`wtza.feather` 704986 B，每星 253–545 行，G18 缺失；§4 `vs_gim.py` 五行输出全部逐位一致（el>30° −1.69/2.79/3.26，相关 −0.92，补 C1C−C1W 后 −1.39/1.34/1.93）；坑 1 的 sed 补丁同命令重跑 `br_gps` 17.90929817、el>30° −2.31/1.38/2.69、相关 −0.01，与 §4 末逐位一致；坑 5 的 `FileNotFoundError`（`getBias_fromfile`）复现；§8 的 VTEC 中位 23.6、四分位 17.2–32.2、IPP 纬度 30.5–66.7°、经度 −15.5–41.8°、最低仰角 0.0008 rad 复现。
+> - 修正：耗时本次 5.9 s（原 4.4 s），§9 改为 4–6 s；其余无改动。
+> - 未复跑：坑 2（RINEX 3 KeyError）、坑 4（换导航文件复用旧星位）、坑 10（上游 main `ValueError`）和 GLONASS 路径；venv 用 uv 硬链接装，占用数字与原文 pip `--no-cache-dir` 的 696 MB 不可比。
+
 > 岗位：给一个测站的 RINEX 2 观测 + 广播星历 + Bias-SINEX，一次调用出“每星每分钟一行”的 **STEC（码/相位/整平后）+ VTEC + 穿刺点经纬度**，存成 feather。  
 > 版本注意：PyPI 0.0.15 的代码**不等于**上游任何一个 git 提交；上游 main `8e54598`（2026-08-28，“Major modification”，作者自注“All still needs to be heavily tested”）API 已变，本机用同一脚本在 `gnss.compute_position` 报 `ValueError: Length of new names must be 1, got 2`。**本文只写 PyPI 0.0.15**。冲突时：本机 `site-packages/ionotec/tec.py` > 上游 README > 本文。
 
@@ -224,4 +230,4 @@ corr(per-sat diff, C1C-C1W DSB) = -0.01 over 30 sats
 - 只验证了 **1 站（WTZA）1 天、GPS-only**；GLONASS 路径（需 `*.YYg` 导航、内置频点号表）未测。
 - PyPI 0.0.15 与 git 不对应；上游 main 自称未充分测试，本机同脚本不能跑。
 - 固定 60 s 重采样、h 与映射函数单层、不做周跳修复（只按跳变切段粘接），不输出 RMS/质量标志。
-- 单站全天 GPS-only 本机 4.4 s（其中大半是 import）；venv 696 MB 偏重（cartopy 只在 `graph` 子模块用）。
+- 单站全天 GPS-only 本机 4–6 s（两次实测 4.4 / 5.9 s，其中大半是 import）；venv 696 MB 偏重（cartopy 只在 `graph` 子模块用）。
