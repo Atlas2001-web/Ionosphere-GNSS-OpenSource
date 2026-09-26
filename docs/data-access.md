@@ -21,7 +21,7 @@
 | 掩星 RO | [CDAAC](https://cdaac-www.cosmic.ucar.edu/) · [data.cosmic](https://data.cosmic.ucar.edu/gnss-ro/) · [ROM SAF](https://rom-saf.eumetsat.int/)（[决策表](#电离层与地磁门户决策表)）· [awsgnssroutils](https://github.com/gnss-ro/aws-opendata) · COSMIC-2 电离层 [cosmic2-ro](./software/cosmic2-ro.md) | 开放 / ROM SAF 产品库须注册（AWS 镜像开放） |
 | 地磁 / 空间天气 | [Kyoto WDC](https://wdc.kugi.kyoto-u.ac.jp/) · [INTERMAGNET](https://intermagnet.org/) · [SuperMAG](https://supermag.jhuapl.edu/) · [GFZ Kp](https://kp.gfz.de/en/) · [SWPC](https://www.spaceweather.gov/) · [OMNI/CDAWeb HAPI](https://cdaweb.gsfc.nasa.gov/hapi) · 台站分钟 / 秒值：USGS · BGS · NRCan · THEMIS GMAG · MACCS · TGO → [决策表](#电离层与地磁门户决策表)；耀斑 X 射线 / EUV（GOES XRS、FISM2、EVE）见 [E31](#dp-e31) | 开放 / 注册 |
 | 区域 TEC 现报 | [eSWua TEC](http://www.eswua.ingv.it/ewphp/landing.php?doi=tec) · [IONORING](http://ionos.ingv.it/ionoring/ionoring.htm)；全球近实时 TEC（GloTEC / DLR / UPC / CODE 预报）见 [E29](#dp-e29) | 开放（CC BY） |
-| 闪烁 ISMR | [`ismr_downloader`](https://github.com/GEGE-UNESP/ismr_downloader)（主）· [Query Tool](https://ismrquerytool.fct.unesp.br/)（辅，常超时）· 高纬 [CHAIN](https://www.chain-project.net/data/gps/ismr/)（[E26](#dp-e26)） | UNESP 网页注册；CHAIN 匿名 |
+| 闪烁 ISMR | [`ismr_downloader`](https://github.com/GEGE-UNESP/ismr_downloader)（主）· [Query Tool](https://ismrquerytool.fct.unesp.br/)（辅，常超时）· 高纬 [CHAIN](https://www.chain-project.net/data/gps/ismr/)（[E26](#dp-e26)）· 多区域 [eSWua 闪烁 web service](http://ws-eswua.rm.ingv.it/swit/scintillation/records/wsstation)（[E34](#dp-e34)） | UNESP 网页注册；CHAIN、eSWua 匿名 |
 | 测高仪 | [GIRO / DIDBase](https://giro.uml.edu/didbase/) · [RAL / UKSSDC](https://www.ukssdc.ac.uk/ionosondes/) | GIRO 特征参数匿名（[E23](#dp-e23)），SAO 数值库要邮件申请账号；RAL 网页注册 |
 | ISR / SuperDARN / 区域台链 | [CEDAR Madrigal](https://cedar.openmadrigal.org/) · [EISCAT](https://portal.eiscat.se/) · [SRI AMISR](https://data.amisr.com/database/) · [FRDR SuperDARN](https://www.frdr-dfdr.ca/repo/collection/superdarn) · [子午工程](https://www.meridianproject.ac.cn/) · [PITHIA 编目](https://esc.pithia.eu/) → [决策表](#电离层与地磁门户决策表) | Madrigal / FRDR 开放；EISCAT 门户、子午工程须登录 |
 | 电离层–热层卫星（ICON / GOLD） | [SPDF ICON](https://spdf.gsfc.nasa.gov/pub/data/icon/) · [SPDF GOLD](https://spdf.gsfc.nasa.gov/pub/data/gold/) · [CDAWeb](https://cdaweb.gsfc.nasa.gov/) CDAS REST · [GOLD SOC](https://gold.cs.ucf.edu/data/search/)（[决策表 E21–E22](#dp-e21) · [icon-gold-data](./software/icon-gold-data.md)）；DMSP SSIES/SSUSI、TIMED GUVI 见 [E32](#dp-e32) | 开放（CDAWeb HAPI 不含这两个任务） |
@@ -439,7 +439,7 @@ curl -L -C - -O \
 
 ## 电离层与地磁门户决策表
 
-第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD），以及地基与 LEO 电离层观测（E23 GIRO / DIDBase 测高仪、E24 Swarm swarm-diss HTTPS、E25 VirES HAPI、E26 CHAIN 闪烁 ISMR、E27 GIM/IONEX 各中心门户、E28 IGS 观测匿名镜像、E29 近实时 TEC 产品、E30 区域 CORS 网、E31 耀斑驱动数据、E32 DMSP / TIMED GUVI、E33 全天空成像仪）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
+第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD），以及地基与 LEO 电离层观测（E23 GIRO / DIDBase 测高仪、E24 Swarm swarm-diss HTTPS、E25 VirES HAPI、E26 CHAIN 闪烁 ISMR、E27 GIM/IONEX 各中心门户、E28 IGS 观测匿名镜像、E29 近实时 TEC 产品、E30 区域 CORS 网、E31 耀斑驱动数据、E32 DMSP / TIMED GUVI、E33 全天空成像仪、E34 CHAIN 以外闪烁网）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
 
 | 门户 | 账号 / 门槛 | 格式 | 时间分辨率 · 时延 | 实测 |
 |---|---|---|---|:---:|
@@ -476,6 +476,7 @@ curl -L -C - -O \
 | [耀斑驱动数据](./software/solar-flare-data.md) | **匿名**：SWPC 事件表（NCEI 归档）、NCEI GOES-R XRS L2 `_science`（`sci_`）与运行版（`dn_`）、SWPC JSON（仅 7 天）、LISIRD LaTiS 的 FISM2 与 SDO EVE | netCDF4（XRS）/ 文本 / JSON / CSV | 2024-05-11 X5.8：G16 science 1 s 峰 5.865e-4 @ 01:22:50、G18 定为 X5.7、运行版高 1.2%；FISM2 30.4 nm ×1.54 峰 01:20，ESP 0.1–7 nm ×16.1；FISM2 延迟约 7 天 | ✅（[E31](#dp-e31)，[手册](./software/solar-flare-data.md)） |
 | [DMSP / TIMED GUVI](./software/dmsp-timed-data.md) | **匿名**：SPDF `dmsp/`（SSIES-3 CDF、SSUSI EDR/SDR）与 `timed/guvi/`；CDAWeb HAPI（SSIES 取整、无质量标志）；Madrigal kinst 8100（下载需填三个信息字段，见 [madrigal](./software/madrigal.md)）；JHU/APL 官网为 JS 页面，门槛未验证 | NASA CDF / HDF5 / netCDF3 classic | F18 2024-05-11：SSIES 6100 条 1 s、dens good 86.1%；SSUSI 南半球功率 1185.6 GW、观测边界 50.2°（模型 61.8°）；SSIES 2015–2021 缺；GUVI 成像只到 2007 | ✅（[E32](#dp-e32)，[手册](./software/dmsp-timed-data.md)） |
 | [全天空成像仪](./software/allsky-imager-data.md) | **匿名**：UCalgary 开放数据（THEMIS ASI、REGO stream0 + skymap）、Berkeley THEMIS L1 CDF（asf/ast）、MANGO 数据服务器（level1 / raw / quicklook） | 多帧 PGM / CDF / HDF5 / IDL `.sav` | 2024-05-11 gill：THEMIS 每分钟 20 帧 × 3 s（256²，饱和 65535）、REGO 20 帧（512²）；ast 4797 张；MANGO cfs 红线 96 帧 × 4 min；skymap 要选 gill_20230922 | ✅（[E33](#dp-e33)，[手册](./software/allsky-imager-data.md)） |
+| [闪烁监测网（CHAIN 以外）](./software/scintillation-networks.md) | **匿名**：INGV eSWua web service（站表 + 逐站 1 min 记录）；Madrigal kinst 8010 列表/参数匿名，下载要填用户信息；UNESP ISMR 要账号 | JSON / HDF5 / ISMR CSV | eSWua 42 站；2024-05-10 22–24 UT nya1p 5181 条 × 75 字段；最新数据约 11 min 前（15 min 一批）；UNESP 证书链不全 + Turnstile；LISN 不可达 | ✅（[E34](#dp-e34)，[手册](./software/scintillation-networks.md)） |
 
 要登录才能拿数据的：EISCAT 门户（Madrigal 可绕行）、子午工程、ROM SAF 产品库（AWS 可绕行）、TGO ASCII、UKSSDC/RAL。要「申请」的：BGS 本站高分辨率（GIN 可绕行）。
 
@@ -836,6 +837,17 @@ curl -s $U/THEMIS/asi/skymaps/gill/ | grep -o 'gill_[0-9]\{8\}' | sort -u | awk 
 curl -s -O https://themis.ssl.berkeley.edu/data/themis/thg/l1/asi/gill/2024/05/thg_l1_ast_gill_20240511_v01.cdf   # 实测：200，2,744,143 B；4797 张 32×32 缩略图（04:13–08:13 UT）；asf 全帧每小时 95–124 MB
 curl -s -O https://data.mangonetwork.org/data/transport/mango/archive/cfs/redline/level1/2024/132/mango-cfs-redline-level1-20240511.hdf5   # 实测：200，16,102,350 B；96 帧 500×500 uint8（无单位），4 min 一帧；Mask=True 为被遮像素
 # 实测：THEMIS 2024-05-11 有 11 个站目录、REGO 3 个；MANGO 8 站有 2024/132 level1；gill ast 与 MANGO cfs 全图均值都在 07:07–07:08 UT 最亮（本文口径）
+```
+
+<a id="dp-e34"></a>**E34 闪烁监测网（CHAIN 以外：INGV eSWua 匿名 web service；Madrigal kinst 8010；UNESP 门槛）**
+
+```bash
+W=http://ws-eswua.rm.ingv.it/swit/scintillation/records
+curl -s $W/wsstation -o st.json   # 实测：200，15,700 B；42 站（Active 28 / Closed 11 / Installing 3），PolaRx5S 28 台
+curl -s "$W/wsnya1p?filter=dt,bt,2024-05-10%2022:00:00,2024-05-10%2023:59:00&size=20000" -o nya.json   # 实测：7,595,618 B，3.0 s；5181 条 × 75 字段，120 分钟、57 星；phi60 L1 最大 0.652 rad（仰角≥30°，本文口径）
+curl -s "$W/wslyb0p?filter=dt,ge,2026-09-26%2010:00:00&size=20000"   # 实测：10:26 UTC 时最新 dt 为 10:15（1 min 分辨率，15 min 一批入库）；size 是硬上限，超出静默截断
+curl -s "https://cedar.openmadrigal.org/getExperimentsService.py?code=8010&startyear=2024&startmonth=5&startday=10&starthour=0&startmin=0&startsec=0&endyear=2024&endmonth=5&endday=12&endhour=0&endmin=0&endsec=0&local=1"   # 实测：3 个每日实验，文件 scin_YYYYMMDD.001.hdf5（S4_SCIN / SIGMA_PHI）；下载需填姓名/邮箱/单位，本文不做
+# 实测：不带 filter 的 order=dt,desc 等 61 s 后 502；UNESP Query Tool 证书链不全（curl exit 60），首页是 SPA + Cloudflare Turnstile，要账号；LISN http 超时、https 403
 ```
 
 ---
