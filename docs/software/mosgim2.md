@@ -104,7 +104,7 @@ real	6m48.715s
 | attrs `pole_colat` / `pole_long` | 0.1658 / −1.2671 | 地磁北极（rad，代码写死 2017 年值 80.5°N, 72.6°W） |
 | attrs `sites` | 58 个站名 | 实际参与的站 |
 
-**第 4 步：格网化并与 CODE 比。** CODE 终版 `COD0OPSFIN_20242350000_01D_01H_GIM.INX`（71×73 格网、25 幅；下载 `curl -sfLO https://www.aiub.unibe.ch/download/CODE/2024/COD0OPSFIN_20242350000_01D_01H_GIM.INX.gz`，需 `-L`）。把下面脚本存到 mosgim2 仓根目录（要 `import mosgim2.*`）：
+**第 4 步：格网化并与 CODE 比。** CODE 终版 `COD0OPSFIN_20242350000_01D_01H_GIM.INX`（71×73 格网、25 幅；下载 `curl -sfLO https://download.aiub.unibe.ch/CODE/2024/COD0OPSFIN_20242350000_01D_01H_GIM.INX.gz`，需 `-L`）。把下面脚本存到 mosgim2 仓根目录（要 `import mosgim2.*`）：
 
 ```python
 # gim_vs_ionex.py — 在 mosgim2 仓根目录运行: python gim_vs_ionex.py <res.hdf5> <CODE.INX> [out.png]

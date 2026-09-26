@@ -45,7 +45,7 @@ CLI 只面向 MS / FITS；“给站点和时间算 RM”要走 Python API（下�
 
 ```bash
 mkdir -p ~/iono_ops/spx-demo/ionex_files && cd ~/iono_ops/spx-demo
-for d in 235 236; do curl -sfL -O --output-dir ionex_files https://www.aiub.unibe.ch/download/CODE/2024/COD0OPSFIN_2024${d}0000_01D_01H_GIM.INX.gz; done   # 355254 / 354652 B
+for d in 235 236; do curl -sfL -O --output-dir ionex_files https://download.aiub.unibe.ch/CODE/2024/COD0OPSFIN_2024${d}0000_01D_01H_GIM.INX.gz; done   # 355254 / 354652 B
 ```
 
 `rm_lofar.py`（站点坐标为 CS002 附近的近似值）：
@@ -223,7 +223,7 @@ API：`get_rm.get_rm_from_skycoord(loc, times, source, iono_model_name="ionex", 
 | --- | --- | --- | --- |
 | 1 | `spinifex -h` 报 `ImportError: casacore is not installed! To operate on MeasurementSets, install spinifex[casacore].` | CLI 在 import 时就要 casacore | `pip install --no-cache-dir "spinifex[casacore]"`（或只用 Python API） |
 | 2 | 找不到“按站点+时间算 RM”的命令行 | CLI 只有 MS→H5Parm 与 FITS 改正 | 用 API：`python -u rm_lofar.py` |
-| 3 | `server='cddis'` 报 `FileNotFoundError: Please add your NASA Earthdata login credentials to ~/.netrc` | CDDIS 需登录；本机还被挡 | 先从 AIUB 下同名文件到 `output_directory`：`curl -sfL -O --output-dir ionex_files https://www.aiub.unibe.ch/download/CODE/2024/COD0OPSFIN_20242350000_01D_01H_GIM.INX.gz` |
+| 3 | `server='cddis'` 报 `FileNotFoundError: Please add your NASA Earthdata login credentials to ~/.netrc` | CDDIS 需登录；本机还被挡 | 先从 AIUB 下同名文件到 `output_directory`：`curl -sfL -O --output-dir ionex_files https://download.aiub.unibe.ch/CODE/2024/COD0OPSFIN_20242350000_01D_01H_GIM.INX.gz` |
 | 4 | 不传参数时实际下载的是 `uqrg…i.Z`（UPC），与文档“默认 cddis/cod”不符 | 2.0 代码默认 `server=chapman, prefix=uqr` | 显式写：`get_rm_from_skycoord(..., prefix="cod", server="cddis", output_directory="ionex_files")` |
 | 5 | 只放了当天文件，仍去 CDDIS 要次日文件并报 netrc 错 | `remove_midnight_jumps=True` 要读次日 | 下次日文件，或加 `remove_midnight_jumps=False`（本机只放 DOY 235 时 12:00 RM=1.61117527，与 §3 有次日文件时的 1.6112 一致；日界附近才会有差） |
 | 6 | 改 `height=350*u.km` 结果不变（12:00 仍 1.61117527） | 公开函数用模块常量 `DEFAULT_IONO_HEIGHT=[450] km` 作为唯一层，`height` 只在多层里挑最近 | 调用前改常量：`get_rm.DEFAULT_IONO_HEIGHT = np.array([350.]) * u.km`（本机 12:00 RM 变 1.44861521） |

@@ -42,7 +42,7 @@ curl -sL "https://kp.gfz.de/app/json/?start=2024-05-10T00:00:00Z&end=2024-05-12T
   - `Hp30` → 7 个值 `[1.667,3.0,…]`，**没有** `status`；`ap30` → `[6.0,15.0,…]`；`Hp60` → 4 个值。
   - `SN` → `172.0`，带 `SNstatus:def`；`Fobs` → `223.4`；`Fadj` → `227.9`。
   - `index=xyz` → **HTTP 500 HTML 页**，不是 JSON 错误。
-- `kp.gfz-potsdam.de` 会 301 到 `kp.gfz.de`，所以要加 `-L`。
+- 旧域名 `kp.gfz-potsdam.de` 已 **301 永久跳转**到 `kp.gfz.de`（2026-09-26 复核），直接写新域名；沿用旧域名的脚本要加 `-L`。
 
 **状态分段**（最近 40 天，在 08:00 UT 查询）：
 

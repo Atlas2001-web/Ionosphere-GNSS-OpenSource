@@ -137,7 +137,7 @@ if len(sys.argv) > 3:   # 可选：与 C1C−C1W 卫星 DSB 做相关（坑：io
 ```
 
 ```bash
-curl -sfL -O --output-dir data https://www.aiub.unibe.ch/download/CODE/2024/COD0OPSFIN_20242350000_01D_01H_GIM.INX.gz   # 355254 B；-L 必须
+curl -sfL -O --output-dir data https://download.aiub.unibe.ch/CODE/2024/COD0OPSFIN_20242350000_01D_01H_GIM.INX.gz   # 355254 B；-L 必须
 gunzip -k data/COD0OPSFIN_20242350000_01D_01H_GIM.INX.gz
 python -u vs_gim.py output/TEC/2024/wtza.feather data/COD0OPSFIN_20242350000_01D_01H_GIM.INX data/CAS0OPSRAP_20242350000_01D_01D_DCB.BIA
 ```

@@ -167,7 +167,7 @@ print(f'{sta}: DCB_rcv={sd[sta]} ns  n={len(r)}  VTEC={r[:,0].mean():.2f}  GIM={
 
 ```bash
 pip install numpy
-curl -sfL -O https://www.aiub.unibe.ch/download/CODE/2024/COD0OPSFIN_20242350000_01D_01H_GIM.INX.gz && gunzip COD0OPSFIN_20242350000_01D_01H_GIM.INX.gz   # 355254 B；-L 必须（301 跳到 S3 镜像）
+curl -sfL -O https://download.aiub.unibe.ch/CODE/2024/COD0OPSFIN_20242350000_01D_01H_GIM.INX.gz && gunzip COD0OPSFIN_20242350000_01D_01H_GIM.INX.gz   # 355254 B；-L 必须（301 跳到 S3 镜像）
 python level_vs_gim.py tec/2024/235/wtza COD0OPSFIN_20242350000_01D_01H_GIM.INX wtza
 python level_vs_gim.py tec/2024/235/mas1 COD0OPSFIN_20242350000_01D_01H_GIM.INX mas1   # MAS1 见 §5
 ```

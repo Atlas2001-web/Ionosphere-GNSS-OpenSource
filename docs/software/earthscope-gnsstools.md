@@ -4,6 +4,8 @@
 > **别混淆：** [gnsstools](./gnsstools.md) 是 arthurdjn 写的 Python 教学库（RINEX/SP3 → pandas），跟本篇**同名但无关**。EarthScope 的 Python 数据接口是 [earthscope-sdk](./earthscope-sdk.md)，也不是本库。
 > 实测时间：2026-09-26 04:26–04:38 EDT。环境是 Debian box（系统 `/etc/localtime` 为 `Etc/UTC`），CLI 日志里的 `time=…Z` 是 UTC。
 
+> **质检复跑通过（2026-09-26 04:48–05:03 EDT，go1.26.8 从源码构建 `b3efce5`，`version` 报 `v0.111.1-0.20260924003836-b3efce58c3e7`）**：冷缓存构建 98 s、`gnss-convert` 164978130 B / `gnss-inspect` 10567569 B；WTZR CRX 4131445 B、sha256 `81b6c958`；`info` 2880 历元；3.05 26333817 B、`--doppler` 34909851 B、2.11 7462110 B、Parquet 11 MB 447933 行 / 449 个 phase=0 / loss_of_lock 2704；3.05 头与首历元、2.11 类型行、PHASE SHIFT 清零逐字一致；hatanaka(RNXCMP) 对照 127653 行 / 1198 行前导零差异；自压 CRX 自解字节相同、RNXCMP 解出 2934 行（卫星行 2880 vs 124719）；GMSD7 `gnss-inspect` 1143 帧（pyrtcm 按类型计数全同）；JPS 130 历元、NovAtel 46 历元且 644 个 D≈+2²⁰、ubx `unexpected EOF`、rtcm3 输入 `unsupported`、`validate` not yet implemented；空文件 / 5.00 / `--rinex-version 9.9`→4.02 / 15 MB 截断 1410 历元 / `--site-log` 错路径均一致。**已修**：§4.1 解压输出名与后续命令不一致（`WTZR_es.rnx`→`WTZR.rnx`）；`info` 补 `File`/`File size` 两行及不带 `--detailed --metadata` 时缺接收机/天线/坐标；Parquet `satellite` 是 uint16 PRN（单列仅 43 值）。未复跑：convbin 逐值对照、georinex 读回、4.02 输入、RINEX 当 SBF/BINEX 读、gnss-inspect 坏 CRC/截断、`.crx.gz` 截断等其余错误用例。
+
 ## 1. 用途边界
 
 | 能（已实测） | 不能 / 未测 |
@@ -67,11 +69,13 @@ Available Commands:
 数据来自 `https://igs.bkg.bund.de/root_ftp/IGS/obs/2026/258/WTZR00DEU_R_20262580000_01D_30S_MO.crx.gz`（4131445 B，sha256 `81b6c958…`，免账号）。
 
 ```bash
-gnss-convert crinex decompress --input WTZR00DEU_R_20262580000_01D_30S_MO.crx.gz --output WTZR_es.rnx   # 1.50 s，exit 0
+gnss-convert crinex decompress --input WTZR00DEU_R_20262580000_01D_30S_MO.crx.gz --output WTZR.rnx      # 1.06–1.50 s，exit 0，30169464 B
 gnss-convert info --input rinex:WTZR.rnx --detailed --metadata                                            # 0.41 s
 ```
 ```
 Format:     RINEX 3.04 / Observation / Mixed
+File:       WTZR.rnx
+File size:  28.8 MB
 Station:    WTZR
 Receiver:   1831551             LEICA GR50          4.50/7.710
 Antenna:    10020031            LEIAR25.R3      LEIT
@@ -79,7 +83,7 @@ Position:   4075580.8863   931853.5784  4801567.9707
 Time range: 2026-09-15T00:00:00Z — 2026-09-15T23:59:30Z
 Epochs:     2880
 ```
-`--statistics` 没有多输出任何内容，默认输出里也没有卫星数和观测值统计。
+`--statistics` 没有多输出任何内容，默认输出里也没有卫星数和观测值统计。不加 `--detailed --metadata` 时只有 Format/File/File size/Station/Time range/Epochs 六行，**没有 Receiver/Antenna/Position**。
 
 ```bash
 gnss-convert convert --input rinex:WTZR.rnx --output rinex:WTZR_3.05.rnx --rinex-version 3.05            # 0.54 s，26333817 B
@@ -106,7 +110,7 @@ G05 127513684.211 7  24265041.597 7        47.500    99361311.583 7  …
 
 2.11 输出的头只有这一行观测类型：`8    L1    L2    C1    P2    P1    S1    S2    C2      # / TYPES OF OBSERV`。
 
-Parquet 按 Hive 分区写到 `pq/station_id=WTZR/year=2026/month=09/day=15/session_id=WTZR/data_*.parquet`，每个（历元, 卫星, 信号）一行，共 **447933 行**，覆盖 2880 历元、123 颗卫星。列有 `epoch`(ms, UTC) `constellation` `satellite` `signal` `code` `phase` `doppler` `snr` `loss_of_lock` `half_cycle_ambiguity` `lock_time` `fcn` 等。
+Parquet 按 Hive 分区写到 `pq/station_id=WTZR/year=2026/month=09/day=15/session_id=WTZR/data_*.parquet`，每个（历元, 卫星, 信号）一行，共 **447933 行**，覆盖 2880 历元、123 颗卫星（按 `constellation`+`satellite` 计；`satellite` 列是 uint16 PRN 号，单看它只有 43 个不同值，必须和 `constellation` 一起当键）。列有 `epoch`(ms, UTC) `constellation` `satellite` `signal` `code` `phase` `doppler` `snr` `loss_of_lock` `half_cycle_ambiguity` `lock_time` `fcn` 等。
 
 ### 4.2 路径 B：RTKLIB 仓库里的真实原始数据
 
