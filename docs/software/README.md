@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **175 篇**操作手册（合计 **38606 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **177 篇**操作手册（合计 **39084 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -200,6 +200,8 @@
 | 173 | [gtrop.md](./gtrop.md) | 全球 1° 对流层 ZHD/ZWD + 加权平均温度 Tm 经验模型（年/半年项+长期趋势+高程归算；MATLAB/Octave） | 187 | **已短硬** · 2026-09-26 01:49–01:58 EDT；tip **`2b31ae7`**（2019）/**无 LICENSE**/★5；Octave 9.4.0 原样 `example.m`（ZHD **2015.7722** mm）；GRAZ 2024 DOY1 ZHD **2186.2**/ZWD **64.1**/Tm **266.51** K/PWV 9.7 mm，对照 GPT3 ZTD 2.2427、VMF3 站点 **2.2733** m；高度/季节扫描；全球 ZWD 图 [img/](./img/)；坑：h 传米出复数、0–360 经度越界、弧度静默错、向量报错、mm vs m、无日内项 · **质检复跑通过**（02:00–02:05 EDT；example/GRAZ 15 行/全球统计/坑逐字同 I/O；修：§7 南极点补 lon=15→Tm 240.75，坑 8 注明 grid.m shadow） |
 | 174 | [galileo-osnma.md](./galileo-osnma.md) | Galileo OSNMA 导航电文**认证**库（Rust `galileo-osnma`，`no_std`；ECDSA/Merkle→KROOT→TESLA→ADKD0/4/12 标签；不定位、不防 meaconing） | 208 | **已短硬** · 2026-09-26 01:41–02:10 EDT；crates **0.11.6**（2026-03-04）/tag=main **`b6c337b`**/MIT OR Apache-2.0/★89/MSRV **1.88.0**；`cargo test` 28+7 passed；GSC 公开测试向量（免注册）+包内钥匙：configuration_1 **24** 星 CED/**22** 星时间参数认证、首次 **+90 s**（慢 MAC +390 s）、ΔtLS=18 s；configuration_2 只给 Merkle 根 25 星 +450 s；合成错用例 6 类实测；默认 features 需 protoc；Galmon 实时流/u-blox SFRBX **未测**、现行 PKID 2 钥需 GSC 注册未取 |
 | 175 | [great-pifgo.md](./great-pifgo.md) | 武大 GREAT 因子图 PPP / TC PPP+INS（IF 非差；IMU 预积分；滑窗边缘化；Ceres；XML；≠ RTK） | 255 | **已短硬** · 2026-09-26 01:31–02:10 EDT；tip **`47c8c6e`**（无 tag）/PDF 称 GPL-3.0/★**18**；Linux 需自编 Ceres **1.14** + Eigen 路径大小写 + 链接补丁（`_set_satdata` 上游已修；`-Wreturn-type` 全仓仅 `gsetamb.cpp:194` 无害）；编译 `-j3` 626 s；`-h` **G-Nut/PVT [0.9.0]**；3 样例包 PPP-FGO/TC PPP/INS-FGO 全 exit **0**（1012 TC 8m39s），自算对 GT 3D RMS：1012 TC **0.349** m（与上游 Windows 结果逐秒差 ≤2 mm）、1012 PPP-FGO p50 0.79 m、1128 PPP-FGO 0.955 m；1013 XML `.21o` vs 文件 `.21O` → exit 0 空输出；全 Float（PPP-AR 需 [great-upd](./great-upd.md)，未测）；对照 [great-msf](./great-msf.md)/[graphrtk-ins](./graphrtk-ins.md) |
+| 176 | [gmat.md](./gmat.md) | NASA GMAT 轨道设计/传播：TLE-SGP4 或 SP3 初值数值积分 → 报告 / CCSDS-OEM / SPK / 站星可见窗口；外接 RO 切点与 IPP 几何（不算 TEC） | 322 | **已短硬** · 2026-09-26 02:00–02:10 EDT；SourceForge **R2026a** Linux 包（Build Mar 30 2026，GitHub main `9363e12`/Apache-2.0/★112）；`GmatConsole --run` 官方 TLE 样例 0.047 s；COSMIC-2 FM1+32 GPS（CelesTrak TLE）24 h×30 s 6.8 s：报告 2881 历元、OEM、G01@30.53N114.36E 可见 11:53:46–16:51:11 UTC（自算 IPP 一致）；几何 RO 切点过 0 km **829** 次/日（未计天线视场）；python-sgp4 核对差 0.03 km；G01 从 CODE SP3 初值数值积分 22.9 h 误差 SRP 关 **339 m**/开 **126 m**（光压参数为猜值）；坑：非 ASCII 脚本拒读、多星 TLE 历元、GMAT MJD 差 29999.5、一行多赋值、`StepSize`、表头重复、OEM `SatId`/TDR/UTC、相对路径落 `output/`；图 [img/](./img/) |
+| 177 | [gamit-globk.md](./gamit-globk.md) | MIT GAMIT（双差相位网解）+ GLOBK（h-file 合并→时间序列/速度场）；sh_gamit/sh_glred 流程、控制文件、输出与判读；高阶电离层项（CODE IONEX+IGRF） | 154 | **登记受限** · **未在本机实跑（申请制分发）**：机构许可、非商业、口令下载 10.71；依据 Quick Start（v.2026-07-21）、Intro 10.7（2018）、GAMIT/GLOBK Ref、EarthScope 2024 讲义；无任何本机 stdout；**禁臆造** summary/q-file/.pos |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -317,6 +319,7 @@
 | VieVS MATLAB GUI PPP（需许可证） | [rapppid.md](./rapppid.md) |
 | Pi 基站 + Web / NTRIP 上行 | [rtkbase.md](./rtkbase.md) |
 | PPP-AR | [pride-pppar.md](./pride-pppar.md) |
+| 网解坐标时间序列 / 速度场（GAMIT/GLOBK，申请制；本篇未实跑） | [gamit-globk.md](./gamit-globk.md) |
 | 多 AC 钟差/相位偏差离线合成 | [clkcomb.md](./clkcomb.md) |
 | GFZ 多 AC 轨道+钟 VCE 综合（科学许可登记） | [spocc.md](./spocc.md) |
 | 武大多星座 UPD（WL/EWL/NL→PPP-AR） | [great-upd.md](./great-upd.md) |
@@ -363,6 +366,7 @@
 | GENESIS COSMIC-1 **大气** L2→netCDF（非 ionPrf） | [cosmic-crunch.md](./cosmic-crunch.md) |
 | AWS GNSS-RO 查/下（**calibratedPhase** / 大气三型） | [awsgnssroutils.md](./awsgnssroutils.md) |
 | CDAAC **ionPrf / ionPhs**（pysat） | [pysatcdaac.md](./pysatcdaac.md) |
+| GNSS/LEO 轨道外推、星历文件、掩星切点 / 站星 IPP 几何（TLE 或 SP3 初值） | [gmat.md](./gmat.md) |
 | 闪烁 ISMR（UNESP API 批量） | [ismr-downloader.md](./ismr-downloader.md) |
 | Swarm/Aeolus 按需切片（须 token） | [viresclient.md](./viresclient.md) |
 | 测高仪 foF2/hmF2 年度（澳/日/GIRO） | [ionosonde-data-downloader.md](./ionosonde-data-downloader.md) |
@@ -420,6 +424,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
+最近新增（用法讲解）：**gmat**+**gamit-globk**（[gmat.md](./gmat.md) / [gamit-globk.md](./gamit-globk.md)；2026-09-26 02:00–02:12 EDT；GMAT R2026a 官方 Linux 包 `GmatConsole` 实跑：COSMIC-2 FM1+32 GPS TLE/SGP4 一日报告+OEM+ContactLocator，外算 RO 切点 829 次/日（纯几何）与武汉 G01 IPP，G01 SP3 初值数值积分 22.9 h 误差 339→126 m（开光压），图 [img/](./img/)；GAMIT/GLOBK 申请制分发，按 MIT 公开文档写安装/sh_gamit/sh_glred/控制文件/判读，**未在本机实跑**、无 stdout）。
 最近新增（用法讲解）：**galileo-osnma**（[galileo-osnma.md](./galileo-osnma.md)；2026-09-26 01:41–02:10 EDT；crates **0.11.6**/`b6c337b`/MIT OR Apache-2.0/MSRV 1.88.0；28+7 测试通过；GSC 测试向量 configuration_1：KROOT 1 次、TESLA 119 次、CED 24 星/时间 22 星认证、首次 +90 s（慢 MAC +390 s）；configuration_2 空中 DSM-PKR 3 次验证、25 星 +450 s；合成篡改：翻位→`tag0 wrong` 不认证、错公钥 `WrongEcdsa`、错根 `Invalid`、GST 偏 ±30 s 全部 TESLA 失败、重放 MACK 被拒；longan-nano 固件 riscv32 编译 text 73462 B；实时流/u-blox 未测）。
 最近新增（质检）：**tropds+gtrop 质检复跑通过**（2026-09-26 02:00–02:05 EDT；TropDS tip `6bb9ef0`：权重 sha₁₂ `a6dd6e6adf360982`、inference Min/Max/Mean 0.6699/40.3515/11.9130、RMSE **2.017→2.208** cm / ZHD-dm 57.78→265.28 mm；修 §4a 自指 symlink Errno 40→`../../output`+坑 10。GTrop tip `2b31ae7`：example ZHD **2015.7722**、GRAZ ZHD **2186.2**/ZWD **64.1**/Tm **266.51**/PWV 9.7；修 §7 南极点补 lon=15、坑 8 注明 `grid.m` shadow）。
 最近新增（用法讲解）：**tropds**+**gtrop**（[tropds.md](./tropds.md) / [gtrop.md](./gtrop.md)；2026-09-26 01:49–01:58 EDT；TropDS `6bb9ef0`/BSD-3：加密权重按 issue #1 解出，CPU 推理 VMF3 1° ZWD 真实格网，5° 块平均 blur 上 RMSE 2.017→2.208 cm 未改善、如实记录；GTrop `2b31ae7`/无 LICENSE：Octave 原样跑通，GRAZ 2024 DOY1 ZTD 2.2503 m vs GPT3 2.2427 / VMF3 2.2733 m，Tm→PWV 9.7 mm，全球 ZWD 图 [img/](./img/)）。
@@ -560,6 +565,7 @@ data-access
    ├─ rnx2cggtts (RINEX+SP3→CGGTTS 2E；强制 SP3；生态 cggtts 4.x；≠ TEC)
    ├─ binex (BINEX 编解码库；接 rinex2bin；≠ 定位/RINEX 文本)
    ├─ sp3 (IGS SP3 C/D 解析/插值；≠ POD/CLK 综合)
+   ├─ gmat (NASA GMAT 轨道传播/星历/可见窗口；RO 切点·IPP 几何外算；≠ TEC)
    ├─ gfzrnx (可选清洗)
    ├─ anubis (门禁)
    ├─ georinex (探活)
@@ -625,7 +631,7 @@ data-access
    ├─ ublox_driver (ROS1 ZED-F9P；gnss_comm/GVINS；无 ROS 门禁)
    ├─ glab-upc (教学 SPP/PPP；官方 UPC gLAB)
    ├─ ntripbrowser / cors-relay / ntripcaster-libev / ntrip-cpp / ntrip-go / caster / ntripclient / ntripserver / pygnssutils / ntripstreams / ntrip-client / bnc / bkg-ntripcaster (路径 C)
-   └─ cssrlib / claslib / qzsl6tool / b2blib / rtklib-b2b / rtppp-b2b / haslib / madocalib / laika / rtklib / rtklib-explorer / rtklib-py / pyrtklib / pyrtklib-demo5 / pyrtklib-rinex / ppp-rtklib / learning-rtklib / gnss-correction-rtklib / mrtklib / great-pvt / great-pce / great-podflt / cube / clkcomb / groops / rapppid / ppp-wizard / gogps-matlab / gsilib / pride-pppar (路径 D)
+   └─ cssrlib / claslib / qzsl6tool / b2blib / rtklib-b2b / rtppp-b2b / haslib / madocalib / laika / rtklib / rtklib-explorer / rtklib-py / pyrtklib / pyrtklib-demo5 / pyrtklib-rinex / ppp-rtklib / learning-rtklib / gnss-correction-rtklib / mrtklib / great-pvt / great-pce / great-podflt / cube / clkcomb / groops / rapppid / ppp-wizard / gogps-matlab / gsilib / pride-pppar / gamit-globk (路径 D；gamit-globk 申请制未实跑)
 sh-gim：仅路径 E 边界，不串进 A/B 主链
 iono-scintillation：概念/仿真旁路，不替代实测 ROTI
 saga-utils：高速 I/Q 闪烁算法旁路（源码参考；S4 为幅度版≈强度 S4/2）
