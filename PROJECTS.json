@@ -20136,7 +20136,7 @@
       "name": "digisondeindices",
       "url": "https://github.com/sunipkm/digisondeindices",
       "desc_zh": "按时间和台站代码拉取 foF2、hmF2、TEC 等标定参数，输出 xarray",
-      "analysis_zh": "个人开发者发布的 Python 小工具，MIT 许可。按时间与台站代码从 Lowell GIRO 的 DIDBase 获取 Digisonde 自动/人工标定参数，包括 foF2、foF1、foE、hmF2、MUFD、半厚度、B0 与测高仪推算 TEC 以及自动标定置信度，统一输出为 xarray Dataset，缺测时返回空数据集。适合把测高仪参数批量接入 IRI 对比、TEC 校验或机器学习流程。功能单一、星标少，依赖 DIDBase 在线服务，使用时请遵守 GIRO 数据政策。",
+      "analysis_zh": "个人开发者的 Python 小工具，MIT 许可。按时间与 URSI 台站码从 GIRO DIDBase 按月拉 Digisonde 标定参数（foF2、hmF2、MUF(D)、B0、TEC、置信度 CS 等），缓存为 NetCDF 后返回 xarray Dataset。PyPI 最新版 2.1.0 仍调用已下线的 DIDBGetValues 接口（404），且漏声明 pytz、dask 依赖，需按本库手册改写到 fastchar/getbest 才能用。GIRO 数据为 CC BY-NC-SA 4.0，须致谢站点。",
       "language": "Python",
       "license": "MIT",
       "category": "ionosphere",

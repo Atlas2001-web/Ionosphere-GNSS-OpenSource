@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **218 篇**操作手册（合计 **49854 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **219 篇**操作手册（合计 **50111 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -243,6 +243,7 @@
 | 216 | [chain-scintillation.md](./chain-scintillation.md) | CHAIN 加拿大高纬 GISTM 闪烁：匿名 HTTPS/FTP 拉按小时 ISMR（Septentrio sbf2ismr 62 列，官方列定义 × 真实行）、S4 去噪、Phi01–Phi60、锁定/仰角过滤、TEC/dTEC 列 | 422 | **已短硬** · 2026-09-26 04:48–05:00 EDT；Churchill 2024-05-10/11 Phi60 >0.25 rad 13.8%（平静夜 0%），17 UT 起、最大 3.136 rad @ 23:25 UTC；S4 >0.2 仅 1.2%；锁定 <240 s 时 Phi=nan 而 S4 仍在 |
 | 217 | [gnssommelier.md](./gnssommelier.md) | EarthScope GNSSommelier：跨 16 个 IGS 中心检索/下载 SP3/CLK/ERP/BIA/IONEX（CLI `gnssommelier search/download/probe` + Python `GNSSClient`，落盘自动解压 + `*_lock.json` sha256）；不在 PyPI，源码装需 `SETUPTOOLS_SCM_PRETEND_VERSION` | 165 | **已短硬** 用法讲解新入库 · 2026-09-26 04:47–05:00 EDT；tag **v0.0.1**=`039d239`/Apache-2.0/★14/gpm-cli **0.1.0**；probe 11/16 CONNECTED（COD 60 s 超时）；JPL FIN SP3 **1293754 B**/289 历元/G31+E29、ERP 422 B；IONEX 9 条全经 CDDIS FTPS 且匿名时好时坏；`GIM` 非法名、`AAA=` 过滤无效、`--to` 线程风暴勿跑 |
 | 218 | [biscef.md](./biscef.md) | Kartverket BiScEF：多机构 GNSS 闪烁数据交换格式（实为 NetCDF4/HDF5 约定，v1.1）；S4/σφ/谱斜率/ROTI/TEC 字段表 + ismr2BiScEF（ISMR→BiScEF）+ 画图脚本；≠ 闪烁计算器/解码库 | 202 | **已短硬** 用法讲解新入库 · 2026-09-26 04:52–05:03 EDT；main `90e6a2b`/MIT/★2/无 PyPI；三读取器 0 差；ISMR 往返 59/65 全等；时间基准 NOR=GPS、FMI/UNB 旧脚本 +27 s；缺测 −1/NaN/0 混用 |
+| 219 | [digisondeindices.md](./digisondeindices.md) | sunipkm/digisondeindices：GIRO DIDBase 测高仪参数（foF2/MUF(D)/hmF2/B0/TEC/CS）按月下载→NetCDF 缓存→xarray；**PyPI 2.1.0 原样失效**（DIDBGetValues 404），附运行时补丁 `didb_fix.py` 改写到 fastchar/getbest | 259 | **已短硬** 用法讲解新入库 · 2026-09-26 05:01–05:07 EDT；2.1.0/master `2a37ab3`/MIT/★2；需补 pytz+dask+pandas<3、Python≥3.12；MHJ45 2022-01-25 05:00 foF2 **2.0**/MUF(D) 6.116/hmF2 308.9/TEC 0.6 TECU 与 curl 原始行一致；2022-01 **8633** 行；当月刷新/forcedownload `NoneType.stem` 崩溃（先 purge）、UTC 以西时区最近 4 h 误判“预测”、跨月重复时刻、nearest 无容差 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -459,6 +460,7 @@
 | COSMIC-2 电离层掩星：ionPrf 电子密度剖面 / podTc2 链路 TEC 的直连下载、目录与时延、NmF2/hmF2 与筛选 | [cosmic2-ro.md](./cosmic2-ro.md) |
 | NASA ICON / GOLD：SPDF 路径、CDAWeb 数据集与 CDAS REST 子集、HAPI 覆盖、质量标志与 GOLD 扫描网格 | [icon-gold-data.md](./icon-gold-data.md) |
 | 测高仪 foF2/hmF2 匿名拉取（GIRO fastchar）、站表、CS 过滤、SAO 获取门槛、磁暴耗减 | [giro-ionosonde.md](./giro-ionosonde.md) |
+| 测高仪参数按时刻直接拿 xarray（Python 客户端，需运行时补丁） | [digisondeindices.md](./digisondeindices.md) |
 | Swarm LP Ne/Te、顶部 TEC、IPIR/IBI/EEF 免注册下载与 flag 过滤（swarm-diss HTTPS、VirES HAPI） | [swarm-data.md](./swarm-data.md) |
 | 高纬 GNSS 闪烁 S4/σφ 实测（CHAIN ISMR，免注册）与 ISMR 62 列定义 | [chain-scintillation.md](./chain-scintillation.md) |
 | 读/交换多机构闪烁 HDF5 文件（Kartverket/FMI/DTU/UNB 的 BiScEF `.nc`，S4/σφ/ROTI；先核时间基准与缺测值） | [biscef.md](./biscef.md) |
