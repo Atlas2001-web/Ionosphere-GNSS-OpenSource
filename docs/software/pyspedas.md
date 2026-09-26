@@ -2,6 +2,7 @@
 
 目录：上游 <https://github.com/spedas/pyspedas> · HEAD **`723c6a2`** · PyPI **2.2.0**（`requires_python >=3.10`）· **MIT** · ★204 · 本机验证 **2026-09-26 02:53–03:05 EDT**：CPython 3.11.16 venv，`pip --no-cache-dir install pyspedas` 装完 **670 MB**（含 astropy/spacepy/xarray/netCDF4/s3fs）；真实下载 OMNI HRO 1 分钟 CDF（2024-05，**8.37 MB**）+ GFZ Kp 年文件 + Kyoto Dst 暂定值，跑 2024-05-10/11 “Gannon” 超级磁暴。
 
+> **质检复跑通过**（2026-09-26 03:17–03:20 EDT）：新建 3.11 venv 装 pyspedas **2.2.0**，Requires 列表一致；为省磁盘，用 uv 从本机缓存硬链接安装，venv 目录 483 MB，这个数字不能和原文用 `pip --no-cache-dir` 得到的 670 MB 直接比较。`storm.py` 从本文原样抽出运行，用时 8.4 s。下载行为一致：OMNI 月文件 8.366 MB，Dst final 找不到后退到 provisional，Kp 取自 GFZ `Kp_def2024.wdc`；数据目录 8.5 MB。全部统计行逐字相同（Bz −47.8、SYM-H −518、AE 4098、Dst −406 @02:30、Kp 17 点最大 9.0 等）。§3.1 的 17 个 Kp 值、SSC +88 @17:15（241 点），坑 7 的 `get_data('BZ')` 返回 None 且 `tnames('*Z*')` 为 BZ_GSE/BZ_GSM，§3.2 的 PNG 落在 `pyspedas_plots/`（106796 B，坑 2），§4 的 5 分钟表和 577 行 / 19292 B 的 CSV，以及 HEAD `723c6a2`、`omni_data/` 默认相对路径、`gfz=False`，均一致。无需修正。未复跑：`swarm.mag`、`tinterpol`、坑 8（残留旧版 pytplot）。
 > 岗位：给 TEC / ROTI / TID 分析配“太阳风 + 地磁指数”时间轴。PySPEDAS 本身**不读 RINEX、不算 TEC**。  
 > 冲突时：**本机 `help(pyspedas.projects.omni.data)` / 上游文档 > 本文**。
 

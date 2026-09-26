@@ -2,6 +2,13 @@
 
 目录：上游 <https://github.com/giorgiosavastano/VARION> · 唯一分支 tip **`905f456`**（2020-05-14）· **GPL-3.0** · ★15 · 无 release、无 PyPI 包 · **只支持 Python 2.7** · 作者 G. Savastano、M. Ravanelli（罗马大学 + JPL）· 本机验证 **2026-09-26 02:53–03:05 EDT**：micromamba 建 conda-forge **Python 2.7.15 + numpy 1.16.5 + pandas 0.24.2**；跑仓库自带的 **2011-03-11 东日本大地震日台湾 GS19 1 Hz** RINEX，以及 NOAA NGS 下载的 **2012-10-28 海达瓜伊地震后夏威夷 MKEA 30 s** RINEX。
 
+> **质检复跑通过**（2026-09-26 03:19–03:22 EDT）。
+> - 环境：独立 `--depth 1` 克隆 `905f456`（68 MB，其中 obs 51 MB）；按本文用 micromamba 建出 2.7.15 / numpy 1.16.5 / pandas 0.24.2，版本串一致。
+> - GS19：stdout 逐行一致，real 43.9 s；9 个输出文件、G26 前两行、9 颗星的统计（用自写统计脚本）逐字相同。
+> - MKEA：NGS 文件 409674 B，解压后 3161435 B，为 RINEX 2.11、30 s；选出的 12 颗星、real 2.4 s、12 行统计逐字相同。
+> - 坑：1（Python 3 SyntaxError）、2（`NameError: start`）、3（不加 `-brdc` 时行末 `False` 且无输出）、4（在仓库根目录运行报 `'obs'` 不存在）均复现；PyPI `varion` 0.1.0 确为 BrightMinding 的随机数包（2025-06-06 上传，2850 B）。
+> - 修正：原文把 G05/G26 行数少于满弧全归因于阈值剔点，实际还因为卫星在窗内落山。
+> - 未复跑：坑 6–10。
 > **PyPI 上的 `varion` 0.1.0 不是它**：那是 BrightMinding 的“hybrid random number generator”（2025-06 上传，2.8 kB）。不要 `pip install varion`。  
 > 冲突时：**`VARION.py` 源码 > 上游 README > 本文**。
 
@@ -108,7 +115,7 @@ G26 n=3026 05:00:00-06:15:10 ele 10.1-34.3 std=0.048 max|dsTEC|=0.172 TECU @ 05:
 G27 n=7201 05:00:00-07:00:00 ele 43.1-73.9 std=0.136 max|dsTEC|=0.408 TECU @ 05:40:32 IPP 25.20N 122.52E
 ```
 
-2 h × 1 Hz = 7201 行是满弧；G05/G26 少于弧长是被 0.02 TECU/s 阈值剔点后留下的。
+2 h × 1 Hz = 7201 行是满弧。G05/G26 在 06:16/06:15 前后落山，G12 从 05:46 升起，G22 从 06:17 升起，所以本身就不是满窗；可见段内还有大量历元被 0.02 TECU/s 阈值剔掉（质检统计：G05 可见段跨度 4614 s 只剩 2021 行，G26 跨度 4511 s 剩 3026 行）。
 
 ## 4. 端到端 B：2012 海达瓜伊地震后的夏威夷 MKEA（NOAA NGS 30 s）
 
