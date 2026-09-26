@@ -17,7 +17,7 @@
 
 **不做：**
 
-- **不做 PPP**、不做 LC 松耦合（`<GNSS Type>` 文档只列 `TCI`）；滤波 PPP/INS 用 [great-msf](./great-msf.md)，因子图 PPP/INS 是姊妹仓 GREAT-PIFGO
+- **不做 PPP**、不做 LC 松耦合（`<GNSS Type>` 文档只列 `TCI`）；滤波 PPP/INS 用 [great-msf](./great-msf.md)，因子图 PPP/INS 用 [great-pifgo](./great-pifgo.md)
 - 视觉/LiDAR（`msf_type` 枚举里有 `VIL_SLAM/GVIL_*`，本版未开源）
 - **不是**产品生产：UPD → [great-upd](./great-upd.md)；轨道钟差 → [great-podflt](./great-podflt.md) / [great-pce](./great-pce.md)
 - 上游只承诺 Windows（VS 预编译 + Ceres `.lib/.dll`）；Linux "用户自行编译测试"
@@ -230,7 +230,7 @@ Spent1113.994 seconds.
 | 因子图 RTK / TC RTK+INS（武大 XML 体系） | **本文 GraphRTK-INS** |
 | 滤波版 PPP/RTK + INS（LC/TC，更快，含 PPP） | [great-msf](./great-msf.md) |
 | 纯 GNSS PPP/RTK（有 Linux 预编译） | [great-pvt](./great-pvt.md) |
-| 因子图 **PPP / TC PPP/INS**（同族；手册待写） | GREAT-PIFGO（`PROJECTS.json` 已收录） |
+| 因子图 **PPP / TC PPP/INS**（同族） | [great-pifgo](./great-pifgo.md) |
 | ROS 因子图 GNSS | [graphgnsslib](./graphgnsslib.md) |
 | 轻量 RTK CLI | [rtklib](./rtklib.md) |
 
