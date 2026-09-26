@@ -430,3 +430,10 @@
 - 当前条目：**1026**
 - 分类计数：{'ionosphere': 302, 'troposphere': 47, 'gnss-data': 135, 'gnss-positioning': 103, 'orbit-clock': 33, 'navigation-ins': 71, 'gnss-sdr': 77, 'mobile-apps': 29, 'tools-learning': 59, 'gnss-datasets': 170}
 - 详见 `research/routine_finds_20260926b.json`
+
+## 例行检索补录（2026-09-26c）
+
+- 新增 **10** 条（AeroRust nmea、NovAtel EDIE、Trimble GSOF ROS 驱动/Wireshark 插件、和芯星通 UM980/UM982 驱动与 PPK 流水线、SparkFun Unicore 库、smartphone-gnss-booster、BDS-RawScope）
+- 当前条目：**1036**
+- 分类计数：{'ionosphere': 302, 'troposphere': 47, 'gnss-data': 140, 'gnss-positioning': 103, 'orbit-clock': 33, 'navigation-ins': 73, 'gnss-sdr': 77, 'mobile-apps': 32, 'tools-learning': 59, 'gnss-datasets': 170}
+- 详见 `research/routine_finds_20260926c.json`

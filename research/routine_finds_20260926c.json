@@ -1,0 +1,202 @@
+[
+  {
+    "name": "AeroRust nmea",
+    "url": "https://github.com/AeroRust/nmea",
+    "desc_zh": "AeroRust 社区维护的 Rust NMEA 0183 语句解析 crate（no_std 友好，按特性裁剪）",
+    "category": "gnss-data",
+    "subcategory": "基础库",
+    "provenance": "personal_community",
+    "analysis_zh": "AeroRust 开源社区维护的 Rust crate，Apache-2.0 许可，发布于 crates.io 并有 docs.rs 文档。可解析 GGA、GLL、GNS、GSA、GSV、RMC、VTG、GST、GBS 等 GNSS 语句，也覆盖航点、水深、风速等船舶电子语句，并通过 Cargo feature 按需裁剪，适合嵌入式与 no_std 场景。自 2017 年发展至今，带基准测试与功能测试，仍在维护。与本目录的 minmea、pynmea2 等同类库相比属于 Rust 生态首选之一；仓库 docs/software/nmea-rs.md 有配套中文使用手册。",
+    "language": "Rust",
+    "license": "Apache-2.0",
+    "markers": [
+      "routine-2026-09-26c"
+    ],
+    "stars_approx": 110,
+    "source": "routine-finds-20260926c",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "one_liner_zh": "AeroRust 社区维护的 Rust NMEA 0183 语句解析 crate（no_std 友好，按特性裁剪）"
+  },
+  {
+    "name": "novatel_edie",
+    "url": "https://github.com/novatel/novatel_edie",
+    "desc_zh": "NovAtel 官方 EDIE 编解码 SDK：OEM7 接收机日志/命令的 C++ 与 Python 解析与格式转换",
+    "category": "gnss-data",
+    "subcategory": "接收机驱动",
+    "provenance": "official",
+    "analysis_zh": "NovAtel（Hexagon）官方发布的 Encode Decode Interface Engine SDK，MIT 许可，C++ 实现并提供 Python 包。可对 OEM7 接收机的 ASCII、二进制与简化 ASCII 日志进行帧识别、解码与互相转换，基于官方消息定义数据库，适合编写离线解析、日志过滤、格式转换与数据回放工具。构建使用 CMake 预设并支持 Conan 管理依赖。与已收录的 novatel_oem7_driver（ROS 驱动）互补：后者面向机器人实时接入，EDIE 更适合底层解码与数据处理。近期仍活跃更新。",
+    "language": "C++",
+    "license": "MIT",
+    "markers": [
+      "routine-2026-09-26c"
+    ],
+    "stars_approx": 32,
+    "source": "routine-finds-20260926c",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "one_liner_zh": "NovAtel 官方 EDIE 编解码 SDK：OEM7 接收机日志/命令的 C++ 与 Python 解析与格式转换"
+  },
+  {
+    "name": "trimble_driver_ros",
+    "url": "https://github.com/trimble-oss/trimble_driver_ros",
+    "desc_zh": "Trimble 官方开源 ROS/ROS 2 驱动：解析 GSOF 输出并发布标准与自定义话题",
+    "category": "navigation-ins",
+    "subcategory": "ROS驱动",
+    "provenance": "official",
+    "analysis_zh": "Trimble 官方 trimble-oss 组织发布的 ROS 2 软件包，BSD-2-Clause 许可，C++ 实现。解析 Trimble General Serial Output Format（GSOF）的一个子集，可选发布 sensor_msgs/NavSatFix 与 nav_msgs/Odometry 等标准消息（以 GSOF49 首个位置或 set_origin 服务设定的原点构建局部切平面），同时提供专用 GSOF 话题；主要在 Applanix 组合导航产品上测试。适合在自动驾驶、移动测绘平台中接入 Trimble/Applanix 定位定姿系统。README 详列节点参数、话题与服务。",
+    "language": "C++",
+    "license": "BSD-2-Clause",
+    "markers": [
+      "routine-2026-09-26c"
+    ],
+    "stars_approx": 10,
+    "source": "routine-finds-20260926c",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "one_liner_zh": "Trimble 官方开源 ROS/ROS 2 驱动：解析 GSOF 输出并发布标准与自定义话题"
+  },
+  {
+    "name": "trimble-gsof-wireshark",
+    "url": "https://github.com/ryanf55/trimble-gsof-wireshark",
+    "desc_zh": "Wireshark 的 Trimble GSOF 协议解析插件（Lua）",
+    "category": "gnss-data",
+    "subcategory": "接收机驱动",
+    "provenance": "personal_community",
+    "analysis_zh": "个人开发者编写的 Wireshark Lua 解析插件，MIT 许可。把 gsof.lua 放入 Wireshark 插件目录后，即可在抓包界面逐字段解码 Trimble/Applanix 接收机通过 UDP 输出的 GSOF 报文，README 以 PX-1 为例说明端口配置与演示截图。对于调试 GSOF 数据流、核对字段含义或排查网络传输问题很方便，可与 trimble_driver_ros 搭配使用。插件体量小，覆盖的 GSOF 消息类型有限，作者欢迎补充新报文。2025 年创建。",
+    "language": "Lua",
+    "license": "MIT",
+    "markers": [
+      "routine-2026-09-26c"
+    ],
+    "stars_approx": 2,
+    "source": "routine-finds-20260926c",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "one_liner_zh": "Wireshark 的 Trimble GSOF 协议解析插件（Lua）"
+  },
+  {
+    "name": "SparkFun Unicore GNSS Arduino Library",
+    "url": "https://github.com/sparkfun/SparkFun_Unicore_GNSS_Arduino_Library",
+    "desc_zh": "SparkFun 面向和芯星通 UM980 等三频 RTK 模块的 Arduino 驱动库",
+    "category": "mobile-apps",
+    "subcategory": "嵌入式",
+    "provenance": "personal_community",
+    "analysis_zh": "SparkFun 发布的 Arduino 库，代码部分为 MIT 许可（硬件设计另为 CC BY-SA 4.0），面向和芯星通 UM980 及同系列三频 RTK 接收机。封装 Unicore 命令与消息解析，可读取位置、速度、ECEF 坐标与精度统计，配置星座、NMEA/RTCM 输出、基准站/流动站模式与 PPS，并附二十余个示例，涵盖 NTRIP 客户端/服务器与 Galileo HAS 启用。适合 DIY 低成本三频 RTK 基准站或流动站。仓库另有固件升级说明，可与本目录的 SparkFun u-blox 库对照。",
+    "language": "C++",
+    "license": "MIT",
+    "markers": [
+      "routine-2026-09-26c"
+    ],
+    "stars_approx": 24,
+    "source": "routine-finds-20260926c",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "one_liner_zh": "SparkFun 面向和芯星通 UM980 等三频 RTK 模块的 Arduino 驱动库"
+  },
+  {
+    "name": "smartphone-gnss-booster",
+    "url": "https://github.com/taroz/smartphone-gnss-booster",
+    "desc_zh": "Taro Suzuki 的开源硬件+App 方案：让普通安卓手机实现实时厘米级 RTK",
+    "category": "mobile-apps",
+    "subcategory": "原始测量",
+    "provenance": "academic_lab",
+    "analysis_zh": "千叶工业大学 Taro Suzuki（gtsam_gnss、GSDC2023 等项目作者）开源的软硬件方案，MIT 许可。gnss-booster 是贴在手机背面的再辐射板（KiCad 工程含原理图、Gerber 与 BOM），把外接有源天线信号经 L1/L5 贴片天线耦合进手机内置天线，由无线充电线圈供电，显著提升 C/N0；android-rtcm-streamer 是 Kotlin+RTKLIB JNI 的 App，把原始观测转成 RTCM3 MSM7 推送到云端 rtkrcv 并回显 FIX 解，也可记录 RINEX。2026 年 9 月新建，更新频繁。",
+    "language": "C",
+    "license": "MIT",
+    "markers": [
+      "routine-2026-09-26c"
+    ],
+    "stars_approx": 40,
+    "source": "routine-finds-20260926c",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "one_liner_zh": "Taro Suzuki 的开源硬件+App 方案：让普通安卓手机实现实时厘米级 RTK"
+  },
+  {
+    "name": "um982-driver",
+    "url": "https://github.com/sunshineharry/um982driver",
+    "desc_zh": "和芯星通 UM982/UM980 扩展语句（PVTSLN/BESTNAV/GNHPR）Python 驱动",
+    "category": "gnss-data",
+    "subcategory": "接收机驱动",
+    "provenance": "personal_community",
+    "analysis_zh": "个人开发者发布的 Python 驱动，GPL-3.0 许可，可通过 pip 安装 um982-driver。解析 UM982/UM980 输出的标准 NMEA 以及 PVTSLN、KSXT、GNHPR、BESTNAV 等 Unicore 扩展 ASCII 语句，获取双天线航向、速度、RTK 状态与标准差等比 NMEA 更丰富的信息，README 给出串口输出配置命令与示例程序，附录另有未充分测试的 C 版本。适合机器人与无人车快速接入国产双天线 RTK。目前仅支持 ASCII 指令集，中文文档较完整。",
+    "language": "Python",
+    "license": "GPL-3.0",
+    "markers": [
+      "routine-2026-09-26c"
+    ],
+    "stars_approx": 39,
+    "source": "routine-finds-20260926c",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "one_liner_zh": "和芯星通 UM982/UM980 扩展语句（PVTSLN/BESTNAV/GNHPR）Python 驱动"
+  },
+  {
+    "name": "UnicoreDriver",
+    "url": "https://github.com/zltan-whu/unicoredriver",
+    "desc_zh": "基于官方协议实现的和芯星通 UM982/UM980 ROS 驱动（C++）",
+    "category": "navigation-ins",
+    "subcategory": "ROS驱动",
+    "provenance": "personal_community",
+    "analysis_zh": "开发者谭志良（账号带 WHU 标识）发布的 ROS Noetic 驱动，GPL-3.0 许可，C++ 实现，依赖 Eigen 与 Boost。依据和芯星通 UM982 官方协议开发，在 UM982 与 UM980 上测试；需用 UPrecise 配置接收机输出 BESTNAVXYZB，驱动经串口读取并发布 nav_msgs/Odometry 话题，launch 文件支持多台接收机分命名空间接入，并可配置 NTRIP 获取 RTK 固定解。适合在组合导航或多传感器平台中接入国产 RTK 板卡。仓库 2025 年一次性发布，后续更新较少。",
+    "language": "C++",
+    "license": "GPL-3.0",
+    "markers": [
+      "routine-2026-09-26c"
+    ],
+    "stars_approx": 11,
+    "source": "routine-finds-20260926c",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "one_liner_zh": "基于官方协议实现的和芯星通 UM982/UM980 ROS 驱动（C++）"
+  },
+  {
+    "name": "um980-rtklib-pipeline",
+    "url": "https://github.com/holubp/um980-rtklib-pipeline",
+    "desc_zh": "UM980 混合串口日志拆分与 RTKLIB 后处理（PPK）Python 流水线",
+    "category": "gnss-data",
+    "subcategory": "RINEX转换",
+    "provenance": "personal_community",
+    "analysis_zh": "个人开发者发布的 Python 命令行工具 um980-ppk，GPL-3.0 许可。针对 UM980 现场日志中 NMEA、Unicore ASCII/二进制、原始观测与星历交错混杂的 .unc 流，生成记录脚本、分析日志、提取干净的 NMEA 与解算轨迹、导出观测 CSV 与 RINEX 3 观测文件、匹配导航文件，并拼装安全的 rnx2rtkp 调用。作者说明刻意不依赖 convbin，因为许多 RTKLIB 版本缺少 Unicore 支持。适合低成本三频 PPK 用户。项目较新、星标少，功能以文档为准。",
+    "language": "Python",
+    "license": "GPL-3.0",
+    "markers": [
+      "routine-2026-09-26c"
+    ],
+    "stars_approx": 1,
+    "source": "routine-finds-20260926c",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "one_liner_zh": "UM980 混合串口日志拆分与 RTKLIB 后处理（PPK）Python 流水线"
+  },
+  {
+    "name": "BDS-RawScope",
+    "url": "https://github.com/sinyl-labs/bds-rawscope",
+    "desc_zh": "零依赖安卓 GNSS 原始观测分析 App：天空图、RINEX 导出与 WLS/RAIM/卡尔曼定位",
+    "category": "mobile-apps",
+    "subcategory": "Android",
+    "provenance": "personal_community",
+    "analysis_zh": "个人开发者发布的安卓 App，MIT 许可，Java 原生实现、不引入第三方依赖，Release APK 约 2 MB，支持 Android 7.0 以上。读取手机 GNSS 芯片原始测量与导航电文，提供 C/N0 柱状图、天空图、3D 天球显示，本地完成 WLS、RAIM 与卡尔曼 PVT 解算，并可导出 RINEX/GPX 交给 RTKLIB 后处理，另含基于 TLE/SGP4 的低轨卫星显示。定位偏观测与实验，适合学习手机原始观测。2026 年 9 月新建，尚无星标，稳定性待观察。",
+    "language": "Java",
+    "license": "MIT",
+    "markers": [
+      "routine-2026-09-26c"
+    ],
+    "stars_approx": 0,
+    "source": "routine-finds-20260926c",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "one_liner_zh": "零依赖安卓 GNSS 原始观测分析 App：天空图、RINEX 导出与 WLS/RAIM/卡尔曼定位"
+  }
+]

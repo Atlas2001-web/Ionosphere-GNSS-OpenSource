@@ -1,5 +1,5 @@
 # 移动与嵌入式应用 / Mobile Apps
-> **29** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **32** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 手机/嵌入式上的 GNSS 测试、原始测量记录与简易定位。
 
@@ -14,6 +14,7 @@
 | [positional](https://github.com/mtrewartha/positional) | positional：Android 位置与卫星信息简易 App | Kotlin | 61 | 🏷️ 个人社区 |
 | [GalileoHack](https://github.com/griush/GalileoHack) | GalileoHack：多星座 GNSS 可见性 Android 演示 App | Java | 34 | 🏷️ 个人社区 |
 | [PRIDE-GeoDataLogger](https://github.com/PrideLab/PRIDE-GeoDataLogger) | PRIDE-GeoDataLogger：手机多频 GNSS+IMU 采集工具 | — | 22 | 🏷️ 高校实验室 |
+| [BDS-RawScope](https://github.com/sinyl-labs/bds-rawscope) | 零依赖安卓 GNSS 原始观测分析 App：天空图、RINEX 导出与 WLS/RAIM/卡尔曼定位 | Java | 0 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -66,6 +67,13 @@ HackUPC 2024 ESA 挑战获奖的开源 Android GNSS Tracker，展示手机所见
 
 PRIDE 团队面向智能手机的多频 GNSS 与 IMU 采集工具，便于把手机原始测量送入后续 PPP 或科学研究流程。适合手机大地测量、城市峡谷与行人导航试验。手机天线相位中心与占空比限制明显；采集前应规划时间同步、姿态记录与导出格式，以便对接 PRIDE-PPPAR 或自研脚本。
 
+#### [BDS-RawScope](https://github.com/sinyl-labs/bds-rawscope)  
+*🏷️ 个人社区*
+
+语言：Java · 许可：MIT · 星标约：0 · 宿主：github
+
+个人开发者发布的安卓 App，MIT 许可，Java 原生实现、不引入第三方依赖，Release APK 约 2 MB，支持 Android 7.0 以上。读取手机 GNSS 芯片原始测量与导航电文，提供 C/N0 柱状图、天空图、3D 天球显示，本地完成 WLS、RAIM 与卡尔曼 PVT 解算，并可导出 RINEX/GPX 交给 RTKLIB 后处理，另含基于 TLE/SGP4 的低轨卫星显示。定位偏观测与实验，适合学习手机原始观测。2026 年 9 月新建，尚无星标，稳定性待观察。
+
 ## 嵌入式
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
@@ -77,6 +85,7 @@ PRIDE 团队面向智能手机的多频 GNSS 与 IMU 采集工具，便于把手
 | [STM32-GNSS](https://github.com/SimpleMethod/STM32-GNSS) | STM32-GNSS：STM32 上的 UBX 库 | C | 89 | 🏷️ 个人社区 |
 | [satpulse](https://github.com/jclark/satpulse) | satpulse：跨平台 GNSS 授时与接收机 GUI | Go | 63 | 🏷️ 个人社区 |
 | [STM32Primer2-GNSS-Tracker](https://github.com/nemuisan/STM32Primer2_GNSS_Tracker) | STM32Primer2-GNSS-Tracker：Primer2 平台 GNSS 轨迹记录 | C | 31 | 🏷️ 个人社区 |
+| [SparkFun Unicore GNSS Arduino Library](https://github.com/sparkfun/SparkFun_Unicore_GNSS_Arduino_Library) | SparkFun 面向和芯星通 UM980 等三频 RTK 模块的 Arduino 驱动库 | C++ | 24 | 🏷️ 个人社区 |
 | [esp32-gps](https://github.com/mrichar1/esp32-gps) | ESP32 上整合 GPS、蓝牙与 NTRIP/RTK 转发 | Python | 23 | 🏷️ 个人社区 |
 | [Cryologger-GVT](https://github.com/cryologger/glacier-velocity-tracker) | Cryologger GVT：面向 PPP 的开源冰川 GNSS 测速仪 | C++ | 19 | 🏷️ 个人社区 |
 | [GNSSClock](https://github.com/stevemarple/GNSS_Clock) | GNSSClock：Arduino 上读 NMEA/PPS 的 GNSS 时钟 | C++ | 2 | 🏷️ 个人社区 |
@@ -132,6 +141,13 @@ Go 实现的跨平台 GNSS 工具，强调 PPS/PTP/NTP 授时、RINEX/RTCM 与�
 
 运行于 STM32 Primer2 的 GNSS 轨迹记录固件/应用，把卫星定位点记下来便于回放与展示。适合嵌入式便携记录与爱好者硬件实验。硬件绑定 Primer2，功能以记录为主，不是跨平台定位 SDK，也不含 RTK 引擎。存储介质与采样间隔决定可记录轨迹时长。电池与存储容量共同限制连续记录时长。
 
+#### [SparkFun Unicore GNSS Arduino Library](https://github.com/sparkfun/SparkFun_Unicore_GNSS_Arduino_Library)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：MIT · 星标约：24 · 宿主：github
+
+SparkFun 发布的 Arduino 库，代码部分为 MIT 许可（硬件设计另为 CC BY-SA 4.0），面向和芯星通 UM980 及同系列三频 RTK 接收机。封装 Unicore 命令与消息解析，可读取位置、速度、ECEF 坐标与精度统计，配置星座、NMEA/RTCM 输出、基准站/流动站模式与 PPS，并附二十余个示例，涵盖 NTRIP 客户端/服务器与 Galileo HAS 启用。适合 DIY 低成本三频 RTK 基准站或流动站。仓库另有固件升级说明，可与本目录的 SparkFun u-blox 库对照。
+
 #### [esp32-gps](https://github.com/mrichar1/esp32-gps)  
 *🏷️ 个人社区*
 
@@ -173,6 +189,7 @@ Cryologger Glacier Velocity Tracker 以 Arduino/MicroMod 与 SparkFun ZED-F9P �
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [gsdc2023](https://github.com/taroz/gsdc2023) | gsdc2023：手机十米级挑战 2023 解算代码 | MATLAB | 114 | 🏷️ 个人社区 |
+| [smartphone-gnss-booster](https://github.com/taroz/smartphone-gnss-booster) | Taro Suzuki 的开源硬件+App 方案：让普通安卓手机实现实时厘米级 RTK | C | 40 | 🏷️ 高校实验室 |
 | [GNSS_MobileCalculator](https://github.com/RogerioDoCarmo/GNSS_MobileCalculator) | Android 原始伪距 SPS 示例 | Java | 15 | 🏷️ 个人社区 |
 | [androidGnss](https://github.com/AILocAR/androidGnss) | Android 原始 GNSS 伪距定位 MATLAB 代码 | MATLAB | 14 | 🏷️ 高校实验室 |
 | [google-gnss-logger](https://github.com/gscatto/google-gnss-logger) | google-gnss-logger：GNSS Logger 原始测量 Java 解析库 | Java | 8 | 🏷️ 个人社区 |
@@ -185,6 +202,13 @@ Cryologger Glacier Velocity Tracker 以 Arduino/MicroMod 与 SparkFun ZED-F9P �
 语言：MATLAB · 许可：MIT · 星标约：114 · 宿主：github
 
 taroz 针对 Google Smartphone Decimeter Challenge 2023 的公开代码与思路，处理手机原始 GNSS 测量与轨迹评估。MIT 许可；衔接 Android 原始观测与低成本定位研究。竞赛规则与数据版本绑定，复现需自备挑战数据集与官方评价指标脚本。
+
+#### [smartphone-gnss-booster](https://github.com/taroz/smartphone-gnss-booster)  
+*🏷️ 高校实验室*
+
+语言：C · 许可：MIT · 星标约：40 · 宿主：github
+
+千叶工业大学 Taro Suzuki（gtsam_gnss、GSDC2023 等项目作者）开源的软硬件方案，MIT 许可。gnss-booster 是贴在手机背面的再辐射板（KiCad 工程含原理图、Gerber 与 BOM），把外接有源天线信号经 L1/L5 贴片天线耦合进手机内置天线，由无线充电线圈供电，显著提升 C/N0；android-rtcm-streamer 是 Kotlin+RTKLIB JNI 的 App，把原始观测转成 RTCM3 MSM7 推送到云端 rtkrcv 并回显 FIX 解，也可记录 RINEX。2026 年 9 月新建，更新频繁。
 
 #### [GNSS_MobileCalculator](https://github.com/RogerioDoCarmo/GNSS_MobileCalculator)  
 *🏷️ 个人社区*

@@ -1,5 +1,5 @@
 # GNSS 数据与格式 / GNSS Data I/O
-> **135** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **140** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
@@ -836,6 +836,7 @@ MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实�
 | [GPS.js](https://github.com/rawify/GPS.js) | GPS.js：浏览器/Node 可用的 NMEA 0183 解析库 | JavaScript | 270 | 🏷️ 个人社区 |
 | [pyubx2](https://github.com/semuconsulting/pyubx2) | pyubx2：u-blox UBX 协议 Python 编解码库 | Python | 254 | 🏷️ 个人社区 |
 | [gnsstk](https://github.com/SGL-UT/gnsstk) | gnsstk：C++ GNSS 基础库（原 GPSTk） | C++ | 183 | 🏷️ 高校实验室 核心 |
+| [AeroRust nmea](https://github.com/AeroRust/nmea) | AeroRust 社区维护的 Rust NMEA 0183 语句解析 crate（no_std 友好，按特性裁剪） | Rust | 110 | 🏷️ 个人社区 |
 | [pynmeagps](https://github.com/semuconsulting/pynmeagps) | pynmeagps：NMEA 0183 编解码库 | Python | 106 | 🏷️ 个人社区 核心 |
 | [nmea-parser](https://github.com/zaari/nmea-parser) | nmea-parser：Rust 版 AIS/GNSS NMEA 0183 解析 | Rust | 51 | 🏷️ 个人社区 |
 | [navsu](https://github.com/stanford-gps-lab/navsu) | navsu：斯坦福 GPS Lab MATLAB GNSS/IGS 工具箱 | MATLAB | 24 | 🏷️ 高校实验室 |
@@ -887,6 +888,13 @@ rawify 的 JavaScript NMEA 0183 解析器，可处理语句流并维护导航状
 语言：C++ · 许可：— · 星标约：183 · 宿主：github
 
 德州大学 SGL 的 GNSSTK 库（GPSTk 后继），提供时间系统、坐标、观测模型等底层能力，配套 gnsstk-apps。适合做 C++ 科研软件底座。应用层 PPP/RTK 需自行或接 apps；老文档仍可能写 GPSTk。
+
+#### [AeroRust nmea](https://github.com/AeroRust/nmea)  
+*🏷️ 个人社区*
+
+语言：Rust · 许可：Apache-2.0 · 星标约：110 · 宿主：github
+
+AeroRust 开源社区维护的 Rust crate，Apache-2.0 许可，发布于 crates.io 并有 docs.rs 文档。可解析 GGA、GLL、GNS、GSA、GSV、RMC、VTG、GST、GBS 等 GNSS 语句，也覆盖航点、水深、风速等船舶电子语句，并通过 Cargo feature 按需裁剪，适合嵌入式与 no_std 场景。自 2017 年发展至今，带基准测试与功能测试，仍在维护。与本目录的 minmea、pynmea2 等同类库相比属于 Rust 生态首选之一；仓库 docs/software/nmea-rs.md 有配套中文使用手册。
 
 #### [pynmeagps](https://github.com/semuconsulting/pynmeagps)  
 *🏷️ 个人社区 核心*
@@ -1081,6 +1089,7 @@ gpsd 社区官网，提供安装文档、兼容硬件列表与发布信息。源
 | [prx](https://github.com/jtec/prx) | prx：RINEX 3.05 观测→CSV 小工具 | Python | 23 | 🏷️ 个人社区 |
 | [ubx2rinex](https://github.com/nav-solutions/ubx2rinex) | ubx2rinex：Rust 实现 UBX 到 RINEX 转换/采集 | Rust | 12 | 🏷️ 个人社区 |
 | [trm2rinex-docker](https://github.com/Matioupi/trm2rinex-docker) | 用 Docker+Wine 在 Linux 上运行 Trimble convertToRinex 的构建脚本 | Dockerfile | 11 | 🏷️ 个人社区 |
+| [um980-rtklib-pipeline](https://github.com/holubp/um980-rtklib-pipeline) | UM980 混合串口日志拆分与 RTKLIB 后处理（PPK）Python 流水线 | Python | 1 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -1111,6 +1120,13 @@ Rust 实现的 u-blox UBX 原始观测反序列化与 RINEX 采集工具，方�
 语言：Dockerfile · 许可：MIT · 星标约：11 · 宿主：github
 
 社区维护的 Dockerfile 与说明，MIT 许可：把 Windows 专用的 Trimble convertToRinex（T00/T02 等原始格式转 RINEX 2/3）连同最小 Wine 环境封装为约 300MB 的镜像，便于在 Linux 服务器批量转换。出于版权原因作者不提供预构建镜像，构建时从 Trimble 官网拉取安装包，链接失效需自行替换。对使用 Trimble 接收机建 CORS 或做批处理的用户很实用，可与 teqc、GFZRNX 等下游工具衔接。最后更新于 2023 年，Wine 版本兼容性需自测。
+
+#### [um980-rtklib-pipeline](https://github.com/holubp/um980-rtklib-pipeline)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：GPL-3.0 · 星标约：1 · 宿主：github
+
+个人开发者发布的 Python 命令行工具 um980-ppk，GPL-3.0 许可。针对 UM980 现场日志中 NMEA、Unicore ASCII/二进制、原始观测与星历交错混杂的 .unc 流，生成记录脚本、分析日志、提取干净的 NMEA 与解算轨迹、导出观测 CSV 与 RINEX 3 观测文件、匹配导航文件，并拼装安全的 rnx2rtkp 调用。作者说明刻意不依赖 convbin，因为许多 RTKLIB 版本缺少 Unicore 支持。适合低成本三频 PPK 用户。项目较新、星标少，功能以文档为准。
 
 ## 掩星/CDAAC解析
 
@@ -1170,6 +1186,9 @@ Leibniz Universität Hannover 地球测量研究所工具，批量修正 RINEX �
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [septentrio_gnss_driver](https://github.com/septentrio-gnss/septentrio_gnss_driver) | septentrio_gnss_driver：Septentrio ROS 驱动 | C++ | 133 | 🏷️ 官方 |
+| [um982-driver](https://github.com/sunshineharry/um982driver) | 和芯星通 UM982/UM980 扩展语句（PVTSLN/BESTNAV/GNHPR）Python 驱动 | Python | 39 | 🏷️ 个人社区 |
+| [novatel_edie](https://github.com/novatel/novatel_edie) | NovAtel 官方 EDIE 编解码 SDK：OEM7 接收机日志/命令的 C++ 与 Python 解析与格式转换 | C++ | 32 | 🏷️ 官方 |
+| [trimble-gsof-wireshark](https://github.com/ryanf55/trimble-gsof-wireshark) | Wireshark 的 Trimble GSOF 协议解析插件（Lua） | Lua | 2 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -1179,6 +1198,27 @@ Leibniz Universität Hannover 地球测量研究所工具，批量修正 RINEX �
 语言：C++ · 许可：BSD-3-Clause · 星标约：133 · 宿主：github
 
 把 Septentrio 接收机接入机器人操作系统，发布导航与观测话题，便于车载/无人机平台联调。输入为网口/串口 SBF；输出为 ROS 话题。局限：面向机器人集成而非电离层专题处理；闪烁/ISMR 需另接解析模块。
+
+#### [um982-driver](https://github.com/sunshineharry/um982driver)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：GPL-3.0 · 星标约：39 · 宿主：github
+
+个人开发者发布的 Python 驱动，GPL-3.0 许可，可通过 pip 安装 um982-driver。解析 UM982/UM980 输出的标准 NMEA 以及 PVTSLN、KSXT、GNHPR、BESTNAV 等 Unicore 扩展 ASCII 语句，获取双天线航向、速度、RTK 状态与标准差等比 NMEA 更丰富的信息，README 给出串口输出配置命令与示例程序，附录另有未充分测试的 C 版本。适合机器人与无人车快速接入国产双天线 RTK。目前仅支持 ASCII 指令集，中文文档较完整。
+
+#### [novatel_edie](https://github.com/novatel/novatel_edie)  
+*🏷️ 官方*
+
+语言：C++ · 许可：MIT · 星标约：32 · 宿主：github
+
+NovAtel（Hexagon）官方发布的 Encode Decode Interface Engine SDK，MIT 许可，C++ 实现并提供 Python 包。可对 OEM7 接收机的 ASCII、二进制与简化 ASCII 日志进行帧识别、解码与互相转换，基于官方消息定义数据库，适合编写离线解析、日志过滤、格式转换与数据回放工具。构建使用 CMake 预设并支持 Conan 管理依赖。与已收录的 novatel_oem7_driver（ROS 驱动）互补：后者面向机器人实时接入，EDIE 更适合底层解码与数据处理。近期仍活跃更新。
+
+#### [trimble-gsof-wireshark](https://github.com/ryanf55/trimble-gsof-wireshark)  
+*🏷️ 个人社区*
+
+语言：Lua · 许可：MIT · 星标约：2 · 宿主：github
+
+个人开发者编写的 Wireshark Lua 解析插件，MIT 许可。把 gsof.lua 放入 Wireshark 插件目录后，即可在抓包界面逐字段解码 Trimble/Applanix 接收机通过 UDP 输出的 GSOF 报文，README 以 PX-1 为例说明端口配置与演示截图。对于调试 GSOF 数据流、核对字段含义或排查网络传输问题很方便，可与 trimble_driver_ros 搭配使用。插件体量小，覆盖的 GSOF 消息类型有限，作者欢迎补充新报文。2025 年创建。
 
 ## SP3/轨道钟差格式
 
