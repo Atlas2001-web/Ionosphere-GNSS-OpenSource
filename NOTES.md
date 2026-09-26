@@ -416,3 +416,10 @@
 - 当前条目：**998**
 - 分类计数：{'ionosphere': 288, 'troposphere': 47, 'gnss-data': 135, 'gnss-positioning': 103, 'orbit-clock': 33, 'navigation-ins': 71, 'gnss-sdr': 77, 'mobile-apps': 29, 'tools-learning': 59, 'gnss-datasets': 156}
 - 详见 `research/routine_finds_20260924s.json`
+
+## 例行检索补录（2026-09-26）
+
+- 新增 **13** 条（EISCAT/AMISR 非相干散射雷达门户、CEDAR Madrigal、子午工程、ROM SAF、FRDR SuperDARN、PITHIA eSC；pyDARN/RST、ppigrf、Lompe、LPI、inscar）
+- 当前条目：**1011**
+- 分类计数：{'ionosphere': 294, 'troposphere': 47, 'gnss-data': 135, 'gnss-positioning': 103, 'orbit-clock': 33, 'navigation-ins': 71, 'gnss-sdr': 77, 'mobile-apps': 29, 'tools-learning': 59, 'gnss-datasets': 163}
+- 详见 `research/routine_finds_20260926.json`

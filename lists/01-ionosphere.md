@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> **288** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **294** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -101,6 +101,7 @@ yujieqing 仓库：为电离层层析准备几何/射线矩阵相关代码，可
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [ppigrf](https://github.com/IAGA-VMOD/ppigrf) | IAGA V-MOD 工作组托管的纯 Python IGRF 地磁参考场计算库 | Python | 80 | 🏷️ 官方 |
 | [igrf](https://github.com/space-physics/igrf) | igrf：IGRF13 地磁模型 Python/Matlab 接口 | Python | 77 | 🏷️ 高校实验室 |
 | [GEMINI3D](https://github.com/gemini3d/gemini3d) | GEMINI3D：三维电离层物理模式 | Fortran | 69 | 🏷️ 高校实验室 |
 | [aacgmv2](https://github.com/aburrell/aacgmv2) | aacgmv2：AACGM-v2 地磁坐标 Python 库 | Python | 35 | 🏷️ 高校实验室 |
@@ -112,6 +113,7 @@ yujieqing 仓库：为电离层层析准备几何/射线矩阵相关代码，可
 | [hwm93](https://github.com/space-physics/hwm93) | hwm93：HWM93 水平风模型 Python/Matlab 接口 | Python | 23 | 🏷️ 高校实验室 |
 | [sami2py](https://github.com/sami2py/sami2py) | sami2py：NRL SAMI2 二维电离层模式的 Python 封装 | Python/Fortran | 21 | 🏷️ 高校实验室 |
 | [dvoacap-python](https://github.com/skyelaird/dvoacap-python) | VOACAP/DVOACAP 短波电离层传播预测引擎的 Python 移植版 | Python | 8 | 🏷️ 个人社区 |
+| [inscar](https://github.com/engeir/inscar) | 计算斜向磁场条件下非相干散射谱的 Python 库（支持非麦克斯韦分布） | Python | 7 | 🏷️ 高校实验室 |
 | [sami3_gitm](https://github.com/jdhuba/sami3_gitm) | sami3_gitm：Huba 公开 SAMI3/GITM 基础耦合代码 | Fortran | 7 | 🏷️ 官方 |
 | [transcar](https://github.com/space-physics/transcar) | transcar：一维沉降电离层 Fortran 模式 | Fortran | 7 | 🏷️ 高校实验室 |
 | [mat_gemini](https://github.com/gemini3d/mat_gemini) | mat_gemini：GEMINI 三维电离层模式 MATLAB 核心脚本 | MATLAB | 6 | 🏷️ 高校实验室 |
@@ -132,6 +134,13 @@ yujieqing 仓库：为电离层层析准备几何/射线矩阵相关代码，可
 | [SAMI3-3.22-CCMC-mirror](https://github.com/sylee918/SAMI3) | SAMI3-3.22-CCMC-mirror：SAMI3-3.22 Fortran 个人 git 镜像 | Fortran | 0 | 🏷️ 高校实验室 |
 
 ### 详细说明
+
+#### [ppigrf](https://github.com/IAGA-VMOD/ppigrf)  
+*🏷️ 官方*
+
+语言：Python · 许可：MIT · 星标约：80 · 宿主：github
+
+由国际地磁与高空物理协会（IAGA）V-MOD 工作组组织托管的纯 Python IGRF 实现，MIT 许可并有 Zenodo DOI，已跟进 IGRF-14。无需编译 Fortran，即可按时间、地理或地心坐标批量计算地磁场分量，适合嵌入 TEC 投影、磁纬换算、电离层穿刺点磁坐标与闪烁统计等流程。与本目录已有的 igrf（space-physics，封装 Fortran）相比依赖更轻、易于部署。仓库附 IGRF 官方参考链接；需要高精度外场模型时应另选 CHAOS 等模型。
 
 #### [igrf](https://github.com/space-physics/igrf)  
 *🏷️ 高校实验室*
@@ -209,6 +218,13 @@ sami2py 把海军实验室 SAMI2 二维电离层模式包成 Python：可设置�
 语言：Python · 许可：MIT · 星标约：8 · 宿主：github
 
 业余无线电社区将 VE3NEA 的 DVOACAP（Delphi 实现的 VOACAP 短波传播预测引擎）移植为 Python 的项目，MIT 许可。基于 CCIR/URSI 系数的电离层 F2/E 层参数计算最高可用频率、路径损耗与信噪比等，附带与原版对比的回归验证与 CI。虽面向 HF 通信而非 GNSS，但其电离层剖面建模思路可与 IRI、NeQuick 对照，也适合教学演示太阳活动对电离层的影响。README 给出新手安装脚本；数值精度以其验证报告为准，科研使用需自行复核。
+
+#### [inscar](https://github.com/engeir/inscar)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：MIT · 星标约：7 · 宿主：github
+
+特罗姆瑟大学研究者发布的 Python 包，MIT 许可，已上架 PyPI 并有 ReadTheDocs 文档、测试与覆盖率 CI。可在雷达视线与地磁场成任意斜角时，针对各向同性但不一定为麦克斯韦分布的电子速度分布计算非相干散射功率谱，用于研究超热电子、等离子体线等效应。适合学习 ISR 理论或检验 EISCAT、AMISR 谱拟合假设，不直接处理实测数据。与 LPI 分别处于理论谱计算与原始数据反演两端，可配合阅读。
 
 #### [sami3_gitm](https://github.com/jdhuba/sami3_gitm)  
 *🏷️ 官方*
@@ -567,7 +583,10 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 | [Kamodo](https://github.com/nasa/Kamodo) | Kamodo：NASA CCMC 日地模式输出函数化套件 | Python | 58 | 🏷️ 官方 |
 | [geospacelab](https://github.com/JouleCai/geospacelab) | geospacelab：日地空间数据管理与可视化 | Python | 48 | 🏷️ 高校实验室 |
 | [apexpy](https://github.com/aburrell/apexpy) | apexpy：Apex/准偶极地磁坐标 Python 封装 | Python | 40 | 🏷️ 高校实验室 |
+| [pyDARN](https://github.com/SuperDARN/pydarn) | SuperDARN 官方社区维护的 Python 数据可视化库 | Python | 38 | 🏷️ 高校实验室 |
+| [SuperDARN RST](https://github.com/SuperDARN/rst) | SuperDARN 雷达软件工具包 RST：原始数据处理、拟合与对流图生成 | C | 28 | 🏷️ 高校实验室 |
 | [jvierine-ionosonde](https://github.com/jvierine/ionosonde) | ionosonde（jvierine）：开源测高仪/电离图 Python 软件 | Python | 23 | 🏷️ 高校实验室 |
+| [Lompe](https://github.com/klaundal/lompe) | 极区电离层电动力学局地反演工具 Lompe（多源数据融合） | Python | 23 | 🏷️ 高校实验室 |
 | [Ionort-raytrace](https://github.com/blair3sat/ionosphere-rt) | Ionort-raytrace：三维电离层射线追踪 Fortran 实现 | Fortran | 17 | 🏷️ 高校实验室 |
 | [pysatSpaceWeather](https://github.com/pysat/pysatSpaceWeather) | pysatSpaceWeather：pysat 空间天气指数支持库 | Python | 14 | 🏷️ 高校实验室 |
 | [ionosonde_volgatech](https://github.com/Vladimi-lan/ionosonde_volgatech) | ionosonde_volgatech：伏尔加技术大学测高仪处理代码 | Python | 13 | 🏷️ 高校实验室 |
@@ -585,6 +604,7 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 | [gcmprocpy](https://github.com/NCAR/gcmprocpy) | gcmprocpy：TIE-GCM / WACCM-X 输出后处理 Python 工具 | Python | 6 | 🏷️ 官方 |
 | [SAMI3-GITM-python](https://github.com/abukowski21/SAMI3-GITM-python) | SAMI3-GITM-python：SAMI3–GITM 耦合输出 Python/Notebook 分析 | Python | 6 | 🏷️ 高校实验室 |
 | [Kamodo-core](https://github.com/nasa/Kamodo-core) | Kamodo-core：科学数据函数化 API 核心（NASA） | Python | 5 | 🏷️ 官方 |
+| [LPI](https://github.com/ilkkavir/lpi) | 奥卢大学非相干散射雷达电压级数据滞后剖面反演 R 包（MPI 版） | R | 5 | 🏷️ 高校实验室 |
 | [pynasonde](https://github.com/shibaji7/pynasonde) | pynasonde：精密电离层测高/探测 Python 应用 | Python | 5 | 🏷️ 高校实验室 |
 | [mitiono](https://github.com/sabrinastronomy/mitiono) | mitiono：由 GPS 接收机数据提取电离层与波束图 | Jupyter Notebook | 4 | 🏷️ 高校实验室 |
 | [MyIonosphere_Library](https://github.com/mguerra96/MyIonosphere_Library) | MyIonosphere_Library：相位 GFLC 与 IPP 的 MATLAB 函数库 | MATLAB | 4 | 🏷️ 个人社区 |
@@ -627,12 +647,33 @@ GeospaceLAB 用 Python 统一拉取与管理 OMNI、地磁指数、EISCAT、DMSP
 
 电离层研究里把地理坐标转到 Apex/准偶极坐标的常用库，PyIRI 等也依赖同类坐标。输入纬经高与时间；输出磁纬磁地方时等。局限：不是电子密度模型；需注意 IGRF 年代与外推。
 
+#### [pyDARN](https://github.com/SuperDARN/pydarn)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：LGPL-3.0 · 星标约：38 · 宿主：github
+
+SuperDARN 数据分析工作组维护的 Python 可视化库，LGPL-3.0 许可，有 Zenodo DOI 与 ReadTheDocs 文档，可 pip 安装。支持绘制距离-时间图、扇区扫描图、对流图、功率谱等，读取 FITACF、grid、map 等 SuperDARN 标准格式（底层读写由 pyDARNio 负责），新版本增加 FITACF 去趋势与对流图真实速度。适合研究高纬电离层对流及其与 GNSS 闪烁、TEC 结构的联系。数据需另行从 FRDR、BAS 等镜像获取。仓库持续维护。
+
+#### [SuperDARN RST](https://github.com/SuperDARN/rst)  
+*🏷️ 高校实验室*
+
+语言：C · 许可：GPL-3.0 · 星标约：28 · 宿主：github
+
+SuperDARN 数据分析工作组（DAWG）维护的 Radar Software Toolkit，GPL-3.0 许可，C 语言命令行工具集并有 Zenodo DOI。负责从 rawacf 做 ACF 拟合生成 fitacf，再经网格化、球谐拟合生成全球对流图，是 SuperDARN 标准数据产品的官方处理链。文档分为 ReadTheDocs 安装教程与 API 说明两站，支持 Linux 与 macOS，Windows 暂不支持。适合需要自行重处理 SuperDARN 数据的研究者，与 pyDARN 可视化配合使用。
+
 #### [jvierine-ionosonde](https://github.com/jvierine/ionosonde)  
 *🏷️ 高校实验室*
 
 语言：Python · 许可：GPL-3.0 · 星标约：23 · 宿主：github
 
 面向测高仪数据处理与实验的 Python 项目，可用于电离图获取/分析相关工作流。与 GNSS TEC 互补，提供底部电离层约束。局限：README 信息偏少，需读代码确认具体仪器格式；不替代 GIRO/SAO 官方工具链。
+
+#### [Lompe](https://github.com/klaundal/lompe)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：MIT · 星标约：23 · 宿主：github
+
+卑尔根大学课题组开发的 LOcal Mapping of Polar ionospheric Electrodynamics，MIT 许可，Python 实现并提供 Binder 可运行示例。在局地立方球网格上，融合 SuperDARN 对流、卫星磁场/离子漂移与地面磁力计扰动等观测，反演区域电场、电流与电势分布，Hall/Pedersen 电导需用户以函数形式给出。适合研究极光区电动力学与 GNSS 闪烁、TEC 斑块的驱动过程。学习曲线较陡，建议先跑仓库自带示例笔记本。近期仍有更新。
 
 #### [Ionort-raytrace](https://github.com/blair3sat/ionosphere-rt)  
 *🏷️ 高校实验室*
@@ -752,6 +793,13 @@ gcmprocpy 面向 NCAR TIE-GCM 与 WACCM-X 模式输出，做后处理、诊断�
 语言：Python · 许可：NASA-Open · 星标约：5 · 宿主：github
 
 Kamodo-core 提供函数化科学数据访问的核心 API，CCMC 的 Kamodo readers 建立其上。单独使用可把任意网格场变成可组合函数；与 nasa/Kamodo 搭配更完整。局限：只有 core 时缺少各模式专用 reader；安装路径在历史上有 ensemblegov 与 nasa 组织迁移，注意文档版本。
+
+#### [LPI](https://github.com/ilkkavir/lpi)  
+*🏷️ 高校实验室*
+
+语言：R · 许可：BSD-2-Clause · 星标约：5 · 宿主：github
+
+奥卢大学 Ilkka Virtanen 开发的 Lag Profile Inversion R 包，BSD-2-Clause 许可并有 Zenodo DOI。从电压级非相干散射雷达采样出发，反卷积得到各距离门的滞后剖面（自相关函数），是后续拟合电子密度、温度等参数的前一步；当前主分支为适配 HPC 的 MPI 版，数据 I/O 由 LPI.gdf、LPI.KAIRA 等配套包提供。适合 EISCAT/EISCAT_3D 等雷达的原始数据研究者。使用说明见仓库内 PDF 手册与教程，README 本身较简。
 
 #### [pynasonde](https://github.com/shibaji7/pynasonde)  
 *🏷️ 高校实验室*

@@ -23,7 +23,7 @@
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
 - 列表文件：[`lists/01-ionosphere.md`](../lists/01-ionosphere.md)
-- 当前条目数：**288**
+- 当前条目数：**294**
 
 ## `troposphere` — 对流层
 
@@ -86,7 +86,7 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
 - 列表文件：[`lists/10-gnss-datasets.md`](../lists/10-gnss-datasets.md)
-- 当前条目数：**156**
+- 当前条目数：**163**
 
 ## 与用户仓库的关系标记
 

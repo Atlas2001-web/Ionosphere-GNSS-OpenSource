@@ -451,3 +451,10 @@
 - Method: software-OSS angle — flagship geodetic/orbit suites missing (MIT GAMIT/GLOBK, NASA GMAT), QZSS L6/HAS decoding (qzsl6tool), TID/scintillation code (NRL lstid_processing, HamSCI LSTID, Grape TID tools, SAGA utils), CSA Alouette ionograms, troposphere models (GTrop, MF height correction, TropDS), RINEX conversion/SDR sim (trm2rinex-docker, anywhere-sdr), teaching DD toolbox (Qelaro), DVOACAP Python; `gh search`/`gh api` + `curl -sIL` (all 200); dedup vs PROJECTS.json and all `routine_finds_*.json`
 - Avoided: georinex/GFZRNX/RNXCMP/hatanaka/Orekit/gnsspy/laika/pyrtklib/gnssrefl/tec-suite/pytecgg already listed; IBGE RBMC + IGN RAMSAC already present; t-fors/BiScEF already listed; mazgch/hpg + GitHub GTrop-like repos without license kept only when academically notable; iono-lugre (0★, paper-only) and gannon-storm-rtk-analysis (new, 0★) deferred; topic:troposphere/ppp/rtk mostly AWS/VPN noise
 - Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
+## Routine pass 2026-09-26
+
+- Catalog size before: **998**; after merge: **1011** (+13)
+- Finds file: `research/routine_finds_20260926.json`
+- Method: ionosphere data-portal + analysis-tool angle — ISR portals (EISCAT Portal, SRI AMISR DB), CEDAR Madrigal data site (distinct from OpenMadrigal software home), China Meridian Project data centre, EUMETSAT ROM SAF products, FRDR SuperDARN collection, PITHIA-NRF e-Science Centre; tools pyDARN, SuperDARN RST, ppigrf (IAGA V-MOD), Lompe, LPI (ISR lag-profile inversion), inscar (ISR spectra); `gh search`/`gh api` + `curl -sIL` (all 200); dedup vs PROJECTS.json and all `routine_finds_*.json` checked before deep research
+- Avoided: GIRO/DIDBase/SAO-X, NCEI TEC, CDAAC/COSMIC RO, IGS iono/IONEX dirs, CODE/UPC/JPL GIM, ESA SWE, INGV eSWua, apexpy/aacgmv2/igrf/madrigalWeb, SAMI2/SAMI3, VT SuperDARN already listed; Millstone Madrigal (near-dup of CEDAR Madrigal network); DIAS NOA (JS-only shell, content unverifiable); ICON/GOLD mission pages (weak GNSS link); gpstec/gnssrolib (no README/stale); pyDARNio folded under pyDARN; BAS SuperDARN page and globalsuperdarn.org (unreachable)
+- Merge safety: append-only; UPDATED=0; blanking vs HEAD=0

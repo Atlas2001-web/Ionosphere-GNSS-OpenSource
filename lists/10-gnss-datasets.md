@@ -1,5 +1,5 @@
 # GNSS 数据源 / GNSS Datasets
-> **156** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **163** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
@@ -215,11 +215,15 @@ Space Weather Canada 维护的太阳射电流量测量存档，提供日值、�
 | [CAS-BDsmart-RTS-Iono](https://data.bdsmart.cn/pub/product/rts/iono/) | 中科院 BDsmart 实时电离层产品目录（RTS IONEX 等） | data-portal | — | 🏷️ 官方 |
 | [CDDIS-Atmospheric-Products](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/atmospheric_products.html) | CDDIS 大气产品页：电离层 IONEX 与对流层产品索引说明 | data-portal | — | 🏷️ 官方 |
 | [CDDIS-IONEX](https://cddis.nasa.gov/archive/gnss/products/ionex/) | CDDIS IONEX 目录：IGS 及各分析中心全球电离层图 | data-portal | — | 🏷️ 官方 核心 |
+| [CEDAR Madrigal](https://cedar.openmadrigal.org/) | NSF CEDAR 计划的 Madrigal 高层大气数据库主站（含全球 GNSS TEC 等） | data-portal | — | 🏷️ 官方 |
 | [CNES-PPP-WIZARD-Realtime-Products](http://www.ppp-wizard.net/products/REAL_TIME) | CNES PPP-WIZARD 实时产品目录（含实时轨道钟差/偏差及电离层相关输出） | data-portal | — | 🏷️ 官方 |
+| [EISCAT Portal](https://portal.eiscat.se/) | EISCAT 科学协会非相干散射雷达观测计划、L2/L3 数据与实时图门户 | data-portal | — | 🏷️ 官方 |
 | [eSWua-TEC](http://www.eswua.ingv.it/ewphp/landing.php?doi=tec) | INGV eSWua 数据库：地中海/欧洲/全球 TEC 现报与预报产品入口 | data-portal | — | 🏷️ 官方 核心 |
 | [IGS-Ionosphere-WG](https://igs.org/wg/ionosphere/) | IGS 电离层工作组：GIM/IAAC 与产品活动入口 | data-portal | — | 🏷️ 官方 |
 | [IONORING](http://ionos.ingv.it/ionoring/ionoring.htm) | 意大利 INGV 基于 RING 网的实时 TEC 监测与地图发布页 | data-portal | — | 🏷️ 官方 核心 |
 | [JPL-IONEX-Rapid](https://sideshow.jpl.nasa.gov/pub/iono_daily/IONEX_rapid/) | JPL 快速 IONEX 发布目录：日更新全球电离层图 | data-portal | — | 🏷️ 官方 核心 |
+| [ROM SAF](https://rom-saf.eumetsat.int/) | EUMETSAT 无线电掩星气象卫星应用中心（ROM SAF）产品门户 | data-portal | — | 🏷️ 官方 |
+| [SRI ISR Database (AMISR)](https://data.amisr.com/database/) | SRI International 运营的 AMISR 非相干散射雷达（PFISR/RISR）数据库入口 | data-portal | — | 🏷️ 官方 |
 | [UPC-Chapman-TOMION-Rapid](https://chapman.upc.es/tomion/rapid/) | UPC Chapman：TOMION/IONEX 快速电离层产品下载 | data-portal | — | 🏷️ 高校实验室 |
 | [UPC-gAGE-FastPPP-Products](https://gage.upc.edu/en/gage-products/fast-ppp-products) | UPC gAGE Fast-PPP 产品页：STEC/IONEX/钟差等申请说明 | data-portal | — | 🏷️ 高校实验室 |
 | [UPC-IONEX-Archive](https://cabrera.upc.edu/upc_ionex_GPSonly-RINEXv3/) | UPC 电离层 IONEX 归档目录（分年） | data-portal | — | 🏷️ 高校实验室 |
@@ -256,12 +260,26 @@ Space Weather Canada 维护的太阳射电流量测量存档，提供日值、�
 
 存放 IGS 综合与各电离层分析中心的 GIM、ROTI 等 IONEX 文件，按年份与年积日组织。是 GNSS 电离层事后研究最常用入口之一。下载需登录；注意 Final、Rapid 与预测产品的时延及格网分辨率差异，并结合码偏差/OSB 产品一起使用以免系统差。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
 
+#### [CEDAR Madrigal](https://cedar.openmadrigal.org/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+NSF CEDAR 计划托管的 Madrigal 数据库实例，与本目录已收录的 OpenMadrigal 软件项目主页不同，这里是可直接检索的数据站：提供实验列表、单实验选择、批量下载命令生成、类 FTP 访问、仪器与参数元数据，以及派生参数引擎与 ISR 经验模型在线运行。库中包含 MIT Haystack 全球 GNSS TEC 图、电离层测高仪、FPI 与多台 ISR 数据，并链接 Millstone、EISCAT、SRI、JRO 等其他 Madrigal 节点。部分下载需填写姓名与单位信息。
+
 #### [CNES-PPP-WIZARD-Realtime-Products](http://www.ppp-wizard.net/products/REAL_TIME)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 CNES PPP-WIZARD 示范系统的 REAL_TIME 产品树，可检索实时流配套文件；CNES 亦通过 IGS-RTS 播发实时 SSR。已收录门户首页，本条补齐可枚举的实时产品路径，便于脚本对接。
+
+#### [EISCAT Portal](https://portal.eiscat.se/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+欧洲非相干散射科学协会（EISCAT）官方数据门户，覆盖特罗姆瑟 UHF/VHF 与斯瓦尔巴 ESR 32 m/42 m 雷达：可查运行计划与 L2 分析数据、浏览 L3 产品，并查看各雷达的实时图与实时分析结果。高纬电子密度、温度与离子速度剖面是校验 GNSS TEC、闪烁与 IRI 顶部模型的重要独立观测。下载需通过 EGI Check-in 加入 EISCAT 虚拟组织，入门手册在门户中提供；部分数据也同步到 Madrigal。收录前已 HTTP 200 核验。
 
 #### [eSWua-TEC](http://www.eswua.ingv.it/ewphp/landing.php?doi=tec)  
 *🏷️ 官方 核心*
@@ -290,6 +308,20 @@ INGV 基于 RING 网（约 40 站）的意大利区域实时 VTEC 监测页：IP
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 JPL 侧快速电离层图公开目录，文件为 IONEX 风格，适合需要较短时延 GIM 的科研与监测。其结果与 IGS 综合 Final 存在差异，不可直接等同。部分机构网络可能拦截 sideshow 域名；重要任务建议同时备份 CDDIS 路径中的同系列产品。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+
+#### [ROM SAF](https://rom-saf.eumetsat.int/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+EUMETSAT 下属的 Radio Occultation Meteorology SAF 官方门户，负责 Metop、Sentinel-6 与 Metop-SG 等任务 GNSS 掩星数据的业务化处理，提供弯曲角、折射率与温湿廓线的近实时产品、气候数据记录、产品质量与监测页面，以及文档、报告和用户服务台。与本目录已收录的 ROPP 软件包同源，此条对应数据产品侧。GNSS-RO 资料可用于对流层与电离层剖面研究，也可与 COSMIC/CDAAC 数据互补。部分产品需注册。收录前已 HTTP 200 核验。
+
+#### [SRI ISR Database (AMISR)](https://data.amisr.com/database/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+SRI International 维护的非相干散射雷达数据库，按仪器列出波克弗拉特 PFISR 与雷索卢特湾 RISR-N 等 AMISR 相控阵雷达的实验与处理产品，可按日期检索电子密度、温度和视线速度等参数文件。相控阵体制支持多波束准三维观测，常用于研究极光区电离层结构、极盖斑块及其与 GNSS 闪烁/TEC 梯度的关系。数据也在 SRI Madrigal 站点镜像，可配合 madrigalWeb 批量下载。使用时请遵循上游数据致谢要求。收录前已 HTTP 200 核验。
 
 #### [UPC-Chapman-TOMION-Rapid](https://chapman.upc.es/tomion/rapid/)  
 *🏷️ 高校实验室*
@@ -780,11 +812,14 @@ IGN 为 RAMSAC 提供的 NTRIP 实时服务门户，含站网地图、用户注�
 | [AMBER-Magnetometers](https://magnetometers.bc.edu/) | BC AMBER 等磁强计网络数据中心 | data-portal | — | 🏷️ 高校实验室 |
 | [CARISMA](https://www.carisma.ca/) | 加拿大 CARISMA 地磁阵列数据门户 | data-portal | — | 🏷️ 高校实验室 |
 | [FMI-IMAGE](https://space.fmi.fi/image/) | FMI IMAGE 北欧地磁台链数据 | data-portal | — | 🏷️ 官方 |
+| [FRDR SuperDARN Collection](https://www.frdr-dfdr.ca/repo/collection/superdarn) | 加拿大联邦研究数据库（FRDR）托管的 SuperDARN 雷达数据集合 | data-portal | — | 🏷️ 官方 |
 | [INTERMAGNET](https://www.intermagnet.org/) | INTERMAGNET 全球地磁台网数据 | data-portal | — | 🏷️ 官方 |
 | [Kyoto-WDC-Geomagnetism](https://wdc.kugi.kyoto-u.ac.jp/) | 京都 WDC：Kp/Dst 等地磁指数 | data-portal | — | 🏷️ 官方 核心 |
+| [Meridian Project Data Center](https://www.meridianproject.ac.cn/) | 中国子午工程（Meridian Project）空间环境地基监测数据检索与共享门户 | data-portal | — | 🏷️ 官方 |
 | [NOAA-NGDC-Ionosphere](https://www.ngdc.noaa.gov/stp/iono/) | NGDC iono：NOAA 电离层/STP 历史产品目录 | data-portal | — | 🏷️ 官方 |
 | [NSTB-WAAS-Test-Team](https://www.nstb.tc.faa.gov/) | NSTB：FAA WAAS 测试团队数据与工具门户 | data-portal | — | 🏷️ 官方 |
 | [OpenMadrigal](https://openmadrigal.org/) | OpenMadrigal/CEDAR 分布式空间天气数据库 | data-portal | — | 🏷️ 高校实验室 |
+| [PITHIA e-Science Centre](https://esc.pithia.eu/) | 欧盟 PITHIA-NRF 电离层与热层数据集合、模型与工作流元数据检索中心 | data-portal | — | 🏷️ 官方 |
 | [SuperDARN-VT](https://vt.superdarn.org/) | VT SuperDARN 高频雷达/对流数据入口 | data-portal | — | 🏷️ 高校实验室 |
 | [SuperMAG](https://supermag.jhuapl.edu/) | SuperMAG 全球地磁合并数据 | data-portal | — | 🏷️ 高校实验室 |
 
@@ -811,6 +846,13 @@ CARISMA（Canadian Array for Realtime Investigations of Magnetic Activity）地�
 
 FMI 的 IMAGE（International Monitor for Auroral Geomagnetic Effects）地磁台网门户，覆盖北欧高纬，提供研究用磁情指数与台站数据入口，常与极光区 GNSS TEC/闪烁联合分析。网页公开；具体 FTP/文件服务与引用格式见站内文档。
 
+#### [FRDR SuperDARN Collection](https://www.frdr-dfdr.ca/repo/collection/superdarn)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+加拿大联邦研究数据存储库 FRDR 中的 SuperDARN 专题集合，由 SuperDARN Canada 等单位维护，按年份与雷达发布原始及处理后的相干散射雷达数据集并分配 DOI，是全球 SuperDARN 数据的主要公开镜像之一。数据反映高纬电离层对流与不规则体，可与 GNSS 闪烁、ROTI 及极盖 TEC 结构对照；读写和绘图可用 pyDARN、RST 等工具。部分数据按 SuperDARN 数据政策需要致谢或联系 PI。界面有英法双语。收录前已 HTTP 200 核验。
+
 #### [INTERMAGNET](https://www.intermagnet.org/)  
 *🏷️ 官方*
 
@@ -824,6 +866,13 @@ FMI 的 IMAGE（International Monitor for Auroral Geomagnetic Effects）地磁�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 京都 WDC for Geomagnetism 提供 Kp、Dst 等经典地磁指数与相关数据服务，是空间天气与电离层扰动研究的常用外部驱动入口。门户以网页/文件服务为主；下载与引用规则见站点说明。本条收录「数据怎么拿」，不是 GNSS 观测归档。
+
+#### [Meridian Project Data Center](https://www.meridianproject.ac.cn/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+中国科学院国家空间科学中心牵头的子午工程官方网站与数据中心，汇集沿东经 120° 与北纬 30° 布设的地基空间环境监测链数据，含电离层测高仪、高频雷达、非相干散射雷达、GNSS TEC/闪烁接收机、磁力计与激光雷达等，提供数据检索、DOI 清单、批量下载与数据政策说明。对研究东亚电离层扰动、与 GNSS TEC 结果互证很有价值。站点以中文为主并有英文版，下载需注册登录并遵守数据政策；网络调整期间偶有暂停。
 
 #### [NOAA-NGDC-Ionosphere](https://www.ngdc.noaa.gov/stp/iono/)  
 *🏷️ 官方*
@@ -845,6 +894,13 @@ William J. Hughes 技术中心 WAAS Test Team 站点，提供测试数据与工�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 OpenMadrigal 项目主页，介绍分布式 Madrigal 数据库（CEDAR、ISR TEC 等）及开源服务器/客户端。科研上常作非相干散射雷达与 GNSS TEC 产品的交叉验证入口。具体实验数据在各成员站（如 cedar.openmadrigal.org）；Python 访问见 madrigalWeb。
+
+#### [PITHIA e-Science Centre](https://esc.pithia.eu/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+欧盟 H2020 PITHIA-NRF（电离层、热层、等离子体层综合研究设施）项目的 e-Science Centre，基于统一的空间物理本体与元数据模型登记来自欧洲各机构的数据集合、静态数据集与在线工作流，可按内容检索电离层测高、GNSS TEC、模型输出等资源并跳转到提供方接口。它本身主要做发现与编目，而不是集中存储，适合寻找欧洲电离层数据源与服务。提供者需注册才能登记资源，普通浏览公开。收录前已 HTTP 200 核验。
 
 #### [SuperDARN-VT](https://vt.superdarn.org/)  
 *🏷️ 高校实验室*
