@@ -72,7 +72,7 @@ C++ 实现三套偏差模式：DCB（码偏差与 VTEC 球谐联立）、UPD 与
 | [GREAT-UPD](https://github.com/GREAT-WHU/GREAT-UPD) | GREAT-UPD：多星座 UPD 估计 | C++ | 19 | 🏷️ 高校实验室 核心 |
 | [GREAT_PODFLT](https://github.com/GREAT-WHU/GREAT_PODFLT) | GREAT_PODFLT：实时滤波精密定轨 | C++ | 17 | 🏷️ 高校实验室 核心 |
 | [GREAT-IFCB](https://github.com/GREAT-WHU/GREAT-IFCB) | GREAT-IFCB：多 GNSS 频间钟差（IFCB）估计 | C++ | 15 | 🏷️ 高校实验室 |
-| [rt-clk-service](https://github.com/DoubleString/rt-clk-service) | rt-clk-service：实时钟差/轨道/UPD/IFPB 服务代码 | C++ | 12 | 🏷️ 个人社区 |
+| [rt-clk-service](https://github.com/DoubleString/rt-clk-service) | rt-clk-service：RTCM3 SSR 实时流解码演示 | C++ | 12 | 🏷️ 个人社区 |
 | [GREAT-PCE](https://github.com/GREAT-WHU/GREAT-PCE) | GREAT-PCE：精密卫星钟差估计 | C++ | 9 | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
@@ -94,7 +94,7 @@ C++ 实现三套偏差模式：DCB（码偏差与 VTEC 球谐联立）、UPD 与
 #### [GREAT_PODFLT](https://github.com/GREAT-WHU/GREAT_PODFLT)  
 *🏷️ 高校实验室 核心*
 
-语言：C++ · 许可：— · 星标约：17 · 宿主：github
+语言：C++ · 许可：GPL-3.0 (per doc/GREAT_PODFLT.pdf; no LICENSE file) · 星标约：17 · 宿主：github
 
 执行多 GNSS 实时滤波精密轨道确定（POD），偏产品生成与定轨算法验证，而非终端定位。适合轨道/钟差方向研究生对照 GREAT 流水线。公开算例与力模型文档完整度需自查；与 Ginan、GROOPS 等大型套件相比，更适合精读 GREAT 定轨滤波环节，而不是替代整套业务定轨系统。
 
@@ -110,7 +110,7 @@ C++ 实现三套偏差模式：DCB（码偏差与 VTEC 球谐联立）、UPD 与
 
 语言：C++ · 许可：— · 星标约：12 · 宿主：github
 
-面向实时钟差、轨道与 UPD/IFPB 等偏差产品的服务向代码，贴近 PPP-AR 实时链。适合研究实时产品生成。公开完整度有限，需自备数据与对照 IGS 产品。
+实为一个很小的演示程序：用硬编码的 NTRIP 账号和挂载点拉 RTCM3 SSR 流，经捆绑的 RTKLIB 解码后把轨道钟差、相位/码偏差和 IFPB 打印到 stdout。没有参数、配置文件和落盘，也不生成钟差或 UPD 产品。实测默认 caster 已连不上，要用须改源码换成自己的挂载点；GitHub 未标许可。
 
 #### [GREAT-PCE](https://github.com/GREAT-WHU/GREAT-PCE)  
 *🏷️ 高校实验室 核心*

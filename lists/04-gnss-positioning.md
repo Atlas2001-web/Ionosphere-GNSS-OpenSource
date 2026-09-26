@@ -65,7 +65,7 @@ VieVS（TU Wien）精密单点定位模块，MATLAB 实现，便于与 VLBI/大�
 
 语言：Python · 许可：GPL-2.0 · 星标约：121 · 宿主：github
 
-脚本化调用外部 PPP 并归档结果，常见于时间实验室/钟差相关流程。适合自动化胶水道具。核心解算仍依赖外部引擎；不是独立精密定位库。
+脚本化调用外部 PPP 并归档结果，常见于时间实验室/钟差相关流程。适合自动化胶水道具。核心解算仍依赖外部引擎；不是独立精密定位库。实测 CODE rapid 自动下载已坏（URL 拼错），产品要手工放好。
 
 #### [GAMP_PPPH](https://github.com/zhufengGNSS/GAMP_PPPH)  
 *🏷️ 个人社区 ★*
@@ -114,7 +114,7 @@ Automatic PPP Analysis Software-Türkiye（APAS-TR）处理 GPS/GLONASS/Galileo/
 
 语言：C · 许可：— · 星标约：10 · 宿主：github
 
-解码北斗 PPP-B2b 广播的精密轨道钟差改正，带流解析、缓冲与完整性检查，便于接入实时 PPP 流水线。做 BDS-3 短报文 PPP 或接收机原型时应优先阅读。仓库体量小、许可未标明，工程化与多系统融合仍需自补；可与 PRIDE、Ginan、RTKLIB 实时分支对照改正数接口设计。区域服务范围与信号可见性会直接影响改正可用性。
+解码北斗 PPP-B2b 广播的精密轨道钟差改正，带流解析、缓冲与完整性检查，便于接入实时 PPP 流水线。做 BDS-3 PPP-B2b 实时定位或接收机原型时可以参考。仓库体量小、许可未标明，工程化与多系统融合仍需自补；可与 PRIDE、Ginan、RTKLIB 实时分支对照改正数接口设计。区域服务范围与信号可见性会直接影响改正可用性。实测仓库只是嵌入 BNC 的源码切片，没有构建脚本，缺 BNC 头文件和 Qt 无法单独编译。
 
 #### [PyGNSSFix](https://github.com/rodrigo-moliveira/PyGNSSFix)  
 *🏷️ 个人社区*
@@ -630,7 +630,7 @@ AILocAR 在 PrNet 之后的端到端神经伪距改正实现，把改正与定�
 
 语言：C++ · 许可：BSD-3-Clause · 星标约：6 · 宿主：github
 
-提供可在 Ruby 下控制的 PVT，并解析 RINEX/SP3/ANTEX/UBX。适合脚本自动化爱好者。小众语言生态限制社区体量；精密 PPP-AR 请看专用引擎。
+提供可在 Ruby 下控制的 PVT，并解析 RINEX/SP3/ANTEX/UBX。适合脚本自动化爱好者。小众语言生态限制社区体量；精密 PPP-AR 请看专用引擎。实测在 Ruby 3.3.8 上加 --weight 会段错误。
 
 #### [NeRC](https://github.com/AILocAR/NeRC)  
 *🏷️ 高校实验室*

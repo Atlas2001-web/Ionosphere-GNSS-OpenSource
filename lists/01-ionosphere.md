@@ -844,7 +844,7 @@ Open-Access System for Ionospheric Studies：从 GNSS 观测算 ROTI、ΔTEC、S
 
 语言：Cython · 许可：BSD-3-Clause · 星标约：12 · 宿主：github
 
-Septentrio 厂商发布的 Python/Cython 解析器，把 SBF 流转成 JSON 结构，社区已扩展 ISMR（4086）等闪烁监测块，便于从 PolaRx 系列提取 S4、σφ 等。输入为 SBF 文件或流；输出为结构化观测/状态块。局限：侧重解码而非完整闪烁科学产品流水线；大文件需注意内存策略。
+Septentrio 厂商发布的 Python/Cython 解析器，把 SBF 文件或字节流解成块名和字段字典，也能编码回字节。PyPI 包名是 sbf-parser。实测当前版本没有 ISMR（4086）等闪烁块，提不出 S4、σφ，ISMR 数据要走 ismr_downloader 等其他工具。大文件需分块读，防止内存吃满。
 
 #### [saga-utils](https://github.com/perrysou/saga-utils)  
 *🏷️ 个人社区*
@@ -1237,7 +1237,7 @@ GitHub rumkex/IonTools，偏辅助脚本/小工具集合，用来补主流程里
 
 语言：Fortran · 许可：MIT · 星标约：25 · 宿主：github
 
-跟进 IRI-2020 的可调用封装，便于更新背景场或做版本差异试验。依赖 Fortran 构建；与 GNSS 实测 TEC 同化需另接观测链。
+跟进 IRI-2020 的可调用封装，便于更新背景场或做版本差异试验。依赖 Fortran 构建；与 GNSS 实测 TEC 同化需另接观测链。捆带的 apf107/ig_rz 指数只到 2023 年，之后的日期不报错但结果失真，需自行更新。
 
 #### [pyIRI2016](https://github.com/rilma/pyIRI2016)  
 *🏷️ 个人社区*
@@ -1437,7 +1437,7 @@ C++ 工具面向 GNSS 电离层掩星数据处理与分析，适合理解 LEO—
 | [real-time-ionospheric-maps-Kalman](https://github.com/AlexandraKoulouri/real-time-ionospheric-maps-using-Kalman) | real-time-ionospheric-maps-Kalman：南美区域集合卡尔曼电离层图 | MATLAB | 3 | 🏷️ 个人社区 |
 | [GIM_fusion_VLBI](https://github.com/arrueegg/GIM_fusion_VLBI) | GIM_fusion_VLBI：把 VLBI 信息融入全球电离层图 | Python | 1 | 🏷️ 个人社区 |
 | [m_gim-PANXIONG](https://github.com/PANXIONG-CN/m_gim) | m_gim-PANXIONG：小体量 MATLAB GIM 脚本草稿 | MATLAB | 1 | 🏷️ 个人社区 ★ |
-| [DiffIonMap](https://github.com/Jin-Whu/DiffIonMap) | IONEX 差分成图：对比分析中心或风暴扰动 | Python | 0 | 🏷️ 个人社区 |
+| [DiffIonMap](https://github.com/Jin-Whu/DiffIonMap) | DiffIonMap：两份 IONEX 并排对照成图 | Python | 0 | 🏷️ 个人社区 |
 | [GNSS.IonosphereMaps](https://github.com/gurkanguldas/GNSS.IonosphereMaps) | GNSS.IonosphereMaps：Java 电离层图工具 | Java | — | 🏷️ 个人社区 ★ |
 | [Ionospheric-TEC-Kriging-Turkiye](https://github.com/skaratay/Ionospheric-TEC-Kriging-Turkiye) | Ionospheric-TEC-Kriging-Turkiye：土耳其区域 TEC 克里金/GPR | MATLAB | 0 | 🏷️ 高校实验室 |
 | [Zenodo-VTEC-map-generation-SBAS](https://doi.org/10.5281/zenodo.10058636) | Zenodo-VTEC-map-generation-SBAS：SBAS 误差模型用 VTEC 图生成补充包 | MATLAB | 0 | 🏷️ 高校实验室 |
@@ -1510,7 +1510,7 @@ MosGIM 早期公开版本，便于追溯相位差 GIM 的原始流程。适合�
 
 语言：Python · 许可：— · 星标约：0 · 宿主：github
 
-读入两份 IONEX，生成差分 TEC 图，便于对比分析中心产品或风暴扰动相对变化。极简、久未更新。不负责产品下载与质量控核；批量业务制图请用专业 IONEX/GIM 流水线。
+读入两家分析中心同一天的 IONEX，逐时次左右并排画 VTEC 图，便于肉眼对比产品或风暴期形态。实测它只出“A VS B”并排图，不计算差值图；要 ΔTEC 需自己相减。代码是 Python 2，Py3 下要小改；久未更新，不负责下载与质控。
 
 #### [GNSS.IonosphereMaps](https://github.com/gurkanguldas/GNSS.IonosphereMaps)  
 *🏷️ 个人社区 ★*

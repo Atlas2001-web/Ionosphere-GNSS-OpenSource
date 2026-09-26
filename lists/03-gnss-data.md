@@ -434,7 +434,7 @@ Anubis 免费档下载入口，提供 Linux 预编译与 GPL-3 源码，覆盖�
 
 语言：C · 许可：GPL-2.0-or-later · 星标约：65 · 宿主：official_site
 
-RTCM-Ntrip 项目提供的 RTCM 3 到 RINEX 转换工具，便于把实时流转成事后文件。说明与附件见官方 wiki。功能聚焦转换；质检与编辑需搭配 Anubis/GFZRNX 等。
+RTCM-Ntrip 项目提供的 RTCM 3 到 RINEX 转换工具，便于把实时流转成事后文件。说明与附件见官方 wiki。功能聚焦转换；质检与编辑需搭配 Anubis/GFZRNX 等。注意门户已把它标为 obsolete，功能并入 BNC；它只能从 NTRIP 流实时转换，不能读离线 RTCM 文件。
 
 #### [prx](https://github.com/jtec/prx)  
 *🏷️ 个人社区*
@@ -485,7 +485,7 @@ Rust 实现的 u-blox UBX 原始观测反序列化与 RINEX 采集工具，方�
 
 语言：Python · 许可：BSD-3-Clause · 星标约：3 · 宿主：github
 
-把 UCAR CDAAC GNSS-RO 产品接到 pysat 数据管理框架，文档与代码中列出 ionphs（电离层 excess phase）、podtec、scnLv1 等标签。适合已在用 pysat 做近地空间数据融合、又想顺手读 COSMIC 掩星文件的人。部分标签加载限制需对照 README；不是独立的 Abel 反演引擎。
+把 UCAR CDAAC GNSS-RO 产品接到 pysat 数据管理框架，文档与代码中列出 ionphs（电离层 excess phase）、podtec、scnLv1 等标签。适合已在用 pysat 做近地空间数据融合、又想顺手读 COSMIC 掩星文件的人。部分标签加载限制需对照 README；不是独立的 Abel 反演引擎。实测 0.0.5 的 ionprf 可正常载入，ionphs 能下载但 Instrument.load 报错，需用 netCDF4 直接读。
 
 #### [cosmic-crunch](https://github.com/ErickShepherd/cosmic-crunch)  
 *🏷️ 个人社区*
@@ -643,7 +643,7 @@ nav-solutions / rtk-rs 生态的 RINEX→BINEX CLI（MPL-2.0，Rust）。便于�
 
 语言：Python · 许可：Apache-2.0 · 星标约：14 · 宿主：github
 
-EarthScope 开源的 GNSS 产品联邦工具，按日期与任务在十余个 IGS 分析中心间解析依赖并下载解压 SP3/CLK/BIAS/ERP/IONEX/ATX 等，附 CLI 与可选 PRIDE-PPPAR 流水线封装。解决 PPP 辅助产品分散与命名差异。需网络可达各 AC；与 EarthScope gnsstools（格式/流）互补。
+EarthScope 开源的 GNSS 产品联邦工具，按日期与任务在十余个 IGS 分析中心间解析依赖并下载解压 SP3/CLK/BIAS/ERP/IONEX/ATX 等，附 CLI 与可选 PRIDE-PPPAR 流水线封装。解决 PPP 辅助产品分散与命名差异。需网络可达各 AC；与 EarthScope gnsstools（格式/流）互补。不在 PyPI，需从源码装。实测 BKG 的 IONEX 路径 404，JPL 的 IONEX 目录配错，IONEX 基本只能经 CDDIS 拿。
 
 #### [GDDS](https://github.com/LECUT/GDDS)  
 *🏷️ 个人社区*
@@ -694,7 +694,7 @@ GeoDE（Geodetic Database Engine）把 RINEX 下载、归档扫描、PPP、GAMIT
 |---|---|---|---:|---|
 | [georinex](https://github.com/geospace-code/georinex) | georinex：高速 Python RINEX 读写 | Python | 269 | 🏷️ 个人社区 🔀 ★ 核心 |
 | [gnsspy](https://github.com/GNSSpy-Project/gnsspy) | gnsspy：Python GNSS 数据读写与分析包 | Python | 209 | 🏷️ 个人社区 ★ |
-| [rinex](https://github.com/nav-solutions/rinex) | rinex：Rust RINEX 解析与 RINEX-Cli | Rust | 126 | 🏷️ 个人社区 核心 |
+| [rinex](https://github.com/nav-solutions/rinex) | rinex：Rust RINEX 解析库（配套 rinex-cli） | Rust | 126 | 🏷️ 个人社区 核心 |
 | [gnsstools](https://github.com/arthurdjn/gnsstools) | 轻量 Python：RINEX/SP3 读取与轨道改正 | Python | 39 | 🏷️ 个人社区 |
 | [RinexReader](https://github.com/aaronboda24/RinexReader) | RinexReader：C++ RINEX 2/3 读取库 | C++ | 38 | 🏷️ 个人社区 |
 | [READ_GNSS](https://github.com/dzd9798/READ_GNSS) | READ_GNSS：MATLAB 读 RINEX/IONEX 等 GNSS 文件 | MATLAB | 10 | 🏷️ 个人社区 |
@@ -721,7 +721,7 @@ Python 里最常用的 RINEX 读写库之一，覆盖观测/导航/SP3，可批�
 
 语言：Rust · 许可：MPL-2.0 · 星标约：126 · 宿主：github
 
-GeoRust/nav-solutions 系 RINEX 库，附 RINEX-Cli，可做质检、SPP/PPP、CGGTTS 等，社区常把它比作 teqc/Anubis/gLAB 的开源组合拳。适合要强类型与高性能 IO 的人。学习曲线比 Python 陡；生态仍在演进。
+GeoRust/nav-solutions 系 RINEX 库，本身是纯库，没有命令行；配套的 rinex-cli 在独立仓，可做质检、SPP/PPP 等，社区常把它比作 teqc/Anubis/gLAB 的开源组合拳。适合要强类型与高性能 IO 的人。学习曲线比 Python 陡；生态仍在演进。
 
 #### [gnsstools](https://github.com/arthurdjn/gnsstools)  
 *🏷️ 个人社区*
@@ -903,7 +903,7 @@ MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实�
 | [nav-solutions-gnss](https://github.com/nav-solutions/gnss) | nav-solutions-gnss：Rust 星座/信号基础定义 crate | Rust | 11 | 🏷️ 个人社区 |
 | [pysbf2](https://github.com/semuconsulting/pysbf2) | pysbf2：Septentrio SBF 消息的 Python 编解码库 | Python | 8 | 🏷️ 个人社区 |
 | [pyubxutils](https://github.com/semuconsulting/pyubxutils) | pyubxutils：UBX 接收机 Python 命令行工具 | Python | 5 | 🏷️ 个人社区 |
-| [gnss-protos](https://github.com/nav-solutions/gnss-protos) | gnss-protos：GNSS 广播协议编解码 Rust 库 | Rust | 4 | 🏷️ 个人社区 |
+| [gnss-protos](https://github.com/nav-solutions/gnss-protos) | gnss-protos：GPS/QZSS LNAV 电文编解码 Rust 库 | Rust | 4 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -1024,7 +1024,7 @@ semuconsulting 基于 pyubx2 的 u-blox 工具集，BSD-3-Clause。包括 ubxsav
 
 语言：Rust · 许可：MPL-2.0 · 星标约：4 · 宿主：github
 
-集中处理多种 GNSS 广播与传输相关协议编解码的 Rust 库，为 rinex、rtk、ntrip 等 crate 提供底座。适合需要强类型与高性能 IO 的开发者。上层定位/质检算法需另接；协议覆盖范围随版本扩展，集成时建议锁定 crate 版本并跑官方样例报文。
+nav-solutions 生态的 Rust 协议库，目前实测只实现 GPS/QZSS LNAV 星历子帧（1–3）的比特流编解码，历书帧和其他系统尚未支持；crates.io 仅 0.0.2，仓内已是 0.1.0-beta，API 会变。纯库、无命令行，不做定位；集成时锁定版本并用仓内样例帧回归。
 
 ## Android原始观测
 
