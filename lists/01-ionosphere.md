@@ -343,7 +343,7 @@ HAO 上的 TIE-GCM/TIME-GCM 家族说明、用户指南与发布历史入口，�
 #### [Klobuchar-study-code](https://github.com/KaijingZheng/Klobuchar-ionosphere-model-in-global-navigation-satellite-systems)  
 *🏷️ 个人社区*
 
-语言：MATLAB · 许可：unknown · 星标约：0 · 宿主：github
+语言：MATLAB · 许可：— · 星标约：0 · 宿主：github
 
 教学/研究向的 Klobuchar 实现与精度探讨，便于理解 GPS 广播八参数改正。局限：非新品算法库；星数为 0；改进结论需独立验证。
 
@@ -510,7 +510,7 @@ Jupyter 流程读取 CDAAC/COSMIC 掩星 NetCDF，面向 TEC 与掩星电离层�
 #### [gps-tec-cnn-lstm-attention](https://github.com/hyy-why/gps-tec-cnn-lstm-attention)  
 *🏷️ 个人社区*
 
-语言：Python · 许可：unknown · 星标约：1 · 宿主：github
+语言：Python · 许可：— · 星标约：1 · 宿主：github
 
 论文配套的 CNN-BiLSTM 注意力 TEC 预测代码，目标是复现实验而非业务运行。星标与文档有限，数据准备脚本完整度需自查。业务空间天气预报请用业务模式或同化产品。
 
@@ -713,7 +713,7 @@ SuperDARN 数据分析工作组（DAWG）维护的 Radar Software Toolkit，GPL-
 #### [Ionort-raytrace](https://github.com/blair3sat/ionosphere-rt)  
 *🏷️ 高校实验室*
 
-语言：Fortran · 许可：unknown · 星标约：17 · 宿主：github
+语言：Fortran · 许可：CC-BY-NC-ND-3.0 (INGV IONORT MATLAB code per MATLAB/README.TXT; Julia port unstated) · 星标约：17 · 宿主：github
 
 基于 Ionort 射线追踪思想的 Fortran 实现，用于给定电子密度背景下追踪无线电射线路径，可服务 HF/GNSS 传播与层析正演。局限：仓库较旧；电子密度场需外部提供（IRI/模式）；与商业/成熟射线库相比文档与测试不足。
 
@@ -727,9 +727,9 @@ SuperDARN 数据分析工作组（DAWG）维护的 Radar Software Toolkit，GPL-
 #### [ionosonde_volgatech](https://github.com/Vladimi-lan/ionosonde_volgatech)  
 *🏷️ 高校实验室*
 
-语言：Python · 许可：unknown · 星标约：13 · 宿主：github
+语言：Python · 许可：— · 星标约：13 · 宿主：github
 
-与具体测高仪系统相关的 Python 处理代码，体量不小，可作为非 GIRO 数据源处理参考。局限：缺少清晰英文 README；通用性与许可需使用者自行确认（license 字段为空）。
+与具体测高仪系统相关的 Python 处理代码，体量不小，可作为非 GIRO 数据源处理参考。局限：缺少清晰英文 README；通用性与许可需使用者自行确认（仓库未声明许可）。
 
 #### [Alouette_ISIS_extract](https://github.com/asc-csa/Alouette_ISIS_extract)  
 *🏷️ 官方*
@@ -986,7 +986,7 @@ C++ 工具面向 GNSS 电离层掩星数据处理与分析，适合理解 LEO—
 #### [INPE-TEC-Maps-IONEX](https://github.com/Hollweg/INPE-TEC-Maps-IONEX)  
 *🏷️ 高校实验室 ★*
 
-语言：Python · 许可：— · 星标约：15 · 宿主：github
+语言：Python · 许可：no formal licence (README: free reproduction, keep author credit) · 星标约：15 · 宿主：github
 
 把电离层预报/分析系统输出整理成 TEC 图和 IONEX，方便与国际产品格式对齐。适合需要 IONEX 交换或南美区域 TEC 图的用户。对全球多分析中心产品融合支持有限；格式细节建议对照 IONEX 标准与 INX_Editor 一起核。
 
@@ -1170,7 +1170,7 @@ SuperSID 用简易 VLF 接收监测突发电离层扰动（太阳耀斑等引起
 #### [Ionospheric-TEC-ROTI-Interactives](https://github.com/Tesfay-Tesfu/Ionospheric-TEC-ROTI-Interactives)  
 *🏷️ 高校实验室*
 
-语言：Python · 许可：unknown · 星标约：3 · 宿主：github
+语言：Python · 许可：— · 星标约：3 · 宿主：github
 
 带 Tkinter/交互流程的 TEC 与 ROTI 计算工具，可按高度角筛选并对比扰动日与静日，输出 30 s 与 5 min 窗口 ROTI。输入为用户准备的 TEC 数据文件夹（非完整 RINEX 解算链）。局限：依赖外部已算好的 TEC；GUI 交互偏本地脚本；许可未声明。
 
@@ -1191,7 +1191,7 @@ Notebook 实验：对 GNSS 导出的 ROTI 做深度学习时序预报。局限�
 #### [igs-roti](https://github.com/jonathanblade/igs-roti)  
 *🏷️ 个人社区*
 
-语言：Python · 许可：unknown · 星标约：2 · 宿主：github
+语言：Python · 许可：— · 星标约：2 · 宿主：github
 
 针对 IGS ROTI map 产品的可视化网页/工具，方便快速查看全球/区域 ROTI 图，而不是从原始观测算 ROTI。局限：依赖 IGS 产品发布；仓库小、维护有限。
 
@@ -1590,14 +1590,14 @@ Oleg Zolotov 等实现的 FIRI-2018（Friedrich 等更新的低电离层经验�
 #### [GIM_fusion_VLBI](https://github.com/arrueegg/GIM_fusion_VLBI)  
 *🏷️ 高校实验室*
 
-语言：Python · 许可：unknown · 星标约：1 · 宿主：github
+语言：Python · 许可：— · 星标约：1 · 宿主：github
 
 探索将 VLBI 相关信息融入 GIM 的数据同化/融合流程，拓展传统纯 GNSS GIM。局限：研究仓、星数低；输入数据与实验配置需读论文/脚本；非业务 GIM 软件。
 
 #### [DiffIonMap](https://github.com/Jin-Whu/DiffIonMap)  
 *🏷️ 高校实验室*
 
-语言：Python · 许可：unknown · 星标约：0 · 宿主：github
+语言：Python · 许可：— · 星标约：0 · 宿主：github
 
 读入两份 IONEX，生成差分 TEC 图，便于对比分析中心产品或风暴扰动相对变化。极简、久未更新。不负责产品下载与质量控核；批量业务制图请用专业 IONEX/GIM 流水线。
 
@@ -1638,7 +1638,7 @@ Oleg Zolotov 等实现的 FIRI-2018（Friedrich 等更新的低电离层经验�
 #### [ED-AttConvLSTM](https://github.com/leeliangchao/ED-AttConvLSTM)  
 *🏷️ 高校实验室*
 
-语言：Jupyter Notebook · 许可：— · 星标约：10 · 宿主：github
+语言：Jupyter Notebook · 许可：no licence granted (README: contact authors before reuse) · 星标约：10 · 宿主：github
 
 编码器—解码器加注意力的 ConvLSTM，针对 TEC 图时序预报。适合复现相关论文结构。工程部署与多源同化不在范围；输入 GIM 分辨率与缺失值处理需自建。
 
@@ -1762,7 +1762,7 @@ SWPC 官方 HTTP 产品树，提供 geojson_2d_urt 与 netcdf_2d_urt 等目录�
 #### [EGNOS_SDK_Core](https://github.com/EpsilonRTD/EGNOS_SDK_Core)  
 *🏷️ 个人社区*
 
-语言：Java · 许可：— · 星标约：5 · 宿主：github
+语言：Java · 许可：EUPL-1.1 · 星标约：5 · 宿主：github
 
 在移动端集成 EGNOS/SBAS 改正能力的 SDK 核心，便于理解终端如何消费 SBAS 电离层格网。输入为 SDK API 与 SBAS 数据通道；输出为改正后的定位相关量。局限：偏移动集成；不是开源 EMS 全链路解析教程。
 
@@ -1994,7 +1994,7 @@ C++ 实现多星座电离层监测指标（ROTI、AATR、STEC/VTEC），偏近�
 #### [gnss-scintillation-simulator](https://github.com/cu-sense-lab/gnss-scintillation-simulator)  
 *🏷️ 高校实验室*
 
-语言：MATLAB · 许可：— · 星标约：25 · 宿主：github
+语言：MATLAB · 许可：MIT · 星标约：25 · 宿主：github
 
 科罗拉多大学 Boulder Satellite Navigation and Sensing Lab（cu-sense-lab）开源的 GNSS 闪烁仿真器，生成相位与幅度闪烁序列，用于接收机跟踪环与完好性试验。适合算法仿真，不是实测 ROTI 产品生成器；参数需对照文献与实测统计。同实验室还有简化两参数版 gnss-scintillation-simulator_2-param。
 

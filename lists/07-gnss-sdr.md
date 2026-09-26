@@ -110,7 +110,7 @@ Python 工具集，提供 GNSS 扩频码生成、捕获与跟踪等基带 DSP �
 #### [gps-sdr](https://github.com/gps-sdr/gps-sdr)  
 *🏷️ 个人社区*
 
-语言：C++ · 许可：— · 星标约：107 · 宿主：github
+语言：C++ · 许可：GPL-2.0-or-later · 星标约：107 · 宿主：github
 
 较早的开源 GPS 软件接收机项目，面向 USRP 与 GN3S 等前端，见证了 SDR GNSS 从实验走向开源生态的阶段。适合历史对照与旧硬件实验。相对现代 gnss-sdr 依赖与驱动可能过时，新部署优先评估 gnss-sdr 或 GNSS-SDRLIB。旧版 UHD/GNU Radio 绑定可能无法在新系统直接编译。
 
@@ -124,7 +124,7 @@ Python 工具集，提供 GNSS 扩频码生成、捕获与跟踪等基带 DSP �
 #### [CU-SDR-Collection](https://github.com/gnsscusdr/CU-SDR-Collection)  
 *🏷️ 个人社区*
 
-语言：MATLAB · 许可：— · 星标约：80 · 宿主：github
+语言：MATLAB · 许可：GPL-2.0-or-later · 星标约：80 · 宿主：github
 
 CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据，便于复现捕获、跟踪与定位教学流程。适合 SoftGNSS 风格 MATLAB SDR 课程与论文对照。各子项目完整度不一；要工程化实时多星座接收，仍优先评估 gnss-sdr 主线。示例数据路径需按仓库说明改到本地磁盘。不同子目录对应不同信号与作业流程，勿混用配置。
 
@@ -159,9 +159,9 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 #### [SoftGNSS-python](https://github.com/perrysou/SoftGNSS-python)  
 *🏷️ 个人社区*
 
-语言：Python · 许可：— · 星标约：44 · 宿主：github
+语言：Python · 许可：GPL-2.0-or-later (main.py header only, retained from SoftGNSS; no repo-wide licence) · 星标约：44 · 宿主：github
 
-把教学经典 SoftGNSS 思路迁到 Python，降低 MATLAB 门槛，便于改捕获、跟踪与位同步实验。适合课堂与自学 GNSS-SDR。功能深度与实时性不如 gnss-sdr；许可未在仓库显著标明，商用或再分发前需自行确认代码来源与授权条款。建议与原版 SoftGNSS 文档对照理解各处理阶段。
+把教学经典 SoftGNSS 思路迁到 Python，降低 MATLAB 门槛，便于改捕获、跟踪与位同步实验。适合课堂与自学 GNSS-SDR。功能深度与实时性不如 gnss-sdr；仓库无整体许可文件，仅 main.py 保留 SoftGNSS 的 GPLv2-or-later 头注释，商用或再分发前需自行确认代码来源与授权条款。建议与原版 SoftGNSS 文档对照理解各处理阶段。
 
 #### [gnss-baseband](https://github.com/j-core/gnss-baseband)  
 *🏷️ 个人社区*
@@ -173,14 +173,14 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 #### [gnss-sdr-1pps](https://github.com/oscimp/gnss-sdr-1pps)  
 *🏷️ 个人社区*
 
-语言：— · 许可：— · 星标约：40 · 宿主：github
+语言：— · 许可：GPL-3.0-or-later · 星标约：40 · 宿主：github
 
 围绕为 gnss-sdr 增加 1-PPS 秒脉冲能力的补丁、说明与相关文件，方便把软件接收机接到时频设备。适合已部署 gnss-sdr、需要硬件秒脉冲的用户。须与主项目具体版本对齐合并；本仓库不是独立接收机发行版。硬件 PPS 输出电平与线缆延迟要纳入系统标定。PPS 线缆长度引入的延迟应写入系统时延表。
 
 #### [FlyDog-SDR-GPS](https://github.com/flydog-sdr/FlyDog_SDR_GPS)  
 *🏷️ 个人社区*
 
-语言：C++ · 许可：— · 星标约：30 · 宿主：github
+语言：C++ · 许可：LGPL-2.0-or-later (KiwiSDR code) + GPL-3.0-or-later (GPS receiver code) · 星标约：30 · 宿主：github
 
 从 Beagle_SDR_GPS/KiwiSDR 分出的固件树，配合专用附加板（如更高位数 ADC）使用。适合已有 FlyDog 硬件或研究 Kiwi 衍生的开发者。与原版 Kiwi 配置、帽板不完全互通；社区规模与长期支持需自评后再投入。刷机前备份原 Kiwi 配置，避免变砖后难恢复。刷写镜像前确认帽板硬件修订号一致。
 
@@ -271,14 +271,14 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 #### [BDSSDR](https://github.com/nkyang/BDS_SDR)  
 *🏷️ 个人社区*
 
-语言：MATLAB · 许可：— · 星标约：2 · 宿主：github
+语言：MATLAB · 许可：GPL-2.0-or-later · 星标约：2 · 宿主：github
 
 仓库内含 GNSS_SDR 目录，面向北斗及相关 GNSS 软件接收实验；星标少、README 几乎缺失，需自行翻目录与脚本。适合愿意读代码的 SDR 学习者。维护与说明弱于 SoftGNSS、CU-SDR-Collection 及 BDS-3 B1C/B2a 专用仓库；编译与数据路径请先本地验证。
 
 #### [FlyCat-SDR-GPS](https://github.com/flydog-sdr/FlyCat_SDR_GPS)  
 *🏷️ 个人社区*
 
-语言：C++ · 许可：— · 星标约：2 · 宿主：github
+语言：C++ · 许可：LGPL-2.0-or-later (KiwiSDR code) + GPL-3.0-or-later (GPS receiver code) · 星标约：2 · 宿主：github
 
 面向 Orange Pi 的 FlyCat SDR+GPS cape，强调 16-bit 采样与更宽频段，定位为 Kiwi 路线的下一代硬件尝试。适合硬件黑客与短波/GNSS SDR 板级玩家。软件生态与文档体量小于主流 KiwiSDR；驱动、镜像与采购渠道需自行确认。与 Orange Pi 具体型号的引脚/供电兼容性要核对。
 
@@ -352,7 +352,7 @@ Mictronics 维护的 PlutoSDR GPS 基带 IQ 生成与发射工具，把模拟中
 #### [gps-sdr-sim-assistant](https://github.com/frank-pian/gps-sdr-sim-assistant)  
 *🏷️ 个人社区*
 
-语言：JavaScript · 许可：— · 星标约：63 · 宿主：github
+语言：JavaScript · 许可：MIT · 星标约：63 · 宿主：github
 
 为流行的 gps-sdr-sim 提供 GUI，降低轨迹设置、参数填写与导出步骤的操作成本，方便演示与反复试验。适合经常用 gps-sdr-sim 的测试人员。核心仿真仍完全依赖上游；射频发射合法性与功率控制责任在使用者。生成文件仍要交给 gps-sdr-sim 命令行或脚本发射。界面生成的参数最终仍交回 gps-sdr-sim 执行。
 
@@ -514,7 +514,7 @@ VHDL 代码用于生成 GPS L1 C/A 以及 Galileo E1OS、E5 的 PRN 与无数据
 #### [NavLab-DPE-SDR](https://github.com/Stanford-NavLab/NavLab-DPE-SDR)  
 *🏷️ 高校实验室*
 
-语言：Cuda · 许可：— · 星标约：46 · 宿主：github
+语言：Cuda · 许可：MIT · 星标约：46 · 宿主：github
 
 斯坦福导航实验室开源的直接位置估计（DPE）GPS 接收软件，含 CUDARecv 与 PyGNSS，在位置域直接估计而非传统标量跟踪环。适合研究强多径/抗干扰新体制的算法群体。依赖 CUDA 与较大算力；部署与调参成本高于常规 gnss-sdr 跟踪环路线。GPU 驱动与 CUDA 工具链版本需与编译说明严格一致。
 
