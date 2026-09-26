@@ -12916,7 +12916,7 @@
       "name": "ISMR-Query-Tool",
       "url": "https://ismrquerytool.fct.unesp.br/",
       "desc_zh": "UNESP ISMR Query Tool：闪烁监测接收机 ISMR 数据查询",
-      "analysis_zh": "圣保罗州立大学等维护的 ISMR Query Tool，用于查询/获取 GNSS 闪烁监测接收机（ISMR）相关数据，服务低纬闪烁与 CIGALA/CALIBRA 一类研究。站点曾变更域名或证书，若打不开请用 HTTP 或项目组当前公布地址；配合仓内 ismr_downloader 软件条目使用。",
+      "analysis_zh": "圣保罗州立大学（UNESP）维护的 ISMR Query Tool，查询/下载 GNSS 闪烁监测接收机（ISMR：S4、σφ 等）数据，服务巴西低纬闪烁与 CIGALA/CALIBRA 一类研究。2026-09-26 实测：http 只 301 跳转到 https，https 证书链不全（curl exit 60），首页为 SPA + Cloudflare Turnstile，须 UNESP 账号；命令行批量用仓内 ismr_downloader（要邮箱+密码）。匿名替代见 docs/software/scintillation-networks.md（INGV eSWua）。",
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
@@ -12932,7 +12932,7 @@
       "provenance": "academic_lab",
       "one_liner_zh": "UNESP ISMR 闪烁数据查询工具",
       "registration": "form_register",
-      "registration_zh": "在查询工具网页按提示注册/登录后检索下载；政策以 UNESP 页面为准，失败时核对是否需 HTTP 或新域名。"
+      "registration_zh": "须在 Query Tool 注册 UNESP 账号（邮箱 + 密码）后检索下载；http 仅跳转 https，不能绕开登录（2026-09-26 实测）。"
     },
     {
       "name": "CDDIS-Highrate-GNSS",
@@ -14830,7 +14830,7 @@
       "name": "JPL-GPS-Time-Series",
       "url": "https://sideshow.jpl.nasa.gov/post/series.html",
       "desc_zh": "NASA JPL GPS 站坐标时间序列（sideshow）公开页",
-      "analysis_zh": "JPL sideshow 上的 GPS Time Series 入口，提供全球站坐标时间序列浏览与相关产品链接，常与 GipsyX/轨道钟差产品一并使用。与 IONEX_rapid 等同域不同路径；引用与更新策略见页面说明。适合形变、参考框架与 PPP 结果对照，原始观测请仍走 CDDIS/区域 CORS。",
+      "analysis_zh": "JPL 大地测量组用 GipsyX PPP 发布的全球约 2860 站 GPS 日坐标时序（sideshow repro2018a/post：point/*.series 编辑后时序、resid/*.resid 残差）与四张汇总表（XYZ/经纬高位置速度、阶跃、季节项），HTTPS 匿名静态文件。实测仍是 IGS14 框架（参考历元 2026-01-01），表内位置单位 mm，数据约 6–7 天延迟、每周左右重算；http/ftp 不响应，旧 raw/ 与 repro2011b 为停更快照。原始观测请走 CDDIS/区域 CORS。docs/software/jpl-gps-timeseries.md 有实测手册。",
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
@@ -14844,7 +14844,9 @@
       "user_relation": "none",
       "host": "official_site",
       "provenance": "official",
-      "one_liner_zh": "JPL GPS 时序：sideshow 全球站坐标序列入口"
+      "one_liner_zh": "JPL GPS 时序：sideshow 全球站坐标序列入口",
+      "registration": "open",
+      "registration_zh": "时序与汇总表均 HTTPS 匿名下载，无需注册（2026-09-26 实测）。"
     },
     {
       "name": "GipsyX-JPL",
@@ -20292,7 +20294,7 @@
       "name": "UnicoreDriver",
       "url": "https://github.com/zltan-whu/UnicoreDriver",
       "desc_zh": "ROS Noetic 下读 BESTNAVXYZB 发布 Odometry，支持多台接收机",
-      "analysis_zh": "开发者 Zhiliang Tan（账号名带 whu）发布的 ROS Noetic 驱动，GPL-3.0 许可，C++ 实现，依赖 Eigen 与 Boost。依据和芯星通 UM982 官方协议开发，在 UM982 与 UM980 上测试；需用 UPrecise 配置接收机输出 BESTNAVXYZB，驱动经串口读取并发布 nav_msgs/Odometry 话题，launch 文件支持多台接收机分命名空间接入，并可配置 NTRIP 获取 RTK 固定解。适合在组合导航或多传感器平台中接入国产 RTK 板卡。仓库 2025 年一次性发布，后续更新较少。",
+      "analysis_zh": "开发者 Zhiliang Tan（账号名带 whu）发布的 ROS Noetic 驱动，GPL-3.0 许可，C++ 实现，依赖 Boost（CMake 要求 Eigen3，但源码未用到）。依据和芯星通 UM982 官方协议开发，在 UM982 与 UM980 上测试；需用 UPrecise 配置接收机输出 BESTNAVXYZB，驱动经串口读取并发布 nav_msgs/Odometry 话题，launch 文件支持多台接收机分命名空间接入，并可配置 NTRIP 获取 RTK 固定解。适合在组合导航或多传感器平台中接入国产 RTK 板卡。仓库 2025 年一次性发布，后续更新较少。",
       "language": "C++",
       "license": "GPL-3.0",
       "category": "navigation-ins",

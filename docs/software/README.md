@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **256 篇**操作手册（合计 **58590 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **257 篇**操作手册（合计 **58778 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -281,6 +281,7 @@
 | 254 | [unicore-driver.md](./unicore-driver.md) | zltan-whu/UnicoreDriver：和芯星通 UM982/UM980 **二进制 BESTNAVXYZB** → ROS Noetic `nav_msgs/Odometry`（`~best_nav_ecef`，frame `ecef`，无 ENU；多接收机 `<group ns>`；附 NTRIP→串口 RTCM 注入）；不解 ASCII/NMEA，观测/星历只落 `.bin` | 208 | **已短硬** 用法讲解新入库 · 2026-09-26 06:20–06:32 EDT；main `240ae7d`/无 tag/GPL-3.0/★11；**无 ROS/无接收机**：最小 ROS 桩原样编译 + socat；真实 UM980 BESTNAVXYZB 32/32（satpulse MIT 数据）+ 合成（源自真实观测值）622/622；独立解析 max|Δ| 4.85×10⁻⁵ m，pyproj 对 BESTNAVA/GGA ≤1.4×10⁻⁴ m；坑：stamp 早 DelayMs、长度 65535 堆溢出崩溃、断线静默停读、INSUFFICIENT_OBS 照发、退出码 0、明文密码；交叉 [um982-driver](./um982-driver.md)/[um980-rtklib-pipeline](./um980-rtklib-pipeline.md)/[novatel-edie](./novatel-edie.md) |
 | 255 | [hwm14.md](./hwm14.md) | gemini3d/hwm14：NRL HWM14 水平中性风（CMake/gfortran 静态库，无 CLI）：日序+UT+高度+纬经+ap → 经向风（+北）/纬向风（+东）m/s；`ap(2)<0` 只算平静风，≥0 叠加 DWM07 扰动风；附 space-physics/hwm93 构建与同点对比 | 265 | **已短硬** 用法讲解新入库 · 2026-09-26 06:25–06:31 EDT；main `1f289bf`/Apache-2.0；ctest 2/2；45°N 0°E DOY132 00 UT 300 km 平静 −67.92/−28.45、ap=80 −104.34/−171.82 m/s，IGRF13 I=60°10′ → 上推 29.31/45.03 m/s；hwm93 pip 因 numpy.distutils 失败、Fortran ctest 2/2，300 km 平静经向 −125.50；坑：HWMPATH、ap=0 ≠ 平静、库顺序、f107/stl/年份不用 |
 | 256 | [ionfr.md](./ionfr.md) | csobey/ionFR：射电视线电离层法拉第旋转 RM（IGRF13 geomag70 + IONEX 单层 450 km）：RA/Dec+站点+日期 → 每小时斜 TEC、视线 B（G）、RM 与误差（rad m⁻²）写 IonRM.txt；Py2 遗留，只吃 2 h 13 图 IONEX | 270 | **已短硬** 用法讲解新入库 · 2026-09-26 06:22–06:32 EDT；master `4fe4f12`/GPL-3.0；3 处补丁后 Py3.13 可跑；AIUB CODE 1 h 抽 2 h，B0329+54@LOFAR 2024-05-01/05-11 日均 RM 1.4806/0.9479 rad m⁻²（sTEC 26.25/17.65 TECU）；对 spinifex 偶数小时差 −1.4%～+4.9%、奇数小时 +9%；坑：`-lm` 顺序、scipy.pi、25 图 IndexError、追加写、≥2025 geomag70 死循环（换 IGRF-14）、±180° 经度 0/IndexError |
+| 257 | [jpl-gps-timeseries.md](./jpl-gps-timeseries.md) | JPL GipsyX 全球约 2860 站 GPS 日坐标时序（sideshow `repro2018a/post`：`point/*.series`、`resid/*.resid`）+ 四张汇总表（XYZ / 经纬高位置速度、阶跃、季节项）；匿名 HTTPS，路径与 17 列字段 | 188 | **已短硬** · 2026-09-26 06:27–06:37 EDT；ALGO 12085 行 1992-08-29 → 2026-09-19（约 6–7 天延迟），table2 速度 E −16.460/N 2.536/U 3.229 mm/yr，2013 起直线 E −16.54/N 2.52/U 3.20；坑：仍是 IGS14、表内位置单位 mm、残差后缀 .resid、PDF wget 缺尾斜杠、table2 纬经度只到 6 位（差 2 cm）、同日两行、σ>5 mm 未剔、http/ftp 不通 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -518,6 +519,7 @@
 | DMSP 原位等离子体 / SSUSI 极光与 TIMED GUVI 数据不登录去哪拿、哪年有、CDF/HDF5/netCDF3 怎么读 | [dmsp-timed-data.md](./dmsp-timed-data.md) |
 | 极光 / 630 nm 气辉全天空图像（THEMIS、REGO、MANGO）不登录去哪拿、怎么读、像素怎么定位 | [allsky-imager-data.md](./allsky-imager-data.md) |
 | CHAIN 以外哪里能匿名拿 S4 / σφ（欧洲、极区、东南亚、非洲、南美），字段和采样率是什么 | [scintillation-networks.md](./scintillation-networks.md) |
+| JPL 给某 GNSS 站算的日坐标时序、速度、阶跃、季节项不登录去哪拿（IGS14；`point/SSSS.series`、`resid/SSSS.resid`、table1–4） | [jpl-gps-timeseries.md](./jpl-gps-timeseries.md) |
 | MetOp / Spire / GRACE / CHAMP 等 COSMIC-2 以外任务的电离层掩星（Ne 剖面、链路 TEC）哪里有、哪些根本没有、怎么读 | [ro-missions-data.md](./ro-missions-data.md) |
 | 美国 CORS（NCN）RINEX 批量下载、小时文件时延、站坐标（ITRF2020 vs NAD 83）、UFCORS 任意时段 | [noaa-ncn-data.md](./noaa-ncn-data.md) |
 | 某个 GNSS 站的每日 / 5 分钟坐标、5 分钟 ZTD/水汽、速度和阶跃不登录去哪拿（UNR NGL；用 IGS20 路径、站名大写、只用 https） | [unr-ngl.md](./unr-ngl.md) |

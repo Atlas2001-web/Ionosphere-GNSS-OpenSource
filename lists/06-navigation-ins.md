@@ -97,7 +97,7 @@ Swift Navigation 厂商 ROS 2 驱动，通过 Swift Binary Protocol（SBP）接�
 
 语言：C++ · 许可：GPL-3.0 · 星标约：11 · 宿主：github
 
-开发者 Zhiliang Tan（账号名带 whu）发布的 ROS Noetic 驱动，GPL-3.0 许可，C++ 实现，依赖 Eigen 与 Boost。依据和芯星通 UM982 官方协议开发，在 UM982 与 UM980 上测试；需用 UPrecise 配置接收机输出 BESTNAVXYZB，驱动经串口读取并发布 nav_msgs/Odometry 话题，launch 文件支持多台接收机分命名空间接入，并可配置 NTRIP 获取 RTK 固定解。适合在组合导航或多传感器平台中接入国产 RTK 板卡。仓库 2025 年一次性发布，后续更新较少。
+开发者 Zhiliang Tan（账号名带 whu）发布的 ROS Noetic 驱动，GPL-3.0 许可，C++ 实现，依赖 Boost（CMake 要求 Eigen3，但源码未用到）。依据和芯星通 UM982 官方协议开发，在 UM982 与 UM980 上测试；需用 UPrecise 配置接收机输出 BESTNAVXYZB，驱动经串口读取并发布 nav_msgs/Odometry 话题，launch 文件支持多台接收机分命名空间接入，并可配置 NTRIP 获取 RTK 固定解。适合在组合导航或多传感器平台中接入国产 RTK 板卡。仓库 2025 年一次性发布，后续更新较少。
 
 #### [trimble_driver_ros](https://github.com/trimble-oss/trimble_driver_ros)  
 *🏷️ 个人社区*

@@ -868,7 +868,7 @@ INGV 基于 RING 网（约 40 站）的意大利区域实时 VTEC 监测页：IP
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-圣保罗州立大学等维护的 ISMR Query Tool，用于查询/获取 GNSS 闪烁监测接收机（ISMR）相关数据，服务低纬闪烁与 CIGALA/CALIBRA 一类研究。站点曾变更域名或证书，若打不开请用 HTTP 或项目组当前公布地址；配合仓内 ismr_downloader 软件条目使用。
+圣保罗州立大学（UNESP）维护的 ISMR Query Tool，查询/下载 GNSS 闪烁监测接收机（ISMR：S4、σφ 等）数据，服务巴西低纬闪烁与 CIGALA/CALIBRA 一类研究。2026-09-26 实测：http 只 301 跳转到 https，https 证书链不全（curl exit 60），首页为 SPA + Cloudflare Turnstile，须 UNESP 账号；命令行批量用仓内 ismr_downloader（要邮箱+密码）。匿名替代见 docs/software/scintillation-networks.md（INGV eSWua）。
 
 #### [JPL-IONEX-Rapid](https://sideshow.jpl.nasa.gov/pub/iono_daily/IONEX_rapid/)  
 *🏷️ 官方 核心*
@@ -1828,7 +1828,7 @@ EPN中央局坐标产品服务专页，汇总欧洲永久GNSS网坐标类产品�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-JPL sideshow 上的 GPS Time Series 入口，提供全球站坐标时间序列浏览与相关产品链接，常与 GipsyX/轨道钟差产品一并使用。与 IONEX_rapid 等同域不同路径；引用与更新策略见页面说明。适合形变、参考框架与 PPP 结果对照，原始观测请仍走 CDDIS/区域 CORS。
+JPL 大地测量组用 GipsyX PPP 发布的全球约 2860 站 GPS 日坐标时序（sideshow repro2018a/post：point/*.series 编辑后时序、resid/*.resid 残差）与四张汇总表（XYZ/经纬高位置速度、阶跃、季节项），HTTPS 匿名静态文件。实测仍是 IGS14 框架（参考历元 2026-01-01），表内位置单位 mm，数据约 6–7 天延迟、每周左右重算；http/ftp 不响应，旧 raw/ 与 repro2011b 为停更快照。原始观测请走 CDDIS/区域 CORS。docs/software/jpl-gps-timeseries.md 有实测手册。
 
 #### [UNR-GPSNetMap](https://geodesy.unr.edu/NGLStationPages/gpsnetmap/GPSNetMap.html)  
 *🏷️ 高校实验室*
