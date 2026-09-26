@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **178 篇**操作手册（合计 **39298 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **180 篇**操作手册（合计 **39585 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -203,6 +203,8 @@
 | 176 | [gmat.md](./gmat.md) | NASA GMAT 轨道设计/传播：TLE-SGP4 或 SP3 初值数值积分 → 报告 / CCSDS-OEM / SPK / 站星可见窗口；外接 RO 切点与 IPP 几何（不算 TEC） | 328 | **已短硬** · 2026-09-26 02:00–02:10 EDT；SourceForge **R2026a** Linux 包（Build Mar 30 2026，GitHub main `9363e12`/Apache-2.0/★112）；`GmatConsole --run` 官方 TLE 样例 0.047 s；COSMIC-2 FM1+32 GPS（CelesTrak TLE）24 h×30 s 6.8 s：报告 2881 历元、OEM、G01@30.53N114.36E 可见 11:53:46–16:51:11 UTC（自算 IPP 一致）；几何 RO 切点过 0 km **829** 次/日（未计天线视场）；python-sgp4 核对差 0.03 km；G01 从 CODE SP3 初值数值积分 22.9 h 误差 SRP 关 **339 m**/开 **126 m**（光压参数为猜值）；坑：非 ASCII 脚本拒读、多星 TLE 历元、GMAT MJD 差 29999.5、一行多赋值、`StepSize`、表头重复、OEM `SatId`/TDR/UTC、相对路径落 `output/`；图 [img/](./img/) · **质检复跑通过**（02:14–02:30 EDT；独立解压同包，实跑 A 报告/GPS 地固表逐字节相同、G01 窗口一致；实跑 B 有/无光压 22.92 h 误差 125.88/339.42 m 一致；坑 1–6、8 复现；修：stdout 漏 `libOVtoOFI` 行，坑 7 应注释三行插件） |
 | 177 | [gamit-globk.md](./gamit-globk.md) | MIT GAMIT（双差相位网解）+ GLOBK（h-file 合并→时间序列/速度场）；sh_gamit/sh_glred 流程、控制文件、输出与判读；高阶电离层项（CODE IONEX+IGRF） | 155 | **登记受限** · **未在本机实跑（申请制分发）**：机构许可、非商业、口令下载 10.71；依据 Quick Start（v.2026-07-21）、Intro 10.7（2018）、GAMIT/GLOBK Ref、EarthScope 2024 讲义；无任何本机 stdout；**禁臆造** summary/q-file/.pos · **质检复核通过（未实跑，只核对文档）**（02:15–02:35 EDT；未实跑边界写得清楚、无编造输出；坑 1–9 及 GMAP/IGRF11、`-ion`、CODE-only IONEX、`LC_NUMERIC`、判读阈值均在 MIT 公开手册/讲义找到原文） |
 | 178 | [satpulse.md](./satpulse.md) | GNSS 授时守护+接收机配置（Go；`satpulsed` 串口→chrony SOCK/NTP SHM，PPS→PHC→ptp4l；`satpulsetool gps/scan/replay/ubxsim`；Workbench；≠ PTP 协议栈/PPP 引擎） | 209 | **已短硬** · 2026-09-26 02:05–02:20 EDT；main **`838c9fd`**（`v0.3-pre-20260913-71`；正式版 v0.2 2026-05-07）/MIT/★64/Go ≥1.25（1.24.4 编不过，用 1.25.1）；`go test` 86 包 ok/**7381** 用例 pass；gpsd `43362cd` F9P/F9T 日志 scan→replay：F9T NAV-PVT UTC `19:33:33.999880784Z`/23 星 GPS+GAL+BDS L1+L5；socat pty→`satpulsed`→SOCK 40 B/magic `SOCK`/`pulse=0`；`ubxsim` 配置 ZED-F9P HPG 1.51；错误：错路径 exit 1、未知键/无 PHC exit 78、pty 上 `pps.pin` TIOCMGET 失败；PPS/PHC/ptp4l/chrony 真对接**未在真硬件测试** |
+| 179 | [python-sgp4.md](./python-sgp4.md) | Python SGP4/SDP4：TLE/OMM → TEME 位置速度（`Satrec`/`SatrecArray`；不做帧转换，配 astropy/skyfield 转 ITRS；km 级，非精密轨道） | 152 | **已短硬** · 2026-09-26 02:09–02:30 EDT；PyPI **2.27**/master **`8126f77`**/MIT/★472；accelerated C++；CelesTrak GP 抓取 02:09:18 EDT，ISS 历元 `26268.43198945`、PRN02 `26268.06454359`；`python -m sgp4.tests` **45 OK**（3 路 tcppver）；vs satellite.js 7.1.0 Δr **5–17 mm**（历元单/双 double，tsince 对齐后逐位同）；vs IGS ULT SP3（BKG 免登录，astropy TEME→ITRS）PRN02 24 h 3D mean **0.534**/max **0.828** km，31 星中位 **1.658** km，G13 **470** km；忘 GPST−UTC **53.5** km、TEME 当 ECEF **26974** km；截断 TLE→error 2+NaN 不抛异常；OMM vs TLE **1.39 m** |
+| 180 | [satellite-js.md](./satellite-js.md) | JS/TS SGP4/SDP4（浏览器/Node，纯 ESM）：TLE/OMM → TEME + `eciToEcf`/`eciToGeodetic`/`ecfToLookAngles`（GMST-only，可视化级） | 135 | **已短硬** · 2026-09-26 02:09–02:30 EDT；npm **7.1.0**/develop **`95e43b7`**/MIT/★1091；Node 20.19.2；`vitest --project js` **410/410**（catalog 项目 OOM 未跑、wasm 需 em++ 未跑）；对官方 `tcppver.out` **666** 态 max Δr **1.2e-4 m**；vs python-sgp4 **5–17 mm**；SP3 PRN02 mean **0.549** km/31 星中位 **1.675** km；`eciToEcf` vs astropy ITRS **53 m**；截断 TLE→error 0+NaN（非 null）；衰减→`null`+error 6 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -369,6 +371,8 @@
 | AWS GNSS-RO 查/下（**calibratedPhase** / 大气三型） | [awsgnssroutils.md](./awsgnssroutils.md) |
 | CDAAC **ionPrf / ionPhs**（pysat） | [pysatcdaac.md](./pysatcdaac.md) |
 | GNSS/LEO 轨道外推、星历文件、掩星切点 / 站星 IPP 几何（TLE 或 SP3 初值） | [gmat.md](./gmat.md) |
+| TLE/OMM → SGP4 位置速度（Python 批量；TEME→ITRS 配 astropy） | [python-sgp4.md](./python-sgp4.md) |
+| TLE/OMM → SGP4 前端可视化 / 过境（JS/TS，浏览器/Node） | [satellite-js.md](./satellite-js.md) |
 | 闪烁 ISMR（UNESP API 批量） | [ismr-downloader.md](./ismr-downloader.md) |
 | Swarm/Aeolus 按需切片（须 token） | [viresclient.md](./viresclient.md) |
 | 测高仪 foF2/hmF2 年度（澳/日/GIRO） | [ionosonde-data-downloader.md](./ionosonde-data-downloader.md) |
