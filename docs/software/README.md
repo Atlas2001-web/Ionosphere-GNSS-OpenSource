@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **225 篇**操作手册（合计 **51746 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **226 篇**操作手册（合计 **51936 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -250,6 +250,7 @@
 | 223 | [tidd.md](./tidd.md) | JPL/Sapienza/UCLA：GPS 单站单星 dsTEC/dt（TECU/s）文本 → 1 min 均值 → 60 min 滑窗 GAF 图（代码实为 GASF）→ fastai ResNet 二分类 anomalous/normal → 样本外整段 TP/FN/FP；无预训练模型、不读 RINEX | 220 | **已短硬** 用法讲解新入库 · 2026-09-26 04:05–05:15 EDT；main `cd15176`/无 PyPI/Apache-2.0/★10；S3 19.2 GB tar 用 Range 只流前 2.8 GB；Py3.11 + `pandas<3`（pandas 3 静默 0 段）+ PYTHONPATH（setup 空包）+ accelerate + hyperdash 桩；pytest 10 passed；训夏威夷 302 4 站 20 弧（14 109 张图）resnet18 2 epoch CPU 62 min；上游样本外 tp=0（datetime 减 60 ns bug）、训练 precision/recall 互换；按行位置重算智利 259 4 站 12 弧 tp 5/fn 7/fp 29，F1 0.217 |
 | 224 | [gnss-obs-mirrors.md](./gnss-obs-mirrors.md) | IGS/MGEX 日观测匿名镜像（BKG、CAS、SOPAC、GA；IGN/WHU/KASI 本次不通；CDDIS 需 Earthdata）：同日同 24 站到达率、上架延迟、跨镜像同名文件是否同一份数据、解 Hatanaka 后历元完整性 | 323 | **已短硬** · 2026-09-26 05:10–05:20 EDT；2024-05-11 BKG/CAS/SOPAC 24/24、GA 22/24；前一天上架中位 SOPAC/GA 0.3 h、CAS 0.4 h、BKG 9.0 h；gz 字节全不同但观测段一致；CAS/GA 版 WTZR 让 Rust crx2rnx panic |
 | 225 | [ppp-tools.md](./ppp-tools.md) | aewallin/ppp-tools：时间实验室向 RINEX→外部 PPP 引擎（RTKLIB/gLAB/GPSPACE）→ 逐历元接收机钟/坐标 → 两站钟差的 Python 胶水脚本；≠ [ppp-rtklib](./ppp-rtklib.md)（mulin33 学习代码） | 211 | **已短硬** 用法讲解新入库 · 2026-09-26 05:05–05:18 EDT；master `e77e351`/GPL-2.0/★121/无 tag；RTKLIB 2.4.2 p13 分支 2 处修补后 WTZR 全天 3D 8.5 mm、钟对 IGS σ 0.310 ns；MI05−WTZR `diff_stations` 实跑；gLAB/GPSPACE 未测 |
+| 226 | [lisird.md](./lisird.md) | LASP LISIRD 太阳输入直连（免账号）：LaTiS 281 集（选列/时间与数值过滤/`format_time`/`last()`；csv/json/jsond/txt、`.das`/`.dds`）——Penticton F10.7 一日三测与近正午（=GFZ Fobs）、复合 Lyman-α、FISM2 EUV 波段/0.1 nm 光谱、GOES XRS 1 min；HAPI 2.0 仅 29 集且只有 CSV；`noaa_radio_flux` 2018 停更、2500 万样本上限 | 190 | **已短硬** 用法讲解新入库 · 2026-09-26 05:10–05:30 EDT；2024-05-10 F10.7obs 223.4（81 天均值 176.2）、GOES-18 XRS 峰 3.88e-4 W/m²（X3.9，06:54 UT）、FISM 121.55 nm 0.0585 W/m²/nm；PROJECTS LISIRD analysis/registration 已按实测改写 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -463,6 +464,7 @@
 | Madrigal（CEDAR/EISCAT/AMISR）找实验 + 下载 TEC 格网 / ISR 文件；服务端 isprint 只取一点 | [madrigal.md](./madrigal.md) |
 | 地磁台分钟/秒值（USGS ws、INTERMAGNET/GIN 定值、NRCan/MACCS/THEMIS）下载 + H/D + 缺测处理 | [geomag-api.md](./geomag-api.md) |
 | Kp/ap/Hp30、Dst/AE/SYM-H、实时太阳风与 F10.7 的直连下载 + 数据状态（def/pre、final/provisional/realtime）+ 跨源对比 | [space-weather-indices.md](./space-weather-indices.md) |
+| 太阳输入：F10.7 日值/81 天均值、Lyman-α、FISM2 EUV 光谱、GOES XRS 1 min 耀斑（LISIRD，免账号） | [lisird.md](./lisird.md) |
 | COSMIC-2 电离层掩星：ionPrf 电子密度剖面 / podTc2 链路 TEC 的直连下载、目录与时延、NmF2/hmF2 与筛选 | [cosmic2-ro.md](./cosmic2-ro.md) |
 | NASA ICON / GOLD：SPDF 路径、CDAWeb 数据集与 CDAS REST 子集、HAPI 覆盖、质量标志与 GOLD 扫描网格 | [icon-gold-data.md](./icon-gold-data.md) |
 | 测高仪 foF2/hmF2 匿名拉取（GIRO fastchar）、站表、CS 过滤、SAO 获取门槛、磁暴耗减 | [giro-ionosonde.md](./giro-ionosonde.md) |

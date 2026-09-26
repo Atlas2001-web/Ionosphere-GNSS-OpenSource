@@ -18326,7 +18326,7 @@
       "name": "LISIRD",
       "url": "https://lasp.colorado.edu/lisird/",
       "desc_zh": "LASP LISIRD：交互式太阳辐照数据中心",
-      "analysis_zh": "科罗拉多大学 LASP 的 Interactive Solar Irradiance Datacenter，汇集太阳光谱/辐照等数据浏览与获取。为电离层/中性大气模型提供太阳输入参考。非 GNSS 观测站。",
+      "analysis_zh": "科罗拉多大学 LASP 的太阳辐照数据中心，收录约 280 个数据集：Penticton F10.7（每日三测与近正午值）、复合 Lyman-α、FISM2 EUV 光谱、GOES XRS/EUVS、TIMED/SDO/TSIS 辐照等。LaTiS 接口在 URL 里选变量、时间范围和时间格式，输出 CSV/JSON/文本；另有只含 29 个数据集的 HAPI 2.0（仅 CSV）。两者都不用账号，适合给 IRI/NeQuick、热层模式和耀斑 TEC 事件配太阳输入。不是 GNSS 数据源。",
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
@@ -18342,7 +18342,7 @@
       "provenance": "official",
       "one_liner_zh": "LASP LISIRD：交互式太阳辐照数据中心",
       "registration": "open",
-      "registration_zh": "门户公开浏览；部分服务需注册；请遵守上游条款。"
+      "registration_zh": "LaTiS（/lisird/latis/dap）与 HAPI（/lisird/hapi）接口匿名可用，无需账号（2026-09-26 实测）；发表时按各数据集 acknowledgment 致谢。"
     },
     {
       "name": "BGS-INTERMAGNET-Data",
