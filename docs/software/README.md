@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **174 篇**操作手册（合计 **38351 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **175 篇**操作手册（合计 **38606 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -199,6 +199,7 @@
 | 172 | [tropds.md](./tropds.md) | 对流层延迟**格网** AI 降尺度（物理约束 U-Net；180×360 blur→clear；不算 ZTD/PWV、不读 ERA5；PyTorch） | 212 | **已短硬** · 2026-09-26 01:49–01:58 EDT；tip **`6bb9ef0`**/BSD-3-Clause/★1；仓内无数据；Drive 权重为加密 RAR5（7z 25.01 `Unsupported Method`，unrar 7.12 + issue #1 密码解出 150007202 B，epoch 38）；torch 2.14 CPU 原样 `inference.py` 3.6 s；输入 TU Wien VMF3 1° 真实 ZWD（cm）+5° 块平均 blur：RMSE **2.017→2.208** cm（未改善）、ZHD-dm 58→265 mm；坑：`requirements.txt` apex 装不上、默认 0–50 clip、`2024_clear.npy` 静默改归一化、weight 全冻结、181×360 不报错、年份写死 2024 · **质检复跑通过**（02:00–02:05 EDT；权重/sha/stdout/RMSE 2.017→2.208 等逐字同 I/O；修：§4a 符号链接自指 Errno 40 → `../../output`，补坑 10） |
 | 173 | [gtrop.md](./gtrop.md) | 全球 1° 对流层 ZHD/ZWD + 加权平均温度 Tm 经验模型（年/半年项+长期趋势+高程归算；MATLAB/Octave） | 187 | **已短硬** · 2026-09-26 01:49–01:58 EDT；tip **`2b31ae7`**（2019）/**无 LICENSE**/★5；Octave 9.4.0 原样 `example.m`（ZHD **2015.7722** mm）；GRAZ 2024 DOY1 ZHD **2186.2**/ZWD **64.1**/Tm **266.51** K/PWV 9.7 mm，对照 GPT3 ZTD 2.2427、VMF3 站点 **2.2733** m；高度/季节扫描；全球 ZWD 图 [img/](./img/)；坑：h 传米出复数、0–360 经度越界、弧度静默错、向量报错、mm vs m、无日内项 · **质检复跑通过**（02:00–02:05 EDT；example/GRAZ 15 行/全球统计/坑逐字同 I/O；修：§7 南极点补 lon=15→Tm 240.75，坑 8 注明 grid.m shadow） |
 | 174 | [galileo-osnma.md](./galileo-osnma.md) | Galileo OSNMA 导航电文**认证**库（Rust `galileo-osnma`，`no_std`；ECDSA/Merkle→KROOT→TESLA→ADKD0/4/12 标签；不定位、不防 meaconing） | 208 | **已短硬** · 2026-09-26 01:41–02:10 EDT；crates **0.11.6**（2026-03-04）/tag=main **`b6c337b`**/MIT OR Apache-2.0/★89/MSRV **1.88.0**；`cargo test` 28+7 passed；GSC 公开测试向量（免注册）+包内钥匙：configuration_1 **24** 星 CED/**22** 星时间参数认证、首次 **+90 s**（慢 MAC +390 s）、ΔtLS=18 s；configuration_2 只给 Merkle 根 25 星 +450 s；合成错用例 6 类实测；默认 features 需 protoc；Galmon 实时流/u-blox SFRBX **未测**、现行 PKID 2 钥需 GSC 注册未取 |
+| 175 | [great-pifgo.md](./great-pifgo.md) | 武大 GREAT 因子图 PPP / TC PPP+INS（IF 非差；IMU 预积分；滑窗边缘化；Ceres；XML；≠ RTK） | 255 | **已短硬** · 2026-09-26 01:31–02:10 EDT；tip **`47c8c6e`**（无 tag）/PDF 称 GPL-3.0/★**18**；Linux 需自编 Ceres **1.14** + Eigen 路径大小写 + 链接补丁（`_set_satdata` 上游已修；`-Wreturn-type` 全仓仅 `gsetamb.cpp:194` 无害）；编译 `-j3` 626 s；`-h` **G-Nut/PVT [0.9.0]**；3 样例包 PPP-FGO/TC PPP/INS-FGO 全 exit **0**（1012 TC 8m39s），自算对 GT 3D RMS：1012 TC **0.349** m（与上游 Windows 结果逐秒差 ≤2 mm）、1012 PPP-FGO p50 0.79 m、1128 PPP-FGO 0.955 m；1013 XML `.21o` vs 文件 `.21O` → exit 0 空输出；全 Float（PPP-AR 需 [great-upd](./great-upd.md)，未测）；对照 [great-msf](./great-msf.md)/[graphrtk-ins](./graphrtk-ins.md) |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -311,6 +312,7 @@
 | 武大 GREAT 精密 PPP/RTK（XML） | [great-pvt.md](./great-pvt.md) |
 | 武大 GREAT GNSS+INS 松/紧耦合（PPP/RTK+IMU） | [great-msf.md](./great-msf.md) |
 | 武大 GREAT 因子图 RTK / TC RTK+INS | [graphrtk-ins.md](./graphrtk-ins.md) |
+| 武大 GREAT 因子图 PPP / TC PPP+INS（无基站） | [great-pifgo.md](./great-pifgo.md) |
 | TU Graz 重力场 + GNSS 网解/PPP（XML） | [groops.md](./groops.md) |
 | VieVS MATLAB GUI PPP（需许可证） | [rapppid.md](./rapppid.md) |
 | Pi 基站 + Web / NTRIP 上行 | [rtkbase.md](./rtkbase.md) |
