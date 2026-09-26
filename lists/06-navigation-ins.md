@@ -27,7 +27,7 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 | [gici-open](https://github.com/chichengcn/gici-open) | GICI：GNSS/INS/相机紧组合开源库 | C++ | 667 | 🏷️ 高校实验室 核心 |
 | [VINS-GPS-Wheel](https://github.com/Wallong/VINS-GPS-Wheel) | VINS-GPS-Wheel：VINS-Mono+轮速+GNSS | C++ | 280 | 🏷️ 个人社区 |
 | [RTK-Visual-Inertial-Navigation](https://github.com/xiaohong-huang/RTK-Visual-Inertial-Navigation) | RTK-VIN：滑窗滤波 RTK 视觉惯性导航 | C++ | 136 | 🏷️ 高校实验室 |
-| [carvig](https://github.com/Erensu/carvig) | carvig：车载 INS/GNSS/视觉组合导航 | C | 120 | 🏷️ 高校实验室 |
+| [carvig](https://github.com/Erensu/carvig) | carvig：车载 INS/GNSS/视觉组合导航 | C | 120 | 🏷️ 个人社区 |
 | [salsa](https://github.com/yxw027/salsa) | salsa：GNSS+视觉+惯性状态估计原型 | C++ | 14 | 🏷️ 高校实验室 |
 | [GVINS-WHU](https://github.com/zhangwhu/GVINS) | GVINS-WHU：武大方向 PPP-RTK/INS/视觉组合导航 | C++ | 12 | 🏷️ 高校实验室 |
 
@@ -69,7 +69,7 @@ HKUST Aerial Robotics 发布的优化式多传感器状态估计器，在 VINS-M
 在滑窗滤波框架里融合 RTK/DGNSS 与视觉惯性，面向高精度户外机器人与自动驾驶实验。适合已有 VIO 基础、想引入载波相位差分约束的团队。测地网 RTK 服务运维与模糊度完好性监测非其主场；可与 GVINS、gici-open、Multi_Sensor_Fusion 比较紧耦合策略。外参标定质量往往比滤波形式更能决定最终精度。
 
 #### [carvig](https://github.com/Erensu/carvig)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C · 许可：— · 星标约：120 · 宿主：github
 
@@ -661,7 +661,7 @@ ROS 包用于连接 NTRIP caster、接收 RTCM，并服务于 u-blox ZED-F9P 一
 |---|---|---|---:|---|
 | [ublox-ros](https://github.com/KumarRobotics/ublox) | ublox-ros：KumarRobotics ROS1 经典 u-blox GPS 驱动 | C++ | 537 | 🏷️ 高校实验室 |
 | [novatel_gps_driver](https://github.com/swri-robotics/novatel_gps_driver) | novatel_gps_driver：SWRI 社区 NovAtel GNSS ROS 驱动（BSD-3） | C++ | 175 | 🏷️ 个人社区 |
-| [novatel_oem7_driver](https://github.com/novatel/novatel_oem7_driver) | novatel_oem7_driver：NovAtel OEM7/SPAN 官方 ROS 驱动（MIT） | C++ | 123 | 🏷️ 个人社区 |
+| [novatel_oem7_driver](https://github.com/novatel/novatel_oem7_driver) | novatel_oem7_driver：NovAtel OEM7/SPAN 官方 ROS 驱动（MIT） | C++ | 123 | 🏷️ 官方 |
 | [UnicoreDriver](https://github.com/zltan-whu/UnicoreDriver) | 基于官方协议实现的和芯星通 UM982/UM980 ROS 驱动（C++） | C++ | 11 | 🏷️ 个人社区 |
 | [trimble_driver_ros](https://github.com/trimble-oss/trimble_driver_ros) | Trimble 官方开源 ROS/ROS 2 驱动：解析 GSOF 输出并发布标准与自定义话题 | C++ | 10 | 🏷️ 官方 |
 
@@ -682,7 +682,7 @@ KumarRobotics 维护的 ROS 驱动，解析 u-blox 接收机消息并发布导�
 Southwest Research Institute 维护的 NovAtel GPS/GNSS ROS 驱动，BSD-3-Clause，在移动机器人与自动驾驶栈中使用较广。偏消息解析与话题发布，不替代 OEM7 官方新驱动的全部能力。串口/以太网连接与最佳实践见仓库文档。适合 ROS1 时代工程对照；新项目可并行评估官方 OEM7 驱动。
 
 #### [novatel_oem7_driver](https://github.com/novatel/novatel_oem7_driver)  
-*🏷️ 个人社区*
+*🏷️ 官方*
 
 语言：C++ · 许可：MIT · 星标约：123 · 宿主：github
 

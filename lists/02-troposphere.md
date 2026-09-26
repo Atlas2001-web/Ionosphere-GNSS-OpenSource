@@ -30,13 +30,13 @@ EUMETSAT ROM SAF 维护的掩星处理软件包（当前 ROPP-12.0），官方�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GNSSR_MERRByS_Python](https://github.com/pjalesSSTL/GNSSR_MERRByS_Python) | GNSSR_MERRByS_Python：TechDemoSat-1 星载 GNSS-R 示例 | Jupyter Notebook | 19 | 🏷️ 高校实验室 |
+| [GNSSR_MERRByS_Python](https://github.com/pjalesSSTL/GNSSR_MERRByS_Python) | GNSSR_MERRByS_Python：TechDemoSat-1 星载 GNSS-R 示例 | Jupyter Notebook | 19 | 🏷️ 个人社区 |
 | [DDM-Former](https://github.com/daixinzhao/DDM-Former) | DDM-Former：GNSS-R DDM 海面风速 Transformer | Python | 10 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
 #### [GNSSR_MERRByS_Python](https://github.com/pjalesSSTL/GNSSR_MERRByS_Python)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Jupyter Notebook · 许可：— · 星标约：19 · 宿主：github
 

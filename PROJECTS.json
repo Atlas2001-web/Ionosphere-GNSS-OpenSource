@@ -120,7 +120,7 @@
       "name": "baidu-ntripcaster",
       "url": "https://github.com/baidu/ntripcaster",
       "desc_zh": "百度开源组织发布的 NTRIP Caster 实现",
-      "analysis_zh": "百度 Open Source 组织公开的 NTRIP Caster，可作自建播发与协议学习的对照样本。适合对比 BKG 与社区实现。按 catalog 政策记为个人社区（公司开源档）；上线前须完成压力、安全与兼容性测试。",
+      "analysis_zh": "百度 Open Source 组织公开的 NTRIP Caster，可作自建播发与协议学习的对照样本。适合对比 BKG 与社区实现。按 catalog 政策记为个人社区（公司开源档）；上线前须完成压力、安全与兼容性测试。仓库已于 2019-05 归档（只读），不再更新。",
       "language": "C",
       "license": "GPL-2.0-or-later",
       "category": "gnss-data",
@@ -2994,7 +2994,7 @@
       "url": "https://github.com/hirokawa/cssrlib",
       "desc_zh": "开源 Compact SSR 解码：对接 CLAS/HAS/BDS PPP/IGS SSR",
       "analysis_zh": "基于 RTKLIB 思路的 Python 工具包，解码 Compact SSR、RTCM/IGS SSR 等，对接 QZSS CLAS、Galileo HAS、北斗 PPP 与 IGS 服务做 PPP/PPP-RTK/RTK 教学与试验。附 Colab 教程，适合快速理解开放增强服务。实时生产与完好性需自测；与 MADOCALIB/CLASLIB/MRTKLIB 的 C 实现对照选型。",
-      "language": "Jupyter Notebook",
+      "language": "Python",
       "license": "MIT",
       "category": "gnss-positioning",
       "subcategory": "PPP/PPP-RTK",
@@ -3007,7 +3007,7 @@
       "featured": true,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "cssrlib：Python PPP/PPP-RTK 工具包"
     },
     {
@@ -3396,7 +3396,7 @@
       "name": "GPSPACE",
       "url": "https://github.com/CGS-GIS/GPSPACE",
       "desc_zh": "加拿大自然资源部（NRCan）测地调查 CGS 发布的精密单点定位程序",
-      "analysis_zh": "官方背景的 Fortran PPP，便于对照国家机构处理流程。适合研究与教学对照。现代多星座实时服务请结合 CSRS-PPP 网页与其他开源引擎。",
+      "analysis_zh": "加拿大测地调查局（CGS）1990 年代至 2018 年 8 月业务使用的 Fortran PPP 程序，2003 年起在 CSRS-PPP 在线服务后台运行；2018 年被新软件取代后停止支持，以 MIT 许可作为归档（只读）仓库发布，CGS 声明不再更新代码或文档。适合研究与教学对照国家机构处理流程。现代多星座实时服务请结合 CSRS-PPP 网页与其他开源引擎。",
       "language": "Fortran",
       "license": "MIT",
       "category": "gnss-positioning",
@@ -3561,7 +3561,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "HPRTK：高精度实时定位 C++ 工程参考"
     },
     {
@@ -3694,7 +3694,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "MobileGNSS-SPP：手机 GNSS 的 EKF 单点定位"
     },
     {
@@ -4760,9 +4760,9 @@
     {
       "name": "gnss-sdr-1pps",
       "url": "https://github.com/oscimp/gnss-sdr-1pps",
-      "desc_zh": "补丁与说明包：把软件接收机接到时频设备输出秒脉冲",
-      "analysis_zh": "围绕为 gnss-sdr 增加 1-PPS 秒脉冲能力的补丁、说明与相关文件，方便把软件接收机接到时频设备。适合已部署 gnss-sdr、需要硬件秒脉冲的用户。须与主项目具体版本对齐合并；本仓库不是独立接收机发行版。硬件 PPS 输出电平与线缆延迟要纳入系统标定。PPS 线缆长度引入的延迟应写入系统时延表。",
-      "language": "",
+      "desc_zh": "gnss-sdr 补丁集：双天线到达方向欺骗检测、干扰检测/抑制与 1-PPS 输出",
+      "analysis_zh": "OSCIMP 维护的 gnss-sdr 补丁集（按 v0.0.18/v0.0.20 分版本）：接双通道相干 SDR（测试用 Ettus B210、Fairwaves XTRX），两天线相距半波长，通过比较各 GPS L1 卫星信号到达方向检测欺骗，用多天线强相关信号检测并抑制干扰，另加 1-PPS 输出与 B210 PPS 修正补丁。适合研究抗欺骗/抗干扰与授时输出的 SDR 用户。不是独立接收机：需按 README 克隆指定 gnss-sdr 版本再打补丁；作者也承认欺骗检测嵌在 Signal_Source 里破坏了原有架构。PPS 线缆与前端延迟需纳入系统标定。",
+      "language": "C++",
       "license": "GPL-3.0-or-later",
       "category": "gnss-sdr",
       "subcategory": "软件接收机",
@@ -4773,7 +4773,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "gnss-sdr-1pps：为 gnss-sdr 增加 1-PPS 的扩展材料"
+      "one_liner_zh": "gnss-sdr-1pps：gnss-sdr 双天线抗欺骗/抗干扰与 1-PPS 补丁"
     },
     {
       "name": "gnss-sdr-monitor",
@@ -4977,7 +4977,7 @@
       "name": "gps-sdr-sim",
       "url": "https://github.com/osqzss/gps-sdr-sim",
       "desc_zh": "高星标 GPS L1 C/A 基带仿真，驱动 SDR 做接收机回放测试",
-      "analysis_zh": "生成可回放的 L1 基带，广泛用于接收机与抗干扰实验。适合实验室信号源。仅仿真信号，不含真实天空；使用需遵守当地无线电与欺骗相关法规。",
+      "analysis_zh": "生成可回放的 L1 基带，广泛用于接收机与抗干扰实验。适合实验室信号源。仅仿真信号，不含真实天空；使用需遵守当地无线电与欺骗相关法规。仓库已于 2025-01 归档（只读），可继续 fork 使用，但上游不再合并更新。",
       "language": "C",
       "license": "MIT",
       "category": "gnss-sdr",
@@ -5142,8 +5142,8 @@
     {
       "name": "LEOGPS",
       "url": "https://github.com/sammmlow/LEOGPS",
-      "desc_zh": "斯坦福相关：面向低轨航天器 GPS 与相对导航的工具包",
-      "analysis_zh": "服务 LEO 星载 GPS 与编队相对导航仿真/处理。适合航天器导航课与前期仿真。地面测地 PPP 与实时 RTK 非其主场。",
+      "desc_zh": "Samuel Low 个人开源：面向低轨航天器 GPS 与编队相对导航的 Python 工具包",
+      "analysis_zh": "服务 LEO 星载 GPS 与编队相对导航仿真/处理。README 说明目前仅支持 GPS L1/L2、RINEX 2.xx 观测，并使用 CODE 精密星历与钟差，输出时间系统为 GPS 时。适合航天器导航课与前期仿真。地面测地 PPP 与实时 RTK 非其主场。",
       "language": "Python",
       "license": "MIT",
       "category": "gnss-positioning",
@@ -5154,7 +5154,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "LEOGPS：LEO 星载 GPS/相对导航 Python 包"
     },
     {
@@ -5696,7 +5696,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "csonde-gnss-ionosphere",
@@ -6785,7 +6785,7 @@
       "name": "ionex-analyzer",
       "url": "https://github.com/matador96/ionex-analyzer",
       "desc_zh": "毕业设计风格桌面原型；研究批处理请回 Python 栈",
-      "analysis_zh": "用 Electron/React 做的 IONEX 可视化桌面小应用，交互浏览格网 TEC 较友好，来源为毕业设计风格仓库。适合演示与教学展示。研究级批处理、插值、DCB 与建模请回到 Python/MATLAB 工具链；星标低、维护不确定，当作原型参考即可，勿当生产依赖。若只需脚本绑图，优先轻量 Python 方案更易维护。",
+      "analysis_zh": "用 Electron/React 做的 IONEX 可视化桌面小应用，交互浏览格网 TEC 较友好，来源为毕业设计风格仓库。适合演示与教学展示。研究级批处理、插值、DCB 与建模请回到 Python/MATLAB 工具链；星标低，仓库已于 2023-04 归档（只读），当作原型参考即可，勿当生产依赖。若只需脚本绑图，优先轻量 Python 方案更易维护。",
       "language": "JavaScript",
       "license": null,
       "category": "ionosphere",
@@ -7275,7 +7275,7 @@
       "name": "IonoTomo",
       "url": "https://github.com/Joshuaalbert/IonoTomo",
       "desc_zh": "Notebook 正演电离层对射电信号影响；非 GNSS 双频 TEC 业务软件",
-      "analysis_zh": "结合射线追踪与射电观测仿真做电离层层析，面向射电天文与空间天气交叉课题，Notebook 形式便于改参数。适合需要正演电离层对射电信号影响的人。不是 GNSS 双频 TEC 业务软件；地基 GNSS 体素层析可并行参考 SegmentsComputation 与 synthetic 层析仓库。仿真假设与真实射电阵几何差异需要单独评估。",
+      "analysis_zh": "结合射线追踪与射电观测仿真做电离层层析，面向射电天文与空间天气交叉课题，Notebook 形式便于改参数。适合需要正演电离层对射电信号影响的人。不是 GNSS 双频 TEC 业务软件；地基 GNSS 体素层析可并行参考 SegmentsComputation 与 synthetic 层析仓库。仿真假设与真实射电阵几何差异需要单独评估。仓库已于 2020-11 归档（只读）。",
       "language": "Jupyter Notebook",
       "license": "Apache-2.0",
       "category": "ionosphere",
@@ -7608,7 +7608,7 @@
       "url": "https://github.com/space-physics/iri90",
       "desc_zh": "脚本化电子密度廓线；模型偏旧，精度不及 IRI-2016/2020，不替代业务 GIM",
       "one_liner_zh": "iri90：IRI-90 国际参考电离层的 Python 封装",
-      "analysis_zh": "把经典 IRI-90 Fortran/数据流程包装成 Python，便于脚本化计算给定时刻与位置的电子密度等廓线，适合课堂演示与快速对比 GNSS TEC。输入一般为日期、地理坐标与高度网格；输出为模式密度/相关参量。局限：模型年代较早，精度与 IRI-2016/2020 有差距；依赖编译/数据文件配置，不替代业务 GIM。",
+      "analysis_zh": "把经典 IRI-90 Fortran/数据流程包装成 Python，便于脚本化计算给定时刻与位置的电子密度等廓线，适合课堂演示与快速对比 GNSS TEC。输入一般为日期、地理坐标与高度网格；输出为模式密度/相关参量。局限：模型年代较早，精度与 IRI-2016/2020 有差距；依赖编译/数据文件配置，不替代业务 GIM。仓库已于 2022-08 归档（只读）。",
       "language": "Python",
       "license": "MIT",
       "category": "ionosphere",
@@ -10092,7 +10092,7 @@
     {
       "name": "carvig",
       "url": "https://github.com/Erensu/carvig",
-      "desc_zh": "武大相关：C 实现的多传感器车载一体化定位",
+      "desc_zh": "WHU 个人开发者基于 RTKLIB 扩展的 C 语言 INS/GNSS/视觉车载组合导航",
       "analysis_zh": "面向车辆定位的 INS/GNSS/视觉一体化导航实现（C），把惯导、卫星与视觉观测纳入同一解算框架，服务自动驾驶或车载定位验证。适合做多传感器室外定位的工程与研究生。纯 GNSS 的 RTK/PPP 引擎深度不如 RTKLIB/PRIDE；本库价值在融合架构，文档与外场标定成本需自行评估。传感器外参与时间同步质量会直接限制融合精度。",
       "language": "C",
       "license": null,
@@ -10104,7 +10104,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "carvig：车载 INS/GNSS/视觉组合导航"
     },
     {
@@ -12065,7 +12065,7 @@
       "language": "Jupyter Notebook",
       "license": null,
       "stars": 19,
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "host": "github",
       "one_liner_zh": "GNSSR_MERRByS_Python：TechDemoSat-1 星载 GNSS-R 示例",
       "analysis_zh": "Surrey TechDemoSat-1（MERRByS）星载 GNSS-R 的 Python/Jupyter 示例，演示空间反射数据读取与初步处理。适合星载 GNSS-R 入门。地基 GNSS-IR 请用 gnssrefl；两者几何与校正链不同。",
@@ -16953,7 +16953,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "personal_community",
+      "provenance": "official",
       "one_liner_zh": "novatel_oem7_driver：NovAtel OEM7/SPAN 官方 ROS 驱动（MIT）"
     },
     {
@@ -19621,7 +19621,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "阿拉斯加闪烁极光 GPS 阵列（SAGA）数据处理与估计工具（MATLAB）"
     },
     {
@@ -20396,9 +20396,9 @@
     }
   ],
   "provenance_counts": {
-    "official": 341,
-    "academic_lab": 355,
-    "personal_community": 333
+    "official": 342,
+    "academic_lab": 347,
+    "personal_community": 340
   },
   "updated": "2026-09-26"
 }

@@ -22,7 +22,7 @@
 
 语言：Jupyter Notebook · 许可：Apache-2.0 · 星标约：11 · 宿主：github
 
-结合射线追踪与射电观测仿真做电离层层析，面向射电天文与空间天气交叉课题，Notebook 形式便于改参数。适合需要正演电离层对射电信号影响的人。不是 GNSS 双频 TEC 业务软件；地基 GNSS 体素层析可并行参考 SegmentsComputation 与 synthetic 层析仓库。仿真假设与真实射电阵几何差异需要单独评估。
+结合射线追踪与射电观测仿真做电离层层析，面向射电天文与空间天气交叉课题，Notebook 形式便于改参数。适合需要正演电离层对射电信号影响的人。不是 GNSS 双频 TEC 业务软件；地基 GNSS 体素层析可并行参考 SegmentsComputation 与 synthetic 层析仓库。仿真假设与真实射电阵几何差异需要单独评估。仓库已于 2020-11 归档（只读）。
 
 #### [iono-tomography](https://github.com/brianbreitsch/iono-tomography)  
 *🏷️ 高校实验室*
@@ -612,7 +612,7 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 | [ionosphereAI](https://github.com/space-physics/ionosphereAI) | ionosphereAI：多源噪声数据中的电离层特征检测 | Python | 11 | 🏷️ 高校实验室 |
 | [ocbpy](https://github.com/aburrell/ocbpy) | ocbpy：极盖边界自适应磁坐标转换库 | Python | 11 | 🏷️ 高校实验室 |
 | [POLAN](https://github.com/space-physics/POLAN) | POLAN：Titheridge 虚高→真高反演（现代封装） | Fortran | 11 | 🏷️ 高校实验室 |
-| [COSMIC-IONPRF-Ne-TEC](https://github.com/HassanNooreldeen/COSMIC-IONPRF-NC-CDAAC-UCAR-Ne-TEC) | COSMIC-IONPRF-Ne-TEC：COSMIC CDAAC 掩星 Ne/TEC MATLAB 下载分析 | MATLAB | 9 | 🏷️ 高校实验室 |
+| [COSMIC-IONPRF-Ne-TEC](https://github.com/HassanNooreldeen/COSMIC-IONPRF-NC-CDAAC-UCAR-Ne-TEC) | COSMIC-IONPRF-Ne-TEC：COSMIC CDAAC 掩星 Ne/TEC MATLAB 下载分析 | MATLAB | 9 | 🏷️ 个人社区 |
 | [pysatModels](https://github.com/pysat/pysatModels) | pysatModels：pysat 模式分析与模式-数据对比 | Python | 9 | 🏷️ 高校实验室 |
 | [AlouetteApp](https://github.com/asc-csa/AlouetteApp) | 加拿大航天局 Alouette-I 顶部探测电离图筛选、下载与可视化 Dash 应用 | Python | 8 | 🏷️ 官方 |
 | [Septentrio-PyDataLink](https://github.com/septentrio-gnss/Septentrio-PyDataLink) | Septentrio-PyDataLink：接收机数据流可视化与互联 | Python | 8 | 🏷️ 官方 |
@@ -760,7 +760,7 @@ CSA 开源项目，从 Alouette 与 ISIS 卫星历史扫描电离图图像中提
 经典 POLAN 算法用于从测高仪/电离图虚高估计真实高度剖面，space-physics 仓库提供可编译的现代维护。对把测高仪 foF2/hmF2 与 GNSS TEC 联合分析很有用。局限：需要质量较好的描迹/虚高输入；不直接处理 GNSS；使用者需了解测高仪反演假设。
 
 #### [COSMIC-IONPRF-Ne-TEC](https://github.com/HassanNooreldeen/COSMIC-IONPRF-NC-CDAAC-UCAR-Ne-TEC)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：MATLAB · 许可：— · 星标约：9 · 宿主：github
 
@@ -1079,7 +1079,7 @@ ESA SWE 网络 Transionospheric 服务族中的近实时 TEC 图产品页，用�
 
 语言：JavaScript · 许可：— · 星标约：0 · 宿主：github
 
-用 Electron/React 做的 IONEX 可视化桌面小应用，交互浏览格网 TEC 较友好，来源为毕业设计风格仓库。适合演示与教学展示。研究级批处理、插值、DCB 与建模请回到 Python/MATLAB 工具链；星标低、维护不确定，当作原型参考即可，勿当生产依赖。若只需脚本绑图，优先轻量 Python 方案更易维护。
+用 Electron/React 做的 IONEX 可视化桌面小应用，交互浏览格网 TEC 较友好，来源为毕业设计风格仓库。适合演示与教学展示。研究级批处理、插值、DCB 与建模请回到 Python/MATLAB 工具链；星标低，仓库已于 2023-04 归档（只读），当作原型参考即可，勿当生产依赖。若只需脚本绑图，优先轻量 Python 方案更易维护。
 
 #### [MathWorks-ionex_reader](https://www.mathworks.com/matlabcentral/fileexchange/172149-ionex_reader)  
 *🏷️ 个人社区*
@@ -1122,7 +1122,7 @@ University of Warmia and Mazury（Olsztyn）承担 IGS 电离层图组合与验�
 |---|---|---|---:|---|
 | [SuperSID](https://github.com/sberl/supersid) | SuperSID：VLF 突发电离层扰动（SID）监测 | Python | 16 | 🏷️ 个人社区 |
 | [SbfParser](https://github.com/septentrio-gnss/SbfParser) | SbfParser：Septentrio SBF 流/文件官方解析器 | Cython | 12 | 🏷️ 官方 |
-| [saga-utils](https://github.com/perrysou/saga-utils) | 阿拉斯加闪烁极光 GPS 阵列（SAGA）数据处理与估计工具（MATLAB） | MATLAB | 10 | 🏷️ 高校实验室 |
+| [saga-utils](https://github.com/perrysou/saga-utils) | 阿拉斯加闪烁极光 GPS 阵列（SAGA）数据处理与估计工具（MATLAB） | MATLAB | 10 | 🏷️ 个人社区 |
 | [gnss-scintillation-simulator_2-param](https://github.com/cu-sense-lab/gnss-scintillation-simulator_2-param) | gnss-scintillation-simulator_2-param：CU 两参数闪烁仿真 | MATLAB | 6 | 🏷️ 高校实验室 |
 | [Ionospheric-TEC-ROTI-Interactives](https://github.com/Tesfay-Tesfu/Ionospheric-TEC-ROTI-Interactives) | Ionospheric-TEC-ROTI-Interactives：交互式 TEC/ROTI 计算 | Python | 3 | 🏷️ 高校实验室 |
 | [roti-gnss-ml](https://github.com/NeelayS/roti-gnss) | roti-gnss-ml：深度学习 GNSS ROTI 时序预报实验 | Python | 3 | 🏷️ 个人社区 |
@@ -1154,7 +1154,7 @@ SuperSID 用简易 VLF 接收监测突发电离层扰动（太阳耀斑等引起
 官方生态 Python/Cython 解析器，把 SBF 流转成 JSON 结构，社区已扩展 ISMR（4086）等闪烁监测块，便于从 PolaRx 系列提取 S4、σφ 等。输入为 SBF 文件或流；输出为结构化观测/状态块。局限：侧重解码而非完整闪烁科学产品流水线；大文件需注意内存策略。
 
 #### [saga-utils](https://github.com/perrysou/saga-utils)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：MATLAB · 许可：GPL-3.0 · 星标约：10 · 宿主：github
 
@@ -1806,7 +1806,7 @@ SWPC 官方 HTTP 产品树，提供 geojson_2d_urt 与 netcdf_2d_urt 等目录�
 
 语言：Python · 许可：MIT · 星标约：8 · 宿主：github
 
-把经典 IRI-90 Fortran/数据流程包装成 Python，便于脚本化计算给定时刻与位置的电子密度等廓线，适合课堂演示与快速对比 GNSS TEC。输入一般为日期、地理坐标与高度网格；输出为模式密度/相关参量。局限：模型年代较早，精度与 IRI-2016/2020 有差距；依赖编译/数据文件配置，不替代业务 GIM。
+把经典 IRI-90 Fortran/数据流程包装成 Python，便于脚本化计算给定时刻与位置的电子密度等廓线，适合课堂演示与快速对比 GNSS TEC。输入一般为日期、地理坐标与高度网格；输出为模式密度/相关参量。局限：模型年代较早，精度与 IRI-2016/2020 有差距；依赖编译/数据文件配置，不替代业务 GIM。仓库已于 2022-08 归档（只读）。
 
 #### [FIRI.jl](https://github.com/fgasdia/FaradayInternationalReferenceIonosphere.jl)  
 *🏷️ 高校实验室*

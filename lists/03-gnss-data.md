@@ -137,7 +137,7 @@ RTCM-Ntrip 官方仓库中的 POSIX ntripserver，用于将接收机或文件流
 
 语言：C · 许可：GPL-2.0-or-later · 星标约：46 · 宿主：github
 
-百度 Open Source 组织公开的 NTRIP Caster，可作自建播发与协议学习的对照样本。适合对比 BKG 与社区实现。按 catalog 政策记为个人社区（公司开源档）；上线前须完成压力、安全与兼容性测试。
+百度 Open Source 组织公开的 NTRIP Caster，可作自建播发与协议学习的对照样本。适合对比 BKG 与社区实现。按 catalog 政策记为个人社区（公司开源档）；上线前须完成压力、安全与兼容性测试。仓库已于 2019-05 归档（只读），不再更新。
 
 #### [millipede-caster](https://github.com/pbeyssac/millipede-caster)  
 *🏷️ 个人社区*

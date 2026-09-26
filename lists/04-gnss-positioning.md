@@ -108,16 +108,16 @@ CLAS 测试库解码 Compact SSR（RTCM MT4073），提供 SSR2OSR、SSR2OBS 与
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [cssrlib](https://github.com/hirokawa/cssrlib) | cssrlib：Python PPP/PPP-RTK 工具包 | Jupyter Notebook | 211 | 🏷️ 高校实验室 核心 |
+| [cssrlib](https://github.com/hirokawa/cssrlib) | cssrlib：Python PPP/PPP-RTK 工具包 | Python | 211 | 🏷️ 个人社区 核心 |
 | [PPP-RTK-Beechan](https://github.com/MichaelBeechan/PPP-RTK) | PPP-RTK（Beechan）：C 版 SPP/RTD/PPP/RTK/PPP-RTK | C | 26 | 🏷️ 个人社区 |
 | [Easy4PTK](https://github.com/alxanderjiang/Easy4PTK) | Easy4PTK：易移植多星座 PPP-RTK Python/Jupyter 试验箱 | Jupyter Notebook | 5 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [cssrlib](https://github.com/hirokawa/cssrlib)  
-*🏷️ 高校实验室 核心*
+*🏷️ 个人社区 核心*
 
-语言：Jupyter Notebook · 许可：MIT · 星标约：211 · 宿主：github
+语言：Python · 许可：MIT · 星标约：211 · 宿主：github
 
 基于 RTKLIB 思路的 Python 工具包，解码 Compact SSR、RTCM/IGS SSR 等，对接 QZSS CLAS、Galileo HAS、北斗 PPP 与 IGS 服务做 PPP/PPP-RTK/RTK 教学与试验。附 Colab 教程，适合快速理解开放增强服务。实时生产与完好性需自测；与 MADOCALIB/CLASLIB/MRTKLIB 的 C 实现对照选型。
 
@@ -208,7 +208,7 @@ VieVS（TU Wien）精密单点定位模块，MATLAB 实现，便于与 VLBI/大�
 
 语言：Fortran · 许可：MIT · 星标约：58 · 宿主：github
 
-官方背景的 Fortran PPP，便于对照国家机构处理流程。适合研究与教学对照。现代多星座实时服务请结合 CSRS-PPP 网页与其他开源引擎。
+加拿大测地调查局（CGS）1990 年代至 2018 年 8 月业务使用的 Fortran PPP 程序，2003 年起在 CSRS-PPP 在线服务后台运行；2018 年被新软件取代后停止支持，以 MIT 许可作为归档（只读）仓库发布，CGS 声明不再更新代码或文档。适合研究与教学对照国家机构处理流程。现代多星座实时服务请结合 CSRS-PPP 网页与其他开源引擎。
 
 #### [PPPLib](https://github.com/yxw027/PPPLib)  
 *🏷️ 高校实验室*
@@ -343,7 +343,7 @@ MIT 地球大气与行星科学系长期维护的 GAMIT/GLOBK 套件，GAMIT 负
 |---|---|---|---:|---|
 | [libgnss++](https://github.com/rsasaki0109/gnssplusplus-library) | libgnss++：现代 C++20 GNSS 工具包（SPP/RTK/PPP/CLAS） | C++ | 189 | 🏷️ 个人社区 |
 | [SatellitePosition](https://github.com/LStudioLoren/SatellitePosition) | SatellitePosition：Python 单点/RTK 学习实现 | Python | 62 | 🏷️ 个人社区 |
-| [MobileGNSS-SPP](https://github.com/salmoshu/MobileGNSS-SPP) | MobileGNSS-SPP：手机 GNSS 的 EKF 单点定位 | C | 41 | 🏷️ 高校实验室 |
+| [MobileGNSS-SPP](https://github.com/salmoshu/MobileGNSS-SPP) | MobileGNSS-SPP：手机 GNSS 的 EKF 单点定位 | C | 41 | 🏷️ 个人社区 |
 | [GNSS-Explorer](https://github.com/brucezhcw/GNSS-Explorer) | GNSS-Explorer：基于 RTKLIB 的 SPP 算法优化探索 | C | 21 | 🏷️ 高校实验室 |
 | [GNSSPositioning](https://github.com/bitecc/GNSSPositioning) | GNSSPositioning：含电离层/对流层改正的 SPP 教学程序 | C++ | 12 | 🏷️ 个人社区 |
 | [SPP_SPV](https://github.com/GYH-WHU/SPP_SPV) | SPP_SPV：武大相关 GPS/BDS 单点定位与测速教学 | C++ | 7 | 🏷️ 高校实验室 |
@@ -366,7 +366,7 @@ MIT 地球大气与行星科学系长期维护的 GAMIT/GLOBK 套件，GAMIT 负
 用 Python 从零实现卫星单点定位与 RTK 相对定位的学习项目，注释与结构偏教学向。适合编程课、导航算法入门与作业模板。数值稳健性、周跳探测与多路径处理不及成熟库；学完概念后应用 RTKLIB 或 goGPS 做精度与固定率对照，避免把作业代码当生产引擎。
 
 #### [MobileGNSS-SPP](https://github.com/salmoshu/MobileGNSS-SPP)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C · 许可：MIT · 星标约：41 · 宿主：github
 
@@ -490,7 +490,7 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 | [rtkbase](https://github.com/Stefal/rtkbase) | rtkbase：树莓派自建 GNSS 基准站与 Web 管理 | Python | 769 | 🏷️ 个人社区 核心 |
 | [rtklib-py](https://github.com/rtklibexplorer/rtklib-py) | rtklib-py：demo5 思路的 Python RTKLIB（偏 PPK） | Python | 244 | 🏷️ 个人社区 |
 | [OpenRTK](https://github.com/AndreasArendt/OpenRTK) | OpenRTK：轻量开源精密 GNSS/RTK | C++ | 23 | 🏷️ 个人社区 |
-| [HPRTK](https://github.com/yxw027/HPRTK) | HPRTK：高精度实时定位 C++ 工程参考 | C++ | 17 | 🏷️ 高校实验室 |
+| [HPRTK](https://github.com/yxw027/HPRTK) | HPRTK：高精度实时定位 C++ 工程参考 | C++ | 17 | 🏷️ 个人社区 |
 | [RTK](https://github.com/GYH-WHU/RTK) | RTK：GPS/BDS 双系统浮点/固定 RTK 教学实现 | C++ | 11 | 🏷️ 高校实验室 |
 | [Qelaro](https://github.com/atoofihub/Qelaro) | 面向教学与可复现的 Python GNSS 双差基线解算工具箱（CLI+GUI） | Python | 10 | 🏷️ 个人社区 |
 | [GNSSRTK](https://github.com/supakunz/GNSS_RTK) | GNSSRTK：AGV 路径规划与车载显示的 GNSS-RTK 程序 | Python | 3 | 🏷️ 个人社区 |
@@ -519,7 +519,7 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 体量较小的开源 RTK/精密 GNSS 代码，MIT 许可便于嵌入式或课程裁剪。社区与文档成熟度明显小于 RTKLIB；上线前请自测模糊度与多星座支持范围。
 
 #### [HPRTK](https://github.com/yxw027/HPRTK)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C++ · 许可：— · 星标约：17 · 宿主：github
 
@@ -550,17 +550,17 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [LEOGPS](https://github.com/sammmlow/LEOGPS) | LEOGPS：LEO 星载 GPS/相对导航 Python 包 | Python | 88 | 🏷️ 高校实验室 |
+| [LEOGPS](https://github.com/sammmlow/LEOGPS) | LEOGPS：LEO 星载 GPS/相对导航 Python 包 | Python | 88 | 🏷️ 个人社区 |
 | [goGPS_Java](https://github.com/goGPS-Project/goGPS_Java) | goGPS Java：JVM 版 GNSS 观测处理 | Java | 66 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
 #### [LEOGPS](https://github.com/sammmlow/LEOGPS)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：MIT · 星标约：88 · 宿主：github
 
-服务 LEO 星载 GPS 与编队相对导航仿真/处理。适合航天器导航课与前期仿真。地面测地 PPP 与实时 RTK 非其主场。
+服务 LEO 星载 GPS 与编队相对导航仿真/处理。README 说明目前仅支持 GPS L1/L2、RINEX 2.xx 观测，并使用 CODE 精密星历与钟差，输出时间系统为 GPS 时。适合航天器导航课与前期仿真。地面测地 PPP 与实时 RTK 非其主场。
 
 #### [goGPS_Java](https://github.com/goGPS-Project/goGPS_Java)  
 *🏷️ 高校实验室*

@@ -25,7 +25,7 @@
 | [ESP32-SDR-GPS](https://github.com/iliasam/ESP32_SDR_GPS) | ESP32-SDR-GPS：MCU 级软件 GPS 接收实验 | C | 55 | 🏷️ 个人社区 |
 | [SoftGNSS-python](https://github.com/perrysou/SoftGNSS-python) | SoftGNSS-python：经典 SoftGNSS 的 Python 移植 | Python | 44 | 🏷️ 个人社区 |
 | [gnss-baseband](https://github.com/j-core/gnss-baseband) | gnss-baseband：GPS 类 DSSS 基带 VHDL IP | VHDL | 43 | 🏷️ 个人社区 |
-| [gnss-sdr-1pps](https://github.com/oscimp/gnss-sdr-1pps) | gnss-sdr-1pps：为 gnss-sdr 增加 1-PPS 的扩展材料 | — | 40 | 🏷️ 个人社区 |
+| [gnss-sdr-1pps](https://github.com/oscimp/gnss-sdr-1pps) | gnss-sdr-1pps：gnss-sdr 双天线抗欺骗/抗干扰与 1-PPS 补丁 | C++ | 40 | 🏷️ 个人社区 |
 | [FlyDog-SDR-GPS](https://github.com/flydog-sdr/FlyDog_SDR_GPS) | FlyDog-SDR-GPS：改进 ADC 的 KiwiSDR 衍生固件 | C++ | 30 | 🏷️ 个人社区 |
 | [Fast_GNSS_ReceiverMATLAB](https://github.com/JohnBagshaw/Fast_GNSS_ReceiverMATLAB) | 高灵敏度快速捕获 MATLAB GNSS 接收机实验 | MATLAB | 26 | 🏷️ 个人社区 |
 | [pylgrim](https://github.com/kirienko/pylgrim) | pylgrim：Python 实现的 GNSS 软件接收机 | Python | 21 | 🏷️ 个人社区 |
@@ -173,9 +173,9 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 #### [gnss-sdr-1pps](https://github.com/oscimp/gnss-sdr-1pps)  
 *🏷️ 个人社区*
 
-语言：— · 许可：GPL-3.0-or-later · 星标约：40 · 宿主：github
+语言：C++ · 许可：GPL-3.0-or-later · 星标约：40 · 宿主：github
 
-围绕为 gnss-sdr 增加 1-PPS 秒脉冲能力的补丁、说明与相关文件，方便把软件接收机接到时频设备。适合已部署 gnss-sdr、需要硬件秒脉冲的用户。须与主项目具体版本对齐合并；本仓库不是独立接收机发行版。硬件 PPS 输出电平与线缆延迟要纳入系统标定。PPS 线缆长度引入的延迟应写入系统时延表。
+OSCIMP 维护的 gnss-sdr 补丁集（按 v0.0.18/v0.0.20 分版本）：接双通道相干 SDR（测试用 Ettus B210、Fairwaves XTRX），两天线相距半波长，通过比较各 GPS L1 卫星信号到达方向检测欺骗，用多天线强相关信号检测并抑制干扰，另加 1-PPS 输出与 B210 PPS 修正补丁。适合研究抗欺骗/抗干扰与授时输出的 SDR 用户。不是独立接收机：需按 README 克隆指定 gnss-sdr 版本再打补丁；作者也承认欺骗检测嵌在 Signal_Source 里破坏了原有架构。PPS 线缆与前端延迟需纳入系统标定。
 
 #### [FlyDog-SDR-GPS](https://github.com/flydog-sdr/FlyDog_SDR_GPS)  
 *🏷️ 个人社区*
@@ -312,7 +312,7 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 
 语言：C · 许可：MIT · 星标约：3466 · 宿主：github
 
-生成可回放的 L1 基带，广泛用于接收机与抗干扰实验。适合实验室信号源。仅仿真信号，不含真实天空；使用需遵守当地无线电与欺骗相关法规。
+生成可回放的 L1 基带，广泛用于接收机与抗干扰实验。适合实验室信号源。仅仿真信号，不含真实天空；使用需遵守当地无线电与欺骗相关法规。仓库已于 2025-01 归档（只读），可继续 fork 使用，但上游不再合并更新。
 
 #### [multi-sdr-gps-sim](https://github.com/Mictronics/multi-sdr-gps-sim)  
 *🏷️ 个人社区*
