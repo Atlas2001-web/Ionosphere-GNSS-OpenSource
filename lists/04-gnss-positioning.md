@@ -352,8 +352,12 @@ MIT 地球大气与行星科学系长期维护的 GAMIT/GLOBK 套件，GAMIT 负
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [RTKLIB](https://github.com/tomojitakasu/RTKLIB) | RTKLIB：经典开源 GNSS 定位工具箱（RTK/PPP） | C | 3128 | 🏷️ 个人社区 ★ 核心 |
+| [RTKLIB-explorer](https://github.com/rtklibexplorer/RTKLIB) | RTKLIB-explorer：面向低成本接收机的 RTKLIB 分支 | C | 971 | 🏷️ 个人社区 核心 |
+| [laika](https://github.com/commaai/laika) | laika：comma.ai 轻量 Python GNSS 库 | Python | 723 | 🏷️ 个人社区 核心 |
 | [GREAT-PVT](https://github.com/GREAT-WHU/GREAT-PVT) | GREAT-PVT：武大 GREAT 精密 PVT 软件 | C++ | 279 | 🏷️ 高校实验室 ★ 核心 |
 | [libgnss++](https://github.com/rsasaki0109/gnssplusplus-library) | libgnss++：现代 C++20 GNSS 工具包（SPP/RTK/PPP/CLAS） | C++ | 189 | 🏷️ 个人社区 |
+| [gnss-rtk](https://github.com/nav-solutions/gnss-rtk) | gnss-rtk：Rust PPP/RTK 解算（AGPL） | Rust | 79 | 🏷️ 个人社区 |
 | [SatellitePosition](https://github.com/LStudioLoren/SatellitePosition) | SatellitePosition：Python 单点/RTK 学习实现 | Python | 62 | 🏷️ 个人社区 |
 | [MobileGNSS-SPP](https://github.com/salmoshu/MobileGNSS-SPP) | MobileGNSS-SPP：手机 GNSS 的 EKF 单点定位 | C | 41 | 🏷️ 个人社区 |
 | [GNSS-Explorer](https://github.com/brucezhcw/GNSS-Explorer) | GNSS-Explorer：基于 RTKLIB 的 SPP 算法优化探索 | C | 21 | 🏷️ 个人社区 |
@@ -362,6 +366,27 @@ MIT 地球大气与行星科学系长期维护的 GAMIT/GLOBK 套件，GAMIT 负
 | [GSILIB](https://terras.gsi.go.jp/geo_info/gsilib/gsilib.html) | GSILIB：多 GNSS 基线/PPP 解析库 | C | — | 🏷️ 官方 核心 |
 
 ### 详细说明
+
+#### [RTKLIB](https://github.com/tomojitakasu/RTKLIB)  
+*🏷️ 个人社区 ★ 核心*
+
+语言：C · 许可：BSD-2-Clause · 星标约：3128 · 宿主：github
+
+窗口工具与嵌入式移植极广，是开源 RTK/PPP 入门与生产原型的常见底座。适合低成本接收机与教学实验。默认分支对部分多星座/低成本场景需配合 demo5 等社区分支；实时链路与模糊度策略要因机型验证。
+
+#### [RTKLIB-explorer](https://github.com/rtklibexplorer/RTKLIB)  
+*🏷️ 个人社区 核心*
+
+语言：C · 许可：BSD-2-Clause · 星标约：971 · 宿主：github
+
+针对低成本 GNSS 的活跃社区分支，博客与讨论丰富。适合手持/无人机 RTK 试验。非官方担保；升级与实时安全策略请自行回归。
+
+#### [laika](https://github.com/commaai/laika)  
+*🏷️ 个人社区 核心*
+
+语言：Python · 许可：MIT · 星标约：723 · 宿主：github
+
+面向自动驾驶与研究的精简 GNSS 库，可下载星历与改正、做伪距定位并与 RTKLIB 风格流程对接，Python 接口干净。适合想快速验证定位链路、而不愿先啃完整测地软件栈的工程师与学生。功能覆盖远小于 PRIDE、Ginan、RTKLIB，模糊度固定与多频多星座产品化能力弱；和 rtklib-py、goGPS 对照时，优势在轻量与可嵌入脚本。
 
 #### [GREAT-PVT](https://github.com/GREAT-WHU/GREAT-PVT)  
 *🏷️ 高校实验室 ★ 核心*
@@ -376,6 +401,13 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 语言：C++ · 许可：MIT · 星标约：189 · 宿主：github
 
 含 Python 绑定、Docker 与 ROS2 支持，架构较新。适合嵌入式/机器人集成试验。精密产品级完整性与多星座策略仍需自测。
+
+#### [gnss-rtk](https://github.com/nav-solutions/gnss-rtk)  
+*🏷️ 个人社区*
+
+语言：Rust · 许可：AGPL-3.0 · 星标约：79 · 宿主：github
+
+与 rinex 库同一 Rust 生态的精密定位解算，AGPL。适合 Rust 栈爱好者。生态年轻于 RTKLIB；AGPL 对闭源集成不友好。
 
 #### [SatellitePosition](https://github.com/LStudioLoren/SatellitePosition)  
 *🏷️ 个人社区*
@@ -418,29 +450,6 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 语言：C · 许可：BSD-2-Clause (ANTApp GPL-3.0) · 星标约：— · 宿主：official_site
 
 国土地理院（GSI）基于 RTKLIB 2.4.2 与 ANTTOOL 发布的多 GNSS 解析软件，支持 GPS/QZSS/GLONASS/Galileo 的 L1/L2/L5 基线处理，并新增异机种 IFB/ISB 估计与 L2P–L2C 四分之一周校正。BSD-2（ANTApp 为 GPL-3）。适合日本公共测量与多星座短基线实验；Windows 为主，功能分批核验后公开，不是完整实时 RTK 套件。
-
-## PPP/RTK
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [laika](https://github.com/commaai/laika) | laika：comma.ai 轻量 Python GNSS 库 | Python | 723 | 🏷️ 个人社区 核心 |
-| [gnss-rtk](https://github.com/nav-solutions/gnss-rtk) | gnss-rtk：Rust PPP/RTK 解算（AGPL） | Rust | 79 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [laika](https://github.com/commaai/laika)  
-*🏷️ 个人社区 核心*
-
-语言：Python · 许可：MIT · 星标约：723 · 宿主：github
-
-面向自动驾驶与研究的精简 GNSS 库，可下载星历与改正、做伪距定位并与 RTKLIB 风格流程对接，Python 接口干净。适合想快速验证定位链路、而不愿先啃完整测地软件栈的工程师与学生。功能覆盖远小于 PRIDE、Ginan、RTKLIB，模糊度固定与多频多星座产品化能力弱；和 rtklib-py、goGPS 对照时，优势在轻量与可嵌入脚本。
-
-#### [gnss-rtk](https://github.com/nav-solutions/gnss-rtk)  
-*🏷️ 个人社区*
-
-语言：Rust · 许可：AGPL-3.0 · 星标约：79 · 宿主：github
-
-与 rinex 库同一 Rust 生态的精密定位解算，AGPL。适合 Rust 栈爱好者。生态年轻于 RTKLIB；AGPL 对闭源集成不友好。
 
 ## 城市峡谷
 
@@ -819,7 +828,9 @@ PolyU TAS Lab 的 Yixin Gao 与 Weisong Wen 发布的 GNSS+LEO 因子图定位�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [PRIDE-PPPAR](https://github.com/PrideLab/PRIDE-PPPAR) | PRIDE-PPPAR：多星座 PPP 模糊度固定 | C | 415 | 🏷️ 高校实验室 ★ 核心 |
 | [MRTKLIB](https://github.com/h-shiono/MRTKLIB) | MRTKLIB：现代 PPP/PPP-RTK 定位库 | C | 78 | 🏷️ 个人社区 核心 |
+| [PPP_AR](https://github.com/heiwa0519/PPP_AR) | PPP_AR：多星座 PPP 模糊度固定实现 | C | 40 | 🏷️ 高校实验室 |
 | [pygnsslab](https://github.com/PyGnssLab/pygnsslab) | pygnsslab：纯 Python 模块化 RINEX/PPP/PPP-AR | Python | 34 | 🏷️ 个人社区 |
 | [Urban-RTKLIB](https://github.com/MayHarryWang/Urban-RTKLIB) | Urban-RTKLIB：面向城市峡谷的 RTKLIB 改版 | C | 25 | 🏷️ 个人社区 |
 | [mrtklib-docker-ui](https://github.com/h-shiono/mrtklib-docker-ui) | mrtklib-docker-ui：MRTKLIB 的 Docker/Web 演示界面 | TypeScript | 10 | 🏷️ 个人社区 |
@@ -827,12 +838,26 @@ PolyU TAS Lab 的 Yixin Gao 与 Weisong Wen 发布的 GNSS+LEO 因子图定位�
 
 ### 详细说明
 
+#### [PRIDE-PPPAR](https://github.com/PrideLab/PRIDE-PPPAR)  
+*🏷️ 高校实验室 ★ 核心*
+
+语言：C · 许可：GPL-3.0 · 星标约：415 · 宿主：github
+
+面向多 GNSS 的 PPP-AR 开源软件，科研引用多，模糊度固定与产品接口成熟。适合高精度事后 PPP、地壳形变、气象 ZTD。实时 PPP-RTK 与图形界面非重点；学习曲线陡于 RTKLIB。
+
 #### [MRTKLIB](https://github.com/h-shiono/MRTKLIB)  
 *🏷️ 个人社区 核心*
 
 语言：C · 许可：BSD-2-Clause · 星标约：78 · 宿主：github
 
 面向 PPP、PPP-AR 与 PPP-RTK（含 CLAS/MADOCA 等区域增强）的现代定位库，比经典 RTKLIB 默认树更贴近亚太 PPP-RTK 场景。适合评估 SSR/CSSR 改正接入与模糊度固定。文档与样例需要时间消化；与 PRIDE、Ginan、Urban-RTKLIB 对照时重点看改正数接口、收敛时间与固定率。上游许可请仔细阅读。
+
+#### [PPP_AR](https://github.com/heiwa0519/PPP_AR)  
+*🏷️ 高校实验室*
+
+语言：C · 许可：— · 星标约：40 · 宿主：github
+
+围绕多星座 PPP 模糊度固定（PPP-AR）组织的实现，便于对照教材中的宽巷/窄巷与产品依赖关系。适合学习 PPP-AR 流程。工程化程度、实时性与 OSB/UPD 产品格式支持参差不齐；严肃精度评估请交叉验证 PRIDE-PPPAR、Ginan 或 MRTKLIB。
 
 #### [pygnsslab](https://github.com/PyGnssLab/pygnsslab)  
 *🏷️ 个人社区*
@@ -885,29 +910,6 @@ PolyU TAS Lab 的 Yixin Gao 与 Weisong Wen 发布的 GNSS+LEO 因子图定位�
 
 面向定位算法实验与二次开发的 C++ 仓。适合跟进图优化/组合导航课程作业。成熟度与文档因版本而异，引用前请自备回归数据。
 
-## PPP-AR
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [PRIDE-PPPAR](https://github.com/PrideLab/PRIDE-PPPAR) | PRIDE-PPPAR：多星座 PPP 模糊度固定 | C | 415 | 🏷️ 高校实验室 ★ 核心 |
-| [PPP_AR](https://github.com/heiwa0519/PPP_AR) | PPP_AR：多星座 PPP 模糊度固定实现 | C | 40 | 🏷️ 高校实验室 |
-
-### 详细说明
-
-#### [PRIDE-PPPAR](https://github.com/PrideLab/PRIDE-PPPAR)  
-*🏷️ 高校实验室 ★ 核心*
-
-语言：C · 许可：GPL-3.0 · 星标约：415 · 宿主：github
-
-面向多 GNSS 的 PPP-AR 开源软件，科研引用多，模糊度固定与产品接口成熟。适合高精度事后 PPP、地壳形变、气象 ZTD。实时 PPP-RTK 与图形界面非重点；学习曲线陡于 RTKLIB。
-
-#### [PPP_AR](https://github.com/heiwa0519/PPP_AR)  
-*🏷️ 高校实验室*
-
-语言：C · 许可：— · 星标约：40 · 宿主：github
-
-围绕多星座 PPP 模糊度固定（PPP-AR）组织的实现，便于对照教材中的宽巷/窄巷与产品依赖关系。适合学习 PPP-AR 流程。工程化程度、实时性与 OSB/UPD 产品格式支持参差不齐；严肃精度评估请交叉验证 PRIDE-PPPAR、Ginan 或 MRTKLIB。
-
 ## 处理/绘图
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
@@ -945,29 +947,6 @@ PolyU TAS Lab 的 Yixin Gao 与 Weisong Wen 发布的 GNSS+LEO 因子图定位�
 语言：Python · 许可：MIT · 星标约：4 · 宿主：github
 
 实用的 Receiver Autonomous Integrity Monitoring 教学实现，含卡方故障探测、排除与 HPL/VPL，并提供 Stanford 图等可视化。MIT 许可；填补目录中开源 RAIM 示例缺口。偏演示与课程，航空级认证请遵循相应 DO 标准与审定流程。
-
-## RTK/PPP
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [RTKLIB](https://github.com/tomojitakasu/RTKLIB) | RTKLIB：经典开源 GNSS 定位工具箱（RTK/PPP） | C | 3128 | 🏷️ 个人社区 ★ 核心 |
-| [RTKLIB-explorer](https://github.com/rtklibexplorer/RTKLIB) | RTKLIB-explorer：面向低成本接收机的 RTKLIB 分支 | C | 971 | 🏷️ 个人社区 核心 |
-
-### 详细说明
-
-#### [RTKLIB](https://github.com/tomojitakasu/RTKLIB)  
-*🏷️ 个人社区 ★ 核心*
-
-语言：C · 许可：BSD-2-Clause · 星标约：3128 · 宿主：github
-
-窗口工具与嵌入式移植极广，是开源 RTK/PPP 入门与生产原型的常见底座。适合低成本接收机与教学实验。默认分支对部分多星座/低成本场景需配合 demo5 等社区分支；实时链路与模糊度策略要因机型验证。
-
-#### [RTKLIB-explorer](https://github.com/rtklibexplorer/RTKLIB)  
-*🏷️ 个人社区 核心*
-
-语言：C · 许可：BSD-2-Clause · 星标约：971 · 宿主：github
-
-针对低成本 GNSS 的活跃社区分支，博客与讨论丰富。适合手持/无人机 RTK 试验。非官方担保；升级与实时安全策略请自行回归。
 
 ## 多功能引擎
 

@@ -7,7 +7,7 @@
   "generated": "2026-09-26",
   "project_count": 1029,
   "counts_by_category": {
-    "ionosphere": 273,
+    "ionosphere": 247,
     "troposphere": 48,
     "gnss-data": 137,
     "gnss-positioning": 108,
@@ -15,8 +15,8 @@
     "navigation-ins": 72,
     "gnss-sdr": 76,
     "mobile-apps": 32,
-    "tools-learning": 57,
-    "gnss-datasets": 195
+    "tools-learning": 58,
+    "gnss-datasets": 220
   },
   "projects": [
     {
@@ -2006,7 +2006,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "偏差产品",
+      "subcategory": "轨道钟差",
       "markers": [],
       "stars_approx": null,
       "source": "data-portal verified 2026-09-14",
@@ -2026,7 +2026,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "偏差产品",
+      "subcategory": "轨道钟差",
       "markers": [],
       "stars_approx": null,
       "source": "data-portal verified 2026-09-14",
@@ -3229,7 +3229,7 @@
       "language": "Rust",
       "license": "AGPL-3.0",
       "category": "gnss-positioning",
-      "subcategory": "PPP/RTK",
+      "subcategory": "SPP/RTK/PPP",
       "markers": [],
       "stars_approx": 79,
       "source": "curated+verified (awesome-gnss / stars / API / official site)",
@@ -3572,7 +3572,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "gnss-positioning",
-      "subcategory": "PPP/RTK",
+      "subcategory": "SPP/RTK/PPP",
       "markers": [
         "core"
       ],
@@ -3894,7 +3894,7 @@
       "language": "C",
       "license": null,
       "category": "gnss-positioning",
-      "subcategory": "PPP-AR",
+      "subcategory": "PPP/PPP-AR",
       "markers": [],
       "stars_approx": 40,
       "source": "gh-search+verified (more_finds / exhaustive 2026-09-14)",
@@ -3966,7 +3966,7 @@
       "language": "C",
       "license": "GPL-3.0",
       "category": "gnss-positioning",
-      "subcategory": "PPP-AR",
+      "subcategory": "PPP/PPP-AR",
       "markers": [
         "core",
         "starred"
@@ -4157,7 +4157,7 @@
       "language": "C",
       "license": "BSD-2-Clause",
       "category": "gnss-positioning",
-      "subcategory": "RTK/PPP",
+      "subcategory": "SPP/RTK/PPP",
       "markers": [
         "core",
         "starred"
@@ -4198,7 +4198,7 @@
       "language": "C",
       "license": "BSD-2-Clause",
       "category": "gnss-positioning",
-      "subcategory": "RTK/PPP",
+      "subcategory": "SPP/RTK/PPP",
       "markers": [
         "core"
       ],
@@ -5463,7 +5463,7 @@
       "language": "Python",
       "license": "CSA",
       "category": "ionosphere",
-      "subcategory": "工具",
+      "subcategory": "测高仪",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -5523,7 +5523,7 @@
       "language": "various",
       "license": "scientific distribution (INGV portal)",
       "category": "ionosphere",
-      "subcategory": "电离层工具",
+      "subcategory": "测高仪",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -5542,8 +5542,8 @@
       "analysis_zh": "北京航空航天大学团队维护的电离层与空间天气站点，提供 Final/Rapid/Ultra 及更高时间分辨率全球 TEC 图展示，并参与 IAG 实时电离层监测等工作组方向。与 CAS BDsmart IONEX 数据树不同，本站偏研究展示与联系入口；批量业务下载优先确认站内 archive 链接或并行使用 data.bdsmart.cn。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "IONEX/TEC图",
+      "category": "gnss-datasets",
+      "subcategory": "电离层产品",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -5584,7 +5584,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "ionosphere",
-      "subcategory": "电离层工具",
+      "subcategory": "工具",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -5606,7 +5606,7 @@
       "language": "Fortran",
       "license": "UML academic (AS IS)",
       "category": "ionosphere",
-      "subcategory": "电离层工具",
+      "subcategory": "测高仪",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -5766,7 +5766,7 @@
       "analysis_zh": "德国宇航中心（DLR）Neustrelitz 运营的业务电离层服务，明确为原 SWACI 的后继门户，并继续提供 SWACI 长期存档。产品包括欧洲/全球近实时 VTEC（约 15 分钟更新、时延通常 <5 分钟）、ROTI、梯度指数与 1 小时预报等，面向 GNSS 导航与空间天气用户。近实时下载需先注册账号；历史批量需邮件申请。适合作为欧洲区域 TEC 对照与扰动监测，不宜当作唯一全球精密 GIM 替代 IGS 最终 IONEX。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
+      "category": "gnss-datasets",
       "subcategory": "电离层产品",
       "markers": [
         "batch-2026-09-17"
@@ -5788,7 +5788,7 @@
       "analysis_zh": "IMPC 产品导航页，按 TEC、ROTI、梯度指数等分类链接到欧洲/全球近实时图及说明页。ASCII 矩阵与 PNG 为主要交付格式，新格式规划含 JSON。研究用途可与 ROB 欧洲 TEC、IGS GIM 交叉比对；业务引用请遵守 IMPC terms。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
+      "category": "gnss-datasets",
       "subcategory": "电离层产品",
       "markers": [
         "batch-2026-09-17"
@@ -5811,7 +5811,7 @@
       "language": "Java",
       "license": "UML academic (AS IS)",
       "category": "ionosphere",
-      "subcategory": "电离层工具",
+      "subcategory": "测高仪",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -5890,8 +5890,8 @@
       "analysis_zh": "ESA 空间天气网络中的电离层监测应用入口，面向全球 TEC 及相关质量信息的业务展示与档案访问。适合欧洲用户做空间天气态势与 GNSS 单频改正评估；具体文件格式与引用条款以门户内文档为准。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "IONEX/TEC图",
+      "category": "gnss-datasets",
+      "subcategory": "电离层产品",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -5912,8 +5912,8 @@
       "analysis_zh": "专用于创建 ESA 空间天气门户账号的注册表单。若目标是下载近实时/预报 TEC 图或使用 IONMON，需先完成本页注册再回主站登录授权。属于数据访问元条目，本身不托管观测文件。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "电离层产品",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -5934,8 +5934,8 @@
       "analysis_zh": "欧洲航天局空间态势感知空间天气段的统一门户，聚合地磁、太阳与电离层等多域服务。电离层相关能力集中在 Transionospheric Radio Link（TIO）与 IONMON 等应用。多数深度产品需注册后授权；公开仪表盘可先浏览当前状态。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "电离层产品",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -5956,8 +5956,8 @@
       "analysis_zh": "与近实时 TEC 配套的预报产品入口，服务短时电离层状态预估与链路质量评估。适合运行支持与教学演示；科学研究若需可复现网格文件，请在登录后按服务说明导出并记录版本/时次。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "TEC预报",
+      "category": "gnss-datasets",
+      "subcategory": "电离层产品",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -5978,8 +5978,8 @@
       "analysis_zh": "ESA SWE 网络 Transionospheric 服务族中的近实时 TEC 图产品页，用于评估跨电离层链路与 GNSS 相关影响。与 DLR IMPC、ROB 欧洲 TEC 同属欧洲业务产品生态，可多源交叉验证。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "IONEX/TEC图",
+      "category": "gnss-datasets",
+      "subcategory": "电离层产品",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -6000,7 +6000,7 @@
       "analysis_zh": "TIO 服务族目录页，汇总近实时/预报 TEC、闪烁图、扰动监测与电离层改正质量评估等入口。属欧洲官方电离层业务导航页，便于从单一书签进入各子产品。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
+      "category": "gnss-datasets",
       "subcategory": "电离层产品",
       "markers": [
         "batch-2026-09-17"
@@ -6242,8 +6242,8 @@
       "analysis_zh": "德国地学研究中心作为 IGS 电离层分析中心（IAAC）的官方产品介绍：基于约 250 站 IGS 网、GPS/GLONASS/Galileo，用 EPOS.P8 生成全球 VTEC 图，并给出 DOI 与文献。本页偏文档/入口；批量 IONEX 请转到 ISDC 或 CDDIS 的 GFZ 产品路径。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "IONEX/TEC图",
+      "category": "gnss-datasets",
+      "subcategory": "电离层产品",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -6284,8 +6284,8 @@
       "analysis_zh": "GAMBIT（Global Assimilative Model of Bottomside Ionospheric Timeline）官方主页，提供与 IRTAM 相关的系数获取与工具说明。Java/Fortran 读取器另有下载链接；门户本身便于跟踪 API/文档更新。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "IRI模型",
+      "category": "gnss-datasets",
+      "subcategory": "电离层产品",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -6306,8 +6306,8 @@
       "analysis_zh": "Global Ionospheric Radio Observatory 的 IRI Real-Time Assimilative Mapping 服务页，将全球 Digisonde 近实时特性同化进 IRI，生成 F2 临界频率与峰高近实时图。系数读取可用 IRTAM 读取器压缩包或 PyIRTAM；本页是官方产品可视化/服务入口。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "IRI模型",
+      "category": "gnss-datasets",
+      "subcategory": "电离层产品",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -6323,7 +6323,7 @@
     {
       "name": "GIRO-portal",
       "url": "https://giro.uml.edu/",
-      "category": "ionosphere",
+      "category": "gnss-datasets",
       "subcategory": "电离层产品",
       "language": null,
       "provenance": "official",
@@ -6566,7 +6566,7 @@
       "language": "Python",
       "license": "GPL-3.0",
       "category": "ionosphere",
-      "subcategory": "工具",
+      "subcategory": "测高仪",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -6668,7 +6668,7 @@
       "language": "unknown",
       "license": "ESA Community License v2.4 Strong Copyleft (Type 1)",
       "category": "ionosphere",
-      "subcategory": "电离层工具",
+      "subcategory": "工具",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -6883,7 +6883,7 @@
       "language": "MATLAB",
       "license": "GPL-3.0",
       "category": "ionosphere",
-      "subcategory": "电离层工具",
+      "subcategory": "工具",
       "markers": [
         "starred"
       ],
@@ -7044,7 +7044,7 @@
       "language": "MATLAB",
       "license": "CC-BY-NC-ND-3.0 (INGV IONORT MATLAB code per MATLAB/README.TXT; Julia port unstated)",
       "category": "ionosphere",
-      "subcategory": "工具",
+      "subcategory": "HF射线追踪",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -7064,7 +7064,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "ionosphere",
-      "subcategory": "工具",
+      "subcategory": "数据接口",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -7084,7 +7084,7 @@
       "language": "Python",
       "license": null,
       "category": "ionosphere",
-      "subcategory": "工具",
+      "subcategory": "测高仪",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -7103,7 +7103,7 @@
       "language": "Python",
       "license": null,
       "category": "ionosphere",
-      "subcategory": "电离层工具",
+      "subcategory": "工具",
       "markers": [],
       "stars_approx": 7,
       "source": "gh-search+verified (missing_meta / extra searches)",
@@ -7297,7 +7297,7 @@
       "language": "C++",
       "license": "BSD-3-Clause",
       "category": "ionosphere",
-      "subcategory": "电离层工具",
+      "subcategory": "工具",
       "markers": [
         "starred"
       ],
@@ -7688,7 +7688,7 @@
       "language": "",
       "license": "GPL-3.0",
       "category": "ionosphere",
-      "subcategory": "电离层产品",
+      "subcategory": "数据接口",
       "markers": [
         "gapfill-2026-09-17"
       ],
@@ -7745,7 +7745,7 @@
       "language": "Python",
       "license": "GPL-3.0",
       "category": "ionosphere",
-      "subcategory": "工具",
+      "subcategory": "测高仪",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -8195,7 +8195,7 @@
       "language": "Fortran/C",
       "license": "UML academic (AS IS)",
       "category": "ionosphere",
-      "subcategory": "电离层工具",
+      "subcategory": "测高仪",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -8216,8 +8216,8 @@
       "analysis_zh": "Wakkanai、Kokubunji、Yamagawa、Okinawa 等日本测高仪数字化资料入口，可与 GIRO/DIDBase 全球测高仪生态对照。适合 foF2/hmF2 气候统计或与 GNSS TEC 联合分析；不是 GNSS IONEX 替代品。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "电离层工具",
+      "category": "gnss-datasets",
+      "subcategory": "电离层产品",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -8238,7 +8238,7 @@
       "analysis_zh": "日本信息通信研究机构运营的世界数据中心，保存自 IGY 以来日本本土与南极测高仪等电离层资料及空间天气预警相关数据，并作为 WDS 成员对外分发。偏观测档案与空间天气，与 GNSS GIM 产品互补；做亚太区域电离层气候或闪烁背景研究时很有价值。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
+      "category": "gnss-datasets",
       "subcategory": "电离层产品",
       "markers": [
         "batch-2026-09-17"
@@ -8261,7 +8261,7 @@
       "language": "C++",
       "license": "no licence (README: copyright reserved, reference use only)",
       "category": "ionosphere",
-      "subcategory": "电离层工具",
+      "subcategory": "工具",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -8280,7 +8280,7 @@
       "analysis_zh": "美国国家环境信息中心对 SWPC TEC 产品的权威归档页：US-TEC（约 2004–2023）与 GloTEC（约 2025 起）均可由此进入 cloud-access 下载，并附格式 README。历史事件复现与气候态统计用此页；近实时态势优先 SWPC GloTEC 产品页/services。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
+      "category": "gnss-datasets",
       "subcategory": "电离层产品",
       "markers": [
         "batch-2026-09-17"
@@ -8302,7 +8302,7 @@
       "analysis_zh": "美国国家海洋大气局空间天气预测中心的全球 TEC 同化系统展示页。GloTEC 以 IRI-2016 为背景、Gauss-Markov 卡尔曼滤波同化地基 GNSS sTEC 与 COSMIC-2 掩星 sTEC，提供全球/北美/CONUS 图、相对 30 日中值异常与观测计数。面向 GNSS 延迟与空间天气态势感知；精密大地测量最终产品仍建议对照 IGS GIM。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
+      "category": "gnss-datasets",
       "subcategory": "电离层产品",
       "markers": [
         "batch-2026-09-17"
@@ -8324,7 +8324,7 @@
       "analysis_zh": "SWPC 官方 HTTP 产品树，提供 geojson_2d_urt 与 netcdf_2d_urt 等目录，便于自动化拉取近实时全球 TEC 网格。适合做业务监控看板或与自有 GNSS TEC 估计交叉验证；长期归档请改走 NCEI 空间天气门户。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
+      "category": "gnss-datasets",
       "subcategory": "电离层产品",
       "markers": [
         "batch-2026-09-17"
@@ -8467,7 +8467,7 @@
       "language": "Fortran",
       "license": "MIT",
       "category": "ionosphere",
-      "subcategory": "工具",
+      "subcategory": "测高仪",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -8662,7 +8662,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "ionosphere",
-      "subcategory": "工具",
+      "subcategory": "测高仪",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -8682,7 +8682,7 @@
       "language": "Python",
       "license": "MIT (pyproject license field; classifier says GPLv3+; no LICENSE file)",
       "category": "ionosphere",
-      "subcategory": "电离层工具",
+      "subcategory": "工具",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -8865,7 +8865,7 @@
       "language": "MATLAB",
       "license": "GPL-3.0",
       "category": "ionosphere",
-      "subcategory": "工具",
+      "subcategory": "HF射线追踪",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -8924,8 +8924,8 @@
       "analysis_zh": "ROB/OMA 基于 EUREF 常设网 GPS+GLONASS+Galileo 观测生成欧洲区域近实时 VTEC 与变率产品（约 5 分钟、0.5° 网格，2022-05 起多系统）。门户提供统计对比图与北/中/南欧时间序列，联系 iono@oma.be。适合欧洲区域扰动监测与 PPP 区域改正对照；全球尺度仍需 IGS/各 AC 的 GIM。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "IONEX/TEC图",
+      "category": "gnss-datasets",
+      "subcategory": "电离层产品",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -8946,8 +8946,8 @@
       "analysis_zh": "与 gnss.be/SpaceWeather 可视化配套的 IONEX 文件归档，便于脚本批量拉取欧洲近实时 TEC 图。格式与 IGS IONEX 兼容，适合接入自有 TEC 可视化或 PPP 区域改正试验。使用前请阅读站点免责声明与引用要求。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "IONEX/TEC图",
+      "category": "gnss-datasets",
+      "subcategory": "电离层产品",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -9166,7 +9166,7 @@
       "language": "Java",
       "license": "proprietary-freeware",
       "category": "ionosphere",
-      "subcategory": "电离层工具",
+      "subcategory": "测高仪",
       "markers": [],
       "stars_approx": null,
       "source": "GIRO SAO Explorer portal verified 2026-09-14",
@@ -9442,7 +9442,7 @@
       "language": "Python",
       "license": "BSD-3-Clause",
       "category": "ionosphere",
-      "subcategory": "电离层工具",
+      "subcategory": "模型",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -9732,7 +9732,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "ionosphere",
-      "subcategory": "电离层工具",
+      "subcategory": "测高仪",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -9753,8 +9753,8 @@
       "analysis_zh": "Warmia-Mazury 大学空间环境射电诊断中心（CDRSK）对 IGS 电离层验证/组合职能的机构页，可与 igsiono.uwm.edu.pl 技术页对照。对需要联系组合中心或了解 UWM 职责分工的用户有用。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "IONEX/TEC图",
+      "category": "gnss-datasets",
+      "subcategory": "电离层产品",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -9775,8 +9775,8 @@
       "analysis_zh": "University of Warmia and Mazury（Olsztyn）承担 IGS 电离层图组合与验证相关门户，面向各 IAAC 独立 GIM 的加权组合（如 IGSG）流程与产品入口。与 IGS Ionosphere WG 页面互补，适合追踪官方组合策略与验证信息。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "IONEX/TEC图",
+      "category": "gnss-datasets",
+      "subcategory": "电离层产品",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -13074,7 +13074,7 @@
       "language": "Python",
       "license": "GPL-3.0",
       "category": "ionosphere",
-      "subcategory": "工具",
+      "subcategory": "TID",
       "markers": [
         "routine-2026-09-20"
       ],
@@ -13878,7 +13878,7 @@
       "language": "Python",
       "license": "AGPL-3.0",
       "category": "ionosphere",
-      "subcategory": "电离层工具",
+      "subcategory": "工具",
       "markers": [
         "routine-2026-09-23b"
       ],
@@ -13898,7 +13898,7 @@
       "language": "Python",
       "license": "Apache-2.0",
       "category": "ionosphere",
-      "subcategory": "电离层工具",
+      "subcategory": "工具",
       "markers": [
         "routine-2026-09-23b"
       ],
@@ -14338,7 +14338,7 @@
       "language": "C",
       "license": "GPL-3.0",
       "category": "ionosphere",
-      "subcategory": "电离层工具",
+      "subcategory": "工具",
       "markers": [
         "routine-2026-09-24"
       ],
@@ -15517,8 +15517,8 @@
       "analysis_zh": "William J. Hughes 技术中心 WAAS Test Team 站点，提供测试数据与工具入口；旧 FTP 已弃用，数据改由站内新链分发。实验室工具偶有维护窗口导致暂时不可用。适合 WAAS 性能评估与研究对照，下载前先看页面公告与镜像说明。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "gnss-datasets",
-      "subcategory": "空间天气辅助",
+      "category": "tools-learning",
+      "subcategory": "SBAS",
       "markers": [
         "routine-2026-09-24e"
       ],
@@ -16732,7 +16732,7 @@
       "language": "Python",
       "license": "GPL-3.0",
       "category": "ionosphere",
-      "subcategory": "电离层工具",
+      "subcategory": "工具",
       "markers": [
         "routine-2026-09-24j"
       ],
@@ -17083,7 +17083,7 @@
       "analysis_zh": "澳大利亚气象局太空天气服务（SWS）卫星专题页，提供电离层闪烁实况/事件、TEC 图以及相关卫星空间天气产品入口。对 GNSS 可用性与赤道/中纬闪烁监测有直接参考价值。页面为产品导航而非原始 ISMR 全量归档。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
+      "category": "gnss-datasets",
       "subcategory": "电离层产品",
       "markers": [
         "routine-2026-09-24k"
@@ -17215,8 +17215,8 @@
       "analysis_zh": "Community Coordinated Modeling Center 主门户，汇总模型目录、即时/申请运行与可视化等服务。IRI/SAMI3 等 CCMC 模型页可由此导航发现。偏模型与仿真编排，不直接提供 GNSS 观测下载。运行申请与输出使用请遵守 CCMC 政策。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "模型",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24k"
       ],
@@ -17357,7 +17357,7 @@
       "analysis_zh": "BOM 太空天气服务 HF Systems 专题，提供澳大利亚及周边电离层图、电离图查看、T 指数与 HF 传播相关产品。对理解电离层状态及 GNSS/HF 可用性有参考价值。偏区域监测产品导航，而非全球 IONEX 归档。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
+      "category": "gnss-datasets",
       "subcategory": "电离层产品",
       "markers": [
         "routine-2026-09-24l"
@@ -17423,7 +17423,7 @@
       "analysis_zh": "Space Weather Prediction Center 的 D Region Absorption Predictions（D-RAP）产品页，给出太阳爆发后 D 区吸收对高频通信等的影响预估，并在影响说明中关联 GPS/通信系统。对评估强扰动期 GNSS 可用性有辅助意义。非 TEC 图本身。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
+      "category": "gnss-datasets",
       "subcategory": "电离层产品",
       "markers": [
         "routine-2026-09-24l"
@@ -19392,7 +19392,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "ionosphere",
-      "subcategory": "工具",
+      "subcategory": "测高仪",
       "markers": [
         "routine-2026-09-24s"
       ],
@@ -19552,7 +19552,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "ionosphere",
-      "subcategory": "工具",
+      "subcategory": "TID",
       "markers": [
         "routine-2026-09-24s"
       ],
@@ -19572,7 +19572,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "ionosphere",
-      "subcategory": "工具",
+      "subcategory": "TID",
       "markers": [
         "routine-2026-09-24s"
       ],
@@ -19592,7 +19592,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "ionosphere",
-      "subcategory": "工具",
+      "subcategory": "TID",
       "markers": [
         "routine-2026-09-24s"
       ],

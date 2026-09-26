@@ -1,5 +1,5 @@
 # 学习资源与工具 / Tools & Learning
-> **57** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **58** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
@@ -160,6 +160,7 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 | [ESSP-EGNOS-User-Support](https://egnos-user-support.essp-sas.eu/) | ESSP EGNOS 用户支持站：状态、历史与帮助台入口 | data-portal | — | 🏷️ 官方 |
 | [FAA-WAAS](https://www.faa.gov/about/office_org/headquarters_offices/ato/service_units/techops/navservices/gnss/waas) | FAA WAAS：美国广域增强系统官方介绍 | data-portal | — | 🏷️ 官方 |
 | [ICAO-PBN](https://www.icao.int/safety/pbn/Pages/Overview.aspx) | ICAO PBN：基于性能导航官方概述入口 | data-portal | — | 🏷️ 官方 |
+| [NSTB-WAAS-Test-Team](https://www.nstb.tc.faa.gov/) | NSTB：FAA WAAS 测试团队数据与工具门户 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -197,6 +198,13 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 国际民航组织关于 Performance-Based Navigation（PBN）的概述页，链向航空导航性能与相关文件框架，常与 GNSS/SBAS 完好性运行要求对照。偏规章与运行概念，不是接收机开源代码。具体 SARPs/手册下载遵循 ICAO 分发规则。
+
+#### [NSTB-WAAS-Test-Team](https://www.nstb.tc.faa.gov/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+William J. Hughes 技术中心 WAAS Test Team 站点，提供测试数据与工具入口；旧 FTP 已弃用，数据改由站内新链分发。实验室工具偶有维护窗口导致暂时不可用。适合 WAAS 性能评估与研究对照，下载前先看页面公告与镜像说明。
 
 ## 可视化
 
