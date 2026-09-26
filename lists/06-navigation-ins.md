@@ -157,14 +157,14 @@ Trimble 公司 trimble-oss 组织发布的 ROS 2 软件包，BSD-2-Clause 许可
 
 语言：C++ · 许可：— · 星标约：252 · 宿主：github
 
-给出 lidar、IMU、相机与 GPS 的时间戳硬件同步思路与参考实现，解决多传感器融合前的时钟对齐问题。适合自动驾驶与机器人传感器套件研发。解决的是同步而非状态估计；滤波/建图需另接 VINS、GICI、gtsam 等。硬件触发拓扑要比纯软件时间戳对齐更稳。线缆延时与触发极性要在示波器上核验。选用前建议先跑通作者提供的最小示例。
+给出 lidar、IMU、相机与 GPS 的时间戳硬件同步思路与参考实现，解决多传感器融合前的时钟对齐问题。适合自动驾驶与机器人传感器套件研发。解决的是同步而非状态估计；滤波/建图需另接 VINS、GICI、gtsam 等。硬件触发拓扑要比纯软件时间戳对齐更稳。线缆延时与触发极性要在示波器上核验。
 
 #### [raw-gnss-fusion](https://github.com/JonasBchrt/raw-gnss-fusion)  
 *🏷️ 个人社区*
 
 语言：Python · 许可：LGPL-3.0 · 星标约：160 · 宿主：github
 
-便于复现论文设定的原始测量与融合流水线。适合研究起步。不是开箱商用导航软件。
+ICRA 2023 论文（Beuchert、Camurri、Fallon）配套仓库：用因子图把原始 GNSS 载波相位与 IMU、激光雷达融合，不需要基准站也能在地球坐标系中做无漂移、无跳变的定位。内容分三块：基于 GTSAM 与 GPSTk 的时间相对双差载波相位因子演示脚本（输入 UBX，非实时代码）、公开机器人数据集（GNSS/IMU/lidar）使用说明、各数据集上的结果。适合研究起步与论文复现；环境停留在 Python 3.7 与 GPSTk 8，不是开箱商用导航软件。
 
 #### [GREAT-MSF](https://github.com/GREAT-WHU/GREAT-MSF)  
 *🏷️ 高校实验室*
@@ -415,7 +415,7 @@ balamuruganky 的 C++ EKF 示例：以 IMU 传播预测 GNSS 量测，演示松�
 
 语言：C++ · 许可：MIT · 星标约：187 · 宿主：github
 
-结构直白，便于第一次跑通松组合闭环与噪声调参。适合课程实验。紧组合、模糊度固定与完整性监测需另寻方案。
+C++（Eigen）松组合示例：IMU 在 ECEF 系做机械编排，GNSS 位置/速度作卡尔曼观测更新，实现参照 Groves《Principles of GNSS, Inertial, and Multisensor Integrated Navigation Systems》第 2 版，附输入样例与 ECEF/ENU、速度、姿态结果图。结构直白，适合课程实验与第一次调噪声参数。工程为 Visual Studio 2017 解决方案，2019 年后未更新；紧组合、模糊度固定与完好性监测需另寻方案。
 
 #### [KF-GINS-Matlab](https://github.com/i2Nav-WHU/KF-GINS-Matlab)  
 *🏷️ 高校实验室 核心*
@@ -508,7 +508,7 @@ rtklibexplorer 社区风格的松组合 GNSS/IMU Python 实现，便于配合 de
 
 语言：MATLAB · 许可：MIT · 星标约：96 · 宿主：github
 
-经典间接法误差状态演示，适合对照直接法教材。教学友好。非生产导航栈；实车标定与传感器时延需自补。
+间接法（误差状态）卡尔曼滤波的 IMU/GPS 融合 MATLAB 仿真，IMU 与 GPS 数据均由程序仿真生成，适合对照直接法教材理解误差状态建模。仓库 2017 年后未更新，不含实测数据；非生产导航栈，实车标定与传感器时延需自补。
 
 ## 因子图紧组合
 
@@ -625,7 +625,7 @@ JuliaGNSS 生态中的滤波库，实现经典 KF、UKF、AUKF 及其方根形�
 
 语言：MATLAB · 许可：BSD-2-Clause · 星标约：291 · 宿主：github
 
-观测方程可读，便于研究生改滤波与测向约束。适合课程与仿真。嵌入式实时与模糊度固定需另选 C/C++ 引擎。
+基于 Groves 组合导航教材（中译本）附带的紧组合仿真代码改写，用伪距、伪距率与 INS 数据做紧组合解算，支持双天线测向约束，附一组手推车实测数据及 Inertial Explorer 参考解。观测方程可读，便于研究生改滤波与测向约束。嵌入式实时与模糊度固定需另选 C/C++ 引擎。
 
 #### [TGINS](https://github.com/heiwa0519/TGINS)  
 *🏷️ 高校实验室*

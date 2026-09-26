@@ -1067,7 +1067,7 @@ NASA Earthdata 上的 GNSS Differential Code Bias 产品页，说明 CDDIS 归�
 |---|---|---|---:|---|
 | [CODE-AIUB-Analysis-Center](https://www.aiub.unibe.ch/research/code___analysis_center/index_eng.html) | CODE/AIUB 分析中心主页：精密轨道钟差与电离层等产品介绍 | data-portal | — | 🏷️ 官方 核心 |
 | [CSNO-TARC](https://www.csno-tarc.cn/) | 中国卫星导航系统管理办公室测试评估研究中心（TARC） | data-portal | — | 🏷️ 官方 |
-| [CSNO-TARC-Differential](https://www.csno-tarc.cn/en/data/differential) | TARC 差分数据英文页 | data-portal | — | 🏷️ 官方 |
+| [CSNO-TARC-Differential](https://www.csno-tarc.cn/en/data/differential) | CSNO-TARC 差分数据英文页（北斗监测类产品线索） | data-portal | — | 🏷️ 官方 |
 | [GFZ-GNSS-Services](https://gnss.gfz.de/services) | GFZ GNSS 服务页：产品与在线服务入口 | data-portal | — | 🏷️ 官方 |
 | [GFZ-ISDC-GNSS-Products](https://isdc.gfz.de/gnss-products/) | GFZ ISDC GNSS 产品专页 | data-portal | — | 🏷️ 官方 |
 | [GLONASS-IAC](https://glonass-iac.ru/en/) | GLONASS IAC：官方星座与产品信息服务门户 | data-portal | — | 🏷️ 官方 |

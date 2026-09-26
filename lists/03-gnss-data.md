@@ -14,7 +14,7 @@ RINEX/SP3/CLK/ANTEX 读写与转换、RTCM/NTRIP、Hatanaka 压缩、质量检�
 | [ntripclient](https://software.rtcm-ntrip.org/wiki/ntripclient) | BKG POSIX ntripclient：命令行拉取 NTRIP 数据流 | C | 129 | 🏷️ 官方 |
 | [pyrtcm](https://github.com/semuconsulting/pyrtcm) | pyrtcm：RTCM3 报文编解码库 | Python | 115 | 🏷️ 个人社区 |
 | [ntripserver](https://software.rtcm-ntrip.org/wiki/ntripserver) | BKG POSIX ntripserver：把本地 GNSS 流推到 NTRIP 播发器 | C | 74 | 🏷️ 官方 |
-| [ntripcaster-libev](https://github.com/tisyang/ntripcaster) | ntripcaster：libev 高性能 NTRIP Broadcaster | C | 68 | 🏷️ 个人社区 |
+| [ntripcaster-libev](https://github.com/tisyang/ntripcaster) | ntripcaster：基于 libev 的高性能 NTRIP 播发器 | C | 68 | 🏷️ 个人社区 |
 | [ntrip-go](https://github.com/go-gnss/ntrip) | ntrip：Go 语言 NTRIP 客户端与服务端库 | Go | 62 | 🏷️ 个人社区 |
 | [caster](https://github.com/Node-NTRIP/caster) | caster：Node.js NTRIP V1/V2 库 | TypeScript | 52 | 🏷️ 个人社区 核心 |
 | [cors-relay](https://github.com/tisyang/cors-relay) | cors-relay：CORS/NTRIP 差分流中继 | C | 49 | 🏷️ 个人社区 |
@@ -103,7 +103,7 @@ RTCM-Ntrip 官方仓库中的 POSIX ntripserver，用于将接收机或文件流
 
 语言：C · 许可：BSD-3-Clause · 星标约：68 · 宿主：github
 
-基于 C 与 libev 的事件驱动 NTRIP Broadcaster，强调吞吐与并发连接，适合自建 CORS 中继与播发试验。可与同作者 cors-relay 等工具搭配。协议细节与管理界面因版本而异，公网服务请自行做认证与加固。
+基于 C 与 libev 的事件驱动 NTRIP 播发器（Broadcaster），强调吞吐与并发连接，适合自建 CORS 中继与播发试验。可与同作者 cors-relay 等工具搭配。协议细节与管理界面因版本而异，公网服务请自行做认证与加固。
 
 #### [ntrip-go](https://github.com/go-gnss/ntrip)  
 *🏷️ 个人社区*
@@ -686,7 +686,7 @@ MIT 许可的 Python 脚本，按站号与日期/小时段批量抓取爱尔兰 
 
 语言：Python · 许可：BSD-3-Clause · 星标约：61 · 宿主：github
 
-把数据获取到分析管理串成流程，偏科研工作流。适合实验室批处理。不是单一 PPP 引擎替代。
+GeoDE（Geodetic Database Engine）把 RINEX 下载、归档扫描、PPP、GAMIT/GLOBK 与 GPSPACE 多节点并行处理、ETM 时间序列拟合和元数据质检串成一条流程，数据存 PostgreSQL，另有 Django 网页界面管理测站网。适合管理大规模测站网的实验室批处理。部署需自备 GAMIT/GLOBK、GFZRNX、RNXCMP 与数据库，门槛较高；不是单一 PPP 引擎替代。
 
 ## RINEX读写
 
@@ -1057,7 +1057,7 @@ Android 原始 GNSS 测量日志与桌面可视化分析工具，智能手机高
 | [gpsd](https://gitlab.com/gpsd/gpsd) | gpsd：跨平台 GNSS/AIS 守护进程 | C | 104 | 🏷️ 个人社区 |
 | [um982-driver](https://github.com/sunshineharry/UM982Driver) | 和芯星通 UM982/UM980 扩展语句（PVTSLN/BESTNAV/GNHPR）Python 驱动 | Python | 39 | 🏷️ 个人社区 |
 | [piksi_tools](https://github.com/swift-nav/piksi_tools) | piksi_tools：Swift Navigation Piksi 接收机 Python 工具 | Python | 36 | 🏷️ 个人社区 |
-| [novatel_edie](https://github.com/novatel/novatel_edie) | NovAtel 厂商发布的 EDIE 编解码 SDK：OEM7 接收机日志/命令的 C++ 与 Python 解析与格式转换 | C++ | 32 | 🏷️ 个人社区 |
+| [novatel_edie](https://github.com/novatel/novatel_edie) | novatel_edie：NovAtel 官方 OEM7 日志编解码 SDK（C++/Python） | C++ | 32 | 🏷️ 个人社区 |
 | [Septentrio-PyDataLink](https://github.com/septentrio-gnss/Septentrio-PyDataLink) | Septentrio-PyDataLink：接收机数据流可视化与互联 | Python | 8 | 🏷️ 个人社区 |
 | [SbfMixer](https://github.com/septentrio-gnss/SbfMixer) | SbfMixer：Septentrio 接收机的 Node-RED 节点 | JavaScript | 2 | 🏷️ 个人社区 |
 | [trimble-gsof-wireshark](https://github.com/Ryanf55/trimble-gsof-wireshark) | Wireshark 的 Trimble GSOF 协议解析插件（Lua） | Lua | 2 | 🏷️ 个人社区 |

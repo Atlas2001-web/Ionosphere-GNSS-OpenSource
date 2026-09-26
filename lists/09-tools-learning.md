@@ -301,7 +301,7 @@ William J. Hughes 技术中心 WAAS Test Team 站点，提供测试数据与工�
 
 语言：MATLAB · 许可：MIT · 星标约：137 · 宿主：github
 
-在任意位置生成虚拟鱼眼天顶图并判断 GNSS 可见性，城市遮挡研究直观。需要 Google Earth 相关环境。
+在任意位置用 Google Earth 三维场景生成虚拟鱼眼天顶图，并自动判定各 GNSS 卫星的 LOS/NLOS，可用于城市多路径评估和 NLOS 参考；也能沿车载 GNSS 轨迹生成鱼眼视频。需要 MATLAB R2022a 以上（图像处理工具箱）、Google Earth Pro 与同作者 MatRTKLIB，影像录制要在 Google Earth 里手动操作。
 
 #### [gnss_timeseries_viewers](https://github.com/kmaterna/gnss_timeseries_viewers)  
 *🏷️ 个人社区*
@@ -464,7 +464,7 @@ daniestevez 维护的 Galileo OSNMA 协议 Rust 库，校验导航电文密码�
 
 语言：Python · 许可：EUPL-1.2 · 星标约：52 · 宿主：github
 
-实现 Galileo 开放业务消息认证（OSNMA），用于抗欺骗研究与接收机试验。适合安全/完好性方向。
+OSNMAlib：Galileo 开放业务导航电文认证（OSNMA）的 Python 实现，读取 I/NAV 页面后验证公钥、TESLA 根密钥与链密钥、MACK 结构及 ADKD 0/4/12 标签，并报告认证状态；已通过官方 ICD 测试向量，支持冷/温/热启动、JSON 状态输出与 TTFAF 统计，实时运行可用 NTP 或本机时钟同步。适合抗欺骗与完好性研究，或集成进接收机软件。安全性取决于接收机与 Galileo 系统时的同步保证；2025-12 公钥已由 ID 1 换为 ID 2，处理旧数据需留意。
 
 #### [gal-osnma-sim](https://github.com/galileoz/gal-osnma-sim)  
 *🏷️ 个人社区*
