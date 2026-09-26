@@ -1,6 +1,6 @@
 # go-gnss-rtcm · go-gnss/rtcm（Go RTCM3 解析库）操作手册
 
-目录：[`PROJECTS.json` → `go-gnss-rtcm`](../../PROJECTS.json) · 上游 <https://github.com/go-gnss/rtcm> · 最新标签 **`v0.0.9`** = master tip **`6948afc`**（2026-09-16 06:51 EDT；`Add frame deserialization from []byte`；上一版 v0.0.8 `74819e4` 2026-03-11）· **Apache-2.0** · ★**26** · go.mod **`go 1.22`** · 纯库 + 示例 `cmd/ntriplatency` · 本机 **go1.24.4**（2026-09-26 02:29–02:34 EDT）：centipede `VALDM` 真流 **57344 B / 382 帧**，类型计数与 pyrtcm **1.2.0** 全等；195 帧 MSM 的 NSat **逐帧一致**；382 帧**重编码逐字节一致**。
+目录：[`PROJECTS.json` → `go-gnss-rtcm`](../../PROJECTS.json) · 上游 <https://github.com/go-gnss/rtcm> · 最新标签 **`v0.0.9`** = master tip **`6948afc`**（2026-09-16 06:51 EDT；`Add frame deserialization from []byte`；上一版 v0.0.8 `74819e4` 2026-03-11）· **Apache-2.0** · ★**26** · go.mod **`go 1.22`** · 纯库 + 示例 `cmd/ntriplatency` · 本机 **go1.24.4**（**R10质检复跑** 2026-09-26 03:01–03:05 EDT）：centipede `VALDM` 真流 **53248 B / 358 帧**，类型计数与 pyrtcm **1.2.0** 全等；191 帧 MSM 的 NSat **逐帧一致**；358 帧**重编码逐字节一致**。
 
 > 一句话：把 RTCM3 字节流切帧、校 CRC24Q、按消息号解成 Go struct，也能把 struct 编回字节。**不是 NTRIP 客户端**（同组织 [ntrip-go](./ntrip-go.md) 负责），**不是 RTK 解算器**，**不是 RINEX 转换器**；MSM 只给原始 DF 整数，米/dBHz 要自己乘。
 
@@ -13,7 +13,7 @@
 | 每个类型都有 `Serialize()`；`EncapsulateMessage` 补帧头 + CRC | 写 RINEX（用 [rtcm3torinex](./rtcm3torinex.md) / `convbin`） |
 | MSM 时间：`DF004` / `DF427` / `GlonassTimeMSM` 等 | MSM 自动算伪距/相位（只给 DF397/398/405… 整数） |
 
-91 个消息号：观测 1001–1004、1009–1012；站/天线 1005–1008、1033；星历 1019/1020/1042/1044/1045/1046；辅助 1013/1029/1230；网络 RTK 1014–1017、1037–1039；坐标变换 1021–1027；FKP 1034/1035；SSR 1057–1060、1063–1066；MSM1–7 × GPS/GLO/GAL/SBAS/QZSS/BDS（1071–1127，共 42 个）。**没有** 1041（NavIC）、1131+（NavIC MSM）、4xxx 私有报文（落 `MessageUnknown`）。
+91 个消息号：观测 1001–1004、1009–1012；站/天线 1005–1008、1033；星历 1019/1020/1042/1044/1045/1046；辅助 1013/1029/1230；网络 RTK 1014–1017、1030–1032、1037–1039；坐标变换 1021–1027；FKP 1034/1035；SSR 1057–1060、1063–1066；MSM1–7 × GPS/GLO/GAL/SBAS/QZSS/BDS（1071–1127，共 42 个）。**没有** 1041（NavIC）、1131+（NavIC MSM）、4xxx 私有报文（落 `MessageUnknown`）。
 
 同组织：`go-gnss/ntrip`（★62，NTRIP 客户端/服务端，本库 go.mod 依赖 v0.0.14，见 [ntrip-go](./ntrip-go.md)）；另有 `rinex`/`spartn`/`sinex`/`sbf` 小库（★0–5；前三个最后推送 2020–2022，`sbf` 2025-07）。
 
@@ -23,7 +23,7 @@
 go get github.com/go-gnss/rtcm@v0.0.9     # 仅子包 rtcm3 有 API
 # 依赖：bamiaux/iobit（位读写，读越界不报错）、go-restruct/restruct、go-gnss/ntrip（仅示例用）
 git clone https://github.com/go-gnss/rtcm && cd rtcm && go test ./...
-# ok  github.com/go-gnss/rtcm/rtcm3  0.107s   ← 本机 9 个 Test* 全 PASS，无子测试
+# ok  github.com/go-gnss/rtcm/rtcm3  0.109s   ← 本机 9 个 Test* 全 PASS，无子测试
 ```
 
 系统 go1.24.4 满足 `go 1.22`，无需另装。测试覆盖：`data/*_frame.bin` **69** 个样帧的解→编往返、帧层、DF004/DF034/DF386/DF427 时间换算；**无**任何坏输入测试。
@@ -35,9 +35,9 @@ git clone https://github.com/go-gnss/rtcm && cd rtcm && go test ./...
 ```bash
 timeout 40 curl -s -H 'Ntrip-Version: Ntrip/2.0' -u centipede:centipede \
   http://caster.centipede.fr:2101/VALDM -o valdm.rtcm
-# 实录 2026-09-26 02:30:07–02:30:47 EDT；57344 B，sha256 前 12 位 2330d6b732fd
-# 首字节 d3 00 a5（curl 已剥 HTTP/chunked）；末尾 198 B 为被 timeout 截断的残帧
-# 1033 自报 "RTKBase Ublox_ZED-F9P" fw "2.3.4"
+# 实录 2026-09-26 03:01:34–03:02:14 EDT；curl exit 124；53248 B，sha256 前 12 位 4b5f6ad03ea0
+# 首字节 d3 00 b4（curl 已剥 HTTP/chunked）；末尾 11 B 为被 timeout 截断的残帧
+# 1033 自报 "RTKBase Ublox_ZED-F9P" fw "2.3.4"（天线描述 ADVNULLANTENNA）
 ```
 
 ### 3.2 解码 + 计数 + 取字段（`main.go`，完整可编）
@@ -132,42 +132,42 @@ func main() {
 ### 3.3 真实 stdout（`go run . valdm.rtcm`）
 
 ```text
-1077 first: epoch(DF004)=541826000 ms t=06:30:08.000 nsat=10 nsig=2 ncell=18
-  sats=[1 2 3 4 6 9 17 19 28 31] sigIDs=[2 16]
-  G01 raw: ms=73 ext=0 rough=332 rate=642
-  cell0 raw: finePR=-196421 finePh=-1558880 lock=646 half=false cnr=752 finerate=-3815
-  cell0 PR=21981938.087 m CNR=47.0000 dBHz (hand-scaled)
+1077 first: epoch(DF004)=543713000 ms t=07:01:35.000 nsat=11 nsig=2 ncell=20
+  sats=[1 2 3 4 6 9 11 17 19 28 31] sigIDs=[2 16]
+  G01 raw: ms=77 ext=0 rough=717 rate=743
+  cell0 raw: finePR=72331 finePh=-511535 lock=649 half=false cnr=752 finerate=-378
+  cell0 PR=23293972.930 m CNR=47.0000 dBHz (hand-scaled)
 1005 sta=0 ECEF=(4151313.6403, 380499.3117, 4811408.2782) m
 1006 sta=0 ECEF=(4151313.6403, 380499.3117, 4811408.2782) m H=0.0000 m
-frames=382 unknown=0
-1004:40 1005:4 1006:1 1008:4 1012:40 1019:10 1020:34 1033:4 1042:16 1046:33 1077:39 1087:39 1097:39 1107:39 1127:39 1230:1
+frames=358 unknown=0
+1004:39 1005:4 1006:1 1008:4 1012:39 1019:11 1020:28 1033:4 1042:9 1046:27 1077:39 1087:38 1097:38 1107:38 1127:38 1230:1
 ```
 
-- 首个 MSM 是 1077：**10 星 / 2 信号 / 18 格**；信号 ID 2、16 = **1C、2L**（F9P L1C/A + L2C）。
+- 首个 MSM 是 1077：**11 星 / 2 信号 / 20 格**；信号 ID 2、16 = **1C、2L**（F9P L1C/A + L2C）。
 - 伪距按 $\rho = \dfrac{c}{1000}\left(N_{\mathrm{ms}} + \dfrac{r}{1024} + \Delta\rho \cdot 2^{-29}\right)$（单位 m；$N_{\mathrm{ms}}$=DF397，$r$=DF398，$\Delta\rho$=DF405）自己拼；CNR = DF408 × 2⁻⁴ dBHz。
-- `t=06:30:08` UTC 与录流时间（06:30 UTC）一致——但这是 `Time()` 拿**当前系统时钟**推周（见坑 3）。
-- 1005/1006 的 `sta=0`、天线高 0 m：站方配置如此，与 pyrtcm 一致。
+- `t=07:01:35` UTC 与录流时间（07:01 UTC）一致——但这是 `Time()` 拿**当前系统时钟**推周（见坑 3）。
+- 1005/1006 的 `sta=0`、天线高 0 m、ECEF 与上次录流相同：站方配置如此，与 pyrtcm 一致。
 
 ### 3.4 交叉核对（pyrtcm 1.2.0，同一文件）
 
 | 项 | go-gnss/rtcm | pyrtcm | 结论 |
 | --- | --- | --- | --- |
-| 总帧 / 类型计数 | 382；16 种（见上） | 382；16 种逐项同数 | 一致 |
-| MSM NSat（1077/1087/1097/1107/1127 各 39 帧） | 10/9/11/**0**/7 | 同，**195 行 diff 为空** | 一致 |
+| 总帧 / 类型计数 | 358；16 种（见上） | 358；16 种逐项同数 | 一致 |
+| MSM NSat（1077×39 + 1087/1097/1107/1127×38） | 11/8/9/**0**/8 | 同，**191 行 diff 为空** | 一致 |
 | 1005 ECEF | 4151313.6403, 380499.3117, 4811408.2782 m | …, 4811408.2782000005 m | 一致（f64 表示差） |
-| 1077 首星 G01 | ms=73，rough=332，rate=642 | DF397=73，DF398=0.32421875（=332/1024），DF399=642 | 一致 |
-| 首格 1C | fine=−196421，Ph=−1558880，lock=646，cnr=752，rate=−3815 | DF405=−0.00036586（×2²⁹=−196421），DF406=−0.00072591，DF407=646，DF408=47.0，DF404=−0.3815 | 一致 |
-| 首格伪距 | 21981938.087 m（手算） | 由 DF397+DF398+DF405 算得 21981938.087 m | 一致 |
+| 1077 首星 G01 | ms=77，rough=717，rate=743 | DF397=77，DF398=0.7001953125（=717/1024），DF399=743 | 一致 |
+| 首格 1C | fine=72331，Ph=−511535，lock=649，cnr=752，rate=−378 | DF405=0.00013473（×2²⁹=72331），DF406=−0.00023820，DF407=649，DF408=47.0，DF404=−0.0378 | 一致 |
+| 首格伪距 | 23293972.930 m（手算） | 由 DF397+DF398+DF405 算得 23293972.930 m | 一致 |
 
 与 [rtcm-rs](./rtcm-rs.md) 同一挂载点：1005 ECEF 相同；**1107（NSat=0 空 MSM）本库正常解出**，rtcm-rs 0.11.0 解成 `Corrupt`。
 
 ### 3.5 编码往返
 
-- **真实**：382 帧逐帧 `DeserializeMessage` → `EncapsulateMessage(m).Serialize()`，**382/382 与原帧逐字节相同**（含 CRC）。
-- **合成** 1005（sta=2003，GPS/GLO/GAL=1，X/Y/Z=1114104.5999/−4850731.7456/3975942.1549 m，字段填 0.1 mm 整数）：
+- **真实**：358 帧逐帧 `DeserializeMessage` → `EncapsulateMessage(m).Serialize()`，**358/358 与原帧逐字节相同**（含 CRC）。
+- **合成** 1005（sta=2003，GPS/GLO/GAL=true，X/Y/Z=1114104.5999/−4850731.7456/3975942.1549 m，字段填 0.1 mm 整数）：
 
 ```text
-synthetic 1005 frame 25B crc=497461 hex=d300133ed7d30382980edeef34b4bd13300941d8a06d497461
+synthetic 1005 frame 25B crc=4813921 (0x497461) hex=d300133ed7d30382980edeef34b4bd13300941d8a06d497461
 decode err=<nil>/<nil> equal=true X=11141045999
 X=1e12 m: frame 25B, decoded X=-5825462.2720 m          ← 超 38 bit 量程，静默回绕
 pyrtcm parse（默认校 CRC）: 1005 2003 1 1 1 1114104.5999 -4850731.7456 3975942.1549
@@ -179,17 +179,17 @@ struct 是整数字段，`==` 往返为 true（rtcm-rs 用 f64 米要容差比�
 
 | 输入 | `DeserializeFrameBytes` | `Scanner.NextMessage` 循环 | panic? |
 | --- | --- | --- | --- |
-| 原文件 | — | 382 帧，`io.EOF` | 否 |
-| 1 字节分块 `iotest.OneByteReader` / `HalfReader` | — | 382 / 382，与整文件同 | 否 |
-| 首帧 CRC 末字节翻转 | `invalid CRC` | 381 帧：**坏帧静默跳过**，无任何回报 | 否 |
+| 原文件 | — | 358 帧，`io.EOF` | 否 |
+| 1 字节分块 `iotest.OneByteReader` / `HalfReader` | — | 358 / 358，与整文件同 | 否 |
+| 首帧 CRC 末字节翻转 | `invalid CRC` | 357 帧：**坏帧静默跳过**，无任何回报 | 否 |
 | 首帧载荷翻 1 bit | `invalid CRC` | 同上 | 否 |
-| 最后完整帧截掉一半 | `data is smaller than frame length` | 381 帧，残帧结束时只给 `io.EOF` | 否 |
-| 帧前 `HTTP/1.1 200 OK\r\n\r\n\x00\xff\xd3` 垃圾 | `invalid preamble`（不自动找） | 382 帧（逐字节重同步） | 否 |
-| 假 `d3 03 ff`（宣称 1023 B）+ 整文件 | — | 382 帧 | 否 |
-| 假 `d3 03 ff` + 末 3 帧（472 B） | — | **0 帧，直接 `io.EOF`**：`Peek(1028)` 撞 EOF，后面 3 个好帧全丢 | 否 |
+| 最后完整帧截掉一半 | `data is smaller than frame length` | 357 帧，残帧结束时只给 `io.EOF` | 否 |
+| 帧前 `HTTP/1.1 200 OK\r\n\r\n\x00\xff\xd3` 垃圾 | `invalid preamble`（不自动找） | 358 帧（逐字节重同步） | 否 |
+| 假 `d3 03 ff`（宣称 1023 B）+ 整文件 | — | 358 帧 | 否 |
+| 假 `d3 03 ff` + 末 3 帧（本机 613 B） | — | **0 帧，直接 `io.EOF`**：`Peek(1028)` 撞 EOF，后面 3 个好帧全丢 | 否 |
 | 1 字节载荷 | `DeserializeMessage` → `invalid rtcm message: no message number` | — | 否 |
 | 1005 载荷截到 8 B | 返回 `Message1005` + err `runtime error: index out of range [0] with length 0`（restruct 内部 recover） | — | 否 |
-| 1077 载荷截到 20 B | **err=nil**，nsat=10，各星 ms 全 0，CellMask=0，信号数组空 | — | 否 |
+| 1077 载荷截到 20 B | **err=nil**，nsat=11（本文件首帧），各星 ms 全 0，CellMask=0，信号数组空 | — | 否 |
 | 零卫星 1077（**合成**，22 B 头） | 成帧→扫描 1 帧；err=nil，nsat=0，重编码相同 | — | 否 |
 | 12 星×6 信号=72 格 1077（**合成**，超规范 64） | err=nil，CellMask=0，信号空，重编码≠原文 | — | 否 |
 
@@ -231,6 +231,7 @@ struct 是整数字段，`==` 往返为 true（rtcm-rs 用 f64 米要容差比�
 | 10 | 32 位平台掩码计数错 | 源码 `bits.OnesCount(uint(mask))`，`uint` 为 32 bit 时截断（源码推断，未测） | 部署 64 位 |
 | 11 | `go get` 下载 ntrip/logrus/uuid | go.mod 依赖 go-gnss/ntrip（仅 `cmd/ntriplatency` 用） | 可忽略；`rtcm3` 包只 import `iobit`/`restruct`/根包 `leap.go`，不链进二进制 |
 | 12 | 共享机器 `GOPATH` 被别的项目污染 | 本机环境继承了他人 `GOMODCACHE`，首次 `go get` 报 missing go.sum | 显式设 `GOPATH/GOMODCACHE/GOCACHE` 到自己目录 |
+| 13 | 把帧尾三字节当十进制 CRC | `Frame.Crc` 是 uint32；本合成帧 `crc=4813921`=`0x497461`（hex 末 6 位） | 打印用 `%d`/`0x%X`，勿把 hex 字面当十进制 |
 
 ## 7. 选型
 
