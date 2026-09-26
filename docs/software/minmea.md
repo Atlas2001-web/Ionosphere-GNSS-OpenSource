@@ -1,6 +1,6 @@
 # minmea · 轻量纯 C NMEA 0183 解析库操作手册
 
-目录：[`PROJECTS.json` → `minmea`](../../PROJECTS.json) · 上游 <https://github.com/kosma/minmea> · tip **`c43c9e7`** · 许可 **WTFPL**（可选 **MIT** / **LGPL-3.0+**，见 `LICENSE.grants`）· 单文件 `minmea.c` + `minmea.h` · 本机验证（2026-09-24 05:45 EDT）：CMake 建 `libminmea.a` + `example`；`check` 单测 **38/38**；例程/探针解官方样句 + 北京 NMEA（对齐 [gpsd](./gpsd.md)/[pynmeagps](./pynmeagps.md)）
+目录：[`PROJECTS.json` → `minmea`](../../PROJECTS.json) · 上游 <https://github.com/kosma/minmea> · tip **`c43c9e7`** · 许可 **WTFPL**（可选 **MIT** / **LGPL-3.0+**，见 `LICENSE.grants`）· 单文件 `minmea.c` + `minmea.h` · 本机验证（2026-09-24 05:45 EDT）：CMake 建 `libminmea.a` + `example`；`check` 单测 **38/38**；例程/探针解官方样句 + 北京 NMEA（对齐 [gpsd](./gpsd.md)/[pynmeagps](./pynmeagps.md)） · **质检复跑通过**（2026-09-26 01:30–01:33 EDT，gcc 14.2：tip/38 checks/example/探针 7 行数值全部同 I/O；修：补出探针源码（原文未给 `/tmp/minmea_probe.c` 无法复现）、example GSA 实际打印 `$xxxxx sentence is not parsed`、坑 4 实测现象）
 
 > 岗位：嵌入式/无堆分配环境下的 **NMEA 0183 语句解析**（定点优先，可选浮点坐标）。冲突时：**上游 README / `minmea.h` > 本文**。Python 编解码 → [pynmeagps](./pynmeagps.md)；系统守护 → [gpsd](./gpsd.md)；流 CLI → [pygnssutils](./pygnssutils.md)。
 
@@ -71,11 +71,30 @@ printf '%s\n' \
 head -6 ~/iono_ops/gpsd-demo/demo_beijing.nmea | ./example
 ```
 
-**本机：** `$GNRMC` → **(39.904186, 116.390739)**；`$GNGGA` → `fix quality: 1`。`$GNGSA` 在 example 中落入默认分支（见坑表）；库 API 可解。
+**本机：** `$GNRMC` → **(39.904186, 116.390739)**；`$GNGGA` → `fix quality: 1`。`$GNGSA` 在 example 中落入默认分支，打印 `$xxxxx sentence is not parsed`（见坑表）；库 API 可解。
 
 ### 3.3 库 API 探针
 
 ```bash
+cat > /tmp/minmea_probe.c <<'C'
+#include <stdio.h>
+#include "minmea.h"
+int main(void){
+ const char *gga="$GPGGA,123204.00,5106.94086,N,01701.51680,E,1,06,3.86,127.9,M,40.5,M,,*51";
+ const char *rmc="$GPRMC,123519,A,4807.038,N,01131.000,E,022.4,084.4,230394,003.1,W*6A";
+ const char *gsa="$GPGSA,A,3,02,08,09,05,04,26,,,,,,,4.92,3.86,3.05*00"; /* tests.c 样句；*00 恰好是真校验和 */
+ const char *brmc="$GNRMC,123519.00,A,3954.25123,N,11623.44456,E,0.1,0.0,240926,,,A*4B";
+ const char *bgga="$GNGGA,123519.00,3954.25123,N,11623.44456,E,1,12,0.9,44.0,M,-8.0,M,,*5C";
+ struct minmea_sentence_gga g; struct minmea_sentence_rmc r; struct minmea_sentence_gsa a;
+ minmea_parse_gga(&g,gga); printf("GGA q=%d sats=%d hdop=%.2f alt=%.1f lat=%.8f lon=%.8f\n",g.fix_quality,g.satellites_tracked,minmea_tofloat(&g.hdop),minmea_tofloat(&g.altitude),minmea_tocoord(&g.latitude),minmea_tocoord(&g.longitude));
+ minmea_parse_rmc(&r,rmc); printf("RMC valid=%d lat=%.6f lon=%.6f speed=%.3f\n",r.valid,minmea_tocoord(&r.latitude),minmea_tocoord(&r.longitude),minmea_tofloat(&r.speed));
+ minmea_parse_gsa(&a,gsa); printf("GSA mode=%c fix=%d pdop=%.2f hdop=%.2f vdop=%.2f\n",a.mode,a.fix_type,minmea_tofloat(&a.pdop),minmea_tofloat(&a.hdop),minmea_tofloat(&a.vdop));
+ minmea_parse_rmc(&r,brmc); printf("BJ RMC lat=%.8f lon=%.8f\n",minmea_tocoord(&r.latitude),minmea_tocoord(&r.longitude));
+ minmea_parse_gga(&g,bgga); printf("BJ GGA q=%d sats=%d hdop=%.2f alt=%.1f\n",g.fix_quality,g.satellites_tracked,minmea_tofloat(&g.hdop),minmea_tofloat(&g.altitude));
+ const char *all[]={gga,rmc,gsa,brmc,bgga}; for(int i=0;i<5;i++) printf("check%d=%d ",i,minmea_check(all[i],false));
+ printf("\nid GGA=%d GSA=%d RMC=%d\n",minmea_sentence_id(gga,false),minmea_sentence_id(gsa,false),minmea_sentence_id(rmc,false));
+ return 0;}
+C
 # 编译时与 CMake 一致带 feature 宏；见上游/本仓 CMakeLists.txt
 cc -std=c99 -D_POSIX_C_SOURCE=199309L -D_DEFAULT_SOURCE \
   -I$HOME/iono_ops/minmea -o /tmp/minmea_probe /tmp/minmea_probe.c \
@@ -122,8 +141,8 @@ UART/日志 NMEA 行
 | ---: | --- | --- | --- |
 | 1 | CMake：`Package 'check' not found` | 未装 libcheck | `apt install check` 或 `-DMINMEA_ENABLE_TESTING=OFF` |
 | 2 | `ctest` 半失败 | 缺 `scan-build` | 忽略该项；直接 `./tests` |
-| 3 | example：`$GNGSA … not parsed` | example switch 无 GSA 分支 | 用 `minmea_parse_gsa`；勿当库不支持 |
-| 4 | `timegm`/`timespec` 编译错 | 缺 POSIX/BSD 宏 | 抄 CMake `CMAKE_C_FLAGS` 宏集 |
+| 3 | example：`$xxxxx sentence is not parsed`（GSA 行） | example switch 无 GSA 分支 | 用 `minmea_parse_gsa`；勿当库不支持 |
+| 4 | 不带宏编译：`warning: 'struct timespec' declared inside parameter list`（CMake 带 `-Werror` 即成错误） | 缺 POSIX/BSD 宏 | 抄 CMake `CMAKE_C_FLAGS` 宏集 |
 | 5 | 坐标差 60× | 把 `ddmm.mmmm` 当十进度 | 必走 `minmea_tocoord` |
 | 6 | 浮点禁区链接失败 | 目标无 libm / 禁用 float | 只用定点 `value/scale` + `minmea_rescale` |
 | 7 | 长句截断 | 缓冲 < `MINMEA_MAX_SENTENCE_LENGTH` | 加大缓冲；先 `minmea_check` |

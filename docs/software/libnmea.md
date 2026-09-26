@@ -1,6 +1,6 @@
 # libnmea · 轻量纯 C NMEA 0183 解析库操作手册
 
-目录：[`PROJECTS.json` → `libnmea`](../../PROJECTS.json) · 上游 <https://github.com/jacketizer/libnmea> · tip **`91fd433`**（`master`；PR **#58** talker 无关句型匹配）· 许可 **MIT** · ★**326** · 本机验证（2026-09-24 06:36–06:37 EDT）：`make` → `build/libnmea.so` **24576** B + 7×`build/nmea/libgp*.so`；`make check` → **All tests passed!**（断言 **74**）；`make examples` → `parse_stdin`/`minimum`；北京 GGA/RMC（validate=**1**）lat=**39.9041866667**/lon=**116.3907433333**/sats=**12**/alt=**44.0**；`$GNGGA` 同解；`validate=0` 时坏校验和仍解析（`parse_stdin` 默认此路径）
+目录：[`PROJECTS.json` → `libnmea`](../../PROJECTS.json) · 上游 <https://github.com/jacketizer/libnmea> · tip **`91fd433`**（`master`；PR **#58** talker 无关句型匹配）· 许可 **MIT** · ★**326** · 本机验证（2026-09-24 06:36–06:37 EDT）：`make` → `build/libnmea.so` **24576** B + 7×`build/nmea/libgp*.so`；`make check` → **All tests passed!**（`should` 断言 **74** 条；绿色 `•` 行共 85）；`make examples` → `parse_stdin`/`minimum`；北京 GGA/RMC（validate=**1**）lat=**39.9041866667**/lon=**116.3907433333**/sats=**12**/alt=**44.0**；`$GNGGA` 同解；`validate=0` 时坏校验和仍解析（`parse_stdin` 默认此路径） · **质检复跑通过**（2026-09-26 01:31–01:35 EDT，tip/★326/0 tag、GLL/GSV/北京 GGA+RMC/探针 5 项/`make install` Error 127 全部同 I/O；修：`.so` 大小随工具链 24568 B、74 为 `should` 计数（`•` 共 85）、漏尾斜杠实为 segfault 而非空输出）
 
 > 岗位：桌面/嵌入式 **NMEA 0183 → C 结构体**（动态加载句型模块）。冲突时：**上游 README / `nmea.h` > 本文**。单文件无 `dlopen` → [minmea](./minmea.md)；Python → [pynmeagps](./pynmeagps.md)/[pynmea2](./pynmea2.md)；系统守护 → [gpsd](./gpsd.md)。
 
@@ -38,7 +38,7 @@ cd libnmea && git rev-parse --short HEAD   # 本机：91fd433
 make && make check
 # → Building build/libnmea.so
 # → All tests passed!
-ls -la build/libnmea.so build/nmea/        # 24576 B；7 个 libgp*.so
+ls -la build/libnmea.so build/nmea/        # 24576 B（gcc 14.2：24568 B）；7 个 libgp*.so
 PREFIX=$PWD/target make install            # 可选；本机 ldconfig 缺失可忽略（Error 127）
 export LD_LIBRARY_PATH="$PWD/build${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
 export NMEA_PARSER_PATH="$PWD/build/nmea/" # 尾斜杠必需
@@ -47,7 +47,8 @@ make examples                              # → build/parse_stdin build/minimum
 
 | 现象 | 原因 | 修复 |
 | --- | --- | --- |
-| `Failed to parse` / 空输出 | 未设 `NMEA_PARSER_PATH` 或漏尾 `/` | `export NMEA_PARSER_PATH=…/nmea/` |
+| 无任何输出、退出码 0 | 未设 `NMEA_PARSER_PATH`（默认目录无模块） | `export NMEA_PARSER_PATH=…/nmea/` |
+| `Segmentation fault`（退出码 139） | `NMEA_PARSER_PATH` 漏尾 `/` | 补尾斜杠 |
 | `ldconfig: No such file` | 容器无 `ldconfig` | 忽略；用 `LD_LIBRARY_PATH` |
 | 坏校验和仍出结构体 | `parse_stdin` 调 `nmea_parse(..., 0)` | 自写代码传 **`1`** |
 
@@ -91,7 +92,7 @@ printf '%s\r\n' \
 | `$GNGGA` 同体 `*51` | type=`NMEA_GPGGA`；sats=**12** |
 | 同 GGA 改 `*00` + validate=**1** | **`NULL`** |
 | 同 GGA 改 `*00` + validate=**0** | 仍 OK（与 `parse_stdin` 一致） |
-| `make check` | **All tests passed!**（**74** 条断言） |
+| `make check` | **All tests passed!**（**74** 条 `should` 断言；`grep -c should`） |
 
 ## 4. I/O 与关键 API
 
@@ -104,7 +105,7 @@ printf '%s\r\n' \
 
 ## 5. 坑
 
-1. **`NMEA_PARSER_PATH` 尾斜杠** —— README 强调；漏了模块加载失败。
+1. **`NMEA_PARSER_PATH` 尾斜杠** —— README 强调；漏了 `parse_stdin` 直接 **段错误**（139），完全不设则静默无输出（0）。
 2. **`parse_stdin` 不校验和** —— 第 3 参固定 `0`；生产代码用 `1`。
 3. **`PREFIX=… make install` + `ldconfig`** —— 无 root/`ldconfig` 时 Error 127；改 `LD_LIBRARY_PATH` 即可。
 4. **句型白名单** —— 仅 7 类；无 `ZDA`/`GBS`/`GST`（那些见 [minmea](./minmea.md)）。
