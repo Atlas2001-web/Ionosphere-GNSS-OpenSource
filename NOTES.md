@@ -437,3 +437,10 @@
 - 当前条目：**1035**
 - 分类计数：{'ionosphere': 302, 'troposphere': 47, 'gnss-data': 140, 'gnss-positioning': 103, 'orbit-clock': 33, 'navigation-ins': 73, 'gnss-sdr': 77, 'mobile-apps': 32, 'tools-learning': 59, 'gnss-datasets': 170}
 - 详见 `research/routine_finds_20260926c.json`
+
+## 例行检索补录（2026-09-26d）
+
+- 新增 **1** 条（binex：nav-solutions Rust BINEX 编解码库，补齐 docs/software/binex.md 对应目录条目）
+- 当前条目：**1027**
+- 分类计数：{'ionosphere': 246, 'troposphere': 47, 'gnss-data': 138, 'gnss-positioning': 108, 'orbit-clock': 31, 'navigation-ins': 72, 'gnss-sdr': 76, 'mobile-apps': 32, 'tools-learning': 57, 'gnss-datasets': 220}
+- 详见 `research/routine_finds_20260926d.json`

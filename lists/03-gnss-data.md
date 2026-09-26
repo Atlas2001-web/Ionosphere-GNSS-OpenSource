@@ -1,5 +1,5 @@
 # GNSS 数据与格式 / GNSS Data I/O
-> **137** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **138** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 RINEX/SP3/CLK/ANTEX 读写与转换、RTCM/NTRIP、Hatanaka 压缩、质量检查/多路径分析、接收机驱动与协议、数据下载脚本——所有解算的上游。
 
@@ -698,6 +698,7 @@ GeoDE（Geodetic Database Engine）把 RINEX 下载、归档扫描、PPP、GAMIT
 | [gnsstools](https://github.com/arthurdjn/gnsstools) | 轻量 Python：RINEX/SP3 读取与轨道改正 | Python | 39 | 🏷️ 个人社区 |
 | [RinexReader](https://github.com/aaronboda24/RinexReader) | RinexReader：C++ RINEX 2/3 读取库 | C++ | 38 | 🏷️ 个人社区 |
 | [READ_GNSS](https://github.com/dzd9798/READ_GNSS) | READ_GNSS：MATLAB 读 RINEX/IONEX 等 GNSS 文件 | MATLAB | 10 | 🏷️ 个人社区 |
+| [binex](https://github.com/nav-solutions/binex) | binex：Rust BINEX 编解码库（与 rinex 同生态） | Rust | 5 | 🏷️ 个人社区 |
 | [doris-rinex](https://github.com/nav-solutions/doris) | Rust DORIS RINEX 解析库 | Rust | 3 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -743,6 +744,13 @@ GeoRust/nav-solutions 系 RINEX 库，本身是纯库，没有命令行；配套
 语言：MATLAB · 许可：— · 星标约：10 · 宿主：github
 
 在 MATLAB 中读入常见 GNSS 相关文件（含 RINEX、IONEX 等），降低自写解析器的成本，方便后续 TEC 或定位实验。适合已有 MATLAB 工作流的学生课题组。功能广度与健壮性不如 georinex、gnsstk；大型工程或多星座新格式建议仍用专门 IO 库并做交叉校验。遇到新 RINEX 版本时应抽检字段再批量入库。
+
+#### [binex](https://github.com/nav-solutions/binex)  
+*🏷️ 个人社区*
+
+语言：Rust · 许可：MPL-2.0 · 星标约：5 · 宿主：github
+
+与 rinex 同属 nav-solutions 生态的 Rust 纯库，MPL-2.0 许可，crates.io 版本 0.5.2，无命令行。BINEX 是面向接收机固件与实时流的二进制交换格式，可看作 RINEX 的流式对应：库提供 Message 单帧编解码，以及对任意 Read 流逐帧输出开源消息与未公开原型的 Decoder，覆盖测站元数据、GPS/GLONASS/SBAS 星历等记录。上游注明增强 CRC 未支持、小端流缺公开数据验证。本仓 docs/software/binex.md 有实测手册，RINEX 转 BINEX 命令行见 rinex2bin。
 
 #### [doris-rinex](https://github.com/nav-solutions/doris)  
 *🏷️ 个人社区*

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "binex",
+    "url": "https://github.com/nav-solutions/binex",
+    "desc_zh": "nav-solutions：BINEX 二进制交换格式编解码与流解析 Rust 库",
+    "analysis_zh": "与 rinex 同属 nav-solutions 生态的 Rust 纯库，MPL-2.0 许可，crates.io 版本 0.5.2，无命令行。BINEX 是面向接收机固件与实时流的二进制交换格式，可看作 RINEX 的流式对应：库提供 Message 单帧编解码，以及对任意 Read 流逐帧输出开源消息与未公开原型的 Decoder，覆盖测站元数据、GPS/GLONASS/SBAS 星历等记录。上游注明增强 CRC 未支持、小端流缺公开数据验证。本仓 docs/software/binex.md 有实测手册，RINEX 转 BINEX 命令行见 rinex2bin。",
+    "language": "Rust",
+    "license": "MPL-2.0",
+    "category": "gnss-data",
+    "subcategory": "RINEX读写",
+    "markers": [
+      "routine-2026-09-26d"
+    ],
+    "stars_approx": 5,
+    "source": "routine-finds-20260926d",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "provenance": "personal_community",
+    "one_liner_zh": "binex：Rust BINEX 编解码库（与 rinex 同生态）"
+  }
+]
