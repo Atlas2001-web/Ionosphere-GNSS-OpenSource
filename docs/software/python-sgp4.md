@@ -2,6 +2,12 @@
 
 目录：`PROJECTS.json` **`python-sgp4`**（orbit-clock / SGP4传播）· 上游 <https://github.com/brandon-rhodes/python-sgp4> · PyPI **`sgp4` 2.27**（2026-07-03 发布；master **`8126f77`**，2026-09-24 08:58 EDT）· **MIT** · ★**472** · 本机 Python **3.13.5**，`sgp4.api.accelerated == True`（Vallado C++ 扩展 `vallado_cpp.abi3.so`）· 真跑 2026-09-26 02:09–02:30 EDT
 
+> **质检复跑通过（有小修正）**（2026-09-26 03:52–03:59 EDT）。
+> - 环境：uv venv，Python 3.13.15，sgp4 2.27（`accelerated=True`）/ astropy 8.0.1 / skyfield 1.55。03:57 EDT 重抓 CelesTrak，ISS 与 PRN02 的 TLE 与原文历元完全相同（gps-ops 历元跨度 26260.32 PRN21 … 26268.90 PRN27 也一致）。
+> - 逐字复现：§3.2 四行 r/v；`jdsatepochF` 0.06454359，tsince 1347.0572304；`inclo`/`no_kozai`/`a`；§3.3 45 个测试 OK，3 路 tcppver 通过，33 组 TLE / 700 行；§3.4 用同名 BKG ULT/RAP 文件和 astropy 重算，PRN02 0.534/0.551/0.316/0.828 km，漏减 18 s 53.489/57.897 km，TEME 当 ECEF 26974.176/52133.889 km，RAP 0.456/0.463/0.593 km；ULT 31 星中位 1.658 km（最小 G03 0.302，G13 469.6，G21 5.1），RAP 32 星中位 1.710 km、最大 420.9 km；jd+fr 合并差 4.3 cm；checksum 不校验；截断 TLE error=2 + NaN；旧接口 `ValueError: TLE format error`；OMM−TLE 1.39 m；exporter 回写差异与 OMM EPOCH。
+> - 修正：坑 4 的「+5 年」实为 `sgp4_tsince(5×365.25×1440)`，这样得 e=6、r=[4619.1,−2794.5,3262.1]，按日历日期外推会得到别的数，已写明；坑 10 实测 SatrecArray 163–185 ms，逐星 `sgp4_array` 154–159 ms，这个规模下没有收益，删去原「逐个循环 245 ms、收益随规模增长」。
+> - 未复跑：§3.2 与 satellite.js 的交叉（需 Node）、§3.4 的 R/T/N 分解和 skyfield 帧转换对比（210 / 46.6 / 2.5 m）、G13 全组反查。
+
 > 岗位：把 **TLE / OMM 平均根数** 传播成某 UTC 时刻的 **TEME** 位置（km）/速度（km/s）。精度是 **km 级**（GPS 实测中位 ~1.7 km，见 §3.4），**不是**精密轨道。冲突时：**上游 README / `help(Satrec)` > 本文**。
 > 姊妹篇：[satellite-js](./satellite-js.md)（同一 Vallado 算法的 JS/TS 版，§3.2 实测差 ≤ 1.7 cm）。精密轨道：[data-access · SP3](../data-access.md#sp3--clk--bias) → [gnssanalysis](./gnssanalysis.md) / [sp3](./sp3.md)。数值积分外推：[gmat](./gmat.md)。
 
@@ -132,13 +138,13 @@ CelesTrak/Space-Track 根数 →（本库）TEME → astropy/skyfield 转 ITRS �
 1. **TEME ≠ ECEF**：把 TEME 当 ECEF 与 SP3 比，PRN02 平均差 **26974 km**。必须 `TEME→ITRS`。
 2. **GPST vs UTC**：SP3 历元是 GPST，不减 18 s 直接当 UTC → **53.5 km**（GPS 3.9 km/s × 18 s ≈ 70 km 量级）。
 3. **错误不抛异常**：截断 TLE → `Satrec` 静默给 `error=2`、`no_kozai=0`，`sgp4()` 返回 `(2, (nan,nan,nan), …)`；老接口 `sgp4.io.twoline2rv` 才 `ValueError: TLE format error`。**每次检查 `e`**。
-4. **衰减码 6 仍给出坐标**：ISS TLE 外推 +5 年 → `e=6 "mrt is less than 1.0 … decayed"`，但 `r=[4619.1,-2794.5,3262.1]` 不是 NaN；+3 年仍 `e=0`（结果已无物理意义）。按 `e` 过滤，别按 NaN 过滤。
+4. **衰减码 6 仍给出坐标**：ISS TLE `sgp4_tsince(5*365.25*1440)`（历元后 5 年）→ `e=6 "mrt is less than 1.0 … decayed"`，但 `r=[4619.1,-2794.5,3262.1]` 不是 NaN；+3 年（同法）仍 `e=0`（结果已无物理意义）。按 `e` 过滤，别按 NaN 过滤。
 5. **jd/fr 精度**：`sgp4(jd+fr, 0)` 丢精度（实测 4.3 cm）；TLE 历元本身只有 8 位小数（≈0.86 ms）。
 6. **OMM ≠ TLE 逐位**：PRN02 JSON `ECCENTRICITY 0.01725844` 比 TLE 多一位 → 同时刻差 **1.39 m**（satellite.js 1.91 m）。混用两种源做差分会看到伪信号。
 7. **单位**：内部角度全是弧度、平均运动 rad/min；TLE 里是度与 rev/day。自己改 `Satrec` 字段必须换算。
 8. **TLE 老化/机动**：同组 GPS TLE 历元差 8 天；G13 实测 470 km、G21（TLE 已 7.7 d）5.1 km。先看 `epochdays` 和年龄。
 9. **skyfield 默认 IERS 表过期**：`load.timescale()` 内置 dUT1 外推 → 210 m；要 `builtin=False` + 装极移表。astropy 在 cwd 发现 `finals2000A.all` 会优先读并告警 `AstropyDeprecationWarning`——把 skyfield 数据放子目录（`Loader('skydata')`）。
-10. **SatrecArray 只有 C 扩展才快**：`accelerated=False` 时回落 `sgp4/model.py` 纯 Python 版（接口同、无向量化加速）；本机 C 版 32 星×10080 分钟 = 322560 状态 **181 ms**（逐个循环 245 ms），收益随规模增长。
+10. **SatrecArray 只有 C 扩展才快**：`accelerated=False` 时回落 `sgp4/model.py` 纯 Python 版（接口同、无向量化加速）；本机 C 版 32 星×10080 分钟 = 322560 状态 `SatrecArray` **163–185 ms**；32 次逐星 `sgp4_array` 154–159 ms，这个规模下 `SatrecArray` 没有速度优势。
 
 ## 8. 选型
 
