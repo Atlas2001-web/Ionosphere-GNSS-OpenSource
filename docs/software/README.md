@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **203 篇**操作手册（合计 **44977 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **204 篇**操作手册（合计 **45210 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -228,6 +228,7 @@
 | 201 | [ionotec.md](./ionotec.md) | Blunier/智利 Complexity Cluster 轻量 Python 库：单站 RINEX 2 观测+广播星历+CAS Bias-SINEX → 切段整平、扣卫星 DSB、方差最小法估接收机偏差、400 km 单层 → 每星每分钟 STEC/VTEC/IPP（feather）；≠ RINEX 3 / GIM | 233 | **已短硬** · 2026-09-26 03:31–03:40 EDT；PyPI **0.0.15**（≠ 任何 git 提交；main `8e54598` 同脚本报错）/MIT/★6；BKG WTZA 2024-235 全天 13221 行/30 星（G18 丢）；对 CODE 终版 GIM el>30° −1.69±2.79 TECU，逐星偏差与 C1C−C1W DSB 相关 −0.92（码用 P2−C1），改 P2−P1 后 −2.31±1.38；RINEX 3 `KeyError: 'P2'` · **质检复跑通过**（03:43–03:47 EDT；§3/§4 stdout、坑 1 补丁（br 17.91、el>30° −2.31±1.38、相关 −0.01）、§8 统计逐位复现；只把 §9 耗时改为 4–6 s） |
 | 202 | [spinifex.md](./spinifex.md) | ASTRON/CSIRO（RMextract 后继）：IONEX GIM 插值（日固旋转、跨午夜去跳）+ IGRF-14（ppigrf）视线投影 → 射电视线 STEC 与电离层法拉第 RM；可选 PyIRI 剖面（`ionex_iri`）/ UPC tomion；CLI 只管 MS→H5Parm 与 FITS | 249 | **已短硬** · 2026-09-26 03:38–03:45 EDT；PyPI **2.0**=`v2.0` `3788d3d`/main `e2ca48c`/Apache-2.0；LOFAR 核心→Cas A 2024-08-22 CODE：RM 0.83–1.79 rad/m²，UQRG 差 ≤0.17；关旋转时 VTEC 与自写插值 max 差 0.000，开旋转 ≤0.55 TECU；`ionex_iri` 低仰角 RM −18%；代码默认 chapman/uqr（文档写 cddis/cod），单层 `height` 参数无效 · **质检复跑通过**（03:43–03:47 EDT；CODE/UQRG 8 行表、check_vtec（rot=0 实测最大差 2.9e−10）、ionex_iri 表、坑 1/4/5/6/8/9 逐位复现；只把 §8 耗时改为 2–5 s） |
 | 203 | [rt-navi.md](./rt-navi.md) | nav-solutions Rust 实时导航 PoC：u-blox 串口读 RXM-RAWX 伪距 + RXM-SFRBX GPS 星历 → gnss-rtk（rev `5eb681c`）逐历元 PVT，只打日志；≠ 文件回放工具 / RINEX 转换 / RTK | 212 | **已短硬** · 2026-09-26 03:32–03:50 EDT；crates **0.0.1** 存根/main `ca95fb8`（0.0.2 未发版）/MPL-2.0/★12；socat 伪串口回放 rtkexplorer F9P `rover.ubx`：上游 0 解（默认 CPP + 全标 L1）；补丁 SPP+仅 L1 后 173/400 解、3D 中位 14.246 m；pyubx2 伪距逐值 max|Δ|=0（但 4916/7655 实为 L2/E5b/B2）；CFG-RATE 10 s、CFG-VALSET 未发、8E1；写端断开日志洪水；**未在真接收机测试** |
+| 204 | [meridian-data.md](./meridian-data.md) | 子午工程数据中心访问侧（无账号实测）：/sjj/ DOI 总表解析（1161 DOI、97 站、54 类设备、CSTR=14804.11.+DOI 后缀）、DOI→NSSDC vsso 落地页 + getDetail 元数据、dcstatus SPA 公开接口（检索/详情/文件名清单/格式说明 PDF）与 401 接口、SSO/注册/离线申请流程（仅公开页面）、2026-06-22 致谢与成果报送政策原文；≠ 登录后下载（未测）/ CMONOC | 233 | **已短硬** · 2026-09-26 03:42–04:00 EDT；未注册、未提交任何表单；DOI 302→vsso.nssdc.ac.cn（RA ISTIC）；抽样 47 个元数据全为 CC BY-NC-ND 4.0，9 个占位；SPA 1147 数据集，文件清单公开（测高仪 id 21226 共 615,918 个文件，5 min 产品延迟约 15 min），下载接口 body code 401；官方格式说明：RINEX 3.03 .ORN / S4 定宽 TXT / ISR HDF5 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -434,6 +435,7 @@
 | Madrigal（CEDAR/EISCAT/AMISR）找实验 + 下载 TEC 格网 / ISR 文件；服务端 isprint 只取一点 | [madrigal.md](./madrigal.md) |
 | 地磁台分钟/秒值（USGS ws、INTERMAGNET/GIN 定值、NRCan/MACCS/THEMIS）下载 + H/D + 缺测处理 | [geomag-api.md](./geomag-api.md) |
 | SuperDARN 原始数据下载（FRDR RAWACF、Globus/BAS/VT 镜像门槛、sha1+bz2 校验、使用规则） | [superdarn-data.md](./superdarn-data.md) |
+| 子午工程数据（DOI/CSTR 查询、不登录可见的元数据与文件清单、登录门槛、致谢与报送规则） | [meridian-data.md](./meridian-data.md) |
 | 单站 1 Hz/30 s RINEX 看 sTEC 变化率 / 海啸型 TID（VARION，Python 2.7） | [varion.md](./varion.md) |
 | SuperDARN HF 雷达 RTI / 扇形图 / 极区对流图（FITACF/MAP；TID 斜纹、对流速度） | [pydarn.md](./pydarn.md) |
 | Swarm 卫星原位 RODI / 顶部 TEC ROTI（LP+POD；CC BY-NC-SA） | [titipy.md](./titipy.md) |
