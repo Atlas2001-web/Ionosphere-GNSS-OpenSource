@@ -2,6 +2,8 @@
 
 目录：[`PROJECTS.json` → `ionex`](../../PROJECTS.json) · 上游 <https://github.com/gnss-lab/ionex> · MIT · 本文件 [`ionex-gim.md`](./ionex-gim.md) · **新短硬同包** → [ionex.md](./ionex.md) · 本机验证 **ionex 0.2**（包内 `tests/test_data/ionex_file.00i`）· **质检复跑**（2026-09-26 01:05 EDT，新 venv Python 3.13.5，`git+` 装得 ionex **0.2**，上游 tip `8783a71` 2020-07-24 23:18 EDT 无更新）：§3.2 八行输出逐字一致（12 图、71×73=5183、tec0 9.8 / mid 31.8、nearest dt −3600 s）；`next(reader)` TypeError、`_rms None`、`m.rms` NotImplementedError 复现；修 §3.1 grep（原式 `LON1` 命中数据块头 + `head` 截断，给不出所示 END OF FILE 行）。真产品冒烟：AIUB `http://ftp.aiub.unibe.ch/CODE/2023/` 约 97 s 无响应（curl `000 0`），未测
 
+> 注：旧 FTP `ftp.aiub.unibe.ch` 已停用，CODE 产品请改用 <https://www.aiub.unibe.ch/download/CODE/2023/>（2026-09-26 实测：`COD0OPSFIN_20230010000_01D_01H_GIM.INX.gz` HTTP 200、324744 B，解压为有效 IONEX 1.0 头；旧短名 `CODG0010.23I.Z` 404；目录无索引页，需给完整文件名）。
+
 > 岗位：用 Python 包 **`ionex`** 读分析中心 IONEX（IGS/CODE/UPC/ESA…）VTEC 图。**只读**，不生成 GIM。球谐求解边界见 [sh-gim](./sh-gim.md)。绝对 TEC 校准见 [pytecgg](./pytecgg.md)（**viventriglia**）。API 以已安装包为准。
 
 ## 1. 用途与边界

@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **194 篇**操作手册（合计 **42689 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **194 篇**操作手册（合计 **42691 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -31,7 +31,7 @@
 | 4 | [pytecgg.md](./pytecgg.md) | 校准 sTEC/vTEC（作者 viventriglia） | 593 | **已短硬** R1+R8二遍 [`ff674b4`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/ff674b4) · 本机 1.3.0（ABMF 全日 `calculate_tec`/`veq` 实跑） |
 | 5 | [ionomoni.md](./ionomoni.md) | STEC / ROTI / AATR（C++） | 219 | **已短硬** R3 [`f5845f7`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/f5845f7) · **登记受限**（官方主推 Win；Linux 无开箱二进制） |
 | 6 | [oasis-roti.md](./oasis-roti.md) | ROTI / ΔTEC / SIDX（Python） | 264 | **已短硬** R3 [`f5845f7`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/f5845f7) · **质检复跑通过**（2026-09-26 00:31–00:45 EDT；**PyPI 1.0.3 ≠ tip `e5994f6`**；PyPI+pandas **3.0.6** 须显式 `RNXScreening`→53×RNX1/2/3、G_ROTI **2668** 行/32 星/median **0.07439**、SIDX 出；漏调→leveling **IndexError**；tip+pandas3 RNXclean **invalid error value**；tip+pandas **2.3.3** ROTI 首行≡原稿、SIDX `'Y'` 崩；原稿 ΔTEC 首行未复现已换真值；tip `TECcalc` 写 `.DCB`/`.TEC`） |
-| 7 | [ionex-gim.md](./ionex-gim.md) | 读 IONEX GIM | 201 | **已短硬** R3 [`f5845f7`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/f5845f7) · 本机 ionex 0.2 · **质检复跑通过**（2026-09-26 01:05 EDT；ionex 0.2；12 图 71×73 tec0 9.8 逐字复现；修 §3.1 grep 截断） |
+| 7 | [ionex-gim.md](./ionex-gim.md) | 读 IONEX GIM | 203 | **已短硬** R3 [`f5845f7`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/f5845f7) · 本机 ionex 0.2 · **质检复跑通过**（2026-09-26 01:05 EDT；ionex 0.2；12 图 71×73 tec0 9.8 逐字复现；修 §3.1 grep 截断） |
 | 8 | [sh-gim.md](./sh-gim.md) | 维护者球谐仓**边界**（求解器未开源） | 124 | **边界** · 保持短；禁止扩写成端到端求解教程 |
 | 9 | [pygnssutils.md](./pygnssutils.md) | NTRIP CLI / 小 caster | 361 | **已短硬** R5 [`37ac39b`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/37ac39b) · 本机 1.2.7 |
 | 10 | [bnc.md](./bnc.md) | BKG 多流客户端 | 274 | **已短硬** R2+R7二遍 · 本机 BNC 2.13.7（REQC 实跑 / NTRIP 标操作步骤） |
