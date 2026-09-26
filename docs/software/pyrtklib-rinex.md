@@ -1,6 +1,6 @@
 # pyRTKLib-RINEX（alainmuls/pyRTKLib）· 调 rnx2rtkp + 出图的 Python 脚本集 操作手册
 
-目录：[`PROJECTS.json` → `pyRTKLib-RINEX`](../../PROJECTS.json) · 上游 <https://github.com/alainmuls/pyRTKLib> · **无 LICENSE 文件**（GitHub API `license=null`，版权默认归作者，复用/再分发前先问作者）· tip **`4d9a89c`**（2021-02-09，之后无提交；★50）· 本机 Python **3.13.5**（失败）/ **3.8.20**（出图成功）· 解算器 Debian `rnx2rtkp` **2.4.3 b34** · **2026-09-26 01:07–01:10 EDT** 实跑：仓内 Septentrio AsteRx3 Galileo E1 单频 `GALI0171.20O`（2020-01-17 06:00–11:59:59，1 Hz）→ SPP **21359** 历元全 Q=5 → `pyrtkplot.py` 生成 **11** 张 PNG + 9 个 CSV/JSON。上游 `pyrtkproc.py` **原样跑不出结果**（`sys.exit(6)`，见坑 2），本文给出 3 处最小补丁。
+目录：[`PROJECTS.json` → `pyRTKLib-RINEX`](../../PROJECTS.json) · 上游 <https://github.com/alainmuls/pyRTKLib> · **无 LICENSE 文件**（GitHub API `license=null`，版权默认归作者，复用/再分发前先问作者）· tip **`4d9a89c`**（2021-02-09，之后无提交；★50）· 本机 Python **3.13.5**（失败）/ **3.8.20**（出图成功）· 解算器 Debian `rnx2rtkp` **2.4.3 b34** · **2026-09-26 01:07–01:10 EDT** 实跑：仓内 Septentrio AsteRx3 Galileo E1 单频 `GALI0171.20O`（2020-01-17 06:00–11:59:59，1 Hz）→ SPP **21359** 历元全 Q=5 → `pyrtkplot.py` 生成 **11** 张 PNG + 9 个 CSV/JSON。上游 `pyrtkproc.py` **原样跑不出结果**（`sys.exit(6)`，见坑 2），本文给出 3 处最小补丁。 · **质检复跑**（2026-09-26 01:30–01:40 EDT，重 clone `4d9a89c`，GitHub API `license=null`/★50）：原样 exit **2**（缺 `crz2rnx`）→ 占位后 exit **6**、`rtkp/gal/` 空 → 只打补丁 1 得 `KeyError: 'Tropo'` → 补丁 1+2 得第 228 行 `TypeError` → 三处全打 exit 0（3.7 s），`.pos` **2819979** B、`.pos.stat` **15030586** B、头与前 2 行逐字一致、21600 历元中 **21359**×Q5、`$POS/$VELACC/$CLK` 各 21359、`$SAT` **135228**；Py3.13+pandas 3.0.6 出图 `ValueError: Value must be a nonnegative integer or None`、Py3.8+pandas 0.25.3 不改 `weight` 得 `weight is invalid`（7 个文件），改后 exit 0、**11** PNG + 9 个 CSV/JSON，dfStatENU/dfDistXDOP 与 json（WAvg、sd 3.284/2.723/5.310、PDOP<6 93.2 %、13 颗 E）逐字一致；坑 8 `-c 15` 报错与 15° 后 **20563**、坑 9 `-g gps gal` 报错复现。说明：conf 大小随 `-d` 路径变（本机 `/tmp/qc31/prr` 得 5487 B，原稿 `/tmp/prr` 5477 B）；`data/rnx` 实为 **167516688 B（≈168 MB / 160 MiB）**，已改；坑 7（锁版源码构建）未复跑。
 
 > 岗位：把 RINEX 观测交给 RTKLIB 的 `rnx2rtkp` 做 SPP/RTK，再把 `.pos` / `.pos.stat` 画成 UTM 偏移、散点、CN0、伪距残差、仰角、接收机钟差、DOP 图。**它自己不做定位解算**，也不绑定 RTKLIB 的 C 代码。
 
@@ -39,7 +39,7 @@
 | `pyftposnav.py` | FTP 下载导航文件 | 依赖 CDDIS 匿名 FTP（已停），未跑 |
 | `rnx_obs_tabular.py` / `gfzrnx_obstab.py` | 观测表格化 | 依赖 `gfzrnx`，未跑 |
 | `glab_*.py` | gLAB 输出解析/出图 | 未跑，见 [glab-upc](./glab-upc.md) |
-| `data/rnx/` | 样例：`GALI0171.20O/E`（Gal）、`GPSS0171.20O/N`（GPS）、`P1710171.20O/P`（混合），共约 163 MB | 本文用 GALI |
+| `data/rnx/` | 样例：`GALI0171.20O/E`（Gal）、`GPSS0171.20O/N`（GPS）、`P1710171.20O/P`（混合），共约 168 MB（160 MiB） | 本文用 GALI |
 
 README 假定目录结构 `${HOME}/RxTURP/BEGPIOS/<ASTX|BEGP|uBlox>/YYDDD/`，作者自注“从未在别的目录结构下测过”。模板默认路径写死 `~/amPython/pyRTKLib/rnx2rtkp.tmpl`，一定要 `-t` 覆盖。
 

@@ -1,6 +1,6 @@
 # learning_rtklib（libing64）· RTKLIB 中文学习笔记 + 6 个 C++ 调用示例 操作手册
 
-目录：[`PROJECTS.json` → `learning_rtklib`](../../PROJECTS.json) · 上游 <https://github.com/libing64/learning_rtklib> · **无 LICENSE 文件**（GitHub API `license=null`）；它依赖的 RTKLIB 为 **BSD-2-Clause**（Takasu `readme.txt`）· tip **`e326a4b`**（2020-08-22，此后无提交；★163，非 fork）· 仓库 53 MB（大部分是样例数据）· 本机 gcc **14.2.0** / cmake **3.31.6** · **2026-09-26 01:06–01:09 EDT** 实跑：按其 README 用 tomojitakasu/RTKLIB master `71db0ff`（**2.4.2 p13**）编出 `librtklib.a`，6 个示例全部编译、全部 exit 0；同一源码树的 `rnx2rtkp` 在仓内数据上 SPP **900**×Q5、RTK **115**×Q1，且与示例程序输出逐位一致。
+目录：[`PROJECTS.json` → `learning_rtklib`](../../PROJECTS.json) · 上游 <https://github.com/libing64/learning_rtklib> · **无 LICENSE 文件**（GitHub API `license=null`）；它依赖的 RTKLIB 为 **BSD-2-Clause**（Takasu `readme.txt`）· tip **`e326a4b`**（2020-08-22，此后无提交；★163，非 fork）· 仓库 53 MB（大部分是样例数据）· 本机 gcc **14.2.0** / cmake **3.31.6** · **2026-09-26 01:06–01:09 EDT** 实跑：按其 README 用 tomojitakasu/RTKLIB master `71db0ff`（**2.4.2 p13**）编出 `librtklib.a`，6 个示例全部编译、全部 exit 0；同一源码树的 `rnx2rtkp` 在仓内数据上 SPP **900**×Q5、RTK **115**×Q1，且与示例程序输出逐位一致。 · **质检复跑**（2026-09-26 01:25–01:40 EDT，另起目录重 clone 两仓）：定性全部成立（GitHub API `license=null`/`fork=false`/★163；README **477** 行、6 个 `.cpp` 共 **670** 行、无 RTKLIB 源码；§5 只有 “TODO” 且引用的 `dpp_example.cpp` 不存在）；README §8.1 CMakeLists 原样编出 `librtklib.a`（1533042 B），6 示例 exit 0、行数 1127/1320/919/72/9002/902 与 §2 表中 10 处源文件行号全对；`rnx2rtkp` 2.4.2 SPP **900**×Q5、RTK **115**×Q1、`-e` 与示例逐位一致、头坐标高程 **70.2724**、Debian 2.4.3 同 115×Q1；坑 2/4/7/8 复现。改 3 处：`ppp_example` 末行 X 实为 **−3120047.546458**（原稿少 1 m 笔误）；`rtk_example` 是 **69** 个 fix 历元（70 个 `pos:` 含 1 行 `station pos:`）；坑 3 细化——tomojitakasu **2.4.3 b34** 头文件下只有 `nav_t.lam` 报错（spp/rtk/ppp 3 个），`marker`/`FREQ1` 报错只在 **EX 2.5.1**（4 个示例不过）。本机 `rnx2rtkp` 2261800 B（原稿 2261824，编译路径差异）。
 
 > 岗位：**读 RTKLIB 的入门台阶**——看中文笔记理解 RINEX / 卫星位置 / SPP / RTK / PPP，再用最短的 C++ 程序直接调 `readrnxt`、`satpos`、`pntpos`、`rtkpos` 看中间结果。
 
@@ -112,7 +112,7 @@ for e in rinex_example satpos_example spp_example rtk_example ppp_satpos_example
 | rinex_example | 0 | 1127 | 0.01 s | `nav : n=162`，`obs : n=948` |
 | satpos_example | 0 | 1320 | 0.02 s | 每 30 s 一组卫星 ECEF + 钟差 |
 | spp_example | 0 | 919 | 0.38 s | 900 历元 ECEF 解 |
-| rtk_example | 0 | 72 | 0.08 s | 70 行 “pos:” 全部是 fix（`stat==SOLQ_FIX` 分支） |
+| rtk_example | 0 | 72 | 0.08 s | 69 行解全部是 fix（`stat==SOLQ_FIX` 分支；另 1 行 `station pos:`） |
 | ppp_satpos_example | 0 | 9002 | 0.55 s | 广播 vs 精密卫星位置并列 |
 | ppp_example | 0 | 902 | 0.62 s | 900 行：每历元一行 PPP-static ECEF（行首数字是观测序号/总观测数 8486） |
 
@@ -138,7 +138,7 @@ station pos: -3978242.434800,3382841.171500,3649902.766700
 (1153,15)/1987, type: 0, pos: 2022.778256,-468.637599,2610.281396
 
 # ppp_example 末行
-8476/8486, pos: -3120046.546458,4084621.475280,3764033.497483
+8476/8486, pos: -3120047.546458,4084621.475280,3764033.497483
 ```
 
 ### 4.2 用本树 `rnx2rtkp` 跑同样数据（交叉验证）
@@ -202,7 +202,7 @@ RTK（115 行全部 Q=1）：
 
 1. **`fatal error: rtklib.h: No such file or directory`** → 仓库 `CMakeLists.txt` 默认你已 `sudo make install` 到 `/usr/local`，`include_directories` 被注释掉 → `cmake .. -DCMAKE_CXX_FLAGS="-I$HOME/iono_ops/opt/rtklib242/include" -DCMAKE_EXE_LINKER_FLAGS="-L$HOME/iono_ops/opt/rtklib242/lib"`。
 2. **程序 exit 0 却什么解都没有；`rinex_example` 打印 `nav : n=0` `obs : n=0`，`spp_example` 只打 19 行选项** → 数据路径写死为 `../data/...`，只在 `build/` 里运行才对，读不到文件也不报错 → `cd ~/iono_ops/src/learning_rtklib/build && ./spp_example`（或只对 spp：`./build/spp_example data/rinex/daej229a00.20n data/rinex/daej229a00.20o`，本机 900 行）。
-3. **对 rtklib-explorer / 2.4.3 头文件编译报 `'struct nav_t' has no member named 'lam'`、`'FREQ1' was not declared`、`'struct sta_t' has no member named 'marker'`** → 示例按 2.4.2 API 写；新版本删了 `lam`、改名 `FREQL1`、`markerno` → 用 README 指定的 tomojitakasu master：`git clone --depth 1 https://github.com/tomojitakasu/RTKLIB ~/iono_ops/src/RTKLIB-tomoji`。
+3. **对 rtklib-explorer / 2.4.3 头文件编译报 `'struct nav_t' has no member named 'lam'`、`'FREQ1' was not declared`、`'struct sta_t' has no member named 'marker'`** → 示例按 2.4.2 API 写；tomojitakasu 2.4.3 b34 只删了 `nav_t.lam`（spp/rtk/ppp 三个示例报错），EX 2.5.1 再把 `FREQ1` 改名 `FREQL1`、`marker` 改 `markerno`（rinex/spp/rtk/ppp 四个报错） → 用 README 指定的 tomojitakasu master：`git clone --depth 1 https://github.com/tomojitakasu/RTKLIB ~/iono_ops/src/RTKLIB-tomoji`。
 4. **`rnx2rtkp -p 0 -sys G …` 只打印 usage，没有 `.pos`（exit 仍为 0）** → 2.4.2 的 `rnx2rtkp` 不认 `-sys`（那是 demo5/EX 的旗标），遇到未知旗标就打印帮助 → 去掉 `-sys`，要限系统请用 conf：`echo "pos1-navsys =1" > gps.conf && $R -k gps.conf -p 0 rinex/daej229a00.20o rinex/daej229a00.20n`。
 5. **同一 RTK 数据，自己算的坐标和示例/别人差 ~0.4 m 高程**（本机：默认 `69.8714` m，用头坐标 `70.2724` m） → 不给 `-r` 时 `rnx2rtkp` 用基准站 SPP 平均当基准，`rtk_example` 用 RINEX 头 APPROX → 固定基准：`$R -p 2 -f 2 -r -3978242.4348 3382841.1715 3649902.7667 07590920.05o 30400920.05o 07590920.05n`。
 6. **`build/` 里突然多出 10 MB 的 `spp.trace`、2.6 MB 的 `ppp.trace`** → 库带 `-DTRACE` 编译，示例里 `traceopen()`+`tracelevel(4)` → 读完就删或改级别：`rm -f ~/iono_ops/src/learning_rtklib/build/*.trace`（要保留调试就把 `tracelevel(4)` 改成 `2` 再 `make`）。
