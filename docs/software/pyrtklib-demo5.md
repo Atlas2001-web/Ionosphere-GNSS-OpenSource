@@ -1,6 +1,6 @@
 # pyrtklib_demo5 · RTKLIB demo5/EX 的 Python 绑定操作手册
 
-目录：[`PROJECTS.json` → `pyrtklib_demo5`](../../PROJECTS.json) · 上游 <https://github.com/IPNL-POLYU/pyrtklib_demo5> · 许可 **MIT**（绑定层；内嵌 RTKLIB 源码另受 Takasu **BSD-2-Clause**）· tip **`05845e3`**（2025-10-03）· PyPI 包名 **`pyrtklib5` 0.2.8** · 导入名 `pyrtklib5` · 内核 `VER_RTKLIB="EX"` / `PATCH_LEVEL="2.5.0"` · 本机 Python **3.13.5** · **2026-09-26 00:46–00:54 EDT** 实跑：仓内 F9P+BRDC `postpos` SPP **2304** 历元全 Q=5；RTKLIB 测试集 GSI 0759/3040 RTK **115** 历元 Q1=**102**/Q2=**13**，首 fix ratio **50.4**；ALGO PPP-static（借 [ppp-rtklib](./ppp-rtklib.md) 数据）**2880**×Q6
+目录：[`PROJECTS.json` → `pyrtklib_demo5`](../../PROJECTS.json) · 上游 <https://github.com/IPNL-POLYU/pyrtklib_demo5> · 许可 **MIT**（绑定层；内嵌 RTKLIB 源码另受 Takasu **BSD-2-Clause**）· tip **`05845e3`**（2025-10-03）· PyPI 包名 **`pyrtklib5` 0.2.8** · 导入名 `pyrtklib5` · 内核 `VER_RTKLIB="EX"` / `PATCH_LEVEL="2.5.0"` · 本机 Python **3.13.5** · **2026-09-26 00:46–00:54 EDT** 实跑：仓内 F9P+BRDC `postpos` SPP **2304** 历元全 Q=5；RTKLIB 测试集 GSI 0759/3040 RTK **115** 历元 Q1=**102**/Q2=**13**，首 fix ratio **50.4**；ALGO PPP-static（借 [ppp-rtklib](./ppp-rtklib.md) 数据）**2880**×Q6 · **质检复跑**（2026-09-26 01:00–01:03 EDT，pip 实装 **0.2.8**，`EX 2.5.0`，`PMODE_PPP_STATIC=8`）：`example_pntpos.py` **2333** 行+`done`、首 3 行/末行逐字一致、`test.log` **183003715** B；`run_demo5.py` F9P **2304**×Q5、GSI **115**/Q1 **102**/Q2 **13**、ref pos 与前 5 历元逐字一致、首 fix ratio **50.4**（与 [rtklib-explorer](./rtklib-explorer.md) C 版记录一致）；PPP `loadopts=1`、`mode 8 ionoopt 3 tropopt 3`、**2880**×Q6、末历元 `201.0317` 逐字一致；坑 1（`FileWrapper` already registered）、坑 2（`prcopt_default` 全局引用）、坑 7（`filopt_t` 无 setter）复现。改 1 处：`.pyi` 实为 **6468** 行（原稿“约 5.5k”）。墙时本机共享负载波动大（SPP+RTK 0.92 s、pntpos 7.8 s），仅供参考
 
 > 岗位：在 Python 里调用 **rtklibexplorer 版（demo5 → EX 2.5.0）** 的 C 核心：`readrnx` / `pntpos` / `postpos` / RTCM 解码等。冲突时：**本机 `pyrtklib5.pyi` 函数签名 > 上游 readme > 本文**。
 
@@ -49,7 +49,7 @@ Successfully installed numpy-2.5.3 pandas-3.0.6 pyrtklib5-0.2.8 python-dateutil-
 EX 2.5.0
 ```
 
-安装后目录只有 `__init__.py`、`pyrtklib5.so`、`pyrtklib5.pyi`：**查函数签名就翻 `.pyi`**（约 5.5k 行）。
+安装后目录只有 `__init__.py`、`pyrtklib5.so`、`pyrtklib5.pyi`：**查函数签名就翻 `.pyi`**（0.2.8 实测 **6468** 行）。
 
 ### 2.2 源码（无匹配轮子时）
 
