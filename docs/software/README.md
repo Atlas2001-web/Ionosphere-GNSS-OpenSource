@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **221 篇**操作手册（合计 **50805 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **223 篇**操作手册（合计 **51208 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -246,6 +246,8 @@
 | 219 | [digisondeindices.md](./digisondeindices.md) | sunipkm/digisondeindices：GIRO DIDBase 测高仪参数（foF2/MUF(D)/hmF2/B0/TEC/CS）按月下载→NetCDF 缓存→xarray；**PyPI 2.1.0 原样失效**（DIDBGetValues 404），附运行时补丁 `didb_fix.py` 改写到 fastchar/getbest | 259 | **已短硬** 用法讲解新入库 · 2026-09-26 05:01–05:07 EDT；2.1.0/master `2a37ab3`/MIT/★2；需补 pytz+dask+pandas<3、Python≥3.12；MHJ45 2022-01-25 05:00 foF2 **2.0**/MUF(D) 6.116/hmF2 308.9/TEC 0.6 TECU 与 curl 原始行一致；2022-01 **8633** 行；当月刷新/forcedownload `NoneType.stem` 崩溃（先 purge）、UTC 以西时区最近 4 h 误判“预测”、跨月重复时刻、nearest 无容差 |
 | 220 | [gim-product-portals.md](./gim-product-portals.md) | GIM/IONEX 各分析中心匿名门户（CAS 汇总镜像、CODE/AIUB S3、UPC、ESA、JPL sideshow；CDDIS 需 Earthdata）、新旧文件名对照、最终/快速/预报/实时实测时延、2024-05-11 各中心对 CODE 逐格点均差/RMS | 399 | **已短硬** · 2026-09-26 05:00–05:10 EDT；对 CODE 面积加权 RMS：IGS 3.30 / WHU 4.40 / JPL 4.99 / CAS 6.71 / UPC 7.54 / ESA 8.88 / EMR 15.77 TECU；ESA 源站同名文件为重处理版；IGN/BKG/WHU/KASI/GSSC 本次不通 |
 | 221 | [geomagindices.md](./geomagindices.md) | space-physics/geomagindices：按时刻取 Ap/F10.7/Kp 的 pandas 小库（msise00 自动取指数靠它）；**1.5.1 原样静默给错值**：NGDC FTP 日值源 550 → 退回月均、无 Kp；45 天预报 URL 404（运行时改名补丁）；20 年预报表 Ap/F10.7 互换；月均合并顺序随 PYTHONHASHSEED 变；附 GFZ Kp API 直连替代 | 188 | **已短硬** 用法讲解新入库 · 2026-09-26 05:09–05:13 EDT；1.5.1/main `1c76774`/MIT/★17；2024-05-11 返回 Ap 24/F10.7 188.37（GFZ 定值 Ap 271、Fobs 213.7）；Kp 峰 9.000 @05-11 00Z；45 天 27Sep26 Ap 10/F10.7 95 与原文件一致 |
+| 222 | [darntids.md](./darntids.md) | Frissell/HamSCI SuperDARN MSTID 工具包（现行 w2naf-academia 仓；PROJECTS 旧址已弃用）：FITACF 地面散射 → GS 映射 → auto_range → 插值/0.3–1.2 mHz FIR/去趋势/加窗/补零 → FFT → MUSIC 水平波数谱 → 峰检测出 λ/方位/主频/相速度 → HDF5 + 16 张分步图；批量 MSTID 指数分类/日历图需 MongoDB | 183 | **已短硬** 用法讲解新入库 · 2026-09-26 04:05–04:20 EDT；PyPI **0.2.0**/main `6effcd0`/GPL-3.0（README 末尾误写 MIT）/★2；**必须钉 pydarn 4.1.2 + pydarnio 1.3**（默认 pydarnio 2.1 `SDarnRead` 崩）；pytest 19 passed；Zenodo 7005203 SAS 2012-11-01 20–22 UT 单事件 MUSIC：auto_range 门 29–43，42 个峰，首峰 λ 245 km/Azm 39°/Value 0.783；PGR 2016-01-25 14 峰；仅 2 h 文件 → 有效窗 56 min、通带只 3 个频点（f 全为 0.893 mHz），不构成 MSTID 结论；Mongo 批处理未跑 |
+| 223 | [tidd.md](./tidd.md) | JPL/Sapienza/UCLA：GPS 单站单星 dsTEC/dt（TECU/s）文本 → 1 min 均值 → 60 min 滑窗 GAF 图（代码实为 GASF）→ fastai ResNet 二分类 anomalous/normal → 样本外整段 TP/FN/FP；无预训练模型、不读 RINEX | 220 | **已短硬** 用法讲解新入库 · 2026-09-26 04:05–05:15 EDT；main `cd15176`/无 PyPI/Apache-2.0/★10；S3 19.2 GB tar 用 Range 只流前 2.8 GB；Py3.11 + `pandas<3`（pandas 3 静默 0 段）+ PYTHONPATH（setup 空包）+ accelerate + hyperdash 桩；pytest 10 passed；训夏威夷 302 4 站 20 弧（14 109 张图）resnet18 2 epoch CPU 62 min；上游样本外 tp=0（datetime 减 60 ns bug）、训练 precision/recall 互换；按行位置重算智利 259 4 站 12 弧 tp 5/fn 7/fp 29，F1 0.217 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -472,6 +474,8 @@
 | 子午工程数据（DOI/CSTR 查询、不登录可见的元数据与文件清单、登录门槛、致谢与报送规则） | [meridian-data.md](./meridian-data.md) |
 | 单站 1 Hz/30 s RINEX 看 sTEC 变化率 / 海啸型 TID（VARION，Python 2.7） | [varion.md](./varion.md) |
 | SuperDARN HF 雷达 RTI / 扇形图 / 极区对流图（FITACF/MAP；TID 斜纹、对流速度） | [pydarn.md](./pydarn.md) |
+| SuperDARN 地面散射 MSTID：MUSIC 求波长/方向/相速度（单事件免 MongoDB；须钉 pydarn 4.1.2） | [darntids.md](./darntids.md) |
+| GPS dsTEC/dt 滑窗成图 + CNN 判海啸/地震 TID（自训模型；无预训练权重） | [tidd.md](./tidd.md) |
 | Swarm 卫星原位 RODI / 顶部 TEC ROTI（LP+POD；CC BY-NC-SA） | [titipy.md](./titipy.md) |
 
 ---
@@ -512,6 +516,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
+最近新增（用法讲解）：**darntids**+**tidd**（[darntids.md](./darntids.md) / [tidd.md](./tidd.md)；2026-09-26 04:05–05:15 EDT；DARNtids PyPI 0.2.0/`6effcd0`/GPL-3.0：PROJECTS 旧址 w2naf/DARNtids 已弃用；pyDARNmusic 0.2.0 须 pydarn 4.1.2+pydarnio 1.3；Zenodo 7005203 SAS 2012-11-01 单事件 MUSIC 42 峰（首峰 λ 245 km/39°），短窗频率量化为 3 点，Mongo 批处理未跑；tidd `cd15176`/Apache-2.0：S3 19.2 GB 只 Range 流前 2.8 GB，resnet18 自训 2 epoch，上游样本外 tp=0 为时间戳 bug、训练 precision/recall 互换、代码实为 GASF，行位置重算 F1 0.217）。
 最近新增（用法讲解）：**BiScEF**（[biscef.md](./biscef.md)；2026-09-26 04:52–05:03 EDT；main `90e6a2b`/无 tag/MIT/★2/不在 PyPI；实为 NetCDF4/HDF5；FINHEL0 82601 行/NORTRO2 43260 行，h5py/netCDF4/pyfive 7 文件逐值 0 差；ISMR 往返 59/65 全等、非逐字节；NOR UNIXTime=GPS 时、FMI/UNB 旧脚本晚 27 s；Zenodo 15045918 NORTRO2 2024-05-11 σφ>0.3 rad 2238；下一优先 ppp-tools，go-gnss-spartn 留候选）。
 最近新增（用法讲解）：**rtcm / @gnss/rtcm**（[gnss-rtcm-ts.md](./gnss-rtcm-ts.md)；2026-09-26 04:41–04:48 EDT；npm 0.1.5/master `96108e4`/无 tag/GPL-3.0-or-later/★48/Node v20.19.2；RTKLIB `180043e` GMSD7 1143 帧/19558 cell、testglo 429 帧与 pyrtcm 1.2.0 计数全等，1005/1019/1020/1004/1012 0 差；MSM 卫星/信号字段按卫星逐颗读致解错、编码同构错故往返一致；32 位卫星掩码、Unknown 类型号/编码、流解码尾部丢消息与 closeOnError 终止；下一优先 BiScEF，go-gnss-spartn 留候选）。
 最近新增（用法讲解）：**EarthScope-gnsstools**（[earthscope-gnsstools.md](./earthscope-gnsstools.md)；2026-09-26 04:26–04:38 EDT；tag v0.111.0/`30b776a`/Apache-2.0/★6/Go ≥1.26；WTZR 2026-258 转 3.05 `--doppler` 1791283 值 Δ=0、CRX 与 RNXCMP 数值全等；GMSD7 RTCM3 1143 帧 = pyrtcm；默认丢 D、丢头、PHASE SHIFT 清零、自产 CRX 被 RNXCMP 静默解错、NovAtel 负多普勒 +2²⁰ Hz；下一优先 rtcm（Node-NTRIP），go-gnss-spartn 留候选）。
@@ -697,7 +702,9 @@ data-access
    ├─ lstid-processing (NRL LSTID：CINDI 带通+identify_tid / SAMI3 极值拟合；非 GNSS TEC)
    ├─ hamsci-lstid-detection (Madrigal HF spot 跳距边缘→LSTID 周期/振幅；12–24 UTC)
    ├─ varion (单站 GPS sTEC 变化率→dsTEC+IPP；海啸/TID；Py2.7)
+   ├─ tidd (dsTEC/dt 文本→60 min GAF 图→ResNet 判 TID；自训；pandas<3)
    ├─ pydarn (SuperDARN FITACF/MAP → RTI/扇形/对流图；门号→经纬度对 GNSS IPP)
+   ├─ darntids (SuperDARN 地面散射→MUSIC k 谱→MSTID λ/方位/速度；批量需 MongoDB)
    ├─ titipy (Swarm LP/顶部 TEC → RODI/ROTEI/ROTI；10 s 窗；须补丁；CC BY-NC-SA)
    ├─ pyglow (IRI 气候态对照)
    ├─ iri2016 (IRI-2016 → xarray)
@@ -765,7 +772,7 @@ saga-utils：高速 I/Q 闪烁算法旁路（源码参考；S4 为幅度版≈�
 | 03 / 10 / 18 | ionex · ionex-gim · ionex-rs · diffionmap · sh-gim(边界) · pyglow · mosgim2 · spinifex |
 | 04 | iri-fortran · iri-2026-package · iri-common-files · iri2016 · pyglow · pyiri · pyirtam · apexpy · aacgmv2 · msise00 · nequickg · galileo-nequick-g · nequick2-ictp · kamodo |
 | 05 / 13 / 21 | oasis-roti · ionomoni · iono-scintillation · saga-utils · geospacelab · sami2py |
-| 22 | gnss-tec · pytecgg · oasis-roti · lstid-processing · hamsci-lstid-detection · pyrayhf |
+| 22 | gnss-tec · pytecgg · oasis-roti · lstid-processing · hamsci-lstid-detection · pyrayhf · darntids · tidd |
 | 06 / 20 | cssrlib · haslib · madocalib · qzsl6tool · laika · gnss_lib_py · pyrtklib · pyrtklib-demo5 · pyrtklib-rinex · ppp-rtklib · learning-rtklib · mrtklib · rtklib-explorer · rtklib-b2b · android_rinex · gps-measurement-tools · pygpsclient · pynmeagps · pyubx2 · ubx2rinex · pyrtcm · pyspartn · pysbf2 · septentrio-gnss-driver · ublox-dgnss · ublox-driver · ntripstreams · ntrip-client · ntripclient · ntripserver · cors-relay · ntripcaster-libev · ntrip-cpp · ntrip-go · caster · glab-upc · rtklib · great-pvt · groops · rapppid · ppp-wizard · gogps-matlab · gsilib · rtppp-b2b · pride-pppar · ionomoni · gnss-sdr · pocketsdr · gps-sdr-sim · fgi-gsrx · gnssrefl · mpsim |
 | 09 | pytecgg |
 
