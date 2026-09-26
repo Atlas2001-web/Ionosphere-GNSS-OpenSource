@@ -485,7 +485,7 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 | [HPRTK](https://github.com/yxw027/HPRTK) | HPRTK：高精度实时定位 C++ 工程参考 | C++ | 17 | 🏷️ 高校实验室 |
 | [RTK](https://github.com/GYH-WHU/RTK) | RTK：GPS/BDS 双系统浮点/固定 RTK 教学实现 | C++ | 11 | 🏷️ 高校实验室 |
 | [Qelaro](https://github.com/atoofihub/Qelaro) | 面向教学与可复现的 Python GNSS 双差基线解算工具箱（CLI+GUI） | Python | 10 | 🏷️ 个人社区 |
-| [GNSSRTK](https://github.com/SupakunZ/GNSS_RTK) | GNSSRTK：AGV 路径规划与车载显示的 GNSS-RTK 程序 | Python | 3 | 🏷️ 个人社区 |
+| [GNSSRTK](https://github.com/supakunz/GNSS_RTK) | GNSSRTK：AGV 路径规划与车载显示的 GNSS-RTK 程序 | Python | 3 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -531,7 +531,7 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 
 个人开发者发布的 Python GNSS/大地测量工具箱，MIT 许可并有 Zenodo DOI。首个版本聚焦基于 RINEX 观测、导航文件与 SP3 的双差基线最小二乘解算，提供命令行与 Web 图形界面（NestJS 前端 + FastAPI 服务），另含 SPP（Klobuchar/NeQuick-G 电离层改正）、LAMBDA 模糊度固定与 Melbourne-Wübbena 周跳探测等模块，并配有观测模型、差分策略与平差理论文档。代码透明、带测试 CI，适合课程作业或理解 RTK 原理，而非替代 RTKLIB 等成熟引擎。项目较新、星标不多，功能以文档声明为准。
 
-#### [GNSSRTK](https://github.com/SupakunZ/GNSS_RTK)  
+#### [GNSSRTK](https://github.com/supakunz/GNSS_RTK)  
 *🏷️ 个人社区*
 
 语言：Python · 许可：— · 星标约：3 · 宿主：github

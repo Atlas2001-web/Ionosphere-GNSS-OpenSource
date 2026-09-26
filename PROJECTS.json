@@ -3355,7 +3355,7 @@
     },
     {
       "name": "GNSSRTK",
-      "url": "https://github.com/SupakunZ/GNSS_RTK",
+      "url": "https://github.com/supakunz/GNSS_RTK",
       "desc_zh": "侧重自动驾驶演示路线与 HMI；非通用测地 RTK 引擎",
       "analysis_zh": "面向自动导引车（AGV）的 GNSS-RTK 应用：读取 SimpleRTK 等板卡数据，生成高精度行驶路径、地图标绘、到目标点距离，并设计车载显示界面。适合室外 AGV/机器人导引原型。归类为精密定位而非对流层或 GNSS-IR；RTK 解算深度不及 RTKLIB，强项在路径业务与人机界面集成。改正数链路与板卡配置需按 ArduSimple 等厂商文档准备。",
       "language": "Python",
@@ -12676,7 +12676,7 @@
     },
     {
       "name": "SparkFun_u-blox_GNSS_v3",
-      "url": "https://github.com/SparkFun/SparkFun_u-blox_GNSS_v3",
+      "url": "https://github.com/sparkfun/SparkFun_u-blox_GNSS_v3",
       "desc_zh": "SparkFun：经 Configuration Interface 驱动模块",
       "analysis_zh": "面向嵌入式/创客的 Arduino 库，用 u-blox Configuration Interface 配置与读取模块，便于采集原始测量或 NMEA。适合低成本接收机原型与教学；不是精密定位引擎，高级 RTK/PPP 仍需配合基站与解算软件。",
       "language": "C++",
