@@ -1384,7 +1384,7 @@ GSI terras 站点上关于 SFTP 获取电子基准点观测、日坐标、IGS �
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-巴西国家地理统计局 RBMC 连续监测网介绍页，是获取巴西 CORS/RINEX 的官方入口之一。南美电离层与低纬闪烁研究常用。实际文件下载常转到 IBGE 数据服务子站，请按页面当前链接注册或检索。
+巴西国家地理统计局 RBMC 连续监测网介绍页，是获取巴西 CORS/RINEX 的官方入口之一。南美电离层与低纬闪烁研究常用。实际日观测文件在 IBGE geoftp 的 rbmc/dados_RINEX3/年/年积日/ 下匿名公开（15 s CRINEX，2026-09-26 实测 2024/132 共 84 站、最新日上架约 10–23 h），另有 REST API；本页只是说明入口。
 
 #### [IBGE-RBMC-API](https://servicodados.ibge.gov.br/api/docs/rbmc?versao=1)  
 *🏷️ 官方*
@@ -1842,7 +1842,7 @@ NGL GPS Networks Map，可点击站点查看站信息，便于浏览 MAGNET 与�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-Nevada Geodetic Laboratory 主页，发布全球 GPS 站时序、应变率、垂直运动与 MAGNET 等网络信息，是学术界常用的开放坐标时间序列来源之一。配套站列表/地图与出版物入口；处理策略与引用方式见站内说明。适合形变与参考框架研究，非官方 CORS 原始 RINEX 替代，原始观测仍应回 IGS/区域网。
+Nevada Geodetic Laboratory 主页，用 GipsyX 发布全球约 2.4 万站的 GPS 日/5 分钟坐标时序、5 分钟 ZTD/PWV、MIDAS 速度与阶跃库，HTTPS 匿名静态文件。实测 Plug and Play 页的 IGS14 直链多已 404，须按站点页用 gps_timeseries/IGS20/ 路径且站名大写；http 端口不响应。最终解约 2 周延迟。原始 RINEX 仍回 IGS/区域网。docs/software/unr-ngl.md 有实测手册。
 
 ## 海平面
 

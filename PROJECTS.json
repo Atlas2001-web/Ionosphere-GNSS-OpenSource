@@ -12874,7 +12874,7 @@
       "name": "IBGE-RBMC",
       "url": "https://www.ibge.gov.br/en/geosciences/geodetic-network/2421-rbmc.html",
       "desc_zh": "巴西 IBGE RBMC：连续 GNSS 监测网数据说明",
-      "analysis_zh": "巴西国家地理统计局 RBMC 连续监测网介绍页，是获取巴西 CORS/RINEX 的官方入口之一。南美电离层与低纬闪烁研究常用。实际文件下载常转到 IBGE 数据服务子站，请按页面当前链接注册或检索。",
+      "analysis_zh": "巴西国家地理统计局 RBMC 连续监测网介绍页，是获取巴西 CORS/RINEX 的官方入口之一。南美电离层与低纬闪烁研究常用。实际日观测文件在 IBGE geoftp 的 rbmc/dados_RINEX3/年/年积日/ 下匿名公开（15 s CRINEX，2026-09-26 实测 2024/132 共 84 站、最新日上架约 10–23 h），另有 REST API；本页只是说明入口。",
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
@@ -12887,8 +12887,8 @@
       "host": "official_site",
       "provenance": "official",
       "one_liner_zh": "巴西 IBGE RBMC 连续 GNSS 网",
-      "registration": "form_register",
-      "registration_zh": "阅读 RBMC 页后的下载/服务链接；多数产品需在 IBGE 相关系统注册后获取，以站点当前流程为准。"
+      "registration": "open",
+      "registration_zh": "RBMC 日观测经 geoftp 与 REST API 匿名下载，无需注册（2026-09-26 实测，见 docs/software/cors-networks.md）；IBGE 其他在线服务以各自页面为准。"
     },
     {
       "name": "IGS-Files-CDN",
@@ -14808,7 +14808,7 @@
       "name": "UNR-NGL",
       "url": "https://geodesy.unr.edu/",
       "desc_zh": "内华达大学 Reno 大地测量实验室（NGL）：全球 GPS 时序与产品",
-      "analysis_zh": "Nevada Geodetic Laboratory 主页，发布全球 GPS 站时序、应变率、垂直运动与 MAGNET 等网络信息，是学术界常用的开放坐标时间序列来源之一。配套站列表/地图与出版物入口；处理策略与引用方式见站内说明。适合形变与参考框架研究，非官方 CORS 原始 RINEX 替代，原始观测仍应回 IGS/区域网。",
+      "analysis_zh": "Nevada Geodetic Laboratory 主页，用 GipsyX 发布全球约 2.4 万站的 GPS 日/5 分钟坐标时序、5 分钟 ZTD/PWV、MIDAS 速度与阶跃库，HTTPS 匿名静态文件。实测 Plug and Play 页的 IGS14 直链多已 404，须按站点页用 gps_timeseries/IGS20/ 路径且站名大写；http 端口不响应。最终解约 2 周延迟。原始 RINEX 仍回 IGS/区域网。docs/software/unr-ngl.md 有实测手册。",
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
@@ -14822,7 +14822,9 @@
       "user_relation": "none",
       "host": "official_site",
       "provenance": "academic_lab",
-      "one_liner_zh": "UNR NGL：全球 GPS 时序与形变产品门户"
+      "one_liner_zh": "UNR NGL：全球 GPS 时序与形变产品门户",
+      "registration": "open",
+      "registration_zh": "全部产品 HTTPS 匿名下载，无需注册（2026-09-26 实测）。"
     },
     {
       "name": "JPL-GPS-Time-Series",
@@ -20354,7 +20356,7 @@
       "language": "Rust",
       "license": "MPL-2.0",
       "category": "gnss-data",
-      "subcategory": "RINEX读写",
+      "subcategory": "格式编解码",
       "markers": [
         "routine-2026-09-26d"
       ],

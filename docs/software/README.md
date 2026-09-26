@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **250 篇**操作手册（合计 **57278 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **251 篇**操作手册（合计 **57450 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -275,6 +275,7 @@
 | 248 | [um980-rtklib-pipeline.md](./um980-rtklib-pipeline.md) | holubp/um980-rtklib-pipeline：UM980 混合串口日志（NMEA + Unicore ASCII/二进制）→ 干净 NMEA/解算轨迹/观测 CSV/RINEX 3.04 OBS + 接收机星历 NAV，再拼 `rnx2rtkp` 跑 PPK（CLI `um980-ppk`）；不走 convbin；不解 OBSVBASEA/KSXT | 204 | **已短硬** 用法讲解新入库 · 2026-09-26 06:06–06:18 EDT；main `25d9546`/无 tag/GPL-3.0/★1；JHua07 公开 UM98x 日志：RINEX 对 OBSVMA 45880/45880、|ΔL|≤0.0005 周；OBSVBASEA 改名作基准站 + BKG BRDC，RTKLIB-EX 2.5.1 + onepass conf Q1 585/622，对 GGA 固定水平中位 26.1 mm、dU +132 mm；坑：RMC `D` 致 all.nmea 清空、默认 native 折行 RINEX 不可读、无 conf 错固定、LLI 恒 0、RTKLIB 0 解 exit 0；真接收机未测 |
 | 249 | [inscar.md](./inscar.md) | engeir/inscar：非相干散射雷达（ISR）**理论**功率谱（Hagfors/Mace）：给 Ne、Te、Ti、离子质量、雷达频率、磁场、视线夹角 → 离子线谱；麦克斯韦/kappa/任意各向同性 VDF；不读实测、不拟合 | 201 | **已短硬** 用法讲解新入库 · 2026-09-26 06:14–06:20 EDT；PyPI 3.3.2/main `eedbe1e`/MIT；933 MHz、Ne 3e11 m⁻³、Ti 1000 K、O⁺：Te/Ti=1/2/3 → 肩峰 6.14/9.26/10.84 kHz、肩/谷 1.13/1.78/2.77、总功率比 1.000/0.657/0.489（理论 2/(1+Te/Ti) 1/0.667/0.5）；坑：mass 实为 kg（README 写 u）、离子 Ne 默认 2e11、float32 被拒、f=0 NaN、默认 ±2 MHz 太粗；等离子体线/kappa/IntLong 未实跑 |
 | 250 | [polan.md](./polan.md) | space-physics/POLAN：Titheridge 经典 Fortran，电离图虚高 h′(f) → 真高剖面 + 各层 foE/hmE、foF2/hmF2、标高、板厚与误差；CMake 独立可执行 / meson f2py Python 接口 | 247 | **已短硬** 用法讲解新入库 · 2026-09-26 06:14–06:20 EDT；main `23c0056`/MIT/无 PyPI；gfortran 14.2 + CMake 3.31 ctest 过；示例 27 电离图 out.dat 707 行与仓内逐行一致（除头行）；Chapman 1A（真值 HM 300/SH 60）→ 6.999 MHz/299.7 km/59.6 km；坑：无 `-std=legacy` 编不过、列错位 exit 0 出错值、Tab、`-1` 结尾时末条 PEAK 是 E 层、out.dat 固定覆盖、Python 接口 dip=0；真实 SAO 全流程未实跑 |
+| 251 | [unr-ngl.md](./unr-ngl.md) | UNR Nevada Geodetic Lab 匿名产品：全球约 2.4 万站 GPS 日坐标 tenv3（最终/快速）、5 分钟 kenv、5 分钟 SINEX TRO（ZTD/PWV）、MIDAS 速度、阶跃库、站点清单；路径拼装与字段 | 172 | **已短硬** · 2026-09-26 06:21–06:26 EDT；P090 tenv3 6759 天至 2026-09-12（快速解至 09-24），MIDAS E −20.29/N −5.90/U −0.82 mm/yr；2024-132 trop 288 历元 ZTD 1971.9–1984.4 mm、PWV 6.11–8.06 mm；坑：Plug and Play 页 IGS14 直链 404、http 挂起、站名须大写、梯度两列互换、2026 trop zip 未生成 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -512,6 +513,7 @@
 | DMSP 原位等离子体 / SSUSI 极光与 TIMED GUVI 数据不登录去哪拿、哪年有、CDF/HDF5/netCDF3 怎么读 | [dmsp-timed-data.md](./dmsp-timed-data.md) |
 | 极光 / 630 nm 气辉全天空图像（THEMIS、REGO、MANGO）不登录去哪拿、怎么读、像素怎么定位 | [allsky-imager-data.md](./allsky-imager-data.md) |
 | 美国 CORS（NCN）RINEX 批量下载、小时文件时延、站坐标（ITRF2020 vs NAD 83）、UFCORS 任意时段 | [noaa-ncn-data.md](./noaa-ncn-data.md) |
+| 某个 GNSS 站的每日 / 5 分钟坐标、5 分钟 ZTD/水汽、速度和阶跃不登录去哪拿（UNR NGL；用 IGS20 路径、站名大写、只用 https） | [unr-ngl.md](./unr-ngl.md) |
 | 欧洲 EPN/RENAG/RGP 台站检索、按站按日拿 RINEX 下载 URL 和 md5、IGS 站点日志 | [epos-glass-api.md](./epos-glass-api.md) |
 | 读/交换多机构闪烁 HDF5 文件（Kartverket/FMI/DTU/UNB 的 BiScEF `.nc`，S4/σφ/ROTI；先核时间基准与缺测值） | [biscef.md](./biscef.md) |
 | SuperDARN 原始数据下载（FRDR RAWACF、Globus/BAS/VT 镜像门槛、sha1+bz2 校验、使用规则） | [superdarn-data.md](./superdarn-data.md) |
