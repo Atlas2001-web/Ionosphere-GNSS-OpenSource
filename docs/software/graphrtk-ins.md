@@ -2,6 +2,7 @@
 
 目录：[`PROJECTS.json` → `GraphRTK-INS`](../../PROJECTS.json) · 上游 <https://github.com/GREAT-WHU/GraphRTK-INS> · 许可：GitHub 未识别（`license: null`），`doc/*.pdf` §3.2 写 **GPL-3.0** · ★**84** · tip **`25cf011`** = tag **`v1.1-beta`**（2026-07-23 02:22 EDT；另有 `v1.0-beta`）· README 自称 **GREAT-FGO 1.0 (Beta)** · 本机：Debian g++ **14.2.0** / CMake **3.31.6** 源码编译（**无 Linux 二进制**；需自编 **Ceres 1.14** + **2 处补丁**）· 样例 `FGO_20211012` 城市车载 1 h：RTK-FGO 与 TC-RTK/INS-FGO 两份 XML **exit 0** · 2026-09-26 00:40–01:31 EDT
 
+> **质检复跑通过**（2026-09-26 01:50–02:40 EDT，在 `/tmp` 另起目录，从零编 Ceres 1.14 并按本文编本仓）：tip、tag、★、sample rar 96060302 B、7z 报 17 个 `Unsupported Method`、bsdtar 解压、门 2 的 `Eigen/Dense` 报错、打补丁 A 后 6 个二进制的字节数、RUNPATH、缺 libceres 时 exit 127、`-h`/`-X`/`-x` 行为、不打补丁 B 时 RTK exit 134（`_M_create`），均与文中一致。RTK 与 TC 两份 XML 均 exit 0，精度统计**与文中逐位相同**。修正：门 2 的用时 21 s 实为 1.6 s；补充复现到的不打补丁 A 时的链接错误（原文写“未复现”）；补充 `-Wreturn-type` 全仓复扫结果；说明在同一台机器上、不同时间与负载下 RTK/TC 统计可逐位复现。
 > 岗位：**因子图（滑窗 + 边缘化）** 的 RTK 与 RTK/INS 紧耦合（IMU **预积分因子**），Ceres 求解，XML 驱动；与滤波版 [great-msf](./great-msf.md) 同源同 XML 风格。冲突时：**本机 `-h` / `doc/GraphRTK-INS说明文档 1.0.pdf` > 本文**。
 
 **质检边界：** 只跑了 `FGO_20211012` 一个包（`FGO_20250928.rar` 未跑）；未跑 `plot/*.py`、未测 GLFW 窗口。精度数字是**本机自写脚本**把 `.fgo`/`.ins` 与包内 `ref/groundtruth_*.txt` 按周内秒逐秒比对所得，**不是**上游公布值；包内还附了**上游在 Windows 上跑出的 `result/`**，本文把它当第二参照。
@@ -52,7 +53,7 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DBUILD_EXAMP
 cmake --build build -j8 && cmake --install build        # → ceres114/lib/libceres.so.1.14.0
 ```
 
-**门 2：原样编译第一步就挂（本机实测，21 s）：**
+**门 2：原样编译第一步就挂（本机实测；质检复跑时 configure+build 1.6 s 即报错）：**
 
 ```text
 src/LibGnut/gutils/gtriple.h:26:10: fatal error: Eigen/Dense: No such file or directory
@@ -69,9 +70,14 @@ src/LibGnut/gutils/gtriple.h:26:10: fatal error: Eigen/Dense: No such file or di
 	target_link_libraries(${PROJECT_NAME} ${CERES_LIB} glog gflags ${GLFW_LIB} OpenGL::GL)
 ```
 
-（Linux 分支原本不链 Ceres/GLFW/GL；GLFW/GL 与 great-msf 同病。本机是先打补丁再编，未单独复现"不打补丁时的链接报错"。）
+（Linux 分支原本不链 Ceres/GLFW/GL；GLFW/GL 与 great-msf 同病。**质检复跑已复现不打补丁 A 的情形**：`libLibGREAT.so`/`libLibGnut.so` 能编出，但 4 个可执行 GREAT_PVT/MSF/PVTFGO/GINSFGO 全部链接失败（`collect2: error: ld returned 1 exit status`），共 236 行 `undefined reference`，其中 ceres 68 行、glfw 60 行，其余是 `glPointSize`/`glMultMatrixd` 等 gl 符号，例如：）
 
-**补丁 B（运行期崩溃，必须）**：`src/LibGREAT/gfgognss/gpvtfgo.cpp` 的 `bool t_gpvtfgo::_set_satdata(...)` 末尾缺 `return`（`g++ -fsyntax-only -Wreturn-type` 全仓扫只此 1 处）。GCC `-O3` 把"落出非 void 函数"当不可达 → RTK 第一历元即：
+```text
+/usr/bin/ld: .../Lib/libLibGREAT.so: undefined reference to `ceres::Problem::AddParameterBlock(double*, int, ceres::LocalParameterization*)'
+/usr/bin/ld: .../Lib/libLibGREAT.so: undefined reference to `glPointSize'
+```
+
+**补丁 B（运行期崩溃，必须）**：`src/LibGREAT/gfgognss/gpvtfgo.cpp` 的 `bool t_gpvtfgo::_set_satdata(...)` 末尾缺 `return`（`g++ -fsyntax-only -Wreturn-type` 全仓扫只此 1 处；质检按 `compile_commands.json` 复扫 191 个编译单元：未改的原文件只在 `gpvtfgo.cpp:407` 报 `no return statement in function returning non-void`，打上补丁 B 后为 0 处）。GCC `-O3` 把"落出非 void 函数"当不可达 → RTK 第一历元即：
 
 ```text
 terminate called after throwing an instance of 'std::length_error'
@@ -161,6 +167,7 @@ Spent1113.994 seconds.
 
 - 末 2 历元（203700/203701）GNSS 已结束、纯 INS 外推，本机误差 ~30 m；全 3702 行 RMS 为 0.691 m，统计时去掉。
 - 本机 vs 上游逐秒差：RTK p50 **0.014 m**、p95 0.531 m；TC p50 0.029 m。**中位数几乎一致，差异集中在模糊度固定与否的历元**。
+- **质检复跑（2026-09-26 01:50–02:17 EDT，另起目录独立编 Ceres 1.14 与本仓并打同样两处补丁）得到的统计与上表逐位相同**：RTK Fixed 3127/Float 519，RMS/p50/p95/max 0.678/0.114/1.340/20.679，仅 Fixed 0.367/0.102/0.630，首个 Fixed 在 sow 200003（ratio 2.16），`.fgo` 788037 B；TC Fixed 3110/Float 592、MeasType 3668/34，≤203699 为 0.414/0.108/0.993/4.137，仅 Fixed 0.305，全 3702 行 RMS 0.691，`.ins` 914894 B。墙钟时间：RTK 8m59.9s（`Spent536.273`，stdout 109877972 B / 4159176 行），TC 18m47.5s（`Spent1121.215`）。用同一脚本重算上游 `result/` 也与上表一致。这次复跑和作者的运行在同一台机器上，只是时间和负载不同；此时 `max_solver_time` 截断**没有**让统计结果发生变化。和上游的差异更可能来自平台或依赖（Windows/MSVC、Eigen 3.3.5 等）。换一台 CPU 不同的机器是否仍能逐位复现，没有测过。
 - 本机 TC 比上游差，**推测**主因是 `<max_solver_time> 0.08 </max_solver_time>`（Ceres 墙钟上限）：本机单历元 ~200 ms、机器负载高，求解被截断，结果随 CPU 变——**FGO 结果不可逐位复现**（§7 坑 9）。另有 Eigen 3.4 vs 仓内 3.3.5、Ceres 无 SuiteSparse 等差异。
 - 比对脚本（自写）：`round(sow,2)` 配对，`.fgo`/`.ins` 第 2–4 列 vs GT 第 3–5 列（GT 第 1 列是 GPS 周）。
 
@@ -215,7 +222,7 @@ Spent1113.994 seconds.
 | 6 | RTK 第一历元 `std::length_error ... _M_create`，exit 134 | `_set_satdata` 缺 `return`，GCC -O3 UB | 补丁 B：加 `return true;` |
 | 7 | 跑完把上游 `result/` 覆盖了 | 输出名与包内参考同名 | 先 `mv result result_upstream` |
 | 8 | 路径全找不到 / 结果空 | XML 里 `.\GNSS\...` 反斜杠；路径相对 cwd | `sed 's#\\#/#g'`；在包根目录跑 |
-| 9 | 同 XML 两次/两台机器结果不同，固定率低于上游 | `max_solver_time 0.08 s` 是**墙钟**上限，慢机/高负载被截断 | 评精度时调大并记录（本机试 1.0 s：~75 历元/min，1 h 数据约 50 min，未跑完）；别拿单次结果做逐位回归 |
+| 9 | 同 XML 两次/两台机器结果不同，固定率低于上游 | `max_solver_time 0.08 s` 是**墙钟**上限，慢机/高负载被截断 | 评精度时调大并记录（本机试 1.0 s：~75 历元/min，1 h 数据约 50 min，未跑完）；别拿单次结果做逐位回归（质检：同一台机器上隔 1 h、负载不同的两次运行统计逐位相同；跨机器未测） |
 | 10 | RTK 跑 9 分钟、终端刷屏 | 每历元打印残差/雅可比，stdout 110 MB | `> pvt.log 2>&1` 或 `> /dev/null` |
 | 11 | `path is not file (skipped)!` 红字 | 日志文案写反，实为正常读 `file://` | 忽略 |
 | 12 | 末尾几秒误差几十米 | GNSS 结束后纯 INS 外推（MeasType=INS, Nsat 0） | 统计时按 MeasType 或时段裁掉 |
