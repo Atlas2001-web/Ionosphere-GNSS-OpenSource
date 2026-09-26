@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> **247** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **246** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 电离层研究软件：GNSS 双频 TEC 估计、GIM/IONEX 处理、TEC 预报（含机器学习）、闪烁/ROTI、TID、层析、掩星与法拉第旋转。也收录 IRI/NeQuick 等电离层模型、MSIS/HWM 中性大气模型、测高仪与雷达/ISR 工具、HF 射线追踪和磁坐标库；电离层产品与空间天气数据门户已移至「GNSS 数据源」。
 
@@ -630,7 +630,7 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 
 语言：Python · 许可：MIT · 星标约：0 · 宿主：github
 
-把地震目录与电离层 TEC/ROT/ROTI 分析串起来，并可用 Kp/Dst 过滤地磁暴，强调无需额外 API Key。适合震电离层耦合统计入门。局限：依赖 GIM/IONEX 而非测站原始 STEC；因果解释需谨慎；星数为 0。
+输入地名和年份，自动查 USGS 地震目录、下载 CODE GIM，在震中附近点上插值 TEC 并算 ROT/ROTI，再用 Kp/Dst 标出地磁暴日，输出 4 张图；数据源都不要账号。实测 0.1.1 写死的 http://ftp.aiub.unibe.ch/CODE 连上后不响应，GIM 一张也下不到，要把 quakeion.tec 模块的 CODE_BASE 改成 https://download.aiub.unibe.ch/CODE。所谓“测站”只是 IGS 站坐标，TEC 来自 GIM 格网而非测站观测；因果解释需谨慎。
 
 #### [Seemala-GPS-TEC](https://seemala.blogspot.com/2026/08/gps-tec-analysis-program-version-37.html)  
 *🏷️ 个人社区*
@@ -795,7 +795,6 @@ aburrell 维护的 AACGM-v2 Python 库，在地理坐标与高度调整校正地
 | [IonoMoni](https://github.com/qiliu2025/IonoMoni) | IonoMoni：多星座 ROTI/AATR/STEC/VTEC | C++ | 37 | 🏷️ 个人社区 ★ |
 | [gnss-scintillation-simulator](https://github.com/cu-sense-lab/gnss-scintillation-simulator) | gnss-scintillation-simulator：GNSS 闪烁相位/幅度仿真 | MATLAB | 25 | 🏷️ 高校实验室 |
 | [OASIS](https://github.com/giorgiopicanco/OASIS) | OASIS：RINEX 扰动指标计算 | Python | 16 | 🏷️ 个人社区 核心 |
-| [SbfParser](https://github.com/septentrio-gnss/SbfParser) | SbfParser：Septentrio SBF 流/文件厂商解析器 | Cython | 12 | 🏷️ 个人社区 |
 | [saga-utils](https://github.com/perrysou/saga-utils) | 阿拉斯加闪烁极光 GPS 阵列（SAGA）数据处理与估计工具（MATLAB） | MATLAB | 10 | 🏷️ 个人社区 |
 | [scintill-ai](https://github.com/viventriglia/scintill-ai) | scintill-ai：机器学习电离层闪烁分析研究项目 | Shell | 8 | 🏷️ 个人社区 |
 | [TITIPy](https://github.com/pignalberi/TITIPy) | Swarm 顶部电离层 RODI/ROTI/ROTEI（Python） | Python | 8 | 🏷️ 高校实验室 |
@@ -838,13 +837,6 @@ C++ 实现多星座电离层监测指标（ROTI、AATR、STEC/VTEC），偏近�
 语言：Python · 许可：CC-BY-NC-4.0 · 星标约：16 · 宿主：github
 
 Open-Access System for Ionospheric Studies：从 GNSS 观测算 ROTI、ΔTEC、SIDX 等，做扰动与闪烁相关监测。适合空间天气事件个例与台站网指标产品。高采样率接收机原始闪烁指数（S4/σφ）仍需专用接收机或仿真器。ohm1122/OASIS 是本仓的 fork（维护者星标），无独立提交且落后上游 28 个提交。
-
-#### [SbfParser](https://github.com/septentrio-gnss/SbfParser)  
-*🏷️ 个人社区*
-
-语言：Cython · 许可：BSD-3-Clause · 星标约：12 · 宿主：github
-
-Septentrio 厂商发布的 Python/Cython 解析器，把 SBF 文件或字节流解成块名和字段字典，也能编码回字节。PyPI 包名是 sbf-parser。实测当前版本没有 ISMR（4086）等闪烁块，提不出 S4、σφ，ISMR 数据要走 ismr_downloader 等其他工具。大文件需分块读，防止内存吃满。
 
 #### [saga-utils](https://github.com/perrysou/saga-utils)  
 *🏷️ 个人社区*
@@ -1216,7 +1208,7 @@ GitHub rumkex/IonTools，偏辅助脚本/小工具集合，用来补主流程里
 
 语言：Python/Fortran · 许可：MIT · 星标约：117 · 宿主：github
 
-把 IRI 等上层大气经验模型接到 Python，irimodel.org 在「pyglow」一行直接链到本仓库，说明它是社区里常用的 IRI-2012/2016 包装路径。适合脚本化批量取 Ne/Te 剖面、和 GNSS TEC 产品做气候态对照。底层仍依赖 Fortran 模型文件与指数更新；跟官方最新 IRI-2020/2026 发布节奏可能不同步，精密业务应核对所绑版本。许可 MIT，比部分需注册的官方 C 发行更好集成。
+把 IRI 等上层大气经验模型接到 Python，irimodel.org 在「pyglow」一行直接链到本仓库，说明它是社区里常用的 IRI-2012/2016 包装路径。适合脚本化批量取 Ne/Te 剖面、和 GNSS TEC 产品做气候态对照。底层仍依赖 Fortran 模型文件与指数更新；跟官方最新 IRI-2020/2026 发布节奏可能不同步，精密业务应核对所绑版本。许可 MIT，比部分需注册的官方 C 发行更好集成。上游已停更，实测要 Python 3.8 + numpy 1.20.3（再加 gfortran）才能装上，Python 3.10 以上装不了。
 
 #### [iri2016](https://github.com/space-physics/iri2016)  
 *🏷️ 个人社区*

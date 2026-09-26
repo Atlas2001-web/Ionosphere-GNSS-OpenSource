@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **245 篇**操作手册（合计 **56235 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **246 篇**操作手册（合计 **56397 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -270,6 +270,7 @@
 | 243 | [pysatspaceweather.md](./pysatspaceweather.md) | pysat/pysatSpaceWeather：Kp/ap/F10.7/Dst/AE… 各一个 pysat Instrument（GFZ、SWPC、NOAA、LASP），下载缓存后离线 load；Kp→ap、日 Ap、81 天 f107a、combine_kp/combine_f107 | 261 | **已短硬** 用法讲解新入库 · 2026-09-26 05:54–06:07 EDT；PyPI 0.2.2/`e36d39d`/BSD-3，pysat 3.2.2；须 numpy<2.3、pandas<3；2024-05-10/11 Kp 峰 9.0（ap 400，daily_Ap 105/271），F10.7 obs 213.7–233.2 SFU；NOAA Dst 止于 2008（2003-10-30 22 UT −383 nT 经 HTTPS+mock 加载），LISIRD 历史 F10.7 止于 2018，45day 预报 404；GFZ 月文件须 freq='MS' 下载否则错位 |
 | 244 | [ocbpy.md](./ocbpy.md) | aburrell/ocbpy：极盖边界（OCB）自适应磁坐标：IMAGE/AMPERE 边界圆 → AACGM lat/MLT 转 OCB lat/MLT（边界固定 74°）、revert_coord、VectorData 矢量按极盖半径缩放；包内自带 IMAGE 2000–2002、AMPERE 2010–2024-10 边界 | 204 | **已短硬** 用法讲解新入库 · 2026-09-26 06:07–06:10 EDT；PyPI 0.7.0/`3ced0de`/BSD-3，aacgmv2 2.7.1；AMPERE 2024-05-10 午夜边界 06 UT 69.1° → 22 UT 58.1°，AACGM 70° 点 OCB lat 74.824→79.957；500 m/s 流速 ×1.994；坑：默认文件表 AMPERE 写死到 2022（须传 filename）、未选 rec_ind 全 NaN、建对象约 40 s |
 | 245 | [dmsp-timed-data.md](./dmsp-timed-data.md) | DMSP SSIES-3 / SSUSI 与 TIMED GUVI 公开数据：SPDF 路径与年份覆盖、CDAWeb HAPI 限制、Madrigal kinst 8100 文件列表、JHU/APL 门户；CDF / HDF5 / netCDF3 三种格式真实读取（2024-05-11 F18） | 254 | **已短硬** · 2026-09-26 06:06–06:12 EDT；F18 2024-05-11：SSIES 6100 条 1 s、dens good 86.1%；SSUSI 南 1185.6 GW、边界 50.2° vs 模型 61.8°；SSIES 2015–2021 缺 |
+| 246 | [quakeion.md](./quakeion.md) | Gm015555/quakeion：地名+年份 → USGS 地震目录、CODE GIM 震中/近站点插值 TEC、ROT/ROTI 逐日 σ 超限、GFZ Kp + 京都 Dst 暴日，4 张 PNG；四个源都匿名；0.1.1 写死的 `http://ftp.aiub.unibe.ch/CODE` 挂起，须改 `CODE_BASE` | 162 | **已短硬** 用法讲解新入库 · 2026-09-26 06:08–06:17 EDT；PyPI **0.1.1**/MIT/tip `8c4d05f`；上游测试 29 passed；Aomori M7.6（2025-12-08）±1 天 3 个 FIN GIM 各 344 KB 压缩、TEC 72 点、ROT max 0.131、ROTI max 0.082 TECU/min、1σ/2σ 超限 21/3；Kp 17 行（end 只取 00:00，漏最后一天）、Dst 73 行（final 404→provisional）；2016 旧名 `.Z` 与 2026-09-24 RAP 均命中；`import quakeion.tec` 拿到的是函数 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -501,6 +502,7 @@
 | 不登录下载 IGS 日观测：哪个镜像齐、到得快、是不是同一份（CDDIS 需 Earthdata） | [gnss-obs-mirrors.md](./gnss-obs-mirrors.md) |
 | 一条命令按站按日从多个国家/区域 GNSS 网拉 RINEX 日文件（SOPAC/NGS/GFZ/Kadaster/GeoNet/EUREF/NOA/RENAG；先补装 requests，ARGN 会假成功） | [grinq.md](./grinq.md) |
 | 现在的全球/区域 TEC 去哪不登录拿（GloTEC、DLR、UPC 实时、CODE 预报、CAS RTS）、多久更新、历史多深 | [realtime-iono-products.md](./realtime-iono-products.md) |
+| 按地名/年份一键看大地震前后 GIM 尺度 TEC/ROT/ROTI + Kp/Dst 暴日（USGS/CODE/GFZ/京都全匿名；先改 CODE 地址） | [quakeion.md](./quakeion.md) |
 | 美国 / 欧洲 / 新西兰 / 巴西 / 验潮站 CORS 日观测不登录去哪拿、多少站、多久上架（NOAA、EPN、GeoNet、RBMC、SONEL） | [cors-networks.md](./cors-networks.md) |
 | 耀斑 TEC 突增要的 GOES X 射线 / EUV 数据去哪不登录拿、GOES-16 与 GOES-18、science 与运行版差在哪 | [solar-flare-data.md](./solar-flare-data.md) |
 | DMSP 原位等离子体 / SSUSI 极光与 TIMED GUVI 数据不登录去哪拿、哪年有、CDF/HDF5/netCDF3 怎么读 | [dmsp-timed-data.md](./dmsp-timed-data.md) |

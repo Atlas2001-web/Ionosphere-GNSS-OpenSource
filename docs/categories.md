@@ -23,7 +23,7 @@
 电离层研究软件：GNSS 双频 TEC 估计、GIM/IONEX 处理、TEC 预报（含机器学习）、闪烁/ROTI、TID、层析、掩星与法拉第旋转。也收录 IRI/NeQuick 等电离层模型、MSIS/HWM 中性大气模型、测高仪与雷达/ISR 工具、HF 射线追踪和磁坐标库；电离层产品与空间天气数据门户已移至「GNSS 数据源」。
 
 - 列表文件：[`lists/01-ionosphere.md`](../lists/01-ionosphere.md)
-- 当前条目数：**247**
+- 当前条目数：**246**
 
 ## `troposphere` — 对流层
 
@@ -37,7 +37,7 @@
 RINEX/SP3/CLK/ANTEX 读写与转换、RTCM/NTRIP、Hatanaka 压缩、质量检查/多路径分析、接收机驱动与协议、数据下载脚本——所有解算的上游。
 
 - 列表文件：[`lists/03-gnss-data.md`](../lists/03-gnss-data.md)
-- 当前条目数：**136**
+- 当前条目数：**137**
 
 ## `gnss-positioning` — 精密定位
 

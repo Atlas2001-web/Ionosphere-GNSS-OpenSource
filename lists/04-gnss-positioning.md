@@ -318,7 +318,7 @@ Python/Jupyter 多星座 PPP-RTK 试验箱，强调可读与易移植，便于�
 
 语言：Python · 许可：MIT · 星标约：723 · 宿主：github
 
-面向自动驾驶与研究的精简 GNSS 库，可下载星历与改正、做伪距定位并与 RTKLIB 风格流程对接，Python 接口干净。适合想快速验证定位链路、而不愿先啃完整测地软件栈的工程师与学生。功能覆盖远小于 PRIDE、Ginan、RTKLIB，模糊度固定与多频多星座产品化能力弱；和 rtklib-py、goGPS 对照时，优势在轻量与可嵌入脚本。
+面向自动驾驶与研究的精简 GNSS 库，可下载星历与改正、做伪距定位并与 RTKLIB 风格流程对接，Python 接口干净。适合想快速验证定位链路、而不愿先啃完整测地软件栈的工程师与学生。功能覆盖远小于 PRIDE、Ginan、RTKLIB，模糊度固定与多频多星座产品化能力弱；和 rtklib-py、goGPS 对照时，优势在轻量与可嵌入脚本。下载星历和改正要先注册 NASA Earthdata 并写 .netrc，否则 401 或空文件；只读本地 RINEX、算 DOP 不需要账号。
 
 #### [GREAT-PVT](https://github.com/GREAT-WHU/GREAT-PVT)  
 *🏷️ 高校实验室 ★ 核心*

@@ -7,9 +7,9 @@
   "generated": "2026-09-26",
   "project_count": 1026,
   "counts_by_category": {
-    "ionosphere": 247,
+    "ionosphere": 246,
     "troposphere": 47,
-    "gnss-data": 136,
+    "gnss-data": 137,
     "gnss-positioning": 108,
     "orbit-clock": 31,
     "navigation-ins": 72,
@@ -234,7 +234,7 @@
       "name": "caster",
       "url": "https://github.com/Node-NTRIP/caster",
       "desc_zh": "Node-NTRIP：自建小型网络 RTK 分发用 caster",
-      "analysis_zh": "用 TypeScript/Node 实现的 NTRIP caster 库，声明支持 V1/V2，便于自建小型网络 RTK 分发服务。适合实验室 CORS 试验与课程演示。高并发、计费鉴权与运维监控不如专用商业方案或 BNC 生态成熟；上线前应做压测、源挂死与证书过期等故障演练。",
+      "analysis_zh": "用 TypeScript/Node 实现的 NTRIP caster 库，声明支持 V1/V2，便于自建小型网络 RTK 分发服务。适合实验室 CORS 试验与课程演示。高并发、计费鉴权与运维监控不如专用商业方案或 BNC 生态成熟；上线前应做压测、源挂死与证书过期等故障演练。实测在 Node 20 上启动就崩（http-parser-ts 报 parser.remove is not a function），需要用 Node 16。",
       "language": "TypeScript",
       "license": "GPL-3.0",
       "category": "gnss-data",
@@ -929,7 +929,7 @@
       "name": "ntrip-cpp",
       "url": "https://github.com/ybzwyrcld/ntrip",
       "desc_zh": "社区：caster/client/server 握手与挂载点参考实现",
-      "analysis_zh": "提供 NTRIP 2.0 协议下 caster、客户端与服务端示例，星标较高，适合嵌入 C++ 服务或学习握手与挂载点逻辑。二次开发差分转发、教学演示都常见。完整鉴权、集群与监控需自增；Python/Go 生态另有 pygnssutils 与 go-gnss/ntrip，运维桌面场景仍常看 BNC。",
+      "analysis_zh": "提供 NTRIP 2.0 协议下 caster、客户端与服务端示例，星标较高，适合嵌入 C++ 服务或学习握手与挂载点逻辑。二次开发差分转发、教学演示都常见。完整鉴权、集群与监控需自增；Python/Go 生态另有 pygnssutils 与 go-gnss/ntrip，运维桌面场景仍常看 BNC。caster 默认不编译；当前主干打开 NTRIP_BUILD_CASTER 前要先修两处构建错误（examples 里的目标名、caster 头文件的 include 路径）。",
       "language": "C++",
       "license": "MIT",
       "category": "gnss-data",
@@ -3550,7 +3550,7 @@
       "name": "laika",
       "url": "https://github.com/commaai/laika",
       "desc_zh": "comma.ai 轻量 Python GNSS 库（星历/改正/伪距定位）",
-      "analysis_zh": "面向自动驾驶与研究的精简 GNSS 库，可下载星历与改正、做伪距定位并与 RTKLIB 风格流程对接，Python 接口干净。适合想快速验证定位链路、而不愿先啃完整测地软件栈的工程师与学生。功能覆盖远小于 PRIDE、Ginan、RTKLIB，模糊度固定与多频多星座产品化能力弱；和 rtklib-py、goGPS 对照时，优势在轻量与可嵌入脚本。",
+      "analysis_zh": "面向自动驾驶与研究的精简 GNSS 库，可下载星历与改正、做伪距定位并与 RTKLIB 风格流程对接，Python 接口干净。适合想快速验证定位链路、而不愿先啃完整测地软件栈的工程师与学生。功能覆盖远小于 PRIDE、Ginan、RTKLIB，模糊度固定与多频多星座产品化能力弱；和 rtklib-py、goGPS 对照时，优势在轻量与可嵌入脚本。下载星历和改正要先注册 NASA Earthdata 并写 .netrc，否则 401 或空文件；只读本地 RINEX、算 DOP 不需要账号。",
       "language": "Python",
       "license": "MIT",
       "category": "gnss-positioning",
@@ -3564,7 +3564,9 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "laika：comma.ai 轻量 Python GNSS 库"
+      "one_liner_zh": "laika：comma.ai 轻量 Python GNSS 库",
+      "registration": "form_register",
+      "registration_zh": "库本身免注册；下载星历/改正（CDDIS）需 NASA Earthdata 账号，写入 .netrc。"
     },
     {
       "name": "libgnss++",
@@ -8511,7 +8513,7 @@
       "provenance": "personal_community",
       "host": "github",
       "one_liner_zh": "pyglow：上层大气气候态 Python 库",
-      "analysis_zh": "把 IRI 等上层大气经验模型接到 Python，irimodel.org 在「pyglow」一行直接链到本仓库，说明它是社区里常用的 IRI-2012/2016 包装路径。适合脚本化批量取 Ne/Te 剖面、和 GNSS TEC 产品做气候态对照。底层仍依赖 Fortran 模型文件与指数更新；跟官方最新 IRI-2020/2026 发布节奏可能不同步，精密业务应核对所绑版本。许可 MIT，比部分需注册的官方 C 发行更好集成。",
+      "analysis_zh": "把 IRI 等上层大气经验模型接到 Python，irimodel.org 在「pyglow」一行直接链到本仓库，说明它是社区里常用的 IRI-2012/2016 包装路径。适合脚本化批量取 Ne/Te 剖面、和 GNSS TEC 产品做气候态对照。底层仍依赖 Fortran 模型文件与指数更新；跟官方最新 IRI-2020/2026 发布节奏可能不同步，精密业务应核对所绑版本。许可 MIT，比部分需注册的官方 C 发行更好集成。上游已停更，实测要 Python 3.8 + numpy 1.20.3（再加 gfortran）才能装上，Python 3.10 以上装不了。",
       "markers": [
         "core"
       ],
@@ -8803,7 +8805,7 @@
       "url": "https://github.com/Gm015555/quakeion",
       "desc_zh": "零 API Key 入门友好；因果解释慎用，依赖 GIM 非测站 STEC",
       "one_liner_zh": "quakeion：震例目录 + CODE GIM TEC/ROT/ROTI 分析",
-      "analysis_zh": "把地震目录与电离层 TEC/ROT/ROTI 分析串起来，并可用 Kp/Dst 过滤地磁暴，强调无需额外 API Key。适合震电离层耦合统计入门。局限：依赖 GIM/IONEX 而非测站原始 STEC；因果解释需谨慎；星数为 0。",
+      "analysis_zh": "输入地名和年份，自动查 USGS 地震目录、下载 CODE GIM，在震中附近点上插值 TEC 并算 ROT/ROTI，再用 Kp/Dst 标出地磁暴日，输出 4 张图；数据源都不要账号。实测 0.1.1 写死的 http://ftp.aiub.unibe.ch/CODE 连上后不响应，GIM 一张也下不到，要把 quakeion.tec 模块的 CODE_BASE 改成 https://download.aiub.unibe.ch/CODE。所谓“测站”只是 IGS 站坐标，TEC 来自 GIM 格网而非测站观测；因果解释需谨慎。",
       "language": "Python",
       "license": "MIT",
       "category": "ionosphere",
@@ -9186,8 +9188,8 @@
       "analysis_zh": "Septentrio 厂商发布的 Python/Cython 解析器，把 SBF 文件或字节流解成块名和字段字典，也能编码回字节。PyPI 包名是 sbf-parser。实测当前版本没有 ISMR（4086）等闪烁块，提不出 S4、σφ，ISMR 数据要走 ismr_downloader 等其他工具。大文件需分块读，防止内存吃满。",
       "language": "Cython",
       "license": "BSD-3-Clause",
-      "category": "ionosphere",
-      "subcategory": "闪烁/ROTI",
+      "category": "gnss-data",
+      "subcategory": "基础库",
       "markers": [
         "gapfill-2026-09-17"
       ],
@@ -12658,7 +12660,7 @@
       "name": "cddis-highrate-downloader",
       "url": "https://github.com/cemalialtuntas/cddis-highrate-downloader",
       "desc_zh": "批量下载 NASA CDDIS 高采样率 GNSS 数据的 Python 工具",
-      "analysis_zh": "面向 NASA CDDIS 高采样（high-rate）GNSS 归档的 Python 批量下载器，减轻按站/按日手工翻目录的负担。适合闪烁、地震同震、高动态轨迹等需要 1 Hz 以上观测的研究。README 称走 CDDIS 匿名 FTP、无需账号，可自动解压并调用 CRX2RNX；请限速、遵守 NASA 条款，并核对长文件名与校验。",
+      "analysis_zh": "面向 NASA CDDIS 高采样（high-rate）GNSS 归档的 Python 批量下载器，减轻按站/按日手工翻目录的负担。适合闪烁、地震同震、高动态轨迹等需要 1 Hz 以上观测的研究。代码走 CDDIS 匿名 FTPS，README 称无需账号，可自动解压并调用 CRX2RNX。实测匿名能登录、能查文件大小，但列目录和下载报 425，并不可靠；CDDIS 的 HTTPS 下载需要 NASA Earthdata 账号（.netrc），批量生产建议走 HTTPS。半年前的数据已打成 tar，本工具取不到。",
       "language": "Python",
       "license": "MIT",
       "category": "gnss-data",
@@ -12672,7 +12674,9 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "academic_lab",
-      "one_liner_zh": "批量下载 CDDIS 高采样 GNSS 数据"
+      "one_liner_zh": "批量下载 CDDIS 高采样 GNSS 数据",
+      "registration": "mixed",
+      "registration_zh": "工具不要求账号；匿名 FTPS 实测不稳定（列目录/下载 425）。CDDIS HTTPS 下载需 NASA Earthdata 账号并授权 CDDIS。"
     },
     {
       "name": "docker-gnsssdr",
@@ -20266,7 +20270,7 @@
       "name": "um982-driver",
       "url": "https://github.com/sunshineharry/UM982Driver",
       "desc_zh": "pip 安装，读取 UM982 双天线航向、速度与 RTK 状态",
-      "analysis_zh": "个人开发者发布的 Python 驱动，GPL-3.0 许可，可通过 pip 安装 um982-driver。解析 UM982/UM980 输出的标准 NMEA 以及 PVTSLN、KSXT、GNHPR、BESTNAV 等 Unicore 扩展 ASCII 语句，获取双天线航向、速度、RTK 状态与标准差等比 NMEA 更丰富的信息，README 给出串口输出配置命令与示例程序，附录另有未充分测试的 C 版本。适合机器人与无人车快速接入国产双天线 RTK。目前仅支持 ASCII 指令集，中文文档较完整。",
+      "analysis_zh": "个人开发者的 Python 串口驱动，GPL-3.0，可 pip 安装 um982-driver。实测只解三种 ASCII 语句：#PVTSLNA（位置和标准差）、#BESTNAVA（速度）、$GNHPR（双天线航向/俯仰/横滚），再用 pyproj 转 UTM。不解 KSXT（README 却让开 KSXT）、不解标准 NMEA 和二进制，也不给 RTK 解状态。UM980 单天线没有 GNHPR，README 示例会崩。附录有未测试的 C 版本。",
       "language": "Python",
       "license": "GPL-3.0",
       "category": "gnss-data",

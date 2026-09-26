@@ -28,9 +28,9 @@
 
 | 分类 | 列表 | 数 |
 |---|---|---:|
-| 电离层 | [01](./lists/01-ionosphere.md) | 247 |
+| 电离层 | [01](./lists/01-ionosphere.md) | 246 |
 | 对流层 | [02](./lists/02-troposphere.md) | 47 |
-| GNSS 数据与格式 | [03](./lists/03-gnss-data.md) | 136 |
+| GNSS 数据与格式 | [03](./lists/03-gnss-data.md) | 137 |
 | 精密定位 | [04](./lists/04-gnss-positioning.md) | 108 |
 | 轨道与钟差 | [05](./lists/05-orbit-clock.md) | 31 |
 | 导航 | [06](./lists/06-navigation-ins.md) | 72 |

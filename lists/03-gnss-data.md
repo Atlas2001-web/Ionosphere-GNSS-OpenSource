@@ -1,5 +1,5 @@
 # GNSS 数据与格式 / GNSS Data I/O
-> **136** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **137** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 RINEX/SP3/CLK/ANTEX 读写与转换、RTCM/NTRIP、Hatanaka 压缩、质量检查/多路径分析、接收机驱动与协议、数据下载脚本——所有解算的上游。
 
@@ -61,7 +61,7 @@ RINEX/SP3/CLK/ANTEX 读写与转换、RTCM/NTRIP、Hatanaka 压缩、质量检�
 
 语言：C++ · 许可：MIT · 星标约：177 · 宿主：github
 
-提供 NTRIP 2.0 协议下 caster、客户端与服务端示例，星标较高，适合嵌入 C++ 服务或学习握手与挂载点逻辑。二次开发差分转发、教学演示都常见。完整鉴权、集群与监控需自增；Python/Go 生态另有 pygnssutils 与 go-gnss/ntrip，运维桌面场景仍常看 BNC。
+提供 NTRIP 2.0 协议下 caster、客户端与服务端示例，星标较高，适合嵌入 C++ 服务或学习握手与挂载点逻辑。二次开发差分转发、教学演示都常见。完整鉴权、集群与监控需自增；Python/Go 生态另有 pygnssutils 与 go-gnss/ntrip，运维桌面场景仍常看 BNC。caster 默认不编译；当前主干打开 NTRIP_BUILD_CASTER 前要先修两处构建错误（examples 里的目标名、caster 头文件的 include 路径）。
 
 #### [pygnssutils](https://github.com/semuconsulting/pygnssutils)  
 *🏷️ 个人社区*
@@ -117,7 +117,7 @@ RTCM-Ntrip 官方仓库中的 POSIX ntripserver，用于将接收机或文件流
 
 语言：TypeScript · 许可：GPL-3.0 · 星标约：52 · 宿主：github
 
-用 TypeScript/Node 实现的 NTRIP caster 库，声明支持 V1/V2，便于自建小型网络 RTK 分发服务。适合实验室 CORS 试验与课程演示。高并发、计费鉴权与运维监控不如专用商业方案或 BNC 生态成熟；上线前应做压测、源挂死与证书过期等故障演练。
+用 TypeScript/Node 实现的 NTRIP caster 库，声明支持 V1/V2，便于自建小型网络 RTK 分发服务。适合实验室 CORS 试验与课程演示。高并发、计费鉴权与运维监控不如专用商业方案或 BNC 生态成熟；上线前应做压测、源挂死与证书过期等故障演练。实测在 Node 20 上启动就崩（http-parser-ts 报 parser.remove is not a function），需要用 Node 16。
 
 #### [cors-relay](https://github.com/tisyang/cors-relay)  
 *🏷️ 个人社区*
@@ -636,7 +636,7 @@ nav-solutions / rtk-rs 生态的 RINEX→BINEX CLI（MPL-2.0，Rust）。便于�
 
 语言：Python · 许可：MIT · 星标约：14 · 宿主：github
 
-面向 NASA CDDIS 高采样（high-rate）GNSS 归档的 Python 批量下载器，减轻按站/按日手工翻目录的负担。适合闪烁、地震同震、高动态轨迹等需要 1 Hz 以上观测的研究。README 称走 CDDIS 匿名 FTP、无需账号，可自动解压并调用 CRX2RNX；请限速、遵守 NASA 条款，并核对长文件名与校验。
+面向 NASA CDDIS 高采样（high-rate）GNSS 归档的 Python 批量下载器，减轻按站/按日手工翻目录的负担。适合闪烁、地震同震、高动态轨迹等需要 1 Hz 以上观测的研究。代码走 CDDIS 匿名 FTPS，README 称无需账号，可自动解压并调用 CRX2RNX。实测匿名能登录、能查文件大小，但列目录和下载报 425，并不可靠；CDDIS 的 HTTPS 下载需要 NASA Earthdata 账号（.netrc），批量生产建议走 HTTPS。半年前的数据已打成 tar，本工具取不到。
 
 #### [GNSSommelier](https://github.com/EarthScope/GNSSommelier)  
 *🏷️ 官方*
@@ -900,6 +900,7 @@ MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实�
 | [nmea-parser](https://github.com/zaari/nmea-parser) | nmea-parser：Rust 版 AIS/GNSS NMEA 0183 解析 | Rust | 51 | 🏷️ 个人社区 |
 | [navsu](https://github.com/stanford-gps-lab/navsu) | navsu：斯坦福 GPS Lab MATLAB GNSS/IGS 工具箱 | MATLAB | 24 | 🏷️ 高校实验室 |
 | [pysbf](https://github.com/jashandeep-sohi/pysbf) | pysbf：Septentrio SBF 文件 Python 解析模块 | Python | 16 | 🏷️ 个人社区 |
+| [SbfParser](https://github.com/septentrio-gnss/SbfParser) | SbfParser：Septentrio SBF 流/文件厂商解析器 | Cython | 12 | 🏷️ 个人社区 |
 | [nav-solutions-gnss](https://github.com/nav-solutions/gnss) | nav-solutions-gnss：Rust 星座/信号基础定义 crate | Rust | 11 | 🏷️ 个人社区 |
 | [pysbf2](https://github.com/semuconsulting/pysbf2) | pysbf2：Septentrio SBF 消息的 Python 编解码库 | Python | 8 | 🏷️ 个人社区 |
 | [pyubxutils](https://github.com/semuconsulting/pyubxutils) | pyubxutils：UBX 接收机 Python 命令行工具 | Python | 5 | 🏷️ 个人社区 |
@@ -998,6 +999,13 @@ Stanford GPS Lab 的 navsu MATLAB 工具箱，聚合 RINEX/产品解析、时间
 
 较早的 Septentrio SBF 文件解析模块，核心用 C 写成（可选 Cython），README 以 Python 2.7 为安装示例，声明支持 SBF 文档 v1.13.0 的全部数据块，2017 年后未更新。GPL-3.0。新项目宜优先用仍在维护、许可更宽松的 pysbf2（BSD）；本库可作离线日志解析的历史参考。
 
+#### [SbfParser](https://github.com/septentrio-gnss/SbfParser)  
+*🏷️ 个人社区*
+
+语言：Cython · 许可：BSD-3-Clause · 星标约：12 · 宿主：github
+
+Septentrio 厂商发布的 Python/Cython 解析器，把 SBF 文件或字节流解成块名和字段字典，也能编码回字节。PyPI 包名是 sbf-parser。实测当前版本没有 ISMR（4086）等闪烁块，提不出 S4、σφ，ISMR 数据要走 ismr_downloader 等其他工具。大文件需分块读，防止内存吃满。
+
 #### [nav-solutions-gnss](https://github.com/nav-solutions/gnss)  
 *🏷️ 个人社区*
 
@@ -1076,7 +1084,7 @@ Android 原始 GNSS 测量日志与桌面可视化分析工具，智能手机高
 
 语言：Python · 许可：GPL-3.0 · 星标约：39 · 宿主：github
 
-个人开发者发布的 Python 驱动，GPL-3.0 许可，可通过 pip 安装 um982-driver。解析 UM982/UM980 输出的标准 NMEA 以及 PVTSLN、KSXT、GNHPR、BESTNAV 等 Unicore 扩展 ASCII 语句，获取双天线航向、速度、RTK 状态与标准差等比 NMEA 更丰富的信息，README 给出串口输出配置命令与示例程序，附录另有未充分测试的 C 版本。适合机器人与无人车快速接入国产双天线 RTK。目前仅支持 ASCII 指令集，中文文档较完整。
+个人开发者的 Python 串口驱动，GPL-3.0，可 pip 安装 um982-driver。实测只解三种 ASCII 语句：#PVTSLNA（位置和标准差）、#BESTNAVA（速度）、$GNHPR（双天线航向/俯仰/横滚），再用 pyproj 转 UTM。不解 KSXT（README 却让开 KSXT）、不解标准 NMEA 和二进制，也不给 RTK 解状态。UM980 单天线没有 GNHPR，README 示例会崩。附录有未测试的 C 版本。
 
 #### [piksi_tools](https://github.com/swift-nav/piksi_tools)  
 *🏷️ 个人社区*
