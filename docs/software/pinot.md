@@ -1,6 +1,6 @@
 # Pinot · “Pinot is not only TEQC” 质检/预处理操作手册
 
-目录：[`PROJECTS.json` → `pinot`](../../PROJECTS.json) · 上游 <https://github.com/purpleskyfall/pinot> · 脚本文档索引 <http://gnss.help/2017/02/16/pinot-content/> · **GPL-2.0** · Python3 脚本集（非 PyPI 包）· 本机验证：`orderfile` / `sitecheck` / `metacheck` / `subnet` / `low2upper` 实跑（2026-09-24 ET）；`qualitycheck` 因无 Linux `teqc` 仅冒烟失败路径
+目录：[`PROJECTS.json` → `pinot`](../../PROJECTS.json) · 上游 <https://github.com/purpleskyfall/pinot> · 脚本文档索引 <http://gnss.help/2017/02/16/pinot-content/>（链接已失效，2026-09-26 检查域名已不存在） · **GPL-2.0** · Python3 脚本集（非 PyPI 包）· 本机验证：`orderfile` / `sitecheck` / `metacheck` / `subnet` / `low2upper` 实跑（2026-09-24 ET）；`qualitycheck` 因无 Linux `teqc` 仅冒烟失败路径
 
 > 岗位：CORS / 台网 **静态 RINEX 批处理**——缺站检查、头信息比对、IGS 日目录整理、子网划分；QC 数字靠 **TEQC `+qc`**。冲突时：**本机脚本 `-h` / 上游 README > 本文**。
 

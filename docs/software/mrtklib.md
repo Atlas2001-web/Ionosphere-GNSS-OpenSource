@@ -164,4 +164,4 @@ grep -v '^%' /tmp/mrtk_smoke/rtk.pos | awk 'NF>=6{n++; q[$6]++} END{print "epoch
 [rtklib](./rtklib.md) · [great-pvt](./great-pvt.md) · [ginan](./ginan.md) · [pride-pppar](./pride-pppar.md) · [madocalib](./madocalib.md) · [claslib](./claslib.md) · [cssrlib](./cssrlib.md) · [haslib](./haslib.md) · [pyrtklib](./pyrtklib.md) · [README](./README.md)
 
 - DOI：[10.5281/zenodo.20373746](https://doi.org/10.5281/zenodo.20373746)
-- 直播看板（CLAS）：<https://live.pntmoni.com/>
+- 直播看板（CLAS）：<https://live.pntmoni.com/>（链接已失效，2026-09-26 两次检查均返回 502）

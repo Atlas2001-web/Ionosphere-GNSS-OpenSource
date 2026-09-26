@@ -1,6 +1,6 @@
 # gnss-downloader · PyQt5 NASA/WHU FTP GNSS 下载操作手册
 
-目录：[`PROJECTS.json` → `gnss-downloader`](../../PROJECTS.json) · 上游 <https://github.com/Mereithhh/gnss-downloader> · 官网 <https://www.mereith.com/gnss> · **无 SPDX 许可文件**（仓内无 `LICENSE`）· tip **`e6d0d84`**（2020-05-07；Release **V3.0** / 2020-05-06）· 本机验证（2026-09-24 EDT）：无下载 CLI；`core.gps_downloader` 横幅实跑；WHU FTP **230**+CWD 通、NLST/RETR **425**；`SIZE brdc0010.24n.gz`=**57792**、`ABPO00MDG_R_20240010000_01D_GN.rnx.gz`=**29294**；`cddis.nasa.gov` 不可达；`gdc.cddis…` 明文 FTP **530** 须加密；无头缺 PyQt5 · ★≈23
+目录：[`PROJECTS.json` → `gnss-downloader`](../../PROJECTS.json) · 上游 <https://github.com/Mereithhh/gnss-downloader> · 官网 <https://www.mereith.com/gnss>（链接已失效，2026-09-26 检查为 404） · **无 SPDX 许可文件**（仓内无 `LICENSE`）· tip **`e6d0d84`**（2020-05-07；Release **V3.0** / 2020-05-06）· 本机验证（2026-09-24 EDT）：无下载 CLI；`core.gps_downloader` 横幅实跑；WHU FTP **230**+CWD 通、NLST/RETR **425**；`SIZE brdc0010.24n.gz`=**57792**、`ABPO00MDG_R_20240010000_01D_GN.rnx.gz`=**29294**；`cddis.nasa.gov` 不可达；`gdc.cddis…` 明文 FTP **530** 须加密；无头缺 PyQt5 · ★≈23
 
 > 岗位：带界面从 **WHU / NASA(CDDIS)** 按日拉 IGS 日采样观测/导航与 igs/igu/igr sp3。冲突时：**上游 README / Release 说明 / 本机 stdout > 本文**。无头批下 → [gampii-good](./gampii-good.md) / [fast](./fast.md) / [data-access](../data-access.md)；多模块 GUI → [gdds](./gdds.md)；CDDIS 1 s → [cddis-highrate-downloader](./cddis-highrate-downloader.md)。**勾选 NASA 源涉及 CDDIS 时先读** [data-access](../data-access.md)「共用：Earthdata / `.netrc`」。
 
@@ -229,5 +229,5 @@ CDDIS 1s → cddis-highrate-downloader
 
 ## 9. 链接
 
-- 上游：<https://github.com/Mereithhh/gnss-downloader> · Release <https://github.com/Mereithhh/gnss-downloader/releases/tag/V3.0> · 官网 <https://www.mereith.com/gnss>
+- 上游：<https://github.com/Mereithhh/gnss-downloader> · Release <https://github.com/Mereithhh/gnss-downloader/releases/tag/V3.0> · 官网 <https://www.mereith.com/gnss>（链接已失效，2026-09-26 检查为 404）
 - 兄弟：[data-access](../data-access.md) · [gdds](./gdds.md) · [gampii-good](./gampii-good.md) · [fast](./fast.md) · [cddis-highrate-downloader](./cddis-highrate-downloader.md) · [georinex](./georinex.md) · [hatanaka](./hatanaka.md) · [README](./README.md) · [`PROJECTS.json`](../../PROJECTS.json)
