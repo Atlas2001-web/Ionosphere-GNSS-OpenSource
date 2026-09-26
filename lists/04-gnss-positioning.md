@@ -201,7 +201,7 @@ VieVS（TU Wien）精密单点定位模块，MATLAB 实现，便于与 VLBI/大�
 
 语言：C · 许可：— · 星标约：78 · 宿主：github
 
-整理/公开的多星座 PPP 相关源码，常被中文社区当作 GAMP 学习材料。适合对照教材读流程。官方维护关系与许可需自行核实，慎直接用于生产。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
+整理/公开的多星座 PPP 相关源码，常被中文社区当作 GAMP 学习材料。适合对照教材读流程。官方维护关系与许可需自行核实，慎直接用于生产。
 
 #### [GPSPACE](https://github.com/CGS-GIS/GPSPACE)  
 *🏷️ 官方*
@@ -215,7 +215,7 @@ VieVS（TU Wien）精密单点定位模块，MATLAB 实现，便于与 VLBI/大�
 
 语言：C++ · 许可：— · 星标约：49 · 宿主：github
 
-开源 PPP 库，便于阅读 PPP 状态估计与资源管理结构。适合课程设计与二次开发起点。社区体量小于 PRIDE/RTKLIB；功能完整性以实测为准。
+开源 PPP 库，便于阅读 PPP 状态估计与资源管理结构。适合课程设计与二次开发起点。社区体量小于 PRIDE/RTKLIB。
 
 #### [PPP](https://github.com/XiaoGongWei/PPP)  
 *🏷️ 个人社区*
@@ -265,7 +265,7 @@ VieVS（TU Wien）精密单点定位模块，MATLAB 实现，便于与 VLBI/大�
 
 语言：C++ · 许可：Apache-2.0 (see GitHub) · 星标约：— · 宿主：official_site
 
-Geoscience Australia 对开源 GNSS 分析中心软件 Ginan 的官方说明，介绍实时改正服务与产品生成角色，并指向 GA GitHub 获取源码。适合了解国家级 PPP/改正链路背景；具体编译、模块划分与许可以 GitHub 仓库 README 为准。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
+Geoscience Australia 对开源 GNSS 分析中心软件 Ginan 的官方说明，介绍实时改正服务与产品生成角色，并指向 GA GitHub 获取源码。适合了解国家级 PPP/改正链路背景；具体编译、模块划分与许可以 GitHub 仓库 README 为准。
 
 ## 教学/PPP套件
 
@@ -281,7 +281,7 @@ Geoscience Australia 对开源 GNSS 分析中心软件 Ginan 的官方说明，�
 
 语言：C/Python · 许可：Apache-2.0 + LGPL-3.0 (GUI) · 星标约：— · 宿主：official_site
 
-UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许可说明（GUI LGPL-3，核心/绘图 Apache 2.0）。做教学实验请从此获取而非不明镜像。版本与 Qt/Python 依赖需按说明匹配目标发行版，避免混用旧 GUI 与新核心。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
+UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许可说明（GUI LGPL-3，核心/绘图 Apache 2.0）。做教学实验请从此获取而非不明镜像。版本与 Qt/Python 依赖需按说明匹配目标发行版，避免混用旧 GUI 与新核心。
 
 #### [gLAB-UPC](https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite)  
 *🏷️ 高校实验室 核心*
@@ -328,14 +328,14 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 
 语言：Python · 许可：BSD-3-Clause · 星标约：17 · 宿主：github
 
-海床大地测量社区维护的 GNSS-Acoustic（GNSS-A）软件：海面 GNSS 与水声测距联合约束海底换能器/点位，用于海底形变与板块边界监测。面向海洋大地测量课题组。不是陆地 RTK/PPP；依赖船舶、声学与时间同步链路，作业与数据成本远高于陆基站网。社区仓库，版本接口以上游发布说明为准。
+海床大地测量社区维护的 GNSS-Acoustic（GNSS-A）软件：海面 GNSS 与水声测距联合约束海底换能器/点位，用于海底形变与板块边界监测。面向海洋大地测量课题组。不是陆地 RTK/PPP；依赖船舶、声学与时间同步链路，作业与数据成本远高于陆基站网。
 
 #### [GAMIT/GLOBK](https://geoweb.mit.edu/gg/)  
 *🏷️ 高校实验室*
 
 语言：Fortran/C · 许可：scientific distribution (request) · 星标约：— · 宿主：official_site
 
-MIT 地球大气与行星科学系长期维护的 GAMIT/GLOBK 套件，GAMIT 负责双差相位网解（轨道、站坐标、对流层参数），GLOBK 用卡尔曼滤波合并多期松弛解生成速度场与时间序列，是构造地壳形变研究的主力工具之一。主页集中了快速入门、GAMIT/GLOBK 参考手册、更新记录与依赖说明；源码需先提交许可申请后获取，非 SPDX 开源许可。与 Bernese、GipsyX 属同一档次的科研解算软件，适合与本目录 PPP 类开源工具对照。收录前已 HTTP 200 核验。
+MIT 地球大气与行星科学系长期维护的 GAMIT/GLOBK 套件，GAMIT 负责双差相位网解（轨道、站坐标、对流层参数），GLOBK 用卡尔曼滤波合并多期松弛解生成速度场与时间序列，是构造地壳形变研究的主力工具之一。主页集中了快速入门、GAMIT/GLOBK 参考手册、更新记录与依赖说明；源码需先提交许可申请后获取，非 SPDX 开源许可。与 Bernese、GipsyX 属同一档次的科研解算软件，适合与 PPP 类开源工具对照。
 
 ## SPP/RTK/PPP
 
@@ -537,7 +537,7 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 
 语言：Python · 许可：MIT · 星标约：10 · 宿主：github
 
-个人开发者发布的 Python GNSS/大地测量工具箱，MIT 许可并有 Zenodo DOI。首个版本聚焦基于 RINEX 观测、导航文件与 SP3 的双差基线最小二乘解算，提供命令行与 Web 图形界面（NestJS 前端 + FastAPI 服务），另含 SPP（Klobuchar/NeQuick-G 电离层改正）、LAMBDA 模糊度固定与 Melbourne-Wübbena 周跳探测等模块，并配有观测模型、差分策略与平差理论文档。代码透明、带测试 CI，适合课程作业或理解 RTK 原理，而非替代 RTKLIB 等成熟引擎。项目较新、星标不多，功能以文档声明为准。
+个人开发者发布的 Python GNSS/大地测量工具箱，MIT 许可并有 Zenodo DOI。首个版本聚焦基于 RINEX 观测、导航文件与 SP3 的双差基线最小二乘解算，提供命令行与 Web 图形界面（NestJS 前端 + FastAPI 服务），另含 SPP（Klobuchar/NeQuick-G 电离层改正）、LAMBDA 模糊度固定与 Melbourne-Wübbena 周跳探测等模块，并配有观测模型、差分策略与平差理论文档。代码透明、带测试 CI，适合课程作业或理解 RTK 原理，而非替代 RTKLIB 等成熟引擎。项目较新、星标不多。
 
 #### [GNSSRTK](https://github.com/supakunz/GNSS_RTK)  
 *🏷️ 个人社区*
@@ -745,7 +745,7 @@ PolyU TAS Lab 的 Yixin Gao 与 Weisong Wen 发布的 GNSS+LEO 因子图定位�
 
 语言：— · 许可：— · 星标约：0 · 宿主：github
 
-仅说明，无代码。nlsfi 名下的 HASlibTestSuite 仓库只有一个内容为“# HASlibTestSuite1”的 README，2022-09-30 后没有更新，并不包含测试样例或脚本。需要 Galileo HAS 解码时直接用 nlsfi/HASlib 及其自带示例；本条保留仅为记录该仓库名称。
+仅说明，无代码。nlsfi 名下的 HASlibTestSuite 仓库只有一个内容为“# HASlibTestSuite1”的 README，2022-09-30 后没有更新，并不包含测试样例或脚本。需要 Galileo HAS 解码时直接用 nlsfi/HASlib 及其自带示例。
 
 ## PPP/HAS
 
@@ -1075,7 +1075,7 @@ Python 终端 RTK 客户端（AGPL-3.0）：经 NTRIP 拉取 RTCM3 改正并注�
 
 语言：Python · 许可：MIT · 星标约：1 · 宿主：github
 
-sidereon 统一 GNSS+轨道力学引擎的 Python 发行（MIT，pip install sidereon），以 numpy 数组暴露 SPP、TLE 传播、SP3 加载与时间/坐标系转换；核为静态链接 Rust。目录已收录 Rust 主仓 sidereon，本条便于 Python 用户直达。功能面仍在演进；精密 PPP/RTK 深度需对照主仓路线图。
+sidereon 统一 GNSS+轨道力学引擎的 Python 发行（MIT，pip install sidereon），以 numpy 数组暴露 SPP、TLE 传播、SP3 加载与时间/坐标系转换；核为静态链接 Rust。Rust 主仓为 sidereon，本包便于 Python 用户直接调用。功能面仍在演进；精密 PPP/RTK 深度需对照主仓路线图。
 
 ## 形变/多源联合
 
@@ -1105,7 +1105,7 @@ TU Delft 开源 IGP（MATLAB，Apache-2.0）：以 Space-Time Matrix 统一 GNSS
 
 语言：Rust · 许可：MPL-2.0 · 星标约：12 · 宿主：github
 
-nav-solutions 框架下的实时 PoC：以 U-Blox 原始/手动模式作测量源，喂给同组织的 PVT 解算器并与接收机固件解对比。MPL-2.0；当前单串口单接收机。偏工程验证而非测地级 PPP-AR 产品，外参、时间同步与对流层模型需使用者自理。与已收录的 gnss-rtk/rinex 等 crate 同一生态。
+nav-solutions 框架下的实时 PoC：以 U-Blox 原始/手动模式作测量源，喂给同组织的 PVT 解算器并与接收机固件解对比。MPL-2.0；当前单串口单接收机。偏工程验证而非测地级 PPP-AR 产品，外参、时间同步与对流层模型需使用者自理。与 gnss-rtk/rinex 等 crate 同一生态。
 
 ## GNSS算法库
 
@@ -1120,7 +1120,7 @@ nav-solutions 框架下的实时 PoC：以 U-Blox 原始/手动模式作测量�
 
 语言：C · 许可：LGPL-3.0 · 星标约：23 · 宿主：github
 
-标准 C 实现的平台无关 GNSS 工具库（libswiftnav），LGPL-3.0，面向软件接收机或需 GNSS 数值例程的嵌入式/主机程序。不负责与 Swift 接收机通信（那是 libsbp）；本库偏算法与公用函数。构建需 CMake；API 随版本演进，接入前请对照文档与测试。与已收录的 libsbp/piksi_tools 同属厂商开源栈。
+标准 C 实现的平台无关 GNSS 工具库（libswiftnav），LGPL-3.0，面向软件接收机或需 GNSS 数值例程的嵌入式/主机程序。不负责与 Swift 接收机通信（那是 libsbp）；本库偏算法与公用函数。构建需 CMake；API 随版本演进，接入前请对照文档与测试。与 libsbp/piksi_tools 同属厂商开源栈。
 
 ## 多路径AI
 

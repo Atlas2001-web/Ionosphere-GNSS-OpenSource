@@ -40,7 +40,7 @@
 | **数据源门户** | [10](./lists/10-gnss-datasets.md) | 169 |
 | **合计** | [PROJECTS.json](./PROJECTS.json) | **1029** |
 
-标记：🏷️ 官方 / 高校实验室 / 个人社区 · 官方 332 · 高校 238 · 社区 459 · 细则 [categories.md](./docs/categories.md)
+标记：🏷️ 官方 / 高校实验室 / 个人社区 · 官方 331 · 高校 214 · 社区 484 · 细则 [categories.md](./docs/categories.md)
 
 ---
 

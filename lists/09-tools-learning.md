@@ -40,7 +40,7 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 
 语言：— · 许可：Apache-2.0 · 星标约：599 · 宿主：github
 
-Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献入口，本目录大量种子来源之一。适合定期浏览查新。本身不含算法实现。
+Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献入口。适合定期浏览查新。本身不含算法实现。
 
 #### [awesome-gnss-hdkarimi](https://github.com/hdkarimi/awesome-gnss)  
 *🏷️ 个人社区*
@@ -80,7 +80,7 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 
 语言：MATLAB · 许可：MIT · 星标约：137 · 宿主：github
 
-在任意位置生成虚拟鱼眼天顶图并判断 GNSS 可见性，城市遮挡研究直观。需要 Google Earth 相关环境。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
+在任意位置生成虚拟鱼眼天顶图并判断 GNSS 可见性，城市遮挡研究直观。需要 Google Earth 相关环境。
 
 #### [gnss_timeseries_viewers](https://github.com/kmaterna/gnss_timeseries_viewers)  
 *🏷️ 个人社区*
@@ -101,7 +101,7 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 
 语言：web · 许可：site terms · 星标约：— · 宿主：official_site
 
-面向 GNSS 测站速度场的浏览器可视化工具，便于快速查看区域形变矢量。属于机构托管的 Web 应用而非本地库；科研制图仍常导出后用 GMT/Python。适合教学演示与数据探索，不能替代时间序列精密分析或网平差软件。使用前请核验上游页面与许可条款。
+面向 GNSS 测站速度场的浏览器可视化工具，便于快速查看区域形变矢量。属于机构托管的 Web 应用而非本地库；科研制图仍常导出后用 GMT/Python。适合教学演示与数据探索，不能替代时间序列精密分析或网平差软件。
 
 ## SBAS
 
@@ -119,7 +119,7 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-欧洲 GNSS 服务中心（GSC）EGNOS 用户支持站点，汇总服务状态、文档与用户资源（原 ESSP 入口现多导向此域）。官方 portal；与 EGNOS SDK/Toolkit 代码条目互补。适合 SBAS 服务调研，EDAS 等实时数据接口往往需要注册，条款以站内说明为准。
+欧洲 GNSS 服务中心（GSC）EGNOS 用户支持站点，汇总服务状态、文档与用户资源（原 ESSP 入口现多导向此域）。官方 portal；与 EGNOS SDK/Toolkit 代码条目互补。适合 SBAS 服务调研，EDAS 等实时数据接口往往需要注册。
 
 #### [EGNOS-Toolkit](https://sourceforge.net/projects/libegnos/)  
 *🏷️ 个人社区*
@@ -168,7 +168,7 @@ ENRI 是日本在航空交通管理与通信导航监视（ATM/CNS）领域的�
 
 语言：various · 许可：varies · 星标约：— · 宿主：official_site
 
-澳大利亚定位项目服务总览，含 SouthPAN、GNSS 数据中心与 AUSPOS 在线处理等入口。多数为在线服务而非本地开源库，与 Ginan 开源套件互补。查找国家级数据流、改正服务与在线 PPP 时可作为官方导航页。使用前请核验上游页面与许可条款。
+澳大利亚定位项目服务总览，含 SouthPAN、GNSS 数据中心与 AUSPOS 在线处理等入口。多数为在线服务而非本地开源库，与 Ginan 开源套件互补。查找国家级数据流、改正服务与在线 PPP 时可作为官方导航页。
 
 #### [GPS.gov](https://www.gps.gov/)  
 *🏷️ 官方*
@@ -189,7 +189,7 @@ GPS.gov 是美国面向公众的 GPS 系统官方站点，汇总政策、现代�
 
 语言：various · 许可：USGov public resource · 星标约：— · 宿主：official_site
 
-NOAA/NGS 大地测量 PC 软件汇总页，链向 HTDP 等可下载程序与文档，是做美国基准与地壳运动相关计算时的官方起点。具体程序许可与源码可用性因条目而异，例如 HTDP 源码已在 GitHub noaa-ngs 组织发布。使用前请核验上游页面与许可条款。
+NOAA/NGS 大地测量 PC 软件汇总页，链向 HTDP 等可下载程序与文档，是做美国基准与地壳运动相关计算时的官方起点。具体程序许可与源码可用性因条目而异，例如 HTDP 源码已在 GitHub noaa-ngs 组织发布。
 
 #### [UNAVCO-Software-Portal](https://www.unavco.org/software/)  
 *🏷️ 官方*
@@ -218,7 +218,7 @@ USCG Navigation Center 官网，发布航海航标、差分 GPS/导航服务公�
 
 语言：various · 许可：varies · 星标约：— · 宿主：official_site
 
-gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbuntu Live 环境，是教学实验的一站式入口，便于课程统一环境。具体许可以各下载页为准；Live 镜像体积较大，需预留足够磁盘空间。使用前请核验上游页面与许可条款。
+gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbuntu Live 环境，是教学实验的一站式入口，便于课程统一环境。具体许可以各下载页为准；Live 镜像体积较大，需预留足够磁盘空间。
 
 ## 轨迹/航点转换
 
@@ -233,7 +233,7 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 
 语言：C++ · 许可：GPL-2.0-or-later · 星标约：— · 宿主：other
 
-成熟的开源 GPS 数据转换器，支持大量消费级接收机与地图软件之间的航点、轨迹互转，并提供去重与简化。对测绘级 RINEX/载波相位无助，但野外勘察与 GIS 衔接很实用。主站提供文档与下载；SourceForge 镜像偶发屏蔽时可改用官网通道。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
+成熟的开源 GPS 数据转换器，支持大量消费级接收机与地图软件之间的航点、轨迹互转，并提供去重与简化。对测绘级 RINEX/载波相位无助，但野外勘察与 GIS 衔接很实用。主站提供文档与下载；SourceForge 镜像偶发屏蔽时可改用官网通道。
 
 ## 坐标框架/地壳运动
 
@@ -248,7 +248,7 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 
 语言：Fortran · 许可：USGov (17 USC 105; royalty-free licence outside US) · 星标约：33 · 宿主：github
 
-美国国家大地测量局官方开源的 Horizontal Time-Dependent Positioning，Fortran 实现地壳运动模型下的坐标时间归算与框架变换。配套用户指南与 NGS 工具页。GNSS 测站坐标比较、CORS 历元统一常用；不处理原始观测，也不是 PPP 软件。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
+美国国家大地测量局官方开源的 Horizontal Time-Dependent Positioning，Fortran 实现地壳运动模型下的坐标时间归算与框架变换。配套用户指南与 NGS 工具页。GNSS 测站坐标比较、CORS 历元统一常用；不处理原始观测，也不是 PPP 软件。
 
 ## 因子图教程
 
@@ -355,7 +355,7 @@ MATLAB 课程练习：用五站 GPS 静态网数据（AdvConc2019.mat）构造�
 
 语言：Win32 binaries · 许可：proprietary-freeware · 星标约：— · 宿主：official_site
 
-美国 NGS 发布的 ADJUST 及配套 CHKOBS 等 Windows 工具，用于水平/GPS 观测平差与蓝簿数据检查。提供可执行包，不提供源码。面向向 NGS 提交工程的美国用户；一般科研 PPP 或国际测区处理不必依赖本套件。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
+美国 NGS 发布的 ADJUST 及配套 CHKOBS 等 Windows 工具，用于水平/GPS 观测平差与蓝簿数据检查。提供可执行包，不提供源码。面向向 NGS 提交工程的美国用户；一般科研 PPP 或国际测区处理不必依赖本套件。
 
 ## 教材与工具索引
 
@@ -378,14 +378,14 @@ MATLAB 课程练习：用五站 GPS 静态网数据（AdvConc2019.mat）构造�
 
 语言：various · 许可：varies by article · 星标约：— · 宿主：official_site
 
-国家大地测量局汇集的 GPS Solutions 期刊工具箱文章目录，涵盖 RINEX 类库、模糊度、Klobuchar、轨道插值等经典小品。2024-09 后站点不再直接托管源码，需联系作者或期刊。适合文献溯源与教学对照，不宜当作持续维护的软件发行渠道。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
+国家大地测量局汇集的 GPS Solutions 期刊工具箱文章目录，涵盖 RINEX 类库、模糊度、Klobuchar、轨道插值等经典小品。2024-09 后站点不再直接托管源码，需联系作者或期刊。适合文献溯源与教学对照，不宜当作持续维护的软件发行渠道。
 
 ## 坐标转换
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [geodesy-js](https://github.com/chrisveness/geodesy) | geodesy-js：浏览器/Node 可用的 JS 大地测量库 | JavaScript | 1227 | 🏷️ 个人社区 |
-| [pymap3d](https://github.com/geospace-code/pymap3d) | pymap3d：纯 Python 三维坐标转换（ECEF/ENU/ECI） | Python | 445 | 🏷️ 高校实验室 |
+| [pymap3d](https://github.com/geospace-code/pymap3d) | pymap3d：纯 Python 三维坐标转换（ECEF/ENU/ECI） | Python | 445 | 🏷️ 个人社区 |
 | [Geodesy.jl](https://github.com/JuliaGeo/Geodesy.jl) | Geodesy.jl：Julia 坐标与大地测量变换库 | Julia | 114 | 🏷️ 个人社区 |
 | [ncat-lib](https://github.com/noaa-ngs/ncat-lib) | NGS NCAT Java 库：离线坐标/基准转换 | Java | 21 | 🏷️ 官方 |
 | [NGS-NCAT](https://geodesy.noaa.gov/NCAT/) | NGS-NCAT：NOAA/NGS 大地坐标与参考框架在线转换 | web/service | — | 🏷️ 官方 |
@@ -401,7 +401,7 @@ MATLAB 课程练习：用五站 GPS 静态网数据（AdvConc2019.mat）构造�
 chrisveness 维护的 JS 大地测量工具集，覆盖常见椭球上的距离、方位与坐标变换，浏览器与 Node 可用。MIT 许可；填补 Web 前端坐标计算缺口。偏通用大地测量，不处理 RINEX/RTK 观测；高精度应用请核对方位约定与椭球参数。
 
 #### [pymap3d](https://github.com/geospace-code/pymap3d)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：BSD-2-Clause · 星标约：445 · 宿主：github
 
@@ -419,14 +419,14 @@ JuliaGeo 的坐标系统与点位变换库，支持常见大地测量坐标转�
 
 语言：Java · 许可：USGov (17 USC 105 / NOAA terms) · 星标约：21 · 宿主：github
 
-NGS 公开的 NCAT（NGS Coordinate Conversion and Transformation Tool）底层 Java 转换模块库，可用 Ant 构建 jar，在无网络环境下做坐标与基准转换（NADCON/VERTCON 格网需另从 NCAT 站点下载）。美国政府雇员作品在美不受版权限制（17 U.S.C. §105），并对外提供免版税非独占许可（仓库 SPDX 标为 NOASSERTION/other）。与已收录的 NGS-NCAT 网页工具互补（网页 vs 可嵌入库）。不是 GNSS 观测解算器。
+NGS 公开的 NCAT（NGS Coordinate Conversion and Transformation Tool）底层 Java 转换模块库，可用 Ant 构建 jar，在无网络环境下做坐标与基准转换（NADCON/VERTCON 格网需另从 NCAT 站点下载）。美国政府雇员作品在美不受版权限制（17 U.S.C. §105），并对外提供免版税非独占许可（仓库 SPDX 标为 NOASSERTION/other）。与 NGS-NCAT 网页工具互补（网页 vs 可嵌入库）。不是 GNSS 观测解算器。
 
 #### [NGS-NCAT](https://geodesy.noaa.gov/NCAT/)  
 *🏷️ 官方*
 
 语言：web/service · 许可：USGov public resource · 星标约：— · 宿主：official_site
 
-国家大地测量局坐标转换与变换工具，支持多种美国大地基准与框架之间的点位转换。以 Web/服务形式提供，便于把 GNSS 成果归算到所需基准。不是观测处理软件；与 HTDP、VDATUM 等 NGS 工具链互补，做美国测区成果交付时常一起查阅。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
+国家大地测量局坐标转换与变换工具，支持多种美国大地基准与框架之间的点位转换。以 Web/服务形式提供，便于把 GNSS 成果归算到所需基准。不是观测处理软件；与 HTDP、VDATUM 等 NGS 工具链互补，做美国测区成果交付时常一起查阅。
 
 #### [NRCan-TRX](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/trx.php)  
 *🏷️ 官方*
@@ -459,7 +459,7 @@ daniestevez 维护的 Galileo OSNMA 协议 Rust 库，校验导航电文密码�
 
 语言：Python · 许可：EUPL-1.2 · 星标约：52 · 宿主：github
 
-实现 Galileo 开放业务消息认证（OSNMA），用于抗欺骗研究与接收机试验。适合安全/完好性方向。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
+实现 Galileo 开放业务消息认证（OSNMA），用于抗欺骗研究与接收机试验。适合安全/完好性方向。
 
 #### [gal-osnma-sim](https://github.com/galileoz/gal-osnma-sim)  
 *🏷️ 个人社区*
@@ -480,7 +480,7 @@ GSC 关于 Galileo Open Service Navigation Message Authentication（OSNMA）的�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-欧洲 GNSS 服务中心电子图书馆中的 Programme Reference Documents，集中链向 Galileo/EGNOS 接口控制文件与计划级参考文档。官方 portal；做接收机/OSNMA/HAS 开发前的权威文档入口。具体 PDF 版本与下载条款以页面为准，需遵守欧盟文件分发条件。
+欧洲 GNSS 服务中心电子图书馆中的 Programme Reference Documents，集中链向 Galileo/EGNOS 接口控制文件与计划级参考文档。官方 portal；做接收机/OSNMA/HAS 开发前的权威文档入口。需遵守欧盟文件分发条件。
 
 ## SWARM教程
 
@@ -510,7 +510,7 @@ GSC 关于 Galileo Open Service Navigation Message Authentication（OSNMA）的�
 
 语言：Java/app · 许可：USGov public resource · 星标约：— · 宿主：official_site
 
-NOAA 垂直基准转换软件与服务，连接椭球高、大地水准面与潮汐等垂直基准，海岸带与 GNSS 高程应用中常用。以官方发布包与 Web 服务为准；与水平框架工具 HTDP、NCAT 分工不同，高程与平面归算请分别选用对应工具。使用前请核验上游页面与许可条款。
+NOAA 垂直基准转换软件与服务，连接椭球高、大地水准面与潮汐等垂直基准，海岸带与 GNSS 高程应用中常用。以官方发布包与 Web 服务为准；与水平框架工具 HTDP、NCAT 分工不同，高程与平面归算请分别选用对应工具。
 
 ## 接收机工具
 
@@ -540,7 +540,7 @@ NOAA 垂直基准转换软件与服务，连接椭球高、大地水准面与潮
 
 语言：Python · 许可：MIT · 星标约：24 · 宿主：github
 
-Swift Navigation 维护的 Python GNSS 实用集合，MIT 许可，近年仍有推送。与同组织的 libsbp、piksi_tools 互补，侧重脚本化处理而非完整 PPP 引擎。名称在目录中写作 swift-nav-pygnss，避免与 pygnssutils 等已收录项目混淆。接口随 SBP/固件演进出变更，集成前请读示例与版本说明。
+Swift Navigation 维护的 Python GNSS 实用集合，MIT 许可，近年仍有推送。与同组织的 libsbp、piksi_tools 互补，侧重脚本化处理而非完整 PPP 引擎。勿与名称相近的 pygnssutils 等库混淆。接口随 SBP/固件演进出变更，集成前请读示例与版本说明。
 
 ## SBAS用户支持
 
@@ -555,7 +555,7 @@ Swift Navigation 维护的 Python GNSS 实用集合，MIT 许可，近年仍有�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-欧洲卫星服务商（ESSP）运营的 EGNOS 用户支持门户，提供系统介绍、实时/历史状态、订阅与 7×24 帮助台。与已收录的 EGNOS GSC 门户互补：GSC 偏官方产品与文档，本站偏运行支持与用户服务。登录后可管理订阅；公开页亦可浏览状态摘要。收录前已 HTTP 核验；使用请遵守 ESSP/EUSPA 条款。
+欧洲卫星服务商（ESSP）运营的 EGNOS 用户支持门户，提供系统介绍、实时/历史状态、订阅与 7×24 帮助台。与 EGNOS GSC 门户互补：GSC 偏官方产品与文档，本站偏运行支持与用户服务。登录后可管理订阅；公开页亦可浏览状态摘要。
 
 ## 基准与框架
 
@@ -570,7 +570,7 @@ Swift Navigation 维护的 Python GNSS 实用集合，MIT 许可，近年仍有�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-LINZ 关于新西兰大地测量系统的指导页，解释基准、框架与使用注意，服务测绘与 GNSS 成果归算用户。偏文档与概念，不替代 PositioNZ 观测下载。与 LINZ-Geodetic 产品页成对：一为服务入口，一为系统说明。收录前已 HTTP 核验；工程采用请对照最新官方通告。
+LINZ 关于新西兰大地测量系统的指导页，解释基准、框架与使用注意，服务测绘与 GNSS 成果归算用户。偏文档与概念，不替代 PositioNZ 观测下载。与 LINZ-Geodetic 产品页成对：一为服务入口，一为系统说明。工程采用请对照最新官方通告。
 
 ## 地磁模型
 
@@ -585,7 +585,7 @@ LINZ 关于新西兰大地测量系统的指导页，解释基准、框架与使
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-美国 NCEI 发布的 World Magnetic Model 官方页，提供模型说明、系数与计算入口，支撑磁航向、磁偏角及部分电离层/地磁应用。与已收录的 wmm2020 软件包装互补：本页为权威发布与文档源头。模型有年限与更新周期，工程中勿混用过期系数。收录前已 HTTP 核验；请遵守 NOAA 数据使用说明。
+美国 NCEI 发布的 World Magnetic Model 官方页，提供模型说明、系数与计算入口，支撑磁航向、磁偏角及部分电离层/地磁应用。与 wmm2020 软件包装互补：本页为权威发布与文档源头。模型有年限与更新周期，工程中勿混用过期系数。
 
 ## 航天器态势
 
@@ -600,7 +600,7 @@ LINZ 关于新西兰大地测量系统的指导页，解释基准、框架与使
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-Satellite Situation Center Web（SSCWeb）提供航天器轨道、星下点与相关坐标查询，便于空间任务与地面 GNSS/电离层观测的几何对照。与 CDAWeb/SPDF 同属 NASA 空间数据体系。收录前已 HTTP 核验；查询结果用于科研时请注明服务与历元。
+Satellite Situation Center Web（SSCWeb）提供航天器轨道、星下点与相关坐标查询，便于空间任务与地面 GNSS/电离层观测的几何对照。与 CDAWeb/SPDF 同属 NASA 空间数据体系。查询结果用于科研时请注明服务与历元。
 
 ## 空间天气API
 
@@ -615,7 +615,7 @@ Satellite Situation Center Web（SSCWeb）提供航天器轨道、星下点与�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-SWPC 对外提供的服务根目录，索引 experimental、json、netcdf、products 等机器可读空间天气产品路径。便于脚本拉取指数、通量与相关产品，与已收录的 GloTEC 等具体产品页互补。目录本身无文档正文，具体端点以子路径为准。收录前已 HTTP 核验；高频抓取请遵守 NOAA 使用政策。
+SWPC 对外提供的服务根目录，索引 experimental、json、netcdf、products 等机器可读空间天气产品路径。便于脚本拉取指数、通量与相关产品，与 GloTEC 等具体产品页互补。目录本身无文档正文，具体端点以子路径为准。高频抓取请遵守 NOAA 使用政策。
 
 ## ESA导航
 
@@ -630,7 +630,7 @@ SWPC 对外提供的服务根目录，索引 experimental、json、netcdf、prod
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-欧洲航天局卫星导航应用门户，汇总 Galileo、EGNOS、NAVISP、月球导航等项目新闻与介绍。偏政策与工程进展导航，具体 ICD/服务细节仍走 GSC 等站点。与已收录的 GSC 产品页形成官方叙事互补。收录前已 HTTP 核验；引用请注明 ESA 页面与日期。
+欧洲航天局卫星导航应用门户，汇总 Galileo、EGNOS、NAVISP、月球导航等项目新闻与介绍。偏政策与工程进展导航，具体 ICD/服务细节仍走 GSC 等站点。与 GSC 产品页形成官方叙事互补。引用请注明 ESA 页面与日期。
 
 ## GPS驯服钟
 
@@ -660,4 +660,4 @@ SWPC 对外提供的服务根目录，索引 experimental、json、netcdf、prod
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-NCEI Geomagnetism 主页，汇总地磁模型、数据、制图与监测服务入口；已收录 WMM 门户可由此发现更多地磁产品。对磁航向与部分电离层/空间天气应用有关。请遵守 NOAA 数据使用说明。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证与引用要求。
+NCEI Geomagnetism 主页，汇总地磁模型、数据、制图与监测服务入口；可由此进入 WMM 门户及更多地磁产品。对磁航向与部分电离层/空间天气应用有关。

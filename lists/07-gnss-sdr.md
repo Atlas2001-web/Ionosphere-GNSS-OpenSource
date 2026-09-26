@@ -189,7 +189,7 @@ OSCIMP 维护的 gnss-sdr 补丁集（按 v0.0.18/v0.0.20 分版本）：接双�
 
 语言：MATLAB · 许可：MIT · 星标约：26 · 宿主：github
 
-面向捕获速度与弱信号灵敏度的 MATLAB GNSS 接收机实现，适合算法试验与教学对照。不是完整多星座产品级 SDR；前端与性能边界以仓库说明为准。
+面向捕获速度与弱信号灵敏度的 MATLAB GNSS 接收机实现，适合算法试验与教学对照。不是完整多星座产品级 SDR。
 
 #### [pylgrim](https://github.com/kirienko/pylgrim)  
 *🏷️ 个人社区*
@@ -361,7 +361,7 @@ Mictronics 维护的 PlutoSDR GPS 基带 IQ 生成与发射工具，把模拟中
 
 语言：C++ · 许可：— · 星标约：62 · 宿主：github
 
-专门生成 Galileo E1B/C，补齐 gps-sdr-sim 偏 GPS 的空白。适合 Galileo 基带试验。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
+专门生成 Galileo E1B/C，补齐 gps-sdr-sim 偏 GPS 的空白。适合 Galileo 基带试验。
 
 #### [BeiDou_B1C](https://github.com/lnexenl/BeiDou_B1C)  
 *🏷️ 个人社区*
@@ -396,7 +396,7 @@ MATLAB GNSS 测量仿真器，按场景生成伪距等观测，便于定位滤�
 
 语言：C++ · 许可：— · 星标约：29 · 宿主：github
 
-GPS 与 Galileo 卫星信号模拟相关实现，说明中提及与 RTKLIB 能力结合，用于产生测试用信号/数据。适合多星座接收机输入测试与教学。可发射前端、星历接口与完整度以仓库为准；实发同样受法规约束。Galileo 与 GPS 时间系统差异要在仿真里显式处理。多星座仿真要显式处理 GPS/Galileo 时间差。
+GPS 与 Galileo 卫星信号模拟相关实现，说明中提及与 RTKLIB 能力结合，用于产生测试用信号/数据。适合多星座接收机输入测试与教学。实发同样受法规约束。Galileo 与 GPS 时间系统差异要在仿真里显式处理。
 
 #### [beidou-sdr-sim](https://github.com/yangfan852219770/beidou-sdr-sim)  
 *🏷️ 个人社区*
@@ -410,7 +410,7 @@ GPS 与 Galileo 卫星信号模拟相关实现，说明中提及与 RTKLIB 能�
 
 语言：Rust · 许可：MIT · 星标约：13 · 宿主：github
 
-受 gps-sdr-sim 启发、用 Rust 重写的软件定义 GPS 信号发生器，MIT 许可。读取 RINEX 导航星历与用户轨迹，生成 GPS L1 C/A 的 IQ 采样文件，可交由 HackRF 等 SDR 播放，用于接收机测试与教学；在保持命令行兼容的同时强调模块化与内存安全，带 CI 与发布版本。README 醒目提示法律风险：未经授权发射 GNSS 信号在多数地区违法，应在屏蔽环境或有线注入下使用。可与已收录的 gps-sdr-sim、multi-sdr-gps-sim 对比。
+受 gps-sdr-sim 启发、用 Rust 重写的软件定义 GPS 信号发生器，MIT 许可。读取 RINEX 导航星历与用户轨迹，生成 GPS L1 C/A 的 IQ 采样文件，可交由 HackRF 等 SDR 播放，用于接收机测试与教学；在保持命令行兼容的同时强调模块化与内存安全，带 CI 与发布版本。README 醒目提示法律风险：未经授权发射 GNSS 信号在多数地区违法，应在屏蔽环境或有线注入下使用。可与 gps-sdr-sim、multi-sdr-gps-sim 对比。
 
 #### [esp2822NMEAsim](https://github.com/michalpelka/esp2822_NMEA_sim)  
 *🏷️ 个人社区*
@@ -424,7 +424,7 @@ GPS 与 Galileo 卫星信号模拟相关实现，说明中提及与 RTKLIB 能�
 
 语言：Python · 许可：— · 星标约：4 · 宿主：github
 
-面向微纳卫星/立方星工程的 GNSS 仿真相关 Python 工具，用于地面验证导航算法与接口。适合学生卫星与小型航天器软件队。功能与精度指标以仓库文档为准，通常不能替代机构级航天器动力学+GNSS 仿真器。轨道力学简化程度要在任务设计评审里说清楚。轨道与姿态简化假设应在任务设计中写明。选用前建议先跑通作者提供的最小示例。
+面向微纳卫星/立方星工程的 GNSS 仿真相关 Python 工具，用于地面验证导航算法与接口。适合学生卫星与小型航天器软件队。通常不能替代机构级航天器动力学+GNSS 仿真器。轨道力学简化程度要在任务设计评审里说清楚。选用前建议先跑通作者提供的最小示例。
 
 #### [gps-qzss-sdr-sim](https://github.com/iGNSS/gps-qzss-sdr-sim)  
 *🏷️ 个人社区*
@@ -448,7 +448,7 @@ GPS 与 Galileo 卫星信号模拟相关实现，说明中提及与 RTKLIB 能�
 
 语言：MATLAB · 许可：GPL-2.0 · 星标约：74 · 宿主：github
 
-将经典 SoftGNSS（Borre/Akos）教学接收机代码移植到 Octave 的 GPL-2.0 版本，便于无 MATLAB 许可环境下学习 GPS 软件接收机流程。与已收录的 SoftGNSS/ SoftGNSS-python 同源不同实现，目录名加 octave 后缀区分。README 自称“hackish port”，只确认到捕获 PRN 为止，定位结果未经测试；偏教学演示，实时性与多星座能力有限；采样数据与前端需自备。
+将经典 SoftGNSS（Borre/Akos）教学接收机代码移植到 Octave 的 GPL-2.0 版本，便于无 MATLAB 许可环境下学习 GPS 软件接收机流程。与 SoftGNSS、SoftGNSS-python 同源、实现不同。README 自称“hackish port”，只确认到捕获 PRN 为止，定位结果未经测试；偏教学演示，实时性与多星座能力有限；采样数据与前端需自备。
 
 #### [CCAR-GNSS-SDR-Book](https://ccar.colorado.edu/gnss/)  
 *🏷️ 高校实验室*
@@ -500,7 +500,7 @@ VHDL 代码用于生成 GPS L1 C/A 以及 Galileo E1OS、E5 的 PRN 与无数据
 
 语言：C++ · 许可：GPL-3.0 · 星标约：114 · 宿主：github
 
-给 gnss-sdr 用的实时 GUI 监视器，看通道与 PVT 状态更直观。依赖 GNSS-SDR 主程序。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
+给 gnss-sdr 用的实时 GUI 监视器，看通道与 PVT 状态更直观。依赖 GNSS-SDR 主程序。
 
 ## 直接位置估计
 
@@ -629,7 +629,7 @@ SystemVerilog 描述的单通道 GPS L1 C/A FPGA 相关器，经 AXI4-Lite 控�
 
 语言：C · 许可：GPL-3.0 · 星标约：65 · 宿主：github
 
-基于 Maxim MAX2771 的多星座 GNSS 射频前端与 Cypress FX2LP USB 采集方案，GPL-3.0。面向软件接收机实验，可输出基带采样供 GNSS-SDR 等处理。硬件原理图/固件以仓库为准，焊接与时钟质量影响噪声底。适合 SDR 教学与前端联调，不提供完整 PVT 产品链。
+基于 Maxim MAX2771 的多星座 GNSS 射频前端与 Cypress FX2LP USB 采集方案，GPL-3.0。面向软件接收机实验，可输出基带采样供 GNSS-SDR 等处理。焊接与时钟质量影响噪声底。适合 SDR 教学与前端联调，不提供完整 PVT 产品链。
 
 ## SDR抽象
 
@@ -674,7 +674,7 @@ Pothos/Soapy 生态的核心：厂商与平台中立的软件无线电抽象层�
 
 语言：C++ · 许可：LGPL-2.1 · 星标约：90 · 宿主：github
 
-Soapy SDR 插件，对接 Analog Devices ADALM-Pluto，LGPL-2.1。适合低成本 Pluto 前端接入 GNSS 软件接收机实验。驱动与固件版本需匹配；动态范围有限。与已收录 pluto-gps-sim 等仿真工具可互补。
+Soapy SDR 插件，对接 Analog Devices ADALM-Pluto，LGPL-2.1。适合低成本 Pluto 前端接入 GNSS 软件接收机实验。驱动与固件版本需匹配；动态范围有限。与 pluto-gps-sim 等仿真工具可互补。
 
 ## UHD插件
 

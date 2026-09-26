@@ -17,7 +17,7 @@
 
 语言：data-portal · 许可：CC-BY-4.0 · 星标约：— · 宿主：official_site
 
-EUMETSAT 下属的 Radio Occultation Meteorology SAF 官方门户，负责 Metop、Sentinel-6 与 Metop-SG 等任务 GNSS 掩星数据的业务化处理，提供弯曲角、折射率与温湿廓线的近实时产品、气候数据记录、产品质量与监测页面，以及文档、报告和用户服务台。与本目录已收录的 ROPP 软件包同源，此条对应数据产品侧。其产品全部针对中性大气（对流层至平流层的折射率、温湿压与对流层顶高度等，另有月均格点产品），未提供电离层电子密度或 TEC 产品，主要服务数值天气预报同化与气候监测，可与 COSMIC/CDAAC 数据互补。产品下载需注册登录。收录前已 HTTP 200 核验。
+EUMETSAT 下属的 Radio Occultation Meteorology SAF 官方门户，负责 Metop、Sentinel-6 与 Metop-SG 等任务 GNSS 掩星数据的业务化处理，提供弯曲角、折射率与温湿廓线的近实时产品、气候数据记录、产品质量与监测页面，以及文档、报告和用户服务台。与 ROPP 软件包同源，此条对应数据产品侧。其产品全部针对中性大气（对流层至平流层的折射率、温湿压与对流层顶高度等，另有月均格点产品），未提供电离层电子密度或 TEC 产品，主要服务数值天气预报同化与气候监测，可与 COSMIC/CDAAC 数据互补。产品下载需注册登录。
 
 #### [ROM-SAF-ROPP](https://rom-saf.eumetsat.int/ropp/)  
 *🏷️ 官方*
@@ -188,7 +188,7 @@ ITC Water Resources 在树莓派上运行的 GNSS 反射测量实验工程，面
 
 语言：Fortran · 许可：MIT · 星标约：2 · 宿主：github
 
-Larson 团队 Fortran 工具，翻译/读取 GPS RINEX 并提取 SNR，服务反射测量流水线。MIT 许可；与 gnssSNR、gpssnrpy 同谱系、更偏 GPS-only 路径。RINEX 版本支持以说明为准，完整 GNSS-IR 反演需再接 gnssrefl 处理。
+Larson 团队 Fortran 工具，翻译/读取 GPS RINEX 并提取 SNR，服务反射测量流水线。MIT 许可；与 gnssSNR、gpssnrpy 同谱系、更偏 GPS-only 路径。完整 GNSS-IR 反演需再接 gnssrefl 处理。
 
 ## GNSS-IR水位
 
@@ -203,7 +203,7 @@ Larson 团队 Fortran 工具，翻译/读取 GPS RINEX 并提取 SNR，服务反
 
 语言：MATLAB · 许可：— · 星标约：7 · 宿主：github
 
-面向 GNSS 多路径反射信号的水位检索实现，提供从观测到水位产品的处理流程，适合水文与近岸监测试验。许可与依赖以仓库说明为准。站点几何、天线环境与 SNR 质量对结果影响大；与通用 GNSS-IR 套件（如 gnssrefl、GIRAS）对照选型时可看其水文专项流程与示例。
+面向 GNSS 多路径反射信号的水位检索实现，提供从观测到水位产品的处理流程，适合水文与近岸监测试验。站点几何、天线环境与 SNR 质量对结果影响大；与通用 GNSS-IR 套件（如 gnssrefl、GIRAS）对照选型时可看其水文专项流程与示例。
 
 ## GNSS-R处理
 
@@ -313,7 +313,7 @@ GNSS 干涉反射测量（GNSS-IR）主流开源工具，用反射信号估水�
 
 语言：Python · 许可：MIT · 星标约：172 · 宿主：github
 
-将 ITU-R P. 系列大气衰减与传播建议实现为 Python 库，用于雨衰、气体衰减等链路预算，常与卫星/GNSS 相关传播分析对照。MIT 许可；目录已有 ITU-R 软件索引页，本条补齐可脚本化的 P 系列工具包。注意建议书版本与适用频段，它不是 GNSS 观测解算器。
+将 ITU-R P. 系列大气衰减与传播建议实现为 Python 库，用于雨衰、气体衰减等链路预算，常与卫星/GNSS 相关传播分析对照。MIT 许可；相比 ITU-R 官方软件索引页，这是可脚本化的 P 系列工具包。注意建议书版本与适用频段，它不是 GNSS 观测解算器。
 
 #### [PyAPS](https://github.com/insarlab/PyAPS)  
 *🏷️ 高校实验室*
@@ -425,7 +425,7 @@ Ding 等 2024 年发表于 Journal of Geodesy 的映射函数垂直建模方法�
 
 语言：Fortran/MATLAB · 许可：TU Wien terms · 星标约：— · 宿主：official_site
 
-维也纳工大 VMF 服务门户，说明 VMF1/VMF3 格网产品与 GPT 系列气象模型，并链到 /codes 开源实现。PPP/VLBI 对流层延迟建模的权威数据与代码源头。格网下载常需遵循站点条款；具体源码文件见 codes 目录条目，勿与第三方拷贝混淆。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
+维也纳工大 VMF 服务门户，说明 VMF1/VMF3 格网产品与 GPT 系列气象模型，并链到 /codes 开源实现。PPP/VLBI 对流层延迟建模的权威数据与代码源头。格网下载常需遵循站点条款；具体源码文件见 codes 目录条目，勿与第三方拷贝混淆。
 
 ## 经验模型
 
@@ -446,22 +446,22 @@ UNB 系列中性大气经验模型，无实测气象时给天顶延迟粗值。�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [lowtran](https://github.com/space-physics/lowtran) | lowtran：LOWTRAN7 大气消光模型的 Python 封装 | Python | 118 | 🏷️ 高校实验室 |
-| [msise00](https://github.com/space-physics/msise00) | NRLMSISE-00 的 Python/Matlab 封装 | Python | 63 | 🏷️ 高校实验室 |
+| [lowtran](https://github.com/space-physics/lowtran) | lowtran：LOWTRAN7 大气消光模型的 Python 封装 | Python | 118 | 🏷️ 个人社区 |
+| [msise00](https://github.com/space-physics/msise00) | NRLMSISE-00 的 Python/Matlab 封装 | Python | 63 | 🏷️ 个人社区 |
 | [hwm14](https://github.com/gemini3d/hwm14) | hwm14：NRL 水平风场模型开源 CMake 构建 | Fortran | 7 | 🏷️ 高校实验室 |
 | [GTrop](https://github.com/sun1753814280/GTrop) | 基于 1979–2017 再分析资料的全球对流层延迟与加权平均温度经验模型 GTrop（MATLAB） | MATLAB | 5 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [lowtran](https://github.com/space-physics/lowtran)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：MIT · 星标约：118 · 宿主：github
 
 space-physics 维护的 LOWTRAN7 现代封装，用 f2py/CMake 在 Python 中直接传 xarray，避免读写文本卡。用于大气透过率、消光与辐照度估算，可服务 GNSS 气象/传播仿真周边。需 Fortran 编译器；不是对流层 ZTD 映射官方库。MIT。
 
 #### [msise00](https://github.com/space-physics/msise00)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：MIT · 星标约：63 · 宿主：github
 
@@ -494,7 +494,7 @@ gemini3d 维护的 NRL Horizontal Wind Model 2014 可构建库，用 CMake 生�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-介绍 IGS 对流层联合产品、分析中心角色及会议活动，是查找 ZTD、梯度与相关试点的入口页。页面本身不托管大容量产品文件，下载通常走 CDDIS/IGN 等数据中心。对流层产品与电离层/轨道产品解耦，引用时需核对产品版本与时延。收录前已用 HTTP 核验可访问；使用请遵守 IGS 与上游条款。
+介绍 IGS 对流层联合产品、分析中心角色及会议活动，是查找 ZTD、梯度与相关试点的入口页。页面本身不托管大容量产品文件，下载通常走 CDDIS/IGN 等数据中心。对流层产品与电离层/轨道产品解耦，引用时需核对产品版本与时延。
 
 ## GNSS-VOD
 
@@ -524,7 +524,7 @@ Vincent Humphrey（MeteoSwiss）开发的 Python 工具包，用成对 GNSS 接�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-EPN 中央局对流层产品服务页，汇总欧洲永久 GNSS 网的对流层延迟相关产品入口。与已收录 EPN 主页、观测 FTP 互补，本页专指对流层派生产品。GNSS 气象与 ZTD 对比常用。收录前已 HTTP 核验；下载与引用遵循 EPN/EUREF 规定。
+EPN 中央局对流层产品服务页，汇总欧洲永久 GNSS 网的对流层延迟相关产品入口。与 EPN 主页、观测 FTP 互补，本页专指对流层派生产品。GNSS 气象与 ZTD 对比常用。
 
 ## VMF产品
 
@@ -540,11 +540,11 @@ EPN 中央局对流层产品服务页，汇总欧洲永久 GNSS 网的对流层�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-VMF 数据服务器上较早期的 VMF1 GNSS 产品目录，与 VMF3 目录并列。历史解算与文献复现仍常引用 VMF1。与 trop_products 总页、codes 页互补。收录前已 HTTP 核验；引用格式见 TU Wien VMF 说明。
+VMF 数据服务器上较早期的 VMF1 GNSS 产品目录，与 VMF3 目录并列。历史解算与文献复现仍常引用 VMF1。与 trop_products 总页、codes 页互补。引用格式见 TU Wien VMF 说明。
 
 #### [VMF3-GNSS-Products](https://vmf.geo.tuwien.ac.at/trop_products/GNSS/VMF3/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-维也纳工大 VMF 数据服务器上 VMF3 面向 GNSS 的产品目录，含 VMF3_EI/FC/OP 等子目录。与已收录 trop_products 总目录、VMF 主页互补，本 URL 直达 VMF3。精密定位与 ZTD 映射常用网格。收录前已 HTTP 核验；使用请引用 TU Wien VMF 文档。
+维也纳工大 VMF 数据服务器上 VMF3 面向 GNSS 的产品目录，含 VMF3_EI/FC/OP 等子目录。与 trop_products 总目录、VMF 主页互补，本 URL 直达 VMF3。精密定位与 ZTD 映射常用网格。使用请引用 TU Wien VMF 文档。

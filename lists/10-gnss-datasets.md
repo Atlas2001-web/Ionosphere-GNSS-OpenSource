@@ -56,14 +56,14 @@
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-德国联邦制图与大地测量局维护的 IGS 数据中心门户，同时提供文件下载与实时播发相关入口，是欧洲用户常用镜像与 caster 起点。实时 NTRIP 与事后文件通道彼此独立，配置账号时不要把 caster 凭证与 HTTPS 下载混用。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+德国联邦制图与大地测量局维护的 IGS 数据中心门户，同时提供文件下载与实时播发相关入口，是欧洲用户常用镜像与 caster 起点。实时 NTRIP 与事后文件通道彼此独立，配置账号时不要把 caster 凭证与 HTTPS 下载混用。
 
 #### [CDDIS-GNSS-Archive](https://cddis.nasa.gov/archive/gnss/)  
 *🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-IGS 核心数据中心，提供日/小时 RINEX、广播星历、精密 SP3/CLK、IONEX 与偏差等产品。目录按年积日或 GPS 周组织，文件多为压缩格式。适合全球网事后处理与电离层研究。匿名 FTP 已停用，必须 Earthdata 登录；大流量请限速，并核对长文件名规范与校验信息。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+IGS 核心数据中心，提供日/小时 RINEX、广播星历、精密 SP3/CLK、IONEX 与偏差等产品。目录按年积日或 GPS 周组织，文件多为压缩格式。适合全球网事后处理与电离层研究。匿名 FTP 已停用，必须 Earthdata 登录；大流量请限速，并核对长文件名规范与校验信息。
 
 #### [CDDIS-Highrate-GNSS](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/high-rate_data.html)  
 *🏷️ 官方*
@@ -77,21 +77,21 @@ NASA CDDIS 对高采样率（high-rate）GNSS 观测产品的官方说明页，�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-欧空局 GNSS 科学支持中心，提供面向科研的 GNSS 数据与产品检索下载，并镜像部分 IGS 内容。适合已有欧洲科研账号体系的用户。权限通常分层，登录后仍可能对部分集合只读或需追加申请；请遵守 ESA 数据政策与引用要求。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+欧空局 GNSS 科学支持中心，提供面向科研的 GNSS 数据与产品检索下载，并镜像部分 IGS 内容。适合已有欧洲科研账号体系的用户。权限通常分层，登录后仍可能对部分集合只读或需追加申请。
 
 #### [GFZ-ISDC](https://isdc.gfz-potsdam.de/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-亥姆霍兹德国地学研究中心综合科学数据中心，提供 GNSS 及多种地球物理产品的统一检索入口。欧洲大地测量与重力/GNSS 组合研究常用。完成注册后仍需按具体集合申请授权，并非所有子库都对个人用户立即完全开放。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+亥姆霍兹德国地学研究中心综合科学数据中心，提供 GNSS 及多种地球物理产品的统一检索入口。欧洲大地测量与重力/GNSS 组合研究常用。完成注册后仍需按具体集合申请授权，并非所有子库都对个人用户立即完全开放。
 
 #### [IGS-Data-Access](https://igs.org/data-access/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-集中列出 IGS 各数据中心镜像地址与访问提示，方便按网络条件选择就近源。本页不托管观测文件本体。各中心登录门槛不同，例如 CDDIS 需要 Earthdata。镜像同步偶有延迟，关键周产品可在两个中心交叉校验大小与时间戳。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+集中列出 IGS 各数据中心镜像地址与访问提示，方便按网络条件选择就近源。本页不托管观测文件本体。各中心登录门槛不同，例如 CDDIS 需要 Earthdata。镜像同步偶有延迟，关键周产品可在两个中心交叉校验大小与时间戳。
 
 #### [IGS-Files-CDN](https://files.igs.org/)  
 *🏷️ 官方 核心*
@@ -105,28 +105,28 @@ IGS 提供的 files.igs.org 文件分发入口，常用于获取站点日志、�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-IGS 官方门户，链向产品规范、分析中心、全球/区域数据中心以及实时服务说明。站点本身通常不直接托管海量 RINEX。适合查阅标准文件名、站点日志格式与政策文件。实际观测与产品下载请转到 CDDIS、BKG、ESA GSSC 等归档系统。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+IGS 官方门户，链向产品规范、分析中心、全球/区域数据中心以及实时服务说明。站点本身通常不直接托管海量 RINEX。适合查阅标准文件名、站点日志格式与政策文件。实际观测与产品下载请转到 CDDIS、BKG、ESA GSSC 等归档系统。
 
 #### [NASA-Earthdata-Login](https://urs.earthdata.nasa.gov/)  
 *🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-NASA 地球科学数据统一身份入口。下载 CDDIS GNSS 观测与产品前需先在此注册免费账号，浏览器与脚本（常配 .netrc）均可使用。本站不存储 GNSS 文件，只负责认证与应用授权；请按提示勾选 CDDIS 等应用。注意保管密码与令牌，切勿写入公开仓库或日志。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+NASA 地球科学数据统一身份入口。下载 CDDIS GNSS 观测与产品前需先在此注册免费账号，浏览器与脚本（常配 .netrc）均可使用。本站不存储 GNSS 文件，只负责认证与应用授权；请按提示勾选 CDDIS 等应用。注意保管密码与令牌，切勿写入公开仓库或日志。
 
 #### [SOPAC-CSRC](https://sopac-csrc.ucsd.edu/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-加州大学圣地亚哥分校 SOPAC 门户，历史上长期作为 IGS 数据中心之一，提供轨道产品与永久阵列相关服务入口。适合查找 SOPAC 特色产品与工具。部分古老 FTP 主机名已变更，应优先采用本页当前链接及 garner 公共目录。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+加州大学圣地亚哥分校 SOPAC 门户，历史上长期作为 IGS 数据中心之一，提供轨道产品与永久阵列相关服务入口。适合查找 SOPAC 特色产品与工具。部分古老 FTP 主机名已变更，应优先采用本页当前链接及 garner 公共目录。
 
 #### [SOPAC-Garner-Pub](https://garner.ucsd.edu/pub/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-SOPAC 侧公开文件树，常包含产品文件与辅助资料，可作为 CDDIS 之外的对照镜像。目录权限与层级会随运维调整。对关键 GPS 周产品，建议与另一 IGS 数据中心交叉检查文件大小、修改时间与校验结果。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+SOPAC 侧公开文件树，常包含产品文件与辅助资料，可作为 CDDIS 之外的对照镜像。目录权限与层级会随运维调整。对关键 GPS 周产品，建议与另一 IGS 数据中心交叉检查文件大小、修改时间与校验结果。
 
 ## 地磁空间天气
 
@@ -155,77 +155,77 @@ SOPAC 侧公开文件树，常包含产品文件与辅助资料，可作为 CDDI
 
 语言：data-portal · 许可：academic non-commercial · 星标约：— · 宿主：official_site
 
-英国地质调查局（BGS）地磁组的数据服务页面，介绍其英国及海外地磁观测台的 1 秒与 1 分钟均值数据、年均值、地磁指数与模型产品的获取方式。与本目录已收录的 BGS INTERMAGNET 数据门户（imag-data）不同，这里对应 BGS 自有观测台与自有产品，部分高分辨率数据需要申请。页面明确数据仅供学术使用，禁止商业用途，商业用户需另行联系。适合研究欧洲中高纬磁暴与电离层扰动关联。页面依赖 JavaScript 显示。
+英国地质调查局（BGS）地磁组的数据服务页面，介绍其英国及海外地磁观测台的 1 秒与 1 分钟均值数据、年均值、地磁指数与模型产品的获取方式。与 BGS INTERMAGNET 数据门户（imag-data）不同，这里对应 BGS 自有观测台与自有产品，部分高分辨率数据需要申请。页面明确数据仅供学术使用，禁止商业用途，商业用户需另行联系。适合研究欧洲中高纬磁暴与电离层扰动关联。页面依赖 JavaScript 显示。
 
 #### [BoM-SWS](https://www.sws.bom.gov.au/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-澳大利亚气象局空间天气服务网站，提供电离层状态、高频传播与相关预报产品，对亚太地区 GNSS 用户具有区域参考价值。产品更新频率不一。若需自动抓取，请遵守站点条款，优先使用其标明的数据服务而不是裸爬页面。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+澳大利亚气象局空间天气服务网站，提供电离层状态、高频传播与相关预报产品，对亚太地区 GNSS 用户具有区域参考价值。产品更新频率不一。若需自动抓取，请遵守站点条款，优先使用其标明的数据服务而不是裸爬页面。
 
 #### [CelesTrak-SpaceData](https://celestrak.org/SpaceData/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-CelesTrak 提供的空间天气及相关辅助数据集合，方便与卫星轨道、可见性工具链衔接使用。它不是 IGS 官方数据中心。关键地磁或太阳指数建议同时对照 NOAA、GFZ 等一手发布源，以免镜像更新延迟影响事件分析。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+CelesTrak 提供的空间天气及相关辅助数据集合，方便与卫星轨道、可见性工具链衔接使用。它不是 IGS 官方数据中心。关键地磁或太阳指数建议同时对照 NOAA、GFZ 等一手发布源，以免镜像更新延迟影响事件分析。
 
 #### [GFZ-Kp-Index](https://kp.gfz-potsdam.de/en/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-GFZ 官方发布的行星 Kp 等地磁活动指数，是空间天气研究以及 GNSS 闪烁、ROTI 扰动分析中常用的外部驱动参数，通常开放获取。使用时注意时间分辨率以及确定值与预报值的区别，论文中应明确写出来源机构与产品版本。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+GFZ 官方发布的行星 Kp 等地磁活动指数，是空间天气研究以及 GNSS 闪烁、ROTI 扰动分析中常用的外部驱动参数，通常开放获取。使用时注意时间分辨率以及确定值与预报值的区别，论文中应明确写出来源机构与产品版本。
 
 #### [GIRO-DIDBase](https://giro.uml.edu/didbase/)  
 *🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-麻省大学洛厄尔分校维护的测高仪观测数据库入口，提供虚高图与临界频率等特性参数，常与 GNSS TEC 及 IRTAM 同化产品对照。空间天气与模型验证常用。一般需要注册；请按站内要求引用，并留意测站时间覆盖可能存在空洞。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+麻省大学洛厄尔分校维护的测高仪观测数据库入口，提供虚高图与临界频率等特性参数，常与 GNSS TEC 及 IRTAM 同化产品对照。空间天气与模型验证常用。一般需要注册；请按站内要求引用，并留意测站时间覆盖可能存在空洞。
 
 #### [MACCS](http://space.augsburg.edu/maccs/)  
 *🏷️ 高校实验室*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-美国奥格斯堡大学运营的 Magnetometer Array for Cusp and Cleft Studies，在加拿大北极地区（Cape Dorset、Clyde River、Igloolik、Pangnirtung 等站）布设磁力计，研究极隙区与尖角区的近地空间环境。网站提供当天各站数据图、每日图浏览、数据与绘图申请以及 ULF 指数 FTP 入口。高纬磁场扰动与极盖电离层斑块、GNSS 相位闪烁密切相关，可与 CARISMA、SuperMAG 互补。站点界面较旧，为 HTTP 访问；收录前已核验 200。
+美国奥格斯堡大学运营的 Magnetometer Array for Cusp and Cleft Studies，在加拿大北极地区（Cape Dorset、Clyde River、Igloolik、Pangnirtung 等站）布设磁力计，研究极隙区与尖角区的近地空间环境。网站提供当天各站数据图、每日图浏览、数据与绘图申请以及 ULF 指数 FTP 入口。高纬磁场扰动与极盖电离层斑块、GNSS 相位闪烁密切相关，可与 CARISMA、SuperMAG 互补。站点界面较旧，为 HTTP 访问。
 
 #### [NASA-OMNIWeb](https://omniweb.gsfc.nasa.gov/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-NASA/GSFC 的 OMNIWeb 接口提供太阳风等离子体、行星际磁场与地磁指数等合并时间序列，广泛用于 GNSS 相关空间天气统计分析。通过网页表单交互取数。若需要高时间分辨率，请正确选择 OMNI 高分辨或低分辨数据集。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+NASA/GSFC 的 OMNIWeb 接口提供太阳风等离子体、行星际磁场与地磁指数等合并时间序列，广泛用于 GNSS 相关空间天气统计分析。通过网页表单交互取数。若需要高时间分辨率，请正确选择 OMNI 高分辨或低分辨数据集。
 
 #### [NASA-SPDF](https://spdf.gsfc.nasa.gov/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-NASA 空间物理数据设施总入口，托管太阳风、磁层与相关日地物理数据，可与 GNSS 电离层扰动机制研究结合。门类非常广泛。使用具体任务数据时请遵循页面给出的 DOI 与致谢（acknowledge）要求，便于结果可复现。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+NASA 空间物理数据设施总入口，托管太阳风、磁层与相关日地物理数据，可与 GNSS 电离层扰动机制研究结合。门类非常广泛。使用具体任务数据时请遵循页面给出的 DOI 与致谢（acknowledge）要求，便于结果可复现。
 
 #### [NOAA-SWPC](https://www.swpc.noaa.gov/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-美国 NOAA 空间天气预测中心门户，提供耀斑、质子事件、地磁活动等业务产品，常用来解释 GNSS 定位异常与电离层扰动时段。实时导向强。科研归档时应保存所用产品副本，并注意业务产品可能事后修订。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+美国 NOAA 空间天气预测中心门户，提供耀斑、质子事件、地磁活动等业务产品，常用来解释 GNSS 定位异常与电离层扰动时段。实时导向强。科研归档时应保存所用产品副本，并注意业务产品可能事后修订。
 
 #### [NOAA-SWPC-Planetary-K](https://www.swpc.noaa.gov/products/planetary-k-index)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-SWPC 发布的行星 K 指数产品页，便于把地磁活动快速叠加到 GNSS ROTI 或闪烁时间轴上做事件分析。与 GFZ Kp 密切相关但发布节奏与文件格式可能不同，对比研究时必须分别注明来源，避免混用造成时间轴错位。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+SWPC 发布的行星 K 指数产品页，便于把地磁活动快速叠加到 GNSS ROTI 或闪烁时间轴上做事件分析。与 GFZ Kp 密切相关但发布节奏与文件格式可能不同，对比研究时必须分别注明来源，避免混用造成时间轴错位。
 
 #### [NRCan Canadian Magnetic Data](https://geomag.nrcan.gc.ca/data-donnee/sd-en.php)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-加拿大自然资源部（NRCan）地磁组的官方数据页面，说明如何经 Earthquakes Canada 的 FDSN dataselect/station 网络服务下载加拿大国家地磁台网（网络代码 C2）波形数据，并给出位置码、通道码等检索参数；另有加拿大小时变幅、均值、变化率等地磁指数与 Kp 链接。高纬台站对极光带磁暴敏感，适合与 CARISMA、SuperMAG 数据及 GNSS 闪烁研究配合。FDSN 接口可直接用 ObsPy 等工具访问。英法双语。收录前已 HTTP 200 核验。
+加拿大自然资源部（NRCan）地磁组的官方数据页面，说明如何经 Earthquakes Canada 的 FDSN dataselect/station 网络服务下载加拿大国家地磁台网（网络代码 C2）波形数据，并给出位置码、通道码等检索参数；另有加拿大小时变幅、均值、变化率等地磁指数与 Kp 链接。高纬台站对极光带磁暴敏感，适合与 CARISMA、SuperMAG 数据及 GNSS 闪烁研究配合。FDSN 接口可直接用 ObsPy 等工具访问。英法双语。
 
 #### [NRCAN-Solar-Radio-Flux](https://www.spaceweather.gc.ca/forecast-prevision/solar-solaire/solarflux/sx-5-en.php)  
 *🏷️ 官方*
@@ -239,7 +239,7 @@ Space Weather Canada 维护的太阳射电流量测量存档，提供日值、�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-挪威北极大学（UiT）特罗姆瑟地球物理观测台的地磁数据门户，汇集 TGO 自有台站及 DTU、FMI、索丹屈莱、阿拉斯加大学等合作台站：可绘制存档与 24 小时实时磁照图、多站叠加图，下载 ASCII 数据（部分需密码），并提供 K 指数、特罗姆瑟活动指数、小时变幅指数与 GIC 代理（nT/s）。斯堪的纳维亚高纬磁场数据是分析极光区 GNSS 闪烁与 EISCAT 同步观测的常用背景。收录前已 HTTP 200 核验。
+挪威北极大学（UiT）特罗姆瑟地球物理观测台的地磁数据门户，汇集 TGO 自有台站及 DTU、FMI、索丹屈莱、阿拉斯加大学等合作台站：可绘制存档与 24 小时实时磁照图、多站叠加图，下载 ASCII 数据（部分需密码），并提供 K 指数、特罗姆瑟活动指数、小时变幅指数与 GIC 代理（nT/s）。斯堪的纳维亚高纬磁场数据是分析极光区 GNSS 闪烁与 EISCAT 同步观测的常用背景。
 
 #### [THEMIS GMAG](https://themis.ssl.berkeley.edu/gmag/)  
 *🏷️ 官方*
@@ -253,7 +253,7 @@ Space Weather Canada 维护的太阳射电流量测量存档，提供日值、�
 
 语言：data-portal · 许可：USGov public resource · 星标约：— · 宿主：official_site
 
-美国地质调查局（USGS）地磁计划的数据与工具总入口，汇集其全美及海外地磁观测台的实时数据流、衍生产品绘图（geomag.usgs.gov/plots）、数据网络服务与邮件列表，并注明数据管理与特殊请求联系人。秒级与分钟级地磁记录可用来判断磁暴时段、计算 dB/dt 与 GIC 代理，辅助解释 GNSS TEC 扰动与定位退化。数据属美国政府公共资源，可自由使用但应注明来源。页面对非浏览器请求可能返回 403，需正常浏览器访问；收录前已核验 200。
+美国地质调查局（USGS）地磁计划的数据与工具总入口，汇集其全美及海外地磁观测台的实时数据流、衍生产品绘图（geomag.usgs.gov/plots）、数据网络服务与邮件列表，并注明数据管理与特殊请求联系人。秒级与分钟级地磁记录可用来判断磁暴时段、计算 dB/dt 与 GIC 代理，辅助解释 GNSS TEC 扰动与定位退化。数据属美国政府公共资源，可自由使用但应注明来源。页面对非浏览器请求可能返回 403，需正常浏览器访问。
 
 ## 电离层产品
 
@@ -285,49 +285,49 @@ Space Weather Canada 维护的太阳射电流量测量存档，提供日值、�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-中国科学院相关团队发布的多 GNSS GIM HTTPS 目录，用于接替旧 FTP，提供快速与最终等 IONEX 产品。东亚与全球电离层研究常用来源之一。同步到 IGS 数据中心可能存在时延差；请将脚本迁移到新域名，勿再依赖已宣布停用的旧 FTP。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+中国科学院相关团队发布的多 GNSS GIM HTTPS 目录，用于接替旧 FTP，提供快速与最终等 IONEX 产品。东亚与全球电离层研究常用来源之一。同步到 IGS 数据中心可能存在时延差；请将脚本迁移到新域名，勿再依赖已宣布停用的旧 FTP。
 
 #### [CAS-BDsmart-RTS-Iono](https://data.bdsmart.cn/pub/product/rts/iono/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-与已收录的 CAS 最终/快速 IONEX 目录配套的实时（RTS）电离层产品树，面向近实时 GIM/SSR 相关用户。适合 PPP-RTK/实时监测试验；事后精密分析仍建议使用最终 IONEX 与多 AC 交叉验证。
+与 CAS 最终/快速 IONEX 目录配套的实时（RTS）电离层产品树，面向近实时 GIM/SSR 相关用户。适合 PPP-RTK/实时监测试验；事后精密分析仍建议使用最终 IONEX 与多 AC 交叉验证。
 
 #### [CDDIS-Atmospheric-Products](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/atmospheric_products.html)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-汇总 IGS 电离层 GIM（IONEX）与对流层相关产品在 CDDIS 的存放说明，并解释新旧文件名对应关系。面向 TEC/ZTD 用户快速定位路径。实际数据文件仍在 archive 树中按日或周存放。Rapid 与 Final 时延不同，引用时应注明分析中心与产品类型。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+汇总 IGS 电离层 GIM（IONEX）与对流层相关产品在 CDDIS 的存放说明，并解释新旧文件名对应关系。面向 TEC/ZTD 用户快速定位路径。实际数据文件仍在 archive 树中按日或周存放。Rapid 与 Final 时延不同，引用时应注明分析中心与产品类型。
 
 #### [CDDIS-IONEX](https://cddis.nasa.gov/archive/gnss/products/ionex/)  
 *🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-存放 IGS 综合与各电离层分析中心的 GIM、ROTI 等 IONEX 文件，按年份与年积日组织。是 GNSS 电离层事后研究最常用入口之一。下载需登录；注意 Final、Rapid 与预测产品的时延及格网分辨率差异，并结合码偏差/OSB 产品一起使用以免系统差。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+存放 IGS 综合与各电离层分析中心的 GIM、ROTI 等 IONEX 文件，按年份与年积日组织。是 GNSS 电离层事后研究最常用入口之一。下载需登录；注意 Final、Rapid 与预测产品的时延及格网分辨率差异，并结合码偏差/OSB 产品一起使用以免系统差。
 
 #### [CEDAR Madrigal](https://cedar.openmadrigal.org/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-NSF CEDAR 计划托管的 Madrigal 数据库实例，与本目录已收录的 OpenMadrigal 软件项目主页不同，这里是可直接检索的数据站：提供实验列表、单实验选择、批量下载命令生成、类 FTP 访问、仪器与参数元数据，以及派生参数引擎与 ISR 经验模型在线运行。库中包含 MIT Haystack 全球 GNSS TEC 图、电离层测高仪、FPI 与多台 ISR 数据，并链接 Millstone、EISCAT、SRI、JRO 等其他 Madrigal 节点。部分下载需填写姓名与单位信息。
+NSF CEDAR 计划托管的 Madrigal 数据库实例，与 OpenMadrigal 软件项目主页不同，这里是可直接检索的数据站：提供实验列表、单实验选择、批量下载命令生成、类 FTP 访问、仪器与参数元数据，以及派生参数引擎与 ISR 经验模型在线运行。库中包含 MIT Haystack 全球 GNSS TEC 图、电离层测高仪、FPI 与多台 ISR 数据，并链接 Millstone、EISCAT、SRI、JRO 等其他 Madrigal 节点。部分下载需填写姓名与单位信息。
 
 #### [CNES-PPP-WIZARD-Realtime-Products](http://www.ppp-wizard.net/products/REAL_TIME)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-CNES PPP-WIZARD 示范系统的 REAL_TIME 产品树，可检索实时流配套文件；CNES 亦通过 IGS-RTS 播发实时 SSR。已收录门户首页，本条补齐可枚举的实时产品路径，便于脚本对接。
+CNES PPP-WIZARD 示范系统的 REAL_TIME 产品树，可检索实时流配套文件；CNES 亦通过 IGS-RTS 播发实时 SSR。相比门户首页，这里直接列出可枚举的实时产品路径，便于脚本对接。
 
 #### [EISCAT Portal](https://portal.eiscat.se/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-欧洲非相干散射科学协会（EISCAT）官方数据门户，覆盖特罗姆瑟 UHF/VHF 与斯瓦尔巴 ESR 32 m/42 m 雷达：可查运行计划与 L2 分析数据、浏览 L3 产品，并查看各雷达的实时图与实时分析结果。高纬电子密度、温度与离子速度剖面是校验 GNSS TEC、闪烁与 IRI 顶部模型的重要独立观测。下载需通过 EGI Check-in 加入 EISCAT 虚拟组织，入门手册在门户中提供；部分数据也同步到 Madrigal。收录前已 HTTP 200 核验。
+欧洲非相干散射科学协会（EISCAT）官方数据门户，覆盖特罗姆瑟 UHF/VHF 与斯瓦尔巴 ESR 32 m/42 m 雷达：可查运行计划与 L2 分析数据、浏览 L3 产品，并查看各雷达的实时图与实时分析结果。高纬电子密度、温度与离子速度剖面是校验 GNSS TEC、闪烁与 IRI 顶部模型的重要独立观测。下载需通过 EGI Check-in 加入 EISCAT 虚拟组织，入门手册在门户中提供；部分数据也同步到 Madrigal。
 
 #### [eSWua-TEC](http://www.eswua.ingv.it/ewphp/landing.php?doi=tec)  
 *🏷️ 官方 核心*
@@ -341,7 +341,7 @@ INGV eSWua 数据库 TEC 专题（DOI:10.13127/eswua/tec，CC BY 4.0）。接入
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-介绍 IGS 电离层联合产品机制、各分析中心角色以及相关会议与试点活动。适合了解 CODE、JPL、UPC、CAS、WHU 等 IAAC 分工。页面不直接存储 IONEX 文件。综合产品与单中心产品在精度和时延上不同，研究中应分开评估与引用。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+介绍 IGS 电离层联合产品机制、各分析中心角色以及相关会议与试点活动。适合了解 CODE、JPL、UPC、CAS、WHU 等 IAAC 分工。页面不直接存储 IONEX 文件。综合产品与单中心产品在精度和时延上不同，研究中应分开评估与引用。
 
 #### [IONORING](http://ionos.ingv.it/ionoring/ionoring.htm)  
 *🏷️ 官方 核心*
@@ -355,21 +355,21 @@ INGV 基于 RING 网（约 40 站）的意大利区域实时 VTEC 监测页：IP
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-JPL 侧快速电离层图公开目录，文件为 IONEX 风格，适合需要较短时延 GIM 的科研与监测。其结果与 IGS 综合 Final 存在差异，不可直接等同。部分机构网络可能拦截 sideshow 域名；重要任务建议同时备份 CDDIS 路径中的同系列产品。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+JPL 侧快速电离层图公开目录，文件为 IONEX 风格，适合需要较短时延 GIM 的科研与监测。其结果与 IGS 综合 Final 存在差异，不可直接等同。部分机构网络可能拦截 sideshow 域名；重要任务建议同时备份 CDDIS 路径中的同系列产品。
 
 #### [RAL Ionosonde (UKSSDC)](https://www.ukssdc.ac.uk/ionosondes/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-英国卢瑟福·阿普尔顿实验室（RAL）电离层监测组的介绍与数据页面，隶属 UK Solar System Data Centre：说明其运行的奇尔顿（英国）与斯坦利港（福克兰群岛）测高仪，以及已于 1998 年停运的勒威克站，电离图与 URSI 标定参数存档于世界数据中心。奇尔顿序列承接斯劳站，是全球最长的电离层测高记录之一，适合长期趋势与 foF2 气候研究。特殊观测需求可联系该组加密探测。与本目录 UKSSDC 首页条目互补。
+英国卢瑟福·阿普尔顿实验室（RAL）电离层监测组的介绍与数据页面，隶属 UK Solar System Data Centre：说明其运行的奇尔顿（英国）与斯坦利港（福克兰群岛）测高仪，以及已于 1998 年停运的勒威克站，电离图与 URSI 标定参数存档于世界数据中心。奇尔顿序列承接斯劳站，是全球最长的电离层测高记录之一，适合长期趋势与 foF2 气候研究。特殊观测需求可联系该组加密探测。与 UKSSDC 首页互补。
 
 #### [SRI ISR Database (AMISR)](https://data.amisr.com/database/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-SRI International 维护的非相干散射雷达数据库，按仪器列出波克弗拉特 PFISR 与雷索卢特湾 RISR-N 等 AMISR 相控阵雷达的实验与处理产品，可按日期检索电子密度、温度和视线速度等参数文件。相控阵体制支持多波束准三维观测，常用于研究极光区电离层结构、极盖斑块及其与 GNSS 闪烁/TEC 梯度的关系。数据也在 SRI Madrigal 站点镜像，可配合 madrigalWeb 批量下载。使用时请遵循上游数据致谢要求。收录前已 HTTP 200 核验。
+SRI International 维护的非相干散射雷达数据库，按仪器列出波克弗拉特 PFISR 与雷索卢特湾 RISR-N 等 AMISR 相控阵雷达的实验与处理产品，可按日期检索电子密度、温度和视线速度等参数文件。相控阵体制支持多波束准三维观测，常用于研究极光区电离层结构、极盖斑块及其与 GNSS 闪烁/TEC 梯度的关系。数据也在 SRI Madrigal 站点镜像，可配合 madrigalWeb 批量下载。
 
 #### [UPC-Chapman-TOMION-Rapid](https://chapman.upc.es/tomion/rapid/)  
 *🏷️ 高校实验室*
@@ -383,28 +383,28 @@ SRI International 维护的非相干散射雷达数据库，按仪器列出波�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-说明 Fast-PPP 相关精密产品组成，包括模糊度小数、精密 STEC、IONEX 与卫星钟差，并给出建议引用文献。面向高精度电离层与 PPP 研究用户。产品服务器通常需要邮件开通，并非完全匿名开放；获权后请遵守学术使用约定。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+说明 Fast-PPP 相关精密产品组成，包括模糊度小数、精密 STEC、IONEX 与卫星钟差，并给出建议引用文献。面向高精度电离层与 PPP 研究用户。产品服务器通常需要邮件开通，并非完全匿名开放；获权后请遵守学术使用约定。
 
 #### [UPC-IONEX-Archive](https://cabrera.upc.edu/upc_ionex_GPSonly-RINEXv3/)  
 *🏷️ 高校实验室*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-UPC 提供的分年 IONEX 归档，包含长期时间序列以及最新快速文件入口，服务 GNSS 电离层与相关高精度应用研究。适合明确需要 UPC 单中心解的用户。请与 IGS 综合产品区分使用；目录旁文档说明格式约定与处理设定，引用时写明版本。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+UPC 提供的分年 IONEX 归档，包含长期时间序列以及最新快速文件入口，服务 GNSS 电离层与相关高精度应用研究。适合明确需要 UPC 单中心解的用户。请与 IGS 综合产品区分使用；目录旁文档说明格式约定与处理设定，引用时写明版本。
 
 #### [UPC-IONO4HAS-Products](https://server.gage.upc.edu/iono4has/products.html)  
 *🏷️ 高校实验室*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-展示与 Galileo HAS 相关的电离层产品链接及当日运行状态，便于开展监测与对比实验。内容偏研究原型，不宜简单等同于 IGS 标准综合 GIM。格式细节见站内说明；长期归档可能与公开 IONEX 目录并存，下载前确认许可范围。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+展示与 Galileo HAS 相关的电离层产品链接及当日运行状态，便于开展监测与对比实验。内容偏研究原型，不宜简单等同于 IGS 标准综合 GIM。格式细节见站内说明；长期归档可能与公开 IONEX 目录并存，下载前确认许可范围。
 
 #### [WHU-IGS-Ionosphere-AC](https://panda.whu.edu.cn/yjpt/IGSdlcfxzx.htm)  
 *🏷️ 高校实验室 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-武汉大学卫星导航定位技术研究中心作为 IGS 电离层分析中心的产品介绍页，覆盖事后与实时 GIM、多系统码偏差以及 ROTI 图。对中文用户较友好。自建 FTP 主机偶发不可达时，可改用 IGS 数据中心中的 WHU 文件，并区分实时与事后时延。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+武汉大学卫星导航定位技术研究中心作为 IGS 电离层分析中心的产品介绍页，覆盖事后与实时 GIM、多系统码偏差以及 ROTI 图。对中文用户较友好。自建 FTP 主机偶发不可达时，可改用 IGS 数据中心中的 WHU 文件，并区分实时与事后时延。
 
 ## 偏差产品
 
@@ -422,7 +422,7 @@ UPC 提供的分年 IONEX 归档，包含长期时间序列以及最新快速文
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-中科院相关 GNSS 产品的 HTTPS 发布根目录，常见子树包括多星座码偏差、全球电离层图以及实时 SSR 转存等。适合把偏差与 GIM 放在同一流水线下载。具体子目录以站点为准；论文引用请标明 CAS 产品标识、日期与文件长名。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+中科院相关 GNSS 产品的 HTTPS 发布根目录，常见子树包括多星座码偏差、全球电离层图以及实时 SSR 转存等。适合把偏差与 GIM 放在同一流水线下载。论文引用请标明 CAS 产品标识、日期与文件长名。
 
 #### [CDDIS-DCB-Product](https://www.earthdata.nasa.gov/data/space-geodesy-techniques/gnss/differential-code-bias-product)  
 *🏷️ 官方*
@@ -436,14 +436,14 @@ NASA Earthdata 上的 GNSS Differential Code Bias 产品页，说明 CDDIS 归�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-北斗及相关 GNSS 服务的测试评估门户，发布性能监测、差分信息等入口，中文北斗应用与服务监测场景常用。公开浏览内容与需申请下载的内容可能并存。再分发或商用前应阅读版权条款；涉及合作网数据时以站内最新公告为准，勿臆造未公开接口。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+北斗及相关 GNSS 服务的测试评估门户，发布性能监测、差分信息等入口，中文北斗应用与服务监测场景常用。公开浏览内容与需申请下载的内容可能并存。再分发或商用前应阅读版权条款；涉及合作网数据时以站内最新公告为准，勿臆造未公开接口。
 
 #### [CSNO-TARC-Differential](https://www.csno-tarc.cn/en/data/differential)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-TARC 面向国际用户的差分与相关数据说明页面，便于获取北斗监测类产品线索。页面内容会随服务更新。其产品体系与 IGS 码偏差/OSB 并不完全等同，若与 IGS 产品融合使用，必须注意信号定义、基准与时间系统差异。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+TARC 面向国际用户的差分与相关数据说明页面，便于获取北斗监测类产品线索。页面内容会随服务更新。其产品体系与 IGS 码偏差/OSB 并不完全等同，若与 IGS 产品融合使用，必须注意信号定义、基准与时间系统差异。
 
 ## 轨道钟差
 
@@ -465,21 +465,21 @@ TARC 面向国际用户的差分与相关数据说明页面，便于获取北斗
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-伯尔尼大学天文研究所 CODE 分析中心门户，概述精密轨道、钟差、ERP、电离层图与偏差等产品线，是全球 PPP 与电离层研究常用源。具体 FTP/HTTPS 主机名可能调整，下载时优先遵循本页与 IGS 镜像的当前链接，并核对文件完整性。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+伯尔尼大学天文研究所 CODE 分析中心门户，概述精密轨道、钟差、ERP、电离层图与偏差等产品线，是全球 PPP 与电离层研究常用源。具体 FTP/HTTPS 主机名可能调整，下载时优先遵循本页与 IGS 镜像的当前链接，并核对文件完整性。
 
 #### [GFZ-GNSS-Services](https://gnss.gfz.de/services)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-列出 GFZ 与 GNSS 相关的在线服务及产品入口，包括精密产品综合等跳转。适合先浏览服务再进入具体下载系统。各子服务的鉴权方式可能不同，请按子页说明分别配置，不要共用一套凭据硬试所有接口。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+列出 GFZ 与 GNSS 相关的在线服务及产品入口，包括精密产品综合等跳转。适合先浏览服务再进入具体下载系统。各子服务的鉴权方式可能不同，请按子页说明分别配置，不要共用一套凭据硬试所有接口。
 
 #### [GFZ-ISDC-GNSS-Products](https://isdc.gfz-potsdam.de/gnss-products/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-聚焦 GFZ 发布的 GNSS 相关产品说明与获取入口，可与 gnss.gfz.de 服务页交叉对照。适合寻找 GFZ 轨道钟差及衍生产品。产品列表会随项目扩展，下载前应阅读各集合的许可文本、引用格式与embargo 说明。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+聚焦 GFZ 发布的 GNSS 相关产品说明与获取入口，可与 gnss.gfz.de 服务页交叉对照。适合寻找 GFZ 轨道钟差及衍生产品。产品列表会随项目扩展，下载前应阅读各集合的许可文本、引用格式与embargo 说明。
 
 #### [GLONASS-IAC](https://glonass-iac.ru/en/)  
 *🏷️ 官方*
@@ -493,14 +493,14 @@ GLONASS IAC 英文站，提供星座状态、产品与系统介绍入口，是�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-介绍 IGS 多星座试验跟踪网以及轨道、钟差、偏差、天线等实验产品，开展 Galileo、BDS、QZSS 精密应用前应阅读。数据文件仍从标准 IGS 产品目录获取。各星座产品成熟度随时间变化，论文引用请标明 MGEX 与具体分析中心版本。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+介绍 IGS 多星座试验跟踪网以及轨道、钟差、偏差、天线等实验产品，开展 Galileo、BDS、QZSS 精密应用前应阅读。数据文件仍从标准 IGS 产品目录获取。各星座产品成熟度随时间变化，论文引用请标明 MGEX 与具体分析中心版本。
 
 #### [IGS-Products](https://igs.org/products/)  
 *🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-定义 IGS 轨道、钟差、ERP、偏差与大气等产品类型、时延等级以及长文件名规则，是科研引用与脚本命名的权威参考。文件本体存放在各数据中心。务必注意约 GPS 周 2238 前后的命名切换，旧流水线需要同步适配新模式。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+定义 IGS 轨道、钟差、ERP、偏差与大气等产品类型、时延等级以及长文件名规则，是科研引用与脚本命名的权威参考。文件本体存放在各数据中心。务必注意约 GPS 周 2238 前后的命名切换，旧流水线需要同步适配新模式。
 
 #### [QZSS-Official](https://qzss.go.jp/en/)  
 *🏷️ 官方*
@@ -532,14 +532,14 @@ GLONASS IAC 英文站，提供星座状态、产品与系统介绍入口，是�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-伯尔尼大学天文研究所 CODE 分析中心的官方产品文件浏览器。可进入 CODE、CODE_MGEX、ionex、ionosphere 等目录获取最终/快速/超快速轨道钟差与 IONEX 等。FTP 已弃用，请改用本 HTTPS 入口；与已收录的 CODE AC 介绍页互补，本条聚焦可下载产品树。
+伯尔尼大学天文研究所 CODE 分析中心的官方产品文件浏览器。可进入 CODE、CODE_MGEX、ionex、ionosphere 等目录获取最终/快速/超快速轨道钟差与 IONEX 等。FTP 已弃用，请改用本 HTTPS 入口；与 CODE AC 介绍页互补，本页聚焦可下载产品树。
 
 #### [Earthdata-MGEX](https://www.earthdata.nasa.gov/data/space-geodesy-techniques/gnss/mgex-data-product)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-CDDIS/Earthdata 上的 MGEX 数据产品说明与获取入口，对应 IGS Multi-GNSS Experiment 观测与产品。官方 portal；与 igs.org/mgex 介绍页互补，侧重 NASA 侧下载路径与 Earthdata 账号体系。批量下载常需 Earthdata Login，政策以页面为准。
+CDDIS/Earthdata 上的 MGEX 数据产品说明与获取入口，对应 IGS Multi-GNSS Experiment 观测与产品。官方 portal；与 igs.org/mgex 介绍页互补，侧重 NASA 侧下载路径与 Earthdata 账号体系。批量下载常需 Earthdata Login。
 
 #### [JPL-GPS-Time-Series](https://sideshow.jpl.nasa.gov/post/series.html)  
 *🏷️ 官方*
@@ -569,14 +569,14 @@ Nevada Geodetic Laboratory 主页，发布全球 GPS 站时序、应变率、垂
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-COSMIC/FORMOSAT 等任务的无线电掩星数据中心门户，提供中性大气与电离层电子密度廓线等产品，常与地基 GNSS TEC 联合分析。空间天气与气象交叉研究几乎必用。注册通常免费，但须遵守引用与使用协议；不同处理级别不可混用。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+COSMIC/FORMOSAT 等任务的无线电掩星数据中心门户，提供中性大气与电离层电子密度廓线等产品，常与地基 GNSS TEC 联合分析。空间天气与气象交叉研究几乎必用。注册通常免费，但须遵守引用与使用协议；不同处理级别不可混用。
 
 #### [COSMIC-GNSS-RO-Data](https://data.cosmic.ucar.edu/gnss-ro/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-面向 GNSS 无线电掩星的公开数据目录树，便于使用直链或镜像方式批量拉取文件，适合流水线化预处理。目录层级会随任务与版本变化，下载脚本应用清单或校验和验证完整性，避免漏文件或版本混杂。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+面向 GNSS 无线电掩星的公开数据目录树，便于使用直链或镜像方式批量拉取文件，适合流水线化预处理。目录层级会随任务与版本变化，下载脚本应用清单或校验和验证完整性，避免漏文件或版本混杂。
 
 ## PPP/PPP-RTK样例
 
@@ -627,35 +627,35 @@ COSMIC/FORMOSAT 等任务的无线电掩星数据中心门户，提供中性大�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-GAGE 数据系统上的 GNSS 归档入口，承接原 UNAVCO 测站 RINEX 等产品，广泛用于构造、火山、水文与电离层研究。北美及合作网密度高、时间跨度长。登录与接口策略可能调整，编写脚本前应用浏览器确认当前权限模型与路径。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+GAGE 数据系统上的 GNSS 归档入口，承接原 UNAVCO 测站 RINEX 等产品，广泛用于构造、火山、水文与电离层研究。北美及合作网密度高、时间跨度长。登录与接口策略可能调整，编写脚本前应用浏览器确认当前权限模型与路径。
 
 #### [EarthScope-Home](https://www.earthscope.org/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-EarthScope 联盟门户，汇总地球物理与大地测量设施、项目与数据政策信息。具体 GNSS 文件检索在 GAGE 数据系统完成。历史上 UNAVCO 品牌页面多会重定向到此处。寻找 RINEX 时请优先使用 gage-data.earthscope.org 归档链接。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+EarthScope 联盟门户，汇总地球物理与大地测量设施、项目与数据政策信息。具体 GNSS 文件检索在 GAGE 数据系统完成。历史上 UNAVCO 品牌页面多会重定向到此处。寻找 RINEX 时请优先使用 gage-data.earthscope.org 归档链接。
 
 #### [EUREF-EPN-CB](https://www.epncb.oma.be/)  
 *🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-欧洲 EPN 中央局官方门户，提供测站信息、观测文件与产品相关入口，是欧洲大地参考框架网的核心数据枢纽。适合区域 PPP、形变与电离层研究。实时流与事后文件渠道分离；使用高采样数据时注意存储容量并遵循 EPN 引用要求。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+欧洲 EPN 中央局官方门户，提供测站信息、观测文件与产品相关入口，是欧洲大地参考框架网的核心数据枢纽。适合区域 PPP、形变与电离层研究。实时流与事后文件渠道分离；使用高采样数据时注意存储容量并遵循 EPN 引用要求。
 
 #### [EUREF-EPN-Obs-FTP](https://epncb.oma.be/ftp/obs/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-EPN 测站观测文件目录，便于按站名直接下载 RINEX，是欧洲区域研究的高频访问路径。目录组织相对稳定，但测站列表会增减。批量下载前应对照中央局站点状态页，剔除长期停测或仅测试用途的测站。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+EPN 测站观测文件目录，便于按站名直接下载 RINEX，是欧洲区域研究的高频访问路径。目录组织相对稳定，但测站列表会增减。批量下载前应对照中央局站点状态页，剔除长期停测或仅测试用途的测站。
 
 #### [GA-GNSS-Data](https://data.gnss.ga.gov.au/)  
 *🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-澳大利亚地球科学局 GNSS 数据服务，覆盖澳新等区域参考站观测与相关产品的检索下载，是亚太用户重要区域网来源。旧版 ga.gov.au 深链可能失效，请优先使用本数据域名与官方 API 文档，并关注站网元数据更新。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+澳大利亚地球科学局 GNSS 数据服务，覆盖澳新等区域参考站观测与相关产品的检索下载，是亚太用户重要区域网来源。旧版 ga.gov.au 深链可能失效，请优先使用本数据域名与官方 API 文档，并关注站网元数据更新。
 
 #### [GA-GNSS-RINEX-S3](https://ga-gnss-data-rinex-v1.s3.amazonaws.com/index.html)  
 *🏷️ 官方*
@@ -676,14 +676,14 @@ GSI terras 站点上关于 SFTP 获取电子基准点观测、日坐标、IGS �
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-香港地政总署卫星定位参考站网说明页，属于高密度城市 CORS 的典型代表，适合华南与香港本地增强、教学及城市电离层个例。实时播发与事后 RINEX 渠道通常不同；投入商用或再分发前请阅读官方使用条款。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+香港地政总署卫星定位参考站网说明页，属于高密度城市 CORS 的典型代表，适合华南与香港本地增强、教学及城市电离层个例。实时播发与事后 RINEX 渠道通常不同；投入商用或再分发前请阅读官方使用条款。
 
 #### [HongKong-SatRef-RINEX](https://www.geodetic.gov.hk/en/rinex/rinex.htm)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-说明如何获取 SatRef 事后 RINEX 观测数据，是区域电离层与对流层案例研究的便捷来源。需注意采样率、文件保留期限与站名规则。若进行大量自动下载，应遵守网站礼貌访问规范并优先在本地缓存。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+说明如何获取 SatRef 事后 RINEX 观测数据，是区域电离层与对流层案例研究的便捷来源。需注意采样率、文件保留期限与站名规则。若进行大量自动下载，应遵守网站礼貌访问规范并优先在本地缓存。
 
 #### [IBGE-RBMC-FTP](https://geoftp.ibge.gov.br/informacoes_sobre_posicionamento_geodesico/rbmc/)  
 *🏷️ 官方*
@@ -697,7 +697,7 @@ IBGE geoftp 下 RBMC 连续监测网公共文件树，可直接浏览/下载公�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-法国国家地理与森林信息研究所大地测量站点，导向国家 GNSS 连续运行网与产品信息，可作为欧洲区域网的补充数据源。历史上 IGS 数据中心 FTP 主机可能不稳定，获取文件时优先使用本页给出的当前方式与镜像说明。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+法国国家地理与森林信息研究所大地测量站点，导向国家 GNSS 连续运行网与产品信息，可作为欧洲区域网的补充数据源。历史上 IGS 数据中心 FTP 主机可能不稳定，获取文件时优先使用本页给出的当前方式与镜像说明。
 
 #### [IGN-RGP-Data](https://rgpdata.ign.fr/)  
 *🏷️ 官方*
@@ -711,7 +711,7 @@ IBGE geoftp 下 RBMC 连续监测网公共文件树，可直接浏览/下载公�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-墨西哥国家统计地理院（INEGI）主动大地测量网（RGNA）RINEX 取数应用，可按固定站与起止时刻选择 RINEX 2.11/3.04。拉美除巴西 RBMC 外的重要国家 CORS 入口；站点覆盖与缺数说明以页面提示为准。适合区域网形变、电离层与相对定位试验，使用须遵守 INEGI 开放数据条款。
+墨西哥国家统计地理院（INEGI）主动大地测量网（RGNA）RINEX 取数应用，可按固定站与起止时刻选择 RINEX 2.11/3.04。拉美除巴西 RBMC 外的重要国家 CORS 入口；适合区域网形变、电离层与相对定位试验，使用须遵守 INEGI 开放数据条款。
 
 #### [NOAA-CORS-AWS](https://noaa-cors-pds.s3.amazonaws.com/index.html)  
 *🏷️ 官方*
@@ -725,7 +725,7 @@ NOAA Open Data Dissemination（NODD）把 NCN/CORS RINEX 放到公开 S3 桶 noa
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-CORS 观测文件目录树入口，便于按测站、年份与年积日批量抓取公开 RINEX。面向自动化流水线。请控制并发与请求频率，遵守 NOAA 使用政策，并在本地做好缓存与校验，以免重复冲击服务器。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+CORS 观测文件目录树入口，便于按测站、年份与年积日批量抓取公开 RINEX。面向自动化流水线。请控制并发与请求频率，遵守 NOAA 使用政策，并在本地做好缓存与校验，以免重复冲击服务器。
 
 #### [NOAA-NCN-API](https://geodesy.noaa.gov/web_services/ncn-api.shtml)  
 *🏷️ 官方*
@@ -739,14 +739,14 @@ CORS 观测文件目录树入口，便于按测站、年份与年积日批量抓
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-美国 NGS 国家 CORS 网（NCN）「Data and Products」说明页，汇总观测、产品与获取途径说明，衔接 corsdata 树、AWS NODD 与 NCN API。适合首次弄清 NGS 多入口关系；实际批量下载仍走目录/API/云。本条收录导航页而非重复文件树 URL，政策以 NGS 条款为准。
+美国 NGS 国家 CORS 网（NCN）「Data and Products」说明页，汇总观测、产品与获取途径说明，衔接 corsdata 树、AWS NODD 与 NCN API。适合首次弄清 NGS 多入口关系；实际批量下载仍走目录/API/云。本页是导航说明，不是文件树本身。
 
 #### [NOAA-NGS-CORS](https://geodesy.noaa.gov/CORS/)  
 *🏷️ 官方 核心*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-美国国家大地测量局 CORS 官方入口，提供测站元数据、RINEX 观测与相关产品链接，是北美高精度定位与电离层研究常用网络。站点数量多、跨度长。处理前务必核对天线变更日志与站点活跃状态，避免使用已关闭测站而未更新元数据。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+美国国家大地测量局 CORS 官方入口，提供测站元数据、RINEX 观测与相关产品链接，是北美高精度定位与电离层研究常用网络。站点数量多、跨度长。处理前务必核对天线变更日志与站点活跃状态，避免使用已关闭测站而未更新元数据。
 
 #### [RAMSAC-RINEX](https://www.ign.gob.ar/NuestrasActividades/Geodesia/Ramsac/DescargaRinex)  
 *🏷️ 官方*
@@ -760,14 +760,14 @@ CORS 观测文件目录树入口，便于按测站、年份与年积日批量抓
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-SIRGAS 官方网站介绍拉丁美洲及周边大地参考框架与 GNSS 站网组织方式，是该区域地壳运动与电离层研究的入口级资源。具体 RINEX 往往分散在各成员国数据中心，需要从本站再跳转，并分别遵守各国获取规则。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+SIRGAS 官方网站介绍拉丁美洲及周边大地参考框架与 GNSS 站网组织方式，是该区域地壳运动与电离层研究的入口级资源。具体 RINEX 往往分散在各成员国数据中心，需要从本站再跳转，并分别遵守各国获取规则。
 
 #### [SONEL](https://www.sonel.org/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-全球海平面观测组织门户，许多验潮站与 GNSS 并址，服务于海洋大地测量、垂直基准与海平面变化研究。数据偏沿海场景。GNSS 文件有时并不直接托管，而是链到各国 CORS 或数据中心，需要二次跳转并分别注册。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
+全球海平面观测组织门户，许多验潮站与 GNSS 并址，服务于海洋大地测量、垂直基准与海平面变化研究。数据偏沿海场景。GNSS 文件有时并不直接托管，而是链到各国 CORS 或数据中心，需要二次跳转并分别注册。
 
 #### [UNAVCO-GPS-GNSS-Data](https://www.unavco.org/data/gps-gnss/gps-gnss.html)  
 *🏷️ 官方*
@@ -791,7 +791,7 @@ SIRGAS 官方网站介绍拉丁美洲及周边大地参考框架与 GNSS 站网�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-说明 IGS 实时轨道钟差及 SSR 播发框架、参与分析中心与应用场景，面向实时 PPP 与完整性监测。本页通常不直接推送数据流，需经 BKG 等 NTRIP caster 接入。流可用性与消息版本会更新，上线前应核对挂载点表和解码库兼容性。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+说明 IGS 实时轨道钟差及 SSR 播发框架、参与分析中心与应用场景，面向实时 PPP 与完整性监测。本页通常不直接推送数据流，需经 BKG 等 NTRIP caster 接入。流可用性与消息版本会更新，上线前应核对挂载点表和解码库兼容性。
 
 #### [NSGI-NTRIP](https://www.nsgi.nl/referentiepunten-en-gnss-data/gnss-data/real-time-streams)  
 *🏷️ 官方*
@@ -851,7 +851,7 @@ IGN 为 RAMSAC 提供的 NTRIP 实时服务门户，含站网地图、用户注�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-维也纳工大 VMF 服务的对流层产品目录树，提供 VMF1/VMF3 等格网，供 PPP 与 VLBI 映射函数使用。本条强调数据产品，源码实现见同站 /codes（软件类另收）。选用时注意格网版本与气象模型匹配；业务系统还需确认更新节奏与文献引用要求。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+维也纳工大 VMF 服务的对流层产品目录树，提供 VMF1/VMF3 等格网，供 PPP 与 VLBI 映射函数使用。这里是数据产品，源码实现见同站 /codes。选用时注意格网版本与气象模型匹配；业务系统还需确认更新节奏与文献引用要求。
 
 ## 空间天气辅助
 
@@ -878,7 +878,7 @@ IGN 为 RAMSAC 提供的 NTRIP 实时服务门户，含站网地图、用户注�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-Boston College 维护的 AMBER 等磁强计网络数据中心，提供 ASCII 日文件与日绘图，服务低纬/非洲扇区空间天气与电流体系研究，可与 GNSS ROTI/闪烁对照。门户含 Downloads 浏览；使用请遵守站点引用与数据政策。本条是地磁辅助数据，不是 GNSS 观测归档。
+Boston College 维护的 AMBER 等磁强计网络数据中心，提供 ASCII 日文件与日绘图，服务低纬/非洲扇区空间天气与电流体系研究，可与 GNSS ROTI/闪烁对照。门户含 Downloads 浏览；这里是地磁辅助数据，不是 GNSS 观测归档。
 
 #### [CARISMA](https://www.carisma.ca/)  
 *🏷️ 高校实验室*
@@ -899,7 +899,7 @@ FMI 的 IMAGE（International Monitor for Auroral Geomagnetic Effects）地磁�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-加拿大联邦研究数据存储库 FRDR 中的 SuperDARN 专题集合，由 SuperDARN Canada 等单位维护，按年份与雷达发布原始及处理后的相干散射雷达数据集并分配 DOI，是全球 SuperDARN 数据的主要公开镜像之一。数据反映高纬电离层对流与不规则体，可与 GNSS 闪烁、ROTI 及极盖 TEC 结构对照；读写和绘图可用 pyDARN、RST 等工具。部分数据按 SuperDARN 数据政策需要致谢或联系 PI。界面有英法双语。收录前已 HTTP 200 核验。
+加拿大联邦研究数据存储库 FRDR 中的 SuperDARN 专题集合，由 SuperDARN Canada 等单位维护，按年份与雷达发布原始及处理后的相干散射雷达数据集并分配 DOI，是全球 SuperDARN 数据的主要公开镜像之一。数据反映高纬电离层对流与不规则体，可与 GNSS 闪烁、ROTI 及极盖 TEC 结构对照；读写和绘图可用 pyDARN、RST 等工具。部分数据按 SuperDARN 数据政策需要致谢或联系 PI。界面有英法双语。
 
 #### [INTERMAGNET](https://www.intermagnet.org/)  
 *🏷️ 官方*
@@ -913,7 +913,7 @@ FMI 的 IMAGE（International Monitor for Auroral Geomagnetic Effects）地磁�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-京都 WDC for Geomagnetism 提供 Kp、Dst 等经典地磁指数与相关数据服务，是空间天气与电离层扰动研究的常用外部驱动入口。门户以网页/文件服务为主；下载与引用规则见站点说明。本条收录「数据怎么拿」，不是 GNSS 观测归档。
+京都 WDC for Geomagnetism 提供 Kp、Dst 等经典地磁指数与相关数据服务，是空间天气与电离层扰动研究的常用外部驱动入口。门户以网页/文件服务为主；下载与引用规则见站点说明。不是 GNSS 观测归档。
 
 #### [Meridian Project Data Center](https://www.meridianproject.ac.cn/)  
 *🏷️ 官方*
@@ -948,7 +948,7 @@ OpenMadrigal 项目主页，介绍分布式 Madrigal 数据库（CEDAR、ISR TEC
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-欧盟 H2020 PITHIA-NRF（电离层、热层、等离子体层综合研究设施）项目的 e-Science Centre，基于统一的空间物理本体与元数据模型登记来自欧洲各机构的数据集合、静态数据集与在线工作流，可按内容检索电离层测高、GNSS TEC、模型输出等资源并跳转到提供方接口。它本身主要做发现与编目，而不是集中存储，适合寻找欧洲电离层数据源与服务。提供者需注册才能登记资源，普通浏览公开。收录前已 HTTP 200 核验。
+欧盟 H2020 PITHIA-NRF（电离层、热层、等离子体层综合研究设施）项目的 e-Science Centre，基于统一的空间物理本体与元数据模型登记来自欧洲各机构的数据集合、静态数据集与在线工作流，可按内容检索电离层测高、GNSS TEC、模型输出等资源并跳转到提供方接口。它本身主要做发现与编目，而不是集中存储，适合寻找欧洲电离层数据源与服务。提供者需注册才能登记资源，普通浏览公开。
 
 #### [SuperDARN-VT](https://vt.superdarn.org/)  
 *🏷️ 高校实验室*
@@ -1004,28 +1004,28 @@ JHU/APL SuperMAG 汇集全球地磁台站并提供统一坐标与多种指数/�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-智利大学物理数学学院国家地震中心（CSN）GPS 站点门户，含台站地图（RTX/外项目标注）与数据联系入口。拉美地震—大地测量联合网的公开观测入口，可补 SIRGAS/国家 CORS。学术机构运营；数据发布范围以站点说明为准。收录前已 HTTP 核验。
+智利大学物理数学学院国家地震中心（CSN）GPS 站点门户，含台站地图（RTX/外项目标注）与数据联系入口。拉美地震—大地测量联合网的公开观测入口，可补 SIRGAS/国家 CORS。学术机构运营。
 
 #### [EUREF-EPN-Data-Access](https://www.epncb.oma.be/_networkdata/data_access/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-EPN 网络数据访问专页，说明如何获取欧洲永久 GNSS 站观测与相关资源。与 EPN 主页、Obs FTP 互补，偏数据获取指引而非产品目录。欧洲区域 CORS/RINEX 研究常用导航页。收录前已 HTTP 核验；访问方式、镜像与配额以上游政策为准。
+EPN 网络数据访问专页，说明如何获取欧洲永久 GNSS 站观测与相关资源。与 EPN 主页、Obs FTP 互补，偏数据获取指引而非产品目录。欧洲区域 CORS/RINEX 研究常用导航页。
 
 #### [EUREF-EPN-StationList](https://www.epncb.oma.be/_networkdata/stationlist.php)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-EPN中央局站表专页，列出欧洲永久GNSS网站点清单，并链到网络状态与相关导航。与已收录EPN主页、数据访问与对流层产品页互补，本页直达站表，便于选站与元数据核对。欧洲CORS研究常用入口。收录前已HTTP核验；站信息更新以EPN中央局为准。
+EPN中央局站表专页，列出欧洲永久GNSS网站点清单，并链到网络状态与相关导航。与EPN主页、数据访问与对流层产品页互补，本页直达站表，便于选站与元数据核对。欧洲CORS研究常用入口。站信息更新以EPN中央局为准。
 
 #### [GeoNet-Data-API](https://data.geonet.org.nz/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-GeoNet 面向自动化拉取的稳定 Data API（data.geonet.org.nz）：浏览/下载原始数据与产品；GNSS RINEX 位于 /v1/data/gnss/rinex/（另有 1 Hz 路径）。支持 gzip Accept-Encoding。旧兼容端点计划于 2026 年底退役，脚本应迁移到 /v1/data/。数据自由开放，使用前需阅读 Data Policy/Disclaimer 并引用数据集 DOI。与已收录的 GeoNet 大地测量说明页互补（门户介绍 vs 机器接口）。
+GeoNet 面向自动化拉取的稳定 Data API（data.geonet.org.nz）：浏览/下载原始数据与产品；GNSS RINEX 位于 /v1/data/gnss/rinex/（另有 1 Hz 路径）。支持 gzip Accept-Encoding。旧兼容端点计划于 2026 年底退役，脚本应迁移到 /v1/data/。数据自由开放，使用前需阅读 Data Policy/Disclaimer 并引用数据集 DOI。与 GeoNet 大地测量说明页互补（门户介绍 vs 机器接口）。
 
 #### [GeoNet-NZ-Geodetic](https://www.geonet.org.nz/data/types/geodetic)  
 *🏷️ 官方*
@@ -1046,7 +1046,7 @@ GeoNet 大地测量数据说明入口，链向新西兰 GNSS 等产品的获取�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-IBGE 服务数据文档中的 RBMC API（v1），提供 rinex2/rinex3 及 1 秒高采样等端点，便于脚本化拉取巴西连续监测网。与已收录的 RBMC 介绍页互补，本条专指可编程接口。遵守 IBGE 服务条款与礼貌访问；端点路径/版本以文档为准。
+IBGE 服务数据文档中的 RBMC API（v1），提供 rinex2/rinex3 及 1 秒高采样等端点，便于脚本化拉取巴西连续监测网。与 RBMC 介绍页互补，本页专指可编程接口。遵守 IBGE 服务条款与礼貌访问。
 
 #### [Japan-MIRAI-Archive](https://go.gnss.go.jp/mirai/miraiarchive/)  
 *🏷️ 官方*
@@ -1060,21 +1060,21 @@ IBGE 服务数据文档中的 RBMC API（v1），提供 rinex2/rinex3 及 1 秒�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-韩国 GNSS 数据服务门户汇聚国土地理院、海洋定位、气象与科研等机构参考站，提供事后 RINEX 打包下载（单次跨度常有上限）。适合朝鲜半岛及周边区域电离层/定位验证。需网页注册登录；具体可下载台站与保留策略以站点现行说明为准。
+韩国 GNSS 数据服务门户汇聚国土地理院、海洋定位、气象与科研等机构参考站，提供事后 RINEX 打包下载（单次跨度常有上限）。适合朝鲜半岛及周边区域电离层/定位验证。需网页注册登录。
 
 #### [NOAA-UFCORS](https://geodesy.noaa.gov/UFCORS/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-美国 NGS 提供的 User Friendly CORS 网页服务，可按站与时段请求部分日、跨日拼接或降采样的 RINEX，免手工拼 CORS 目录。与已收录的 CORS 数据树/AWS 桶互补，偏交互取数。属门户服务（portal-terms）；大批量科研抓取仍建议用 NODD/S3 或 corsdata 目录并限速。
+美国 NGS 提供的 User Friendly CORS 网页服务，可按站与时段请求部分日、跨日拼接或降采样的 RINEX，免手工拼 CORS 目录。与 CORS 数据树/AWS 桶互补，偏交互取数。属门户服务（portal-terms）；大批量科研抓取仍建议用 NODD/S3 或 corsdata 目录并限速。
 
 #### [NRCan-CACS](https://webapp.csrs.nrcan.gc.ca/geod/data-donnees/cacs-scca.php)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-加拿大自然资源部 CSRS 门户提供的 Canadian Active Control System 数据入口，可按站选取并下载 RINEX 观测与元数据，亦分发部分精密星历/钟差选项。北美高纬与极区电离层、地壳形变研究常用。收录前已 HTTP 核验页面可访问；批量下载请遵守 NRCan 礼貌访问与引用要求。
+加拿大自然资源部 CSRS 门户提供的 Canadian Active Control System 数据入口，可按站选取并下载 RINEX 观测与元数据，亦分发部分精密星历/钟差选项。北美高纬与极区电离层、地壳形变研究常用。批量下载请遵守 NRCan 礼貌访问与引用要求。
 
 #### [NSGI-RINEX](https://www.nsgi.nl/referentiepunten-en-gnss-data/gnss-data/rinex-data)  
 *🏷️ 官方*
@@ -1095,7 +1095,7 @@ Ordnance Survey Data Hub 的 OS Net 产品页，汇总大不列颠 GNSS 基准�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-Land Information New Zealand 的 PositioNZ 连续运行参考站观测 FTP/HTTPS 浏览树，提供国家网 RINEX 等文件按目录组织下载。适合澳新区域对照与科研。部分 LINZ 门户页对外网 403，本 FTP 树可直达；使用请遵守 LINZ 数据条款。
+Land Information New Zealand 的 PositioNZ 连续运行参考站观测 FTP/HTTPS 浏览树，提供国家网 RINEX 等文件按目录组织下载。适合澳新区域对照与科研。部分 LINZ 门户页对外网 403，本 FTP 树可直达。
 
 #### [RENAG](https://renag.resif.fr/)  
 *🏷️ 官方*
@@ -1109,21 +1109,21 @@ Land Information New Zealand 的 PositioNZ 连续运行参考站观测 FTP/HTTPS
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-SIRGAS 连续运行参考站专页，提供站表、log、邮件列表与地图，由 DGFI-TUM 分析中心托管。与已收录 SIRGAS 主页互补，本页直达台站元数据。拉美区域参考框架研究常用入口。收录前已 HTTP 核验；产品与引用请遵守 SIRGAS/DGFI 规定。
+SIRGAS 连续运行参考站专页，提供站表、log、邮件列表与地图，由 DGFI-TUM 分析中心托管。与 SIRGAS 主页互补，本页直达台站元数据。拉美区域参考框架研究常用入口。
 
 #### [SIRGAS-Weekly-Solutions](https://www.sirgas.org/en/weekly-solutions/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-SIRGAS 周解专页，提供按周/按站的 XYZ 与经纬高产品入口，由 DGFI-TUM 分析中心托管。与已收录 SIRGAS 主页与 Stations 页互补，本页直达周解。拉美参考框架时间序列研究常用。收录前已 HTTP 核验；下载与引用请遵守 SIRGAS/DGFI 规定。
+SIRGAS 周解专页，提供按周/按站的 XYZ 与经纬高产品入口，由 DGFI-TUM 分析中心托管。与 SIRGAS 主页与 Stations 页互补，本页直达周解。拉美参考框架时间序列研究常用。
 
 #### [Spain-IGN-ERGNSS](https://datos-geodesia.ign.es/ERGNSS/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-西班牙国家地理研究所大地测量数据服务器上的 ERGNSS 目录，提供国家连续 GNSS 网相关文件的开放索引（亦可见 EUREF/IGS 等并列目录）。西欧中纬电离层与区域网研究可作补充源。目录型 HTTPS 访问；子目录结构与文件命名以站点为准，批量抓取请限速。
+西班牙国家地理研究所大地测量数据服务器上的 ERGNSS 目录，提供国家连续 GNSS 网相关文件的开放索引（亦可见 EUREF/IGS 等并列目录）。西欧中纬电离层与区域网研究可作补充源。目录型 HTTPS 访问；批量抓取请限速。
 
 #### [SWEPOS-RINEX](https://www.lantmateriet.se/en/geodata/gps-geodesy-and-swepos/lantmateriets-doi-objects/swepos-rinex-data/)  
 *🏷️ 官方*
@@ -1199,7 +1199,7 @@ NGS Online Positioning User Service：用户上传双频静态观测，由 NGS �
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-美国国家大地测量局（NGS）OPUS Projects 5.x：面向多测站、多时段控制网的在线管理与处理（PAGES 套件），可视化会话并与国家空间参考系统（NSRS）约束平差。创建项目通常需完成官方培训并注册为项目管理者；若要入库 NGS IDB 还需项目跟踪号与 WinDesc 点之记。属官方免费科学/测绘服务（非 OSI 源码发行）。与已收录的单站 OPUS 互补；NSRS 数据元切换节点请关注 NGS 公告。
+美国国家大地测量局（NGS）OPUS Projects 5.x：面向多测站、多时段控制网的在线管理与处理（PAGES 套件），可视化会话并与国家空间参考系统（NSRS）约束平差。创建项目通常需完成官方培训并注册为项目管理者；若要入库 NGS IDB 还需项目跟踪号与 WinDesc 点之记。属官方免费科学/测绘服务（非 OSI 源码发行）。与单站 OPUS 互补；NSRS 数据元切换节点请关注 NGS 公告。
 
 ## 元数据
 
@@ -1222,7 +1222,7 @@ NGS Online Positioning User Service：用户上传双频静态观测，由 NGS �
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-瑞士联邦地形局永久 GNSS 网信息前端（ELFI/PNAC），用于查询 AGNES 等站元数据与坐标相关信息。测绘与科研可先在此定位瑞士参考站。RINEX 本体多经 swipos 许可渠道获取；本页侧重站网检索，而非匿名大流量观测下载。请对照上游页面核实最新访问方式与许可。
+瑞士联邦地形局永久 GNSS 网信息前端（ELFI/PNAC），用于查询 AGNES 等站元数据与坐标相关信息。测绘与科研可先在此定位瑞士参考站。RINEX 本体多经 swipos 许可渠道获取；本页侧重站网检索，而非匿名大流量观测下载。
 
 ## 国际联盟
 
@@ -1270,7 +1270,7 @@ EPOS GNSS Thematic Core Service 官方门户，汇总欧洲 GNSS 观测、坐标
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-GA GNSS Data Centre 的 RINEX 查询 API 说明：可按站名、时间窗、文件周期/类型与 RINEX 版本检索，返回含下载链接的 JSON。匿名可取开放数据，鉴权可取受限站。适合脚本化拉取澳新/APREF 相关观测；与已收录的门户首页互补，侧重程序化接口。
+GA GNSS Data Centre 的 RINEX 查询 API 说明：可按站名、时间窗、文件周期/类型与 RINEX 版本检索，返回含下载链接的 JSON。匿名可取开放数据，鉴权可取受限站。适合脚本化拉取澳新/APREF 相关观测；与门户首页互补，侧重程序化接口。
 
 #### [OS-Net-API](https://docs.os.uk/os-apis/accessing-os-apis/os-net-api/getting-started)  
 *🏷️ 官方*
@@ -1284,7 +1284,7 @@ OS Net API 入门文档，说明如何用 API Key 列出并下载大不列颠 CO
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-EarthScope（原 UNAVCO）整理的 GPS/GNSS 数据访问方法页，对比 Web、FTP/HTTPS、API 等拉取途径与适用场景。新用户可据此选择 GAGE 归档或工具链入口。具体数据集许可与账号要求以各通道为准；与已收录的数据首页互补。
+EarthScope（原 UNAVCO）整理的 GPS/GNSS 数据访问方法页，对比 Web、FTP/HTTPS、API 等拉取途径与适用场景。新用户可据此选择 GAGE 归档或工具链入口。具体数据集许可与账号要求以各通道为准；与数据首页互补。
 
 ## IGS数据中心
 
@@ -1300,14 +1300,14 @@ EarthScope（原 UNAVCO）整理的 GPS/GNSS 数据访问方法页，对比 Web�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-德国地学研究中心（GFZ）Information System and Data Center 的 GNSS HTTPS 数据根：/gnss/data/daily、/highrate 等目录提供日文件与高采样观测及产品树，匿名 HTTPS 浏览下载。IGSMail 等通告已推动从旧 FTP 迁移至此主机（旧 FTP 计划关停）。与已收录的 isdc.gfz-potsdam.de 门户页互补——本条指向可直接 wget/curl 的数据树。使用请遵守 GFZ/ISDC 数据政策并引用相应 DOI。
+德国地学研究中心（GFZ）Information System and Data Center 的 GNSS HTTPS 数据根：/gnss/data/daily、/highrate 等目录提供日文件与高采样观测及产品树，匿名 HTTPS 浏览下载。IGSMail 等通告已推动从旧 FTP 迁移至此主机（旧 FTP 计划关停）。与 isdc.gfz-potsdam.de 门户页互补，这里是可直接 wget/curl 的数据树。使用请遵守 GFZ/ISDC 数据政策并引用相应 DOI。
 
 #### [KASI-GNSS-Data-Center](https://gnss.kasi.re.kr/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-KASI GNSS 门户，标明 IGS Global Data Center、KASI GNSS Network、AOPOD 与 KOMPSAT-5 GPS RO 等活动，并提供数据访问与产品入口。东亚官方 GNSS 数据中心节点，可补 IGS 数据分发版图。收录前已 HTTP 核验；下载与引用请遵守 KASI/IGS 政策。
+KASI GNSS 门户，标明 IGS Global Data Center、KASI GNSS Network、AOPOD 与 KOMPSAT-5 GPS RO 等活动，并提供数据访问与产品入口。东亚官方 GNSS 数据中心节点，可补 IGS 数据分发版图。
 
 ## 多系统扩展
 
@@ -1322,7 +1322,7 @@ KASI GNSS 门户，标明 IGS Global Data Center、KASI GNSS Network、AOPOD 与
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-介绍 IGS 多系统 GNSS 工作组职责及与 MGEX 的衔接，适合跟踪新信号、新星座在 IGS 框架中的试验与标准化进展。页面偏组织与活动说明，观测与产品下载仍走 MGEX/CDDIS 等渠道。与仅 GPS 时代产品体系对照阅读更有帮助。收录前已 HTTP 核验可访问。
+介绍 IGS 多系统 GNSS 工作组职责及与 MGEX 的衔接，适合跟踪新信号、新星座在 IGS 框架中的试验与标准化进展。页面偏组织与活动说明，观测与产品下载仍走 MGEX/CDDIS 等渠道。与仅 GPS 时代产品体系对照阅读更有帮助。
 
 ## 参考框架
 
@@ -1337,7 +1337,7 @@ KASI GNSS 门户，标明 IGS Global Data Center、KASI GNSS Network、AOPOD 与
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-说明 IGS 参考框架工作组在测站坐标、框架对齐与相关产品一致性方面的职责。对长期时间序列、速度场与框架转换用户有指引价值。页面不直接提供 SINEX 下载，产品仍走 IGS 产品中心。收录前已 HTTP 核验可访问；引用请遵循 IGS 框架产品说明。
+说明 IGS 参考框架工作组在测站坐标、框架对齐与相关产品一致性方面的职责。对长期时间序列、速度场与框架转换用户有指引价值。页面不直接提供 SINEX 下载，产品仍走 IGS 产品中心。
 
 ## 国家大地测量
 
@@ -1352,7 +1352,7 @@ KASI GNSS 门户，标明 IGS Global Data Center、KASI GNSS Network、AOPOD 与
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-Toitū Te Whenua LINZ 大地测量业务入口，汇总新西兰大地基准、控制网与相关产品服务说明，可衔接 PositioNZ 等 GNSS 连续站数据。适合查找官方大地成果与服务路径，而非直接批量下 RINEX。与已收录的 PositioNZ FTP 互补：本页偏导航与业务说明。收录前已 HTTP 核验；下载与引用请遵守 LINZ 条款。
+Toitū Te Whenua LINZ 大地测量业务入口，汇总新西兰大地基准、控制网与相关产品服务说明，可衔接 PositioNZ 等 GNSS 连续站数据。适合查找官方大地成果与服务路径，而非直接批量下 RINEX。与 PositioNZ FTP 互补：本页偏导航与业务说明。
 
 ## 空间物理数据
 
@@ -1367,7 +1367,7 @@ Toitū Te Whenua LINZ 大地测量业务入口，汇总新西兰大地基准、�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-Coordinated Data Analysis Web（CDAWeb）提供多航天任务空间物理数据的检索、绘图与下载，格式以 CDF 等为主。可用于把太阳风/磁层观测与 GNSS 电离层响应对照。非 GNSS 专用站，但属空间天气常用上游。收录前已 HTTP 核验；下载请遵守 NASA SPDF 数据政策。
+Coordinated Data Analysis Web（CDAWeb）提供多航天任务空间物理数据的检索、绘图与下载，格式以 CDF 等为主。可用于把太阳风/磁层观测与 GNSS 电离层响应对照。非 GNSS 专用站，但属空间天气常用上游。
 
 ## 日地物理归档
 
@@ -1382,7 +1382,7 @@ Coordinated Data Analysis Web（CDAWeb）提供多航天任务空间物理数据
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-UK Solar System Data Centre（UKSSDC）兼世界日地物理数据中心职能，归档太阳、电离层与相关 STP 数据。对电离层历史序列与太阳活动背景有价值。部分数据需注册后检索。收录前已 HTTP 核验；使用请遵守 STFC/RAL 与 WDC 条款。
+UK Solar System Data Centre（UKSSDC）兼世界日地物理数据中心职能，归档太阳、电离层与相关 STP 数据。对电离层历史序列与太阳活动背景有价值。部分数据需注册后检索。
 
 ## WDC数据
 
@@ -1397,7 +1397,7 @@ UK Solar System Data Centre（UKSSDC）兼世界日地物理数据中心职能�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-澳大利亚 SWS World Data Centre 页面，提供磁强计、电离层等 STP 数据的展示与下载入口。可补充南半球区域空间天气与电离层序列。具体数据集权限与格式见子页说明。收录前已 HTTP 核验；再分发请遵循 WDC/SWS 政策。
+澳大利亚 SWS World Data Centre 页面，提供磁强计、电离层等 STP 数据的展示与下载入口。可补充南半球区域空间天气与电离层序列。具体数据集权限与格式见子页说明。
 
 ## 国家GNSS门户
 
@@ -1412,7 +1412,7 @@ UK Solar System Data Centre（UKSSDC）兼世界日地物理数据中心职能�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-GNSS.be 为 ROB 的 GNSS 开放数据与产品门户，提供活动介绍、开放数据与服务入口；已收录的欧洲 TEC/IONEX 产品页可由此导航。新近通报含 GNSS-DCAT-AP 与 RINEX API 等更新。下载请遵守 ROB 开放数据条款。
+GNSS.be 为 ROB 的 GNSS 开放数据与产品门户，提供活动介绍、开放数据与服务入口；欧洲 TEC/IONEX 产品页可由此导航。新近通报含 GNSS-DCAT-AP 与 RINEX API 等更新。
 
 ## 测站地图
 
@@ -1427,7 +1427,7 @@ GNSS.be 为 ROB 的 GNSS 开放数据与产品门户，提供活动介绍、开�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-NGL GPS Networks Map，可点击站点查看站信息，便于浏览 MAGNET 与全球 GPS 网分布。与 UNR 主站/时间序列产品互补，偏可视化入口。数据引用请遵循 NGL 说明。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证与引用要求。
+NGL GPS Networks Map，可点击站点查看站信息，便于浏览 MAGNET 与全球 GPS 网分布。与 UNR 主站/时间序列产品互补，偏可视化入口。
 
 ## OMNI查询
 
@@ -1442,7 +1442,7 @@ NGL GPS Networks Map，可点击站点查看站信息，便于浏览 MAGNET 与�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-OMNIWeb Data Explorer 表单页，可对 OMNI 太阳风/地磁等参数绘图、列表或导出文件，并支持命令行获取说明。与 OMNIWeb 主站互补，偏交互查询。引用请遵循 NASA SPDF/OMNI 规范。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证与引用要求。
+OMNIWeb Data Explorer 表单页，可对 OMNI 太阳风/地磁等参数绘图、列表或导出文件，并支持命令行获取说明。与 OMNIWeb 主站互补，偏交互查询。
 
 ## 国家CORS
 
@@ -1465,63 +1465,63 @@ OMNIWeb Data Explorer 表单页，可对 OMNI 太阳风/地磁等参数绘图、
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-GUGiK 运营的波兰 ASG-EUPOS 系统门户，介绍参考站网、管理中心与服务，并提供站网地图与系统消息。面向测量与导航用户的国家 CORS/NRTK 入口。部分服务需登录。与 system.asgeupos.pl 服务页互补。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。
+GUGiK 运营的波兰 ASG-EUPOS 系统门户，介绍参考站网、管理中心与服务，并提供站网地图与系统消息。面向测量与导航用户的国家 CORS/NRTK 入口。部分服务需登录。与 system.asgeupos.pl 服务页互补。
 
 #### [CROPOS](https://www.cropos.hr/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-CROatian POsitioning System 门户，介绍国家参考站网概念、差分/高精度实时服务与资费说明。南欧区域 CORS/NRTK 代表性系统。注册与服务开通按站点流程。收录前已核验可访问。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。
+CROatian POsitioning System 门户，介绍国家参考站网概念、差分/高精度实时服务与资费说明。南欧区域 CORS/NRTK 代表性系统。注册与服务开通按站点流程。
 
 #### [CZEPOS](https://czepos.cuzk.cz/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-捷克测绘局（CÚZK）CZEPOS 门户，提供永久站规格、坐标、天线参数、服务配置说明与产品下载/注册入口，并含运行质量监测。中欧国家 CORS 公开信息页，与 GNSSNet、ReNEP、ASG-EUPOS 等互补。界面以捷克语为主。收录前已 HTTP 核验；注册与商用条款以上游为准。
+捷克测绘局（CÚZK）CZEPOS 门户，提供永久站规格、坐标、天线参数、服务配置说明与产品下载/注册入口，并含运行质量监测。中欧国家 CORS 公开信息页，与 GNSSNet、ReNEP、ASG-EUPOS 等互补。界面以捷克语为主。
 
 #### [GA-GNSS-Networks](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/geodesy/gnss-networks)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-GA 对 GNSS 站网的官方概述页（定位澳大利亚/大地测量路径），说明澳大利亚及区域 GNSS 网络背景。与已收录 data.gnss.ga.gov.au、APREF、AUSPOS 互补，本页偏科普与导航入口而非文件 API。收录前已 HTTP 核验（旧路径会 301 到本 URL）。
+GA 对 GNSS 站网的官方概述页（定位澳大利亚/大地测量路径），说明澳大利亚及区域 GNSS 网络背景。与 data.gnss.ga.gov.au、APREF、AUSPOS 互补，本页偏科普与导航入口而非文件 API。旧路径会 301 跳转到本 URL。
 
 #### [GNSSNet-Hungary](https://www.gnssnet.hu/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-匈牙利 GNSS 服务中心（Lechner/宇宙大地测量台）门户，提供实时流、后处理、坐标变换与 FarmRTK 等入口。中欧国家 CORS 公开信息页，与 ASG-EUPOS、CROPOS 等区域网互补。界面以匈牙利语为主。收录前已 HTTP 200 核验；商用/注册条款以上游为准。
+匈牙利 GNSS 服务中心（Lechner/宇宙大地测量台）门户，提供实时流、后处理、坐标变换与 FarmRTK 等入口。中欧国家 CORS 公开信息页，与 ASG-EUPOS、CROPOS 等区域网互补。界面以匈牙利语为主。
 
 #### [GSI-Terras-GEONET](https://terras.gsi.go.jp/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-日本 GSI 电子基准点（GEONET）观测与解析成果的互联网提供门户，含站点移设/停用公告。与已收录 SFTP 说明、RNXCMP、RINGO 等互补，本页为数据服务主入口。日文界面为主，有英语入口提示。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。
+日本 GSI 电子基准点（GEONET）观测与解析成果的互联网提供门户，含站点移设/停用公告。与 SFTP 说明、RNXCMP、RINGO 等互补，本页为数据服务主入口。日文界面为主，有英语入口提示。
 
 #### [ReNEP-Portugal](https://renep.dgterritorio.gov.pt/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-葡萄牙领土总局（DGT）维护的国家 GNSS 永久站网 ReNEP 门户，提供站点信息、新闻与用户注册入口，服务国家大地基准。西欧国家 CORS/NTRIP 公开入口的补充，与已收录西班牙 ERGNSS、法国 IGN 等互补。界面以葡萄牙语为主。收录前已 HTTP 核验；注册与数据条款以上游为准。
+葡萄牙领土总局（DGT）维护的国家 GNSS 永久站网 ReNEP 门户，提供站点信息、新闻与用户注册入口，服务国家大地基准。西欧国家 CORS/NTRIP 公开入口的补充，与西班牙 ERGNSS、法国 IGN 等互补。界面以葡萄牙语为主。
 
 #### [SRGI-BIG-InaCORS](https://srgi.big.go.id/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-印尼测绘局 BIG 的系统性地理参考（SRGI）门户，提供 Ina-CORS RTK、在线后处理与 RINEX 下载，并含控制网、大地水准面与 GNSS 监测（含 ZWD）等入口。东南亚国家 CORS 公开数据的重要入口，与区域地壳形变/电离层研究互补。界面以印尼语为主；服务条款与注册要求以上游为准。收录前已 HTTP 200 核验。
+印尼测绘局 BIG 的系统性地理参考（SRGI）门户，提供 Ina-CORS RTK、在线后处理与 RINEX 下载，并含控制网、大地水准面与 GNSS 监测（含 ZWD）等入口。东南亚国家 CORS 公开数据的重要入口，与区域地壳形变/电离层研究互补。界面以印尼语为主。
 
 #### [SWEPOS-Portal](https://swepos.lantmateriet.se/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-Lantmäteriet 的 SWEPOS 服务门户，面向瑞典 GNSS 增强服务用户入口。与已收录的 SWEPOS RINEX DOI 数据页互补：本页偏服务登录与业务导航。Cookie/同意条可能影响首次访问体验。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。
+Lantmäteriet 的 SWEPOS 服务门户，面向瑞典 GNSS 增强服务用户入口。与 SWEPOS RINEX DOI 数据页互补：本页偏服务登录与业务导航。Cookie/同意条可能影响首次访问体验。
 
 ## NRTK服务
 
@@ -1536,7 +1536,7 @@ Lantmäteriet 的 SWEPOS 服务门户，面向瑞典 GNSS 增强服务用户入�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-ASG-EUPOS 服务站点，汇总站网服务入口，并含电离层（I95、IRIM/GRIM 等）相关链接与登录注册。偏业务服务导航而非原始 RINEX 全量镜像。使用前请核对服务条款与计费。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证、服务条款与引用要求。
+ASG-EUPOS 服务站点，汇总站网服务入口，并含电离层（I95、IRIM/GRIM 等）相关链接与登录注册。偏业务服务导航而非原始 RINEX 全量镜像。使用前请核对服务条款与计费。
 
 ## 海平面
 
@@ -1553,21 +1553,21 @@ ASG-EUPOS 服务站点，汇总站网服务入口，并含电离层（I95、IRIM
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-Global Sea Level Observing System 官方站，描述核心验潮网、实时/快模/延时数据交付与成员义务。与已收录 PSMSL、SONEL 互补：GLOSS 偏全球观测体系与台站手册。GNSS 潮位计研究常对照其台站框架。收录前已 HTTP 核验。
+Global Sea Level Observing System 官方站，描述核心验潮网、实时/快模/延时数据交付与成员义务。与 PSMSL、SONEL 互补：GLOSS 偏全球观测体系与台站手册。GNSS 潮位计研究常对照其台站框架。
 
 #### [IOC-SeaLevel-Monitoring](https://www.ioc-sealevelmonitoring.org/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-IOC Sea Level Station Monitoring Facility，提供全球验潮站地图、站表、详情与 GLOSS 目录入口，偏近实时监测。与 GLOSS/PSMSL 互补，便于对照 GNSS@tide gauge 站况。收录前已 HTTP 核验；服务可用性以站点公告为准。
+IOC Sea Level Station Monitoring Facility，提供全球验潮站地图、站表、详情与 GLOSS 目录入口，偏近实时监测。与 GLOSS/PSMSL 互补，便于对照 GNSS@tide gauge 站况。
 
 #### [PSMSL](https://www.psmsl.org/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-Permanent Service for Mean Sea Level 官方站，汇集全球验潮站月/年均值，并与 GLOSS 等协作。GNSS 潮位计/GNSS-IR 海面研究常与 PSMSL 序列对照。与已收录 SONEL 互补：SONEL 偏 GNSS@tide gauge，本站偏经典验潮。收录前已 HTTP 核验。
+Permanent Service for Mean Sea Level 官方站，汇集全球验潮站月/年均值，并与 GLOSS 等协作。GNSS 潮位计/GNSS-IR 海面研究常与 PSMSL 序列对照。与 SONEL 互补：SONEL 偏 GNSS@tide gauge，本站偏经典验潮。
 
 ## 坐标产品
 
@@ -1582,7 +1582,7 @@ Permanent Service for Mean Sea Level 官方站，汇集全球验潮站月/年均
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-EPN中央局坐标产品服务专页，汇总欧洲永久GNSS网坐标类产品与服务入口，并链到相关产品说明。与对流层产品页、站表页并列，面向参考框架与站坐标用户。收录前已HTTP核验；产品版本、格式与引用请遵循EUREF与EPN规定及官方发布说明文档。详见上游页面。
+EPN中央局坐标产品服务专页，汇总欧洲永久GNSS网坐标类产品与服务入口，并链到相关产品说明。与对流层产品页、站表页并列，面向参考框架与站坐标用户。产品版本、格式与引用请遵循EUREF与EPN规定及官方发布说明文档。
 
 ## 数据中心
 
@@ -1598,11 +1598,11 @@ EPN中央局坐标产品服务专页，汇总欧洲永久GNSS网坐标类产品�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-Earthdata 对 GNSS Daily 30-Second 观测产品的说明页（承接原 CDDIS 文档迁移）。与高采样、大气、IONEX 等产品页并列，是标准日 RINEX 归档入口说明。收录前已 HTTP 核验；实际文件经 Earthdata/CDDIS 策略获取。
+Earthdata 对 GNSS Daily 30-Second 观测产品的说明页（承接原 CDDIS 文档迁移）。与高采样、大气、IONEX 等产品页并列，是标准日 RINEX 归档入口说明。实际文件经 Earthdata/CDDIS 策略获取。
 
 #### [Earthdata-GNSS](https://www.earthdata.nasa.gov/data/space-geodesy-techniques/gnss)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-Earthdata 上 GNSS 技术主题总览，汇聚 CDDIS 迁移后的 GNSS 数据产品入口（含 MGEX、DCB 等已分列产品的上级导航）。与单产品页互补，适合发现 NASA 侧 GNSS 归档。收录前已 HTTP 核验；下载多需 Earthdata 账号。
+Earthdata 上 GNSS 技术主题总览，汇聚 CDDIS 迁移后的 GNSS 数据产品入口（含 MGEX、DCB 等已分列产品的上级导航）。与单产品页互补，适合发现 NASA 侧 GNSS 归档。下载多需 Earthdata 账号。

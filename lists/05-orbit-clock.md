@@ -31,7 +31,7 @@
 
 语言：C++ · 许可：BSD-3-Clause · 星标约：3 · 宿主：github
 
-Yuanxin Pan 开源的钟差/相位偏差合成工具，源于学位论文并应用于武大参与的 IGS 第三次重处理等研究，可综合多分析中心产品以改善 PPP-AR。附理论文档与论文索引。星标不多但科学指向明确；闭源 PPPx 二进制定位引擎不在本条目范围。
+Yuanxin Pan 开源的钟差/相位偏差合成工具，源于学位论文并应用于武大参与的 IGS 第三次重处理等研究，可综合多分析中心产品以改善 PPP-AR。附理论文档与论文索引。星标不多但科学指向明确；闭源 PPPx 二进制定位引擎不在本仓库内。
 
 ## DCB/UPD/IFCB/OSB
 
@@ -185,7 +185,7 @@ Tudatpy 是 TU Delft Tudat 的 Python 接口，面向轨道传播、天体动力
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-汇总 IGS Bias and Calibration 工作组活动，面向差分码偏差、可观测量特定偏差（OSB）及校准议题。对 PPP-AR、多系统组合与钟差产品一致性很关键。页面为活动与文档入口，具体偏差文件仍从 IGS 产品树获取。收录前已 HTTP 核验；引用请注明产品来源与版本。
+汇总 IGS Bias and Calibration 工作组活动，面向差分码偏差、可观测量特定偏差（OSB）及校准议题。对 PPP-AR、多系统组合与钟差产品一致性很关键。页面为活动与文档入口，具体偏差文件仍从 IGS 产品树获取。引用请注明产品来源与版本。
 
 ## 时标产品
 
@@ -200,7 +200,7 @@ Tudatpy 是 TU Delft Tudat 的 Python 接口，面向轨道传播、天体动力
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-国际计量局时间部门提供的 FTP/产品入口，涵盖 UTC、快速 UTC 与 TT(BIPM) 等时标文件，是 GNSS 时间比对、CGGTTS 与实验室钟差溯源的常用上游。页面说明访问方式与目录结构，实际文件经 FTP 拉取。时标修订与通告需对照 BIPM Circular T。收录前已 HTTP 核验；使用请遵守 BIPM 数据政策。
+国际计量局时间部门提供的 FTP/产品入口，涵盖 UTC、快速 UTC 与 TT(BIPM) 等时标文件，是 GNSS 时间比对、CGGTTS 与实验室钟差溯源的常用上游。页面说明访问方式与目录结构，实际文件经 FTP 拉取。时标修订与通告需对照 BIPM Circular T。
 
 ## EOP与参考系
 
@@ -215,7 +215,7 @@ Tudatpy 是 TU Delft Tudat 的 Python 接口，面向轨道传播、天体动力
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-国际地球自转与参考系统服务（IERS）数据中心，提供地球定向参数（EOP）、地球物理流体、参考系相关下载、公报与简易分析工具。GNSS 精密定位与轨道确定常需对齐 EOP/时标。页面为目录与工具入口，具体文件按产品说明获取。收录前已 HTTP 核验；请遵守 IERS 数据政策与引用格式。
+国际地球自转与参考系统服务（IERS）数据中心，提供地球定向参数（EOP）、地球物理流体、参考系相关下载、公报与简易分析工具。GNSS 精密定位与轨道确定常需对齐 EOP/时标。页面为目录与工具入口，具体文件按产品说明获取。请遵守 IERS 数据政策与引用格式。
 
 ## EOP产品
 
@@ -230,7 +230,7 @@ Tudatpy 是 TU Delft Tudat 的 Python 接口，面向轨道传播、天体动力
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-IERS EOP Product Center 门户，面向地球定向参数序列与相关说明，由巴黎天文台维护。与 IERS Datacenter 互补：本站偏 EOP 产品中心视角。精密 GNSS/VLBI/SLR 联合分析常用其序列。收录前已 HTTP 核验；选用哪套 EOP 产品需对照分析策略与时效。
+IERS EOP Product Center 门户，面向地球定向参数序列与相关说明，由巴黎天文台维护。与 IERS Datacenter 互补：本站偏 EOP 产品中心视角。精密 GNSS/VLBI/SLR 联合分析常用其序列。选用哪套 EOP 产品需对照分析策略与时效。
 
 ## 轨道根数
 
@@ -245,7 +245,7 @@ IERS EOP Product Center 门户，面向地球定向参数序列与相关说明�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-CelesTrak 提供的现行 GP（原 TLE）轨道根数获取页，含查询与专题数据说明，广泛用于卫星可见性与简易轨道预报。与已收录的 SpaceData 页互补：本页偏 GP 元素集。根数精度有限，不替代精密星历。收录前已 HTTP 核验；请遵守 CelesTrak 使用条款。
+CelesTrak 提供的现行 GP（原 TLE）轨道根数获取页，含查询与专题数据说明，广泛用于卫星可见性与简易轨道预报。与 SpaceData 页互补：本页偏 GP 元素集。根数精度有限，不替代精密星历。
 
 ## SGP4传播
 
@@ -281,16 +281,16 @@ CelesTrak 提供的现行 GP（原 TLE）轨道根数获取页，含查询与专
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [dSGP4](https://github.com/esa/dSGP4) | dSGP4：ESA 可微分 SGP4（机器学习友好） | Python | 97 | 🏷️ 高校实验室 |
+| [dSGP4](https://github.com/esa/dSGP4) | dSGP4：ESA 可微分 SGP4（机器学习友好） | Python | 97 | 🏷️ 官方 |
 
 ### 详细说明
 
 #### [dSGP4](https://github.com/esa/dSGP4)  
-*🏷️ 高校实验室*
+*🏷️ 官方*
 
 语言：Python · 许可：GPL-3.0 · 星标约：97 · 宿主：github
 
-ESA GitHub 组织发布的可微分 SGP4（PyTorch），对应 Acciarini、Baydin、Izzo 发表在 Acta Astronautica（2025）的论文。GPL-3.0，pip/conda 可装：可对时间和 TLE 参数求梯度，支持批量传播、TLE/OMM 读写，并含学习 SGP4 修正的混合模型 mldsgp4。用于状态转移矩阵、协方差传播与基于梯度的定轨；精度仍属 SGP4 族，不是精密轨道。
+ESA 先进概念团队（ACT）成员在 ESA GitHub 组织发布的可微分 SGP4（PyTorch），对应 Acciarini、Baydin、Izzo 发表在 Acta Astronautica（2025）的论文。GPL-3.0，pip/conda 可装：可对时间和 TLE 参数求梯度，支持批量传播、TLE/OMM 读写，并含学习 SGP4 修正的混合模型 mldsgp4。用于状态转移矩阵、协方差传播与基于梯度的定轨；精度仍属 SGP4 族，不是精密轨道。
 
 ## SGP4-Rust
 
@@ -320,7 +320,7 @@ Rust 语言的 SGP4 传播实现，MIT 许可，便于嵌入式或高性能服�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-BIPM Time Department 的 FTP 索引页，指向 pub 等时标相关目录，是 UTC/TAI 等文件的机器可达入口。与已收录 BIPM-Time-FTP 说明页互补：本页偏目录浏览。使用请遵守 BIPM 数据政策与引用要求。
+BIPM Time Department 的 FTP 索引页，指向 pub 等时标相关目录，是 UTC/TAI 等文件的机器可达入口。与 BIPM-Time-FTP 说明页互补：本页偏目录浏览。
 
 ## 产品门户
 
@@ -336,14 +336,14 @@ BIPM Time Department 的 FTP 索引页，指向 pub 等时标相关目录，是 
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-CDDIS 对 IGS 等精密轨道（SP3）与钟差（CLK）产品的说明入口；站点提示已向 earthdata.nasa.gov 迁移。与已收录 CDDIS 大气/IONEX/高采样页互补，本页专指轨道钟差派生产品文档。下载现多走 Earthdata；需遵守 NASA 账号与引用条款。收录前已 HTTP 核验页面可达。
+CDDIS 对 IGS 等精密轨道（SP3）与钟差（CLK）产品的说明入口；站点提示已向 earthdata.nasa.gov 迁移。与 CDDIS 大气/IONEX/高采样页互补，本页专指轨道钟差派生产品文档。下载现多走 Earthdata；需遵守 NASA 账号与引用条款。
 
 #### [ESA-Navigation-Support-Office](https://navigation-office.esa.int/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-ESA Navigation Support Office（OPS-GN）公开门户，介绍导航支持活动、产品与出版物入口。面向 GNSS 精密产品与任务支持用户，与 GSSC/Navipedia 等 ESA 导航资源互补。页面偏 JS 应用；收录前已 HTTP 核验可达。
+ESA Navigation Support Office（OPS-GN）公开门户，介绍导航支持活动、产品与出版物入口。面向 GNSS 精密产品与任务支持用户，与 GSSC/Navipedia 等 ESA 导航资源互补。页面偏 JS 应用。
 
 ## VLBI/EOP
 
@@ -359,14 +359,14 @@ ESA Navigation Support Office（OPS-GN）公开门户，介绍导航支持活动
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-Observatoire de Paris 托管的 IVS 大地测量 VLBI 分析服务门户，提供 VLBI 解算与地球定向相关产品入口。轨道/参考框架与 EOP 用户可与 IERS EOP、GNSS 框架联合使用。收录前已 HTTP 核验；产品级别与引用见 IVS/巴黎天文台说明。
+Observatoire de Paris 托管的 IVS 大地测量 VLBI 分析服务门户，提供 VLBI 解算与地球定向相关产品入口。轨道/参考框架与 EOP 用户可与 IERS EOP、GNSS 框架联合使用。产品级别与引用见 IVS/巴黎天文台说明。
 
 #### [IVSCC](https://ivscc.gsfc.nasa.gov/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-International VLBI Service 协调中心门户，介绍观测计划、台站网、数据产品与技术文件。与已收录巴黎 IVSOPAR 分析中心互补，本站偏服务协调与总入口。EOP/TRF 与 GNSS 框架联合用户常用。收录前已 HTTP 核验。
+International VLBI Service 协调中心门户，介绍观测计划、台站网、数据产品与技术文件。与巴黎 IVSOPAR 分析中心互补，本站偏服务协调与总入口。EOP/TRF 与 GNSS 框架联合用户常用。
 
 ## 轨道动力学
 
@@ -396,4 +396,4 @@ nyx-space 维护的 Rust 宇航动力学工具包，AGPL-3.0，星标近五百�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-International Laser Ranging Service 官方门户，组织 SLR 网络、产品与会议信息，服务地球动力学与精密轨道。与 GNSS 精密定轨/参考框架联合解算相关，可补 IVS/IGS 空间大地测量链条。收录前已 HTTP 核验（政府停摆时可能暂停更新）。
+International Laser Ranging Service 官方门户，组织 SLR 网络、产品与会议信息，服务地球动力学与精密轨道。与 GNSS 精密定轨/参考框架联合解算相关，可补 IVS/IGS 空间大地测量链条。美国政府停摆期间可能暂停更新。

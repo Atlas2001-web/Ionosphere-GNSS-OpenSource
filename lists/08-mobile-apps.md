@@ -97,7 +97,7 @@ PRIDE 团队面向智能手机的多频 GNSS 与 IMU 采集工具，便于把手
 
 语言：Python · 许可：MIT · 星标约：391 · 宿主：github
 
-inmcm 的 MicroPython NMEA 解析库，面向 PyBoard 等嵌入式板，支持常见 GNSS 语句与状态提取。MIT 许可，适合教学与低成本物联网定位原型。非桌面级全功能解析器；内存与句子覆盖以仓库说明为准，复杂差分或原始观测量请另选链路处理。
+inmcm 的 MicroPython NMEA 解析库，面向 PyBoard 等嵌入式板，支持常见 GNSS 语句与状态提取。MIT 许可，适合教学与低成本物联网定位原型。非桌面级全功能解析器；复杂差分或原始观测量请另选链路处理。
 
 #### [ubxlib](https://github.com/u-blox/ubxlib)  
 *🏷️ 个人社区*
@@ -146,7 +146,7 @@ Go 实现的跨平台 GNSS 工具，强调 PPS/PTP/NTP 授时、RINEX/RTCM 与�
 
 语言：C++ · 许可：MIT · 星标约：24 · 宿主：github
 
-SparkFun 发布的 Arduino 库，代码部分为 MIT 许可（硬件设计另为 CC BY-SA 4.0），面向和芯星通 UM980 及同系列三频 RTK 接收机。封装 Unicore 命令与消息解析，可读取位置、速度、ECEF 坐标与精度统计，配置星座、NMEA/RTCM 输出、基准站/流动站模式与 PPS，并附二十余个示例，涵盖 NTRIP 客户端/服务器与 Galileo HAS 启用。适合 DIY 低成本三频 RTK 基准站或流动站。仓库另有固件升级说明，可与本目录的 SparkFun u-blox 库对照。
+SparkFun 发布的 Arduino 库，代码部分为 MIT 许可（硬件设计另为 CC BY-SA 4.0），面向和芯星通 UM980 及同系列三频 RTK 接收机。封装 Unicore 命令与消息解析，可读取位置、速度、ECEF 坐标与精度统计，配置星座、NMEA/RTCM 输出、基准站/流动站模式与 PPS，并附二十余个示例，涵盖 NTRIP 客户端/服务器与 Galileo HAS 启用。适合 DIY 低成本三频 RTK 基准站或流动站。仓库另有固件升级说明，可与 SparkFun u-blox 库对照。
 
 #### [esp32-gps](https://github.com/mrichar1/esp32-gps)  
 *🏷️ 个人社区*
@@ -229,7 +229,7 @@ Taro Suzuki 公开的 Google Smartphone Decimeter Challenge 2023 复现代码：
 
 语言：Java · 许可：MIT · 星标约：8 · 宿主：github
 
-MIT 许可的 Java 库，高效解析 Android GNSS Logger 导出的原始测量与传感器事件文本格式，可配置只读所需字段。适合手机原始观测后处理管线。仓库偏库而非 App；上游 Logger 格式若变更需跟进。与已收录 GPSTest 等采集工具互补。
+MIT 许可的 Java 库，高效解析 Android GNSS Logger 导出的原始测量与传感器事件文本格式，可配置只读所需字段。适合手机原始观测后处理管线。仓库偏库而非 App；上游 Logger 格式若变更需跟进。与 GPSTest 等采集工具互补。
 
 ## QZSS嵌入式
 

@@ -87,7 +87,7 @@ HKUST Aerial Robotics 发布的优化式多传感器状态估计器，在 VINS-M
 
 语言：C++ · 许可：GPL-3.0-or-later · 星标约：12 · 宿主：github
 
-仓库描述只有「PPP-RTK/INS/Visual」，没有 README。目录含 ic_gvins（结构同 i2Nav IC-GVINS）、gnss_comm-main（HKUST gnss_comm）与 data_to_rosbag，看名称是在其上加入 PPP-RTK。与 HKUST-Aerial-Robotics/GVINS（本目录 GVINS-HKUST）是不同项目、不同作者；使用和引用前先读源码。
+仓库描述只有「PPP-RTK/INS/Visual」，没有 README。目录含 ic_gvins（结构同 i2Nav IC-GVINS）、gnss_comm-main（HKUST gnss_comm）与 data_to_rosbag，看名称是在其上加入 PPP-RTK。与 HKUST-Aerial-Robotics/GVINS是不同项目、不同作者；使用和引用前先读源码。
 
 ## 车载定位
 
@@ -585,7 +585,7 @@ JuliaGNSS 生态中的滤波库，实现经典 KF、UKF、AUKF 及其方根形�
 
 语言：Python · 许可：LGPL-3.0 · 星标约：160 · 宿主：github
 
-便于复现论文设定的原始测量与融合流水线。适合研究起步。不是开箱商用导航软件；依赖与数据许可以仓库为准。
+便于复现论文设定的原始测量与融合流水线。适合研究起步。不是开箱商用导航软件。
 
 ## ROS/RTKLIB
 
@@ -623,7 +623,7 @@ JuliaGNSS 生态中的滤波库，实现经典 KF、UKF、AUKF 及其方根形�
 
 语言：C++ · 许可：— · 星标约：90 · 宿主：github
 
-紧耦合 GNSS/INS 开源实现，常与 PPPLib 作者社区一并出现。适合紧组合课程实践。维护与许可信息需核对。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
+紧耦合 GNSS/INS 开源实现，常与 PPPLib 作者社区一并出现。适合紧组合课程实践。维护与许可信息需核对。
 
 ## 车载与机器人
 
@@ -751,12 +751,12 @@ Aceinna 设备的 Python 通信工具，支持 OpenIMU、OpenRTK 与 INS401（�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [nmea_navsat_driver](https://github.com/ros-drivers/nmea_navsat_driver) | nmea_navsat_driver：ROS NMEA→NavSatFix 通用驱动 | Python | 287 | 🏷️ 官方 |
+| [nmea_navsat_driver](https://github.com/ros-drivers/nmea_navsat_driver) | nmea_navsat_driver：ROS NMEA→NavSatFix 通用驱动 | Python | 287 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [nmea_navsat_driver](https://github.com/ros-drivers/nmea_navsat_driver)  
-*🏷️ 官方*
+*🏷️ 个人社区*
 
 语言：Python · 许可：BSD-3-Clause · 星标约：287 · 宿主：github
 
