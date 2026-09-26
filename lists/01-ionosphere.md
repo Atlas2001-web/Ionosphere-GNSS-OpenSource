@@ -238,7 +238,7 @@ sami2py 把海军实验室 SAMI2 二维电离层模式包成 Python：可设置�
 #### [sami3_gitm](https://github.com/jdhuba/sami3_gitm)  
 *🏷️ 官方*
 
-语言：Fortran · 许可：unknown · 星标约：7 · 宿主：github
+语言：Fortran · 许可：— · 星标约：7 · 宿主：github
 
 作者仓库提供的 SAMI3 与 GITM 数据接口的基础（vanilla）版本，使用 EUVAC 等驱动，适合追溯耦合实现。局限：偏早期快照；缺少现代文档与测试；生产研究更建议结合 SAMI3-4.00 / GITM 新仓与论文配置。
 
@@ -489,7 +489,7 @@ Python 包读 RINEX 并算 TEC，关键路径用 Rust 加速，和 PyTECGg 同�
 #### [TEC-MoLLM](https://github.com/PANXIONG-CN/TEC-MoLLM)  
 *🏷️ 高校实验室*
 
-语言：Python · 许可：unknown · 星标约：4 · 宿主：github
+语言：Python · 许可：— · 星标约：4 · 宿主：github
 
 多模态深度学习 TEC 预报原型，组合图网络、时序卷积与大模型 LoRA 微调。输入为历史 TEC/空间天气特征；输出预报场。局限：算力与复现成本高；与经典物理/经验模式比可解释性弱；许可未标明。
 
@@ -580,7 +580,7 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 #### [TEC-forecast-F107](https://github.com/hekaixuan-atm/TEC-forecast)  
 *🏷️ 高校实验室*
 
-语言：Python · 许可：unknown · 星标约：0 · 宿主：github
+语言：Python · 许可：no formal licence (README: academic and research use) · 星标约：0 · 宿主：github
 
 论文配套实验：在深度学习 TEC 预报中引入空间非均匀 F10.7 强迫，探索太阳辐射空间差异的影响。适合复现与对比基线。仓库体量小、数据划分依赖作者设定，非业务级物理/同化模式。
 
@@ -605,7 +605,7 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 | [SuperDARN RST](https://github.com/SuperDARN/rst) | SuperDARN 雷达软件工具包 RST：原始数据处理、拟合与对流图生成 | C | 28 | 🏷️ 高校实验室 |
 | [jvierine-ionosonde](https://github.com/jvierine/ionosonde) | ionosonde（jvierine）：开源测高仪/电离图 Python 软件 | Python | 23 | 🏷️ 高校实验室 |
 | [Lompe](https://github.com/klaundal/lompe) | 极区电离层电动力学局地反演工具 Lompe（多源数据融合） | Python | 23 | 🏷️ 高校实验室 |
-| [Ionort-raytrace](https://github.com/blair3sat/ionosphere-rt) | Ionort-raytrace：三维电离层射线追踪 Fortran 实现 | Fortran | 17 | 🏷️ 高校实验室 |
+| [Ionort-raytrace](https://github.com/blair3sat/ionosphere-rt) | Ionort-raytrace：INGV IONORT 三维 HF 射线追踪（MATLAB 界面 + 预编译 Fortran 求解器） | MATLAB | 17 | 🏷️ 高校实验室 |
 | [pysatSpaceWeather](https://github.com/pysat/pysatSpaceWeather) | pysatSpaceWeather：pysat 空间天气指数支持库 | Python | 14 | 🏷️ 高校实验室 |
 | [ionosonde_volgatech](https://github.com/Vladimi-lan/ionosonde_volgatech) | ionosonde_volgatech：伏尔加技术大学测高仪处理代码 | Python | 13 | 🏷️ 高校实验室 |
 | [Alouette_ISIS_extract](https://github.com/asc-csa/Alouette_ISIS_extract) | Alouette_ISIS_extract：CSA 历史扫描电离图提取 | Python | 11 | 🏷️ 官方 |
@@ -713,9 +713,9 @@ SuperDARN 数据分析工作组（DAWG）维护的 Radar Software Toolkit，GPL-
 #### [Ionort-raytrace](https://github.com/blair3sat/ionosphere-rt)  
 *🏷️ 高校实验室*
 
-语言：Fortran · 许可：CC-BY-NC-ND-3.0 (INGV IONORT MATLAB code per MATLAB/README.TXT; Julia port unstated) · 星标约：17 · 宿主：github
+语言：MATLAB · 许可：CC-BY-NC-ND-3.0 (INGV IONORT MATLAB code per MATLAB/README.TXT; Julia port unstated) · 星标约：17 · 宿主：github
 
-基于 Ionort 射线追踪思想的 Fortran 实现，用于给定电子密度背景下追踪无线电射线路径，可服务 HF/GNSS 传播与层析正演。局限：仓库较旧；电子密度场需外部提供（IRI/模式）；与商业/成熟射线库相比文档与测试不足。
+收录 INGV 开发的 IONORT（IONOsphere Ray-Tracing）三维 HF 射线追踪程序：MATLAB 界面（ionort.m / ionort_gui.m）负责参数输入与绘图，并调用预编译的 Windows Fortran 求解器（Chapman 或离散网格电子密度，分有/无地磁场共四个版本）。维护者主要把注释从意大利语译成英文；README 说明旧式定长格式的 Fortran 源码大概率已无法直接编译，Julia 重写只有几行起步代码。适合 HF/GNSS 传播与层析正演的教学参考；INGV 的 MATLAB 部分按 CC BY-NC-ND 3.0 发布，不可商用、不可改作再分发。
 
 #### [pysatSpaceWeather](https://github.com/pysat/pysatSpaceWeather)  
 *🏷️ 高校实验室*
@@ -1177,7 +1177,7 @@ SuperSID 用简易 VLF 接收监测突发电离层扰动（太阳耀斑等引起
 #### [roti-gnss-ml](https://github.com/NeelayS/roti-gnss)  
 *🏷️ 个人社区*
 
-语言：Python · 许可：unknown · 星标约：3 · 宿主：github
+语言：Python · 许可：— · 星标约：3 · 宿主：github
 
 Notebook 实验：对 GNSS 导出的 ROTI 做深度学习时序预报。局限：研究原型；数据与复现说明有限；不是业务 ROTI 生成器。
 
@@ -1833,9 +1833,9 @@ SWPC 官方 HTTP 产品树，提供 geojson_2d_urt 与 netcdf_2d_urt 等目录�
 #### [NeQuickJRC](https://github.com/mgfernan/NeQuickJRC)  
 *🏷️ 个人社区*
 
-语言：C · 许可：— · 星标约：4 · 宿主：github
+语言：C · 许可：EUPL v1 (JRC NeQuickG C sources) + MIT (Python package per pyproject.toml) · 星标约：4 · 宿主：github
 
-整理 JRC NeQuickG 的 C 实现便于编译调用，偏工程嵌入。作者声明非 JRC 原开发托管，使用前核对版本与许可。需要 Python 胶水时可与 NequickG 对照。
+整理 JRC NeQuickG 的 C 实现便于编译调用，偏工程嵌入。作者声明非 JRC 原开发托管；C 源码头注释为 JRC 的 EUPL v1，Python 包在 pyproject.toml 中标 MIT，使用前核对版本。需要 Python 胶水时可与 NequickG 对照。
 
 #### [IRI2020_parameters](https://github.com/ohm1122/IRI2020_parameters)  
 *🏷️ 个人社区 ★*

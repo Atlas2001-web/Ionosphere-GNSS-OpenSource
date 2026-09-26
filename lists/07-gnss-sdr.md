@@ -38,7 +38,7 @@
 | [multi-channel-gnss](https://github.com/dasdboot/multi-channel-gnss) | multi-channel-gnss：LimeSDR 多通道 GNSS 实验仓 | — | 12 | 🏷️ 个人社区 |
 | [gnss-sdr-rs](https://github.com/kewei/gnss-sdr-rs) | gnss-sdr-rs：Rust 语言 GNSS 软件接收机实验 | Rust | 9 | 🏷️ 个人社区 |
 | [GPSMAXIM2769b-](https://github.com/vaidhyamookiah/GPSMAXIM2769b-) | GPSMAXIM2769b-：Maxim 2769b GNSS 前端 PCB（Papilio） | Eagle | 4 | 🏷️ 个人社区 |
-| [GRID](https://github.com/mmurrian/GRID) | GRID：灵活可扩展 GNSS/GPS 软件定义接收机（仅说明，无代码） | — | 4 | 🏷️ 个人社区 |
+| [GRID](https://github.com/mmurrian/GRID) | GRID：UT Austin 商业授权 GNSS 软件接收机介绍页（仅说明，无代码） | — | 4 | 🏷️ 个人社区 |
 | [BDSSDR](https://github.com/nkyang/BDS_SDR) | BDSSDR：北斗/GNSS 软件接收 MATLAB 实验码 | MATLAB | 2 | 🏷️ 个人社区 |
 | [FlyCat-SDR-GPS](https://github.com/flydog-sdr/FlyCat_SDR_GPS) | FlyCat-SDR-GPS：Orange Pi 用 16-bit 宽带 SDR+GPS 扩展 | C++ | 2 | 🏷️ 个人社区 |
 
@@ -264,9 +264,9 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 #### [GRID](https://github.com/mmurrian/GRID)  
 *🏷️ 个人社区*
 
-语言：— · 许可：— · 星标约：4 · 宿主：github
+语言：— · 许可：proprietary (no code in repo; binary via Locus Lock, source licensing via UT Austin OTC) · 星标约：4 · 宿主：github
 
-仓库仅说明，无代码（只有 README 与一张应用示意图；源码/二进制授权需经 UT Austin 技术商业化办公室或 Locus Lock）。定位为成熟、可配置的 GNSS SDR 框架，强调模块灵活与扩展。适合已有软件无线电经验、想换一套接收机架构做实验的人。公开星标与文档相对少，上手与编译成本高于主流项目；对比选型时仍以 gnss-sdr、GNSS-SDRLIB、FGI-GSRx 为常见基线。引入前建议先评估许可证与构建文档是否满足团队需求。
+仓库仅说明，无代码（只有 README 与一张应用示意图；源码/二进制授权需经 UT Austin 技术商业化办公室或 Locus Lock）。README 介绍 UT Austin 无线电导航实验室开发 15 年以上的 C++ GNSS 软件接收机 GRID：SIMD 加速，支持多星座、多频、多天线，用于 RTK、电离层探测、欺骗检测和在轨运行。适合查阅其能力与相关论文；需要可直接编译的开源 SDR 时，请用 gnss-sdr、GNSS-SDRLIB、FGI-GSRx。
 
 #### [BDSSDR](https://github.com/nkyang/BDS_SDR)  
 *🏷️ 个人社区*

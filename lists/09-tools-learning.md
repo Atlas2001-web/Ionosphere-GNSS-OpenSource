@@ -269,7 +269,7 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 #### [ion_gnss25_fg_code_examples](https://github.com/watsonryan/ion_gnss25_fg_code_examples)  
 *🏷️ 个人社区*
 
-语言：Python · 许可：see upstream README · 星标约：7 · 宿主：github
+语言：Python · 许可：— · 星标约：7 · 宿主：github
 
 配套 ION GNSS+ 2025 因子图教程的 Python 示例，基于 GTSAM 演示多机器人里程计、测距约束及单历元/动态 GNSS 伪距定位。适合学习 FGO 与 GNSS 因子建模。教学代码而非生产定位库；运行需自备 GTSAM Python 绑定与依赖环境。
 

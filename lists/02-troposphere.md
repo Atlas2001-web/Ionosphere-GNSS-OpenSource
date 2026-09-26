@@ -85,7 +85,7 @@ Surrey TechDemoSat-1（MERRByS）星载 GNSS-R 的 Python/Jupyter 示例，演�
 #### [OpATOM](https://github.com/benceturak/GeoPack/tree/GPSTomographyToolbox/GPSTomographyToolbox)  
 *🏷️ 高校实验室*
 
-语言：Python · 许可：— · 星标约：3 · 宿主：github
+语言：Python · 许可：MIT · 星标约：3 · 宿主：github
 
 BME 大地测量组发布的开源 Python 层析工具箱，由 ZWD/梯度、SP3、VMF1 网格重建三维湿折射率并可换算水汽密度，含 MART 迭代、粗差剔除与探空气球验证样例。适合近实时 GNSS 气象层析实验；输入偏 Bernese TRP/VMF1 工作流，区域尺度与体素设计需按研究区自调。用户指南见 gpsmet.geod.bme.hu。
 
@@ -179,7 +179,7 @@ Kristine Larson 团队 Matlab 工具：利用 SNR 判断天线积雪何时污染
 #### [gnssr-raspberry](https://github.com/ITC-Water-Resources/gnssr-raspberry)  
 *🏷️ 高校实验室*
 
-语言：Python · 许可：— · 星标约：3 · 宿主：github
+语言：Python · 许可：LGPL-3.0 · 星标约：3 · 宿主：github
 
 ITC Water Resources 在树莓派上运行的 GNSS 反射测量实验工程，面向低成本水文监测站。适合野外原型与教学演示。仓库星标较少、文档随版本变化；水位/土壤湿度产品建议对照 gnssrefl 与大地型天线结果。
 
@@ -250,7 +250,7 @@ Larson 团队 Fortran 工具，翻译/读取 GPS RINEX 并提取 SNR，服务反
 #### [GNSSRMERRByS](https://github.com/pjalesSSTL/GNSSR_MERRByS)  
 *🏷️ 个人社区*
 
-语言：MATLAB · 许可：— · 星标约：34 · 宿主：github
+语言：MATLAB · 许可：MIT · 星标约：34 · 宿主：github
 
 Surrey Satellite Technology 提供的 TechDemoSat-1（MERRByS）星载 GNSS-R 示例处理材料，演示空间反射数据的读取与初步产品步骤。面向星载 GNSS-R、海洋与地表遥感读者。这是任务示例而非通用地基 GNSS-IR 软件；地基水位/雪深请用 gnssrefl 等，两者观测几何与校正链不同。
 

@@ -271,7 +271,7 @@ Peinser 发布的自托管 NTRIP v2 caster：汇聚多基站 RTCM 改正并通�
 
 语言：Go · 许可：— · 星标约：1 · 宿主：github
 
-轻量 NTRIP 播发端，支持 v1/v2 客户端拉取与基站推送、按 GGA 就近切换虚拟挂载点、账号认证与 SIGHUP 热重载。适合自建小型 CORS/农机差分播发；密码明文配置、尚无原生 TLS，公网部署需前置反向代理并自行加固。许可未在 GitHub 标明 SPDX，使用前请确认上游条款。
+轻量 NTRIP 播发端，支持 v1/v2 客户端拉取与基站推送、按 GGA 就近切换虚拟挂载点、账号认证与 SIGHUP 热重载。适合自建小型 CORS/农机差分播发；密码明文配置、尚无原生 TLS，公网部署需前置反向代理并自行加固。仓库未声明任何许可，使用前请向作者确认条款。
 
 #### [BKG-NtripCaster](https://igs.bkg.bund.de/ntrip/bkgcaster)  
 *🏷️ 官方 核心*

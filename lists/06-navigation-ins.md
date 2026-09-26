@@ -430,7 +430,7 @@ OKVIS2-X 在经典 OKVIS 视觉惯性框架上扩展稠密深度或 LiDAR，并�
 #### [GNSS_INS_Integrations_Comparisons](https://github.com/ZhengdaoLI0602/GNSS_INS_Integrations_Comparisons)  
 *🏷️ 高校实验室*
 
-语言：MATLAB · 许可：see upstream README · 星标约：70 · 宿主：github
+语言：MATLAB · 许可：— · 星标约：70 · 宿主：github
 
 配套 Remote Sensing 论文的 MATLAB 实验仓，对比固定增益 KF、自适应 KF、因子图及自适应因子图在 GNSS/INS 二维定位中的表现，FGO 部分参考 MathWorks 示例改造。适合算法课与论文复现。非完整车载三维产品；数据准备脚本需按 README 逐步运行。
 

@@ -123,7 +123,7 @@ Ardusimple WiFi NTRIP Master 的官方 ESP-IDF 固件（GPL-3.0），把 ESP32 U
 #### [STM32-GNSS](https://github.com/SimpleMethod/STM32-GNSS)  
 *🏷️ 个人社区*
 
-语言：C · 许可：— · 星标约：89 · 宿主：github
+语言：C · 许可：MIT · 星标约：89 · 宿主：github
 
 面向 STM32 的 u-blox GNSS 库，支持 UBX 协议与 DMA，作者称在 NEO-M8、MAX-M8、NEO-M9N 等模块上验证。适合嵌入式读取 NMEA/UBX、配置接收机。库本身不做高精度解算；若要 RTK，需模块固件支持并另接 NTRIP/电台改正数。不同 u-blox 固件协议细节仍有差异，注意版本。
 
@@ -137,7 +137,7 @@ Go 实现的跨平台 GNSS 工具，强调 PPS/PTP/NTP 授时、RINEX/RTCM 与�
 #### [STM32Primer2-GNSS-Tracker](https://github.com/nemuisan/STM32Primer2_GNSS_Tracker)  
 *🏷️ 个人社区*
 
-语言：C · 许可：— · 星标约：31 · 宿主：github
+语言：C · 许可：BSD-3-Clause · 星标约：31 · 宿主：github
 
 运行于 STM32 Primer2 的 GNSS 轨迹记录固件/应用，把卫星定位点记下来便于回放与展示。适合嵌入式便携记录与爱好者硬件实验。硬件绑定 Primer2，功能以记录为主，不是跨平台定位 SDK，也不含 RTK 引擎。存储介质与采样间隔决定可记录轨迹时长。电池与存储容量共同限制连续记录时长。
 
