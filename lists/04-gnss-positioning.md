@@ -1,7 +1,7 @@
 # 精密定位 / Precise Positioning
 > **108** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
-SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
+SPP、DGPS、RTK/PPK、PPP/PPP-AR/PPP-RTK（含 PPP-B2b、Galileo HAS、MADOCA 改正数）、网络 RTK 客户端、RAIM 完好性，以及因子图等现代优化定位。
 
 ## 教学/PPP套件
 

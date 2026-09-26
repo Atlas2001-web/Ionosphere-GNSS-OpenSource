@@ -2,7 +2,7 @@
 
 按「要解决什么问题」划分，不按编程语言。
 
-典型路径：数据/格式（RINEX/RTCM）→ 质检 → 电离层 TEC/GIM/闪烁、对流层 ZTD/PWV，或精密定位 RTK/PPP（常配合轨道钟差）；车载/机器人再接 GNSS/INS。另线：GNSS-SDR、手机原始测量 App。
+常见用法：先用数据/格式工具读写 RINEX/RTCM 并质检，再做电离层（TEC/GIM/闪烁）、对流层（ZTD/PWV）或精密定位（RTK/PPP，常配合轨道钟差）；车载/机器人再接 GNSS/INS。另有 GNSS-SDR、手机原始测量 App，以及只提供数据/产品下载的「GNSS 数据源」门户（含电离层产品与空间天气）。
 
 ## 来源标记（provenance）
 
@@ -20,7 +20,7 @@
 
 ## `ionosphere` — 电离层
 
-研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
+电离层研究软件：GNSS 双频 TEC 估计、GIM/IONEX 处理、TEC 预报（含机器学习）、闪烁/ROTI、TID、层析、掩星与法拉第旋转。也收录 IRI/NeQuick 等电离层模型、MSIS/HWM 中性大气模型、测高仪与雷达/ISR 工具、HF 射线追踪和磁坐标库；电离层产品与空间天气数据门户已移至「GNSS 数据源」。
 
 - 列表文件：[`lists/01-ionosphere.md`](../lists/01-ionosphere.md)
 - 当前条目数：**247**
@@ -34,21 +34,21 @@
 
 ## `gnss-data` — GNSS 数据与格式
 
-RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
+RINEX/SP3/CLK/ANTEX 读写与转换、RTCM/NTRIP、Hatanaka 压缩、质量检查/多路径分析、接收机驱动与协议、数据下载脚本——所有解算的上游。
 
 - 列表文件：[`lists/03-gnss-data.md`](../lists/03-gnss-data.md)
 - 当前条目数：**137**
 
 ## `gnss-positioning` — 精密定位
 
-SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
+SPP、DGPS、RTK/PPK、PPP/PPP-AR/PPP-RTK（含 PPP-B2b、Galileo HAS、MADOCA 改正数）、网络 RTK 客户端、RAIM 完好性，以及因子图等现代优化定位。
 
 - 列表文件：[`lists/04-gnss-positioning.md`](../lists/04-gnss-positioning.md)
 - 当前条目数：**108**
 
 ## `orbit-clock` — 轨道与钟差
 
-精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。
+精密轨道确定、卫星钟差与相位偏差（UPD/OSB）产品生成，另含 SGP4/轨道根数传播、EOP/VLBI、SLR 与时间比对工具。独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简。
 
 - 列表文件：[`lists/05-orbit-clock.md`](../lists/05-orbit-clock.md)
 - 当前条目数：**31**
@@ -76,14 +76,14 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 
 ## `tools-learning` — 学习资源与工具
 
-awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
+学习资源与通用工具：awesome 列表、课程笔记与教材索引、机构软件门户、坐标转换与基准、可视化、地磁模型，以及 SBAS/认证完好性学习工具。
 
 - 列表文件：[`lists/09-tools-learning.md`](../lists/09-tools-learning.md)
 - 当前条目数：**57**
 
 ## `gnss-datasets` — GNSS 数据源
 
-需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
+数据与产品门户（非软件）：IGS/CORS 观测数据、轨道钟差与偏差产品、实时流、坐标与参考框架。也收录电离层产品（GIM/TEC 图、测高仪数据）以及地磁/空间天气数据门户。
 
 - 列表文件：[`lists/10-gnss-datasets.md`](../lists/10-gnss-datasets.md)
 - 当前条目数：**220**

@@ -35,7 +35,7 @@ CAT_META = {
     "ionosphere": {
         "title": "电离层 / Ionosphere",
         "file": "01-ionosphere.md",
-        "blurb": "研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。",
+        "blurb": "电离层研究软件：GNSS 双频 TEC 估计、GIM/IONEX 处理、TEC 预报（含机器学习）、闪烁/ROTI、TID、层析、掩星与法拉第旋转。也收录 IRI/NeQuick 等电离层模型、MSIS/HWM 中性大气模型、测高仪与雷达/ISR 工具、HF 射线追踪和磁坐标库；电离层产品与空间天气数据门户已移至「GNSS 数据源」。",
         "who": "研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与…",
     },
     "troposphere": {
@@ -47,19 +47,19 @@ CAT_META = {
     "gnss-data": {
         "title": "GNSS 数据与格式 / GNSS Data I/O",
         "file": "03-gnss-data.md",
-        "blurb": "RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。",
+        "blurb": "RINEX/SP3/CLK/ANTEX 读写与转换、RTCM/NTRIP、Hatanaka 压缩、质量检查/多路径分析、接收机驱动与协议、数据下载脚本——所有解算的上游。",
         "who": "RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与…",
     },
     "gnss-positioning": {
         "title": "精密定位 / Precise Positioning",
         "file": "04-gnss-positioning.md",
-        "blurb": "SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。",
+        "blurb": "SPP、DGPS、RTK/PPK、PPP/PPP-AR/PPP-RTK（含 PPP-B2b、Galileo HAS、MADOCA 改正数）、网络 RTK 客户端、RAIM 完好性，以及因子图等现代优化定位。",
         "who": "SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优…",
     },
     "orbit-clock": {
         "title": "轨道与钟差 / Orbit & Clock",
         "file": "05-orbit-clock.md",
-        "blurb": "精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。",
+        "blurb": "精密轨道确定、卫星钟差与相位偏差（UPD/OSB）产品生成，另含 SGP4/轨道根数传播、EOP/VLBI、SLR 与时间比对工具。独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简。",
         "who": "精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立小库较少，多见于大型套件。",
     },
     "navigation-ins": {
@@ -83,14 +83,14 @@ CAT_META = {
     "tools-learning": {
         "title": "学习资源与工具 / Tools & Learning",
         "file": "09-tools-learning.md",
-        "blurb": "awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。",
-        "who": "awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。",
+        "blurb": "学习资源与通用工具：awesome 列表、课程笔记与教材索引、机构软件门户、坐标转换与基准、可视化、地磁模型，以及 SBAS/认证完好性学习工具。",
+        "who": "学习资源与通用工具：awesome 列表、课程笔记与教材索引、机构软件门户、坐标转换与基准、可视化、地磁模型，以及 SBAS/认证完好性学习工具。",
     },
     "gnss-datasets": {
         "title": "GNSS 数据源 / GNSS Datasets",
         "file": "10-gnss-datasets.md",
-        "blurb": "需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。",
-        "who": "需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。",
+        "blurb": "数据与产品门户（非软件）：IGS/CORS 观测数据、轨道钟差与偏差产品、实时流、坐标与参考框架。也收录电离层产品（GIM/TEC 图、测高仪数据）以及地磁/空间天气数据门户。",
+        "who": "数据与产品门户（非软件）：IGS/CORS 观测数据、轨道钟差与偏差产品、实时流、坐标与参考框架。也收录电离层产品（GIM/TEC 图、测高仪数据）以及地磁/空间天气数据门户。",
     },
 }
 
@@ -229,7 +229,7 @@ def regenerate_categories(counts):
         "",
         "按「要解决什么问题」划分，不按编程语言。",
         "",
-        "典型路径：数据/格式（RINEX/RTCM）→ 质检 → 电离层 TEC/GIM/闪烁、对流层 ZTD/PWV，或精密定位 RTK/PPP（常配合轨道钟差）；车载/机器人再接 GNSS/INS。另线：GNSS-SDR、手机原始测量 App。",
+        "常见用法：先用数据/格式工具读写 RINEX/RTCM 并质检，再做电离层（TEC/GIM/闪烁）、对流层（ZTD/PWV）或精密定位（RTK/PPP，常配合轨道钟差）；车载/机器人再接 GNSS/INS。另有 GNSS-SDR、手机原始测量 App，以及只提供数据/产品下载的「GNSS 数据源」门户（含电离层产品与空间天气）。",
         "",
         "## 来源标记（provenance）",
         "",

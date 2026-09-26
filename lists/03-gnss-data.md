@@ -1,7 +1,7 @@
 # GNSS 数据与格式 / GNSS Data I/O
 > **137** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
-RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
+RINEX/SP3/CLK/ANTEX 读写与转换、RTCM/NTRIP、Hatanaka 压缩、质量检查/多路径分析、接收机驱动与协议、数据下载脚本——所有解算的上游。
 
 ## RTCM/NTRIP
 
