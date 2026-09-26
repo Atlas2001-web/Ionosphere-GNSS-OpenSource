@@ -2,7 +2,7 @@
 
 入口：[CODE/AIUB](https://download.aiub.unibe.ch/CODE/) · [CAS 汇总镜像](https://data.bdsmart.cn/pub/product/iono/ionex/) · [UPC TOMION](https://chapman.upc.es/tomion/) · [ESA Navigation Office](http://navigation-office.esa.int/products/gnss-products/) · [JPL sideshow iono_daily](https://sideshow.jpl.nasa.gov/pub/iono_daily/) · [CDDIS ionex（需 Earthdata）](https://cddis.nasa.gov/archive/gnss/products/ionex/) · 本机验证 **2026-09-26 05:00–05:10 EDT**（全部匿名 curl，无注册、无表单）
 
-> **质检复跑通过（2026-09-26 06:03–06:06 EDT）**：`probe.sh` 第 1–5、7 段与原文逐字一致，包括 md5、字节数、ESA 两版不同（300/275 站）、CODE 旧名 404、FIN 264 200 / 265 404、CAS 镜像 264 列表。第 6 段 UPC 实时文件随时间变化（这次 `usrg2690.09.75` 在 11:49 CEST 上架，即 09:49 UTC），JPL README 与原文一致（JPLR 也写了 “2 TECU Bias added”）。`dl.sh` 8 个文件全 200，字节数一致；`cmp.py`（/usr/bin/python3，numpy 2.2.4）输出与原文**逐字相同**。唯一更正：EMR 缺测是 165 个，不是 91 个。
+> **质检复跑通过（2026-09-26 06:03–06:05 EDT，提交 `1deffde`）**：`probe.sh` 第 1–5、7 段与原文逐字一致，包括 md5、字节数、ESA 两版不同（300/275 站）、CODE 旧名 404、FIN 264 200 / 265 404、CAS 镜像 264 列表。第 6 段 UPC 实时文件随时间变化（这次 `usrg2690.09.75` 在 11:49 CEST 上架，即 09:49 UTC），JPL README 与原文一致（JPLR 也写了 “2 TECU Bias added”）。`dl.sh` 8 个文件全 200，字节数一致；`cmp.py`（/usr/bin/python3，numpy 2.2.4）输出与原文**逐字相同**。唯一更正：EMR 缺测是 165 个，不是 91 个。
 >
 > 岗位：回答“某天某中心的 GIM 去哪匿名拿、叫什么名字、出来要等多久、各家差多少”。**只管门户这一侧**：读 IONEX 的 Python API 见 [ionex-gim](./ionex-gim.md)（同包 [ionex](./ionex.md)、Rust 版 [ionex-rs](./ionex-rs.md)）；自建 GIM 见 [sh-gim](./sh-gim.md)、[mosgim2](./mosgim2.md)；单站 TEC 见 [pytecgg](./pytecgg.md)；近实时 TEC 产品另见 [realtime-iono-products](./realtime-iono-products.md)。本文不重复这些。
 >

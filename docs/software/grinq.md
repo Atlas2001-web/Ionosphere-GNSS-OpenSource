@@ -2,6 +2,8 @@
 
 目录：[`PROJECTS.json` → `grinq`](../../PROJECTS.json) · 上游 <https://github.com/PJarrin/grinq>（MIT，Zenodo DOI 10.5281/zenodo.22228489，setup.py `0.0.1`，tip `d0891d2`，2026-09-17 04:52 EDT）· 本机验证 **2026-09-26 05:43–05:51 EDT**，Python 3.11 venv，`uv pip install ./grinq`（源码 tarball，未 clone）。
 
+> **质检复跑通过（2026-09-26 06:07–06:09 EDT）**：Python 3.11 uv venv，源码 tarball `d0891d2`，numpy 1.26.4，earthscope-sdk 1.6.1，venv 361 MB。§2 漏装 `requests` 的报错、§4 七个落盘文件的字节数（glps 593531/622511、mdo1 2383548、POTS 6393064、DLF1 3383327、AUCK 7903579 且 2880 历元、ALIC 32500 B 的 S3 网页 `gzip -t` not in gzip format）、重复下载时的 “exists” 提示，以及坑 3、4、5、7、9、`-c foo`、站名 5 位、unavco `ImportError` 的原文都逐字复现。本机没有 lftp，坑 5 由源码 `clone.py:15-26` 核实。坑 6（`-P`）、坑 8、坑 10、ergnss/renag/noanet/euref 没重跑。
+>
 > 岗位：给定**中心名 + 站名 + 年积日区间**，把 RINEX 2 短名或 RINEX 3 长名**日文件**拉到 `DIR/年/年积日/`。它**不解 Hatanaka**、不做质检（QC 脚本要另行注册拿 Anubis），也不查站点是否存在。
 > 同类比较：只要 IGS 站、想知道哪个镜像全、哪个快 → [gnss-obs-mirrors](./gnss-obs-mirrors.md)；美国 CORS → [noaa-ncn-data](./noaa-ncn-data.md)；欧洲 EPN/RENAG 带 md5 → [epos-glass-api](./epos-glass-api.md)；门户门槛见 [data-access](../data-access.md)。
 > 冲突时：**本机 `grinq_get_rinex.py -h` / 上游源码 > 本文**。

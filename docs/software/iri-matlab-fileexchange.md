@@ -1,7 +1,9 @@
 # IRI-MATLAB-FileExchange · MathWorks File Exchange IRI 封装操作手册
 
-目录：[`PROJECTS.json` → `IRI-MATLAB-FileExchange`](../../PROJECTS.json) · File Exchange <https://www.mathworks.com/matlabcentral/fileexchange/34863-international-reference-ionosphere-iri-model> · irimodel.org 明确列出的 **MATLAB version** 入口 · 作者 **Drew Compston** · 页面标 **Version 2.0.0.0**（**30.4 KB**）· 发布 **2019-12-07** · 本机核页 **2026-09-24 06:18 EDT**（WebFetch 可读；本机 `curl` 对该域 **HTTP 403**）· **无 MATLAB / 无 Octave → 未下载 zip、未跑 `iri2016`/`iritest.m`（禁止臆造 Ne/TEC）** · **质检复跑** 2026-09-24 06:24 EDT（WebFetch 再确认 **2.0.0.0**/30.4 KB/**7 Dec 2019**/hack+`curl`；本机 `curl` **403**/body **476** B；CCMC vitmo→`IRI~2012/`/`IRI~2016/` **200**；`IRI~2020/` **200**但 FE **无**对应函数；irimodel.org 文案 **MATLAB version → IRI-2012 and IRI-2016**；**无 matlab/octave**→**未臆造 Ne/TEC**；交叉 [iri-fortran](./iri-fortran.md)/[iri-2026-package](./iri-2026-package.md)/[iri-common-files](./iri-common-files.md)/[pyiri](./pyiri.md)/[iri2016](./iri2016.md)）
+目录：[`PROJECTS.json` → `IRI-MATLAB-FileExchange`](../../PROJECTS.json) · File Exchange <https://www.mathworks.com/matlabcentral/fileexchange/34863-international-reference-ionosphere-iri-model> · irimodel.org 明确列出的 **MATLAB version** 入口 · 作者 **Drew Compston** · 许可 **BSD-2-Clause**（旧版 zip 内 `license.txt`，见坑 9）· 页面标 **Version 2.0.0.0**（**30.4 KB**；2026-09-26 抓取已显示为 **2.0.0（31.5 KB）**）· 发布 **2019-12-07** · 本机核页 **2026-09-24 06:18 EDT**（WebFetch 可读；本机 `curl` 对该域 **HTTP 403**）· **无 MATLAB / 无 Octave → 未下载 zip、未跑 `iri2016`/`iritest.m`（禁止臆造 Ne/TEC）** · **质检复跑** 2026-09-24 06:24 EDT（WebFetch 再确认 **2.0.0.0**/30.4 KB/**7 Dec 2019**/hack+`curl`；本机 `curl` **403**/body **476** B；CCMC vitmo→`IRI~2012/`/`IRI~2016/` **200**；`IRI~2020/` **200**但 FE **无**对应函数；irimodel.org 文案 **MATLAB version → IRI-2012 and IRI-2016**；**无 matlab/octave**→**未臆造 Ne/TEC**；交叉 [iri-fortran](./iri-fortran.md)/[iri-2026-package](./iri-2026-package.md)/[iri-common-files](./iri-common-files.md)/[pyiri](./pyiri.md)/[iri2016](./iri2016.md)）
 
+> **质检复跑通过（2026-09-26 06:07–06:09 EDT）**：许可核实。File Exchange 下载路径 `versions/1…15` 的 zip（1.0.0–1.14.0）都带 `license.txt`，内容是 BSD 2-Clause（© 2014 Drew Compston），已改坑 9 和目录行。2.0.0 的 zip 拿不到（16–60 全 404），页面 License 弹窗抓取为空，2.0.0 许可文本属于**环境受限**。另外：页面现在显示 2.0.0 / 31.5 KB；条目页 curl 仍 403（476 B），但旧版 zip 可以匿名 200 下载（已改 §3 第 1 步和坑 10）。仍无 MATLAB，未跑 iri2016。
+>
 > 岗位：讲清这条 **官方指向的 MATLAB 入口**实际在干什么、能跟到哪一代 IRI、以及和 Fortran 金标准 / COMMON_FILES / IRI-2026 的边界。冲突时：**File Exchange 页面说明 + irimodel.org 链接文案 > 本文**。本地金标准数字只引用 [iri-fortran](./iri-fortran.md)。
 
 ## 1. 用途与边界
@@ -67,7 +69,7 @@
 
 ## 3. 获取（诚实：本机未落盘）
 
-1. 打开 File Exchange 条目 → **Download**（通常需 MathWorks 账号登录；以页面为准）。
+1. 打开 File Exchange 条目 → **Download**。旧版 zip 本机可以匿名下载：`curl -A 'Mozilla/5.0' https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/34863/versions/15/download/zip` → 200，29565 B，内容是 1.14.0 的 `iri2007.m`/`iri2012.m`/`ecef2geod.m`/`iritest.m`/`license.txt`。2.0.0 的 zip 这个路径拿不到，请用浏览器下载。
 2. 解压到 MATLAB 路径可及的目录；把该目录 `addpath`（或放进已有工具箱路径）。
 3. 确认系统能跑 `curl`（Windows：按页面建议自装并把 `curl.exe` 放同目录或 PATH）。
 4. 按包内 `iritest.m` / 函数头注释改经纬、高度、时间、扫参。
@@ -108,7 +110,7 @@ curl -sS -o /dev/null -w '%{http_code} %{url_effective}\n' -A 'Mozilla/5.0' -L \
 | 项 | 值 |
 | --- | --- |
 | 标题 | International Reference Ionosphere (IRI) Model |
-| 版本 | **2.0.0.0**（30.4 KB） |
+| 版本 | **2.0.0.0**（30.4 KB）；2026-09-26 抓取显示 **2.0.0（31.5 KB）**，页面版本表共 14 个版本（1.0.0 2012-01-31 → 2.0.0 2019-12-07） |
 | 发布 | **7 Dec 2019** |
 | 兼容 | “Compatible with any release”；Win / macOS / Linux |
 | 依赖 | MATLAB；`curl`（Windows 另下） |
@@ -138,8 +140,8 @@ curl -sS -o /dev/null -w '%{http_code} %{url_effective}\n' -A 'Mozilla/5.0' -L \
 6. **CCMC 有 IRI-2020 页 ≠ 本函数能跑 2020**——缺第三方补丁就不要自称 2020/2026。
 7. **Windows 缺 curl**——页面已写明；装错架构的 `curl.exe` 会静默失败。
 8. **结果随远端默认开关**——论文复现应对齐 [iri-fortran](./iri-fortran.md) 的 `JF(50)` / 指数文件，而不是一次网页输出。
-9. **许可以 File Exchange 页为准**——条目 `license` 在 PROJECTS 中为 null；再分发前读页面 License。
-10. **本机 MathWorks 域 403**——质检复跑仍 **403**/476 B；自动化 CI 勿假设 `curl` 能拉 zip；人工浏览器下载。
+9. **许可是 BSD-2-Clause**（2026-09-26 质检核实）。版本 1–15（1.0.0 到 1.14.0）的 zip 都自带 `license.txt`（1313 B）：`Copyright (c) 2014, Drew Compston`，两条再分发条款加免责声明，是标准 BSD 2-Clause 文本；PROJECTS 条目现在也写的是 `BSD-2-Clause`。2.0.0（2019）的 zip 用同一下载路径拿不到（`versions/16…60` 都是 404），File Exchange 页的 “View License” 弹窗在抓取结果里是空的，所以 **2.0.0 的 `license.txt` 本机没亲眼看到**。再分发时保留版权声明和免责声明。
+10. **本机 MathWorks 条目页 403**——质检复跑仍是 **403**/476 B。但 `mlc-downloads/…/versions/N/download/zip` 对旧版本匿名返回 200（N=1–4、6、8–15；5、7 返回 401）。拿不到的是 2.0.0，要人工用浏览器下载。
 11. **与 [iri2016](./iri2016.md)（space-physics）不是同一个包装**——后者走本地 Fortran；本条走 CCMC HTTP。
 12. **Octave 非官方目标**——作者写的是 MATLAB + 系统 curl；Octave 差异自行承担，本文不保证。
 
