@@ -24,6 +24,7 @@
 | 闪烁 ISMR | [`ismr_downloader`](https://github.com/GEGE-UNESP/ismr_downloader)（主）· [Query Tool](https://ismrquerytool.fct.unesp.br/)（辅，常超时） | 网页注册 |
 | 测高仪 | [GIRO / DIDBase](https://giro.uml.edu/didbase/) · [RAL / UKSSDC](https://www.ukssdc.ac.uk/ionosondes/) | 网页注册 |
 | ISR / SuperDARN / 区域台链 | [CEDAR Madrigal](https://cedar.openmadrigal.org/) · [EISCAT](https://portal.eiscat.se/) · [SRI AMISR](https://data.amisr.com/database/) · [FRDR SuperDARN](https://www.frdr-dfdr.ca/repo/collection/superdarn) · [子午工程](https://www.meridianproject.ac.cn/) · [PITHIA 编目](https://esc.pithia.eu/) → [决策表](#电离层与地磁门户决策表) | Madrigal / FRDR 开放；EISCAT 门户、子午工程须登录 |
+| 电离层–热层卫星（ICON / GOLD） | [SPDF ICON](https://spdf.gsfc.nasa.gov/pub/data/icon/) · [SPDF GOLD](https://spdf.gsfc.nasa.gov/pub/data/gold/) · [CDAWeb](https://cdaweb.gsfc.nasa.gov/) CDAS REST · [GOLD SOC](https://gold.cs.ucf.edu/data/search/)（[决策表 E21–E22](#dp-e21) · [icon-gold-data](./software/icon-gold-data.md)） | 开放（CDAWeb HAPI 不含这两个任务） |
 | 对流层格网 | [VMF](https://vmf.geo.tuwien.ac.at/) → `trop_products/` | 多开放 |
 
 逐站细节与注册字段 → [`10-gnss-datasets.md`](../lists/10-gnss-datasets.md)。
@@ -429,7 +430,7 @@ curl -L -C - -O \
 
 ## 电离层与地磁门户决策表
 
-第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
+第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
 
 | 门户 | 账号 / 门槛 | 格式 | 时间分辨率 · 时延 | 实测 |
 |---|---|---|---|:---:|
@@ -453,6 +454,8 @@ curl -L -C - -O \
 | [OMNI / CDAWeb HAPI](https://cdaweb.gsfc.nasa.gov/hapi) | 开放；HAPI **2.0**（参数是 `id=`、`time.min/max`） | CSV / JSON / binary | `OMNI_HRO_1MIN` 1 min，已时移到弓激波鼻点，stopDate 2026-09-03（约滞后 3 周）；OMNI2 小时值用半点时间戳；数据状态写在参数描述里（如 Dst：Provisional 到 2026/212，Quick-look 为 2026/213–259） | ✅（[E18](#dp-e18)） |
 | [CDAAC COSMIC-2 电离层](https://data.cosmic.ucar.edu/gnss-ro/cosmic2/) | 开放，`data.cosmic.ucar.edu` 全树匿名 200（含 level0）；旧门户 `cdaac-www.cosmic.ucar.edu/cdaac/login/` 与 `/cdaac/tar/rest.html` 为 **401**，但不需要；`cosmic2/repro/` **404** | 日包 `.tar.gz`，内含 netCDF-3（ionPrf 约 10 KB/条，podTc2 57–97 KB/条）；**没有单文件 URL** | ionPrf 只在 `provisional/spaceWeather/level2/YYYY/DDD/`（`prov1`，2019/274 起），2024-05-11 共 3608 条、峰值点 ±40.5°；podTc2 在 `nrt/level1b`（当天结束后约 5 h，0.6–0.9 GB/天）或 `rapid/level1b`（约 1.7 天）；ionPrf 无质量标志 | ✅（[E19](#dp-e19) · [cosmic2-ro](./software/cosmic2-ro.md)） |
 | [AWS gnss-ro-data](https://gnss-ro-data.s3.amazonaws.com/index.html) | 开放，S3 ListObjectsV2 匿名 | 每次掩星一个 netCDF（v1.1 `.nc` / v2.0 `.nc4`） | COSMIC-2 只有 calibratedPhase / refractivityRetrieval / atmosphericRetrieval（v2.0 名为 `gnssro_cosmic2_ucar_{l1b,l2a,l2b}`，按 年/月/日）；**没有 ionPrf / podTc2** | 中性大气 ✅；电离层 ✗（[E20](#dp-e20)） |
+| [ICON（SPDF / CDAWeb）](https://spdf.gsfc.nasa.gov/pub/data/icon/) | 开放；SPDF HTTPS 匿名，CDAS REST 匿名；**CDAWeb HAPI 没有 ICON**（`info?id=ICON_L2-7_IVM-A` → 1406 / HTTP 400） | netCDF-4 日文件（SPDF，文件名已改小写 + `yyyymmdd`）；CDAS REST 子集为 CDF | 2019-11～2022-11-25（失联，任务已结束）；L2 仍在重处理（IVM v08r002、MIGHTI v06、FUV v07，SPDF 时间戳 2025–2026）；日文件 0.8 MB（FUV day）～95 MB（FUV night），IVM 约 50 MB | ✅（[E21](#dp-e21) · [icon-gold-data](./software/icon-gold-data.md)） |
+| [GOLD（SPDF / SOC / CDAWeb）](https://spdf.gsfc.nasa.gov/pub/data/gold/) | 开放；SOC 下载页是网页表单出 tar（单次上限 L1C DAY 15 天、L2 366 天）；CDAWeb 只有 L2 ON2 / NMAX / O2DEN / TDISK，**HAPI 没有 GOLD** | netCDF-4；L2 按日（0.16–4.7 MB），L1C 按扫描（2024/132：95 个文件约 2.85 GB） | 2018-10-05 起；SPDF / SOC / CDAWeb 最新都是 2026-07-05（09-26 查询，约 83 天时延）；NMAX v05、ON2 v04 r02、TDISK v05 r03；质量看 `<var>_dqi == 0`（NMAX 有限值里 60 % 带 LBH 污染位） | ✅（[E22](#dp-e22)） |
 
 要登录才能拿数据的：EISCAT 门户（Madrigal 可绕行）、子午工程、ROM SAF 产品库（AWS 可绕行）、TGO ASCII、UKSSDC/RAL。要「申请」的：BGS 本站高分辨率（GIN 可绕行）。
 
@@ -653,6 +656,26 @@ curl -s "https://gnss-ro-data.s3.amazonaws.com/?list-type=2&delimiter=/&prefix=c
 # 实测：atmosphericRetrieval/ calibratedPhase/ refractivityRetrieval/ 三个前缀，没有 ionPrf / podTc2
 curl -s "https://gnss-ro-data.s3.amazonaws.com/?list-type=2&prefix=contributed/v2.0/gnssro_cosmic2_ucar_l1b/&max-keys=5"
 # 实测：…/2019/10/02/gnssro_cosmic2_ucar_l1b_0001.0001_cosmic2e1-G01-201910020023.nc4，Size 1979798
+```
+
+<a id="dp-e21"></a>**E21 ICON（SPDF 日文件 + CDAS REST 子集）**
+
+```bash
+curl -s -O "https://spdf.gsfc.nasa.gov/pub/data/icon/l2/l2-2_mighti_vector-wind-red/2021/icon_l2-2_mighti_vector-wind-red_20211104_v06r000.nc"
+# 实测：200，5,513,380 B；Epoch × 高度 = 2219 × 16（160–311 km）；Wind_Quality 1 / 0.5 / 0 = 15569 / 3840 / 16095 点
+curl -s -H "Accept: application/json" "https://cdaweb.gsfc.nasa.gov/WS/cdasr/1/dataviews/sp_phys/datasets/ICON_L2-7_IVM-A/data/20211104T000000Z,20211105T000000Z/ICON_L27_Ion_Velocity_Meridional,ICON_L27_DM_Flag?format=cdf"
+# 实测（9 个变量时）：200，JSON 给出 /tmp/ 下的 CDF 链接，4,307,271 B；DM_Flag==0 且非 NaN 的漂移 42373 / 86397
+curl -s "https://cdaweb.gsfc.nasa.gov/hapi/info?id=ICON_L2-7_IVM-A"   # {"status":{"code":1406,…"unknown dataset id"}}，HTTP 400
+```
+
+<a id="dp-e22"></a>**E22 GOLD（SPDF L2 + SOC）**
+
+```bash
+curl -s -O "https://spdf.gsfc.nasa.gov/pub/data/gold/level2/nmax/2024/gold_l2_nmax_2024_132_v05_r01_c01.nc"
+# 实测：200，3,952,273 B；36 次扫描 × 100 × 92；有限值 76062，其中 dqi==0 的 17755，中位数 8.38e5 el/cm³
+curl -s "https://spdf.gsfc.nasa.gov/pub/data/gold/level2/on2/2026/" | grep -o 'gold_l2_on2_2026_[0-9]*' | tail -1
+# 实测：gold_l2_on2_2026_186（= 2026-07-05），SPDF 列表时间 2026-07-20 01:25
+curl -s "https://cdaweb.gsfc.nasa.gov/hapi/info?id=GOLD_L2_NMAX"      # 1406 / HTTP 400
 ```
 
 ---
