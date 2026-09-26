@@ -12,7 +12,7 @@
 | [bluetooth_gnss](https://github.com/ykasidit/bluetooth_gnss) | bluetooth_gnss：蓝牙外接 GNSS/RTK Android 应用 | Java | 123 | 🏷️ 个人社区 |
 | [GNSS_Compare](https://github.com/TheGalfins/GNSS_Compare) | 手机原始测量定位框架（GPS/Galileo 等） | Java | 73 | 🏷️ 个人社区 |
 | [positional](https://github.com/mtrewartha/positional) | positional：Android 位置与卫星信息简易 App | Kotlin | 61 | 🏷️ 个人社区 |
-| [GalileoHack](https://github.com/griush/GalileoHack) | GalileoHack：多星座 GNSS 可见性 Android 演示 App | Kotlin | 34 | 🏷️ 个人社区 |
+| [GalileoHack](https://github.com/griush/GalileoHack) | GalileoHack：多星座 GNSS 可见性 Android 演示 App | Java | 34 | 🏷️ 个人社区 |
 | [PRIDE-GeoDataLogger](https://github.com/PrideLab/PRIDE-GeoDataLogger) | PRIDE-GeoDataLogger：手机多频 GNSS+IMU 采集工具 | — | 22 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -55,7 +55,7 @@
 #### [GalileoHack](https://github.com/griush/GalileoHack)  
 *🏷️ 个人社区*
 
-语言：Kotlin · 许可：MIT · 星标约：34 · 宿主：github
+语言：Java · 许可：MIT · 星标约：34 · 宿主：github
 
 HackUPC 2024 ESA 挑战获奖的开源 Android GNSS Tracker，展示手机所见各星座卫星并对比 GNSS 与网络定位。MIT，有 Play 商店包。偏教学演示与可视化，非精密定位或原始测量导出工具；芯片与 Android 版本影响可见卫星。
 
@@ -172,7 +172,7 @@ Cryologger Glacier Velocity Tracker 以 Arduino/MicroMod 与 SparkFun ZED-F9P �
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gsdc2023](https://github.com/taroz/gsdc2023) | gsdc2023：手机十米级挑战 2023 解算代码 | Python | 114 | 🏷️ 个人社区 |
+| [gsdc2023](https://github.com/taroz/gsdc2023) | gsdc2023：手机十米级挑战 2023 解算代码 | MATLAB | 114 | 🏷️ 个人社区 |
 | [GNSS_MobileCalculator](https://github.com/RogerioDoCarmo/GNSS_MobileCalculator) | Android 原始伪距 SPS 示例 | Java | 15 | 🏷️ 个人社区 |
 | [androidGnss](https://github.com/AILocAR/androidGnss) | Android 原始 GNSS 伪距定位 MATLAB 代码 | MATLAB | 14 | 🏷️ 高校实验室 |
 | [google-gnss-logger](https://github.com/gscatto/google-gnss-logger) | google-gnss-logger：GNSS Logger 原始测量 Java 解析库 | Java | 8 | 🏷️ 个人社区 |
@@ -182,7 +182,7 @@ Cryologger Glacier Velocity Tracker 以 Arduino/MicroMod 与 SparkFun ZED-F9P �
 #### [gsdc2023](https://github.com/taroz/gsdc2023)  
 *🏷️ 个人社区*
 
-语言：Python · 许可：MIT · 星标约：114 · 宿主：github
+语言：MATLAB · 许可：MIT · 星标约：114 · 宿主：github
 
 taroz 针对 Google Smartphone Decimeter Challenge 2023 的公开代码与思路，处理手机原始 GNSS 测量与轨迹评估。MIT 许可；衔接 Android 原始观测与低成本定位研究。竞赛规则与数据版本绑定，复现需自备挑战数据集与官方评价指标脚本。
 

@@ -1041,7 +1041,7 @@ TU Delft 开源 IGP（MATLAB，Apache-2.0）：以 Space-Time Matrix 统一 GNSS
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [TouchRTKStation](https://github.com/taroz/TouchRTKStation) | TouchRTKStation：RTKLIB 单频流动/基准站方案 | C | 99 | 🏷️ 个人社区 |
+| [TouchRTKStation](https://github.com/taroz/TouchRTKStation) | TouchRTKStation：RTKLIB 单频流动/基准站方案 | Python | 99 | 🏷️ 个人社区 |
 | [ELT_RTKBase](https://github.com/GNSSOEM/ELT_RTKBase) | ELT_RTKBase：多品牌接收机的树莓派 RTK 基准站 | Shell | 70 | 🏷️ 个人社区 |
 | [rtk_client](https://github.com/tobiasnix/rtk_client) | Python 终端 RTK：NTRIP + 串口 GNSS 客户端 | Python | 0 | 🏷️ 个人社区 |
 
@@ -1050,7 +1050,7 @@ TU Delft 开源 IGP（MATLAB，Apache-2.0）：以 Space-Time Matrix 统一 GNSS
 #### [TouchRTKStation](https://github.com/taroz/TouchRTKStation)  
 *🏷️ 个人社区*
 
-语言：C · 许可：MIT · 星标约：99 · 宿主：github
+语言：Python · 许可：MIT · 星标约：99 · 宿主：github
 
 taroz 维护的单频 RTK-GNSS 流动/基准站方案，底层依托 RTKLIB，面向可触摸终端与野外快速架站。MIT 许可；与纯命令行 RTKLIB 相比更偏整机与交互体验。适合教学与低成本单频实验，多频与完好性能力有限，硬件串口与电台配置见仓库说明。
 
