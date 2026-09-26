@@ -56,8 +56,10 @@ COSMIC/FORMOSAT 等任务的无线电掩星数据中心门户，提供中性大�
 | [BKG-IGS-Data-Center](https://igs.bkg.bund.de/) | BKG IGS 数据中心：欧洲侧 GNSS 数据与 NTRIP 入口 | data-portal | — | 🏷️ 官方 核心 |
 | [CDDIS-GNSS-Archive](https://cddis.nasa.gov/archive/gnss/) | NASA CDDIS：IGS 全球 GNSS 观测与产品主归档之一 | data-portal | — | 🏷️ 官方 核心 |
 | [CDDIS-Highrate-GNSS](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/high-rate_data.html) | CDDIS 高采样 GNSS 数据说明 | data-portal | — | 🏷️ 官方 |
+| [CODE-AIUB-Product-Download](https://download.aiub.unibe.ch/) | AIUB/CODE 产品 HTTPS 下载浏览器（含 CODE/ionex/ionosphere 等目录） | data-portal | — | 🏷️ 官方 |
 | [Earthdata-Daily-30s-GNSS](https://www.earthdata.nasa.gov/data/space-geodesy-techniques/gnss/daily-30-second-data-product) | NASA Earthdata：GNSS 日文件 30 秒采样产品说明 | data-portal | — | 🏷️ 官方 |
 | [Earthdata-GNSS](https://www.earthdata.nasa.gov/data/space-geodesy-techniques/gnss) | NASA Earthdata：GNSS 空间大地测量技术数据总览 | data-portal | — | 🏷️ 官方 |
+| [Earthdata-MGEX](https://www.earthdata.nasa.gov/data/space-geodesy-techniques/gnss/mgex-data-product) | Earthdata MGEX：NASA 侧多 GNSS 试验数据入口 | data-portal | — | 🏷️ 官方 |
 | [ESA-GSSC](https://gssc.esa.int/) | ESA GNSS Science Support Centre：科学数据与产品门户 | data-portal | — | 🏷️ 官方 核心 |
 | [GFZ-ISDC](https://isdc.gfz.de/) | GFZ ISDC：波茨坦地球科学研究数据中心门户 | data-portal | — | 🏷️ 官方 |
 | [GFZ-ISDC-Data-HTTPS](https://isdc-data.gfz.de/gnss/) | GFZ ISDC GNSS HTTPS 归档（新旧 FTP 迁移） | data-portal | — | 🏷️ 官方 |
@@ -93,6 +95,13 @@ IGS 核心数据中心，提供日/小时 RINEX、广播星历、精密 SP3/CLK�
 
 NASA CDDIS 对高采样率（high-rate）GNSS 观测产品的官方说明页，解释目录组织与用途，是闪烁/同震等高频应用找数据的路标。下载实体文件仍走 CDDIS 归档并需 Earthdata；可与 cddis-highrate-downloader 软件条目搭配。
 
+#### [CODE-AIUB-Product-Download](https://download.aiub.unibe.ch/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+伯尔尼大学天文研究所 CODE 分析中心的官方产品文件浏览器。可进入 CODE、CODE_MGEX、ionex、ionosphere 等目录获取最终/快速/超快速轨道钟差与 IONEX 等。FTP 已弃用，请改用本 HTTPS 入口；与 CODE AC 介绍页互补，本页聚焦可下载产品树。
+
 #### [Earthdata-Daily-30s-GNSS](https://www.earthdata.nasa.gov/data/space-geodesy-techniques/gnss/daily-30-second-data-product)  
 *🏷️ 官方*
 
@@ -106,6 +115,13 @@ Earthdata 对 GNSS Daily 30-Second 观测产品的说明页（承接原 CDDIS �
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 Earthdata 上 GNSS 技术主题总览，汇聚 CDDIS 迁移后的 GNSS 数据产品入口（含 MGEX、DCB 等已分列产品的上级导航）。与单产品页互补，适合发现 NASA 侧 GNSS 归档。下载多需 Earthdata 账号。
+
+#### [Earthdata-MGEX](https://www.earthdata.nasa.gov/data/space-geodesy-techniques/gnss/mgex-data-product)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+CDDIS/Earthdata 上的 MGEX 数据产品说明与获取入口，对应 IGS Multi-GNSS Experiment 观测与产品。与 igs.org/mgex 介绍页互补，侧重 NASA 侧下载路径与 Earthdata 账号体系。批量下载常需 Earthdata Login。
 
 #### [ESA-GSSC](https://gssc.esa.int/)  
 *🏷️ 官方 核心*
@@ -126,7 +142,7 @@ Earthdata 上 GNSS 技术主题总览，汇聚 CDDIS 迁移后的 GNSS 数据产
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-德国地学研究中心（GFZ）Information System and Data Center 的 GNSS HTTPS 数据根：/gnss/data/daily、/highrate 等目录提供日文件与高采样观测及产品树，匿名 HTTPS 浏览下载。IGSMail 等通告已推动从旧 FTP 迁移至此主机（旧 FTP 计划关停）。与 isdc.gfz-potsdam.de 门户页互补，这里是可直接 wget/curl 的数据树。使用请遵守 GFZ/ISDC 数据政策并引用相应 DOI。
+德国地学研究中心（GFZ）Information System and Data Center 的 GNSS HTTPS 数据根：/gnss/data/daily、/highrate 等目录提供日文件与高采样观测及产品树，匿名 HTTPS 浏览下载。IGSMail 等通告已推动从旧 FTP 迁移至此主机（旧 FTP 计划关停）。与 isdc.gfz.de 门户页互补，这里是可直接 wget/curl 的数据树。使用请遵守 GFZ/ISDC 数据政策并引用相应 DOI。
 
 #### [IGS-Data-Access](https://igs.org/data-access/)  
 *🏷️ 官方*
@@ -1132,29 +1148,6 @@ GLONASS IAC 英文站，提供星座状态、产品与系统介绍入口，是�
 
 准天顶系统运营信息/档案英文页，集中提供公开归档与状态相关入口，便于回溯服务公告与可下载产品。区别于 MIRAI 用户观测归档；面向增强服务研究与多星座完好性对照。具体文件清单与下载权限以页面及关联 Notices/Downloads 为准，可能随运营变更。
 
-## IGS产品下载
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [CODE-AIUB-Product-Download](https://download.aiub.unibe.ch/) | AIUB/CODE 产品 HTTPS 下载浏览器（含 CODE/ionex/ionosphere 等目录） | data-portal | — | 🏷️ 官方 |
-| [Earthdata-MGEX](https://www.earthdata.nasa.gov/data/space-geodesy-techniques/gnss/mgex-data-product) | Earthdata MGEX：NASA 侧多 GNSS 试验数据入口 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [CODE-AIUB-Product-Download](https://download.aiub.unibe.ch/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-伯尔尼大学天文研究所 CODE 分析中心的官方产品文件浏览器。可进入 CODE、CODE_MGEX、ionex、ionosphere 等目录获取最终/快速/超快速轨道钟差与 IONEX 等。FTP 已弃用，请改用本 HTTPS 入口；与 CODE AC 介绍页互补，本页聚焦可下载产品树。
-
-#### [Earthdata-MGEX](https://www.earthdata.nasa.gov/data/space-geodesy-techniques/gnss/mgex-data-product)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-CDDIS/Earthdata 上的 MGEX 数据产品说明与获取入口，对应 IGS Multi-GNSS Experiment 观测与产品。与 igs.org/mgex 介绍页互补，侧重 NASA 侧下载路径与 Earthdata 账号体系。批量下载常需 Earthdata Login。
-
 ## PPP/PPP-RTK样例
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
@@ -1174,8 +1167,12 @@ CDDIS/Earthdata 上的 MGEX 数据产品说明与获取入口，对应 IGS Multi
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [ASG-EUPOS](https://www.asgeupos.pl/) | 波兰 ASG-EUPOS：国家 GNSS 增强/参考站网门户 | data-portal | — | 🏷️ 官方 |
+| [ASG-EUPOS-Services](https://system.asgeupos.pl/) | ASG-EUPOS 系统服务页：含电离层等专题入口 | data-portal | — | 🏷️ 官方 |
 | [BEV-APOS](https://www.bev.gv.at/Services/Produkte/Grundlagenvermessung/APOS.html) | BEV APOS：奥地利 CORS；RINEX 事后免费 | data-portal | — | 🏷️ 官方 |
+| [CROPOS](https://www.cropos.hr/) | 克罗地亚 CROPOS：国家 GNSS 参考站网与实时服务 | data-portal | — | 🏷️ 官方 |
 | [CSN-Chile-GPS](https://gps.csn.uchile.cl/) | 智利国家地震中心 CSN：GPS/GNSS 台站图与公开数据入口 | data-portal | — | 🏷️ 高校实验室 |
+| [CZEPOS](https://czepos.cuzk.cz/) | 捷克 CÚZK CZEPOS：国家 GNSS 永久站网服务与数据门户 | data-portal | — | 🏷️ 官方 |
 | [EarthScope-GAGE-GNSS-Archive](https://gage-data.earthscope.org/archive/gnss) | EarthScope GAGE GNSS 归档：北美及合作站观测数据 | data-portal | — | 🏷️ 官方 核心 |
 | [EarthScope-Home](https://www.earthscope.org/) | EarthScope 主页：原 UNAVCO/IRIS 合并后的地球科学联盟入口 | data-portal | — | 🏷️ 官方 |
 | [EUREF-EPN-CB](https://epncb.oma.be/) | EUREF EPN 中央局：欧洲参考站网数据与产品 | data-portal | — | 🏷️ 官方 核心 |
@@ -1183,10 +1180,13 @@ CDDIS/Earthdata 上的 MGEX 数据产品说明与获取入口，对应 IGS Multi
 | [EUREF-EPN-Obs-FTP](https://epncb.oma.be/pub/obs/) | EPN 观测数据 FTP/Web 目录 | data-portal | — | 🏷️ 官方 |
 | [EUREF-EPN-StationList](https://epncb.oma.be/_networkdata/stationlist.php) | EUREF EPN：永久站站表专页 | data-portal | — | 🏷️ 官方 |
 | [GA-GNSS-Data](https://data.gnss.ga.gov.au/) | Geoscience Australia GNSS 数据门户（AUSCORS 等） | data-portal | — | 🏷️ 官方 核心 |
+| [GA-GNSS-Networks](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/geodesy/gnss-networks) | Geoscience Australia：GNSS 站网概述页（Positioning Australia） | data-portal | — | 🏷️ 官方 |
 | [GA-GNSS-RINEX-S3](https://ga-gnss-data-rinex-v1.s3.amazonaws.com/index.html) | GA RINEX S3：澳大利亚 CORS 观测的对象存储浏览 | data-portal | — | 🏷️ 官方 |
 | [GeoNet-Data-API](https://data.geonet.org.nz/) | GeoNet Data API：新西兰 GNSS RINEX 机器接口 | data-portal | — | 🏷️ 官方 |
 | [GeoNet-NZ-Geodetic](https://www.geonet.org.nz/data/types/geodetic) | 新西兰 GeoNet 大地测量/GNSS 数据 | data-portal | — | 🏷️ 官方 |
+| [GNSSNet-Hungary](https://www.gnssnet.hu/) | 匈牙利 GNSSNet：Lechner 宇宙大地测量台实时/后处理服务门户 | data-portal | — | 🏷️ 官方 |
 | [GSI-GEONET-SFTP](https://terras.gsi.go.jp/ftp_about.html) | GSI SFTP 说明：GEONET 观测/坐标/对流层获取须知 | data-portal | — | 🏷️ 官方 |
+| [GSI-Terras-GEONET](https://terras.gsi.go.jp/) | 国土地理院 Terras：GEONET 电子基准点数据提供门户 | data-portal | — | 🏷️ 官方 |
 | [HongKong-SatRef](https://www.geodetic.gov.hk/en/satref/satref.htm) | 香港 SatRef：卫星定位参考站网介绍 | data-portal | — | 🏷️ 官方 |
 | [HongKong-SatRef-RINEX](https://www.geodetic.gov.hk/en/rinex/rinex.htm) | 香港 SatRef RINEX 数据说明与下载 | data-portal | — | 🏷️ 官方 |
 | [IBGE-RBMC](https://www.ibge.gov.br/en/geosciences/geodetic-network/2421-rbmc.html) | 巴西 IBGE RBMC 连续 GNSS 网 | data-portal | — | 🏷️ 官方 |
@@ -1197,6 +1197,7 @@ CDDIS/Earthdata 上的 MGEX 数据产品说明与获取入口，对应 IGS Multi
 | [INEGI-RGNA](https://www.inegi.org.mx/app/geo2/rgna/) | 墨西哥 RGNA：INEGI 主动大地网 RINEX 下载 | data-portal | — | 🏷️ 官方 |
 | [Japan-MIRAI-Archive](https://go.gnss.go.jp/mirai/miraiarchive/) | 日本 MIRAI HTTPS RINEX 归档（含 QZSS） | data-portal | — | 🏷️ 官方 |
 | [Korea-GNSS-Data](https://www.gnssdata.or.kr/) | 韩国多机构 CORS 事后 RINEX 门户 | data-portal | — | 🏷️ 官方 |
+| [LINZ-Geodetic](https://www.linz.govt.nz/products-services/geodetic) | 新西兰 LINZ 大地测量产品与服务入口 | data-portal | — | 🏷️ 官方 |
 | [NOAA-CORS-AWS](https://noaa-cors-pds.s3.amazonaws.com/index.html) | NOAA CORS on AWS：NCN RINEX 的 S3/NODD 分发 | data-portal | — | 🏷️ 官方 |
 | [NOAA-CORS-Data-Tree](https://geodesy.noaa.gov/corsdata/) | NOAA CORS 数据目录树 | data-portal | — | 🏷️ 官方 |
 | [NOAA-NCN-API](https://geodesy.noaa.gov/web_services/ncn-api.shtml) | NOAA NCN API：CORS 站元数据与最近站查询 | data-portal | — | 🏷️ 官方 |
@@ -1209,16 +1210,34 @@ CDDIS/Earthdata 上的 MGEX 数据产品说明与获取入口，对应 IGS Multi
 | [PositioNZ](https://apps.linz.govt.nz/ftp/positionz/) | PositioNZ：新西兰国家 GNSS 网 RINEX FTP 入口 | data-portal | — | 🏷️ 官方 |
 | [RAMSAC-RINEX](https://www.ign.gob.ar/NuestrasActividades/Geodesia/Ramsac/DescargaRinex) | 阿根廷 RAMSAC：IGN 永久 GNSS 网 RINEX 下载 | data-portal | — | 🏷️ 官方 |
 | [RENAG](https://renag.resif.fr/) | RENAG：法国国家永久 GNSS 网数据与元数据门户 | data-portal | — | 🏷️ 官方 |
+| [ReNEP-Portugal](https://renep.dgterritorio.gov.pt/) | 葡萄牙 DGT ReNEP：国家 GNSS 连续运行参考站公共服务 | data-portal | — | 🏷️ 官方 |
+| [ROB-GNSS-be](https://gnss.be/) | 比利时皇家天文台 GNSS.be：开放数据与产品服务总入口 | data-portal | — | 🏷️ 官方 |
 | [SIRGAS-Home](https://www.sirgas.org/en/) | SIRGAS：拉丁美洲大地参考架与 GNSS 网门户 | data-portal | — | 🏷️ 官方 |
 | [SIRGAS-Stations](https://www.sirgas.org/en/stations/) | SIRGAS：连续运行站列表、日志与地图（DGFI-TUM 分析中心） | data-portal | — | 🏷️ 官方 |
 | [SIRGAS-Weekly-Solutions](https://www.sirgas.org/en/weekly-solutions/) | SIRGAS：周解坐标产品（DGFI-TUM 分析中心） | data-portal | — | 🏷️ 官方 |
 | [SONEL](https://www.sonel.org/) | SONEL：全球海平面观测网（含 GNSS 并址站） | data-portal | — | 🏷️ 官方 |
 | [Spain-IGN-ERGNSS](https://datos-geodesia.ign.es/ERGNSS/) | 西班牙 IGN ERGNSS 公开 GNSS 数据目录 | data-portal | — | 🏷️ 官方 |
+| [SRGI-BIG-InaCORS](https://srgi.big.go.id/) | 印尼 BIG SRGI：Ina-CORS 实时/后处理与 RINEX 下载门户 | data-portal | — | 🏷️ 官方 |
+| [SWEPOS-Portal](https://swepos.lantmateriet.se/) | 瑞典 SWEPOS 服务门户（Lantmäteriet） | data-portal | — | 🏷️ 官方 |
 | [SWEPOS-RINEX](https://www.lantmateriet.se/en/geodata/gps-geodesy-and-swepos/lantmateriets-doi-objects/swepos-rinex-data/) | SWEPOS：瑞典国家 GNSS 参考网 RINEX 开放数据 | data-portal | — | 🏷️ 官方 |
 | [TU-Delft-GNSS-Data](https://gnss1.tudelft.nl/) | TU Delft GNSS：高校大地测量项目观测数据服务器 | data-portal | — | 🏷️ 高校实验室 |
 | [UNAVCO-GPS-GNSS-Data](https://www.unavco.org/data/gps-gnss/gps-gnss.html) | UNAVCO 遗留 GNSS 数据页（导向 EarthScope/GAGE） | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
+
+#### [ASG-EUPOS](https://www.asgeupos.pl/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+GUGiK 运营的波兰 ASG-EUPOS 系统门户，介绍参考站网、管理中心与服务，并提供站网地图与系统消息。面向测量与导航用户的国家 CORS/NRTK 入口。部分服务需登录。与 system.asgeupos.pl 服务页互补。
+
+#### [ASG-EUPOS-Services](https://system.asgeupos.pl/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+ASG-EUPOS 服务站点，汇总站网服务入口，并含电离层（I95、IRIM/GRIM 等）相关链接与登录注册。偏业务服务导航而非原始 RINEX 全量镜像。使用前请核对服务条款与计费。
 
 #### [BEV-APOS](https://www.bev.gv.at/Services/Produkte/Grundlagenvermessung/APOS.html)  
 *🏷️ 官方*
@@ -1227,12 +1246,26 @@ CDDIS/Earthdata 上的 MGEX 数据产品说明与获取入口，对应 IGS Multi
 
 奥地利联邦计量与测量局（BEV）运营的 Austrian Positioning Service。APOS-PP 提供约 40 站 GPS/GLO/GAL/BDS 的 RINEX（1 s / 30 s）事后数据，经 Geoportal 免费下载且无需注册，许可为 CC BY 4.0；实时 RTK/DGPS/RAW 为收费或需注册服务。站网按 EUREF Class A 维护，坐标参考 ETRS89。适合中欧区域 CORS 对照与教学；实时改正不在免费范围内。英文产品说明页见 BEV 官网 English 栏目。
 
+#### [CROPOS](https://www.cropos.hr/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+CROatian POsitioning System 门户，介绍国家参考站网概念、差分/高精度实时服务与资费说明。南欧区域 CORS/NRTK 代表性系统。注册与服务开通按站点流程。
+
 #### [CSN-Chile-GPS](https://gps.csn.uchile.cl/)  
 *🏷️ 高校实验室*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 智利大学物理数学学院国家地震中心（CSN）GPS 站点门户，含台站地图（RTX/外项目标注）与数据联系入口。拉美地震—大地测量联合网的公开观测入口，可补 SIRGAS/国家 CORS。学术机构运营。
+
+#### [CZEPOS](https://czepos.cuzk.cz/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+捷克测绘局（CÚZK）CZEPOS 门户，提供永久站规格、坐标、天线参数、服务配置说明与产品下载/注册入口，并含运行质量监测。中欧国家 CORS 公开信息页，与 GNSSNet、ReNEP、ASG-EUPOS 等互补。界面以捷克语为主。
 
 #### [EarthScope-GAGE-GNSS-Archive](https://gage-data.earthscope.org/archive/gnss)  
 *🏷️ 官方 核心*
@@ -1283,6 +1316,13 @@ EPN中央局站表专页，列出欧洲永久GNSS网站点清单，并链到网�
 
 澳大利亚地球科学局 GNSS 数据服务，覆盖澳新等区域参考站观测与相关产品的检索下载，是亚太用户重要区域网来源。旧版 ga.gov.au 深链可能失效，请优先使用本数据域名与官方 API 文档，并关注站网元数据更新。
 
+#### [GA-GNSS-Networks](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/geodesy/gnss-networks)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+GA 对 GNSS 站网的官方概述页（定位澳大利亚/大地测量路径），说明澳大利亚及区域 GNSS 网络背景。与 data.gnss.ga.gov.au、APREF、AUSPOS 互补，本页偏科普与导航入口而非文件 API。旧路径会 301 跳转到本 URL。
+
 #### [GA-GNSS-RINEX-S3](https://ga-gnss-data-rinex-v1.s3.amazonaws.com/index.html)  
 *🏷️ 官方*
 
@@ -1304,12 +1344,26 @@ GeoNet 面向自动化拉取的稳定 Data API（data.geonet.org.nz）：浏览/
 
 GeoNet 大地测量数据说明入口，链向新西兰 GNSS 等产品的获取方式，是西南太平洋区域研究常用门户。具体 RINEX/产品树以其子链为准；使用请遵守 GeoNet 数据许可。
 
+#### [GNSSNet-Hungary](https://www.gnssnet.hu/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+匈牙利 GNSS 服务中心（Lechner/宇宙大地测量台）门户，提供实时流、后处理、坐标变换与 FarmRTK 等入口。中欧国家 CORS 公开信息页，与 ASG-EUPOS、CROPOS 等区域网互补。界面以匈牙利语为主。
+
 #### [GSI-GEONET-SFTP](https://terras.gsi.go.jp/ftp_about.html)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 GSI terras 站点上关于 SFTP 获取电子基准点观测、日坐标、IGS 精密星历与对流层延迟估计值的使用说明页。RINGO/RNXCMP/GSILIB 之外的数据通道文档；实际传输需按站内流程完成 SFTP 用户登记。日文为主，适合已掌握日文或借助翻译访问 GEONET 批量数据的用户。
+
+#### [GSI-Terras-GEONET](https://terras.gsi.go.jp/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+日本 GSI 电子基准点（GEONET）观测与解析成果的互联网提供门户，含站点移设/停用公告。与 SFTP 说明、RNXCMP、RINGO 等互补，本页为数据服务主入口。日文界面为主，有英语入口提示。
 
 #### [HongKong-SatRef](https://www.geodetic.gov.hk/en/satref/satref.htm)  
 *🏷️ 官方*
@@ -1380,6 +1434,13 @@ IBGE geoftp 下 RBMC 连续监测网公共文件树，可直接浏览/下载公�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 韩国 GNSS 数据服务门户汇聚国土地理院、海洋定位、气象与科研等机构参考站，提供事后 RINEX 打包下载（单次跨度常有上限）。适合朝鲜半岛及周边区域电离层/定位验证。需网页注册登录。
+
+#### [LINZ-Geodetic](https://www.linz.govt.nz/products-services/geodetic)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Toitū Te Whenua LINZ 大地测量业务入口，汇总新西兰大地基准、控制网与相关产品服务说明，可衔接 PositioNZ 等 GNSS 连续站数据。适合查找官方大地成果与服务路径，而非直接批量下 RINEX。与 PositioNZ FTP 互补：本页偏导航与业务说明。
 
 #### [NOAA-CORS-AWS](https://noaa-cors-pds.s3.amazonaws.com/index.html)  
 *🏷️ 官方*
@@ -1465,6 +1526,20 @@ Land Information New Zealand 的 PositioNZ 连续运行参考站观测 FTP/HTTPS
 
 法国 RÉNAG（Réseau National GNSS permanent）官方站点，挂靠 RESIF，提供永久站信息、数据政策、可用性/质量说明、实时与产品入口（doi:10.15778/resif.rg）。科研用户可由此定位法国开放 GNSS 观测。具体下载协议与许可证以站方/RESIF 声明为准，不是解算软件。
 
+#### [ReNEP-Portugal](https://renep.dgterritorio.gov.pt/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+葡萄牙领土总局（DGT）维护的国家 GNSS 永久站网 ReNEP 门户，提供站点信息、新闻与用户注册入口，服务国家大地基准。西欧国家 CORS/NTRIP 公开入口的补充，与西班牙 ERGNSS、法国 IGN 等互补。界面以葡萄牙语为主。
+
+#### [ROB-GNSS-be](https://gnss.be/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+GNSS.be 为 ROB 的 GNSS 开放数据与产品门户，提供活动介绍、开放数据与服务入口；欧洲 TEC/IONEX 产品页可由此导航。新近通报含 GNSS-DCAT-AP 与 RINEX API 等更新。
+
 #### [SIRGAS-Home](https://www.sirgas.org/en/)  
 *🏷️ 官方*
 
@@ -1500,6 +1575,20 @@ SIRGAS 周解专页，提供按周/按站的 XYZ 与经纬高产品入口，由 
 
 西班牙国家地理研究所大地测量数据服务器上的 ERGNSS 目录，提供国家连续 GNSS 网相关文件的开放索引（亦可见 EUREF/IGS 等并列目录）。西欧中纬电离层与区域网研究可作补充源。目录型 HTTPS 访问；批量抓取请限速。
 
+#### [SRGI-BIG-InaCORS](https://srgi.big.go.id/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+印尼测绘局 BIG 的系统性地理参考（SRGI）门户，提供 Ina-CORS RTK、在线后处理与 RINEX 下载，并含控制网、大地水准面与 GNSS 监测（含 ZWD）等入口。东南亚国家 CORS 公开数据的重要入口，与区域地壳形变/电离层研究互补。界面以印尼语为主。
+
+#### [SWEPOS-Portal](https://swepos.lantmateriet.se/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Lantmäteriet 的 SWEPOS 服务门户，面向瑞典 GNSS 增强服务用户入口。与 SWEPOS RINEX DOI 数据页互补：本页偏服务登录与业务导航。Cookie/同意条可能影响首次访问体验。
+
 #### [SWEPOS-RINEX](https://www.lantmateriet.se/en/geodata/gps-geodesy-and-swepos/lantmateriets-doi-objects/swepos-rinex-data/)  
 *🏷️ 官方*
 
@@ -1525,11 +1614,21 @@ TU Delft 地球科学与遥感系维护的 GNSS 数据服务器，托管该校�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [ntrip-catalog](https://github.com/Pix4D/ntrip-catalog) | ntrip-catalog：Pix4D 开源 NTRIP 服务商 CRS 目录 | Python | 14 | 🏷️ 个人社区 |
 | [IGS-RTS](https://igs.org/rts/) | IGS 实时服务（RTS）：实时轨道钟差/SSR 流说明 | data-portal | — | 🏷️ 官方 核心 |
 | [NSGI-NTRIP](https://www.nsgi.nl/referentiepunten-en-gnss-data/gnss-data/real-time-streams) | NSGI NTRIP：荷兰 CORS 免费/付费实时流入口 | data-portal | — | 🏷️ 官方 |
+| [RAMSAC-NTRIP](https://www.ign.gob.ar/NuestrasActividades/Geodesia/RamsacNtrip) | 阿根廷 RAMSAC-NTRIP：国家 CORS 实时流门户 | data-portal | — | 🏷️ 官方 |
 | [SouthPAN](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/about-the-program/southpan) | SouthPAN：澳新 SBAS/精密定位增强官方项目页 | data-portal | — | 🏷️ 官方 |
+| [TUSAGA-Aktif](https://www.tusaga-aktif.gov.tr/) | TUSAGA-Aktif：土耳其国家主动 GNSS 网服务门户 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
+
+#### [ntrip-catalog](https://github.com/Pix4D/ntrip-catalog)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：CC0-1.0 · 星标约：14 · 宿主：github
+
+以 JSON 维护多家 NTRIP 服务的挂载点与 CRS 信息，站点 ntrip-catalog.org 提供检索。解决 RTCM/NTRIP 握手不携带参考框架信息的问题，便于应用按位置匹配改正坐标系。属开放数据目录而非 caster 实现；条目完整性依赖社区贡献与服务商变更。
 
 #### [IGS-RTS](https://igs.org/rts/)  
 *🏷️ 官方 核心*
@@ -1545,36 +1644,19 @@ TU Delft 地球科学与遥感系维护的 GNSS 数据服务器，托管该校�
 
 NSGI 实时数据页，说明 AGRS 等站免费 RTCM 流与 NETPOS 付费流，经 ntrip.kadaster.nl（2101/443）分发。科研与测绘可匿名取免费 mountpoint。与 RINEX 归档互补；付费 NETPOS 需按站方订购，sourcetable 以 caster 为准。
 
-#### [SouthPAN](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/about-the-program/southpan)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-Geoscience Australia 对 Southern Positioning Augmentation Network 的官方说明页，概述面向澳新的卫星基增强与精密定位服务路线。工程用户可由此了解服务能力与入口，再链到数据中心/NTRIP 注册。本页是项目介绍而非开源解算器；具体改正流访问需按站方注册策略。
-
-## NTRIP服务商/CRS
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [ntrip-catalog](https://github.com/Pix4D/ntrip-catalog) | ntrip-catalog：Pix4D 开源 NTRIP 服务商 CRS 目录 | Python | 14 | 🏷️ 个人社区 |
-| [RAMSAC-NTRIP](https://www.ign.gob.ar/NuestrasActividades/Geodesia/RamsacNtrip) | 阿根廷 RAMSAC-NTRIP：国家 CORS 实时流门户 | data-portal | — | 🏷️ 官方 |
-| [TUSAGA-Aktif](https://www.tusaga-aktif.gov.tr/) | TUSAGA-Aktif：土耳其国家主动 GNSS 网服务门户 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [ntrip-catalog](https://github.com/Pix4D/ntrip-catalog)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：CC0-1.0 · 星标约：14 · 宿主：github
-
-以 JSON 维护多家 NTRIP 服务的挂载点与 CRS 信息，站点 ntrip-catalog.org 提供检索。解决 RTCM/NTRIP 握手不携带参考框架信息的问题，便于应用按位置匹配改正坐标系。属开放数据目录而非 caster 实现；条目完整性依赖社区贡献与服务商变更。
-
 #### [RAMSAC-NTRIP](https://www.ign.gob.ar/NuestrasActividades/Geodesia/RamsacNtrip)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 IGN 为 RAMSAC 提供的 NTRIP 实时服务门户，含站网地图、用户注册与技术说明，面向差分定位与监测用户。与 RINEX 事后下载互补；Caster 端点、mountpoint 与资费/开放范围以登记页为准。南美实时 CORS 公开入口之一，便于与 SIRGAS 区域网对照试验。
+
+#### [SouthPAN](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/about-the-program/southpan)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Geoscience Australia 对 Southern Positioning Augmentation Network 的官方说明页，概述面向澳新的卫星基增强与精密定位服务路线。工程用户可由此了解服务能力与入口，再链到数据中心/NTRIP 注册。本页是项目介绍而非开源解算器；具体改正流访问需按站方注册策略。
 
 #### [TUSAGA-Aktif](https://www.tusaga-aktif.gov.tr/)  
 *🏷️ 官方*
@@ -1761,109 +1843,6 @@ NGL GPS Networks Map，可点击站点查看站信息，便于浏览 MAGNET 与�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 Nevada Geodetic Laboratory 主页，发布全球 GPS 站时序、应变率、垂直运动与 MAGNET 等网络信息，是学术界常用的开放坐标时间序列来源之一。配套站列表/地图与出版物入口；处理策略与引用方式见站内说明。适合形变与参考框架研究，非官方 CORS 原始 RINEX 替代，原始观测仍应回 IGS/区域网。
-
-## 国家CORS
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [ASG-EUPOS](https://www.asgeupos.pl/) | 波兰 ASG-EUPOS：国家 GNSS 增强/参考站网门户 | data-portal | — | 🏷️ 官方 |
-| [ASG-EUPOS-Services](https://system.asgeupos.pl/) | ASG-EUPOS 系统服务页：含电离层等专题入口 | data-portal | — | 🏷️ 官方 |
-| [CROPOS](https://www.cropos.hr/) | 克罗地亚 CROPOS：国家 GNSS 参考站网与实时服务 | data-portal | — | 🏷️ 官方 |
-| [CZEPOS](https://czepos.cuzk.cz/) | 捷克 CÚZK CZEPOS：国家 GNSS 永久站网服务与数据门户 | data-portal | — | 🏷️ 官方 |
-| [GA-GNSS-Networks](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/geodesy/gnss-networks) | Geoscience Australia：GNSS 站网概述页（Positioning Australia） | data-portal | — | 🏷️ 官方 |
-| [GNSSNet-Hungary](https://www.gnssnet.hu/) | 匈牙利 GNSSNet：Lechner 宇宙大地测量台实时/后处理服务门户 | data-portal | — | 🏷️ 官方 |
-| [GSI-Terras-GEONET](https://terras.gsi.go.jp/) | 国土地理院 Terras：GEONET 电子基准点数据提供门户 | data-portal | — | 🏷️ 官方 |
-| [LINZ-Geodetic](https://www.linz.govt.nz/products-services/geodetic) | 新西兰 LINZ 大地测量产品与服务入口 | data-portal | — | 🏷️ 官方 |
-| [ReNEP-Portugal](https://renep.dgterritorio.gov.pt/) | 葡萄牙 DGT ReNEP：国家 GNSS 连续运行参考站公共服务 | data-portal | — | 🏷️ 官方 |
-| [ROB-GNSS-be](https://gnss.be/) | 比利时皇家天文台 GNSS.be：开放数据与产品服务总入口 | data-portal | — | 🏷️ 官方 |
-| [SRGI-BIG-InaCORS](https://srgi.big.go.id/) | 印尼 BIG SRGI：Ina-CORS 实时/后处理与 RINEX 下载门户 | data-portal | — | 🏷️ 官方 |
-| [SWEPOS-Portal](https://swepos.lantmateriet.se/) | 瑞典 SWEPOS 服务门户（Lantmäteriet） | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [ASG-EUPOS](https://www.asgeupos.pl/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-GUGiK 运营的波兰 ASG-EUPOS 系统门户，介绍参考站网、管理中心与服务，并提供站网地图与系统消息。面向测量与导航用户的国家 CORS/NRTK 入口。部分服务需登录。与 system.asgeupos.pl 服务页互补。
-
-#### [ASG-EUPOS-Services](https://system.asgeupos.pl/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-ASG-EUPOS 服务站点，汇总站网服务入口，并含电离层（I95、IRIM/GRIM 等）相关链接与登录注册。偏业务服务导航而非原始 RINEX 全量镜像。使用前请核对服务条款与计费。
-
-#### [CROPOS](https://www.cropos.hr/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-CROatian POsitioning System 门户，介绍国家参考站网概念、差分/高精度实时服务与资费说明。南欧区域 CORS/NRTK 代表性系统。注册与服务开通按站点流程。
-
-#### [CZEPOS](https://czepos.cuzk.cz/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-捷克测绘局（CÚZK）CZEPOS 门户，提供永久站规格、坐标、天线参数、服务配置说明与产品下载/注册入口，并含运行质量监测。中欧国家 CORS 公开信息页，与 GNSSNet、ReNEP、ASG-EUPOS 等互补。界面以捷克语为主。
-
-#### [GA-GNSS-Networks](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/geodesy/gnss-networks)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-GA 对 GNSS 站网的官方概述页（定位澳大利亚/大地测量路径），说明澳大利亚及区域 GNSS 网络背景。与 data.gnss.ga.gov.au、APREF、AUSPOS 互补，本页偏科普与导航入口而非文件 API。旧路径会 301 跳转到本 URL。
-
-#### [GNSSNet-Hungary](https://www.gnssnet.hu/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-匈牙利 GNSS 服务中心（Lechner/宇宙大地测量台）门户，提供实时流、后处理、坐标变换与 FarmRTK 等入口。中欧国家 CORS 公开信息页，与 ASG-EUPOS、CROPOS 等区域网互补。界面以匈牙利语为主。
-
-#### [GSI-Terras-GEONET](https://terras.gsi.go.jp/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-日本 GSI 电子基准点（GEONET）观测与解析成果的互联网提供门户，含站点移设/停用公告。与 SFTP 说明、RNXCMP、RINGO 等互补，本页为数据服务主入口。日文界面为主，有英语入口提示。
-
-#### [LINZ-Geodetic](https://www.linz.govt.nz/products-services/geodetic)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-Toitū Te Whenua LINZ 大地测量业务入口，汇总新西兰大地基准、控制网与相关产品服务说明，可衔接 PositioNZ 等 GNSS 连续站数据。适合查找官方大地成果与服务路径，而非直接批量下 RINEX。与 PositioNZ FTP 互补：本页偏导航与业务说明。
-
-#### [ReNEP-Portugal](https://renep.dgterritorio.gov.pt/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-葡萄牙领土总局（DGT）维护的国家 GNSS 永久站网 ReNEP 门户，提供站点信息、新闻与用户注册入口，服务国家大地基准。西欧国家 CORS/NTRIP 公开入口的补充，与西班牙 ERGNSS、法国 IGN 等互补。界面以葡萄牙语为主。
-
-#### [ROB-GNSS-be](https://gnss.be/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-GNSS.be 为 ROB 的 GNSS 开放数据与产品门户，提供活动介绍、开放数据与服务入口；欧洲 TEC/IONEX 产品页可由此导航。新近通报含 GNSS-DCAT-AP 与 RINEX API 等更新。
-
-#### [SRGI-BIG-InaCORS](https://srgi.big.go.id/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-印尼测绘局 BIG 的系统性地理参考（SRGI）门户，提供 Ina-CORS RTK、在线后处理与 RINEX 下载，并含控制网、大地水准面与 GNSS 监测（含 ZWD）等入口。东南亚国家 CORS 公开数据的重要入口，与区域地壳形变/电离层研究互补。界面以印尼语为主。
-
-#### [SWEPOS-Portal](https://swepos.lantmateriet.se/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-Lantmäteriet 的 SWEPOS 服务门户，面向瑞典 GNSS 增强服务用户入口。与 SWEPOS RINEX DOI 数据页互补：本页偏服务登录与业务导航。Cookie/同意条可能影响首次访问体验。
 
 ## 海平面
 

@@ -121,12 +121,14 @@ USCG Navigation Center 官网，发布航海航标、差分 GPS/导航服务公�
 
 与 GVINS 配套的同步视觉、IMU 与 GNSS 原始测量数据，方便复现紧耦合实验与对比算法，是 GNSS-VIO 常用测试集之一。本身不含完整解算器；处理请配合 GVINS、gnss_comm、ublox_driver。许可为 CC BY-NC-SA 4.0（非商业），论文复现与再分发前务必阅读仓库说明与引用要求。
 
-## 资源列表
+## 教材与工具索引
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [awesome-gnss-barbeau](https://github.com/barbeau/awesome-gnss) | awesome-gnss：GNSS 开源资源列表 | — | 599 | 🏷️ 个人社区 核心 |
 | [awesome-gnss-hdkarimi](https://github.com/hdkarimi/awesome-gnss) | awesome-gnss-hdkarimi：GNSS/RNSS 开源与慕课策展列表 | — | 50 | 🏷️ 个人社区 |
+| [Navipedia](https://gssc.esa.int/navipedia/index.php/Main_Page) | Navipedia：ESA GSSC 的 GNSS 参考百科 | data-portal | — | 🏷️ 官方 |
+| [NGS-GPS-Toolbox](https://geodesy.noaa.gov/gps-toolbox/) | NGS-GPS-Toolbox：NGS《GPS Toolbox》专栏历史代码索引 | various | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -143,6 +145,20 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 语言：— · 许可：MIT · 星标约：50 · 宿主：github
 
 策展 GNSS/RNSS 相关开源软件、数据、工具与慕课入口的 awesome 列表，帮助新人快速摸清领域版图。与 barbeau/awesome-gnss（现名 awesome-gnss-barbeau）是不同策展；链接时效性需自行点击验证。
+
+#### [Navipedia](https://gssc.esa.int/navipedia/index.php/Main_Page)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+欧洲 GNSS 服务中心维护的 Navipedia，按主题整理卫星导航概念、系统与算法条目，是公开可编辑风格的 GNSS 参考 Wiki。适合教学查阅与概念对照，条目深度不一，工程实施与接口开发仍应回到 ICD 与正式标准原文核对。
+
+#### [NGS-GPS-Toolbox](https://geodesy.noaa.gov/gps-toolbox/)  
+*🏷️ 官方*
+
+语言：various · 许可：varies by article · 星标约：— · 宿主：official_site
+
+国家大地测量局汇集的 GPS Solutions 期刊工具箱文章目录，涵盖 RINEX 类库、模糊度、Klobuchar、轨道插值等经典小品。2024-09 后站点不再直接托管源码，需联系作者或期刊。适合文献溯源与教学对照，不宜当作持续维护的软件发行渠道。
 
 ## 坐标转换
 
@@ -423,29 +439,6 @@ MATLAB 课程练习：用五站 GPS 静态网数据（AdvConc2019.mat）构造�
 语言：Win32 binaries · 许可：proprietary-freeware · 星标约：— · 宿主：official_site
 
 美国 NGS 发布的 ADJUST 及配套 CHKOBS 等 Windows 工具，用于水平/GPS 观测平差与蓝簿数据检查。提供可执行包，不提供源码。面向向 NGS 提交工程的美国用户；一般科研 PPP 或国际测区处理不必依赖本套件。
-
-## 教材与工具索引
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [Navipedia](https://gssc.esa.int/navipedia/index.php/Main_Page) | Navipedia：ESA GSSC 的 GNSS 参考百科 | data-portal | — | 🏷️ 官方 |
-| [NGS-GPS-Toolbox](https://geodesy.noaa.gov/gps-toolbox/) | NGS-GPS-Toolbox：NGS《GPS Toolbox》专栏历史代码索引 | various | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [Navipedia](https://gssc.esa.int/navipedia/index.php/Main_Page)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-欧洲 GNSS 服务中心维护的 Navipedia，按主题整理卫星导航概念、系统与算法条目，是公开可编辑风格的 GNSS 参考 Wiki。适合教学查阅与概念对照，条目深度不一，工程实施与接口开发仍应回到 ICD 与正式标准原文核对。
-
-#### [NGS-GPS-Toolbox](https://geodesy.noaa.gov/gps-toolbox/)  
-*🏷️ 官方*
-
-语言：various · 许可：varies by article · 星标约：— · 宿主：official_site
-
-国家大地测量局汇集的 GPS Solutions 期刊工具箱文章目录，涵盖 RINEX 类库、模糊度、Klobuchar、轨道插值等经典小品。2024-09 后站点不再直接托管源码，需联系作者或期刊。适合文献溯源与教学对照，不宜当作持续维护的软件发行渠道。
 
 ## 认证/完好性
 

@@ -3,15 +3,31 @@
 
 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
-## VMF产品
+## 对流层产品
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [EUREF-EPN-Troposphere](https://epncb.oma.be/_productsservices/troposphere/) | EUREF EPN：对流层产品与服务专页 | data-portal | — | 🏷️ 官方 |
+| [IGS-Troposphere-WG](https://igs.org/wg/troposphere/) | IGS 对流层工作组：ZTD/梯度产品与活动入口 | data-portal | — | 🏷️ 官方 |
 | [VMF-Data-Server-TropProducts](https://vmf.geo.tuwien.ac.at/trop_products/) | TU Wien VMF 对流层格网数据目录（与 /codes 源码区分） | data-portal | — | 🏷️ 官方 核心 |
 | [VMF1-GNSS-Products](https://vmf.geo.tuwien.ac.at/trop_products/GNSS/VMF1/) | TU Wien：VMF1 GNSS 对流层产品目录 | data-portal | — | 🏷️ 官方 |
 | [VMF3-GNSS-Products](https://vmf.geo.tuwien.ac.at/trop_products/GNSS/VMF3/) | TU Wien：VMF3 GNSS 对流层产品目录（EI/FC/OP） | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
+
+#### [EUREF-EPN-Troposphere](https://epncb.oma.be/_productsservices/troposphere/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+EPN 中央局对流层产品服务页，汇总欧洲永久 GNSS 网的对流层延迟相关产品入口。与 EPN 主页、观测 FTP 互补，本页专指对流层派生产品。GNSS 气象与 ZTD 对比常用。
+
+#### [IGS-Troposphere-WG](https://igs.org/wg/troposphere/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+介绍 IGS 对流层联合产品、分析中心角色及会议活动，是查找 ZTD、梯度与相关试点的入口页。页面本身不托管大容量产品文件，下载通常走 CDDIS/IGN 等数据中心。对流层产品与电离层/轨道产品解耦，引用时需核对产品版本与时延。
 
 #### [VMF-Data-Server-TropProducts](https://vmf.geo.tuwien.ac.at/trop_products/)  
 *🏷️ 官方 核心*
@@ -135,11 +151,12 @@ BME 大地测量组发布的开源 Python 层析工具箱，由 ZWD/梯度、SP3
 
 维也纳工业大学 GNSS-ATom 项目的 MATLAB 层析软件，沿弯曲信号路径重建低层大气三维湿折射率，并支持广播星历→方位角、ZTD→斜延迟、数值天气模式与折射场互转。GPL-3。适合对流层层析方法教学；依赖 MATLAB GUI 与多种大地测量格式，不是实时业务系统。
 
-## VMF/GGOS产品
+## ZTD/ZWD/VMF
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [GGOS-Tropo-RTKLIB](https://github.com/tianruivpn1001/C-project-for-solving-tropospheric-delay-using-GGOS-tropospheric-products) | GGOS-Tropo-RTKLIB：VMF 接入 RTKLIB 对流层 | C | 43 | 🏷️ 个人社区 |
+| [STD_SWD_Calc](https://github.com/zohrehadavi/STD_SWD_Calc) | STD_SWD_Calc：斜路径延迟与模型 ZTD | Python | 10 | 🏷️ 个人社区 核心 |
 
 ### 详细说明
 
@@ -149,6 +166,13 @@ BME 大地测量组发布的开源 Python 层析工具箱，由 ZWD/梯度、SP3
 语言：C · 许可：— · 星标约：43 · 宿主：github
 
 在 RTKLIB 二次开发中接入 GGOS/VMF 格网做对流层延迟，带较详细中文编译笔记。适合 Windows/VS 环境下改 RTKLIB 学 VMF。作者亦说明与官方 MATLAB 参考存在数值差，科研前应用官方码交叉验证。
+
+#### [STD_SWD_Calc](https://github.com/zohrehadavi/STD_SWD_Calc)  
+*🏷️ 个人社区 核心*
+
+语言：Python · 许可：GPL-3.0 · 星标约：10 · 宿主：github
+
+Python 包生成斜路径干/湿延迟（STD/SWD）以及基于 GPT/VMF 的模型 ZTD，直接对接维也纳映射函数生态。适合 GNSS 气象、PPP 先验对流层、与实测 ZTD 对比。站点元数据与 VMF 格网下载要自己准备；业务化连续运行需另写调度。
 
 ## GNSS-IR
 
@@ -362,21 +386,6 @@ Larson 团队 Fortran 工具，翻译/读取 GPS RINEX 并提取 SNR，服务反
 
 TU Wien VieVS 组发布的 Fortran 射线追踪程序，可对微波与光学频段观测重建对流层延迟及相关参数，输入依赖数值天气预报场。适合与 VMF/GPT 产品对照、做高精度延迟研究或 VLBI/GNSS 联合试验。NWM 数据获取与预处理需自备；官方亦有校内 Git 镜像，公开仓以 GitHub 为准。
 
-## ZTD/ZWD/VMF
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [STD_SWD_Calc](https://github.com/zohrehadavi/STD_SWD_Calc) | STD_SWD_Calc：斜路径延迟与模型 ZTD | Python | 10 | 🏷️ 个人社区 核心 |
-
-### 详细说明
-
-#### [STD_SWD_Calc](https://github.com/zohrehadavi/STD_SWD_Calc)  
-*🏷️ 个人社区 核心*
-
-语言：Python · 许可：GPL-3.0 · 星标约：10 · 宿主：github
-
-Python 包生成斜路径干/湿延迟（STD/SWD）以及基于 GPT/VMF 的模型 ZTD，直接对接维也纳映射函数生态。适合 GNSS 气象、PPP 先验对流层、与实测 ZTD 对比。站点元数据与 VMF 格网下载要自己准备；业务化连续运行需另写调度。
-
 ## VMF/GPT官方代码
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
@@ -446,29 +455,6 @@ space-physics 维护的 LOWTRAN7 现代封装，用 f2py/CMake 在 Python 中直
 语言：— · 许可：— · 星标约：3 · 宿主：github
 
 UNB 系列中性大气经验模型，无实测气象时给天顶延迟粗值。适合教学与低精度先验。精度不及 VMF+数值天气模式；精密 PPP 优先 VMF3/GPT3。
-
-## 对流层产品
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [EUREF-EPN-Troposphere](https://epncb.oma.be/_productsservices/troposphere/) | EUREF EPN：对流层产品与服务专页 | data-portal | — | 🏷️ 官方 |
-| [IGS-Troposphere-WG](https://igs.org/wg/troposphere/) | IGS 对流层工作组：ZTD/梯度产品与活动入口 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [EUREF-EPN-Troposphere](https://epncb.oma.be/_productsservices/troposphere/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-EPN 中央局对流层产品服务页，汇总欧洲永久 GNSS 网的对流层延迟相关产品入口。与 EPN 主页、观测 FTP 互补，本页专指对流层派生产品。GNSS 气象与 ZTD 对比常用。
-
-#### [IGS-Troposphere-WG](https://igs.org/wg/troposphere/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-介绍 IGS 对流层联合产品、分析中心角色及会议活动，是查找 ZTD、梯度与相关试点的入口页。页面本身不托管大容量产品文件，下载通常走 CDDIS/IGN 等数据中心。对流层产品与电离层/轨道产品解耦，引用时需核对产品版本与时延。
 
 ## GNSS-VOD
 

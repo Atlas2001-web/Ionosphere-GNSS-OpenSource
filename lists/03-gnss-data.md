@@ -1049,14 +1049,28 @@ semuconsulting 基于 pyubx2 的 u-blox 工具集，BSD-3-Clause。包括 ubxsav
 
 Android 原始 GNSS 测量日志与桌面可视化分析工具，智能手机高精度研究几乎必用。GnssLogger 由 Google 维护、状态有变化，常与 GPSTest 日志互通。不是全星座科研 PPP 引擎。
 
-## 接收机接口
+## 接收机驱动
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [septentrio_gnss_driver](https://github.com/septentrio-gnss/septentrio_gnss_driver) | septentrio_gnss_driver：Septentrio ROS 驱动 | C++ | 133 | 🏷️ 个人社区 |
 | [gpsd](https://gitlab.com/gpsd/gpsd) | gpsd：跨平台 GNSS/AIS 守护进程 | C | 104 | 🏷️ 个人社区 |
+| [um982-driver](https://github.com/sunshineharry/UM982Driver) | 和芯星通 UM982/UM980 扩展语句（PVTSLN/BESTNAV/GNHPR）Python 驱动 | Python | 39 | 🏷️ 个人社区 |
+| [piksi_tools](https://github.com/swift-nav/piksi_tools) | piksi_tools：Swift Navigation Piksi 接收机 Python 工具 | Python | 36 | 🏷️ 个人社区 |
+| [novatel_edie](https://github.com/novatel/novatel_edie) | NovAtel 厂商发布的 EDIE 编解码 SDK：OEM7 接收机日志/命令的 C++ 与 Python 解析与格式转换 | C++ | 32 | 🏷️ 个人社区 |
+| [Septentrio-PyDataLink](https://github.com/septentrio-gnss/Septentrio-PyDataLink) | Septentrio-PyDataLink：接收机数据流可视化与互联 | Python | 8 | 🏷️ 个人社区 |
+| [SbfMixer](https://github.com/septentrio-gnss/SbfMixer) | SbfMixer：Septentrio 接收机的 Node-RED 节点 | JavaScript | 2 | 🏷️ 个人社区 |
+| [trimble-gsof-wireshark](https://github.com/Ryanf55/trimble-gsof-wireshark) | Wireshark 的 Trimble GSOF 协议解析插件（Lua） | Lua | 2 | 🏷️ 个人社区 |
 | [gpsd-website](https://gpsd.io/) | gpsd-website：gpsd 官网（文档、兼容机列表与发行说明） | — | — | 🏷️ 个人社区 |
 
 ### 详细说明
+
+#### [septentrio_gnss_driver](https://github.com/septentrio-gnss/septentrio_gnss_driver)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：BSD-3-Clause · 星标约：133 · 宿主：github
+
+把 Septentrio 接收机接入机器人操作系统，发布导航与观测话题，便于车载/无人机平台联调。输入为网口/串口 SBF；输出为 ROS 话题。局限：面向机器人集成而非电离层专题处理；闪烁/ISMR 需另接解析模块。
 
 #### [gpsd](https://gitlab.com/gpsd/gpsd)  
 *🏷️ 个人社区*
@@ -1064,6 +1078,48 @@ Android 原始 GNSS 测量日志与桌面可视化分析工具，智能手机高
 语言：C · 许可：BSD-2-Clause · 星标约：104 · 宿主：gitlab
 
 长期维护的用户态守护进程，监听串口/USB 上的 NMEA 或厂商二进制，向客户端（默认 2947）提供统一位置/时间服务。发行包见 Savannah/官网 gpsd.io；GitLab 为开发主仓。适合嵌入式与桌面集成取位，不是精密载波相位或科研 PPP 引擎。
+
+#### [um982-driver](https://github.com/sunshineharry/UM982Driver)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：GPL-3.0 · 星标约：39 · 宿主：github
+
+个人开发者发布的 Python 驱动，GPL-3.0 许可，可通过 pip 安装 um982-driver。解析 UM982/UM980 输出的标准 NMEA 以及 PVTSLN、KSXT、GNHPR、BESTNAV 等 Unicore 扩展 ASCII 语句，获取双天线航向、速度、RTK 状态与标准差等比 NMEA 更丰富的信息，README 给出串口输出配置命令与示例程序，附录另有未充分测试的 C 版本。适合机器人与无人车快速接入国产双天线 RTK。目前仅支持 ASCII 指令集，中文文档较完整。
+
+#### [piksi_tools](https://github.com/swift-nav/piksi_tools)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：LGPL-3.0 · 星标约：36 · 宿主：github
+
+面向 Swift Navigation Piksi 系列的 Python 工具，覆盖配置、日志与常见现场操作，许可证 LGPL-3.0。与 libsbp 消息生态配合，适合已有 Piksi/SBP 设备的工程调试。非通用多品牌 RTK 套件；协议与固件版本需匹配。仓库仍可访问且许可证明确，补齐厂商工具链条目。
+
+#### [novatel_edie](https://github.com/novatel/novatel_edie)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：MIT · 星标约：32 · 宿主：github
+
+NovAtel（Hexagon）厂商发布的 Encode Decode Interface Engine SDK，MIT 许可，C++ 实现并提供 Python 包。可对 OEM7 接收机的 ASCII、二进制与简化 ASCII 日志进行帧识别、解码与互相转换，基于厂商消息定义数据库，适合编写离线解析、日志过滤、格式转换与数据回放工具。构建使用 CMake 预设并支持 Conan 管理依赖。与 novatel_oem7_driver（ROS 驱动）互补：后者面向机器人实时接入，EDIE 更适合底层解码与数据处理。近期仍活跃更新。
+
+#### [Septentrio-PyDataLink](https://github.com/septentrio-gnss/Septentrio-PyDataLink)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：BSD-3-Clause · 星标约：8 · 宿主：github
+
+pyDataLink 用于可视化与连接接收机数据流，便于实验教学中快速查看观测与配置链路。输入为接收机/记录数据流；输出为可视化与转发接口。局限：偏工程联调，不直接给出 TEC/闪烁科学指标。
+
+#### [SbfMixer](https://github.com/septentrio-gnss/SbfMixer)  
+*🏷️ 个人社区*
+
+语言：JavaScript · 许可：BSD-3-Clause · 星标约：2 · 宿主：github
+
+通过 Node-RED 流程编排访问 Septentrio，适合演示数据采集与简单自动化。输入为接收机连接与流程节点配置；输出为可拖拽的数据管道。局限：教学/原型友好，科研级批处理与质控能力有限。
+
+#### [trimble-gsof-wireshark](https://github.com/Ryanf55/trimble-gsof-wireshark)  
+*🏷️ 个人社区*
+
+语言：Lua · 许可：MIT · 星标约：2 · 宿主：github
+
+个人开发者编写的 Wireshark Lua 解析插件，MIT 许可。把 gsof.lua 放入 Wireshark 插件目录后，即可在抓包界面逐字段解码 Trimble/Applanix 接收机通过 UDP 输出的 GSOF 报文，README 以 PX-1 为例说明端口配置与演示截图。对于调试 GSOF 数据流、核对字段含义或排查网络传输问题很方便，可与 trimble_driver_ros 搭配使用。插件体量小，覆盖的 GSOF 消息类型有限，作者欢迎补充新报文。2025 年创建。
 
 #### [gpsd-website](https://gpsd.io/)  
 *🏷️ 个人社区*
@@ -1117,69 +1173,6 @@ ROS 包用于连接 NTRIP caster、接收 RTCM，并服务于 u-blox ZED-F9P 一
 语言：Python · 许可：GPL-3.0 · 星标约：0 · 宿主：github
 
 Leibniz Universität Hannover 地球测量研究所工具，批量修正 RINEX 头、裁剪时间窗并改变采样间隔，服务质检与预处理流水线。LICENSE 为 GPL-3.0（GitHub 常显示 NOASSERTION）。与 pcc-explorer/atx-scanner 同系列；星级低但填补批处理编辑缺口。
-
-## 接收机驱动
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [septentrio_gnss_driver](https://github.com/septentrio-gnss/septentrio_gnss_driver) | septentrio_gnss_driver：Septentrio ROS 驱动 | C++ | 133 | 🏷️ 个人社区 |
-| [um982-driver](https://github.com/sunshineharry/UM982Driver) | 和芯星通 UM982/UM980 扩展语句（PVTSLN/BESTNAV/GNHPR）Python 驱动 | Python | 39 | 🏷️ 个人社区 |
-| [piksi_tools](https://github.com/swift-nav/piksi_tools) | piksi_tools：Swift Navigation Piksi 接收机 Python 工具 | Python | 36 | 🏷️ 个人社区 |
-| [novatel_edie](https://github.com/novatel/novatel_edie) | NovAtel 厂商发布的 EDIE 编解码 SDK：OEM7 接收机日志/命令的 C++ 与 Python 解析与格式转换 | C++ | 32 | 🏷️ 个人社区 |
-| [Septentrio-PyDataLink](https://github.com/septentrio-gnss/Septentrio-PyDataLink) | Septentrio-PyDataLink：接收机数据流可视化与互联 | Python | 8 | 🏷️ 个人社区 |
-| [SbfMixer](https://github.com/septentrio-gnss/SbfMixer) | SbfMixer：Septentrio 接收机的 Node-RED 节点 | JavaScript | 2 | 🏷️ 个人社区 |
-| [trimble-gsof-wireshark](https://github.com/Ryanf55/trimble-gsof-wireshark) | Wireshark 的 Trimble GSOF 协议解析插件（Lua） | Lua | 2 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [septentrio_gnss_driver](https://github.com/septentrio-gnss/septentrio_gnss_driver)  
-*🏷️ 个人社区*
-
-语言：C++ · 许可：BSD-3-Clause · 星标约：133 · 宿主：github
-
-把 Septentrio 接收机接入机器人操作系统，发布导航与观测话题，便于车载/无人机平台联调。输入为网口/串口 SBF；输出为 ROS 话题。局限：面向机器人集成而非电离层专题处理；闪烁/ISMR 需另接解析模块。
-
-#### [um982-driver](https://github.com/sunshineharry/UM982Driver)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：GPL-3.0 · 星标约：39 · 宿主：github
-
-个人开发者发布的 Python 驱动，GPL-3.0 许可，可通过 pip 安装 um982-driver。解析 UM982/UM980 输出的标准 NMEA 以及 PVTSLN、KSXT、GNHPR、BESTNAV 等 Unicore 扩展 ASCII 语句，获取双天线航向、速度、RTK 状态与标准差等比 NMEA 更丰富的信息，README 给出串口输出配置命令与示例程序，附录另有未充分测试的 C 版本。适合机器人与无人车快速接入国产双天线 RTK。目前仅支持 ASCII 指令集，中文文档较完整。
-
-#### [piksi_tools](https://github.com/swift-nav/piksi_tools)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：LGPL-3.0 · 星标约：36 · 宿主：github
-
-面向 Swift Navigation Piksi 系列的 Python 工具，覆盖配置、日志与常见现场操作，许可证 LGPL-3.0。与 libsbp 消息生态配合，适合已有 Piksi/SBP 设备的工程调试。非通用多品牌 RTK 套件；协议与固件版本需匹配。仓库仍可访问且许可证明确，补齐厂商工具链条目。
-
-#### [novatel_edie](https://github.com/novatel/novatel_edie)  
-*🏷️ 个人社区*
-
-语言：C++ · 许可：MIT · 星标约：32 · 宿主：github
-
-NovAtel（Hexagon）厂商发布的 Encode Decode Interface Engine SDK，MIT 许可，C++ 实现并提供 Python 包。可对 OEM7 接收机的 ASCII、二进制与简化 ASCII 日志进行帧识别、解码与互相转换，基于厂商消息定义数据库，适合编写离线解析、日志过滤、格式转换与数据回放工具。构建使用 CMake 预设并支持 Conan 管理依赖。与 novatel_oem7_driver（ROS 驱动）互补：后者面向机器人实时接入，EDIE 更适合底层解码与数据处理。近期仍活跃更新。
-
-#### [Septentrio-PyDataLink](https://github.com/septentrio-gnss/Septentrio-PyDataLink)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：BSD-3-Clause · 星标约：8 · 宿主：github
-
-pyDataLink 用于可视化与连接接收机数据流，便于实验教学中快速查看观测与配置链路。输入为接收机/记录数据流；输出为可视化与转发接口。局限：偏工程联调，不直接给出 TEC/闪烁科学指标。
-
-#### [SbfMixer](https://github.com/septentrio-gnss/SbfMixer)  
-*🏷️ 个人社区*
-
-语言：JavaScript · 许可：BSD-3-Clause · 星标约：2 · 宿主：github
-
-通过 Node-RED 流程编排访问 Septentrio，适合演示数据采集与简单自动化。输入为接收机连接与流程节点配置；输出为可拖拽的数据管道。局限：教学/原型友好，科研级批处理与质控能力有限。
-
-#### [trimble-gsof-wireshark](https://github.com/Ryanf55/trimble-gsof-wireshark)  
-*🏷️ 个人社区*
-
-语言：Lua · 许可：MIT · 星标约：2 · 宿主：github
-
-个人开发者编写的 Wireshark Lua 解析插件，MIT 许可。把 gsof.lua 放入 Wireshark 插件目录后，即可在抓包界面逐字段解码 Trimble/Applanix 接收机通过 UDP 输出的 GSOF 报文，README 以 PX-1 为例说明端口配置与演示截图。对于调试 GSOF 数据流、核对字段含义或排查网络传输问题很方便，可与 trimble_driver_ros 搭配使用。插件体量小，覆盖的 GSOF 消息类型有限，作者欢迎补充新报文。2025 年创建。
 
 ## 产品读写
 

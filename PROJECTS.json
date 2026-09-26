@@ -786,7 +786,7 @@
       "language": "C",
       "license": "BSD-2-Clause",
       "category": "gnss-data",
-      "subcategory": "接收机接口",
+      "subcategory": "接收机驱动",
       "markers": [],
       "stars_approx": 104,
       "source": "web/official verified 2026-09-14",
@@ -804,7 +804,7 @@
       "language": null,
       "license": "BSD-2-Clause",
       "category": "gnss-data",
-      "subcategory": "接收机接口",
+      "subcategory": "接收机驱动",
       "markers": [],
       "stars_approx": null,
       "source": "web/official verified 2026-09-14",
@@ -1943,7 +1943,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "IGS产品下载",
+      "subcategory": "IGS综合",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -2694,7 +2694,7 @@
       "language": "Python",
       "license": "CC0-1.0",
       "category": "gnss-datasets",
-      "subcategory": "NTRIP服务商/CRS",
+      "subcategory": "实时流",
       "markers": [
         "routine-2026-09-16"
       ],
@@ -2874,7 +2874,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "troposphere",
-      "subcategory": "VMF产品",
+      "subcategory": "对流层产品",
       "markers": [
         "core"
       ],
@@ -11322,7 +11322,7 @@
       "language": "",
       "license": "Apache-2.0",
       "category": "tools-learning",
-      "subcategory": "资源列表",
+      "subcategory": "教材与工具索引",
       "markers": [
         "core"
       ],
@@ -11342,7 +11342,7 @@
       "language": "",
       "license": "MIT",
       "category": "tools-learning",
-      "subcategory": "资源列表",
+      "subcategory": "教材与工具索引",
       "markers": [],
       "stars_approx": 50,
       "source": "gh-search+verified (more_finds / exhaustive 2026-09-14)",
@@ -11876,7 +11876,7 @@
       "language": "C",
       "license": null,
       "category": "troposphere",
-      "subcategory": "VMF/GGOS产品",
+      "subcategory": "ZTD/ZWD/VMF",
       "markers": [],
       "stars_approx": 43,
       "source": "curated+verified (awesome-gnss / stars / API / official site)",
@@ -13754,7 +13754,7 @@
       "name": "GFZ-ISDC-Data-HTTPS",
       "url": "https://isdc-data.gfz.de/gnss/",
       "desc_zh": "GFZ ISDC GNSS 数据/产品 HTTPS 归档（替代旧 FTP）",
-      "analysis_zh": "德国地学研究中心（GFZ）Information System and Data Center 的 GNSS HTTPS 数据根：/gnss/data/daily、/highrate 等目录提供日文件与高采样观测及产品树，匿名 HTTPS 浏览下载。IGSMail 等通告已推动从旧 FTP 迁移至此主机（旧 FTP 计划关停）。与 isdc.gfz-potsdam.de 门户页互补，这里是可直接 wget/curl 的数据树。使用请遵守 GFZ/ISDC 数据政策并引用相应 DOI。",
+      "analysis_zh": "德国地学研究中心（GFZ）Information System and Data Center 的 GNSS HTTPS 数据根：/gnss/data/daily、/highrate 等目录提供日文件与高采样观测及产品树，匿名 HTTPS 浏览下载。IGSMail 等通告已推动从旧 FTP 迁移至此主机（旧 FTP 计划关停）。与 isdc.gfz.de 门户页互补，这里是可直接 wget/curl 的数据树。使用请遵守 GFZ/ISDC 数据政策并引用相应 DOI。",
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
@@ -14738,7 +14738,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "NTRIP服务商/CRS",
+      "subcategory": "实时流",
       "markers": [
         "routine-2026-09-24c"
       ],
@@ -15198,7 +15198,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "NTRIP服务商/CRS",
+      "subcategory": "实时流",
       "markers": [
         "routine-2026-09-24d"
       ],
@@ -15798,7 +15798,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "IGS产品下载",
+      "subcategory": "IGS综合",
       "markers": [
         "routine-2026-09-24f"
       ],
@@ -16812,7 +16812,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "国家CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-24j"
       ],
@@ -17988,7 +17988,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "国家CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-24n"
       ],
@@ -18198,7 +18198,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "国家CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-24o"
       ],
@@ -18220,7 +18220,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "国家CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-24o"
       ],
@@ -18242,7 +18242,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "国家CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-24o"
       ],
@@ -18264,7 +18264,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "国家CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-24o"
       ],
@@ -18286,7 +18286,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "国家CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-24o"
       ],
@@ -18496,7 +18496,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "国家CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-24p"
       ],
@@ -18694,7 +18694,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "国家CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-24q"
       ],
@@ -18716,7 +18716,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "国家CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-24q"
       ],
@@ -18826,7 +18826,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "troposphere",
-      "subcategory": "VMF产品",
+      "subcategory": "对流层产品",
       "markers": [
         "routine-2026-09-24q"
       ],
@@ -18848,7 +18848,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "troposphere",
-      "subcategory": "VMF产品",
+      "subcategory": "对流层产品",
       "markers": [
         "routine-2026-09-24q"
       ],
@@ -18958,7 +18958,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "orbit-clock",
-      "subcategory": "VLBI/EOP",
+      "subcategory": "EOP与参考系",
       "markers": [
         "routine-2026-09-24q"
       ],
@@ -19000,7 +19000,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "国家CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-24r"
       ],
@@ -19044,7 +19044,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "国家CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-24r"
       ],
@@ -19198,7 +19198,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "orbit-clock",
-      "subcategory": "VLBI/EOP",
+      "subcategory": "EOP与参考系",
       "markers": [
         "routine-2026-09-24r"
       ],

@@ -226,6 +226,8 @@ BIPM Time Department 的 FTP 索引页，指向 pub 等时标相关目录，是 
 |---|---|---|---:|---|
 | [IERS-Datacenter](https://datacenter.iers.org/) | IERS 数据中心：EOP、地球物理流体与公报入口 | data-portal | — | 🏷️ 官方 |
 | [IERS-EOP-PC](https://hpiers.obspm.fr/eop-pc/) | IERS 地球定向参数产品中心（巴黎天文台） | data-portal | — | 🏷️ 官方 |
+| [IVS-IVSOPAR](https://ivsopar.obspm.fr/) | 巴黎天文台 IVS 分析中心：大地测量 VLBI 产品门户 | data-portal | — | 🏷️ 官方 |
+| [IVSCC](https://ivscc.gsfc.nasa.gov/) | IVS 协调中心：国际 VLBI 服务主站 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -242,6 +244,20 @@ BIPM Time Department 的 FTP 索引页，指向 pub 等时标相关目录，是 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 IERS EOP Product Center 门户，面向地球定向参数序列与相关说明，由巴黎天文台维护。与 IERS Datacenter 互补：本站偏 EOP 产品中心视角。精密 GNSS/VLBI/SLR 联合分析常用其序列。选用哪套 EOP 产品需对照分析策略与时效。
+
+#### [IVS-IVSOPAR](https://ivsopar.obspm.fr/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Observatoire de Paris 托管的 IVS 大地测量 VLBI 分析服务门户，提供 VLBI 解算与地球定向相关产品入口。轨道/参考框架与 EOP 用户可与 IERS EOP、GNSS 框架联合使用。产品级别与引用见 IVS/巴黎天文台说明。
+
+#### [IVSCC](https://ivscc.gsfc.nasa.gov/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+International VLBI Service 协调中心门户，介绍观测计划、台站网、数据产品与技术文件。与巴黎 IVSOPAR 分析中心互补，本站偏服务协调与总入口。EOP/TRF 与 GNSS 框架联合用户常用。
 
 ## 轨道根数
 
@@ -296,29 +312,6 @@ Rust 语言的 SGP4 传播实现，MIT 许可，便于嵌入式或高性能服�
 语言：Python · 许可：GPL-3.0 · 星标约：97 · 宿主：github
 
 ESA 先进概念团队（ACT）成员在 ESA GitHub 组织发布的可微分 SGP4（PyTorch），对应 Acciarini、Baydin、Izzo 发表在 Acta Astronautica（2025）的论文。GPL-3.0，pip/conda 可装：可对时间和 TLE 参数求梯度，支持批量传播、TLE/OMM 读写，并含学习 SGP4 修正的混合模型 mldsgp4。用于状态转移矩阵、协方差传播与基于梯度的定轨；精度仍属 SGP4 族，不是精密轨道。
-
-## VLBI/EOP
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [IVS-IVSOPAR](https://ivsopar.obspm.fr/) | 巴黎天文台 IVS 分析中心：大地测量 VLBI 产品门户 | data-portal | — | 🏷️ 官方 |
-| [IVSCC](https://ivscc.gsfc.nasa.gov/) | IVS 协调中心：国际 VLBI 服务主站 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [IVS-IVSOPAR](https://ivsopar.obspm.fr/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-Observatoire de Paris 托管的 IVS 大地测量 VLBI 分析服务门户，提供 VLBI 解算与地球定向相关产品入口。轨道/参考框架与 EOP 用户可与 IERS EOP、GNSS 框架联合使用。产品级别与引用见 IVS/巴黎天文台说明。
-
-#### [IVSCC](https://ivscc.gsfc.nasa.gov/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-International VLBI Service 协调中心门户，介绍观测计划、台站网、数据产品与技术文件。与巴黎 IVSOPAR 分析中心互补，本站偏服务协调与总入口。EOP/TRF 与 GNSS 框架联合用户常用。
 
 ## SLR
 
