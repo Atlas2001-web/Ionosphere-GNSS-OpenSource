@@ -1,6 +1,6 @@
 # gnss-rs · GNSS 星座 / SV 基础类型库操作手册
 
-目录：[`PROJECTS.json` → `nav-solutions-gnss`](../../PROJECTS.json) · 上游 <https://github.com/nav-solutions/gnss> · crates.io **`gnss-rs` 2.7.0**（2026-09-08 发布；tag **`v2.7.0`=`71df4af`**；main **`1eff5ef`**）· **MPL-2.0** · ★**11** · MSRV **1.85.0** · **无 [[bin]]**（纯库；lib 名 `gnss_rs`）· 本机 **rustc 1.98.1**（2026-09-26 00:32 EDT 真跑）
+目录：[`PROJECTS.json` → `nav-solutions-gnss`](../../PROJECTS.json) · 上游 <https://github.com/nav-solutions/gnss> · crates.io **`gnss-rs` 2.7.0**（2026-09-08 发布；tag **`v2.7.0`=`71df4af`**；main **`1eff5ef`**）· **MPL-2.0** · ★**11** · MSRV **1.85.0** · **无 [[bin]]**（纯库；lib 名 `gnss_rs`）· 本机 **rustc 1.98.1**（2026-09-26 00:32 EDT 真跑）· **质检复跑**（2026-09-26 00:44 EDT）：crates **2.7.0**（Cargo.lock 实锁）/tag `v2.7.0`→`71df4af`/main **`1eff5ef`**/★**11**/crates `gnss` **404** 均未变；§3.1–3.7 stdout 逐行对齐（含默认 feature `S23→SBAS`、`SV::from_str("")` panic @`sv/mod.rs:199:60`）
 
 > 岗位：nav-solutions 生态的**最底层共享类型**：`Constellation`（星座枚举）+ `SV`（卫星 = 星座 + PRN）+ 可选 SBAS 库 / DOMES / COSPAR。冲突时：**上游 README / docs.rs / 本机 `cargo doc -p gnss-rs` > 本文**。  
 > 上层消费者：[rinex](./rinex.md)（0.22.0 依赖 `gnss-rs ^2.6`）· [gnss-rtk](./gnss-rtk.md)（0.8.0 → `^2.4`）· [sp3](./sp3.md)（1.4.1 → `^2.4`）· [cggtts](./cggtts.md)（4.4.0 → `^2.4`）· [rnx2cggtts](./rnx2cggtts.md) 间接。[binex](./binex.md) 0.5.2 的 `Cargo.toml` **未见** `gnss-rs` 依赖。
@@ -20,7 +20,7 @@
 - **没有** 载波/信号/频点/波长：2.7.0 源码**无** `Carrier`/`Signal`/频率 API → 频点在 [rinex](./rinex.md)（`rinex::carrier`）或 [gnss-rtk](./gnss-rtk.md)（`gnss_rtk::prelude::Carrier`）
 - **不是** 文件读写（RINEX/SP3/BINEX/CGGTTS）→ [rinex](./rinex.md) / [sp3](./sp3.md) / [binex](./binex.md) / [cggtts](./cggtts.md)
 - **不是** 定位/钟差/TEC 解算 → [gnss-rtk](./gnss-rtk.md) / [rtklib](./rtklib.md)；TEC → [gnss-tec](./gnss-tec.md) / [ionex-rs](./ionex-rs.md)
-- **不是** 时间尺转换：`timescale()` 只返回 hifitime 的 `TimeScale` 标签；换算用 `hifitime`（本车道下一篇）
+- **不是** 时间尺转换：`timescale()` 只返回 hifitime 的 `TimeScale` 标签；换算用 [hifitime](./hifitime.md)
 - **不是** 广播电文编解码 → [gnss-protos](./gnss-protos.md)
 
 一句话：`gnss-rs` = **"G01 是谁、属于哪个星座/时间尺"**；一行观测值都不碰。
@@ -215,7 +215,7 @@ gnss-rs（G01/EGNOS/GPST 标签）
   → rinex / sp3 / cggtts / binex：文件里的 SV、星座字段
   → gnss-rtk：解算候选 SV、Carrier 频点（频点在 gnss-rtk/rinex）
   → rnx2cggtts：RINEX→CGGTTS 共视
-  → 时间尺换算：hifitime
+  → 时间尺换算：[hifitime](./hifitime.md)
   → TEC/电离层：本库不参与（gnss-tec / ionex-rs / georinex）
 ```
 
@@ -248,6 +248,6 @@ gnss-rs（G01/EGNOS/GPST 标签）
 | SPP/PPP/RTK 解算 | [gnss-rtk](./gnss-rtk.md) / [rtklib](./rtklib.md) |
 | RINEX→CGGTTS | [rnx2cggtts](./rnx2cggtts.md) |
 | LNAV 帧编解码 | [gnss-protos](./gnss-protos.md) |
-| GPST/GST/BDT/UTC 换算 | `hifitime`（本目录待写） |
+| GPST/GST/BDT/UTC 换算 | [hifitime](./hifitime.md) |
 
 相关：上游 README · docs.rs `gnss-rs` · [rinex](./rinex.md) · [gnss-rtk](./gnss-rtk.md) · [sp3](./sp3.md) · [cggtts](./cggtts.md) · [data-access](../data-access.md)

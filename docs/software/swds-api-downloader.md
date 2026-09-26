@@ -1,6 +1,6 @@
 # swds-api-downloader · INPE/EMBRACE Space Weather Data Share API 下载样例操作手册
 
-目录：[`PROJECTS.json` → `swds-api-downloader`](../../PROJECTS.json) · 上游 <https://github.com/embrace-inpe/swds-api-downloader> · 许可 **MIT** · tip **`f4a4f40`**（2019-04-02）· ★**4** · README 徽章 **1.0.3** · **无 PyPI** · 纯标准库（`urllib`/`getopt`），`requirements.txt` 只有 `coverage==4.5.2`（跑测试用）· 本机验证（2026-09-26 00:31–00:35 EDT，Python **3.13.5**）：`-h` / 缺 `-p` / 长旗标 bug 均复现；真实下载 → **`SwdsError: The variable host is not a valid URL`**（exit **1**）；根因 = 硬编码 host 已 **302→HTTPS**、证书链缺中间证书，`-k` 绕过后 `/api/auth/login/` 与 `/api/files/` 均 **404** → **API 已下线，脚本事实失效**；替代：公开目录 **<https://embracedata.inpe.br/>**（证书正常，`sjc23apr.17m` 与 `INPE2660.26I` 实拉成功）
+目录：[`PROJECTS.json` → `swds-api-downloader`](../../PROJECTS.json) · 上游 <https://github.com/embrace-inpe/swds-api-downloader> · 许可 **MIT** · tip **`f4a4f40`**（2019-04-02）· ★**4** · README 徽章 **1.0.3** · **无 PyPI** · 纯标准库（`urllib`/`getopt`），`requirements.txt` 只有 `coverage==4.5.2`（跑测试用）· 本机验证（2026-09-26 00:31–00:35 EDT，Python **3.13.5**）：`-h` / 缺 `-p` / 长旗标 bug 均复现；真实下载 → **`SwdsError: The variable host is not a valid URL`**（exit **1**）；根因 = 硬编码 host 已 **302→HTTPS**、证书链缺中间证书，`-k` 绕过后 `/api/auth/login/` 与 `/api/files/` 均 **404** → **API 已下线，脚本事实失效**；替代：公开目录 **<https://embracedata.inpe.br/>**（证书正常，`sjc23apr.17m` 与 `INPE2660.26I` 实拉成功）· **质检复跑**（2026-09-26 00:42–00:43 EDT）：tip `f4a4f40` 未变；exit **1/3/2/1**、`helpers.py:101` 漏逗号、`login`/`files` **404**、`Verify return code: 21`、unittest **16** 跑 **3** errors、`sjc23apr.17m` **66747** B/**1045** 行/止于 17:20、`INPE2660.26I` **1264319** B/144 图——全部复现；修 2 处：门户 200 需 `-k`、`error.log` 实为建空文件
 
 > 岗位：给 EMBRACE/INPE（巴西空间天气计划）账号用户写的 **API 批下样例**——按 application/station/resolution 等整数 ID 查文件表、带 Bearer token 下载。冲突时：**上游 README / INPE 公告 > 本文**。
 
@@ -112,7 +112,7 @@ exit=1
 ```
 
 - 构造函数先 `urlopen(host)` 探活，失败就报这句——**先于**凭据检查，所以空账号也是这条错
-- 没有联网请求 `/api/*`，**没有文件落盘**，`error.log` 也不写（`SwdsError` 走 `sys.exit`）
+- 没有联网请求 `/api/*`，**没有数据文件落盘**；`log_config()` 仍会在 cwd 建一个 **0 B** 的 `error.log`（质检复测），里面无内容（`SwdsError` 走 `sys.exit`）
 
 ### 3.5 定位根因
 
@@ -133,7 +133,7 @@ python3 -c "import urllib.request as u; u.urlopen('$H', timeout=15)"
 | `-k` GET `/api/auth/login/`、`/api/files/` | **404** |
 | `-k` POST login | **404** |
 | Python `urlopen` | `URLError … CERTIFICATE_VERIFY_FAILED` → 被包装成上面的 `SwdsError` |
-| `https://www2.inpe.br/climaespacial/portal/` | **200**（门户本身在，SWDS 路径没了）|
+| `https://www2.inpe.br/climaespacial/portal/` | 校验证书 → `000`（同一 `unable to get local issuer certificate`）；`-k` → **200**（门户本身在，SWDS 路径没了；质检 2026-09-26 00:43 EDT 复测）|
 
 结论：**两层墙**——TLS 链不全（可绕）+ API 路径 404（绕不过）。改 `host` 或关证书校验都拿不到文件，**不要**为此在代码里关 SSL 校验。
 

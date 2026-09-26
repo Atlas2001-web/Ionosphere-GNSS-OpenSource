@@ -1,6 +1,6 @@
 # hifitime · 高精度时间尺库（GPST/GST/BDT/UTC/TAI/TT）操作手册
 
-目录：nav-solutions 生态底层依赖（未单列 `PROJECTS.json`）· 上游 <https://github.com/nyx-space/hifitime> · crates.io **`hifitime` 4.3.1**（2026-08-07 发布；tag **`4.3.1`=`67ff2fc`**；master **`0d32fb8`**，2026-09-09）· **MPL-2.0** · ★**547** · `rust-version` 未声明 · **纯库**（另有 PyPI 同名绑定 **4.3.1**）· 本机 **rustc 1.98.1** / Python **3.13.5**（2026-09-26 00:36 EDT 真跑）
+目录：nav-solutions 生态底层依赖（未单列 `PROJECTS.json`）· 上游 <https://github.com/nyx-space/hifitime> · crates.io **`hifitime` 4.3.1**（2026-08-07 发布；tag **`4.3.1`=`67ff2fc`**；master **`0d32fb8`**，2026-09-09）· **MPL-2.0** · ★**547** · `rust-version` 未声明 · **纯库**（另有 PyPI 同名绑定 **4.3.1**）· 本机 **rustc 1.98.1** / Python **3.13.5**（2026-09-26 00:36 EDT 真跑）· **质检复跑**（2026-09-26 00:45 EDT；Cargo.lock 实锁 **4.3.1**、pip **4.3.1**）：§3.1/3.2/3.3/3.5 关键行逐字对齐——GPST−UTC 18 s、周 **2295**/tow **86418** s、UTC 历元取周 **(6470, 0)**、`"… GPS"`→`00:00:12 UTC`、UTC 跨闰秒相减 **1 s**/TAI **2 s**、`00:00:35 TAI→23:59:58 UTC` 往返 `eq=false`、空串 `Err` 不 panic；Python 绑定同值
 
 > 岗位：给 GNSS/航天代码一个**纳秒级、带时间尺标签**的 `Epoch` + `Duration`，并在 UTC/TAI/TT/GPST/GST/BDT/QZSST（及 ET/TDB/TCG/TCB）间换算，内置闰秒表。冲突时：**docs.rs / 上游 README / 本机 `cargo doc -p hifitime` > 本文**。
 > 下游：[gnss-rs](./gnss-rs.md) 2.7.0（`^4.2`）· [rinex](./rinex.md) 0.22.0（`^4.2`）· [binex](./binex.md) 0.5.2（`^4.2`）· [sp3](./sp3.md) 1.4.1（`^4.1`）· [gnss-rtk](./gnss-rtk.md) 0.8.0（`^4.1`）· [cggtts](./cggtts.md) 4.4.0（`^4.1`）· [rnx2cggtts](./rnx2cggtts.md) 间接。以上均取自本机 registry 的 `Cargo.toml`。
