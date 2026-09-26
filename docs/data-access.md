@@ -19,7 +19,7 @@
 | 欧洲站元数据 / 程序化 | [EPOS GNSS](https://gnss-epos.eu/) · [GLASS API](https://gnssdata-epos.oca.eu/GlassFramework/) · [M3G](https://gnss-metadata.eu/landing/m3g) | 视节点 |
 | 实时 RTCM / SSR | `products.igs-ip.net:2101` · [igs-ip.net](https://www.igs-ip.net/)（NTRIP；后者偶发超时） · [注册](https://register.rtcm-ntrip.org/cgi-bin/registration.cgi) | 挂载点账号 |
 | 掩星 RO | [CDAAC](https://cdaac-www.cosmic.ucar.edu/) · [data.cosmic](https://data.cosmic.ucar.edu/gnss-ro/) · [ROM SAF](https://rom-saf.eumetsat.int/)（[决策表](#电离层与地磁门户决策表)）· [awsgnssroutils](https://github.com/gnss-ro/aws-opendata) | 开放 / ROM SAF 产品库须注册（AWS 镜像开放） |
-| 地磁 / 空间天气 | [Kyoto WDC](https://wdc.kugi.kyoto-u.ac.jp/) · [INTERMAGNET](https://intermagnet.org/) · [SuperMAG](https://supermag.jhuapl.edu/) · [GFZ Kp](https://kp.gfz.de/en/) · [SWPC](https://www.spaceweather.gov/) · 台站分钟 / 秒值：USGS · BGS · NRCan · THEMIS GMAG · MACCS · TGO → [决策表](#电离层与地磁门户决策表) | 开放 / 注册 |
+| 地磁 / 空间天气 | [Kyoto WDC](https://wdc.kugi.kyoto-u.ac.jp/) · [INTERMAGNET](https://intermagnet.org/) · [SuperMAG](https://supermag.jhuapl.edu/) · [GFZ Kp](https://kp.gfz.de/en/) · [SWPC](https://www.spaceweather.gov/) · [OMNI/CDAWeb HAPI](https://cdaweb.gsfc.nasa.gov/hapi) · 台站分钟 / 秒值：USGS · BGS · NRCan · THEMIS GMAG · MACCS · TGO → [决策表](#电离层与地磁门户决策表) | 开放 / 注册 |
 | 区域 TEC 现报 | [eSWua TEC](http://www.eswua.ingv.it/ewphp/landing.php?doi=tec) · [IONORING](http://ionos.ingv.it/ionoring/ionoring.htm) | 开放（CC BY） |
 | 闪烁 ISMR | [`ismr_downloader`](https://github.com/GEGE-UNESP/ismr_downloader)（主）· [Query Tool](https://ismrquerytool.fct.unesp.br/)（辅，常超时） | 网页注册 |
 | 测高仪 | [GIRO / DIDBase](https://giro.uml.edu/didbase/) · [RAL / UKSSDC](https://www.ukssdc.ac.uk/ionosondes/) | 网页注册 |
@@ -280,17 +280,18 @@ PY
 
 **我要什么**：地磁 Kp（或相关指数）与空间天气产品，给 GNSS/电离层事件对齐。
 
-**去哪**：[GFZ Kp](https://kp.gfz.de/en/) · [SWPC](https://www.spaceweather.gov/) · 备份指数 [Kyoto WDC](https://wdc.kugi.kyoto-u.ac.jp/)。
+**去哪**：[GFZ Kp](https://kp.gfz.de/en/data)（[E15](#dp-e15)）· [SWPC JSON](https://services.swpc.noaa.gov/)（[E16](#dp-e16)）· [Kyoto WDC](https://wdc.kugi.kyoto-u.ac.jp/) Dst / AE（[E17](#dp-e17)）· [OMNI via CDAWeb HAPI](https://cdaweb.gsfc.nasa.gov/hapi)（[E18](#dp-e18)）。完整手册：[space-weather-indices](software/space-weather-indices.md)；Python 一行加载：[pyspedas](software/pyspedas.md)。
 
 **怎么下**：
 
 ```bash
-# GFZ Kp JSON（开放；分清确定值 / 预报）
-curl -s "https://kp.gfz.de/app/json/?start=2023-02-18T00:00:00Z&end=2023-02-19T00:00:00Z&index=Kp"
-# SWPC：https://www.spaceweather.gov/ → Products（K 指数、GloTEC 等）点选下载或 JSON
+# GFZ Kp JSON（开放；status 字段 def / pre，加 &status=def 只要定值）
+curl -sL "https://kp.gfz.de/app/json/?start=2024-05-10T00:00:00Z&end=2024-05-12T21:00:00Z&index=Kp"
+# SWPC 实时 3 h Kp（只保留 7 天）
+curl -s "https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json"
 ```
 
-**账号/配额坑**：多开放；`kp.gfz-potsdam.de` 会跳到 `kp.gfz.de`；`swpc.noaa.gov` 多跳到 `spaceweather.gov`，`spaceweather.noaa.gov` 仍不可靠；勿把 GFZ Kp 与 SWPC K 指数混用不标注；批量礼貌访问。
+**账号/配额坑**：都开放；`kp.gfz-potsdam.de` 会 301 到 `kp.gfz.de`；SWPC 旧的 `products/solar-wind/*.json` 已 404，改用 `json/rtsw/`；SWPC 的历史值去 NCEI 季度 DGD 文件拿；不要把 GFZ Kp 和 SWPC 估计 Kp 混用而不标注（2024-05-10–12 两者 MAE 0.24，最大差 1 级）；批量访问要礼貌。
 
 ### 开放产品镜像快径（CODE / GFZ / CAS）
 
@@ -421,7 +422,7 @@ curl -L -C - -O \
 
 ## 电离层与地磁门户决策表
 
-第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
+第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
 
 | 门户 | 账号 / 门槛 | 格式 | 时间分辨率 · 时延 | 实测 |
 |---|---|---|---|:---:|
@@ -439,6 +440,10 @@ curl -L -C - -O \
 | [THEMIS GMAG](https://themis.ssl.berkeley.edu/gmag/) | 开放 HTTPS；SPDF 同路径镜像 | CDF（L2） | FYKN 样例一天 86400 点 = 1 s；L2 时延约 9 天（09-26 时最新为 09-17） | ✅（[E12](#dp-e12)） |
 | [TGO 特罗姆瑟](https://flux.phys.uit.no/geomag.html) | 图和 K 指数公开；**ASCII 数字数据要密码**：挪威站向 TGO 要、丹麦 / 格陵兰站向 DTU Space 要（见 [Data access](https://flux.phys.uit.no/div/DataAccess.html)）；GFZ 站为 CC BY-NC 4.0 | ASCII / IAGA-2002 | 1 min、10 s；K 指数 3 h | K 指数 ✅；ASCII ✗（[E13](#dp-e13)） |
 | [RAL 测高仪 (UKSSDC)](https://www.ukssdc.ac.uk/ionosondes/) | **须注册**（免费、自动）：[userreg.pl](https://www.ukssdc.ac.uk/cgi-bin/wdcc1/userreg.pl)；之后用户名为注册邮箱。未登录时 `/dpsdata/` 与 `cost_database.pl` 均为 **401** | 原始 DPS 电离图文件（SAO-Explorer 读）+ URSI 标定参数 | 常规 1 h 一张电离图（可申请加密探测）；Chilton 序列承接 1931 年起的 Slough | ✗（[E14](#dp-e14)） |
+| [GFZ Kp / Hpo](https://kp.gfz.de/en/data) | 开放，无需账号；`meta.license` 为 CC BY 4.0；`kp.gfz-potsdam.de` 会 301 到 `kp.gfz.de` | JSON（`app/json/`）；另有 WDC ASCII 与 FTP | Kp / ap 3 h，Hp30 / ap30 30 min；Kp 当前档先标 `pre`，按月转 `def`（09-26 时 def 到 08-31）；Hp30 延迟 <1 h，无状态字段 | ✅（[E15](#dp-e15)） |
+| [NOAA SWPC](https://services.swpc.noaa.gov/) | 开放；JSON 只保留几天，历史值在 [NCEI](https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/annual_reports/daily_solar_indices_summaries/daily_geomagnetic_data/) 季度 DGD 文本 | JSON；DGD 文本 | 1 min 估计 Kp（约 6 h）、3 h Kp（7 天）、RTSW 1 min 太阳风（多颗卫星混在一个文件，用 `active` 区分）、F10.7 每天 3 次；全是估计值，不会升级 | ✅（[E16](#dp-e16)） |
+| [Kyoto WDC](https://wdc.kugi.kyoto-u.ac.jp/) | 开放 HTTP / HTTPS；没有 API，要解析 HTML `<pre>` 或 WDC 定宽文本 | Dst：HTML 定宽表；AE：400 字符 WDC 行（`aeYYMMDD.for.request`） | Dst 1 h、AE 1 min；状态写在路径里：`dst_final` ≤2020-12，`dst_provisional` 2021-01～2026-07，`dst_realtime` ≥2026-08（旧月份返回 403） | ✅（[E17](#dp-e17)） |
+| [OMNI / CDAWeb HAPI](https://cdaweb.gsfc.nasa.gov/hapi) | 开放；HAPI **2.0**（参数是 `id=`、`time.min/max`） | CSV / JSON / binary | `OMNI_HRO_1MIN` 1 min，已时移到弓激波鼻点，stopDate 2026-09-03（约滞后 3 周）；OMNI2 小时值用半点时间戳；数据状态写在参数描述里（如 Dst：Provisional 到 2026/212，Quick-look 为 2026/213–259） | ✅（[E18](#dp-e18)） |
 
 要登录才能拿数据的：EISCAT 门户（Madrigal 可绕行）、子午工程、ROM SAF 产品库（AWS 可绕行）、TGO ASCII、UKSSDC/RAL。要「申请」的：BGS 本站高分辨率（GIN 可绕行）。
 
@@ -581,6 +586,44 @@ curl -s -o /dev/null -w "%{http_code}\n" "https://www.ukssdc.ac.uk/dpsdata/"
 ```
 
 步骤：① 填 [userreg.pl](https://www.ukssdc.ac.uk/cgi-bin/wdcc1/userreg.pl)（姓名、邮箱、UK / 非 UK、用户类型，加一道人机验证；自动开通）→ ② 用注册邮箱作用户名登录 `/dpsdata/`（原始数字数据）或 [Prompt Ionospheric Database](https://www.ukssdc.ac.uk/prompt_database.html)（自动标定参数表 / 绘图 / POLAN / 下载 SAO-Explorer 原始文件）。本轮没有注册，没有验证文件。
+
+
+<a id="dp-e15"></a>**E15 GFZ Kp / ap / Hp30（JSON）**
+
+```bash
+curl -sL "https://kp.gfz.de/app/json/?start=2024-05-10T00:00:00Z&end=2024-05-12T21:00:00Z&index=Kp"
+# 实测：HTTP 200，913 B，24 个值（end 包含在内），最大 9.0，status 全为 "def"
+# index=Hp30 / ap30 / Hp60 / ap / Ap / SN / Fobs / Fadj 同样 200；Hp30 和 Fobs 没有 status 字段；拼错指数名会得到 HTML 500
+```
+
+<a id="dp-e16"></a>**E16 NOAA SWPC（JSON + NCEI 归档）**
+
+```bash
+curl -s "https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json"
+# 实测：200，58 行（2026-09-19 00 → 09-26 03 UT），字段 time_tag / Kp / a_running / station_count
+curl -s "https://services.swpc.noaa.gov/json/rtsw/rtsw_mag_1m.json"
+# 实测：200，1,519,952 B；source 为 SOLAR1（active=true）/ ACE / IMAP 混在一起
+curl -s "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/annual_reports/daily_solar_indices_summaries/daily_geomagnetic_data/2024Q2_DGD.txt"
+# 实测：200，10,710 B；最后 8 列是 Estimated Planetary K（2024-05-11：9.00 8.33 8.67 9.00 8.67 8.33 7.33 7.33）
+```
+
+<a id="dp-e17"></a>**E17 Kyoto WDC（Dst / AE）**
+
+```bash
+curl -s "https://wdc.kugi.kyoto-u.ac.jp/dst_provisional/202405/index.html"
+# 实测：200，5,080 B，标题 "Hourly Equatorial Dst Values (PROVISIONAL)"；最小值 -406（05-11 02–03 UT）；负数会粘连，要按列宽解析
+curl -s "https://wdc.kugi.kyoto-u.ac.jp/ae_provisional/202405/ae240511.for.request"
+# 实测：200，9,667 B；400 字符 WDC 行，第 35 列起是 60 个 I6 分钟值
+```
+
+<a id="dp-e18"></a>**E18 OMNI 1 min（CDAWeb HAPI）**
+
+```bash
+curl -s "https://cdaweb.gsfc.nasa.gov/hapi/info?id=OMNI_HRO_1MIN"
+# 实测：200，5,647 B；各参数都给出 fill（如 BZ_GSM 9999.99、SYM_H 99999）
+curl -s "https://cdaweb.gsfc.nasa.gov/hapi/data?id=OMNI_HRO_1MIN&time.min=2024-05-10T00:00:00Z&time.max=2024-05-13T00:00:00Z&parameters=Timeshift,BZ_GSM,flow_speed,AE_INDEX,SYM_H"
+# 实测：200，226,800 B，4,320 行；SYM-H 最小 -518（2024-05-11 02:14）；参数顺序与 info 不一致时，HTTP 仍是 200，但 body 为 status 1411
+```
 
 ---
 
