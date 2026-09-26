@@ -1,8 +1,8 @@
 # gnss-osi-download · 爱尔兰 Tailte/OSI Active GNSS RINEX 下载操作手册
 
-目录：[`PROJECTS.json` → `GNSS_OSI_download`](../../PROJECTS.json) · 上游 <https://github.com/jdesbonnet/GNSS_OSI_download> · 数据门户 <https://gnss.osi.ie> · 许可 **MIT** · tip **`0aeb83a`**（2024-11-25）· ★**1** · **无 PyPI** · 单文件 `osi_gnss_download.py` · 本机验证（2026-09-24 07:29 EDT）：`-h` 全旗标 OK；`--list-stations` / 下载 → **`requests.exceptions.ConnectionError`**（`NameResolutionError: Failed to resolve 'gnss.osi.ie'`）；**未落盘** `RINEX_*.zip` · **质检复跑**（2026-09-25 23:36 EDT）：tip **`0aeb83a`** 未变；requests **2.34.2**/bs4 **4.15.0**；Google DoH `gnss.osi.ie` → **Status 3 = NXDOMAIN（全球域名已撤，不是本机 DNS 墙）**；`tailte.ie` **200**；候选 `gnss.tailte.ie` 解析 **137.191.226.156** 但 HTTPS **TLS EOF**/HTTP 超时 → 脚本**事实失效**
+目录：[`PROJECTS.json` → `GNSS_OSI_download`](../../PROJECTS.json) · 上游 <https://github.com/jdesbonnet/GNSS_OSI_download> · 数据门户 <https://gnss.tailte.ie/download-rinex.php> · 许可 **MIT** · tip **`0aeb83a`**（2024-11-25）· ★**1** · **无 PyPI** · 单文件 `osi_gnss_download.py` · 本机验证（2026-09-24 07:29 EDT）：`-h` 全旗标 OK；`--list-stations` / 下载 → **`requests.exceptions.ConnectionError`**（`NameResolutionError: Failed to resolve 'gnss.osi.ie'`）；**未落盘** `RINEX_*.zip` · **质检复跑**（2026-09-25 23:36 EDT）：tip **`0aeb83a`** 未变；requests **2.34.2**/bs4 **4.15.0**；Google DoH `gnss.osi.ie` → **Status 3 = NXDOMAIN（全球域名已撤，不是本机 DNS 墙）**；`tailte.ie` **200**；候选 `gnss.tailte.ie` 解析 **137.191.226.156** 但 HTTPS **TLS EOF**/HTTP 超时 → 脚本**事实失效**
 
-> 岗位：从 **Tailte Éireann**（原 Ordnance Survey Ireland / OSI）Active GNSS 网网页表单拉 **近 30 日** RINEX ZIP。冲突时：**门户 T&C / 上游 README > 本文**。下载前须在 <https://gnss.osi.ie> 同意条款。上游自述 **2024-11-20** 可用。
+> 岗位：从 **Tailte Éireann**（原 Ordnance Survey Ireland / OSI）Active GNSS 网网页表单拉 **近 30 日** RINEX ZIP。冲突时：**门户 T&C / 上游 README > 本文**。下载前须在 <https://gnss.tailte.ie/download-rinex.php> 同意条款。上游自述 **2024-11-20** 可用。
 
 ## 1. 用途与边界
 
