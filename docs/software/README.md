@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **159 篇**操作手册（合计 **34884 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **162 篇**操作手册（合计 **35581 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -188,6 +188,8 @@
 | 157 | [gnss-correction-rtklib.md](./gnss-correction-rtklib.md) | Purinton dGPS/PPK 教程 + RTKLIB 批处理脚本（Leica `.m00`→teqc→`rnx2rtkp`→csv/shp） | 263 | **已短硬** · 2026-09-26 01:00–01:08 EDT；tip **`891cad8`**/GPL-3.0/★**24**（2021 停更）；Debian `rnx2rtkp` 2.4.3b34 + 仓内 conf：BP01 **1156**×Q2（作者 GUI **2590**）；`pos2-rejionno` 30→1000 后 **2590**×Q2 与仓内 `.pos` 同数（~140 km 基线，**0 fix**；sdu 中位 **0.0515** m）；NGS `brdc0570.19n` 替换结果逐位同；teqc `.m00`→MS01 **551**×Q2；IGN FTP **425**；脚本 Windows 写死+缺 GDAL 未整跑 |
 | 158 | [gnss-ins-sim.md](./gnss-ins-sim.md) | Aceinna GNSS/INS 轨迹 + IMU/GPS/磁/里程计数据仿真（Python；无卫星/电离层模型） | 278 | **已短硬** · 2026-09-26 01:00–01:08 EDT；tip **`966ff27`**/MIT/★**1493**；numpy **2.5.3** 可装；`demo_no_algo` 80.06 s/15 文件；自写 NED 例 95.01 s：IMU **9501** 行/GPS **96**（可见 76）；GPS 误差=白噪声（std 1.55/1.48/2.81 vs 设 1.5/1.5/3）；ARW 0.25→gyro std **0.0447**；不可见历元仍写值；`ref_frame=1` 表头称 NED 实为 ECEF+位移；`demo_ins_loose` 未完成、`demo_aceinna_ins` 仅 Windows DLL |
 | 159 | [rtcm-rs.md](./rtcm-rs.md) | Rust RTCM 3（10403.x 至 3.4）编解码纯库（no_std/按消息号 feature 裁剪；≠ NTRIP 客户端/RINEX 转换/RTK） | 239 | **已短硬** · 2026-09-26 01:05–01:08 EDT；crates **0.11.0**/tag **`d4d0269`**/master **`f08941b`**（空 MSM 修复未发）/MIT OR Apache-2.0/★**33**/MSRV **1.66.1**；rustc **1.98.1**；纯库；centipede `VALDM`（F9P/RTKBase）`str2str` 抓 35 s **53271 B/322 帧**：1004/1012/1077/1087/1097/1107/1127 各 **35**、1005×**4**/1006×**1**/1008×4/1033×4/1019×12/1020×17/1042×10/1046×24/1230×1；1005 ECEF **(4151313.6403, 380499.3117, 4811408.2782) m**；1077 首历元 **12 星/21 格**、G01 C1C PR **20276061.853 m**/CNR **49** dBHz；pyrtcm **1.2.0** 计数与 DF397/398/405/408 逐位一致；**0.11.0 把空 MSM 1107（NSat=0）解成 `Corrupt`×35**（tip 正常）；1005 编码往返 **25 B**/dz **9.3×10⁻¹⁰ m**；x=10¹² m **静默回绕**成 −5825462.272；CRC 坏帧静默丢；伪 `0xD3` 长度头使迭代器 `Incomplete` 停；默认 `test_gen` 拖入 rand；交叉 [pyrtcm](./pyrtcm.md)/[rtcm3torinex](./rtcm3torinex.md)/[ntrip-client](./ntrip-client.md)/[ntripclient](./ntripclient.md)/[rtcm-ntrip-software](./rtcm-ntrip-software.md)/[gnss-protos](./gnss-protos.md)/[binex](./binex.md)/[ubx2rinex](./ubx2rinex.md) |
+| 160 | [pyrtklib-rinex.md](./pyrtklib-rinex.md) | alainmuls/pyRTKLib：生成 conf 调外部 `rnx2rtkp` + pandas/matplotlib 出 UTM/CN0/PRres/DOP 图（≠ IPNL pyrtklib 绑定） | 230 | **已短硬** · 2026-09-26 01:07–01:10 EDT；tip **`4d9a89c`**/**无 LICENSE**/★**50**；`pyrtkproc.py` 原样 `sys.exit(6)`+`KeyError 'Tropo'`+str≥int 三补丁；Debian rnx2rtkp 2.4.3 Galileo E1 SPP **21359**×Q5；`pyrtkplot` 需 Py3.8+pandas 0.25+`weight='strong'`→`bold`，11 PNG；dUTM.N 均值 **1.251** m/dEllH **−1.797** m |
+| 161 | [learning-rtklib.md](./learning-rtklib.md) | libing64 RTKLIB 中文学习笔记 + 6 个 C++ 调用示例（**不含 RTKLIB 源码**；需自编 2.4.2 `librtklib.a`） | 227 | **已短硬** · 2026-09-26 01:06–01:09 EDT；tip **`e326a4b`**/**无 LICENSE**/★**163**；Takasu master `71db0ff` 2.4.2 p13；6 示例 exit 0；rnx2rtkp SPP **900**×Q5 / GSI RTK **115**×Q1，与 spp/rtk 示例首历元逐位一致；`sol_t sol;` 未初始化坑 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -282,6 +284,8 @@
 | Python 调 RTKLIB C 核心 | [pyrtklib.md](./pyrtklib.md) |
 | Python 调 RTKLIB demo5/EX 核心 | [pyrtklib-demo5.md](./pyrtklib-demo5.md) |
 | 读懂 RTKLIB PPP 流程（抽出的学习代码） | [ppp-rtklib.md](./ppp-rtklib.md) |
+| 入门读 RTKLIB 函数调用（中文笔记 + 最短 C++ 示例，2.4.2） | [learning-rtklib.md](./learning-rtklib.md) |
+| 批量调 rnx2rtkp 并出 UTM 偏移/CN0/残差/DOP 图（Septentrio 老脚本） | [pyrtklib-rinex.md](./pyrtklib-rinex.md) |
 | 纯 Python demo5-PPK（读算法/改实验） | [rtklib-py.md](./rtklib-py.md) |
 | 现代 PPP-RTK（CLAS/MADOCA/HAS/`mrtk`） | [mrtklib.md](./mrtklib.md) |
 | 低成本 u-blox RTK（explorer/EX） | [rtklib-explorer.md](./rtklib-explorer.md) |
@@ -392,6 +396,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
+最近新增（用法讲解）：**pyrtklib-rinex**+**learning-rtklib**（2026-09-26 01:06–01:10 EDT；pyRTKLib `4d9a89c`/无 LICENSE：tip `pyrtkproc.py` 在 `sys.exit(6)` 截断，3 处补丁后 Debian rnx2rtkp 2.4.3 Galileo E1 SPP 21359×Q5，`pyrtkplot` Py3.8/pandas 0.25 出 11 PNG；learning_rtklib `e326a4b`/无 LICENSE：只有笔记+6 示例、无 RTKLIB 源码，Takasu 2.4.2 p13 `librtklib.a` 编译全过，rnx2rtkp SPP 900×Q5/RTK 115×Q1 与示例逐位一致；2.4.3/EX 头文件编译失败）。
 最近新增（用法讲解）：**rtcm-rs**（2026-09-26 01:05–01:08 EDT；crates **0.11.0**/tag **`d4d0269`**/master **`f08941b`**（空 MSM 修复未发）/MIT OR Apache-2.0/★**33**/MSRV **1.66.1**；rustc **1.98.1**；纯库；centipede `VALDM`（F9P/RTKBase）`str2str` 抓 35 s **53271 B/322 帧**：1004/1012/1077/1087/1097/1107/1127 各 **35**、1005×**4**/1006×**1**/1008×4/1033×4/1019×12/1020×17/1042×10/1046×24/1230×1；1005 ECEF **(4151313.6403, 380499.3117, 4811408.2782) m**；1077 首历元 **12 星/21 格**、G01 C1C PR **20276061.853 m**/CNR **49** dBHz；pyrtcm **1.2.0** 计数与 DF397/398/405/408 逐位一致；**0.11.0 把空 MSM 1107（NSat=0）解成 `Corrupt`×35**（tip 正常）；1005 编码往返 **25 B**/dz **9.3×10⁻¹⁰ m**；x=10¹² m **静默回绕**成 −5825462.272；CRC 坏帧静默丢；伪 `0xD3` 长度头使迭代器 `Incomplete` 停；默认 `test_gen` 拖入 rand；下一优先 **`ublox`**（crates 0.10.0，ublox-rs）；`qc-traits` 降为候选）。
 最近新增（用法讲解）：**gnss-correction-rtklib**+**gnss-ins-sim**（2026-09-26 01:00–01:08 EDT；GCR `891cad8`/GPL-3.0：仓内 conf 在 Debian 2.4.3 只出 1156 历元，`pos2-rejionno=1000` 复现作者 2590×Q2、0 fix/~140 km；NGS brdc 替 IGN FTP(425)；gnss-ins-sim `966ff27`/MIT：自写 NED 例 IMU 9501/GPS 96，GPS 仅白噪声、无卫星/电离层模型，Linux 无可跑组合滤波 demo）。
 最近新增（用法讲解）：**sinex**（2026-09-26 00:58–01:05 EDT；crates **0.2.4**/vcs **`e47d514`**/main **`c236b9b`**/MPL-2.0/★**1**/无 MSRV 声明；rustc **1.98.1**；纯库；gnss-rs **2.7.0** 直编无需锁版；**只读 Bias-SINEX**（坐标 SNX/TRO→`UnknownSection`）；真实 CODE MGEX `com22370.bia`（BKG 镜像，6668 OSB）原样解析**失败**（section 行尾空格→`UnknownSection`；规范列宽 trim 后差 1 列→`split_at` panic；Latin-1 注释→UTF-8 panic），`--fix` 预处理后 97 星/139 站；G01 OSB C1C **−1.4477** ns、C1W/C2W 0 → C1C−C1W 与旧 `.dcb` P1−C1 **1.448** 反号吻合（G02/G19 同）；fixture DSB G01 C1W−C2W **−7.5594** ns；分秒被截成整点、sat_clk_ref 丢 GPS、坏行静默丢、空文件 Ok；CAS BSX 未取到（FTP 超时）；交叉 [gkit-bias](./gkit-bias.md)/[mcosb](./mcosb.md)/[gnssanalysis](./gnssanalysis.md)/[gnss-qc](./gnss-qc.md)/[hifitime](./hifitime.md)/[gnss-rs](./gnss-rs.md)，课 02/09/10）。
@@ -582,7 +587,7 @@ data-access
    ├─ ublox_driver (ROS1 ZED-F9P；gnss_comm/GVINS；无 ROS 门禁)
    ├─ glab-upc (教学 SPP/PPP；官方 UPC gLAB)
    ├─ ntripbrowser / cors-relay / ntripcaster-libev / ntrip-cpp / ntrip-go / caster / ntripclient / ntripserver / pygnssutils / ntripstreams / ntrip-client / bnc / bkg-ntripcaster (路径 C)
-   └─ cssrlib / claslib / b2blib / rtklib-b2b / rtppp-b2b / haslib / madocalib / laika / rtklib / rtklib-explorer / rtklib-py / pyrtklib / pyrtklib-demo5 / ppp-rtklib / gnss-correction-rtklib / mrtklib / great-pvt / great-pce / great-podflt / cube / clkcomb / groops / rapppid / ppp-wizard / gogps-matlab / gsilib / pride-pppar (路径 D)
+   └─ cssrlib / claslib / b2blib / rtklib-b2b / rtppp-b2b / haslib / madocalib / laika / rtklib / rtklib-explorer / rtklib-py / pyrtklib / pyrtklib-demo5 / pyrtklib-rinex / ppp-rtklib / learning-rtklib / gnss-correction-rtklib / mrtklib / great-pvt / great-pce / great-podflt / cube / clkcomb / groops / rapppid / ppp-wizard / gogps-matlab / gsilib / pride-pppar (路径 D)
 sh-gim：仅路径 E 边界，不串进 A/B 主链
 iono-scintillation：概念/仿真旁路，不替代实测 ROTI
 ```
@@ -597,7 +602,7 @@ iono-scintillation：概念/仿真旁路，不替代实测 ROTI
 | 03 / 10 / 18 | ionex · ionex-gim · ionex-rs · diffionmap · sh-gim(边界) · pyglow |
 | 04 | iri-fortran · iri-2026-package · iri-common-files · iri2016 · pyglow · pyiri · pyirtam · apexpy · aacgmv2 · msise00 · nequickg · galileo-nequick-g · nequick2-ictp · kamodo |
 | 05 / 13 / 21 | oasis-roti · ionomoni · iono-scintillation · geospacelab |
-| 06 / 20 | cssrlib · haslib · madocalib · laika · gnss_lib_py · pyrtklib · pyrtklib-demo5 · ppp-rtklib · mrtklib · rtklib-explorer · rtklib-b2b · android_rinex · gps-measurement-tools · pygpsclient · pynmeagps · pyubx2 · ubx2rinex · pyrtcm · pyspartn · pysbf2 · septentrio-gnss-driver · ublox-dgnss · ublox-driver · ntripstreams · ntrip-client · ntripclient · ntripserver · cors-relay · ntripcaster-libev · ntrip-cpp · ntrip-go · caster · glab-upc · rtklib · great-pvt · groops · rapppid · ppp-wizard · gogps-matlab · gsilib · rtppp-b2b · pride-pppar · ionomoni · gnss-sdr · pocketsdr · gps-sdr-sim · fgi-gsrx · gnssrefl · mpsim |
+| 06 / 20 | cssrlib · haslib · madocalib · laika · gnss_lib_py · pyrtklib · pyrtklib-demo5 · pyrtklib-rinex · ppp-rtklib · learning-rtklib · mrtklib · rtklib-explorer · rtklib-b2b · android_rinex · gps-measurement-tools · pygpsclient · pynmeagps · pyubx2 · ubx2rinex · pyrtcm · pyspartn · pysbf2 · septentrio-gnss-driver · ublox-dgnss · ublox-driver · ntripstreams · ntrip-client · ntripclient · ntripserver · cors-relay · ntripcaster-libev · ntrip-cpp · ntrip-go · caster · glab-upc · rtklib · great-pvt · groops · rapppid · ppp-wizard · gogps-matlab · gsilib · rtppp-b2b · pride-pppar · ionomoni · gnss-sdr · pocketsdr · gps-sdr-sim · fgi-gsrx · gnssrefl · mpsim |
 | 09 | pytecgg |
 
 ---
