@@ -1,9 +1,11 @@
 # tidd · GNSS sTEC 变化率 → GADF 图像 → CNN 判 TID（海啸/地震电离层扰动）操作手册
 
-目录：上游 <https://github.com/vc1492a/tidd>（JPL + 罗马大学 + UCLA；V. Constantinou、M. Ravanelli 等）· main tip **`cd15176`**（2024-06-27 11:52 EDT）· 无 tag、**无 PyPI**（`pypi.org/pypi/tidd` 返回 404）；README 徽章写 0.1.2，`setup.py` 写 0.1.1 · **Apache-2.0**（`license.txt`，Copyright 2020 Caltech；GitHub 因文件名识别为 NOASSERTION）· ★10 · Zenodo DOI 10.5281/zenodo.12571499 · 论文 IGARSS 2023，doi 10.1109/igarss52108.2023.10282501。
+目录：上游 <https://github.com/vc1492a/tidd>（JPL + 罗马大学 + UCLA；V. Constantinou、M. Ravanelli 等）· main tip **`cd15176`**（2024-06-27 11:52 EDT）· 5 个 tag（`0.0.1` `0.0.2` `0.1.0` `0.1.1` `0.1.2`；`0.1.2` 打在 `0012122`，2023-11-07 12:59 EST），GitHub Release 只有 `0.1.1` 和 `0.1.2`（后者发布于 2024-06-27 11:48 EDT），**两个 Release 都没有附件，也就没有模型权重**；仓内 `dist/` 只留着旧的 `src-0.0.x` / `tidd-0.1.0/0.1.1` 包 · **无 PyPI**（`pypi.org/pypi/tidd` 返回 404）；README 徽章写 0.1.2，`setup.py` 写 0.1.1 · **Apache-2.0**（`license.txt`，Copyright 2020 Caltech；GitHub 因文件名识别为 NOASSERTION）· ★10 · Zenodo DOI 10.5281/zenodo.12571499 · 论文 IGARSS 2023，doi 10.1109/igarss52108.2023.10282501。
 
 > 本文实测：2026-09-26 04:05–05:15 EDT，Debian 8 核、无 GPU，`uv` 建 **Python 3.11.16** venv（上游只声明支持 3.7/3.8）。数据为上游 S3 上的**真实** 2012 夏威夷 / 2015 智利 sTEC 变化率文件。
 > 冲突时：**本机源码 > 上游 README > 本文**。
+
+> **质检复跑通过（2026-09-26 05:55 EDT）**：已复跑的部分：重新克隆上游（tip `cd15176`）；CPU 版 torch 环境 `10 passed`；S3 `Content-Length: 19177325223`；用同样的 Range 截断流解出智利 259 天 264 个、夏威夷 302 天 1597 个文件；两份标签 JSON、测试文件 md5 `38ec4e35…` 一致。§4.1 的 ahup/G20 统计逐项一致，32 个文件生成 14109 张 jpg（6617/514 与 3185/304/3489），用时 84 s，占 551 MB，返回的路径同样不存在。pyts 默认 `method='summation'`、`packages=['']`（换目录后 `ModuleNotFoundError`）、`modeling.py` 第 101 行，这几条也都复核过。**时间戳 bug 已用真实数据复现**：aeda/G25 共 160 行，标签内 28 行，`2015-09-16T23:07:00` 减 60 后变成 `23:06:59.999999940`。即使把所有窗口都判为异常，tidd 的判分也只给出 tp=0 fn=1 fp=1；换成行位置后是 tp=1。`group_consecutive_values([])` 返回 `[[]]`，由此多记 1 个长度为 0 的 FP。§4.3 表中 12 条弧的 rows / label_rows、§5 的仰角区间与本次复跑一致。**环境受限**：没有重训 resnet18。全程 62 min，按限流要求没跑，所以 §4.2 的训练指标、§4.3 的 flagged / tp / fp 列、F1 0.217 以及智利结果图都依赖作者那次训练出的模型，本次无法复核，图片保持原样。已修正：上游其实有 5 个 tag 和 2 个无附件的 Release；两套数据的分隔符不同；4 个智利站并不是严格的字母序前 4；`validation_f1_score` 也被赋成了 precision；夏威夷 302 天的文件是完整的。
 
 ## 1. 它解决什么问题
 
@@ -27,7 +29,7 @@ python -m pytest -q
 # 10 passed, 1 warning in 15.95s
 ```
 
-实测版本：torch 2.14.0+cpu、fastai 2.8.12、pyts 0.13.0、numpy 1.26.4、pandas 2.0.3、accelerate 1.15.0。venv 约 1.6 GB，主要是 torch。`requirements.txt` 钉的 torch 1.7.0 / fastai 2.1.8 只有 3.7/3.8 的 wheel，这里没有用。另外 `hyperdash` 云服务已关停，`Experiment` 又在构造时就调用它，所以本文放了一个 8 行的**离线桩**（§4.2），只记录 `param/metric`。
+实测版本：torch 2.14.0+cpu、fastai 2.8.12、pyts 0.13.0、numpy 1.26.4、pandas 2.0.3、accelerate 1.15.0（质检复跑时同一条命令解析到的是 numpy 2.4.6、pandas 2.3.3，也是 `10 passed`，图像生成结果不变）。venv 约 1.6 GB，主要是 torch。`requirements.txt` 钉的 torch 1.7.0 / fastai 2.1.8 只有 3.7/3.8 的 wheel，这里没有用。另外 `hyperdash` 云服务已关停，`Experiment` 又在构造时就调用它，所以本文放了一个 8 行的**离线桩**（§4.2），只记录 `param/metric`。
 
 ## 3. 数据（上游 S3，**19.2 GB 单一 tar.gz**）
 
@@ -53,7 +55,7 @@ hawaii 302: G04 31400-33200 | G07 31160-32960 | G08 31900-33700 | G10 29900-3170
 chile  259: G12 83059-84600 | G24 83179-84469 | G25 83209-84889
 ```
 
-**每个文件 = 一个测站 × 一颗卫星 × 一天**，文件名为 `<站4字符><doy>0[.12o|_no_glo_new]_<Gxx>.txt`，制表符分隔，共 7 列。仓内测试文件 `tests/data/ahup3020.12o_G20.txt` 与 S3 里的同名文件 md5 相同（`38ec4e35…`）。
+**每个文件 = 一个测站 × 一颗卫星 × 一天**，文件名为 `<站4字符><doy>0[.12o|_no_glo_new]_<Gxx>.txt`，共 7 列。分隔符两套数据不一样：夏威夷用**双制表符**；智利表头是双制表符，数据行却是**单空格**，而且是 CRLF 行尾。`Data.read_data_from_file` 用 `sep="\t\t| "` 同时兼容这两种写法。仓内测试文件 `tests/data/ahup3020.12o_G20.txt` 与 S3 里的同名文件 md5 相同（`38ec4e35…`）。
 
 | 列（夏威夷表头） | 智利表头 | 含义 |
 | --- | --- | --- |
@@ -68,7 +70,7 @@ chile  259: G12 83059-84600 | G24 83179-84469 | G25 83209-84889
 
 ## 4. 端到端（本机真跑）
 
-子集的选取方式：训练用夏威夷 302 的 **ahup / kfap / mkea / uwev 4 个站 × 5 颗有标签卫星 = 20 个文件**；样本外验证按作者的设计用**智利 259**，取站名字母序前 4 个站 **aeda / antc / arjf / cern × 3 颗卫星 = 12 个文件**。目录照上游约定摆放：`data/{hawaii,chile}/<年>/<doy>/` 加上各自的 `tid_start_finish_times.json`。
+子集的选取方式：训练用夏威夷 302 的 **ahup / kfap / mkea / uwev 4 个站 × 5 颗有标签卫星 = 20 个文件**；样本外验证按作者的设计用**智利 259**，取 **aeda / antc / arjf / cern 4 个站 × 3 颗卫星 = 12 个文件**。这 4 个站都是不带 `_no_glo_new` 后缀的文件，但**并不是严格的字母序前 4 个**：按字母序，全部文件里 antc 后面是 apsa、arev，不带后缀的文件里 arjf 后面还有 bton。目录照上游约定摆放：`data/{hawaii,chile}/<年>/<doy>/` 加上各自的 `tid_start_finish_times.json`。
 
 ### 4.1 读一条弧 + 仓库自带的图像生成
 
@@ -147,7 +149,7 @@ elapsed 3732s
 **这组数字不能直接用**，原因有三：
 1. `training_precision` 和 `recall` **互换了**。fastai 的混淆矩阵是“行 = 真值，列 = 预测”，而 `metrics.confusion_matrix_scores` 用行和做 precision 的分母。所以真正的 precision 是 0.893，recall 是 0.714。
 2. 训练集内的验证集是 `valid_pct=0.2` **随机抽取**的滑窗。相邻窗口有 59/60 重叠，信息泄漏严重，0.97 的 accuracy 只比“全判 normal”的基线 6617/7131 = 0.928 高一些。
-3. 样本外的 **tp=0 是代码 bug**：`adjusted_ground_truth_sequence = [x - 60 for x in 时间戳]` 是在 `datetime64` 上减 60 **纳秒**（实测 `2015-09-16T23:07:00` → `23:06:59.999999940`），和整数位置索引永远没有交集。另外 `group_consecutive_values([])` 返回 `[[]]`，一个异常都没报的弧也会被记 1 个长度为 0 的 FP（上面 `fp_lengths` 里有两个 0）。`metrics["validation_recall"]` 也被错误赋值成了 precision。
+3. 样本外的 **tp=0 是代码 bug**：`adjusted_ground_truth_sequence = [x - 60 for x in 时间戳]` 是在 `datetime64` 上减 60 **纳秒**（实测 `2015-09-16T23:07:00` → `23:06:59.999999940`），和整数位置索引永远没有交集。另外 `group_consecutive_values([])` 返回 `[[]]`，一个异常都没报的弧也会被记 1 个长度为 0 的 FP（上面 `fp_lengths` 里有两个 0）。`metrics["validation_recall"]` 和 `metrics["validation_f1_score"]` 也都被错误地赋成了 precision（`modeling.py` 第 571、573 行）。
 
 ### 4.3 用 tidd 自己的判分函数重算（只修正索引）
 
@@ -208,7 +210,7 @@ TOTAL tp=5 fn=7 fp=29 precision=0.147 recall=0.417 f1=0.217
 ## 8. 诚实边界
 
 - **没有预训练模型**。本文从零训练了一个 resnet18（2 epoch，CPU，每个 epoch 约 12.5 min，全程 62 min），只用于演示流程。样本外 F1 0.217 是**这个小模型**的成绩，不代表论文结果。
-- 数据只取了 19.2 GB 中的一小部分：夏威夷 302 天 4 站 20 条弧，智利 259 天 4 站 12 条弧。夏威夷 302 天的 1597 个文件来自截断的流，**不保证是那一天的全部文件**。其余 14 天（没有标签，按设计全部作为 normal）没有使用。
+- 数据只取了 19.2 GB 中的一小部分：夏威夷 302 天 4 站 20 条弧，智利 259 天 4 站 12 条弧。夏威夷 302 天的 1597 个文件取自截断的流。质检复跑时用 `tar -tz` 列了同样前 2.5 GB 的目录：302 之后紧接着就是 304 的条目，所以 302 天的 1597 个文件是完整的。其余 14 天（没有标签，按设计全部作为 normal）没有使用。
 - `examples/` 用的是相对路径 `../data/...`，注释和 notebook 输出里还残留作者本机路径（`/home/vconstan/...`）。本文没有运行 notebook。`_out_of_sample` 里年份写死为 2012（非 chile）/ 2015。
 - 如果要从自己的 RINEX 得到输入，需要另外用 VARION 类工具算 dsTEC/dt，并整理成上述 7 列格式（[varion](./varion.md) 输出的是积分后的 dsTEC，与 tidd 要的变化率不同）。本文没有做这一步。
 - 许可：Apache-2.0。数据本身在 README 里没有单独的许可说明，来源测站网（夏威夷 / 智利 CORS）的致谢要求请自行确认。

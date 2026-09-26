@@ -5,6 +5,8 @@
 > 本文实测：2026-09-26 04:05–04:20 EDT，Debian，`uv` 建 **Python 3.11.16** venv。数据是 Zenodo [10.5281/zenodo.7005203](https://doi.org/10.5281/zenodo.7005203)（pyDARN 论文配套，CC-BY-4.0）里的**真实** SAS / PGR FITACF。
 > 冲突时：**本机源码 > 上游 README > 本文**。
 
+> **质检复跑通过（2026-09-26 05:30 EDT）**：已复跑：确认 w2naf-academia 现行仓库 tip `6effcd0`，旧仓库 `w2naf/DARNtids` 的 README 首行是 DEPRECATED（tip `ce39085`）；PyPI 上 0.1.0 / 0.2.0 两个版本；Zenodo zip 218324968 B，md5 `fbbe3be6…` 一致；3 个 FITACF 的覆盖范围逐项一致。钉版安装后解析出的版本与 §2 相同，`19 passed`（warning 数每次运行在 19–27 条之间浮动），venv 513 MB。SAS 与 PGR 单事件 MUSIC 都复跑了（各约 15 s）：26 个文件、18 张 png，`gate_limits` 分别为 [29, 43] / [24, 34]；`karr.txt` 分别检出 42 / 14 个信号，前几行逐字一致；HDF5 数据集、(57,16,15)、finite 0.114、0.2976 mHz 步长和 3 个频率格点也都一致。坑 1（不钉版装到 pydarn 4.3 + pydarnio 2.1 后报两条 AttributeError）、坑 4（平铺目录只打印 `No data for this time period.`）、坑 6（`boxcar_filter` 抛 TypeError）、源码第 801 / 1259 行以及仓内的 x86 ELF `fitexfilter` 也都复核过。未复跑：MongoDB 批处理（坑 5）和 pydarn 3.x 相关的坑 2、坑 3。正文无需修改。
+
 ## 1. 它解决什么问题
 
 - **MSTID / LSTID**：行进式电离层扰动（TID）按尺度分类。MSTID（中尺度）的水平波长约 50–500 km，周期 15–60 min，常见于中纬度冬季白天，多被认为由低层大气重力波驱动。LSTID（大尺度）的波长上千 km，周期 1–3 h，多与磁暴或极光带加热有关。尺度口径见课 [22](../tutorials/22-tid-traveling-disturbances.md) §4。DARNtids 只针对 **MSTID**。
