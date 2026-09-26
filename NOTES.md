@@ -409,3 +409,10 @@
 - 当前条目：**983**
 - 分类计数：{'ionosphere': 282, 'troposphere': 44, 'gnss-data': 133, 'gnss-positioning': 101, 'orbit-clock': 32, 'navigation-ins': 71, 'gnss-sdr': 76, 'mobile-apps': 29, 'tools-learning': 59, 'gnss-datasets': 156}
 - 详见 `research/routine_finds_20260924r.json`
+
+## 例行检索补录（2026-09-24s）
+
+- 新增 **15** 条（GAMIT/GLOBK、NASA GMAT、qzsl6tool、CSA AlouetteApp、NRL/HamSCI TID 工具、GTrop/TropDS/映射函数高程改正、anywhere-sdr 等）
+- 当前条目：**998**
+- 分类计数：{'ionosphere': 288, 'troposphere': 47, 'gnss-data': 135, 'gnss-positioning': 103, 'orbit-clock': 33, 'navigation-ins': 71, 'gnss-sdr': 77, 'mobile-apps': 29, 'tools-learning': 59, 'gnss-datasets': 156}
+- 详见 `research/routine_finds_20260924s.json`

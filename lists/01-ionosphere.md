@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> **282** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **288** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -111,6 +111,7 @@ yujieqing 仓库：为电离层层析准备几何/射线矩阵相关代码，可
 | [LongwaveModePropagator.jl](https://github.com/fgasdia/LongwaveModePropagator.jl) | LongwaveModePropagator.jl：VLF 长波模传播 Julia 模型 | Julia | 26 | 🏷️ 高校实验室 |
 | [hwm93](https://github.com/space-physics/hwm93) | hwm93：HWM93 水平风模型 Python/Matlab 接口 | Python | 23 | 🏷️ 高校实验室 |
 | [sami2py](https://github.com/sami2py/sami2py) | sami2py：NRL SAMI2 二维电离层模式的 Python 封装 | Python/Fortran | 21 | 🏷️ 高校实验室 |
+| [dvoacap-python](https://github.com/skyelaird/dvoacap-python) | VOACAP/DVOACAP 短波电离层传播预测引擎的 Python 移植版 | Python | 8 | 🏷️ 个人社区 |
 | [sami3_gitm](https://github.com/jdhuba/sami3_gitm) | sami3_gitm：Huba 公开 SAMI3/GITM 基础耦合代码 | Fortran | 7 | 🏷️ 官方 |
 | [transcar](https://github.com/space-physics/transcar) | transcar：一维沉降电离层 Fortran 模式 | Fortran | 7 | 🏷️ 高校实验室 |
 | [mat_gemini](https://github.com/gemini3d/mat_gemini) | mat_gemini：GEMINI 三维电离层模式 MATLAB 核心脚本 | MATLAB | 6 | 🏷️ 高校实验室 |
@@ -201,6 +202,13 @@ space-physics 对经典 NASA Horizontal Wind Model 93 的 Python/Matlab 封装�
 语言：Python/Fortran · 许可：BSD-3-Clause · 星标约：21 · 宿主：github
 
 sami2py 把海军实验室 SAMI2 二维电离层模式包成 Python：可设置经度、年积日等驱动并运行 Fortran 内核，再把输出归档、加载与绘图。相对完整 IRI/NeQuick 气候模型，它更强调沿磁力线的等离子体动力学。输入含经度、日期、可选中性大气缩放与自定义 ExB 漂移等；输出为模式场。局限：依赖 Fortran 编译器；二维近似不覆盖全球三维结构；仓库近年更新偏少。
+
+#### [dvoacap-python](https://github.com/skyelaird/dvoacap-python)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：8 · 宿主：github
+
+业余无线电社区将 VE3NEA 的 DVOACAP（Delphi 实现的 VOACAP 短波传播预测引擎）移植为 Python 的项目，MIT 许可。基于 CCIR/URSI 系数的电离层 F2/E 层参数计算最高可用频率、路径损耗与信噪比等，附带与原版对比的回归验证与 CI。虽面向 HF 通信而非 GNSS，但其电离层剖面建模思路可与 IRI、NeQuick 对照，也适合教学演示太阳活动对电离层的影响。README 给出新手安装脚本；数值精度以其验证报告为准，科研使用需自行复核。
 
 #### [sami3_gitm](https://github.com/jdhuba/sami3_gitm)  
 *🏷️ 官方*
@@ -569,7 +577,9 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 | [POLAN](https://github.com/space-physics/POLAN) | POLAN：Titheridge 虚高→真高反演（现代封装） | Fortran | 11 | 🏷️ 高校实验室 |
 | [COSMIC-IONPRF-Ne-TEC](https://github.com/HassanNooreldeen/COSMIC-IONPRF-NC-CDAAC-UCAR-Ne-TEC) | COSMIC-IONPRF-Ne-TEC：COSMIC CDAAC 掩星 Ne/TEC MATLAB 下载分析 | MATLAB | 9 | 🏷️ 高校实验室 |
 | [pysatModels](https://github.com/pysat/pysatModels) | pysatModels：pysat 模式分析与模式-数据对比 | Python | 9 | 🏷️ 高校实验室 |
+| [AlouetteApp](https://github.com/asc-csa/AlouetteApp) | 加拿大航天局 Alouette-I 顶部探测电离图筛选、下载与可视化 Dash 应用 | Python | 8 | 🏷️ 官方 |
 | [Septentrio-PyDataLink](https://github.com/septentrio-gnss/Septentrio-PyDataLink) | Septentrio-PyDataLink：接收机数据流可视化与互联 | Python | 8 | 🏷️ 官方 |
+| [hamsci_LSTID_detection](https://github.com/HamSCI/hamsci_LSTID_detection) | HamSCI 从业余无线电 spot 数据自动检测大尺度行进电离层扰动的代码 | Python | 7 | 🏷️ 高校实验室 |
 | [radionopy](https://github.com/UPennEoR/radionopy) | radionopy：大尺度电离层行为 Python/C 计算工具 | C | 7 | 🏷️ 高校实验室 |
 | [Raytrace-Model](https://github.com/kyruzic/Raytrace-Model) | 电离层中电波三维传播的 MATLAB 射线追踪 | MATLAB | 7 | 🏷️ 个人社区 |
 | [gcmprocpy](https://github.com/NCAR/gcmprocpy) | gcmprocpy：TIE-GCM / WACCM-X 输出后处理 Python 工具 | Python | 6 | 🏷️ 官方 |
@@ -578,12 +588,14 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 | [pynasonde](https://github.com/shibaji7/pynasonde) | pynasonde：精密电离层测高/探测 Python 应用 | Python | 5 | 🏷️ 高校实验室 |
 | [mitiono](https://github.com/sabrinastronomy/mitiono) | mitiono：由 GPS 接收机数据提取电离层与波束图 | Jupyter Notebook | 4 | 🏷️ 高校实验室 |
 | [MyIonosphere_Library](https://github.com/mguerra96/MyIonosphere_Library) | MyIonosphere_Library：相位 GFLC 与 IPP 的 MATLAB 函数库 | MATLAB | 4 | 🏷️ 个人社区 |
+| [psws-drf-tid-tools](https://github.com/N6RFM/psws-drf-tid-tools) | 基于 HamSCI Grape 数字 RF 记录估计 TID 传播速度与方向的 Python 流程 | Python | 4 | 🏷️ 个人社区 |
 | [SubionosphericVLFInversionAlgorithms.jl](https://github.com/fgasdia/SubionosphericVLFInversionAlgorithms.jl) | SubionosphericVLFInversionAlgorithms.jl：VLF 反演低电离层 Julia 算法 | Julia | 4 | 🏷️ 高校实验室 |
 | [pytiegcm](https://github.com/asher-pembroke/pytiegcm) | pytiegcm：TIE-GCM 输出的轻量 Python 读取器 | Python | 3 | 🏷️ 个人社区 |
 | [IonOccAnalysis](https://github.com/wonder2019WHU/IonOccAnalysis) | IonOccAnalysis：GNSS 电离层掩星数据分析（武大相关） | C++ | 2 | 🏷️ 高校实验室 |
 | [Ionosonde-Data-Downloader](https://github.com/bzossi/Ionosonde-Data-Downloader) | 自动拉取公共测高仪库数据的轻量脚本 | Python | 2 | 🏷️ 个人社区 |
 | [SbfMixer](https://github.com/septentrio-gnss/SbfMixer) | SbfMixer：Septentrio 接收机的 Node-RED 节点 | JavaScript | 2 | 🏷️ 官方 |
 | [HamSCI-ionosonde](https://github.com/HamSCI/hamsci_ionosonde) | HamSCI-ionosonde：低成本啁啾测高仪处理与验证 | Python | 1 | 🏷️ 高校实验室 |
+| [lstid_processing](https://github.com/USNavalResearchLaboratory/lstid_processing) | 美国海军研究实验室 C/NOFS IVM 与 SAMI3 大尺度 TID 分析工具包 | Python | 0 | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -685,12 +697,26 @@ CSA 开源项目，从 Alouette 与 ISIS 卫星历史扫描电离图图像中提
 
 在 pysat 框架下对接模式输出并做模式-观测对比，便于把经验/物理电离层模式纳入同一分析脚本。局限：需先熟悉 pysat；具体模式覆盖以文档为准。
 
+#### [AlouetteApp](https://github.com/asc-csa/AlouetteApp)  
+*🏷️ 官方*
+
+语言：Python · 许可：MIT · 星标约：8 · 宿主：github
+
+加拿大航天局（CSA）官方开源的 Plotly Dash 应用，MIT 许可，面向 1962 年发射的 Alouette-I 顶部探测仪历史电离图数字化成果：可按时间、地面站、坐标、频率等条件筛选电离图，导出提取特征 CSV 或原始图像，并在地图与折线图中概览所选数据。是少见的官方历史顶部电离层数据开放入口，适合做长期电离层气候或 IRI 顶部剖面对比。与已收录的 alouette_isis_extract 为同源项目（后者负责特征提取）。法英双语文档。
+
 #### [Septentrio-PyDataLink](https://github.com/septentrio-gnss/Septentrio-PyDataLink)  
 *🏷️ 官方*
 
 语言：Python · 许可：BSD-3-Clause · 星标约：8 · 宿主：github
 
 pyDataLink 用于可视化与连接接收机数据流，便于实验教学中快速查看观测与配置链路。输入为接收机/记录数据流；输出为可视化与转发接口。局限：偏工程联调，不直接给出 TEC/闪烁科学指标。
+
+#### [hamsci_LSTID_detection](https://github.com/HamSCI/hamsci_LSTID_detection)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：MIT · 星标约：7 · 宿主：github
+
+HamSCI（NASA SWO2R 团队，Frissell 等）开源的 LSTID 自动检测代码，MIT 许可并有 Zenodo DOI。输入为 CEDAR Madrigal 中 RBN、PSKReporter、WSPRNet 业余无线电 spot 的每日 HDF5，通过统计与频谱方法识别大尺度 TID 的出现与周期，附 Madrigal 下载脚本与依赖版本清单。提供了不同于 GNSS TEC 的 TID 独立观测途径，可与 Madrigal GNSS TEC、DARNtids 结果互证。运行环境要求 Python 3.11 与 Linux。
 
 #### [radionopy](https://github.com/UPennEoR/radionopy)  
 *🏷️ 高校实验室*
@@ -748,6 +774,13 @@ Kamodo-core 提供函数化科学数据访问的核心 API，CCMC 的 Kamodo rea
 
 计算相位几何自由组合（GFLC）与电离层穿刺点，适合教学推导 STEC 观测方程。输入为相位观测与站星几何；输出为 GFLC/IPP。局限：不是完整 TEC 定标与 DCB 解算套件。
 
+#### [psws-drf-tid-tools](https://github.com/N6RFM/psws-drf-tid-tools)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：4 · 宿主：github
+
+业余无线电爱好者开源的 Python 管线，MIT 许可，面向 HamSCI Grape 系列个人空间天气站的 Digital RF I/Q 记录：从多站多普勒变化估计行进电离层扰动的传播速度和方向，并附获取 Madrigal GNSS TEC 以作对比的脚本。README 明确说明平面波、单跳 F 层、中点垂直反射等简化假设，建议结合 Kp、AE 指数与 hamsci_LSTID_detection 结果判读。适合公民科学与 TID 教学，数值结论宜谨慎。近期仍在更新。
+
 #### [SubionosphericVLFInversionAlgorithms.jl](https://github.com/fgasdia/SubionosphericVLFInversionAlgorithms.jl)  
 *🏷️ 高校实验室*
 
@@ -789,6 +822,13 @@ C++ 工具面向 GNSS 电离层掩星数据处理与分析，适合理解 LEO—
 语言：Python · 许可：GPL-3.0 · 星标约：1 · 宿主：github
 
 配套 HamSCI 低成本 chirp 测高仪：SDR 发收、互相关测时延、估算虚高，并在日食等事件中与业务测高仪对比。输入为 SDR/GNU Radio 采集；输出时延与虚高序列。局限：依赖实验执照与硬件；频段 2–10 MHz，与 GNSS 频段不同。
+
+#### [lstid_processing](https://github.com/USNavalResearchLaboratory/lstid_processing)  
+*🏷️ 官方*
+
+语言：Python · 许可：MIT · 星标约：0 · 宿主：github
+
+美国海军研究实验室（NRL）官方开源的 Python 包，MIT 许可，已发布 PyPI 并有 ReadTheDocs 文档与 Zenodo DOI。用于在 C/NOFS 卫星 CINDI 离子速度计数据中识别中、大尺度行进电离层扰动（TID），并提供处理 SAMI3 电离层模式输出及下载案例模式数据的例程，服务于 Burrell 等 2026 年 JGR 论文的可复现性。作者说明不会频繁更新，更适合作为 TID 研究参考实现，可与 GNSS TEC 类 TID 检测工具对照。
 
 ## 测高仪自动缩放
 
@@ -978,6 +1018,7 @@ University of Warmia and Mazury（Olsztyn）承担 IGS 电离层图组合与验�
 |---|---|---|---:|---|
 | [SuperSID](https://github.com/sberl/supersid) | SuperSID：VLF 突发电离层扰动（SID）监测 | Python | 16 | 🏷️ 个人社区 |
 | [SbfParser](https://github.com/septentrio-gnss/SbfParser) | SbfParser：Septentrio SBF 流/文件官方解析器 | Cython | 12 | 🏷️ 官方 |
+| [saga-utils](https://github.com/perrysou/saga-utils) | 阿拉斯加闪烁极光 GPS 阵列（SAGA）数据处理与估计工具（MATLAB） | MATLAB | 10 | 🏷️ 高校实验室 |
 | [gnss-scintillation-simulator_2-param](https://github.com/cu-sense-lab/gnss-scintillation-simulator_2-param) | gnss-scintillation-simulator_2-param：CU 两参数闪烁仿真 | MATLAB | 6 | 🏷️ 高校实验室 |
 | [Ionospheric-TEC-ROTI-Interactives](https://github.com/Tesfay-Tesfu/Ionospheric-TEC-ROTI-Interactives) | Ionospheric-TEC-ROTI-Interactives：交互式 TEC/ROTI 计算 | Python | 3 | 🏷️ 高校实验室 |
 | [roti-gnss-ml](https://github.com/NeelayS/roti-gnss) | roti-gnss-ml：深度学习 GNSS ROTI 时序预报实验 | Python | 3 | 🏷️ 个人社区 |
@@ -1007,6 +1048,13 @@ SuperSID 用简易 VLF 接收监测突发电离层扰动（太阳耀斑等引起
 语言：Cython · 许可：BSD-3-Clause · 星标约：12 · 宿主：github
 
 官方生态 Python/Cython 解析器，把 SBF 流转成 JSON 结构，社区已扩展 ISMR（4086）等闪烁监测块，便于从 PolaRx 系列提取 S4、σφ 等。输入为 SBF 文件或流；输出为结构化观测/状态块。局限：侧重解码而非完整闪烁科学产品流水线；大文件需注意内存策略。
+
+#### [saga-utils](https://github.com/perrysou/saga-utils)  
+*🏷️ 高校实验室*
+
+语言：MATLAB · 许可：GPL-3.0 · 星标约：10 · 宿主：github
+
+面向 Scintillation Auroral GPS Array（SAGA，部署于阿拉斯加 Poker Flat 的多接收机阵列）的数据处理、分析与状态估计工具集，GPL-3.0 许可，MATLAB 实现，出自相关高校课题组研究生工作。可读取高采样率接收机数据，计算 S4、σφ 等闪烁指数，并利用阵列几何估计电离层不规则体漂移速度。适合高纬闪烁与接收机阵列研究者参考算法实现；仓库自 2018 年后未更新，说明文档很少，依赖原始数据格式需自行适配。
 
 #### [gnss-scintillation-simulator_2-param](https://github.com/cu-sense-lab/gnss-scintillation-simulator_2-param)  
 *🏷️ 高校实验室*

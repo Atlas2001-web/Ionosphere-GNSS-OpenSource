@@ -1,5 +1,5 @@
 # 轨道与钟差 / Orbit & Clock
-> **32** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **33** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。
 
@@ -155,6 +155,7 @@ C++ 实现三套偏差模式：DCB（码偏差与 VTEC 球谐联立）、UPD 与
 |---|---|---|---:|---|
 | [Orekit](https://github.com/CS-SI/Orekit) | Orekit：开源太空动力学与轨道传播基础库 | Java | 298 | 🏷️ 个人社区 |
 | [orbdetpy](https://github.com/ut-astria/orbdetpy) | orbdetpy：Python/Java 轨道确定开源工具 | Java | 129 | 🏷️ 高校实验室 |
+| [GMAT](https://github.com/nasa/GMAT) | NASA 通用任务分析工具 GMAT：开源轨道设计、传播与估计（含 GNSS/测距观测）平台 | C++ | 112 | 🏷️ 官方 |
 | [tudatpy](https://github.com/tudat-team/tudatpy) | tudatpy：TU Delft 天体动力学 Python 工具箱 | Python | 91 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -172,6 +173,13 @@ CS-SI 维护的底层太空动力学库，覆盖轨道传播、力模型、姿�
 语言：Java · 许可：GPL-3.0 · 星标约：129 · 宿主：github
 
 德州大学 ASTRIA 实验室的 Orbit Determination with Python，面向空间目标轨道确定与相关仿真。GPL-3.0；填补目录中小型 OD 工具缺口，与 tudatpy/Orekit 可对照。偏空间态势感知场景，GNSS 测地级 POD 请另选 Ginan、GROOPS 等专用处理链。
+
+#### [GMAT](https://github.com/nasa/GMAT)  
+*🏷️ 官方*
+
+语言：C++ · 许可：Apache-2.0 · 星标约：112 · 宿主：github
+
+NASA 戈达德主导的 General Mission Analysis Tool 的官方 GitHub 仓库，Apache-2.0 许可，C++ 实现并带脚本语言与 GUI。可做高精度轨道传播（多体引力、大气阻力、光压）、机动优化以及批处理/扩展卡尔曼滤波轨道确定，估计模块支持 GPS 伪距、DSN 测距测速等观测。对 GNSS 用户而言可用于低轨卫星星载 GNSS 定轨实验、可见性与覆盖分析。仓库根 README 较简，安装与构建说明在 application 目录；发行包另见 SourceForge。已用 gh api 核验在线。
 
 #### [tudatpy](https://github.com/tudat-team/tudatpy)  
 *🏷️ 高校实验室*

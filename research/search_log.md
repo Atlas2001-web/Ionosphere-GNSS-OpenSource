@@ -444,3 +444,10 @@
 - Avoided: get.igs.org→igs.org home; NGS CORS near geodesy.noaa.gov/CORS/data; ROMPOS/HEPOS/SKPOS/AFREF down; more SWPC product pages; saturated Soapy/PPP/pyrtklib/nav-solutions; celestial-nav thin; IGP Peru agency-weak; NLSC/NGII weak GNSS specificity
 - Merge safety: append-only; UPDATED=0; blanking vs HEAD=0
 
+## Routine pass 2026-09-24s
+
+- Catalog size before: **983**; after merge: **998** (+15)
+- Finds file: `research/routine_finds_20260924s.json`
+- Method: software-OSS angle — flagship geodetic/orbit suites missing (MIT GAMIT/GLOBK, NASA GMAT), QZSS L6/HAS decoding (qzsl6tool), TID/scintillation code (NRL lstid_processing, HamSCI LSTID, Grape TID tools, SAGA utils), CSA Alouette ionograms, troposphere models (GTrop, MF height correction, TropDS), RINEX conversion/SDR sim (trm2rinex-docker, anywhere-sdr), teaching DD toolbox (Qelaro), DVOACAP Python; `gh search`/`gh api` + `curl -sIL` (all 200); dedup vs PROJECTS.json and all `routine_finds_*.json`
+- Avoided: georinex/GFZRNX/RNXCMP/hatanaka/Orekit/gnsspy/laika/pyrtklib/gnssrefl/tec-suite/pytecgg already listed; IBGE RBMC + IGN RAMSAC already present; t-fors/BiScEF already listed; mazgch/hpg + GitHub GTrop-like repos without license kept only when academically notable; iono-lugre (0★, paper-only) and gannon-storm-rtk-analysis (new, 0★) deferred; topic:troposphere/ppp/rtk mostly AWS/VPN noise
+- Merge safety: append-only; UPDATED=0; blanking vs HEAD=0

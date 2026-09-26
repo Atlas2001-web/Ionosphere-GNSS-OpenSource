@@ -4,16 +4,16 @@
   "repo_description_en": "Curated index of open-source ionosphere / troposphere / GNSS / PNT software",
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
-  "generated": "2026-09-24",
-  "project_count": 983,
+  "generated": "2026-09-26",
+  "project_count": 998,
   "counts_by_category": {
-    "ionosphere": 282,
-    "troposphere": 44,
-    "gnss-data": 133,
-    "gnss-positioning": 101,
-    "orbit-clock": 32,
+    "ionosphere": 288,
+    "troposphere": 47,
+    "gnss-data": 135,
+    "gnss-positioning": 103,
+    "orbit-clock": 33,
     "navigation-ins": 71,
-    "gnss-sdr": 76,
+    "gnss-sdr": 77,
     "mobile-apps": 29,
     "tools-learning": 59,
     "gnss-datasets": 156
@@ -19451,12 +19451,314 @@
       "one_liner_zh": "ESA OPS-GN：导航支持办公室门户",
       "registration": "open",
       "registration_zh": "门户公开浏览；具体产品获取请遵守 ESA 条款。"
+    },
+    {
+      "name": "GAMIT/GLOBK",
+      "url": "http://geoweb.mit.edu/gg/",
+      "desc_zh": "MIT EAPS 维护的 GAMIT/GLOBK 高精度 GNSS 大地测量解算套件主页",
+      "analysis_zh": "MIT 地球大气与行星科学系长期维护的 GAMIT/GLOBK 套件，GAMIT 负责双差相位网解（轨道、站坐标、对流层参数），GLOBK 用卡尔曼滤波合并多期松弛解生成速度场与时间序列，是构造地壳形变研究的主力工具之一。主页集中了快速入门、GAMIT/GLOBK 参考手册、更新记录与依赖说明；源码需先提交许可申请后获取，非 SPDX 开源许可。与 Bernese、GipsyX 属同一档次的科研解算软件，适合与本目录 PPP 类开源工具对照。收录前已 HTTP 200 核验。",
+      "language": "Fortran/C",
+      "license": "scientific distribution (request)",
+      "category": "gnss-positioning",
+      "subcategory": "大地测量/GNSS",
+      "markers": [
+        "routine-2026-09-24s"
+      ],
+      "stars_approx": null,
+      "source": "routine-finds-20260924s",
+      "featured": false,
+      "user_relation": "none",
+      "host": "official_site",
+      "provenance": "academic_lab",
+      "one_liner_zh": "MIT EAPS 维护的 GAMIT/GLOBK 高精度 GNSS 大地测量解算套件主页",
+      "registration": "form_register",
+      "registration_zh": "源码与更新需通过主页 License Request 表单申请，学术用途为主，条款以上游为准。"
+    },
+    {
+      "name": "GMAT",
+      "url": "https://github.com/nasa/GMAT",
+      "desc_zh": "NASA 通用任务分析工具 GMAT：开源轨道设计、传播与估计（含 GNSS/测距观测）平台",
+      "analysis_zh": "NASA 戈达德主导的 General Mission Analysis Tool 的官方 GitHub 仓库，Apache-2.0 许可，C++ 实现并带脚本语言与 GUI。可做高精度轨道传播（多体引力、大气阻力、光压）、机动优化以及批处理/扩展卡尔曼滤波轨道确定，估计模块支持 GPS 伪距、DSN 测距测速等观测。对 GNSS 用户而言可用于低轨卫星星载 GNSS 定轨实验、可见性与覆盖分析。仓库根 README 较简，安装与构建说明在 application 目录；发行包另见 SourceForge。已用 gh api 核验在线。",
+      "language": "C++",
+      "license": "Apache-2.0",
+      "category": "orbit-clock",
+      "subcategory": "轨道确定/基础库",
+      "markers": [
+        "routine-2026-09-24s"
+      ],
+      "stars_approx": 112,
+      "source": "routine-finds-20260924s",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "official",
+      "one_liner_zh": "NASA 通用任务分析工具 GMAT：开源轨道设计、传播与估计（含 GNSS/测距观测）平台"
+    },
+    {
+      "name": "qzsl6tool",
+      "url": "https://github.com/yoronneko/qzsl6tool",
+      "desc_zh": "日本个人开发的 QZSS L6（CLAS/MADOCA-PPP）与 Galileo HAS 电文解析显示工具集",
+      "analysis_zh": "日本开发者维护的 QZS L6 Tool，BSD-2-Clause 许可，纯 Python 流式工具集：从接收机原始数据中抽取 L6/RTCM 帧，并按标准输入→标准输出方式逐条解码显示 CLAS、MADOCA-PPP 增强电文，后续扩展到 Galileo HAS 与多种接收机格式。设计上可与 netcat、RTKLIB str2str 管道串联，便于排查改正数内容与完整性。与本目录的 CLASLIB、MADOCALIB 形成“解码查看 + 定位解算”互补。中日文档并存，采用语义化版本，近期仍在更新。",
+      "language": "Python",
+      "license": "BSD-2-Clause",
+      "category": "gnss-data",
+      "subcategory": "RTCM/NTRIP",
+      "markers": [
+        "routine-2026-09-24s"
+      ],
+      "stars_approx": 35,
+      "source": "routine-finds-20260924s",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "日本个人开发的 QZSS L6（CLAS/MADOCA-PPP）与 Galileo HAS 电文解析显示工具集"
+    },
+    {
+      "name": "AlouetteApp",
+      "url": "https://github.com/asc-csa/AlouetteApp",
+      "desc_zh": "加拿大航天局 Alouette-I 顶部探测电离图筛选、下载与可视化 Dash 应用",
+      "analysis_zh": "加拿大航天局（CSA）官方开源的 Plotly Dash 应用，MIT 许可，面向 1962 年发射的 Alouette-I 顶部探测仪历史电离图数字化成果：可按时间、地面站、坐标、频率等条件筛选电离图，导出提取特征 CSV 或原始图像，并在地图与折线图中概览所选数据。是少见的官方历史顶部电离层数据开放入口，适合做长期电离层气候或 IRI 顶部剖面对比。与已收录的 alouette_isis_extract 为同源项目（后者负责特征提取）。法英双语文档。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "routine-2026-09-24s"
+      ],
+      "stars_approx": 8,
+      "source": "routine-finds-20260924s",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "official",
+      "one_liner_zh": "加拿大航天局 Alouette-I 顶部探测电离图筛选、下载与可视化 Dash 应用"
+    },
+    {
+      "name": "dvoacap-python",
+      "url": "https://github.com/skyelaird/dvoacap-python",
+      "desc_zh": "VOACAP/DVOACAP 短波电离层传播预测引擎的 Python 移植版",
+      "analysis_zh": "业余无线电社区将 VE3NEA 的 DVOACAP（Delphi 实现的 VOACAP 短波传播预测引擎）移植为 Python 的项目，MIT 许可。基于 CCIR/URSI 系数的电离层 F2/E 层参数计算最高可用频率、路径损耗与信噪比等，附带与原版对比的回归验证与 CI。虽面向 HF 通信而非 GNSS，但其电离层剖面建模思路可与 IRI、NeQuick 对照，也适合教学演示太阳活动对电离层的影响。README 给出新手安装脚本；数值精度以其验证报告为准，科研使用需自行复核。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "模型",
+      "markers": [
+        "routine-2026-09-24s"
+      ],
+      "stars_approx": 8,
+      "source": "routine-finds-20260924s",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "VOACAP/DVOACAP 短波电离层传播预测引擎的 Python 移植版"
+    },
+    {
+      "name": "Qelaro",
+      "url": "https://github.com/atoofihub/Qelaro",
+      "desc_zh": "面向教学与可复现的 Python GNSS 双差基线解算工具箱（CLI+GUI）",
+      "analysis_zh": "个人开发者发布的 Python GNSS/大地测量工具箱，MIT 许可并有 Zenodo DOI。首个版本聚焦基于 RINEX 观测、导航文件与 SP3 的双差基线最小二乘解算，提供命令行与图形界面，另含 Melbourne-Wübbena 周跳探测等独立小工具，并配有观测模型、差分策略与平差理论文档。代码透明、带测试 CI，适合课程作业或理解 RTK 原理，而非替代 RTKLIB 等成熟引擎。项目较新、星标不多，功能以文档声明为准。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "gnss-positioning",
+      "subcategory": "RTK",
+      "markers": [
+        "routine-2026-09-24s"
+      ],
+      "stars_approx": 10,
+      "source": "routine-finds-20260924s",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "面向教学与可复现的 Python GNSS 双差基线解算工具箱（CLI+GUI）"
+    },
+    {
+      "name": "trm2rinex-docker",
+      "url": "https://github.com/Matioupi/trm2rinex-docker",
+      "desc_zh": "用 Docker+Wine 在 Linux 上运行 Trimble convertToRinex 的构建脚本",
+      "analysis_zh": "社区维护的 Dockerfile 与说明，MIT 许可：把 Windows 专用的 Trimble convertToRinex（T00/T02 等原始格式转 RINEX 2/3）连同最小 Wine 环境封装为约 300MB 的镜像，便于在 Linux 服务器批量转换。出于版权原因作者不提供预构建镜像，构建时从 Trimble 官网拉取安装包，链接失效需自行替换。对使用 Trimble 接收机建 CORS 或做批处理的用户很实用，可与 teqc、GFZRNX 等下游工具衔接。最后更新于 2023 年，Wine 版本兼容性需自测。",
+      "language": "Dockerfile",
+      "license": "MIT",
+      "category": "gnss-data",
+      "subcategory": "RINEX转换",
+      "markers": [
+        "routine-2026-09-24s"
+      ],
+      "stars_approx": 11,
+      "source": "routine-finds-20260924s",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "用 Docker+Wine 在 Linux 上运行 Trimble convertToRinex 的构建脚本"
+    },
+    {
+      "name": "anywhere-sdr",
+      "url": "https://github.com/lll9p/anywhere-sdr",
+      "desc_zh": "Rust 编写的 GPS L1 C/A 基带信号仿真器，兼容 gps-sdr-sim 用法",
+      "analysis_zh": "受 gps-sdr-sim 启发、用 Rust 重写的软件定义 GPS 信号发生器，MIT 许可。读取 RINEX 导航星历与用户轨迹，生成 GPS L1 C/A 的 IQ 采样文件，可交由 HackRF 等 SDR 播放，用于接收机测试与教学；在保持命令行兼容的同时强调模块化与内存安全，带 CI 与发布版本。README 醒目提示法律风险：未经授权发射 GNSS 信号在多数地区违法，应在屏蔽环境或有线注入下使用。可与已收录的 gps-sdr-sim、multi-sdr-gps-sim 对比。",
+      "language": "Rust",
+      "license": "MIT",
+      "category": "gnss-sdr",
+      "subcategory": "信号仿真",
+      "markers": [
+        "routine-2026-09-24s"
+      ],
+      "stars_approx": 13,
+      "source": "routine-finds-20260924s",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "Rust 编写的 GPS L1 C/A 基带信号仿真器，兼容 gps-sdr-sim 用法"
+    },
+    {
+      "name": "GTrop",
+      "url": "https://github.com/sun1753814280/GTrop",
+      "desc_zh": "基于 1979–2017 再分析资料的全球对流层延迟与加权平均温度经验模型 GTrop（MATLAB）",
+      "analysis_zh": "论文“A global model for estimating tropospheric delay and weighted mean temperature developed with atmospheric reanalysis data from 1979 to 2017”配套代码仓库，MATLAB 实现，由学术作者公开。模型以长期再分析资料拟合天顶对流层延迟与加权平均温度 Tm 的时空变化，可在无实测气象参数时为 GNSS 定位和 PWV 反演提供先验值，定位上类似 GPT3 等经验模型的替代或对照。仓库说明较少且未声明许可，复用前应联系作者并引用原文。同作者另有区域版 CTrop。",
+      "language": "MATLAB",
+      "license": "unspecified",
+      "category": "troposphere",
+      "subcategory": "大气模型",
+      "markers": [
+        "routine-2026-09-24s"
+      ],
+      "stars_approx": 5,
+      "source": "routine-finds-20260924s",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "基于 1979–2017 再分析资料的全球对流层延迟与加权平均温度经验模型 GTrop（MATLAB）"
+    },
+    {
+      "name": "Mapping-Function-Height-Correction-Models",
+      "url": "https://github.com/Sardingfish/Mapping-Function-Height-Correction-Models",
+      "desc_zh": "对流层映射函数高程改正模型参数与 MATLAB 脚本（J Geod 2024 配套）",
+      "analysis_zh": "Ding 等 2024 年发表于 Journal of Geodesy 的映射函数垂直建模方法配套仓库，MIT 许可。VMF1/VMF3 等映射函数产品只在地表给出，飞机、无人机或高山测站需要高程改正；仓库提供最小模型参数集与 MATLAB 脚本，按用户高度恢复系数 a 并输出改正后的映射函数。适合 GNSS/VLBI 高精度处理中研究对流层映射误差的读者，与 TU Wien VMF 代码配合使用。平台标注为 Windows，数据量精简，便于复现论文结论。",
+      "language": "MATLAB",
+      "license": "MIT",
+      "category": "troposphere",
+      "subcategory": "VMF/GPT官方代码",
+      "markers": [
+        "routine-2026-09-24s"
+      ],
+      "stars_approx": 2,
+      "source": "routine-finds-20260924s",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "对流层映射函数高程改正模型参数与 MATLAB 脚本（J Geod 2024 配套）"
+    },
+    {
+      "name": "TropDS",
+      "url": "https://github.com/Sardingfish/TropDS",
+      "desc_zh": "物理约束 U-Net 深度学习对流层延迟格网降尺度框架 TropDS",
+      "analysis_zh": "与 Mapping-Function-Height-Correction-Models 同一作者团队的深度学习项目，BSD-3-Clause 许可，Python/PyTorch 实现。针对空间大地测量中粗分辨率 ZHD/ZWD 格网，采用带物理约束的 U-Net 将低分辨率延迟图恢复为高分辨率，以提升 GNSS、InSAR 对流层改正精度，并提供项目网页与示例动画。据仓库新闻 2026 年已被期刊接收。适合研究 AI 对流层建模或需要高分辨率延迟格网的用户；训练需 GPU 与再分析数据，模型泛化性应在本地区自行评估。",
+      "language": "Python",
+      "license": "BSD-3-Clause",
+      "category": "troposphere",
+      "subcategory": "大气延迟/InSAR",
+      "markers": [
+        "routine-2026-09-24s"
+      ],
+      "stars_approx": 1,
+      "source": "routine-finds-20260924s",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "物理约束 U-Net 深度学习对流层延迟格网降尺度框架 TropDS"
+    },
+    {
+      "name": "lstid_processing",
+      "url": "https://github.com/USNavalResearchLaboratory/lstid_processing",
+      "desc_zh": "美国海军研究实验室 C/NOFS IVM 与 SAMI3 大尺度 TID 分析工具包",
+      "analysis_zh": "美国海军研究实验室（NRL）官方开源的 Python 包，MIT 许可，已发布 PyPI 并有 ReadTheDocs 文档与 Zenodo DOI。用于在 C/NOFS 卫星 CINDI 离子速度计数据中识别中、大尺度行进电离层扰动（TID），并提供处理 SAMI3 电离层模式输出及下载案例模式数据的例程，服务于 Burrell 等 2026 年 JGR 论文的可复现性。作者说明不会频繁更新，更适合作为 TID 研究参考实现，可与 GNSS TEC 类 TID 检测工具对照。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "routine-2026-09-24s"
+      ],
+      "stars_approx": 0,
+      "source": "routine-finds-20260924s",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "official",
+      "one_liner_zh": "美国海军研究实验室 C/NOFS IVM 与 SAMI3 大尺度 TID 分析工具包"
+    },
+    {
+      "name": "hamsci_LSTID_detection",
+      "url": "https://github.com/HamSCI/hamsci_LSTID_detection",
+      "desc_zh": "HamSCI 从业余无线电 spot 数据自动检测大尺度行进电离层扰动的代码",
+      "analysis_zh": "HamSCI（NASA SWO2R 团队，Frissell 等）开源的 LSTID 自动检测代码，MIT 许可并有 Zenodo DOI。输入为 CEDAR Madrigal 中 RBN、PSKReporter、WSPRNet 业余无线电 spot 的每日 HDF5，通过统计与频谱方法识别大尺度 TID 的出现与周期，附 Madrigal 下载脚本与依赖版本清单。提供了不同于 GNSS TEC 的 TID 独立观测途径，可与 Madrigal GNSS TEC、DARNtids 结果互证。运行环境要求 Python 3.11 与 Linux。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "routine-2026-09-24s"
+      ],
+      "stars_approx": 7,
+      "source": "routine-finds-20260924s",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "HamSCI 从业余无线电 spot 数据自动检测大尺度行进电离层扰动的代码"
+    },
+    {
+      "name": "psws-drf-tid-tools",
+      "url": "https://github.com/N6RFM/psws-drf-tid-tools",
+      "desc_zh": "基于 HamSCI Grape 数字 RF 记录估计 TID 传播速度与方向的 Python 流程",
+      "analysis_zh": "业余无线电爱好者开源的 Python 管线，MIT 许可，面向 HamSCI Grape 系列个人空间天气站的 Digital RF I/Q 记录：从多站多普勒变化估计行进电离层扰动的传播速度和方向，并附获取 Madrigal GNSS TEC 以作对比的脚本。README 明确说明平面波、单跳 F 层、中点垂直反射等简化假设，建议结合 Kp、AE 指数与 hamsci_LSTID_detection 结果判读。适合公民科学与 TID 教学，数值结论宜谨慎。近期仍在更新。",
+      "language": "Python",
+      "license": "MIT",
+      "category": "ionosphere",
+      "subcategory": "工具",
+      "markers": [
+        "routine-2026-09-24s"
+      ],
+      "stars_approx": 4,
+      "source": "routine-finds-20260924s",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "personal_community",
+      "one_liner_zh": "基于 HamSCI Grape 数字 RF 记录估计 TID 传播速度与方向的 Python 流程"
+    },
+    {
+      "name": "saga-utils",
+      "url": "https://github.com/perrysou/saga-utils",
+      "desc_zh": "阿拉斯加闪烁极光 GPS 阵列（SAGA）数据处理与估计工具（MATLAB）",
+      "analysis_zh": "面向 Scintillation Auroral GPS Array（SAGA，部署于阿拉斯加 Poker Flat 的多接收机阵列）的数据处理、分析与状态估计工具集，GPL-3.0 许可，MATLAB 实现，出自相关高校课题组研究生工作。可读取高采样率接收机数据，计算 S4、σφ 等闪烁指数，并利用阵列几何估计电离层不规则体漂移速度。适合高纬闪烁与接收机阵列研究者参考算法实现；仓库自 2018 年后未更新，说明文档很少，依赖原始数据格式需自行适配。",
+      "language": "MATLAB",
+      "license": "GPL-3.0",
+      "category": "ionosphere",
+      "subcategory": "闪烁",
+      "markers": [
+        "routine-2026-09-24s"
+      ],
+      "stars_approx": 10,
+      "source": "routine-finds-20260924s",
+      "featured": false,
+      "user_relation": "none",
+      "host": "github",
+      "provenance": "academic_lab",
+      "one_liner_zh": "阿拉斯加闪烁极光 GPS 阵列（SAGA）数据处理与估计工具（MATLAB）"
     }
   ],
   "provenance_counts": {
-    "official": 324,
-    "academic_lab": 337,
-    "personal_community": 322
+    "official": 327,
+    "academic_lab": 343,
+    "personal_community": 328
   },
-  "updated": "2026-09-24"
+  "updated": "2026-09-26"
 }

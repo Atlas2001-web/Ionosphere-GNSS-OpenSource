@@ -1,5 +1,5 @@
 # 软件接收机与信号 / GNSS-SDR
-> **76** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **77** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。
 
@@ -300,6 +300,7 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 | [gnss-signal-simulator-rs](https://github.com/danusha2345/gnss-signal-simulator-rs) | gnss-signal-simulator-rs：Rust 多星座 GNSS 信号仿真 | Rust | 30 | 🏷️ 个人社区 |
 | [GPSGALSSS](https://github.com/domonforyou/GPS_GAL_SSS) | GPSGALSSS：GPS/Galileo 卫星信号模拟器 | C++ | 29 | 🏷️ 个人社区 |
 | [beidou-sdr-sim](https://github.com/yangfan852219770/beidou-sdr-sim) | beidou-sdr-sim：北斗 GEO（PRN1–5）信号仿真 | C | 27 | 🏷️ 个人社区 |
+| [anywhere-sdr](https://github.com/lll9p/anywhere-sdr) | Rust 编写的 GPS L1 C/A 基带信号仿真器，兼容 gps-sdr-sim 用法 | Rust | 13 | 🏷️ 个人社区 |
 | [esp2822NMEAsim](https://github.com/michalpelka/esp2822_NMEA_sim) | esp2822NMEAsim：廉价 MCU 模拟 PPS 与 NMEA | C++ | 7 | 🏷️ 个人社区 |
 | [Microsat-gps-sim](https://github.com/niklasknoell/Microsat-gps-sim) | Microsat-gps-sim：微纳卫星工程向 GNSS 仿真（Python） | Python | 4 | 🏷️ 个人社区 |
 | [gps-qzss-sdr-sim](https://github.com/iGNSS/gps-qzss-sdr-sim) | gps-qzss-sdr-sim：软件定义 GPS/QZSS 信号仿真器 | — | 1 | 🏷️ 个人社区 |
@@ -403,6 +404,13 @@ GPS 与 Galileo 卫星信号模拟相关实现，说明中提及与 RTKLIB 能�
 语言：C · 许可：— · 星标约：27 · 宿主：github
 
 生成北斗 GEO 卫星 PRN 1–5 的仿真信号，并可经 LimeSDR Mini 发射，方便接收机联调与课堂演示。适合实验室北斗信号源实验。仅覆盖部分 GEO，不是全星座 gps-sdr-sim 级工具；任何射频发射必须遵守当地无线电法规。LimeSuite 驱动与主机 USB 供电稳定性要先排查。
+
+#### [anywhere-sdr](https://github.com/lll9p/anywhere-sdr)  
+*🏷️ 个人社区*
+
+语言：Rust · 许可：MIT · 星标约：13 · 宿主：github
+
+受 gps-sdr-sim 启发、用 Rust 重写的软件定义 GPS 信号发生器，MIT 许可。读取 RINEX 导航星历与用户轨迹，生成 GPS L1 C/A 的 IQ 采样文件，可交由 HackRF 等 SDR 播放，用于接收机测试与教学；在保持命令行兼容的同时强调模块化与内存安全，带 CI 与发布版本。README 醒目提示法律风险：未经授权发射 GNSS 信号在多数地区违法，应在屏蔽环境或有线注入下使用。可与已收录的 gps-sdr-sim、multi-sdr-gps-sim 对比。
 
 #### [esp2822NMEAsim](https://github.com/michalpelka/esp2822_NMEA_sim)  
 *🏷️ 个人社区*

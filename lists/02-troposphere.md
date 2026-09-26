@@ -1,5 +1,5 @@
 # 对流层 / Troposphere
-> **44** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **47** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
@@ -281,6 +281,7 @@ GNSS 干涉反射测量（GNSS-IR）主流开源工具，用反射信号估水�
 | [ITU-Rpy](https://github.com/inigodelportillo/ITU-Rpy) | ITU-Rpy：ITU-R 大气衰减建议的 Python 库 | Python | 172 | 🏷️ 个人社区 |
 | [PyAPS](https://github.com/insarlab/PyAPS) | PyAPS：全球模式大气相位屏（APS） | Python | 86 | 🏷️ 高校实验室 |
 | [ICAMS](https://github.com/ymcmrs/ICAMS) | ICAMS：InSAR 对流层改正（全球大气模式） | Python | 44 | 🏷️ 高校实验室 |
+| [TropDS](https://github.com/Sardingfish/TropDS) | 物理约束 U-Net 深度学习对流层延迟格网降尺度框架 TropDS | Python | 1 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -304,6 +305,13 @@ GNSS 干涉反射测量（GNSS-IR）主流开源工具，用反射信号估水�
 语言：Python · 许可：— · 星标约：44 · 宿主：github
 
 用全球大气模式做 InSAR 对流层改正，并考虑空间随机特性。适合高级 InSAR 大气研究。与 GNSS 单站 ZTD 流程接口需自行桥接。
+
+#### [TropDS](https://github.com/Sardingfish/TropDS)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：BSD-3-Clause · 星标约：1 · 宿主：github
+
+与 Mapping-Function-Height-Correction-Models 同一作者团队的深度学习项目，BSD-3-Clause 许可，Python/PyTorch 实现。针对空间大地测量中粗分辨率 ZHD/ZWD 格网，采用带物理约束的 U-Net 将低分辨率延迟图恢复为高分辨率，以提升 GNSS、InSAR 对流层改正精度，并提供项目网页与示例动画。据仓库新闻 2026 年已被期刊接收。适合研究 AI 对流层建模或需要高分辨率延迟格网的用户；训练需 GPU 与再分析数据，模型泛化性应在本地区自行评估。
 
 ## GNSS-IR硬件
 
@@ -369,10 +377,18 @@ Python 包生成斜路径干/湿延迟（STD/SWD）以及基于 GPT/VMF 的模�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [Mapping-Function-Height-Correction-Models](https://github.com/Sardingfish/Mapping-Function-Height-Correction-Models) | 对流层映射函数高程改正模型参数与 MATLAB 脚本（J Geod 2024 配套） | MATLAB | 2 | 🏷️ 高校实验室 |
 | [TU-Wien-VMF-GPT-codes](https://vmf.geo.tuwien.ac.at/codes) | TU Wien 官方 VMF1/VMF3/GPT/GMF 源码与格网目录 | Fortran/MATLAB/C++ | — | 🏷️ 官方 核心 |
 | [VMF-TUWien-Home](https://vmf.geo.tuwien.ac.at/) | VMF-TUWien-Home：TU Wien VMF/GPT 对流层产品与代码门户 | Fortran/MATLAB | — | 🏷️ 官方 |
 
 ### 详细说明
+
+#### [Mapping-Function-Height-Correction-Models](https://github.com/Sardingfish/Mapping-Function-Height-Correction-Models)  
+*🏷️ 高校实验室*
+
+语言：MATLAB · 许可：MIT · 星标约：2 · 宿主：github
+
+Ding 等 2024 年发表于 Journal of Geodesy 的映射函数垂直建模方法配套仓库，MIT 许可。VMF1/VMF3 等映射函数产品只在地表给出，飞机、无人机或高山测站需要高程改正；仓库提供最小模型参数集与 MATLAB 脚本，按用户高度恢复系数 a 并输出改正后的映射函数。适合 GNSS/VLBI 高精度处理中研究对流层映射误差的读者，与 TU Wien VMF 代码配合使用。平台标注为 Windows，数据量精简，便于复现论文结论。
 
 #### [TU-Wien-VMF-GPT-codes](https://vmf.geo.tuwien.ac.at/codes)  
 *🏷️ 官方 核心*
@@ -410,6 +426,7 @@ UNB 系列中性大气经验模型，无实测气象时给天顶延迟粗值。�
 | [lowtran](https://github.com/space-physics/lowtran) | lowtran：LOWTRAN7 大气消光模型的 Python 封装 | Python | 118 | 🏷️ 高校实验室 |
 | [msise00](https://github.com/space-physics/msise00) | NRLMSISE-00 的 Python/Matlab 封装 | Python | 63 | 🏷️ 高校实验室 |
 | [hwm14](https://github.com/gemini3d/hwm14) | hwm14：NRL 水平风场模型开源 CMake 构建 | Fortran | 7 | 🏷️ 高校实验室 |
+| [GTrop](https://github.com/sun1753814280/GTrop) | 基于 1979–2017 再分析资料的全球对流层延迟与加权平均温度经验模型 GTrop（MATLAB） | MATLAB | 5 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -433,6 +450,13 @@ space-physics 维护的 LOWTRAN7 现代封装，用 f2py/CMake 在 Python 中直
 语言：Fortran · 许可：Apache-2.0 · 星标约：7 · 宿主：github
 
 gemini3d 维护的 NRL Horizontal Wind Model 2014 可构建库，用 CMake 生成 libhwm14，供上层大气/电离层耦合与轨迹仿真调用。Apache-2.0。是中性风经验模型而非 GNSS 处理软件；旧 HWM93 包装仓已归档，新集成优先此仓。
+
+#### [GTrop](https://github.com/sun1753814280/GTrop)  
+*🏷️ 高校实验室*
+
+语言：MATLAB · 许可：unspecified · 星标约：5 · 宿主：github
+
+论文“A global model for estimating tropospheric delay and weighted mean temperature developed with atmospheric reanalysis data from 1979 to 2017”配套代码仓库，MATLAB 实现，由学术作者公开。模型以长期再分析资料拟合天顶对流层延迟与加权平均温度 Tm 的时空变化，可在无实测气象参数时为 GNSS 定位和 PWV 反演提供先验值，定位上类似 GPT3 等经验模型的替代或对照。仓库说明较少且未声明许可，复用前应联系作者并引用原文。同作者另有区域版 CTrop。
 
 ## 对流层产品
 

@@ -1,5 +1,5 @@
 # 精密定位 / Precise Positioning
-> **101** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **103** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
@@ -297,6 +297,7 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 | [groops](https://github.com/groops-devs/groops) | GROOPS：重力场与 GNSS 处理（TU Graz） | C++ | 244 | 🏷️ 高校实验室 ★ 核心 |
 | [GARPOS](https://github.com/s-watanabe-jhod/garpos) | GARPOS：日本海保 GNSS-声学海底定位开源解算器 | Python | 25 | 🏷️ 官方 |
 | [gnatss](https://github.com/seafloor-geodesy/gnatss) | gnatss：海底 GNSS-A 换能器测量社区软件 | Python | 17 | 🏷️ 个人社区 |
+| [GAMIT/GLOBK](http://geoweb.mit.edu/gg/) | MIT EAPS 维护的 GAMIT/GLOBK 高精度 GNSS 大地测量解算套件主页 | Fortran/C | — | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -320,6 +321,13 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 语言：Python · 许可：BSD-3-Clause · 星标约：17 · 宿主：github
 
 海床大地测量社区维护的 GNSS-Acoustic（GNSS-A）软件：海面 GNSS 与水声测距联合约束海底换能器/点位，用于海底形变与板块边界监测。面向海洋大地测量课题组。不是陆地 RTK/PPP；依赖船舶、声学与时间同步链路，作业与数据成本远高于陆基站网。社区仓库，版本接口以上游发布说明为准。
+
+#### [GAMIT/GLOBK](http://geoweb.mit.edu/gg/)  
+*🏷️ 高校实验室*
+
+语言：Fortran/C · 许可：scientific distribution (request) · 星标约：— · 宿主：official_site
+
+MIT 地球大气与行星科学系长期维护的 GAMIT/GLOBK 套件，GAMIT 负责双差相位网解（轨道、站坐标、对流层参数），GLOBK 用卡尔曼滤波合并多期松弛解生成速度场与时间序列，是构造地壳形变研究的主力工具之一。主页集中了快速入门、GAMIT/GLOBK 参考手册、更新记录与依赖说明；源码需先提交许可申请后获取，非 SPDX 开源许可。与 Bernese、GipsyX 属同一档次的科研解算软件，适合与本目录 PPP 类开源工具对照。收录前已 HTTP 200 核验。
 
 ## SPP/RTK/PPP
 
@@ -476,6 +484,7 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 | [OpenRTK](https://github.com/AndreasArendt/OpenRTK) | OpenRTK：轻量开源精密 GNSS/RTK | C++ | 23 | 🏷️ 个人社区 |
 | [HPRTK](https://github.com/yxw027/HPRTK) | HPRTK：高精度实时定位 C++ 工程参考 | C++ | 17 | 🏷️ 高校实验室 |
 | [RTK](https://github.com/GYH-WHU/RTK) | RTK：GPS/BDS 双系统浮点/固定 RTK 教学实现 | C++ | 11 | 🏷️ 高校实验室 |
+| [Qelaro](https://github.com/atoofihub/Qelaro) | 面向教学与可复现的 Python GNSS 双差基线解算工具箱（CLI+GUI） | Python | 10 | 🏷️ 个人社区 |
 | [GNSSRTK](https://github.com/SupakunZ/GNSS_RTK) | GNSSRTK：AGV 路径规划与车载显示的 GNSS-RTK 程序 | Python | 3 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -514,6 +523,13 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 语言：C++ · 许可：— · 星标约：11 · 宿主：github
 
 实现 GPS/BDS 双系统相对定位，覆盖单点、RTK 浮点解到固定解的基本流程，代码面向教学。适合课堂复现双差观测与模糊度固定。基线长度适应性、周跳探测与多路径抑制相对简化；与 RTKLIB、GraphGNSSLib 对照可读差异，不宜直接当作生产级 RTK 引擎。
+
+#### [Qelaro](https://github.com/atoofihub/Qelaro)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：10 · 宿主：github
+
+个人开发者发布的 Python GNSS/大地测量工具箱，MIT 许可并有 Zenodo DOI。首个版本聚焦基于 RINEX 观测、导航文件与 SP3 的双差基线最小二乘解算，提供命令行与图形界面，另含 Melbourne-Wübbena 周跳探测等独立小工具，并配有观测模型、差分策略与平差理论文档。代码透明、带测试 CI，适合课程作业或理解 RTK 原理，而非替代 RTKLIB 等成熟引擎。项目较新、星标不多，功能以文档声明为准。
 
 #### [GNSSRTK](https://github.com/SupakunZ/GNSS_RTK)  
 *🏷️ 个人社区*

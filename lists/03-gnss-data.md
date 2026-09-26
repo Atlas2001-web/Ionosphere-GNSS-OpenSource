@@ -1,5 +1,5 @@
 # GNSS 数据与格式 / GNSS Data I/O
-> **133** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **135** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
@@ -22,6 +22,7 @@ RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品�
 | [baidu-ntripcaster](https://github.com/baidu/ntripcaster) | baidu/ntripcaster：百度开源 NTRIP 播发端 | C | 46 | 🏷️ 个人社区 |
 | [millipede-caster](https://github.com/pbeyssac/millipede-caster) | 高性能开源 NTRIP/RTK Caster（C） | C | 43 | 🏷️ 个人社区 |
 | [nmea-msgs](https://github.com/ros-drivers/nmea_msgs) | nmea_msgs：ROS 用 NMEA 消息接口（ros-drivers） | CMake | 38 | 🏷️ 官方 |
+| [qzsl6tool](https://github.com/yoronneko/qzsl6tool) | 日本个人开发的 QZSS L6（CLAS/MADOCA-PPP）与 Galileo HAS 电文解析显示工具集 | Python | 35 | 🏷️ 个人社区 |
 | [ntripbrowser](https://github.com/emlid/ntripbrowser) | CLI 查询 NTRIP caster 源表与挂载点 | Python | 32 | 🏷️ 个人社区 |
 | [rtcm-rs](https://github.com/martinhakansson/rtcm-rs) | rtcm-rs：RTCM v3 编解码 Rust crate | Rust | 32 | 🏷️ 个人社区 |
 | [asv-gnss](https://github.com/asv-soft/asv-gnss) | asv-gnss：.NET 下 RTCM/NMEA 与接收机控制库 | C# | 29 | 🏷️ 个人社区 |
@@ -152,6 +153,13 @@ Millipede 是面向 RTK/CORS 场景的开源 NTRIP caster（C，BSD-3-Clause）�
 语言：CMake · 许可：— · 星标约：38 · 宿主：github
 
 ros-drivers 组织维护的 nmea_msgs，定义与 NMEA 相关的 ROS 消息，方便驱动、导航与录包节点交换 GNSS 语句。适合机器人接入 GNSS 接收机。只提供消息契约，不含语句解析与 PVT；解析需另接驱动或 nmea_navsat_driver 一类包。
+
+#### [qzsl6tool](https://github.com/yoronneko/qzsl6tool)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：BSD-2-Clause · 星标约：35 · 宿主：github
+
+日本开发者维护的 QZS L6 Tool，BSD-2-Clause 许可，纯 Python 流式工具集：从接收机原始数据中抽取 L6/RTCM 帧，并按标准输入→标准输出方式逐条解码显示 CLAS、MADOCA-PPP 增强电文，后续扩展到 Galileo HAS 与多种接收机格式。设计上可与 netcat、RTKLIB str2str 管道串联，便于排查改正数内容与完整性。与本目录的 CLASLIB、MADOCALIB 形成“解码查看 + 定位解算”互补。中日文档并存，采用语义化版本，近期仍在更新。
 
 #### [ntripbrowser](https://github.com/emlid/ntripbrowser)  
 *🏷️ 个人社区*
@@ -1072,6 +1080,7 @@ gpsd 社区官网，提供安装文档、兼容硬件列表与发布信息。源
 | [rtcm3torinex](https://software.rtcm-ntrip.org/wiki/rtcm3torinex) | BKG rtcm3torinex：RTCM3 流转 RINEX 的官方小工具 | C | 65 | 🏷️ 官方 |
 | [prx](https://github.com/jtec/prx) | prx：RINEX 3.05 观测→CSV 小工具 | Python | 23 | 🏷️ 个人社区 |
 | [ubx2rinex](https://github.com/nav-solutions/ubx2rinex) | ubx2rinex：Rust 实现 UBX 到 RINEX 转换/采集 | Rust | 12 | 🏷️ 个人社区 |
+| [trm2rinex-docker](https://github.com/Matioupi/trm2rinex-docker) | 用 Docker+Wine 在 Linux 上运行 Trimble convertToRinex 的构建脚本 | Dockerfile | 11 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -1095,6 +1104,13 @@ RTCM-Ntrip 项目提供的 RTCM 3 到 RINEX 转换工具，便于把实时流转
 语言：Rust · 许可：MPL-2.0 · 星标约：12 · 宿主：github
 
 Rust 实现的 u-blox UBX 原始观测反序列化与 RINEX 采集工具，方便把低成本板卡数据送进经典后处理软件。适合外场脚本化采集与自动化。与 android_rinex、georinex 互补；天线高、观测码映射与时钟处理要按接收机配置核对，转换后建议跑质检工具。
+
+#### [trm2rinex-docker](https://github.com/Matioupi/trm2rinex-docker)  
+*🏷️ 个人社区*
+
+语言：Dockerfile · 许可：MIT · 星标约：11 · 宿主：github
+
+社区维护的 Dockerfile 与说明，MIT 许可：把 Windows 专用的 Trimble convertToRinex（T00/T02 等原始格式转 RINEX 2/3）连同最小 Wine 环境封装为约 300MB 的镜像，便于在 Linux 服务器批量转换。出于版权原因作者不提供预构建镜像，构建时从 Trimble 官网拉取安装包，链接失效需自行替换。对使用 Trimble 接收机建 CORS 或做批处理的用户很实用，可与 teqc、GFZRNX 等下游工具衔接。最后更新于 2023 年，Wine 版本兼容性需自测。
 
 ## 掩星/CDAAC解析
 
