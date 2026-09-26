@@ -1,6 +1,6 @@
 # OASIS（pyOASIS）· ROTI / ΔTEC / SIDX 操作手册
 
-目录：[`PROJECTS.json` → `OASIS`](../../PROJECTS.json) · 上游 <https://github.com/giorgiopicanco/OASIS> · PyPI **`pyOASIS`** · **CC BY-NC 4.0**（商业先读 LICENSE）· 本机验证 **pyOASIS 1.0.3** + 仓内样例 `BOAV` DOY 049/2023（SP3→RNX3→ROTI/ΔTEC 真跑）
+目录：[`PROJECTS.json` → `OASIS`](../../PROJECTS.json) · 上游 <https://github.com/giorgiopicanco/OASIS> · PyPI **`pyOASIS`** · **CC BY-NC 4.0**（商业先读 LICENSE）· 本机验证 **pyOASIS 1.0.3** + 仓内样例 `BOAV` DOY 049/2023（SP3→RNX3→ROTI/ΔTEC 真跑）· **质检复跑**（2026-09-26 00:31–00:45 EDT；Py **3.13.5**/numpy **2.5.3**）：**PyPI 1.0.3 ≠ GitHub tip `e5994f6`（2025-11-04）**——两棵代码树都自称 1.0.3；PyPI 版要**显式调 `RNXScreening`** 才出 RNX2/RNX3；tip 版在 pandas **3.0.6** 下 RNXclean 崩、在 pandas **2.3.3** 下 SIDX 崩——详见 §3.0
 
 > 岗位：RINEX OBS + **同日** MGEX SP3 → 电离层扰动指数。主产物 **ROTI、ΔTEC、SIDX**。不是硬件 S4/σφ，不是校准绝对 TEC，不是 GIM。入口以仓库 `main.py` 与包 API `pyOASIS.SP3intp` / `RNXclean` / `RNXlevelling` / `ROTIcalc` / `DTECcalc` / `SIDXcalc` 为准。
 
@@ -16,7 +16,7 @@
 | --- | --- |
 | ROTI | Rate of TEC Index（短窗 ROT 标准差） |
 | ΔTEC | 长短窗 leveled GF 之差（**非**绝对 TEC） |
-| SIDX | Sudden Ionospheric Disturbance Index |
+| SIDX | Sudden Ionospheric Disturbance Index（上游 README：1 min 窗 \|ROT\| 均值，mTECU/s；源码 docstring 误作 Slant） |
 | GF leveling | 相位几何无关组合按弧段对齐到码 |
 | IPP | 穿刺点（需 SP3） |
 
@@ -45,9 +45,22 @@ ls INPUT/
 | 可 import、`main.py` 秒退 | 不在仓库根 / 无 INPUT | `cd OASIS`；`ls INPUT/` |
 | 许可疑虑 | CC BY-NC | 商业先读 LICENSE |
 | `pd.to_numeric(..., errors='ignore')` 炸 | **pandas 3** 已删 `errors='ignore'` | 临时改 `errors='coerce'`，或钉 `pandas<3` |
+| `RNXlevelling` → `IndexError: list index out of range`，目录只有 **53× .RNX1** | **PyPI 1.0.3** 的 `RNXclean` **不调** screening（tip 才内联） | 在 `RNXclean` 后加 `pyOASIS.RNXScreening(sta_out)` |
+| tip 版 `RNXclean` → `ValueError: invalid error value specified`（打印 `Triggering RNXScreening` 后） | pandas 3 删了 `to_numeric(errors='ignore')`（`RNX_CLEAN.py:1255`） | 钉 `pandas<3` 或改 `'coerce'` |
 | leveling 在插值步无声退出 | 旧代码 `index.values.astype("datetime64[s]").astype("int64")` 与新 numpy/pandas 不兼容 | 升级上游；或插值改 `Series.interpolate(method="time")` |
 
 ## 3. 端到端：样例站日 → 指数文件
+
+### 3.0 两条可用路径（质检真跑，挑一条）
+
+| 路径 | 环境 | 步骤 | 结果 |
+| --- | --- | --- | --- |
+| **A（推荐）** PyPI `pyOASIS==1.0.3` | pandas **3.0.6** | SP3intp → RNXclean → **RNXScreening** → RNXlevelling → ROTI/DTEC/SIDX | **全通**；53×RNX1/2/3 + **6** txt + **3** png；墙时 **2 m 40 s** |
+| A 但漏 `RNXScreening` | 同上 | 按 `main.py` 顺序 | RNXclean“OK”但只 **53×RNX1**；leveling **IndexError**；ROTI 打 `No data found for G system. Skipping...` |
+| **B** GitHub tip `e5994f6`（`PYTHONPATH=仓库根`） | pandas **2.3.3** | 同 `main.py` | ROTI/DTEC 通；**SIDX** `ValueError: could not convert string to float: 'Y'`；墙时 **1 m 23 s** |
+| B | pandas 3.0.6 | 同 `main.py` | RNXclean **ValueError: invalid error value specified** → 全链无 RNX2 |
+
+> 坑中坑：`python /其他目录/脚本.py` 时 `sys.path[0]` 是**脚本目录**，仓库根的 `pyOASIS/` **不会**遮蔽 site-packages；在仓库根 `python3 main.py` 才用 tip 代码。先 `python -c "import pyOASIS;print(pyOASIS.__file__)"` 确认跑的是哪棵树。
 
 上游示例：`INPUT/boav0491.23o` + 同日 GFZ MGEX SP3（DOY 049 / 2023）。**当前 `main.py` 期望子目录：**
 
@@ -107,10 +120,11 @@ orbit_out.mkdir(parents=True, exist_ok=True)
 sta_out.mkdir(parents=True, exist_ok=True)
 pyOASIS.SP3intp(year, doy, orbit_in, orbit_out)
 pyOASIS.RNXclean(sta, doy, year, rinex_dir, orbit_out, sta_out)
+pyOASIS.RNXScreening(sta_out)   # PyPI 1.0.3 必须；tip 已在 RNXclean 内调（再调会重复）
 pyOASIS.RNXlevelling(sta, sta_out, show_plot=False)
 pyOASIS.ROTIcalc(sta, doy, year, sta_out, sta_out, show_plot=False)
 pyOASIS.DTECcalc(sta, doy, year, sta_out, sta_out, show_plot=False)
-# SIDX：部分环境 RNX3 的 mini_flag='N' 会导致 astype(float) 失败——见坑表
+# SIDX：tip+pandas2 下 astype(float) 遇 'Y' 失败——见坑 17；PyPI 1.0.3 通过
 pyOASIS.SIDXcalc(sta, doy, year, sta_out, sta_out, show_plot=False)
 PY
 find OUTPUT -type f | head -n 40
@@ -119,11 +133,13 @@ find OUTPUT -type f | head -n 40
 | 步骤 | API | 作用 / 典型产出 |
 | --- | --- | --- |
 | 轨道 | `SP3intp` | SP3 → 观测历元表；`OUTPUT/ORBITS/.../ORBITS_YYYY_DOY.SP3` |
-| 清洗 | `RNXclean`（内含 screening） | → `.RNX1` / `.RNX2` |
+| 清洗 | `RNXclean` | → `.RNX1`（tip 版内联 screening 再 → `.RNX2`） |
+| 筛查 | `RNXScreening(dir)` | `.RNX1` → `.RNX2`；**PyPI 1.0.3 须手调** |
 | 对齐 | `RNXlevelling` | 弧段 GF leveling → `.RNX3` |
-| 指数 | `ROTIcalc` / `DTECcalc` / `SIDXcalc` | `*_G_ROTI.txt` / `*_DTEC.txt` / SIDX |
+| 指数 | `ROTIcalc` / `DTECcalc` / `SIDXcalc` | `*_{G,R}_ROTI.txt` / `*_{G,R}_DTEC.txt` / `*_{G,R}_SIDX.txt` + png |
+| 绝对 TEC（**仅 tip**） | `TECcalc` | `*_L1L2.TEC`/`*_L1L2.DCB`/`*_RNX3_merged.txt`；PyPI 1.0.3 **无此函数** |
 
-**本机真实产物摘要（pyOASIS 1.0.3，BOAV 2023/049，2026-09-24）：**
+**本机真实产物摘要（原稿 2026-09-24；质检确认该 ROTI 首行 = 路径 B tip+pandas2 输出，逐字一致）：**
 
 ```text
 # SP3 插值后
@@ -143,7 +159,30 @@ date	time	MJD	Longitude	Latitude	Height	Elevation	DTEC	STA	SAT
 2023-02-18	17:22:37	59993.72405	  298.46125	   -2.94429	  450.00000	   30.82391	   -5.08360	BOAV	G01
 ```
 
-**期望：** 日志走完 leveling；`OUTPUT/RINEX/<Y>/<DOY>/<STA>/` 下有 `.RNX3` 与 `*_ROTI.txt`。缺 SP3 → 死在轨道步。SIDX 本机未稳定出文件（见坑 17）。
+**质检真跑（2026-09-26）：**
+
+路径 A（PyPI 1.0.3 + pandas 3.0.6；列多了 `ROTI15`/`DTEC15`/`SIDX15`=L1–L5，缺测填 `-999999.999`）：
+
+```text
+BOAV_049_2023_G_ROTI.txt  313706 B  2668 行  32 星  ROTI median 0.07439 / max 7.816
+BOAV_049_2023_R_ROTI.txt  172995 B  1526 行  21 星  median 0.13759 / max 5.618
+BOAV_049_2023_G_DTEC.txt 1029787 B  9460 行  DTEC max 22.44
+BOAV_049_2023_G_SIDX.txt 3271944 B 31135 行 ；R_SIDX 1984486 B 19005 行
+MJD	Longitude	Latitude	Height	Elevation	ROTI	ROTI15	STA	SAT
+59993.726475694435	298.84639657183476	-0.46051146023898	450.0	31.779999999999994	0.07878615621799209	0.053248627443426365	BOAV	G01
+```
+
+路径 B（tip + pandas 2.3.3；无 *15 列）：
+
+```text
+G_ROTI 2673 行/32 星 median 0.07451 max 7.8018 ；R_ROTI 1504 行/21 星 median 0.13738
+G_DTEC 2734 行 min −64.6907 max 68.4168 ；R_DTEC 1532 行
+date	time	MJD	Longitude	Latitude	Height	Elevation	DTEC	STA	SAT
+2023-02-18	17:22:52	59993.72422	  298.46864	   -2.92503	  450.00000	   30.92499	   -5.13455	BOAV	G01
+TECcalc：打印 "No valid data for BOAV." 却仍写 L1L2.TEC 65395 行 / L1L2.DCB 221 行 / RNX3_merged 302101 行（数值未验证，勿直接发表）
+```
+
+→ 原稿 ΔTEC 首行（17:22:37 / −5.08360）**本次两路径都未复现**，以上为准。两路径 ROTI 数值接近但**不逐行相等**（版本算法不同）；跨版本勿硬比。缺 SP3 → 死在轨道步。
 
 ### 3.4 输出字段
 
@@ -174,7 +213,7 @@ date	time	MJD	Longitude	Latitude	Height	Elevation	DTEC	STA	SAT
 | ROTI / ΔTEC / SIDX | 路径 B 分析 |
 | leveled GF / 图 | 自检弧段 |
 
-**明确不输出：** DCB 产品、IONEX、硬件 S4、校准 `veq`。
+**明确不输出：** IONEX、硬件 S4、校准 `veq`。PyPI 1.0.3 不出 DCB；**tip 的 `TECcalc` 会写 `*_L1L2.DCB`**（与 README“不依赖 DCB”指输入端，不矛盾），本机未验证其数值。
 
 ## 5. 接到哪一步
 
@@ -206,7 +245,8 @@ date	time	MJD	Longitude	Latitude	Height	Elevation	DTEC	STA	SAT
 | 14 | 与 GIM 像素比 ROTI | 对象不同 | GIM→[ionex-gim](./ionex-gim.md) |
 | 15 | `head` 见 HTML | 下载成登录页 | 重走 Earthdata |
 | 16 | RNXclean / leveling 无声失败 | pandas3 `errors='ignore'`；datetime64 强转 | `errors='coerce'`；time 插值；或钉旧 pandas |
-| 17 | SIDX `astype(float)` 遇 `'N'` | RNX3 `mini_flag` 等列为字串 | 升上游或筛列/`to_numeric`；先交付 ROTI/ΔTEC |
+| 17 | SIDX `ValueError: could not convert string to float: 'Y'`（tip+pandas 2.3.3 真跑；原稿记 `'N'`） | RNX3 `mini_flag` 等列为字串 | 用路径 A（PyPI 1.0.3 通）；或筛列/`to_numeric`；先交付 ROTI/ΔTEC |
+| 19 | 以为 `pip install pyOASIS` = GitHub main | PyPI 1.0.3 与 tip `e5994f6` 代码不同（无 `TECcalc`、screening 不内联） | `print(pyOASIS.__file__)`；按 §3.0 选路径 |
 | 18 | 样例在 `INPUT/` 根而脚本读子目录 | 布局过时 | 拷入 `INPUT/RINEX` 与 `INPUT/ORBITS` |
 
 ## 7. 选型

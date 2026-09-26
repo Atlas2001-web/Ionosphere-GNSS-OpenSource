@@ -1,6 +1,6 @@
 # cosmic-crunch · JPL GENESIS COSMIC-1 L2 掩星 ASCII→netCDF4 操作手册
 
-目录：[`PROJECTS.json` → `cosmic-crunch`](../../PROJECTS.json) · 上游 <https://github.com/ErickShepherd/cosmic-crunch> · 许可 **MIT** · PyPI **`cosmic-crunch` 2.1.2** · 本机验证：`get --test` 拉 **10** 个 `.L2.txt.gz` + `convert`/`--netcdf4` 出 **10** 个 `.L2.nc`（2026-09-24 EDT）
+目录：[`PROJECTS.json` → `cosmic-crunch`](../../PROJECTS.json) · 上游 <https://github.com/ErickShepherd/cosmic-crunch> · 许可 **MIT** · PyPI **`cosmic-crunch` 2.1.2** · 本机验证：`get --test` 拉 **10** 个 `.L2.txt.gz` + `convert`/`--netcdf4` 出 **10** 个 `.L2.nc`（2026-09-24 EDT）· **质检复跑**（2026-09-26 00:47 EDT）：PyPI **2.1.2** 仍最新；`get --test` **6.7 s** 拉 **10** 个/合计 **260585** B；单文件+目录 convert 摘要逐字对齐；nlev **417**/NCEP **379**；修 Height 上界 **59.699**（原稿 59.700 是四舍五入误写）；重复 convert **静默覆盖**（Skipped 仍 0）
 
 > 岗位：从 **JPL GENESIS** 批量拉取 COSMIC-1（FORMOSAT-3）**大气** Level-2 ASCII（折射/温压湿），并转成 **netCDF4**。冲突时：**本机 `cosmic-crunch -h` / 上游 README > 本文**。
 
@@ -151,10 +151,12 @@ PY
 groups ['COSMIC1-Profile', 'NCEP_FNL-Profile']
 ShortName GPS-OCC-L2 ParameterName ['Atmosphere', 'Refractivity', 'Temperature', 'Pressure', 'Water Vapor Pressure']
 nlev 417 vars ['Height', 'Lat', 'Lon', 'Refractivity', 'Temperature', 'Pressure', 'WV Pressure']
-Height km: 0.399 .. 59.700
+Height km: 0.399 .. 59.699
 ```
 
-（同文件 `NCEP_FNL-Profile`：`Index=379`，变量同名；根组 **无** 变量，字段在 group 内。）
+（同文件 `NCEP_FNL-Profile`：`Index=379`，变量同名；根组 **无** 变量，字段在 group 内。全局属性真值：`Transmitter=gps72`、`Receiver=cosmic1`、`RisingSettingMode=Setting`。）
+
+> 质检补坑：同目录**再跑** `convert` 仍报 `Successful conversions: 10`/`Skipped: 0`——**无跳过已存在 nc**、直接覆盖；`--skip_empty` 只跳“全空数组”文件，不是增量开关。增量请自己先 `find … -name '*.L2.nc'` 过滤。
 
 ## 4. I/O 字段
 
@@ -165,7 +167,7 @@ Height km: 0.399 .. 59.700
 | 全局 `Transmitter` / `Receiver` | 例 `gps72` / `cosmic1` |
 | 全局 `RisingSettingMode` | `Rising` / `Setting` |
 | 全局 `LowestAltitude` | 最低高度（km） |
-| group 变量 `Height` | 高度 km（本机 COSMIC1 0.399–59.7） |
+| group 变量 `Height` | 高度 km（本机 COSMIC1 0.399–59.699；全局 `LowestAltitude`=0.399119） |
 | `Lat` / `Lon` | 切点纬度/经度 |
 | `Refractivity` | 折射度 N |
 | `Temperature` / `Pressure` | 温度 K / 气压 hPa 量级（以文件为准） |
