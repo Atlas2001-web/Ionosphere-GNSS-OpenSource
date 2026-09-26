@@ -2,7 +2,7 @@
 
 目录：[`PROJECTS.json`](../../PROJECTS.json) → `TropDS` · 上游 <https://github.com/Sardingfish/TropDS> · tip **`6bb9ef0`**（2026-07-11）· ★**1** · forks **0** · 许可 **BSD-3-Clause**（仓内 `LICENSE`，GitHub API 同；README 徽章链接写成 MIT，以 LICENSE 为准）· 语言 **Python / PyTorch**（6 个 `.py` 共 **2104** 行）· 论文 Ding et al., *Journal of Geodesy* 2026 · 无 PyPI、无测试、**仓内无数据**
 
-本机验证（**2026-09-26 01:49–01:58 EDT**）：Python **3.11.16** venv，torch **2.14.0+cpu** / numpy **2.4.6**，无 GPU。预训练权重从作者 Google Drive 下载（**130852672** B，实为 RAR5 加密包），用作者在 issue #1 公布的密码解出 `best_model.pth`（**150007202** B）；原样 `inference.py` 在 CPU 上 3.6 s 跑完一张 180×360 格网。输入用 TU Wien VMF3 1° 格网 2024-01-01 00 UTC 的真实 ZWD，stdout 与误差对照见 §4。**未训练**（仓内无训练数据，训练需 GPU 与多年格网）。
+本机验证（**2026-09-26 01:49–01:58 EDT**）：Python **3.11.16** venv，torch **2.14.0+cpu** / numpy **2.4.6**，无 GPU。预训练权重从作者 Google Drive 下载（**130852672** B，实为 RAR5 加密包），用作者在 issue #1 公布的密码解出 `best_model.pth`（**150007202** B）；原样 `inference.py` 在 CPU 上 3.6 s 跑完一张 180×360 格网。输入用 TU Wien VMF3 1° 格网 2024-01-01 00 UTC 的真实 ZWD，stdout 与误差对照见 §4。 **质检复跑通过**（2026-09-26 02:00–02:05 EDT，独立 clone/venv/重新下载）：Drive 包 130852672 B（`Rar!` 头）、7z 报 `Unsupported Method` 得 0 B、unrar+密码解出 150007202 B / sha256 前缀 `a6dd6e6adf360982`、checkpoint epoch 38 / best_val_loss 0.0010780527549998267；VMF3 文件 3434750 B / 64807 行；§4b stdout **逐字一致**（Min 0.6699 / Max 40.3515 / Mean 11.9130 / Std 9.8792，real 3.35 s）；§4c 六行全部复现（RMSE **2.017→2.208** cm、bias +0.622、GRAZ 8.92/10.16/9.91、南北翻转 2.265、ZHD 57.78→265.28 mm）；坑 1/2/5（2.168）/7 实测复现。修：§4a 的 `ln -sf ../output/…` 会建成自指链接，`inference.py` 直接报 Errno 40，改为 `../../output/…` 并补坑 10。**未训练**（仓内无训练数据，训练需 GPU 与多年格网）。
 
 > 岗位：已经有一张**全球 1° 对流层延迟格网（ZHD 或 ZWD）但精度/细节不够**（粗分辨率插值上来的"模糊图"），用 U-Net 把它恢复成更接近高分辨率参考的"清晰图"。**它不算 ZTD/ZWD/PWV**，不读 ERA5/GNSS 原始数据——输入和输出都是现成的 180×360 数组。冲突时：**源码 > 本文 > 上游 README**。  
 > 经验模型给先验 → [gtrop](./gtrop.md) / GPT3（[tu-wien-vmf-gpt-codes](./tu-wien-vmf-gpt-codes.md)）；NWM 格网本身（VMF3）→ 同上页；斜路径 → [std-swd-calc](./std-swd-calc.md)；射线追踪 → [radiate](./radiate.md)。
@@ -82,7 +82,7 @@ checkpoint 内容（本机 `torch.load` 打印）：`epoch 38`、`best_val_loss 
 ```bash
 mkdir -p run/data run/output && cd run
 curl -fsSL -o VMF3_20240101.H00 https://vmf.geo.tuwien.ac.at/trop_products/GRID/1x1/VMF3/VMF3_OP/2024/VMF3_20240101.H00   # 3434750 B，64807 行
-cp ../*.py . && ln -sf ../output/best_model.pth output/
+cp ../*.py . && ln -sf ../../output/best_model.pth output/   # 链接目标相对 run/output/ 解析，写 ../output 会自指（坑 10）
 cat > prep.py <<'PY'
 import numpy as np
 d=np.loadtxt('VMF3_20240101.H00',comments='!')
@@ -191,6 +191,8 @@ python train.py            # 读 data/2020–2024；输出 output/best_model.pth
 7. **现象** 喂 181×360（例如含两极的 1° 格网）照样出 `Output shape: (181, 360)`，没有任何报错 → **原因** 推理路径没有形状检查（训练的 `datasets.py` 才断言 180×360），U-Net 对任意尺寸都能前向 → **修复** 先转成格心 180×360：`python -c "import numpy as n;a=n.load('g181.npy');n.save('data/2024_blur.npy',0.5*(a[1:]+a[:-1]))"`（沿纬向相邻格线取平均，经向 361→360 同理去掉重复经线）
 8. **现象** 按 README（2025）只放了 `data/2025_blur.npy`，运行只打印 `Error: Data file does not exist - ./data/2024_blur.npy` → **原因** 年份写死在 `main()` 里是 2024 → **修复** `sed -i 's/YEAR_INFERENCE = 2024/YEAR_INFERENCE = 2025/' inference.py`
 9. **现象** 以为要 GPU → **原因** README 前提写 CUDA；推理其实 CPU 可跑（本机 180×360 单张 3.6 s 墙时含加载） → **修复** 装 CPU 版 torch 即可：`pip install --index-url https://download.pytorch.org/whl/cpu torch`
+
+10. **现象** `OSError: [Errno 40] Too many levels of symbolic links: './output/best_model.pth'`（质检照抄旧版 §4a 实测） → **原因** 在 `run/` 里 `ln -sf ../output/best_model.pth output/`，符号链接目标相对**链接所在目录** `run/output/` 解析，指回自己 → **修复** `rm output/best_model.pth && ln -sf ../../output/best_model.pth output/`（或写绝对路径）
 
 ## 7. 诚实边界
 

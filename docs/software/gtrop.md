@@ -2,7 +2,7 @@
 
 目录：[`PROJECTS.json`](../../PROJECTS.json) → `GTrop` · 上游 <https://github.com/sun1753814280/GTrop> · tip **`2b31ae7`**（2019-07-10，此后无提交）· ★**5** · forks **1** · **仓内无 LICENSE 文件**（GitHub API `license=null`，即默认保留所有权利；引用论文，不要转发 `coefficient.mat`）· 语言 **MATLAB**（3 个 `.m` 共约 190 行 + `coefficient.mat` **18343857** B，MATLAB 5.0 MAT-file，2019-01-27 生成）
 
-本机验证（**2026-09-26 01:49–01:58 EDT**）：GNU Octave **9.4.0**，**未装 MATLAB**。上游 `example.m` 在 Octave 原样跑通（0.96 s）；GRAZ 2024 DOY 1 端到端、高度/季节扫描、8 类错误输入都在本机跑过，stdout 全部原样贴在下文。无需网络、无需 ERA5/CDS 账号（系数已预先拟合好放在仓内）。
+本机验证（**2026-09-26 01:49–01:58 EDT**）：GNU Octave **9.4.0**，**未装 MATLAB**。上游 `example.m` 在 Octave 原样跑通（0.96 s）；GRAZ 2024 DOY 1 端到端、高度/季节扫描、8 类错误输入都在本机跑过，stdout 全部原样贴在下文。 **质检复跑通过**（2026-09-26 02:00–02:03 EDT，独立 clone + Octave 9.4.0）：tip `2b31ae7`（全历史 7 commit）/★5/3 个 `.m` 194 行/`coefficient.mat` 18343857 B 头 `MATLAB 5.0 MAT-file, Platform: PCWIN64, Created on: Sun Jan 27 15:12:48 2019`；`example` 三行、§4b 全部 15 行、全球 DOY182 统计（ZWD 1.3–418.9 mm、Tm 221.64–296.50 K、h0 −0.111–5.359 km）、Π 0.1521/0.1515、§4d 引用的 GPT3/VMF3 数与 [tu-wien](./tu-wien-vmf-gpt-codes.md) 页一致、PWV 8.8/15.9 复算一致、坑 1–4/6/7 **逐字复现**。修：§7 南极点 Tm 实为 240.74（原写 240.75）。无需网络、无需 ERA5/CDS 账号（系数已预先拟合好放在仓内）。
 
 > 岗位：**没有任何气象数据**时，给任意经纬度/高度/日期一个 ZHD、ZWD、Tm 的**气候学先验**（PPP 对流层初值、PWV 反演里的 Tm）。冲突时：**源码 > 本文 > 上游 README**。  
 > 同类经验模型官方源码（GPT3）与实测 NWM 格网（VMF3）→ [tu-wien-vmf-gpt-codes](./tu-wien-vmf-gpt-codes.md)；ZTD 投影成斜路径 → [std-swd-calc](./std-swd-calc.md)；沿 NWM 射线积分 → [radiate](./radiate.md)；AI 格网降尺度 → [tropds](./tropds.md)。
@@ -173,7 +173,7 @@ lat=[47.0671 30.5]; lon=[15.4935 114.3]; h=[0.5383 0.03];
 - 本页所有 GTrop 数字均为本机 Octave 9.4.0 输出；**未在 MATLAB 上交叉验证**，但代码无 MATLAB 专有函数，`example.m` 在 Octave 原样跑通
 - 系数的来源资料、拟合年份以论文题目为准（"atmospheric reanalysis data from 1979 to 2017"），仓内**没有**拟合脚本，无法本机重训或更新到 2017 年以后；2024 年的值依赖线性趋势外推
 - 精度只做了单站单日对照（§4d），不是统计验证；需要统计精度请读原论文
-- 未测极点（lat=±90 时 `B1==B2` 分支）以外的边界；`lat=-89.5, h=2.8 km` 本机得 `ZHD=1564.2 ZWD=6.6 Tm=240.75`，量级合理
+- 未测极点（lat=±90 时 `B1==B2` 分支）以外的边界；`lat=-89.5, h=2.8 km` 本机得 `ZHD=1564.2 ZWD=6.6 Tm=240.74`（240.7436），量级合理
 
 ## 8. 选型
 
