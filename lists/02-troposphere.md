@@ -1,5 +1,5 @@
 # 对流层 / Troposphere
-> **47** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **48** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
@@ -525,3 +525,18 @@ VMF 数据服务器上较早期的 VMF1 GNSS 产品目录，与 VMF3 目录并�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 维也纳工大 VMF 数据服务器上 VMF3 面向 GNSS 的产品目录，含 VMF3_EI/FC/OP 等子目录。与已收录 trop_products 总目录、VMF 主页互补，本 URL 直达 VMF3。精密定位与 ZTD 映射常用网格。收录前已 HTTP 核验；使用请引用 TU Wien VMF 文档。
+
+## GNSS掩星/RO
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [ROM SAF](https://rom-saf.eumetsat.int/) | EUMETSAT 无线电掩星气象卫星应用中心（ROM SAF）中性大气掩星产品门户 | data-portal | — | 🏷️ 官方 |
+
+### 详细说明
+
+#### [ROM SAF](https://rom-saf.eumetsat.int/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：CC-BY-4.0 · 星标约：— · 宿主：official_site
+
+EUMETSAT 下属的 Radio Occultation Meteorology SAF 官方门户，负责 Metop、Sentinel-6 与 Metop-SG 等任务 GNSS 掩星数据的业务化处理，提供弯曲角、折射率与温湿廓线的近实时产品、气候数据记录、产品质量与监测页面，以及文档、报告和用户服务台。与本目录已收录的 ROPP 软件包同源，此条对应数据产品侧。其产品全部针对中性大气（对流层至平流层的折射率、温湿压与对流层顶高度等，另有月均格点产品），未提供电离层电子密度或 TEC 产品，主要服务数值天气预报同化与气候监测，可与 COSMIC/CDAAC 数据互补。产品下载需注册登录。收录前已 HTTP 200 核验。

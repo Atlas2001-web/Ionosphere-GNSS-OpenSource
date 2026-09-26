@@ -1,5 +1,5 @@
 # GNSS 数据源 / GNSS Datasets
-> **170** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **169** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
@@ -271,7 +271,6 @@ Space Weather Canada 维护的太阳射电流量测量存档，提供日值、�
 | [IONORING](http://ionos.ingv.it/ionoring/ionoring.htm) | 意大利 INGV 基于 RING 网的实时 TEC 监测与地图发布页 | data-portal | — | 🏷️ 官方 核心 |
 | [JPL-IONEX-Rapid](https://sideshow.jpl.nasa.gov/pub/iono_daily/IONEX_rapid/) | JPL 快速 IONEX 发布目录：日更新全球电离层图 | data-portal | — | 🏷️ 官方 核心 |
 | [RAL Ionosonde (UKSSDC)](https://www.ukssdc.ac.uk/ionosondes/) | 卢瑟福·阿普尔顿实验室电离层监测组：奇尔顿与斯坦利港测高仪数据页 | data-portal | — | 🏷️ 官方 |
-| [ROM SAF](https://rom-saf.eumetsat.int/) | EUMETSAT 无线电掩星气象卫星应用中心（ROM SAF）产品门户 | data-portal | — | 🏷️ 官方 |
 | [SRI ISR Database (AMISR)](https://data.amisr.com/database/) | SRI International 运营的 AMISR 非相干散射雷达（PFISR/RISR）数据库入口 | data-portal | — | 🏷️ 官方 |
 | [UPC-Chapman-TOMION-Rapid](https://chapman.upc.es/tomion/rapid/) | UPC Chapman：TOMION/IONEX 快速电离层产品下载 | data-portal | — | 🏷️ 高校实验室 |
 | [UPC-gAGE-FastPPP-Products](https://gage.upc.edu/en/gage-products/fast-ppp-products) | UPC gAGE Fast-PPP 产品页：STEC/IONEX/钟差等申请说明 | data-portal | — | 🏷️ 高校实验室 |
@@ -364,13 +363,6 @@ JPL 侧快速电离层图公开目录，文件为 IONEX 风格，适合需要较
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 英国卢瑟福·阿普尔顿实验室（RAL）电离层监测组的介绍与数据页面，隶属 UK Solar System Data Centre：说明其运行的奇尔顿（英国）与斯坦利港（福克兰群岛）测高仪，以及已于 1998 年停运的勒威克站，电离图与 URSI 标定参数存档于世界数据中心。奇尔顿序列承接斯劳站，是全球最长的电离层测高记录之一，适合长期趋势与 foF2 气候研究。特殊观测需求可联系该组加密探测。与本目录 UKSSDC 首页条目互补。
-
-#### [ROM SAF](https://rom-saf.eumetsat.int/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-EUMETSAT 下属的 Radio Occultation Meteorology SAF 官方门户，负责 Metop、Sentinel-6 与 Metop-SG 等任务 GNSS 掩星数据的业务化处理，提供弯曲角、折射率与温湿廓线的近实时产品、气候数据记录、产品质量与监测页面，以及文档、报告和用户服务台。与本目录已收录的 ROPP 软件包同源，此条对应数据产品侧。GNSS-RO 资料可用于对流层与电离层剖面研究，也可与 COSMIC/CDAAC 数据互补。部分产品需注册。收录前已 HTTP 200 核验。
 
 #### [SRI ISR Database (AMISR)](https://data.amisr.com/database/)  
 *🏷️ 官方*

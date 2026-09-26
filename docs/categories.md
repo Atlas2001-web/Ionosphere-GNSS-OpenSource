@@ -30,7 +30,7 @@
 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
 - 列表文件：[`lists/02-troposphere.md`](../lists/02-troposphere.md)
-- 当前条目数：**47**
+- 当前条目数：**48**
 
 ## `gnss-data` — GNSS 数据与格式
 
@@ -86,7 +86,7 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
 - 列表文件：[`lists/10-gnss-datasets.md`](../lists/10-gnss-datasets.md)
-- 当前条目数：**170**
+- 当前条目数：**169**
 
 ## 与用户仓库的关系标记
 

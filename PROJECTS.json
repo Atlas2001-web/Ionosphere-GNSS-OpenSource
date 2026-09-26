@@ -8,7 +8,7 @@
   "project_count": 1036,
   "counts_by_category": {
     "ionosphere": 302,
-    "troposphere": 47,
+    "troposphere": 48,
     "gnss-data": 140,
     "gnss-positioning": 103,
     "orbit-clock": 33,
@@ -16,7 +16,7 @@
     "gnss-sdr": 77,
     "mobile-apps": 32,
     "tools-learning": 59,
-    "gnss-datasets": 170
+    "gnss-datasets": 169
   },
   "projects": [
     {
@@ -19757,7 +19757,7 @@
     {
       "name": "EISCAT Portal",
       "url": "https://portal.eiscat.se/",
-      "desc_zh": "EISCAT 科学协会非相干散射雷达观测计划、L2/L3 数据与实时图门户",
+      "desc_zh": "查特罗姆瑟/斯瓦尔巴 ISR 运行计划与实时图；下载 L2 数据需加入 EISCAT VO",
       "analysis_zh": "欧洲非相干散射科学协会（EISCAT）官方数据门户，覆盖特罗姆瑟 UHF/VHF 与斯瓦尔巴 ESR 32 m/42 m 雷达：可查运行计划与 L2 分析数据、浏览 L3 产品，并查看各雷达的实时图与实时分析结果。高纬电子密度、温度与离子速度剖面是校验 GNSS TEC、闪烁与 IRI 顶部模型的重要独立观测。下载需通过 EGI Check-in 加入 EISCAT 虚拟组织，入门手册在门户中提供；部分数据也同步到 Madrigal。收录前已 HTTP 200 核验。",
       "language": "data-portal",
       "license": "portal-terms",
@@ -19779,7 +19779,7 @@
     {
       "name": "SRI ISR Database (AMISR)",
       "url": "https://data.amisr.com/database/",
-      "desc_zh": "SRI International 运营的 AMISR 非相干散射雷达（PFISR/RISR）数据库入口",
+      "desc_zh": "按日期检索 PFISR/RISR-N 实验的电子密度、温度与视线速度文件",
       "analysis_zh": "SRI International 维护的非相干散射雷达数据库，按仪器列出波克弗拉特 PFISR 与雷索卢特湾 RISR-N 等 AMISR 相控阵雷达的实验与处理产品，可按日期检索电子密度、温度和视线速度等参数文件。相控阵体制支持多波束准三维观测，常用于研究极光区电离层结构、极盖斑块及其与 GNSS 闪烁/TEC 梯度的关系。数据也在 SRI Madrigal 站点镜像，可配合 madrigalWeb 批量下载。使用时请遵循上游数据致谢要求。收录前已 HTTP 200 核验。",
       "language": "data-portal",
       "license": "portal-terms",
@@ -19799,7 +19799,7 @@
     {
       "name": "CEDAR Madrigal",
       "url": "https://cedar.openmadrigal.org/",
-      "desc_zh": "NSF CEDAR 计划的 Madrigal 高层大气数据库主站（含全球 GNSS TEC 等）",
+      "desc_zh": "可在线检索并生成批量下载命令，MIT Haystack 全球 TEC 图也在此库",
       "analysis_zh": "NSF CEDAR 计划托管的 Madrigal 数据库实例，与本目录已收录的 OpenMadrigal 软件项目主页不同，这里是可直接检索的数据站：提供实验列表、单实验选择、批量下载命令生成、类 FTP 访问、仪器与参数元数据，以及派生参数引擎与 ISR 经验模型在线运行。库中包含 MIT Haystack 全球 GNSS TEC 图、电离层测高仪、FPI 与多台 ISR 数据，并链接 Millstone、EISCAT、SRI、JRO 等其他 Madrigal 节点。部分下载需填写姓名与单位信息。",
       "language": "data-portal",
       "license": "portal-terms",
@@ -19819,7 +19819,7 @@
     {
       "name": "Meridian Project Data Center",
       "url": "https://www.meridianproject.ac.cn/",
-      "desc_zh": "中国子午工程（Meridian Project）空间环境地基监测数据检索与共享门户",
+      "desc_zh": "东经 120°/北纬 30° 链测高仪、雷达、TEC 与磁力计数据，注册后下载",
       "analysis_zh": "中国科学院国家空间科学中心牵头的子午工程官方网站与数据中心，汇集沿东经 120° 与北纬 30° 布设的地基空间环境监测链数据，含电离层测高仪、高频雷达、非相干散射雷达、GNSS TEC/闪烁接收机、磁力计与激光雷达等，提供数据检索、DOI 清单、批量下载与数据政策说明。对研究东亚电离层扰动、与 GNSS TEC 结果互证很有价值。站点以中文为主并有英文版，下载需注册登录并遵守数据政策；网络调整期间偶有暂停。",
       "language": "data-portal",
       "license": "portal-terms",
@@ -19841,12 +19841,12 @@
     {
       "name": "ROM SAF",
       "url": "https://rom-saf.eumetsat.int/",
-      "desc_zh": "EUMETSAT 无线电掩星气象卫星应用中心（ROM SAF）产品门户",
-      "analysis_zh": "EUMETSAT 下属的 Radio Occultation Meteorology SAF 官方门户，负责 Metop、Sentinel-6 与 Metop-SG 等任务 GNSS 掩星数据的业务化处理，提供弯曲角、折射率与温湿廓线的近实时产品、气候数据记录、产品质量与监测页面，以及文档、报告和用户服务台。与本目录已收录的 ROPP 软件包同源，此条对应数据产品侧。GNSS-RO 资料可用于对流层与电离层剖面研究，也可与 COSMIC/CDAAC 数据互补。部分产品需注册。收录前已 HTTP 200 核验。",
+      "desc_zh": "Metop 等掩星弯曲角、折射率、温湿廓线与气候数据记录（CDR），注册后下载",
+      "analysis_zh": "EUMETSAT 下属的 Radio Occultation Meteorology SAF 官方门户，负责 Metop、Sentinel-6 与 Metop-SG 等任务 GNSS 掩星数据的业务化处理，提供弯曲角、折射率与温湿廓线的近实时产品、气候数据记录、产品质量与监测页面，以及文档、报告和用户服务台。与本目录已收录的 ROPP 软件包同源，此条对应数据产品侧。其产品全部针对中性大气（对流层至平流层的折射率、温湿压与对流层顶高度等，另有月均格点产品），未提供电离层电子密度或 TEC 产品，主要服务数值天气预报同化与气候监测，可与 COSMIC/CDAAC 数据互补。产品下载需注册登录。收录前已 HTTP 200 核验。",
       "language": "data-portal",
-      "license": "portal-terms",
-      "category": "gnss-datasets",
-      "subcategory": "电离层产品",
+      "license": "CC-BY-4.0",
+      "category": "troposphere",
+      "subcategory": "GNSS掩星/RO",
       "markers": [
         "routine-2026-09-26"
       ],
@@ -19856,14 +19856,14 @@
       "user_relation": "none",
       "host": "official_site",
       "provenance": "official",
-      "one_liner_zh": "EUMETSAT 无线电掩星气象卫星应用中心（ROM SAF）产品门户",
+      "one_liner_zh": "EUMETSAT 无线电掩星气象卫星应用中心（ROM SAF）中性大气掩星产品门户",
       "registration": "mixed",
-      "registration_zh": "门户与文档公开；部分数据产品需注册账号。"
+      "registration_zh": "门户与文档公开；产品下载需注册登录，产品按 CC BY 4.0 许可并需按使用政策致谢。"
     },
     {
       "name": "FRDR SuperDARN Collection",
       "url": "https://www.frdr-dfdr.ca/repo/collection/superdarn",
-      "desc_zh": "加拿大联邦研究数据库（FRDR）托管的 SuperDARN 雷达数据集合",
+      "desc_zh": "按年份和雷达发布带 DOI 的 SuperDARN rawacf/dat 数据，CC BY-NC 4.0",
       "analysis_zh": "加拿大联邦研究数据存储库 FRDR 中的 SuperDARN 专题集合，由 SuperDARN Canada 等单位维护，按年份与雷达发布原始及处理后的相干散射雷达数据集并分配 DOI，是全球 SuperDARN 数据的主要公开镜像之一。数据反映高纬电离层对流与不规则体，可与 GNSS 闪烁、ROTI 及极盖 TEC 结构对照；读写和绘图可用 pyDARN、RST 等工具。部分数据按 SuperDARN 数据政策需要致谢或联系 PI。界面有英法双语。收录前已 HTTP 200 核验。",
       "language": "data-portal",
       "license": "portal-terms",
@@ -19883,7 +19883,7 @@
     {
       "name": "PITHIA e-Science Centre",
       "url": "https://esc.pithia.eu/",
-      "desc_zh": "欧盟 PITHIA-NRF 电离层与热层数据集合、模型与工作流元数据检索中心",
+      "desc_zh": "只做编目：按本体检索欧洲电离层数据集与工作流，再跳转到提供方",
       "analysis_zh": "欧盟 H2020 PITHIA-NRF（电离层、热层、等离子体层综合研究设施）项目的 e-Science Centre，基于统一的空间物理本体与元数据模型登记来自欧洲各机构的数据集合、静态数据集与在线工作流，可按内容检索电离层测高、GNSS TEC、模型输出等资源并跳转到提供方接口。它本身主要做发现与编目，而不是集中存储，适合寻找欧洲电离层数据源与服务。提供者需注册才能登记资源，普通浏览公开。收录前已 HTTP 200 核验。",
       "language": "data-portal",
       "license": "portal-terms",
@@ -19903,7 +19903,7 @@
     {
       "name": "pyDARN",
       "url": "https://github.com/SuperDARN/pydarn",
-      "desc_zh": "SuperDARN 官方社区维护的 Python 数据可视化库",
+      "desc_zh": "pip 安装，读取 fitacf 等文件并画 RTP、扇区、对流图等 SuperDARN 图件",
       "analysis_zh": "SuperDARN 数据分析工作组维护的 Python 可视化库，LGPL-3.0 许可，有 Zenodo DOI 与 ReadTheDocs 文档，可 pip 安装。支持绘制距离-时间图、扇区扫描图、对流图、功率谱等，读取 FITACF、grid、map 等 SuperDARN 标准格式（底层读写由 pyDARNio 负责），新版本增加 FITACF 去趋势与对流图真实速度。适合研究高纬电离层对流及其与 GNSS 闪烁、TEC 结构的联系。数据需另行从 FRDR、BAS 等镜像获取。仓库持续维护。",
       "language": "Python",
       "license": "LGPL-3.0",
@@ -19923,7 +19923,7 @@
     {
       "name": "SuperDARN RST",
       "url": "https://github.com/SuperDARN/rst",
-      "desc_zh": "SuperDARN 雷达软件工具包 RST：原始数据处理、拟合与对流图生成",
+      "desc_zh": "DAWG 维护的 C 工具链，把 rawacf 拟合为 fitacf 并生成对流图，支持 Linux/macOS",
       "analysis_zh": "SuperDARN 数据分析工作组（DAWG）维护的 Radar Software Toolkit，GPL-3.0 许可，C 语言命令行工具集并有 Zenodo DOI。负责从 rawacf 做 ACF 拟合生成 fitacf，再经网格化、球谐拟合生成全球对流图，是 SuperDARN 标准数据产品的官方处理链。文档分为 ReadTheDocs 安装教程与 API 说明两站，支持 Linux 与 macOS，Windows 暂不支持。适合需要自行重处理 SuperDARN 数据的研究者，与 pyDARN 可视化配合使用。",
       "language": "C",
       "license": "GPL-3.0",
@@ -19943,7 +19943,7 @@
     {
       "name": "ppigrf",
       "url": "https://github.com/IAGA-VMOD/ppigrf",
-      "desc_zh": "IAGA V-MOD 工作组托管的纯 Python IGRF 地磁参考场计算库",
+      "desc_zh": "只依赖 NumPy/Pandas，默认 IGRF-14；单个 .py 加 .shc 文件即可嵌入项目",
       "analysis_zh": "由国际地磁与高空物理协会（IAGA）V-MOD 工作组组织托管的纯 Python IGRF 实现，MIT 许可并有 Zenodo DOI，已跟进 IGRF-14。无需编译 Fortran，即可按时间、地理或地心坐标批量计算地磁场分量，适合嵌入 TEC 投影、磁纬换算、电离层穿刺点磁坐标与闪烁统计等流程。与本目录已有的 igrf（space-physics，封装 Fortran）相比依赖更轻、易于部署。仓库附 IGRF 官方参考链接；需要高精度外场模型时应另选 CHAOS 等模型。",
       "language": "Python",
       "license": "MIT",
@@ -19963,7 +19963,7 @@
     {
       "name": "Lompe",
       "url": "https://github.com/klaundal/lompe",
-      "desc_zh": "极区电离层电动力学局地反演工具 Lompe（多源数据融合）",
+      "desc_zh": "在局地网格上融合 SuperDARN、卫星与地磁观测，反演电场、电流与电势",
       "analysis_zh": "卑尔根大学课题组开发的 LOcal Mapping of Polar ionospheric Electrodynamics，MIT 许可，Python 实现并提供 Binder 可运行示例。在局地立方球网格上，融合 SuperDARN 对流、卫星磁场/离子漂移与地面磁力计扰动等观测，反演区域电场、电流与电势分布，Hall/Pedersen 电导需用户以函数形式给出。适合研究极光区电动力学与 GNSS 闪烁、TEC 斑块的驱动过程。学习曲线较陡，建议先跑仓库自带示例笔记本。近期仍有更新。",
       "language": "Python",
       "license": "MIT",
@@ -19983,7 +19983,7 @@
     {
       "name": "LPI",
       "url": "https://github.com/ilkkavir/lpi",
-      "desc_zh": "奥卢大学非相干散射雷达电压级数据滞后剖面反演 R 包（MPI 版）",
+      "desc_zh": "在 HPC 上用 MPI 对 ISR 电压数据做滞后剖面反卷积；数据读写需另配 LPI.gdf 等包",
       "analysis_zh": "奥卢大学 Ilkka Virtanen 开发的 Lag Profile Inversion R 包，BSD-2-Clause 许可并有 Zenodo DOI。从电压级非相干散射雷达采样出发，反卷积得到各距离门的滞后剖面（自相关函数），是后续拟合电子密度、温度等参数的前一步；当前主分支为适配 HPC 的 MPI 版，数据 I/O 由 LPI.gdf、LPI.KAIRA 等配套包提供。适合 EISCAT/EISCAT_3D 等雷达的原始数据研究者。使用说明见仓库内 PDF 手册与教程，README 本身较简。",
       "language": "R",
       "license": "BSD-2-Clause",
@@ -20003,7 +20003,7 @@
     {
       "name": "inscar",
       "url": "https://github.com/engeir/inscar",
-      "desc_zh": "计算斜向磁场条件下非相干散射谱的 Python 库（支持非麦克斯韦分布）",
+      "desc_zh": "给定电子速度分布和磁场夹角计算理论 ISR 谱，PyPI 可装，不处理实测数据",
       "analysis_zh": "特罗姆瑟大学研究者发布的 Python 包，MIT 许可，已上架 PyPI 并有 ReadTheDocs 文档、测试与覆盖率 CI。可在雷达视线与地磁场成任意斜角时，针对各向同性但不一定为麦克斯韦分布的电子速度分布计算非相干散射功率谱，用于研究超热电子、等离子体线等效应。适合学习 ISR 理论或检验 EISCAT、AMISR 谱拟合假设，不直接处理实测数据。与 LPI 分别处于理论谱计算与原始数据反演两端，可配合阅读。",
       "language": "Python",
       "license": "MIT",
@@ -20023,7 +20023,7 @@
     {
       "name": "USGS Geomagnetism Data",
       "url": "https://www.usgs.gov/programs/geomagnetism/data",
-      "desc_zh": "美国地质调查局地磁计划：观测台实时数据、绘图与下载服务入口",
+      "desc_zh": "美国地磁台实时绘图、Web 服务与编程接口入口；脚本请求可能遇 403",
       "analysis_zh": "美国地质调查局（USGS）地磁计划的数据与工具总入口，汇集其全美及海外地磁观测台的实时数据流、衍生产品绘图（geomag.usgs.gov/plots）、数据网络服务与邮件列表，并注明数据管理与特殊请求联系人。秒级与分钟级地磁记录可用来判断磁暴时段、计算 dB/dt 与 GIC 代理，辅助解释 GNSS TEC 扰动与定位退化。数据属美国政府公共资源，可自由使用但应注明来源。页面对非浏览器请求可能返回 403，需正常浏览器访问；收录前已核验 200。",
       "language": "data-portal",
       "license": "USGov public resource",
@@ -20043,7 +20043,7 @@
     {
       "name": "NRCan Canadian Magnetic Data",
       "url": "https://geomag.nrcan.gc.ca/data-donnee/sd-en.php",
-      "desc_zh": "加拿大自然资源部地磁观测网（CANMOS）数据下载与地磁指数页面",
+      "desc_zh": "说明如何经 FDSN 服务（网络代码 C2）取加拿大地磁台数据，附地磁指数",
       "analysis_zh": "加拿大自然资源部（NRCan）地磁组的官方数据页面，说明如何经 Earthquakes Canada 的 FDSN dataselect/station 网络服务下载加拿大国家地磁台网（网络代码 C2）波形数据，并给出位置码、通道码等检索参数；另有加拿大小时变幅、均值、变化率等地磁指数与 Kp 链接。高纬台站对极光带磁暴敏感，适合与 CARISMA、SuperMAG 数据及 GNSS 闪烁研究配合。FDSN 接口可直接用 ObsPy 等工具访问。英法双语。收录前已 HTTP 200 核验。",
       "language": "data-portal",
       "license": "portal-terms",
@@ -20063,7 +20063,7 @@
     {
       "name": "BGS Geomagnetism Data Service",
       "url": "https://geomag.bgs.ac.uk/data_service/data/home.html",
-      "desc_zh": "英国地质调查局地磁组观测台数据服务（学术用途申请获取）",
+      "desc_zh": "BGS 自有台站秒/分钟数据、年均值与指数，仅限学术非商业使用",
       "analysis_zh": "英国地质调查局（BGS）地磁组的数据服务页面，介绍其英国及海外地磁观测台的 1 秒与 1 分钟均值数据、年均值、地磁指数与模型产品的获取方式。与本目录已收录的 BGS INTERMAGNET 数据门户（imag-data）不同，这里对应 BGS 自有观测台与自有产品，部分高分辨率数据需要申请。页面明确数据仅供学术使用，禁止商业用途，商业用户需另行联系。适合研究欧洲中高纬磁暴与电离层扰动关联。页面依赖 JavaScript 显示。",
       "language": "data-portal",
       "license": "academic non-commercial",
@@ -20085,7 +20085,7 @@
     {
       "name": "MACCS",
       "url": "http://space.augsburg.edu/maccs/",
-      "desc_zh": "奥格斯堡大学运营的加拿大北极尖角区/极隙区磁力计阵列（MACCS）数据页",
+      "desc_zh": "加拿大北极多站磁力计的当日/每日图，数据需申请，仅 HTTP 访问",
       "analysis_zh": "美国奥格斯堡大学运营的 Magnetometer Array for Cusp and Cleft Studies，在加拿大北极地区（Cape Dorset、Clyde River、Igloolik、Pangnirtung 等站）布设磁力计，研究极隙区与尖角区的近地空间环境。网站提供当天各站数据图、每日图浏览、数据与绘图申请以及 ULF 指数 FTP 入口。高纬磁场扰动与极盖电离层斑块、GNSS 相位闪烁密切相关，可与 CARISMA、SuperMAG 互补。站点界面较旧，为 HTTP 访问；收录前已核验 200。",
       "language": "data-portal",
       "license": "portal-terms",
@@ -20105,7 +20105,7 @@
     {
       "name": "THEMIS GMAG",
       "url": "https://themis.ssl.berkeley.edu/gmag/",
-      "desc_zh": "NASA THEMIS 任务地面磁力计（GMAG）与全天空成像仪数据目录",
+      "desc_zh": "按日期组织的 GMAG/ASI CDF 文件目录与台站清单，可用 PySPEDAS 直接下载",
       "analysis_zh": "加州大学伯克利空间科学实验室维护的 NASA THEMIS 任务地面观测信息页，列出地面磁力计（GMAG）与全天空成像仪（ASI）的数据可用性、文件系统目录、台站分组与所属网络清单，数据以 CDF 文件形式按日期组织，覆盖北美众多合作台网。可用 PySPEDAS 或 SPEDAS 直接下载与绘图。适合研究亚暴、极光与高纬电离层扰动，并与 GNSS TEC/ROTI 做事件对比。页面为纯文本目录风格，数据使用需遵守各台网致谢要求。",
       "language": "data-portal",
       "license": "portal-terms",
@@ -20125,7 +20125,7 @@
     {
       "name": "TGO Geomagnetic Data",
       "url": "https://flux.phys.uit.no/geomag.html",
-      "desc_zh": "特罗姆瑟地球物理观测台（UiT）北欧磁力计链实时与存档数据门户",
+      "desc_zh": "斯堪的纳维亚磁照图、K 指数与 GIC 代理；部分 ASCII 下载需密码",
       "analysis_zh": "挪威北极大学（UiT）特罗姆瑟地球物理观测台的地磁数据门户，汇集 TGO 自有台站及 DTU、FMI、索丹屈莱、阿拉斯加大学等合作台站：可绘制存档与 24 小时实时磁照图、多站叠加图，下载 ASCII 数据（部分需密码），并提供 K 指数、特罗姆瑟活动指数、小时变幅指数与 GIC 代理（nT/s）。斯堪的纳维亚高纬磁场数据是分析极光区 GNSS 闪烁与 EISCAT 同步观测的常用背景。收录前已 HTTP 200 核验。",
       "language": "data-portal",
       "license": "portal-terms",
@@ -20147,7 +20147,7 @@
     {
       "name": "RAL Ionosonde (UKSSDC)",
       "url": "https://www.ukssdc.ac.uk/ionosondes/",
-      "desc_zh": "卢瑟福·阿普尔顿实验室电离层监测组：奇尔顿与斯坦利港测高仪数据页",
+      "desc_zh": "奇尔顿测高序列承接斯劳站，适合 foF2 长期趋势研究；电离图存档于 WDC",
       "analysis_zh": "英国卢瑟福·阿普尔顿实验室（RAL）电离层监测组的介绍与数据页面，隶属 UK Solar System Data Centre：说明其运行的奇尔顿（英国）与斯坦利港（福克兰群岛）测高仪，以及已于 1998 年停运的勒威克站，电离图与 URSI 标定参数存档于世界数据中心。奇尔顿序列承接斯劳站，是全球最长的电离层测高记录之一，适合长期趋势与 foF2 气候研究。特殊观测需求可联系该组加密探测。与本目录 UKSSDC 首页条目互补。",
       "language": "data-portal",
       "license": "portal-terms",
@@ -20167,7 +20167,7 @@
     {
       "name": "PySPEDAS",
       "url": "https://github.com/spedas/pyspedas",
-      "desc_zh": "空间物理多任务数据检索、分析与绘图 Python 框架（含地面磁力计模块）",
+      "desc_zh": "pip 安装，一行代码下载 THEMIS、MMS、GOES、OMNI 等数据并用 pytplot 绘图",
       "analysis_zh": "SPEDAS 团队（源自 THEMIS/伯克利 SSL）维护的 Python 版空间物理数据分析框架，MIT 许可，可 pip 安装并有完整 ReadTheDocs 文档。统一封装数十个任务与数据源的下载和读取，包括 ACE、Arase、C/NOFS、DSCOVR、GOES、MMS、THEMIS 及其地面磁力计与全天空成像仪、Swarm、OMNI 等，并提供坐标变换、时间序列处理与 pytplot 绘图。做 GNSS 电离层事件分析时可一站式获取太阳风、地磁与卫星原位数据。持续活跃维护。",
       "language": "Python",
       "license": "MIT",
@@ -20187,7 +20187,7 @@
     {
       "name": "MagPy",
       "url": "https://github.com/geomagpy/magpy",
-      "desc_zh": "地磁观测台数据处理 Python 包 MagPy（GeomagPy），支持 IAGA-2002/ImagCDF 等格式",
+      "desc_zh": "读写 IAGA-2002、ImagCDF 等格式，做基线计算与绘图，带 XMagPy 图形界面",
       "analysis_zh": "奥地利 GeoSphere（原 ZAMG）Conrad 观测台团队主导开发的地磁数据分析包，BSD-3-Clause 许可。面向观测台日常处理：读写 ImagCDF、IAGA-2002、WDC、IAF、BLV 等格式，做基线值与基线计算、滤波、合并、指数计算与数据库管理，完整安装还带图形界面 XMagPy。适合需要把 INTERMAGNET 或自建磁力计数据接入 GNSS 电离层研究流程的用户。作者提示 2.x 版本仍在频繁改动，升级前应阅读发布说明。",
       "language": "Python",
       "license": "BSD-3-Clause",
@@ -20207,7 +20207,7 @@
     {
       "name": "ChaosMagPy",
       "url": "https://github.com/ancklo/ChaosMagPy",
-      "desc_zh": "丹麦技术大学 CHAOS 地磁场模型的 Python 计算包",
+      "desc_zh": "计算 CHAOS 模型的地核场、岩石圈场与外源场，pip 可装，另支持其他地磁模型",
       "analysis_zh": "DTU Space 研究者维护的 Python 包，主体为 MIT 许可（部分文档示例脚本为 LGPL-3.0），有 Zenodo DOI 与 ReadTheDocs 文档，可 pip 安装。用于计算 CHAOS 系列地磁场模型（基于 Swarm、CHAMP 等卫星与观测台数据）的内源场、外源磁层场及其时变，也可读取其他球谐模型系数。相比 IGRF 时间分辨率更高、含外源场，适合精细磁坐标换算与电离层电流分析。模型系数文件需从 DTU 网站另行下载。",
       "language": "Python",
       "license": "MIT",
@@ -20227,7 +20227,7 @@
     {
       "name": "resolvedvelocities",
       "url": "https://github.com/amisr/resolvedvelocities",
-      "desc_zh": "AMISR 视线速度反演三维离子漂移与电场矢量的 Python 实现",
+      "desc_zh": "命令行加配置文件，把 AMISR 视线速度按纬度或高度分箱反演为矢量",
       "analysis_zh": "AMISR 官方 GitHub 组织发布的 Python 包，GPL-3.0 许可，实现 Heinselman 与 Nicolls 的贝叶斯重建算法，从 PFISR/RISR 多波束视线速度反演三维离子漂移速度和电场矢量。提供按磁纬分箱（F 区局地对流）与按高度分箱（E 区速度剖面）两种命令行程序，均以配置文件驱动，依赖 numpy 与 apexpy。输入为 SRI ISR 数据库中的处理后 HDF5 文件。适合研究高纬对流与电离层不规则体驱动的用户。",
       "language": "Python",
       "license": "GPL-3.0",
@@ -20247,7 +20247,7 @@
     {
       "name": "MIPS",
       "url": "https://github.com/MITHaystack/MIPS",
-      "desc_zh": "MIT Haystack 非相干散射雷达系统性能仿真器",
+      "desc_zh": "按波形、阵列、功率孔径等参数估算 ISR 的 SNR 与测量误差，用于雷达设计权衡",
       "analysis_zh": "MIT 海斯塔克天文台发布的 Incoherent Scatter Performance Simulator，BSD-2-Clause 许可。基于物理的雷达性能模型，考虑一阶与二阶效应及测量统计，可评估不同波形带宽、中心频率、占空比、阵列布局、单站/双站配置与功率孔径组合下的信噪比、测量速度和参数估计误差，用于下一代地球空间雷达的设计权衡。适合 ISR 系统设计与观测模式规划，不处理实测数据。README 附引用信息；文档较精简，需要一定雷达理论基础。",
       "language": "Python",
       "license": "BSD-2-Clause",
@@ -20267,7 +20267,7 @@
     {
       "name": "BAFIM",
       "url": "https://github.com/ilkkavir/BAFIM",
-      "desc_zh": "GUISDAP 非相干散射分析的贝叶斯时间滤波先验模块",
+      "desc_zh": "用时间域贝叶斯滤波替换 GUISDAP 默认的 IRI 先验，新版 GUISDAP 已内置",
       "analysis_zh": "奥卢大学 Ilkka Virtanen 开发的 GUISDAP 扩展模块，BSD-2-Clause 许可，MATLAB 实现。以时间上的贝叶斯滤波替代 GUISDAP 默认基于 IRI 的先验，并在距离方向使用相关先验保持剖面平滑，可用于沿磁力线与斜向波束以及远程站数据，从而提高 EISCAT 等雷达参数拟合的时间分辨率与稳定性。新版 GUISDAP 已内置该模块，仅需另装 flipchem 离子化学模块。与本目录 LPI 同一作者，适合 ISR 数据分析人员。",
       "language": "MATLAB",
       "license": "BSD-2-Clause",
@@ -20287,7 +20287,7 @@
     {
       "name": "digisondeindices",
       "url": "https://github.com/sunipkm/digisondeindices",
-      "desc_zh": "从 GIRO DIDBase 下载并解析 Digisonde 标定参数为 xarray 的 Python 工具",
+      "desc_zh": "按时间和台站代码拉取 foF2、hmF2、TEC 等标定参数，输出 xarray",
       "analysis_zh": "个人开发者发布的 Python 小工具，MIT 许可。按时间与台站代码从 Lowell GIRO 的 DIDBase 获取 Digisonde 自动/人工标定参数，包括 foF2、foF1、foE、hmF2、MUFD、半厚度、B0 与测高仪推算 TEC 以及自动标定置信度，统一输出为 xarray Dataset，缺测时返回空数据集。适合把测高仪参数批量接入 IRI 对比、TEC 校验或机器学习流程。功能单一、星标少，依赖 DIDBase 在线服务，使用时请遵守 GIRO 数据政策。",
       "language": "Python",
       "license": "MIT",
@@ -20307,7 +20307,7 @@
     {
       "name": "isr-raw",
       "url": "https://github.com/space-physics/isr-raw",
-      "desc_zh": "处理 PFISR 等非相干散射雷达原始 I/Q 电压数据的 Python 工具",
+      "desc_zh": "读取 PFISR 原始 I/Q 电压 HDF5，计算单脉冲功率、SNR 并快速画图",
       "analysis_zh": "space-physics 组织（Michael Hirsch 等）发布的 Python 工具集，Apache-2.0 许可，面向 Poker Flat AMISR 手动申请的原始 I+jQ 电压样本，可按单脉冲读取原始功率、自相关与等离子体线数据，并通过 ini 配置的绘图程序检查湍流活动（含 CFAR 检测）等现象。适合需要比标准处理产品更高时间分辨率的 ISR 研究，如极光与阿尔芬波相关散射。原始数据需向 SRI 专门申请；代码近年更新较少，依赖版本需自行适配。",
       "language": "Python",
       "license": "Apache-2.0",
