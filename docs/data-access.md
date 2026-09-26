@@ -439,7 +439,7 @@ curl -L -C - -O \
 
 ## 电离层与地磁门户决策表
 
-第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD），以及地基与 LEO 电离层观测（E23 GIRO / DIDBase 测高仪、E24 Swarm swarm-diss HTTPS、E25 VirES HAPI、E26 CHAIN 闪烁 ISMR、E27 GIM/IONEX 各中心门户、E28 IGS 观测匿名镜像、E29 近实时 TEC 产品、E30 区域 CORS 网、E31 耀斑驱动数据、E32 DMSP / TIMED GUVI）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
+第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD），以及地基与 LEO 电离层观测（E23 GIRO / DIDBase 测高仪、E24 Swarm swarm-diss HTTPS、E25 VirES HAPI、E26 CHAIN 闪烁 ISMR、E27 GIM/IONEX 各中心门户、E28 IGS 观测匿名镜像、E29 近实时 TEC 产品、E30 区域 CORS 网、E31 耀斑驱动数据、E32 DMSP / TIMED GUVI、E33 全天空成像仪）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
 
 | 门户 | 账号 / 门槛 | 格式 | 时间分辨率 · 时延 | 实测 |
 |---|---|---|---|:---:|
@@ -475,6 +475,7 @@ curl -L -C - -O \
 | [区域 CORS 网](./software/cors-networks.md) | **匿名**：NOAA NGS S3 `noaa-cors-pds`、EPN `/pub/RINEX/`（+ BKG EUREF 镜像）、GeoNet（S3）、IBGE RBMC geoftp、SONEL FTP；**EarthScope GAGE 302 到登录**、CDDIS 需 Earthdata | RINEX 2 短名 o.gz / d.gz；RINEX 3 crx.gz；GeoNet 为 rnx.gz | 2024/132：NOAA 1740 站目录、SONEL 692、EPN 395、GeoNet 186、RBMC 84（15 s）；5 网各 1 站全部完整；上架中位 GeoNet 0.2 h、NOAA 2.8 h、RBMC ≈ 23 h、EPN 中央局 ≈ 52 h | ✅（[E30](#dp-e30)，[手册](./software/cors-networks.md)） |
 | [耀斑驱动数据](./software/solar-flare-data.md) | **匿名**：SWPC 事件表（NCEI 归档）、NCEI GOES-R XRS L2 `_science`（`sci_`）与运行版（`dn_`）、SWPC JSON（仅 7 天）、LISIRD LaTiS 的 FISM2 与 SDO EVE | netCDF4（XRS）/ 文本 / JSON / CSV | 2024-05-11 X5.8：G16 science 1 s 峰 5.865e-4 @ 01:22:50、G18 定为 X5.7、运行版高 1.2%；FISM2 30.4 nm ×1.54 峰 01:20，ESP 0.1–7 nm ×16.1；FISM2 延迟约 7 天 | ✅（[E31](#dp-e31)，[手册](./software/solar-flare-data.md)） |
 | [DMSP / TIMED GUVI](./software/dmsp-timed-data.md) | **匿名**：SPDF `dmsp/`（SSIES-3 CDF、SSUSI EDR/SDR）与 `timed/guvi/`；CDAWeb HAPI（SSIES 取整、无质量标志）；Madrigal kinst 8100（下载需填三个信息字段，见 [madrigal](./software/madrigal.md)）；JHU/APL 官网为 JS 页面，门槛未验证 | NASA CDF / HDF5 / netCDF3 classic | F18 2024-05-11：SSIES 6100 条 1 s、dens good 86.1%；SSUSI 南半球功率 1185.6 GW、观测边界 50.2°（模型 61.8°）；SSIES 2015–2021 缺；GUVI 成像只到 2007 | ✅（[E32](#dp-e32)，[手册](./software/dmsp-timed-data.md)） |
+| [全天空成像仪](./software/allsky-imager-data.md) | **匿名**：UCalgary 开放数据（THEMIS ASI、REGO stream0 + skymap）、Berkeley THEMIS L1 CDF（asf/ast）、MANGO 数据服务器（level1 / raw / quicklook） | 多帧 PGM / CDF / HDF5 / IDL `.sav` | 2024-05-11 gill：THEMIS 每分钟 20 帧 × 3 s（256²，饱和 65535）、REGO 20 帧（512²）；ast 4797 张；MANGO cfs 红线 96 帧 × 4 min；skymap 要选 gill_20230922 | ✅（[E33](#dp-e33)，[手册](./software/allsky-imager-data.md)） |
 
 要登录才能拿数据的：EISCAT 门户（Madrigal 可绕行）、子午工程、ROM SAF 产品库（AWS 可绕行）、TGO ASCII、UKSSDC/RAL。要「申请」的：BGS 本站高分辨率（GIN 可绕行）。
 
@@ -823,6 +824,18 @@ curl -s -O $S/dmsp/dmspf18/ssusi/data/edr-iono/2024/132/dmspf18_ssusi_edr-iono_2
 curl -s -O $S/timed/guvi/levels_v13/level1c/spectrograph/2024/132/TIMED_GUVI_L1C-2-disk-SPECT_2024132002517-2024132020153_REV121644_Av13-01r001.nc   # 实测：200，524,755 B，HDF5；DISK_INTENSITY_DAY 408×6；GUVI 成像模式只到 2007，光谱仪到 2026/075
 curl -s 'https://cdaweb.gsfc.nasa.gov/hapi/data?id=DMSP-F18_SSIES-3_THERMAL-PLASMA&time.min=2024-05-11T01:20:00Z&time.max=2024-05-11T01:20:03Z&parameters=temp,dens'   # 实测：3 行，数值取整（2562,142273），无质量标志 / 经纬度；参数顺序颠倒报 1411
 curl -s 'https://cedar.openmadrigal.org/getExperimentFilesService.py?id=100240270'   # 实测：Madrigal kinst 8100，F16/F17/F18 dms_ut_20240511_NN.002.hdf5（带质量标志）；下载方法见 madrigal 手册
+```
+
+<a id="dp-e33"></a>**E33 全天空成像仪（THEMIS ASI / REGO：UCalgary + Berkeley；MANGO）**
+
+```bash
+U=https://data.phys.ucalgary.ca/sort_by_project
+curl -s -O $U/THEMIS/asi/stream0/2024/05/11/gill_themis19/ut06/20240511_0600_gill_themis19_full.pgm.gz   # 实测：200，2,062,433 B；gzip 多帧 PGM：20 帧 × 3 s，256×256，16 bit；暴夜饱和到 65535
+curl -s -O $U/GO-Canada/REGO/stream0/2024/05/11/gill_rego-652/ut06/20240511_0600_gill_rego-652_6300.pgm.gz   # 实测：200，6,936,968 B；630 nm，20 帧 × 3 s（曝光 2 s），512×512
+curl -s $U/THEMIS/asi/skymaps/gill/ | grep -o 'gill_[0-9]\{8\}' | sort -u | awk -F_ '$2<=20240511' | tail -1   # 实测：gill_20230922（共 19 版；要选生效日 ≤ 观测日的那版）
+curl -s -O https://themis.ssl.berkeley.edu/data/themis/thg/l1/asi/gill/2024/05/thg_l1_ast_gill_20240511_v01.cdf   # 实测：200，2,744,143 B；4797 张 32×32 缩略图（04:13–08:13 UT）；asf 全帧每小时 95–124 MB
+curl -s -O https://data.mangonetwork.org/data/transport/mango/archive/cfs/redline/level1/2024/132/mango-cfs-redline-level1-20240511.hdf5   # 实测：200，16,102,350 B；96 帧 500×500 uint8（无单位），4 min 一帧；Mask=True 为被遮像素
+# 实测：THEMIS 2024-05-11 有 11 个站目录、REGO 3 个；MANGO 8 站有 2024/132 level1；gill ast 与 MANGO cfs 全图均值都在 07:07–07:08 UT 最亮（本文口径）
 ```
 
 ---

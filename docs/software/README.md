@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **246 篇**操作手册（合计 **56397 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **247 篇**操作手册（合计 **56622 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -271,6 +271,7 @@
 | 244 | [ocbpy.md](./ocbpy.md) | aburrell/ocbpy：极盖边界（OCB）自适应磁坐标：IMAGE/AMPERE 边界圆 → AACGM lat/MLT 转 OCB lat/MLT（边界固定 74°）、revert_coord、VectorData 矢量按极盖半径缩放；包内自带 IMAGE 2000–2002、AMPERE 2010–2024-10 边界 | 204 | **已短硬** 用法讲解新入库 · 2026-09-26 06:07–06:10 EDT；PyPI 0.7.0/`3ced0de`/BSD-3，aacgmv2 2.7.1；AMPERE 2024-05-10 午夜边界 06 UT 69.1° → 22 UT 58.1°，AACGM 70° 点 OCB lat 74.824→79.957；500 m/s 流速 ×1.994；坑：默认文件表 AMPERE 写死到 2022（须传 filename）、未选 rec_ind 全 NaN、建对象约 40 s |
 | 245 | [dmsp-timed-data.md](./dmsp-timed-data.md) | DMSP SSIES-3 / SSUSI 与 TIMED GUVI 公开数据：SPDF 路径与年份覆盖、CDAWeb HAPI 限制、Madrigal kinst 8100 文件列表、JHU/APL 门户；CDF / HDF5 / netCDF3 三种格式真实读取（2024-05-11 F18） | 254 | **已短硬** · 2026-09-26 06:06–06:12 EDT；F18 2024-05-11：SSIES 6100 条 1 s、dens good 86.1%；SSUSI 南 1185.6 GW、边界 50.2° vs 模型 61.8°；SSIES 2015–2021 缺 |
 | 246 | [quakeion.md](./quakeion.md) | Gm015555/quakeion：地名+年份 → USGS 地震目录、CODE GIM 震中/近站点插值 TEC、ROT/ROTI 逐日 σ 超限、GFZ Kp + 京都 Dst 暴日，4 张 PNG；四个源都匿名；0.1.1 写死的 `http://ftp.aiub.unibe.ch/CODE` 挂起，须改 `CODE_BASE` | 162 | **已短硬** 用法讲解新入库 · 2026-09-26 06:08–06:17 EDT；PyPI **0.1.1**/MIT/tip `8c4d05f`；上游测试 29 passed；Aomori M7.6（2025-12-08）±1 天 3 个 FIN GIM 各 344 KB 压缩、TEC 72 点、ROT max 0.131、ROTI max 0.082 TECU/min、1σ/2σ 超限 21/3；Kp 17 行（end 只取 00:00，漏最后一天）、Dst 73 行（final 404→provisional）；2016 旧名 `.Z` 与 2026-09-24 RAP 均命中；`import quakeion.tec` 拿到的是函数 |
+| 247 | [allsky-imager-data.md](./allsky-imager-data.md) | 全天空成像仪匿名数据：UCalgary THEMIS ASI / REGO（多帧 PGM + skymap .sav）、Berkeley THEMIS L1 CDF、MANGO level1 HDF5；2024-05-10/11 暴夜一夜目录规模与样本读取、定位 | 225 | **已短硬** · 2026-09-26 06:15–06:18 EDT；gill：THEMIS 20 帧/min（饱和 65535）、REGO 512² 20 帧/min、ast 4797 张；MANGO 8 站 level1，cfs 96 帧；skymap 选 20230922 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -506,6 +507,7 @@
 | 美国 / 欧洲 / 新西兰 / 巴西 / 验潮站 CORS 日观测不登录去哪拿、多少站、多久上架（NOAA、EPN、GeoNet、RBMC、SONEL） | [cors-networks.md](./cors-networks.md) |
 | 耀斑 TEC 突增要的 GOES X 射线 / EUV 数据去哪不登录拿、GOES-16 与 GOES-18、science 与运行版差在哪 | [solar-flare-data.md](./solar-flare-data.md) |
 | DMSP 原位等离子体 / SSUSI 极光与 TIMED GUVI 数据不登录去哪拿、哪年有、CDF/HDF5/netCDF3 怎么读 | [dmsp-timed-data.md](./dmsp-timed-data.md) |
+| 极光 / 630 nm 气辉全天空图像（THEMIS、REGO、MANGO）不登录去哪拿、怎么读、像素怎么定位 | [allsky-imager-data.md](./allsky-imager-data.md) |
 | 美国 CORS（NCN）RINEX 批量下载、小时文件时延、站坐标（ITRF2020 vs NAD 83）、UFCORS 任意时段 | [noaa-ncn-data.md](./noaa-ncn-data.md) |
 | 欧洲 EPN/RENAG/RGP 台站检索、按站按日拿 RINEX 下载 URL 和 md5、IGS 站点日志 | [epos-glass-api.md](./epos-glass-api.md) |
 | 读/交换多机构闪烁 HDF5 文件（Kartverket/FMI/DTU/UNB 的 BiScEF `.nc`，S4/σφ/ROTI；先核时间基准与缺测值） | [biscef.md](./biscef.md) |
