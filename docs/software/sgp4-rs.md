@@ -27,7 +27,7 @@ cargo build --release                      # 本机冷编译 9.2 s（含依赖�
 
 `no_std`：`default-features = false, features = ["libm"]`（未测）。
 
-本文所有数字来自一个自写 CLI `sgp4cmp`（`teme` / `sp3` / `bench` / `tle` / `life` / `ver` 六个子命令，约 170 行）。核心四行：
+本文所有数字来自一个自写 CLI `sgp4cmp`（`teme` / `sp3` / `bench` / `tle` / `life` / `ver` 六个子命令，约 150 行）。核心四行：
 
 ```rust
 let elements = sgp4::parse_3les(&txt)?;                      // 或 serde_json::from_str::<Vec<sgp4::Elements>>(&json)?
