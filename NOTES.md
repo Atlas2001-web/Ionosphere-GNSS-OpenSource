@@ -423,3 +423,10 @@
 - 当前条目：**1011**
 - 分类计数：{'ionosphere': 294, 'troposphere': 47, 'gnss-data': 135, 'gnss-positioning': 103, 'orbit-clock': 33, 'navigation-ins': 71, 'gnss-sdr': 77, 'mobile-apps': 29, 'tools-learning': 59, 'gnss-datasets': 163}
 - 详见 `research/routine_finds_20260926.json`
+
+## 例行检索补录（2026-09-26b）
+
+- 新增 **15** 条（USGS/NRCan/BGS 地磁数据、MACCS、THEMIS GMAG、TGO 磁力计链、RAL 测高仪；PySPEDAS、MagPy、ChaosMagPy、resolvedvelocities、MIPS、BAFIM、digisondeindices、isr-raw）
+- 当前条目：**1026**
+- 分类计数：{'ionosphere': 302, 'troposphere': 47, 'gnss-data': 135, 'gnss-positioning': 103, 'orbit-clock': 33, 'navigation-ins': 71, 'gnss-sdr': 77, 'mobile-apps': 29, 'tools-learning': 59, 'gnss-datasets': 170}
+- 详见 `research/routine_finds_20260926b.json`

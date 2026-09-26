@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> **294** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **302** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -105,6 +105,7 @@ yujieqing 仓库：为电离层层析准备几何/射线矩阵相关代码，可
 | [igrf](https://github.com/space-physics/igrf) | igrf：IGRF13 地磁模型 Python/Matlab 接口 | Python | 77 | 🏷️ 高校实验室 |
 | [GEMINI3D](https://github.com/gemini3d/gemini3d) | GEMINI3D：三维电离层物理模式 | Fortran | 69 | 🏷️ 高校实验室 |
 | [aacgmv2](https://github.com/aburrell/aacgmv2) | aacgmv2：AACGM-v2 地磁坐标 Python 库 | Python | 35 | 🏷️ 高校实验室 |
+| [ChaosMagPy](https://github.com/ancklo/ChaosMagPy) | 丹麦技术大学 CHAOS 地磁场模型的 Python 计算包 | Python | 34 | 🏷️ 高校实验室 |
 | [wmm2020](https://github.com/space-physics/wmm2020) | wmm2020：世界磁模型 WMM2020 Python 接口 | Python | 29 | 🏷️ 高校实验室 |
 | [GITM](https://github.com/GITMCode/GITM) | GITM：全球电离层-热层模式社区 Fortran 源码 | Fortran | 28 | 🏷️ 高校实验室 |
 | [Aether-IT-model](https://github.com/AetherModel/Aether) | Aether：热层-电离层耦合物理模式（非 PPP-RTK AETHER） | C++ | 27 | 🏷️ 高校实验室 |
@@ -119,6 +120,7 @@ yujieqing 仓库：为电离层层析准备几何/射线矩阵相关代码，可
 | [mat_gemini](https://github.com/gemini3d/mat_gemini) | mat_gemini：GEMINI 三维电离层模式 MATLAB 核心脚本 | MATLAB | 6 | 🏷️ 高校实验室 |
 | [SAMI2](https://github.com/NRL-Plasma-Physics-Division/SAMI2) | SAMI2：NRL 二维电离层模式官方 Fortran 源码 | Fortran | 6 | 🏷️ 官方 |
 | [IPE](https://github.com/NOAA-SWPC/IPE) | IPE：NOAA SWPC 电离层-等离子体层-电动力学模式 | Fortran | 5 | 🏷️ 官方 |
+| [MIPS](https://github.com/MITHaystack/MIPS) | MIT Haystack 非相干散射雷达系统性能仿真器 | Python | 5 | 🏷️ 高校实验室 |
 | [AURORA](https://github.com/egavazzi/AURORA) | AURORA：电离层电子输运时变模型（UiT） | MATLAB | 3 | 🏷️ 高校实验室 |
 | [ntcmg](https://github.com/lguldur/ntcmg) | ntcmg：Galileo NTCM-G 电离层改正 C++ 实现 | C++ | 3 | 🏷️ 个人社区 |
 | [FIRI-2018](https://github.com/AlexT1983/FIRI-2018) | FIRI-2018：低电离层经验模型 FIRI-2018 的 MATLAB 实现 | MATLAB | 2 | 🏷️ 高校实验室 |
@@ -162,6 +164,13 @@ GEMINI3D 是面向电离层的三维流体电动力学数值模式，用 Fortran
 语言：Python · 许可：MIT · 星标约：35 · 宿主：github
 
 aburrell 维护的 AACGM-v2 Python 库，在地理坐标与高度调整校正地磁坐标间转换，电离层/极光研究常用。MIT 许可；引用需同时给出包 DOI 与 Shepherd 2014 论文。与 apexpy、igrf 互补，它本身不是 GNSS 观测解算器。
+
+#### [ChaosMagPy](https://github.com/ancklo/ChaosMagPy)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：MIT · 星标约：34 · 宿主：github
+
+DTU Space 研究者维护的 Python 包，主体为 MIT 许可（部分文档示例脚本为 LGPL-3.0），有 Zenodo DOI 与 ReadTheDocs 文档，可 pip 安装。用于计算 CHAOS 系列地磁场模型（基于 Swarm、CHAMP 等卫星与观测台数据）的内源场、外源磁层场及其时变，也可读取其他球谐模型系数。相比 IGRF 时间分辨率更高、含外源场，适合精细磁坐标换算与电离层电流分析。模型系数文件需从 DTU 网站另行下载。
 
 #### [wmm2020](https://github.com/space-physics/wmm2020)  
 *🏷️ 高校实验室*
@@ -260,6 +269,13 @@ Naval Research Laboratory 的 SAMI2（Sami2 is Another Model of the Ionosphere�
 语言：Fortran · 许可：GPL-3.0 · 星标约：5 · 宿主：github
 
 IPE（Ionosphere Plasmasphere Electrodynamics）由 NOAA 空间天气预测中心开源，描述电离层与等离子体层耦合及电动力学，面向业务与科研的全球电子密度等产品。适合作为物理/半业务背景场，与实测 TEC、闪烁指数对比。局限：配置与耦合运行门槛不低；星数不多、社区文档相对 GITM/TIE-GCM 更散；不宜直接替代经验修正模型做接收机实时改正。
+
+#### [MIPS](https://github.com/MITHaystack/MIPS)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：BSD-2-Clause · 星标约：5 · 宿主：github
+
+MIT 海斯塔克天文台发布的 Incoherent Scatter Performance Simulator，BSD-2-Clause 许可。基于物理的雷达性能模型，考虑一阶与二阶效应及测量统计，可评估不同波形带宽、中心频率、占空比、阵列布局、单站/双站配置与功率孔径组合下的信噪比、测量速度和参数估计误差，用于下一代地球空间雷达的设计权衡。适合 ISR 系统设计与观测模式规划，不处理实测数据。README 附引用信息；文档较精简，需要一定雷达理论基础。
 
 #### [AURORA](https://github.com/egavazzi/AURORA)  
 *🏷️ 高校实验室*
@@ -579,7 +595,9 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [PySPEDAS](https://github.com/spedas/pyspedas) | 空间物理多任务数据检索、分析与绘图 Python 框架（含地面磁力计模块） | Python | 204 | 🏷️ 官方 |
 | [pysat](https://github.com/pysat/pysat) | pysat：日地空间科学数据分析框架 | Python | 173 | 🏷️ 高校实验室 |
+| [MagPy](https://github.com/geomagpy/magpy) | 地磁观测台数据处理 Python 包 MagPy（GeomagPy），支持 IAGA-2002/ImagCDF 等格式 | Python | 67 | 🏷️ 高校实验室 |
 | [Kamodo](https://github.com/nasa/Kamodo) | Kamodo：NASA CCMC 日地模式输出函数化套件 | Python | 58 | 🏷️ 官方 |
 | [geospacelab](https://github.com/JouleCai/geospacelab) | geospacelab：日地空间数据管理与可视化 | Python | 48 | 🏷️ 高校实验室 |
 | [apexpy](https://github.com/aburrell/apexpy) | apexpy：Apex/准偶极地磁坐标 Python 封装 | Python | 40 | 🏷️ 高校实验室 |
@@ -606,6 +624,9 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 | [Kamodo-core](https://github.com/nasa/Kamodo-core) | Kamodo-core：科学数据函数化 API 核心（NASA） | Python | 5 | 🏷️ 官方 |
 | [LPI](https://github.com/ilkkavir/lpi) | 奥卢大学非相干散射雷达电压级数据滞后剖面反演 R 包（MPI 版） | R | 5 | 🏷️ 高校实验室 |
 | [pynasonde](https://github.com/shibaji7/pynasonde) | pynasonde：精密电离层测高/探测 Python 应用 | Python | 5 | 🏷️ 高校实验室 |
+| [resolvedvelocities](https://github.com/amisr/resolvedvelocities) | AMISR 视线速度反演三维离子漂移与电场矢量的 Python 实现 | Python | 5 | 🏷️ 官方 |
+| [BAFIM](https://github.com/ilkkavir/BAFIM) | GUISDAP 非相干散射分析的贝叶斯时间滤波先验模块 | MATLAB | 4 | 🏷️ 高校实验室 |
+| [isr-raw](https://github.com/space-physics/isr-raw) | 处理 PFISR 等非相干散射雷达原始 I/Q 电压数据的 Python 工具 | Python | 4 | 🏷️ 高校实验室 |
 | [mitiono](https://github.com/sabrinastronomy/mitiono) | mitiono：由 GPS 接收机数据提取电离层与波束图 | Jupyter Notebook | 4 | 🏷️ 高校实验室 |
 | [MyIonosphere_Library](https://github.com/mguerra96/MyIonosphere_Library) | MyIonosphere_Library：相位 GFLC 与 IPP 的 MATLAB 函数库 | MATLAB | 4 | 🏷️ 个人社区 |
 | [psws-drf-tid-tools](https://github.com/N6RFM/psws-drf-tid-tools) | 基于 HamSCI Grape 数字 RF 记录估计 TID 传播速度与方向的 Python 流程 | Python | 4 | 🏷️ 个人社区 |
@@ -619,12 +640,26 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 
 ### 详细说明
 
+#### [PySPEDAS](https://github.com/spedas/pyspedas)  
+*🏷️ 官方*
+
+语言：Python · 许可：MIT · 星标约：204 · 宿主：github
+
+SPEDAS 团队（源自 THEMIS/伯克利 SSL）维护的 Python 版空间物理数据分析框架，MIT 许可，可 pip 安装并有完整 ReadTheDocs 文档。统一封装数十个任务与数据源的下载和读取，包括 ACE、Arase、C/NOFS、DSCOVR、GOES、MMS、THEMIS 及其地面磁力计与全天空成像仪、Swarm、OMNI 等，并提供坐标变换、时间序列处理与 pytplot 绘图。做 GNSS 电离层事件分析时可一站式获取太阳风、地磁与卫星原位数据。持续活跃维护。
+
 #### [pysat](https://github.com/pysat/pysat)  
 *🏷️ 高校实验室*
 
 语言：Python · 许可：BSD-3-Clause · 星标约：173 · 宿主：github
 
 pysat 提供跨平台一致的数据分析工作流，生态含空间天气指数、模式接口等，常与电离层卫星/地基数据一起用。局限：本身不是 IRI/TEC 专用包；学习曲线在“生态”而非单函数。
+
+#### [MagPy](https://github.com/geomagpy/magpy)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：BSD-3-Clause · 星标约：67 · 宿主：github
+
+奥地利 GeoSphere（原 ZAMG）Conrad 观测台团队主导开发的地磁数据分析包，BSD-3-Clause 许可。面向观测台日常处理：读写 ImagCDF、IAGA-2002、WDC、IAF、BLV 等格式，做基线值与基线计算、滤波、合并、指数计算与数据库管理，完整安装还带图形界面 XMagPy。适合需要把 INTERMAGNET 或自建磁力计数据接入 GNSS 电离层研究流程的用户。作者提示 2.x 版本仍在频繁改动，升级前应阅读发布说明。
 
 #### [Kamodo](https://github.com/nasa/Kamodo)  
 *🏷️ 官方*
@@ -807,6 +842,27 @@ Kamodo-core 提供函数化科学数据访问的核心 API，CCMC 的 Kamodo rea
 语言：Python · 许可：MIT · 星标约：5 · 宿主：github
 
 面向精密电离层无线电探测（sounding）的 Python 应用，服务实验测高/探测数据处理。局限：相对传统 Digisonde 软件生态仍小；硬件/数据格式适配需对照文档。
+
+#### [resolvedvelocities](https://github.com/amisr/resolvedvelocities)  
+*🏷️ 官方*
+
+语言：Python · 许可：GPL-3.0 · 星标约：5 · 宿主：github
+
+AMISR 官方 GitHub 组织发布的 Python 包，GPL-3.0 许可，实现 Heinselman 与 Nicolls 的贝叶斯重建算法，从 PFISR/RISR 多波束视线速度反演三维离子漂移速度和电场矢量。提供按磁纬分箱（F 区局地对流）与按高度分箱（E 区速度剖面）两种命令行程序，均以配置文件驱动，依赖 numpy 与 apexpy。输入为 SRI ISR 数据库中的处理后 HDF5 文件。适合研究高纬对流与电离层不规则体驱动的用户。
+
+#### [BAFIM](https://github.com/ilkkavir/BAFIM)  
+*🏷️ 高校实验室*
+
+语言：MATLAB · 许可：BSD-2-Clause · 星标约：4 · 宿主：github
+
+奥卢大学 Ilkka Virtanen 开发的 GUISDAP 扩展模块，BSD-2-Clause 许可，MATLAB 实现。以时间上的贝叶斯滤波替代 GUISDAP 默认基于 IRI 的先验，并在距离方向使用相关先验保持剖面平滑，可用于沿磁力线与斜向波束以及远程站数据，从而提高 EISCAT 等雷达参数拟合的时间分辨率与稳定性。新版 GUISDAP 已内置该模块，仅需另装 flipchem 离子化学模块。与本目录 LPI 同一作者，适合 ISR 数据分析人员。
+
+#### [isr-raw](https://github.com/space-physics/isr-raw)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：Apache-2.0 · 星标约：4 · 宿主：github
+
+space-physics 组织（Michael Hirsch 等）发布的 Python 工具集，Apache-2.0 许可，面向 Poker Flat AMISR 手动申请的原始 I+jQ 电压样本，可按单脉冲读取原始功率、自相关与等离子体线数据，并通过 ini 配置的绘图程序检查湍流活动（含 CFAR 检测）等现象。适合需要比标准处理产品更高时间分辨率的 ISR 研究，如极光与阿尔芬波相关散射。原始数据需向 SRI 专门申请；代码近年更新较少，依赖版本需自行适配。
 
 #### [mitiono](https://github.com/sabrinastronomy/mitiono)  
 *🏷️ 高校实验室*
@@ -2233,6 +2289,7 @@ Joe Huba（Syntek/NRL）在 Zenodo 以 software 类型存档的 SAMI3-3.22 官�
 |---|---|---|---:|---|
 | [geomagindices](https://github.com/space-physics/geomagindices) | geomagindices：地磁指数 Python 读写工具 | Python | 17 | 🏷️ 高校实验室 |
 | [madrigalWeb](https://github.com/MITHaystack/madrigalWeb) | OpenMadrigal/CEDAR Python 数据客户端 | Python | 4 | 🏷️ 高校实验室 |
+| [digisondeindices](https://github.com/sunipkm/digisondeindices) | 从 GIRO DIDBase 下载并解析 Digisonde 标定参数为 xarray 的 Python 工具 | Python | 2 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -2249,6 +2306,13 @@ space-physics 维护的地磁指数读写工具，常为电离层/空间天气�
 语言：Python · 许可：MIT · 星标约：4 · 宿主：github
 
 访问全球 Madrigal 站点（含 CEDAR）的官方 Python 客户端，可检索/下载非相干散射雷达、GNSS TEC 等空间天气与电离层归档。MIT。适合批量脚本拉取；需遵守各站点数据政策，部分实验需注册。配套门户见 OpenMadrigal。
+
+#### [digisondeindices](https://github.com/sunipkm/digisondeindices)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：2 · 宿主：github
+
+个人开发者发布的 Python 小工具，MIT 许可。按时间与台站代码从 Lowell GIRO 的 DIDBase 获取 Digisonde 自动/人工标定参数，包括 foF2、foF1、foE、hmF2、MUFD、半厚度、B0 与测高仪推算 TEC 以及自动标定置信度，统一输出为 xarray Dataset，缺测时返回空数据集。适合把测高仪参数批量接入 IRI 对比、TEC 校验或机器学习流程。功能单一、星标少，依赖 DIDBase 在线服务，使用时请遵守 GIRO 数据政策。
 
 ## TID/扰动
 

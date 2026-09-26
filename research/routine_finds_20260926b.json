@@ -1,0 +1,306 @@
+[
+  {
+    "name": "USGS Geomagnetism Data",
+    "url": "https://www.usgs.gov/programs/geomagnetism/data",
+    "desc_zh": "美国地质调查局地磁计划：观测台实时数据、绘图与下载服务入口",
+    "category": "gnss-datasets",
+    "subcategory": "地磁空间天气",
+    "provenance": "official",
+    "analysis_zh": "美国地质调查局（USGS）地磁计划的数据与工具总入口，汇集其全美及海外地磁观测台的实时数据流、衍生产品绘图（geomag.usgs.gov/plots）、数据网络服务与邮件列表，并注明数据管理与特殊请求联系人。秒级与分钟级地磁记录可用来判断磁暴时段、计算 dB/dt 与 GIC 代理，辅助解释 GNSS TEC 扰动与定位退化。数据属美国政府公共资源，可自由使用但应注明来源。页面对非浏览器请求可能返回 403，需正常浏览器访问；收录前已核验 200。",
+    "language": "data-portal",
+    "license": "USGov public resource",
+    "markers": [
+      "routine-2026-09-26b"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260926b",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "one_liner_zh": "美国地质调查局地磁计划：观测台实时数据、绘图与下载服务入口"
+  },
+  {
+    "name": "NRCan Canadian Magnetic Data",
+    "url": "https://geomag.nrcan.gc.ca/data-donnee/sd-en.php",
+    "desc_zh": "加拿大自然资源部地磁观测网（CANMOS）数据下载与地磁指数页面",
+    "category": "gnss-datasets",
+    "subcategory": "地磁空间天气",
+    "provenance": "official",
+    "analysis_zh": "加拿大自然资源部（NRCan）地磁组的官方数据页面，说明如何经 Earthquakes Canada 的 FDSN dataselect/station 网络服务下载加拿大国家地磁台网（网络代码 C2）波形数据，并给出位置码、通道码等检索参数；另有加拿大小时变幅、均值、变化率等地磁指数与 Kp 链接。高纬台站对极光带磁暴敏感，适合与 CARISMA、SuperMAG 数据及 GNSS 闪烁研究配合。FDSN 接口可直接用 ObsPy 等工具访问。英法双语。收录前已 HTTP 200 核验。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "markers": [
+      "routine-2026-09-26b"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260926b",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "one_liner_zh": "加拿大自然资源部地磁观测网（CANMOS）数据下载与地磁指数页面"
+  },
+  {
+    "name": "BGS Geomagnetism Data Service",
+    "url": "https://geomag.bgs.ac.uk/data_service/data/home.html",
+    "desc_zh": "英国地质调查局地磁组观测台数据服务（学术用途申请获取）",
+    "category": "gnss-datasets",
+    "subcategory": "地磁空间天气",
+    "provenance": "official",
+    "analysis_zh": "英国地质调查局（BGS）地磁组的数据服务页面，介绍其英国及海外地磁观测台的 1 秒与 1 分钟均值数据、年均值、地磁指数与模型产品的获取方式。与本目录已收录的 BGS INTERMAGNET 数据门户（imag-data）不同，这里对应 BGS 自有观测台与自有产品，部分高分辨率数据需要申请。页面明确数据仅供学术使用，禁止商业用途，商业用户需另行联系。适合研究欧洲中高纬磁暴与电离层扰动关联。页面依赖 JavaScript 显示。",
+    "language": "data-portal",
+    "license": "academic non-commercial",
+    "markers": [
+      "routine-2026-09-26b"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260926b",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "one_liner_zh": "英国地质调查局地磁组观测台数据服务（学术用途申请获取）",
+    "registration": "mixed",
+    "registration_zh": "部分高分辨率数据需申请；仅限学术非商业使用。"
+  },
+  {
+    "name": "MACCS",
+    "url": "http://space.augsburg.edu/maccs/",
+    "desc_zh": "奥格斯堡大学运营的加拿大北极尖角区/极隙区磁力计阵列（MACCS）数据页",
+    "category": "gnss-datasets",
+    "subcategory": "地磁空间天气",
+    "provenance": "academic_lab",
+    "analysis_zh": "美国奥格斯堡大学运营的 Magnetometer Array for Cusp and Cleft Studies，在加拿大北极地区（Cape Dorset、Clyde River、Igloolik、Pangnirtung 等站）布设磁力计，研究极隙区与尖角区的近地空间环境。网站提供当天各站数据图、每日图浏览、数据与绘图申请以及 ULF 指数 FTP 入口。高纬磁场扰动与极盖电离层斑块、GNSS 相位闪烁密切相关，可与 CARISMA、SuperMAG 互补。站点界面较旧，为 HTTP 访问；收录前已核验 200。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "markers": [
+      "routine-2026-09-26b"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260926b",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "one_liner_zh": "奥格斯堡大学运营的加拿大北极尖角区/极隙区磁力计阵列（MACCS）数据页"
+  },
+  {
+    "name": "THEMIS GMAG",
+    "url": "https://themis.ssl.berkeley.edu/gmag/",
+    "desc_zh": "NASA THEMIS 任务地面磁力计（GMAG）与全天空成像仪数据目录",
+    "category": "gnss-datasets",
+    "subcategory": "地磁空间天气",
+    "provenance": "official",
+    "analysis_zh": "加州大学伯克利空间科学实验室维护的 NASA THEMIS 任务地面观测信息页，列出地面磁力计（GMAG）与全天空成像仪（ASI）的数据可用性、文件系统目录、台站分组与所属网络清单，数据以 CDF 文件形式按日期组织，覆盖北美众多合作台网。可用 PySPEDAS 或 SPEDAS 直接下载与绘图。适合研究亚暴、极光与高纬电离层扰动，并与 GNSS TEC/ROTI 做事件对比。页面为纯文本目录风格，数据使用需遵守各台网致谢要求。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "markers": [
+      "routine-2026-09-26b"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260926b",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "one_liner_zh": "NASA THEMIS 任务地面磁力计（GMAG）与全天空成像仪数据目录"
+  },
+  {
+    "name": "TGO Geomagnetic Data",
+    "url": "https://flux.phys.uit.no/geomag.html",
+    "desc_zh": "特罗姆瑟地球物理观测台（UiT）北欧磁力计链实时与存档数据门户",
+    "category": "gnss-datasets",
+    "subcategory": "地磁空间天气",
+    "provenance": "academic_lab",
+    "analysis_zh": "挪威北极大学（UiT）特罗姆瑟地球物理观测台的地磁数据门户，汇集 TGO 自有台站及 DTU、FMI、索丹屈莱、阿拉斯加大学等合作台站：可绘制存档与 24 小时实时磁照图、多站叠加图，下载 ASCII 数据（部分需密码），并提供 K 指数、特罗姆瑟活动指数、小时变幅指数与 GIC 代理（nT/s）。斯堪的纳维亚高纬磁场数据是分析极光区 GNSS 闪烁与 EISCAT 同步观测的常用背景。收录前已 HTTP 200 核验。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "markers": [
+      "routine-2026-09-26b"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260926b",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "one_liner_zh": "特罗姆瑟地球物理观测台（UiT）北欧磁力计链实时与存档数据门户",
+    "registration": "mixed",
+    "registration_zh": "图形公开；部分 ASCII 数据下载需密码。"
+  },
+  {
+    "name": "RAL Ionosonde (UKSSDC)",
+    "url": "https://www.ukssdc.ac.uk/ionosondes/",
+    "desc_zh": "卢瑟福·阿普尔顿实验室电离层监测组：奇尔顿与斯坦利港测高仪数据页",
+    "category": "gnss-datasets",
+    "subcategory": "电离层产品",
+    "provenance": "official",
+    "analysis_zh": "英国卢瑟福·阿普尔顿实验室（RAL）电离层监测组的介绍与数据页面，隶属 UK Solar System Data Centre：说明其运行的奇尔顿（英国）与斯坦利港（福克兰群岛）测高仪，以及已于 1998 年停运的勒威克站，电离图与 URSI 标定参数存档于世界数据中心。奇尔顿序列承接斯劳站，是全球最长的电离层测高记录之一，适合长期趋势与 foF2 气候研究。特殊观测需求可联系该组加密探测。与本目录 UKSSDC 首页条目互补。",
+    "language": "data-portal",
+    "license": "portal-terms",
+    "markers": [
+      "routine-2026-09-26b"
+    ],
+    "stars_approx": null,
+    "source": "routine-finds-20260926b",
+    "featured": false,
+    "user_relation": "none",
+    "host": "official_site",
+    "one_liner_zh": "卢瑟福·阿普尔顿实验室电离层监测组：奇尔顿与斯坦利港测高仪数据页"
+  },
+  {
+    "name": "PySPEDAS",
+    "url": "https://github.com/spedas/pyspedas",
+    "desc_zh": "空间物理多任务数据检索、分析与绘图 Python 框架（含地面磁力计模块）",
+    "category": "ionosphere",
+    "subcategory": "工具",
+    "provenance": "official",
+    "analysis_zh": "SPEDAS 团队（源自 THEMIS/伯克利 SSL）维护的 Python 版空间物理数据分析框架，MIT 许可，可 pip 安装并有完整 ReadTheDocs 文档。统一封装数十个任务与数据源的下载和读取，包括 ACE、Arase、C/NOFS、DSCOVR、GOES、MMS、THEMIS 及其地面磁力计与全天空成像仪、Swarm、OMNI 等，并提供坐标变换、时间序列处理与 pytplot 绘图。做 GNSS 电离层事件分析时可一站式获取太阳风、地磁与卫星原位数据。持续活跃维护。",
+    "language": "Python",
+    "license": "MIT",
+    "markers": [
+      "routine-2026-09-26b"
+    ],
+    "stars_approx": 204,
+    "source": "routine-finds-20260926b",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "one_liner_zh": "空间物理多任务数据检索、分析与绘图 Python 框架（含地面磁力计模块）"
+  },
+  {
+    "name": "MagPy",
+    "url": "https://github.com/geomagpy/magpy",
+    "desc_zh": "地磁观测台数据处理 Python 包 MagPy（GeomagPy），支持 IAGA-2002/ImagCDF 等格式",
+    "category": "ionosphere",
+    "subcategory": "工具",
+    "provenance": "academic_lab",
+    "analysis_zh": "奥地利 GeoSphere（原 ZAMG）Conrad 观测台团队主导开发的地磁数据分析包，BSD-3-Clause 许可。面向观测台日常处理：读写 ImagCDF、IAGA-2002、WDC、IAF、BLV 等格式，做基线值与基线计算、滤波、合并、指数计算与数据库管理，完整安装还带图形界面 XMagPy。适合需要把 INTERMAGNET 或自建磁力计数据接入 GNSS 电离层研究流程的用户。作者提示 2.x 版本仍在频繁改动，升级前应阅读发布说明。",
+    "language": "Python",
+    "license": "BSD-3-Clause",
+    "markers": [
+      "routine-2026-09-26b"
+    ],
+    "stars_approx": 67,
+    "source": "routine-finds-20260926b",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "one_liner_zh": "地磁观测台数据处理 Python 包 MagPy（GeomagPy），支持 IAGA-2002/ImagCDF 等格式"
+  },
+  {
+    "name": "ChaosMagPy",
+    "url": "https://github.com/ancklo/ChaosMagPy",
+    "desc_zh": "丹麦技术大学 CHAOS 地磁场模型的 Python 计算包",
+    "category": "ionosphere",
+    "subcategory": "模型",
+    "provenance": "academic_lab",
+    "analysis_zh": "DTU Space 研究者维护的 Python 包，主体为 MIT 许可（部分文档示例脚本为 LGPL-3.0），有 Zenodo DOI 与 ReadTheDocs 文档，可 pip 安装。用于计算 CHAOS 系列地磁场模型（基于 Swarm、CHAMP 等卫星与观测台数据）的内源场、外源磁层场及其时变，也可读取其他球谐模型系数。相比 IGRF 时间分辨率更高、含外源场，适合精细磁坐标换算与电离层电流分析。模型系数文件需从 DTU 网站另行下载。",
+    "language": "Python",
+    "license": "MIT",
+    "markers": [
+      "routine-2026-09-26b"
+    ],
+    "stars_approx": 34,
+    "source": "routine-finds-20260926b",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "one_liner_zh": "丹麦技术大学 CHAOS 地磁场模型的 Python 计算包"
+  },
+  {
+    "name": "resolvedvelocities",
+    "url": "https://github.com/amisr/resolvedvelocities",
+    "desc_zh": "AMISR 视线速度反演三维离子漂移与电场矢量的 Python 实现",
+    "category": "ionosphere",
+    "subcategory": "工具",
+    "provenance": "official",
+    "analysis_zh": "AMISR 官方 GitHub 组织发布的 Python 包，GPL-3.0 许可，实现 Heinselman 与 Nicolls 的贝叶斯重建算法，从 PFISR/RISR 多波束视线速度反演三维离子漂移速度和电场矢量。提供按磁纬分箱（F 区局地对流）与按高度分箱（E 区速度剖面）两种命令行程序，均以配置文件驱动，依赖 numpy 与 apexpy。输入为 SRI ISR 数据库中的处理后 HDF5 文件。适合研究高纬对流与电离层不规则体驱动的用户。",
+    "language": "Python",
+    "license": "GPL-3.0",
+    "markers": [
+      "routine-2026-09-26b"
+    ],
+    "stars_approx": 5,
+    "source": "routine-finds-20260926b",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "one_liner_zh": "AMISR 视线速度反演三维离子漂移与电场矢量的 Python 实现"
+  },
+  {
+    "name": "MIPS",
+    "url": "https://github.com/MITHaystack/MIPS",
+    "desc_zh": "MIT Haystack 非相干散射雷达系统性能仿真器",
+    "category": "ionosphere",
+    "subcategory": "模型",
+    "provenance": "academic_lab",
+    "analysis_zh": "MIT 海斯塔克天文台发布的 Incoherent Scatter Performance Simulator，BSD-2-Clause 许可。基于物理的雷达性能模型，考虑一阶与二阶效应及测量统计，可评估不同波形带宽、中心频率、占空比、阵列布局、单站/双站配置与功率孔径组合下的信噪比、测量速度和参数估计误差，用于下一代地球空间雷达的设计权衡。适合 ISR 系统设计与观测模式规划，不处理实测数据。README 附引用信息；文档较精简，需要一定雷达理论基础。",
+    "language": "Python",
+    "license": "BSD-2-Clause",
+    "markers": [
+      "routine-2026-09-26b"
+    ],
+    "stars_approx": 5,
+    "source": "routine-finds-20260926b",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "one_liner_zh": "MIT Haystack 非相干散射雷达系统性能仿真器"
+  },
+  {
+    "name": "BAFIM",
+    "url": "https://github.com/ilkkavir/BAFIM",
+    "desc_zh": "GUISDAP 非相干散射分析的贝叶斯时间滤波先验模块",
+    "category": "ionosphere",
+    "subcategory": "工具",
+    "provenance": "academic_lab",
+    "analysis_zh": "奥卢大学 Ilkka Virtanen 开发的 GUISDAP 扩展模块，BSD-2-Clause 许可，MATLAB 实现。以时间上的贝叶斯滤波替代 GUISDAP 默认基于 IRI 的先验，并在距离方向使用相关先验保持剖面平滑，可用于沿磁力线与斜向波束以及远程站数据，从而提高 EISCAT 等雷达参数拟合的时间分辨率与稳定性。新版 GUISDAP 已内置该模块，仅需另装 flipchem 离子化学模块。与本目录 LPI 同一作者，适合 ISR 数据分析人员。",
+    "language": "MATLAB",
+    "license": "BSD-2-Clause",
+    "markers": [
+      "routine-2026-09-26b"
+    ],
+    "stars_approx": 4,
+    "source": "routine-finds-20260926b",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "one_liner_zh": "GUISDAP 非相干散射分析的贝叶斯时间滤波先验模块"
+  },
+  {
+    "name": "digisondeindices",
+    "url": "https://github.com/sunipkm/digisondeindices",
+    "desc_zh": "从 GIRO DIDBase 下载并解析 Digisonde 标定参数为 xarray 的 Python 工具",
+    "category": "ionosphere",
+    "subcategory": "数据接口",
+    "provenance": "personal_community",
+    "analysis_zh": "个人开发者发布的 Python 小工具，MIT 许可。按时间与台站代码从 Lowell GIRO 的 DIDBase 获取 Digisonde 自动/人工标定参数，包括 foF2、foF1、foE、hmF2、MUFD、半厚度、B0 与测高仪推算 TEC 以及自动标定置信度，统一输出为 xarray Dataset，缺测时返回空数据集。适合把测高仪参数批量接入 IRI 对比、TEC 校验或机器学习流程。功能单一、星标少，依赖 DIDBase 在线服务，使用时请遵守 GIRO 数据政策。",
+    "language": "Python",
+    "license": "MIT",
+    "markers": [
+      "routine-2026-09-26b"
+    ],
+    "stars_approx": 2,
+    "source": "routine-finds-20260926b",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "one_liner_zh": "从 GIRO DIDBase 下载并解析 Digisonde 标定参数为 xarray 的 Python 工具"
+  },
+  {
+    "name": "isr-raw",
+    "url": "https://github.com/space-physics/isr-raw",
+    "desc_zh": "处理 PFISR 等非相干散射雷达原始 I/Q 电压数据的 Python 工具",
+    "category": "ionosphere",
+    "subcategory": "工具",
+    "provenance": "academic_lab",
+    "analysis_zh": "space-physics 组织（Michael Hirsch 等）发布的 Python 工具集，Apache-2.0 许可，面向 Poker Flat AMISR 手动申请的原始 I+jQ 电压样本，可按单脉冲读取原始功率、自相关与等离子体线数据，并通过 ini 配置的绘图程序检查湍流活动（含 CFAR 检测）等现象。适合需要比标准处理产品更高时间分辨率的 ISR 研究，如极光与阿尔芬波相关散射。原始数据需向 SRI 专门申请；代码近年更新较少，依赖版本需自行适配。",
+    "language": "Python",
+    "license": "Apache-2.0",
+    "markers": [
+      "routine-2026-09-26b"
+    ],
+    "stars_approx": 4,
+    "source": "routine-finds-20260926b",
+    "featured": false,
+    "user_relation": "none",
+    "host": "github",
+    "one_liner_zh": "处理 PFISR 等非相干散射雷达原始 I/Q 电压数据的 Python 工具"
+  }
+]

@@ -1,5 +1,5 @@
 # GNSS 数据源 / GNSS Datasets
-> **163** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **170** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 需要下载 RINEX/SP3/IONEX/CORS/实时流等 GNSS 数据产品的科研与工程用户。
 
@@ -132,17 +132,30 @@ SOPAC 侧公开文件树，常包含产品文件与辅助资料，可作为 CDDI
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [BGS Geomagnetism Data Service](https://geomag.bgs.ac.uk/data_service/data/home.html) | 英国地质调查局地磁组观测台数据服务（学术用途申请获取） | data-portal | — | 🏷️ 官方 |
 | [BoM-SWS](https://www.sws.bom.gov.au/) | 澳大利亚 BoM 空间天气服务（SWS） | data-portal | — | 🏷️ 官方 |
 | [CelesTrak-SpaceData](https://celestrak.org/SpaceData/) | CelesTrak SpaceData：空间天气与相关辅助数据镜像 | data-portal | — | 🏷️ 官方 |
 | [GFZ-Kp-Index](https://kp.gfz-potsdam.de/en/) | GFZ Kp 地磁指数官方发布 | data-portal | — | 🏷️ 官方 |
 | [GIRO-DIDBase](https://giro.uml.edu/didbase/) | GIRO DIDBase：全球电离层测高仪数据库 | data-portal | — | 🏷️ 官方 核心 |
+| [MACCS](http://space.augsburg.edu/maccs/) | 奥格斯堡大学运营的加拿大北极尖角区/极隙区磁力计阵列（MACCS）数据页 | data-portal | — | 🏷️ 高校实验室 |
 | [NASA-OMNIWeb](https://omniweb.gsfc.nasa.gov/) | NASA OMNIWeb：太阳风与地磁指数多源合并数据 | data-portal | — | 🏷️ 官方 |
 | [NASA-SPDF](https://spdf.gsfc.nasa.gov/) | NASA SPDF：空间物理数据设施总入口 | data-portal | — | 🏷️ 官方 |
 | [NOAA-SWPC](https://www.swpc.noaa.gov/) | NOAA 空间天气预测中心（SWPC） | data-portal | — | 🏷️ 官方 |
 | [NOAA-SWPC-Planetary-K](https://www.swpc.noaa.gov/products/planetary-k-index) | NOAA SWPC 行星 K 指数产品 | data-portal | — | 🏷️ 官方 |
+| [NRCan Canadian Magnetic Data](https://geomag.nrcan.gc.ca/data-donnee/sd-en.php) | 加拿大自然资源部地磁观测网（CANMOS）数据下载与地磁指数页面 | data-portal | — | 🏷️ 官方 |
 | [NRCAN-Solar-Radio-Flux](https://www.spaceweather.gc.ca/forecast-prevision/solar-solaire/solarflux/sx-5-en.php) | NRCan 太阳射电流量：F10.7 等空间天气驱动存档 | data-portal | — | 🏷️ 官方 |
+| [TGO Geomagnetic Data](https://flux.phys.uit.no/geomag.html) | 特罗姆瑟地球物理观测台（UiT）北欧磁力计链实时与存档数据门户 | data-portal | — | 🏷️ 高校实验室 |
+| [THEMIS GMAG](https://themis.ssl.berkeley.edu/gmag/) | NASA THEMIS 任务地面磁力计（GMAG）与全天空成像仪数据目录 | data-portal | — | 🏷️ 官方 |
+| [USGS Geomagnetism Data](https://www.usgs.gov/programs/geomagnetism/data) | 美国地质调查局地磁计划：观测台实时数据、绘图与下载服务入口 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
+
+#### [BGS Geomagnetism Data Service](https://geomag.bgs.ac.uk/data_service/data/home.html)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：academic non-commercial · 星标约：— · 宿主：official_site
+
+英国地质调查局（BGS）地磁组的数据服务页面，介绍其英国及海外地磁观测台的 1 秒与 1 分钟均值数据、年均值、地磁指数与模型产品的获取方式。与本目录已收录的 BGS INTERMAGNET 数据门户（imag-data）不同，这里对应 BGS 自有观测台与自有产品，部分高分辨率数据需要申请。页面明确数据仅供学术使用，禁止商业用途，商业用户需另行联系。适合研究欧洲中高纬磁暴与电离层扰动关联。页面依赖 JavaScript 显示。
 
 #### [BoM-SWS](https://www.sws.bom.gov.au/)  
 *🏷️ 官方*
@@ -172,6 +185,13 @@ GFZ 官方发布的行星 Kp 等地磁活动指数，是空间天气研究以及
 
 麻省大学洛厄尔分校维护的测高仪观测数据库入口，提供虚高图与临界频率等特性参数，常与 GNSS TEC 及 IRTAM 同化产品对照。空间天气与模型验证常用。一般需要注册；请按站内要求引用，并留意测站时间覆盖可能存在空洞。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
 
+#### [MACCS](http://space.augsburg.edu/maccs/)  
+*🏷️ 高校实验室*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+美国奥格斯堡大学运营的 Magnetometer Array for Cusp and Cleft Studies，在加拿大北极地区（Cape Dorset、Clyde River、Igloolik、Pangnirtung 等站）布设磁力计，研究极隙区与尖角区的近地空间环境。网站提供当天各站数据图、每日图浏览、数据与绘图申请以及 ULF 指数 FTP 入口。高纬磁场扰动与极盖电离层斑块、GNSS 相位闪烁密切相关，可与 CARISMA、SuperMAG 互补。站点界面较旧，为 HTTP 访问；收录前已核验 200。
+
 #### [NASA-OMNIWeb](https://omniweb.gsfc.nasa.gov/)  
 *🏷️ 官方*
 
@@ -200,12 +220,40 @@ NASA 空间物理数据设施总入口，托管太阳风、磁层与相关日地
 
 SWPC 发布的行星 K 指数产品页，便于把地磁活动快速叠加到 GNSS ROTI 或闪烁时间轴上做事件分析。与 GFZ Kp 密切相关但发布节奏与文件格式可能不同，对比研究时必须分别注明来源，避免混用造成时间轴错位。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。具体路径与权限以站点当前说明为准，脚本下载建议做断点续传与校验。
 
+#### [NRCan Canadian Magnetic Data](https://geomag.nrcan.gc.ca/data-donnee/sd-en.php)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+加拿大自然资源部（NRCan）地磁组的官方数据页面，说明如何经 Earthquakes Canada 的 FDSN dataselect/station 网络服务下载加拿大国家地磁台网（网络代码 C2）波形数据，并给出位置码、通道码等检索参数；另有加拿大小时变幅、均值、变化率等地磁指数与 Kp 链接。高纬台站对极光带磁暴敏感，适合与 CARISMA、SuperMAG 数据及 GNSS 闪烁研究配合。FDSN 接口可直接用 ObsPy 等工具访问。英法双语。收录前已 HTTP 200 核验。
+
 #### [NRCAN-Solar-Radio-Flux](https://www.spaceweather.gc.ca/forecast-prevision/solar-solaire/solarflux/sx-5-en.php)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 Space Weather Canada 维护的太阳射电流量测量存档，提供日值、月平均与旋转平均等文本/图表，是 IRI、NeQuick 等电离层模型常用的太阳活动驱动输入。页面开放浏览下载。仅含射电通量时间序列，不含 GNSS 原始观测或全球 TEC 图产品。
+
+#### [TGO Geomagnetic Data](https://flux.phys.uit.no/geomag.html)  
+*🏷️ 高校实验室*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+挪威北极大学（UiT）特罗姆瑟地球物理观测台的地磁数据门户，汇集 TGO 自有台站及 DTU、FMI、索丹屈莱、阿拉斯加大学等合作台站：可绘制存档与 24 小时实时磁照图、多站叠加图，下载 ASCII 数据（部分需密码），并提供 K 指数、特罗姆瑟活动指数、小时变幅指数与 GIC 代理（nT/s）。斯堪的纳维亚高纬磁场数据是分析极光区 GNSS 闪烁与 EISCAT 同步观测的常用背景。收录前已 HTTP 200 核验。
+
+#### [THEMIS GMAG](https://themis.ssl.berkeley.edu/gmag/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+加州大学伯克利空间科学实验室维护的 NASA THEMIS 任务地面观测信息页，列出地面磁力计（GMAG）与全天空成像仪（ASI）的数据可用性、文件系统目录、台站分组与所属网络清单，数据以 CDF 文件形式按日期组织，覆盖北美众多合作台网。可用 PySPEDAS 或 SPEDAS 直接下载与绘图。适合研究亚暴、极光与高纬电离层扰动，并与 GNSS TEC/ROTI 做事件对比。页面为纯文本目录风格，数据使用需遵守各台网致谢要求。
+
+#### [USGS Geomagnetism Data](https://www.usgs.gov/programs/geomagnetism/data)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：USGov public resource · 星标约：— · 宿主：official_site
+
+美国地质调查局（USGS）地磁计划的数据与工具总入口，汇集其全美及海外地磁观测台的实时数据流、衍生产品绘图（geomag.usgs.gov/plots）、数据网络服务与邮件列表，并注明数据管理与特殊请求联系人。秒级与分钟级地磁记录可用来判断磁暴时段、计算 dB/dt 与 GIC 代理，辅助解释 GNSS TEC 扰动与定位退化。数据属美国政府公共资源，可自由使用但应注明来源。页面对非浏览器请求可能返回 403，需正常浏览器访问；收录前已核验 200。
 
 ## 电离层产品
 
@@ -222,6 +270,7 @@ Space Weather Canada 维护的太阳射电流量测量存档，提供日值、�
 | [IGS-Ionosphere-WG](https://igs.org/wg/ionosphere/) | IGS 电离层工作组：GIM/IAAC 与产品活动入口 | data-portal | — | 🏷️ 官方 |
 | [IONORING](http://ionos.ingv.it/ionoring/ionoring.htm) | 意大利 INGV 基于 RING 网的实时 TEC 监测与地图发布页 | data-portal | — | 🏷️ 官方 核心 |
 | [JPL-IONEX-Rapid](https://sideshow.jpl.nasa.gov/pub/iono_daily/IONEX_rapid/) | JPL 快速 IONEX 发布目录：日更新全球电离层图 | data-portal | — | 🏷️ 官方 核心 |
+| [RAL Ionosonde (UKSSDC)](https://www.ukssdc.ac.uk/ionosondes/) | 卢瑟福·阿普尔顿实验室电离层监测组：奇尔顿与斯坦利港测高仪数据页 | data-portal | — | 🏷️ 官方 |
 | [ROM SAF](https://rom-saf.eumetsat.int/) | EUMETSAT 无线电掩星气象卫星应用中心（ROM SAF）产品门户 | data-portal | — | 🏷️ 官方 |
 | [SRI ISR Database (AMISR)](https://data.amisr.com/database/) | SRI International 运营的 AMISR 非相干散射雷达（PFISR/RISR）数据库入口 | data-portal | — | 🏷️ 官方 |
 | [UPC-Chapman-TOMION-Rapid](https://chapman.upc.es/tomion/rapid/) | UPC Chapman：TOMION/IONEX 快速电离层产品下载 | data-portal | — | 🏷️ 高校实验室 |
@@ -308,6 +357,13 @@ INGV 基于 RING 网（约 40 站）的意大利区域实时 VTEC 监测页：IP
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 JPL 侧快速电离层图公开目录，文件为 IONEX 风格，适合需要较短时延 GIM 的科研与监测。其结果与 IGS 综合 Final 存在差异，不可直接等同。部分机构网络可能拦截 sideshow 域名；重要任务建议同时备份 CDDIS 路径中的同系列产品。收录前已用 HTTP 核验页面可访问；使用请遵守上游条款与引用要求。
+
+#### [RAL Ionosonde (UKSSDC)](https://www.ukssdc.ac.uk/ionosondes/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+英国卢瑟福·阿普尔顿实验室（RAL）电离层监测组的介绍与数据页面，隶属 UK Solar System Data Centre：说明其运行的奇尔顿（英国）与斯坦利港（福克兰群岛）测高仪，以及已于 1998 年停运的勒威克站，电离图与 URSI 标定参数存档于世界数据中心。奇尔顿序列承接斯劳站，是全球最长的电离层测高记录之一，适合长期趋势与 foF2 气候研究。特殊观测需求可联系该组加密探测。与本目录 UKSSDC 首页条目互补。
 
 #### [ROM SAF](https://rom-saf.eumetsat.int/)  
 *🏷️ 官方*
