@@ -241,6 +241,7 @@
 | 214 | [swarm-data.md](./swarm-data.md) | ESA Swarm 电离层产品：swarm-diss HTTPS `?do=` 匿名列/下（FTP 530）、LP `EFIx_LP_1B`/`EFIxLPI_1B`、TEC、IPIR（含 PCP_flag）、IBI、EEF 的文件名/基线/时延与 flag；VirES HAPI 匿名、OWS 要 token | 716 | **已短硬** · 2026-09-26 04:47 EDT；Swarm B 2024-05-11 vs 05-08：白天北半球 N_ion ×0.30、夜间赤道 ×0.30–0.42、南纬 −30..−20 夜间 ×5.9；OPER 上架 3–9 天、FAST ~40 min；TEC 仰角 ≥50° |
 | 215 | [gnss-rtcm-ts.md](./gnss-rtcm-ts.md) | Node-NTRIP/rtcm：TypeScript RTCM3（至 3.3 Amd.1）编解码库 npm `@gnss/rtcm`（拆帧/CRC-24Q/消息对象/Transform 流）；≠ [rtcm-rs](./rtcm-rs.md)/[go-gnss-rtcm](./go-gnss-rtcm.md)/[pyrtcm](./pyrtcm.md) | 218 | **已短硬** 用法讲解新入库 · npm **0.1.5**/master `96108e4`/无 tag/GPL-3.0-or-later/★48；GMSD7 1143 帧、testglo 429 帧 = pyrtcm 1.2.0，1005/1019/1020/1004/1012 0 差；**MSM 卫星/信号字段解错**（按卫星逐颗读）、往返一致是同构假象；流解码尾部丢消息 |
 | 216 | [chain-scintillation.md](./chain-scintillation.md) | CHAIN 加拿大高纬 GISTM 闪烁：匿名 HTTPS/FTP 拉按小时 ISMR（Septentrio sbf2ismr 62 列，官方列定义 × 真实行）、S4 去噪、Phi01–Phi60、锁定/仰角过滤、TEC/dTEC 列 | 422 | **已短硬** · 2026-09-26 04:48–05:00 EDT；Churchill 2024-05-10/11 Phi60 >0.25 rad 13.8%（平静夜 0%），17 UT 起、最大 3.136 rad @ 23:25 UTC；S4 >0.2 仅 1.2%；锁定 <240 s 时 Phi=nan 而 S4 仍在 |
+| 217 | [gnssommelier.md](./gnssommelier.md) | EarthScope GNSSommelier：跨 16 个 IGS 中心检索/下载 SP3/CLK/ERP/BIA/IONEX（CLI `gnssommelier search/download/probe` + Python `GNSSClient`，落盘自动解压 + `*_lock.json` sha256）；不在 PyPI，源码装需 `SETUPTOOLS_SCM_PRETEND_VERSION` | 165 | **已短硬** 用法讲解新入库 · 2026-09-26 04:47–05:00 EDT；tag **v0.0.1**=`039d239`/Apache-2.0/★14/gpm-cli **0.1.0**；probe 11/16 CONNECTED（COD 60 s 超时）；JPL FIN SP3 **1293754 B**/289 历元/G31+E29、ERP 422 B；IONEX 9 条全经 CDDIS FTPS 且匿名时好时坏；`GIM` 非法名、`AAA=` 过滤无效、`--to` 线程风暴勿跑 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -338,6 +339,7 @@
 | CDDIS 高采样（1 s / 15 min）批量 | [cddis-highrate-downloader.md](./cddis-highrate-downloader.md) |
 | IGS/CORS/产品/时序 GUI 多模块下载 | [gdds.md](./gdds.md) |
 | 轻量 PyQt 点选 WHU/NASA 日文件（2020） | [gnss-downloader.md](./gnss-downloader.md) |
+| 跨 IGS 中心按日期自动找/下 SP3·CLK·ERP·BIA 并留 sha256 lock（限 HTTPS 中心更稳） | [gnssommelier.md](./gnssommelier.md) |
 | GAMP/PPP YAML 批下载观测+产品（GOOD） | [gampii-good.md](./gampii-good.md) |
 | 球谐 GIM 边界说明 | [sh-gim.md](./sh-gim.md) |
 | 开源自建全球 GIM（仅相位差、球谐系数 HDF5；接 tec-suite） | [mosgim2.md](./mosgim2.md) |
