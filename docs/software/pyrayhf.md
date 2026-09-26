@@ -2,6 +2,12 @@
 
 目录：[`PROJECTS.json` → `PyRayHF`](../../PROJECTS.json) · 上游 <https://github.com/victoriyaforsythe/PyRayHF>（NRL Victoriya Forsythe；main `8fef3ac` 2025-12-23）· PyPI **`PyRayHF` 0.1.0**（Alpha）· 许可 **MIT**（`LICENSE`；`pyproject` classifier 写成 BSD，以 LICENSE 为准，与 [pyiri](./pyiri.md) 同样的笔误）· 本机验证 **2026-09-26 03:44–03:50 EDT**：CPython 3.13.5 venv，PyIRI 0.1.7 / numpy 2.5.3 / scipy 1.18.1 / lmfit 1.3.4；仓内 `pytest` **35 passed**。
 
+> **质检复跑通过（有小修正）**（2026-09-26 04:04–04:12 EDT）。
+> - 环境：uv venv，CPython 3.13.15，PyRayHF 0.1.0 / PyIRI 0.1.7 / numpy 2.5.3 / scipy 1.18.1 / lmfit 1.3.4，与原文一致；PyPI 0.1.0 上传于 2025-12-23，Alpha，classifier 写 BSD，LICENSE 为 MIT（Copyright 2023 victoriyaforsythe）；main `8fef3ac`（2025-12-23）的 `library.py` 与 PyPI 版逐字相同；仓内 `pytest` 35 passed。
+> - 逐字复现（按 §3.1 核心加自写的打印与扫描）：§3.2 全部数字，包括 NmF2 1.9414e12 / hmF2 365 / foF2 12.510、PyIRI F2 字典 1.94152e12 / 364.62 / 12.5130、|B| 31364 nT、psi 68.06°、fH 0.878 MHz、O/X 各 8 个 h′、21 行斜测表（穿透时返回 7 个 NaN 键、没有 apex 键）、三条跳距扫描（76 km@84°、656 km@57°、1550 km@27°，n_nan 4/29/58）；坑 8 的 14 MHz/30° O 模 871.0 km、X 模 NaN；`generate_input_1D` 3.2 s，全脚本 4.7 s。
+> - 修正：坑 4 的 85° 落地实测 503.6 km（原写 503），改为 504；坑 8 把 T×1e9 喂进去后，是 **X 模** h′ 全等于下界 60 km，O 模 h′ 乱而非恒定（2/4/6/8 MHz 为 63.9/69.6/62.7/189.3 km），已改；`calculate_magnetic_field` 确在返回前 `mag / 1E9`，docstring 写 nT，属实。
+> - 未复跑：坑 5/6（经纬顺序、2000 km 上限）、`*_gradient` 与 `model_VH`/`minimize_parameters`、出图（未重画 PNG）；venv 用 uv 硬链接装，体积与原文 463 MB 不可比。
+
 > 岗位：给一条（或一片）电子密度剖面 + 地磁场，算 HF 电波**斜向**传播的落地距离、路径长度、群时延，以及**垂测**虚高 h'(f)。不需要 MATLAB/PHaRLAP。冲突时：本机 `site-packages/PyRayHF/library.py` docstring > 上游 notebook > 本文。
 
 ## 1. 它解决什么（术语先讲清）
@@ -163,11 +169,11 @@ saved pyrayhf_rays.png
 1. **`KeyError: 'z_apex_km'`** → 射线穿透时函数提前返回，字典只有 7 个 NaN 键，没有 apex 键 → 一律 `r.get("z_apex_km", np.nan)`，或先判 `np.isfinite(r["ground_range_km"])`。
 2. **射线“全部 NaN”或落地距离离谱** → 频率单位错：斜测要 Hz，垂测要 MHz → `trace_ray_spherical_snells(14e6, …)` 与 `vertical_forward_operator(np.array([14.0]), …)`。
 3. **拿 `group_path_km` 当群路径和斜测仪对不上**（上表 14 MHz/60°：1074.3 vs c·τ = 1521.4 km）→ 该键是几何长度，docstring 写着 “total geometric path length” → `P = r["group_delay_sec"] * 299792.458`。
-4. **近垂直（本例 ≥ 86°）明明 f < foF2 却 NaN；85° 落地 503 km 比 84° 的 76 km 还远** → 分层 Snell 在 p→0、反射点极尖锐时数值不稳 → 近垂直改用 `lib.vertical_forward_operator(fr, Ne, B, psi, alt)`，斜向只信 ≤ 80° 左右的结果并画图目检。
+4. **近垂直（本例 ≥ 86°）明明 f < foF2 却 NaN；85° 落地 504 km 比 84° 的 76 km 还远** → 分层 Snell 在 p→0、反射点极尖锐时数值不稳 → 近垂直改用 `lib.vertical_forward_operator(fr, Ne, B, psi, alt)`，斜向只信 ≤ 80° 左右的结果并画图目检。
 5. **经纬度填反，剖面跑到别处** → `generate_input_1D(…, tlat, tlon, …)` 先纬后经，而 PyIRI 的 `IRI_density_1day(…, alon, alat, …)` 先经后纬 → `lib.generate_input_1D(2020,4,1,12, 20.0, 10.0, aalt, 100.0)  # lat, lon`。
 6. **`aalt` 给到 2000 km 或从 0 起算 E 层下出怪值** → docstring 限定上限 1000 km；D 层以下 PyIRI 密度无物理意义 → `aalt = np.arange(60, 1000, 1.0)`。
 7. **每次都刷一屏 `FutureWarning: … old_output …`** → PyRayHF 0.1.0 按旧 6 输出调用 PyIRI 0.1.7 → `python -W ignore::FutureWarning -u ray_e2e.py`（只是告警；PyIRI 0.2 若改默认值，0.1.0 会解包失败，届时 `pip install "PyIRI<0.2"`）。
-8. **X 模全 NaN、O 模落地距离也变了（14 MHz/30° O：978.2→871.0 km），垂测 h′ 恒等于下界 60 km** → `Babs` 必须是 **T**（`calculate_magnetic_field` docstring 写 nT，但代码已除 1e9）；把别的 IGRF 包的 nT 直接喂进去就是这样（本机把 T×1e9 实测复现） → `Babs = B_nT * 1e-9`。
+8. **X 模全 NaN、O 模落地距离也变了（14 MHz/30° O：978.2→871.0 km），X 模垂测 h′ 恒等于下界 60 km、O 模 h′ 乱跳（4 MHz 69.6 km）** → `Babs` 必须是 **T**（`calculate_magnetic_field` docstring 写 nT，但代码已除 1e9）；把别的 IGRF 包的 nT 直接喂进去就是这样（本机把 T×1e9 实测复现） → `Babs = B_nT * 1e-9`。
 9. **射线图 0–60 km 看不到线** → 剖面下界以下画布是空白、白线画在白底上 → `ax.set_facecolor("0.35")`。
 
 ## 6. 怎么读结果

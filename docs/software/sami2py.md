@@ -2,6 +2,12 @@
 
 目录：[`PROJECTS.json` → `sami2py`](../../PROJECTS.json) · 上游 <https://github.com/sami2py/sami2py>（NASA GSFC Jeff Klenzing 等；tag **v0.3.0** = main `c6d3c5b` 2022-11-03；`develop` 分支最后 `b796fae` 2023-06-27，未发版）· **不在 PyPI**（`pypi.org/pypi/sami2py/json` → 404），只能源码装 · 许可 **BSD-3-Clause**（`License.md`）· 本机验证 **2026-09-26 03:47–04:00 EDT**：gfortran 14.2.0，CPython 3.13.5 venv，numpy 2.5.3 / xarray 2026.7.0 / netCDF4 1.7.4 / scipy 1.18.1；上游 `pytest` **47 passed**。
 
+> **质检复跑通过（有修正）**（2026-09-26 04:03–04:21 EDT）。
+> - 环境：`git clone` 得 tag v0.3.0 = `c6d3c5b`，develop `b796fae`；gfortran 14.2.0；CPython 3.13.15 标准 venv 下 `pip install -e .` 用 20 s，`sami2py.x` 573360 B；numpy 2.5.3 / xarray 2026.7.0 / netCDF4 1.7.4 / scipy 1.18.1；`pytest` 47 passed。
+> - 逐字复现：§3.1 运行（25 行 istep，最后为 `istep = 8486 … hour = 48.0017891`，IEEE 下溢提示）；归档文件逐个字节数一致（denif/tif/vsif 31178700、tef 4454100、glatf/glonf/zaltf 178164，合计 95 MB）；`version.txt` 为 v0.3.0 / c6d3c5b；§3.2 `print(M)` 全文、dims、glat/glon/zalt 范围、Ne 全局最大 3.368e12、磁赤道 −11.92°，以及四个 SLT 行逐位一致（SLT 14 赤道 71.4 TECU，双峰 +1.5° 83.6 / −21.5° 81.1）；坑 2（`GIT_DIR=/nonexistent` 下 2 h 探测跑 22 s 后 exit 128）、坑 3（day=81 时 FileNotFoundError）、坑 7（ion 维为 7）、坑 9（每帧 1.247 MB）复现。
+> - 修正：`ut` 实际是 0.0025、1.0025 …，最后一帧 0.00167，原文 `2.000e-03 … 2.0000e-03` 的写法不对；§3.2 输出和坑 5 已按实测改（最后一帧回绕后排在第一帧之前，但并非同值）。墙钟本次 716.8 s（原 598.6 s，机器负载 9–12），§3.1 改为约 10–12 min。新增两条坑：用 `uv pip install -e .`（隔离构建）时 setup.py 把设置写进 `~/.sami2py/.tmpXXXX/`，import 时报找不到 `fortran_path.txt`，必须用标准 venv 的 `pip install -e .`；在克隆目录的**父目录**里运行脚本时，`import sami2py` 会解析成命名空间包（没有 `__version__`，`s_run.py` 首行就报 AttributeError），要换到别的目录运行。
+> - 未完全复现：三行离子成分的取点方法原文没有给出；按「顶点最近磁力线 + SLT 14 帧」自取，量级一致（300 km O⁺ 0.995；600 km H⁺ 0.004 / O⁺ 0.989 / Te 1165 K；1500 km H⁺ 0.606 / O⁺ 0.258 / He⁺ 0.124），但不逐位相同。未复跑：坑 1、6、10，出图（未重画 PNG），傅里叶漂移和 `outn`。
+
 > 岗位：用**物理方程**（不是经验拟合）算出一条磁子午面内、磁赤道两侧的电离层 Ne/Ti/Te/离子速度随时间演化，看**赤道喷泉 → 赤道异常（EIA）双峰**怎么长出来、F10.7/漂移/风改了之后怎么变。冲突时：本机 `sami2py/_core.py` docstring > readthedocs > 本文。
 
 ## 1. 它解决什么（术语先讲清）
@@ -67,7 +73,7 @@ Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLA
 wall_s 598.6
 ```
 
-- 48 模式小时 = **598.6 s** 单核墙钟（Fortran 不并行）；只算 2 h 的探测跑约 18 s。
+- 48 模式小时 = **598.6–716.8 s** 单核墙钟（两次实测，随机器负载变；Fortran 不并行）；只算 2 h 的探测跑约 18–22 s。
 - 归档目录 `archive/eia/lon-75/2014_080/`：`denif.dat`/`tif.dat`/`vsif.dat` 各 31178700 B，`tef.dat` 4454100 B，`glatf/glonf/zaltf.dat` 各 178164 B，外加 namelist、`time.dat`、`version.txt`（`sami2py v0.3.0` / `short hash c6d3c5b`）；合计 **95 MB**（25 帧文本格式）。
 
 ### 3.2 读回 + 求 Ne、vTEC、EIA 峰 `s_load.py`（核心部分）
@@ -116,7 +122,7 @@ ExB Drifts: Fejer-Scherliess
 No modifications to empirical models
 dims: {'z': 101, 'f': 98, 'ion': 7, 'ut': 25}
 glat range -40.15..17.94  glon range 280.45..286.06  zalt range 85.0..2000.0 km
-ut: [2.000e-03 1.002e+00 2.002e+00] ... [2.3002e+01 2.0000e-03]
+ut: [0.0025 1.0025 2.0025] ... [2.30016667e+01 1.66666667e-03]
 Ne global max 3.368e+12 m^-3
 dip-equator geo lat (field-line apex) = -11.92
 SLT= 2.12 UT= 7.00: NeMax=1.616e+12 at lat=-19.5 alt=300 | dipEq NmF2=7.663e+11 hmF2=300 vTEC_eq=20.0 | crest N -0.5 21.4 TECU, S -19.5 32.7 TECU
@@ -173,12 +179,14 @@ saved sami2py_eia.png
 2. **跑完 10 分钟最后崩 `CalledProcessError: ['git', 'rev-parse', '--short', 'HEAD'] … 128`** → 归档时在 fortran 目录里调 git 记版本，zip/tarball 安装或非 git 目录必挂（本机 `GIT_DIR=/nonexistent` 复现） → `git clone https://github.com/sami2py/sami2py.git && cd sami2py && pip install --no-cache-dir -e .`。
 3. **`Model(...)` 报 `FileNotFoundError: …/2014_081/sami2py-1.00.namelist`** → `Model` 靠 tag/lon/year/day 拼路径，任何一个与 `run_model` 不同就找不到 → `sami2py.Model(tag='eia', lon=-75.0, year=2014, day=80)` 与跑的时候逐字一致。
 4. **找“赤道处”数值找错地方，南北峰不对称得离谱** → 网格沿**磁**力线，−75° 经度处磁赤道在地理 −11.9°，网格南到 −40.15°、北只到 17.94° → `lat_eq = float(ds.glat.values[50, :].mean())`，峰值按 `lat_eq±…` 找。
-5. **按 `ut` 排序/插值出现时间倒退** → 48 h 输出的最后一帧 hour=48 回绕成 `ut=0.002`，与第一帧同值 → 用帧下标或 `ds.slt`：`k = int(np.argmin(np.abs(((ds.slt.values - 14 + 12) % 24) - 12)))`。
+5. **按 `ut` 排序/插值出现时间倒退** → 48 h 输出的最后一帧 hour=48 回绕成 `ut≈0.00167`，排到第一帧（0.0025）之前 → 用帧下标或 `ds.slt`：`k = int(np.argmin(np.abs(((ds.slt.values - 14 + 12) % 24) - 12)))`。
 6. **另一个项目的 sami2py 突然读到别人的 fortran/归档目录** → 设置存在 `~/.sami2py/<venv 目录名>/`，同名 venv（如都叫 `venv`）共用 → 给 venv 起唯一名：`python3 -m venv venv_sami2py_<项目名>`。
 7. **`print(M)` 显示 `Ions Used: H+, O+, NO+, O2+, He+, N2+`，少了 N⁺** → 元数据拼串 `ions[nion1:nion2]` 差一位，数据里其实是 7 种 → 以数组为准：`ds.deni.sizes['ion']  # 7`。
 8. **Ne 小了 10⁶ 倍，和 IRI/PyIRI（m⁻³）对不上** → `deni` 单位是 N/cc → `ne = ds.deni.sum("ion") * 1e6`。
 9. **日志半天不动，以为卡死** → Fortran stdout 重定向到文件时块缓冲；48 h 本机就是要 ~600 s → 看进度用 `ls -la $(python -c "import sami2py;print(sami2py.fortran_dir)")/denif.dat`（每小时帧增长约 1.25 MB）。
 10. **`Note: … IEEE_UNDERFLOW_FLAG IEEE_DENORMAL`** → gfortran 程序结束时汇总浮点下溢，SAMI2 极小密度项的正常现象，不是错误、不影响输出 → 嫌吵就带 `-ffpe-summary=none` 重编：`make -C sami2py/fortran clean compile gf="gfortran -fno-range-check -fno-automatic -ffixed-line-length-none -ffpe-summary=none"`（本文未重编）。
+11. **`import sami2py` 后 `FileNotFoundError: …/.sami2py/<venv>/fortran_path.txt`** → 用了隔离构建的安装方式（如 `uv pip install -e .`），setup.py 按构建环境名把设置写到了 `~/.sami2py/.tmpXXXX/` → 用标准 venv 的 `pip install -e .`（本机 pip 26.2.1 正常写到 `~/.sami2py/<venv 名>/`）。
+12. **`AttributeError: module 'sami2py' has no attribute '__version__'`** → 在克隆目录的父目录里运行脚本，`sami2py/` 克隆目录被当成命名空间包 → 换个目录运行：`mkdir job && cd job && python -u ../s_run.py`。
 
 ## 6. 怎么读结果
 
