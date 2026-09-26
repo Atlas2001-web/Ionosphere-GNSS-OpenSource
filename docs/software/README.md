@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **154 篇**操作手册（合计 **33654 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **156 篇**操作手册（合计 **34108 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -182,6 +182,8 @@
 | 151 | [std-swd-calc.md](./std-swd-calc.md) | GNSS 斜路径湿/总延迟 SWD/STD（ZTD+GPT3/VMF1+GMF；Python） | 209 | **已短硬** · 2026-09-26 00:31–00:40 EDT；tip **`3e4552b`**/GPL-3.0/★**10**；原样 `IndentationError`+VMF.py Windows 路径/`mjd_to_ymd` 差一天/numpy2 `int()` → 3 处 sed 补丁；GRAZ 2024-01-01 ZTD **2.2733**/ZHD **2.1847**/ZWD **0.0886**/SWD@5° **0.9570** m；VMF1 格网 zhd 未高程归算 ZWD 偏大 **0.10** m；CDDIS FTPS **425**；交叉 [tu-wien-vmf-gpt-codes](./tu-wien-vmf-gpt-codes.md)/[radiate](./radiate.md)/[pride-pppar](./pride-pppar.md)/[ginan](./ginan.md) · **质检复跑通过**（2026-09-26 00:55 EDT；原样 IndentationError；1+3 处 sed；§4a/4b/CalcSTD 逐字复现；CDDIS 425 复现；墙时受共享负载影响） |
 | 152 | [tu-wien-vmf-gpt-codes.md](./tu-wien-vmf-gpt-codes.md) | TU Wien GPT3/VMF1/VMF3 官方源码（MATLAB/Fortran/Python）+ VMF 数据区关系 | 229 | **已短硬** · 2026-09-26 00:32–00:39 EDT；无 git/无许可证文本/数据 CC BY 4.0；GRAZ GPT3 Octave≡gfortran≡Python（p **959.59** hPa/ZTD **2.2427** m）；VMF3 站点 ZTD **2.2733**/格网 **2.2693** m；`vmf3_grid.m` Octave 需 4 处补丁；`Verification/` **403**；FC 当年 **401**；无 MATLAB；交叉 [std-swd-calc](./std-swd-calc.md)/[radiate](./radiate.md)/[ginan](./ginan.md)/[gnssrefl](./gnssrefl.md) · **质检复跑通过**（2026-09-26 00:48 EDT；Octave/gfortran/Python GPT3 p=959.59/ah=0.00121094 三路一致；站点 STD@5° 23.1536；原样 grid `Invalid call to round`→4 sed→ZTD 2.2693 复现；FC2026 401） |
 | 153 | [gnss-qc.md](./gnss-qc.md) | Rust GNSS 数据 QC 上下文 + HTML 报告库（nav-solutions；rinex-qc 后继；纯库） | 219 | **已短硬** · 2026-09-26 00:54 EDT；crates **0.4.0**/tag **`fe2d376`**/main **`3ee5918`**/MPL-2.0/★**1**/MSRV **1.82**；rustc **1.98.1**；纯库；`cargo add` 直编 **E0277 `UpperHex`**（gnss-rs ≥2.6）→锁 `gnss-rs =2.5.0`+`sp3 =1.3.0` 可编（main 需 qc-traits **0.4.0**+gnss-rs 2.5.0）；ESBC OBS+NAV+GRG SP3：epochs **2880**/sv **113**/GPST/30 s/No gaps；NAVI/CPP/PPP ✓、PPP Ultra ✗；Summary **6849** B、Full **72308856** B（plotly **84**）/**20.6 s**；每信号 SPP/CPP/PPP 计数恒 **0%**（源码注释 TODO）、Multipath 图空；缺文件 **panic exit 101**；异站 OBS 被静默合并（**2905** 历元）；rinex-qc→gnss-qc 改名、qc-traits 0.5.0；rinex-cli 0.12.1 内核=gnss-qc 0.0.2；交叉 [rinex](./rinex.md)/[rinex-cli](./rinex-cli.md)/[sp3](./sp3.md)/[gnss-rs](./gnss-rs.md)/[hifitime](./hifitime.md)/[gnss-rtk](./gnss-rtk.md) |
+| 154 | [pyrtklib-demo5.md](./pyrtklib-demo5.md) | 港理工 IPNL：RTKLIB demo5/EX 2.5.0 Python 绑定（`pip install pyrtklib5`） | 252 | **已短硬** · 2026-09-26 00:46–00:54 EDT；tip **`05845e3`**/PyPI **0.2.8**/MIT/★**13**；F9P `postpos` SPP **2304**×Q5；GSI RTK **115**/Q1=**102**/Q2=**13**/首 fix ratio **50.4**（=rtklib-explorer CLI）；ALGO PPP-static **2880**×Q6 dU=+0.20；与 pyrtklib 同进程 import 冲突已记 |
+| 155 | [ppp-rtklib.md](./ppp-rtklib.md) | RTKLIB 2.4.2 抽出的静态 PPP 学习代码（课程作业；VS 工程） | 202 | **已短硬** · 2026-09-26 00:53–00:58 EDT；tip **`c9f133c`**/**无 LICENSE**/★**4**；gcc 14 `-fpermissive`+删 `r_clk.c`+改反斜杠路径 → Linux 编译；ALGO **2880**×Q6 与仓内 Windows `ppp.pos` 逐行一致；默认无电离层/对流层改正 dU=**+6.09** m，IFLC+SAAS **−0.08** m；EST 被注释失效 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -272,6 +274,8 @@
 | BKG POSIX 官方上传 CLI（SOURCE） | [ntripserver.md](./ntripserver.md)
 | RTK / 浮点 PPP | [rtklib.md](./rtklib.md) |
 | Python 调 RTKLIB C 核心 | [pyrtklib.md](./pyrtklib.md) |
+| Python 调 RTKLIB demo5/EX 核心 | [pyrtklib-demo5.md](./pyrtklib-demo5.md) |
+| 读懂 RTKLIB PPP 流程（抽出的学习代码） | [ppp-rtklib.md](./ppp-rtklib.md) |
 | 纯 Python demo5-PPK（读算法/改实验） | [rtklib-py.md](./rtklib-py.md) |
 | 现代 PPP-RTK（CLAS/MADOCA/HAS/`mrtk`） | [mrtklib.md](./mrtklib.md) |
 | 低成本 u-blox RTK（explorer/EX） | [rtklib-explorer.md](./rtklib-explorer.md) |
@@ -380,6 +384,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
+最近新增（用法讲解）：**pyrtklib-demo5**（2026-09-26 00:46–00:54 EDT；`pyrtklib5` **0.2.8**/EX **2.5.0**/tip `05845e3`/MIT；F9P SPP 2304×Q5；GSI RTK 115/Q1=102/ratio 50.4 与 rtklib-explorer CLI 一致；ALGO PPP 2880×Q6；pyrtklib 同进程 `FileWrapper already registered`）+ **ppp-rtklib**（00:53–00:58 EDT；`c9f133c`/无 LICENSE；Linux gcc 14 补丁编译；ALGO 2880×Q6 逐行=作者 Windows 结果；默认 dU +6.09 m → IFLC+SAAS −0.08 m；交叉 rtklib/pyrtklib/rtklib-explorer；**未改**其它页）。
 最近新增（用法讲解）：**gnss-qc**（2026-09-26 00:54 EDT；crates **0.4.0**/tag **`fe2d376`**/main **`3ee5918`**/MPL-2.0/★**1**/MSRV **1.82**；rustc **1.98.1**；纯库；`cargo add` 直编 **E0277 `UpperHex`**（gnss-rs ≥2.6）→锁 `gnss-rs =2.5.0`+`sp3 =1.3.0` 可编（main 需 qc-traits **0.4.0**+gnss-rs 2.5.0）；ESBC OBS+NAV+GRG SP3：epochs **2880**/sv **113**/GPST/30 s/No gaps；NAVI/CPP/PPP ✓、PPP Ultra ✗；Summary **6849** B、Full **72308856** B（plotly **84**）/**20.6 s**；每信号 SPP/CPP/PPP 计数恒 **0%**（源码注释 TODO）、Multipath 图空；缺文件 **panic exit 101**；异站 OBS 被静默合并（**2905** 历元）；rinex-qc→gnss-qc 改名、qc-traits 0.5.0；rinex-cli 0.12.1 内核=gnss-qc 0.0.2；交叉 [rinex](./rinex.md)/[rinex-cli](./rinex-cli.md)/[sp3](./sp3.md)/[gnss-rs](./gnss-rs.md)/[hifitime](./hifitime.md)/[gnss-rtk](./gnss-rtk.md)；**下一优先** **`qc-traits`**（crates `gnss-qc-traits` 0.5.0，nav-solutions/qc-traits，无手册）或 **`sinex`**（crates 0.2.4，nav-solutions/sinex，无手册）；原列 `antex` **撤下**：crates.io `antex` 是 EngosSoftware 终端样式库，ANTEX 解析在 `rinex`（[rinex](./rinex.md) 已覆盖）；`rinex-qc` 已由本篇 gnss-qc 取代；勿抢 gnssrefl/mpsim/GREAT/Gkit/MCOSB）。
 最近新增（用法讲解）：**std-swd-calc**+**tu-wien-vmf-gpt-codes**（2026-09-26 00:31–00:40 EDT；STD_SWD_Calc `3e4552b`/GPL-3.0/3 处补丁后 GRAZ SWD@5° **0.9570** m；TU Wien GPT3 三语言一致/VMF3 站点 ZTD **2.2733**/格网 **2.2693** m；`vmf3_grid.m` Octave 4 补丁）。
 最近新增（用法讲解）：**hifitime**（2026-09-26 00:36 EDT；crates **4.3.1**/tag **`67ff2fc`**/master **`0d32fb8`**/MPL-2.0/★**547**；rustc **1.98.1**；纯库+PyPI **4.3.1**；2024-01-01 UTC 实测 GPST−UTC=**18 s**/TAI−UTC=**37 s**/TT−TAI=**32.184 s**/GPST−BDT=**14 s**；GPST 周 **2295**+**86418 s**，BDT 周 **939**；`to_time_of_week()` 按自身尺（UTC→周 **6470**）；`from_format_str` 恒 UTC；`"… GPS"` 解析→UTC 标签；`23:59:60` 折叠为 `23:59:59`；UTC 相减跨闰秒少 1 s；TAI→UTC 闰秒后 **37 s** 窗口早 1 s/往返不等；无 GLONASST/IRNSS→`Err(TimeSystem)`（对应 gnss-rs Glonass→UTC/IRNSS→None）；非法输入全 `Err` 无 panic；交叉 gnss-rs/rinex/sp3/cggtts/rnx2cggtts/gnss-rtk；下一优先 **`antex`**，其后 `rinex-qc`）。
@@ -565,7 +570,7 @@ data-access
    ├─ ublox_driver (ROS1 ZED-F9P；gnss_comm/GVINS；无 ROS 门禁)
    ├─ glab-upc (教学 SPP/PPP；官方 UPC gLAB)
    ├─ ntripbrowser / cors-relay / ntripcaster-libev / ntrip-cpp / ntrip-go / caster / ntripclient / ntripserver / pygnssutils / ntripstreams / ntrip-client / bnc / bkg-ntripcaster (路径 C)
-   └─ cssrlib / claslib / b2blib / rtklib-b2b / rtppp-b2b / haslib / madocalib / laika / rtklib / rtklib-explorer / rtklib-py / pyrtklib / mrtklib / great-pvt / great-pce / great-podflt / cube / clkcomb / groops / rapppid / ppp-wizard / gogps-matlab / gsilib / pride-pppar (路径 D)
+   └─ cssrlib / claslib / b2blib / rtklib-b2b / rtppp-b2b / haslib / madocalib / laika / rtklib / rtklib-explorer / rtklib-py / pyrtklib / pyrtklib-demo5 / ppp-rtklib / mrtklib / great-pvt / great-pce / great-podflt / cube / clkcomb / groops / rapppid / ppp-wizard / gogps-matlab / gsilib / pride-pppar (路径 D)
 sh-gim：仅路径 E 边界，不串进 A/B 主链
 iono-scintillation：概念/仿真旁路，不替代实测 ROTI
 ```
@@ -580,7 +585,7 @@ iono-scintillation：概念/仿真旁路，不替代实测 ROTI
 | 03 / 10 / 18 | ionex · ionex-gim · ionex-rs · diffionmap · sh-gim(边界) · pyglow |
 | 04 | iri-fortran · iri-2026-package · iri-common-files · iri2016 · pyglow · pyiri · pyirtam · apexpy · aacgmv2 · msise00 · nequickg · galileo-nequick-g · nequick2-ictp · kamodo |
 | 05 / 13 / 21 | oasis-roti · ionomoni · iono-scintillation · geospacelab |
-| 06 / 20 | cssrlib · haslib · madocalib · laika · gnss_lib_py · pyrtklib · mrtklib · rtklib-explorer · rtklib-b2b · android_rinex · gps-measurement-tools · pygpsclient · pynmeagps · pyubx2 · ubx2rinex · pyrtcm · pyspartn · pysbf2 · septentrio-gnss-driver · ublox-dgnss · ublox-driver · ntripstreams · ntrip-client · ntripclient · ntripserver · cors-relay · ntripcaster-libev · ntrip-cpp · ntrip-go · caster · glab-upc · rtklib · great-pvt · groops · rapppid · ppp-wizard · gogps-matlab · gsilib · rtppp-b2b · pride-pppar · ionomoni · gnss-sdr · pocketsdr · gps-sdr-sim · fgi-gsrx · gnssrefl · mpsim |
+| 06 / 20 | cssrlib · haslib · madocalib · laika · gnss_lib_py · pyrtklib · pyrtklib-demo5 · ppp-rtklib · mrtklib · rtklib-explorer · rtklib-b2b · android_rinex · gps-measurement-tools · pygpsclient · pynmeagps · pyubx2 · ubx2rinex · pyrtcm · pyspartn · pysbf2 · septentrio-gnss-driver · ublox-dgnss · ublox-driver · ntripstreams · ntrip-client · ntripclient · ntripserver · cors-relay · ntripcaster-libev · ntrip-cpp · ntrip-go · caster · glab-upc · rtklib · great-pvt · groops · rapppid · ppp-wizard · gogps-matlab · gsilib · rtppp-b2b · pride-pppar · ionomoni · gnss-sdr · pocketsdr · gps-sdr-sim · fgi-gsrx · gnssrefl · mpsim |
 | 09 | pytecgg |
 
 ---
