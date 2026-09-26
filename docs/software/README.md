@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **149 篇**操作手册（合计 **32440 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **153 篇**操作手册（合计 **33435 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -179,6 +179,8 @@
 | 148 | [swds-api-downloader.md](./swds-api-downloader.md) | INPE/EMBRACE SWDS API 下载样例（已失效）+ embracedata 公开目录替代 | 238 | **已短硬** · tip **`f4a4f40`**/MIT/★**4**/无 PyPI；`-h` exit **1**、缺 `-p` exit **3**、`--start_date` 漏逗号 bug；真实下载 → **`SwdsError` host**（TLS 链不全 + `/api/auth/login/` **404**）；unittest 16/**3 错**；替代 embracedata `sjc23apr.17m` **66747 B**、`INPE2660.26I` **1264319 B** 实拉 · （2026-09-26 00:31–00:35 EDT） |
 | 149 | [hifitime.md](./hifitime.md) | 高精度时间尺库 GPST/GST/BDT/UTC/TAI/TT（nyx-space；nav-solutions 共用；纯库+Python） | 320 | **已短硬** · 2026-09-26 00:36 EDT；crates **4.3.1**/tag **`67ff2fc`**/master **`0d32fb8`**/MPL-2.0/★**547**；rustc **1.98.1**；纯库+PyPI **4.3.1**；2024-01-01 UTC 实测 GPST−UTC=**18 s**/TAI−UTC=**37 s**/TT−TAI=**32.184 s**/GPST−BDT=**14 s**；GPST 周 **2295**+**86418 s**，BDT 周 **939**；`to_time_of_week()` 按自身尺（UTC→周 **6470**）；`from_format_str` 恒 UTC；`"… GPS"` 解析→UTC 标签；`23:59:60` 折叠为 `23:59:59`；UTC 相减跨闰秒少 1 s；TAI→UTC 闰秒后 **37 s** 窗口早 1 s/往返不等；无 GLONASST/IRNSS→`Err(TimeSystem)`（对应 gnss-rs Glonass→UTC/IRNSS→None）；非法输入全 `Err` 无 panic；交叉 [gnss-rs](./gnss-rs.md)/[rinex](./rinex.md)/[sp3](./sp3.md)/[cggtts](./cggtts.md)/[rnx2cggtts](./rnx2cggtts.md)/[gnss-rtk](./gnss-rtk.md)/[binex](./binex.md) |
 | 150 | [great-msf.md](./great-msf.md) | 武大 GREAT 多源融合 PPP/RTK+INS（松/紧耦合；XML） | 195 | **已短硬** · 2026-09-26 00:39 EDT；tip **`4366a53`**/GPL-3.0/★**151**；源码编译需 GLFW/GL 链接补丁（原样 exit **2**）；`-h` **GREAT-MSF [1.0.0]**；MSF_20201029 LCRTK/TCRTK/TCPPP exit **0**，对 GT 3D RMS **0.063/0.074/1.203** m；交叉 [great-pvt](./great-pvt.md)/[great-upd](./great-upd.md)/[great-podflt](./great-podflt.md) |
+| 151 | [std-swd-calc.md](./std-swd-calc.md) | GNSS 斜路径湿/总延迟 SWD/STD（ZTD+GPT3/VMF1+GMF；Python） | 209 | **已短硬** · 2026-09-26 00:31–00:40 EDT；tip **`3e4552b`**/GPL-3.0/★**10**；原样 `IndentationError`+VMF.py Windows 路径/`mjd_to_ymd` 差一天/numpy2 `int()` → 3 处 sed 补丁；GRAZ 2024-01-01 ZTD **2.2733**/ZHD **2.1847**/ZWD **0.0886**/SWD@5° **0.9570** m；VMF1 格网 zhd 未高程归算 ZWD 偏大 **0.10** m；CDDIS FTPS **425**；交叉 [tu-wien-vmf-gpt-codes](./tu-wien-vmf-gpt-codes.md)/[radiate](./radiate.md)/[pride-pppar](./pride-pppar.md)/[ginan](./ginan.md) |
+| 152 | [tu-wien-vmf-gpt-codes.md](./tu-wien-vmf-gpt-codes.md) | TU Wien GPT3/VMF1/VMF3 官方源码（MATLAB/Fortran/Python）+ VMF 数据区关系 | 229 | **已短硬** · 2026-09-26 00:32–00:39 EDT；无 git/无许可证文本/数据 CC BY 4.0；GRAZ GPT3 Octave≡gfortran≡Python（p **959.59** hPa/ZTD **2.2427** m）；VMF3 站点 ZTD **2.2733**/格网 **2.2693** m；`vmf3_grid.m` Octave 需 4 处补丁；`Verification/` **403**；FC 当年 **401**；无 MATLAB；交叉 [std-swd-calc](./std-swd-calc.md)/[radiate](./radiate.md)/[ginan](./ginan.md)/[gnssrefl](./gnssrefl.md) |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -204,6 +206,8 @@
 | GNSS-IR 反射器高度（水位/雪深/土壤） | [gnssrefl.md](./gnssrefl.md) |
 | GNSS 多路径前向仿真（MATLAB/Octave） | [mpsim.md](./mpsim.md) |
 | 对流层 NWM 射线追踪（斜/天顶延迟） | [radiate.md](./radiate.md) |
+| ZTD→斜路径湿延迟 SWD（层析输入；Python） | [std-swd-calc.md](./std-swd-calc.md) |
+| GPT3/VMF3 映射函数官方源码 + VMF 格网 | [tu-wien-vmf-gpt-codes.md](./tu-wien-vmf-gpt-codes.md) |
 | 改/拼/抽稀 RINEX | [gfzrnx.md](./gfzrnx.md) |
 | 观测 QC 报告 | [anubis.md](./anubis.md) |
 | 周跳探测改正试验（RINEX 3.01–3.03） | [cycle-slip-correction.md](./cycle-slip-correction.md) |
@@ -374,6 +378,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
+最近新增（用法讲解）：**std-swd-calc**+**tu-wien-vmf-gpt-codes**（2026-09-26 00:31–00:40 EDT；STD_SWD_Calc `3e4552b`/GPL-3.0/3 处补丁后 GRAZ SWD@5° **0.9570** m；TU Wien GPT3 三语言一致/VMF3 站点 ZTD **2.2733**/格网 **2.2693** m；`vmf3_grid.m` Octave 4 补丁）。
 最近新增（用法讲解）：**hifitime**（2026-09-26 00:36 EDT；crates **4.3.1**/tag **`67ff2fc`**/master **`0d32fb8`**/MPL-2.0/★**547**；rustc **1.98.1**；纯库+PyPI **4.3.1**；2024-01-01 UTC 实测 GPST−UTC=**18 s**/TAI−UTC=**37 s**/TT−TAI=**32.184 s**/GPST−BDT=**14 s**；GPST 周 **2295**+**86418 s**，BDT 周 **939**；`to_time_of_week()` 按自身尺（UTC→周 **6470**）；`from_format_str` 恒 UTC；`"… GPS"` 解析→UTC 标签；`23:59:60` 折叠为 `23:59:59`；UTC 相减跨闰秒少 1 s；TAI→UTC 闰秒后 **37 s** 窗口早 1 s/往返不等；无 GLONASST/IRNSS→`Err(TimeSystem)`（对应 gnss-rs Glonass→UTC/IRNSS→None）；非法输入全 `Err` 无 panic；交叉 gnss-rs/rinex/sp3/cggtts/rnx2cggtts/gnss-rtk；下一优先 **`antex`**，其后 `rinex-qc`）。
 最近新增（用法讲解）：**swds-api-downloader**（2026-09-26 00:35 EDT；tip **`f4a4f40`**/★**4**；API 已下线 → `SwdsError`；embracedata 磁力计/IONEX 实拉；未臆造 API 返回）。
 最近新增（用法讲解）：**gnss-rs**（2026-09-26 00:32 EDT；crates **2.7.0**/tag **`71df4af`**/main **`1eff5ef`**/MPL-2.0/★**11**/MSRV **1.85**；rustc **1.98.1**；纯库；`{:x}` G/R/E/C/J/I/S/M；Glonass→**UTC**/IRNSS→**None**/SBAS→**GPST**；std 下 `S23`→**EGNOS**/`ASTRA-5B`/发射 **2021-11-01**，默认 no_std→`SBAS`；`sbas_selector` 武汉→**BDSBAS**/巴黎→**EGNOS**/南极→**None**；北斗 GEO=PRN<6 或 >58；**无** Carrier/频点 API；`SV::from_str("")` **panic**；交叉 rinex/rnx2cggtts/gnss-rtk/gnss-protos/sp3/binex/cggtts；下一优先 **`hifitime`**（本车道 GNSS 时间尺库，当前缺），其后候选 `antex`/`rinex-qc`）。
@@ -532,6 +537,8 @@ data-access
    ├─ gnssrefl (GNSS-IR；SNR→RH；Python)
    ├─ mpsim (多路径前向仿真；MATLAB/Octave)
    ├─ radiate (对流层射线追踪；Fortran/NWM)
+   ├─ std-swd-calc (ZTD→SWD/STD；GPT3/VMF1+GMF；Python)
+   ├─ tu-wien-vmf-gpt-codes (GPT3/VMF1/VMF3 官方源码；Octave/gfortran/Python)
    ├─ minmea (嵌入式 C NMEA 解析核)
    ├─ libnmea (动态句型模块 NMEA；对照 minmea)
    ├─ pynmea2 (经典高星标 NMEA 解析；对照 pynmeagps)
