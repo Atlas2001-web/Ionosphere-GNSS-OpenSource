@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **199 篇**操作手册（合计 **44012 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **200 篇**操作手册（合计 **44264 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -224,6 +224,7 @@
 | 197 | [titipy.md](./titipy.md) | INGV TITIPy：Swarm LP 2 Hz Ne/Te + POD 顶部 TEC 1 Hz → RODI / ROTEI / ROTI（10 s 窗 ROD/ROT 标准差）+ QD/MLT 分箱极区图；≠ 地面 ROTI（TECU/s 非 TECU/min）；**CC BY-NC-SA 3.0**（GitHub 显示 NOASSERTION） | 259 | **已短硬** · 2026-09-26 03:05–03:30 EDT；tip `223ace7`/无 PyPI/★8；swarm-diss HTTPS 免登录下 Swarm A 2024-05-11 LP 0701 + TEC 0502（FTPS 530 须账号）；3 处补丁（0701 改名 N_ion/T_elec、cdflib 1.x 无 close、numpy 参差数组）；LP 172776 行，RODI 中位 1320/2644/6007 cm⁻³/s（\|QD\| 0–30/30–60/60–90），最大 136680 @MLT 19；TEC 22 PRN 318075 行 ROTI p95 0.261 TECU/s（低纬）；整机磁盘写满中止于 PRN24；Te 标志 21 被旧过滤丢 38% |
 | 198 | [sidereon.md](./sidereon.md) | neilberkman 纯 Rust GNSS 库：RINEX 3 OBS/NAV、SP3、CRX 解析 → `solve_spp_from_rinex_obs` 多系统单点定位（Klobuchar+对流层），另有 RTK/PPP/SGP4/NTRIP 状态机；≠ 实时接收机驱动 | 216 | **已短硬** · 2026-09-26 03:10–03:29 EDT；crates **2.1.1**=tag `ce702db`/main `33f2cdd`（3.0.0 未发版）/MIT/★18/MSRV 1.89（未测）；rustc 1.98.1；BKG WTZR 2026-258 全天 + BRDC：多系统 3D 中位 2.195/95% 4.179 m，GPS 1.983/3.532 m，对 RTKLIB 2.4.3 逐历元 \|Δ\| 中位 0.776 m；OBS/SP3/NAV 字段独立 Python 逐值 max\|Δ\|=0；坑：2.1.1 SP3 漏相对论项+TGD（10.787 m）、不认 .gz、NAV 截断静默、不健康星历静默丢；错误用例 0 panic；RTK/PPP/CLI 未测 |
 | 199 | [geomag-api.md](./geomag-api.md) | 地磁台数据 API 下载侧：USGS Geomag ws（IAGA-2002/JSON，1 s/1 min，variation→definitive）+ INTERMAGNET via BGS GIN（definitive/best-avail），备选 NRCan FDSN miniSEED、MACCS 0.5 s、THEMIS GMAG CDF；H/D 计算、99999/null、样本上限与 30 s 超时；≠ 指数（→pyspedas）/ SuperMAG / 基线处理 | 257 | **已短硬** · 2026-09-26 03:22–03:40 EDT；BOU 2024-05-10 18 UT：USGS adjusted Z 全 null，GIN definitive 有；adjusted−definitive H 均差 0.83 nT（std 0.15）；上限 1296000 样本（422），1 s×2 天/1 min×30 天 → 404 HTML 超时 |
+| 200 | [superdarn-data.md](./superdarn-data.md) | SuperDARN 数据获取下载侧：FRDR（31 个数据集；只有 RAWACF 2007–2023 / 老 DAT 1993–2006；未公开的 file_sizes.json 列目录 + HTTPS 302→Globus 单文件；批量 Globus 需账号+端点）、SuperDARN Canada Globus group（FITACF/MAP，邮件申请）、BAS 镜像（SSH 公钥申请；公开目录 API）、VT（需登录 15 次/天）；bz2+DMap 格式，含纯 Python 头部窥视脚本；Rules of the Road 原文；≠ 读图画图（→pydarn） | 252 | **已短硬** · 2026-09-26 03:35–03:55 EDT；FRDR 2023=item 1302（6.32 TB，2025-09-18 上线），2023/05 共 13,113 项，中位文件 33 MB；cve 6 KB/sas.a 161 KB/1993 DAT 15 KB sha1 均与 hashes 一致；cve 同名文件 FRDR≠BAS sha1；LICENSE CC BY vs readme CC BY-NC |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -426,6 +427,7 @@
 | LSTID：业余无线电 HF spot 跳距边缘正弦拟合（Madrigal 免账号） | [hamsci-lstid-detection.md](./hamsci-lstid-detection.md) |
 | Madrigal（CEDAR/EISCAT/AMISR）找实验 + 下载 TEC 格网 / ISR 文件；服务端 isprint 只取一点 | [madrigal.md](./madrigal.md) |
 | 地磁台分钟/秒值（USGS ws、INTERMAGNET/GIN 定值、NRCan/MACCS/THEMIS）下载 + H/D + 缺测处理 | [geomag-api.md](./geomag-api.md) |
+| SuperDARN 原始数据下载（FRDR RAWACF、Globus/BAS/VT 镜像门槛、sha1+bz2 校验、使用规则） | [superdarn-data.md](./superdarn-data.md) |
 | 单站 1 Hz/30 s RINEX 看 sTEC 变化率 / 海啸型 TID（VARION，Python 2.7） | [varion.md](./varion.md) |
 | SuperDARN HF 雷达 RTI / 扇形图 / 极区对流图（FITACF/MAP；TID 斜纹、对流速度） | [pydarn.md](./pydarn.md) |
 | Swarm 卫星原位 RODI / 顶部 TEC ROTI（LP+POD；CC BY-NC-SA） | [titipy.md](./titipy.md) |
