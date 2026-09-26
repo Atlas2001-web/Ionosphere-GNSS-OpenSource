@@ -13577,8 +13577,8 @@
     {
       "name": "GNSS_OSI_download",
       "url": "https://github.com/jdesbonnet/GNSS_OSI_download",
-      "desc_zh": "爱尔兰 Tailte Éireann（原 OSI）Active GNSS 网 RINEX 下载脚本",
-      "analysis_zh": "MIT 许可的 Python 脚本，从 gnss.osi.ie 批量下载爱尔兰 Active GNSS 站 RINEX（ZIP），可列站号并按日期/小时段抓取。填补西欧岛屿 CORS 自动化缺口。使用前须同意站点条款；公开窗口常约近 30 天。门户偶发网络可达性问题，失败时核对站点状态。",
+      "desc_zh": "爱尔兰 OSI Active GNSS 网 RINEX 批量下载脚本；脚本仍指向已失效旧域 gnss.osi.ie，数据改从新官方页 gnss.tailte.ie 获取",
+      "analysis_zh": "MIT 许可的 Python 脚本，按站号与日期/小时段批量抓取爱尔兰 Active GNSS 站 RINEX（ZIP）。现状（2026-09-26 复核）：脚本硬编码的旧域 gnss.osi.ie 在公共 DNS 返回 NXDOMAIN，列站与下载均报 NameResolutionError，原样无法使用。OSI 已并入 Tailte Éireann，数据改从新官方页 gnss.tailte.ie/download-rinex.php 获取；该页公告 9 月 28 日起迁移至 RINEX 3，期间网站暂停服务。新页表单是否兼容脚本未验证，改 BASE_URL 前先人工核对。",
       "language": "Python",
       "license": "MIT",
       "category": "gnss-data",
@@ -13592,7 +13592,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "爱尔兰 OSI/Tailte GNSS 网 RINEX 下载脚本"
+      "one_liner_zh": "爱尔兰 OSI GNSS RINEX 下载脚本（旧域已失效，数据迁至 Tailte）"
     },
     {
       "name": "sidereon-python",

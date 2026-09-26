@@ -1297,7 +1297,7 @@ EarthScope 发布的 Python 客户端（Apache-2.0，PyPI: earthscope-sdk），�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GNSS_OSI_download](https://github.com/jdesbonnet/GNSS_OSI_download) | 爱尔兰 OSI/Tailte GNSS 网 RINEX 下载脚本 | Python | 1 | 🏷️ 个人社区 |
+| [GNSS_OSI_download](https://github.com/jdesbonnet/GNSS_OSI_download) | 爱尔兰 OSI GNSS RINEX 下载脚本（旧域已失效，数据迁至 Tailte） | Python | 1 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -1306,7 +1306,7 @@ EarthScope 发布的 Python 客户端（Apache-2.0，PyPI: earthscope-sdk），�
 
 语言：Python · 许可：MIT · 星标约：1 · 宿主：github
 
-MIT 许可的 Python 脚本，从 gnss.osi.ie 批量下载爱尔兰 Active GNSS 站 RINEX（ZIP），可列站号并按日期/小时段抓取。填补西欧岛屿 CORS 自动化缺口。使用前须同意站点条款；公开窗口常约近 30 天。门户偶发网络可达性问题，失败时核对站点状态。
+MIT 许可的 Python 脚本，按站号与日期/小时段批量抓取爱尔兰 Active GNSS 站 RINEX（ZIP）。现状（2026-09-26 复核）：脚本硬编码的旧域 gnss.osi.ie 在公共 DNS 返回 NXDOMAIN，列站与下载均报 NameResolutionError，原样无法使用。OSI 已并入 Tailte Éireann，数据改从新官方页 gnss.tailte.ie/download-rinex.php 获取；该页公告 9 月 28 日起迁移至 RINEX 3，期间网站暂停服务。新页表单是否兼容脚本未验证，改 BASE_URL 前先人工核对。
 
 ## 天线模型
 
