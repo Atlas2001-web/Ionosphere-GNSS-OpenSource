@@ -558,7 +558,6 @@ $$
 
 - [ ] GIM：从 `CDDIS-IONEX` 下载至少一家；推荐再备 `JPL-IONEX-Rapid` 或 `ROB-IONEX-Products` / `GFZ-Global-Ionosphere-Maps` / `WHU-IGS-Ionosphere-AC` 作交叉  
 - [ ] 读写：`ionex` / `ionex-rs` / `ionex_reader` / `ionex-analyzer`（任选其一先跑通）  
-- [ ] 辅助拉取：`ionex-downloader`（以该仓库 README 为准）  
 - [ ] 地磁/空间天气时间线：`GFZ-Kp-Index`、`NOAA-SWPC`、`NOAA-SWPC-Planetary-K`；太阳风可选 `NASA-OMNIWeb`  
 - [ ] 近实时/业务 TEC 对照（可选）：`DLR-IMPC`、`DLR-IMPC-Products`、`ESA-TIO-NRT-TEC`、`NOAA-SWPC-GloTEC`  
 - [ ] ROTI（可选）：`igs-roti`、`Okoh-MATLAB-ROT-ROTI`、`Ionospheric-TEC-ROTI-Interactives`  

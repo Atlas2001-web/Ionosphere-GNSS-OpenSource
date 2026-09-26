@@ -90,7 +90,7 @@
 **IONEX** 是交换这种地图的一种常用文本/压缩文件格式。  
 你在 `CDDIS-IONEX` 下载到的 `.INX` / `.ionex` / 带 `GIM` 字样的长文件名，多半就是它。
 
-用本仓库工具读：`ionex`、`ionex-rs`、`ionex_reader`、`ionex-analyzer`；拉取辅助：`ionex-downloader`。
+用本仓库工具读：`ionex`、`ionex-rs`、`ionex_reader`、`ionex-analyzer`。
 
 ### 2.3 「分析中心」是什么
 
@@ -454,7 +454,7 @@ $$
 
 - 数据：`CDDIS-IONEX`（主）、备选 `JPL-IONEX-Rapid`、`ROB-IONEX-Products`、`GFZ-Global-Ionosphere-Maps`、`UPC-IONEX-Archive`、`WHU-IGS-Ionosphere-AC`  
 - 注册：[`docs/data-access.md`](../data-access.md)、`NASA-Earthdata-Login`  
-- 读写：`ionex`、`ionex-rs`、`ionex_reader`、`ionex-analyzer`、`ionex-downloader`  
+- 读写：`ionex`、`ionex-rs`、`ionex_reader`、`ionex-analyzer`  
 - 列表：[`lists/10-gnss-datasets.md`](../../lists/10-gnss-datasets.md)、[`lists/01-ionosphere.md`](../../lists/01-ionosphere.md)  
 - 地磁选日：`GFZ-Kp-Index`、`NOAA-SWPC-Planetary-K`、`NOAA-SWPC`
 

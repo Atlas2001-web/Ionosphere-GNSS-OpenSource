@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> **301** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **300** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -1259,7 +1259,6 @@ KNMI 在 Swarm-VIP-Dynamic（UiO/Birmingham/INGV/DLR/KNMI）合作中的代码�
 | [ionosphere-plotting](https://github.com/arwildo/ionosphere-plotting) | ionosphere-plotting：TEC/foF2/DST 等指数绑图脚本 | Python | 7 | 🏷️ 个人社区 |
 | [GRITI](https://github.com/dinsmoro/GRITI) | GRITI：多源电离层瞬变分析与可视化工具箱 | Python | 5 | 🏷️ 高校实验室 |
 | [spinifex](https://git.astron.nl/RD/spinifex) | ASTRON Spinifex：射电天文 TEC/RM 电离层工具 | Python | 4 | 🏷️ 官方 |
-| [ionex-downloader](https://github.com/ohm1122/ionex-downloader) | ionex-downloader：批量拉取 IONEX/GIM 的小脚本 | — | 1 | 🏷️ 个人社区 |
 | [nleht-fdtd-ionosphere](https://gitlab.com/nleht/fdtd) | nleht-fdtd：电离层 VLF 波 MPI 并行 FDTD（GitLab） | C++ | 1 | 🏷️ 高校实验室 |
 | [pypride](https://gitlab.com/gofrito/pypride) | pypride：行星雷达/VLBI 库（含 IONEX 与闪烁表 TEC） | Python | 1 | 🏷️ 高校实验室 |
 | [Boston-College-ISR-Ionospheric-Studies](https://www.bc.edu/bc-web/research/sites/institute-for-scientific-research/research/ionospheric-studies.html) | Boston College ISR 电离层研究组主页（闪烁、层析与 GNSS TEC 方向） | data-portal | — | 🏷️ 高校实验室 |
@@ -1304,13 +1303,6 @@ KNMI 在 Swarm-VIP-Dynamic（UiO/Birmingham/INGV/DLR/KNMI）合作中的代码�
 语言：Python · 许可：Apache-2.0 · 星标约：4 · 宿主：gitlab
 
 荷兰 ASTRON 维护的 Spinifex，用纯 Python 从 IONEX/TOMION 等模型估计视线 TEC 与旋转量度（RM），面向 LOFAR 等干涉测量改正。可 pip 安装 GitLab 主仓；GitHub 仅为镜像。依赖外部 IONEX 下载与地磁模型，不是 GNSS 双频 STEC 估计算法本身。
-
-#### [ionex-downloader](https://github.com/ohm1122/ionex-downloader)  
-*🏷️ 个人社区*
-
-语言：— · 许可：— · 星标约：1 · 宿主：github
-
-批处理拉取 IONEX（GIM）文件的小工具，减少手工下载 IGS 或分析中心产品的重复劳动。适合电离层课题数据准备与课程作业。维护活跃度与镜像源覆盖有限，生产流水线更常见用 wget/aria2、FAST 或机构自建镜像；下载后可用 IonMap 或 gnss-lab/ionex 继续处理。注意分析中心产品时延与文件命名规则变化。
 
 #### [nleht-fdtd-ionosphere](https://gitlab.com/nleht/fdtd)  
 *🏷️ 高校实验室*

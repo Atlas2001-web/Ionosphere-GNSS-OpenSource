@@ -190,7 +190,7 @@
 | 任务 | 可搜的真实 `name` 示例 |
 |---|---|
 | 估 TEC | `gnss-tec`、`pygnss-tec`、`tec-suite`、`Seemala-GPS-TEC`、`Okoh-MATLAB-TEC-from-RINEX`、`IONOLAB-TEC-Software`、`tec-example` |
-| 读/画 IONEX | `ionex`、`ionex-rs`、`ionex_reader`、`ionex-analyzer`、`ionex-downloader`、`ionex_formatter` |
+| 读/画 IONEX | `ionex`、`ionex-rs`、`ionex_reader`、`ionex-analyzer`、`ionex_formatter` |
 | ROTI | `igs-roti`、`Okoh-MATLAB-ROT-ROTI`、`Ionospheric-TEC-ROTI-Interactives` |
 | 经验模型 | `IRI-2020-package`、`iri2020`、`PyIRI`、`NeQuick2-ICTP`、`Galileo-NeQuick-G`、`NequickG` |
 | 物理/模式接口 | `TIE-GCM`、`pytiegcm`、`GITM`、`sami2py`、`Kamodo` |

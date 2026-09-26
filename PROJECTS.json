@@ -5,9 +5,9 @@
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
   "generated": "2026-09-26",
-  "project_count": 1036,
+  "project_count": 1035,
   "counts_by_category": {
-    "ionosphere": 301,
+    "ionosphere": 300,
     "troposphere": 49,
     "gnss-data": 140,
     "gnss-positioning": 103,
@@ -6834,24 +6834,6 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "ionex-analyzer：Electron/React 的 IONEX 可视化"
-    },
-    {
-      "name": "ionex-downloader",
-      "url": "https://github.com/ohm1122/ionex-downloader",
-      "desc_zh": "课题数据准备够用；产线更常见 wget/aria2 或机构镜像",
-      "analysis_zh": "批处理拉取 IONEX（GIM）文件的小工具，减少手工下载 IGS 或分析中心产品的重复劳动。适合电离层课题数据准备与课程作业。维护活跃度与镜像源覆盖有限，生产流水线更常见用 wget/aria2、FAST 或机构自建镜像；下载后可用 IonMap 或 gnss-lab/ionex 继续处理。注意分析中心产品时延与文件命名规则变化。",
-      "language": "",
-      "license": null,
-      "category": "ionosphere",
-      "subcategory": "电离层工具",
-      "markers": [],
-      "stars_approx": 1,
-      "source": "gh-search+verified (missing_meta / extra searches)",
-      "featured": false,
-      "user_relation": "none",
-      "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "ionex-downloader：批量拉取 IONEX/GIM 的小脚本"
     },
     {
       "name": "ionex-rs",
@@ -20528,7 +20510,7 @@
   "provenance_counts": {
     "official": 344,
     "academic_lab": 355,
-    "personal_community": 337
+    "personal_community": 336
   },
   "updated": "2026-09-26"
 }

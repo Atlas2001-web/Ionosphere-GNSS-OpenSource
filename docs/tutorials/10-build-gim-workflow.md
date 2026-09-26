@@ -472,7 +472,7 @@ $$
 | DCB | 产品名、约束（如卫星和为零） | 几 ns → 数 TECU；回 09 |
 | 时间片 | epoch 中心、窗长 | IONEX 常 1–2 h |
 
-读写与分析落点：`ionex`、`ionex-rs`、`ionex_reader`、`ionex-analyzer`、`ionex-downloader`、`ionex_formatter`、`INX_Editor`。
+读写与分析落点：`ionex`、`ionex-rs`、`ionex_reader`、`ionex-analyzer`、`ionex_formatter`、`INX_Editor`。
 
 ---
 
@@ -603,7 +603,7 @@ $$
 |---|---|
 | 估 TEC | `gnss-tec`、`pygnss-tec`、`tec-suite`、`Seemala-GPS-TEC`、`Okoh-MATLAB-TEC-from-RINEX`、`IONOLAB-TEC-Software` |
 | QC / RINEX | `TEQC`、`GFZRNX`、`georinex` |
-| 读写 IONEX | `ionex`、`ionex-rs`、`ionex_reader`、`ionex-analyzer`、`ionex-downloader`、`ionex_formatter` |
+| 读写 IONEX | `ionex`、`ionex-rs`、`ionex_reader`、`ionex-analyzer`、`ionex_formatter` |
 | 球谐/GIM 实现 | `SH-GIM`、`mosgim`、`mosgim2`、`m_gim`、`M_GIM` |
 | 插值思路参考 | `Ionospheric-TEC-Kriging-Turkiye` |
 | 官方/业务产品 | `CDDIS-IONEX`、`JPL-IONEX-Rapid`、`GFZ-Global-Ionosphere-Maps`、`DLR-IMPC`、`ESA-TIO-NRT-TEC`、`NOAA-SWPC-GloTEC`、`ROB-European-TEC`、`INPE-TEC-Maps-IONEX`、`WHU-IGS-Ionosphere-AC` |

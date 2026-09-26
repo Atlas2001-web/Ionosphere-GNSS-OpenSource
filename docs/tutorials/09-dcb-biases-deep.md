@@ -515,7 +515,7 @@ $$
 | RINEX→STEC | `gnss-tec`、`pygnss-tec`、`tec-suite`、`Seemala-GPS-TEC`、`Okoh-MATLAB-TEC-from-RINEX`、`IONOLAB-TEC-Software` | [`lists/01-ionosphere.md`](../../lists/01-ionosphere.md) |
 | 读数 / QC | `georinex`、`Anubis`、`TEQC`、`GFZRNX` | [`lists/03-gnss-data.md`](../../lists/03-gnss-data.md)；短文 [`georinex`](../software/georinex.md)、[`Anubis`](../software/anubis.md)、[`GFZRNX`](../software/gfzrnx.md) |
 | 偏差线索 | `Gkit-Bias`、`MCOSB` | 交叉检索；用前读上游 README |
-| 读 IONEX | `ionex`、`ionex-rs`、`ionex_reader`、`ionex-analyzer`、`ionex-downloader` | [`ionex-gim`](../software/ionex-gim.md) |
+| 读 IONEX | `ionex`、`ionex-rs`、`ionex_reader`、`ionex-analyzer` | [`ionex-gim`](../software/ionex-gim.md) |
 | 产品入口 | `CDDIS-IONEX`、`JPL-IONEX-Rapid`、`ROB-IONEX-Products`、`GFZ-Global-Ionosphere-Maps`、`WHU-IGS-Ionosphere-AC`、`IGS-Products`、`IGS-Data-Access`、`CODE-AIUB-Product-Download`、`UWM-IGS-Iono-Combination` | [`lists/10-gnss-datasets.md`](../../lists/10-gnss-datasets.md)；[`data-access.md`](../data-access.md) |
 | 建图 | `mosgim`、`mosgim2`、`m_gim`、`M_GIM`、`SH-GIM`（🚩） | 进阶 [10](./10-build-gim-workflow.md)；[`SH-GIM`](../software/sh-gim.md) |
 | 定位侧 | `RTKLIB`、`gLAB-UPC`、`PRIDE-PPPAR`、`PPP-RTK-Ionosphere` | [`RTKLIB`](../software/rtklib.md)、[`PRIDE-PPPAR`](../software/pride-pppar.md) |

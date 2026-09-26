@@ -518,10 +518,9 @@ $$
 #### 09:30–11:00　读入并出第一张图
 
 1. 安装/克隆其一：`ionex`、`ionex-rs`、`ionex_reader`、`ionex-analyzer`（以各 README 为准）。  
-2. 辅助拉取可用 `ionex-downloader`。  
-3. 加载 IONEX → 选一个历元（如 12:00 UTC）→ 画填色图。  
-4. 色标：先自动范围，再改成「整数 TECU、不要过多小数」。  
-5. 标题模板：`VTEC [TECU] | 2024-xx-xx 12:00 UTC | AC=CODE | file=...`
+2. 加载 IONEX → 选一个历元（如 12:00 UTC）→ 画填色图。  
+3. 色标：先自动范围，再改成「整数 TECU、不要过多小数」。  
+4. 标题模板：`VTEC [TECU] | 2024-xx-xx 12:00 UTC | AC=CODE | file=...`
 
 **为什么要写 AC 与代次**：两家中心可差数 TECU；预报≠最终——这是机制局限，不是你画图失败。
 
@@ -807,7 +806,7 @@ $\mathrm{VTEC}\approx 34/1.70=20\,\mathrm{TECU}$。低仰角 $M$ 大，映射与
 | 读观测 | `georinex`、`GFZRNX`、`TEQC`、`Anubis` → [`lists/03-gnss-data.md`](../../lists/03-gnss-data.md) |
 | 压缩还原 | `RNXCMP`、`crx2rnx`、`hatanaka` |
 | 估 TEC | `gnss-tec`、`pygnss-tec`、`tec-suite`、`Seemala-GPS-TEC`、`Okoh-MATLAB-TEC-from-RINEX`、`IONOLAB-TEC-Software`、`tec-example` |
-| 读 IONEX | `ionex`、`ionex-rs`、`ionex_reader`、`ionex-analyzer`、`ionex-downloader` |
+| 读 IONEX | `ionex`、`ionex-rs`、`ionex_reader`、`ionex-analyzer` |
 | 业务 TEC 对照 | `DLR-IMPC`、`DLR-IMPC-Products`、`ESA-TIO-NRT-TEC`、`NOAA-SWPC-GloTEC`、`eSWua-TEC`、`IONORING` |
 | 地磁/空间天气 | `GFZ-Kp-Index`、`NOAA-SWPC`、`NOAA-SWPC-Planetary-K`、`NASA-OMNIWeb` |
 | ROTI | `igs-roti`、`Okoh-MATLAB-ROT-ROTI`、`Ionospheric-TEC-ROTI-Interactives` |
