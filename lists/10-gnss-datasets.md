@@ -1774,7 +1774,7 @@ EPOS GNSS Thematic Core Service 官方门户，汇总欧洲 GNSS 观测、坐标
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-由 UBI、ROB、CNRS-OCA、INGV 等在 EPOS 框架下开发的 GLASS Framework API（OCA 节点实例），提供 GNSS 台站、高采样/常规 RINEX 元数据及下载 URL 等 REST 接口（JSON/XML/CSV 等）。开发说明见 GlassFramework/about.html；Swagger 亦可经 EPOS GNSS 门户进入。适合脚本化检索欧洲节点观测而不必手工翻 FTP。账号/配额与站级许可以节点策略为准；不是定位解算器。
+EPOS 框架下 UBI、ROB、CNRS-OCA、INGV 开发的 GLASS 接口，本条是 OCA 的欧洲数据节点（GlassFramework 3.4.1，库名 gnss-europe，列出 2462 站）。按站名、国家、网络或经纬度框查台站元数据（JSON/CSV/XML），按站名加日期查 RINEX 文件，返回 md5、文件大小和原数据中心下载 URL（EPN、RENAG 等），另可取 IGS 站点日志和 GeodesyML。接口说明只有 WADL，没有 Swagger；部分参数（perpage、limit、date_from）会被忽略。只是检索层，文件要到各数据中心下载。
 
 #### [GA-GNSS-RINEX-API](https://data.gnss.ga.gov.au/docs/rinex-file-query/v1.0/web-api-access.html)  
 *🏷️ 官方*

@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **230 篇**操作手册（合计 **52835 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **231 篇**操作手册（合计 **52960 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -255,6 +255,7 @@
 | 228 | [iri2020.md](./iri2020.md) | space-physics IRI-2020 Fortran → xarray（不在 PyPI，git clone + CMake/gfortran 首跑自编）：Ne/离子/温度剖面 + NmF2/hmF2/foF2/TEC；与 pyiri 同场景对照；指数文件更新与段错误修补 | 222 | **已短硬** 用法讲解 · 2026-09-26 05:18–05:30 EDT；main `8b6ab9e`/MIT；2020-04-01 12UT 20N10E：NmF2 **1.494e12** m⁻³/hmF2 335.0/foF2 10.977（文件 F10.7=69.2）；改驱动 F10.7=100+Rz12 → hmF2 364.0（pyiri 364.6）/foF2 12.76（12.51）；捆带指数止于 2023 → 2024-05-11 静默 f107=63.75/ap=−11；新 `ig_rz.dat` SIGSEGV（806 月数组，issue #5）→ 改 1200 后得 ap 271；TEC 积分上限=请求最高高度；`FFLAGS=-O2` 改 TEC 38.11→34.78 · **质检复跑通过 2026-09-26 EDT**（§3.1/3.3/3.4 逐字一致，806 月段错误与修补复现；修告警构成） |
 | 229 | [noaa-ncn-data.md](./noaa-ncn-data.md) | NOAA CORS 网（NCN）数据直连（免账号）：NODD S3 `noaa-cors-pds`（ListObjectsV2 翻页；日/小时 `.d.gz`/`.o.gz`/`.S`、brdc/SP3、coord_20 ITRF2020、station_log）与 corsdata 同名同 md5；NCN API `cors?id=`/`ncors?x,y,z`（坐标为 NAD 83(2011)，与 ITRF2020 差 1.6 m）；UFCORS curl POST 取 1–24 h zip（默认只出 GPS、出错也回 200）；时延：NGS 自营小时文件约 15 min、日文件约 5 h，EarthScope 转入站日文件约 1.5 天 | 218 | **已短硬** · 2026-09-26 05:21–05:40 EDT；P041 2024-001 `.24d.gz` 1769574 B md5 两源一致、2880 历元/SUM 94%；1LSU 2026-268 UFCORS 1 h 121 历元；2026 年 S3 XML 多出 ChecksumAlgorithm 字段，紧邻式正则静默返回 0 个文件 |
 | 230 | [ntrip-core.md](./ntrip-core.md) | greenforge-labs/ntrip-core：Rust/Tokio 异步 NTRIP v1/v2 客户端**库**（rustls TLS、sourcetable 解析、最近挂载点、GGA 上报、自动重连、HTTP 代理）；只交原始字节，不解 RTCM；≠ [ntrip-client](./ntrip-client.md)（nav-solutions） | 214 | **已短硬** 用法讲解新入库 · 2026-09-26 05:19–05:32 EDT；crates 0.2.0/main `5949d60`/MIT/★4；centipede 30 s 461 帧与 str2str 逐字节一致；本机回放 5/5 `cmp` 一致；v1 不存在挂载静默交出 sourcetable、重连无上限、读头部无超时；rtk2go 订流/TLS 订流/代理未测 |
+| 231 | [epos-glass-api.md](./epos-glass-api.md) | EPOS GLASS API（OCA 欧洲节点，免账号）：按站名/网络/国家/经纬度框查台站元数据（json/csv/xml，2462 站），按站+日期查 RINEX 文件记录（md5、大小、EPN/RENAG 等原数据中心 URL），IGS 站点日志与 GeodesyML（zip）；只有 WADL；`date_from`/`perpage`/`limit` 被忽略、`rinex_count` 恒 400、`stations-json-dictionary` 会触发缓存重建 | 125 | **已短硬** 用法讲解新入库 · 2026-09-26 05:29–05:40 EDT；GlassFramework 3.4.1.255；GRAS00FRA 2026-263 2596725 B（EPN）、SOPH00FRA 1705454 B md5 与 GLASS 一致、crx2rnx 2880 历元；观测到可查约 2–3 天；PROJECTS EPOS-GLASS-API analysis/registration 已按实测改写 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -481,6 +482,7 @@
 | 各中心 GIM/IONEX 去哪匿名下载、新旧文件名、出来要等多久、各家差多少 | [gim-product-portals.md](./gim-product-portals.md) |
 | 不登录下载 IGS 日观测：哪个镜像齐、到得快、是不是同一份（CDDIS 需 Earthdata） | [gnss-obs-mirrors.md](./gnss-obs-mirrors.md) |
 | 美国 CORS（NCN）RINEX 批量下载、小时文件时延、站坐标（ITRF2020 vs NAD 83）、UFCORS 任意时段 | [noaa-ncn-data.md](./noaa-ncn-data.md) |
+| 欧洲 EPN/RENAG/RGP 台站检索、按站按日拿 RINEX 下载 URL 和 md5、IGS 站点日志 | [epos-glass-api.md](./epos-glass-api.md) |
 | 读/交换多机构闪烁 HDF5 文件（Kartverket/FMI/DTU/UNB 的 BiScEF `.nc`，S4/σφ/ROTI；先核时间基准与缺测值） | [biscef.md](./biscef.md) |
 | SuperDARN 原始数据下载（FRDR RAWACF、Globus/BAS/VT 镜像门槛、sha1+bz2 校验、使用规则） | [superdarn-data.md](./superdarn-data.md) |
 | 子午工程数据（DOI/CSTR 查询、不登录可见的元数据与文件清单、登录门槛、致谢与报送规则） | [meridian-data.md](./meridian-data.md) |
@@ -530,6 +532,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
+最近新增（用法讲解）：**epos-glass-api**（[epos-glass-api.md](./epos-glass-api.md)；2026-09-26 05:29–05:40 EDT；免账号；GLASS 3.4.1 OCA 节点 2462 站；`files/station-marker` + `epoch_start/epoch_end` 闭区间按日查文件，SOPH00FRA md5 一致、2880 历元；`combination` 的 `date_from` 被忽略会吐全历史；目录条目 EPOS-GLASS-API 的 analysis/registration 按实测改写）。
 最近新增（用法讲解）：**ntrip-core**（[ntrip-core.md](./ntrip-core.md)；2026-09-26 05:19–05:32 EDT；crates **0.2.0**/tag 仅 v0.1.0/main `5949d60`/MIT/★4；rtk2go 766/centipede 1276/GA TLS 922 条源表；centipede IPGP 30 s 79161 B/461 帧 ≡ str2str 连续子串；本机回放 89661 B/521 帧 5/5 一致；坑：v1 缺挂载静默吐源表、chunked 字面匹配、重连无上限、读头无超时、GGA 60 分进位；下一优先 azarashi，go-gnss-spartn 留候选）。
 最近新增（用法讲解）：**noaa-ncn-data**（[noaa-ncn-data.md](./noaa-ncn-data.md)；2026-09-26 05:21–05:40 EDT；免账号；NODD S3 与 corsdata md5 一致（S3 0.14 s 对 1.0 s）；NCN API 53 字段/NAD 83(2011)；UFCORS POST 200 zip，默认只出 GPS；目录条目 NOAA-NCN-API / NOAA-CORS-AWS / NOAA-UFCORS 的 analysis/registration 按实测改写）。
 最近新增（用法讲解）：**pymsis**+**iri2020**（[pymsis.md](./pymsis.md) / [iri2020.md](./iri2020.md)；2026-09-26 05:18–05:30 EDT；pymsis PyPI 0.13.0/MIT+NRL MSIS2 许可：CelesTrak 自动指数 2024-05-11 Ap 271，45°N 300 km O/N₂ 3.460→1.364（MSIS2.1）/2.919→1.249（MSIS00）；iri2020 `8b6ab9e`/MIT/不在 PyPI：pyiri 同场景 NmF2 1.494e12 m⁻³（F10.7 69.2），改驱动 F10.7=100+Rz12 后 hmF2 364.0 vs pyiri 364.6；捆带指数 2023 止、过期静默 ap=−11，新 ig_rz.dat 段错误需 806→1200 补丁；交叉 msise00/iri2016/pyiri/iri-fortran）。
