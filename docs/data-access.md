@@ -11,7 +11,7 @@
 | 你想要 | 优先门户 | 注册 |
 |---|---|:---:|
 | 全球 RINEX / 广播星历 | [CDDIS](https://cddis.nasa.gov/archive/gnss/) · [BKG root_ftp](https://igs.bkg.bund.de/root_ftp/) · [GFZ ISDC HTTPS](https://isdc-data.gfz.de/gnss/) · [ESA GSSC](https://gssc.esa.int/) | Earthdata / 视中心 |
-| SP3 / CLK / 偏差 | CDDIS `gnss/products/` · [IGS files](https://files.igs.org/pub/) · GFZ ISDC · [CODE HTTPS](https://www.aiub.unibe.ch/download/) · [CAS `pub/`](https://data.bdsmart.cn/pub/) | 同左 / 多开放 |
+| SP3 / CLK / 偏差 | CDDIS `gnss/products/` · [IGS files](https://files.igs.org/pub/) · GFZ ISDC · [CODE HTTPS](https://download.aiub.unibe.ch/) · [CAS `pub/`](https://data.bdsmart.cn/pub/) | 同左 / 多开放 |
 | GIM / IONEX | CDDIS `gnss/products/ionex/` · CODE · [CAS ionex](https://data.bdsmart.cn/pub/product/iono/ionex/) · [UPC rapid](https://chapman.upc.es/tomion/rapid/) · JPL | 视源（后两者常匿名） |
 | 高采样率（闪烁 / 同震） | [CDDIS high-rate](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/high-rate_data.html) · GFZ `/gnss/data/highrate/` · `cddis-highrate-downloader` | Earthdata / 开放 |
 | 区域 CORS（美/新西兰/巴西） | [NOAA CORS](https://geodesy.noaa.gov/CORS/) · [CORS AWS](https://noaa-cors-pds.s3.amazonaws.com/index.html) · [GeoNet API](https://data.geonet.org.nz/) · [IBGE RBMC](https://geoftp.ibge.gov.br/informacoes_sobre_posicionamento_geodesico/rbmc/) · [EarthScope GAGE](https://gage-data.earthscope.org/archive/gnss) | 视网络 |
@@ -94,7 +94,7 @@ curl -L -n -C - -o obs.crx.gz \
 
 **我要什么**：精密轨道（SP3）、钟差（CLK）、码偏差 / OSB（bias）。
 
-**去哪**：CDDIS `gnss/products/WWWW/`（`WWWW` = GPS 周）· [IGS files/pub](https://files.igs.org/pub/) · [GFZ ISDC products](https://isdc-data.gfz.de/gnss/products/) · [CODE download](https://www.aiub.unibe.ch/download/)（跳转到 [S3 列表](https://code.aiub.unibe.ch/s3_script/aiub_s3_bucket_listing.php)）· [CAS pub](https://data.bdsmart.cn/pub/)。
+**去哪**：CDDIS `gnss/products/WWWW/`（`WWWW` = GPS 周）· [IGS files/pub](https://files.igs.org/pub/) · [GFZ ISDC products](https://isdc-data.gfz.de/gnss/products/) · [CODE download](https://download.aiub.unibe.ch/)（跳转到 [S3 列表](https://code.aiub.unibe.ch/s3_script/aiub_s3_bucket_listing.php)）· [CAS pub](https://data.bdsmart.cn/pub/)。
 
 **怎么下**：
 
@@ -106,7 +106,7 @@ curl -L -n -C - -o igs.sp3.gz \
 
 # CODE 开放镜像（无需 Earthdata；须带年份子目录）
 curl -L -C - -o COD0OPSFIN_20230490000_01D_05M_ORB.SP3.gz \
-  "https://www.aiub.unibe.ch/download/CODE/2023/COD0OPSFIN_20230490000_01D_05M_ORB.SP3.gz"
+  "https://download.aiub.unibe.ch/CODE/2023/COD0OPSFIN_20230490000_01D_05M_ORB.SP3.gz"
 # 目录：https://code.aiub.unibe.ch/s3_script/aiub_s3_bucket_listing.php?path=CODE/2023
 ```
 
@@ -300,7 +300,7 @@ curl -sL "https://kp.gfz.de/app/json/?start=2024-05-10T00:00:00Z&end=2024-05-12T
 curl -s "https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json"
 ```
 
-**账号/配额坑**：都开放；`kp.gfz-potsdam.de` 会 301 到 `kp.gfz.de`；SWPC 旧的 `products/solar-wind/*.json` 已 404，改用 `json/rtsw/`；SWPC 的历史值去 NCEI 季度 DGD 文件拿；不要把 GFZ Kp 和 SWPC 估计 Kp 混用而不标注（2024-05-10–12 两者 MAE 0.24，最大差 1 级）；批量访问要礼貌。
+**账号/配额坑**：都开放；直接用 `kp.gfz.de`（旧 GFZ-Potsdam 子域名已永久 301 到这里）；SWPC 旧的 `products/solar-wind/*.json` 已 404，改用 `json/rtsw/`；SWPC 的历史值去 NCEI 季度 DGD 文件拿；不要把 GFZ Kp 和 SWPC 估计 Kp 混用而不标注（2024-05-10–12 两者 MAE 0.24，最大差 1 级）；批量访问要礼貌。
 
 ### 开放产品镜像快径（CODE / GFZ / CAS）
 
@@ -317,9 +317,9 @@ curl -s "https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json"
 **怎么下**：
 
 ```bash
-# CODE SP3（须含年份目录；www.aiub → download.aiub → Switch S3）
+# CODE SP3（须含年份目录；download.aiub 一次 301 到 Switch S3，curl 须带 -L）
 curl -L -C - -O \
-  "https://www.aiub.unibe.ch/download/CODE/2023/COD0OPSFIN_20230490000_01D_05M_ORB.SP3.gz"
+  "https://download.aiub.unibe.ch/CODE/2023/COD0OPSFIN_20230490000_01D_05M_ORB.SP3.gz"
 
 # GFZ 日观测（匿名 HTTPS）
 curl -L -C - -O \
@@ -449,7 +449,7 @@ curl -L -C - -O \
 | [THEMIS GMAG](https://themis.ssl.berkeley.edu/gmag/) | 开放 HTTPS；SPDF 同路径镜像 | CDF（L2） | FYKN 样例一天 86400 点 = 1 s；L2 时延约 9 天（09-26 时最新为 09-17） | ✅（[E12](#dp-e12)） |
 | [TGO 特罗姆瑟](https://flux.phys.uit.no/geomag.html) | 图和 K 指数公开；**ASCII 数字数据要密码**：挪威站向 TGO 要、丹麦 / 格陵兰站向 DTU Space 要（见 [Data access](https://flux.phys.uit.no/div/DataAccess.html)）；GFZ 站为 CC BY-NC 4.0 | ASCII / IAGA-2002 | 1 min、10 s；K 指数 3 h | K 指数 ✅；ASCII ✗（[E13](#dp-e13)） |
 | [RAL 测高仪 (UKSSDC)](https://www.ukssdc.ac.uk/ionosondes/) | **须注册**（免费、自动）：[userreg.pl](https://www.ukssdc.ac.uk/cgi-bin/wdcc1/userreg.pl)；之后用户名为注册邮箱。未登录时 `/dpsdata/` 与 `cost_database.pl` 均为 **401** | 原始 DPS 电离图文件（SAO-Explorer 读）+ URSI 标定参数 | 常规 1 h 一张电离图（可申请加密探测）；Chilton 序列承接 1931 年起的 Slough | ✗（[E14](#dp-e14)） |
-| [GFZ Kp / Hpo](https://kp.gfz.de/en/data) | 开放，无需账号；`meta.license` 为 CC BY 4.0；`kp.gfz-potsdam.de` 会 301 到 `kp.gfz.de` | JSON（`app/json/`）；另有 WDC ASCII 与 FTP | Kp / ap 3 h，Hp30 / ap30 30 min；Kp 当前档先标 `pre`，按月转 `def`（09-26 时 def 到 08-31）；Hp30 延迟 <1 h，无状态字段 | ✅（[E15](#dp-e15)） |
+| [GFZ Kp / Hpo](https://kp.gfz.de/en/data) | 开放，无需账号；`meta.license` 为 CC BY 4.0；直接用 `kp.gfz.de`（旧 GFZ-Potsdam 子域名已永久 301 到这里） | JSON（`app/json/`）；另有 WDC ASCII 与 FTP | Kp / ap 3 h，Hp30 / ap30 30 min；Kp 当前档先标 `pre`，按月转 `def`（09-26 时 def 到 08-31）；Hp30 延迟 <1 h，无状态字段 | ✅（[E15](#dp-e15)） |
 | [NOAA SWPC](https://services.swpc.noaa.gov/) | 开放；JSON 只保留几天，历史值在 [NCEI](https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/annual_reports/daily_solar_indices_summaries/daily_geomagnetic_data/) 季度 DGD 文本 | JSON；DGD 文本 | 1 min 估计 Kp（约 6 h）、3 h Kp（7 天）、RTSW 1 min 太阳风（多颗卫星混在一个文件，用 `active` 区分）、F10.7 每天 3 次；全是估计值，不会升级 | ✅（[E16](#dp-e16)） |
 | [Kyoto WDC](https://wdc.kugi.kyoto-u.ac.jp/) | 开放 HTTP / HTTPS；没有 API，要解析 HTML `<pre>` 或 WDC 定宽文本 | Dst：HTML 定宽表；AE：400 字符 WDC 行（`aeYYMMDD.for.request`） | Dst 1 h、AE 1 min；状态写在路径里：`dst_final` ≤2020-12，`dst_provisional` 2021-01～2026-07，`dst_realtime` ≥2026-08（旧月份返回 403） | ✅（[E17](#dp-e17)） |
 | [OMNI / CDAWeb HAPI](https://cdaweb.gsfc.nasa.gov/hapi) | 开放；HAPI **2.0**（参数是 `id=`、`time.min/max`） | CSV / JSON / binary | `OMNI_HRO_1MIN` 1 min，已时移到弓激波鼻点，stopDate 2026-09-03（约滞后 3 周）；OMNI2 小时值用半点时间戳；数据状态写在参数描述里（如 Dst：Provisional 到 2026/212，Quick-look 为 2026/213–259） | ✅（[E18](#dp-e18)） |
