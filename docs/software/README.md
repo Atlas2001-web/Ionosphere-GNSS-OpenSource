@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **191 篇**操作手册（合计 **42034 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **193 篇**操作手册（合计 **42459 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -216,6 +216,8 @@
 | 189 | [nyx.md](./nyx.md) | nyx-space Rust 航天动力学库（PyPI `nyx_space` wheel / crate `nyx-space`；ANISE 帧/星历/EOP）：数值积分（球谐+日月+SRP）、位置观测 EKF 定轨估 Cr、导出 OEM/BSP/Parquet；≠ SP3 解析器 / SGP4 / GNSS POD（无 GR、Python 无 BLS、AGPL） | 228 | **已短硬** · 2026-09-26 02:46–02:53 EDT；PyPI **2.6.0**（tag `7452963` 2026-09-12）/crate 2.6.0+anise 0.10.6/AGPL-3.0/★490/Py 3.13.5；wheel 12 s（venv 529 MB）；Rust 最小例 163 s/target 843 MB，@24h 与 Python 同为 67.03 m；PRN 02 同 Orekit 初值 12×12+日月+SRP **38.0 / 67.0 m**（Orekit 41.4 / 75.5，含 GR），无 SRP 57.5 / 107.4 m；EKF 估 Cr 12 h **1.911** / 24 h 1.918（orbdetpy EKF 1.912 / 1.923），回推 t0 再飞外推段 1.73 m；RTS 平滑器输出不可信；坑 14 条 |
 | 190 | [novatel-edie.md](./novatel-edie.md) | NovAtel 官方 EDIE：OEM4/6/7 日志解帧/解码/互转（ASCII↔二进制↔JSON）、RANGECMP 解压、命令编码（C++17 库 + PyPI `novatel-edie`；JSON 消息库 606 条）；≠ 定位解算器 / RINEX 转换 / 串口驱动 | 208 | **已短硬** · 2026-09-26 02:47–02:59 EDT；PyPI **2.10.11**（内核 3.11.11）/GitHub tag `CPP-v3.11.14`=`6db1f00`（Release 页停在 3.9.47）/MIT/★32/wheel cp39–cp312abi3，Linux+Win，无 macOS/sdist；RTKLIB `oemv_200911218.gps` 真数据：BESTPOS 49/RANGECMP 46/RAWEPHEM 25/GLOEPHEMERIS 8/TRACKSTAT 50/SATVIS 49/未知 id287 90；OEMV 类型字节 0x02→RANGECMP **静默不解压**（手动 UNSUPPORTED），改头重算 CRC 后 1380 条观测与 convbin 2.4.3 RINEX **1380/1380** 对上（差 ≤0.0005）；二进制往返 227/227 逐字节相同，ASCII 有舍入；C++ 3.11.14 与 Python ASCII 输出 404183 B 逐字节相同；合成错误用例全部无崩溃（坏 CRC/截断/垃圾/未知 ID/NMEA/空库）；坑：CLI 缺 typing_extensions、缺文件静默为空、Decoder 不验 CRC、Commander 须写全参数；真接收机未测 |
 | 191 | [sgp4-rs.md](./sgp4-rs.md) | Rust `sgp4` crate（neuromorphicsystems；纯 Rust/可 no_std）：TLE/OMM(JSON) → TEME 位置速度（`Constants::propagate`→`Result`；不做帧转换/不拉数据/无衰减码；km 级，非精密轨道） | 202 | **已短硬** · 2026-09-26 02:57–03:00 EDT；crates **2.4.0** = tag/master **`66b6318`**（2026-02-23）/MIT/★120；rustc 1.98.1，冷编译 9.2 s/target 52 MB；**默认 WGS84**（与 CelesTrak/python-sgp4 差 27–34 m），改 WGS72+IAU 后对 python-sgp4 2.27 32 星×192 历元 max **8.8 µm**，OMM ≤1.4 mm；PRN02 对 IGS ULT SP3 mean **0.534 km**（同 python），31 星中位 1.658 km；tcppver 深空 24 星 ≤4.2 mm、近地 ≤7.7 µm（AFSPC 模式 23599 差 964 m 属预期）；322560 状态 **85–88 ms**（python SatrecArray 160–181、satellite.js 268）；坑：checksum/尾空格/CRLF 严格拒、OMM `EPOCH` 带 Z 崩、ISS 外推到地下仍 Ok（无 e=6） |
+| 192 | [pyspedas.md](./pyspedas.md) | NASA/UCLA PySPEDAS：OMNI 太阳风（Bz/速度/动压/SYM-H/AE）+ Kyoto Dst + GFZ Kp → tplot 变量，出图、`avg_data` 重采样，对齐 TEC/ROTI 时间轴（不读 RINEX、不算 TEC） | 224 | **已短硬** · 2026-09-26 02:53–03:05 EDT；PyPI **2.2.0**/HEAD **`723c6a2`**/MIT/★204；venv 670 MB；Gannon 暴 2024-05-10/11 实跑：OMNI HRO 1 min 月文件 8.37 MB，Bz min **−47.8** nT、SYM-H min **−518** nT、Dst（provisional，final 404）min **−406**、Kp 最高 **9.0**、SSC SYM-H **+88** @17:15；PNG；Swarm/THEMIS/GOES 未跑 |
+| 193 | [varion.md](./varion.md) | Sapienza/JPL VARION：单站 GPS L1/L2 几何无关相位历元差 → sTEC 变化率 → 10 阶多项式去趋势积分 dsTEC + 300 km IPP（海啸/TID 实时探测思路；**仅 Python 2.7**；PyPI `varion` 是无关随机数包） | 201 | **已短硬** · 2026-09-26 02:53–03:05 EDT；tip **`905f456`**（2020-05-14）/GPL-3.0/★15；micromamba Py 2.7.15；仓内 2011-03-11 台湾 GS19 1 Hz（Tohoku）9 星 7201 行满弧、NGS 2012-10-28 MKEA 30 s（Haida Gwaii）12 星；不给 `-time` 即 NameError 实测；**不宣称**检出海啸 TID（单站、未做走时拟合） |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -384,6 +386,7 @@
 | SPARTN 编解码（Python；PPP-RTK 改正） | [pyspartn.md](./pyspartn.md) |
 | GPS/QZSS LNAV 星历帧编解码（Rust 纯库） | [gnss-protos.md](./gnss-protos.md) |
 | 空间天气多源拉取/作图（OMNI·TEC map） | [geospacelab.md](./geospacelab.md) |
+| OMNI 太阳风 / SYM-H / Dst / Kp 一行拉取 + 重采样对齐 TEC/ROTI（磁暴时间轴） | [pyspedas.md](./pyspedas.md) |
 | GENESIS COSMIC-1 **大气** L2→netCDF（非 ionPrf） | [cosmic-crunch.md](./cosmic-crunch.md) |
 | AWS GNSS-RO 查/下（**calibratedPhase** / 大气三型） | [awsgnssroutils.md](./awsgnssroutils.md) |
 | CDAAC **ionPrf / ionPhs**（pysat） | [pysatcdaac.md](./pysatcdaac.md) |
@@ -413,6 +416,7 @@
 | 高速 I/Q 闪烁（S4/σφ 去趋势算法、阵列漂移；SAGA/CASES，需自备原始数据） | [saga-utils.md](./saga-utils.md) |
 | LSTID：卫星原位（C/NOFS）/ SAMI3 模式扰动极值（NRL 论文复现） | [lstid-processing.md](./lstid-processing.md) |
 | LSTID：业余无线电 HF spot 跳距边缘正弦拟合（Madrigal 免账号） | [hamsci-lstid-detection.md](./hamsci-lstid-detection.md) |
+| 单站 1 Hz/30 s RINEX 看 sTEC 变化率 / 海啸型 TID（VARION，Python 2.7） | [varion.md](./varion.md) |
 
 ---
 
@@ -452,6 +456,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
+最近新增（用法讲解）：**pyspedas**+**varion**（[pyspedas.md](./pyspedas.md) / [varion.md](./varion.md)；2026-09-26 02:53–03:05 EDT；PySPEDAS **2.2.0**/MIT：Gannon 暴 OMNI Bz −47.8 / SYM-H −518 / Dst −406 / Kp 9，5 min 重采样对齐 ROTI；VARION `905f456`/GPL-3.0/Py2.7：Tohoku GS19 1 Hz 9 星 + Haida Gwaii MKEA 30 s 12 星真跑 dsTEC/IPP，如实不宣称检出 TID；PyPI `varion` ≠ 本项目）。
 最近新增（用法讲解）：**novatel_edie**（[novatel-edie.md](./novatel-edie.md)；2026-09-26 02:47–02:59 EDT；PyPI **2.10.11**/tag `CPP-v3.11.14`=`6db1f00`/MIT/★32；RTKLIB OEMV 样例：RANGECMP 因类型字节 0x02 静默不解压，改头后与 convbin RINEX 1380/1380 对上；二进制往返逐字节相同；C++ 与 Python ASCII 逐字节相同；合成错误用例全部无崩溃）
 最近新增（用法讲解）：**tec-suite**+**mosgim2**（[tec-suite.md](./tec-suite.md) / [mosgim2.md](./mosgim2.md)；2026-09-26 02:15–02:50 EDT；tec-suite `18465f9`/GPL-3.0 + mosgim2 `fc42e31`/MIT 串成 RINEX→STEC→GIM：BKG 2024-08-22 58 站 → 3073 个 `.dat` → 两层球谐 25 幅；对 CODE 终版 GIM corr 0.951、偏差 −5.58、RMS 9.67 TECU（如实：偏低、赤道双峰抹平）；单站整平+扣 DCB 后 WTZA/MAS1 与 CODE 差 +0.30/−0.21 TECU；ionex-gim/sh-gim 各加一行 mosgim2 链接）。
 最近新增（用法讲解）：**ubx-mga-rinex-ephemeris**（[ubx-mga-rinex-ephemeris.md](./ubx-mga-rinex-ephemeris.md)；2026-09-26 02:35–02:46 EDT；main **`eb0c6e8`**/MIT/★6/Python ≥3.10；venv georinex 1.16.2 + pyubx2 1.3.7；pytest 337 passed；BKG BRDC 268（RINEX 3.05，免账号）→ 95 帧 6856 B，2.15 s；pyubx2 `msgmode=SET` 逐帧计数与工具自报一致；G01/E05 22 字段从原始整数换算与 RINEX 误差绝对值 ≤3.4×10⁻⁴ LSB（无损），pyubx2 属性四舍五入使 E05 af1 偏 14%；另跑 BKG 269 滚动/S 文件、ESBC 2020（含 IONO/UTC 但 GAL 0 帧）、RINEX 2/2.12、RINEX 4（CNAV 误编）；错误用例：空/只头/二进制/zip/无后缀 gz/缺文件/`--systems BDS`/超 `--max-age` 均 exit 1，截断 gz、`.crx`、`-o` 目录缺失为 traceback exit 1，截断/坏字段/超量程/过期星历 exit 0 静默；写入接收机/TTFF 未测）
@@ -617,8 +622,10 @@ data-access
    ├─ mosgim2 (相位差球谐 GIM 自建；tec-suite→HDF5；对照 CODE)
    ├─ cddis-highrate-downloader (CDDIS high-rate 15 min)
    ├─ geospacelab (OMNI/指数/Madrigal TEC 产品图)
+   ├─ pyspedas (OMNI Bz/SYM-H/AE + Dst + Kp → tplot；对齐 TEC/ROTI 时间轴)
    ├─ lstid-processing (NRL LSTID：CINDI 带通+identify_tid / SAMI3 极值拟合；非 GNSS TEC)
    ├─ hamsci-lstid-detection (Madrigal HF spot 跳距边缘→LSTID 周期/振幅；12–24 UTC)
+   ├─ varion (单站 GPS sTEC 变化率→dsTEC+IPP；海啸/TID；Py2.7)
    ├─ pyglow (IRI 气候态对照)
    ├─ iri2016 (IRI-2016 → xarray)
    ├─ iri-fortran (官方 IRI-2026 Fortran；fort.7)
