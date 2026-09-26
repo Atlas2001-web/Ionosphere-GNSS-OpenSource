@@ -2,6 +2,13 @@
 
 目录：上游 <https://github.com/gnss-lab/tec-suite> · tip **`18465f9`**（2020-11-07，“Added l8c8 tec support”）· 版本字串 **v0.7.8** · **GPL-3.0-or-later**（`LICENSE` + `setup.py` “GPLv3+”）· 作者 Ilya Zhivetiev（[SIMuRG](https://simurg.space/) 团队用它给 SIMuRG / MosGIM 供数）· 本机验证 **2026-09-26 02:15–02:50 EDT**：CPython 3.11.16 + `future` 1.0.0 + `hatanaka`（提供 `crx2rnx`）；BKG 2024-08-22（DOY 235）WTZA（RINEX 2.11）与 MAS1（RINEX 3.04）单站全日；58 站批量 → 3073 个 `.dat`，交给 [mosgim2](./mosgim2.md) 建图；整平+扣 DCB 后与 CODE 终版 GIM 对比，WTZA 差 **+0.30±2.05 TECU**，MAS1 **−0.21±3.58 TECU**。
 
+> **质检复跑通过**（2026-09-26 03:00–03:15 EDT，独立克隆 `18465f9` 与新建 3.11 venv，按本文 sed 打两处补丁，`git diff --stat` 一致）。
+> - WTZA：`-c` 用相对路径时报坑 1 的错；stdout、31 个文件、G11 头与前 3 行逐字一致（用时 0.085 min）；`--save-coordinates` 一致。
+> - §4 脚本从本文原样抽出，CODE GIM 与 AIUB 官方文件 md5 相同：WTZA `0.30/2.05/2.07`、K=0 时 `12.85/11.21/17.05`、MAS1 `−0.21/3.58/3.59` 逐位一致；去掉 `s[3]=='G'` 后 MAS1 得 −8.64，坑 10 复现。
+> - MAS1：暂时撤掉补丁时出现坑 2 原文报错；打补丁后 G 32 / R 26 个文件，以及 C/E/S 缺导航的提示，均一致。
+> - 58 站批量：同样挑出 19 个 RINEX 2（其中 BAKO、MDVJ 虽有 RINEX 3，也按作者用 RINEX 2）加 39 个 RINEX 3.04，7 组并行，每组 1m19s–1m33s（机器负载更高）。合并后 58 目录 / 3073 个 `.dat` / 330 MB 一致；MIZU 全零文件为 4 个。
+> - 修正：本文没给 CODE GIM 的下载地址，已补 AIUB 链接；坑 4 的 174 个全零文件里含 IISC 的 R19/R20，原文写成只有 R06/R10/R13/R23。
+> - 未复跑：不打补丁 2 时 MIZU 全零 11 个（磁盘紧张，观测文件跑完即删）；坑 6、8、9、11。
 > 岗位：把 RINEX 观测 + 广播星历变成“每站每星一个文本文件”，列出历元、高度角/方位角、卫星 ECEF 与多种频率组合的**原始**斜 TEC。  
 > 冲突时：**本机 `python tecs.py -v` / 上游 `docs/usage.rst` > 本文**。
 
@@ -160,6 +167,7 @@ print(f'{sta}: DCB_rcv={sd[sta]} ns  n={len(r)}  VTEC={r[:,0].mean():.2f}  GIM={
 
 ```bash
 pip install numpy
+curl -sfL -O https://www.aiub.unibe.ch/download/CODE/2024/COD0OPSFIN_20242350000_01D_01H_GIM.INX.gz && gunzip COD0OPSFIN_20242350000_01D_01H_GIM.INX.gz   # 355254 B；-L 必须（301 跳到 S3 镜像）
 python level_vs_gim.py tec/2024/235/wtza COD0OPSFIN_20242350000_01D_01H_GIM.INX wtza
 python level_vs_gim.py tec/2024/235/mas1 COD0OPSFIN_20242350000_01D_01H_GIM.INX mas1   # MAS1 见 §5
 ```
@@ -218,7 +226,7 @@ curl -sfO --output-dir nav https://igs.bkg.bund.de/root_ftp/IGS/BRDC/2024/235/br
 | 1 | `FileNotFoundError: [Errno 2] No such file or directory: ''` | `-c tecs.cfg` 相对路径，程序 `os.chdir(dirname(cfg))` 得到空串 | `python tecs.py -c $PWD/tecs.cfg` |
 | 2 | `[ERROR] unknown rinex version: 3.04`，整站无输出 | 观测类只登记到 3.03 | §2 补丁 1（`sed … tecs/rinex/__init__.py`） |
 | 3 | RINEX 3 站点 GPS G02/G13/G16/G19/G20/G21/G22 的 `tec.l1l2` 全天 0（MIZU 58 个文件中 11 个全零） | 头里同时有 `L2L L2W`，按字母序永远取 `L2L`；Block IIR 没有 L2C → 空值 | §2 补丁 2；打补丁后 MIZU 全零文件 11→4 |
-| 4 | 补丁后仍有 R06/R10/R13/R23 全零（58 站共 174 个文件） | 这几颗 GLONASS 当日无 G2 观测（MIZU 07:06 历元 R06/R23 只有 C1C/C1P/D1），不是 bug | 不修；下游按 `tec != 0` 过滤：`awk '!/^#/ && $5!=0' f.dat` |
+| 4 | 补丁后仍有 GLONASS 文件全零（58 站共 174 个：R06/R10/R13/R23 各 43 个 = 172，另有 IISC 的 R19/R20） | 这几颗 GLONASS 当日无 G2 观测（MIZU 07:06 历元 R06/R23 只有 C1C/C1P/D1），不是 bug | 不修；下游按 `tec != 0` 过滤：`awk '!/^#/ && $5!=0' f.dat` |
 | 5 | `crx2rnx … [Errno 2] No such file or directory: 'crx2rnx'` | 读 `.crx`/`.YYd` 靠外部 `crx2rnx -` | `pip install hatanaka`（或编 GSI RNXCMP）后 `which crx2rnx` |
 | 6 | Galileo 文件 `tec.l1l2` 全是 0.000 | E 星没有 L2 频点 | `recFields` 加 `tec.l1l5`，并放混合导航：`curl -sfO --output-dir nav/m …/BRDC00IGS_R_20242350000_01D_MN.rnx.gz` |
 | 7 | RINEX 3 输出目录叫 `MAS1`，下游按小写站名匹配不上 | 站名 = 文件名前 4 字符原样 | 下载时改小写：`for f in obs/*; do mv "$f" "$(echo $f \| tr A-Z a-z)"; done` |

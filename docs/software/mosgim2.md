@@ -2,6 +2,13 @@
 
 目录：上游 <https://github.com/PadArt/mosgim2> · tip **`fc42e31`**（2023-08-09，共 13 commit，无 tag/PyPI）· **MIT**（Copyright 2023 Artem Padokhin, Artem Vesnin）· 方法论文：Padokhin et al., *Radiophysics and Quantum Electronics* 65(7):481–495, 2023（用于研究须引用，见仓内 `CITATION.cff`）· 本机验证 **2026-09-26 02:25–02:50 EDT**：CPython 3.11.16，scipy **1.14.1** / numpy **2.1.3** / h5py 3.16.0 / lemkelcp 0.1（打 README 所述补丁）/ cartopy 0.26.0；输入 = [tec-suite](./tec-suite.md) 处理的 BKG 2024-08-22 **58 站** GPS+GLONASS 相位 TEC；`process.py` 两层球谐（15×15 + 10×10）一日 **25 幅**，墙钟 **6 m 49 s**；与 CODE 终版 GIM 对比 corr **0.951**、偏差 **−5.58 TECU**、RMS **9.67 TECU**。
 
+> **质检复跑通过**（2026-09-26 03:05–03:17 EDT，全链路独立复跑）。
+> - 独立克隆 `fc42e31`（13 个 commit、`LICENSE.txt` 为 MIT、CITATION 页码 481–495），新建 3.11 venv 装 scipy 1.14.1 / numpy 2.1.3 / h5py 3.16.0，未装 cartopy（`gim_vs_ionex.py` 用不到）；四处 sed 补丁均命中。
+> - 输入是本轮 tec-suite 质检重新生成的 58 站 3073 个文件。stdout 共 333 行，`Collected 58 sites`；180 条 `not processed`（179 条解包异常、1 条 `coco_R26`，该文件只有 1 行数据）；`number of observations=98657`；墙钟 6m55.7s（原文 6m49s）。
+> - 结果 `2024-08-22.hdf5` 为 83792 B，键、形状、attrs 均一致。`gim_vs_ionex.py` 从本文原样抽出，对比 AIUB 官方 CODE GIM（md5 与作者所用文件相同），输出与 §3 **逐字相同**：corr 0.951、bias −5.58、RMS 9.67、五个纬带数值，以及四个时刻的峰值 87.9/88.5/95.0/88.0 对 108.7/114.0/101.8/106.2。
+> - 站名表经 `ast` 解析为 319 项，其中确有拼接出的 `'zambab12'`（坑 7）；上游 2017 测试包本次同样连接超时。
+> - 修正：attrs 表补上 `nmaps`；补 CODE GIM 的下载地址。
+> - 未复跑：`plot.py` 动图（需 cartopy，磁盘不足）；坑 1、2、5、6、9、10。
 > 岗位：把多站“连续弧上的相位 TEC”拼成全球 VTEC 球谐系数（HDF5），再画图或自行格网化。  
 > 冲突时：**仓内 `config.py` 注释 / 本机实跑 > 本文**。维护者自有的 SH-GIM 求解器未开源，边界见 [sh-gim](./sh-gim.md)；本工具是独立第三方开源实现。
 
@@ -91,13 +98,13 @@ real	6m48.715s
 | `layer1_SHcoefs` | (25, 256) | 第 1 层每个时间节点 256 个实球谐系数（阶 15 → (15+1)² ） |
 | `layer2_SHcoefs` | (25, 121) | 第 2 层，阶 10 → 121 |
 | `timestamps` | (25,) | UNIX 秒，00:00 … 次日 00:00 UT 每小时 |
-| attrs `coord` / `nlayers` / `linear` | `mag` / 2 / True | 坐标系、层数、时间分段线性 |
+| attrs `coord` / `nlayers` / `nmaps` / `linear` | `mag` / 2 / 25 / True | 坐标系、层数、图数、时间分段线性 |
 | attrs `layer1_height` / `layer2_height` | 300000.0 / 750000.0 | 壳高（m） |
 | attrs `layer1_dims` / `layer2_dims` | [15 15] / [10 10] | 阶 n / 次 m |
 | attrs `pole_colat` / `pole_long` | 0.1658 / −1.2671 | 地磁北极（rad，代码写死 2017 年值 80.5°N, 72.6°W） |
 | attrs `sites` | 58 个站名 | 实际参与的站 |
 
-**第 4 步：格网化并与 CODE 比。** CODE 终版 `COD0OPSFIN_20242350000_01D_01H_GIM.INX`（71×73 格网、25 幅）。把下面脚本存到 mosgim2 仓根目录（要 `import mosgim2.*`）：
+**第 4 步：格网化并与 CODE 比。** CODE 终版 `COD0OPSFIN_20242350000_01D_01H_GIM.INX`（71×73 格网、25 幅；下载 `curl -sfLO https://www.aiub.unibe.ch/download/CODE/2024/COD0OPSFIN_20242350000_01D_01H_GIM.INX.gz`，需 `-L`）。把下面脚本存到 mosgim2 仓根目录（要 `import mosgim2.*`）：
 
 ```python
 # gim_vs_ionex.py — 在 mosgim2 仓根目录运行: python gim_vs_ionex.py <res.hdf5> <CODE.INX> [out.png]
