@@ -576,14 +576,14 @@ JuliaGNSS 生态中的滤波库，实现经典 KF、UKF、AUKF 及其方根形�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [raw-gnss-fusion](https://github.com/JonasBchrt/raw-gnss-fusion) | raw-gnss-fusion：原始 GNSS 多传感器融合代码与数据 | — | 160 | 🏷️ 高校实验室 |
+| [raw-gnss-fusion](https://github.com/JonasBchrt/raw-gnss-fusion) | raw-gnss-fusion：原始 GNSS 多传感器融合代码与数据 | Python | 160 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
 #### [raw-gnss-fusion](https://github.com/JonasBchrt/raw-gnss-fusion)  
 *🏷️ 高校实验室*
 
-语言：— · 许可：LGPL-3.0 · 星标约：160 · 宿主：github
+语言：Python · 许可：LGPL-3.0 · 星标约：160 · 宿主：github
 
 便于复现论文设定的原始测量与融合流水线。适合研究起步。不是开箱商用导航软件；依赖与数据许可以仓库为准。
 

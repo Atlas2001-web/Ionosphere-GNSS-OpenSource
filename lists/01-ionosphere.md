@@ -9,7 +9,7 @@
 |---|---|---|---:|---|
 | [IonoTomo](https://github.com/Joshuaalbert/IonoTomo) | IonoTomo：射电天文射线追踪与电离层层析仿真 | Jupyter Notebook | 11 | 🏷️ 高校实验室 |
 | [iono-tomography](https://github.com/brianbreitsch/iono-tomography) | iono-tomography：电离层层析 Python 实验原型 | Python | 4 | 🏷️ 高校实验室 |
-| [synthetic_ionospheric_tomography_isl](https://github.com/suixin11suoyu/synthetic_ionospheric_tomography_isl) | synthetic_ionospheric_tomography_isl：多 GNSS 星间链路层析仿真 | — | 2 | 🏷️ 个人社区 |
+| [synthetic_ionospheric_tomography_isl](https://github.com/suixin11suoyu/synthetic_ionospheric_tomography_isl) | synthetic_ionospheric_tomography_isl：多 GNSS 星间链路层析仿真 | Jupyter Notebook | 2 | 🏷️ 个人社区 |
 | [317Lab-tomography](https://github.com/317Lab/tomography) | 317Lab-tomography：Lynch 火箭实验室电离层层析代码 | Jupyter Notebook | 1 | 🏷️ 高校实验室 |
 | [GNSS_TOM](https://github.com/sailvssea/GNSS_TOM) | GNSS_TOM：GNSS 对流层与电离层层析 C++（仿 GPSTk 风） | C++ | 1 | 🏷️ 高校实验室 |
 | [Geometric-Matrix-For-Ionospheric-Tomogrphy](https://github.com/yujieqing/Geometric-Matrix-For-Ionospheric-Tomogrphy) | 层析几何矩阵构建（C++，yujieqing） | C++ | — | 🏷️ 个人社区 ★ |
@@ -34,7 +34,7 @@
 #### [synthetic_ionospheric_tomography_isl](https://github.com/suixin11suoyu/synthetic_ionospheric_tomography_isl)  
 *🏷️ 个人社区*
 
-语言：— · 许可：— · 星标约：2 · 宿主：github
+语言：Jupyter Notebook · 许可：— · 星标约：2 · 宿主：github
 
 仿真多 GNSS 星间链路（ISL）辅助的电离层层析，探索新观测几何对电子密度反演的贡献。适合读相关论文后复现实验设置与几何配置。公开星标低、偏研究原型，落地需自备真实 ISL 或地基数据接口；可与 SegmentsComputation、IonoTomo 对照正演与矩阵环节。仿真噪声模型应尽量贴近目标星座链路预算。
 
@@ -398,7 +398,7 @@ Space Weather Modeling Framework 组件之一，描述高纬电离层电动力�
 | [quakeion](https://github.com/Gm015555/quakeion) | quakeion：震例目录 + CODE GIM TEC/ROT/ROTI 分析 | Python | 0 | 🏷️ 个人社区 |
 | [Seemala-GPS-TEC](https://seemala.blogspot.com/2026/08/gps-tec-analysis-program-version-37.html) | Seemala GPS-TEC：RINEX 估计 GPS TEC（Windows） | Windows/Exe | — | 🏷️ 高校实验室 |
 | [TEC-forecast-F107](https://github.com/hekaixuan-atm/TEC-forecast) | 空间非均匀 F10.7 强迫的全球 TEC 预报代码 | Python | 0 | 🏷️ 高校实验室 |
-| [vtec](https://github.com/mfkiwl/vtec) | vtec：STEC→VTEC 换算与相关小工具（MIT） | — | — | 🏷️ 个人社区 ★ |
+| [vtec](https://github.com/mfkiwl/vtec) | vtec：STEC→VTEC 换算与相关小工具（MIT） | C++ | — | 🏷️ 个人社区 ★ |
 
 ### 详细说明
 
@@ -587,7 +587,7 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 #### [vtec](https://github.com/mfkiwl/vtec)  
 *🏷️ 个人社区 ★*
 
-语言：— · 许可：MIT · 星标约：— · 宿主：github
+语言：C++ · 许可：MIT · 星标约：— · 宿主：github
 
 围绕 VTEC 换算与相关计算的小工具，适合把 STEC 投影到垂直方向做图或预报输入。功能边界较窄，完整双频重建与偏差估计需配合专业 TEC 库。
 
@@ -1134,7 +1134,7 @@ University of Warmia and Mazury（Olsztyn）承担 IGS 电离层图组合与验�
 | [scintkit](https://github.com/qwsae10/scintkit) | scintkit：ScintPi/GNSS 闪烁快看工具集 | Jupyter Notebook | 1 | 🏷️ 个人社区 |
 | [IBP-Model](https://igit.iap-kborn.de/ibp/ibp-model) | IBP-Model：低纬赤道等离子体泡发生概率（IAP Kühlungsborn） | Python | 0 | 🏷️ 高校实验室 |
 | [M_ISSION](https://github.com/wulide4/M_ISSION) | M_ISSION：多 GNSS 电离层闪烁指数计算软件 | C++ | 0 | 🏷️ 个人社区 |
-| [ScintPi-1.0-Software](https://doi.org/10.5281/zenodo.4905193) | ScintPi-1.0-Software：UT Dallas 低成本闪烁仪配套软件 | unknown | — | 🏷️ 高校实验室 |
+| [ScintPi-1.0-Software](https://doi.org/10.5281/zenodo.4905193) | ScintPi-1.0-Software：UT Dallas 低成本闪烁仪配套软件 | binary (PyInstaller) | — | 🏷️ 高校实验室 |
 | [Swarm-VIP-Dynamic](https://gitlab.com/KNMI-OSS/spaceweather/swarm-vip-dynamic) | Swarm-VIP-Dynamic：KNMI 的 ISMR 闪烁处理与模型评估工作仓 | Python | 0 | 🏷️ 官方 |
 
 ### 详细说明
@@ -1205,9 +1205,9 @@ Notebook 实验：对 GNSS 导出的 ROTI 做深度学习时序预报。局限�
 #### [FARR](https://gitlab.com/longleywj/farr)  
 *🏷️ 高校实验室*
 
-语言：C++ · 许可：GPL-3.0 · 星标约：1 · 宿主：gitlab
+语言：C++ · 许可：GPL-3.0-or-later · 星标约：1 · 宿主：gitlab
 
-NJIT/Boston University 的三维 FDTD 开源码（GitLab，GPL-3.0），仿真磁化碰撞等离子体中的电波传播与闪烁。提供 CMake/Docker/Python 辅助。面向传播机理研究，不是 GNSS 观测解算或 GIM 产品工具。
+NJIT/Boston University 的三维 FDTD 开源码（GitLab，GPL-3.0-or-later），仿真磁化碰撞等离子体中的电波传播与闪烁。提供 CMake/Docker/Python 辅助。面向传播机理研究，不是 GNSS 观测解算或 GIM 产品工具。
 
 #### [gnss-vector-scintillation](https://github.com/DTUSWx/gnss-vector-scintillation)  
 *🏷️ 高校实验室*
@@ -1240,16 +1240,16 @@ NJIT/Boston University 的三维 FDTD 开源码（GitLab，GPL-3.0），仿真�
 #### [ScintPi-1.0-Software](https://doi.org/10.5281/zenodo.4905193)  
 *🏷️ 高校实验室*
 
-语言：unknown · 许可：CC-BY-4.0 · 星标约：— · 宿主：other
+语言：binary (PyInstaller) · 许可：CC-BY-4.0 · 星标约：— · 宿主：other
 
-德州大学达拉斯分校发布的 ScintPi 1.0 官方采集/可视化软件 ZIP（concept DOI 10.5281/zenodo.4905193），经 USB 连接硬件，面向教育与低成本闪烁监测。CC-BY-4.0，“as is”无质保。与 GitHub 上第三方 scintkit 小工具不同，本条是仪器配套官方软件存档。适合教学网部署；论文级多站 S4/σφ 分析仍需专用 GISTM 或商用接收机链路。
+德州大学达拉斯分校发布的 ScintPi 1.0 官方采集/可视化软件 ZIP（concept DOI 10.5281/zenodo.4905193），经 USB 连接硬件，面向教育与低成本闪烁监测。CC-BY-4.0，“as is”无质保；ZIP 内只有 PyInstaller 打包的可执行文件（Windows 绘图 exe 与树莓派采集程序），不含源码。与 GitHub 上第三方 scintkit 小工具不同，本条是仪器配套官方软件存档。适合教学网部署；论文级多站 S4/σφ 分析仍需专用 GISTM 或商用接收机链路。
 
 #### [Swarm-VIP-Dynamic](https://gitlab.com/KNMI-OSS/spaceweather/swarm-vip-dynamic)  
 *🏷️ 官方*
 
-语言：Python · 许可：see upstream repository · 星标约：0 · 宿主：gitlab
+语言：Python · 许可：Apache-2.0 · 星标约：0 · 宿主：gitlab
 
-KNMI 在 Swarm-VIP-Dynamic（UiO/Birmingham/INGV/DLR/KNMI）合作中的代码仓：含有效 F10.7 代理、Septentrio PolaRX5S ISMR 闪烁监测文件处理与可视化、项目模型及 IBP 等外部模型评估、Swarm 轨道派生磁纬/地方时等。与 swarm-vip-dynamic-models 库配套，偏研究流水线与闪烁数据可视化。公开 GitLab 仓；许可以仓内说明为准。页面 HTTP 200。
+KNMI 在 Swarm-VIP-Dynamic（UiO/Birmingham/INGV/DLR/KNMI）合作中的代码仓：含有效 F10.7 代理、Septentrio PolaRX5S ISMR 闪烁监测文件处理与可视化、项目模型及 IBP 等外部模型评估、Swarm 轨道派生磁纬/地方时等。与 swarm-vip-dynamic-models 库配套，偏研究流水线与闪烁数据可视化。公开 GitLab 仓，无 LICENSE 文件，pyproject.toml 标 Apache License v2.0。页面 HTTP 200。
 
 ## 电离层工具
 
@@ -1265,8 +1265,8 @@ KNMI 在 Swarm-VIP-Dynamic（UiO/Birmingham/INGV/DLR/KNMI）合作中的代码�
 | [CARP-Average-Profile](https://ulcar.uml.edu/SoftwareUtilities/CARP/) | CARP-Average-Profile：测高仪平均代表剖面计算 | Fortran | — | 🏷️ 高校实验室 |
 | [Drift-X](https://ulcar.uml.edu/Drift-X.html) | Drift-X：Digisonde 漂移数据可视化与分析（Java） | Java | — | 🏷️ 高校实验室 |
 | [IMSP-MGS](https://essr.esa.int/project/ionosphere-modular-software-package-imsp-mgs) | IMSP-MGS：GNSS-R/SAR/雷达测深电离层效应仿真（ESA） | unknown | — | 🏷️ 官方 |
-| [IonKit-NH](https://github.com/ohm1122/IonKit-NH) | IonKit-NH：电离层数据处理相关脚本工具包 | — | — | 🏷️ 个人社区 ★ |
-| [IonKit-NH-tanggdut](https://github.com/tanggdut/IonKit-NH) | IonKit-NH-tanggdut：IonKit-NH 衍生整理仓 | — | — | 🏷️ 个人社区 ★ |
+| [IonKit-NH](https://github.com/ohm1122/IonKit-NH) | IonKit-NH：MATLAB 电离层自然灾害 TID 检测工具包（fork） | MATLAB | — | 🏷️ 个人社区 ★ |
+| [IonKit-NH-tanggdut](https://github.com/tanggdut/IonKit-NH) | IonKit-NH-tanggdut：IonKit-NH 原作者上游仓 | MATLAB | — | 🏷️ 个人社区 ★ |
 | [IonTools](https://github.com/rumkex/IonTools) | IonTools：电离层分析辅助小工具（C++） | C++ | — | 🏷️ 个人社区 ★ |
 | [NHPC-TrueHeight](https://ulcar.uml.edu/SoftwareUtilities/NHPC/) | NHPC：测高仪迹线真高剖面反演（Digisonde/ARTIST） | Fortran/C | — | 🏷️ 高校实验室 |
 | [NICT-Ionosonde-Data](https://wdc.nict.go.jp/Ionosphere/index.html) | NICT 日本测高仪（ionosonde）观测数据入口 | data-portal | — | 🏷️ 官方 |
@@ -1307,16 +1307,16 @@ KNMI 在 Swarm-VIP-Dynamic（UiO/Birmingham/INGV/DLR/KNMI）合作中的代码�
 #### [nleht-fdtd-ionosphere](https://gitlab.com/nleht/fdtd)  
 *🏷️ 高校实验室*
 
-语言：C++ · 许可：see upstream repository · 星标约：1 · 宿主：gitlab
+语言：C++ · 许可：no licence (README: copyright reserved, reference use only) · 星标约：1 · 宿主：gitlab
 
-面向电离层中甚低频（VLF）波传播的三维时域有限差分 C++ 代码，支持 MPI 多节点。适合低电离层/波导传播与 D 区扰动数值实验，与 GNSS L 波段闪烁工具互补。公开 GitLab 项目；许可与构建说明以仓库为准。页面可访问。
+面向电离层中甚低频（VLF）波传播的三维时域有限差分 C++ 代码，支持 MPI 多节点。适合低电离层/波导传播与 D 区扰动数值实验，与 GNSS L 波段闪烁工具互补。公开 GitLab 项目，但 README 声明代码受版权保护、仅供参考，未授予开源许可，且已停止活跃开发。
 
 #### [pypride](https://gitlab.com/gofrito/pypride)  
 *🏷️ 高校实验室*
 
-语言：Python · 许可：MIT (see upstream; classifiers also mention GPL) · 星标约：1 · 宿主：gitlab
+语言：Python · 许可：MIT (pyproject license field; classifier says GPLv3+; no LICENSE file) · 星标约：1 · 宿主：gitlab
 
-GitLab 上的 pypride（PRIDE 相关派生）Python/Fortran 混合包，面向深空/VLBI 几何与延迟处理；内含从 CDDIS 拉取 IONEX 及 computeTEC 等由闪烁观测表估计上下行电离层贡献的脚本。MIT/GPL 标注并存，以仓内为准。对 GNSS 电离层用户价值在于 IONEX 自动获取与行星际闪烁相关 TEC 估算；主业并非地面 GNSS TEC 流水线。公开仓可克隆。
+GitLab 上的 pypride（PRIDE 相关派生）Python/Fortran 混合包，面向深空/VLBI 几何与延迟处理；内含从 CDDIS 拉取 IONEX 及 computeTEC 等由闪烁观测表估计上下行电离层贡献的脚本。pyproject.toml 许可字段写 MIT，classifier 却写 GPLv3+，仓内无 LICENSE 文件，再分发前需向作者确认。对 GNSS 电离层用户价值在于 IONEX 自动获取与行星际闪烁相关 TEC 估算；主业并非地面 GNSS TEC 流水线。公开仓可克隆。
 
 #### [Boston-College-ISR-Ionospheric-Studies](https://www.bc.edu/bc-web/research/sites/institute-for-scientific-research/research/ionospheric-studies.html)  
 *🏷️ 高校实验室*
@@ -1349,16 +1349,16 @@ ONERA/RDA/IEEC 在 ESA TDE 框架下开发、经 ESSR 发布的 Ionosphere Modul
 #### [IonKit-NH](https://github.com/ohm1122/IonKit-NH)  
 *🏷️ 个人社区 ★*
 
-语言：— · 许可：GPL-3.0 · 星标约：— · 宿主：github
+语言：MATLAB · 许可：GPL-3.0 · 星标约：— · 宿主：github
 
-IonKit-NH 工具包星标种子，覆盖电离层数据处理相关脚本。适合浏览星标工作流；与 tanggdut 衍生版注意分辨上游。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
+tanggdut/IonKit-NH 的 fork（维护者星标种子），仓内同样只有 IonKit-NH.zip、用户手册和 README，zip 与上游完全相同。工具包用 MATLAB 处理 GPS/GLONASS/Galileo/BDS 双频观测求 TEC，生成时间-距离图和二维 TEC 扰动图，用于识别地震、海啸、火山喷发引起的电离层扰动。更新与引用以上游为准。
 
 #### [IonKit-NH-tanggdut](https://github.com/tanggdut/IonKit-NH)  
 *🏷️ 个人社区 ★*
 
-语言：— · 许可：GPL-3.0 · 星标约：— · 宿主：github
+语言：MATLAB · 许可：GPL-3.0 · 星标约：— · 宿主：github
 
-IonKit-NH 的衍生整理版，可能含路径或示例改动。合并进产线前先 diff 上游 ohm1122 版本，避免重复维护。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
+IonKit-NH 的原作者仓（Tang L.），MATLAB 工具包，用 GPS/GLONASS/Galileo/BDS 双频组合求 TEC，生成时间-距离图和二维 TEC 扰动图，检测地震、海啸、火山喷发激发的行进式电离层扰动。代码以 IonKit-NH.zip 分发（18 个 .m 文件加示例 RINEX 与 TEC 数据），用法见用户手册；使用请引用 Tang 2024（Earthquake Research Advances）。ohm1122 版是它的 fork。
 
 #### [IonTools](https://github.com/rumkex/IonTools)  
 *🏷️ 个人社区 ★*
@@ -1487,35 +1487,35 @@ Global Ionospheric Radio Observatory 的 IRI Real-Time Assimilative Mapping 服�
 #### [IRI-2001-package](https://irimodel.org/IRI-2001/)  
 *🏷️ 官方*
 
-语言：Fortran · 许可：— · 星标约：— · 宿主：official_site
+语言：Fortran · 许可：IRI permissive (AS IS + attribution) · 星标约：— · 宿主：official_site
 
 更早的官方 IRI 发行，主要用于历史复现。系数与选项与当代版本差异大，不适合作为现行 GNSS 电离层改正基准；对照阅读可看官网更新说明与 Bilitza 综述。
 
 #### [IRI-2007-package](https://irimodel.org/IRI-2007/)  
 *🏷️ 官方*
 
-语言：Fortran · 许可：— · 星标约：— · 宿主：official_site
+语言：Fortran · 许可：IRI permissive (AS IS + attribution) · 星标约：— · 宿主：official_site
 
 官方保留的 IRI-2007 发行，便于复现该年代论文或对比模型演进。新项目应改用 IRI-2020/2026；仅当审稿或历史对比需要锁定旧物理选项时再下载本目录。
 
 #### [IRI-2012-package](https://irimodel.org/IRI-2012/)  
 *🏷️ 官方*
 
-语言：Fortran · 许可：— · 星标约：— · 宿主：official_site
+语言：Fortran · 许可：IRI permissive (AS IS + attribution) · 星标约：— · 宿主：official_site
 
 官方 IRI-2012 发行目录。官网特别提到该版带有 iriorbit 一类沿卫星轨道取 IRI 参数的示例程序，适合空间任务剖面复现与旧论文对照。功能与数据源已有后续版本更新；除非复现 2012 时代结果，新项目优先 IRI-2020/2026，MATLAB/pyglow 用户也要分清自己绑的是哪一代。
 
 #### [IRI-2016-package](https://irimodel.org/IRI-2016/)  
 *🏷️ 官方*
 
-语言：Fortran · 许可：— · 星标约：— · 宿主：official_site
+语言：Fortran · 许可：IRI permissive (AS IS + attribution) · 星标约：— · 宿主：official_site
 
 COSPAR/URSI IRI 工作组在 irimodel.org 发布的 IRI-2016 源码目录，含 Fortran 子程序、系数与说明。很多文献与 MATLAB/pyglow 包装仍对齐这一代。新研究若无追踪官方最新物理选项，应同时看 IRI-2020/2026；指数文件需按官网说明单独更新。
 
 #### [IRI-2026-package](https://irimodel.org/IRI-2026/)  
 *🏷️ 官方 核心*
 
-语言：Fortran · 许可：— · 星标约：— · 宿主：official_site
+语言：Fortran · 许可：IRI permissive (AS IS + attribution) · 星标约：— · 宿主：official_site
 
 irimodel.org 上标注日期最新的 IRI Fortran 发行目录，工作组持续更新的气候态电离层国际标准模型入口。做与最新文献对齐的 Ne/Te/离子成分剖面时优先从这里取源码与系数。指数文件仍需按官网说明单独更新；Python/MATLAB 包装未必已跟上 2026，绑定前核对版本号。
 
@@ -1536,9 +1536,9 @@ irimodel 写明：除版本包外通常还要 COMMON FILES（若 zip 未打进�
 #### [IRI-MATLAB-FileExchange](https://www.mathworks.com/matlabcentral/fileexchange/34863-international-reference-ionosphere-iri-model)  
 *🏷️ 官方 核心*
 
-语言：MATLAB · 许可：— · 星标约：— · 宿主：official_site
+语言：MATLAB · 许可：BSD-2-Clause · 星标约：— · 宿主：official_site
 
-irimodel.org 官方列出的 IRI MATLAB 入口（MathWorks File Exchange，含 2012/2016）。适合已在 MATLAB 做气候态对比、不想先编译 Fortran 的用户。下载与许可以 File Exchange 为准；追最新物理更新仍应回 irimodel.org / IRI 主源码。
+irimodel.org 官方列出的 IRI MATLAB 入口（MathWorks File Exchange，含 2012/2016）。适合已在 MATLAB 做气候态对比、不想先编译 Fortran 的用户。包内 license.txt 为 BSD 两条款许可（作者 Drew Compston），代码通过 curl 调用 IRI 在线接口而非本地 Fortran；追最新物理更新仍应回 irimodel.org / IRI 主源码。
 
 #### [IRI-Plas-SPIM-IZMIRAN](https://www.izmiran.ru/ionosphere/weather/grif/SPIM/)  
 *🏷️ 官方*
@@ -1971,7 +1971,7 @@ SpaceML 维护的电离层预报代码与笔记本，强调时间融合 Transfor
 | [TITIPy](https://github.com/pignalberi/TITIPy) | Swarm 顶部电离层 RODI/ROTI/ROTEI（Python） | Python | 8 | 🏷️ 高校实验室 |
 | [Ionospheric-Scintillation-Maps-and-PDOP](https://github.com/AlexandraKoulouri/Ionospheric-Scintillation-Maps-and-PDOP) | Ionospheric-Scintillation-Maps-and-PDOP：闪烁成像与 PDOP 影响 | MATLAB | 5 | 🏷️ 高校实验室 |
 | [gnssutils](https://github.com/ljlamarche/gnssutils) | 地基 GNSS 闪烁数据清洗与指标计算工具 | Python | 3 | 🏷️ 个人社区 ★ |
-| [OASIS-ohm1122](https://github.com/ohm1122/OASIS) | OASIS-ohm1122：OASIS 闪烁/ROTI 相关用户星标副本 | — | — | 🏷️ 个人社区 ★ |
+| [OASIS-ohm1122](https://github.com/ohm1122/OASIS) | OASIS-ohm1122：OASIS 闪烁/ROTI 相关用户星标副本 | Python | — | 🏷️ 个人社区 ★ |
 | [Okoh-MATLAB-ROT-ROTI](https://doi.org/10.5281/zenodo.7913105) | Okoh-MATLAB-ROT-ROTI：TEC 序列算 30s ROT 与 5min ROTI | MATLAB | — | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -2028,7 +2028,7 @@ INGV/ESA INTENS 的 Swarm 顶部电离层湍流指数工具（Python）：从 La
 #### [OASIS-ohm1122](https://github.com/ohm1122/OASIS)  
 *🏷️ 个人社区 ★*
 
-语言：— · 许可：CC-BY-NC-4.0 · 星标约：— · 宿主：github
+语言：Python · 许可：CC-BY-NC-4.0 · 星标约：— · 宿主：github
 
 用户星标的 OASIS 相关仓库，实际算法与数据接口以 giorgiopicanco/OASIS 上游为准。引用论文时请核对 canonical URL。
 
@@ -2050,7 +2050,7 @@ INGV/ESA INTENS 的 Swarm 顶部电离层湍流指数工具（Python）：从 La
 | [real-time-ionospheric-maps-Kalman](https://github.com/AlexandraKoulouri/real-time-ionospheric-maps-using-Kalman) | real-time-ionospheric-maps-Kalman：南美区域集合卡尔曼电离层图 | MATLAB | 3 | 🏷️ 高校实验室 |
 | [m_gim-PANXIONG](https://github.com/PANXIONG-CN/m_gim) | m_gim-PANXIONG：小体量 MATLAB GIM 脚本草稿 | MATLAB | 1 | 🏷️ 高校实验室 ★ |
 | [GNSS.IonosphereMaps](https://github.com/gurkanguldas/GNSS.IonosphereMaps) | GNSS.IonosphereMaps：Java 电离层图工具 | Java | — | 🏷️ 个人社区 ★ |
-| [Zenodo-VTEC-map-generation-SBAS](https://doi.org/10.5281/zenodo.10058636) | Zenodo-VTEC-map-generation-SBAS：SBAS 误差模型用 VTEC 图生成补充包 | — | 0 | 🏷️ 高校实验室 |
+| [Zenodo-VTEC-map-generation-SBAS](https://doi.org/10.5281/zenodo.10058636) | Zenodo-VTEC-map-generation-SBAS：SBAS 误差模型用 VTEC 图生成补充包 | MATLAB | 0 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -2104,9 +2104,9 @@ gurkanguldas 的 Java 仓库，面向 GNSS 电离层图处理与展示。适合 
 #### [Zenodo-VTEC-map-generation-SBAS](https://doi.org/10.5281/zenodo.10058636)  
 *🏷️ 高校实验室*
 
-语言：— · 许可：— · 星标约：0 · 宿主：zenodo
+语言：MATLAB · 许可：CC-BY-4.0 · 星标约：0 · 宿主：zenodo
 
-Tampere University 发布的 VTEC 图生成代码/数据补充（VTEC_FORZENODO.zip），用于支撑星基导航电离层误差模型研究与复现。输入见压缩包说明；输出为 VTEC 图相关结果。局限：以论文复现为目的，接口与文档完整度因包而异；使用前请核对许可与引用。
+Tampere University 发布的 VTEC 图生成代码/数据补充（VTEC_FORZENODO.zip），用于支撑星基导航电离层误差模型研究与复现。包内为 MATLAB 脚本（Main.m 与 lib/）和预存的 TEC_HourMap.mat，示例给随机用户位置取 VTEC。局限：README 说明是论文代码的简化版，只给 VTEC、不含 STEC 与星座几何；文件声明 CC-BY-4.0，使用需引用 Imad 等人论文。
 
 ## HF射线追踪
 

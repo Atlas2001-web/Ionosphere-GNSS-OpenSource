@@ -303,7 +303,7 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 | [anywhere-sdr](https://github.com/lll9p/anywhere-sdr) | Rust 编写的 GPS L1 C/A 基带信号仿真器，兼容 gps-sdr-sim 用法 | Rust | 13 | 🏷️ 个人社区 |
 | [esp2822NMEAsim](https://github.com/michalpelka/esp2822_NMEA_sim) | esp2822NMEAsim：廉价 MCU 模拟 PPS 与 NMEA | C++ | 7 | 🏷️ 个人社区 |
 | [Microsat-gps-sim](https://github.com/niklasknoell/Microsat-gps-sim) | Microsat-gps-sim：微纳卫星工程向 GNSS 仿真（Python） | Python | 4 | 🏷️ 个人社区 |
-| [gps-qzss-sdr-sim](https://github.com/iGNSS/gps-qzss-sdr-sim) | gps-qzss-sdr-sim：软件定义 GPS/QZSS 信号仿真器 | — | 1 | 🏷️ 个人社区 |
+| [gps-qzss-sdr-sim](https://github.com/iGNSS/gps-qzss-sdr-sim) | gps-qzss-sdr-sim：软件定义 GPS/QZSS 信号仿真器 | C | 1 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -429,7 +429,7 @@ GPS 与 Galileo 卫星信号模拟相关实现，说明中提及与 RTKLIB 能�
 #### [gps-qzss-sdr-sim](https://github.com/iGNSS/gps-qzss-sdr-sim)  
 *🏷️ 个人社区*
 
-语言：— · 许可：MIT · 星标约：1 · 宿主：github
+语言：C · 许可：MIT · 星标约：1 · 宿主：github
 
 软件定义的 GPS（及 QZSS）信号仿真，用于生成可回放或经 SDR 发射的基带/IQ，服务接收机测试。适合实验室信号源需求。仓库星标很少，维护与文档完整度需自查；任何实发须遵守无线电法规，优先评估更活跃的 gps-sdr-sim。若长期无人维护，建议迁移到 osqzss/gps-sdr-sim 生态。
 

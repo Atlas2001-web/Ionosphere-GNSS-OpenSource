@@ -140,7 +140,7 @@ Python/Jupyter 多星座 PPP-RTK 试验箱，强调可读与易移植，便于�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [Easy4B2b](https://github.com/alxanderjiang/Easy4B2b) | Easy4B2b：易移植 Python PPP-B2b 工具箱 | Jupyter Notebook | 0 | 🏷️ 个人社区 |
-| [RTKNAVI-BH](https://github.com/cigit001/RTKNAVI-BH) | RTKNAVI-BH：RTKNAVI 扩展实时 PPP-B2b 与 HAS | — | 0 | 🏷️ 个人社区 |
+| [RTKNAVI-BH](https://github.com/cigit001/RTKNAVI-BH) | RTKNAVI-BH：RTKNAVI 扩展实时 PPP-B2b 与 HAS | C | 0 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -154,7 +154,7 @@ Python/Jupyter 多星座 PPP-RTK 试验箱，强调可读与易移植，便于�
 #### [RTKNAVI-BH](https://github.com/cigit001/RTKNAVI-BH)  
 *🏷️ 个人社区*
 
-语言：— · 许可：BSD-2-Clause · 星标约：0 · 宿主：github
+语言：C · 许可：BSD-2-Clause · 星标约：0 · 宿主：github
 
 在 RTKNAVI 上扩展，尝试同时吃 PPP-B2b 与 Galileo HAS 改正做实时 PPP。适合桌面端联调双系统改正源。仓库较新、文档与稳定性需自测；复杂场景仍建议对照官方测试库与 demo5/RTKLIB 分支。
 
@@ -169,18 +169,18 @@ Python/Jupyter 多星座 PPP-RTK 试验箱，强调可读与易移植，便于�
 #### [Essential-GNSS](https://sourceforge.net/projects/gnsstk/)  
 *🏷️ 个人社区*
 
-语言：C · 许可：BSD-style · 星标约：— · 宿主：sourceforge
+语言：C · 许可：BSD-3-Clause · 星标约：— · 宿主：sourceforge
 
-Glenn MacGougan 等维护的 Essential GNSS Project，提供 RINEX 2.x 解码、YUMA/SEM、NovAtel OEM4 以及 LSQ/EKF/RTK 事后处理示例，许可证偏宽松 BSD 风格。与 Texas SGL 的 GPSTk/gnsstk 同名不同源，勿混淆。代码偏经典教学/嵌入，现代多星座 RINEX3+/PPP 请优先用更新栈。
+Glenn MacGougan 等维护的 Essential GNSS Project，提供 RINEX 2.x 解码、YUMA/SEM、NovAtel OEM4 以及 LSQ/EKF/RTK 事后处理示例，源码头注释为 BSD 三条款许可。与 Texas SGL 的 GPSTk/gnsstk 同名不同源，勿混淆。代码偏经典教学/嵌入，现代多星座 RINEX3+/PPP 请优先用更新栈。
 
 ## PPP
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [raPPPid](https://github.com/TUW-VieVS/raPPPid) | raPPPid：维也纳 VieVS 的 PPP 模块 | MATLAB | 149 | 🏷️ 高校实验室 核心 |
-| [GAMP_PPPH](https://github.com/zhufengGNSS/GAMP_PPPH) | GAMP_PPPH：多星座 PPP 学习源码 | — | 78 | 🏷️ 高校实验室 ★ |
+| [GAMP_PPPH](https://github.com/zhufengGNSS/GAMP_PPPH) | GAMP_PPPH：多星座 PPP 学习源码 | C | 78 | 🏷️ 高校实验室 ★ |
 | [GPSPACE](https://github.com/CGS-GIS/GPSPACE) | GPSPACE：加拿大 NRCan 开源 PPP Fortran 程序 | Fortran | 58 | 🏷️ 官方 |
-| [PPPLib](https://github.com/yxw027/PPPLib) | PPPLib：开源精密单点定位库 | — | 49 | 🏷️ 高校实验室 |
+| [PPPLib](https://github.com/yxw027/PPPLib) | PPPLib：开源精密单点定位库 | C++ | 49 | 🏷️ 高校实验室 |
 | [PPP](https://github.com/XiaoGongWei/PPP) | PPP：静态精密单点定位 C++ 练习实现 | C++ | 23 | 🏷️ 高校实验室 |
 | [PPPH-UAV](https://github.com/BerkayBahadur/PPPH-UAV) | PPPH-UAV：无人机摄影测量向 GNSS PPP（MATLAB） | MATLAB | 14 | 🏷️ 高校实验室 |
 | [RTPPP_B2b](https://github.com/floating0516/RTPPP_B2b) | RTPPP_B2b：B2b 改正实时 PPP 接口 | C | 10 | 🏷️ 个人社区 核心 |
@@ -199,7 +199,7 @@ VieVS（TU Wien）精密单点定位模块，MATLAB 实现，便于与 VLBI/大�
 #### [GAMP_PPPH](https://github.com/zhufengGNSS/GAMP_PPPH)  
 *🏷️ 高校实验室 ★*
 
-语言：— · 许可：— · 星标约：78 · 宿主：github
+语言：C · 许可：— · 星标约：78 · 宿主：github
 
 整理/公开的多星座 PPP 相关源码，常被中文社区当作 GAMP 学习材料。适合对照教材读流程。官方维护关系与许可需自行核实，慎直接用于生产。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
 
@@ -213,7 +213,7 @@ VieVS（TU Wien）精密单点定位模块，MATLAB 实现，便于与 VLBI/大�
 #### [PPPLib](https://github.com/yxw027/PPPLib)  
 *🏷️ 高校实验室*
 
-语言：— · 许可：— · 星标约：49 · 宿主：github
+语言：C++ · 许可：— · 星标约：49 · 宿主：github
 
 开源 PPP 库，便于阅读 PPP 状态估计与资源管理结构。适合课程设计与二次开发起点。社区体量小于 PRIDE/RTKLIB；功能完整性以实测为准。
 
@@ -713,7 +713,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [HASlib.jl](https://github.com/feanor12/HASlib.jl) | HASlib.jl：Galileo HAS 库的 Julia 包装 | Julia | 0 | 🏷️ 个人社区 |
-| [HASlibTestSuite](https://github.com/nlsfi/HASlibTestSuite) | 官方 HASlib 解码正确性测试套件 | — | 0 | 🏷️ 官方 |
+| [HASlibTestSuite](https://github.com/nlsfi/HASlibTestSuite) | HASlibTestSuite：nlsfi 名下的空占位仓（仅 README） | — | 0 | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -729,7 +729,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 语言：— · 许可：— · 星标约：0 · 宿主：github
 
-配套 nlsfi/HASlib 的官方测试套件，用固定样例回归 Galileo HAS 解码与接口兼容性。集成或升级 HAS 库前应用它核对版本差异。本身不是定位引擎；解算仍依赖 HASlib 与下游 PPP 实现。
+仅说明，无代码。nlsfi 名下的 HASlibTestSuite 仓库只有一个内容为“# HASlibTestSuite1”的 README，2022-09-30 后没有更新，并不包含测试样例或脚本。需要 Galileo HAS 解码时直接用 nlsfi/HASlib 及其自带示例；本条保留仅为记录该仓库名称。
 
 ## PPP/HAS
 
@@ -866,9 +866,9 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 #### [PPP-Wizard](http://www.ppp-wizard.net/)  
 *🏷️ 官方 核心*
 
-语言：C++ · 许可：see upstream · 星标约：— · 宿主：official_site
+语言：C++ · 许可：— · 星标约：— · 宿主：official_site
 
-法国空间研究中心（CNES）PPP-WIZARD 项目门户，介绍零差整数模糊度 PPP-AR 演示软件、SSR 计算与日产品/监测入口。适合了解 CNES 实时 PPP-AR 路线并申请软件包。源码不在本页直接 git 克隆；获取方式与许可以官网说明为准，并与 IGS 实时流配合使用。
+法国空间研究中心（CNES）PPP-WIZARD 项目门户，介绍零差整数模糊度 PPP-AR 演示软件、SSR 计算与日产品/监测入口。适合了解 CNES 实时 PPP-AR 路线。站点目前只有方法说明、实时产品与监测页面，没有软件下载或许可声明（链接页仅列出 2015 年开源 PPP 客户端论文）；需要代码请联系 CNES。站点仅支持 HTTP。
 
 ## 定位软件
 

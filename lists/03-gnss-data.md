@@ -80,7 +80,7 @@ RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品�
 #### [ntripclient](https://software.rtcm-ntrip.org/wiki/ntripclient)  
 *🏷️ 官方*
 
-语言：C · 许可：GPL · 星标约：129 · 宿主：official_site
+语言：C · 许可：GPL-2.0-or-later · 星标约：129 · 宿主：official_site
 
 官方轻量 NTRIP 客户端，从播发器订阅 RTCM 等流并写到标准输出或端口。源码位于 RTCM-Ntrip trunk。适合脚本化取流；需要解码/PPP/GUI 时改用 BNC。
 
@@ -94,7 +94,7 @@ RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品�
 #### [ntripserver](https://software.rtcm-ntrip.org/wiki/ntripserver)  
 *🏷️ 官方*
 
-语言：C · 许可：GPL · 星标约：74 · 宿主：official_site
+语言：C · 许可：GPL-2.0-or-later · 星标约：74 · 宿主：official_site
 
 RTCM-Ntrip 官方仓库中的 POSIX ntripserver，用于将接收机或文件流上传至 NtripCaster。源码见 software.rtcm-ntrip.org 浏览器。轻量适合嵌入式/服务器脚本；完整 GUI 与 PPP 请用 BNC。GitHub 上存在社区镜像。
 
@@ -276,7 +276,7 @@ Peinser 发布的自托管 NTRIP v2 caster：汇聚多基站 RTCM 改正并通�
 #### [BKG-NtripCaster](https://igs.bkg.bund.de/ntrip/bkgcaster)  
 *🏷️ 官方 核心*
 
-语言：C · 许可：GPL · 星标约：— · 宿主：official_site
+语言：C · 许可：GPL-3.0-or-later (README/source headers; bundled COPYING is GPLv2 text) · 星标约：— · 宿主：official_site
 
 德国联邦制图与大地测量局发布的 NTRIP 1/2 播发器，基于 Icecast，可同时服务大量客户端。2024 年 9 月起免费提供源码与软件，下载见 BKG FTP。只做流分发不解码内容，不含 VRS；与 BNC 客户端配套常用于 IGS/EUREF 实时站运维与教研演示。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
 
@@ -297,14 +297,14 @@ BKG 提供的 BNC 发行目录，含 GPL-3 源码包、各发行版二进制与�
 #### [BNS](https://software.rtcm-ntrip.org/wiki/BNS)  
 *🏷️ 官方*
 
-语言：C++ · 许可：GPL · 星标约：— · 宿主：official_site
+语言：C++ · 许可：GPL (version unspecified) · 星标约：— · 宿主：official_site
 
 BKG 的 Ntrip 状态空间服务器条目，面向实时 SSR/改正信息播发场景，源码与说明见 RTCM-Ntrip 发行包。适合研究实时 PPP/SSR 链路搭建；现代部署更常见 BNC 与 Professional Caster 组合，本工具偏专用或历史工作流，接入前请对照当前 trunk 文档。
 
 #### [Caster-source-FTP](https://igs.bkg.bund.de/root_ftp/NTRIP/software/caster/)  
 *🏷️ 官方*
 
-语言：C · 许可：GPL · 星标约：— · 宿主：official_site
+语言：C · 许可：GPL-3.0-or-later (README/source headers; bundled COPYING is GPLv2 text) · 星标约：— · 宿主：official_site
 
 可直接获取 ntripcaster 源码 tar 与校验文件的 FTP 目录，对应 BKG 专业播发器免费开源发行。运维部署时可固定版本号拉取并核对 sha256。配置与安全补丁见同目录 CHANGES 与手册；功能介绍见 bkgcaster 产品页。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
 
@@ -536,7 +536,7 @@ GSI 公布的 RNXCMP 许可文本，基于地理院网站条款并要求修改�
 #### [EarthScope-gnsstools](https://gitlab.com/earthscope/gnsstools)  
 *🏷️ 官方*
 
-语言：Go · 许可：— · 星标约：6 · 宿主：gitlab
+语言：Go · 许可：Apache-2.0 · 星标约：6 · 宿主：gitlab
 
 EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RTCM/BINEX/SBF 等编解码、NTRIP 客户端、SPP/TDCP 流水线及可选 TileDB 地理数据模块。适合构建现代数据管道；定位算法深度不及专用 PPP 套件。星数不高但机构背书明确。
 
@@ -987,14 +987,14 @@ EarthScope 开源的 GNSS 产品联邦工具，按日期与任务在十余个 IG
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gnsstk-apps](https://github.com/SGL-UT/gnsstk-apps) | gnsstk-apps：GNSSTK 命令行工具集 | — | 68 | 🏷️ 高校实验室 |
+| [gnsstk-apps](https://github.com/SGL-UT/gnsstk-apps) | gnsstk-apps：GNSSTK 命令行工具集 | C++ | 68 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
 #### [gnsstk-apps](https://github.com/SGL-UT/gnsstk-apps)  
 *🏷️ 高校实验室*
 
-语言：— · 许可：LGPL-3.0 · 星标约：68 · 宿主：github
+语言：C++ · 许可：LGPL-3.0 · 星标约：68 · 宿主：github
 
 SGL-UT 从 GPSTk 拆出的应用程序仓，基于 gnsstk 提供命令行工具。适合不想手写 C++ API 的用户；部署相对现代 Python 工具链偏重，版本需与 gnsstk 核心库对齐。
 
@@ -1040,14 +1040,14 @@ Android 原始 GNSS 测量日志与桌面可视化分析工具，智能手机高
 #### [gpsd](https://gitlab.com/gpsd/gpsd)  
 *🏷️ 个人社区*
 
-语言：C · 许可：BSD · 星标约：104 · 宿主：gitlab
+语言：C · 许可：BSD-2-Clause · 星标约：104 · 宿主：gitlab
 
 长期维护的用户态守护进程，监听串口/USB 上的 NMEA 或厂商二进制，向客户端（默认 2947）提供统一位置/时间服务。发行包见 Savannah/官网 gpsd.io；GitLab 为开发主仓。适合嵌入式与桌面集成取位，不是精密载波相位或科研 PPP 引擎。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
 
 #### [gpsd-website](https://gpsd.io/)  
 *🏷️ 个人社区*
 
-语言：C · 许可：BSD · 星标约：— · 宿主：other
+语言：C · 许可：BSD-2-Clause · 星标约：— · 宿主：other
 
 gpsd 社区官网，提供安装文档、兼容硬件列表与发布信息。源码开发主仓在 GitLab，发行文件指向 Savannah 镜像。嵌入式或桌面定位服务集成前，建议先读本站兼容性说明，避免误用标签页上的非发行压缩包。使用前请核验上游页面与许可条款。
 
@@ -1096,7 +1096,7 @@ gpsd 社区官网，提供安装文档、兼容硬件列表与发布信息。源
 #### [rtcm3torinex](https://software.rtcm-ntrip.org/wiki/rtcm3torinex)  
 *🏷️ 官方*
 
-语言：C · 许可：GPL · 星标约：65 · 宿主：official_site
+语言：C · 许可：GPL-2.0-or-later · 星标约：65 · 宿主：official_site
 
 RTCM-Ntrip 项目提供的 RTCM 3 到 RINEX 转换工具，便于把实时流转成事后文件。说明与附件见官方 wiki。功能聚焦转换；质检与编辑需搭配 Anubis/GFZRNX 等。
 

@@ -46,9 +46,9 @@ Yuanxin Pan 开源的钟差/相位偏差合成工具，源于学位论文并应�
 #### [GFZ-SPOCC-news](https://www.gfz.de/en/section/space-geodetic-techniques/overview/details-section-news/veroeffentlichung-der-software-for-precise-orbit-and-clock-combination-spocc-1)  
 *🏷️ 官方*
 
-语言：Python · 许可：open (GFZ release) · 星标约：— · 宿主：official_site
+语言：Python · 许可：— · 星标约：— · 宿主：official_site
 
-GFZ 正式介绍 SPOCC 背景与目标的新闻页，说明从原型到可发布 Python/Docker 包的过程，并指向 gnss.gfz.de 下载。适合了解发布动机与组合策略；实际安装、配置与示例仍以软件服务页及用户文档为准。使用前请核验上游页面与许可条款。
+GFZ 正式介绍 SPOCC 背景与目标的新闻页，说明从原型到可发布 Python/Docker 包的过程，并指向 gnss.gfz.de 下载。适合了解发布动机与组合策略；实际安装、配置与示例仍以软件服务页及用户文档为准。新闻页与服务页都没有公布许可条款；代码在 GFZ GitLab，需用 GitHub 账号登录后访问。
 
 #### [IGSMAIL-SPOCC](https://lists.igs.org/pipermail/igsmail/2025/008556.html)  
 *🏷️ 官方*
@@ -60,9 +60,9 @@ GFZ 正式介绍 SPOCC 背景与目标的新闻页，说明从原型到可发布
 #### [SPOCC](https://gnss.gfz.de/services/spocc)  
 *🏷️ 官方 核心*
 
-语言：Python · 许可：open (GFZ release) · 星标约：— · 宿主：official_site
+语言：Python · 许可：— · 星标约：— · 宿主：official_site
 
-GFZ 发布的 Software for Precise Orbit and Clock Combination，用方差分量估计对多家分析中心 SP3/CLK 做多星座加权综合，并提供 Docker。面向 IGS 组合与 PPP 用户产品试验。2025 年起经 IGSmail 公开；输入需标准轨道钟差格式，不是单站 PPP 引擎。
+GFZ 发布的 Software for Precise Orbit and Clock Combination，用方差分量估计对多家分析中心 SP3/CLK 做多星座加权综合，并提供 Docker。面向 IGS 组合与 PPP 用户产品试验。2025 年起经 IGSmail 公开；输入需标准轨道钟差格式，不是单站 PPP 引擎。代码在 GFZ GitLab，需用 GitHub 账号登录，公开页面未写明许可。
 
 ## DCB/UPD/IFCB/OSB
 

@@ -116,7 +116,7 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [EGNOS-GSC-User-Support](https://egnos.gsc-europa.eu/) | EGNOS GSC：欧洲静地导航重叠系统用户支持 | data-portal | — | 🏷️ 官方 |
-| [EGNOS-Toolkit](https://sourceforge.net/projects/libegnos/) | SourceForge EGNOS Toolkit：SBAS/EGNOS 消息与接收算法工具 | C/C++ | — | 🏷️ 个人社区 |
+| [EGNOS-Toolkit](https://sourceforge.net/projects/libegnos/) | SourceForge EGNOS Toolkit：SBAS/EGNOS 消息与接收算法工具 | C | — | 🏷️ 个人社区 |
 | [FAA-WAAS](https://www.faa.gov/about/office_org/headquarters_offices/ato/service_units/techops/navservices/gnss/waas) | FAA WAAS：美国广域增强系统官方介绍 | data-portal | — | 🏷️ 官方 |
 | [ICAO-PBN](https://www.icao.int/safety/pbn/Pages/Overview.aspx) | ICAO PBN：基于性能导航官方概述入口 | data-portal | — | 🏷️ 官方 |
 
@@ -132,9 +132,9 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 #### [EGNOS-Toolkit](https://sourceforge.net/projects/libegnos/)  
 *🏷️ 个人社区*
 
-语言：C/C++ · 许可：EUPL · 星标约：— · 宿主：sourceforge
+语言：C · 许可：EUPL-1.1 · 星标约：— · 宿主：sourceforge
 
-基于 EGNOS SDK 的 Linux/UNIX 移植，处理 SISNET、EMS 文件并实现用户端 SBAS 算法，许可 EUPL。托管于 SourceForge，更新偏旧。现代多星座 SBAS/HAS 研究需结合新文档与其他开源栈。
+基于 EGNOS SDK 的 Linux/UNIX 移植，处理 SISNET、EMS 文件并实现用户端 SBAS 算法，许可 EUPL v1.1（源码头注明仅限该版本）。托管于 SourceForge，更新偏旧。现代多星座 SBAS/HAS 研究需结合新文档与其他开源栈。
 
 #### [FAA-WAAS](https://www.faa.gov/about/office_org/headquarters_offices/ato/service_units/techops/navservices/gnss/waas)  
 *🏷️ 官方*
@@ -239,7 +239,7 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 #### [GPSBabel](https://www.gpsbabel.org/)  
 *🏷️ 个人社区*
 
-语言：C++ · 许可：GPL · 星标约：— · 宿主：other
+语言：C++ · 许可：GPL-2.0-or-later · 星标约：— · 宿主：other
 
 成熟的开源 GPS 数据转换器，支持大量消费级接收机与地图软件之间的航点、轨迹互转，并提供去重与简化。对测绘级 RINEX/载波相位无助，但野外勘察与 GIS 衔接很实用。主站提供文档与下载；SourceForge 镜像偶发屏蔽时可改用官网通道。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
 
