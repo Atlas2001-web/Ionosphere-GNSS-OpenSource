@@ -231,7 +231,7 @@ caster ──ntrip-client / ntripclient / str2str──> RTCM3 字节流
 | Python 解析、快速看字段 | [pyrtcm](./pyrtcm.md) |
 | RTCM3 → RINEX 文件 | [rtcm3torinex](./rtcm3torinex.md) / RTKLIB `convbin` |
 | 从 caster 取流 | [ntrip-client](./ntrip-client.md)（Rust）/ [ntripclient](./ntripclient.md)（C）/ [rtcm-ntrip-software](./rtcm-ntrip-software.md) |
-| u-blox UBX 协议 | [pyubx2](./pyubx2.md)；Rust `ublox` crate 待写（本车道下一优先） |
+| u-blox UBX 协议 | [pyubx2](./pyubx2.md)；Rust `ublox` crate → [ublox](./ublox.md) |
 | BINEX / GPS 电文比特 | [binex](./binex.md) / [gnss-protos](./gnss-protos.md) |
 
 ## 8. 相关
