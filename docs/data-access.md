@@ -431,7 +431,7 @@ curl -L -C - -O \
 
 ## 电离层与地磁门户决策表
 
-第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD），以及地基与 LEO 电离层观测（E23 GIRO / DIDBase 测高仪、E24 Swarm swarm-diss HTTPS、E25 VirES HAPI、E26 CHAIN 闪烁 ISMR、E27 GIM/IONEX 各中心门户、E28 IGS 观测匿名镜像）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
+第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD），以及地基与 LEO 电离层观测（E23 GIRO / DIDBase 测高仪、E24 Swarm swarm-diss HTTPS、E25 VirES HAPI、E26 CHAIN 闪烁 ISMR、E27 GIM/IONEX 各中心门户、E28 IGS 观测匿名镜像、E29 近实时 TEC 产品）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
 
 | 门户 | 账号 / 门槛 | 格式 | 时间分辨率 · 时延 | 实测 |
 |---|---|---|---|:---:|
@@ -463,6 +463,7 @@ curl -L -C - -O \
 | [CHAIN 加拿大高纬电离层网](https://www.chain-project.net/) | **匿名**：HTTPS 目录 `https://www.chain-project.net/data/`（`http://www.chain-project.net` 301 到 `chain-new`）；匿名 FTP `ftp.chain-project.net`（用户 `ftp`、密码邮箱，实测时好时坏）；老 `chain.physics.unb.ca/data/gps/ismr/2024/` → 404；发表须引用 Jayachandran et al. 2009 | ISMR（Septentrio `sbf2ismr` 62 列 CSV，gzip，按小时）；RINEX 观测；接收机原始二进制（50 Hz） | 2024 年小时目录 15 个 PolaRxS 站；GSV4004B 老 ISMR 在 `nvismr/`（到 2019）；无表头，GPS 时；锁定 <240 s 时 Phi 已为 nan、S4 仍有值 | ✅（[E26](#dp-e26)，[手册](./software/chain-scintillation.md)） |
 | [GIM / IONEX 各中心门户](./software/gim-product-portals.md) | **匿名**：CAS 汇总镜像 `data.bdsmart.cn/pub/product/iono/ionex/YYYY/DDD/`（含 CAS/COD/EMR/ESA/IGS/JPL/UPC）；CODE `download.aiub.unibe.ch/CODE/`（301 到 S3，无索引）；UPC `chapman.upc.es/tomion/`；ESA `navigation-office.esa.int`；JPL `sideshow.jpl.nasa.gov/pub/iono_daily/`；CDDIS 需 Earthdata；IGN/BKG/WHU/KASI/GSSC 本次不通 | IONEX 1.0（gzip / `.Z`）；长名 `AAA0OPSTTT_YYYYDDD0000_01D_SSS_GIM.INX.gz`，旧短名 `xxxgDDD0.YYi.Z` 按中心分别在 2023 前后切换 | 实测时延：UPC 实时约 4 min；CODE 快速 6.4 h、预报 P1D 提前约 18 h；JPL/ESA 快速 7–8 h；EMR 最终 35 h、JPL 50 h、CAS/UPC 65 h、ESA 88 h、CODE 90 h；2024-05-11 对 CODE 面积加权 RMS 3.3（IGS）… 15.8（EMR）TECU | ✅（[E27](#dp-e27)，[手册](./software/gim-product-portals.md)） |
 | [IGS 日观测匿名镜像](./software/gnss-obs-mirrors.md) | **匿名**：BKG `igs.bkg.bund.de/root_ftp/IGS/obs/YYYY/DDD/`；CAS `data.bdsmart.cn/pub/data/igs/YYYY/DDD/`；SOPAC `http://garner.ucsd.edu/pub/rinex/YYYY/DDD/`（只 http）；GA S3 `ga-gnss-data-rinex-v1/public/daily/`；**CDDIS 需 Earthdata**；IGN / WHU / KASI 本次不通；GFZ ISDC 只有自家网 | RINEX 3 `…_01D_30S_MO.crx.gz`（Hatanaka + gzip）；SOPAC 另有旧短名 `.d.Z` | 24 个 IGS 站：2024-05-11 BKG/CAS/SOPAC 24/24、GA 22/24；前一天数据上架中位 SOPAC/GA 0.3 h、CAS 0.4 h、BKG 9.0 h；同名文件各镜像 gz 字节数不同但观测段一致，抽检全 2880 历元 | ✅（[E28](#dp-e28)，[手册](./software/gnss-obs-mirrors.md)） |
+| [近实时 TEC 产品](./software/realtime-iono-products.md) | **匿名**：NOAA GloTEC `services.swpc.noaa.gov/products/glotec/`（GeoJSON 31 天 + 日 netCDF 2025-05 起）；NCEI 归档 `archive.data.noaa.gov/satellite-spaceweather/SWPC/Models/`（GloTEC 2025-02 起、US-TEC 2004-10 至 2023-11）；DLR IMPC **仅 `latest/` 匿名，历史需 SSO 账号**；UPC 实时 usrg；CODE P0D/P1D/P4D；CAS RTS；BoM 只有 PNG，数值 API 需 key | GeoJSON / netCDF / JSON / HDF5 / IONEX / PNG | 实测时延：DLR 2.6 min、UPC 4–6 min、GloTEC 21–24 min、CAS RTS 按天；09:15 UTC 同历元 GloTEC − CODE 预报 面积加权 RMS 4.19、DLR − GloTEC 均差 −3.49 TECU | ✅（[E29](#dp-e29)，[手册](./software/realtime-iono-products.md)） |
 
 要登录才能拿数据的：EISCAT 门户（Madrigal 可绕行）、子午工程、ROM SAF 产品库（AWS 可绕行）、TGO ASCII、UKSSDC/RAL。要「申请」的：BGS 本站高分辨率（GIN 可绕行）。
 
@@ -759,6 +760,18 @@ curl -s 'https://ga-gnss-data-rinex-v1.s3.amazonaws.com/?list-type=2&prefix=publ
 curl -s -o /dev/null -w '%{http_code}\n' https://cddis.nasa.gov/archive/gnss/data/daily/2026/268/26d/   # 实测：302 → urs.earthdata.nasa.gov（需 Earthdata 账号）
 # 实测（24 个 IGS 站，本文口径）：2024/132 命中 BKG/CAS/SOPAC 24、GA 22（缺 CHPI TSK2）；2026/268 前一天上架中位 SOPAC 0.3 h、GA 0.3 h、CAS 0.4 h、BKG 9.0 h
 # 实测：各镜像 gz 字节数不同（重压缩），解 Hatanaka 后观测段 md5 一致；抽检 10 份全部 2880 历元
+```
+
+<a id="dp-e29"></a>**E29 近实时 TEC 产品（GloTEC / DLR / UPC / CODE 预报 / CAS RTS）**
+
+```bash
+curl -s https://services.swpc.noaa.gov/products/glotec/geojson_2d_urt.json | tail -c 150   # 实测：4464 条（31 天 × 10 min），最新图比时间标签晚 21–24 min 上架
+curl -s -O https://services.swpc.noaa.gov/products/glotec/geojson_2d_urt/glotec_icao_20260926T091500Z.geojson   # 实测：200，2,502,092 B，72×72 格心
+curl -s 'https://archive.data.noaa.gov/satellite-spaceweather?list-type=2&prefix=SWPC/Models/USTEC/ustec/2023/11/' | grep -o '<Key>[^<]*' | tail -1   # 实测：US-TEC 最后一天 2023-11-15
+curl -s -O https://data.impc.dlr.de/tec-nowcast/DLR_GNSS_GCG_L4_VTEC-NTCM-SCM_NC_GLOBAL/latest/DLR_GNSS_GCG_L4_VTEC-NTCM-SCM_NC_GLOBAL_latest_D.json   # 实测：09:17 UTC 200（8.1 MB，09:15 图）；09:37–09:45 UTC 连接失败
+curl -s -o /dev/null -w '%{http_code}\n' https://data.impc.dlr.de/tec-nowcast/DLR_GNSS_GCG_L4_VTEC-NTCM-SCM_NC_GLOBAL/   # 实测：302 → sso.eoc.dlr.de（历史需账号）
+curl -s -O https://chapman.upc.es/tomion/real-time/quick/last_results/usrg2690.26i.Z   # 实测：200；09:30 的图 09:34 UTC 已在；.Z 为真 compress，用 gzip -dc
+# 实测（09:15 UTC，71×73 节点，cos 纬度加权，本文口径）：全球均值 GloTEC 23.45 / CODE P0D 23.16 / UPC 21.75 / DLR 19.96 TECU；GloTEC − CODE P0D RMS 4.19
 ```
 
 ---

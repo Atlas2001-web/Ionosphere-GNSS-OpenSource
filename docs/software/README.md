@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **233 篇**操作手册（合计 **53392 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **234 篇**操作手册（合计 **53688 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -258,6 +258,7 @@
 | 231 | [epos-glass-api.md](./epos-glass-api.md) | EPOS GLASS API（OCA 欧洲节点，免账号）：按站名/网络/国家/经纬度框查台站元数据（json/csv/xml，2462 站），按站+日期查 RINEX 文件记录（md5、大小、EPN/RENAG 等原数据中心 URL），IGS 站点日志与 GeodesyML（zip）；只有 WADL；`date_from`/`perpage`/`limit` 被忽略、`rinex_count` 恒 400、`stations-json-dictionary` 会触发缓存重建 | 125 | **已短硬** 用法讲解新入库 · 2026-09-26 05:29–05:40 EDT；GlassFramework 3.4.1.255；GRAS00FRA 2026-263 2596725 B（EPN）、SOPH00FRA 1705454 B md5 与 GLASS 一致、crx2rnx 2880 历元；观测到可查约 2–3 天；PROJECTS EPOS-GLASS-API analysis/registration 已按实测改写 |
 | 232 | [gitm.md](./gitm.md) | GITMCode 全球电离层-热层 3-D 物理模式（Fortran+MPI）：`Config.pl`→`make`→`UAM.in`（时间/网格块/驱动 IMF·AE·F10.7·FISM/Weimer05+FTA）→ 块文件 → `post_process.py` 合并 `.bin`（PyITM 可出 NetCDF）→ `srcPython/gitm_routines.py` 读；1-D 单柱改 `ModSize.f90` 重编；≠ 经验模型 | 252 | **已短硬** 用法讲解新入库 · 2026-09-26 05:26–05:34 EDT；main `c4fc315`/Apache-2.0；gfortran 14.2+Open MPI 5.0.7 编译 1 min；默认 2×2 块 10°×20° 5 min 4 进程 9.7 s：302 km `[e-]` max **2.448e12** m⁻³、lon170/lat−25 hmF2 338.0 km；1-D 42°N 288°E 00:30 UT NmF2 4.537e11；1DALL 后处理崩（51 值 vs header 40）、np≠块数崩、`read_gitm_one_file` 默认参数 TypeError；auto_test/dynamo/restart 未实跑 |
 | 233 | [lompe.md](./lompe.md) | klaundal/lompe 极区局地电动力学反演（MIT，不在 PyPI）：立方球局地网格 + Hall/Pedersen 电导函数，联合 SuperDARN 视线速度 / Iridium-AMPERE 空间磁扰 / SuperMAG 地面磁扰 → 电势·E·v·水平电流·FAC + lompeplot 7 面板 | 176 | **已短硬** 用法讲解新入库 · 2026-09-26 05:30–05:37 EDT；main `c73d0ed`（v1.1.1-75）；仓内 2012-04-05 样例 05:12 UT ±2 min（iridium 815/supermag 1280/superdarn 1438 行），53×37 格 2052 参数：网格内电势差 **103.9** kV、\|v\| 中位 490 m/s、FAC −1.45…2.26 μA/m²，40 s；需补 `tables`；Verdana findfont 刷屏；demo.py 路径写死；notebooks/在线下载未实跑 |
+| 234 | [realtime-iono-products.md](./realtime-iono-products.md) | 近实时电离层 TEC 产品匿名获取：NOAA GloTEC（GeoJSON/netCDF）与 NCEI GloTEC/US-TEC 归档、DLR IMPC latest（历史需 SSO）、UPC 实时 usrg、CODE 预报、CAS RTS、BoM（仅 PNG，API 需 key）；格式、更新间隔、实测时延、历史深度、09:15 UTC 四产品同网格对比 | 295 | **已短硬** · 2026-09-26 05:17–05:50 EDT；时延 DLR 2.6 min / UPC 4–6 min / GloTEC 21–24 min；GloTEC geojson 滚动 31 天、netCDF 2025-05-12 起、US-TEC 归档 2004-10–2023-11；GloTEC − CODE P0D RMS 4.19 TECU；DLR 间歇不通 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -484,6 +485,7 @@
 | 高纬 GNSS 闪烁 S4/σφ 实测（CHAIN ISMR，免注册）与 ISMR 62 列定义 | [chain-scintillation.md](./chain-scintillation.md) |
 | 各中心 GIM/IONEX 去哪匿名下载、新旧文件名、出来要等多久、各家差多少 | [gim-product-portals.md](./gim-product-portals.md) |
 | 不登录下载 IGS 日观测：哪个镜像齐、到得快、是不是同一份（CDDIS 需 Earthdata） | [gnss-obs-mirrors.md](./gnss-obs-mirrors.md) |
+| 现在的全球/区域 TEC 去哪不登录拿（GloTEC、DLR、UPC 实时、CODE 预报、CAS RTS）、多久更新、历史多深 | [realtime-iono-products.md](./realtime-iono-products.md) |
 | 美国 CORS（NCN）RINEX 批量下载、小时文件时延、站坐标（ITRF2020 vs NAD 83）、UFCORS 任意时段 | [noaa-ncn-data.md](./noaa-ncn-data.md) |
 | 欧洲 EPN/RENAG/RGP 台站检索、按站按日拿 RINEX 下载 URL 和 md5、IGS 站点日志 | [epos-glass-api.md](./epos-glass-api.md) |
 | 读/交换多机构闪烁 HDF5 文件（Kartverket/FMI/DTU/UNB 的 BiScEF `.nc`，S4/σφ/ROTI；先核时间基准与缺测值） | [biscef.md](./biscef.md) |

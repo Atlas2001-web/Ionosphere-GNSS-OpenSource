@@ -385,6 +385,7 @@ UT | CAS | EMR | ESA | ESA(nav-office) | IGS | JPL | UPC | WHU
 | 12 | IGN / BKG / WHU / KASI / GSSC 下不到 | 本次 TLS EOF、超时、502/425、21 端口拒连或目录不存在 | 以 CAS 镜像 + 源站为主；这些镜像换天再试 |
 | 13 | 找不到 2026 年 CODE 最终 / IGS 最终 / WHU | CAS 镜像不全 | CODE 最终去 AIUB；IGS / WHU 最终本次无匿名源 |
 | 14 | 把一天的对比当“精度排名” | 2024-05-11 是强磁暴日，差异偏大 | 只作示例；要排名需多天 + 独立参考（如 JASON VTEC） |
+| 15 | 同样叫 `.Z`，有的 Python `gzip` 能开有的不能 | CAS 镜像上的 `.Z` 实际是 gzip（魔数 `1f 8b`），UPC 源站 `.Z` 是真 Unix compress（`1f 9d`） | 统一用 `gzip -dc`（两种都能解）；或按魔数分支 |
 
 ## 8. 选型
 
