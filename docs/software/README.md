@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **254 篇**操作手册（合计 **58055 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **256 篇**操作手册（合计 **58590 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -279,6 +279,8 @@
 | 252 | [scintillation-networks.md](./scintillation-networks.md) | CHAIN 以外的闪烁监测网：INGV eSWua 匿名 web service（42 站，1 min S4/σφ/TEC，75 字段）、Madrigal kinst 8010 每日 HDF5（下载要填用户信息）、UNESP ISMR 账号门槛、LISN 不可达；2024-05-10 暴时两站对比 | 174 | **已短硬** · 2026-09-26 06:19–06:27 EDT；eSWua 42 站、nya1p 2 h 5181 条 × 75 字段、phi60 最大 0.652 rad；时延约 11 min；order 无 filter 时 502；UNESP exit 60 + Turnstile |
 | 253 | [ro-missions-data.md](./ro-missions-data.md) | COSMIC-2 以外的掩星数据：CDAAC 各任务盘点（MetOp/Spire/PlanetiQ 无 ionPrf，只有 podTec；CHAMP/GRACE/GeoOptics 有 ionPrf），GRACE-FO 不在 CDAAC，ROM SAF 须登录；scipy 直读 ionPrf / podTec | 215 | **已短硬** · 2026-09-26 06:28–06:31 EDT；CHAMP 2003/302 117 条 ionPrf（可用 66），GRACE 2014/060 72 条；MetOp-C podTec 398 弧，occheight 全 -999；gracefo 404；ROM SAF 登录 |
 | 254 | [unicore-driver.md](./unicore-driver.md) | zltan-whu/UnicoreDriver：和芯星通 UM982/UM980 **二进制 BESTNAVXYZB** → ROS Noetic `nav_msgs/Odometry`（`~best_nav_ecef`，frame `ecef`，无 ENU；多接收机 `<group ns>`；附 NTRIP→串口 RTCM 注入）；不解 ASCII/NMEA，观测/星历只落 `.bin` | 208 | **已短硬** 用法讲解新入库 · 2026-09-26 06:20–06:32 EDT；main `240ae7d`/无 tag/GPL-3.0/★11；**无 ROS/无接收机**：最小 ROS 桩原样编译 + socat；真实 UM980 BESTNAVXYZB 32/32（satpulse MIT 数据）+ 合成（源自真实观测值）622/622；独立解析 max|Δ| 4.85×10⁻⁵ m，pyproj 对 BESTNAVA/GGA ≤1.4×10⁻⁴ m；坑：stamp 早 DelayMs、长度 65535 堆溢出崩溃、断线静默停读、INSUFFICIENT_OBS 照发、退出码 0、明文密码；交叉 [um982-driver](./um982-driver.md)/[um980-rtklib-pipeline](./um980-rtklib-pipeline.md)/[novatel-edie](./novatel-edie.md) |
+| 255 | [hwm14.md](./hwm14.md) | gemini3d/hwm14：NRL HWM14 水平中性风（CMake/gfortran 静态库，无 CLI）：日序+UT+高度+纬经+ap → 经向风（+北）/纬向风（+东）m/s；`ap(2)<0` 只算平静风，≥0 叠加 DWM07 扰动风；附 space-physics/hwm93 构建与同点对比 | 265 | **已短硬** 用法讲解新入库 · 2026-09-26 06:25–06:31 EDT；main `1f289bf`/Apache-2.0；ctest 2/2；45°N 0°E DOY132 00 UT 300 km 平静 −67.92/−28.45、ap=80 −104.34/−171.82 m/s，IGRF13 I=60°10′ → 上推 29.31/45.03 m/s；hwm93 pip 因 numpy.distutils 失败、Fortran ctest 2/2，300 km 平静经向 −125.50；坑：HWMPATH、ap=0 ≠ 平静、库顺序、f107/stl/年份不用 |
+| 256 | [ionfr.md](./ionfr.md) | csobey/ionFR：射电视线电离层法拉第旋转 RM（IGRF13 geomag70 + IONEX 单层 450 km）：RA/Dec+站点+日期 → 每小时斜 TEC、视线 B（G）、RM 与误差（rad m⁻²）写 IonRM.txt；Py2 遗留，只吃 2 h 13 图 IONEX | 270 | **已短硬** 用法讲解新入库 · 2026-09-26 06:22–06:32 EDT；master `4fe4f12`/GPL-3.0；3 处补丁后 Py3.13 可跑；AIUB CODE 1 h 抽 2 h，B0329+54@LOFAR 2024-05-01/05-11 日均 RM 1.4806/0.9479 rad m⁻²（sTEC 26.25/17.65 TECU）；对 spinifex 偶数小时差 −1.4%～+4.9%、奇数小时 +9%；坑：`-lm` 顺序、scipy.pi、25 图 IndexError、追加写、≥2025 geomag70 死循环（换 IGRF-14）、±180° 经度 0/IndexError |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -539,6 +541,8 @@
 | ROS1 Noetic 里读 UM982/UM980 **二进制 BESTNAVXYZB** 发 ECEF `Odometry`（unicore-driver；无 ENU、`child_frame_id` 是解类型串、不滤 INSUFFICIENT_OBS、断线不重连，接 EKF 前自己转 ENU 并加看门狗） | [unicore-driver.md](./unicore-driver.md) |
 | 测高仪描迹虚高 h′(f) → 真高剖面、foF2/hmF2（经典 POLAN Fortran；固定列宽输入、结果写当前目录 out.dat，`-1` 结尾时末条 PEAK 是 E 层） | [polan.md](./polan.md) |
 | 理解 ISR（EISCAT/AMISR）谱：给 Ne/Te/Ti/离子质量算理论离子线，看 Te/Ti 怎么改变双峰（inscar；质量传 kg、离子 Ne 也要设；不读实测） | [inscar.md](./inscar.md) |
+| 热层中性风（经向/纬向，m/s）平静 vs 磁暴扰动，估算风把 F 层推高/压低多少（HWM14 Fortran 库；`HWMPATH` 必设，平静要 `ap(2)<0`；HWM93 对照） | [hwm14.md](./hwm14.md) |
+| 复现老论文的射电视线电离层 RM（ionFR：IGRF13+2 h IONEX；Py3 需 3 处补丁、1 h GIM 须先抽 2 h；新项目用 spinifex） | [ionfr.md](./ionfr.md) |
 
 ---
 
@@ -578,6 +582,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
+最近新增（用法讲解）：**hwm14**+**ionfr**（[hwm14.md](./hwm14.md) / [ionfr.md](./ionfr.md)；2026-09-26 06:22–06:32 EDT；hwm14 `1f289bf`/Apache-2.0：gfortran 14.2 + CMake ctest 2/2，45°N 0°E DOY132 00 UT 300 km 经向(+北)/纬向(+东) 平静 −67.92/−28.45 m/s、ap=80 −104.34/−171.82 m/s（DWM07 −36.42/−143.38），IGRF13 倾角 60°10′ 换算上推 29.31→45.03 m/s；hwm93 pip 失败（numpy.distutils）、Fortran ctest 2/2；ionFR `4fe4f12`/GPL-3.0：`-lm`+2 处 scipy 补丁，仓内 2011 测试 TEC 列相同、B/RM 不同（最大差 0.531 rad m⁻²），AIUB CODE 抽 2 h，B0329+54@LOFAR 平静/暴日日均 RM 1.4806/0.9479 rad m⁻²，对 spinifex 2.0 偶数小时差 ≤4.9%；IGRF-14 替换后 2026-09-07 可跑；南半球符号未验证；交叉 pymsis/iri2020/sami2py/gitm/pyglow/spinifex）。
 最近新增（用法讲解）：**unicore-driver**（[unicore-driver.md](./unicore-driver.md)；2026-09-26 06:20–06:32 EDT；main `240ae7d`/无 tag/GPL-3.0/★11；无 ROS：最小桩原样编译 4 源文件；socat 回放真实 UM980 BESTNAVXYZB 32 帧（satpulse MIT）+ 合成（源自 JHua07 all.log 真实观测值）622 帧，发布 32/32、622/622；自写 struct+zlib CRC 解析逐字段 ≤4.85×10⁻⁵ m，pyproj 对同历元 BESTNAVA/GGA ≤1.4×10⁻⁴ m；stamp 早 DelayMs 16–20 ms；错误用例：坏 CRC 有提示、截断/长度 300 静默多丢、长度 65535 堆溢出 SIGSEGV、断线静默停读、INSUFFICIENT_OBS 照发、空输入静默；下一优先 sparkfun-unicore-gnss（新候选），go-gnss-spartn 留候选（2020 起未维护））。
 最近新增（用法讲解）：**inscar**+**polan**（[inscar.md](./inscar.md) / [polan.md](./polan.md)；2026-09-26 06:14–06:20 EDT；inscar 3.3.2/`eedbe1e`/MIT：933 MHz、Ne 3e11 m⁻³、Ti 1000 K、O⁺，Te/Ti=1/2/3 肩峰 6.14/9.26/10.84 kHz、肩/谷 1.13/1.78/2.77、总功率比 0.657/0.489 vs 理论 0.667/0.5；POLAN `23c0056`/MIT：CMake ctest 过，27 电离图 out.dat 与仓内逐行一致，1A 6.999 MHz/299.7 km；交叉 madrigal/giro-ionosonde/digisondeindices/ionosonde-data-downloader/pyrayhf/iri2020）。
 最近新增（用法讲解）：**um980-rtklib-pipeline**（[um980-rtklib-pipeline.md](./um980-rtklib-pipeline.md)；2026-09-26 06:06–06:18 EDT；main `25d9546`/无 tag/不在 PyPI/GPL-3.0/★1；JHua07 公开 UM98x `rover.log`/`all.log`：NMEA 624/624 逐句一致，all.log RMC 全 `D` → `all.nmea` 0 行；RINEX 对 OBSVMA 自写解析+georinex 45880/45880、|ΔL|≤0.0005 周；OBSVBASEA 改名重算 CRC 作基准站（3.20 km）+ BKG BRDC，RTKLIB-EX 2.5.1 + onepass conf 18.5 s Q1 585/622，对 GGA 固定水平中位 26.1 mm、dU +132 mm；无 conf 生成参数错固定、Debian 2.4.3 0 解；坑：native 折行 RINEX、LLI 恒 0、`-r` 被覆盖、0 解/周翻转 exit 0；下一优先 unicore-driver（新候选），go-gnss-spartn 留候选（2020 起未维护））。
@@ -772,6 +777,7 @@ data-access
    ├─ ionex-rs (Rust IONEX 读写)
    ├─ diffionmap (两幅 IONEX 并排 VS)
    ├─ spinifex (GIM+IGRF→射电视线 TEC/RM；RMextract 后继)
+   ├─ ionfr (IGRF13+2 h IONEX→射电视线 RM；Py2 遗留须补丁；≥2025 换 IGRF-14)
    ├─ mosgim2 (相位差球谐 GIM 自建；tec-suite→HDF5；对照 CODE)
    ├─ cddis-highrate-downloader (CDDIS high-rate 15 min)
    ├─ geospacelab (OMNI/指数/Madrigal TEC 产品图)
@@ -805,6 +811,7 @@ data-access
    ├─ kamodo (CCMC 模式场函数化；SWMF_IE)
    ├─ msise00 (NRLMSISE-00 中性大气)
    ├─ pymsis (NRLMSIS 2.1/2.0/00；CelesTrak 指数；O/N₂ 暴时负相)
+   ├─ hwm14 (NRL HWM14 中性风 m/s；+北/+东；DWM07 扰动；Fortran 库；对照 hwm93)
    ├─ gps-measurement-tools (GnssLogger 采集；→ android_rinex)
    ├─ gnss-sdr (IQ/IF→PVT；仿真/前端；≠ RINEX PPP)
    ├─ pocketsdr (Pocket FE / 捕获跟踪；对照 gnss-sdr)
@@ -855,8 +862,8 @@ saga-utils：高速 I/Q 闪烁算法旁路（源码参考；S4 为幅度版≈�
 | 教程 | 优先手册 |
 | --- | --- |
 | 02 / 16 | georinex · rinex · gnsspy · gnsstools · gnsstk · teqc · rinexmod · hatanaka · crx2rnx · rinex-cli · gnss-tec · pytecgg · tec-suite · ionotec |
-| 03 / 10 / 18 | ionex · ionex-gim · ionex-rs · diffionmap · sh-gim(边界) · pyglow · mosgim2 · spinifex |
-| 04 | iri-fortran · iri-2026-package · iri-common-files · iri2016 · iri2020 · pyglow · pyiri · pyirtam · apexpy · aacgmv2 · msise00 · pymsis · nequickg · galileo-nequick-g · nequick2-ictp · kamodo · iricore · ntcmg · pysatspaceweather |
+| 03 / 10 / 18 | ionex · ionex-gim · ionex-rs · diffionmap · sh-gim(边界) · pyglow · mosgim2 · spinifex · ionfr |
+| 04 | iri-fortran · iri-2026-package · iri-common-files · iri2016 · iri2020 · pyglow · pyiri · pyirtam · apexpy · aacgmv2 · msise00 · pymsis · nequickg · galileo-nequick-g · nequick2-ictp · kamodo · iricore · ntcmg · pysatspaceweather · hwm14 |
 | 05 / 13 / 21 | oasis-roti · ionomoni · iono-scintillation · saga-utils · geospacelab · sami2py · lompe · ocbpy |
 | 07 | giro-ionosonde · digisondeindices · ionosonde-data-downloader · polan · pyrayhf · madrigal · inscar |
 | 22 | gnss-tec · pytecgg · oasis-roti · lstid-processing · hamsci-lstid-detection · pyrayhf · darntids · tidd |
