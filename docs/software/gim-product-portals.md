@@ -2,6 +2,8 @@
 
 入口：[CODE/AIUB](https://download.aiub.unibe.ch/CODE/) · [CAS 汇总镜像](https://data.bdsmart.cn/pub/product/iono/ionex/) · [UPC TOMION](https://chapman.upc.es/tomion/) · [ESA Navigation Office](http://navigation-office.esa.int/products/gnss-products/) · [JPL sideshow iono_daily](https://sideshow.jpl.nasa.gov/pub/iono_daily/) · [CDDIS ionex（需 Earthdata）](https://cddis.nasa.gov/archive/gnss/products/ionex/) · 本机验证 **2026-09-26 05:00–05:10 EDT**（全部匿名 curl，无注册、无表单）
 
+> **质检复跑通过（2026-09-26 06:03–06:06 EDT）**：`probe.sh` 第 1–5、7 段与原文逐字一致，包括 md5、字节数、ESA 两版不同（300/275 站）、CODE 旧名 404、FIN 264 200 / 265 404、CAS 镜像 264 列表。第 6 段 UPC 实时文件随时间变化（这次 `usrg2690.09.75` 在 11:49 CEST 上架，即 09:49 UTC），JPL README 与原文一致（JPLR 也写了 “2 TECU Bias added”）。`dl.sh` 8 个文件全 200，字节数一致；`cmp.py`（/usr/bin/python3，numpy 2.2.4）输出与原文**逐字相同**。唯一更正：EMR 缺测是 165 个，不是 91 个。
+>
 > 岗位：回答“某天某中心的 GIM 去哪匿名拿、叫什么名字、出来要等多久、各家差多少”。**只管门户这一侧**：读 IONEX 的 Python API 见 [ionex-gim](./ionex-gim.md)（同包 [ionex](./ionex.md)、Rust 版 [ionex-rs](./ionex-rs.md)）；自建 GIM 见 [sh-gim](./sh-gim.md)、[mosgim2](./mosgim2.md)；单站 TEC 见 [pytecgg](./pytecgg.md)；近实时 TEC 产品另见 [realtime-iono-products](./realtime-iono-products.md)。本文不重复这些。
 >
 > 门槛总表：[电离层与地磁门户决策表](../data-access.md#电离层与地磁门户决策表) · 本文命令块 [E27](../data-access.md#dp-e27)
@@ -310,7 +312,7 @@ UT | CAS | EMR | ESA | ESA(nav-office) | IGS | JPL | UPC | WHU
 | CAS | −2.17 | 6.71 | 30 min 产品，25 个公共历元 |
 | UPC | −0.61 | 7.54 | |
 | ESA | −2.67 | 8.88 | Navigation Office 重处理版 −2.78 / 9.05，与镜像版几乎一样 |
-| EMR | −3.82 | 15.77 | 最大；UT 00 时 RMS 21.6；文件含 91 个 9999 缺测 |
+| EMR | −3.82 | 15.77 | 最大；UT 00 时 RMS 21.6；TEC 图里有 165 个 9999 缺测（25 张图中的 17 张；129575 − 129410 = 165，与格点对数一致） |
 
 各中心差异随 UT 变化：多数中心 05-11 00 UT 最大、20 UT 附近最小（JPL 最小在 05-12 00 UT，UPC 在 05-12 00 UT 反弹到 11.64；见逐 UT 表）。这只是一天、一个强磁暴日的结果，**不能当作各中心常规精度排名**。
 
@@ -378,7 +380,7 @@ UT | CAS | EMR | ESA | ESA(nav-office) | IGS | JPL | UPC | WHU
 | 5 | 时延算错几小时 | 列表时区不同：UPC 是 CEST（列表 11:04 = 09:04 UTC）、JPL sideshow 是美西时间（JPLR 23:58 ↔ 镜像 06:58）、S3 是 UTC | 先确认时区再减 |
 | 6 | 1 h 与 2 h 产品直接逐图相减错位 | 采样 30M/01H/02H/15M 不同 | 只取公共历元；插值会额外引入误差（RMS 4.48 → 6.32） |
 | 7 | 均差符号 / 大小随口径变 | 等经纬网高纬格点过密 | 标明是否 cos(纬度) 加权（EMR 不加权 −2.34，加权 −3.82） |
-| 8 | 统计里混进离谱值 | EMR 文件有 9999 缺测（本日 91 个） | 9999 → NaN 再统计 |
+| 8 | 统计里混进离谱值 | EMR 文件有 9999 缺测（本日 TEC 图里 165 个） | 9999 → NaN 再统计 |
 | 9 | TEC 值读成 RMS | IONEX 在 TEC 图后接 RMS 图，块结构一样 | 解析到 `START OF RMS MAP` 停，或按块类型分开 |
 | 10 | JPL 系统性偏高 | README 写 JPLG/JPLH/JPLR/JPLQ “2 TECU bias added” | 对比时注明；不要当作物理差异 |
 | 11 | CDDIS 返回 HTML 登录页 | 需 Earthdata 账号 | 匿名场景用 CAS 镜像 / 源站 |

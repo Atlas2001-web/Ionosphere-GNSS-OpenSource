@@ -3,6 +3,8 @@
 入口：[NCN API](https://geodesy.noaa.gov/web_services/ncn-api.shtml) · [NODD S3 桶 `noaa-cors-pds`](https://noaa-cors-pds.s3.amazonaws.com/index.html) · [corsdata 目录树](https://geodesy.noaa.gov/corsdata/) · [UFCORS](https://geodesy.noaa.gov/UFCORS/) · 目录条目 `NOAA-NCN-API` / `NOAA-CORS-AWS` / `NOAA-CORS-Data-Tree` / `NOAA-UFCORS`（均 portal-terms，official）。
 本机验证 **2026-09-26 05:21–05:40 EDT**。只用 curl、gzip 和系统 Python 3 标准库，没有 aws CLI，也不需要账号。样例站 **P041**（Boulder，EarthScope 转入）和 **1LSU**（NGS 自营）。
 
+> **质检复跑通过（2026-09-26 06:02–06:05 EDT）**：§3.1–3.5、§3.7–3.9 的实测值全部复现：1LSU/P041 API 坐标、ncors 9 站及其距离、S3 列表三个键和 Size、S3/corsdata md5 相同（0.13 s / 1.04 s）、2880 历元、SUM 行、coord ITRF2020/NAD83、UFCORS zip（这次 297652 B，原文 297651）、`ncn_get.py` 输出、坑 1/2/6/7/8 的报错与 24737011 B。唯一更正在 §3.6 和坑 3：P041 2026-267/268 的日文件其实早已上桶（09-25 11:16Z / 09-26 03:16Z）；262 的日文件是日终后约 11 h 上桶，不是 1.5 天。原文“72 个小时文件”实为 69 个小时文件 + 3 个日文件。
+>
 > 岗位：给 TEC/ROTI、PPP 和 CORS 基线**拿美国 CORS 的 RINEX 和站坐标**。  
 > 本文**不讲** IGS 全球站镜像（见 [gnss-obs-mirrors](./gnss-obs-mirrors.md)）、CDDIS 高频（见 [cddis-highrate-downloader](./cddis-highrate-downloader.md)）和 GUI 下载器（见 [gdds](./gdds.md)）。
 
@@ -117,7 +119,7 @@ curl -s "$B/?list-type=2&prefix=rinex/2026/269/1lsu/" | grep -o '1lsu269i[^<]*</
 | 1LSU 小时文件 `268a` | 2026-09-25 01:15Z（整点后约 15 min） |
 | 1LSU 日文件 `2680` | 2026-09-26 05:15Z（日终后约 5 h） |
 | `brdc2680.26n.gz` | 2026-09-26 04:45Z |
-| P041（EarthScope 转入）2026-267/268 | 只有 72 个小时文件，**还没有日文件**；2026-262 的日文件在 09-20 11:16Z 才上桶（约 1.5 天） |
+| P041（EarthScope 转入）日文件 | 262（09-19）在 09-20 11:16Z 上桶，267（09-24）在 09-25 11:16Z，268（09-25）在 09-26 03:16Z，即日终后约 **3–11 h**。每天目录共 72 个键：69 个小时文件（缺 `x` = 23–24 UT）+ 3 个日文件（`.S/.d.gz/.o.gz`） |
 
 corsdata 目录页显示的时间是**美东时间**（`1lsu2680` 显示 00:46，即 04:46Z），比 S3 早 2–30 分钟。
 
@@ -205,7 +207,7 @@ MISSING rinex/2026/262/zzzz/zzzz2620.26d.gz
 
 1. **站名必须小写**：`rinex/2026/262/P041/p0412620.26d.gz` 返回 **404**，S3 键区分大小写。API 不区分大小写。
 2. **S3 列表 XML 在 2026 年多了字段**：新对象在 `<ETag>` 和 `<Size>` 之间有 `<ChecksumAlgorithm>CRC64NVME</ChecksumAlgorithm><ChecksumType>`。按「Key…LastModified…ETag…Size 紧邻」写的正则对 2024 年的目录能用，对 2026 年的目录会**静默返回 0 个文件**，看上去像当天没数据。应该按 `<Contents>` 块逐个解析。
-3. **日文件还没出 ≠ 没数据**：EarthScope 转入站（P041 等）日文件要约 1.5 天才上桶，这之前只有 24 个小时文件；NGS 自营站约 5 h。
+3. **日文件还没出 ≠ 没数据**：EarthScope 转入站（P041 等）日文件在日终后约 3–11 h 上桶（2026-262/267/268 实测）；NGS 自营站约 5 h。在这之前只能拿小时文件。P041 的小时文件缺最后一小时 `x`，所以数小时文件时，满天是 23 个而不是 24 个。
 4. **corsdata 可能缺 .o.gz**：2024-001 的 P041 在 corsdata 上只有 `.24S` 和 `.24d.gz`，S3 上却多一个 `.24o.gz`（2024-02-03 补上）。以 S3 列表为准。
 5. **API 坐标是 NAD 83(2011) @2010.0**（§3.7），不能当 ITRF 真值用。
 6. **ncors 参数不合法时返回 HTML 500**：`x=0&y=0&z=0` 返回 Tomcat 500（`IllegalArgumentException: NaN`）；站名不存在时返回 `200 []`；缺 `id` 时返回 `200 {"error":"missing CORS ID value"}`。三种情况都要处理。
