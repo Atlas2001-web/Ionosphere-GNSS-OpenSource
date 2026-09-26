@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **169 篇**操作手册（合计 **37286 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **171 篇**操作手册（合计 **37734 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -194,6 +194,8 @@
 | 167 | [lstid-processing.md](./lstid-processing.md) | NRL LSTID 论文复现包：C/NOFS CINDI 带通+阈值识别 TID、SAMI3 磁力线扰动极值+线性拟合（**不含 GNSS TEC**） | 251 | **已短硬** · 2026-09-26 01:18–01:32 EDT；PyPI **0.0.2**/tip **`80b576d`**/MIT/★0；Py3.13 须 `numpy<2.3`+`pandas<3`+pysat `data_dirs`；NRL SAMI3 文件 32–74 GB → HTTP Range 抽 DMSP 线（nl=26,nf=58）**3332761 B**/390 s；复算 `rel_dene_d` 差 **6.9e-14**；Fig.13 流程 Δu∥ 9 条拟合 r −0.85…−0.98 ≈ **600–830 m/s 向赤道**；CINDI 2014-03-26 **71156** 行→`identify_tid` **9** 事件（02:11–02:53 含会合 02:49:59）；`clean_level='none'` ΔNi/Ni>1 **283** 行 |
 | 168 | [hamsci-lstid-detection.md](./hamsci-lstid-detection.md) | HamSCI：Madrigal 业余无线电 spot（RBN/PSK/WSPR）距离–时间热图下沿（跳距）→ 去趋势 → 1–4.5 h 正弦拟合出 LSTID 周期/振幅 | 199 | **已短硬** · 2026-09-26 01:19–01:32 EDT；tip **`8c43cd2`**/MIT/★7/无 PyPI；uv Py3.11 钉版；pytest **52 passed**；合成 01 日 T=**2.55 h**/A=**271 km**/R²=**0.91**、02 日 A=**1.1 km**/R²=**0.30**；真实 `rsd2019-12-01` **782215264 B**/**19187799** 行（Madrigal 免账号）→ Global n_spots **3171570**、CONUS **1458869**，窗口仅 1.7–1.8 h、T≈1.3 h → **不宣称检测到**；窗口写死 12–24/13–23 UTC |
 | 169 | [micropygps.md](./micropygps.md) | inmcm 纯 Python / MicroPython 逐字符 NMEA 0183 解析器（单文件；GP/GL + GN 定位句 17 个句头；≠ 定位解算器/串口驱动；不编码） | 235 | **已短硬** · 2026-09-26 01:34–01:40 EDT；master **`f6c2b76`**（2022-01-06）/MIT/★**391**/无 PyPI；CPython 3.13.5 + MicroPython 1.25.0 unix 一致；gpsd F9P/AIS/F9T 逐字节喂入，GGA 29/29·164/164·9/9 = pynmeagps 1.1.7，GSV 组全同无假星，`$GA`/`$GB`/GST/GBS/ZDA 不解析；UBX 混流 0 异常；短字段句抛 `IndexError`；卫星表/`hdop` 只留最后一句 |
+| 170 | [qzsl6tool.md](./qzsl6tool.md) | QZSS L6（CLAS / MADOCA-PPP）+ HAS/B2b/L1S/RTCM 电文**逐帧解码查看**、转 RTCM 4073/4050（stdin→stdout 管道；不定位） | 257 | **已短硬** · 2026-09-26 01:37–01:46 EDT；PyPI **0.1.11**/tip **`60a5b93`**/BSD-2-Clause/★35；`test/do_test.sh` **47 Passed/0 Failed**（`lv` 分页器改 `head`）；官方归档 2026-09-17 CLAS 前 300 帧（HTTP Range 75000 B）→ 300 行 PRN195 Kobe、`-s` n_sat **18**/n_sig **54**、ST12 STEC 网格（NID=12 G05 c00=**23.150** TECU）；MADOCA-PPP 电离层 1 h **3600** 帧 → MT1 Region1/3/4、Region3（菲律宾）Area2 19 星 c00 时序图；Allystar→L6→RTCM 4073 **62** 条；坑：`.alst` 直喂乱 PRN、E6B 喂 L6 静默 0 行、归档 403 HTML 需 `curl -f`、MADOCA 默认级仅 `(null)`、MT2 小时回绕 |
+| 171 | [saga-utils.md](./saga-utils.md) | SAGA 阵列 / CASES 高速 I/Q 闪烁处理（去趋势、滑窗 S4/σφ、阵列漂移；MATLAB 研究组流水线源码参考） | 191 | **已短硬** · **环境受限**（原始数据门户超时、仓内无样例/解包脚本；无 MATLAB 用 Octave 9.4.0）· 2026-09-26 01:40–01:50 EDT；tip **`94c7cdd`**（2018，1 commit）/GPL-3.0/★10；`main(2015,76,1)` 经 `init`/`ver_chk` 垫片跑到 `/data1/public/...` 无数据退出；**合成**（已标注）验证上游滤波：σφ **0.5027** vs 真值 0.5003，`slidingS4SigmaPHI` “S4” **0.1487** = std(A)/mean(A) ≈ 强度 S4 **0.2932** 的一半；Zenodo 6621888 真实 SAGA 30 s 相位 σφ **0.964/1.006/1.999** rad；样例驱动参数错位 `Unknown signal.` |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -323,6 +325,7 @@
 | GSI 异机种 IFB/ISB 基线（Win GUI） | [gsilib.md](./gsilib.md) |
 | QZSS MADOCA-PPP 官方参考 | [madocalib.md](./madocalib.md) |
 | QZSS CLAS Compact SSR→OSR/VRS/PPP-RTK | [claslib.md](./claslib.md) |
+| 看 QZSS L6（CLAS/MADOCA）/ HAS / B2b 电文里播了啥（逐帧、STEC 多项式；不定位） | [qzsl6tool.md](./qzsl6tool.md) |
 | 北斗 PPP-B2b（嵌 RTKLIB） | [b2blib.md](./b2blib.md) |
 | BNC 内 SBF→PPP-B2b 实时改正接口 | [rtppp-b2b.md](./rtppp-b2b.md) |
 | Sept/Unicore 流 → B2b/HAS 日志+SSR/SP3 | [navdecoder.md](./navdecoder.md) |
@@ -367,6 +370,7 @@
 | u-blox F9/X20P 实时 ROS 2（USB UBX；Aussie Robots） | [ublox-dgnss.md](./ublox-dgnss.md) |
 | u-blox ZED-F9P 实时 ROS 1（港科大；gnss_comm/GVINS） | [ublox-driver.md](./ublox-driver.md) |
 | 闪烁仿真（MATLAB） | [iono-scintillation.md](./iono-scintillation.md) |
+| 高速 I/Q 闪烁（S4/σφ 去趋势算法、阵列漂移；SAGA/CASES，需自备原始数据） | [saga-utils.md](./saga-utils.md) |
 | LSTID：卫星原位（C/NOFS）/ SAMI3 模式扰动极值（NRL 论文复现） | [lstid-processing.md](./lstid-processing.md) |
 | LSTID：业余无线电 HF spot 跳距边缘正弦拟合（Madrigal 免账号） | [hamsci-lstid-detection.md](./hamsci-lstid-detection.md) |
 
@@ -408,6 +412,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
+最近新增（用法讲解）：**qzsl6tool**（[qzsl6tool.md](./qzsl6tool.md)；2026-09-26 01:37–01:46 EDT；PyPI 0.1.11/`60a5b93`/BSD-2；上游回归 47/47；官方归档 CLAS 300 帧 + MADOCA-PPP 电离层 1 h 真解码，Region3 Area2 c00 图 [img/](./img/)；链 claslib/madocalib/cssrlib/haslib）+ **saga-utils**（[saga-utils.md](./saga-utils.md)；`94c7cdd`/GPL-3.0；Octave 垫片跑 `main` 至无数据；合成验证 σφ 正确、`slidingS4SigmaPHI` S4≈强度 S4/2；Zenodo 真实 SAGA 相位 σφ 0.96–2.0 rad；原始数据门户超时，未跑原始 CASES 日）。
 最近新增（用法讲解）：**micropyGPS**（[micropygps.md](./micropygps.md)；2026-09-26 01:34–01:40 EDT；master **`f6c2b76`**/MIT/★**391**/无 PyPI；CPython 3.13.5 + MicroPython 1.25.0 unix；与 nmea-parser/nmea-rs 同批 gpsd 日志：F9P clean 1015/parsed 580，GGA 与 pynmeagps 全同、无假星，但 `$GA`/`$GB` GSV 不认；UBX 混流 0 异常；三库对照表；短字段句 `IndexError`、`local_offset` 不进位日期、dms 秒取整约 8.6 m）。
 最近新增（用法讲解）：**lstid-processing**+**hamsci-lstid-detection**（2026-09-26 01:18–01:32 EDT；NRL `80b576d`/PyPI 0.0.2/MIT：SAMI3 74 GB 文件 HTTP Range 抽 DMSP 磁力线 3.3 MB，复算 rel_dene_d 差 6.9e-14，Fig.13 Δu∥ 拟合 ≈600–830 m/s 向赤道；CINDI 2014-03-26 identify_tid 9 事件；坑 numpy≥2.3/pandas3/pysat data_dirs；HamSCI `8c43cd2`/MIT：pytest 52 passed，合成 LSTID 日 T=2.55 h/A=271 km，真实 Madrigal 2019-12-01 19187799 行跑通但窗口 1.7 h 不宣称检测；图 [img/](./img/)）。
 最近新增（用法讲解）：**nmea**（AeroRust，[nmea-rs.md](./nmea-rs.md)；2026-09-26 01:26–01:33 EDT；crates **0.8.0**/vcs **`7ab1334`**/Apache-2.0/★**110**/MSRV **1.87.0**；rustc **1.98.1**；纯库；与 nmea-parser 同批 gpsd 日志逐类 = pynmeagps 1.1.7（GBS 解析失败），RMC/GGA/ZDA 442 行逐字段同，GSV 无假星；有状态 `parse_for_fix` 29 历元 29 次 `Ok(Gps)`；`satellites()` 多信号 C/N₀ 被覆盖、合成坏 GSV 可致 panic；不能编码；[nmea-parser](./nmea-parser.md) 易混表改链到本篇）。
@@ -607,9 +612,10 @@ data-access
    ├─ ublox_driver (ROS1 ZED-F9P；gnss_comm/GVINS；无 ROS 门禁)
    ├─ glab-upc (教学 SPP/PPP；官方 UPC gLAB)
    ├─ ntripbrowser / cors-relay / ntripcaster-libev / ntrip-cpp / ntrip-go / caster / ntripclient / ntripserver / pygnssutils / ntripstreams / ntrip-client / bnc / bkg-ntripcaster (路径 C)
-   └─ cssrlib / claslib / b2blib / rtklib-b2b / rtppp-b2b / haslib / madocalib / laika / rtklib / rtklib-explorer / rtklib-py / pyrtklib / pyrtklib-demo5 / pyrtklib-rinex / ppp-rtklib / learning-rtklib / gnss-correction-rtklib / mrtklib / great-pvt / great-pce / great-podflt / cube / clkcomb / groops / rapppid / ppp-wizard / gogps-matlab / gsilib / pride-pppar (路径 D)
+   └─ cssrlib / claslib / qzsl6tool / b2blib / rtklib-b2b / rtppp-b2b / haslib / madocalib / laika / rtklib / rtklib-explorer / rtklib-py / pyrtklib / pyrtklib-demo5 / pyrtklib-rinex / ppp-rtklib / learning-rtklib / gnss-correction-rtklib / mrtklib / great-pvt / great-pce / great-podflt / cube / clkcomb / groops / rapppid / ppp-wizard / gogps-matlab / gsilib / pride-pppar (路径 D)
 sh-gim：仅路径 E 边界，不串进 A/B 主链
 iono-scintillation：概念/仿真旁路，不替代实测 ROTI
+saga-utils：高速 I/Q 闪烁算法旁路（源码参考；S4 为幅度版≈强度 S4/2）
 ```
 
 ---
@@ -621,9 +627,9 @@ iono-scintillation：概念/仿真旁路，不替代实测 ROTI
 | 02 / 16 | georinex · rinex · gnsspy · gnsstools · gnsstk · teqc · rinexmod · hatanaka · crx2rnx · rinex-cli · gnss-tec · pytecgg |
 | 03 / 10 / 18 | ionex · ionex-gim · ionex-rs · diffionmap · sh-gim(边界) · pyglow |
 | 04 | iri-fortran · iri-2026-package · iri-common-files · iri2016 · pyglow · pyiri · pyirtam · apexpy · aacgmv2 · msise00 · nequickg · galileo-nequick-g · nequick2-ictp · kamodo |
-| 05 / 13 / 21 | oasis-roti · ionomoni · iono-scintillation · geospacelab |
+| 05 / 13 / 21 | oasis-roti · ionomoni · iono-scintillation · saga-utils · geospacelab |
 | 22 | gnss-tec · pytecgg · oasis-roti · lstid-processing · hamsci-lstid-detection |
-| 06 / 20 | cssrlib · haslib · madocalib · laika · gnss_lib_py · pyrtklib · pyrtklib-demo5 · pyrtklib-rinex · ppp-rtklib · learning-rtklib · mrtklib · rtklib-explorer · rtklib-b2b · android_rinex · gps-measurement-tools · pygpsclient · pynmeagps · pyubx2 · ubx2rinex · pyrtcm · pyspartn · pysbf2 · septentrio-gnss-driver · ublox-dgnss · ublox-driver · ntripstreams · ntrip-client · ntripclient · ntripserver · cors-relay · ntripcaster-libev · ntrip-cpp · ntrip-go · caster · glab-upc · rtklib · great-pvt · groops · rapppid · ppp-wizard · gogps-matlab · gsilib · rtppp-b2b · pride-pppar · ionomoni · gnss-sdr · pocketsdr · gps-sdr-sim · fgi-gsrx · gnssrefl · mpsim |
+| 06 / 20 | cssrlib · haslib · madocalib · qzsl6tool · laika · gnss_lib_py · pyrtklib · pyrtklib-demo5 · pyrtklib-rinex · ppp-rtklib · learning-rtklib · mrtklib · rtklib-explorer · rtklib-b2b · android_rinex · gps-measurement-tools · pygpsclient · pynmeagps · pyubx2 · ubx2rinex · pyrtcm · pyspartn · pysbf2 · septentrio-gnss-driver · ublox-dgnss · ublox-driver · ntripstreams · ntrip-client · ntripclient · ntripserver · cors-relay · ntripcaster-libev · ntrip-cpp · ntrip-go · caster · glab-upc · rtklib · great-pvt · groops · rapppid · ppp-wizard · gogps-matlab · gsilib · rtppp-b2b · pride-pppar · ionomoni · gnss-sdr · pocketsdr · gps-sdr-sim · fgi-gsrx · gnssrefl · mpsim |
 | 09 | pytecgg |
 
 ---
