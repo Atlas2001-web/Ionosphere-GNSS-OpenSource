@@ -220,7 +220,7 @@
 
 | 路径 | 去哪 |
 |---|---|
-| 列表（软件） | [`lists/01-ionosphere.md`](../../lists/01-ionosphere.md)：`Autoscala-INGV`、`SAO-Explorer`、`POLAN`、`ROM-SAF-ROPP`、`cosmic-crunch`… |
+| 列表（软件） | [`lists/01-ionosphere.md`](../../lists/01-ionosphere.md)：`Autoscala-INGV`、`SAO-Explorer`、`POLAN`…；掩星处理 `ROM-SAF-ROPP` 在 [`02`](../../lists/02-troposphere.md)、`cosmic-crunch` 在 [`03`](../../lists/03-gnss-data.md) |
 | 列表（数据） | [`lists/10-gnss-datasets.md`](../../lists/10-gnss-datasets.md)：`GIRO-DIDBase`、`COSMIC-CDAAC`… |
 | 动手短文索引 | [`docs/software/README.md`](../software/README.md)（测高/掩星以列表上游为准；通用读数见 [`georinex`](../software/georinex.md)） |
 

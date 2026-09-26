@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> **302** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **301** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -2237,21 +2237,6 @@ irimodel.org 上 IRI-2020 的文件目录，可直接获取 00_iri.zip/tar、许
 语言：Fortran · 许可：scientific distribution (request) · 星标约：— · 宿主：official_site
 
 阿卜杜斯·萨拉姆国际理论物理中心 T/ICT4D 发布的 NeQuick 2 气候态电子密度模型，含 ITU 系数与太阳活动/modip 文件。面向穿电离层传播与 TEC 积分研究。源码需向维护者邮件申请；若做 Galileo 单频接收机改正，请改用 GSC 的 NeQuick G 官方实现以免版本混淆。
-
-## GNSS掩星处理
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [ROM-SAF-ROPP](https://rom-saf.eumetsat.int/ropp/) | ROM-SAF-ROPP：掩星处理包（电离层改正与 Abel 反演） | Fortran | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [ROM-SAF-ROPP](https://rom-saf.eumetsat.int/ropp/)  
-*🏷️ 官方*
-
-语言：Fortran · 许可：ROM SAF scientific (registration) · 星标约：— · 宿主：official_site
-
-EUMETSAT ROM SAF 维护的标准掩星处理套件，ropp_pp 等模块覆盖 excess phase→弯曲角、电离层改正与反演链路，是业务/科研里常见的开源可编译 Fortran 工具链。源码需登录 ROM SAF 账号下载（当前公开页指向 ROPP-12.0）。适合认真做 RO 预处理的人；只想快速读 COSMIC NetCDF 剖面，不必一上来就装整包。
 
 ## 物理模式
 

@@ -662,7 +662,7 @@ ROS 包用于连接 NTRIP caster、接收 RTCM，并服务于 u-blox ZED-F9P 一
 | [ublox-ros](https://github.com/KumarRobotics/ublox) | ublox-ros：KumarRobotics ROS1 经典 u-blox GPS 驱动 | C++ | 537 | 🏷️ 高校实验室 |
 | [novatel_gps_driver](https://github.com/swri-robotics/novatel_gps_driver) | novatel_gps_driver：SWRI 社区 NovAtel GNSS ROS 驱动（BSD-3） | C++ | 175 | 🏷️ 个人社区 |
 | [novatel_oem7_driver](https://github.com/novatel/novatel_oem7_driver) | novatel_oem7_driver：NovAtel OEM7/SPAN 官方 ROS 驱动（MIT） | C++ | 123 | 🏷️ 个人社区 |
-| [UnicoreDriver](https://github.com/zltan-whu/unicoredriver) | 基于官方协议实现的和芯星通 UM982/UM980 ROS 驱动（C++） | C++ | 11 | 🏷️ 个人社区 |
+| [UnicoreDriver](https://github.com/zltan-whu/UnicoreDriver) | 基于官方协议实现的和芯星通 UM982/UM980 ROS 驱动（C++） | C++ | 11 | 🏷️ 个人社区 |
 | [trimble_driver_ros](https://github.com/trimble-oss/trimble_driver_ros) | Trimble 官方开源 ROS/ROS 2 驱动：解析 GSOF 输出并发布标准与自定义话题 | C++ | 10 | 🏷️ 官方 |
 
 ### 详细说明
@@ -688,7 +688,7 @@ Southwest Research Institute 维护的 NovAtel GPS/GNSS ROS 驱动，BSD-3-Claus
 
 Hexagon/NovAtel 维护的 OEM7 系列 GNSS/SPAN 官方 ROS 驱动，MIT 许可，支持定位、原始观测与惯导相关话题发布。面向车载/机器人集成，而非测地后处理套件。消息定义与固件版本需匹配；多天线/SPAN 配置依赖硬件与校准。与社区旧版 novatel_gps_driver 并存时注意选型。收录前已核验仓库可访问。
 
-#### [UnicoreDriver](https://github.com/zltan-whu/unicoredriver)  
+#### [UnicoreDriver](https://github.com/zltan-whu/UnicoreDriver)  
 *🏷️ 个人社区*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：11 · 宿主：github

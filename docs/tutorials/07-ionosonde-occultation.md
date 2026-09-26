@@ -644,7 +644,7 @@ $$
 | 离子图缩放 | `Autoscala-INGV`、`SAO-Explorer`、`POLAN` | `lists/01-ionosphere.md` |
 | GNSS TEC / GIM | `gnss-tec`、`pygnss-tec`、`ionex`、`CDDIS-IONEX` | `01` / `10` |
 | 掩星门户 | `COSMIC-CDAAC`、`COSMIC-GNSS-RO-Data` | `10` |
-| 掩星读取/处理 | `pysatCDAAC`、`cosmic-crunch`、`awsgnssroutils`、`ROM-SAF-ROPP` | `01` |
+| 掩星读取/处理 | `pysatCDAAC`、`cosmic-crunch`、`awsgnssroutils`、`ROM-SAF-ROPP` | `03` / `10` / `02` |
 | 掩星 TEC 研究脚本 | `CDAAC_COSMIC-TEC_Data-Research`、`COSMIC-IONPRF-Ne-TEC` | `01` |
 | 气候对照 | `IRI-Fortran`、`PyIRI`、`NeQuick2-ICTP` | `01` |
 

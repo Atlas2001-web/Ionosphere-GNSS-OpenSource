@@ -14,7 +14,7 @@
 | [positional](https://github.com/mtrewartha/positional) | positional：Android 位置与卫星信息简易 App | Kotlin | 61 | 🏷️ 个人社区 |
 | [GalileoHack](https://github.com/griush/GalileoHack) | GalileoHack：多星座 GNSS 可见性 Android 演示 App | Java | 34 | 🏷️ 个人社区 |
 | [PRIDE-GeoDataLogger](https://github.com/PrideLab/PRIDE-GeoDataLogger) | PRIDE-GeoDataLogger：手机多频 GNSS+IMU 采集工具 | — | 22 | 🏷️ 高校实验室 |
-| [BDS-RawScope](https://github.com/sinyl-labs/bds-rawscope) | 零依赖安卓 GNSS 原始观测分析 App：天空图、RINEX 导出与 WLS/RAIM/卡尔曼定位 | Java | 0 | 🏷️ 个人社区 |
+| [BDS-RawScope](https://github.com/sinyl-labs/BDS-RawScope) | 零依赖安卓 GNSS 原始观测分析 App：天空图、RINEX 导出与 WLS/RAIM/卡尔曼定位 | Java | 0 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -67,7 +67,7 @@ HackUPC 2024 ESA 挑战获奖的开源 Android GNSS Tracker，展示手机所见
 
 PRIDE 团队面向智能手机的多频 GNSS 与 IMU 采集工具，便于把手机原始测量送入后续 PPP 或科学研究流程。适合手机大地测量、城市峡谷与行人导航试验。手机天线相位中心与占空比限制明显；采集前应规划时间同步、姿态记录与导出格式，以便对接 PRIDE-PPPAR 或自研脚本。
 
-#### [BDS-RawScope](https://github.com/sinyl-labs/bds-rawscope)  
+#### [BDS-RawScope](https://github.com/sinyl-labs/BDS-RawScope)  
 *🏷️ 个人社区*
 
 语言：Java · 许可：MIT · 星标约：0 · 宿主：github
@@ -189,7 +189,7 @@ Cryologger Glacier Velocity Tracker 以 Arduino/MicroMod 与 SparkFun ZED-F9P �
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [gsdc2023](https://github.com/taroz/gsdc2023) | gsdc2023：手机十米级挑战 2023 解算代码 | MATLAB | 114 | 🏷️ 个人社区 |
-| [smartphone-gnss-booster](https://github.com/taroz/smartphone-gnss-booster) | Taro Suzuki 的开源硬件+App 方案：让普通安卓手机实现实时厘米级 RTK | C | 40 | 🏷️ 高校实验室 |
+| [smartphone-gnss-booster](https://github.com/taroz/Smartphone-GNSS-Booster) | Taro Suzuki 的开源硬件+App 方案：让普通安卓手机实现实时厘米级 RTK | C | 40 | 🏷️ 个人社区 |
 | [GNSS_MobileCalculator](https://github.com/RogerioDoCarmo/GNSS_MobileCalculator) | Android 原始伪距 SPS 示例 | Java | 15 | 🏷️ 个人社区 |
 | [androidGnss](https://github.com/AILocAR/androidGnss) | Android 原始 GNSS 伪距定位 MATLAB 代码 | MATLAB | 14 | 🏷️ 高校实验室 |
 | [google-gnss-logger](https://github.com/gscatto/google-gnss-logger) | google-gnss-logger：GNSS Logger 原始测量 Java 解析库 | Java | 8 | 🏷️ 个人社区 |
@@ -203,8 +203,8 @@ Cryologger Glacier Velocity Tracker 以 Arduino/MicroMod 与 SparkFun ZED-F9P �
 
 taroz 针对 Google Smartphone Decimeter Challenge 2023 的公开代码与思路，处理手机原始 GNSS 测量与轨迹评估。MIT 许可；衔接 Android 原始观测与低成本定位研究。竞赛规则与数据版本绑定，复现需自备挑战数据集与官方评价指标脚本。
 
-#### [smartphone-gnss-booster](https://github.com/taroz/smartphone-gnss-booster)  
-*🏷️ 高校实验室*
+#### [smartphone-gnss-booster](https://github.com/taroz/Smartphone-GNSS-Booster)  
+*🏷️ 个人社区*
 
 语言：C · 许可：MIT · 星标约：40 · 宿主：github
 

@@ -23,14 +23,14 @@
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
 - 列表文件：[`lists/01-ionosphere.md`](../lists/01-ionosphere.md)
-- 当前条目数：**302**
+- 当前条目数：**301**
 
 ## `troposphere` — 对流层
 
 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
 - 列表文件：[`lists/02-troposphere.md`](../lists/02-troposphere.md)
-- 当前条目数：**48**
+- 当前条目数：**49**
 
 ## `gnss-data` — GNSS 数据与格式
 

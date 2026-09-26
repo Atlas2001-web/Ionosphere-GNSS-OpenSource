@@ -28,8 +28,8 @@
 
 | 分类 | 列表 | 数 |
 |---|---|---:|
-| 电离层 | [01](./lists/01-ionosphere.md) | 302 |
-| 对流层 | [02](./lists/02-troposphere.md) | 48 |
+| 电离层 | [01](./lists/01-ionosphere.md) | 301 |
+| 对流层 | [02](./lists/02-troposphere.md) | 49 |
 | GNSS 数据与格式 | [03](./lists/03-gnss-data.md) | 140 |
 | 精密定位 | [04](./lists/04-gnss-positioning.md) | 103 |
 | 轨道与钟差 | [05](./lists/05-orbit-clock.md) | 33 |
@@ -40,7 +40,7 @@
 | **数据源门户** | [10](./lists/10-gnss-datasets.md) | 169 |
 | **合计** | [PROJECTS.json](./PROJECTS.json) | **1036** |
 
-标记：🏷️ 官方 / 高校实验室 / 个人社区 · 官方 344 · 高校 356 · 社区 336 · 细则 [categories.md](./docs/categories.md)
+标记：🏷️ 官方 / 高校实验室 / 个人社区 · 官方 344 · 高校 355 · 社区 337 · 细则 [categories.md](./docs/categories.md)
 
 ---
 

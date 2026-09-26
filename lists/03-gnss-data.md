@@ -1186,9 +1186,9 @@ Leibniz Universität Hannover 地球测量研究所工具，批量修正 RINEX �
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [septentrio_gnss_driver](https://github.com/septentrio-gnss/septentrio_gnss_driver) | septentrio_gnss_driver：Septentrio ROS 驱动 | C++ | 133 | 🏷️ 官方 |
-| [um982-driver](https://github.com/sunshineharry/um982driver) | 和芯星通 UM982/UM980 扩展语句（PVTSLN/BESTNAV/GNHPR）Python 驱动 | Python | 39 | 🏷️ 个人社区 |
+| [um982-driver](https://github.com/sunshineharry/UM982Driver) | 和芯星通 UM982/UM980 扩展语句（PVTSLN/BESTNAV/GNHPR）Python 驱动 | Python | 39 | 🏷️ 个人社区 |
 | [novatel_edie](https://github.com/novatel/novatel_edie) | NovAtel 官方 EDIE 编解码 SDK：OEM7 接收机日志/命令的 C++ 与 Python 解析与格式转换 | C++ | 32 | 🏷️ 官方 |
-| [trimble-gsof-wireshark](https://github.com/ryanf55/trimble-gsof-wireshark) | Wireshark 的 Trimble GSOF 协议解析插件（Lua） | Lua | 2 | 🏷️ 个人社区 |
+| [trimble-gsof-wireshark](https://github.com/Ryanf55/trimble-gsof-wireshark) | Wireshark 的 Trimble GSOF 协议解析插件（Lua） | Lua | 2 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -1199,7 +1199,7 @@ Leibniz Universität Hannover 地球测量研究所工具，批量修正 RINEX �
 
 把 Septentrio 接收机接入机器人操作系统，发布导航与观测话题，便于车载/无人机平台联调。输入为网口/串口 SBF；输出为 ROS 话题。局限：面向机器人集成而非电离层专题处理；闪烁/ISMR 需另接解析模块。
 
-#### [um982-driver](https://github.com/sunshineharry/um982driver)  
+#### [um982-driver](https://github.com/sunshineharry/UM982Driver)  
 *🏷️ 个人社区*
 
 语言：Python · 许可：GPL-3.0 · 星标约：39 · 宿主：github
@@ -1213,7 +1213,7 @@ Leibniz Universität Hannover 地球测量研究所工具，批量修正 RINEX �
 
 NovAtel（Hexagon）官方发布的 Encode Decode Interface Engine SDK，MIT 许可，C++ 实现并提供 Python 包。可对 OEM7 接收机的 ASCII、二进制与简化 ASCII 日志进行帧识别、解码与互相转换，基于官方消息定义数据库，适合编写离线解析、日志过滤、格式转换与数据回放工具。构建使用 CMake 预设并支持 Conan 管理依赖。与已收录的 novatel_oem7_driver（ROS 驱动）互补：后者面向机器人实时接入，EDIE 更适合底层解码与数据处理。近期仍活跃更新。
 
-#### [trimble-gsof-wireshark](https://github.com/ryanf55/trimble-gsof-wireshark)  
+#### [trimble-gsof-wireshark](https://github.com/Ryanf55/trimble-gsof-wireshark)  
 *🏷️ 个人社区*
 
 语言：Lua · 许可：MIT · 星标约：2 · 宿主：github
