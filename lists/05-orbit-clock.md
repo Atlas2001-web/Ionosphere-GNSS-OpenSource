@@ -166,13 +166,29 @@ NASA 戈达德主导的 General Mission Analysis Tool 的官方 GitHub 仓库，
 
 Tudatpy 是 TU Delft Tudat 的 Python 接口，面向轨道传播、天体动力学仿真与教学。BSD-3-Clause；与 Orekit 互补（Python/C++ 绑定 vs Java）。非专用 GNSS POD 套件，但可作精密轨道/力模型实验底座；推荐用 conda 发行包，完整文档与示例见 tudat.space。
 
-## 偏差与校准
+## 产品门户
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [CDDIS-Orbit-Clock-Products](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/orbit_and_clock_products.html) | NASA CDDIS：GNSS 轨道与钟差产品说明页 | data-portal | — | 🏷️ 官方 |
+| [ESA-Navigation-Support-Office](https://navigation-office.esa.int/) | ESA OPS-GN：导航支持办公室门户 | data-portal | — | 🏷️ 官方 |
 | [IGS-Bias-Calibration-WG](https://igs.org/wg/bias/) | IGS 偏差与校准工作组：DCB/OSB 等偏差产品入口 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
+
+#### [CDDIS-Orbit-Clock-Products](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/orbit_and_clock_products.html)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+CDDIS 对 IGS 等精密轨道（SP3）与钟差（CLK）产品的说明入口；站点提示已向 earthdata.nasa.gov 迁移。与 CDDIS 大气/IONEX/高采样页互补，本页专指轨道钟差派生产品文档。下载现多走 Earthdata；需遵守 NASA 账号与引用条款。
+
+#### [ESA-Navigation-Support-Office](https://navigation-office.esa.int/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+ESA Navigation Support Office（OPS-GN）公开门户，介绍导航支持活动、产品与出版物入口。面向 GNSS 精密产品与任务支持用户，与 GSSC/Navipedia 等 ESA 导航资源互补。页面偏 JS 应用。
 
 #### [IGS-Bias-Calibration-WG](https://igs.org/wg/bias/)  
 *🏷️ 官方*
@@ -280,29 +296,6 @@ Rust 语言的 SGP4 传播实现，MIT 许可，便于嵌入式或高性能服�
 语言：Python · 许可：GPL-3.0 · 星标约：97 · 宿主：github
 
 ESA 先进概念团队（ACT）成员在 ESA GitHub 组织发布的可微分 SGP4（PyTorch），对应 Acciarini、Baydin、Izzo 发表在 Acta Astronautica（2025）的论文。GPL-3.0，pip/conda 可装：可对时间和 TLE 参数求梯度，支持批量传播、TLE/OMM 读写，并含学习 SGP4 修正的混合模型 mldsgp4。用于状态转移矩阵、协方差传播与基于梯度的定轨；精度仍属 SGP4 族，不是精密轨道。
-
-## 产品门户
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [CDDIS-Orbit-Clock-Products](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/orbit_and_clock_products.html) | NASA CDDIS：GNSS 轨道与钟差产品说明页 | data-portal | — | 🏷️ 官方 |
-| [ESA-Navigation-Support-Office](https://navigation-office.esa.int/) | ESA OPS-GN：导航支持办公室门户 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [CDDIS-Orbit-Clock-Products](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/orbit_and_clock_products.html)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-CDDIS 对 IGS 等精密轨道（SP3）与钟差（CLK）产品的说明入口；站点提示已向 earthdata.nasa.gov 迁移。与 CDDIS 大气/IONEX/高采样页互补，本页专指轨道钟差派生产品文档。下载现多走 Earthdata；需遵守 NASA 账号与引用条款。
-
-#### [ESA-Navigation-Support-Office](https://navigation-office.esa.int/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-ESA Navigation Support Office（OPS-GN）公开门户，介绍导航支持活动、产品与出版物入口。面向 GNSS 精密产品与任务支持用户，与 GSSC/Navipedia 等 ESA 导航资源互补。页面偏 JS 应用。
 
 ## VLBI/EOP
 

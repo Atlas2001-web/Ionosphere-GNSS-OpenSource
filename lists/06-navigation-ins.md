@@ -115,9 +115,11 @@ Trimble 公司 trimble-oss 组织发布的 ROS 2 软件包，BSD-2-Clause 许可
 | [GLIO](https://github.com/XikunLiu-huskit/GLIO) | GLIO：GNSS/LiDAR/IMU 紧耦合连续定位 | C | 438 | 🏷️ 高校实验室 |
 | [libRSF](https://github.com/TUC-ProAut/libRSF) | libRSF：鲁棒传感器融合与在线定位库 | C++ | 337 | 🏷️ 高校实验室 |
 | [syncgpslidarimucam](https://github.com/nkliuhui/sync_gps_lidar_imu_cam) | syncgpslidarimucam：多传感器硬件授时同步 | C++ | 252 | 🏷️ 个人社区 |
+| [raw-gnss-fusion](https://github.com/JonasBchrt/raw-gnss-fusion) | raw-gnss-fusion：原始 GNSS 多传感器融合代码与数据 | Python | 160 | 🏷️ 个人社区 |
 | [GREAT-MSF](https://github.com/GREAT-WHU/GREAT-MSF) | GREAT-MSF：PPP/RTK+INS 多传感器融合 | C++ | 150 | 🏷️ 高校实验室 |
 | [GPSMilemeterIMUEKFLocation](https://github.com/gilbertz/GPS_Milemeter_IMU_EKFLocation) | GPS_Milemeter_IMU_EKF：GPS+里程计+罗盘 EKF（MATLAB） | MATLAB | 89 | 🏷️ 个人社区 |
 | [FE-GUT](https://github.com/zhaoqj23/FE-GUT) | FE-GUT：因子图+EKF 的 GNSS/UWB 紧组合 | C++ | 79 | 🏷️ 个人社区 |
+| [gnssFGO](https://github.com/hz658832/gnssFGO) | RWTH 在线 GNSS/多传感器因子图定位（ROS2） | C++ | 52 | 🏷️ 高校实验室 |
 | [BDS-3-PPP-B2b_IMU_LiDAR](https://github.com/xdinav/BDS-3-PPP-B2b_IMU_LiDAR) | BDS-3-PPP-B2b_IMU_LiDAR：PPP-B2b 与 IMU/LiDAR 融合试验 | — | 6 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -157,6 +159,13 @@ Trimble 公司 trimble-oss 组织发布的 ROS 2 软件包，BSD-2-Clause 许可
 
 给出 lidar、IMU、相机与 GPS 的时间戳硬件同步思路与参考实现，解决多传感器融合前的时钟对齐问题。适合自动驾驶与机器人传感器套件研发。解决的是同步而非状态估计；滤波/建图需另接 VINS、GICI、gtsam 等。硬件触发拓扑要比纯软件时间戳对齐更稳。线缆延时与触发极性要在示波器上核验。选用前建议先跑通作者提供的最小示例。
 
+#### [raw-gnss-fusion](https://github.com/JonasBchrt/raw-gnss-fusion)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：LGPL-3.0 · 星标约：160 · 宿主：github
+
+便于复现论文设定的原始测量与融合流水线。适合研究起步。不是开箱商用导航软件。
+
 #### [GREAT-MSF](https://github.com/GREAT-WHU/GREAT-MSF)  
 *🏷️ 高校实验室*
 
@@ -177,6 +186,13 @@ GREAT 组多传感器融合系统，支持 PPP/RTK 与 INS 等组合。适合已
 语言：C++ · 许可：BSD-3-Clause · 星标约：79 · 宿主：github
 
 混合因子图与 EKF，并开源仿真数据，便于复现时间标定实验。适合室内外衔接与 UWB 辅助研究。实网性能取决于 UWB/GNSS 标定质量。
+
+#### [gnssFGO](https://github.com/hz658832/gnssFGO)  
+*🏷️ 高校实验室*
+
+语言：C++ · 许可：BSD-3-Clause · 星标约：52 · 宿主：github
+
+亚琛工大 IRT 的 gnssFGO（BSD-3-Clause，ROS 2），以连续时间轨迹与因子图融合松/紧耦合 GNSS、激光/视觉里程计等，配套数据集与 Docker。原 rwth-irt 仓已归档，维护迁至本地址。适合车载多传感器研究。依赖 ROS 2 与大量子模块，工程门槛高于纯 GNSS PPP 工具。
 
 #### [BDS-3-PPP-B2b_IMU_LiDAR](https://github.com/xdinav/BDS-3-PPP-B2b_IMU_LiDAR)  
 *🏷️ 个人社区*
@@ -595,21 +611,6 @@ MATLAB/GNU Octave 下仿真与分析惯导/组合导航，流程完整、适合�
 
 JuliaGNSS 生态中的滤波库，实现经典 KF、UKF、AUKF 及其方根形式，供 GNSS/导航状态估计在 Julia 中调用。适合已用 Julia 做原型的研究代码。本身不是完整定位引擎，观测模型、周跳与模糊度处理需自建或与其它包组合。与 JuliaGNSS 其它包组合时可减少重复造轮子。方根滤波在病态协方差时通常更数值稳定。
 
-## 原始GNSS融合
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [raw-gnss-fusion](https://github.com/JonasBchrt/raw-gnss-fusion) | raw-gnss-fusion：原始 GNSS 多传感器融合代码与数据 | Python | 160 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [raw-gnss-fusion](https://github.com/JonasBchrt/raw-gnss-fusion)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：LGPL-3.0 · 星标约：160 · 宿主：github
-
-便于复现论文设定的原始测量与融合流水线。适合研究起步。不是开箱商用导航软件。
-
 ## 紧组合
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
@@ -632,21 +633,6 @@ JuliaGNSS 生态中的滤波库，实现经典 KF、UKF、AUKF 及其方根形�
 语言：C++ · 许可：— · 星标约：90 · 宿主：github
 
 紧耦合 GNSS/INS 开源实现，常与 PPPLib 作者社区一并出现。适合紧组合课程实践。维护与许可信息需核对。
-
-## 因子图融合
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [gnssFGO](https://github.com/hz658832/gnssFGO) | RWTH 在线 GNSS/多传感器因子图定位（ROS2） | C++ | 52 | 🏷️ 高校实验室 |
-
-### 详细说明
-
-#### [gnssFGO](https://github.com/hz658832/gnssFGO)  
-*🏷️ 高校实验室*
-
-语言：C++ · 许可：BSD-3-Clause · 星标约：52 · 宿主：github
-
-亚琛工大 IRT 的 gnssFGO（BSD-3-Clause，ROS 2），以连续时间轨迹与因子图融合松/紧耦合 GNSS、激光/视觉里程计等，配套数据集与 Docker。原 rwth-irt 仓已归档，维护迁至本地址。适合车载多传感器研究。依赖 ROS 2 与大量子模块，工程门槛高于纯 GNSS PPP 工具。
 
 ## IMU驱动
 

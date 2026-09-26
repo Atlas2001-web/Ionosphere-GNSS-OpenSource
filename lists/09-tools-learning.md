@@ -8,6 +8,7 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [ENRI-Japan](https://www.enri.go.jp/eng/index.html) | ENRI：日本电子航法研究所（航空 CNS）门户 | data-portal | — | 🏷️ 官方 |
+| [ESA-Satellite-Navigation](https://www.esa.int/Applications/Satellite_navigation) | ESA 卫星导航应用总入口：Galileo/EGNOS/NAVISP 等 | data-portal | — | 🏷️ 官方 |
 | [GA-Positioning-Services](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/services-and-tools) | Geoscience Australia 定位服务与工具门户（SouthPAN/AUSPOS/数据中心） | various | — | 🏷️ 官方 |
 | [gAGE-Software-Tools](https://gage.upc.edu/en/learning-materials/software-tools) | gAGE-Software-Tools：UPC gAGE 教学工具页（gLAB / gAGEbuntu） | various | — | 🏷️ 高校实验室 |
 | [GPS.gov](https://www.gps.gov/) | GPS.gov：美国 GPS 系统官方公众信息站 | data-portal | — | 🏷️ 官方 |
@@ -25,6 +26,13 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 ENRI 是日本在航空交通管理与通信导航监视（ATM/CNS）领域的国家级研究机构英文门户，涵盖电子航法与相关 GNSS/增强研究入口。适合查日方航空导航与完好性研究方向。具体报告与数据分发条款以各子页为准，非 CORS 下载站。
+
+#### [ESA-Satellite-Navigation](https://www.esa.int/Applications/Satellite_navigation)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+欧洲航天局卫星导航应用门户，汇总 Galileo、EGNOS、NAVISP、月球导航等项目新闻与介绍。偏政策与工程进展导航，具体 ICD/服务细节仍走 GSC 等站点。与 GSC 产品页形成官方叙事互补。引用请注明 ESA 页面与日期。
 
 #### [GA-Positioning-Services](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/services-and-tools)  
 *🏷️ 官方*
@@ -136,13 +144,56 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 
 策展 GNSS/RNSS 相关开源软件、数据、工具与慕课入口的 awesome 列表，帮助新人快速摸清领域版图。与 barbeau/awesome-gnss（现名 awesome-gnss-barbeau）是不同策展；链接时效性需自行点击验证。
 
-## 高程/大地水准面
+## 坐标转换
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [geodesy-js](https://github.com/chrisveness/geodesy) | geodesy-js：浏览器/Node 可用的 JS 大地测量库 | JavaScript | 1227 | 🏷️ 个人社区 |
+| [pymap3d](https://github.com/geospace-code/pymap3d) | pymap3d：纯 Python 三维坐标转换（ECEF/ENU/ECI） | Python | 445 | 🏷️ 个人社区 |
+| [Geodesy.jl](https://github.com/JuliaGeo/Geodesy.jl) | Geodesy.jl：Julia 坐标与大地测量变换库 | Julia | 114 | 🏷️ 个人社区 |
+| [HTDP](https://github.com/noaa-ngs/HTDP) | HTDP：NOAA/NGS 水平时变坐标与框架变换 | Fortran | 33 | 🏷️ 官方 |
+| [ncat-lib](https://github.com/noaa-ngs/ncat-lib) | NGS NCAT Java 库：离线坐标/基准转换 | Java | 21 | 🏷️ 官方 |
 | [earth-gravitational-model](https://github.com/barbeau/earth-gravitational-model) | earth-gravitational-model：WGS84→EGM84 海拔转换（Android 向） | Java | 18 | 🏷️ 个人社区 |
+| [NGS-NCAT](https://geodesy.noaa.gov/NCAT/) | NGS-NCAT：NOAA/NGS 大地坐标与参考框架在线转换 | web/service | — | 🏷️ 官方 |
+| [NRCan-TRX](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/trx.php) | NRCan-TRX：加拿大 NAD83(CSRS)/ITRF 在线坐标与历元转换 | data-portal | — | 🏷️ 官方 |
+| [VDATUM](https://vdatum.noaa.gov/) | VDATUM：NOAA 椭球高↔大地水准面/潮汐垂直基准转换 | Java/app | — | 🏷️ 官方 |
 
 ### 详细说明
+
+#### [geodesy-js](https://github.com/chrisveness/geodesy)  
+*🏷️ 个人社区*
+
+语言：JavaScript · 许可：MIT · 星标约：1227 · 宿主：github
+
+chrisveness 维护的 JS 大地测量工具集，覆盖常见椭球上的距离、方位与坐标变换，浏览器与 Node 可用。MIT 许可；填补 Web 前端坐标计算缺口。偏通用大地测量，不处理 RINEX/RTK 观测；高精度应用请核对方位约定与椭球参数。
+
+#### [pymap3d](https://github.com/geospace-code/pymap3d)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：BSD-2-Clause · 星标约：445 · 宿主：github
+
+geospace-code 维护的纯 Python（可选 Numpy）三维坐标转换库，覆盖 ECEF、ENU、ECI 等常用地空坐标系，BSD-2-Clause，星数高、文档清晰。服务 GNSS/轨道/空间天气几何计算，不做观测解算。API 稳定、依赖少，适合脚本与教学。与精密测地库（如 PROJ）分工不同，偏空间物理常用约定。
+
+#### [Geodesy.jl](https://github.com/JuliaGeo/Geodesy.jl)  
+*🏷️ 个人社区*
+
+语言：Julia · 许可：MIT · 星标约：114 · 宿主：github
+
+JuliaGeo 的坐标系统与点位变换库，支持常见大地测量坐标转换。MIT 许可；填补目录 Julia 生态缺口。偏通用大地测量而非 GNSS 观测处理，完整解算请另接 Julia 或其他语言的 GNSS 专用库。
+
+#### [HTDP](https://github.com/noaa-ngs/HTDP)  
+*🏷️ 官方*
+
+语言：Fortran · 许可：USGov (17 USC 105; royalty-free licence outside US) · 星标约：33 · 宿主：github
+
+美国国家大地测量局官方开源的 Horizontal Time-Dependent Positioning，Fortran 实现地壳运动模型下的坐标时间归算与框架变换。配套用户指南与 NGS 工具页。GNSS 测站坐标比较、CORS 历元统一常用；不处理原始观测，也不是 PPP 软件。
+
+#### [ncat-lib](https://github.com/noaa-ngs/ncat-lib)  
+*🏷️ 官方*
+
+语言：Java · 许可：USGov (17 USC 105 / NOAA terms) · 星标约：21 · 宿主：github
+
+NGS 公开的 NCAT（NGS Coordinate Conversion and Transformation Tool）底层 Java 转换模块库，可用 Ant 构建 jar，在无网络环境下做坐标与基准转换（NADCON/VERTCON 格网需另从 NCAT 站点下载）。美国政府雇员作品在美不受版权限制（17 U.S.C. §105），并对外提供免版税非独占许可（仓库 SPDX 标为 NOASSERTION/other）。与 NGS-NCAT 网页工具互补（网页 vs 可嵌入库）。不是 GNSS 观测解算器。
 
 #### [earth-gravitational-model](https://github.com/barbeau/earth-gravitational-model)  
 *🏷️ 个人社区*
@@ -150,6 +201,27 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 语言：Java · 许可：LGPL-2.1 · 星标约：18 · 宿主：github
 
 基于 GeoTools 大地水准面模型的轻量 Java 库，方便 Android 海拔转换。测地学严密应用请用专业大地水准面产品与更新格网。
+
+#### [NGS-NCAT](https://geodesy.noaa.gov/NCAT/)  
+*🏷️ 官方*
+
+语言：web/service · 许可：USGov public resource · 星标约：— · 宿主：official_site
+
+国家大地测量局坐标转换与变换工具，支持多种美国大地基准与框架之间的点位转换。以 Web/服务形式提供，便于把 GNSS 成果归算到所需基准。不是观测处理软件；与 HTDP、VDATUM 等 NGS 工具链互补，做美国测区成果交付时常一起查阅。
+
+#### [NRCan-TRX](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/trx.php)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+加拿大自然资源部（NRCan）CSRS 在线工具 TRX：在 NAD83(CSRS) 与各代 ITRF（至 ITRF2020）之间转换，支持地理、笛卡尔与 UTM/MTM 等投影坐标互换，可用加拿大速度格网（NAD83v80VG）或自填速度做历元推算；有单点与 CSV 批处理，另有测试 NATRF2022 的 beta 版。不做高程基准转换。常与 CSRS-PPP 成果衔接；数据按加拿大开放政府许可使用。
+
+#### [VDATUM](https://vdatum.noaa.gov/)  
+*🏷️ 官方*
+
+语言：Java/app · 许可：USGov public resource · 星标约：— · 宿主：official_site
+
+NOAA 垂直基准转换软件与服务，连接椭球高、大地水准面与潮汐等垂直基准，海岸带与 GNSS 高程应用中常用。以官方发布包与 Web 服务为准；与水平框架工具 HTDP、NCAT 分工不同，高程与平面归算请分别选用对应工具。
 
 ## SBAS
 
@@ -252,107 +324,6 @@ William J. Hughes 技术中心 WAAS Test Team 站点，提供测试数据与工�
 
 成熟的开源 GPS 数据转换器，支持大量消费级接收机与地图软件之间的航点、轨迹互转，并提供去重与简化。对测绘级 RINEX/载波相位无助，但野外勘察与 GIS 衔接很实用。主站提供文档与下载；SourceForge 镜像偶发屏蔽时可改用官网通道。
 
-## 坐标转换
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [geodesy-js](https://github.com/chrisveness/geodesy) | geodesy-js：浏览器/Node 可用的 JS 大地测量库 | JavaScript | 1227 | 🏷️ 个人社区 |
-| [pymap3d](https://github.com/geospace-code/pymap3d) | pymap3d：纯 Python 三维坐标转换（ECEF/ENU/ECI） | Python | 445 | 🏷️ 个人社区 |
-| [Geodesy.jl](https://github.com/JuliaGeo/Geodesy.jl) | Geodesy.jl：Julia 坐标与大地测量变换库 | Julia | 114 | 🏷️ 个人社区 |
-| [HTDP](https://github.com/noaa-ngs/HTDP) | HTDP：NOAA/NGS 水平时变坐标与框架变换 | Fortran | 33 | 🏷️ 官方 |
-| [ncat-lib](https://github.com/noaa-ngs/ncat-lib) | NGS NCAT Java 库：离线坐标/基准转换 | Java | 21 | 🏷️ 官方 |
-| [NGS-NCAT](https://geodesy.noaa.gov/NCAT/) | NGS-NCAT：NOAA/NGS 大地坐标与参考框架在线转换 | web/service | — | 🏷️ 官方 |
-| [NRCan-TRX](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/trx.php) | NRCan-TRX：加拿大 NAD83(CSRS)/ITRF 在线坐标与历元转换 | data-portal | — | 🏷️ 官方 |
-| [VDATUM](https://vdatum.noaa.gov/) | VDATUM：NOAA 椭球高↔大地水准面/潮汐垂直基准转换 | Java/app | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [geodesy-js](https://github.com/chrisveness/geodesy)  
-*🏷️ 个人社区*
-
-语言：JavaScript · 许可：MIT · 星标约：1227 · 宿主：github
-
-chrisveness 维护的 JS 大地测量工具集，覆盖常见椭球上的距离、方位与坐标变换，浏览器与 Node 可用。MIT 许可；填补 Web 前端坐标计算缺口。偏通用大地测量，不处理 RINEX/RTK 观测；高精度应用请核对方位约定与椭球参数。
-
-#### [pymap3d](https://github.com/geospace-code/pymap3d)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：BSD-2-Clause · 星标约：445 · 宿主：github
-
-geospace-code 维护的纯 Python（可选 Numpy）三维坐标转换库，覆盖 ECEF、ENU、ECI 等常用地空坐标系，BSD-2-Clause，星数高、文档清晰。服务 GNSS/轨道/空间天气几何计算，不做观测解算。API 稳定、依赖少，适合脚本与教学。与精密测地库（如 PROJ）分工不同，偏空间物理常用约定。
-
-#### [Geodesy.jl](https://github.com/JuliaGeo/Geodesy.jl)  
-*🏷️ 个人社区*
-
-语言：Julia · 许可：MIT · 星标约：114 · 宿主：github
-
-JuliaGeo 的坐标系统与点位变换库，支持常见大地测量坐标转换。MIT 许可；填补目录 Julia 生态缺口。偏通用大地测量而非 GNSS 观测处理，完整解算请另接 Julia 或其他语言的 GNSS 专用库。
-
-#### [HTDP](https://github.com/noaa-ngs/HTDP)  
-*🏷️ 官方*
-
-语言：Fortran · 许可：USGov (17 USC 105; royalty-free licence outside US) · 星标约：33 · 宿主：github
-
-美国国家大地测量局官方开源的 Horizontal Time-Dependent Positioning，Fortran 实现地壳运动模型下的坐标时间归算与框架变换。配套用户指南与 NGS 工具页。GNSS 测站坐标比较、CORS 历元统一常用；不处理原始观测，也不是 PPP 软件。
-
-#### [ncat-lib](https://github.com/noaa-ngs/ncat-lib)  
-*🏷️ 官方*
-
-语言：Java · 许可：USGov (17 USC 105 / NOAA terms) · 星标约：21 · 宿主：github
-
-NGS 公开的 NCAT（NGS Coordinate Conversion and Transformation Tool）底层 Java 转换模块库，可用 Ant 构建 jar，在无网络环境下做坐标与基准转换（NADCON/VERTCON 格网需另从 NCAT 站点下载）。美国政府雇员作品在美不受版权限制（17 U.S.C. §105），并对外提供免版税非独占许可（仓库 SPDX 标为 NOASSERTION/other）。与 NGS-NCAT 网页工具互补（网页 vs 可嵌入库）。不是 GNSS 观测解算器。
-
-#### [NGS-NCAT](https://geodesy.noaa.gov/NCAT/)  
-*🏷️ 官方*
-
-语言：web/service · 许可：USGov public resource · 星标约：— · 宿主：official_site
-
-国家大地测量局坐标转换与变换工具，支持多种美国大地基准与框架之间的点位转换。以 Web/服务形式提供，便于把 GNSS 成果归算到所需基准。不是观测处理软件；与 HTDP、VDATUM 等 NGS 工具链互补，做美国测区成果交付时常一起查阅。
-
-#### [NRCan-TRX](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/trx.php)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-加拿大自然资源部（NRCan）CSRS 在线工具 TRX：在 NAD83(CSRS) 与各代 ITRF（至 ITRF2020）之间转换，支持地理、笛卡尔与 UTM/MTM 等投影坐标互换，可用加拿大速度格网（NAD83v80VG）或自填速度做历元推算；有单点与 CSV 批处理，另有测试 NATRF2022 的 beta 版。不做高程基准转换。常与 CSRS-PPP 成果衔接；数据按加拿大开放政府许可使用。
-
-#### [VDATUM](https://vdatum.noaa.gov/)  
-*🏷️ 官方*
-
-语言：Java/app · 许可：USGov public resource · 星标约：— · 宿主：official_site
-
-NOAA 垂直基准转换软件与服务，连接椭球高、大地水准面与潮汐等垂直基准，海岸带与 GNSS 高程应用中常用。以官方发布包与 Web 服务为准；与水平框架工具 HTDP、NCAT 分工不同，高程与平面归算请分别选用对应工具。
-
-## 因子图教程
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [ion_gnss25_fg_code_examples](https://github.com/watsonryan/ion_gnss25_fg_code_examples) | ion_gnss25_fg_code_examples：ION GNSS+ 2025 因子图教程 | Python | 7 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [ion_gnss25_fg_code_examples](https://github.com/watsonryan/ion_gnss25_fg_code_examples)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：— · 星标约：7 · 宿主：github
-
-配套 ION GNSS+ 2025 因子图教程的 Python 示例，基于 GTSAM 演示多机器人里程计、测距约束及单历元/动态 GNSS 伪距定位。适合学习 FGO 与 GNSS 因子建模。教学代码而非生产定位库；运行需自备 GTSAM Python 绑定与依赖环境。
-
-## PNT仿真
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [kshana](https://github.com/ashfordeOU/kshana) | kshana：开源 PNT 韧性/完好性仿真框架 | Rust | 6 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [kshana](https://github.com/ashfordeOU/kshana)  
-*🏷️ 个人社区*
-
-语言：Rust · 许可：AGPL-3.0 · 星标约：6 · 宿主：github
-
-覆盖轨道、参考架、DOP、GNSS/INS、ARAIM/SBAS 保护级等的仿真框架，带跨语言绑定。适合完好性与韧性研究。AGPL；项目较新，接口可能变化。
-
 ## 课程笔记
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
@@ -361,7 +332,9 @@ NOAA 垂直基准转换软件与服务，连接椭球高、大地水准面与潮
 | [learning_rtklib](https://github.com/libing64/learning_rtklib) | learning_rtklib：RTKLIB 学习笔记 | C++ | 163 | 🏷️ 个人社区 |
 | [RTKLIB-Manual-CN](https://github.com/salmoshu/RTKLIB-Manual-CN) | RTKLIB-Manual-CN：中文手册与源码导读 | — | 54 | 🏷️ 个人社区 |
 | [gnss_tutorials](https://github.com/rokubun/gnss_tutorials) | gnss_tutorials：Rokubun Python/Jupyter GNSS 教程 | Jupyter Notebook | 13 | 🏷️ 个人社区 |
+| [Swarm_notebooks](https://github.com/Swarm-DISC/Swarm_notebooks) | Swarm_notebooks：ESA Swarm 科学分析 Jupyter 示例 | Jupyter Notebook | 10 | 🏷️ 官方 |
 | [DD-cycle-slip-lab](https://github.com/VimsRocz/Double_difference_relative_positioning) | DD-cycle-slip-lab：双差定位与周跳教学实验 | MATLAB | 7 | 🏷️ 个人社区 |
+| [ion_gnss25_fg_code_examples](https://github.com/watsonryan/ion_gnss25_fg_code_examples) | ion_gnss25_fg_code_examples：ION GNSS+ 2025 因子图教程 | Python | 7 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -393,12 +366,41 @@ NOAA 垂直基准转换软件与服务，连接椭球高、大地水准面与潮
 
 Rokubun 编写的 GNSS 数据处理 Jupyter 教程，覆盖从观测到基础解算的示范流程。MIT 许可；与 android_rinex 同机构，适合入门与课堂教学演示。内容随课程版本变化，生产流水线请改用仍在维护的库，并补齐自有质控步骤。
 
+#### [Swarm_notebooks](https://github.com/Swarm-DISC/Swarm_notebooks)  
+*🏷️ 官方*
+
+语言：Jupyter Notebook · 许可：MIT · 星标约：10 · 宿主：github
+
+部署在 VirES VRE 上的官方示例笔记本集合，含 EFIx_LP_1B、TECxTMS_2F 等演示，适合跟着学 Swarm 电离层产品字段与绘图。教学与快速原型友好。依赖 viresclient 与在线环境；不是独立算法库。
+
 #### [DD-cycle-slip-lab](https://github.com/VimsRocz/Double_difference_relative_positioning)  
 *🏷️ 个人社区*
 
 语言：MATLAB · 许可：MIT · 星标约：7 · 宿主：github
 
 MATLAB 课程练习：用五站 GPS 静态网数据（AdvConc2019.mat）构造双差（OMC）、建立随机模型、探测并修复周跳、计算双差模糊度，按时间和高度角绘图，也涉及三差。MIT 许可；适合课程实验理解周跳与相对定位基础。非生产 RTK 引擎，数据与习题步骤绑定仓库说明。
+
+#### [ion_gnss25_fg_code_examples](https://github.com/watsonryan/ion_gnss25_fg_code_examples)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：— · 星标约：7 · 宿主：github
+
+配套 ION GNSS+ 2025 因子图教程的 Python 示例，基于 GTSAM 演示多机器人里程计、测距约束及单历元/动态 GNSS 伪距定位。适合学习 FGO 与 GNSS 因子建模。教学代码而非生产定位库；运行需自备 GTSAM Python 绑定与依赖环境。
+
+## PNT仿真
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [kshana](https://github.com/ashfordeOU/kshana) | kshana：开源 PNT 韧性/完好性仿真框架 | Rust | 6 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [kshana](https://github.com/ashfordeOU/kshana)  
+*🏷️ 个人社区*
+
+语言：Rust · 许可：AGPL-3.0 · 星标约：6 · 宿主：github
+
+覆盖轨道、参考架、DOP、GNSS/INS、ARAIM/SBAS 保护级等的仿真框架，带跨语言绑定。适合完好性与韧性研究。AGPL；项目较新，接口可能变化。
 
 ## HF传播态势
 
@@ -500,21 +502,6 @@ GSC 关于 Galileo Open Service Navigation Message Authentication（OSNMA）的�
 
 欧洲 GNSS 服务中心电子图书馆中的 Programme Reference Documents，集中链向 Galileo/EGNOS 接口控制文件与计划级参考文档。做接收机/OSNMA/HAS 开发前的权威文档入口。需遵守欧盟文件分发条件。
 
-## SWARM教程
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [Swarm_notebooks](https://github.com/Swarm-DISC/Swarm_notebooks) | Swarm_notebooks：ESA Swarm 科学分析 Jupyter 示例 | Jupyter Notebook | 10 | 🏷️ 官方 |
-
-### 详细说明
-
-#### [Swarm_notebooks](https://github.com/Swarm-DISC/Swarm_notebooks)  
-*🏷️ 官方*
-
-语言：Jupyter Notebook · 许可：MIT · 星标约：10 · 宿主：github
-
-部署在 VirES VRE 上的官方示例笔记本集合，含 EFIx_LP_1B、TECxTMS_2F 等演示，适合跟着学 Swarm 电离层产品字段与绘图。教学与快速原型友好。依赖 viresclient 与在线环境；不是独立算法库。
-
 ## Python工具
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
@@ -590,21 +577,6 @@ NCEI Enhanced Magnetic Model（EMM）产品页，提供比 WMM 更精细的地�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 Satellite Situation Center Web（SSCWeb）提供航天器轨道、星下点与相关坐标查询，便于空间任务与地面 GNSS/电离层观测的几何对照。与 CDAWeb/SPDF 同属 NASA 空间数据体系。查询结果用于科研时请注明服务与历元。
-
-## ESA导航
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [ESA-Satellite-Navigation](https://www.esa.int/Applications/Satellite_navigation) | ESA 卫星导航应用总入口：Galileo/EGNOS/NAVISP 等 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [ESA-Satellite-Navigation](https://www.esa.int/Applications/Satellite_navigation)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-欧洲航天局卫星导航应用门户，汇总 Galileo、EGNOS、NAVISP、月球导航等项目新闻与介绍。偏政策与工程进展导航，具体 ICD/服务细节仍走 GSC 等站点。与 GSC 产品页形成官方叙事互补。引用请注明 ESA 页面与日期。
 
 ## GPS驯服钟
 

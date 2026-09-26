@@ -278,76 +278,6 @@ Python/Jupyter 多星座 PPP-RTK 试验箱，强调可读与易移植，便于�
 
 在 RTKNAVI 上扩展，尝试同时吃 PPP-B2b 与 Galileo HAS 改正做实时 PPP。适合桌面端联调双系统改正源。仓库较新、文档与稳定性需自测；复杂场景仍建议对照官方测试库与 demo5/RTKLIB 分支。
 
-## 经典定位库
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [Essential-GNSS](https://sourceforge.net/projects/gnsstk/) | Essential-GNSS：轻量 C 库与事后 LSQ/EKF/RTK（SourceForge） | C | — | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [Essential-GNSS](https://sourceforge.net/projects/gnsstk/)  
-*🏷️ 个人社区*
-
-语言：C · 许可：BSD-3-Clause · 星标约：— · 宿主：sourceforge
-
-Glenn MacGougan 等维护的 Essential GNSS Project，提供 RINEX 2.x 解码、YUMA/SEM、NovAtel OEM4 以及 LSQ/EKF/RTK 事后处理示例，源码头注释为 BSD 三条款许可。与 Texas SGL 的 GPSTk/gnsstk 同名不同源，勿混淆。代码偏经典教学/嵌入，现代多星座 RINEX3+/PPP 请优先用更新栈。
-
-## 大地测量/GNSS
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [groops](https://github.com/groops-devs/groops) | GROOPS：重力场与 GNSS 处理（TU Graz） | C++ | 244 | 🏷️ 高校实验室 ★ 核心 |
-| [gnss2tws-green](https://github.com/jzshhh/gnss2tws_green) | gnss2tws-green：GNSS 垂直位移反演陆地水储量 | MATLAB | 33 | 🏷️ 个人社区 |
-| [GARPOS](https://github.com/s-watanabe-jhod/garpos) | GARPOS：日本海保 GNSS-声学海底定位开源解算器 | Python | 25 | 🏷️ 官方 |
-| [gnatss](https://github.com/seafloor-geodesy/gnatss) | gnatss：海底 GNSS-A 换能器测量社区软件 | Python | 17 | 🏷️ 个人社区 |
-| [IGP-TUDelft](https://github.com/TUDelftGeodesy/IGP) | TU Delft IGP：GNSS/InSAR/水准 STM 联合处理 | MATLAB | 2 | 🏷️ 高校实验室 |
-| [GAMIT/GLOBK](https://geoweb.mit.edu/gg/) | MIT EAPS 维护的 GAMIT/GLOBK 高精度 GNSS 大地测量解算套件主页 | Fortran/C | — | 🏷️ 高校实验室 |
-
-### 详细说明
-
-#### [groops](https://github.com/groops-devs/groops)  
-*🏷️ 高校实验室 ★ 核心*
-
-语言：C++ · 许可：GPL-3.0 · 星标约：244 · 宿主：github
-
-格拉茨工业大学 ITSG 背景的 GROOPS，覆盖重力场恢复、GNSS 处理与轨道确定，含 GUI 与 MPI 并行。适合大地测量联合反演与科研计算。学习曲线陡；纯导航 RTK/PPP-AR 工程请优先专用套件。
-
-#### [gnss2tws-green](https://github.com/jzshhh/gnss2tws_green)  
-*🏷️ 个人社区*
-
-语言：MATLAB · 许可：GPL-3.0 · 星标约：33 · 宿主：github
-
-开源 MATLAB 工具 GNSS2TWS：利用 GNSS 测站日尺度垂直位移，经格林函数等方法推断陆地水储量（TWS）变化，服务水文大地测量。适合已有精密坐标时间序列、做气候水文交叉的研究者。不是导航定位解算器；空间平滑、负载模型与参考框架假设必须按配套论文核对。输入坐标序列质量决定反演可信度。站点分布稀疏时，反演空间分辨率会明显下降。
-
-#### [GARPOS](https://github.com/s-watanabe-jhod/garpos)  
-*🏷️ 官方*
-
-语言：Python · 许可：GPL-3.0 · 星标约：25 · 宿主：github
-
-日本海上保安厅水路部公开的 GARPOS，专用于 GNSS-Acoustic（船载 GNSS + 海底应答器测距）联合解算，并可同时估计声速结构相关参数。面向海底大地测量而非陆地 RTK/PPP。Python 实现，GPL-3.0；需准备观测配置与海洋声学先验，门槛偏专业。
-
-#### [gnatss](https://github.com/seafloor-geodesy/gnatss)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：BSD-3-Clause · 星标约：17 · 宿主：github
-
-海床大地测量社区维护的 GNSS-Acoustic（GNSS-A）软件：海面 GNSS 与水声测距联合约束海底换能器/点位，用于海底形变与板块边界监测。面向海洋大地测量课题组。不是陆地 RTK/PPP；依赖船舶、声学与时间同步链路，作业与数据成本远高于陆基站网。
-
-#### [IGP-TUDelft](https://github.com/TUDelftGeodesy/IGP)  
-*🏷️ 高校实验室*
-
-语言：MATLAB · 许可：Apache-2.0 · 星标约：2 · 宿主：github
-
-TU Delft 开源 IGP（MATLAB，Apache-2.0）：以 Space-Time Matrix 统一 GNSS/InSAR/水准等多源形变处理（选择、检验、预测与可视化）。需 MATLAB；InSAR 初始化与数据准备成本不低，偏大地测量形变而非电离层 TEC。
-
-#### [GAMIT/GLOBK](https://geoweb.mit.edu/gg/)  
-*🏷️ 高校实验室*
-
-语言：Fortran/C · 许可：scientific distribution (request) · 星标约：— · 宿主：official_site
-
-MIT 地球大气与行星科学系长期维护的 GAMIT/GLOBK 套件，GAMIT 负责双差相位网解（轨道、站坐标、对流层参数），GLOBK 用卡尔曼滤波合并多期松弛解生成速度场与时间序列，是构造地壳形变研究的主力工具之一。主页集中了快速入门、GAMIT/GLOBK 参考手册、更新记录与依赖说明；源码需先提交许可申请后获取，非 SPDX 开源许可。与 Bernese、GipsyX 属同一档次的科研解算软件，适合与 PPP 类开源工具对照。
-
 ## SPP/RTK/PPP
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
@@ -360,9 +290,11 @@ MIT 地球大气与行星科学系长期维护的 GAMIT/GLOBK 套件，GAMIT 负
 | [gnss-rtk](https://github.com/nav-solutions/gnss-rtk) | gnss-rtk：Rust PPP/RTK 解算（AGPL） | Rust | 79 | 🏷️ 个人社区 |
 | [SatellitePosition](https://github.com/LStudioLoren/SatellitePosition) | SatellitePosition：Python 单点/RTK 学习实现 | Python | 62 | 🏷️ 个人社区 |
 | [MobileGNSS-SPP](https://github.com/salmoshu/MobileGNSS-SPP) | MobileGNSS-SPP：手机 GNSS 的 EKF 单点定位 | C | 41 | 🏷️ 个人社区 |
+| [gnssgo](https://github.com/FengXuebin/gnssgo) | gnssgo：Go 语言移植的 RTKLIB 2.4.3 b34 | Go | 22 | 🏷️ 个人社区 |
 | [GNSS-Explorer](https://github.com/brucezhcw/GNSS-Explorer) | GNSS-Explorer：基于 RTKLIB 的 SPP 算法优化探索 | C | 21 | 🏷️ 个人社区 |
 | [GNSSPositioning](https://github.com/bitecc/GNSSPositioning) | GNSSPositioning：含电离层/对流层改正的 SPP 教学程序 | C++ | 12 | 🏷️ 个人社区 |
 | [SPP_SPV](https://github.com/GYH-WHU/SPP_SPV) | SPP_SPV：个人课程实验：GPS/BDS 单点定位与测速 | C++ | 7 | 🏷️ 个人社区 |
+| [Essential-GNSS](https://sourceforge.net/projects/gnsstk/) | Essential-GNSS：轻量 C 库与事后 LSQ/EKF/RTK（SourceForge） | C | — | 🏷️ 个人社区 |
 | [GSILIB](https://terras.gsi.go.jp/geo_info/gsilib/gsilib.html) | GSILIB：多 GNSS 基线/PPP 解析库 | C | — | 🏷️ 官方 核心 |
 
 ### 详细说明
@@ -423,6 +355,13 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 针对智能手机 GNSS 原始测量设计的 EKF 单点定位实现，意在改善消费级轨迹连续性与噪声表现。适合手机导航算法原型与课程项目。精度达不到载波相位 RTK/PPP；天线相位中心、占空比与多路径仍在，可与 android_rinex、PRIDE-GeoDataLogger 采集链衔接做进一步研究。
 
+#### [gnssgo](https://github.com/FengXuebin/gnssgo)  
+*🏷️ 个人社区*
+
+语言：Go · 许可：GPL-3.0 · 星标约：22 · 宿主：github
+
+将经典 RTKLIB 2.4.3 核心用 Go 重写，便于在微服务与云环境中部署 GNSS 定位组件。示例数据需另行从原版 RTKLIB 获取。算法世代停在 b34；需要新信号/新改正时应评估上游活跃 RTKLIB 分支或 MRTKLIB，而非仅依赖本移植。
+
 #### [GNSS-Explorer](https://github.com/brucezhcw/GNSS-Explorer)  
 *🏷️ 个人社区*
 
@@ -444,12 +383,74 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 基于 C++/MATLAB 的 GPS+BDS 单点定位与测速教学系统，可解码 NovAtel 等接收机输出后完成基本解算。适合本科/研究生课程设计。精度、完备性监测与粗差处理不及 RTKLIB 或商用引擎；科研对比应统一星历钟差产品与误差模型后再引用数值结论。
 
+#### [Essential-GNSS](https://sourceforge.net/projects/gnsstk/)  
+*🏷️ 个人社区*
+
+语言：C · 许可：BSD-3-Clause · 星标约：— · 宿主：sourceforge
+
+Glenn MacGougan 等维护的 Essential GNSS Project，提供 RINEX 2.x 解码、YUMA/SEM、NovAtel OEM4 以及 LSQ/EKF/RTK 事后处理示例，源码头注释为 BSD 三条款许可。与 Texas SGL 的 GPSTk/gnsstk 同名不同源，勿混淆。代码偏经典教学/嵌入，现代多星座 RINEX3+/PPP 请优先用更新栈。
+
 #### [GSILIB](https://terras.gsi.go.jp/geo_info/gsilib/gsilib.html)  
 *🏷️ 官方 核心*
 
 语言：C · 许可：BSD-2-Clause (ANTApp GPL-3.0) · 星标约：— · 宿主：official_site
 
 国土地理院（GSI）基于 RTKLIB 2.4.2 与 ANTTOOL 发布的多 GNSS 解析软件，支持 GPS/QZSS/GLONASS/Galileo 的 L1/L2/L5 基线处理，并新增异机种 IFB/ISB 估计与 L2P–L2C 四分之一周校正。BSD-2（ANTApp 为 GPL-3）。适合日本公共测量与多星座短基线实验；Windows 为主，功能分批核验后公开，不是完整实时 RTK 套件。
+
+## 大地测量/GNSS
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [groops](https://github.com/groops-devs/groops) | GROOPS：重力场与 GNSS 处理（TU Graz） | C++ | 244 | 🏷️ 高校实验室 ★ 核心 |
+| [gnss2tws-green](https://github.com/jzshhh/gnss2tws_green) | gnss2tws-green：GNSS 垂直位移反演陆地水储量 | MATLAB | 33 | 🏷️ 个人社区 |
+| [GARPOS](https://github.com/s-watanabe-jhod/garpos) | GARPOS：日本海保 GNSS-声学海底定位开源解算器 | Python | 25 | 🏷️ 官方 |
+| [gnatss](https://github.com/seafloor-geodesy/gnatss) | gnatss：海底 GNSS-A 换能器测量社区软件 | Python | 17 | 🏷️ 个人社区 |
+| [IGP-TUDelft](https://github.com/TUDelftGeodesy/IGP) | TU Delft IGP：GNSS/InSAR/水准 STM 联合处理 | MATLAB | 2 | 🏷️ 高校实验室 |
+| [GAMIT/GLOBK](https://geoweb.mit.edu/gg/) | MIT EAPS 维护的 GAMIT/GLOBK 高精度 GNSS 大地测量解算套件主页 | Fortran/C | — | 🏷️ 高校实验室 |
+
+### 详细说明
+
+#### [groops](https://github.com/groops-devs/groops)  
+*🏷️ 高校实验室 ★ 核心*
+
+语言：C++ · 许可：GPL-3.0 · 星标约：244 · 宿主：github
+
+格拉茨工业大学 ITSG 背景的 GROOPS，覆盖重力场恢复、GNSS 处理与轨道确定，含 GUI 与 MPI 并行。适合大地测量联合反演与科研计算。学习曲线陡；纯导航 RTK/PPP-AR 工程请优先专用套件。
+
+#### [gnss2tws-green](https://github.com/jzshhh/gnss2tws_green)  
+*🏷️ 个人社区*
+
+语言：MATLAB · 许可：GPL-3.0 · 星标约：33 · 宿主：github
+
+开源 MATLAB 工具 GNSS2TWS：利用 GNSS 测站日尺度垂直位移，经格林函数等方法推断陆地水储量（TWS）变化，服务水文大地测量。适合已有精密坐标时间序列、做气候水文交叉的研究者。不是导航定位解算器；空间平滑、负载模型与参考框架假设必须按配套论文核对。输入坐标序列质量决定反演可信度。站点分布稀疏时，反演空间分辨率会明显下降。
+
+#### [GARPOS](https://github.com/s-watanabe-jhod/garpos)  
+*🏷️ 官方*
+
+语言：Python · 许可：GPL-3.0 · 星标约：25 · 宿主：github
+
+日本海上保安厅水路部公开的 GARPOS，专用于 GNSS-Acoustic（船载 GNSS + 海底应答器测距）联合解算，并可同时估计声速结构相关参数。面向海底大地测量而非陆地 RTK/PPP。Python 实现，GPL-3.0；需准备观测配置与海洋声学先验，门槛偏专业。
+
+#### [gnatss](https://github.com/seafloor-geodesy/gnatss)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：BSD-3-Clause · 星标约：17 · 宿主：github
+
+海床大地测量社区维护的 GNSS-Acoustic（GNSS-A）软件：海面 GNSS 与水声测距联合约束海底换能器/点位，用于海底形变与板块边界监测。面向海洋大地测量课题组。不是陆地 RTK/PPP；依赖船舶、声学与时间同步链路，作业与数据成本远高于陆基站网。
+
+#### [IGP-TUDelft](https://github.com/TUDelftGeodesy/IGP)  
+*🏷️ 高校实验室*
+
+语言：MATLAB · 许可：Apache-2.0 · 星标约：2 · 宿主：github
+
+TU Delft 开源 IGP（MATLAB，Apache-2.0）：以 Space-Time Matrix 统一 GNSS/InSAR/水准等多源形变处理（选择、检验、预测与可视化）。需 MATLAB；InSAR 初始化与数据准备成本不低，偏大地测量形变而非电离层 TEC。
+
+#### [GAMIT/GLOBK](https://geoweb.mit.edu/gg/)  
+*🏷️ 高校实验室*
+
+语言：Fortran/C · 许可：scientific distribution (request) · 星标约：— · 宿主：official_site
+
+MIT 地球大气与行星科学系长期维护的 GAMIT/GLOBK 套件，GAMIT 负责双差相位网解（轨道、站坐标、对流层参数），GLOBK 用卡尔曼滤波合并多期松弛解生成速度场与时间序列，是构造地壳形变研究的主力工具之一。主页集中了快速入门、GAMIT/GLOBK 参考手册、更新记录与依赖说明；源码需先提交许可申请后获取，非 SPDX 开源许可。与 Bernese、GipsyX 属同一档次的科研解算软件，适合与 PPP 类开源工具对照。
 
 ## 城市峡谷
 
@@ -480,21 +481,6 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 语言：Python · 许可：MIT · 星标约：266 · 宿主：github
 
 模块化解析 Android/原始测量与状态估计结果，可视化强，适合智能手机定位与算法课。不是传统测地 PPP 产品线；与 gps-measurement-tools 数据衔接好。
-
-## RTKLIB移植
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [gnssgo](https://github.com/FengXuebin/gnssgo) | gnssgo：Go 语言移植的 RTKLIB 2.4.3 b34 | Go | 22 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [gnssgo](https://github.com/FengXuebin/gnssgo)  
-*🏷️ 个人社区*
-
-语言：Go · 许可：GPL-3.0 · 星标约：22 · 宿主：github
-
-将经典 RTKLIB 2.4.3 核心用 Go 重写，便于在微服务与云环境中部署 GNSS 定位组件。示例数据需另行从原版 RTKLIB 获取。算法世代停在 b34；需要新信号/新改正时应评估上游活跃 RTKLIB 分支或 MRTKLIB，而非仅依赖本移植。
 
 ## RTK
 

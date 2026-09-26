@@ -424,13 +424,39 @@ Anubis 免费档下载入口，提供 Linux 预编译与 GPL-3 源码，覆盖�
 
 长期主导 GNSS 预处理的 Translate/Edit/Quality Check 工具，支持多厂商原始格式转 RINEX、抽稀、窗口与粗差检查。源码因厂商 NDA 未公开；2019-02-25 终版后宣布 EOL，官网仍提供多平台二进制。新站建议并行评估 Anubis、GFZRNX、GNSSTK 等开源替代。
 
-## 接收机下载/RINEX转换
+## RINEX转换
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [rtcm3torinex](https://software.rtcm-ntrip.org/wiki/rtcm3torinex) | BKG rtcm3torinex：RTCM3 流转 RINEX 的官方小工具 | C | 65 | 🏷️ 官方 |
+| [prx](https://github.com/jtec/prx) | prx：RINEX 3.05 观测→CSV 小工具 | Python | 23 | 🏷️ 个人社区 |
+| [ubx2rinex](https://github.com/nav-solutions/ubx2rinex) | ubx2rinex：Rust 实现 UBX 到 RINEX 转换/采集 | Rust | 12 | 🏷️ 个人社区 |
 | [autorino](https://github.com/IPGP/autorino) | autorino：接收机原始数据自动转 RINEX | Python | 11 | 🏷️ 高校实验室 核心 |
+| [trm2rinex-docker](https://github.com/Matioupi/trm2rinex-docker) | 用 Docker+Wine 在 Linux 上运行 Trimble convertToRinex 的构建脚本 | Dockerfile | 11 | 🏷️ 个人社区 |
+| [um980-rtklib-pipeline](https://github.com/holubp/um980-rtklib-pipeline) | UM980 混合串口日志拆分与 RTKLIB 后处理（PPK）Python 流水线 | Python | 1 | 🏷️ 个人社区 |
 
 ### 详细说明
+
+#### [rtcm3torinex](https://software.rtcm-ntrip.org/wiki/rtcm3torinex)  
+*🏷️ 官方*
+
+语言：C · 许可：GPL-2.0-or-later · 星标约：65 · 宿主：official_site
+
+RTCM-Ntrip 项目提供的 RTCM 3 到 RINEX 转换工具，便于把实时流转成事后文件。说明与附件见官方 wiki。功能聚焦转换；质检与编辑需搭配 Anubis/GFZRNX 等。
+
+#### [prx](https://github.com/jtec/prx)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：23 · 宿主：github
+
+轻量把 RINEX 3.05 观测导出 CSV，方便 Excel/脚本快看。适合快速抽查。高精度批处理与多格式支持请优先 georinex。
+
+#### [ubx2rinex](https://github.com/nav-solutions/ubx2rinex)  
+*🏷️ 个人社区*
+
+语言：Rust · 许可：MPL-2.0 · 星标约：12 · 宿主：github
+
+Rust 实现的 u-blox UBX 原始观测反序列化与 RINEX 采集工具，方便把低成本板卡数据送进经典后处理软件。适合外场脚本化采集与自动化。与 android_rinex、georinex 互补；天线高、观测码映射与时钟处理要按接收机配置核对，转换后建议跑质检工具。
 
 #### [autorino](https://github.com/IPGP/autorino)  
 *🏷️ 高校实验室 核心*
@@ -438,6 +464,20 @@ Anubis 免费档下载入口，提供 Linux 预编译与 GPL-3 源码，覆盖�
 语言：Python · 许可：GPL-3.0 · 星标约：11 · 宿主：github
 
 巴黎地球物理研究所（IPGP）维护的 Python 工具，对接 Leica/Septentrio/Topcon/Trimble/BINEX 等厂商官方转换链，强调近实时下载、RINEX3/4 转换、拼接与元数据编辑（联动 rinexmod）。适合台网自动化入库。依赖各厂商转换程序授权与安装；非定位解算引擎。
+
+#### [trm2rinex-docker](https://github.com/Matioupi/trm2rinex-docker)  
+*🏷️ 个人社区*
+
+语言：Dockerfile · 许可：MIT · 星标约：11 · 宿主：github
+
+社区维护的 Dockerfile 与说明，MIT 许可：把 Windows 专用的 Trimble convertToRinex（T00/T02 等原始格式转 RINEX 2/3）连同最小 Wine 环境封装为约 300MB 的镜像，便于在 Linux 服务器批量转换。出于版权原因作者不提供预构建镜像，构建时从 Trimble 官网拉取安装包，链接失效需自行替换。对使用 Trimble 接收机建 CORS 或做批处理的用户很实用，可与 teqc、GFZRNX 等下游工具衔接。最后更新于 2023 年，Wine 版本兼容性需自测。
+
+#### [um980-rtklib-pipeline](https://github.com/holubp/um980-rtklib-pipeline)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：GPL-3.0 · 星标约：1 · 宿主：github
+
+个人开发者发布的 Python 命令行工具 um980-ppk，GPL-3.0 许可。针对 UM980 现场日志中 NMEA、Unicore ASCII/二进制、原始观测与星历交错混杂的 .unc 流，生成记录脚本、分析日志、提取干净的 NMEA 与解算轨迹、导出观测 CSV 与 RINEX 3 观测文件、匹配导航文件，并拼装安全的 rnx2rtkp 调用。作者说明刻意不依赖 convbin，因为许多 RTKLIB 版本缺少 Unicore 支持。适合低成本三频 PPK 用户。项目较新、星标少。
 
 ## 掩星格式转换
 
@@ -857,6 +897,7 @@ MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实�
 | [AeroRust nmea](https://github.com/AeroRust/nmea) | AeroRust 社区维护的 Rust NMEA 0183 语句解析 crate（no_std 友好，按特性裁剪） | Rust | 110 | 🏷️ 个人社区 |
 | [pynmeagps](https://github.com/semuconsulting/pynmeagps) | pynmeagps：NMEA 0183 编解码库 | Python | 106 | 🏷️ 个人社区 核心 |
 | [ublox-rs](https://github.com/ublox-rs/ublox) | ublox-rs：Rust UBX 协议编解码 crate（MIT） | Rust | 84 | 🏷️ 个人社区 |
+| [gnsstk-apps](https://github.com/SGL-UT/gnsstk-apps) | gnsstk-apps：GNSSTK 命令行工具集 | C++ | 68 | 🏷️ 高校实验室 |
 | [nmea-parser](https://github.com/zaari/nmea-parser) | nmea-parser：Rust 版 AIS/GNSS NMEA 0183 解析 | Rust | 51 | 🏷️ 个人社区 |
 | [navsu](https://github.com/stanford-gps-lab/navsu) | navsu：斯坦福 GPS Lab MATLAB GNSS/IGS 工具箱 | MATLAB | 24 | 🏷️ 高校实验室 |
 | [pysbf](https://github.com/jashandeep-sohi/pysbf) | pysbf：Septentrio SBF 文件 Python 解析模块 | Python | 16 | 🏷️ 个人社区 |
@@ -937,6 +978,13 @@ semuconsulting 协议栈中专责 NMEA 0183 解析与生成的 Python 库，常�
 
 用 Rust 实现的 UBX 协议编解码 crate，MIT 许可，便于嵌入式或主机侧与 u-blox 模块对话。偏协议与消息层，不含完整 PVT/RTK 引擎。特性随模块代际与固件变化，接入前需核对支持的消息类。补齐 Rust GNSS 设备接口这一薄点，可与 nav-solutions 生态对照使用。
 
+#### [gnsstk-apps](https://github.com/SGL-UT/gnsstk-apps)  
+*🏷️ 高校实验室*
+
+语言：C++ · 许可：LGPL-3.0 · 星标约：68 · 宿主：github
+
+SGL-UT 从 GPSTk 拆出的应用程序仓，基于 gnsstk 提供命令行工具。适合不想手写 C++ API 的用户；部署相对现代 Python 工具链偏重，版本需与 gnsstk 核心库对齐。
+
 #### [nmea-parser](https://github.com/zaari/nmea-parser)  
 *🏷️ 个人社区*
 
@@ -985,21 +1033,6 @@ semuconsulting 基于 pyubx2 的 u-blox 工具集，BSD-3-Clause。包括 ubxsav
 语言：Rust · 许可：MPL-2.0 · 星标约：4 · 宿主：github
 
 集中处理多种 GNSS 广播与传输相关协议编解码的 Rust 库，为 rinex、rtk、ntrip 等 crate 提供底座。适合需要强类型与高性能 IO 的开发者。上层定位/质检算法需另接；协议覆盖范围随版本扩展，集成时建议锁定 crate 版本并跑官方样例报文。
-
-## 基础库应用
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [gnsstk-apps](https://github.com/SGL-UT/gnsstk-apps) | gnsstk-apps：GNSSTK 命令行工具集 | C++ | 68 | 🏷️ 高校实验室 |
-
-### 详细说明
-
-#### [gnsstk-apps](https://github.com/SGL-UT/gnsstk-apps)  
-*🏷️ 高校实验室*
-
-语言：C++ · 许可：LGPL-3.0 · 星标约：68 · 宿主：github
-
-SGL-UT 从 GPSTk 拆出的应用程序仓，基于 gnsstk 提供命令行工具。适合不想手写 C++ API 的用户；部署相对现代 Python 工具链偏重，版本需与 gnsstk 核心库对齐。
 
 ## Android原始观测
 
@@ -1061,53 +1094,6 @@ gpsd 社区官网，提供安装文档、兼容硬件列表与发布信息。源
 语言：Python · 许可：GPL-3.0 · 星标约：54 · 宿主：github
 
 ROS 包用于连接 NTRIP caster、接收 RTCM，并服务于 u-blox ZED-F9P 一类 RTK 接收机，方便机器人/自动驾驶实验车接入差分。适合 ROS1/相关车载栈快速打通链路。依赖具体 ROS 发行版与串口/USB 配置；不是通用精密大地测量软件。
-
-## RINEX转换
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [rtcm3torinex](https://software.rtcm-ntrip.org/wiki/rtcm3torinex) | BKG rtcm3torinex：RTCM3 流转 RINEX 的官方小工具 | C | 65 | 🏷️ 官方 |
-| [prx](https://github.com/jtec/prx) | prx：RINEX 3.05 观测→CSV 小工具 | Python | 23 | 🏷️ 个人社区 |
-| [ubx2rinex](https://github.com/nav-solutions/ubx2rinex) | ubx2rinex：Rust 实现 UBX 到 RINEX 转换/采集 | Rust | 12 | 🏷️ 个人社区 |
-| [trm2rinex-docker](https://github.com/Matioupi/trm2rinex-docker) | 用 Docker+Wine 在 Linux 上运行 Trimble convertToRinex 的构建脚本 | Dockerfile | 11 | 🏷️ 个人社区 |
-| [um980-rtklib-pipeline](https://github.com/holubp/um980-rtklib-pipeline) | UM980 混合串口日志拆分与 RTKLIB 后处理（PPK）Python 流水线 | Python | 1 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [rtcm3torinex](https://software.rtcm-ntrip.org/wiki/rtcm3torinex)  
-*🏷️ 官方*
-
-语言：C · 许可：GPL-2.0-or-later · 星标约：65 · 宿主：official_site
-
-RTCM-Ntrip 项目提供的 RTCM 3 到 RINEX 转换工具，便于把实时流转成事后文件。说明与附件见官方 wiki。功能聚焦转换；质检与编辑需搭配 Anubis/GFZRNX 等。
-
-#### [prx](https://github.com/jtec/prx)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：MIT · 星标约：23 · 宿主：github
-
-轻量把 RINEX 3.05 观测导出 CSV，方便 Excel/脚本快看。适合快速抽查。高精度批处理与多格式支持请优先 georinex。
-
-#### [ubx2rinex](https://github.com/nav-solutions/ubx2rinex)  
-*🏷️ 个人社区*
-
-语言：Rust · 许可：MPL-2.0 · 星标约：12 · 宿主：github
-
-Rust 实现的 u-blox UBX 原始观测反序列化与 RINEX 采集工具，方便把低成本板卡数据送进经典后处理软件。适合外场脚本化采集与自动化。与 android_rinex、georinex 互补；天线高、观测码映射与时钟处理要按接收机配置核对，转换后建议跑质检工具。
-
-#### [trm2rinex-docker](https://github.com/Matioupi/trm2rinex-docker)  
-*🏷️ 个人社区*
-
-语言：Dockerfile · 许可：MIT · 星标约：11 · 宿主：github
-
-社区维护的 Dockerfile 与说明，MIT 许可：把 Windows 专用的 Trimble convertToRinex（T00/T02 等原始格式转 RINEX 2/3）连同最小 Wine 环境封装为约 300MB 的镜像，便于在 Linux 服务器批量转换。出于版权原因作者不提供预构建镜像，构建时从 Trimble 官网拉取安装包，链接失效需自行替换。对使用 Trimble 接收机建 CORS 或做批处理的用户很实用，可与 teqc、GFZRNX 等下游工具衔接。最后更新于 2023 年，Wine 版本兼容性需自测。
-
-#### [um980-rtklib-pipeline](https://github.com/holubp/um980-rtklib-pipeline)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：GPL-3.0 · 星标约：1 · 宿主：github
-
-个人开发者发布的 Python 命令行工具 um980-ppk，GPL-3.0 许可。针对 UM980 现场日志中 NMEA、Unicore ASCII/二进制、原始观测与星历交错混杂的 .unc 流，生成记录脚本、分析日志、提取干净的 NMEA 与解算轨迹、导出观测 CSV 与 RINEX 3 观测文件、匹配导航文件，并拼装安全的 rnx2rtkp 调用。作者说明刻意不依赖 convbin，因为许多 RTKLIB 版本缺少 Unicore 支持。适合低成本三频 PPK 用户。项目较新、星标少。
 
 ## RINEX头编辑/重命名
 
