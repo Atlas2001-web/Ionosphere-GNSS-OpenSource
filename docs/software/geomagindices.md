@@ -2,6 +2,8 @@
 
 入口：[GitHub space-physics/geomagindices](https://github.com/space-physics/geomagindices) · [PyPI 1.5.1](https://pypi.org/project/geomagindices/) · 替代源 [GFZ Kp API](https://kp.gfz.de/en/data) · 本机验证 **2026-09-26 05:09–05:13 EDT**（CPython 3.13.5 venv）
 
+> **质检复跑通过（2026-09-26 05:58 EDT）**：CPython 3.13.15 venv，pandas 3.0.6 / numpy 2.5.3 / requests 2.34.2。§3.1–3.4、§3.6 输出逐字一致：2015-03-17 返回 2015-04-01 Ap 11 / F10.7 129.05；2024-05 返回 24 / 188.37；smooth 168.42 / 15.0；45 天旧 URL 仍 404（196 B），新 URL 返回 10/95、15/110；2030 那行 73.5/12.2 两列互换；GFZ Ap 271 / Fobs 213.7。NGDC 那步 curl 报 `(9) Server denied you to change to the given directory`。§3.5 的 seed→结果映射换路径后变了，已改为实测结果并注明原因。
+>
 > 岗位：给模型（[msise00](./msise00.md)、IRI/HWM 类）按时刻自动喂 **Ap、F10.7（可平滑）、Kp**。**结论先说：1.5.1 原样装上能跑、不报错，但给的是错的数。** 3 h Kp/Ap 日值读的是 NGDC FTP 目录，现已下线（550）；库会**静默退回月均**，按“最近的月初”取值，Kp 列直接消失。2024-05-11（Gannon 磁暴，GFZ 定值 Ap **271**）它返回 **Ap 24 / F10.7 188.37**，都是 2024-05 的月均。
 > 指数直连下载和数据状态（def/pre）见 [space-weather-indices](./space-weather-indices.md)；PySPEDAS 一行载 OMNI/Kp 见 [pyspedas](./pyspedas.md)。本文只讲这个库本身和怎么绕开。
 
@@ -109,14 +111,14 @@ for s in 0 1 2 3 4 5; do PYTHONHASHSEED=$s python -c \
 ```
 ```
 seed0 2026-10-01 [[nan, nan]]
-seed1 2026-10-01 [[nan, nan]]
-seed2 2026-10-01 [[nan, nan]]
-seed3 2026-08-01 [[9.0, 116.22]]
+seed1 2026-08-01 [[9.0, 116.22]]
+seed2 2026-08-01 [[9.0, 116.22]]
+seed3 2026-10-01 [[nan, nan]]
 seed4 2026-08-01 [[9.0, 116.22]]
-seed5 2026-08-01 [[9.0, 116.22]]
+seed5 2026-10-01 [[nan, nan]]
 ```
 
-同一行代码，一半进程给 NaN，一半给 8 月的值。
+同一行代码，一半进程给 NaN，一半给 8 月的值。哪个 seed 给哪种结果还跟**安装路径**有关：`set` 里放的是完整缓存路径（`web.py:65` `list(set(flist))`）。venv 在 `/tmp/b60` 时 seed 0–2 给 NaN、3–5 有值；在 `/tmp/qc64` 时变成 seed 0/3/5 给 NaN。
 
 ### 3.6 真要日值 / 3 h 值：直连 GFZ（本机实跑）
 
@@ -165,7 +167,7 @@ print(pd.concat([gfz("Ap", t0, t1), gfz("Fobs", t0, t1), gfz("Fadj", t0, t1)], a
 2. **明天、未来 45 天：`ConnectionError …45-day-ap-forecast.txt`** → SWPC 改名 → 用 3.3 的双处改 URL。
 3. **远未来 F10.7 只有 10 左右** → `read20yearfcast` 列名互换 → 自己交换两列，或直接读 `May2016Rpt.txt` 第 4 列（F10.7）、第 7 列（Ap）。
 4. **过去日期返回带 `resolution m` 的奇怪时刻** → 同一调用混了远未来时刻，预报表参与了 nearest → 过去、未来分开调用。
-5. **同一脚本时而 NaN 时而有值** → 月均合并顺序依赖 `set` 迭代顺序 → 设 `PYTHONHASHSEED=0` 之类只能让结果稳定，不能让它正确；近期日期别用本库。
+5. **同一脚本时而 NaN 时而有值** → 月均合并顺序依赖 `set` 迭代顺序 → 设 `PYTHONHASHSEED=0` 之类只能让结果稳定，不能让它正确，而且换个安装路径结果又会变；近期日期别用本库。
 6. **`TypeError: offset-naive and offset-aware`** → 内部拿本地 naive `today()` 比较 → 传 UTC naive datetime；本机若不在 UTC，“今天”的分界会按本地时间偏几小时。
 7. **时间数组很慢、日志刷屏** → 每个过去时刻都重试一次 NGDC 年文件（失败的不缓存）→ 本库不适合批量。
 8. **`forcedownload=True` 不刷新月均** → 退回路径只看文件年龄（30 天），忽略 `force` → 手动删 `data/` 下的 `observed-solar-cycle-indices.json` / `ap_monyr.ave`。

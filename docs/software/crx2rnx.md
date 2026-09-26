@@ -4,6 +4,8 @@
 
 **质检边界：** 仅 CRX→RNX 解压 CLI；**不做** RNX→CRX（见 `rnx2crx`）；V2 CRINEX 可能丢星；写出头 `PGM` 变为 `rs-rinex`，与 GSI 整文件字节不必相同。
 
+> **质检复跑通过（2026-09-26 05:58 EDT）**：坑 4 按实测重写。WTZR 2024/132（GA S3，3849264 B）用 `crx2rnx` 2.7.0 解：`datime parsing` panic，rc=101。改成字母月后 rc=0，C1C 与 GSI 全等。GSI 4.2.0 和 hatanaka 2.8.1 直接可解，143370 行，两者 `cmp` 相同。hatanaka `sample.crx` 的 panic 另有原因：`TIME OF FIRST OBS` 错位。CAS 镜像不可达，环境受限。
+>
 > 岗位：把 Compact RINEX（`.crx` / `.##d` / `.crx.gz`）解成明文 OBS，便于 Rust/现代 CLI 流水线。冲突时：**本机 `crx2rnx -h` / 上游 README > 本文**。  
 > **同名陷阱：** PATH 里的 `crx2rnx` 经常是 [hatanaka](./hatanaka.md) 捆绑的 **GSI RNXCMP** 二进制（旗标 `-f/-s/-d`），**不是**本文 Rust CLI。官方可引用压缩/恢复 → [rnxcmp](./rnxcmp.md)；Python 封装 → [hatanaka](./hatanaka.md)。
 
@@ -188,7 +190,8 @@ mkdir -p /tmp/crx2rnx_pref
 | `PGM` 行 | 改成 `rs-rinex v0.22.0` | 保留原程序名 | 同 GSI |
 | ACOR V3 观测值 | 与 GSI **一致**（本机） | 基准 | 与 GSI body 一致（AJAC） |
 | AJAC V2 | georinex **17** SV；G07 C1 **nan** | **26** SV；C1 G07=25091572.3 | 与 GSI body 相等 |
-| hatanaka `sample.crx` | **panic** `datime parsing` | / `rinex-decompress` OK | OK |
+| hatanaka `sample.crx` | **panic** `datime parsing`（`TIME OF FIRST OBS` 错位一列） | / `rinex-decompress` OK | OK |
+| WTZR 2024/132 `.crx.gz`（头 `12-05-24 00:06`） | **panic** `datime parsing` | 4.2.0 OK，143370 行 | 2.8.1 OK，与 GSI `cmp` 相同 |
 
 ## 4. 输入 / 输出
 
@@ -216,7 +219,7 @@ mkdir -p /tmp/crx2rnx_pref
 | 1 | `crx2rnx -h` 像 GSI（`-f/-s/-d`） | PATH 命中 hatanaka 捆版 | `~/.cargo/bin/crx2rnx -V`；venv 先 `deactivate` |
 | 2 | 以为 `-s` = skip 坏历元 | **旗标语义不同** |  salvage → [rnxcmp](./rnxcmp.md) `-s`；短名才用本文 `-s` |
 | 3 | AJAC 等 V2 解完 SV 变少 / 测值 nan | `rinex` 写回 V2 不完整（本机 17≠26） | 生产 V2 → GSI/`hatanaka`；本文优先 V3 |
-| 4 | `sample.crx`（hatanaka 测试）panic `datime parsing` | 解析器拒该头/历元格式 | 换 nav-solutions `data/CRNX` 样例；或改用 hatanaka |
+| 4 | `panicked at …crx2rnx-2.7.0/src/main.rs:43:46: RINEX parsing error: datime parsing`，没有输出文件，rc=101。本机复现：GA S3 `public/daily/2024/132/WTZR00DEU_R_20241320000_01D_30S_MO.crx.gz`（3849264 B）；CAS `ftp.gipp.org.cn` 连不上（21 口拒连、http 502），**环境受限** | 报错来自**本 CLI 自己**：`Rinex::from_gzip_file` 读头时由 `rinex` 0.22 抛出，不是下游 georinex/gfzrnx。触发条件 ①：`CRINEX PROG / DATE` 行日期写成**数字月**，如 `RNX2CRX ver.4.0.7                       12-05-24 00:06`；`epoch.rs` 的 `parse_formatted_month` 只认 `Jan`…`Dec`。只删 CR（`tr -d '\r'`）照样 panic，CRLF 行尾不是原因。触发条件 ②：`TIME OF FIRST OBS` 列错位，hatanaka `sample.crx` 就是这样（头日期是 `08-Apr-21`，没问题；秒字段比规范 F13.7 右移一列） | 首选：用 GSI `CRX2RNX` 4.2.0（`CRX2RNX - < in.crx > out.rnx`，rc=0，143370 行）或 [hatanaka](./hatanaka.md) 2.8.1 `hatanaka.decompress`（0.4 s，与 GSI `cmp` 相同）；georinex 1.16.2 直接 `load` 这个 `.crx.gz` 也能读（首小时 120 历元、56 SV）。非要用本工具：先把第 2 行日期改成字母月再解，`sed '2s/12-05-24 00:06      /12-May-24 00:06     /'`（保持 60 列对齐），rc=0；首小时 C1C 3651 个值与 GSI 全等，L1C 3650 个中有 2 个差 0.001 周（格式化舍入）。输入改名后输出名会变怪（见 #6），记得加 `-o`。另一个办法：用 GSI `RNX2CRX` 4.2.0 重新压缩，新头是 `26-Sep-26 09:53`，本工具可以解。样例②：把 `TIME OF FIRST OBS` 改成规范列宽后 rc=0 |
 | 5 | `--prefix /tmp/no_such` panic `i/o: output error` | 目录必须预先存在 | `mkdir -p` 后再跑 |
 | 6 | `KUNZ00CZE.crx` → `00CCC_R_..._00U_...rnx` | 非标准长名时文件名合成怪异 | 用 `-o` 显式命名 |
 | 7 | `cmp` Rust `.rnx` ≠ GSI `.rnx` | `PGM` 改写 + 空白格式 | 比对观测字段（如 ACOR C1C）或 georinex |
