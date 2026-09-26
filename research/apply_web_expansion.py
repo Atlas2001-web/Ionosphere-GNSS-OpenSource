@@ -18,7 +18,7 @@ from _idempotent_io import (
     write_json_if_changed,
     write_text_if_changed,
 )
-from _merge_fields import merge_project_fields
+from _merge_fields import PROTECTED_FIELDS, is_retired, merge_project_fields, set_if_empty
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECTS_PATH = ROOT / "PROJECTS.json"
@@ -373,6 +373,10 @@ def main() -> None:
         if f["name"] in by_name:
             skipped.append((f["name"], "dup_name", f["url"]))
             continue
+        if is_retired(f["url"]):
+            # QC removed/merged this project; never re-add (batch 47).
+            skipped.append((f["name"], "retired", f["url"]))
+            continue
 
         entry = {
             "name": f["name"],
@@ -403,7 +407,11 @@ def main() -> None:
             p = by_name[name]
             old_url = p.get("url")
             for k, v in fields.items():
-                p[k] = v
+                # Existing entry: QC owns PROTECTED_FIELDS -> fill gaps only.
+                if k in PROTECTED_FIELDS:
+                    set_if_empty(p, k, v)
+                else:
+                    p[k] = v
             if old_url and norm_url(old_url) != norm_url(p["url"]):
                 # update index
                 existing.pop(norm_url(old_url), None)
@@ -422,22 +430,27 @@ def main() -> None:
             continue
         oldn = norm_url(target["url"])
         for k, v in fields.items():
-            target[k] = v
+            # Existing entry: QC owns PROTECTED_FIELDS (incl. url) -> fill gaps only.
+            if k in PROTECTED_FIELDS:
+                set_if_empty(target, k, v)
+            else:
+                target[k] = v
         existing.pop(oldn, None)
         existing[norm_url(target["url"])] = target
 
     # Special: keep GitHub gLAB mirror but mark personal; official already added as gLAB-UPC
+    # (batch 47: fill-if-empty only; QC owns these fields once the entry exists.)
     if "gLAB" in by_name:
         p = by_name["gLAB"]
-        p["provenance"] = "personal_community"
-        p["host"] = "github"
-        p["desc_zh"] = "gLAB（UPC/ESA）非官方 Git 镜像——请优先用官方下载页"
-        p["one_liner_zh"] = "gLAB 非官方镜像；官方发行见 UPC gAGE 下载页"
+        set_if_empty(p, "provenance", "personal_community")
+        set_if_empty(p, "host", "github")
+        set_if_empty(p, "desc_zh", "gLAB（UPC/ESA）非官方 Git 镜像——请优先用官方下载页")
+        set_if_empty(p, "one_liner_zh", "gLAB 非官方镜像；官方发行见 UPC gAGE 下载页")
         if "gLAB-UPC" in by_name:
-            p["analysis_zh"] = (
+            set_if_empty(p, "analysis_zh", (
                 "社区维护的 gLAB git 镜像，便于版本跟踪；官方二进制/源码与许可以 UPC gAGE 页面为准（本目录另收 gLAB-UPC）。"
                 "核心 Apache、GUI LGPL。不要把镜像当作唯一权威来源。"
-            )
+            ))
 
     # Assign provenance/host to ALL
     for p in projects:

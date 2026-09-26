@@ -8396,7 +8396,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "other",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "Okoh-MATLAB-TEC-from-RINEX",
@@ -8516,7 +8516,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "other",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "pyglow",
@@ -8691,7 +8691,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "gitlab",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "PyRayHF",
@@ -9082,8 +9082,8 @@
       "name": "SAMI3-3.22-Zenodo",
       "url": "https://doi.org/10.5281/zenodo.7895858",
       "desc_zh": "Zenodo software+手册；引用用 concept DOI，非 git 主仓",
-      "one_liner_zh": "SAMI3-3.22-Zenodo：NRL 三维电离层/等离子体层源码存档",
-      "analysis_zh": "Joe Huba（Syntek/NRL）在 Zenodo 以 software 类型存档的 SAMI3-3.22 官方源码包（concept DOI 10.5281/zenodo.7895858），附 sami3-3.22.tgz（约 39 MB）与用户手册。用于全球电离层–等离子体层物理仿真，常与 GNSS TEC/掩星对比。许可 CC-BY-4.0。目录中另有 GitHub 镜像与 CCMC 门户，本条收录可直接下载的 Zenodo 软件存档本身。concept/record 页 HTTP 200。",
+      "one_liner_zh": "SAMI3-3.22-Zenodo：SAMI3 三维电离层/等离子体层模型源码存档",
+      "analysis_zh": "作者 Joe Huba（Zenodo 署名单位为 Syntek Technologies 公司）在 Zenodo 以 software 类型存档的 SAMI3-3.22 源码包（concept DOI 10.5281/zenodo.7895858），附 sami3-3.22.tgz（约 39 MB）与用户手册。用于全球电离层–等离子体层物理仿真，常与 GNSS TEC/掩星对比。许可 CC-BY-4.0。目录中另有 GitHub 镜像与 CCMC 门户，本条收录可直接下载的 Zenodo 软件存档本身。concept/record 页 HTTP 200。",
       "language": "Fortran",
       "license": "CC-BY-4.0",
       "category": "ionosphere",
@@ -9096,7 +9096,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "other",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "SAMI3-4.00",
@@ -9278,7 +9278,7 @@
       "url": "https://seemala.blogspot.com/2026/08/gps-tec-analysis-program-version-37.html",
       "desc_zh": "Gopi Seemala 便携程序，教学与台站 TEC 快检常用",
       "one_liner_zh": "Seemala GPS-TEC：RINEX 估计 GPS TEC（Windows）",
-      "analysis_zh": "波士顿学院 ISR / 空间物理学者 Gopi Seemala 维护的经典 GPS TEC 分析程序（博客当前为 v3.7）。读取 GPS RINEX 2/3 观测与导航文件并自动拉取 DCB，输出 CMN 文本与日变化图；Windows 便携 ZIP，无需安装。低纬电离层教学与区域 TEC 研究引用极广；目前文档称暂仅 GPS。请按 Seemala 2023 章节引用，注意 VC++ 运行库依赖。非开源源码发布。",
+      "analysis_zh": "空间物理学者 Gopi Seemala 在个人博客发布维护的经典 GPS TEC 分析程序（博客当前为 v3.7）。读取 GPS RINEX 2/3 观测与导航文件并自动拉取 DCB，输出 CMN 文本与日变化图；Windows 便携 ZIP，无需安装。低纬电离层教学与区域 TEC 研究引用极广；目前文档称暂仅 GPS。请按 Seemala 2023 章节引用，注意 VC++ 运行库依赖。非开源源码发布。",
       "language": "Windows/Exe",
       "license": "freeware for research (cite Seemala 2023)",
       "category": "ionosphere",
@@ -9291,7 +9291,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "other",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "registration": "open",
       "registration_zh": "博文公开；程序 ZIP 经 Google Drive 链接下载，无需专用门户账号。"
     },
@@ -20397,8 +20397,8 @@
   ],
   "provenance_counts": {
     "official": 333,
-    "academic_lab": 242,
-    "personal_community": 454
+    "academic_lab": 237,
+    "personal_community": 459
   },
   "updated": "2026-09-26"
 }

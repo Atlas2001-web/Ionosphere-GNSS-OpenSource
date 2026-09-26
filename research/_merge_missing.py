@@ -10,7 +10,7 @@ if str(Path(__file__).resolve().parent) not in sys.path:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
 from sync_readme_counts import sync_readme_counts
 from _idempotent_io import append_notes_section, write_json_if_changed, write_text_if_changed
-from _merge_fields import merge_project_fields
+from _merge_fields import is_retired, merge_project_fields
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -873,6 +873,10 @@ def main():
             continue
         if e["name"] in existing_names:
             print("SKIP dup name", e["name"], e["url"])
+            continue
+        if is_retired(e["url"]):
+            # QC removed/merged this project; never re-add (batch 47).
+            print("SKIP retired", e["name"], e["url"])
             continue
         # analysis length check
         nchars = len(e["analysis_zh"])

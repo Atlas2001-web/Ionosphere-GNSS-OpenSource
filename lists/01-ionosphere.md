@@ -396,7 +396,7 @@ Space Weather Modeling Framework 组件之一，描述高纬电离层电动力�
 | [Okoh-MATLAB-TEC-from-RINEX](https://doi.org/10.5281/zenodo.7711905) | Okoh-MATLAB-TEC-from-RINEX：RINEX 提 TEC 的 MATLAB 集 | MATLAB | — | 🏷️ 高校实验室 |
 | [PMGC-SimVP](https://github.com/OnlyYouNotInCity/PMGC-SimVP) | PMGC-SimVP：多尺度门控卷积+SimVP 全球 TEC 预报 | Python | 0 | 🏷️ 高校实验室 |
 | [quakeion](https://github.com/Gm015555/quakeion) | quakeion：震例目录 + CODE GIM TEC/ROT/ROTI 分析 | Python | 0 | 🏷️ 个人社区 |
-| [Seemala-GPS-TEC](https://seemala.blogspot.com/2026/08/gps-tec-analysis-program-version-37.html) | Seemala GPS-TEC：RINEX 估计 GPS TEC（Windows） | Windows/Exe | — | 🏷️ 高校实验室 |
+| [Seemala-GPS-TEC](https://seemala.blogspot.com/2026/08/gps-tec-analysis-program-version-37.html) | Seemala GPS-TEC：RINEX 估计 GPS TEC（Windows） | Windows/Exe | — | 🏷️ 个人社区 |
 | [TEC-forecast-F107](https://github.com/hekaixuan-atm/TEC-forecast) | 空间非均匀 F10.7 强迫的全球 TEC 预报代码 | Python | 0 | 🏷️ 个人社区 |
 | [vtec](https://github.com/mfkiwl/vtec) | vtec：STEC→VTEC 换算与相关小工具（MIT） | C++ | — | 🏷️ 个人社区 ★ |
 
@@ -571,11 +571,11 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 把地震目录与电离层 TEC/ROT/ROTI 分析串起来，并可用 Kp/Dst 过滤地磁暴，强调无需额外 API Key。适合震电离层耦合统计入门。局限：依赖 GIM/IONEX 而非测站原始 STEC；因果解释需谨慎；星数为 0。
 
 #### [Seemala-GPS-TEC](https://seemala.blogspot.com/2026/08/gps-tec-analysis-program-version-37.html)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Windows/Exe · 许可：freeware for research (cite Seemala 2023) · 星标约：— · 宿主：other
 
-波士顿学院 ISR / 空间物理学者 Gopi Seemala 维护的经典 GPS TEC 分析程序（博客当前为 v3.7）。读取 GPS RINEX 2/3 观测与导航文件并自动拉取 DCB，输出 CMN 文本与日变化图；Windows 便携 ZIP，无需安装。低纬电离层教学与区域 TEC 研究引用极广；目前文档称暂仅 GPS。请按 Seemala 2023 章节引用，注意 VC++ 运行库依赖。非开源源码发布。
+空间物理学者 Gopi Seemala 在个人博客发布维护的经典 GPS TEC 分析程序（博客当前为 v3.7）。读取 GPS RINEX 2/3 观测与导航文件并自动拉取 DCB，输出 CMN 文本与日变化图；Windows 便携 ZIP，无需安装。低纬电离层教学与区域 TEC 研究引用极广；目前文档称暂仅 GPS。请按 Seemala 2023 章节引用，注意 VC++ 运行库依赖。非开源源码发布。
 
 #### [TEC-forecast-F107](https://github.com/hekaixuan-atm/TEC-forecast)  
 *🏷️ 个人社区*
@@ -1260,7 +1260,7 @@ KNMI 在 Swarm-VIP-Dynamic（UiO/Birmingham/INGV/DLR/KNMI）合作中的代码�
 | [GRITI](https://github.com/dinsmoro/GRITI) | GRITI：多源电离层瞬变分析与可视化工具箱 | Python | 5 | 🏷️ 高校实验室 |
 | [spinifex](https://git.astron.nl/RD/spinifex) | ASTRON Spinifex：射电天文 TEC/RM 电离层工具 | Python | 4 | 🏷️ 官方 |
 | [nleht-fdtd-ionosphere](https://gitlab.com/nleht/fdtd) | nleht-fdtd：电离层 VLF 波 MPI 并行 FDTD（GitLab） | C++ | 1 | 🏷️ 高校实验室 |
-| [pypride](https://gitlab.com/gofrito/pypride) | pypride：行星雷达/VLBI 库（含 IONEX 与闪烁表 TEC） | Python | 1 | 🏷️ 高校实验室 |
+| [pypride](https://gitlab.com/gofrito/pypride) | pypride：行星雷达/VLBI 库（含 IONEX 与闪烁表 TEC） | Python | 1 | 🏷️ 个人社区 |
 | [Boston-College-ISR-Ionospheric-Studies](https://www.bc.edu/bc-web/research/sites/institute-for-scientific-research/research/ionospheric-studies.html) | Boston College ISR 电离层研究组主页（闪烁、层析与 GNSS TEC 方向） | data-portal | — | 🏷️ 高校实验室 |
 | [CARP-Average-Profile](https://ulcar.uml.edu/SoftwareUtilities/CARP/) | CARP-Average-Profile：测高仪平均代表剖面计算 | Fortran | — | 🏷️ 高校实验室 |
 | [Drift-X](https://ulcar.uml.edu/Drift-X.html) | Drift-X：Digisonde 漂移数据可视化与分析（Java） | Java | — | 🏷️ 高校实验室 |
@@ -1311,7 +1311,7 @@ KNMI 在 Swarm-VIP-Dynamic（UiO/Birmingham/INGV/DLR/KNMI）合作中的代码�
 面向电离层中甚低频（VLF）波传播的三维时域有限差分 C++ 代码，支持 MPI 多节点。适合低电离层/波导传播与 D 区扰动数值实验，与 GNSS L 波段闪烁工具互补。公开 GitLab 项目，但 README 声明代码受版权保护、仅供参考，未授予开源许可，且已停止活跃开发。
 
 #### [pypride](https://gitlab.com/gofrito/pypride)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：MIT (pyproject license field; classifier says GPLv3+; no LICENSE file) · 星标约：1 · 宿主：gitlab
 
@@ -1416,7 +1416,7 @@ Wakkanai、Kokubunji、Yamagawa、Okinawa 等日本测高仪数字化资料入�
 | [IRI-MATLAB-FileExchange](https://www.mathworks.com/matlabcentral/fileexchange/34863-international-reference-ionosphere-iri-model) | IRI-MATLAB：官方指向的 File Exchange 封装 | MATLAB | — | 🏷️ 官方 核心 |
 | [IRI-Plas-SPIM-IZMIRAN](https://www.izmiran.ru/ionosphere/weather/grif/SPIM/) | IRI-Plas/SPIM：IZMIRAN 等离子体层扩展 IRI Fortran | Fortran | — | 🏷️ 官方 |
 | [IRTAM-Coefficient-Reader-Fortran](https://giro.uml.edu/GAMBIT/IrtamReader_Fortran_V1.0.zip) | 官方示例：IRTAM 系数 Fortran 读入器（对接 IRI 同化） | Fortran | — | 🏷️ 官方 |
-| [pyFIRI2018](https://bitbucket.org/ozolotov/pyfiri2018) | pyFIRI2018：FIRI-2018 D 区参考电离层 Python 实现 | Python | — | 🏷️ 高校实验室 |
+| [pyFIRI2018](https://bitbucket.org/ozolotov/pyfiri2018) | pyFIRI2018：FIRI-2018 D 区参考电离层 Python 实现 | Python | — | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -1547,7 +1547,7 @@ IZMIRAN 官方 IRI-Plas/SPIM 下载页：Fortran 主程序与系数包，把 IRI
 从 GAMBIT 页下载的 Fortran 示例，演示如何解析 IRTAM 系数消息并与 IRI 模型联用。适合本地同化/复现研究，而非网页看图。仅为示例读入器，完整实时同化流水线与系数服务条款见 GIRO/GAMBIT；Python 侧可对照 PyIRTAM。
 
 #### [pyFIRI2018](https://bitbucket.org/ozolotov/pyfiri2018)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：Apache-2.0 · 星标约：— · 宿主：other
 
@@ -1963,7 +1963,7 @@ SpaceML 维护的电离层预报代码与笔记本，强调时间融合 Transfor
 | [TITIPy](https://github.com/pignalberi/TITIPy) | Swarm 顶部电离层 RODI/ROTI/ROTEI（Python） | Python | 8 | 🏷️ 高校实验室 |
 | [Ionospheric-Scintillation-Maps-and-PDOP](https://github.com/AlexandraKoulouri/Ionospheric-Scintillation-Maps-and-PDOP) | Ionospheric-Scintillation-Maps-and-PDOP：闪烁成像与 PDOP 影响 | MATLAB | 5 | 🏷️ 个人社区 |
 | [gnssutils](https://github.com/ljlamarche/gnssutils) | 地基 GNSS 闪烁数据清洗与指标计算工具 | Python | 3 | 🏷️ 个人社区 ★ |
-| [Okoh-MATLAB-ROT-ROTI](https://doi.org/10.5281/zenodo.7913105) | Okoh-MATLAB-ROT-ROTI：TEC 序列算 30s ROT 与 5min ROTI | MATLAB | — | 🏷️ 高校实验室 |
+| [Okoh-MATLAB-ROT-ROTI](https://doi.org/10.5281/zenodo.7913105) | Okoh-MATLAB-ROT-ROTI：TEC 序列算 30s ROT 与 5min ROTI | MATLAB | — | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -2017,7 +2017,7 @@ INGV/ESA INTENS 的 Swarm 顶部电离层湍流指数工具（Python）：从 La
 面向地基 GNSS 闪烁接收机数据流的实用函数集，便于清洗与指标计算。适合已有 ISMR/闪烁观测的课题组。GPL 许可需留意；不替代通用 TEC/GIM 或业务闪烁预警系统。
 
 #### [Okoh-MATLAB-ROT-ROTI](https://doi.org/10.5281/zenodo.7913105)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：MATLAB · 许可：CC-BY-4.0 · 星标约：— · 宿主：other
 
@@ -2218,16 +2218,16 @@ irimodel.org 上 IRI-2020 的文件目录，可直接获取 00_iri.zip/tar、许
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [SAMI3-3.22-Zenodo](https://doi.org/10.5281/zenodo.7895858) | SAMI3-3.22-Zenodo：NRL 三维电离层/等离子体层源码存档 | Fortran | — | 🏷️ 高校实验室 |
+| [SAMI3-3.22-Zenodo](https://doi.org/10.5281/zenodo.7895858) | SAMI3-3.22-Zenodo：SAMI3 三维电离层/等离子体层模型源码存档 | Fortran | — | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [SAMI3-3.22-Zenodo](https://doi.org/10.5281/zenodo.7895858)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Fortran · 许可：CC-BY-4.0 · 星标约：— · 宿主：other
 
-Joe Huba（Syntek/NRL）在 Zenodo 以 software 类型存档的 SAMI3-3.22 官方源码包（concept DOI 10.5281/zenodo.7895858），附 sami3-3.22.tgz（约 39 MB）与用户手册。用于全球电离层–等离子体层物理仿真，常与 GNSS TEC/掩星对比。许可 CC-BY-4.0。目录中另有 GitHub 镜像与 CCMC 门户，本条收录可直接下载的 Zenodo 软件存档本身。concept/record 页 HTTP 200。
+作者 Joe Huba（Zenodo 署名单位为 Syntek Technologies 公司）在 Zenodo 以 software 类型存档的 SAMI3-3.22 源码包（concept DOI 10.5281/zenodo.7895858），附 sami3-3.22.tgz（约 39 MB）与用户手册。用于全球电离层–等离子体层物理仿真，常与 GNSS TEC/掩星对比。许可 CC-BY-4.0。目录中另有 GitHub 镜像与 CCMC 门户，本条收录可直接下载的 Zenodo 软件存档本身。concept/record 页 HTTP 200。
 
 ## SWARM/LEO TEC
 

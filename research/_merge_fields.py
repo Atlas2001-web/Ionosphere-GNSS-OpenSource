@@ -1,15 +1,46 @@
 """Shared field-merge helpers for catalog merge/apply pipelines.
 
-Hard rule: never let empty/weak incoming values overwrite non-empty
-enrichment already on an existing PROJECTS.json entry (license,
-language, provenance, Chinese blurbs). Stronger/non-empty incoming
-may still fill gaps or upgrade weak values.
+EXISTING-ENTRY RULE (batch 47, hardened at the root)
+----------------------------------------------------
+Once a project is in PROJECTS.json, its curated fields belong to QC, not to
+the finds file it was originally ingested from. Stale finds files
+(routine_finds_*.json, similar_finds.json, more_finds.json, new_finds.json,
+web_finds.json, ...) still carry pre-QC provenance / license / language /
+blurbs; re-running their merge scripts must NOT revert QC decisions.
+
+Therefore, for an entry that ALREADY exists in the catalog:
+  * a PROTECTED field (see PROTECTED_FIELDS) is only written when the stored
+    value is a gap -- key missing or blank string ""; a non-empty stored
+    value is NEVER overwritten -- no rank "upgrades" (provenance), no
+    "stronger" license, no "richer" Chinese blurb, no category/url moves;
+  * an explicit JSON ``null`` on an existing entry is a QC verdict, not a
+    gap (convention since batch 41: ``license: null`` = verified no licence
+    / not determinable, ``language: null`` = website/data, no code), so it
+    is also never filled -- e.g. PPP-Wizard license null must not become
+    "see upstream" again;
+  * placeholder values ("see upstream README", "unspecified", NOASSERTION,
+    ...) never fill anything, even a real gap;
+  * to change a curated field on an existing entry, edit PROJECTS.json in a
+    QC commit -- not by editing a finds file and re-running a merge.
+
+NEW entries (norm_url not yet in the catalog) are unaffected: merge scripts
+build them from the finds record with full values, as before.
+
+RETIRED URLS: entries QC removed or merged into another entry (and old URLs
+that QC rewrote) are listed in RETIRED_URLS; merge scripts must skip them
+when adding "new" entries (``is_retired(url)``), otherwise a stale finds
+file silently re-adds a deleted/merged project.
+
+Interface is unchanged: ``merge_project_fields(existing, incoming, *,
+fields=None) -> list[str]`` and ``prefer_enrichment_value(field, old, new)``.
+Scripts that write existing entries without these helpers must use
+``set_if_empty`` (or equivalent) for PROTECTED_FIELDS.
 """
 from __future__ import annotations
 
 from typing import Any, Iterable
 
-# QC / enrichment fields that routine merges must not wipe.
+# QC / enrichment fields that routine merges must not wipe (kept for callers).
 ENRICHMENT_FIELDS: tuple[str, ...] = (
     "license",
     "language",
@@ -19,29 +50,72 @@ ENRICHMENT_FIELDS: tuple[str, ...] = (
     "analysis_zh",
 )
 
-# Optional structural fields: fill-if-empty only (never clobber).
+# Structural fields owned by QC once an entry exists: fill-if-empty only.
 FILL_IF_EMPTY_FIELDS: tuple[str, ...] = (
     "host",
+    "category",
+    "subcategory",
+    "url",
 )
 
-_PROVENANCE_RANK = {
-    "personal_community": 1,
-    "academic_lab": 2,
-    "official": 3,
-}
+# Every field covered by the existing-entry rule.
+PROTECTED_FIELDS: tuple[str, ...] = ENRICHMENT_FIELDS + FILL_IF_EMPTY_FIELDS
 
-_WEAK_LICENSE = {
-    "",
+
+_PLACEHOLDERS = {
     "noassertion",
     "none",
     "unknown",
+    "unspecified",
     "n/a",
     "na",
     "null",
+    "other",
     "see upstream",
     "see-upstream",
     "seeupstream",
+    "see upstream readme",
+    "see readme",
 }
+
+
+# norm_url (rstrip("/").lower()) -> why it is no longer a catalog URL.
+RETIRED_URLS: dict[str, str] = {
+    "https://igs.bkg.bund.de/root_ftp/ntrip/software/caster": "merged into BKG-NtripCaster (batch 43)",
+    "https://www.gfz.de/en/section/space-geodetic-techniques/overview/details-section-news/veroeffentlichung-der-software-for-precise-orbit-and-clock-combination-spocc-1": "merged into SPOCC (batch 43)",
+    "https://lists.igs.org/pipermail/igsmail/2025/008556.html": "merged into SPOCC (batch 43)",
+    "https://github.com/ohm1122/ionex-downloader": "removed: empty repository (0472f42)",
+    "https://github.com/gnssnexus/rinex": "retired URL (QC)",
+    "https://github.com/ohm1122/ionkit-nh": "retired URL (QC)",
+    "https://github.com/ohm1122/oasis": "retired URL (QC)",
+    "http://geoweb.mit.edu/gg": "URL rewritten by QC",
+    "http://software.rtcm-ntrip.org/wiki/bns": "URL rewritten by QC",
+    "http://software.rtcm-ntrip.org/wiki/ntripclient": "URL rewritten by QC",
+    "http://software.rtcm-ntrip.org/wiki/ntripserver": "URL rewritten by QC",
+    "http://software.rtcm-ntrip.org": "URL rewritten by QC",
+    "http://software.rtcm-ntrip.org/wiki/rtcm3torinex": "URL rewritten by QC",
+    "https://github.com/stenseng/biscef": "URL rewritten by QC",
+    "https://seemala.blogspot.com/2024/04/gps-tec-analysis-program-version-35.html": "URL rewritten by QC",
+    "https://github.com/yxw027/segmentscomputation": "URL rewritten by QC",
+    "http://www.ep.sci.hokudai.ac.jp/~heki/software.htm": "URL rewritten by QC",
+}
+
+
+def is_retired(url: Any) -> bool:
+    """True if ``url`` was removed/merged/rewritten by QC; do not re-add it."""
+    return isinstance(url, str) and url.rstrip("/").lower() in RETIRED_URLS
+
+
+def _is_placeholder(value: Any) -> bool:
+    return isinstance(value, str) and value.strip().lower() in _PLACEHOLDERS
+
+
+def _is_gap(existing: dict, field: str) -> bool:
+    """True if ``field`` on an existing entry may be filled (missing or "")."""
+    if field not in existing:
+        return True
+    v = existing[field]
+    return isinstance(v, str) and not v.strip()
 
 
 def _is_empty(value: Any) -> bool:
@@ -49,73 +123,38 @@ def _is_empty(value: Any) -> bool:
         return True
     if isinstance(value, str) and not value.strip():
         return True
+    if isinstance(value, (list, dict, tuple)) and not value:
+        return True
     return False
 
 
-def _license_rank(value: Any) -> int:
-    if _is_empty(value):
-        return 0
-    s = str(value).strip()
-    if s.lower() in _WEAK_LICENSE:
-        return 1
-    return 3  # SPDX / concrete license string
-
-
-def _provenance_rank(value: Any) -> int:
-    if _is_empty(value):
-        return 0
-    return _PROVENANCE_RANK.get(str(value).strip(), 1)
-
-
-def _zh_rank(value: Any) -> int:
-    if _is_empty(value):
-        return 0
-    return len(str(value).strip())
-
-
 def prefer_enrichment_value(field: str, old: Any, new: Any) -> Any:
-    """Choose the value to keep for an enrichment field.
+    """Value to keep for ``field`` on an EXISTING catalog entry.
 
-    Hard rule: empty/weak ``new`` never replaces non-empty ``old``.
-    When both are usable, prefer the richer / higher-rank value; for
-    Chinese blurbs, prefer existing QC text when both are non-trivial.
+    Existing ``old`` always wins unless it is a blank string and ``new`` is
+    a real (non-placeholder) value. ``old is None`` is treated as a QC
+    verdict and kept. (``field`` is accepted for interface compatibility;
+    callers that cannot distinguish "missing" from ``None`` should use
+    ``merge_project_fields`` / ``set_if_empty`` instead.)
     """
-    if field == "license":
-        if _license_rank(new) > _license_rank(old):
-            return new
-        return old if not _is_empty(old) else new
-
-    if field == "provenance":
-        # Never downgrade (e.g. official → personal_community).
-        if _provenance_rank(new) > _provenance_rank(old):
-            return new
-        return old if not _is_empty(old) else new
-
-    if field in ("desc_zh", "one_liner_zh", "analysis_zh"):
-        if _is_empty(new):
-            return old
-        if _is_empty(old):
-            return new
-        # Both non-empty: keep existing QC unless it is trivially short
-        # (placeholder) and incoming is clearly richer.
-        old_s, new_s = str(old).strip(), str(new).strip()
-        if _zh_rank(old_s) < 8 and _zh_rank(new_s) > _zh_rank(old_s):
-            return new_s
-        return old
-
-    if field in ("language", "host"):
-        if _is_empty(new):
-            return old
-        if _is_empty(old):
-            return new
-        return old  # both set: keep existing
-
-    # Default: never empty-overwrite; otherwise keep old when both set.
-    if _is_empty(new):
-        return old
-    if _is_empty(old):
+    if isinstance(old, str) and not old.strip() and not _is_empty(new) and not _is_placeholder(new):
         return new
     return old
+
+
+def set_if_empty(existing: dict, field: str, value: Any) -> bool:
+    """Write ``value`` into ``existing[field]`` only if the field is a gap.
+
+    Gap = key missing or blank string. ``None`` (QC verdict) and any
+    non-empty value are kept; empty/placeholder ``value`` never writes.
+
+    Returns True if the entry changed. For use by scripts that assign fields
+    on existing entries directly instead of via ``merge_project_fields``.
+    """
+    if _is_gap(existing, field) and not _is_empty(value) and not _is_placeholder(value):
+        existing[field] = value
+        return True
+    return False
 
 
 def merge_project_fields(
@@ -124,26 +163,16 @@ def merge_project_fields(
     *,
     fields: Iterable[str] | None = None,
 ) -> list[str]:
-    """Merge enrichment fields from ``incoming`` into ``existing`` in-place.
+    """Merge fields from ``incoming`` into the EXISTING entry, in place.
 
-    Only fields present as keys in ``incoming`` are considered. Returns the
-    list of field names whose stored value changed.
+    Only fields present as keys in ``incoming`` are considered; each is
+    fill-if-empty (see module docstring). Returns the list of changed fields.
     """
-    use_fields = tuple(fields) if fields is not None else (ENRICHMENT_FIELDS + FILL_IF_EMPTY_FIELDS)
+    use_fields = tuple(fields) if fields is not None else PROTECTED_FIELDS
     changed: list[str] = []
     for field in use_fields:
         if field not in incoming:
             continue
-        old = existing.get(field) if field in existing else None
-        new = incoming.get(field)
-        kept = prefer_enrichment_value(field, old, new)
-        if field not in existing:
-            if _is_empty(kept):
-                continue
-            existing[field] = kept
-            changed.append(field)
-            continue
-        if kept != existing.get(field):
-            existing[field] = kept
+        if set_if_empty(existing, field, incoming.get(field)):
             changed.append(field)
     return changed
