@@ -12,7 +12,7 @@
 
 **做：** 各匿名镜像的日观测目录路径；同一组站的到达率（24 站命中数）、完整性（解 Hatanaka 后历元数）、同一文件跨镜像是否同一份数据；`Last-Modified` 上架延迟；登录门槛。
 
-**不做：** 高采样 / 小时文件；导航文件；产品（→ [gim-product-portals](./gim-product-portals.md)）；区域 CORS（EPN、CACS 等见 [data-access](../data-access.md)）。
+**不做：** 高采样 / 小时文件；导航文件；产品（→ [gim-product-portals](./gim-product-portals.md)）；区域 CORS（NOAA、EPN、GeoNet、RBMC、SONEL 见 [cors-networks](./cors-networks.md)；CACS 等见 [data-access](../data-access.md)）。
 
 **结论先说：**
 
