@@ -136,7 +136,7 @@ RTCM-Ntrip 官方仓库中的 POSIX ntripserver，用于将接收机或文件流
 #### [baidu-ntripcaster](https://github.com/baidu/ntripcaster)  
 *🏷️ 个人社区*
 
-语言：C · 许可：NOASSERTION · 星标约：46 · 宿主：github
+语言：C · 许可：GPL-2.0-or-later · 星标约：46 · 宿主：github
 
 百度 Open Source 组织公开的 NTRIP Caster，可作自建播发与协议学习的对照样本。适合对比 BKG 与社区实现。按 catalog 政策记为个人社区（公司开源档）；上线前须完成压力、安全与兼容性测试。
 
@@ -469,7 +469,7 @@ Anubis 免费档下载入口，提供 Linux 预编译与 GPL-3 源码，覆盖�
 #### [hatanaka](https://github.com/valgur/hatanaka)  
 *🏷️ 个人社区*
 
-语言：C · 许可：— · 星标约：26 · 宿主：github
+语言：C · 许可：MIT (Python wrapper) + GSI terms (RNXCMP, cite Hatanaka 2008) · 星标约：26 · 宿主：github
 
 把 Hatanaka（RNXCMP）压缩解压接到 Python，方便批量解 CRX。适合 IGS 数据湖前处理。算法权威来源仍是 GSI RNXCMP；本仓库是便利封装。
 
@@ -752,7 +752,7 @@ go-gnss 的 SPARTN 解析库，面向 PPP-RTK/高精度改正流格式。Apache-
 #### [gLAB](https://github.com/valgur/gLAB)  
 *🏷️ 个人社区 ★*
 
-语言：C · 许可：— · 星标约：22 · 宿主：github
+语言：C · 许可：Apache-2.0 + LGPL-3.0 (GUI) · 星标约：22 · 宿主：github
 
 社区维护的 gLAB git 镜像，便于版本跟踪；官方二进制/源码与许可以 UPC gAGE 页面为准（本目录另收 gLAB-UPC）。核心 Apache、GUI LGPL。不要把镜像当作唯一权威来源。
 
@@ -885,7 +885,7 @@ rawify 的 JavaScript NMEA 0183 解析器，可处理语句流并维护导航状
 #### [gnsstk](https://github.com/SGL-UT/gnsstk)  
 *🏷️ 高校实验室 核心*
 
-语言：C++ · 许可：— · 星标约：183 · 宿主：github
+语言：C++ · 许可：LGPL-3.0 · 星标约：183 · 宿主：github
 
 德州大学 SGL 的 GNSSTK 库（GPSTk 后继），提供时间系统、坐标、观测模型等底层能力，配套 gnsstk-apps。适合做 C++ 科研软件底座。应用层 PPP/RTK 需自行或接 apps；老文档仍可能写 GPSTk。
 
@@ -994,7 +994,7 @@ EarthScope 开源的 GNSS 产品联邦工具，按日期与任务在十余个 IG
 #### [gnsstk-apps](https://github.com/SGL-UT/gnsstk-apps)  
 *🏷️ 高校实验室*
 
-语言：— · 许可：— · 星标约：68 · 宿主：github
+语言：— · 许可：LGPL-3.0 · 星标约：68 · 宿主：github
 
 SGL-UT 从 GPSTk 拆出的应用程序仓，基于 gnsstk 提供命令行工具。适合不想手写 C++ API 的用户；部署相对现代 Python 工具链偏重，版本需与 gnsstk 核心库对齐。
 
@@ -1062,7 +1062,7 @@ gpsd 社区官网，提供安装文档、兼容硬件列表与发布信息。源
 #### [GPSTk](https://github.com/SGL-UT/GPSTk)  
 *🏷️ 高校实验室*
 
-语言：C++ · 许可：— · 星标约：360 · 宿主：github
+语言：C++ · 许可：LGPL-3.0 · 星标约：360 · 宿主：github
 
 历史 GPSTk 仓库，已声明归档并迁移到 gnsstk / gnsstk-apps。仅作文献与旧脚本对照；新项目请用 GNSSTK。
 
@@ -1077,7 +1077,7 @@ gpsd 社区官网，提供安装文档、兼容硬件列表与发布信息。源
 #### [ntrip_client-MicroStrain](https://github.com/LORD-MicroStrain/ntrip_client)  
 *🏷️ 个人社区*
 
-语言：Python · 许可：NOASSERTION · 星标约：118 · 宿主：github
+语言：Python · 许可：MIT · 星标约：118 · 宿主：github
 
 工业传感器厂商开源的 ROS 节点：连接 NTRIP caster，接收 RTCM 并发布到话题；可通过订阅 NMEA 支持网络 RTK/VRS。分 ros 与 ros2 分支。适合机器人与车载紧耦合前的差分链路。依赖 ROS 工作区；非通用桌面 NTRIP 客户端，许可条款以仓库为准。
 

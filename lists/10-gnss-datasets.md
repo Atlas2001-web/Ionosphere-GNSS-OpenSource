@@ -589,7 +589,7 @@ COSMIC/FORMOSAT 等任务的无线电掩星数据中心门户，提供中性大�
 #### [cssrlib-data](https://github.com/hirokawa/cssrlib-data)  
 *🏷️ 高校实验室*
 
-语言：Python · 许可：NOASSERTION · 星标约：44 · 宿主：github
+语言：Python · 许可：MIT · 星标约：44 · 宿主：github
 
 为 CSSRlib 提供样例脚本与试验观测/改正数据，方便本地或 Colab 复现 CLAS、HAS、BDS PPP 等开放服务流程。适合跟着官方教程跑通改正接入与定位。不是长期产品归档；业务数据请接 IGS 或各服务官方中心，并注意样例时段与电文版本。
 

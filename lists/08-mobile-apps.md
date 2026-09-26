@@ -180,7 +180,7 @@ Cryologger Glacier Velocity Tracker 以 Arduino/MicroMod 与 SparkFun ZED-F9P �
 #### [SparkFun_u-blox_GNSS_v3](https://github.com/sparkfun/SparkFun_u-blox_GNSS_v3)  
 *🏷️ 个人社区*
 
-语言：C++ · 许可：MIT-style (SparkFun code) · 星标约：104 · 宿主：github
+语言：C++ · 许可：MIT · 星标约：104 · 宿主：github
 
 面向嵌入式/创客的 Arduino 库，用 u-blox Configuration Interface 配置与读取模块，便于采集原始测量或 NMEA。适合低成本接收机原型与教学；不是精密定位引擎，高级 RTK/PPP 仍需配合基站与解算软件。
 

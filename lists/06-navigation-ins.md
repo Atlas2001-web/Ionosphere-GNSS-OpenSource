@@ -415,7 +415,7 @@ OKVIS2-X 在经典 OKVIS 视觉惯性框架上扩展稠密深度或 LiDAR，并�
 #### [msckfvioGPS](https://github.com/loveforeverLi/msckf_vio_GPS)  
 *🏷️ 个人社区*
 
-语言：C++ · 许可：— · 星标约：31 · 宿主：github
+语言：C++ · 许可：academic non-commercial (Penn MSCKF_VIO terms, no redistribution) · 星标约：31 · 宿主：github
 
 在 MSCKF-VIO 上增加 GPS 融合，用卫星位置约束抑制视觉惯性漂移并对齐全球坐标，服务无人机与地面机器人。适合已有 MSCKF 栈、需要全球定位的团队。与上游 MSCKF 的同步情况需自查；城市峡谷 GNSS 质量差时收益有限，精密测地仍用专用 PPP/RTK。相机-IMU 外参标定质量往往比 GPS 权重更敏感。
 
@@ -491,7 +491,7 @@ GREAT 体系内的因子图优化实现，面向精密定位与组合导航相�
 #### [gtsam](https://github.com/borglab/gtsam)  
 *🏷️ 高校实验室 核心*
 
-语言：C++ · 许可：— · 星标约：3680 · 宿主：github
+语言：C++ · 许可：BSD-3-Clause · 星标约：3680 · 宿主：github
 
 通用因子图优化库，被 gtsam_gnss、GVINS、FGO-RTK 等大量 GNSS 项目依赖。本身不是 GNSS 解算器；要 GNSS 因子需接 gtsam_gnss 等扩展。
 
@@ -506,9 +506,9 @@ GREAT 体系内的因子图优化实现，面向精密定位与组合导航相�
 #### [GVINS-Dataset](https://github.com/HKUST-Aerial-Robotics/GVINS-Dataset)  
 *🏷️ 高校实验室*
 
-语言：C++ · 许可：NOASSERTION · 星标约：262 · 宿主：github
+语言：C++ · 许可：CC-BY-NC-SA-4.0 · 星标约：262 · 宿主：github
 
-与 GVINS 配套的同步视觉、IMU 与 GNSS 原始测量数据，方便复现紧耦合实验与对比算法，是 GNSS-VIO 常用测试集之一。本身不含完整解算器；处理请配合 GVINS、gnss_comm、ublox_driver。许可字段为 NOASSERTION，论文复现与再分发前务必阅读仓库说明与引用要求。
+与 GVINS 配套的同步视觉、IMU 与 GNSS 原始测量数据，方便复现紧耦合实验与对比算法，是 GNSS-VIO 常用测试集之一。本身不含完整解算器；处理请配合 GVINS、gnss_comm、ublox_driver。许可为 CC BY-NC-SA 4.0（非商业），论文复现与再分发前务必阅读仓库说明与引用要求。
 
 ## INS工具包
 
@@ -532,7 +532,7 @@ GREAT 体系内的因子图优化实现，面向精密定位与组合导航相�
 #### [NaveGo](https://github.com/rodralez/NaveGo)  
 *🏷️ 高校实验室*
 
-语言：MATLAB · 许可：— · 星标约：640 · 宿主：github
+语言：MATLAB · 许可：LGPL-3.0 · 星标约：640 · 宿主：github
 
 MATLAB/GNU Octave 下仿真与分析惯导/组合导航，流程完整、适合教学。科研快速改公式方便。实时嵌入式与测地 PPP-AR 非其主场。
 
@@ -553,7 +553,7 @@ MATLAB/GNU Octave 下仿真与分析惯导/组合导航，流程完整、适合�
 #### [KalmanFilters.jl](https://github.com/JuliaGNSS/KalmanFilters.jl)  
 *🏷️ 个人社区*
 
-语言：Julia · 许可：— · 星标约：55 · 宿主：github
+语言：Julia · 许可：MIT · 星标约：55 · 宿主：github
 
 JuliaGNSS 生态中的滤波库，实现经典 KF、UKF、AUKF 及其方根形式，供 GNSS/导航状态估计在 Julia 中调用。适合已用 Julia 做原型的研究代码。本身不是完整定位引擎，观测模型、周跳与模糊度处理需自建或与其它包组合。与 JuliaGNSS 其它包组合时可减少重复造轮子。方根滤波在病态协方差时通常更数值稳定。
 
@@ -598,7 +598,7 @@ JuliaGNSS 生态中的滤波库，实现经典 KF、UKF、AUKF 及其方根形�
 #### [rtklib_ros_bridge](https://github.com/MapIV/rtklib_ros_bridge)  
 *🏷️ 个人社区*
 
-语言：C++ · 许可：NOASSERTION · 星标约：121 · 宿主：github
+语言：C++ · 许可：BSD-3-Clause · 星标约：121 · 宿主：github
 
 把经典 RTKLIB 定位输出接入 ROS，便于自动驾驶与机器人栈消费 RTK/PPP 结果。绑定 RTKLIB 2.4.3 b34 一代接口。适合已有 RTKLIB 流水线的 ROS 集成；若需要更新算法内核应另选维护中的 RTKLIB 分支或 MRTKLIB，并注意许可与版本差异。
 

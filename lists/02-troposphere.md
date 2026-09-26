@@ -347,7 +347,7 @@ GNSS 干涉反射测量（GNSS-IR）主流开源工具，用反射信号估水�
 #### [mphw](https://github.com/ufrgs-gnss-lab/mphw)  
 *🏷️ 高校实验室*
 
-语言：MATLAB · 许可：NOASSERTION · 星标约：25 · 宿主：github
+语言：MATLAB · 许可：BSD-2-Clause (MATLAB) + GPL-2.0 (Arduino) + CC-BY-SA-3.0 (docs) · 星标约：25 · 宿主：github
 
 开源低成本 GNSS-IR/反射测量硬件方案（MPHW），配合 SNR 反射测高。适合教学站与原型站网，降低进入 GNSS-R 的硬件门槛。精度受天线与场地多路径制约，科研级水位/雪深仍常对照 gnssrefl + 大地型天线。
 

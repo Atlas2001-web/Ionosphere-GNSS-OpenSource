@@ -48,9 +48,9 @@
 #### [GNSS_TOM](https://github.com/sailvssea/GNSS_TOM)  
 *🏷️ 高校实验室*
 
-语言：C++ · 许可：unknown · 星标约：1 · 宿主：github
+语言：C++ · 许可：LGPL-3.0 · 星标约：1 · 宿主：github
 
-同时面向对流层水汽与电离层 TEC 的层析代码，C++ 实现并参考 GPSTk 风格。输入为 GNSS 相关观测量/几何；输出层析体素场。局限：星数低、文档少；电离层与对流层模块成熟度需实测；许可为 NOASSERTION。
+同时面向对流层水汽与电离层 TEC 的层析代码，C++ 实现并参考 GPSTk 风格。输入为 GNSS 相关观测量/几何；输出层析体素场。局限：星数低、文档少；电离层与对流层模块成熟度需实测；许可为 LGPL-3.0。
 
 #### [Geometric-Matrix-For-Ionospheric-Tomogrphy](https://github.com/yujieqing/Geometric-Matrix-For-Ionospheric-Tomogrphy)  
 *🏷️ 个人社区 ★*
@@ -196,7 +196,7 @@ AetherModel/Aether 是热层/电离层耦合的第一性原理模式（C++），
 #### [TIE-GCM](https://github.com/NCAR/tiegcm)  
 *🏷️ 官方*
 
-语言：Fortran · 许可：NCAR-academic · 星标约：27 · 宿主：github
+语言：Fortran · 许可：NCAR TIE-GCM academic research licence (non-commercial, no operational use) · 星标约：27 · 宿主：github
 
 TIE-GCM 是 NCAR HAO 发展的三维耦合热层-电离层-电动力学 GCM，GitHub 上现为官方开源仓库（含 src、scripts、tiegcmrun）。输入需配套数据文件（太阳、地磁、边界等），输出 netCDF 压力层/高度场。GNSS 研究里常拿来做风暴期 TEC/电子密度对照或数据同化背景。局限：需要 Fortran/MPI/netCDF 与较大输入数据集；业务化改正仍多用 IRI/NeQuick/GIM，而非直接跑 TIE-GCM。
 
@@ -245,7 +245,7 @@ sami2py 把海军实验室 SAMI2 二维电离层模式包成 Python：可设置�
 #### [transcar](https://github.com/space-physics/transcar)  
 *🏷️ 高校实验室*
 
-语言：Fortran · 许可：NOASSERTION · 星标约：7 · 宿主：github
+语言：Fortran · 许可：Apache-2.0 · 星标约：7 · 宿主：github
 
 Blelly/Lilensten/Zettergren 一维沉降电离层模式，用于粒子沉降加热与密度响应研究。输入为沉降能谱等；输出为一维剖面时序。局限：非全球 GIM；与 GNSS 射线积分需自行耦合。
 
@@ -350,16 +350,16 @@ HAO 上的 TIE-GCM/TIME-GCM 家族说明、用户指南与发布历史入口，�
 #### [NeQuick2-MLF2](https://github.com/SkydelSolutions/nequick2-mlf2)  
 *🏷️ 个人社区*
 
-语言：C · 许可：unknown · 星标约：0 · 宿主：github
+语言：C · 许可：EUPL-1.2 · 星标约：0 · 宿主：github
 
 该仓库提供 NeQuick2-MLF2 电离层模式实现，说明基于 Galileo NeQuick-G 算法并由 Gustave Eiffel University / Safran Trusted 4D 修改。对需要在仿真器或接收机侧嵌入 NeQuick 族改正的开发者有参考价值。局限：星数为 0；与官方 NeQuick2/NeQuick-G 发布渠道并行，引用与验证需自行对照 ICTP/ESA/JRC 参考实现；文档相对简略。
 
 #### [RIM](https://github.com/SWMFsoftware/RIM)  
 *🏷️ 官方*
 
-语言：Fortran · 许可：unknown · 星标约：0 · 宿主：github
+语言：Fortran · 许可：Apache-2.0 · 星标约：0 · 宿主：github
 
-Space Weather Modeling Framework 组件之一，描述高纬电离层电动力学等，常与全球磁层模式耦合。局限：通常作为 SWMF 整体使用；单独跑与输入耦合复杂；许可字段不清晰。
+Space Weather Modeling Framework 组件之一，描述高纬电离层电动力学等，常与全球磁层模式耦合。局限：通常作为 SWMF 整体使用；单独跑与输入耦合复杂；许可为 Apache-2.0（密歇根大学版权）。
 
 #### [SAMI3-3.22-CCMC-mirror](https://github.com/sylee918/SAMI3)  
 *🏷️ 高校实验室*
@@ -433,7 +433,7 @@ SIMuRG/gnss-lab 系经典 STEC 重建库，输入 RINEX 相位与伪距，输出
 #### [ALBUS_ionosphere](https://github.com/twillis449/ALBUS_ionosphere)  
 *🏷️ 个人社区*
 
-语言：Python · 许可：— · 星标约：26 · 宿主：github
+语言：Python · 许可：GPL-2.0-or-later · 星标约：26 · 宿主：github
 
 面向射电天文/地空链路，从 GPS 接收机数据估 TEC 与法拉第旋转相关量。适合需要 TEC+RM 联合的场景。通用 GNSS 多星座精密 TEC 流水线不是其主场；协议与输入格式需按仓库说明准备。
 
@@ -468,7 +468,7 @@ Python 包读 RINEX 并算 TEC，关键路径用 Rust 加速，和 PyTECGg 同�
 #### [tidd](https://github.com/vc1492a/tidd)  
 *🏷️ 高校实验室*
 
-语言：Jupyter Notebook · 许可：NOASSERTION · 星标约：10 · 宿主：github
+语言：Jupyter Notebook · 许可：Apache-2.0 · 星标约：10 · 宿主：github
 
 演示从低轨 GPS 的 sTEC 时间变化中做异常检测以指示海啸扰动的方法与笔记本。输入为在轨 GPS TEC 时序；输出为异常检测结果。局限：研究案例向；虚警/漏检与空间天气干扰需注意。
 
@@ -664,7 +664,7 @@ pysat 提供跨平台一致的数据分析工作流，生态含空间天气指�
 #### [Kamodo](https://github.com/nasa/Kamodo)  
 *🏷️ 官方*
 
-语言：Python · 许可：NASA-Open · 星标约：58 · 宿主：github
+语言：Python · 许可：NASA-1.3 · 星标约：58 · 宿主：github
 
 Kamodo（CCMC 读者套件）把多种日地空间模式输出“函数化”，统一插值、单位换算、可视化与卫星飞越（flythrough）。对电离层目录特别有价值：支持 GITM、TIEGCM、IRI、WACCM-X、CTIPe、SWMF-IE 等，便于把物理模式电子密度接到观测对比。输入是各模式输出目录；输出是可调用的 Kamodo 对象与图。局限：依赖与内存要求不低；不同模式 reader 成熟度不一；不是从 GNSS 观测解算 TEC 的软件。
 
@@ -825,7 +825,7 @@ gcmprocpy 面向 NCAR TIE-GCM 与 WACCM-X 模式输出，做后处理、诊断�
 #### [Kamodo-core](https://github.com/nasa/Kamodo-core)  
 *🏷️ 官方*
 
-语言：Python · 许可：NASA-Open · 星标约：5 · 宿主：github
+语言：Python · 许可：NASA-1.3 · 星标约：5 · 宿主：github
 
 Kamodo-core 提供函数化科学数据访问的核心 API，CCMC 的 Kamodo readers 建立其上。单独使用可把任意网格场变成可组合函数；与 nasa/Kamodo 搭配更完整。局限：只有 core 时缺少各模式专用 reader；安装路径在历史上有 ensemblegov 与 nasa 组织迁移，注意文档版本。
 
@@ -1371,7 +1371,7 @@ IonKit-NH 的衍生整理版，可能含路径或示例改动。合并进产线�
 #### [IonTools](https://github.com/rumkex/IonTools)  
 *🏷️ 个人社区 ★*
 
-语言：C++ · 许可：— · 星标约：— · 宿主：github
+语言：C++ · 许可：BSD-3-Clause · 星标约：— · 宿主：github
 
 GitHub rumkex/IonTools，偏辅助脚本/小工具集合，用来补主流程里零散步骤。功能边界以仓库说明为准；关键 TEC/GIM 结论建议用主流库复核，勿把过时脚本当生产基线。
 
@@ -1460,7 +1460,7 @@ Wakkanai、Kokubunji、Yamagawa、Okinawa 等日本测高仪数字化资料入�
 #### [iricore](https://github.com/MIST-Experiment/iricore)  
 *🏷️ 高校实验室*
 
-语言：Python/Fortran · 许可：see upstream · 星标约：2 · 宿主：github
+语言：Python/Fortran · 许可：MIT · 星标约：2 · 宿主：github
 
 把官方 Fortran IRI 编进可 pip 安装的 Python 包，暴露剖面与垂直/斜 TEC，并提供指数文件更新入口。适合 Linux 科研脚本里快速取气候态背景。文档写明主要处理 OUTF、未实现 OARR 用户输入；Windows 需 WSL，且维护节奏偏慢，跟 IRI-2026 对齐前应核对所绑 Fortran 版本。
 
@@ -2001,7 +2001,7 @@ C++ 实现多星座电离层监测指标（ROTI、AATR、STEC/VTEC），偏近�
 #### [OASIS](https://github.com/giorgiopicanco/OASIS)  
 *🏷️ 高校实验室 核心*
 
-语言：Python · 许可：— · 星标约：16 · 宿主：github
+语言：Python · 许可：CC-BY-NC-4.0 · 星标约：16 · 宿主：github
 
 Open-Access System for Ionospheric Studies：从 GNSS 观测算 ROTI、ΔTEC、SIDX 等，做扰动与闪烁相关监测。适合空间天气事件个例与台站网指标产品。高采样率接收机原始闪烁指数（S4/σφ）仍需专用接收机或仿真器。
 
@@ -2036,7 +2036,7 @@ INGV/ESA INTENS 的 Swarm 顶部电离层湍流指数工具（Python）：从 La
 #### [OASIS-ohm1122](https://github.com/ohm1122/OASIS)  
 *🏷️ 个人社区 ★*
 
-语言：— · 许可：— · 星标约：— · 宿主：github
+语言：— · 许可：CC-BY-NC-4.0 · 星标约：— · 宿主：github
 
 用户星标的 OASIS 相关仓库，实际算法与数据接口以 giorgiopicanco/OASIS 上游为准。引用论文时请核对 canonical URL。
 

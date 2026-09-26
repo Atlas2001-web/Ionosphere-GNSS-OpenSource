@@ -36,7 +36,7 @@ Automatic PPP Analysis Software-Türkiye（APAS-TR）处理 GPS/GLONASS/Galileo/
 #### [ginan](https://github.com/GeoscienceAustralia/ginan)  
 *🏷️ 官方 核心*
 
-语言：C++ · 许可：— · 星标约：343 · 宿主：github
+语言：C++ · 许可：Apache-2.0 · 星标约：343 · 宿主：github
 
 澳大利亚定位项目开源工具包，支撑精密定位与改正数生成，工程化程度高。适合要看现代化 C++ 精密定位与服务化架构的人。编译依赖重；完全复现运营服务还需数据与配置。
 
@@ -154,7 +154,7 @@ Python/Jupyter 多星座 PPP-RTK 试验箱，强调可读与易移植，便于�
 #### [RTKNAVI-BH](https://github.com/cigit001/RTKNAVI-BH)  
 *🏷️ 个人社区*
 
-语言：— · 许可：NOASSERTION · 星标约：0 · 宿主：github
+语言：— · 许可：BSD-2-Clause · 星标约：0 · 宿主：github
 
 在 RTKNAVI 上扩展，尝试同时吃 PPP-B2b 与 Galileo HAS 改正做实时 PPP。适合桌面端联调双系统改正源。仓库较新、文档与稳定性需自测；复杂场景仍建议对照官方测试库与 demo5/RTKLIB 分支。
 
@@ -206,7 +206,7 @@ VieVS（TU Wien）精密单点定位模块，MATLAB 实现，便于与 VLBI/大�
 #### [GPSPACE](https://github.com/CGS-GIS/GPSPACE)  
 *🏷️ 官方*
 
-语言：Fortran · 许可：— · 星标约：58 · 宿主：github
+语言：Fortran · 许可：MIT · 星标约：58 · 宿主：github
 
 官方背景的 Fortran PPP，便于对照国家机构处理流程。适合研究与教学对照。现代多星座实时服务请结合 CSRS-PPP 网页与其他开源引擎。
 
@@ -612,7 +612,7 @@ AILocAR 在 PrNet 之后的端到端神经伪距改正实现，把改正与定�
 #### [gps_pvt](https://github.com/fenrir-naru/gps_pvt)  
 *🏷️ 个人社区*
 
-语言：C++ · 许可：— · 星标约：6 · 宿主：github
+语言：C++ · 许可：BSD-3-Clause · 星标约：6 · 宿主：github
 
 提供可在 Ruby 下控制的 PVT，并解析 RINEX/SP3/ANTEX/UBX。适合脚本自动化爱好者。小众语言生态限制社区体量；精密 PPP-AR 请看专用引擎。
 
@@ -758,7 +758,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 #### [MALIB](https://github.com/JAXA-SNU/MALIB)  
 *🏷️ 官方*
 
-语言：C · 许可：see upstream (RTKLIB-derived) · 星标约：77 · 宿主：github
+语言：C · 许可：BSD-2-Clause · 星标约：77 · 宿主：github
 
 日本宇宙航空研究开发机构与合作方发布的 MADOCA-PPP 专用程序包，在 RTKLIB 基础上强化 L6E 改正与 rtkrcv/rnx2rtkp 流程，并附带开空测试数据。面向实时与事后 MADOCA 定位试验。与内阁府 MADOCALIB/CLASLIB 互补；上游标注为 RTKLIB fork，选用时注意许可证与版本对应关系。
 
@@ -838,7 +838,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 #### [MRTKLIB](https://github.com/h-shiono/MRTKLIB)  
 *🏷️ 高校实验室 核心*
 
-语言：C · 许可：— · 星标约：78 · 宿主：github
+语言：C · 许可：BSD-2-Clause · 星标约：78 · 宿主：github
 
 面向 PPP、PPP-AR 与 PPP-RTK（含 CLAS/MADOCA 等区域增强）的现代定位库，比经典 RTKLIB 默认树更贴近亚太 PPP-RTK 场景。适合评估 SSR/CSSR 改正接入与模糊度固定。文档与样例需要时间消化；与 PRIDE、Ginan、Urban-RTKLIB 对照时重点看改正数接口、收敛时间与固定率。上游许可请仔细阅读。
 
@@ -981,14 +981,14 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 #### [RTKLIB](https://github.com/tomojitakasu/RTKLIB)  
 *🏷️ 个人社区 ★ 核心*
 
-语言：C · 许可：— · 星标约：3128 · 宿主：github
+语言：C · 许可：BSD-2-Clause · 星标约：3128 · 宿主：github
 
 窗口工具与嵌入式移植极广，是开源 RTK/PPP 入门与生产原型的常见底座。适合低成本接收机与教学实验。默认分支对部分多星座/低成本场景需配合 demo5 等社区分支；实时链路与模糊度策略要因机型验证。
 
 #### [RTKLIB-explorer](https://github.com/rtklibexplorer/RTKLIB)  
 *🏷️ 个人社区 核心*
 
-语言：C · 许可：— · 星标约：971 · 宿主：github
+语言：C · 许可：BSD-2-Clause · 星标约：971 · 宿主：github
 
 针对低成本 GNSS 的活跃社区分支，博客与讨论丰富。适合手持/无人机 RTK 试验。非官方担保；升级与实时安全策略请自行回归。
 

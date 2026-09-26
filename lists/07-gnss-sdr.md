@@ -68,7 +68,7 @@
 #### [PocketSDR](https://github.com/tomojitakasu/PocketSDR)  
 *🏷️ 个人社区 核心*
 
-语言：C · 许可：NOASSERTION · 星标约：515 · 宿主：github
+语言：C · 许可：BSD-2-Clause · 星标约：515 · 宿主：github
 
 覆盖多星座多频捕获跟踪，配套 Pocket SDR FE 与 Python/C 应用。适合 SDR 教学与算法实验。射频前端与采样质量决定上限；不是即插即用商用接收机。
 
@@ -145,7 +145,7 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 #### [GNSSFirehose](https://github.com/pmonta/GNSS_Firehose)  
 *🏷️ 个人社区*
 
-语言：Verilog · 许可：— · 星标约：68 · 宿主：github
+语言：Verilog · 许可：TAPR-OHL-1.0 (hardware) + GPL-2.0 (HDL/firmware) + CC-BY-SA-3.0 (docs) · 星标约：68 · 宿主：github
 
 宽带前端数字化设计，目标同时覆盖 GPS、GLONASS、Galileo、BeiDou 的射频采样与数字输出（含 Verilog 等）。适合自研多星座采集卡与前端的人。偏硬件/FPGA，相关器与 PVT 需另接 GNSS-DSP-tools、gnss-sdr 等软件。采样率与数据率极高，存储与 PCIe/以太网带宽是瓶颈。
 
@@ -166,7 +166,7 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 #### [gnss-baseband](https://github.com/j-core/gnss-baseband)  
 *🏷️ 个人社区*
 
-语言：VHDL · 许可：— · 星标约：43 · 宿主：github
+语言：VHDL · 许可：BSD-2-Clause · 星标约：43 · 宿主：github
 
 面向 GPS 类似 DSSS 信号的基带接收 IP（VHDL），可嵌入 FPGA 完成相关、捕获与跟踪前端。适合导航芯片预研与 FPGA 教学。提供的是基带 IP，不是完整 PVT 应用；电文解码、定位滤波与多星座扩展需在上层自行实现。仿真测试台与片上资源占用需按目标器件重估。综合时注意 DSP 乘法器与 BRAM 资源上限。
 
@@ -476,14 +476,14 @@ CU Boulder RF & SatNav 实验室维护的 SoftGNSS/教材配套页面，介绍 B
 #### [GNSS-matlab](https://github.com/danipascual/GNSS-matlab)  
 *🏷️ 高校实验室*
 
-语言：MATLAB · 许可：— · 星标约：257 · 宿主：github
+语言：MATLAB · 许可：GPL-3.0-or-later (source/) · 星标约：257 · 宿主：github
 
 生成 GPS/Galileo/BeiDou 等系统的 PRN、二级码与无数据导频等，并附捕获示例与理论摘要，方便信号层仿真与教学。适合通信/导航信号课。不覆盖完整跟踪到 PVT 的接收机链路。
 
 #### [GNSS-VHDL](https://github.com/danipascual/GNSS-VHDL)  
 *🏷️ 高校实验室*
 
-语言：VHDL · 许可：— · 星标约：34 · 宿主：github
+语言：VHDL · 许可：GPL-3.0-or-later · 星标约：34 · 宿主：github
 
 VHDL 代码用于生成 GPS L1 C/A 以及 Galileo E1OS、E5 的 PRN 与无数据信号（仓库说明不含二级码）。适合 FPGA 信号源、基带验证与课程设计。只做码/信号生成，不是接收机；系统级仿真也可参考同作者 GNSS-matlab。二级码与导频结构若需要，须自行扩展或换工具。
 

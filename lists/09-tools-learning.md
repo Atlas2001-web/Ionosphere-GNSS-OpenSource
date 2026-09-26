@@ -254,7 +254,7 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 #### [HTDP](https://github.com/noaa-ngs/HTDP)  
 *🏷️ 官方*
 
-语言：Fortran · 许可：other (NOAA/NGS) · 星标约：33 · 宿主：github
+语言：Fortran · 许可：USGov (17 USC 105; royalty-free licence outside US) · 星标约：33 · 宿主：github
 
 美国国家大地测量局官方开源的 Horizontal Time-Dependent Positioning，Fortran 实现地壳运动模型下的坐标时间归算与框架变换。配套用户指南与 NGS 工具页。GNSS 测站坐标比较、CORS 历元统一常用；不处理原始观测，也不是 PPP 软件。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
 
@@ -346,7 +346,7 @@ Rokubun 编写的 GNSS 数据处理 Jupyter 教程，覆盖从观测到基础解
 #### [Muf_Muncher](https://github.com/mooxle/Muf_Muncher)  
 *🏷️ 个人社区*
 
-语言：HTML · 许可：see upstream README · 星标约：5 · 宿主：github
+语言：HTML · 许可：MIT · 星标约：5 · 宿主：github
 
 把两座欧洲测高仪的 MUF(D)、foF2、偶发 E 与 NOAA 空间天气、POTA 激活性汇总成一页 glance-and-go 看板，偏业余无线电运营。相邻域里少见的“开源+可自建”传播态势工具。不是射线追踪引擎；数据源与站点配置面向中欧，搬到其它区域要改接入。
 
