@@ -1,9 +1,10 @@
 # hamsci-lstid-detection · 业余无线电 HF spot 跳距边缘 → LSTID 正弦拟合操作手册
 
-目录：上游 <https://github.com/HamSCI/hamsci_LSTID_detection>（HamSCI / NASA SWO2R 团队，Frissell W2NAF 等）· tip **`8c43cd2`**（2026-05-14）· 无 PyPI、无 tag（`setup.py` 写 0.1，包名 `hamsci_LSTID_detect`，只打包 `scripts/`）· **MIT**（Copyright 2024 Nathaniel Frissell）· ★7 · Zenodo DOI 10.5281/zenodo.13630866。
+目录：上游 <https://github.com/HamSCI/hamsci_LSTID_detection>（HamSCI / NASA SWO2R 团队，Frissell W2NAF 等）· tip **`8c43cd2`**（2026-05-14）· 无 PyPI；有 2 个论文 tag：`v0.1.0_Frissell_et_al_2024_GRL`（2024-09-02）与 `V0.2.0_Sanchez_et_al_2026_MS`（2026-05-14，tip 前）（`setup.py` 仍写 0.1，包名 `hamsci_LSTID_detect`，只打包 `scripts/`）· **MIT**（Copyright 2024 Nathaniel Frissell）· ★7 · Zenodo DOI 10.5281/zenodo.13630866。
 
 > 本文实测：2026-09-26 01:19–01:32 EDT，Debian 本机，`uv` 建 **Python 3.11.16** venv，按 `requirements.txt` 精确钉版（numpy 1.26.4、polars 1.35.1、cartopy 0.24.1、scipy 1.13.1、statsmodels 0.14.2）。
 > 冲突时：**本机源码 > 上游 README > 本文**。
+> **质检复跑通过**（2026-09-26 01:36–01:47 EDT，独立 clone + uv 3.11.16）：pytest **52 passed, 3 warnings**；合成两天 CSV 两行 selected 数值逐位一致（T 2.5545466369720127 / A 270.634… / R² 0.9096…；02 日 A 1.1439 / R² 0.3031）、png **110** 张；真实 2019-12-01 重新下载 **782215264** B / **19187799** 行（54 s），Global n_spots **3171570** T **1.2743** A **10.80** R² **0.9966** 13:30–15:13；CONUS **1458869** / **1.3281** / **18.02** / **0.9912** 20:42–22:30，来源 PSK 1366433/WSP 84335/RBN 8101、中位距 1711.8 km、缓存 133 MB 全部一致；坑 1/2 实测复现。修：仓库其实有 2 个 tag；合成日收敛初值是 3.0/2.5/2.0/3.5 h（不是 2.5–3.5）。冷读耗时随机器负载浮动（本次 Global 116.6 s / CONUS 75.7 s）。
 
 ## 1. 它解决什么问题
 
@@ -105,7 +106,7 @@ date,selected,T_hr,T_hr_guess,amplitude_km,phase_hr,offset_km,slope_kmph,r2,fitS
 
 ![合成 LSTID 日：热图 + 下沿去趋势后的正弦拟合（本机输出缩放）](./img/hamsci-lstid-synth-final-fit.png)
 
-**怎么读：** 有 LSTID 的一天，热图下沿（亮带底部）呈现清楚的波浪。白虚线是“多项式趋势 + 正弦”的合成拟合，两条绿竖线之间是自动选出的稳定窗口。01 日 T≈**2.55 h**、A≈**271 km**、R²≈**0.91**，窗口 9 h，前 4 个初值（2.5–3.5 h）都收敛到同一个解，说明结果稳定。02 日安静日 A 只有 **1.1 km**、R²≈**0.30**，7 个初值给出的 T 散布在 1.2–3.9 h，这正是“没有 LSTID”的特征。
+**怎么读：** 有 LSTID 的一天，热图下沿（亮带底部）呈现清楚的波浪。白虚线是“多项式趋势 + 正弦”的合成拟合，两条绿竖线之间是自动选出的稳定窗口。01 日 T≈**2.55 h**、A≈**271 km**、R²≈**0.91**，窗口 9 h，R² 前 4 的初值（3.0/2.5/2.0/3.5 h）都收敛到 T≈2.5545 h，说明结果稳定。02 日安静日 A 只有 **1.1 km**、R²≈**0.30**，7 个初值给出的 T 散布在 1.2–3.9 h，这正是“没有 LSTID”的特征。
 
 ## 5. 端到端 B：真实 Madrigal 2019-12-01（本机真跑）
 
@@ -188,7 +189,7 @@ CONUS 子集的来源分布（读缓存 parquet）：PSK 1366433 / WSP 84335 / R
 - 合成数据和真实数据两条路径都在本机跑通。真实数据只跑了 **1 天**（2019-12-01，这是仓库 `config_test.json` 里的日期），这一天**没有**得到可信的 LSTID 检测（§5）。没有挑选已发表的 LSTID 事件日做复现。
 - 第一次冷启动跑合成两天时，2025-01-02 曾报一次 `1 day(s) failed`，之后连续 4 次都复现不了，原因未确认。批量跑完请检查日志末尾有没有 `WARNING - N day(s) failed`。
 - 分析窗口只覆盖 12–24 UTC，而且只看一个频段、一个区域的**下沿**。输出只有周期和振幅，**没有**波长、方向和相速度。
-- 仓库没有 CLI 参数说明（只有 `-p`），没有 tag，也没有 PyPI 发布。`synthetic_data_gen/` 用于生成 ML 训练集，本文未运行。
+- 仓库没有 CLI 参数说明（只有 `-p`），也没有 PyPI 发布；版本只能看两个论文 tag。`synthetic_data_gen/` 用于生成 ML 训练集，本文未运行。
 - 许可：MIT。数据使用请遵守 Madrigal / RBN / PSKReporter / WSPRNet 的致谢要求。
 
 ## 10. 相关

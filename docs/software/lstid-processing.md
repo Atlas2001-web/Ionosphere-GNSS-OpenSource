@@ -4,6 +4,7 @@
 
 > 本文实测：2026-09-26 01:18–01:32 EDT，Debian / Python **3.13.5**，venv 里 `lstid_processing 0.0.2`、pysat **3.2.2**、pysatNASA **0.0.6**、numpy **2.2.6**、pandas **2.3.3**、xarray **2026.7.0**、scipy **1.18.1**。
 > 冲突时：**本机源码 > ReadTheDocs > 本文**。
+> **质检复跑通过**（2026-09-26 01:38–01:52 EDT，独立 venv / Python 3.13.5）：tip `80b576d`、★0、MIT 2025 Burrell 一致；fsspec Range 抽取 347 s；§4.2 全部 21 条拟合（含省略的 vsi2 3+5 条）与 `max|diff|=6.887752087431087e-14` **逐位一致**；CINDI 71156 行、3 个滤波量 p50/p99、**9** 个事件起止/经度/幅度、283 行 >1、最小 980 cm⁻³、15065 s 缺口、下载 0326（25945098 B）+0327（31402027 B）**全部一致**；坑 1/2/3/5/8 实测复现（坑 2 在 numpy 2.5.3 下 `import` 即报）。修：6 文件总量实为 **277 GB** 不是 314 GB（且其中 1 个是 1490 B 的 txt）；§4.2 原本指向仓外 `/workspace/lstid_data` 的完整脚本，已把打印循环补进正文。
 
 ## 1. 它解决什么问题
 
@@ -44,7 +45,7 @@ pip install fsspec aiohttp h5py h5netcdf
 
 | 数据 | 来源 | 大小 | 本机实测 |
 | --- | --- | --- | --- |
-| SAMI3 模式（6 个文件） | `https://map.nrl.navy.mil/map/pub/nrl/lstids/`，公开，不需要账号 | **32–74 GB/个**（HEAD `Content-Length`：oneway 74205114622 B、twoway 37161109231 B、diagh 32503859767 B） | 可达；整文件没下，用 HTTP Range 抽一条磁力线（§4.1） |
+| SAMI3 模式（官方下载器列 6 个文件：5 个 nc + `model_description.txt` 1490 B） | `https://map.nrl.navy.mil/map/pub/nrl/lstids/`，公开，不需要账号 | nc **32–74 GB/个**（HEAD `Content-Length`：oneway 74205114622 B、fejer 74205048375 B、nohpopcoll 59009590031 B、twoway 37161109231 B、diagh 32503859767 B） | 可达；整文件没下，用 HTTP Range 抽一条磁力线（§4.1） |
 | C/NOFS CINDI IVM | NASA CDAWeb，由 pysatNASA `cnofs_ivm` 自动下载，不需要账号 | 约 26–31 MB/天（`cnofs_cindi_ivm_500ms_20140326_v01.cdf` 25945098 B） | 可达，已下载并跑通（§5） |
 
 ```bash
@@ -52,7 +53,7 @@ curl -sI https://map.nrl.navy.mil/map/pub/nrl/lstids/oneway_sami3_rel_w_hmf2_nmf
 # Content-Length: 74205114622
 ```
 
-官方下载器 `lstid_processing.model.io.download_nrl_files(outdir)` 在 `filename=None` 时会**把 6 个文件全部下载**，总量约 314 GB，并且用 `requests.get(url).content` 把整个文件读进内存再写盘。普通机器请不要这样调用，要么只传 `filename=`，要么走 §4.1 的抽取方式。
+官方下载器 `lstid_processing.model.io.download_nrl_files(outdir)` 在 `filename=None` 时会**把 6 个文件全部下载**，总量 **277084723516 B（约 277 GB / 258 GiB）**，并且用 `requests.get(url).content` 把整个文件读进内存再写盘。普通机器请不要这样调用，要么只传 `filename=`，要么走 §4.1 的抽取方式。
 
 注意：`model_description.txt` 正文写的是 “25-26 March **2015**”，文件名和源码用的却是 2014084/085（**2014**-03-25/26）。以文件名和源码为准。
 
@@ -86,12 +87,12 @@ zalt: (575, 1, 1, 160)  390s
 saved 390.71331882476807
 ```
 
-输出 `sami3_oneway_fieldline_d.nc` 为 **3332761 B**，从 74 GB 文件中只读了约 3 MB 的数据，耗时约 6.5 min，基本都花在每个时刻一次 Range 请求上。子集里 `nl`、`nf` 维长度都是 1，所以后面所有函数的索引都传 `0, 0`。
+输出 `sami3_oneway_fieldline_d.nc` 为 **3332761 B**（质检复跑 3331684 B，数据相同、容器元数据差约 1 KB；耗时 347 s，随网络浮动），从 74 GB 文件中只读了约 3 MB 的数据，耗时约 6.5 min，基本都花在每个时刻一次 Range 请求上。子集里 `nl`、`nf` 维长度都是 1，所以后面所有函数的索引都传 `0, 0`。
 
 ### 4.2 跑论文 Fig.13 的流程
 
 ```python
-# run_lstid_e2e.py（节选；完整脚本见仓外 /workspace/lstid_data）
+# run_lstid_e2e.py（原作者完整脚本不在仓库里；下面补全了打印部分，可直接跑出下方 stdout）
 import datetime as dt, numpy as np, matplotlib; matplotlib.use("Agg")
 import lstid_processing, lstid_processing.model as lsmod
 from lstid_processing.smoothing.filter_rout import rel_data_butter
@@ -107,7 +108,13 @@ f2 = lsmod.analysis.get_f2_peaks(0, 0, sami)                        # 南北半�
 nzinds = np.arange(f2["south"][nt0:nt1].min(), f2["north"][nt0:nt1].max() + 1)   # 两峰之间 = 顶部电离层
 out = lsmod.plots.get_plot_tid_peaks(sami, nt0, nt1, 0, 0, nzinds, "d", add_lines=True)
 min_lat, min_sec, _, min_fit, max_lat, max_sec, _, max_fit, fig = out
-# 逐条打印 fit：slope(°/s)×3600 → °/h；×111.2e3 → m/s
+for name, lat, fits in [("minima", min_lat, min_fit), ("maxima", max_lat, max_fit)]:
+    for key in lat:
+        print(f"{name:6s} {key:11s} n_peaks={len(lat[key]):4d} n_fits={len(fits[key])}")
+        for fit, t0, t1 in fits[key]:   # slope °/s ×3600 → °/h；×111.2e3 → m/s
+            print(f"    {estart+dt.timedelta(seconds=t0):%H:%M}-{estart+dt.timedelta(seconds=t1):%H:%M} UT "
+                  f"slope={fit.slope*3600:+.2f} deg/h  ~{fit.slope*111.2e3:+.0f} m/s  r={fit.rvalue:+.2f}")
+fig.savefig("lstid_processing_tid_peaks.png", dpi=60)
 ```
 
 真实 stdout（`python -W ignore run_lstid_e2e.py`，墙钟约 3 s）：
@@ -229,7 +236,7 @@ events: 9
 1. **`import lstid_processing` 报 `NameError: pysat's data_dirs hasn't been set`** → `__init__` 导入 cindi → pysatNASA 的 constellations 在导入时实例化 Instrument → 需要数据目录。修复：`mkdir -p ~/pysatData && python -c "import pysat; pysat.params['data_dirs']='$HOME/pysatData'"`
 2. **`TypeError: data type 'a' not understood`（pysat `_files.py` `pds.Series([], dtype='a')`）** → numpy 2.5 已删除 `'a'` 别名，pysat 3.2.2 还在用；2.2.6 只报 DeprecationWarning。修复：`pip install "numpy<2.3"`
 3. **`cindi.load()` 报 `ValueError: assignment destination is read-only`（`fill_rout.fill_data`）** → pandas 3 默认 Copy-on-Write，`inst[key].copy()` 得到的 `.values` 仍是只读视图。修复：`pip install "pandas<3"`（实测 2.3.3 正常）
-4. **`download_nrl_files(outdir)` 把内存和磁盘都撑爆** → 不传 `filename` 时会下载 6 个文件共约 314 GB，而且整文件先读进内存。修复：`download_nrl_files(outdir, filename="model_description.txt")`，大文件用 §4.1 的 Range 子集
+4. **`download_nrl_files(outdir)` 把内存和磁盘都撑爆** → 不传 `filename` 时会下载 6 个文件共约 277 GB，而且整文件先读进内存。修复：`download_nrl_files(outdir, filename="model_description.txt")`，大文件用 §4.1 的 Range 子集
 5. **把 `get_default_indices()` 的结果传给子集后报 `IndexError: index 26 is out of bounds for axis 1 with size 1`**（实测） → 它写死了 `nl=26, nf=58/44`，子集里这两个维度只剩长度 1。修复：子集里索引一律传 `0, 0`，例如 `lsmod.analysis.get_f2_peaks(0, 0, sami)`
 6. **自己用 `xr.open_dataset(nc)` 打开后没有可用的 `datetime`，`get_time_index` 无从下手** → 源码注释原话 “Time decoding doesn't work because there are multiple time variables”，所以必须 `decode_times=False`，再由 `year/day/hrut` 拼出时间。修复：`sami = lstid_processing.model.io.load_concat_file("sami3_oneway_fieldline_d.nc")`
 7. **CINDI ΔNi/Ni 出现几十甚至上百** → `clean_level='none'`，相对量在低密度处被放大（本次 283 行 >1）。修复：判事件时只用阈值，报告幅度前先裁掉：`cindi.data = cindi.data[abs(cindi['ionDensity_rel_butter_Tmin150s_Tmax300s']) < 1]`
