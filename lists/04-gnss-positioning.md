@@ -909,7 +909,7 @@ PolyU TAS Lab 的 Yixin Gao 与 Weisong Wen 发布的 GNSS+LEO 因子图定位�
 
 语言：Python · 许可：— · 星标约：50 · 宿主：github
 
-个人维护的 Python 工具，侧重 RINEX GPS/Galileo 观测处理与绘图，教学演示友好。与港理工 IPNL 的 pyrtklib（原生 RTKLIB C 绑定）不是同一项目；精密模糊度固定与多星座 PPP-AR 请用专用引擎。
+个人维护的 Python 工具：把 RINEX GPS/Galileo 观测交给 RTKLIB 的 rnx2rtkp 解算，再画位置偏移、CN0、残差、DOP 等图，本身不做定位。实测当前代码原样跑不通：留有调试用 sys.exit(6)，还有 KeyError 和类型比较错误，要打几处补丁才能出结果。与港理工 IPNL 的 pyrtklib（原生 RTKLIB C 绑定）不是同一项目；精密模糊度固定与多星座 PPP-AR 请用专用引擎。
 
 ## RAIM/完好性
 

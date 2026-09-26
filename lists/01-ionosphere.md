@@ -37,14 +37,14 @@ space-physics 维护的指数下载解析库（MIT，Zenodo DOI），get_indices
 
 语言：Python · 许可：MIT · 星标约：4 · 宿主：github
 
-MIT Haystack 课题组发布的 Python 客户端，用于访问全球 Madrigal 站点（含 CEDAR），可检索/下载非相干散射雷达、GNSS TEC 等空间天气与电离层归档。MIT。适合批量脚本拉取；需遵守各站点数据政策，部分实验需注册。配套门户见 OpenMadrigal。
+MIT Haystack 课题组发布的 Python 客户端，用于访问全球 Madrigal 站点（含 CEDAR），可检索/下载非相干散射雷达、GNSS TEC 等空间天气与电离层归档。MIT。适合批量脚本拉取；需遵守各站点数据政策，下载时需填写姓名、邮箱和单位，但不需要账号。配套门户见 OpenMadrigal。
 
 #### [swds-api-downloader](https://github.com/embrace-inpe/swds-api-downloader)  
 *🏷️ 官方*
 
 语言：Python · 许可：MIT · 星标约：4 · 宿主：github
 
-演示如何调用 Embrace 空间天气数据服务（SWDS）API 自动下载产品，方便把取数写进科研脚本。适合 GNSS—空间天气交叉研究的数据入口。接口字段、鉴权与限流可能随官方升级变化；时间范围与产品类型以站点文档为准，勿长期硬编码过期端点。
+EMBRACE/INPE 官方给账号用户写的 API 批下样例（MIT，纯标准库），按应用、台站、分辨率等整数 ID 查文件表，带 Bearer token 下载。2026-09 实测登录与文件接口均返回 404，服务器证书链也不完整，脚本原样已无法使用；只适合参考调用思路。要 EMBRACE 数据请直接走 embracedata 公开目录。
 
 #### [digisondeindices](https://github.com/sunipkm/digisondeindices)  
 *🏷️ 个人社区*
@@ -58,7 +58,7 @@ MIT Haystack 课题组发布的 Python 客户端，用于访问全球 Madrigal �
 
 语言：Python · 许可：MIT · 星标约：2 · 宿主：github
 
-按站点/时间从公共测高仪仓库批量下载，减少手工翻目录。适合底部电离层档案收集。上游目录或接口变更会导致脚本失效；不做描迹反演或质量控制，需另接 Autoscala/SAO 等工具。
+按站点和年份从澳大利亚 SWS、日本 NICT 和 GIRO 批量拉 foF2、hmF2 等参数到 pandas，适合底部电离层档案收集。2026-09 实测 SWS 与 NICT 可用，GIRO 部分调用的 DIDBGetValues 接口已下线（404），要改用 fastchar 接口；不做描迹反演或质量控制，需另接 Autoscala/SAO 等工具。
 
 #### [IRTS_SDK](https://github.com/1acheng/IRTS_SDK)  
 *🏷️ 个人社区*
@@ -532,7 +532,7 @@ Python 包读 RINEX 并算 TEC，关键路径用 Rust 加速，和 PyTECGg 同�
 
 语言：Python · 许可：GPL-3.0 · 星标约：15 · 宿主：github
 
-Giorgio Savastano 个人仓发布的变分法电离层观测工具（方法源自罗马一大 Sapienza 相关论文），读取 RINEX 观测/广播星历估计 slant TEC 变化，用于站级近实时扰动监测（如海啸电离层扰动）。Python+NumPy/Pandas，GPL-3。适合单站高频 TEC 扰动教学与案例复现；依赖较旧的 Python 2.7+ 生态，需自行准备导航文件与站坐标。
+Giorgio Savastano 个人仓发布的变分法电离层观测工具（方法源自罗马一大 Sapienza 相关论文），读取 RINEX 观测/广播星历估计 slant TEC 变化，用于站级近实时扰动监测（如海啸电离层扰动）。Python+NumPy/Pandas，GPL-3。适合单站高频 TEC 扰动教学与案例复现；代码只支持 Python 2.7（Python 3 直接 SyntaxError），需单独建 2.7 环境，需自行准备导航文件与站坐标。
 
 #### [gsit](https://github.com/aldebaran1/gsit)  
 *🏷️ 个人社区*
@@ -865,7 +865,7 @@ Septentrio 厂商发布的 Python/Cython 解析器，把 SBF 流转成 JSON 结�
 
 语言：Python · 许可：CC-BY-NC-SA-3.0 · 星标约：8 · 宿主：github
 
-INGV/ESA INTENS 的 Swarm 顶部电离层湍流指数工具（Python）：从 Langmuir 探针与 POD/TEC 产品算 RODI/ROTI/ROTEI 并制图，含下载与 CDF 读取。CC BY-NC-SA 3.0，需自备 Swarm 账号；面向顶部电离层闪烁研究，不是地基双频 TEC 解算器。
+INGV/ESA INTENS 的 Swarm 顶部电离层湍流指数工具（Python）：从 Langmuir 探针与 POD/TEC 产品算 RODI/ROTI/ROTEI 并制图，含下载与 CDF 读取。CC BY-NC-SA 3.0，自带下载脚本走 FTPS，要 ESA 账号；同一服务器的 HTTPS 接口可免账号下载，改一下下载函数即可；面向顶部电离层闪烁研究，不是地基双频 TEC 解算器。
 
 #### [gnss-scintillation-simulator_2-param](https://github.com/cu-sense-lab/gnss-scintillation-simulator_2-param)  
 *🏷️ 高校实验室*
@@ -1279,7 +1279,7 @@ FIRI（Faraday-International Reference Ionosphere）侧重低电离层电子密�
 
 语言：Python/Fortran · 许可：MIT · 星标约：2 · 宿主：github
 
-把官方 Fortran IRI 编进可 pip 安装的 Python 包，暴露剖面与垂直/斜 TEC，并提供指数文件更新入口。适合 Linux 科研脚本里快速取气候态背景。文档写明主要处理 OUTF、未实现 OARR 用户输入；Windows 需 WSL，且维护节奏偏慢，跟 IRI-2026 对齐前应核对所绑 Fortran 版本。
+把官方 Fortran IRI 编进可 pip 安装的 Python 包，暴露剖面与垂直/斜 TEC，并提供指数文件更新入口。适合 Linux 科研脚本里快速取气候态背景。1.9.0 已能通过 OARR 传入 foF2 等用户值；Linux 没有预编译轮子，安装时要 gfortran 和 cmake 现场编译；Windows 需 WSL，且维护节奏偏慢，跟 IRI-2026 对齐前应核对所绑 Fortran 版本。
 
 #### [CCMC-IRI-online](https://ccmc.gsfc.nasa.gov/models/IRI~2020/)  
 *🏷️ 官方*
@@ -2051,7 +2051,7 @@ gemini3d 维护的 NRL Horizontal Wind Model 2014 可构建库，用 CMake 生�
 
 语言：Python · 许可：Apache-2.0 · 星标约：4 · 宿主：gitlab
 
-荷兰 ASTRON 维护的 Spinifex，用纯 Python 从 IONEX/TOMION 等模型估计视线 TEC 与旋转量度（RM），面向 LOFAR 等干涉测量改正。可 pip 安装 GitLab 主仓；GitHub 仅为镜像。依赖外部 IONEX 下载与地磁模型，不是 GNSS 双频 STEC 估计算法本身。
+荷兰 ASTRON 维护的 Spinifex，用纯 Python 从 IONEX/TOMION 等模型估计视线 TEC 与旋转量度（RM），面向 LOFAR 等干涉测量改正。PyPI 可直接 pip 安装，主仓在 ASTRON GitLab，GitHub 仅为镜像。依赖外部 IONEX 下载与地磁模型，不是 GNSS 双频 STEC 估计算法本身。
 
 ## 雷达/ISR
 

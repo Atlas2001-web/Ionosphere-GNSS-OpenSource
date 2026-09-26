@@ -172,7 +172,7 @@ BME 大地测量组发布的开源 Python 层析工具箱，由 ZWD/梯度、SP3
 
 语言：Python · 许可：GPL-3.0 · 星标约：10 · 宿主：github
 
-Python 包生成斜路径干/湿延迟（STD/SWD）以及基于 GPT/VMF 的模型 ZTD，直接对接维也纳映射函数生态。适合 GNSS 气象、PPP 先验对流层、与实测 ZTD 对比。站点元数据与 VMF 格网下载要自己准备；业务化连续运行需另写调度。
+Python 脚本生成斜路径干/湿延迟（STD/SWD）以及基于 GPT/VMF 的模型 ZTD，直接对接维也纳映射函数生态。适合 GNSS 气象、PPP 先验对流层、与实测 ZTD 对比。站点元数据与 VMF 格网下载要自己准备；业务化连续运行需另写调度。实测当前版本 import CalcSwd 就报 IndentationError，要先修一处缩进（另有单历元数组形状问题）；自带的 CDDIS FTPS 星历下载会静默失败。
 
 ## GNSS-IR
 

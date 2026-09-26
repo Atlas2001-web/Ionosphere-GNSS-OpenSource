@@ -131,7 +131,7 @@ RTCM-Ntrip 官方仓库中的 POSIX ntripserver，用于将接收机或文件流
 
 语言：TypeScript · 许可：GPL-3.0 · 星标约：48 · 宿主：github
 
-覆盖至 RTCM 3.3 的消息编解码，填补 JS/TS 生态空白。适合 Web/Node 实时差分原型。GPL；嵌入式高性能场景另选 C/C++ 实现。
+覆盖至 RTCM 3.3 的消息编解码，填补 JS/TS 生态空白。实测拆帧、CRC 和 1005/1019/1004 等电文解码正确，但 MSM（1071–1137）的卫星与信号字段解错，多星时数值不能用；项目 2021 年后停更。适合拆帧和非 MSM 电文的 Web/Node 原型。GPL；嵌入式高性能场景另选 C/C++ 实现。
 
 #### [baidu-ntripcaster](https://github.com/baidu/ntripcaster)  
 *🏷️ 个人社区*
@@ -365,7 +365,7 @@ BKG/RTCM 维护的 NTRIP 开源软件 Trac 门户，集中入口含 BNC、Profes
 
 语言：Python · 许可：GPL-2.0 · 星标约：25 · 宿主：github
 
-口号 “Pinot is not only TEQC”，用 Python 做 GNSS 观测质量检查与预处理，意在填补 TEQC 停更后的工具缺口。适合 RINEX 质控、教学与脚本化入库。功能完备度与生态仍不及 Anubis/gfzrnx 组合；切换工具时应用标准站对比指标定义，避免质控阈值误伤。
+口号 “Pinot is not only TEQC”，实际是外包 TEQC/RNXCMP 的 Python 批处理壳：缺站检查、头信息比对、日目录整理，QC 数字仍靠 TEQC +qc 算，仓内附带的是 Windows 版 teqc.exe，Linux 要自备。适合台网 RINEX 批量整理与脚本化入库。功能完备度与生态仍不及 Anubis/gfzrnx 组合；切换工具时应用标准站对比指标定义，避免质控阈值误伤。
 
 #### [RNXQCE](https://github.com/cuizilu/RNXQCE)  
 *🏷️ 个人社区*
@@ -441,7 +441,7 @@ RTCM-Ntrip 项目提供的 RTCM 3 到 RINEX 转换工具，便于把实时流转
 
 语言：Python · 许可：MIT · 星标约：23 · 宿主：github
 
-轻量把 RINEX 3.05 观测导出 CSV，方便 Excel/脚本快看。适合快速抽查。高精度批处理与多格式支持请优先 georinex。
+jtec 的 Python 预处理器（MIT）：输入 RINEX 3.0x 观测和广播星历，每历元、每卫星、每个码信号输出一行，带卫星位置速度、钟差、相对论、TGD、对流层和 Klobuchar 电离层等改正，本身不解算位置。实测 pip 安装后的 prx 命令入口报 TypeError，要用 python src/prx/main.py 运行；自动下载星历基本不可用，需自备导航文件。
 
 #### [ubx2rinex](https://github.com/nav-solutions/ubx2rinex)  
 *🏷️ 个人社区*
@@ -578,7 +578,7 @@ GSI 公布的 RNXCMP 许可文本，基于地理院网站条款并要求修改�
 
 语言：Go · 许可：Apache-2.0 · 星标约：6 · 宿主：gitlab
 
-EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，含 RINEX/RTCM/BINEX/SBF 等编解码、NTRIP 客户端、SPP/TDCP 流水线及可选 TileDB 地理数据模块。适合构建现代数据管道；定位算法深度不及专用 PPP 套件。星数不高但机构背书明确。
+EarthScope（原 UNAVCO/GAGE 体系）维护的 Go GNSS 工具集，能读 RINEX/CRINEX/BINEX/SBF/UBX 等并写 RINEX 2/3/4（RTCM3 只能用 gnss-inspect 解成 JSON，不能转 RINEX）、NTRIP 客户端、SPP/TDCP 流水线及可选 TileDB 地理数据模块。适合构建现代数据管道；定位算法深度不及专用 PPP 套件。星数不高但机构背书明确。
 
 #### [rinex2bin](https://github.com/nav-solutions/rinex2bin)  
 *🏷️ 个人社区*
@@ -629,7 +629,7 @@ nav-solutions / rtk-rs 生态的 RINEX→BINEX CLI（MPL-2.0，Rust）。便于�
 
 语言：Python · 许可：— · 星标约：23 · 宿主：github
 
-图形界面对接 NASA/WHU 等常见 FTP 镜像，降低新手按站按日下载门槛。适合偶发取数与教学演示。大规模自动化、断点续传与镜像故障切换不如专用脚本或 FAST 一类工具。
+图形界面对接 NASA/WHU 等常见 FTP 镜像，降低新手按站按日下载门槛。适合偶发取数与教学演示。但源码写死明文匿名 FTP：CDDIS 已拒绝明文匿名登录（530），勾选 NASA 基本拿不到数据；WHU FTP 在部分网络下列目录报 425，会显示搜到 0 个文件。大规模自动化、断点续传与镜像故障切换不如专用脚本或 FAST 一类工具。
 
 #### [cddis-highrate-downloader](https://github.com/cemalialtuntas/cddis-highrate-downloader)  
 *🏷️ 高校实验室 核心*

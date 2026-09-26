@@ -421,7 +421,7 @@ International Service of Geomagnetic Indices（ISGI）门户，汇集 IAGA 认�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-美国奥格斯堡大学运营的 Magnetometer Array for Cusp and Cleft Studies，在加拿大北极地区（Cape Dorset、Clyde River、Igloolik、Pangnirtung 等站）布设磁力计，研究极隙区与尖角区的近地空间环境。网站提供当天各站数据图、每日图浏览、数据与绘图申请以及 ULF 指数 FTP 入口。高纬磁场扰动与极盖电离层斑块、GNSS 相位闪烁密切相关，可与 CARISMA、SuperMAG 互补。站点界面较旧，为 HTTP 访问。
+美国奥格斯堡大学运营的 Magnetometer Array for Cusp and Cleft Studies，在加拿大北极地区（Cape Dorset、Clyde River、Igloolik、Pangnirtung 等站）布设磁力计，研究极隙区与尖角区的近地空间环境。网站提供当天各站数据图、每日图浏览和 ULF 指数 FTP 入口；数据表单填站名和日期后直接返回 IAGA-2002 文件链接（0.5 s 采样，约 12 MB/天），实测无需账号。高纬磁场扰动与极盖电离层斑块、GNSS 相位闪烁密切相关，可与 CARISMA、SuperMAG 互补。站点界面较旧，为 HTTP 访问。
 
 #### [Meridian Project Data Center](https://www.meridianproject.ac.cn/)  
 *🏷️ 官方*
@@ -826,7 +826,7 @@ INGV eSWua 数据库 TEC 专题（DOI:10.13127/eswua/tec，CC BY 4.0）。接入
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-麻省大学洛厄尔分校维护的测高仪观测数据库入口，提供虚高图与临界频率等特性参数，常与 GNSS TEC 及 IRTAM 同化产品对照。空间天气与模型验证常用。一般需要注册；请按站内要求引用，并留意测站时间覆盖可能存在空洞。
+麻省大学洛厄尔分校维护的测高仪观测数据库入口，提供虚高图与临界频率等特性参数，常与 GNSS TEC 及 IRTAM 同化产品对照。空间天气与模型验证常用。特征参数可匿名按站按时段取，数值 SAO 描迹需申请账号；旧的 DIDBGetValues 接口已下线（404）。请按站内要求引用，并留意测站时间覆盖可能存在空洞。
 
 #### [GIRO-GAMBIT](https://giro.uml.edu/GAMBIT/)  
 *🏷️ 高校实验室*
