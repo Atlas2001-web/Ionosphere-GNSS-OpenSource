@@ -1,8 +1,10 @@
 # @gnss/rtcm · TypeScript RTCM3 编解码库（Node-NTRIP/rtcm）操作手册
 
-> <https://github.com/Node-NTRIP/rtcm>：Nebojša Cvetković 写的 TypeScript 库，npm 包名 `@gnss/rtcm`。它按 RTCM 10403.3 Amd.1 声明了 166 个消息类，可以拆帧、校验 CRC-24Q、把消息解码成对象再编码回去，另带 Node `stream.Transform` 形式的流解码器和流编码器。库里**没有 NTRIP 客户端**。Node-NTRIP 的 caster 把它当依赖，见 [caster](./caster.md)。
+> <https://github.com/Node-NTRIP/rtcm>：Nebojša Cvetković 写的 TypeScript 库，npm 包名 `@gnss/rtcm`。它按 RTCM 10403.3 Amd.1 注册了 166 个消息类型（103 个实消息 + 63 个 MSM 占位），可以拆帧、校验 CRC-24Q、把消息解码成对象再编码回去，另带 Node `stream.Transform` 形式的流解码器和流编码器。库里**没有 NTRIP 客户端**。Node-NTRIP 的 caster 把它当依赖，见 [caster](./caster.md)。
 > **结论先说：** 在 RTKLIB 真样本上，帧计数、1005、1019/1020、1004/1012 的解码结果和 pyrtcm 1.2.0 全部一致。**但 MSM（1071–1137）的卫星数据和信号数据解错了**：库按卫星逐颗读字段，RTCM 标准是同一字段先把所有卫星排完。只有卫星掩码、信号掩码、单元掩码（即 PRN 和信号组合）是对的。
 > 实测时间：2026-09-26 04:41–04:48 EDT。环境：Debian box，Node v20.19.2，npm 9.2.0，TypeScript 5.9.3（仅用于编译示例），对照库 pyrtcm 1.2.0（Python 3.13.5 venv）。
+
+> **质检复跑通过（2026-09-26 05:10–05:16 EDT，Node v20.19.2 / npm 9.2.0，`@gnss/rtcm` 0.1.5，依赖 bit-buffer-ts 0.8.1 + reflect-metadata 0.1.14，node_modules 936 KB，安装 1.25 s）**：两份样本 sha256 前缀 `8b466a682912`/`71fd42a95453`；`decode.js` 原样跑 GMSD7 **1143 帧 / 19558 MSM 单元 / 跳过 302 B**（56–70 ms），testglo **429 帧 / 跳过 58 B**，计数与 2 条 CRC 错误逐字一致；首帧 1077 卫星 ID/信号、TS `ext 4 / DF398 145 / 第 2 星 DF397 212` vs pyrtcm 1.2.0 `0 / 135 / 66`（MSM 错位复现）；1005 ARP 原始整数一致；空 Buffer `TypeError`、`hello` 前缀 `Invalid preamble (expected d3, got 68)`、4072/1300 → `messageType` 4064/1296 且编码 `RangeError: offset is out of bounds`；流解码 64 KiB/1 KiB/16 B → GMSD7 1141/1141/1143、testglo 423/423/429。**已修**：「166 个消息类」口径——实为 166 个注册类型号 = 103 实消息 + 63 FUTURE 占位（原文写成 166 类「另有」63 占位），导出符号实为 187 个。未复跑：§5 全字段 compare.py、roundtrip.js、BDS ID 40 合成用例、`tsc --strict`。
 
 ## 1. 用途边界
 
@@ -24,8 +26,8 @@
 | 维护 | 最后一次代码提交在 2021-07。之后只有 dependabot 分支（最晚 2023-03）和 PR #13（2025-03 提交，至今未合并）。issue 共 3 个，都已关闭 |
 | Node | `engines.node >=11.0.0`；本篇在 v20.19.2 上测试 |
 | 依赖 | `bit-buffer-ts ^0.8.1`（装到 0.8.1）、`reflect-metadata ^0.1.13`（装到 0.1.14）；`node_modules` 共 936 KB |
-| 导出 | `RtcmTransport`（`decode`、`encode`、`crc24q`、`DecodeException`、`EncodeException`、`MAX_PACKET_SIZE=1029`）、`RtcmMessage`、`RtcmMessageUnknown`、`RtcmMessageType`、`RtcmDecodeTransformStream`、`RtcmEncodeTransformStream`，以及 166 个 `RtcmMessage*` 类 |
-| 消息 | 1001–1017、1019–1027、1029–1035、1037–1039、1041/1042/1044–1046、SSR 1057–1068、MSM1–7（GPS/GLO/GAL/SBAS/QZSS/BDS/IRNSS 1071–1137）、1230，另有 63 个 `FUTURE_*_MSM` 占位（1141–1227）。4001–4095 私有消息只有枚举值，没有对应的类 |
+| 导出 | `RtcmTransport`（`decode`、`encode`、`crc24q`、`DecodeException`、`EncodeException`、`MAX_PACKET_SIZE=1029`）、`RtcmMessage`、`RtcmMessageUnknown`、`RtcmMessageType`、`RtcmDecodeTransformStream`、`RtcmEncodeTransformStream`，以及其余 `RtcmMessage*` 类：包顶层共 187 个 `RtcmMessage*` 符号，去掉上面 3 个后 184 个类 = 121 个非占位类（含 `RtcmMessageMsm1…7`、`RtcmMessageGpsObservations` 等 17 个 `messageType=-1` 的基类和 1 个参数辅助类）+ 63 个 `RtcmMessageMsm*Future*` 占位；按 `messageType` 去重后注册 **166 个**类型号（103 实 + 63 占位） |
+| 消息 | 1001–1017、1019–1027、1029–1035、1037–1039、1041/1042/1044–1046、SSR 1057–1068、MSM1–7（GPS/GLO/GAL/SBAS/QZSS/BDS/IRNSS 1071–1137）、1230，以及 63 个 `FUTURE_*_MSM` 占位（1141–1227，**已计入**上面 166 个）。4001–4095 私有消息只有枚举值，没有对应的类 |
 
 README 列了 103 个类名，**其中 11 个和实际导出的名字对不上**。例如 README 写 `RtcmMessageGpsL1Observables`，实际是 `…Observations`；`RtcmMessageStationaryArp` 实际是 `RtcmMessageStationArp`；`RtcmMessageGpsSatelliteEphemeris` 实际是 `…EphemerisData`。写代码时以 `build/index.d.ts` 为准。
 

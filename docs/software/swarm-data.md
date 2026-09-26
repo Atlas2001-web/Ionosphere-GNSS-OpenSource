@@ -2,6 +2,8 @@
 
 入口：[swarm-diss 网页](https://swarm-diss.eo.esa.int/) · [Swarm Product Handbook](https://swarmhandbook.earth.esa.int/) · [VirES](https://vires.services/) · [VirES HAPI](https://vires.services/hapi/) · 本机验证 **2026-09-26 04:34–04:47 EDT**
 
+> **质检复跑通过（2026-09-26 05:10–05:14 EDT，Python 3.13.15 + cdflib 1.3.14 + numpy 2.5.3）**：`access.sh`、`fetch.sh`（7 个 ZIP 字节数逐个相同，ZIP 内容清单逐行相同）、`cdfvars.py`、`ne.py`、`tec.py`、`l2.py` 原样重跑，输出与文中**逐字节 diff 无差异**；`latency.py` 除查询时刻外 8 行全同（05:12 EDT）；HAPI LP `x_maxTimeSelection` P2DT12H 确认。无需修改。备注：本次 EEF ZIP 下载用了 49 s（文中 2.9 s），swarm-diss 速度波动大，脚本别设太短超时。
+
 > 岗位：不注册、不用 token，从 ESA Swarm 分发服务器的 **HTTPS 网页接口**拿 Swarm 电离层文件（ZIP 里是 CDF），用 cdflib 读 Langmuir 探针 Ne/Te 和各自的 flag，并认清 TEC（绝对/相对、仰角门限）、IPIR（含极盖斑块 PCP_flag）、IBI（等离子体泡）、EEF（赤道电场）这几个 L2 产品；真实个例是 Swarm B 在 2024-05-11（Kp 9）的沿轨 Ne 与平静日 05-08 对比。有 token 的 VirES 客户端见 [viresclient](./viresclient.md)（那篇写的是 OWS/WPS 必须 token；本文补充：**VirES HAPI 匿名可用**）；用 LP + TEC 算 RODI/ROTI 等不规则体指数、以及 LP 0701 改名的补丁见 [titipy](./titipy.md)（它用的是 Swarm A 同一天，本文不重复其指数计算）；COSMIC-2 剖面见 [cosmic2-ro](./cosmic2-ro.md)；地基测高仪见 [giro-ionosonde](./giro-ionosonde.md)；Kp/Dst 见 [space-weather-indices](./space-weather-indices.md)。
 >
 > 门槛总表：[电离层与地磁门户决策表](../data-access.md#电离层与地磁门户决策表) · 本文命令块 [E24](../data-access.md#dp-e24)（swarm-diss HTTPS）· [E25](../data-access.md#dp-e25)（VirES HAPI）
