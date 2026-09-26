@@ -1,9 +1,18 @@
 # rt-navi · Rust 实时导航（u-blox 串口 + gnss-rtk）操作手册
 
-目录：[`PROJECTS.json` → `rt-navi`](../../PROJECTS.json) · 上游 <https://github.com/nav-solutions/rt-navi> · crates.io **`rt-navi` 0.0.1**（2024-07-28 12:39 EDT，唯一版本，下载 1251）· GitHub main **`ca95fb8`**（2026-04-12 06:40 EDT，仓内 `Cargo.toml` 已是 **0.0.2**，未发版）· **无 tag / 无 release** · **MPL-2.0** · ★**12** · README 标 MSRV 1.87 · edition 2024 · 本机 **rustc 1.98.1**，实测 2026-09-26 03:32–03:50 EDT
+目录：[`PROJECTS.json` → `rt-navi`](../../PROJECTS.json) · 上游 <https://github.com/nav-solutions/rt-navi> · crates.io **`rt-navi` 0.0.1**（2024-07-28 12:39 EDT，唯一版本，下载 1251）· GitHub main **`ca95fb8`**（2026-04-12 06:40 EDT，仓内 `Cargo.toml` 已是 **0.0.2**，未发版）· **无 tag / 无 release** · **MPL-2.0** · ★**12** · README 标 MSRV 1.87 · edition 2024 · 本机 **rustc 1.98.1**，实测 2026-09-26 03:32–03:50 EDT；**质检复跑** 04:03–04:15 EDT
 
 > 岗位：概念验证（PoC）——把 u-blox 接收机当「原始测量器」，从串口读 UBX `RXM-RAWX`（伪距）+ `RXM-SFRBX`（GPS 星历），喂给 [gnss-rtk](./gnss-rtk.md) 逐历元解 PVT，打印到日志。冲突时：**上游源码 > README > 本文**。  
 > **本篇没有真接收机**：所有接收机相关行为均为「**未在真接收机测试**」，数据来自 socat 伪串口回放公开 F9P 录制（§3）。
+
+> **质检复跑通过**（2026-09-26 04:03–04:15 EDT）。
+> - 环境：rustc **1.98.1**；`CARGO_TARGET_DIR` 独立目录；release 冷编译 **1 min 20 s**（补丁版再编 **1 min 14 s**），二进制 **≈38.5 MB**，`--version` → `rt-navi 0.0.2`；`--help` 去 ANSI 与原文一致。crates.io **0.0.1**/下载 **1251**/2024-07-28 16:39 UTC；GitHub main **`ca95fb8`**/MPL-2.0/★**12** 核对无误。
+> - 数据：rtkexplorer F9P zip（wpdmdl=2552）→ `rover.ubx` **14071360 B** sha256 `ba2e782f…95156a`；pyubx2 **1.3.7**：RAWX **4521**/SFRBX **92962**/GNRMC·GGA·GLL·GST 各 **4521**/无 NAV-PVT。
+> - 上游原样 200 历元：stdout 启动段与 `Did not receive ACK` 一致；**200/200** `pre-fit`、**0** 解；回写 **70 B** = CFG-MSG×3（RAWX/NAV-PVT/SFRBX）+ CFG-RATE measRate=**10000** navRate=**10** timeRef=**1** + MON-VER。
+> - SPP+仅 L1 补丁 400 历元：解 **173**；首解行 `lat=40.097007° long=254.852687 alt=1590.218778m | dt=4.783406E-3s` 逐字；错误计数 125/101/1；对 PPK（ECEF）3D 中位/p95/max **14.246 / 22.589 / 23.080 m**，水平 **5.669 m**，天向 **+13.063 m** 逐位一致；GGA×383（alt+sep，GGA 时标按 UTC+18→GPST）对 PPK 中位 **1.281 m**/max **2.152 m**。
+> - 错误：`/dev/ttyNOPE`/`/dev/null` panic exit **101**；`-b abc` exit **2**；同伪串口二次打开 busy **101**；64 KiB 随机静默；写端断开约 3 s → Broken pipe 日志洪水 **≈97 MB / 140 万行**（与原文 144 MB/209 万同行量级，时长切点略异）。
+> - 未重跑：仅 SPP（不滤 L1）16.102 m 表行、LNAV 子帧交叉细表、`ubx27/31`、真接收机。
+
 
 ## 1. 用途与边界
 
