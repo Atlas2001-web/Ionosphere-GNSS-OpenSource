@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **226 篇**操作手册（合计 **51936 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **228 篇**操作手册（合计 **52395 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -251,6 +251,8 @@
 | 224 | [gnss-obs-mirrors.md](./gnss-obs-mirrors.md) | IGS/MGEX 日观测匿名镜像（BKG、CAS、SOPAC、GA；IGN/WHU/KASI 本次不通；CDDIS 需 Earthdata）：同日同 24 站到达率、上架延迟、跨镜像同名文件是否同一份数据、解 Hatanaka 后历元完整性 | 323 | **已短硬** · 2026-09-26 05:10–05:20 EDT；2024-05-11 BKG/CAS/SOPAC 24/24、GA 22/24；前一天上架中位 SOPAC/GA 0.3 h、CAS 0.4 h、BKG 9.0 h；gz 字节全不同但观测段一致；CAS/GA 版 WTZR 让 Rust crx2rnx panic |
 | 225 | [ppp-tools.md](./ppp-tools.md) | aewallin/ppp-tools：时间实验室向 RINEX→外部 PPP 引擎（RTKLIB/gLAB/GPSPACE）→ 逐历元接收机钟/坐标 → 两站钟差的 Python 胶水脚本；≠ [ppp-rtklib](./ppp-rtklib.md)（mulin33 学习代码） | 211 | **已短硬** 用法讲解新入库 · 2026-09-26 05:05–05:18 EDT；master `e77e351`/GPL-2.0/★121/无 tag；RTKLIB 2.4.2 p13 分支 2 处修补后 WTZR 全天 3D 8.5 mm、钟对 IGS σ 0.310 ns；MI05−WTZR `diff_stations` 实跑；gLAB/GPSPACE 未测 |
 | 226 | [lisird.md](./lisird.md) | LASP LISIRD 太阳输入直连（免账号）：LaTiS 281 集（选列/时间与数值过滤/`format_time`/`last()`；csv/json/jsond/txt、`.das`/`.dds`）——Penticton F10.7 一日三测与近正午（=GFZ Fobs）、复合 Lyman-α、FISM2 EUV 波段/0.1 nm 光谱、GOES XRS 1 min；HAPI 2.0 仅 29 集且只有 CSV；`noaa_radio_flux` 2018 停更、2500 万样本上限 | 190 | **已短硬** 用法讲解新入库 · 2026-09-26 05:10–05:30 EDT；2024-05-10 F10.7obs 223.4（81 天均值 176.2）、GOES-18 XRS 峰 3.88e-4 W/m²（X3.9，06:54 UT）、FISM 121.55 nm 0.0585 W/m²/nm；PROJECTS LISIRD analysis/registration 已按实测改写 |
+| 227 | [pymsis.md](./pymsis.md) | SWxTREC NRLMSIS 2.1/2.0/00 中性大气（轮子自带 .so，免编译）：自动拉 CelesTrak F10.7/ap → 密度/温度/O/N₂ 剖面；暴时 O/N₂ 与负相；三代模型同输入对比 | 239 | **已短硬** 用法讲解 · 2026-09-26 05:18–05:22 EDT；PyPI 0.13.0/`0846792`/MIT（MSIS2 另有 NRL 许可，商用须联系）；Gannon 暴 2024-05-11 自动取 Ap **271**/F10.7 223.4（对照 geomagindices 给 24）；45°N 300 km O/N₂ **3.460→1.364**、T 1273→1565 K、ρ ×1.64；MSIS00 N₂ 高 23–27%；越界日期 ValueError 并触发重下载；`SW-All.csv` 权限 600 |
+| 228 | [iri2020.md](./iri2020.md) | space-physics IRI-2020 Fortran → xarray（不在 PyPI，git clone + CMake/gfortran 首跑自编）：Ne/离子/温度剖面 + NmF2/hmF2/foF2/TEC；与 pyiri 同场景对照；指数文件更新与段错误修补 | 220 | **已短硬** 用法讲解 · 2026-09-26 05:18–05:30 EDT；main `8b6ab9e`/MIT；2020-04-01 12UT 20N10E：NmF2 **1.494e12** m⁻³/hmF2 335.0/foF2 10.977（文件 F10.7=69.2）；改驱动 F10.7=100+Rz12 → hmF2 364.0（pyiri 364.6）/foF2 12.76（12.51）；捆带指数止于 2023 → 2024-05-11 静默 f107=63.75/ap=−11；新 `ig_rz.dat` SIGSEGV（806 月数组，issue #5）→ 改 1200 后得 ap 271；TEC 积分上限=请求最高高度；`FFLAGS=-O2` 改 TEC 38.11→34.78 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -320,6 +322,7 @@
 | IRI-2012/2016 气候态（Python 包装） | [pyglow.md](./pyglow.md) |
 | IRI-2016 官方驱动 → xarray | [iri2016.md](./iri2016.md) |
 | 纯 Python IRI（无 Fortran） | [pyiri.md](./pyiri.md) |
+| IRI-2020 官方 Fortran → xarray（git 装；换指数须补丁） | [iri2020.md](./iri2020.md) |
 | HF 短波射线追踪：落地距离 / 跳距 / 群时延 / 垂测虚高（纯 Python，O/X 模） | [pyrayhf.md](./pyrayhf.md) |
 | 低纬物理模式：自己跑出赤道喷泉 / EIA 双峰（SAMI2，gfortran） | [sami2py.md](./sami2py.md) |
 | 官方 IRI Fortran 金标准（IRI-2026 本机） | [iri-fortran.md](./iri-fortran.md) |
@@ -334,6 +337,7 @@
 | CCMC 模式输出函数化 / 飞越 | [kamodo.md](./kamodo.md) |
 | Apex / QD / MLT 磁坐标 | [apexpy.md](./apexpy.md) |
 | NRLMSISE-00 中性大气 | [msise00.md](./msise00.md) |
+| NRLMSIS 2.1/00 中性大气 + 暴时 O/N₂（自动取 F10.7/ap） | [pymsis.md](./pymsis.md) |
 | Android/多源 GNSS → NavData / 教学 WLS | [gnss_lib_py.md](./gnss_lib_py.md) |
 | 校准 sTEC/vTEC | [pytecgg.md](./pytecgg.md) |
 | 粗相对斜 TEC（无 DCB） | [gnss-tec.md](./gnss-tec.md) |
@@ -522,6 +526,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
+最近新增（用法讲解）：**pymsis**+**iri2020**（[pymsis.md](./pymsis.md) / [iri2020.md](./iri2020.md)；2026-09-26 05:18–05:30 EDT；pymsis PyPI 0.13.0/MIT+NRL MSIS2 许可：CelesTrak 自动指数 2024-05-11 Ap 271，45°N 300 km O/N₂ 3.460→1.364（MSIS2.1）/2.919→1.249（MSIS00）；iri2020 `8b6ab9e`/MIT/不在 PyPI：pyiri 同场景 NmF2 1.494e12 m⁻³（F10.7 69.2），改驱动 F10.7=100+Rz12 后 hmF2 364.0 vs pyiri 364.6；捆带指数 2023 止、过期静默 ap=−11，新 ig_rz.dat 段错误需 806→1200 补丁；交叉 msise00/iri2016/pyiri/iri-fortran）。
 最近新增（用法讲解）：**ppp-tools**（[ppp-tools.md](./ppp-tools.md)；2026-09-26 05:05–05:18 EDT；master `e77e351`/无 tag/GPL-2.0/★121；RTKLIB 2.4.2 p13；WTZR 2026-216 IGS20 最终：原样缺 ATX/NAV 必挂，修补后 2880 历元 3.70 s，SINEX 3D 8.5 mm、钟对 IGS AR 均值 −0.014 ns/σ 0.310 ns；MI05−WTZR 双差 107.971 ns/σ 4.394 ns（未扣站延迟）；截断 RINEX 静默 rc=0；下一优先 ntrip-core，go-gnss-spartn 留候选）。
 最近新增（用法讲解）：**darntids**+**tidd**（[darntids.md](./darntids.md) / [tidd.md](./tidd.md)；2026-09-26 04:05–05:15 EDT；DARNtids PyPI 0.2.0/`6effcd0`/GPL-3.0：PROJECTS 旧址 w2naf/DARNtids 已弃用；pyDARNmusic 0.2.0 须 pydarn 4.1.2+pydarnio 1.3；Zenodo 7005203 SAS 2012-11-01 单事件 MUSIC 42 峰（首峰 λ 245 km/39°），短窗频率量化为 3 点，Mongo 批处理未跑；tidd `cd15176`/Apache-2.0：S3 19.2 GB 只 Range 流前 2.8 GB，resnet18 自训 2 epoch，上游样本外 tp=0 为时间戳 bug、训练 precision/recall 互换、代码实为 GASF，行位置重算 F1 0.217）。
 最近新增（用法讲解）：**BiScEF**（[biscef.md](./biscef.md)；2026-09-26 04:52–05:03 EDT；main `90e6a2b`/无 tag/MIT/★2/不在 PyPI；实为 NetCDF4/HDF5；FINHEL0 82601 行/NORTRO2 43260 行，h5py/netCDF4/pyfive 7 文件逐值 0 差；ISMR 往返 59/65 全等、非逐字节；NOR UNIXTime=GPS 时、FMI/UNB 旧脚本晚 27 s；Zenodo 15045918 NORTRO2 2024-05-11 σφ>0.3 rad 2238；下一优先 ppp-tools，go-gnss-spartn 留候选）。
@@ -715,6 +720,7 @@ data-access
    ├─ titipy (Swarm LP/顶部 TEC → RODI/ROTEI/ROTI；10 s 窗；须补丁；CC BY-NC-SA)
    ├─ pyglow (IRI 气候态对照)
    ├─ iri2016 (IRI-2016 → xarray)
+   ├─ iri2020 (IRI-2020 → xarray；git 装；指数过期静默/新 ig_rz 段错误)
    ├─ iri-fortran (官方 IRI-2026 Fortran；fort.7)
    ├─ iri-2026-package / iri-common-files (发行物清单 / 公共系数)
    ├─ pyiri / pyirtam (纯 Python IRI / IRTAM)
@@ -726,6 +732,7 @@ data-access
    ├─ aacgmv2 (AACGM-v2 / MLT；交叉 apexpy)
    ├─ kamodo (CCMC 模式场函数化；SWMF_IE)
    ├─ msise00 (NRLMSISE-00 中性大气)
+   ├─ pymsis (NRLMSIS 2.1/2.0/00；CelesTrak 指数；O/N₂ 暴时负相)
    ├─ gps-measurement-tools (GnssLogger 采集；→ android_rinex)
    ├─ gnss-sdr (IQ/IF→PVT；仿真/前端；≠ RINEX PPP)
    ├─ pocketsdr (Pocket FE / 捕获跟踪；对照 gnss-sdr)
@@ -777,10 +784,10 @@ saga-utils：高速 I/Q 闪烁算法旁路（源码参考；S4 为幅度版≈�
 | --- | --- |
 | 02 / 16 | georinex · rinex · gnsspy · gnsstools · gnsstk · teqc · rinexmod · hatanaka · crx2rnx · rinex-cli · gnss-tec · pytecgg · tec-suite · ionotec |
 | 03 / 10 / 18 | ionex · ionex-gim · ionex-rs · diffionmap · sh-gim(边界) · pyglow · mosgim2 · spinifex |
-| 04 | iri-fortran · iri-2026-package · iri-common-files · iri2016 · pyglow · pyiri · pyirtam · apexpy · aacgmv2 · msise00 · nequickg · galileo-nequick-g · nequick2-ictp · kamodo |
+| 04 | iri-fortran · iri-2026-package · iri-common-files · iri2016 · iri2020 · pyglow · pyiri · pyirtam · apexpy · aacgmv2 · msise00 · pymsis · nequickg · galileo-nequick-g · nequick2-ictp · kamodo |
 | 05 / 13 / 21 | oasis-roti · ionomoni · iono-scintillation · saga-utils · geospacelab · sami2py |
 | 22 | gnss-tec · pytecgg · oasis-roti · lstid-processing · hamsci-lstid-detection · pyrayhf · darntids · tidd |
-| 06 / 20 | cssrlib · haslib · madocalib · qzsl6tool · laika · gnss_lib_py · pyrtklib · pyrtklib-demo5 · pyrtklib-rinex · ppp-rtklib · learning-rtklib · mrtklib · rtklib-explorer · rtklib-b2b · android_rinex · gps-measurement-tools · pygpsclient · pynmeagps · pyubx2 · ubx2rinex · pyrtcm · pyspartn · pysbf2 · septentrio-gnss-driver · ublox-dgnss · ublox-driver · ntripstreams · ntrip-client · ntripclient · ntripserver · cors-relay · ntripcaster-libev · ntrip-cpp · ntrip-go · caster · glab-upc · rtklib · great-pvt · groops · rapppid · ppp-wizard · gogps-matlab · gsilib · rtppp-b2b · pride-pppar · ionomoni · gnss-sdr · pocketsdr · gps-sdr-sim · fgi-gsrx · gnssrefl · mpsim |
+| 06 / 20 | cssrlib · haslib · madocalib · qzsl6tool · laika · gnss_lib_py · pyrtklib · pyrtklib-demo5 · pyrtklib-rinex · ppp-rtklib · learning-rtklib · mrtklib · rtklib-explorer · rtklib-b2b · android_rinex · gps-measurement-tools · pygpsclient · pynmeagps · pyubx2 · ubx2rinex · pyrtcm · pyspartn · pysbf2 · septentrio-gnss-driver · ublox-dgnss · ublox-driver · ntripstreams · ntrip-client · ntripclient · ntripserver · cors-relay · ntripcaster-libev · ntrip-cpp · ntrip-go · caster · glab-upc · rtklib · great-pvt · groops · rapppid · ppp-wizard · gogps-matlab · gsilib · rtppp-b2b · pride-pppar · ionomoni · gnss-sdr · pocketsdr · gps-sdr-sim · fgi-gsrx · gnssrefl · mpsim · pymsis · iri2020 |
 | 09 | pytecgg |
 
 ---
