@@ -1,5 +1,5 @@
 # 精密定位 / Precise Positioning
-> **104** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **106** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
@@ -295,6 +295,7 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [groops](https://github.com/groops-devs/groops) | GROOPS：重力场与 GNSS 处理（TU Graz） | C++ | 244 | 🏷️ 高校实验室 ★ 核心 |
+| [gnss2tws-green](https://github.com/jzshhh/gnss2tws_green) | gnss2tws-green：GNSS 垂直位移反演陆地水储量 | MATLAB | 33 | 🏷️ 高校实验室 |
 | [GARPOS](https://github.com/s-watanabe-jhod/garpos) | GARPOS：日本海保 GNSS-声学海底定位开源解算器 | Python | 25 | 🏷️ 官方 |
 | [gnatss](https://github.com/seafloor-geodesy/gnatss) | gnatss：海底 GNSS-A 换能器测量社区软件 | Python | 17 | 🏷️ 个人社区 |
 | [GAMIT/GLOBK](https://geoweb.mit.edu/gg/) | MIT EAPS 维护的 GAMIT/GLOBK 高精度 GNSS 大地测量解算套件主页 | Fortran/C | — | 🏷️ 高校实验室 |
@@ -307,6 +308,13 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 语言：C++ · 许可：GPL-3.0 · 星标约：244 · 宿主：github
 
 格拉茨工业大学 ITSG 背景的 GROOPS，覆盖重力场恢复、GNSS 处理与轨道确定，含 GUI 与 MPI 并行。适合大地测量联合反演与科研计算。学习曲线陡；纯导航 RTK/PPP-AR 工程请优先专用套件。
+
+#### [gnss2tws-green](https://github.com/jzshhh/gnss2tws_green)  
+*🏷️ 高校实验室*
+
+语言：MATLAB · 许可：GPL-3.0 · 星标约：33 · 宿主：github
+
+开源 MATLAB 工具 GNSS2TWS：利用 GNSS 测站日尺度垂直位移，经格林函数等方法推断陆地水储量（TWS）变化，服务水文大地测量。适合已有精密坐标时间序列、做气候水文交叉的研究者。不是导航定位解算器；空间平滑、负载模型与参考框架假设必须按配套论文核对。输入坐标序列质量决定反演可信度。站点分布稀疏时，反演空间分辨率会明显下降。
 
 #### [GARPOS](https://github.com/s-watanabe-jhod/garpos)  
 *🏷️ 官方*
@@ -1015,6 +1023,45 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 一个核心提供 SPP/RTK/PPP、SGP4/会合等与 RINEX/RTCM/SP3/NTRIP 解析，并带多语言绑定。适合想要「单依赖多协议」的新项目。相对经典库验证样本仍在积累，关键应用需交叉比对 RTKLIB/IGS。
 
+## RTK客户端
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [TouchRTKStation](https://github.com/taroz/TouchRTKStation) | TouchRTKStation：RTKLIB 单频流动/基准站方案 | Python | 99 | 🏷️ 个人社区 |
+| [ELT_RTKBase](https://github.com/GNSSOEM/ELT_RTKBase) | ELT_RTKBase：多品牌接收机的树莓派 RTK 基准站 | Shell | 70 | 🏷️ 个人社区 |
+| [polaris](https://github.com/PointOneNav/polaris) | polaris：Point One RTK 网络服务通信客户端 | C/C++ | 33 | 🏷️ 个人社区 |
+| [rtk_client](https://github.com/tobiasnix/rtk_client) | Python 终端 RTK：NTRIP + 串口 GNSS 客户端 | Python | 0 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [TouchRTKStation](https://github.com/taroz/TouchRTKStation)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：99 · 宿主：github
+
+taroz 维护的单频 RTK-GNSS 流动/基准站方案，底层依托 RTKLIB，面向可触摸终端与野外快速架站。MIT 许可；与纯命令行 RTKLIB 相比更偏整机与交互体验。适合教学与低成本单频实验，多频与完好性能力有限，硬件串口与电台配置见仓库说明。
+
+#### [ELT_RTKBase](https://github.com/GNSSOEM/ELT_RTKBase)  
+*🏷️ 个人社区*
+
+语言：Shell · 许可：AGPL-3.0 · 星标约：70 · 宿主：github
+
+基于 Stefal/rtkbase 的分支增强，面向树莓派等单板，适配 Unicore UM98x、Bynav M2x、Septentrio Mosaic X5 与 u-blox ZED-X20P 等接收机。AGPL-3.0；提供 Web GUI 自建 NTRIP 基准。许可与上游 rtkbase 一致需注意传染性；硬件接线与安装脚本见仓库。
+
+#### [polaris](https://github.com/PointOneNav/polaris)  
+*🏷️ 个人社区*
+
+语言：C/C++ · 许可：MIT · 星标约：33 · 宿主：github
+
+Point One Navigation 官方提供的 C 与 C++ 客户端库，连接其 Polaris RTK 网络取得 RTCM 10403 改正，喂给 Septentrio、NovAtel、u-blox 等兼容接收机，附串口转发与 NTRIP server 示例。需要在 app.pointonenav.com 申请 API key，云端服务本身非开源；适合想把商业 RTK 改正嵌入自有设备的开发者。
+
+#### [rtk_client](https://github.com/tobiasnix/rtk_client)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：AGPL-3.0 · 星标约：0 · 宿主：github
+
+Python 终端 RTK 客户端（AGPL-3.0）：经 NTRIP 拉取 RTCM3 改正并注入串口 GNSS 模块，curses 界面显示 Fixed/Float、卫星与 SNR，支持 TLS、YAML 配置、CSV 轨迹日志、自动重连与模块配置文件（LC29H / generic NMEA）。面向低成本流动站联调，不是模糊度固定解算库（依赖接收机内部 RTK）。星标虽少但 2026 仍有推送；部署需自备 NTRIP 账号与兼容接收机。
+
 ## 定位引擎绑定
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
@@ -1044,37 +1091,6 @@ sidereon 统一 GNSS+轨道力学引擎的 Python 发行（MIT，pip install sid
 语言：MATLAB · 许可：Apache-2.0 · 星标约：2 · 宿主：github
 
 TU Delft 开源 IGP（MATLAB，Apache-2.0）：以 Space-Time Matrix 统一 GNSS/InSAR/水准等多源形变处理（选择、检验、预测与可视化）。需 MATLAB；InSAR 初始化与数据准备成本不低，偏大地测量形变而非电离层 TEC。
-
-## RTK客户端
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [TouchRTKStation](https://github.com/taroz/TouchRTKStation) | TouchRTKStation：RTKLIB 单频流动/基准站方案 | Python | 99 | 🏷️ 个人社区 |
-| [ELT_RTKBase](https://github.com/GNSSOEM/ELT_RTKBase) | ELT_RTKBase：多品牌接收机的树莓派 RTK 基准站 | Shell | 70 | 🏷️ 个人社区 |
-| [rtk_client](https://github.com/tobiasnix/rtk_client) | Python 终端 RTK：NTRIP + 串口 GNSS 客户端 | Python | 0 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [TouchRTKStation](https://github.com/taroz/TouchRTKStation)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：MIT · 星标约：99 · 宿主：github
-
-taroz 维护的单频 RTK-GNSS 流动/基准站方案，底层依托 RTKLIB，面向可触摸终端与野外快速架站。MIT 许可；与纯命令行 RTKLIB 相比更偏整机与交互体验。适合教学与低成本单频实验，多频与完好性能力有限，硬件串口与电台配置见仓库说明。
-
-#### [ELT_RTKBase](https://github.com/GNSSOEM/ELT_RTKBase)  
-*🏷️ 个人社区*
-
-语言：Shell · 许可：AGPL-3.0 · 星标约：70 · 宿主：github
-
-基于 Stefal/rtkbase 的分支增强，面向树莓派等单板，适配 Unicore UM98x、Bynav M2x、Septentrio Mosaic X5 与 u-blox ZED-X20P 等接收机。AGPL-3.0；提供 Web GUI 自建 NTRIP 基准。许可与上游 rtkbase 一致需注意传染性；硬件接线与安装脚本见仓库。
-
-#### [rtk_client](https://github.com/tobiasnix/rtk_client)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：AGPL-3.0 · 星标约：0 · 宿主：github
-
-Python 终端 RTK 客户端（AGPL-3.0）：经 NTRIP 拉取 RTCM3 改正并注入串口 GNSS 模块，curses 界面显示 Fixed/Float、卫星与 SNR，支持 TLS、YAML 配置、CSV 轨迹日志、自动重连与模块配置文件（LC29H / generic NMEA）。面向低成本流动站联调，不是模糊度固定解算库（依赖接收机内部 RTK）。星标虽少但 2026 仍有推送；部署需自备 NTRIP 账号与兼容接收机。
 
 ## 实时PVT
 

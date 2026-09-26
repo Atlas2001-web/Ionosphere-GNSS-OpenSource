@@ -202,7 +202,7 @@ git rev-parse --short HEAD
 | 海报 / IGSmail | 是（1682069 B；2025-01-24 公告） |
 | 本地综合 SP3/CLK stdout | **无**（故意不编造） |
 | 可公开替代实验 | [clkcomb](./clkcomb.md) + [data-access](../data-access.md) |
-| PROJECTS 旁注 | `GFZ-SPOCC-news` / `IGSMAIL-SPOCC` 非仓；软件条目名 **`SPOCC`** |
+| PROJECTS 旁注 | 软件条目名 **`SPOCC`**（新闻页 / IGSmail 公告已于 batch 43 并入该条 analysis_zh，不再单列） |
 
 ## 11. 相关
 

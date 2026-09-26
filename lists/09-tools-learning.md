@@ -1,5 +1,5 @@
 # 学习资源与工具 / Tools & Learning
-> **59** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **57** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
@@ -9,7 +9,6 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 |---|---|---|---:|---|
 | [UrbanNavDataset](https://github.com/IPNL-POLYU/UrbanNavDataset) | 香港/东京等城市峡谷 GNSS/INS/视觉基准集 | Python | 606 | 🏷️ 高校实验室 |
 | [awesome-gins-datasets](https://github.com/i2Nav-WHU/awesome-gins-datasets) | awesome-gins-datasets：车载 GNSS/INS 数据集列表 | — | 280 | 🏷️ 高校实验室 核心 |
-| [gnss2tws-green](https://github.com/jzshhh/gnss2tws_green) | gnss2tws-green：GNSS 垂直位移反演陆地水储量 | MATLAB | 33 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -26,13 +25,6 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 语言：— · 许可：— · 星标约：280 · 宿主：github
 
 汇总适合车载 GNSS/INS 组合导航评测的公开数据集与说明入口，减少四处搜数据的时间成本。适合写论文基线、算法对比与课程大作业选题。本身不是解算软件；引用各数据集时要核对许可协议、传感器时间同步与标定文件是否齐全，缺失标定会严重扭曲融合精度结论。
-
-#### [gnss2tws-green](https://github.com/jzshhh/gnss2tws_green)  
-*🏷️ 高校实验室*
-
-语言：MATLAB · 许可：GPL-3.0 · 星标约：33 · 宿主：github
-
-开源 MATLAB 工具 GNSS2TWS：利用 GNSS 测站日尺度垂直位移，经格林函数等方法推断陆地水储量（TWS）变化，服务水文大地测量。适合已有精密坐标时间序列、做气候水文交叉的研究者。不是导航定位解算器；空间平滑、负载模型与参考框架假设必须按配套论文核对。输入坐标序列质量决定反演可信度。站点分布稀疏时，反演空间分辨率会明显下降。
 
 ## 资源列表
 
@@ -489,21 +481,6 @@ GSC 关于 Galileo Open Service Navigation Message Authentication（OSNMA）的�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 欧洲 GNSS 服务中心电子图书馆中的 Programme Reference Documents，集中链向 Galileo/EGNOS 接口控制文件与计划级参考文档。官方 portal；做接收机/OSNMA/HAS 开发前的权威文档入口。具体 PDF 版本与下载条款以页面为准，需遵守欧盟文件分发条件。
-
-## RTK网络客户端
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [polaris](https://github.com/PointOneNav/polaris) | polaris：Point One RTK 网络服务通信客户端 | — | 33 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [polaris](https://github.com/PointOneNav/polaris)  
-*🏷️ 个人社区*
-
-语言：— · 许可：MIT · 星标约：33 · 宿主：github
-
-与 Point One 的 RTK 网络服务通信的开源客户端侧代码，便于接云端改正。服务本身非开源；适合对接其生态。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
 
 ## SWARM教程
 

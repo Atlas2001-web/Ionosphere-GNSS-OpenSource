@@ -1,5 +1,5 @@
 # GNSS 数据与格式 / GNSS Data I/O
-> **139** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **138** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
@@ -43,7 +43,6 @@ RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品�
 | [BNC](https://igs.bkg.bund.de/ntrip/bnc) | BKG 开源多流 Ntrip 客户端：收 RTCM 并可做实时 PPP | C++ | — | 🏷️ 官方 核心 |
 | [BNC-source-FTP](https://igs.bkg.bund.de/root_ftp/NTRIP/software/BNC/) | BNC-source-FTP：BKG FTP 上的 BNC 源码与二进制目录 | C++ | — | 🏷️ 官方 |
 | [BNS](https://software.rtcm-ntrip.org/wiki/BNS) | BNS：BKG Ntrip 状态空间改正播发服务端 | C++ | — | 🏷️ 官方 |
-| [Caster-source-FTP](https://igs.bkg.bund.de/root_ftp/NTRIP/software/caster/) | Caster-source-FTP：BKG Professional NtripCaster 源码 FTP 目录 | C | — | 🏷️ 官方 |
 | [EUREF-IP-Ntrip-overview](https://igs.bkg.bund.de/ntrip/index) | EUREF-IP-Ntrip-overview：BKG/IGS NTRIP 流与 BNC/Caster 总览 | various | — | 🏷️ 官方 |
 | [RTCM-Ntrip-Software](https://software.rtcm-ntrip.org/) | RTCM-Ntrip：BNC/Caster 官方软件门户 | C/C++ | — | 🏷️ 官方 核心 |
 
@@ -278,7 +277,7 @@ Peinser 发布的自托管 NTRIP v2 caster：汇聚多基站 RTCM 改正并通�
 
 语言：C · 许可：GPL-3.0-or-later (README/source headers; bundled COPYING is GPLv2 text) · 星标约：— · 宿主：official_site
 
-德国联邦制图与大地测量局发布的 NTRIP 1/2 播发器，基于 Icecast，可同时服务大量客户端。2024 年 9 月起免费提供源码与软件，下载见 BKG FTP。只做流分发不解码内容，不含 VRS；与 BNC 客户端配套常用于 IGS/EUREF 实时站运维与教研演示。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
+德国联邦制图与大地测量局发布的 NTRIP 1/2 播发器，基于 Icecast，可同时服务大量客户端。2024 年 9 月起连同 C 源码免费发放，产品页的下载链接指向 BKG FTP 目录 https://igs.bkg.bund.de/root_ftp/NTRIP/software/caster/（2026-09 最新 ntripcaster-2.0.49.tar.bz2，附 .sha256、CHANGES 与手册，部署宜钉版本并校验）。只做流分发不解码内容，不含 VRS；与 BNC 客户端配套常用于 IGS/EUREF 实时站运维与教研演示。
 
 #### [BNC](https://igs.bkg.bund.de/ntrip/bnc)  
 *🏷️ 官方 核心*
@@ -300,13 +299,6 @@ BKG 提供的 BNC 发行目录，含 GPL-3 源码包、各发行版二进制与�
 语言：C++ · 许可：GPL (version unspecified) · 星标约：— · 宿主：official_site
 
 BKG 的 Ntrip 状态空间服务器条目，面向实时 SSR/改正信息播发场景，源码与说明见 RTCM-Ntrip 发行包。适合研究实时 PPP/SSR 链路搭建；现代部署更常见 BNC 与 Professional Caster 组合，本工具偏专用或历史工作流，接入前请对照当前 trunk 文档。
-
-#### [Caster-source-FTP](https://igs.bkg.bund.de/root_ftp/NTRIP/software/caster/)  
-*🏷️ 官方*
-
-语言：C · 许可：GPL-3.0-or-later (README/source headers; bundled COPYING is GPLv2 text) · 星标约：— · 宿主：official_site
-
-可直接获取 ntripcaster 源码 tar 与校验文件的 FTP 目录，对应 BKG 专业播发器免费开源发行。运维部署时可固定版本号拉取并核对 sha256。配置与安全补丁见同目录 CHANGES 与手册；功能介绍见 bkgcaster 产品页。收录前已用 HTTP 核验页面可访问；使用请遵守上游许可与引用要求。
 
 #### [EUREF-IP-Ntrip-overview](https://igs.bkg.bund.de/ntrip/index)  
 *🏷️ 官方*
@@ -1025,7 +1017,7 @@ Android 原始 GNSS 测量日志与桌面可视化分析工具，智能手机高
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [gpsd](https://gitlab.com/gpsd/gpsd) | gpsd：跨平台 GNSS/AIS 守护进程 | C | 104 | 🏷️ 个人社区 |
-| [gpsd-website](https://gpsd.io/) | gpsd-website：gpsd 官网（文档、兼容机列表与发行说明） | C | — | 🏷️ 个人社区 |
+| [gpsd-website](https://gpsd.io/) | gpsd-website：gpsd 官网（文档、兼容机列表与发行说明） | — | — | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -1039,7 +1031,7 @@ Android 原始 GNSS 测量日志与桌面可视化分析工具，智能手机高
 #### [gpsd-website](https://gpsd.io/)  
 *🏷️ 个人社区*
 
-语言：C · 许可：BSD-2-Clause · 星标约：— · 宿主：other
+语言：— · 许可：BSD-2-Clause · 星标约：— · 宿主：other
 
 gpsd 社区官网，提供安装文档、兼容硬件列表与发布信息。源码开发主仓在 GitLab，发行文件指向 Savannah 镜像。嵌入式或桌面定位服务集成前，建议先读本站兼容性说明，避免误用标签页上的非发行压缩包。使用前请核验上游页面与许可条款。
 

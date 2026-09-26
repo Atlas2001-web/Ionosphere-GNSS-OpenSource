@@ -2,7 +2,7 @@
 
 **电离层 · GNSS · 导航开源索引**（链接精选，不是代码大合集）
 
-[![Projects](https://img.shields.io/badge/verified%20projects-1032-blue.svg)](./PROJECTS.json)
+[![Projects](https://img.shields.io/badge/verified%20projects-1029-blue.svg)](./PROJECTS.json)
 [![CC0](https://img.shields.io/badge/catalog-CC0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 [![Datasets](https://img.shields.io/badge/data%20portals-169-teal.svg)](./lists/10-gnss-datasets.md)
 
@@ -30,17 +30,17 @@
 |---|---|---:|
 | 电离层 | [01](./lists/01-ionosphere.md) | 298 |
 | 对流层 | [02](./lists/02-troposphere.md) | 49 |
-| GNSS 数据与格式 | [03](./lists/03-gnss-data.md) | 139 |
-| 精密定位 | [04](./lists/04-gnss-positioning.md) | 104 |
-| 轨道与钟差 | [05](./lists/05-orbit-clock.md) | 33 |
+| GNSS 数据与格式 | [03](./lists/03-gnss-data.md) | 138 |
+| 精密定位 | [04](./lists/04-gnss-positioning.md) | 106 |
+| 轨道与钟差 | [05](./lists/05-orbit-clock.md) | 31 |
 | 导航 | [06](./lists/06-navigation-ins.md) | 73 |
 | 软件接收机 | [07](./lists/07-gnss-sdr.md) | 76 |
 | 移动应用 | [08](./lists/08-mobile-apps.md) | 32 |
-| 学习工具 | [09](./lists/09-tools-learning.md) | 59 |
+| 学习工具 | [09](./lists/09-tools-learning.md) | 57 |
 | **数据源门户** | [10](./lists/10-gnss-datasets.md) | 169 |
-| **合计** | [PROJECTS.json](./PROJECTS.json) | **1032** |
+| **合计** | [PROJECTS.json](./PROJECTS.json) | **1029** |
 
-标记：🏷️ 官方 / 高校实验室 / 个人社区 · 官方 344 · 高校 355 · 社区 333 · 细则 [categories.md](./docs/categories.md)
+标记：🏷️ 官方 / 高校实验室 / 个人社区 · 官方 341 · 高校 355 · 社区 333 · 细则 [categories.md](./docs/categories.md)
 
 ---
 

@@ -1,5 +1,5 @@
 # 轨道与钟差 / Orbit & Clock
-> **33** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **31** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 精密轨道确定、卫星钟差与相位偏差（UPD/OSB）等产品生成；独立开源小库较少，能力多集成在 Ginan、PRIDE-PPPAR、GROOPS 等大型套件中，本类刻意保持精简、不注水。
 
@@ -32,37 +32,6 @@
 语言：C++ · 许可：BSD-3-Clause · 星标约：3 · 宿主：github
 
 Yuanxin Pan 开源的钟差/相位偏差合成工具，源于学位论文并应用于武大参与的 IGS 第三次重处理等研究，可综合多分析中心产品以改善 PPP-AR。附理论文档与论文索引。星标不多但科学指向明确；闭源 PPPx 二进制定位引擎不在本条目范围。
-
-## 轨道钟差综合
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [GFZ-SPOCC-news](https://www.gfz.de/en/section/space-geodetic-techniques/overview/details-section-news/veroeffentlichung-der-software-for-precise-orbit-and-clock-combination-spocc-1) | GFZ-SPOCC-news：GFZ 发布 SPOCC 多 GNSS 轨道钟差综合的新闻页 | Python | — | 🏷️ 官方 |
-| [IGSMAIL-SPOCC](https://lists.igs.org/pipermail/igsmail/2025/008556.html) | IGSMAIL-SPOCC：IGSmail 上 SPOCC 开源发布的社区公告 | text | — | 🏷️ 官方 |
-| [SPOCC](https://gnss.gfz.de/services/spocc) | SPOCC：多分析中心轨道钟差综合 | Python | — | 🏷️ 官方 核心 |
-
-### 详细说明
-
-#### [GFZ-SPOCC-news](https://www.gfz.de/en/section/space-geodetic-techniques/overview/details-section-news/veroeffentlichung-der-software-for-precise-orbit-and-clock-combination-spocc-1)  
-*🏷️ 官方*
-
-语言：Python · 许可：— · 星标约：— · 宿主：official_site
-
-GFZ 正式介绍 SPOCC 背景与目标的新闻页，说明从原型到可发布 Python/Docker 包的过程，并指向 gnss.gfz.de 下载。适合了解发布动机与组合策略；实际安装、配置与示例仍以软件服务页及用户文档为准。新闻页与服务页都没有公布许可条款；代码在 GFZ GitLab，需用 GitHub 账号登录后访问。
-
-#### [IGSMAIL-SPOCC](https://lists.igs.org/pipermail/igsmail/2025/008556.html)  
-*🏷️ 官方*
-
-语言：text · 许可：n/a (announcement) · 星标约：— · 宿主：official_site
-
-国际 GNSS 服务邮件列表中关于 SPOCC 开源发布的公告，确认软件面向多星座轨道与钟差加权综合，并给出 GFZ 服务页链接。属于官方发布记录，便于引用发布时间线；获取软件请转服务页，本页本身不是代码仓。使用前请核验上游页面与许可条款。
-
-#### [SPOCC](https://gnss.gfz.de/services/spocc)  
-*🏷️ 官方 核心*
-
-语言：Python · 许可：— · 星标约：— · 宿主：official_site
-
-GFZ 发布的 Software for Precise Orbit and Clock Combination，用方差分量估计对多家分析中心 SP3/CLK 做多星座加权综合，并提供 Docker。面向 IGS 组合与 PPP 用户产品试验。2025 年起经 IGSmail 公开；输入需标准轨道钟差格式，不是单站 PPP 引擎。代码在 GFZ GitLab，需用 GitHub 账号登录，公开页面未写明许可。
 
 ## DCB/UPD/IFCB/OSB
 
@@ -148,6 +117,21 @@ C++ 实现三套偏差模式：DCB（码偏差与 VTEC 球谐联立）、UPD 与
 语言：MATLAB · 许可：— · 星标约：11 · 宿主：github
 
 面向多系统多频码观测的 OSB 估计脚本集，含读观测、提取多通道偏差、估计与分析等步骤，并涉及 SINEX 类偏差文件。用户需自行准备测站网观测数据。适合偏差产品研究与教学；生产级 OSB 仍以 IGS/各分析中心产品为主，本库偏算法复现。
+
+## 轨道钟差综合
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [SPOCC](https://gnss.gfz.de/services/spocc) | SPOCC：多分析中心轨道钟差综合 | Python | — | 🏷️ 官方 核心 |
+
+### 详细说明
+
+#### [SPOCC](https://gnss.gfz.de/services/spocc)  
+*🏷️ 官方 核心*
+
+语言：Python · 许可：SPOCC Scientific License v1.0 (proprietary; signed terms + registration, IGS/IAG contributors only) · 星标约：— · 宿主：official_site
+
+GFZ 发布的 Software for Precise Orbit and Clock Combination，用方差分量估计对多家分析中心 SP3/CLK 做多星座加权综合，并提供 Docker。面向 IGS 组合与 PPP 用户产品试验，不是单站 PPP 引擎。发布见 IGSMAIL-8560（2025-01-24）与 GFZ 所属部门新闻页。服务页公布 SPOCC Scientific License v1.0：须签署条款登记后才能访问 git.gfz-potsdam.de/gnss/spocc，仅限对 IGS/IAG 有贡献的机构，运营中不得给非 IGS 产品加权，并非 OSI 开源。
 
 ## 轨道确定/基础库
 

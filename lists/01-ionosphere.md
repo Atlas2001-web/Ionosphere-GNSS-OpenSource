@@ -1514,7 +1514,7 @@ irimodel.org 上标注日期最新的 IRI Fortran 发行目录，工作组持续
 #### [IRI-COMMON-FILES](https://irimodel.org/COMMON_FILES/)  
 *🏷️ 官方 核心*
 
-语言：— · 许可：— · 星标约：— · 宿主：official_site
+语言：— · 许可：IRI permissive (AS IS + attribution) · 星标约：— · 宿主：official_site
 
 irimodel 写明：除版本包外通常还要 COMMON FILES（若 zip 未打进包内）。缺公共系数时编译或运行常失败。搭本地 IRI 时与具体版本目录、最新 INDICES 一起下载；不要只克隆 GitHub 包装而漏官方公共文件。
 
