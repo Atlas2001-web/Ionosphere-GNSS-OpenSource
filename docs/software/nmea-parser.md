@@ -27,7 +27,7 @@
 | 易混 | 是什么 | 与本库关系 |
 | --- | --- | --- |
 | **本文** `nmea-parser` | Rust，NMEA 0183 + AIS | `cargo add nmea-parser@0.11.0` |
-| crates.io `nmea`（AeroRust） | 另一个 Rust NMEA crate（0.8.0） | 不同作者、API 不同、**不含 AIS**；本库未对比实测 |
+| [nmea-rs](./nmea-rs.md)（crates.io `nmea`，AeroRust） | 另一个 Rust NMEA crate（0.8.0） | 不同作者、API 不同、**不含 AIS**、支持 `no_std`；同一批 gpsd 日志的对照实测（假星/`$GB`/GSA 系统 ID/GGA 日期）见该篇 |
 | [minmea](./minmea.md) / [libnmea](./libnmea.md) | C 解析库 | 嵌入式 C 选它们 |
 | [pynmea2](./pynmea2.md) / [pynmeagps](./pynmeagps.md) | Python 解析库 | pynmeagps 可生成 NMEA、懂 NMEA 4.10 信号 ID；本文交叉核对用它 |
 | [gpsd](./gpsd.md) | C 守护进程 | 自带 NMEA/AIS 驱动；本文测试数据取自 gpsd 回归日志 |
