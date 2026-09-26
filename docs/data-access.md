@@ -10,7 +10,7 @@
 
 | 你想要 | 优先门户 | 注册 |
 |---|---|:---:|
-| 全球 RINEX / 广播星历 | [CDDIS](https://cddis.nasa.gov/archive/gnss/) · [BKG root_ftp](https://igs.bkg.bund.de/root_ftp/) · [GFZ ISDC HTTPS](https://isdc-data.gfz.de/gnss/) · [ESA GSSC](https://gssc.esa.int/) | Earthdata / 视中心 |
+| 全球 RINEX / 广播星历 | [CDDIS](https://cddis.nasa.gov/archive/gnss/) · [BKG root_ftp](https://igs.bkg.bund.de/root_ftp/) · [GFZ ISDC HTTPS](https://isdc-data.gfz.de/gnss/) · [ESA GSSC](https://gssc.esa.int/)；匿名 IGS 日观测镜像（BKG / CAS / SOPAC / GA）实测见 [E28](#dp-e28) | CDDIS 需 Earthdata；E28 所列匿名 |
 | SP3 / CLK / 偏差 | CDDIS `gnss/products/` · [IGS files](https://files.igs.org/pub/) · GFZ ISDC · [CODE HTTPS](https://download.aiub.unibe.ch/) · [CAS `pub/`](https://data.bdsmart.cn/pub/) | 同左 / 多开放 |
 | GIM / IONEX | CDDIS `gnss/products/ionex/` · CODE · [CAS ionex](https://data.bdsmart.cn/pub/product/iono/ionex/) · [UPC rapid](https://chapman.upc.es/tomion/rapid/) · JPL（[sideshow](https://sideshow.jpl.nasa.gov/pub/iono_daily/)）；门户/新旧名/时延见 [E27](#dp-e27) | CDDIS 需 Earthdata；其余实测匿名 |
 | 高采样率（闪烁 / 同震） | [CDDIS high-rate](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/high-rate_data.html) · GFZ `/gnss/data/highrate/` · `cddis-highrate-downloader` | Earthdata / 开放 |
@@ -431,7 +431,7 @@ curl -L -C - -O \
 
 ## 电离层与地磁门户决策表
 
-第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD），以及地基与 LEO 电离层观测（E23 GIRO / DIDBase 测高仪、E24 Swarm swarm-diss HTTPS、E25 VirES HAPI、E26 CHAIN 闪烁 ISMR、E27 GIM/IONEX 各中心门户）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
+第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD），以及地基与 LEO 电离层观测（E23 GIRO / DIDBase 测高仪、E24 Swarm swarm-diss HTTPS、E25 VirES HAPI、E26 CHAIN 闪烁 ISMR、E27 GIM/IONEX 各中心门户、E28 IGS 观测匿名镜像）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
 
 | 门户 | 账号 / 门槛 | 格式 | 时间分辨率 · 时延 | 实测 |
 |---|---|---|---|:---:|
@@ -462,6 +462,7 @@ curl -L -C - -O \
 | [VirES for Swarm](https://vires.services/) | **HAPI 匿名**（`/hapi/catalog`、`/hapi/info`、`/hapi/data`，174 数据集 / 147 个 `SW_`）；OWS/WPS（viresclient）无 token → **403**，token 要在 vires.services 注册 | HAPI：CSV / JSON / binary 切片 | 单次上限 LP 2.5 天、TEC 5 天；值与 CDF 逐位一致；无模型残差 | ✅（[E25](#dp-e25)；token 路径见 [viresclient](./software/viresclient.md)） |
 | [CHAIN 加拿大高纬电离层网](https://www.chain-project.net/) | **匿名**：HTTPS 目录 `https://www.chain-project.net/data/`（`http://www.chain-project.net` 301 到 `chain-new`）；匿名 FTP `ftp.chain-project.net`（用户 `ftp`、密码邮箱，实测时好时坏）；老 `chain.physics.unb.ca/data/gps/ismr/2024/` → 404；发表须引用 Jayachandran et al. 2009 | ISMR（Septentrio `sbf2ismr` 62 列 CSV，gzip，按小时）；RINEX 观测；接收机原始二进制（50 Hz） | 2024 年小时目录 15 个 PolaRxS 站；GSV4004B 老 ISMR 在 `nvismr/`（到 2019）；无表头，GPS 时；锁定 <240 s 时 Phi 已为 nan、S4 仍有值 | ✅（[E26](#dp-e26)，[手册](./software/chain-scintillation.md)） |
 | [GIM / IONEX 各中心门户](./software/gim-product-portals.md) | **匿名**：CAS 汇总镜像 `data.bdsmart.cn/pub/product/iono/ionex/YYYY/DDD/`（含 CAS/COD/EMR/ESA/IGS/JPL/UPC）；CODE `download.aiub.unibe.ch/CODE/`（301 到 S3，无索引）；UPC `chapman.upc.es/tomion/`；ESA `navigation-office.esa.int`；JPL `sideshow.jpl.nasa.gov/pub/iono_daily/`；CDDIS 需 Earthdata；IGN/BKG/WHU/KASI/GSSC 本次不通 | IONEX 1.0（gzip / `.Z`）；长名 `AAA0OPSTTT_YYYYDDD0000_01D_SSS_GIM.INX.gz`，旧短名 `xxxgDDD0.YYi.Z` 按中心分别在 2023 前后切换 | 实测时延：UPC 实时约 4 min；CODE 快速 6.4 h、预报 P1D 提前约 18 h；JPL/ESA 快速 7–8 h；EMR 最终 35 h、JPL 50 h、CAS/UPC 65 h、ESA 88 h、CODE 90 h；2024-05-11 对 CODE 面积加权 RMS 3.3（IGS）… 15.8（EMR）TECU | ✅（[E27](#dp-e27)，[手册](./software/gim-product-portals.md)） |
+| [IGS 日观测匿名镜像](./software/gnss-obs-mirrors.md) | **匿名**：BKG `igs.bkg.bund.de/root_ftp/IGS/obs/YYYY/DDD/`；CAS `data.bdsmart.cn/pub/data/igs/YYYY/DDD/`；SOPAC `http://garner.ucsd.edu/pub/rinex/YYYY/DDD/`（只 http）；GA S3 `ga-gnss-data-rinex-v1/public/daily/`；**CDDIS 需 Earthdata**；IGN / WHU / KASI 本次不通；GFZ ISDC 只有自家网 | RINEX 3 `…_01D_30S_MO.crx.gz`（Hatanaka + gzip）；SOPAC 另有旧短名 `.d.Z` | 24 个 IGS 站：2024-05-11 BKG/CAS/SOPAC 24/24、GA 22/24；前一天数据上架中位 SOPAC/GA 0.3 h、CAS 0.4 h、BKG 9.0 h；同名文件各镜像 gz 字节数不同但观测段一致，抽检全 2880 历元 | ✅（[E28](#dp-e28)，[手册](./software/gnss-obs-mirrors.md)） |
 
 要登录才能拿数据的：EISCAT 门户（Madrigal 可绕行）、子午工程、ROM SAF 产品库（AWS 可绕行）、TGO ASCII、UKSSDC/RAL。要「申请」的：BGS 本站高分辨率（GIN 可绕行）。
 
@@ -745,6 +746,19 @@ curl -s -O https://sideshow.jpl.nasa.gov/pub/iono_daily/IONEX_final/y2024/JPL0OP
 # 实测：2024-05-11 各中心最终图 − CODE（公共历元、71×73 格点、cos 纬度加权，本文口径）：
 #   IGS +0.09/3.30，WHU +0.62/4.40，JPL +0.87/4.99，CAS −2.17/6.71，UPC −0.61/7.54，ESA −2.67/8.88，EMR −3.82/15.77 TECU（均差/RMS）
 # 实测：ESA Navigation Office 同名文件是 2025-01-10 重处理版（300 站），CAS 镜像是 2024-05-15 原版（275 站）
+```
+
+<a id="dp-e28"></a>**E28 IGS 日观测匿名镜像（BKG / CAS / SOPAC / GA）**
+
+```bash
+f=WTZR00DEU_R_20241320000_01D_30S_MO.crx.gz
+curl -s -O https://igs.bkg.bund.de/root_ftp/IGS/obs/2024/132/$f          # 实测：200，3,758,992 B（BKG 2025-04-20 重压版）
+curl -s -O http://garner.ucsd.edu/pub/rinex/2024/132/$f                  # 实测：200，4,040,864 B（SOPAC 只 http；https 000）
+curl -s -O https://data.bdsmart.cn/pub/data/igs/2024/132/$f              # 实测：200，3,782,487 B（与 GA 同版，RNX2CRX 4.0.7，Rust crx2rnx panic）
+curl -s 'https://ga-gnss-data-rinex-v1.s3.amazonaws.com/?list-type=2&prefix=public/daily/2024/132/WTZR'   # 实测：S3 匿名列目录；全目录须按 NextContinuationToken 翻页
+curl -s -o /dev/null -w '%{http_code}\n' https://cddis.nasa.gov/archive/gnss/data/daily/2026/268/26d/   # 实测：302 → urs.earthdata.nasa.gov（需 Earthdata 账号）
+# 实测（24 个 IGS 站，本文口径）：2024/132 命中 BKG/CAS/SOPAC 24、GA 22（缺 CHPI TSK2）；2026/268 前一天上架中位 SOPAC 0.3 h、GA 0.3 h、CAS 0.4 h、BKG 9.0 h
+# 实测：各镜像 gz 字节数不同（重压缩），解 Hatanaka 后观测段 md5 一致；抽检 10 份全部 2880 历元
 ```
 
 ---

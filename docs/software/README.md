@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **223 篇**操作手册（合计 **51208 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **224 篇**操作手册（合计 **51531 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -248,6 +248,7 @@
 | 221 | [geomagindices.md](./geomagindices.md) | space-physics/geomagindices：按时刻取 Ap/F10.7/Kp 的 pandas 小库（msise00 自动取指数靠它）；**1.5.1 原样静默给错值**：NGDC FTP 日值源 550 → 退回月均、无 Kp；45 天预报 URL 404（运行时改名补丁）；20 年预报表 Ap/F10.7 互换；月均合并顺序随 PYTHONHASHSEED 变；附 GFZ Kp API 直连替代 | 188 | **已短硬** 用法讲解新入库 · 2026-09-26 05:09–05:13 EDT；1.5.1/main `1c76774`/MIT/★17；2024-05-11 返回 Ap 24/F10.7 188.37（GFZ 定值 Ap 271、Fobs 213.7）；Kp 峰 9.000 @05-11 00Z；45 天 27Sep26 Ap 10/F10.7 95 与原文件一致 |
 | 222 | [darntids.md](./darntids.md) | Frissell/HamSCI SuperDARN MSTID 工具包（现行 w2naf-academia 仓；PROJECTS 旧址已弃用）：FITACF 地面散射 → GS 映射 → auto_range → 插值/0.3–1.2 mHz FIR/去趋势/加窗/补零 → FFT → MUSIC 水平波数谱 → 峰检测出 λ/方位/主频/相速度 → HDF5 + 16 张分步图；批量 MSTID 指数分类/日历图需 MongoDB | 183 | **已短硬** 用法讲解新入库 · 2026-09-26 04:05–04:20 EDT；PyPI **0.2.0**/main `6effcd0`/GPL-3.0（README 末尾误写 MIT）/★2；**必须钉 pydarn 4.1.2 + pydarnio 1.3**（默认 pydarnio 2.1 `SDarnRead` 崩）；pytest 19 passed；Zenodo 7005203 SAS 2012-11-01 20–22 UT 单事件 MUSIC：auto_range 门 29–43，42 个峰，首峰 λ 245 km/Azm 39°/Value 0.783；PGR 2016-01-25 14 峰；仅 2 h 文件 → 有效窗 56 min、通带只 3 个频点（f 全为 0.893 mHz），不构成 MSTID 结论；Mongo 批处理未跑 |
 | 223 | [tidd.md](./tidd.md) | JPL/Sapienza/UCLA：GPS 单站单星 dsTEC/dt（TECU/s）文本 → 1 min 均值 → 60 min 滑窗 GAF 图（代码实为 GASF）→ fastai ResNet 二分类 anomalous/normal → 样本外整段 TP/FN/FP；无预训练模型、不读 RINEX | 220 | **已短硬** 用法讲解新入库 · 2026-09-26 04:05–05:15 EDT；main `cd15176`/无 PyPI/Apache-2.0/★10；S3 19.2 GB tar 用 Range 只流前 2.8 GB；Py3.11 + `pandas<3`（pandas 3 静默 0 段）+ PYTHONPATH（setup 空包）+ accelerate + hyperdash 桩；pytest 10 passed；训夏威夷 302 4 站 20 弧（14 109 张图）resnet18 2 epoch CPU 62 min；上游样本外 tp=0（datetime 减 60 ns bug）、训练 precision/recall 互换；按行位置重算智利 259 4 站 12 弧 tp 5/fn 7/fp 29，F1 0.217 |
+| 224 | [gnss-obs-mirrors.md](./gnss-obs-mirrors.md) | IGS/MGEX 日观测匿名镜像（BKG、CAS、SOPAC、GA；IGN/WHU/KASI 本次不通；CDDIS 需 Earthdata）：同日同 24 站到达率、上架延迟、跨镜像同名文件是否同一份数据、解 Hatanaka 后历元完整性 | 323 | **已短硬** · 2026-09-26 05:10–05:20 EDT；2024-05-11 BKG/CAS/SOPAC 24/24、GA 22/24；前一天上架中位 SOPAC/GA 0.3 h、CAS 0.4 h、BKG 9.0 h；gz 字节全不同但观测段一致；CAS/GA 版 WTZR 让 Rust crx2rnx panic |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -469,6 +470,7 @@
 | Swarm LP Ne/Te、顶部 TEC、IPIR/IBI/EEF 免注册下载与 flag 过滤（swarm-diss HTTPS、VirES HAPI） | [swarm-data.md](./swarm-data.md) |
 | 高纬 GNSS 闪烁 S4/σφ 实测（CHAIN ISMR，免注册）与 ISMR 62 列定义 | [chain-scintillation.md](./chain-scintillation.md) |
 | 各中心 GIM/IONEX 去哪匿名下载、新旧文件名、出来要等多久、各家差多少 | [gim-product-portals.md](./gim-product-portals.md) |
+| 不登录下载 IGS 日观测：哪个镜像齐、到得快、是不是同一份（CDDIS 需 Earthdata） | [gnss-obs-mirrors.md](./gnss-obs-mirrors.md) |
 | 读/交换多机构闪烁 HDF5 文件（Kartverket/FMI/DTU/UNB 的 BiScEF `.nc`，S4/σφ/ROTI；先核时间基准与缺测值） | [biscef.md](./biscef.md) |
 | SuperDARN 原始数据下载（FRDR RAWACF、Globus/BAS/VT 镜像门槛、sha1+bz2 校验、使用规则） | [superdarn-data.md](./superdarn-data.md) |
 | 子午工程数据（DOI/CSTR 查询、不登录可见的元数据与文件清单、登录门槛、致谢与报送规则） | [meridian-data.md](./meridian-data.md) |
