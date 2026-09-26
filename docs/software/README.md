@@ -178,6 +178,7 @@
 | 147 | [gnss-rs.md](./gnss-rs.md) | GNSS 星座/SV 基础类型库（nav-solutions；纯库） | 253 | **已短硬** · crates **2.7.0**/tag **`71df4af`**/main **`1eff5ef`**/MPL-2.0/★**11**/MSRV **1.85**；rustc **1.98.1**；纯库；`{:x}` G/R/E/C/J/I/S/M；Glonass→**UTC**/IRNSS→**None**/SBAS→**GPST**；std 下 `S23`→**EGNOS**/`ASTRA-5B`/发射 **2021-11-01**，默认 no_std→`SBAS`；`sbas_selector` 武汉→**BDSBAS**/巴黎→**EGNOS**/南极→**None**；北斗 GEO=PRN<6 或 >58；**无** Carrier/频点 API；`SV::from_str("")` **panic**；交叉 [rinex](./rinex.md)/[gnss-rtk](./gnss-rtk.md)/[sp3](./sp3.md)/[cggtts](./cggtts.md)/[binex](./binex.md)/[rnx2cggtts](./rnx2cggtts.md)/[gnss-protos](./gnss-protos.md) |
 | 148 | [swds-api-downloader.md](./swds-api-downloader.md) | INPE/EMBRACE SWDS API 下载样例（已失效）+ embracedata 公开目录替代 | 238 | **已短硬** · tip **`f4a4f40`**/MIT/★**4**/无 PyPI；`-h` exit **1**、缺 `-p` exit **3**、`--start_date` 漏逗号 bug；真实下载 → **`SwdsError` host**（TLS 链不全 + `/api/auth/login/` **404**）；unittest 16/**3 错**；替代 embracedata `sjc23apr.17m` **66747 B**、`INPE2660.26I` **1264319 B** 实拉 · （2026-09-26 00:31–00:35 EDT） |
 | 149 | [hifitime.md](./hifitime.md) | 高精度时间尺库 GPST/GST/BDT/UTC/TAI/TT（nyx-space；nav-solutions 共用；纯库+Python） | 320 | **已短硬** · 2026-09-26 00:36 EDT；crates **4.3.1**/tag **`67ff2fc`**/master **`0d32fb8`**/MPL-2.0/★**547**；rustc **1.98.1**；纯库+PyPI **4.3.1**；2024-01-01 UTC 实测 GPST−UTC=**18 s**/TAI−UTC=**37 s**/TT−TAI=**32.184 s**/GPST−BDT=**14 s**；GPST 周 **2295**+**86418 s**，BDT 周 **939**；`to_time_of_week()` 按自身尺（UTC→周 **6470**）；`from_format_str` 恒 UTC；`"… GPS"` 解析→UTC 标签；`23:59:60` 折叠为 `23:59:59`；UTC 相减跨闰秒少 1 s；TAI→UTC 闰秒后 **37 s** 窗口早 1 s/往返不等；无 GLONASST/IRNSS→`Err(TimeSystem)`（对应 gnss-rs Glonass→UTC/IRNSS→None）；非法输入全 `Err` 无 panic；交叉 [gnss-rs](./gnss-rs.md)/[rinex](./rinex.md)/[sp3](./sp3.md)/[cggtts](./cggtts.md)/[rnx2cggtts](./rnx2cggtts.md)/[gnss-rtk](./gnss-rtk.md)/[binex](./binex.md) |
+| 150 | [great-msf.md](./great-msf.md) | 武大 GREAT 多源融合 PPP/RTK+INS（松/紧耦合；XML） | 195 | **已短硬** · 2026-09-26 00:39 EDT；tip **`4366a53`**/GPL-3.0/★**151**；源码编译需 GLFW/GL 链接补丁（原样 exit **2**）；`-h` **GREAT-MSF [1.0.0]**；MSF_20201029 LCRTK/TCRTK/TCPPP exit **0**，对 GT 3D RMS **0.063/0.074/1.203** m；交叉 [great-pvt](./great-pvt.md)/[great-upd](./great-upd.md)/[great-podflt](./great-podflt.md) |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -272,6 +273,7 @@
 | GA 现代化 PPP/POD（pea / YAML） | [ginan.md](./ginan.md) |
 | FGO 因子图 GNSS/RTK（ROS 研究） | [graphgnsslib.md](./graphgnsslib.md) |
 | 武大 GREAT 精密 PPP/RTK（XML） | [great-pvt.md](./great-pvt.md) |
+| 武大 GREAT GNSS+INS 松/紧耦合（PPP/RTK+IMU） | [great-msf.md](./great-msf.md) |
 | TU Graz 重力场 + GNSS 网解/PPP（XML） | [groops.md](./groops.md) |
 | VieVS MATLAB GUI PPP（需许可证） | [rapppid.md](./rapppid.md) |
 | Pi 基站 + Web / NTRIP 上行 | [rtkbase.md](./rtkbase.md) |
