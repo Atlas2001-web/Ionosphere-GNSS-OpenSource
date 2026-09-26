@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **231 篇**操作手册（合计 **52960 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **233 篇**操作手册（合计 **53388 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -252,10 +252,12 @@
 | 225 | [ppp-tools.md](./ppp-tools.md) | aewallin/ppp-tools：时间实验室向 RINEX→外部 PPP 引擎（RTKLIB/gLAB/GPSPACE）→ 逐历元接收机钟/坐标 → 两站钟差的 Python 胶水脚本；≠ [ppp-rtklib](./ppp-rtklib.md)（mulin33 学习代码） | 211 | **已短硬** 用法讲解新入库 · 2026-09-26 05:05–05:18 EDT；master `e77e351`/GPL-2.0/★121/无 tag；RTKLIB 2.4.2 p13 分支 2 处修补后 WTZR 全天 3D 8.5 mm、钟对 IGS σ 0.310 ns；MI05−WTZR `diff_stations` 实跑；gLAB/GPSPACE 未测 |
 | 226 | [lisird.md](./lisird.md) | LASP LISIRD 太阳输入直连（免账号）：LaTiS 281 集（选列/时间与数值过滤/`format_time`/`last()`；csv/json/jsond/txt、`.das`/`.dds`）——Penticton F10.7 一日三测与近正午（=GFZ Fobs）、复合 Lyman-α、FISM2 EUV 波段/0.1 nm 光谱、GOES XRS 1 min；HAPI 2.0 仅 29 集且只有 CSV；`noaa_radio_flux` 2018 停更、2500 万样本上限 | 190 | **已短硬** 用法讲解新入库 · 2026-09-26 05:10–05:30 EDT；2024-05-10 F10.7obs 223.4（81 天均值 176.2）、GOES-18 XRS 峰 3.88e-4 W/m²（X3.9，06:54 UT）、FISM 121.55 nm 0.0585 W/m²/nm；PROJECTS LISIRD analysis/registration 已按实测改写 |
 | 227 | [pymsis.md](./pymsis.md) | SWxTREC NRLMSIS 2.1/2.0/00 中性大气（轮子自带 .so，免编译）：自动拉 CelesTrak F10.7/ap → 密度/温度/O/N₂ 剖面；暴时 O/N₂ 与负相；三代模型同输入对比 | 241 | **已短硬** 用法讲解 · 2026-09-26 05:18–05:22 EDT；PyPI 0.13.0/`0846792`/MIT（MSIS2 另有 NRL 许可，商用须联系）；Gannon 暴 2024-05-11 自动取 Ap **271**/F10.7 223.4（对照 geomagindices 给 24）；45°N 300 km O/N₂ **3.460→1.364**、T 1273→1565 K、ρ ×1.64；MSIS00 N₂ 高 23–27%；越界日期 ValueError 并触发重下载；`SW-All.csv` 权限 600 · **质检复跑通过 2026-09-26 EDT**（三段脚本逐行一致，Ap 271/F10.7 223.4、O/N₂ 3.460→1.364；修 tag 说明、坑 2/3） |
-| 228 | [iri2020.md](./iri2020.md) | space-physics IRI-2020 Fortran → xarray（不在 PyPI，git clone + CMake/gfortran 首跑自编）：Ne/离子/温度剖面 + NmF2/hmF2/foF2/TEC；与 pyiri 同场景对照；指数文件更新与段错误修补 | 222 | **已短硬** 用法讲解 · 2026-09-26 05:18–05:30 EDT；main `8b6ab9e`/MIT；2020-04-01 12UT 20N10E：NmF2 **1.494e12** m⁻³/hmF2 335.0/foF2 10.977（文件 F10.7=69.2）；改驱动 F10.7=100+Rz12 → hmF2 364.0（pyiri 364.6）/foF2 12.76（12.51）；捆带指数止于 2023 → 2024-05-11 静默 f107=63.75/ap=−11；新 `ig_rz.dat` SIGSEGV（806 月数组，issue #5）→ 改 1200 后得 ap 271；TEC 积分上限=请求最高高度；`FFLAGS=-O2` 改 TEC 38.11→34.78 · **质检复跑通过 2026-09-26 EDT**（§3.1/3.3/3.4 逐字一致，806 月段错误与修补复现；修告警构成） |
+| 228 | [iri2020.md](./iri2020.md) | space-physics IRI-2020 Fortran → xarray（不在 PyPI，git clone + CMake/gfortran 首跑自编）：Ne/离子/温度剖面 + NmF2/hmF2/foF2/TEC；与 pyiri 同场景对照；指数文件更新与段错误修补 | 222 | **已短硬** 用法讲解 · 2026-09-26 05:18–05:25 EDT；main `8b6ab9e`/MIT；2020-04-01 12UT 20N10E：NmF2 **1.494e12** m⁻³/hmF2 335.0/foF2 10.977（文件 F10.7=69.2）；改驱动 F10.7=100+Rz12 → hmF2 364.0（pyiri 364.6）/foF2 12.76（12.51）；捆带指数止于 2023 → 2024-05-11 静默 f107=63.75/ap=−11；新 `ig_rz.dat` SIGSEGV（806 月数组，issue #5）→ 改 1200 后得 ap 271；TEC 积分上限=请求最高高度；`FFLAGS=-O2` 改 TEC 38.11→34.78 · **质检复跑通过 2026-09-26 EDT**（§3.1/3.3/3.4 逐字一致，806 月段错误与修补复现；修告警构成） |
 | 229 | [noaa-ncn-data.md](./noaa-ncn-data.md) | NOAA CORS 网（NCN）数据直连（免账号）：NODD S3 `noaa-cors-pds`（ListObjectsV2 翻页；日/小时 `.d.gz`/`.o.gz`/`.S`、brdc/SP3、coord_20 ITRF2020、station_log）与 corsdata 同名同 md5；NCN API `cors?id=`/`ncors?x,y,z`（坐标为 NAD 83(2011)，与 ITRF2020 差 1.6 m）；UFCORS curl POST 取 1–24 h zip（默认只出 GPS、出错也回 200）；时延：NGS 自营小时文件约 15 min、日文件约 5 h，EarthScope 转入站日文件约 1.5 天 | 218 | **已短硬** · 2026-09-26 05:21–05:40 EDT；P041 2024-001 `.24d.gz` 1769574 B md5 两源一致、2880 历元/SUM 94%；1LSU 2026-268 UFCORS 1 h 121 历元；2026 年 S3 XML 多出 ChecksumAlgorithm 字段，紧邻式正则静默返回 0 个文件 |
 | 230 | [ntrip-core.md](./ntrip-core.md) | greenforge-labs/ntrip-core：Rust/Tokio 异步 NTRIP v1/v2 客户端**库**（rustls TLS、sourcetable 解析、最近挂载点、GGA 上报、自动重连、HTTP 代理）；只交原始字节，不解 RTCM；≠ [ntrip-client](./ntrip-client.md)（nav-solutions） | 214 | **已短硬** 用法讲解新入库 · 2026-09-26 05:19–05:32 EDT；crates 0.2.0/main `5949d60`/MIT/★4；centipede 30 s 461 帧与 str2str 逐字节一致；本机回放 5/5 `cmp` 一致；v1 不存在挂载静默交出 sourcetable、重连无上限、读头部无超时；rtk2go 订流/TLS 订流/代理未测 |
 | 231 | [epos-glass-api.md](./epos-glass-api.md) | EPOS GLASS API（OCA 欧洲节点，免账号）：按站名/网络/国家/经纬度框查台站元数据（json/csv/xml，2462 站），按站+日期查 RINEX 文件记录（md5、大小、EPN/RENAG 等原数据中心 URL），IGS 站点日志与 GeodesyML（zip）；只有 WADL；`date_from`/`perpage`/`limit` 被忽略、`rinex_count` 恒 400、`stations-json-dictionary` 会触发缓存重建 | 125 | **已短硬** 用法讲解新入库 · 2026-09-26 05:29–05:40 EDT；GlassFramework 3.4.1.255；GRAS00FRA 2026-263 2596725 B（EPN）、SOPH00FRA 1705454 B md5 与 GLASS 一致、crx2rnx 2880 历元；观测到可查约 2–3 天；PROJECTS EPOS-GLASS-API analysis/registration 已按实测改写 |
+| 232 | [gitm.md](./gitm.md) | GITMCode 全球电离层-热层 3-D 物理模式（Fortran+MPI）：`Config.pl`→`make`→`UAM.in`（时间/网格块/驱动 IMF·AE·F10.7·FISM/Weimer05+FTA）→ 块文件 → `post_process.py` 合并 `.bin`（PyITM 可出 NetCDF）→ `srcPython/gitm_routines.py` 读；1-D 单柱改 `ModSize.f90` 重编；≠ 经验模型 | 252 | **已短硬** 用法讲解新入库 · 2026-09-26 05:26–05:34 EDT；main `c4fc315`/Apache-2.0；gfortran 14.2+Open MPI 5.0.7 编译 1 min；默认 2×2 块 10°×20° 5 min 4 进程 9.7 s：302 km `[e-]` max **2.448e12** m⁻³、lon170/lat−25 hmF2 338.0 km；1-D 42°N 288°E 00:30 UT NmF2 4.537e11；1DALL 后处理崩（51 值 vs header 40）、np≠块数崩、`read_gitm_one_file` 默认参数 TypeError；auto_test/dynamo/restart 未实跑 |
+| 233 | [lompe.md](./lompe.md) | klaundal/lompe 极区局地电动力学反演（MIT，不在 PyPI）：立方球局地网格 + Hall/Pedersen 电导函数，联合 SuperDARN 视线速度 / Iridium-AMPERE 空间磁扰 / SuperMAG 地面磁扰 → 电势·E·v·水平电流·FAC + lompeplot 7 面板 | 176 | **已短硬** 用法讲解新入库 · 2026-09-26 05:30–05:37 EDT；main `c73d0ed`（v1.1.1-75）；仓内 2012-04-05 样例 05:12 UT ±2 min（iridium 815/supermag 1280/superdarn 1438 行），53×37 格 2052 参数：网格内电势差 **103.9** kV、\|v\| 中位 490 m/s、FAC −1.45…2.26 μA/m²，40 s；需补 `tables`；Verdana findfont 刷屏；demo.py 路径写死；notebooks/在线下载未实跑 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -328,6 +330,7 @@
 | IRI-2020 官方 Fortran → xarray（git 装；换指数须补丁） | [iri2020.md](./iri2020.md) |
 | HF 短波射线追踪：落地距离 / 跳距 / 群时延 / 垂测虚高（纯 Python，O/X 模） | [pyrayhf.md](./pyrayhf.md) |
 | 低纬物理模式：自己跑出赤道喷泉 / EIA 双峰（SAMI2，gfortran） | [sami2py.md](./sami2py.md) |
+| 全球 3-D 热层-电离层物理模式：自己编译跑 GITM，出 Ne/Tn/成分/风（gfortran+MPI；1-D 单柱秒级） | [gitm.md](./gitm.md) |
 | 官方 IRI Fortran 金标准（IRI-2026 本机） | [iri-fortran.md](./iri-fortran.md) |
 | 官方 IRI-2026 zip 清单 / checksum | [iri-2026-package.md](./iri-2026-package.md) |
 | IRI 公共 CCIR/URSI 系数（≤2016 外置） | [iri-common-files.md](./iri-common-files.md) |
@@ -489,6 +492,7 @@
 | 单站 1 Hz/30 s RINEX 看 sTEC 变化率 / 海啸型 TID（VARION，Python 2.7） | [varion.md](./varion.md) |
 | SuperDARN HF 雷达 RTI / 扇形图 / 极区对流图（FITACF/MAP；TID 斜纹、对流速度） | [pydarn.md](./pydarn.md) |
 | SuperDARN 地面散射 MSTID：MUSIC 求波长/方向/相速度（单事件免 MongoDB；须钉 pydarn 4.1.2） | [darntids.md](./darntids.md) |
+| 极区局地电势/对流/电流/FAC 反演：SuperDARN+AMPERE+SuperMAG 联合（Lompe；自带 2012-04-05 样例，免账号） | [lompe.md](./lompe.md) |
 | GPS dsTEC/dt 滑窗成图 + CNN 判海啸/地震 TID（自训模型；无预训练权重） | [tidd.md](./tidd.md) |
 | Swarm 卫星原位 RODI / 顶部 TEC ROTI（LP+POD；CC BY-NC-SA） | [titipy.md](./titipy.md) |
 | 时间实验室日处理：RINEX→RTKLIB PPP→接收机钟（ns）→ 两站钟差（ppp-tools；先修 ATX 路径与 NAV，站延迟需自扣） | [ppp-tools.md](./ppp-tools.md) |
@@ -532,10 +536,11 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
+最近新增（用法讲解）：**gitm**+**lompe**（[gitm.md](./gitm.md) / [lompe.md](./lompe.md)；2026-09-26 05:26–05:37 EDT；GITM `c4fc315`/Apache-2.0：gfortran 14.2+Open MPI 5.0.7，默认 2002-12-21 5 min 全球 3-D 4 进程 9.7 s，302 km `[e-]` max 2.448e12 m⁻³（`.bin` 与 PyITM NetCDF 一致），1-D 单柱 1.1 s；坑：1DALL 后处理崩、np≠块数崩、run 目录 exe 为符号链接；Lompe `c73d0ed`/MIT/不在 PyPI：仓内 2012-04-05 样例三源联合反演，网格内电势差 103.9 kV、FAC −1.45…2.26 μA/m²；坑：缺 tables、Verdana 刷屏、README `model.lompeplot()` 不存在；交叉 pymsis/iri2020/sami2py/pydarn；顺带把 iri2020 实跑时段更正为 05:18–05:25 EDT）。
 最近新增（用法讲解）：**epos-glass-api**（[epos-glass-api.md](./epos-glass-api.md)；2026-09-26 05:29–05:40 EDT；免账号；GLASS 3.4.1 OCA 节点 2462 站；`files/station-marker` + `epoch_start/epoch_end` 闭区间按日查文件，SOPH00FRA md5 一致、2880 历元；`combination` 的 `date_from` 被忽略会吐全历史；目录条目 EPOS-GLASS-API 的 analysis/registration 按实测改写）。
 最近新增（用法讲解）：**ntrip-core**（[ntrip-core.md](./ntrip-core.md)；2026-09-26 05:19–05:32 EDT；crates **0.2.0**/tag 仅 v0.1.0/main `5949d60`/MIT/★4；rtk2go 766/centipede 1276/GA TLS 922 条源表；centipede IPGP 30 s 79161 B/461 帧 ≡ str2str 连续子串；本机回放 89661 B/521 帧 5/5 一致；坑：v1 缺挂载静默吐源表、chunked 字面匹配、重连无上限、读头无超时、GGA 60 分进位；下一优先 azarashi，go-gnss-spartn 留候选）。
 最近新增（用法讲解）：**noaa-ncn-data**（[noaa-ncn-data.md](./noaa-ncn-data.md)；2026-09-26 05:21–05:40 EDT；免账号；NODD S3 与 corsdata md5 一致（S3 0.14 s 对 1.0 s）；NCN API 53 字段/NAD 83(2011)；UFCORS POST 200 zip，默认只出 GPS；目录条目 NOAA-NCN-API / NOAA-CORS-AWS / NOAA-UFCORS 的 analysis/registration 按实测改写）。
-最近新增（用法讲解）：**pymsis**+**iri2020**（[pymsis.md](./pymsis.md) / [iri2020.md](./iri2020.md)；2026-09-26 05:18–05:30 EDT；pymsis PyPI 0.13.0/MIT+NRL MSIS2 许可：CelesTrak 自动指数 2024-05-11 Ap 271，45°N 300 km O/N₂ 3.460→1.364（MSIS2.1）/2.919→1.249（MSIS00）；iri2020 `8b6ab9e`/MIT/不在 PyPI：pyiri 同场景 NmF2 1.494e12 m⁻³（F10.7 69.2），改驱动 F10.7=100+Rz12 后 hmF2 364.0 vs pyiri 364.6；捆带指数 2023 止、过期静默 ap=−11，新 ig_rz.dat 段错误需 806→1200 补丁；交叉 msise00/iri2016/pyiri/iri-fortran）。
+最近新增（用法讲解）：**pymsis**+**iri2020**（[pymsis.md](./pymsis.md) / [iri2020.md](./iri2020.md)；2026-09-26 05:18–05:25 EDT；pymsis PyPI 0.13.0/MIT+NRL MSIS2 许可：CelesTrak 自动指数 2024-05-11 Ap 271，45°N 300 km O/N₂ 3.460→1.364（MSIS2.1）/2.919→1.249（MSIS00）；iri2020 `8b6ab9e`/MIT/不在 PyPI：pyiri 同场景 NmF2 1.494e12 m⁻³（F10.7 69.2），改驱动 F10.7=100+Rz12 后 hmF2 364.0 vs pyiri 364.6；捆带指数 2023 止、过期静默 ap=−11，新 ig_rz.dat 段错误需 806→1200 补丁；交叉 msise00/iri2016/pyiri/iri-fortran）。
 最近新增（用法讲解）：**ppp-tools**（[ppp-tools.md](./ppp-tools.md)；2026-09-26 05:05–05:18 EDT；master `e77e351`/无 tag/GPL-2.0/★121；RTKLIB 2.4.2 p13；WTZR 2026-216 IGS20 最终：原样缺 ATX/NAV 必挂，修补后 2880 历元 3.70 s，SINEX 3D 8.5 mm、钟对 IGS AR 均值 −0.014 ns/σ 0.310 ns；MI05−WTZR 双差 107.971 ns/σ 4.394 ns（未扣站延迟）；截断 RINEX 静默 rc=0；下一优先 ntrip-core，go-gnss-spartn 留候选）。
 最近新增（用法讲解）：**darntids**+**tidd**（[darntids.md](./darntids.md) / [tidd.md](./tidd.md)；2026-09-26 04:05–05:15 EDT；DARNtids PyPI 0.2.0/`6effcd0`/GPL-3.0：PROJECTS 旧址 w2naf/DARNtids 已弃用；pyDARNmusic 0.2.0 须 pydarn 4.1.2+pydarnio 1.3；Zenodo 7005203 SAS 2012-11-01 单事件 MUSIC 42 峰（首峰 λ 245 km/39°），短窗频率量化为 3 点，Mongo 批处理未跑；tidd `cd15176`/Apache-2.0：S3 19.2 GB 只 Range 流前 2.8 GB，resnet18 自训 2 epoch，上游样本外 tp=0 为时间戳 bug、训练 precision/recall 互换、代码实为 GASF，行位置重算 F1 0.217）。
 最近新增（用法讲解）：**BiScEF**（[biscef.md](./biscef.md)；2026-09-26 04:52–05:03 EDT；main `90e6a2b`/无 tag/MIT/★2/不在 PyPI；实为 NetCDF4/HDF5；FINHEL0 82601 行/NORTRO2 43260 行，h5py/netCDF4/pyfive 7 文件逐值 0 差；ISMR 往返 59/65 全等、非逐字节；NOR UNIXTime=GPS 时、FMI/UNB 旧脚本晚 27 s；Zenodo 15045918 NORTRO2 2024-05-11 σφ>0.3 rad 2238；下一优先 ppp-tools，go-gnss-spartn 留候选）。
@@ -726,6 +731,7 @@ data-access
    ├─ tidd (dsTEC/dt 文本→60 min GAF 图→ResNet 判 TID；自训；pandas<3)
    ├─ pydarn (SuperDARN FITACF/MAP → RTI/扇形/对流图；门号→经纬度对 GNSS IPP)
    ├─ darntids (SuperDARN 地面散射→MUSIC k 谱→MSTID λ/方位/速度；批量需 MongoDB)
+   ├─ lompe (SuperDARN+AMPERE+SuperMAG→局地电势/电流/FAC 反演；不在 PyPI)
    ├─ titipy (Swarm LP/顶部 TEC → RODI/ROTEI/ROTI；10 s 窗；须补丁；CC BY-NC-SA)
    ├─ pyglow (IRI 气候态对照)
    ├─ iri2016 (IRI-2016 → xarray)
@@ -735,6 +741,7 @@ data-access
    ├─ pyiri / pyirtam (纯 Python IRI / IRTAM)
    ├─ pyrayhf (剖面→HF 射线：落地距离/群时延/虚高；O/X；2-D 单跳)
    ├─ sami2py (SAMI2 物理模式→低纬 Ne/EIA；gfortran；≠ SAMI3)
+   ├─ gitm (GITM 全球 3-D 热层-电离层物理模式；Fortran+MPI；1DALL 须自读)
    ├─ nequick2-ictp (ICTP NeQuick 2 申请页；≠ nequickg)
    ├─ galileo-nequick-g (GSC 官方 NeQuick-G C；登记墙；≠ nequickg)
    ├─ apexpy (Apex/QD/MLT 磁坐标)
@@ -794,10 +801,11 @@ saga-utils：高速 I/Q 闪烁算法旁路（源码参考；S4 为幅度版≈�
 | 02 / 16 | georinex · rinex · gnsspy · gnsstools · gnsstk · teqc · rinexmod · hatanaka · crx2rnx · rinex-cli · gnss-tec · pytecgg · tec-suite · ionotec |
 | 03 / 10 / 18 | ionex · ionex-gim · ionex-rs · diffionmap · sh-gim(边界) · pyglow · mosgim2 · spinifex |
 | 04 | iri-fortran · iri-2026-package · iri-common-files · iri2016 · iri2020 · pyglow · pyiri · pyirtam · apexpy · aacgmv2 · msise00 · pymsis · nequickg · galileo-nequick-g · nequick2-ictp · kamodo |
-| 05 / 13 / 21 | oasis-roti · ionomoni · iono-scintillation · saga-utils · geospacelab · sami2py |
+| 05 / 13 / 21 | oasis-roti · ionomoni · iono-scintillation · saga-utils · geospacelab · sami2py · lompe |
 | 22 | gnss-tec · pytecgg · oasis-roti · lstid-processing · hamsci-lstid-detection · pyrayhf · darntids · tidd |
 | 06 / 20 | cssrlib · haslib · madocalib · qzsl6tool · laika · gnss_lib_py · pyrtklib · pyrtklib-demo5 · pyrtklib-rinex · ppp-rtklib · learning-rtklib · mrtklib · rtklib-explorer · rtklib-b2b · android_rinex · gps-measurement-tools · pygpsclient · pynmeagps · pyubx2 · ubx2rinex · pyrtcm · pyspartn · pysbf2 · septentrio-gnss-driver · ublox-dgnss · ublox-driver · ntripstreams · ntrip-client · ntripclient · ntripserver · cors-relay · ntripcaster-libev · ntrip-cpp · ntrip-go · caster · glab-upc · rtklib · great-pvt · groops · rapppid · ppp-wizard · gogps-matlab · gsilib · rtppp-b2b · pride-pppar · ionomoni · gnss-sdr · pocketsdr · gps-sdr-sim · fgi-gsrx · gnssrefl · mpsim · pymsis · iri2020 |
 | 09 | pytecgg |
+| 12 / 15 | gitm · kamodo · sami2py · lompe |
 
 ---
 
