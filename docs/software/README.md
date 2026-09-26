@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **147 篇**操作手册（合计 **31900 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **149 篇**操作手册（合计 **32440 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -176,6 +176,7 @@
 | 145 | [matrtklib.md](./matrtklib.md) | taroz：MATLAB 调 RTKLIB/MALIB + GT 类库 | 165 | **已短硬** · **质检复跑通过**（2026-09-25 23:32–23:33 EDT；tip **`69bcbd3`**/MIT/★**100**/mexa64 **90**/gt **48**/static **301**×Q1 **35.134699011°N**；Octave 负测/`libmx`；**未臆造** MEX；交叉 [rtklib](./rtklib.md)/[rtklib-py](./rtklib-py.md)/[gogps-matlab](./gogps-matlab.md)） |
 | 146 | [urban-rtklib.md](./urban-rtklib.md) | 城市 PPP/PPP-RTK（demo5 b34i 研究叉；FDE/SSR） | 158 | **已短硬** · **质检复跑通过**（2026-09-25 23:32–23:33 EDT；tip **`5d128ef`**/★**25**/`demo5`**b34i**；GTSAM→缺 `libCppUnitLite.a`；去 GTSAM→`insopt_t`；conf **15**/无 OBS；**未臆造** `.pos`；交叉 [rtklib](./rtklib.md)/[rtklib-explorer](./rtklib-explorer.md)/[mrtklib](./mrtklib.md)） |
 | 147 | [gnss-rs.md](./gnss-rs.md) | GNSS 星座/SV 基础类型库（nav-solutions；纯库） | 253 | **已短硬** · crates **2.7.0**/tag **`71df4af`**/main **`1eff5ef`**/MPL-2.0/★**11**/MSRV **1.85**；rustc **1.98.1**；纯库；`{:x}` G/R/E/C/J/I/S/M；Glonass→**UTC**/IRNSS→**None**/SBAS→**GPST**；std 下 `S23`→**EGNOS**/`ASTRA-5B`/发射 **2021-11-01**，默认 no_std→`SBAS`；`sbas_selector` 武汉→**BDSBAS**/巴黎→**EGNOS**/南极→**None**；北斗 GEO=PRN<6 或 >58；**无** Carrier/频点 API；`SV::from_str("")` **panic**；交叉 [rinex](./rinex.md)/[gnss-rtk](./gnss-rtk.md)/[sp3](./sp3.md)/[cggtts](./cggtts.md)/[binex](./binex.md)/[rnx2cggtts](./rnx2cggtts.md)/[gnss-protos](./gnss-protos.md) |
+| 148 | [swds-api-downloader.md](./swds-api-downloader.md) | INPE/EMBRACE SWDS API 下载样例（已失效）+ embracedata 公开目录替代 | 238 | **已短硬** · tip **`f4a4f40`**/MIT/★**4**/无 PyPI；`-h` exit **1**、缺 `-p` exit **3**、`--start_date` 漏逗号 bug；真实下载 → **`SwdsError` host**（TLS 链不全 + `/api/auth/login/` **404**）；unittest 16/**3 错**；替代 embracedata `sjc23apr.17m` **66747 B**、`INPE2660.26I` **1264319 B** 实拉 · （2026-09-26 00:31–00:35 EDT） |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -319,7 +320,8 @@
 | Swarm/Aeolus 按需切片（须 token） | [viresclient.md](./viresclient.md) |
 | 测高仪 foF2/hmF2 年度（澳/日/GIRO） | [ionosonde-data-downloader.md](./ionosonde-data-downloader.md) |
 | EarthScope GAGE API 官方 SDK（须账号） | [earthscope-sdk.md](./earthscope-sdk.md) |
-| 爱尔兰 Tailte/OSI 近 30 日 RINEX 脚本 | [gnss-osi-download.md](./gnss-osi-download.md) |
+| 爱尔兰 Tailte/OSI 近 30 日 RINEX 脚本（旧域失效；新页 gnss.tailte.ie） | [gnss-osi-download.md](./gnss-osi-download.md) |
+| INPE/EMBRACE 空间天气文件（SWDS API 已 404 → embracedata 目录） | [swds-api-downloader.md](./swds-api-downloader.md) |
 | Septentrio SBF 块解析（官方 Cython） | [sbfparser.md](./sbfparser.md) |
 | Septentrio SBF 编解码（纯 Python，同 pyubx2 栈） | [pysbf2.md](./pysbf2.md) |
 | Swift SBP 多语言客户端（PyPI `sbp` / `sbp2json`） | [libsbp.md](./libsbp.md) |
@@ -368,6 +370,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
+最近新增（用法讲解）：**swds-api-downloader**（2026-09-26 00:35 EDT；tip **`f4a4f40`**/★**4**；API 已下线 → `SwdsError`；embracedata 磁力计/IONEX 实拉；未臆造 API 返回）。
 最近新增（用法讲解）：**gnss-rs**（2026-09-26 00:32 EDT；crates **2.7.0**/tag **`71df4af`**/main **`1eff5ef`**/MPL-2.0/★**11**/MSRV **1.85**；rustc **1.98.1**；纯库；`{:x}` G/R/E/C/J/I/S/M；Glonass→**UTC**/IRNSS→**None**/SBAS→**GPST**；std 下 `S23`→**EGNOS**/`ASTRA-5B`/发射 **2021-11-01**，默认 no_std→`SBAS`；`sbas_selector` 武汉→**BDSBAS**/巴黎→**EGNOS**/南极→**None**；北斗 GEO=PRN<6 或 >58；**无** Carrier/频点 API；`SV::from_str("")` **panic**；交叉 rinex/rnx2cggtts/gnss-rtk/gnss-protos/sp3/binex/cggtts；下一优先 **`hifitime`**（本车道 GNSS 时间尺库，当前缺），其后候选 `antex`/`rinex-qc`）。
 最近新增（用法讲解）：**gnss-rtk**（2026-09-24 07:30 EDT；crates **0.8.0**/tip **`02dd852`**/main **`407f527`**/AGPL-3.0/★**79**/MSRV **1.82**；rustc **1.98.1**；纯库；ESBC SPP 4 历元首 xyz=**(3582062.8076439444, 532619.5462266047, 5232818.854390953) m**/clock=**481026.148 ns**/GDOP=**2.697**/残差 **42.483/29.815/64.049 m**/1.38 s；CPP **39.142/30.103/32.390 m**；RTK-SPP **24.439/11.346/96.944 m**；绝对 PPP ignore；交叉 rnx2cggtts/sp3/rinex/rinex-cli/cggtts/rtklib/mrtklib；下一优先 **`gnss-rs`**）。
 最近新增（用法讲解）：**gnssanalysis**（2026-09-24 07:23 EDT；PROJECTS **`gnssanalysis`**；PyPI **0.0.60**/tag **`d0c3642`**/main **`95116fd`**/Apache-2.0/★**43**；`orbq` IGS×COD G01 3D_RMS=**0.06236**/AVG 3D=**0.01553**；`clkq` fixture G01 RMS=**0.6795** m / 全日 GNSS AVG=**8.0811** m；`sp3merge -s/-s` **474205** B/**192**/sha₁₂=`ef2d95ceb516`；API SP3 **3072** 行 G01 CLK=**−247.874423**；`read_bia` **641** OSB G01 C1C=**9.8409** ns；`pytest` **32**；交叉 clkcomb/spocc/gkit-bias/sp3/data-access；下一优先 **GREAT-MSF**）。
@@ -480,7 +483,8 @@ data-access
    ├─ gdds (IGS/CORS/产品/时序 GUI 下载)
    ├─ gnss-downloader (PyQt WHU/NASA 日文件；2020；无下载 CLI)
     ├─ earthscope-sdk (EarthScope GAGE API；须 es login；[arrow] 观测切片)
-    ├─ gnss-osi-download (爱尔兰 Tailte/OSI 近 30 日 RINEX；DNS 可能失败)
+    ├─ gnss-osi-download (爱尔兰 Tailte/OSI 近 30 日 RINEX；旧域 gnss.osi.ie NXDOMAIN；新页 gnss.tailte.ie)
+    ├─ swds-api-downloader (INPE EMBRACE SWDS API 样例；API 404 → embracedata 目录)
    ├─ rnxcmp (官方 Hatanaka CRX)
    ├─ hatanaka (Python CRX↔RNX / georinex 依赖)
    ├─ crx2rnx (Rust 仅解压 CRX；≠ GSI/hatanaka 同名)

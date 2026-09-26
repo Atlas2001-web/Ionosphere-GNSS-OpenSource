@@ -4,6 +4,8 @@
 
 > 岗位：从 **Tailte Éireann**（原 Ordnance Survey Ireland / OSI）Active GNSS 网网页表单拉 **近 30 日** RINEX ZIP。冲突时：**门户 T&C / 上游 README > 本文**。下载前须在 <https://gnss.tailte.ie/download-rinex.php> 同意条款。上游自述 **2024-11-20** 可用。
 
+> **新主机（2026-09-26 00:40 EDT 复核）**：官方下载页已迁至 <https://gnss.tailte.ie/download-rinex.php>（外网抓取可见「Active GNSS Station Data」及公告：**2026-09-28 起迁移至 RINEX 3，期间网站暂停**）；脚本 `BASE_URL` 仍是已 NXDOMAIN 的 `gnss.osi.ie`，本机 curl 新页仍 TLS EOF，新表单与脚本是否兼容**未验证**。
+
 ## 1. 用途与边界
 
 **做：**
