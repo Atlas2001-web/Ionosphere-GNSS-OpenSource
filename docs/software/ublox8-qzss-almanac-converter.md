@@ -5,6 +5,8 @@
 > 一句话：一个 165 行的 `convert_alm.py`，把 **YUMA 文本历书**（GPS PRN 1–32 + QZSS PRN 193–197）转成 u-blox 8/M8 的 **UBX-MGA-GPS-ALM**（`0x13 0x00`）/ **UBX-MGA-QZSS-ALM**（`0x13 0x05`）二进制帧，每帧 44 B。转换本身只用标准库（`sys`/`math`/`struct`）。
 > **本机无 u-blox 接收机**：把 `.ubx` 写进接收机、冷启动/TTFF 效果、MGA-ACK 回应，全部 **「未在真接收机测试」**。下文输出均为本机真跑；人造输入标 **「合成」**。
 
+> **质检复跑通过（2026-09-26 06:10–06:15 EDT）**：clone `1170ab7`（短仓名仍 404），CPython 3.13.15，pyubx2 1.3.7 / pytest 9.1.1 / pylint 4.0.9。`pytest` 106 passed，pylint 10.00/10。4 个历书下载与字节数一致（21168/2864/18303/19008）。6 组转换的输出字节与帧数全部一致（1540/132/1408/1408/1496/1496，stdout 70 行），`cmp` 两条都相同，首帧十六进制一致。`print_ubx.py` 0 行 + 35 条 `Unknown message type`；SET 模式打印的两帧逐字相同。截断输入（4 行 `Converted` 后 `KeyError: 'almWNa'`、不生成文件）和 PRN 203（`KeyError: 'sat_type'`）复现。§4 的独立交叉检查和 §5 其余合成用例未重跑。
+
 ## 1. 用途边界
 
 | 做 | 不做 |

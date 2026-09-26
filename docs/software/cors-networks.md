@@ -2,6 +2,8 @@
 
 入口：[NOAA CORS S3 `noaa-cors-pds`](https://noaa-cors-pds.s3.amazonaws.com/index.html) · [EPN `/pub/RINEX/`](https://epncb.oma.be/pub/RINEX/) · [BKG EUREF 镜像](https://igs.bkg.bund.de/root_ftp/EUREF/obs/) · [GeoNet `/v1/data/gnss/rinex/`](https://data.geonet.org.nz/v1/data/gnss/rinex/) · [IBGE RBMC geoftp](https://geoftp.ibge.gov.br/informacoes_sobre_posicionamento_geodesico/rbmc/) · SONEL `ftp://ftp.sonel.org/gps/data/` · 本机验证 **2026-09-26 05:45–05:58 EDT**（匿名，未注册任何账号；UTC = EDT + 4 h）
 
+> **质检复跑通过（2026-09-26 06:11–06:15 EDT）**：`dl.sh` 6 行下载结果（字节数）与 6 行历元统计逐字相同，Rust crx2rnx 对 NOAA CRINEX 1.0 的 panic 原文一致，朴素正则 2903 条复现。`lat.sh` 除 RBMC 外逐字相同；RBMC 最新目录已变成 268。`cors.py` 2024/132 一段逐字相同；2026/268 一段中 NOAA/EPN/GeoNet/SONEL 相同，**RBMC 268 已上架（85 站，10.1 h）**，已补进结论表、§3.1、§5、坑 7、§8。另补坑 3：GSI CRX2RNX 4.2.0 能解 NOAA 的 `.d`。
+>
 > 岗位：回答“某个区域 CORS 网的日观测不登录去哪拿、多少站、什么采样、什么命名、昨天的数据什么时候能拿到”。每网列 2024-05-11（2024/132，强磁暴日）和 2026-09-25（2026/268，探测前一天）两天的目录，每网真下 1 站 2024/132 日文件并数历元。IGS 全球站镜像（BKG / CAS / SOPAC / GA）另见 [gnss-obs-mirrors](./gnss-obs-mirrors.md)，本文只写区域网这一侧。
 >
 > 门槛总表：[电离层与地磁门户决策表](../data-access.md#电离层与地磁门户决策表) · 本文命令块 [E30](../data-access.md#dp-e30)
@@ -21,7 +23,7 @@
 | **NOAA NGS CORS**（美） | `https://noaa-cors-pds.s3.amazonaws.com/rinex/YYYY/DDD/ssss/` | 30 s；RINEX 2 **短名** `ssssDDD0.YYo.gz`（另有 `.YYd.gz`、`.YYS`） | 1740 个站目录 | 2026/268：中位 **2.8 h**，最晚 7.3 h（30 站） | 1LSU：2880 历元，完整 |
 | **EUREF EPN**（欧） | `https://epncb.oma.be/pub/RINEX/YYYY/DDD/`（`/pub/obs/` 会跳过去） | 30 s；RINEX 3 长名 `…_01D_30S_MO.crx.gz` | 395 | 中央局最新目录只到 **266**（LM 09-26 04:00 UTC，≈ **52 h**）；BKG EUREF 镜像已有 268（267 个，LM 01:30 UTC ≈ 1.5 h） | ACOR：2880，完整 |
 | **GeoNet**（新西兰） | `https://data.geonet.org.nz/v1/data/gnss/rinex/YYYY/DDD/`（链接指到 `geonet-open-data` S3） | 30 s；RINEX 3 长名但 **`.rnx.gz`（不是 crx）** | 186 | 中位 **0.2 h**（30/30） | AHTI：2880，完整 |
-| **IBGE RBMC**（巴西） | `https://geoftp.ibge.gov.br/informacoes_sobre_posicionamento_geodesico/rbmc/dados_RINEX3/YYYY/DDD/` | **15 s**；`…_01D_15S_MO.crx.gz`；另有 `rbmc/dados/` RINEX 2 单站 zip | 84 | 最新目录 267（87 个，LM 09-25 23:00 UTC ≈ **23 h**），268 尚 404 | ALMC：5760（15 s），完整 |
+| **IBGE RBMC**（巴西） | `https://geoftp.ibge.gov.br/informacoes_sobre_posicionamento_geodesico/rbmc/dados_RINEX3/YYYY/DDD/` | **15 s**；`…_01D_15S_MO.crx.gz`；另有 `rbmc/dados/` RINEX 2 单站 zip | 84 | 最新目录 267（87 个，LM 09-25 23:00 UTC ≈ **23 h**），268 尚 404；质检复跑时（10:13 UTC）268 已上架（85 个，首站 LM 09-26 10:05 UTC ≈ **10.1 h**，30/30 中位 10.1 h） | ALMC：5760（15 s），完整 |
 | **SONEL**（验潮站 GNSS，全球） | `ftp://ftp.sonel.org/gps/data/YYYY/DDD/`（只 FTP） | 30 s 为主（687 个 30S + 5 个 15S）；长名 crx.gz + 347 个 `.24d.Z` 旧短名 | 692 | 268 首文件 LM 01:40 UTC ≈ **1.7 h** | 019400JPN：2880，完整 |
 | GA（澳） | 见 [gnss-obs-mirrors](./gnss-obs-mirrors.md) | 30 s 长名 | 938（S3 `public/daily`） | — | — |
 | **EarthScope GAGE**（原 UNAVCO，美） | `https://gage-data.earthscope.org/archive/gnss/rinex/obs/YYYY/DDD/` | — | — | — | **302 到 `/login`，需 EarthScope 账号**，本文不走 |
@@ -138,7 +140,7 @@ IBGE RBMC | 0/0 有 Last-Modified（HEAD 不给或 404）
 SONEL | 0/30 有 Last-Modified（HEAD 不给或 404）
 ```
 
-读法：EPN / RBMC 的 2026/268 是 **404**（当天目录还没建），不是脚本错；它们各自的最新目录见 3.2。SONEL 走 FTP，urllib 的 HEAD 拿不到 Last-Modified，所以 0/30，用 3.2 的 `curl -I` 补。NOAA 的数是“站目录数”，不是文件数（每目录里有 `.o.gz`/`.d.gz`/`.S` 等多个文件）。
+读法：EPN / RBMC 的 2026/268 是 **404**（当天目录还没建），不是脚本错。质检复跑 10:13 UTC 时 RBMC 268 已经是 `200 | 85 | {'15S': 85}`，延迟 30/30 中位 10.1 h；EPN 仍是 404，其余各行与上面逐字相同。它们各自的最新目录见 3.2。SONEL 走 FTP，urllib 的 HEAD 拿不到 Last-Modified，所以 0/30，用 3.2 的 `curl -I` 补。NOAA 的数是“站目录数”，不是文件数（每目录里有 `.o.gz`/`.d.gz`/`.S` 等多个文件）。
 
 ### 3.2 最新目录与需要登录的网（`lat.sh`）
 
@@ -253,7 +255,7 @@ sonel_0194.crx.gz    RINEX 3.02  INTERVAL=30     epochs=2880  last=2024 05 11 23
 | --- | --- | --- |
 | 站数（2024/132） | NOAA 1740 目录 · SONEL 692 · EPN 395 · GeoNet 186 · RBMC 84 | EPN 的 BKG 镜像只有 287 个 |
 | 采样 | RBMC 15 s；其余 30 s（SONEL 有 5 个 15S） | 15 s 文件约大 30% |
-| 上架延迟中位 | GeoNet 0.2 h < BKG EUREF 1.5 h ≈ SONEL 1.7 h < NOAA 2.8 h < RBMC ≈ 23 h < EPN 中央局 ≈ 52 h | 本文口径，单日单次 |
+| 上架延迟中位 | GeoNet 0.2 h < BKG EUREF 1.5 h ≈ SONEL 1.7 h < NOAA 2.8 h < RBMC 10–23 h（268：10.1 h；267：23 h）< EPN 中央局 ≈ 52 h | 本文口径，单日单次 |
 | 列目录方式 | NOAA：S3 ListObjectsV2（`list-type=2&prefix=…&delimiter=/`，1000 条/页）；其余：HTML/FTP 列表 | |
 
 ## 6. 接到哪一步
@@ -268,11 +270,11 @@ sonel_0194.crx.gz    RINEX 3.02  INTERVAL=30     epochs=2880  last=2024 05 11 23
 | --- | --- | --- | --- |
 | 1 | NGS 网页目录里找不到 `.o.gz` | 网页 `corsdata/rinex/` 只放 `.d.gz`（CRINEX）和 `.S`；S3 的 `.o.gz` 是事后补的（本例 2024-06-13） | 批量用 S3 `noaa-cors-pds`；近实时只能拿 `.d.gz` |
 | 2 | RINEX 2 数出 2903 个历元（> 2880） | 每小时一条 flag 4 注释事件也符合“时间行”格式 | 只数 epoch flag = 0 的行（第 29 列） |
-| 3 | `crx2rnx` panic `end byte index 1 is out of bounds` | Rust crx2rnx 2.7.0（gnss-rs 2.6.0）处理 NOAA 的 CRINEX 1.0 出错 | RINEX 2 `.d` 用 C 版 RNXCMP `CRX2RNX`，或改拿 S3 `.o.gz` |
+| 3 | `crx2rnx` panic `end byte index 1 is out of bounds` | Rust crx2rnx 2.7.0（gnss-rs 2.6.0）处理 NOAA 的 CRINEX 1.0 出错 | RINEX 2 `.d` 用 C 版 RNXCMP `CRX2RNX`（质检复跑：4.2.0 解 `1lsu1320.24d` rc=0，flag 0 历元 2880，输出 10318649 B，与 S3 `.o.gz` 解压后大小相同，只有 `PGM / RUN BY / DATE` 一行不同），或改拿 S3 `.o.gz` |
 | 4 | GeoNet 文件喂给 crx2rnx 报错 | GeoNet 日文件是 `.rnx.gz`（未 Hatanaka 压缩），不是 `.crx.gz` | 只 `gzip -d`；按扩展名分流 |
 | 5 | RBMC 历元数“多一倍” | RBMC 是 15 s（5760/天） | 按文件名 `_15S_` 算期望历元，或自己降采样到 30 s |
 | 6 | EPN 昨天的目录 404 | 中央局 `/pub/RINEX/` 本次落后约 2 天（最新 266） | 急用走 BKG EUREF 镜像 `igs.bkg.bund.de/root_ftp/EUREF/obs/`（已有 268），但站数少（2024/132：287 vs 395） |
-| 7 | RBMC 昨天的目录 404 | 本次 RBMC 约 1 天后上架（267 LM 09-25 23:00 UTC） | 事后分析没问题；近实时别指望 RBMC |
+| 7 | RBMC 昨天的目录 404 | RBMC 日终后 10–23 h 才上架：267 的 LM 是 09-25 23:00 UTC（23 h），268 的 LM 是 09-26 10:05 UTC（10.1 h），09:53 UTC 探测时还是 404 | 事后分析没问题；近实时别指望 RBMC |
 | 8 | NOAA 列目录只得 1000 个站 | S3 ListObjectsV2 每页 1000 条 | 循环带 `continuation-token`，直到没有 `NextContinuationToken` |
 | 9 | 把 NOAA 的 1740 当文件数 | 列的是站目录前缀，每目录多个文件 | 统计文件要再列每个前缀，或直接按键名拼 URL 下 |
 | 10 | SONEL 拿不到 Last-Modified / 网站打不开 | 只有 FTP；Python urllib 对 FTP 不给 LM；`www.sonel.org` 本次超时 | 用 `curl -I ftp://…`；数据走 `ftp.sonel.org`，不依赖网站 |
@@ -286,6 +288,6 @@ sonel_0194.crx.gz    RINEX 3.02  INTERVAL=30     epochs=2880  last=2024 05 11 23
 - 美国：**NOAA S3**（站最多，2.8 h）；EarthScope GAGE 只在需要它独有的站时再注册。
 - 欧洲：事后分析用 **EPN 中央局**（395 站）；急用 **BKG EUREF 镜像**（1.5 h，站少）。
 - 新西兰：**GeoNet**（0.2 h，最快，注意 `.rnx.gz`）。
-- 巴西：**RBMC**（15 s，≈ 1 天）。
+- 巴西：**RBMC**（15 s，日终后 10–23 h）。
 - 沿海 / 验潮站、全球补站：**SONEL** FTP。
 - 澳大利亚与 IGS 全球站：[gnss-obs-mirrors](./gnss-obs-mirrors.md)。
