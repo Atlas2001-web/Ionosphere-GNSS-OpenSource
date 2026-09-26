@@ -2,6 +2,8 @@
 
 目录：[`PROJECTS.json` → `pysatSpaceWeather`](../../PROJECTS.json) · 上游 <https://github.com/pysat/pysatSpaceWeather> · 文档 <https://pysatspaceweather.readthedocs.io/> · PyPI **0.2.2**（main HEAD `e36d39d`）· 依赖 **pysat 3.2.2** · 许可 **BSD-3-Clause**（pysat 同为 BSD-3）· 本机实跑 2026-09-26 05:54–06:07 EDT（CPython 3.13.5，venv；最终环境 numpy 2.2.6 / pandas 2.3.3 / xarray 2026.7.0）
 
+> **质检复跑通过（2026-09-26 06:20–06:30 EDT）**：CPython 3.13.5，pysat 3.2.2 / pysatSpaceWeather 0.2.2。默认安装拉到 numpy 2.5.3 + pandas 3.0.6，坑 2（`data type 'a'`）和坑 3（`Invalid frequency: H`）都复现。换成 numpy 2.4.6 + pandas 2.3.3 后，§3.1–3.4 的 Kp/ap/Ap_calc/F10.7/f107a/Dst 输出逐字一致，所以安装上限改为 `numpy<2.5`。NOAA DST 目录 HTTPS 列表 59 项，年文件止于 `dst2008.txt`；`dst2009`/`dst2024` 返回 404，属实。§3.5 当天的 Kp 预报与合并结果复现，lasp Dst 已更新到 10:43 UT。**45day 没有死**：SWPC 把文件改名成 `45-day-forecast.txt`，用 mock 绕法能拿到 45 天预报，坑 8 已重写。坑 4 补了触发条件，坑 5 的 load 报错按实测改写，图与数据一致。
+>
 > 岗位：用同一套 `pysat.Instrument` 接口下载、缓存、加载各家空间天气指数（GFZ Kp/ap/F10.7、SWPC 预报、NOAA Dst、LASP 预测 Dst/AE…），外加 Kp↔ap 换算、81 天 F10.7 平均、多源合并这几个小工具。给磁暴 TEC 分析、IRI/MSIS 驱动、"只取平静日"筛选用。冲突时：**本机 `pysatSpaceWeather/instruments/*.py` 源码 > 本文**。
 
 ## 1. 它解决什么 / 不做什么
@@ -29,10 +31,10 @@
 
 ```bash
 python3 -m venv venv && . venv/bin/activate
-pip install --no-cache-dir pysat pysatSpaceWeather matplotlib 'numpy<2.3' 'pandas<3'
+pip install --no-cache-dir pysat pysatSpaceWeather matplotlib 'numpy<2.5' 'pandas<3'
 ```
 
-两个版本上限都是本机踩出来的：numpy 2.5.3 下创建任何 Instrument 就报 `TypeError: data type 'a' not understood`（坑 2）；pandas 3.0.6 下 `sw_dst` 加载报 `Invalid frequency: H`（坑 3）。
+两个版本上限都是本机踩出来的：numpy 2.5.3 下创建任何 Instrument 就报 `TypeError: data type 'a' not understood`（坑 2）；pandas 3.0.6 下 `sw_dst` 加载报 `Invalid frequency: H`（坑 3）。质检复跑时用 numpy 2.4.6 + pandas 2.3.3 跑通了 §3 全部输出。`'a'` 别名在 2.2.6、2.3.5、2.4.6 下都只报 DeprecationWarning，所以 numpy 上限放宽到 `<2.5`。
 
 首次使用必须指定数据目录（否则 import 时打印 `Hi there! pysat will nominally store data in a 'pysatData' directory which needs to be assigned`）：
 
@@ -190,7 +192,7 @@ vars ['Kp'] n 40
 
 （节选；合并优先级按源码文档串：standard > recent > forecast。文档写 standard 应传 `def`，本机传 `now` 也能跑。）
 
-F10.7 的 `45day` 预报**坏了**：`pysat WARNING: File 45-day-ap-forecast.txt not found: https://services.swpc.noaa.gov/text/`，得到空表；于是 `combine_f107(now_obs, 45day)` 的未来 5 天全是 NaN：
+F10.7 的 `45day` 预报**默认下载失败**，因为 SWPC 改了文件名，绕法见坑 8：`pysat WARNING: File 45-day-ap-forecast.txt not found: https://services.swpc.noaa.gov/text/`，得到空表；于是 `combine_f107(now_obs, 45day)` 的未来 5 天全是 NaN：
 
 ```
 vars ['f107'] n 10
@@ -239,20 +241,20 @@ sw_dst lasp: vars=['dst'] n=575 (Timestamp('2026-09-22 10:23:22'), Timestamp('20
 | # | 现象 | 原因 | 修复 |
 | --- | --- | --- | --- |
 | 1 | `pysat.Instrument('sw','kp',tag='def')` → `KeyError: 'unknown platform supplied: sw'` | 字符串方式只认已注册模块；pysatSpaceWeather 装上不会自动注册 | `pysat.Instrument(inst_module=psw.instruments.sw_kp, tag='def')` |
-| 2 | 创建任何 Instrument 都报 `TypeError: data type 'a' not understood` | pysat 3.2.2 `_files.py` 用 `'a'` dtype 别名，numpy 2.5 已删 | `pip install --no-cache-dir 'numpy<2.3'` |
+| 2 | 创建任何 Instrument 都报 `TypeError: data type 'a' not understood` | pysat 3.2.2 `_files.py` 用 `'a'` dtype 别名，numpy 2.5 已删 | `pip install --no-cache-dir 'numpy<2.5'`（2.4.6 实测可用） |
 | 3 | `sw_dst` load 报 `ValueError: Invalid frequency: H ... Did you mean h?` | `sw_dst.py` 用 `freq='H'`，pandas 3 已删大写别名 | `pip install --no-cache-dir 'pandas<3'` |
-| 4 | `sw_f107 now` 多天加载报 `Loaded data is not unique ... not monotonically increasing`；或 `Fobs_2024-05.txt` 里装的是 05-31…06-29 | `download(start, stop)` 默认按天循环，每天都用 `%Y-%m` 文件名写"当天起一个月"的数据，互相覆盖 | `python -c "import pysat,datetime as dt,pysatSpaceWeather as p; f=pysat.Instrument(inst_module=p.instruments.sw_f107,tag='now',inst_id='obs'); f.download(date_array=pysat.utils.time.create_date_range(dt.datetime(2024,3,1),dt.datetime(2024,7,1),freq='MS'),update_files=True)"` |
-| 5 | `sw_dst noaa` 下载 `TimeoutError: timed out`，之后 load 报 `KeyError: 'dst'` | FTP 被动数据口不通，留下 0 字节年文件，pysat 当作已下载 | `find <data_dir>/sw/dst -size 0 -delete` 再用 HTTPS 下文件 + `mock_download_dir=` |
+| 4 | `sw_f107 now` 多天加载报 `Loaded data is not unique ... not monotonically increasing`；或 `Fobs_2024-05.txt` 里装的是 05-31…06-29 | `download(start, stop)` 默认按天循环，每天都用 `%Y-%m` 文件名写"当天起一个月"的数据。文件已存在时跳过，所以 `start` 是 1 号时不出错；`start` 不是 1 号，或者加了 `update_files=True`，文件就会错位。质检复跑：`start=2024-05-01` 得到 31 行，正常；`start=2024-05-10` 得到 05-10…06-09；再用 `start=05-31, update_files=True` 得到 05-31…06-29，load 报 not unique。修复命令跑完后 5 个月文件都从 1 号到月底，load 61 行 unique | `python -c "import pysat,datetime as dt,pysatSpaceWeather as p; f=pysat.Instrument(inst_module=p.instruments.sw_f107,tag='now',inst_id='obs'); f.download(date_array=pysat.utils.time.create_date_range(dt.datetime(2024,3,1),dt.datetime(2024,7,1),freq='MS'),update_files=True)"` |
+| 5 | `sw_dst noaa` 下载报 `TimeoutError`（质检复跑是 `[Errno 110] Connection timed out`，卡了约 2 min 15 s），之后 load 拿到空数据：同一进程里是 `variables: []`、n=0；新开进程报 `IndexError: index 0 is out of bounds for axis 0 with size 0`（`sw_dst.py:166`） | FTP 被动数据口不通，留下 0 字节年文件，pysat 当作已下载 | `find <data_dir>/sw/dst -size 0 -delete` 再用 HTTPS 下文件 + `mock_download_dir=`（质检复跑：删掉 0 字节文件后，mock 加载得到 72 点，最小值 −383） |
 | 6 | `sw_dst noaa` 下 2024 年一直失败 | NCEI 目录年文件止于 `dst2008.txt`，`dst2024.txt` 404 | 2024 起不要用 `noaa` tag；改用 Kyoto WDC（未实跑）或 `tag='lasp'`（只有最近几天） |
 | 7 | `sw_f107 historic` 下载不报错，load 得到 `variables: []` | LISIRD `noaa_radio_flux` 只到 2018，2019 起返回 `{"": {}}` | 用 `tag='now', inst_id='obs'`（GFZ） |
-| 8 | `sw_f107 45day` 空表，`combine_f107` 未来全 NaN | SWPC 已不提供 `45-day-ap-forecast.txt` | 预报改用 `tag='forecast'`（3 天，本文未实跑）或直接看 SWPC 页面 |
+| 8 | `sw_f107 45day` 空表，`combine_f107` 未来全 NaN | SWPC 把文件改名成 `45-day-forecast.txt`（质检复跑 200，1539 B，内容格式不变），旧名 `45-day-ap-forecast.txt` 404；pysatSpaceWeather 0.2.2 还在请求旧名 | `mkdir -p m45 && curl -sSo m45/45-day-ap-forecast.txt https://services.swpc.noaa.gov/text/45-day-forecast.txt`，然后 `f45.download(start=today, stop=today, mock_download_dir='/abs/m45')`。质检复跑：45 天 `f107`（2026-09-26→11-09）全部载入，`combine_f107` 未来 5 天是 100/95/95/95/100。只要 3 天的话，`tag='forecast'` 也能用（复跑得 100/95/95） |
 | 9 | `import pysat` 打印 `Hi there!  pysat will nominally store data in a 'pysatData' directory which needs to be assigned` | `~/.pysat/pysat_settings.json` 里 `data_dirs` 为空（新用户或换了 `HOME`） | `mkdir -p ~/pysatData && python -c "import pysat; pysat.params['data_dirs']='$HOME/pysatData'"` |
 
 ## 7. 许可与诚实边界
 
 - pysatSpaceWeather、pysat 都是 BSD-3-Clause。数据各有条款：GFZ Kp（`inst.acknowledgements` 打印 `CC BY 4.0`，引用 Matzka et al. 2021, doi:10.5880/Kp.0001）、NOAA/SWPC、LASP；`inst.acknowledgements` / `inst.references` 会打印对应要求。
-- **实跑**：§3.1–3.5 全部输出；坑 1–7、9 复现过；坑 8 看到了 WARNING 和空表。
-- **未实跑**：`sw_ae/al/au`、`ace_*`、`sw_hpo/apo`、`sw_mgii`、`norp_rf`；`filter_geomag`；`sw_f107 forecast/prelim/daily`；`sw_kp prediction`；Kyoto Dst 替代方案。版本上限（numpy<2.3、pandas<3）只在本机 Python 3.13 验证过。
+- **实跑**：§3.1–3.5 全部输出；坑 1–9 复现过；坑 8 的改名绕法由质检复跑验证。
+- **未实跑**：`sw_ae/al/au`、`ace_*`、`sw_hpo/apo`、`sw_mgii`、`norp_rf`；`filter_geomag`；`sw_f107 prelim/daily`；`sw_kp prediction`；Kyoto Dst 替代方案。版本上限（numpy<2.5、pandas<3）只在本机 Python 3.13 验证过。
 - 缓存不会自动失效：`now`/`recent` 这种会变的数据，重跑前加 `update_files=True`。
 
 ## 8. 链接

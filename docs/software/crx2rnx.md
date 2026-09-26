@@ -6,6 +6,8 @@
 
 > **质检复跑通过（2026-09-26 05:51–05:56 EDT，提交 `59d7961`）**：坑 4 按实测重写。WTZR 2024/132（GA S3，3849264 B）用 `crx2rnx` 2.7.0 解：`datime parsing` panic，rc=101。改成字母月后 rc=0，C1C 与 GSI 全等。GSI 4.2.0 和 hatanaka 2.8.1 直接可解，143370 行，两者 `cmp` 相同。hatanaka `sample.crx` 的 panic 另有原因：`TIME OF FIRST OBS` 错位。CAS 镜像不可达，环境受限。
 >
+> **质检复跑通过（2026-09-26 06:25–06:30 EDT）**：新增坑 12 并在 §3.5 表里加了一行。NOAA `1lsu1320.24d` 用 Rust 2.7.0 解，`sv/mod.rs:199:60` panic 复现，rc=101。触发记录定位到 flag-4 事件历元（首个在第 2737 行，全天 23 个）。GSI 4.2.0 和 hatanaka 2.8.1 都能解，输出 10318649 B，两者逐字节相同。GSI 重新压缩后仍然 panic；删掉事件块虽然不再 panic，但每历元只剩 1 颗星，两个办法都不可用。
+>
 > 岗位：把 Compact RINEX（`.crx` / `.##d` / `.crx.gz`）解成明文 OBS，便于 Rust/现代 CLI 流水线。冲突时：**本机 `crx2rnx -h` / 上游 README > 本文**。  
 > **同名陷阱：** PATH 里的 `crx2rnx` 经常是 [hatanaka](./hatanaka.md) 捆绑的 **GSI RNXCMP** 二进制（旗标 `-f/-s/-d`），**不是**本文 Rust CLI。官方可引用压缩/恢复 → [rnxcmp](./rnxcmp.md)；Python 封装 → [hatanaka](./hatanaka.md)。
 
@@ -192,6 +194,7 @@ mkdir -p /tmp/crx2rnx_pref
 | AJAC V2 | georinex **17** SV；G07 C1 **nan** | **26** SV；C1 G07=25091572.3 | 与 GSI body 相等 |
 | hatanaka `sample.crx` | **panic** `datime parsing`（`TIME OF FIRST OBS` 错位一列） | / `rinex-decompress` OK | OK |
 | WTZR 2024/132 `.crx.gz`（头 `12-05-24 00:06`） | **panic** `datime parsing` | 4.2.0 OK，143370 行 | 2.8.1 OK，与 GSI `cmp` 相同 |
+| NOAA 1LSU 2024/132 `.24d`（CRINEX 1.0，含 23 个 flag-4 事件历元） | **panic** `sv/mod.rs:199`（坑 12） | 4.2.0 OK，10318649 B | 2.8.1 OK，与 GSI 字节相同 |
 
 ## 4. 输入 / 输出
 
@@ -218,7 +221,7 @@ mkdir -p /tmp/crx2rnx_pref
 | ---: | --- | --- | --- |
 | 1 | `crx2rnx -h` 像 GSI（`-f/-s/-d`） | PATH 命中 hatanaka 捆版 | `~/.cargo/bin/crx2rnx -V`；venv 先 `deactivate` |
 | 2 | 以为 `-s` = skip 坏历元 | **旗标语义不同** |  salvage → [rnxcmp](./rnxcmp.md) `-s`；短名才用本文 `-s` |
-| 3 | AJAC 等 V2 解完 SV 变少 / 测值 nan | `rinex` 写回 V2 不完整（本机 17≠26） | 生产 V2 → GSI/`hatanaka`；本文优先 V3 |
+| 3 | AJAC 等 V2 解完 SV 变少 / 测值 nan | `rinex` 写回 V2 不完整（本机 17≠26）；NOAA 1LSU 更极端，每历元只剩 1 颗（坑 12） | 生产 V2 → GSI/`hatanaka`；本文优先 V3 |
 | 4 | `panicked at …crx2rnx-2.7.0/src/main.rs:43:46: RINEX parsing error: datime parsing`，没有输出文件，rc=101。本机复现：GA S3 `public/daily/2024/132/WTZR00DEU_R_20241320000_01D_30S_MO.crx.gz`（3849264 B）；CAS `ftp.gipp.org.cn` 连不上（21 口拒连、http 502），**环境受限** | 报错来自**本 CLI 自己**：`Rinex::from_gzip_file` 读头时由 `rinex` 0.22 抛出，不是下游 georinex/gfzrnx。触发条件 ①：`CRINEX PROG / DATE` 行日期写成**数字月**，如 `RNX2CRX ver.4.0.7                       12-05-24 00:06`；`epoch.rs` 的 `parse_formatted_month` 只认 `Jan`…`Dec`。只删 CR（`tr -d '\r'`）照样 panic，CRLF 行尾不是原因。触发条件 ②：`TIME OF FIRST OBS` 列错位，hatanaka `sample.crx` 就是这样（头日期是 `08-Apr-21`，没问题；秒字段比规范 F13.7 右移一列） | 首选：用 GSI `CRX2RNX` 4.2.0（`CRX2RNX - < in.crx > out.rnx`，rc=0，143370 行）或 [hatanaka](./hatanaka.md) 2.8.1 `hatanaka.decompress`（0.4 s，与 GSI `cmp` 相同）；georinex 1.16.2 直接 `load` 这个 `.crx.gz` 也能读（首小时 120 历元、56 SV）。非要用本工具：先把第 2 行日期改成字母月再解，`sed '2s/12-05-24 00:06      /12-May-24 00:06     /'`（保持 60 列对齐），rc=0；首小时 C1C 3651 个值与 GSI 全等，L1C 3650 个中有 2 个差 0.001 周（格式化舍入）。输入改名后输出名会变怪（见 #6），记得加 `-o`。另一个办法：用 GSI `RNX2CRX` 4.2.0 重新压缩，新头是 `26-Sep-26 09:53`，本工具可以解。样例②：把 `TIME OF FIRST OBS` 改成规范列宽后 rc=0 |
 | 5 | `--prefix /tmp/no_such` panic `i/o: output error` | 目录必须预先存在 | `mkdir -p` 后再跑 |
 | 6 | `KUNZ00CZE.crx` → `00CCC_R_..._00U_...rnx` | 非标准长名时文件名合成怪异 | 用 `-o` 显式命名 |
@@ -227,6 +230,7 @@ mkdir -p /tmp/crx2rnx_pref
 | 9 | `.crx.gz` 解完仍想 `.rnx.gz` | 只写明文 | 自行 `gzip` 输出 |
 | 10 | 系统 `rustc 1.85` 装失败 | MSRV | rustup stable（本机 1.98.1） |
 | 11 | 无参调用卡住（venv 环境） | 命中 GSI 捆版等 stdin | 看 `which crx2rnx`；Rust 版缺参直接 Usage |
+| 12 | NOAA CORS 的 `.d`（CRINEX 1.0）panic：`gnss-rs-2.6.0/src/sv/mod.rs:199:60: end byte index 1 is out of bounds for string of length 0`，rc=101，没有输出。复现文件：`geodesy.noaa.gov/corsdata/rinex/2024/132/1lsu/1lsu1320.24d.gz`（1166877 B，解 gzip 后 2928854 B） | 和坑 4 不是一回事：头日期是字母月 `RNX2CRX ver.4.0.8  12-May-24 01:47`，读头没问题。`RUST_BACKTRACE=1` 显示调用链是 `Record::parse` → `DecompressorExpert<5>::decompress` → `next_satellite` → `SV::from_str`。触发记录是 teqc 写进去的**事件历元**（flag 4，如 `&24  5 11  1  0  0.0000000  4  5` 后跟 5 行 COMMENT；全天 23 个，01–23 点每个整点一个）。这种历元没有卫星列表，`next_satellite` 切出空串，`from_str` 取 `string[0..1]` 就越界。验证：只取前 2736 行（第一个事件之前）rc=0；取到 2742 行（含这个事件）就 panic。用 GSI `RNX2CRX` 4.2.0 重新压缩（新头 `26-Sep-26 10:29`）后照样 panic，所以改头或重压缩都绕不开 | 用 GSI `CRX2RNX` 4.2.0：`CRX2RNX - < 1lsu1320.24d > 1lsu1320.24o`，rc=0，10318649 B，2880 个 flag 0 历元 + 23 个 flag 4；或者 [hatanaka](./hatanaka.md) 2.8.1：`hatanaka.decompress(open('1lsu1320.24d.gz','rb').read())`，0.10 s，与 GSI 逐字节相同（喂 `.d` 或 `.d.gz` 都行）。也可以直接拿 S3 的 `.o.gz`（见 [cors-networks](./cors-networks.md) 坑 3）。**删掉事件块不能当绕法**：把 23 个 flag-4 块（共 138 行）删掉后本工具 rc=0、2880 历元，但每个历元只写出 1 颗星（首颗，如 `0  1R20`），输出只有 621299 B，而 GSI 首历元是 22 颗 |
 
 ## 7. 选型
 

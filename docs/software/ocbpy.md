@@ -2,6 +2,8 @@
 
 目录：[`PROJECTS.json` → `ocbpy`](../../PROJECTS.json) · 上游 <https://github.com/aburrell/ocbpy> · 文档 <https://ocbpy.readthedocs.io/> · PyPI **0.7.0**（main HEAD `3ced0de`）· 依赖 aacgmv2 2.7.1 + numpy · 许可 **BSD-3-Clause**（© 2017 Angeline G. Burrell、Gareth Chisham）· 本机实跑 2026-09-26 06:07–06:10 EDT（CPython 3.13.5，venv，numpy 2.2.6）
 
+> **质检复跑通过（2026-09-26 06:20–06:30 EDT）**：ocbpy 0.7.0 + aacgmv2 2.7.1，numpy 2.4.6。§3.1–3.3 输出逐字一致，AMPERE 对象建立用时 40.5 s。`files.py` 里 AMPERE 结束时间写死为 2022-01-01，而 `amp_north/south_radii.ocb` 实际到 `20241031 23:58`（3514320 / 3646800 行），属实。坑 5、6、8 的修复命令实跑都有效：pickle 290 KB、读回瞬时；装上 zenodo-get 3.1.0 后提示消失；`circular` 让 `r_corr` 为 0、边界降约 2°。坑 8 原来写的 “AMPERE 与 IMAGE 同刻比” 不成立（两者没有重叠时段），已改写。坑 1 的提示文字、坑 7 的 54.378 出处按实测修正。
+>
 > 岗位：给定某一时刻的极盖边界圆（来自 IMAGE 紫外成像或 AMPERE 场向电流），把 AACGM 磁纬/MLT 换成"相对这条边界"的 OCB 纬度/MLT，并把速度、电场这类矢量按边界大小缩放。这样不同时刻、不同暴强度下的高纬观测可以叠在一起统计。冲突时：**本机 `ocbpy/_boundary.py`、`ocb_scaling.py` 文档串 > 本文**。
 
 ## 1. 它解决什么 / 不做什么
@@ -182,20 +184,20 @@ VectorData Vi [m/s] at AACGM lat 75, MLT 0:
 
 | # | 现象 | 原因 | 修复 |
 | --- | --- | --- | --- |
-| 1 | `OCBoundary(instrument='amp', stime=2024-…)` 打印 `No OCBoundary file specified`，随后 `unable to find a good OCB record`，属性全是 `None` | `boundaries/files.py` 把 AMPERE 文件结束时间写死为 2022-01-01，而文件实际到 2024-10-31 | `OCBoundary(filename=os.path.join(os.path.dirname(ocbpy.__file__),'boundaries','amp_north_radii.ocb'), instrument='ampere', ...)` |
+| 1 | `OCBoundary(instrument='amp', stime=2024-…)` `print(ocb)` 只有一行 `No OCBoundary file specified`，`filename`/`dtime`/`r`/`fom` 全是 `None`，`records` 为 0。只有开了 INFO 日志才看得到 `no boundary file available for amp northern hemisphere, …` | `boundaries/files.py` 把 AMPERE 文件结束时间写死为 2022-01-01，而文件实际到 2024-10-31 | `OCBoundary(filename=os.path.join(os.path.dirname(ocbpy.__file__),'boundaries','amp_north_radii.ocb'), instrument='ampere', ...)` |
 | 2 | `normal_coord` 返回 `(nan, nan, nan)` | 刚建对象时 `rec_ind = -1`，还没选记录 | `ocb.get_next_good_ocb_ind()`（或 `ocbpy.match_data_ocb(ocb, [时间], idat=0)`） |
 | 3 | 南半球纬度（如 −75°）返回 NaN | `hemisphere=1` 的对象只接受北半球点 | `OCBoundary(filename=.../amp_south_radii.ocb, instrument='ampere', hemisphere=-1)` |
 | 4 | `a.get_aacgm_boundary_lat(0.0, rec_ind=j)` 得到 `None`，格式化时报 `TypeError: unsupported format string passed to NoneType.__format__` | 该方法只把结果写进属性，不返回 | `a.get_aacgm_boundary_lat(mlts, rec_ind=j, overwrite=True); print(a.aacgm_boundary_lat[j])` |
-| 5 | 建 AMPERE 对象要等约 40 s | `amp_north_radii.ocb` 有 3,514,320 行，源码对每一行做时间转换后才按 `stime/etime` 筛 | 一次建好对象反复用：`pickle.dump(a, open('amp_20240510.pkl','wb'))`（pickle 缓存本文未实跑） |
-| 6 | `import ocbpy` 打印 `unable to load \`zenodo_get\` module` | DMSP-SSJ 边界要从 Zenodo 下载，依赖可选包 | `pip install --no-cache-dir zenodo_get`（本文未实跑） |
-| 7 | 60° 这样远在边界外的点也给出 `ocb_lat` 54.378，不是 NaN | 映射对边界外的点照样线性外推 | 统计时自己筛：`mask = ocb_lat >= ocb.boundary_lat`（或按研究需要保留边界外 N 度） |
-| 8 | AMPERE 和 IMAGE 同一时刻比，边界差 2° 左右 | AMPERE 是 R1/R2 电流边界，默认 `elliptical` 修正（本例 `r_corr` −2.10°）；IMAGE 用 `circular`（`r_corr` 0） | 需要原始 R1/R2 时：`OCBoundary(..., rfunc=ocbpy.ocb_correction.circular)`（未实跑） |
+| 5 | 建 AMPERE 对象要等约 40 s | `amp_north_radii.ocb` 有 3,514,320 行，源码对每一行做时间转换后才按 `stime/etime` 筛 | 一次建好对象反复用：`pickle.dump(a, open('amp_20240510.pkl','wb'))`（质检复跑：pickle 文件 290011 B，`pickle.load` 不到 0.01 s；读回后 06 UT 仍匹配 rec 30，70° 午夜 → 74.824，与新建对象相同） |
+| 6 | `import ocbpy` 打印 `unable to load \`zenodo_get\` module` | DMSP-SSJ 边界要从 Zenodo 下载，依赖可选包 | `pip install --no-cache-dir zenodo_get`（质检复跑：装上 zenodo-get 3.1.0 后 `import ocbpy` 不再打印这条；DMSP-SSJ 下载本身没试） |
+| 7 | 60° 这样远在边界外的点也给出 `ocb_lat` 54.378，不是 NaN（§3.1 IMAGE 测试记录 27，MLT 22）。反过来，AMPERE 暴时 22 UT 边界已经退到 58°，60° 落在极盖内，给出 74.946 | 映射对边界外的点照样线性外推 | 统计时自己筛：`mask = ocb_lat >= ocb.boundary_lat`（或按研究需要保留边界外 N 度） |
+| 8 | AMPERE 对象给出的边界纬度比文件里的 R1/R2 圆（`r`、`r_cent`）高 2° 左右 | AMPERE 是 R1/R2 电流边界，默认用 `elliptical` 修正推到 OCB（本例 `r_corr` −2.10°）；IMAGE 用 `circular`（`r_corr` 0）。包内 IMAGE（2000–2002）和 AMPERE（2010–2024）没有重叠时段，没法同一时刻直接对比 | 需要原始 R1/R2 时：`OCBoundary(..., rfunc=ocbpy.ocb_correction.circular)`。质检复跑 22 UT：`r_corr` 全为 0；0/6/12/18 MLT 的边界 AACGM 纬度是 56.015/57.0/56.015/55.0（`elliptical` 是 58.114/61.973/60.211/56.946）；70° 午夜 → 80.576（`elliptical` 是 79.957） |
 
 ## 7. 许可与诚实边界
 
 - ocbpy：BSD-3-Clause。包内边界数据要单独引用：IMAGE 引 Chisham (2017)、Chisham et al. (2022)；AMPERE 引 Milan (2023)、Milan et al. (2015) 并致谢 AMPERE 团队，用了修正还要引 Burrell et al. (2019)（`boundaries/README.md` 原文要求）。
-- **实跑**：§3.1–3.3 全部输出；坑 1–5、7 复现过。
-- **未实跑**：`EABoundary` / `DualBoundary`（赤道侧边界 + 双边界坐标）、`cycle_boundary`、`instruments.vort`/`supermag`/`pysat_instruments`、DMSP-SSJ、`coords='geodetic'` 输入、南半球实际转换；坑 5、6、8 的修复命令。
+- **实跑**：§3.1–3.3 全部输出；坑 1–8 复现过（5、6、8 的修复命令由质检复跑验证）。
+- **未实跑**：`EABoundary` / `DualBoundary`（赤道侧边界 + 双边界坐标）、`cycle_boundary`、`instruments.vort`/`supermag`/`pysat_instruments`、DMSP-SSJ、`coords='geodetic'` 输入、南半球实际转换。
 - ocbpy 只能在"有边界拟合"的时刻用；AMPERE 为 2 分钟一条，但 `fom` 低的记录会被跳过，暴时也可能出现空档。
 
 ## 8. 链接
