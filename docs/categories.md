@@ -23,7 +23,7 @@
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
 - 列表文件：[`lists/01-ionosphere.md`](../lists/01-ionosphere.md)
-- 当前条目数：**300**
+- 当前条目数：**298**
 
 ## `troposphere` — 对流层
 
@@ -37,14 +37,14 @@
 RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
 - 列表文件：[`lists/03-gnss-data.md`](../lists/03-gnss-data.md)
-- 当前条目数：**140**
+- 当前条目数：**139**
 
 ## `gnss-positioning` — 精密定位
 
 SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
 - 列表文件：[`lists/04-gnss-positioning.md`](../lists/04-gnss-positioning.md)
-- 当前条目数：**103**
+- 当前条目数：**104**
 
 ## `orbit-clock` — 轨道与钟差
 
@@ -65,7 +65,7 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。
 
 - 列表文件：[`lists/07-gnss-sdr.md`](../lists/07-gnss-sdr.md)
-- 当前条目数：**77**
+- 当前条目数：**76**
 
 ## `mobile-apps` — 移动与嵌入式应用
 

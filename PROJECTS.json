@@ -5,15 +5,15 @@
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
   "generated": "2026-09-26",
-  "project_count": 1035,
+  "project_count": 1032,
   "counts_by_category": {
-    "ionosphere": 300,
+    "ionosphere": 298,
     "troposphere": 49,
-    "gnss-data": 140,
-    "gnss-positioning": 103,
+    "gnss-data": 139,
+    "gnss-positioning": 104,
     "orbit-clock": 33,
     "navigation-ins": 73,
-    "gnss-sdr": 77,
+    "gnss-sdr": 76,
     "mobile-apps": 32,
     "tools-learning": 59,
     "gnss-datasets": 169
@@ -679,24 +679,6 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "GNSS-MP：观测多路径分析软件"
-    },
-    {
-      "name": "GNSSNexus-rinex",
-      "url": "https://github.com/GNSSNexus/rinex",
-      "desc_zh": "偏特定工具链；选型时与 georinex、nav-solutions/rinex 比覆盖面",
-      "analysis_zh": "GNSSNexus 下的 RINEX 组件，适合特定工具链内使用。选型时与 georinex、nav-solutions/rinex 比较维护活跃度与格式版本覆盖。",
-      "language": "Rust",
-      "license": "Apache-2.0",
-      "category": "gnss-data",
-      "subcategory": "RINEX读写",
-      "markers": [],
-      "stars_approx": null,
-      "source": "curated+verified (awesome-gnss / stars / API / official site)",
-      "featured": false,
-      "user_relation": "none",
-      "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "GNSSNexus-rinex：Rust RINEX 读写组件"
     },
     {
       "name": "GNSSommelier",
@@ -5182,8 +5164,8 @@
       "analysis_zh": "服务 LEO 星载 GPS 与编队相对导航仿真/处理。适合航天器导航课与前期仿真。地面测地 PPP 与实时 RTK 非其主场。",
       "language": "Python",
       "license": "MIT",
-      "category": "gnss-sdr",
-      "subcategory": "星载导航",
+      "category": "gnss-positioning",
+      "subcategory": "相对定位",
       "markers": [],
       "stars_approx": 88,
       "source": "curated+verified (awesome-gnss / stars / API / official site)",
@@ -6913,29 +6895,9 @@
     },
     {
       "name": "IonKit-NH",
-      "url": "https://github.com/ohm1122/IonKit-NH",
-      "desc_zh": "ohm1122 的 fork；原作者上游是 tanggdut/IonKit-NH",
-      "analysis_zh": "tanggdut/IonKit-NH 的 fork（维护者星标种子），仓内同样只有 IonKit-NH.zip、用户手册和 README，zip 与上游完全相同。工具包用 MATLAB 处理 GPS/GLONASS/Galileo/BDS 双频观测求 TEC，生成时间-距离图和二维 TEC 扰动图，用于识别地震、海啸、火山喷发引起的电离层扰动。更新与引用以上游为准。",
-      "language": "MATLAB",
-      "license": "GPL-3.0",
-      "category": "ionosphere",
-      "subcategory": "电离层工具",
-      "markers": [
-        "starred"
-      ],
-      "stars_approx": null,
-      "source": "curated+verified (awesome-gnss / stars / API / official site)",
-      "featured": false,
-      "user_relation": "starred",
-      "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "IonKit-NH：MATLAB 电离层自然灾害 TID 检测工具包（fork）"
-    },
-    {
-      "name": "IonKit-NH-tanggdut",
       "url": "https://github.com/tanggdut/IonKit-NH",
       "desc_zh": "原作者仓：MATLAB 多系统 GNSS TEC 自然灾害电离层扰动检测",
-      "analysis_zh": "IonKit-NH 的原作者仓（Tang L.），MATLAB 工具包，用 GPS/GLONASS/Galileo/BDS 双频组合求 TEC，生成时间-距离图和二维 TEC 扰动图，检测地震、海啸、火山喷发激发的行进式电离层扰动。代码以 IonKit-NH.zip 分发（18 个 .m 文件加示例 RINEX 与 TEC 数据），用法见用户手册；使用请引用 Tang 2024（Earthquake Research Advances）。ohm1122 版是它的 fork。",
+      "analysis_zh": "IonKit-NH 的原作者仓（Tang L.），MATLAB 工具包，用 GPS/GLONASS/Galileo/BDS 双频组合求 TEC，生成时间-距离图和二维 TEC 扰动图，检测地震、海啸、火山喷发激发的行进式电离层扰动。代码以 IonKit-NH.zip 分发（18 个 .m 文件加示例 RINEX 与 TEC 数据），用法见用户手册；使用请引用 Tang 2024（Earthquake Research Advances）。ohm1122/IonKit-NH 是它的 fork（维护者星标来源），自 2024-05 复制后没有任何新提交，已并入本条不再单列。",
       "language": "MATLAB",
       "license": "GPL-3.0",
       "category": "ionosphere",
@@ -6949,7 +6911,7 @@
       "user_relation": "starred",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "IonKit-NH-tanggdut：IonKit-NH 原作者上游仓"
+      "one_liner_zh": "IonKit-NH：MATLAB 多系统 GNSS TEC 自然灾害电离层扰动检测工具包（原作者仓）"
     },
     {
       "name": "IonMap",
@@ -7505,7 +7467,7 @@
       "url": "https://irimodel.org/COMMON_FILES/",
       "category": "ionosphere",
       "subcategory": "IRI模型",
-      "language": "Fortran",
+      "language": null,
       "provenance": "official",
       "host": "official_site",
       "markers": [
@@ -8418,7 +8380,7 @@
       "name": "OASIS",
       "url": "https://github.com/giorgiopicanco/OASIS",
       "desc_zh": "社区：从观测算 ROTI/ΔTEC/SIDX 等电离层扰动量",
-      "analysis_zh": "Open-Access System for Ionospheric Studies：从 GNSS 观测算 ROTI、ΔTEC、SIDX 等，做扰动与闪烁相关监测。适合空间天气事件个例与台站网指标产品。高采样率接收机原始闪烁指数（S4/σφ）仍需专用接收机或仿真器。",
+      "analysis_zh": "Open-Access System for Ionospheric Studies：从 GNSS 观测算 ROTI、ΔTEC、SIDX 等，做扰动与闪烁相关监测。适合空间天气事件个例与台站网指标产品。高采样率接收机原始闪烁指数（S4/σφ）仍需专用接收机或仿真器。ohm1122/OASIS 是本仓的 fork（维护者星标），无独立提交且落后上游 28 个提交，已并入本条。",
       "language": "Python",
       "license": "CC-BY-NC-4.0",
       "category": "ionosphere",
@@ -8433,26 +8395,6 @@
       "host": "github",
       "provenance": "academic_lab",
       "one_liner_zh": "OASIS：RINEX 扰动指标计算"
-    },
-    {
-      "name": "OASIS-ohm1122",
-      "url": "https://github.com/ohm1122/OASIS",
-      "desc_zh": "算法与接口以 giorgiopicanco/OASIS 上游为准；引用请核 canonical URL",
-      "analysis_zh": "用户星标的 OASIS 相关仓库，实际算法与数据接口以 giorgiopicanco/OASIS 上游为准。引用论文时请核对 canonical URL。",
-      "language": "Python",
-      "license": "CC-BY-NC-4.0",
-      "category": "ionosphere",
-      "subcategory": "闪烁/ROTI",
-      "markers": [
-        "starred"
-      ],
-      "stars_approx": null,
-      "source": "curated+verified (awesome-gnss / stars / API / official site)",
-      "featured": false,
-      "user_relation": "starred",
-      "host": "github",
-      "provenance": "personal_community",
-      "one_liner_zh": "OASIS-ohm1122：OASIS 闪烁/ROTI 相关用户星标副本"
     },
     {
       "name": "Okoh-MATLAB-ROT-ROTI",
@@ -20510,7 +20452,7 @@
   "provenance_counts": {
     "official": 344,
     "academic_lab": 355,
-    "personal_community": 336
+    "personal_community": 333
   },
   "updated": "2026-09-26"
 }

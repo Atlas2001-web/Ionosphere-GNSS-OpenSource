@@ -689,7 +689,7 @@ ROTI 工具举例：`igs-roti`、`Okoh-MATLAB-ROT-ROTI`、`Ionospheric-TEC-ROTI-
 | σφ↑ S4 一般 | 偏相位闪烁叙事 | 偷换成「S4 也高」 |
 | 指标高但定位没事 | 几何好或受害星被剔——仍报风险窗 | 以「定位没事」否定风险窗存在 |
 
-闪烁数据入口：`ismr_downloader`。处理：`scintkit`、`OASIS`、`OASIS-ohm1122`、`IonoMoni`、`BiScEF`、`scintill-ai`、`gnssutils`、`M_ISSION` 等。
+闪烁数据入口：`ismr_downloader`。处理：`scintkit`、`OASIS`、`IonoMoni`、`BiScEF`、`scintill-ai`、`gnssutils`、`M_ISSION` 等。
 
 ### 13.5 一夜字段表（先填表再写段落）
 
@@ -733,7 +733,7 @@ TEC 图回答电子有多少；闪烁回答信号抖不抖。不规则体搓皱�
 |---|---|---|
 | ROTI 计算 / 演示 | `igs-roti`、`Okoh-MATLAB-ROT-ROTI`、`Ionospheric-TEC-ROTI-Interactives`、`roti-gnss-ml` | TEC→ROT→ROTI 或看图 |
 | 闪烁仿真 | `gnss-scintillation-simulator`、`gnss-scintillation-simulator_2-param` | 无实测强闪烁时做信号层教学 |
-| 闪烁处理 / 指标 | `scintkit`、`BiScEF`、`OASIS`、`OASIS-ohm1122`、`IonoMoni`、`scintill-ai`、`gnssutils`、`M_ISSION` | 指标计算与监测流 |
+| 闪烁处理 / 指标 | `scintkit`、`BiScEF`、`OASIS`、`IonoMoni`、`scintill-ai`、`gnssutils`、`M_ISSION` | 指标计算与监测流 |
 | 闪烁数据 | `ismr_downloader`；`SbfParser`（SBF/ISMR 块） | 拉/解析专用监测数据 |
 | 可视化灵感 | `Ionospheric-Scintillation-Maps-and-PDOP` | 闪烁与几何联合看图 |
 | TEC 前置 | `gnss-tec`、`pygnss-tec`、`tec-suite`、`Seemala-GPS-TEC` | 给 ROTI 提供 STEC |

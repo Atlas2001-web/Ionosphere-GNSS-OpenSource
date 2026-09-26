@@ -1,5 +1,5 @@
 # GNSS 数据与格式 / GNSS Data I/O
-> **140** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **139** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品下载——所有解算的上游。
 
@@ -624,7 +624,6 @@ nav-solutions / rtk-rs 生态的 RINEX→BINEX CLI（MPL-2.0，Rust）。便于�
 | [rinex](https://github.com/nav-solutions/rinex) | rinex：Rust RINEX 解析与 RINEX-Cli | Rust | 126 | 🏷️ 个人社区 核心 |
 | [RinexReader](https://github.com/aaronboda24/RinexReader) | RinexReader：C++ RINEX 2/3 读取库 | C++ | 38 | 🏷️ 高校实验室 |
 | [READ_GNSS](https://github.com/dzd9798/READ_GNSS) | READ_GNSS：MATLAB 读 RINEX/IONEX 等 GNSS 文件 | MATLAB | 10 | 🏷️ 个人社区 |
-| [GNSSNexus-rinex](https://github.com/GNSSNexus/rinex) | GNSSNexus-rinex：Rust RINEX 读写组件 | Rust | — | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -655,13 +654,6 @@ GeoRust/nav-solutions 系 RINEX 库，附 RINEX-Cli，可做质检、SPP/PPP、C
 语言：MATLAB · 许可：— · 星标约：10 · 宿主：github
 
 在 MATLAB 中读入常见 GNSS 相关文件（含 RINEX、IONEX 等），降低自写解析器的成本，方便后续 TEC 或定位实验。适合已有 MATLAB 工作流的学生课题组。功能广度与健壮性不如 georinex、gnsstk；大型工程或多星座新格式建议仍用专门 IO 库并做交叉校验。遇到新 RINEX 版本时应抽检字段再批量入库。
-
-#### [GNSSNexus-rinex](https://github.com/GNSSNexus/rinex)  
-*🏷️ 个人社区*
-
-语言：Rust · 许可：Apache-2.0 · 星标约：— · 宿主：github
-
-GNSSNexus 下的 RINEX 组件，适合特定工具链内使用。选型时与 georinex、nav-solutions/rinex 比较维护活跃度与格式版本覆盖。
 
 ## RINEX工具
 

@@ -1,5 +1,5 @@
 # 软件接收机与信号 / GNSS-SDR
-> **77** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **76** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 从 IQ/采样到 PVT 的软件接收机，以及信号仿真与监控工具。
 
@@ -544,18 +544,10 @@ VHDL 代码用于生成 GPS L1 C/A 以及 Galileo E1OS、E5 的 PRN 与无数据
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [LEOGPS](https://github.com/sammmlow/LEOGPS) | LEOGPS：LEO 星载 GPS/相对导航 Python 包 | Python | 88 | 🏷️ 高校实验室 |
 | [hardware](https://github.com/oresat/oresat-gps-hardware) | oresat-gps-hardware：立方星 SDR GPS 接收硬件 | Makefile | 33 | 🏷️ 高校实验室 |
 | [oresat-gps-software](https://github.com/oresat/oresat-gps-software) | oresat-gps-software：OreSat 立方星 GPS 接收机软件 | Python | 22 | 🏷️ 高校实验室 |
 
 ### 详细说明
-
-#### [LEOGPS](https://github.com/sammmlow/LEOGPS)  
-*🏷️ 高校实验室*
-
-语言：Python · 许可：MIT · 星标约：88 · 宿主：github
-
-服务 LEO 星载 GPS 与编队相对导航仿真/处理。适合航天器导航课与前期仿真。地面测地 PPP 与实时 RTK 非其主场。
 
 #### [hardware](https://github.com/oresat/oresat-gps-hardware)  
 *🏷️ 高校实验室*

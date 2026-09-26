@@ -1,5 +1,5 @@
 # 电离层 / Ionosphere
-> **300** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **298** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
 
@@ -1265,8 +1265,7 @@ KNMI 在 Swarm-VIP-Dynamic（UiO/Birmingham/INGV/DLR/KNMI）合作中的代码�
 | [CARP-Average-Profile](https://ulcar.uml.edu/SoftwareUtilities/CARP/) | CARP-Average-Profile：测高仪平均代表剖面计算 | Fortran | — | 🏷️ 高校实验室 |
 | [Drift-X](https://ulcar.uml.edu/Drift-X.html) | Drift-X：Digisonde 漂移数据可视化与分析（Java） | Java | — | 🏷️ 高校实验室 |
 | [IMSP-MGS](https://essr.esa.int/project/ionosphere-modular-software-package-imsp-mgs) | IMSP-MGS：GNSS-R/SAR/雷达测深电离层效应仿真（ESA） | unknown | — | 🏷️ 官方 |
-| [IonKit-NH](https://github.com/ohm1122/IonKit-NH) | IonKit-NH：MATLAB 电离层自然灾害 TID 检测工具包（fork） | MATLAB | — | 🏷️ 个人社区 ★ |
-| [IonKit-NH-tanggdut](https://github.com/tanggdut/IonKit-NH) | IonKit-NH-tanggdut：IonKit-NH 原作者上游仓 | MATLAB | — | 🏷️ 个人社区 ★ |
+| [IonKit-NH](https://github.com/tanggdut/IonKit-NH) | IonKit-NH：MATLAB 多系统 GNSS TEC 自然灾害电离层扰动检测工具包（原作者仓） | MATLAB | — | 🏷️ 个人社区 ★ |
 | [IonTools](https://github.com/rumkex/IonTools) | IonTools：电离层分析辅助小工具（C++） | C++ | — | 🏷️ 个人社区 ★ |
 | [NHPC-TrueHeight](https://ulcar.uml.edu/SoftwareUtilities/NHPC/) | NHPC：测高仪迹线真高剖面反演（Digisonde/ARTIST） | Fortran/C | — | 🏷️ 高校实验室 |
 | [NICT-Ionosonde-Data](https://wdc.nict.go.jp/Ionosphere/index.html) | NICT 日本测高仪（ionosonde）观测数据入口 | data-portal | — | 🏷️ 官方 |
@@ -1346,19 +1345,12 @@ UMLCAR 发布的 Digisonde 漂移（DDA）数据查看器，当前发行约 1.2.
 
 ONERA/RDA/IEEC 在 ESA TDE 框架下开发、经 ESSR 发布的 Ionosphere Modular Software Package，用于仿真 GNSS-R、SAR 与雷达测深等任务几何及 30 MHz–3 GHz 主要电离层效应。适合任务设计与电离层误差敏感性分析，而非地面 GNSS TEC 产品流水线。源码经 ESSR git 提供，许可为 ESA Community License v2.4 Strong Copyleft；下载需 ESSR 账号。页面 HTTP 200。
 
-#### [IonKit-NH](https://github.com/ohm1122/IonKit-NH)  
+#### [IonKit-NH](https://github.com/tanggdut/IonKit-NH)  
 *🏷️ 个人社区 ★*
 
 语言：MATLAB · 许可：GPL-3.0 · 星标约：— · 宿主：github
 
-tanggdut/IonKit-NH 的 fork（维护者星标种子），仓内同样只有 IonKit-NH.zip、用户手册和 README，zip 与上游完全相同。工具包用 MATLAB 处理 GPS/GLONASS/Galileo/BDS 双频观测求 TEC，生成时间-距离图和二维 TEC 扰动图，用于识别地震、海啸、火山喷发引起的电离层扰动。更新与引用以上游为准。
-
-#### [IonKit-NH-tanggdut](https://github.com/tanggdut/IonKit-NH)  
-*🏷️ 个人社区 ★*
-
-语言：MATLAB · 许可：GPL-3.0 · 星标约：— · 宿主：github
-
-IonKit-NH 的原作者仓（Tang L.），MATLAB 工具包，用 GPS/GLONASS/Galileo/BDS 双频组合求 TEC，生成时间-距离图和二维 TEC 扰动图，检测地震、海啸、火山喷发激发的行进式电离层扰动。代码以 IonKit-NH.zip 分发（18 个 .m 文件加示例 RINEX 与 TEC 数据），用法见用户手册；使用请引用 Tang 2024（Earthquake Research Advances）。ohm1122 版是它的 fork。
+IonKit-NH 的原作者仓（Tang L.），MATLAB 工具包，用 GPS/GLONASS/Galileo/BDS 双频组合求 TEC，生成时间-距离图和二维 TEC 扰动图，检测地震、海啸、火山喷发激发的行进式电离层扰动。代码以 IonKit-NH.zip 分发（18 个 .m 文件加示例 RINEX 与 TEC 数据），用法见用户手册；使用请引用 Tang 2024（Earthquake Research Advances）。ohm1122/IonKit-NH 是它的 fork（维护者星标来源），自 2024-05 复制后没有任何新提交，已并入本条不再单列。
 
 #### [IonTools](https://github.com/rumkex/IonTools)  
 *🏷️ 个人社区 ★*
@@ -1419,7 +1411,7 @@ Wakkanai、Kokubunji、Yamagawa、Okinawa 等日本测高仪数字化资料入�
 | [IRI-2012-package](https://irimodel.org/IRI-2012/) | IRI-2012-package：官方 Fortran 包（含轨道剖面示例） | Fortran | — | 🏷️ 官方 |
 | [IRI-2016-package](https://irimodel.org/IRI-2016/) | IRI-2016-package：官方 Fortran 源码与系数目录 | Fortran | — | 🏷️ 官方 |
 | [IRI-2026-package](https://irimodel.org/IRI-2026/) | IRI-2026-package：官方最新 Fortran 源码包 | Fortran | — | 🏷️ 官方 核心 |
-| [IRI-COMMON-FILES](https://irimodel.org/COMMON_FILES/) | IRI-COMMON-FILES：各版 IRI 共用系数目录 | Fortran | — | 🏷️ 官方 核心 |
+| [IRI-COMMON-FILES](https://irimodel.org/COMMON_FILES/) | IRI-COMMON-FILES：各版 IRI 共用系数目录 | — | — | 🏷️ 官方 核心 |
 | [IRI-indices](https://irimodel.org/indices/) | IRI-indices：IRI 官方太阳/地磁指数文件发布页 | — | — | 🏷️ 官方 |
 | [IRI-MATLAB-FileExchange](https://www.mathworks.com/matlabcentral/fileexchange/34863-international-reference-ionosphere-iri-model) | IRI-MATLAB：官方指向的 File Exchange 封装 | MATLAB | — | 🏷️ 官方 核心 |
 | [IRI-Plas-SPIM-IZMIRAN](https://www.izmiran.ru/ionosphere/weather/grif/SPIM/) | IRI-Plas/SPIM：IZMIRAN 等离子体层扩展 IRI Fortran | Fortran | — | 🏷️ 官方 |
@@ -1522,7 +1514,7 @@ irimodel.org 上标注日期最新的 IRI Fortran 发行目录，工作组持续
 #### [IRI-COMMON-FILES](https://irimodel.org/COMMON_FILES/)  
 *🏷️ 官方 核心*
 
-语言：Fortran · 许可：— · 星标约：— · 宿主：official_site
+语言：— · 许可：— · 星标约：— · 宿主：official_site
 
 irimodel 写明：除版本包外通常还要 COMMON FILES（若 zip 未打进包内）。缺公共系数时编译或运行常失败。搭本地 IRI 时与具体版本目录、最新 INDICES 一起下载；不要只克隆 GitHub 包装而漏官方公共文件。
 
@@ -1971,7 +1963,6 @@ SpaceML 维护的电离层预报代码与笔记本，强调时间融合 Transfor
 | [TITIPy](https://github.com/pignalberi/TITIPy) | Swarm 顶部电离层 RODI/ROTI/ROTEI（Python） | Python | 8 | 🏷️ 高校实验室 |
 | [Ionospheric-Scintillation-Maps-and-PDOP](https://github.com/AlexandraKoulouri/Ionospheric-Scintillation-Maps-and-PDOP) | Ionospheric-Scintillation-Maps-and-PDOP：闪烁成像与 PDOP 影响 | MATLAB | 5 | 🏷️ 高校实验室 |
 | [gnssutils](https://github.com/ljlamarche/gnssutils) | 地基 GNSS 闪烁数据清洗与指标计算工具 | Python | 3 | 🏷️ 个人社区 ★ |
-| [OASIS-ohm1122](https://github.com/ohm1122/OASIS) | OASIS-ohm1122：OASIS 闪烁/ROTI 相关用户星标副本 | Python | — | 🏷️ 个人社区 ★ |
 | [Okoh-MATLAB-ROT-ROTI](https://doi.org/10.5281/zenodo.7913105) | Okoh-MATLAB-ROT-ROTI：TEC 序列算 30s ROT 与 5min ROTI | MATLAB | — | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -1995,7 +1986,7 @@ C++ 实现多星座电离层监测指标（ROTI、AATR、STEC/VTEC），偏近�
 
 语言：Python · 许可：CC-BY-NC-4.0 · 星标约：16 · 宿主：github
 
-Open-Access System for Ionospheric Studies：从 GNSS 观测算 ROTI、ΔTEC、SIDX 等，做扰动与闪烁相关监测。适合空间天气事件个例与台站网指标产品。高采样率接收机原始闪烁指数（S4/σφ）仍需专用接收机或仿真器。
+Open-Access System for Ionospheric Studies：从 GNSS 观测算 ROTI、ΔTEC、SIDX 等，做扰动与闪烁相关监测。适合空间天气事件个例与台站网指标产品。高采样率接收机原始闪烁指数（S4/σφ）仍需专用接收机或仿真器。ohm1122/OASIS 是本仓的 fork（维护者星标），无独立提交且落后上游 28 个提交，已并入本条。
 
 #### [scintill-ai](https://github.com/viventriglia/scintill-ai)  
 *🏷️ 高校实验室*
@@ -2024,13 +2015,6 @@ INGV/ESA INTENS 的 Swarm 顶部电离层湍流指数工具（Python）：从 La
 语言：Python · 许可：GPL-3.0 · 星标约：3 · 宿主：github
 
 面向地基 GNSS 闪烁接收机数据流的实用函数集，便于清洗与指标计算。适合已有 ISMR/闪烁观测的课题组。GPL 许可需留意；不替代通用 TEC/GIM 或业务闪烁预警系统。
-
-#### [OASIS-ohm1122](https://github.com/ohm1122/OASIS)  
-*🏷️ 个人社区 ★*
-
-语言：Python · 许可：CC-BY-NC-4.0 · 星标约：— · 宿主：github
-
-用户星标的 OASIS 相关仓库，实际算法与数据接口以 giorgiopicanco/OASIS 上游为准。引用论文时请核对 canonical URL。
 
 #### [Okoh-MATLAB-ROT-ROTI](https://doi.org/10.5281/zenodo.7913105)  
 *🏷️ 高校实验室*

@@ -1,5 +1,5 @@
 # 精密定位 / Precise Positioning
-> **103** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **104** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 SPP、DGPS、RTK/PPK、PPP/PPP-AR、网络 RTK 客户端，以及因子图等现代优化定位。
 
@@ -542,9 +542,17 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [LEOGPS](https://github.com/sammmlow/LEOGPS) | LEOGPS：LEO 星载 GPS/相对导航 Python 包 | Python | 88 | 🏷️ 高校实验室 |
 | [goGPS_Java](https://github.com/goGPS-Project/goGPS_Java) | goGPS Java：JVM 版 GNSS 观测处理 | Java | 66 | 🏷️ 高校实验室 |
 
 ### 详细说明
+
+#### [LEOGPS](https://github.com/sammmlow/LEOGPS)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：MIT · 星标约：88 · 宿主：github
+
+服务 LEO 星载 GPS 与编队相对导航仿真/处理。适合航天器导航课与前期仿真。地面测地 PPP 与实时 RTK 非其主场。
 
 #### [goGPS_Java](https://github.com/goGPS-Project/goGPS_Java)  
 *🏷️ 高校实验室*
