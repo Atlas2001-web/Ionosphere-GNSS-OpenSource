@@ -150,7 +150,7 @@ Millipede 是面向 RTK/CORS 场景的开源 NTRIP caster（C，BSD-3-Clause）�
 #### [nmea-msgs](https://github.com/ros-drivers/nmea_msgs)  
 *🏷️ 官方*
 
-语言：CMake · 许可：— · 星标约：38 · 宿主：github
+语言：CMake · 许可：BSD (package.xml; clause variant unspecified) · 星标约：38 · 宿主：github
 
 ros-drivers 组织维护的 nmea_msgs，定义与 NMEA 相关的 ROS 消息，方便驱动、导航与录包节点交换 GNSS 语句。适合机器人接入 GNSS 接收机。只提供消息契约，不含语句解析与 PVT；解析需另接驱动或 nmea_navsat_driver 一类包。
 
@@ -199,7 +199,7 @@ go-gnss 组织的 RTCM 解析库，便于在 Go 服务中解码差分电文。Ap
 #### [NTRIPcaster-python](https://github.com/Rampump/NTRIPcaster)  
 *🏷️ 个人社区*
 
-语言：Python · 许可：NOASSERTION · 星标约：20 · 宿主：github
+语言：Python · 许可：Apache-2.0 (README; LICENSE file is a non-verbatim variant) · 星标约：20 · 宿主：github
 
 用 Python 实现的简易 NTRIP caster，把 GNSS 观测或 RTCM 改正流转发给客户端，便于实验室或农场级自建播发。适合协议学习与小流量试验；高并发、鉴权审计与生产加固不如 BKG/Millipede 一类实现，公网使用需自行评估安全与稳定性。
 
@@ -234,7 +234,7 @@ Python 对接 NTRIP Caster/客户端传 GNSS 流，适合接 RTCM 改正做原�
 #### [AgOpenNtripCaster](https://github.com/AgOpenGPS-Official/AgOpenNtripCaster)  
 *🏷️ 个人社区*
 
-语言：C# · 许可：— · 星标约：10 · 宿主：github
+语言：C# · 许可：README: MIT (badge says GPL-3.0; no LICENSE file) · 星标约：10 · 宿主：github
 
 AgOpenGPS-Official 组织下的 NTRIP 播发端（C#），面向农业自动驾驶与 DIY CORS。适合农机联调。按 catalog 政策记为个人社区（社区 DIY）；公网部署需自行处理账号、带宽与安全加固。
 
@@ -476,7 +476,7 @@ Anubis 免费档下载入口，提供 Linux 预编译与 GPL-3 源码，覆盖�
 #### [crz2rnx](https://github.com/zhufengGNSS/crz2rnx)  
 *🏷️ 高校实验室*
 
-语言：C · 许可：— · 星标约：9 · 宿主：github
+语言：C · 许可：GSI RNXCMP licence (no source modification without GSI consent; AS-IS free redistribution) · 星标约：9 · 宿主：github
 
 整理 Hatanaka 压缩相关的 RNX2CRX/CRX2RNX 程序，方便在无外网环境解压紧凑 RINEX。适合镜像官方 RNXCMP 流程与批量预处理。请核对与国土地理院官方包版本一致性；长期应以官方发布为准，本仓库更适合作为备份或教学拷贝。
 
@@ -590,7 +590,7 @@ nav-solutions / rtk-rs 生态的 RINEX→BINEX CLI（MPL-2.0，Rust）。便于�
 #### [GDDS](https://github.com/LECUT/GDDS)  
 *🏷️ 个人社区*
 
-语言：Python · 许可：— · 星标约：13 · 宿主：github
+语言：Python · 许可：GPL-3.0 · 星标约：13 · 宿主：github
 
 分模块下载全球 IGS、后处理产品、区域 CORS、时间序列等，并含解压。适合数据中心助理式抓取。维护活跃度与镜像可用性需自行跟踪。
 
@@ -730,7 +730,7 @@ NLS/FGI（nlsfi）维护的 Galileo High Accuracy Service 解码库，支持从 
 #### [GHASP-HAS-decoding](https://github.com/borioda/HAS-decoding)  
 *🏷️ 个人社区*
 
-语言：Python · 许可：see upstream README · 星标约：20 · 宿主：github
+语言：Python · 许可：— · 星标约：20 · 宿主：github
 
 社区 Python 工具将接收机记录的 E6B/HAS 相关二进制流转为四类 CSV 改正，便于科研语言加载与 PPP 试验。面向解析与分析而非完整定位引擎。更新节奏与许可条款以仓库为准；生产接入可对照官方 HASlib 或嵌入式 HASPPP。
 
@@ -815,7 +815,7 @@ MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实�
 #### [PyRINEX](https://github.com/geumjin99/PyRINEX)  
 *🏷️ 高校实验室*
 
-语言：Python · 许可：— · 星标约：16 · 宿主：github
+语言：Python · 许可：Apache-2.0 · 星标约：16 · 宿主：github
 
 面向 RINEX 2/3 的 Python 包，支持批处理、多路径与周跳等质量相关分析，可作为 TEQC/Anubis 之外的脚本化 QC 选项。适合自动化质控流水线。指标定义与报告格式因版本而异，正式归档前请与 Anubis/GFZRNX 交叉核对。
 

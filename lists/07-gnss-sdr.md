@@ -54,14 +54,14 @@
 #### [GNSS-SDRLIB](https://github.com/taroz/GNSS-SDRLIB)  
 *🏷️ 个人社区*
 
-语言：C · 许可：— · 星标约：536 · 宿主：github
+语言：C · 许可：GPL-2.0-or-later · 星标约：536 · 宿主：github
 
 广为人知的 C 语言 GNSS SDR 库，覆盖采样到接收处理主要环节，作者另有可见性分析等工具。与 gnss-sdr（C++/GNU Radio 风格）生态不同；Windows/Linux 构建与前端驱动按上游 README 选择。
 
 #### [BeagleSDRGPS](https://github.com/jks-prv/Beagle_SDR_GPS)  
 *🏷️ 个人社区*
 
-语言：C++ · 许可：— · 星标约：521 · 宿主：github
+语言：C++ · 许可：LGPL-2.0-or-later (KiwiSDR code) + GPL-3.0-or-later (GPS receiver code) · 星标约：521 · 宿主：github
 
 历史 KiwiSDR 上游核心，Web 可访问短波接收并含软件 GPS 相关能力。适合考古与教学对照。仓库已归档，新部署请评估社区分叉与硬件可用性。
 

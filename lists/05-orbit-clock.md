@@ -145,7 +145,7 @@ C++ 实现三套偏差模式：DCB（码偏差与 VTEC 球谐联立）、UPD 与
 #### [MCOSB](https://github.com/GCCLib/MCOSB)  
 *🏷️ 高校实验室*
 
-语言：MATLAB · 许可：see upstream README · 星标约：11 · 宿主：github
+语言：MATLAB · 许可：— · 星标约：11 · 宿主：github
 
 面向多系统多频码观测的 OSB 估计脚本集，含读观测、提取多通道偏差、估计与分析等步骤，并涉及 SINEX 类偏差文件。用户需自行准备测站网观测数据。适合偏差产品研究与教学；生产级 OSB 仍以 IGS/各分析中心产品为主，本库偏算法复现。
 

@@ -85,7 +85,7 @@ HKUST Aerial Robotics 发布的优化式多传感器状态估计器，在 VINS-M
 #### [GVINS-WHU](https://github.com/zhangwhu/GVINS)  
 *🏷️ 高校实验室*
 
-语言：C++ · 许可：— · 星标约：12 · 宿主：github
+语言：C++ · 许可：GPL-3.0-or-later · 星标约：12 · 宿主：github
 
 在 PPP-RTK/INS 基础上再融合视觉观测，面向复杂遮挡环境的连续定位。与 HKUST-Aerial-Robotics/GVINS（现名 GVINS-HKUST）是不同项目，论文、数据集与作者均不相同；引用与复现前核对仓库说明。
 

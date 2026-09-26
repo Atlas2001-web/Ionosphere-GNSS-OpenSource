@@ -213,7 +213,7 @@ taroz 针对 Google Smartphone Decimeter Challenge 2023 的公开代码与思路
 #### [GNSS_MobileCalculator](https://github.com/RogerioDoCarmo/GNSS_MobileCalculator)  
 *🏷️ 个人社区*
 
-语言：Java · 许可：NOASSERTION · 星标约：15 · 宿主：github
+语言：Java · 许可：— · 星标约：15 · 宿主：github
 
 在 Android 上读取 GNSS 原始伪距并实现标准单点定位（SPS）流程的开源示例（Java）。适合教学演示「手机原始测量→位置」链路。精度与完整性受手机芯片、占空比与 API 限制，不能替代测绘级 RTK；与 GPSTest、Google GNSS Logger 等工具互补。
 

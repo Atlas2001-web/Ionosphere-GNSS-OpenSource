@@ -364,7 +364,7 @@ Space Weather Modeling Framework 组件之一，描述高纬电离层电动力�
 #### [SAMI3-3.22-CCMC-mirror](https://github.com/sylee918/SAMI3)  
 *🏷️ 高校实验室*
 
-语言：Fortran · 许可：unknown · 星标约：0 · 宿主：github
+语言：Fortran · 许可：— · 星标约：0 · 宿主：github
 
 从 CCMC/Zenodo 体系搬运的 SAMI3-3.22 Fortran 源码镜像，方便 git clone。正式引用仍建议指向 CCMC 模型页或 Zenodo DOI。局限：非官方持续维护仓；体积大；配置与运行说明需回到 CCMC 文档。
 
@@ -895,7 +895,7 @@ space-physics 组织（Michael Hirsch 等）发布的 Python 工具集，Apache-
 #### [pytiegcm](https://github.com/asher-pembroke/pytiegcm)  
 *🏷️ 个人社区*
 
-语言：Python · 许可：unknown · 星标约：3 · 宿主：github
+语言：Python · 许可：MIT · 星标约：3 · 宿主：github
 
 小型 Python reader，方便把 TIE-GCM netCDF 读进分析脚本。适合不想上完整 Kamodo/gcmprocpy 时做快速检查。局限：功能远少于 Kamodo；维护不活跃（约 2022）；变量覆盖需自测。
 
@@ -1943,9 +1943,9 @@ Frontier Development Lab 电离层-热层孪生项目仓库，含 IonCast ConvLS
 #### [ionopy](https://github.com/spaceml-org/ionopy)  
 *🏷️ 高校实验室*
 
-语言：Python · 许可：see upstream README · 星标约：4 · 宿主：github
+语言：Python · 许可：— · 星标约：4 · 宿主：github
 
-SpaceML 维护的电离层预报代码与笔记本，强调时间融合 Transformer，被 IonCast/Heliolab 仓库引用为较新实现。适合跟深度学习 TEC/电离层序列模型。许可证未在 GitHub 标 SPDX，使用前请读仓库说明；数据与训练配置需自备。
+SpaceML 维护的电离层预报代码与笔记本，强调时间融合 Transformer，被 IonCast/Heliolab 仓库引用为较新实现。适合跟深度学习 TEC/电离层序列模型。仓库与 README 均未声明许可证，使用或再分发前应先联系作者；数据与训练配置需自备。
 
 #### [IonoBench](https://github.com/Mert-chan/IonoBench)  
 *🏷️ 高校实验室*
@@ -1964,7 +1964,7 @@ SpaceML 维护的电离层预报代码与笔记本，强调时间融合 Transfor
 #### [SpatioTECformer](https://github.com/research1011/SpatioTECformer)  
 *🏷️ 个人社区*
 
-语言：Python · 许可：see upstream README · 星标约：0 · 宿主：github
+语言：Python · 许可：no licence granted (README: research use, contact author) · 星标约：0 · 宿主：github
 
 把多尺度卷积、自适应融合与 Transformer 编码器拼成 71×73 网格 TEC 预报流水线，模块拆成 model/enhanced_cnn 等文件，代码量小但完整可跑。适合读论文式复现。未标 SPDX 许可证；训练依赖作者 HDF5 特征文件，需自备或按 README 路径改。
 
@@ -1987,9 +1987,9 @@ SpaceML 维护的电离层预报代码与笔记本，强调时间融合 Transfor
 #### [IonoMoni](https://github.com/qiliu2025/IonoMoni)  
 *🏷️ 个人社区 ★*
 
-语言：C++ · 许可：— · 星标约：37 · 宿主：github
+语言：C++ · 许可：GPL-3.0 · 星标约：37 · 宿主：github
 
-C++ 实现多星座电离层监测指标（ROTI、AATR、STEC/VTEC），偏近实时监测。适合需要编译型性能的台站软件。文档与许可信息需自行确认；科研绘图可再接 Python 可视化。
+C++ 实现多星座电离层监测指标（ROTI、AATR、STEC/VTEC），偏近实时监测。适合需要编译型性能的台站软件。README 声明以 GPLv3 发布；科研绘图可再接 Python 可视化。
 
 #### [gnss-scintillation-simulator](https://github.com/cu-sense-lab/gnss-scintillation-simulator)  
 *🏷️ 高校实验室*

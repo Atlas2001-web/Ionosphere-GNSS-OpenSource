@@ -18,7 +18,7 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 
 语言：Python · 许可：— · 星标约：606 · 宿主：github
 
-香港理工 IPNL 等发布的城市峡谷多传感器数据，含真值，是 GNSS/INS/视觉融合算法常用基准。适合算法评测与论文对比。本身不是解算软件；使用请遵守数据集许可与引用要求。
+香港理工 IPNL 等发布的城市峡谷多传感器数据，含真值，是 GNSS/INS/视觉融合算法常用基准。适合算法评测与论文对比。本身不是解算软件；仓库未声明许可（README 的 License 节只列联系人），使用请遵守引用要求并事先与作者确认。
 
 #### [awesome-gins-datasets](https://github.com/i2Nav-WHU/awesome-gins-datasets)  
 *🏷️ 高校实验室 核心*

@@ -43,7 +43,7 @@ Automatic PPP Analysis Software-Türkiye（APAS-TR）处理 GPS/GLONASS/Galileo/
 #### [RTKLIB-B2b](https://github.com/UCAS-Liuchunbo/RTKLIB-B2b)  
 *🏷️ 高校实验室 核心*
 
-语言：C · 许可：— · 星标约：74 · 宿主：github
+语言：C · 许可：GPL-3.0 · 星标约：74 · 宿主：github
 
 基于 RTKLIB 改造的北斗 PPP-B2b 解码与定位工具包，填补开源社区在 B2b 实操链路上的缺口。适合对照 ICD 评估收敛、精度与可用性。可与 floating0516/RTPPP_B2b、GCCLib/B2bLIB、NavDecoder 并列试验；注意电文版本、接收机原始流格式与许可声明是否满足你的使用场景。
 
@@ -100,7 +100,7 @@ JPL Near Earth Tracking 维护的 GipsyX 门户，提供软件发行说明、轨
 #### [CLASLIB](https://github.com/QZSS-Strategy-Office/claslib)  
 *🏷️ 官方 核心*
 
-语言：C · 许可：see upstream (derived RTKLIB/GSILIB) · 星标约：56 · 宿主：github
+语言：C · 许可：BSD-2-Clause (v0.6.0 and earlier per README; later versions unstated) · 星标约：56 · 宿主：github
 
 CLAS 测试库解码 Compact SSR（RTCM MT4073），提供 SSR2OSR、SSR2OBS 与事后 RNX2RTKP 等 PPP-RTK/VRS 工具链。源自 RTKLIB 与 GSILIB，由准天顶卫星系统战略室维护。适合日本境内厘米级增强服务研究与消息转换；部署前须阅读各版本内容差异与官方可靠性免责。
 
@@ -549,7 +549,7 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 #### [goGPS_Java](https://github.com/goGPS-Project/goGPS_Java)  
 *🏷️ 高校实验室*
 
-语言：Java · 许可：— · 星标约：66 · 宿主：github
+语言：Java · 许可：LGPL-3.0-or-later · 星标约：66 · 宿主：github
 
 goGPS 的 Java 实现，便于嵌进 JVM 应用。功能气质同 MATLAB 版但生态不同。移动端/服务器集成可考虑；算法试验仍有人偏 MATLAB 版。
 
@@ -564,7 +564,7 @@ goGPS 的 Java 实现，便于嵌进 JVM 应用。功能气质同 MATLAB 版但�
 #### [goGPS_MATLAB](https://github.com/goGPS-Project/goGPS_MATLAB)  
 *🏷️ 高校实验室 ★ 核心*
 
-语言：MATLAB · 许可：— · 星标约：327 · 宿主：github
+语言：MATLAB · 许可：GPL-3.0 · 星标约：327 · 宿主：github
 
 长期发展的 MATLAB GNSS 处理包，相对定位与低成本设备场景见长，教科研友好。适合实验室快速改算法。部署与授权不如 C/C++ 开源引擎；Java 版见 goGPS_Java。
 
@@ -634,7 +634,7 @@ AILocAR 的 Neural Ranging Correction，结合可微移动地平线定位做测�
 #### [GraphGNSSLib](https://github.com/weisongwen/GraphGNSSLib)  
 *🏷️ 高校实验室 核心*
 
-语言：C · 许可：— · 星标约：628 · 宿主：github
+语言：C · 许可：GPL-3.0 · 星标约：628 · 宿主：github
 
 用因子图做 GNSS 定位与 RTK，把现代图优化引入经典差分流程。适合研究城市峡谷鲁棒性与 FGO+GNSS。传统基站网运维与播发不是其主场；LEO 扩展见 GraphGNSSLib_LEO。
 
@@ -812,7 +812,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 #### [MG_APP](https://github.com/XiaoGongWei/MG_APP)  
 *🏷️ 高校实验室*
 
-语言：C++ · 许可：— · 星标约：98 · 宿主：github
+语言：C++ · 许可：GPL-3.0 · 星标约：98 · 宿主：github
 
 与 GPS Solutions 论文配套的多 GNSS 定位软件，便于对照文章复现。适合学术复现。工程支持与持续更新取决于作者精力。
 

@@ -201,7 +201,7 @@ Larson 团队 Fortran 工具，翻译/读取 GPS RINEX 并提取 SNR，服务反
 #### [GMR-Water](https://github.com/GRseRG-CUMTB/GMR-Water)  
 *🏷️ 高校实验室*
 
-语言：MATLAB · 许可：see upstream README · 星标约：7 · 宿主：github
+语言：MATLAB · 许可：— · 星标约：7 · 宿主：github
 
 面向 GNSS 多路径反射信号的水位检索实现，提供从观测到水位产品的处理流程，适合水文与近岸监测试验。许可与依赖以仓库说明为准。站点几何、天线环境与 SNR 质量对结果影响大；与通用 GNSS-IR 套件（如 gnssrefl、GIRAS）对照选型时可看其水文专项流程与示例。
 
