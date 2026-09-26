@@ -184,3 +184,4 @@ TLE/SP3 → **Orekit（帧/插值/积分）** → 卫星 ITRF 坐标 → 高度�
 | GUI 任务设计 / 报告 | [gmat](./gmat.md) |
 | Python 原生数值积分 / 估计（不用 JVM） | [tudatpy](./tudatpy.md) |
 | 现成 EKF/UKF 定轨 + SSA 测角（Orekit 11 + gRPC，停更；同算例对照） | [orbdetpy](./orbdetpy.md) |
+| pip 即装的 Rust 内核积分 + 位置观测 EKF 估 Cr（无 GR；同算例 38.0 / 67.0 m，Cr 1.911） | [nyx](./nyx.md) |

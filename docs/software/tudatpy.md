@@ -256,5 +256,6 @@ SP3 / TLE（[data-access](../data-access.md) · [sp3](./sp3.md) · [gnssanalysis
 | TLE → km 级位置 / 过境 | [python-sgp4](./python-sgp4.md)（**别用** tudat `sgp4` 给 GPS） |
 | 严格 IERS 帧 + SP3 解析 + 积分/拟合，一个库全包、EOP 数据包好更新 | [orekit](./orekit.md) |
 | Python/conda 原生积分 + 变分方程 + 估参（多参数、多弧、自定义加速度） | **tudatpy（本文）** |
+| pip 即装的 Rust 内核积分 + 位置观测 EKF 估 Cr（无 GR；同算例 38.0 / 67.0 m，Cr 1.911） | [nyx](./nyx.md) |
 | 精密 SP3 批量比较 / 合并 | [gnssanalysis](./gnssanalysis.md) · [sp3](./sp3.md) |
 | GNSS 测地级 POD | Ginan / GROOPS（专用链） |

@@ -220,4 +220,5 @@ SP3 / TLE（[data-access](../data-access.md#sp3--clk--bias) · [sp3](./sp3.md) �
 | 严格 IERS 帧 + SP3 解析 + 积分 / 拟合估 Cr，持续维护 | [orekit](./orekit.md)（orbdetpy 的内核新版） |
 | Python/conda 原生积分 + 变分方程 + 估参，不用 JVM | [tudatpy](./tudatpy.md) |
 | 现成的 EKF/UKF 滤波定轨、测站 Az/El·RA/Dec 观测、多目标 CAR-MHF（SSA 教学/原型） | **orbdetpy（本文）**——接受停更与 Orekit 11 |
+| pip 即装的 Rust 内核积分 + 位置观测 EKF 估 Cr（无 GR；同算例 38.0 / 67.0 m，Cr 1.911） | [nyx](./nyx.md) |
 | GNSS 测地级 POD | Ginan / GROOPS（专用链） |

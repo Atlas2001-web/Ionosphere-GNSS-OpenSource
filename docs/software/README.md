@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **188 篇**操作手册（合计 **41391 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **189 篇**操作手册（合计 **41622 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -213,6 +213,7 @@
 | 186 | [ubx-mga-rinex-ephemeris.md](./ubx-mga-rinex-ephemeris.md) | RINEX 广播星历 → u-blox UBX-MGA 辅助星历（Python `convert_eph.py`：GPS/QZSS/GLO/GAL-EPH + HEALTH，头有参数时附 IONO/UTC/时间偏差；`ubx_tool.py` 串口灌注/复位/TTFF/离线 parse；≠ AssistNow 服务 / UBX 解码库；不含 BDS） | 206 | **已短硬** · 2026-09-26 02:35–02:46 EDT；main **`eb0c6e8`**（2026-04-18，无 tag/PyPI）/MIT/★6/Python ≥3.10；pytest **337 passed**（README 仍写 253）；BKG `BRDC00WRD_R_20262680000` → **95 帧 6856 B**（GPS 32/GAL 30/GLO 26/QZSS 5 + 2×HEALTH；BKG 头无 IONO/UTC），pyubx2 1.3.7 解码 G01/E05 共 22 字段误差绝对值 ≤ **3.4×10⁻⁴ LSB**；GLO R01 x/y/z/τ 一致；坑：默认模式无视 `--max-age`（选到 37.8 h 旧 G10）、不查过期（2020 ESBC exit 0）、RINEX 4 CNAV 误编（21/32 GPS health≠0）、georinex Galileo 全 NaN → ESBC 0 帧 GAL、BDS/SBAS/NavIC 静默丢、坏字段静默回退/饱和、pyubx2 需 `msgmode=SET` 且 af1 显示四舍五入 14%；写入接收机/TTFF **未在真接收机测试** |
 | 187 | [tec-suite.md](./tec-suite.md) | SIMuRG/gnss-lab：RINEX 2/3 观测+广播星历 → 每站每星文本（el/az、卫星 ECEF、`tec.l1l2` 相位 / `tec.p1p2` 码等原始 STEC；**不整平、不扣 DCB、不算 VTEC**；mosgim2 的输入） | 245 | **已短硬** · 2026-09-26 02:15–02:50 EDT；tip **`18465f9`**（2020-11-07）/v0.7.8/GPL-3.0-or-later；源码 + `future` + hatanaka `crx2rnx`；BKG 2024-08-22：WTZA（2.11）31 星、MAS1（3.04）G32/R26；两处本地补丁（3.04 版本登记、L2L 空值跳过：MIZU 全零文件 11→4）；自写整平+DCB（CODE IONEX）+450 km 薄壳 VTEC 对 CODE GIM：WTZA **+0.30±2.05**、MAS1 **−0.21±3.58** TECU（不扣 DCB 偏 12.85）；58 站 7 进程批量 3073 文件/331 MB；坑：`-c` 相对路径、3.04 拒读、Galileo `l1l2`=0、BDS-3 `C5P` 标签、R06/R10/R13/R23 无 G2、IONEX 站 DCB 分系统、经度 0–360 |
 | 188 | [mosgim2.md](./mosgim2.md) | PadArt 开源 GIM：仅用相位差（弧内对最小值做差，消模糊度+DCB）→ 两层薄壳（300/750 km）日固地磁系球谐 + LCP 正值约束 → HDF5 系数（**不写 IONEX**）；吃 tec-suite 输出 | 218 | **已短硬** · 2026-09-26 02:25–02:50 EDT；tip **`fc42e31`**（2023-08-09）/MIT/无 PyPI；Py3.11 + scipy 1.14.1/numpy 2.1.3（requirements 钉 2017 版装不上）+5 处兼容补丁（lemkelcp、`sph_harm`、`np.int`、`decode`、站名表漏逗号 `zambab12`）；58 站 98657 差分观测，单进程 6 m 49 s（6 进程 OOM）；25 幅对 CODE 终版：corr **0.951**/偏差 **−5.58**/RMS **9.67** TECU，赤道带 −8.14/11.55，峰值低 7–26 TECU；[img/](./img/mosgim2-vs-codg-20240822-12ut.png)；作者 2017-002 测试包服务器超时未复现 |
+| 189 | [nyx.md](./nyx.md) | nyx-space Rust 航天动力学库（PyPI `nyx_space` wheel / crate `nyx-space`；ANISE 帧/星历/EOP）：数值积分（球谐+日月+SRP）、位置观测 EKF 定轨估 Cr、导出 OEM/BSP/Parquet；≠ SP3 解析器 / SGP4 / GNSS POD（无 GR、Python 无 BLS、AGPL） | 228 | **已短硬** · 2026-09-26 02:46–02:53 EDT；PyPI **2.6.0**（tag `7452963` 2026-09-12）/crate 2.6.0+anise 0.10.6/AGPL-3.0/★490/Py 3.13.5；wheel 12 s（venv 529 MB）；Rust 最小例 163 s/target 843 MB，@24h 与 Python 同为 67.03 m；PRN 02 同 Orekit 初值 12×12+日月+SRP **38.0 / 67.0 m**（Orekit 41.4 / 75.5，含 GR），无 SRP 57.5 / 107.4 m；EKF 估 Cr 12 h **1.911** / 24 h 1.918（orbdetpy EKF 1.912 / 1.923），回推 t0 再飞外推段 1.73 m；RTS 平滑器输出不可信；坑 14 条 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -389,6 +390,7 @@
 | 严格 IERS 帧 + SP3 插值 + 数值积分/拟合（Java 库，Python 走 orekit_jpype） | [orekit.md](./orekit.md) |
 | Python/conda 原生数值积分 + 变分方程 + 估参（不用 JVM；TLE 别用其 sgp4） | [tudatpy.md](./tudatpy.md) |
 | 现成 EKF/UKF 滤波定轨 + 测站测角/多目标（SSA 原型；Orekit 11 停更，BLS 不估 Cr） | [orbdetpy.md](./orbdetpy.md) |
+| pip 装好即用的 Rust 内核积分 + 位置观测 EKF 估 Cr（不起 JVM；无 GR，Python 无 BLS，AGPL） | [nyx.md](./nyx.md) |
 | 闪烁 ISMR（UNESP API 批量） | [ismr-downloader.md](./ismr-downloader.md) |
 | Swarm/Aeolus 按需切片（须 token） | [viresclient.md](./viresclient.md) |
 | 测高仪 foF2/hmF2 年度（澳/日/GIRO） | [ionosonde-data-downloader.md](./ionosonde-data-downloader.md) |
