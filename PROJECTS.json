@@ -5142,8 +5142,8 @@
     {
       "name": "GRID",
       "url": "https://github.com/mmurrian/GRID",
-      "desc_zh": "研究向 SDR；成熟度与前端绑定因配置而异，非即插即用商用机",
-      "analysis_zh": "定位为成熟、可配置的 GNSS SDR 框架，强调模块灵活与扩展。适合已有软件无线电经验、想换一套接收机架构做实验的人。公开星标与文档相对少，上手与编译成本高于主流项目；对比选型时仍以 gnss-sdr、GNSS-SDRLIB、FGI-GSRx 为常见基线。引入前建议先评估许可证与构建文档是否满足团队需求。",
+      "desc_zh": "仅说明，无代码；研究向 SDR；成熟度与前端绑定因配置而异，非即插即用商用机",
+      "analysis_zh": "仓库仅说明，无代码（只有 README 与一张应用示意图；源码/二进制授权需经 UT Austin 技术商业化办公室或 Locus Lock）。定位为成熟、可配置的 GNSS SDR 框架，强调模块灵活与扩展。适合已有软件无线电经验、想换一套接收机架构做实验的人。公开星标与文档相对少，上手与编译成本高于主流项目；对比选型时仍以 gnss-sdr、GNSS-SDRLIB、FGI-GSRx 为常见基线。引入前建议先评估许可证与构建文档是否满足团队需求。",
       "language": "",
       "license": null,
       "category": "gnss-sdr",
@@ -5155,7 +5155,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "GRID：灵活可扩展 GNSS/GPS 软件定义接收机"
+      "one_liner_zh": "GRID：灵活可扩展 GNSS/GPS 软件定义接收机（仅说明，无代码）"
     },
     {
       "name": "hardware",
