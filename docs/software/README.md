@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **219 篇**操作手册（合计 **50212 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **220 篇**操作手册（合计 **50613 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -244,6 +244,7 @@
 | 217 | [gnssommelier.md](./gnssommelier.md) | EarthScope GNSSommelier：跨 16 个 IGS 中心检索/下载 SP3/CLK/ERP/BIA/IONEX（CLI `gnssommelier search/download/probe` + Python `GNSSClient`，落盘自动解压 + `*_lock.json` sha256）；不在 PyPI，源码装需 `SETUPTOOLS_SCM_PRETEND_VERSION` | 165 | **已短硬** 用法讲解新入库 · 2026-09-26 04:47–05:00 EDT；tag **v0.0.1**=`039d239`/Apache-2.0/★14/gpm-cli **0.1.0**；probe 11/16 CONNECTED（COD 60 s 超时）；JPL FIN SP3 **1293754 B**/289 历元/G31+E29、ERP 422 B；IONEX 9 条全经 CDDIS FTPS 且匿名时好时坏；`GIM` 非法名、`AAA=` 过滤无效、`--to` 线程风暴勿跑 |
 | 218 | [biscef.md](./biscef.md) | Kartverket BiScEF：多机构 GNSS 闪烁数据交换格式（实为 NetCDF4/HDF5 约定，v1.1）；S4/σφ/谱斜率/ROTI/TEC 字段表 + ismr2BiScEF（ISMR→BiScEF）+ 画图脚本；≠ 闪烁计算器/解码库 | 202 | **已短硬** 用法讲解新入库 · 2026-09-26 04:52–05:03 EDT；main `90e6a2b`/MIT/★2/无 PyPI；三读取器 0 差；ISMR 往返 59/65 全等；时间基准 NOR=GPS、FMI/UNB 旧脚本 +27 s；缺测 −1/NaN/0 混用 |
 | 219 | [digisondeindices.md](./digisondeindices.md) | sunipkm/digisondeindices：GIRO DIDBase 测高仪参数（foF2/MUF(D)/hmF2/B0/TEC/CS）按月下载→NetCDF 缓存→xarray；**PyPI 2.1.0 原样失效**（DIDBGetValues 404），附运行时补丁 `didb_fix.py` 改写到 fastchar/getbest | 259 | **已短硬** 用法讲解新入库 · 2026-09-26 05:01–05:07 EDT；2.1.0/master `2a37ab3`/MIT/★2；需补 pytz+dask+pandas<3、Python≥3.12；MHJ45 2022-01-25 05:00 foF2 **2.0**/MUF(D) 6.116/hmF2 308.9/TEC 0.6 TECU 与 curl 原始行一致；2022-01 **8633** 行；当月刷新/forcedownload `NoneType.stem` 崩溃（先 purge）、UTC 以西时区最近 4 h 误判“预测”、跨月重复时刻、nearest 无容差 |
+| 220 | [gim-product-portals.md](./gim-product-portals.md) | GIM/IONEX 各分析中心匿名门户（CAS 汇总镜像、CODE/AIUB S3、UPC、ESA、JPL sideshow；CDDIS 需 Earthdata）、新旧文件名对照、最终/快速/预报/实时实测时延、2024-05-11 各中心对 CODE 逐格点均差/RMS | 399 | **已短硬** · 2026-09-26 05:00–05:10 EDT；对 CODE 面积加权 RMS：IGS 3.30 / WHU 4.40 / JPL 4.99 / CAS 6.71 / UPC 7.54 / ESA 8.88 / EMR 15.77 TECU；ESA 源站同名文件为重处理版；IGN/BKG/WHU/KASI/GSSC 本次不通 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -463,6 +464,7 @@
 | 测高仪参数按时刻直接拿 xarray（Python 客户端，需运行时补丁） | [digisondeindices.md](./digisondeindices.md) |
 | Swarm LP Ne/Te、顶部 TEC、IPIR/IBI/EEF 免注册下载与 flag 过滤（swarm-diss HTTPS、VirES HAPI） | [swarm-data.md](./swarm-data.md) |
 | 高纬 GNSS 闪烁 S4/σφ 实测（CHAIN ISMR，免注册）与 ISMR 62 列定义 | [chain-scintillation.md](./chain-scintillation.md) |
+| 各中心 GIM/IONEX 去哪匿名下载、新旧文件名、出来要等多久、各家差多少 | [gim-product-portals.md](./gim-product-portals.md) |
 | 读/交换多机构闪烁 HDF5 文件（Kartverket/FMI/DTU/UNB 的 BiScEF `.nc`，S4/σφ/ROTI；先核时间基准与缺测值） | [biscef.md](./biscef.md) |
 | SuperDARN 原始数据下载（FRDR RAWACF、Globus/BAS/VT 镜像门槛、sha1+bz2 校验、使用规则） | [superdarn-data.md](./superdarn-data.md) |
 | 子午工程数据（DOI/CSTR 查询、不登录可见的元数据与文件清单、登录门槛、致谢与报送规则） | [meridian-data.md](./meridian-data.md) |

@@ -12,7 +12,7 @@
 |---|---|:---:|
 | 全球 RINEX / 广播星历 | [CDDIS](https://cddis.nasa.gov/archive/gnss/) · [BKG root_ftp](https://igs.bkg.bund.de/root_ftp/) · [GFZ ISDC HTTPS](https://isdc-data.gfz.de/gnss/) · [ESA GSSC](https://gssc.esa.int/) | Earthdata / 视中心 |
 | SP3 / CLK / 偏差 | CDDIS `gnss/products/` · [IGS files](https://files.igs.org/pub/) · GFZ ISDC · [CODE HTTPS](https://download.aiub.unibe.ch/) · [CAS `pub/`](https://data.bdsmart.cn/pub/) | 同左 / 多开放 |
-| GIM / IONEX | CDDIS `gnss/products/ionex/` · CODE · [CAS ionex](https://data.bdsmart.cn/pub/product/iono/ionex/) · [UPC rapid](https://chapman.upc.es/tomion/rapid/) · JPL | 视源（后两者常匿名） |
+| GIM / IONEX | CDDIS `gnss/products/ionex/` · CODE · [CAS ionex](https://data.bdsmart.cn/pub/product/iono/ionex/) · [UPC rapid](https://chapman.upc.es/tomion/rapid/) · JPL（[sideshow](https://sideshow.jpl.nasa.gov/pub/iono_daily/)）；门户/新旧名/时延见 [E27](#dp-e27) | CDDIS 需 Earthdata；其余实测匿名 |
 | 高采样率（闪烁 / 同震） | [CDDIS high-rate](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/high-rate_data.html) · GFZ `/gnss/data/highrate/` · `cddis-highrate-downloader` | Earthdata / 开放 |
 | 区域 CORS（美/新西兰/巴西） | [NOAA CORS](https://geodesy.noaa.gov/CORS/) · [CORS AWS](https://noaa-cors-pds.s3.amazonaws.com/index.html) · [GeoNet API](https://data.geonet.org.nz/) · [IBGE RBMC](https://geoftp.ibge.gov.br/informacoes_sobre_posicionamento_geodesico/rbmc/) · [EarthScope GAGE](https://gage-data.earthscope.org/archive/gnss) | 视网络 |
 | 区域 CORS（欧/亚太/加） | [EPN `/pub/obs/`](https://epncb.oma.be/pub/obs/) · [GA](https://data.gnss.ga.gov.au/) · [CACS](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/data-donnees/cacs-scca.php) · [MIRAI](https://go.gnss.go.jp/mirai/miraiarchive/) · [韩国](https://www.gnssdata.or.kr/) · [BEV Geoportal](https://data.bev.gv.at/) | 开放 / 网页注册 |
@@ -130,7 +130,7 @@ curl -L -C - -O \
   "https://data.bdsmart.cn/pub/product/iono/ionex/2023/049/CAS0OPSFIN_20230490000_01D_30M_GIM.INX.gz"
 
 # UPC 快速格网：按年目录匿名拉
-curl -L -C - -O "https://chapman.upc.es/tomion/rapid/..."
+curl -L -C - -O "https://chapman.upc.es/tomion/rapid/2024/132_240511.15min/UPC0OPSFIN_20241320000_01D_02H_GIM.INX.Z"   # 目录 DDD_YYMMDD.15min；更多中心见 E27
 ```
 
 读文件见 [ionex-gim](./software/ionex-gim.md) · 教程 [03](./tutorials/03-gim-ionex.md)。
@@ -431,7 +431,7 @@ curl -L -C - -O \
 
 ## 电离层与地磁门户决策表
 
-第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD），以及地基与 LEO 电离层观测（E23 GIRO / DIDBase 测高仪、E24 Swarm swarm-diss HTTPS、E25 VirES HAPI、E26 CHAIN 闪烁 ISMR）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
+第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD），以及地基与 LEO 电离层观测（E23 GIRO / DIDBase 测高仪、E24 Swarm swarm-diss HTTPS、E25 VirES HAPI、E26 CHAIN 闪烁 ISMR、E27 GIM/IONEX 各中心门户）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
 
 | 门户 | 账号 / 门槛 | 格式 | 时间分辨率 · 时延 | 实测 |
 |---|---|---|---|:---:|
@@ -461,6 +461,7 @@ curl -L -C - -O \
 | [Swarm 分发服务器 swarm-diss](https://swarm-diss.eo.esa.int/) | HTTPS 网页接口**匿名**：`?do=list&file=`（JSON）/ `?do=download&file=`（路径 `%2F` 编码）；`/swarm/` 直链 403；**FTP 拒绝匿名（530）**，要 ESA 账号 | ZIP 内 CDF + HDR（+ DQC 报告 `.EEF`）；每个产品目录旁有 `<产品>.txt` 全清单 | LP `EFIx_LP_1B`（2 Hz）/`EFIxLPI_1B`（1 Hz）基线 0701→0702（2025-12-13）；TEC/IBI/EEF 0502；IPIR 0302（目录里 0301 仍并存）；OPER 上架 3–9 天，`Fast/` LP/TEC ~40 min | ✅（[E24](#dp-e24)，[手册](./software/swarm-data.md)） |
 | [VirES for Swarm](https://vires.services/) | **HAPI 匿名**（`/hapi/catalog`、`/hapi/info`、`/hapi/data`，174 数据集 / 147 个 `SW_`）；OWS/WPS（viresclient）无 token → **403**，token 要在 vires.services 注册 | HAPI：CSV / JSON / binary 切片 | 单次上限 LP 2.5 天、TEC 5 天；值与 CDF 逐位一致；无模型残差 | ✅（[E25](#dp-e25)；token 路径见 [viresclient](./software/viresclient.md)） |
 | [CHAIN 加拿大高纬电离层网](https://www.chain-project.net/) | **匿名**：HTTPS 目录 `https://www.chain-project.net/data/`（`http://www.chain-project.net` 301 到 `chain-new`）；匿名 FTP `ftp.chain-project.net`（用户 `ftp`、密码邮箱，实测时好时坏）；老 `chain.physics.unb.ca/data/gps/ismr/2024/` → 404；发表须引用 Jayachandran et al. 2009 | ISMR（Septentrio `sbf2ismr` 62 列 CSV，gzip，按小时）；RINEX 观测；接收机原始二进制（50 Hz） | 2024 年小时目录 15 个 PolaRxS 站；GSV4004B 老 ISMR 在 `nvismr/`（到 2019）；无表头，GPS 时；锁定 <240 s 时 Phi 已为 nan、S4 仍有值 | ✅（[E26](#dp-e26)，[手册](./software/chain-scintillation.md)） |
+| [GIM / IONEX 各中心门户](./software/gim-product-portals.md) | **匿名**：CAS 汇总镜像 `data.bdsmart.cn/pub/product/iono/ionex/YYYY/DDD/`（含 CAS/COD/EMR/ESA/IGS/JPL/UPC）；CODE `download.aiub.unibe.ch/CODE/`（301 到 S3，无索引）；UPC `chapman.upc.es/tomion/`；ESA `navigation-office.esa.int`；JPL `sideshow.jpl.nasa.gov/pub/iono_daily/`；CDDIS 需 Earthdata；IGN/BKG/WHU/KASI/GSSC 本次不通 | IONEX 1.0（gzip / `.Z`）；长名 `AAA0OPSTTT_YYYYDDD0000_01D_SSS_GIM.INX.gz`，旧短名 `xxxgDDD0.YYi.Z` 按中心分别在 2023 前后切换 | 实测时延：UPC 实时约 4 min；CODE 快速 6.4 h、预报 P1D 提前约 18 h；JPL/ESA 快速 7–8 h；EMR 最终 35 h、JPL 50 h、CAS/UPC 65 h、ESA 88 h、CODE 90 h；2024-05-11 对 CODE 面积加权 RMS 3.3（IGS）… 15.8（EMR）TECU | ✅（[E27](#dp-e27)，[手册](./software/gim-product-portals.md)） |
 
 要登录才能拿数据的：EISCAT 门户（Madrigal 可绕行）、子午工程、ROM SAF 产品库（AWS 可绕行）、TGO ASCII、UKSSDC/RAL。要「申请」的：BGS 本站高分辨率（GIN 可绕行）。
 
@@ -730,6 +731,20 @@ curl -s -O "$B/2024/131/23/chuc24131x.ismr.gz"                                # 
 #   2024-05-10 16 UT–05-11 08 UT：Phi60 >0.25 rad 占 13.8%，最大 3.136 rad @ 05-10 23:25 UTC；平静夜 05-08/09 同时段 0%
 #   S4（去噪）>0.2 仅 1.2%：高纬以相位闪烁为主
 curl -s -o /dev/null -w '%{http_code}\n' http://chain.physics.unb.ca/data/gps/ismr/2024/   # 实测：404（老路径已空）
+```
+
+<a id="dp-e27"></a>**E27 GIM / IONEX 各中心门户（匿名 HTTPS）**
+
+```bash
+M=https://data.bdsmart.cn/pub/product/iono/ionex
+curl -s "$M/2024/132/" | grep -o 'href="[A-Za-z0-9_]*\.[^"?/]*"' | wc -l     # 实测：33 个文件（17 长名 + 16 旧短名；含 COD/EMR/ESA/IGS/JPL/UPC/CAS + whug/whrg）
+curl -sL -O https://download.aiub.unibe.ch/CODE/2024/COD0OPSFIN_20241320000_01D_01H_GIM.INX.gz   # 实测：200，358,273 B，与镜像解压后 md5 相同
+curl -sIL -o /dev/null -w '%{http_code}\n' https://download.aiub.unibe.ch/CODE/2024/CODG1320.24I.Z  # 实测：404（旧短名不再提供）
+curl -s 'https://zhw-b.s3.cloud.switch.ch/aiub?prefix=CODE/COD0OPSRAP' | grep -o '<LastModified>[^<]*' | tail -1   # 实测：快速图数据日结束后约 6.4 h 上架
+curl -s -O https://sideshow.jpl.nasa.gov/pub/iono_daily/IONEX_final/y2024/JPL0OPSFIN_20241320000_01D_02H_GIM.INX.gz  # 实测：200，JPL 匿名源（README：加 2 TECU 偏置）
+# 实测：2024-05-11 各中心最终图 − CODE（公共历元、71×73 格点、cos 纬度加权，本文口径）：
+#   IGS +0.09/3.30，WHU +0.62/4.40，JPL +0.87/4.99，CAS −2.17/6.71，UPC −0.61/7.54，ESA −2.67/8.88，EMR −3.82/15.77 TECU（均差/RMS）
+# 实测：ESA Navigation Office 同名文件是 2025-01-10 重处理版（300 站），CAS 镜像是 2024-05-15 原版（275 站）
 ```
 
 ---

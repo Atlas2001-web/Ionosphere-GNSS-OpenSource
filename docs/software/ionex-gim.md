@@ -4,6 +4,8 @@
 
 > 注：旧 FTP `ftp.aiub.unibe.ch` 已停用，CODE 产品请改用 <https://download.aiub.unibe.ch/CODE/2023/>（2026-09-26 实测：`COD0OPSFIN_20230010000_01D_01H_GIM.INX.gz` HTTP 200、324744 B，解压为有效 IONEX 1.0 头；旧短名 `CODG0010.23I.Z` 404；目录无索引页，需给完整文件名）。
 
+> 各中心匿名下载路径、新旧文件名、时延与多中心对比：见 [gim-product-portals](./gim-product-portals.md)。
+
 > 岗位：用 Python 包 **`ionex`** 读分析中心 IONEX（IGS/CODE/UPC/ESA…）VTEC 图。**只读**，不生成 GIM。球谐求解边界见 [sh-gim](./sh-gim.md)。绝对 TEC 校准见 [pytecgg](./pytecgg.md)（**viventriglia**）。API 以已安装包为准。
 
 ## 1. 用途与边界
@@ -200,4 +202,4 @@ done
 
 ## 8. 相关
 
-[ionex.md](./ionex.md) · [ionex-rs](./ionex-rs.md) · [sh-gim](./sh-gim.md) · [pytecgg](./pytecgg.md) · [georinex](./georinex.md) · [oasis-roti](./oasis-roti.md) · [ionomoni](./ionomoni.md) · [data-access](../data-access.md) · [README](./README.md)
+[ionex.md](./ionex.md) · [gim-product-portals](./gim-product-portals.md) · [ionex-rs](./ionex-rs.md) · [sh-gim](./sh-gim.md) · [pytecgg](./pytecgg.md) · [georinex](./georinex.md) · [oasis-roti](./oasis-roti.md) · [ionomoni](./ionomoni.md) · [data-access](../data-access.md) · [README](./README.md)
