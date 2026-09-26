@@ -65,7 +65,7 @@ analysis_zh edits (to stop contradicting the new value):
 - 279 SoftGNSS-python: "许可未在仓库显著标明，商用或再分发前需自行确认代码来源与授权条款。" → "仓库无整体许可文件，仅 main.py 保留 SoftGNSS 的 GPLv2-or-later 头注释，商用或再分发前需自行确认代码来源与授权条款。"
 - 367 ionosonde_volgatech: "（license 字段为空）" → "（仓库未声明许可）"
 
-Lists regenerated via `research/merge_routine_20260926c.regenerate_lists/regenerate_categories/regenerate_readme`: only `许可：` detail lines (14 new values + 11 `unknown`→`—`) and the 2 analysis lines changed in lists/01-ionosphere.md and lists/07-gnss-sdr.md; categories/README unchanged. Counts: 1036 projects, counts_by_category and provenance_counts unchanged.
+Lists regenerated via `research/merge_routine_20260926c.regenerate_lists/regenerate_categories/regenerate_readme`: only `许可：` detail lines (14 new values + 7 `unknown`→`—`) and the 2 analysis lines changed in lists/01-ionosphere.md and lists/07-gnss-sdr.md; categories/README unchanged. Counts: 1036 projects, counts_by_category and provenance_counts unchanged.
 
 ## Leftovers / flags
 - 50 remaining blank/`see upstream README` GitHub entries (idx 409 M_GIM-zcytju onward: M_ISSION, NeQuick ports, PPP-RTK-Ionosphere, TEC calc repos, GINS/TGINS/GREAT-*, i2Nav, RTKLIB learning repos, GGOS-Tropo-RTKLIB, ICAMS, UNB3m, OpATOM, ntrip-caster-go, …).
