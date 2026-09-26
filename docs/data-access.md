@@ -18,7 +18,7 @@
 | 区域 CORS（欧/亚太/加） | [EPN `/pub/obs/`](https://epncb.oma.be/pub/obs/) · [GA](https://data.gnss.ga.gov.au/) · [CACS](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/data-donnees/cacs-scca.php) · [MIRAI](https://go.gnss.go.jp/mirai/miraiarchive/) · [韩国](https://www.gnssdata.or.kr/) · [BEV Geoportal](https://data.bev.gv.at/) | 开放 / 网页注册 |
 | 欧洲站元数据 / 程序化 | [EPOS GNSS](https://gnss-epos.eu/) · [GLASS API](https://gnssdata-epos.oca.eu/GlassFramework/) · [M3G](https://gnss-metadata.eu/landing/m3g) | 视节点 |
 | 实时 RTCM / SSR | `products.igs-ip.net:2101` · [igs-ip.net](https://www.igs-ip.net/)（NTRIP；后者偶发超时） · [注册](https://register.rtcm-ntrip.org/cgi-bin/registration.cgi) | 挂载点账号 |
-| 掩星 RO | [CDAAC](https://cdaac-www.cosmic.ucar.edu/) · [data.cosmic](https://data.cosmic.ucar.edu/gnss-ro/) · [ROM SAF](https://rom-saf.eumetsat.int/)（[决策表](#电离层与地磁门户决策表)）· [awsgnssroutils](https://github.com/gnss-ro/aws-opendata) | 开放 / ROM SAF 产品库须注册（AWS 镜像开放） |
+| 掩星 RO | [CDAAC](https://cdaac-www.cosmic.ucar.edu/) · [data.cosmic](https://data.cosmic.ucar.edu/gnss-ro/) · [ROM SAF](https://rom-saf.eumetsat.int/)（[决策表](#电离层与地磁门户决策表)）· [awsgnssroutils](https://github.com/gnss-ro/aws-opendata) · COSMIC-2 电离层 [cosmic2-ro](./software/cosmic2-ro.md) | 开放 / ROM SAF 产品库须注册（AWS 镜像开放） |
 | 地磁 / 空间天气 | [Kyoto WDC](https://wdc.kugi.kyoto-u.ac.jp/) · [INTERMAGNET](https://intermagnet.org/) · [SuperMAG](https://supermag.jhuapl.edu/) · [GFZ Kp](https://kp.gfz.de/en/) · [SWPC](https://www.spaceweather.gov/) · [OMNI/CDAWeb HAPI](https://cdaweb.gsfc.nasa.gov/hapi) · 台站分钟 / 秒值：USGS · BGS · NRCan · THEMIS GMAG · MACCS · TGO → [决策表](#电离层与地磁门户决策表) | 开放 / 注册 |
 | 区域 TEC 现报 | [eSWua TEC](http://www.eswua.ingv.it/ewphp/landing.php?doi=tec) · [IONORING](http://ionos.ingv.it/ionoring/ionoring.htm) | 开放（CC BY） |
 | 闪烁 ISMR | [`ismr_downloader`](https://github.com/GEGE-UNESP/ismr_downloader)（主）· [Query Tool](https://ismrquerytool.fct.unesp.br/)（辅，常超时） | 网页注册 |
@@ -250,7 +250,7 @@ curl -s --max-time 15 "http://products.igs-ip.net:2101/" | head
 
 ### 掩星 RO（CDAAC / AWS）
 
-**我要什么**：掩星 excess phase / 电子密度剖面等 Level-1b/2。
+**我要什么**：掩星 excess phase / 电子密度剖面 / 链路 TEC 等 Level-1b/2。COSMIC-2 的 ionPrf、podTc2 细节（目录、时延、字段、NmF2 筛选）见 [cosmic2-ro](./software/cosmic2-ro.md) 与决策表 [E19](#dp-e19)。
 
 **去哪**：[CDAAC 门户](https://cdaac-www.cosmic.ucar.edu/) · **直链树** [data.cosmic.ucar.edu/gnss-ro](https://data.cosmic.ucar.edu/gnss-ro/)（COSMIC-1/2 等，**无需登录**）· [ROM SAF](https://rom-saf.eumetsat.int/) · AWS 工具 [awsgnssroutils](https://github.com/gnss-ro/aws-opendata)（PyPI 同名）。
 
@@ -260,7 +260,14 @@ curl -s --max-time 15 "http://products.igs-ip.net:2101/" | head
 # A) CDAAC 公开目录（例：COSMIC-1 事后 Level-1b ionPhs 日包）
 curl -L -C - -O \
   "https://data.cosmic.ucar.edu/gnss-ro/cosmic1/postProc/level1b/2019/049/ionPhs_postProc_2019_049.tar.gz"
-# 路径模式：…/<mission>/{postProc|nrt}/level1b|level2/YYYY/DDD/<product>_….tar.gz
+# 路径模式：…/<mission>/<stream>/level1b|level2/YYYY/DDD/<product>_<stream 缩写>_YYYY_DDD.tar.gz（只有日包，没有单文件 URL）
+# COSMIC-1 的 stream 有 postProc / repro2013 等；COSMIC-2 没有 repro（404），见 A2)
+
+# A2) COSMIC-2 电离层（2026-09-26 实测，均匿名 200）
+#   ionPrf 只在 provisional/spaceWeather/level2（nrt/level2 里没有，ionPrf_nrt_… 为 404）
+curl -O "https://data.cosmic.ucar.edu/gnss-ro/cosmic2/provisional/spaceWeather/level2/2024/132/ionPrf_prov1_2024_132.tar.gz"   # 27.9 MB，3608 条剖面
+#   podTc2 在 nrt/level1b（约 5 h 后）或 rapid/level1b（约 1.7 天后），一天 0.5–0.9 GB；只要几个文件就流式读 tar，见 cosmic2-ro §3.4
+#   https://data.cosmic.ucar.edu/gnss-ro/cosmic2/nrt/level1b/2024/132/podTc2_nrt_2024_132.tar.gz   (919 MB)
 
 # B) AWS Registry（推荐批量；勿依赖 registry.opendata.aws/gnss* 深链，常 404）
 pip install awsgnssroutils
@@ -274,7 +281,7 @@ occs.download("ucar_calibratedPhase", data_root="./ro_out", keep_aws_structure=F
 PY
 ```
 
-**账号/配额坑**：`data.cosmic` 匿名开放（ionPhs/ionPrf 等）；旧「必须 CDAAC 网页账号」已过时；ROM SAF 产品库须注册登录（未登录 `login.php` 回 401），其中性大气产品在 AWS `gnss-ro-data/contributed/v1.1/romsaf/` 可匿名拉，见[决策表 E5](#dp-e5)；AWS 工具**没有** `ionPhs` 文件名——电离层 excess phase 用 CDAAC 直链，AWS 侧重 `calibratedPhase` 等三型；勿把 registry 深链写进脚本；处理包 ROPP 与产品页分开找。
+**账号/配额坑**：`data.cosmic` 匿名开放（ionPhs/ionPrf 等）；旧「必须 CDAAC 网页账号」已过时；ROM SAF 产品库须注册登录（未登录 `login.php` 回 401），其中性大气产品在 AWS `gnss-ro-data/contributed/v1.1/romsaf/` 可匿名拉，见[决策表 E5](#dp-e5)；AWS 工具**没有** `ionPhs` 文件名——电离层 excess phase 用 CDAAC 直链，AWS 侧重 `calibratedPhase` 等三型；AWS 桶 `gnss-ro-data` 里 COSMIC-2 也只有这三型（v1.1 `contributed/v1.1/ucar/cosmic2/`、v2.0 `contributed/v2.0/gnssro_cosmic2_ucar_{l1b,l2a,l2b}/`），**没有 ionPrf / podTc2**（[E20](#dp-e20)）；旧门户 `cdaac-www` 的 `/cdaac/login/`、`/cdaac/tar/rest.html` 回 401，但公开树不需要它；勿把 registry 深链写进脚本；处理包 ROPP 与产品页分开找。
 
 ### 地磁 / 空间天气（Kp / SWPC）
 
@@ -422,7 +429,7 @@ curl -L -C - -O \
 
 ## 电离层与地磁门户决策表
 
-第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
+第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
 
 | 门户 | 账号 / 门槛 | 格式 | 时间分辨率 · 时延 | 实测 |
 |---|---|---|---|:---:|
@@ -444,6 +451,8 @@ curl -L -C - -O \
 | [NOAA SWPC](https://services.swpc.noaa.gov/) | 开放；JSON 只保留几天，历史值在 [NCEI](https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/annual_reports/daily_solar_indices_summaries/daily_geomagnetic_data/) 季度 DGD 文本 | JSON；DGD 文本 | 1 min 估计 Kp（约 6 h）、3 h Kp（7 天）、RTSW 1 min 太阳风（多颗卫星混在一个文件，用 `active` 区分）、F10.7 每天 3 次；全是估计值，不会升级 | ✅（[E16](#dp-e16)） |
 | [Kyoto WDC](https://wdc.kugi.kyoto-u.ac.jp/) | 开放 HTTP / HTTPS；没有 API，要解析 HTML `<pre>` 或 WDC 定宽文本 | Dst：HTML 定宽表；AE：400 字符 WDC 行（`aeYYMMDD.for.request`） | Dst 1 h、AE 1 min；状态写在路径里：`dst_final` ≤2020-12，`dst_provisional` 2021-01～2026-07，`dst_realtime` ≥2026-08（旧月份返回 403） | ✅（[E17](#dp-e17)） |
 | [OMNI / CDAWeb HAPI](https://cdaweb.gsfc.nasa.gov/hapi) | 开放；HAPI **2.0**（参数是 `id=`、`time.min/max`） | CSV / JSON / binary | `OMNI_HRO_1MIN` 1 min，已时移到弓激波鼻点，stopDate 2026-09-03（约滞后 3 周）；OMNI2 小时值用半点时间戳；数据状态写在参数描述里（如 Dst：Provisional 到 2026/212，Quick-look 为 2026/213–259） | ✅（[E18](#dp-e18)） |
+| [CDAAC COSMIC-2 电离层](https://data.cosmic.ucar.edu/gnss-ro/cosmic2/) | 开放，`data.cosmic.ucar.edu` 全树匿名 200（含 level0）；旧门户 `cdaac-www.cosmic.ucar.edu/cdaac/login/` 与 `/cdaac/tar/rest.html` 为 **401**，但不需要；`cosmic2/repro/` **404** | 日包 `.tar.gz`，内含 netCDF-3（ionPrf 约 10 KB/条，podTc2 57–97 KB/条）；**没有单文件 URL** | ionPrf 只在 `provisional/spaceWeather/level2/YYYY/DDD/`（`prov1`，2019/274 起），2024-05-11 共 3608 条、峰值点 ±40.5°；podTc2 在 `nrt/level1b`（当天结束后约 5 h，0.6–0.9 GB/天）或 `rapid/level1b`（约 1.7 天）；ionPrf 无质量标志 | ✅（[E19](#dp-e19) · [cosmic2-ro](./software/cosmic2-ro.md)） |
+| [AWS gnss-ro-data](https://gnss-ro-data.s3.amazonaws.com/index.html) | 开放，S3 ListObjectsV2 匿名 | 每次掩星一个 netCDF（v1.1 `.nc` / v2.0 `.nc4`） | COSMIC-2 只有 calibratedPhase / refractivityRetrieval / atmosphericRetrieval（v2.0 名为 `gnssro_cosmic2_ucar_{l1b,l2a,l2b}`，按 年/月/日）；**没有 ionPrf / podTc2** | 中性大气 ✅；电离层 ✗（[E20](#dp-e20)） |
 
 要登录才能拿数据的：EISCAT 门户（Madrigal 可绕行）、子午工程、ROM SAF 产品库（AWS 可绕行）、TGO ASCII、UKSSDC/RAL。要「申请」的：BGS 本站高分辨率（GIN 可绕行）。
 
@@ -623,6 +632,27 @@ curl -s "https://cdaweb.gsfc.nasa.gov/hapi/info?id=OMNI_HRO_1MIN"
 # 实测：200，5,647 B；各参数都给出 fill（如 BZ_GSM 9999.99、SYM_H 99999）
 curl -s "https://cdaweb.gsfc.nasa.gov/hapi/data?id=OMNI_HRO_1MIN&time.min=2024-05-10T00:00:00Z&time.max=2024-05-13T00:00:00Z&parameters=Timeshift,BZ_GSM,flow_speed,AE_INDEX,SYM_H"
 # 实测：200，226,800 B，4,320 行；SYM-H 最小 -518（2024-05-11 02:14）；参数顺序与 info 不一致时，HTTP 仍是 200，但 body 为 status 1411
+```
+
+<a id="dp-e19"></a>**E19 CDAAC COSMIC-2 ionPrf / podTc2（公开 HTTPS 树）**
+
+```bash
+B=https://data.cosmic.ucar.edu/gnss-ro/cosmic2
+curl -s -o ionPrf.tgz -w "%{http_code} %{size_download}\n" $B/provisional/spaceWeather/level2/2024/132/ionPrf_prov1_2024_132.tar.gz
+# 实测：200 27856720；3608 个 ionPrf_C2E[1-6].2024.132.*_nc；3571 条 edmax/edmaxalt 与 max(ELEC_dens) 完全一致，37 条差在 <120 km 的底部噪声
+curl -sI $B/nrt/level1b/2026/268/podTc2_nrt_2026_268.tar.gz | grep -i -E "content-length|last-modified"
+# 实测：671126813 B，last-modified 2026-09-26 04:52:41 GMT（= 00:52 EDT，DOY 268 结束后约 5 h）
+curl -s -o /dev/null -w "%{http_code}\n" $B/nrt/level2/2024/132/ionPrf_nrt_2024_132.tar.gz   # 404：ionPrf 不在 nrt
+curl -s -o /dev/null -w "%{http_code}\n" https://cdaac-www.cosmic.ucar.edu/cdaac/login/      # 401：旧门户，不需要
+```
+
+<a id="dp-e20"></a>**E20 AWS gnss-ro-data（COSMIC-2 只有中性大气）**
+
+```bash
+curl -s "https://gnss-ro-data.s3.amazonaws.com/?list-type=2&delimiter=/&prefix=contributed/v1.1/ucar/cosmic2/"
+# 实测：atmosphericRetrieval/ calibratedPhase/ refractivityRetrieval/ 三个前缀，没有 ionPrf / podTc2
+curl -s "https://gnss-ro-data.s3.amazonaws.com/?list-type=2&prefix=contributed/v2.0/gnssro_cosmic2_ucar_l1b/&max-keys=5"
+# 实测：…/2019/10/02/gnssro_cosmic2_ucar_l1b_0001.0001_cosmic2e1-G01-201910020023.nc4，Size 1979798
 ```
 
 ---

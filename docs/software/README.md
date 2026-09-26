@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **208 篇**操作手册（合计 **46156 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **209 篇**操作手册（合计 **46685 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -233,6 +233,7 @@
 | 206 | [sami2py.md](./sami2py.md) | SAMI2 低纬电离层物理模式 Python 驱动：gfortran 编 `sami2py.x`，F10.7/ap + EUVAC + NRLMSISE-00 + HWM-14 + Fejer–Scherliess E×B（或傅里叶漂移）→ 磁子午面 101×98 场向网格 7 离子 Ne/Ti/Te/vsi → xarray；≠ SAMI3（3-D）/ 泡 / TID | 208 | **已短硬** · 2026-09-26 03:47–04:00 EDT；tag **v0.3.0**=`c6d3c5b`/不在 PyPI/BSD-3；上游 pytest 47 passed；2014 DOY080 lon −75 F10.7=150，48 h（24 h 预热）单核 598.6 s、95 MB；磁赤道地理 −11.92°；SLT 14 vTEC(100–2000 km) 赤道 71.4 / 北峰 83.6 / 南峰 81.1 TECU、SLT 20 赤道 41.3；1500 km H⁺ 57%；非 git 安装归档时 `git rev-parse` 必崩、`Ions Used` 漏 N⁺、`deni` 单位 N/cc |
 | 207 | [gps-pvt.md](./gps-pvt.md) | fenrir-naru Ruby gem（C++ 核心，SWIG）：RINEX 2/3 OBS+NAV、UBX（RAWX+SFRBX）、SP3/CLK/ANTEX → 逐历元最小二乘单点定位 CSV（位置/钟差/DOP/逐星残差），Ruby API 逐历元回调；只 GPS/QZSS（+可选 SBAS/GLONASS）L1 C/A；≠ RTK/PPP | 210 | **已短硬** · 2026-09-26 03:52–04:06 EDT；gem **0.10.5**/tag `14abd10`/master `6551a4c`/BSD-3-Clause（GitHub NOASSERTION）/★6/Ruby 3.3.8；WTZR 2026-258 BRDC00IGS 3D 中位 1.357 m（RTKLIB 1.489 m，逐历元差中位 0.454 m）；BRDC00WRD 缺 GPSA/GPSB 天向 +3.6 m；SP3+CLK 11.290 m；F9P `rover.ubx` 3.045 m（rt-navi 14.246 m / F9P GGA 1.281 m）；C1C/RAWX 逐值 max|Δ|=0；**DST 时区 SP3/GLONASS 偏 1 h，须 TZ=UTC**；`--weight` 段错误；空/CRX abort，错天星历静默；**未在真接收机测试** |
 | 208 | [space-weather-indices.md](./space-weather-indices.md) | 空间天气指数直连（不用 PySPEDAS）：GFZ Kp/ap/Hp30/SN/F10.7 JSON（status def/pre）、SWPC JSON（1 min/3 h Kp、RTSW 太阳风按 active 过滤、F10.7）+ NCEI DGD 归档、Kyoto WDC Dst（final/provisional/realtime 路径，定宽解析器）与 AE WDC 文本、OMNI HRO 1 min / OMNI2 via CDAWeb HAPI 2.0（fill、时移、状态区间）；2024-05 暴对比；≠ tplot 加载（→pyspedas）/ 台站原始磁场（→geomag-api） | 317 | **已短硬** · 2026-09-26 04:00–04:25 EDT；2024-05-10–12：SWPC−GFZ Kp 均差 +0.015、MAE 0.237、最大差 0.997、21/24 档差 ≤1/3；OMNI2 Dst = Kyoto 暂定值（差 0，最小 −406）；SYM-H 小时均值−Dst 的 MAE 11.0 nT、r 0.995，1 min SYM-H 最小 −518；OMNI AE = Kyoto 暂定 AE（4320/4320）；Kyoto final ≤2020-12，provisional 到 2026-07 |
+| 209 | [cosmic2-ro.md](./cosmic2-ro.md) | UCAR CDAAC COSMIC-2 电离层掩星直连：ionPrf（Ne 剖面，el/cm³，MSL_alt）只在 provisional/spaceWeather/level2（prov1），podTc2（链路 TEC/S4/仰角/ECEF）在 nrt 或 rapid level1b；只有日包、全匿名（旧门户 401 不需要）、AWS gnss-ro-data 无电离层；流式 tar 取单文件；edmax vs 自算 NmF2/hmF2、无质量标志时的自定义筛选；≠ pysat 加载 COSMIC-1（→pysatcdaac）/ AWS 中性大气（→awsgnssroutils） | 529 | **已短硬** · 2026-09-26 04:08–04:35 EDT；2024-132 ionPrf 日包 27.9 MB / 3608 条（6 星 552–661，GPS 1690 / GLONASS 1918），峰值点纬度 ±40.5°、地方时 8 格 381–508 条；3571/3608 条 edmax/edmaxalt 与 max(ELEC_dens) 完全一致，37 条差在 <120 km 底部噪声；critfreq 与 edmax 换算差 ≤0.0051 MHz；自定义筛选保留 2661（73.8 %），hmF2 中位 362.8 km、NmF2 中位 9.33e5 el/cm³；podTc2 流式读 163,840 B 取 3 文件，仰角由 ECEF 重算差 0.000°；时延 nrt ≈5 h、rapid ≈1.7 天；cosmic2/repro 404 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -442,6 +443,7 @@
 | Madrigal（CEDAR/EISCAT/AMISR）找实验 + 下载 TEC 格网 / ISR 文件；服务端 isprint 只取一点 | [madrigal.md](./madrigal.md) |
 | 地磁台分钟/秒值（USGS ws、INTERMAGNET/GIN 定值、NRCan/MACCS/THEMIS）下载 + H/D + 缺测处理 | [geomag-api.md](./geomag-api.md) |
 | Kp/ap/Hp30、Dst/AE/SYM-H、实时太阳风与 F10.7 的直连下载 + 数据状态（def/pre、final/provisional/realtime）+ 跨源对比 | [space-weather-indices.md](./space-weather-indices.md) |
+| COSMIC-2 电离层掩星：ionPrf 电子密度剖面 / podTc2 链路 TEC 的直连下载、目录与时延、NmF2/hmF2 与筛选 | [cosmic2-ro.md](./cosmic2-ro.md) |
 | SuperDARN 原始数据下载（FRDR RAWACF、Globus/BAS/VT 镜像门槛、sha1+bz2 校验、使用规则） | [superdarn-data.md](./superdarn-data.md) |
 | 子午工程数据（DOI/CSTR 查询、不登录可见的元数据与文件清单、登录门槛、致谢与报送规则） | [meridian-data.md](./meridian-data.md) |
 | 单站 1 Hz/30 s RINEX 看 sTEC 变化率 / 海啸型 TID（VARION，Python 2.7） | [varion.md](./varion.md) |
