@@ -1,6 +1,6 @@
 # saga-utils · SAGA 阵列 / CASES 高采样率闪烁数据（S4、σφ、漂移）操作手册
 
-目录：[`PROJECTS.json` → `saga-utils`](../../PROJECTS.json) · 上游 <https://github.com/perrysou/saga-utils> · tip **`94c7cdd`**（2018-08-21，全仓仅 **1** 个 commit，无 tag / 无发行版）· 许可 **GPL-3.0** · ★**10** · MATLAB（顶层 **76** 个 `.m`，含 `include/` 共 **274** 个 `.m/.M`）· 本机验证：GNU Octave **9.4.0**（无 MATLAB）；`main.m` 真跑到“找不到数据”为止；上游滤波与 `slidingS4SigmaPHI` 在**合成**数据（已知真值）与 **Zenodo 公开 SAGA 相位**上实跑 · 2026-09-26 01:40–01:50 EDT
+目录：[`PROJECTS.json` → `saga-utils`](../../PROJECTS.json) · 上游 <https://github.com/perrysou/saga-utils> · tip **`94c7cdd`**（2018-08-21；完整历史 **44** 个 commit，首个 `d773435` 2017-08-03——`--depth 1` 浅克隆才显示 1 个；无 tag / 无发行版）· 许可 **GPL-3.0** · ★**10** · MATLAB（顶层 **76** 个 `.m`，含 `include/` 共 **274** 个 `.m/.M`）· 本机验证：GNU Octave **9.4.0**（无 MATLAB）；`main.m` 真跑到“找不到数据”为止；上游滤波与 `slidingS4SigmaPHI` 在**合成**数据（已知真值）与 **Zenodo 公开 SAGA 相位**上实跑 · 2026-09-26 01:40–01:50 EDT · **质检复跑通过**（2026-09-26 01:52–01:56 EDT，独立 clone + Octave 9.4.0）：`main(2015,76,1)` 输出链与 1 B 空 CSV 一致；§4.2 合成脚本逐位复现（14000/FL 3000、σφ 0.5003→**0.5027**、S4 真值 0.2932 / std(A)/mean(A) 0.1494 / saga “S4” **0.1487** / movvar 修正 0.2931、corr 0.9848）；源码第 44/66/93 行确认 `amp=sqrt(P)` 幅度版公式；Zenodo zip 284674 B、Hyb/Shk 第 1–2 列相同第 3 列不同、三段 σφ(30 s)/10 s min·med·max/再高通值**全部一致**。修：仓库实有 44 个 commit（原文“仅 1 个”是浅克隆假象）；补 `Hy_dat_TS` 变量名与整段分支触发条件 N ≥ 2(n−1)
 
 > 岗位：**研究组内部流水线的源码参考**，不是开箱即用工具。它假设你有伊利诺伊理工（IIT）服务器上的 CASES 原始 `.bin` 目录树和一个不在仓里的解包脚本。能直接复用的是几块**算法函数**：去趋势滤波、滑窗 S4/σφ、空间接收机漂移估计。要从 RINEX 1 Hz 数据做 ROTI → [oasis-roti](./oasis-roti.md)；要合成闪烁信号 → [iono-scintillation](./iono-scintillation.md)；要下载 ISMR 闪烁指数 → [ismr-downloader](./ismr-downloader.md)。
 
@@ -136,6 +136,8 @@ fix: movvar/movmean standard S4 median          : 0.2931
 ```bash
 curl -sSL -o z.zip "https://zenodo.org/records/6621888/files/VAGGUP/SAGA_Paper1-datav2.zip?download=1" && unzip -q z.zip
 octave-cli -q real_phase.m     # 对第 2 列调 slidingS4SigmaPHI（功率置 1），30 s 整窗 + 10 s 滑窗
+# 变量名是 Hy_dat_TS（1501×3；同文件另有 Hy_dat_PSD 83×3，别取错）。“30 s 整窗”值 = std(第 2 列)：
+# slidingS4SigmaPHI 只有 N ≥ 2(n−1)（此处 ≥3000）才走整段分支；传 N=1500 仍是滑窗（SAGA1 得 0.884–1.116，不是 0.964）
 ```
 
 ```text

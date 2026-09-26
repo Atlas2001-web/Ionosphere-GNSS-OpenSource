@@ -1,6 +1,6 @@
 # qzsl6tool · QZSS L6（CLAS / MADOCA-PPP）等 GNSS 电文解码操作手册
 
-目录：[`PROJECTS.json` → `qzsl6tool`](../../PROJECTS.json) · 上游 <https://github.com/yoronneko/qzsl6tool> · PyPI **`qzsl6tool` 0.1.11**（2026-09-15）· tip **`60a5b93`** · 许可 **BSD-2-Clause** · ★**35** · 纯 Python（≥3.10），依赖 `bitstring` / `galois` / `numpy` · 本机验证：Python **3.11.16** venv；上游 `test/do_test.sh` **47 Passed / 0 Failed**；官方归档 **2026-09-17** CLAS 前 300 s + MADOCA-PPP 电离层 1 h 真解码 · 2026-09-26 01:37–01:46 EDT
+目录：[`PROJECTS.json` → `qzsl6tool`](../../PROJECTS.json) · 上游 <https://github.com/yoronneko/qzsl6tool> · PyPI **`qzsl6tool` 0.1.11**（2026-09-15）· tip **`60a5b93`** · 许可 **BSD-2-Clause** · ★**35** · 纯 Python（≥3.10），依赖 `bitstring` / `galois` / `numpy` · 本机验证：Python **3.11.16** venv；上游 `test/do_test.sh` **47 Passed / 0 Failed**；官方归档 **2026-09-17** CLAS 前 300 s + MADOCA-PPP 电离层 1 h 真解码 · 2026-09-26 01:37–01:46 EDT · **质检复跑通过**（2026-09-26 01:50–01:53 EDT，独立 uv 3.11.16 venv + 独立下载）：tip/★35/BSD-2/16 脚本、47/0、CLAS 300 帧主行/`-s` stat/ST12 块/子类型计数、MADOCA 3600 帧/MT1 Region1·3·4/MT2 首块/5 星 c00 统计与 G18·E12 趋势、`.alst`→L6 59 行+14 syncing、`clas.rtcm` 7915 B/62 条、4073 计数、4050 67500 B/300 条、HAS 两行、坑 1/2/3/4 **全部同 I/O**。修：坑 7 默认输出实为 3000/3600 行 `(null)`（另 600 行有 MT1/MT2 摘要）；坑 8 两个归档站分别回 403/404
 
 > 岗位：**看电文，不定位**。把接收机原始流里的 QZSS L6（以及 Galileo E6B HAS、北斗 B2b、QZSS L1S/SBAS、RTCM）抽出来、逐帧逐子类型打印成人能读的文本，或把 CLAS/MADOCA 转成 RTCM 喂给别的软件。要用这些改正数**解算坐标** → [claslib](./claslib.md)（CLAS）/ [madocalib](./madocalib.md)（MADOCA-PPP）/ [cssrlib](./cssrlib.md)（Python PPP-RTK）/ [haslib](./haslib.md)（Galileo HAS）。参数冲突时：**本机 `-h` / 上游 `docs/en/*.md` > 本文**。
 
@@ -231,8 +231,8 @@ E09 Dummy page (0xaf3bc3)
 4. **`-P 2` 后 300 行全是 `(Pattern 1, skipped)`** → 数据只有发送模式 1 → 去掉 `-P` 或 `qzsl6read.py -P 1 < x.l6`
 5. **截取片段后前几行全 `(syncing)`，甚至无内容** → 从帧中间切（字节数非 250 倍数）或没从 subframe 头开始 → `dd if=day.l6 of=cut.l6 bs=250 count=300`（或 `curl -r 0-$((250*N-1))`）
 6. **`-r` 后终端满屏乱码** → `-r` 输出 RTCM 二进制 → `qzsl6read.py -r < x.l6 > x.rtcm && rtcmread.py < x.rtcm | head`
-7. **MADOCA 电离层文件默认输出 3600 行全是 `(Iono) (null)`**，以为没数据 → 默认级别只显示 L6 头；MT1/MT2 内容在明细级 → `qzsl6read.py -t 1 < 2026260A.200.l6 | grep -A12 '^MT2' | head`
-8. **下载的 `.l6` 解出 0 行** → URL 不存在时服务器回 403 + HTML 页（本机实测 DOY 300 未来日期）且 curl 默认照存 → `curl -fsS -o x.l6 URL || echo 'no such file'`
+7. **MADOCA 电离层文件默认输出 3600 行里 3000 行是 `(Iono) (null)`**，以为没数据 → 默认级别只在另外 600 行列出 `MT1(IOD=2, Reg3, 5) MT2(IOD=2, Reg3 #1)...` 这类摘要，STEC 系数在明细级 → `qzsl6read.py -t 1 < 2026260A.200.l6 | grep -A12 '^MT2' | head`
+8. **下载的 `.l6` 解出 0 行** → URL 不存在时服务器回 HTML 错误页（实测 DOY 300 未来日期：`l6msg.go.gnss.go.jp` 回 **403**，`sys.qzss.go.jp` 回 **404**），curl 默认照存 → `curl -fsS -o x.l6 URL || echo 'no such file'`
 9. **画 1 h MT2 时间序列出现水平长线** → MT2 历元是“小时内秒”，文件末块已是下一小时 `Epoch=00:00:02` → 解析时若 `t < 上一点 - 30 min` 则 `t += 60 min`（本页图已处理）
 10. **`do_test.sh` 失败时卡住/报 `lv: command not found`** → 失败分支调 `lv` 分页器 → `sed -i 's/|lv$/| head -40/' test/do_test.sh`
 
