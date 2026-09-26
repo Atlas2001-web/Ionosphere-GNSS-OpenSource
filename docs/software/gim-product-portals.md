@@ -2,7 +2,7 @@
 
 入口：[CODE/AIUB](https://download.aiub.unibe.ch/CODE/) · [CAS 汇总镜像](https://data.bdsmart.cn/pub/product/iono/ionex/) · [UPC TOMION](https://chapman.upc.es/tomion/) · [ESA Navigation Office](http://navigation-office.esa.int/products/gnss-products/) · [JPL sideshow iono_daily](https://sideshow.jpl.nasa.gov/pub/iono_daily/) · [CDDIS ionex（需 Earthdata）](https://cddis.nasa.gov/archive/gnss/products/ionex/) · 本机验证 **2026-09-26 05:00–05:10 EDT**（全部匿名 curl，无注册、无表单）
 
-> 岗位：回答“某天某中心的 GIM 去哪匿名拿、叫什么名字、出来要等多久、各家差多少”。**只管门户这一侧**：读 IONEX 的 Python API 见 [ionex-gim](./ionex-gim.md)（同包 [ionex](./ionex.md)、Rust 版 [ionex-rs](./ionex-rs.md)）；自建 GIM 见 [sh-gim](./sh-gim.md)、[mosgim2](./mosgim2.md)；单站 TEC 见 [pytecgg](./pytecgg.md)；近实时 TEC 产品另见 realtime 手册（本批后续）。本文不重复这些。
+> 岗位：回答“某天某中心的 GIM 去哪匿名拿、叫什么名字、出来要等多久、各家差多少”。**只管门户这一侧**：读 IONEX 的 Python API 见 [ionex-gim](./ionex-gim.md)（同包 [ionex](./ionex.md)、Rust 版 [ionex-rs](./ionex-rs.md)）；自建 GIM 见 [sh-gim](./sh-gim.md)、[mosgim2](./mosgim2.md)；单站 TEC 见 [pytecgg](./pytecgg.md)；近实时 TEC 产品另见 [realtime-iono-products](./realtime-iono-products.md)。本文不重复这些。
 >
 > 门槛总表：[电离层与地磁门户决策表](../data-access.md#电离层与地磁门户决策表) · 本文命令块 [E27](../data-access.md#dp-e27)
 >
@@ -12,7 +12,7 @@
 
 **做：** 各分析中心（CODE、UPC、ESA、JPL、CAS、WHU、NRCan/EMR、IGS 综合）IONEX 的匿名 HTTPS 路径；旧短名 ↔ 新长名对照；最终 / 快速 / 预报 / 实时各档的实测上架时延；同一天各中心 VTEC 图逐格点对 CODE 的均差与 RMS。
 
-**不做：** IONEX 解析库用法（→ [ionex-gim](./ionex-gim.md)）；DCB / 硬件延迟；自建球谐；GloTEC / US-TEC 这类区域近实时产品（→ 本批 realtime 手册）。
+**不做：** IONEX 解析库用法（→ [ionex-gim](./ionex-gim.md)）；DCB / 硬件延迟；自建球谐；GloTEC / US-TEC 这类区域近实时产品（→ [realtime-iono-products](./realtime-iono-products.md)）。
 
 **结论先说：**
 
