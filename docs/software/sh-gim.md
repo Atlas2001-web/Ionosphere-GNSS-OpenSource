@@ -70,7 +70,7 @@ main_unpackdata
 | 概念 GIM | [03](../tutorials/03-gim-ionex.md) · [10](../tutorials/10-build-gim-workflow.md) |
 | 读产品 | [ionex-gim](./ionex-gim.md) · [18](../tutorials/18-lab-compare-gims.md) |
 | 单站 TEC | [georinex](./georinex.md) · [pytecgg](./pytecgg.md) |
-| 开源端到端 | lists 中 mosgim / m_gim 等 |
+| 开源端到端 | lists 中 mosgim（[mosgim2 手册](./mosgim2.md)）/ m_gim 等 |
 | 索引路径 E | [README](./README.md) |
 
 路径 E：本页讲边界，不是端到端工站。A/B/D 不依赖 SH-GIM。

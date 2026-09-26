@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **186 篇**操作手册（合计 **40928 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **188 篇**操作手册（合计 **41391 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -211,6 +211,8 @@
 | 184 | [tudatpy.md](./tudatpy.md) | TU Delft Tudat Python 接口（conda `tudat-team` 频道）：IERS 2010 GCRS↔ITRS、数值积分（球谐+日月+SRP+GR）、`create_best_fit_to_ephemeris` 估 Cr；≠ SP3 解析器 / SDP4 | 260 | **已短硬** · 2026-09-26 02:23–02:35 EDT；tudatpy **1.0.0**（develop `5c61b03`）/tudat-resources 2.4（`~/.tudat` 2.2 GB）/Py 3.12.14；PyPI 与 conda-forge 均 404，全依赖 334 包盘满失败→瘦装 97+44 包 env 1.2 GB；PRN02 同 Orekit 算例：同初速 12×12+日月+SRP+GR 46.1 m（Orekit 41.4）、12×12 1453 m（1448），自身 11 点惯性初速 14.1 m；12 h 估 Cr **1.851±0.054** RMS 0.370 m（Orekit 1.879/0.443）；自带 EOP 止于 2024-09-03 静默置零→227 m，续 finals2000A 后与 Orekit 初值差 5 mm；`ephemeris.sgp4` 实为 `ev2lin`，GPS 对 SP3 17.9 km；坑 13 条 |
 | 185 | [orbdetpy.md](./orbdetpy.md) | UT ASTRIA 轨道确定（Python 前端 + Orekit 11.0.2 jar，gRPC）：EKF/UKF/BLS、SP3 导入、TLE 传播；≠ GNSS POD（无 GR、BLS 不估 Cr、停更） | 223 | **已短硬** · 2026-09-26 02:37–02:44 EDT；PyPI **2.1.0**（2022-03，develop `1140678` 2023-04）/GPL-3.0/★129/Py 3.13.5/OpenJDK 21；PRN 02 24 h 全模型 **32.9 m** 均值（Orekit 初值 42.8 m vs Orekit 41.4 m），EKF 12 h 估 **Cr 1.912**，TLE vs SP3 **534 m**；自带 EOP 止于 2023-05，`update_data()` 前 176 m |
 | 186 | [ubx-mga-rinex-ephemeris.md](./ubx-mga-rinex-ephemeris.md) | RINEX 广播星历 → u-blox UBX-MGA 辅助星历（Python `convert_eph.py`：GPS/QZSS/GLO/GAL-EPH + HEALTH，头有参数时附 IONO/UTC/时间偏差；`ubx_tool.py` 串口灌注/复位/TTFF/离线 parse；≠ AssistNow 服务 / UBX 解码库；不含 BDS） | 206 | **已短硬** · 2026-09-26 02:35–02:46 EDT；main **`eb0c6e8`**（2026-04-18，无 tag/PyPI）/MIT/★6/Python ≥3.10；pytest **337 passed**（README 仍写 253）；BKG `BRDC00WRD_R_20262680000` → **95 帧 6856 B**（GPS 32/GAL 30/GLO 26/QZSS 5 + 2×HEALTH；BKG 头无 IONO/UTC），pyubx2 1.3.7 解码 G01/E05 共 22 字段误差绝对值 ≤ **3.4×10⁻⁴ LSB**；GLO R01 x/y/z/τ 一致；坑：默认模式无视 `--max-age`（选到 37.8 h 旧 G10）、不查过期（2020 ESBC exit 0）、RINEX 4 CNAV 误编（21/32 GPS health≠0）、georinex Galileo 全 NaN → ESBC 0 帧 GAL、BDS/SBAS/NavIC 静默丢、坏字段静默回退/饱和、pyubx2 需 `msgmode=SET` 且 af1 显示四舍五入 14%；写入接收机/TTFF **未在真接收机测试** |
+| 187 | [tec-suite.md](./tec-suite.md) | SIMuRG/gnss-lab：RINEX 2/3 观测+广播星历 → 每站每星文本（el/az、卫星 ECEF、`tec.l1l2` 相位 / `tec.p1p2` 码等原始 STEC；**不整平、不扣 DCB、不算 VTEC**；mosgim2 的输入） | 245 | **已短硬** · 2026-09-26 02:15–02:50 EDT；tip **`18465f9`**（2020-11-07）/v0.7.8/GPL-3.0-or-later；源码 + `future` + hatanaka `crx2rnx`；BKG 2024-08-22：WTZA（2.11）31 星、MAS1（3.04）G32/R26；两处本地补丁（3.04 版本登记、L2L 空值跳过：MIZU 全零文件 11→4）；自写整平+DCB（CODE IONEX）+450 km 薄壳 VTEC 对 CODE GIM：WTZA **+0.30±2.05**、MAS1 **−0.21±3.58** TECU（不扣 DCB 偏 12.85）；58 站 7 进程批量 3073 文件/331 MB；坑：`-c` 相对路径、3.04 拒读、Galileo `l1l2`=0、BDS-3 `C5P` 标签、R06/R10/R13/R23 无 G2、IONEX 站 DCB 分系统、经度 0–360 |
+| 188 | [mosgim2.md](./mosgim2.md) | PadArt 开源 GIM：仅用相位差（弧内对最小值做差，消模糊度+DCB）→ 两层薄壳（300/750 km）日固地磁系球谐 + LCP 正值约束 → HDF5 系数（**不写 IONEX**）；吃 tec-suite 输出 | 218 | **已短硬** · 2026-09-26 02:25–02:50 EDT；tip **`fc42e31`**（2023-08-09）/MIT/无 PyPI；Py3.11 + scipy 1.14.1/numpy 2.1.3（requirements 钉 2017 版装不上）+5 处兼容补丁（lemkelcp、`sph_harm`、`np.int`、`decode`、站名表漏逗号 `zambab12`）；58 站 98657 差分观测，单进程 6 m 49 s（6 进程 OOM）；25 幅对 CODE 终版：corr **0.951**/偏差 **−5.58**/RMS **9.67** TECU，赤道带 −8.14/11.55，峰值低 7–26 TECU；[img/](./img/mosgim2-vs-codg-20240822-12ut.png)；作者 2017-002 测试包服务器超时未复现 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -288,6 +290,7 @@
 | Android/多源 GNSS → NavData / 教学 WLS | [gnss_lib_py.md](./gnss_lib_py.md) |
 | 校准 sTEC/vTEC | [pytecgg.md](./pytecgg.md) |
 | 粗相对斜 TEC（无 DCB） | [gnss-tec.md](./gnss-tec.md) |
+| RINEX → 逐星原始斜 TEC 文本（相位/码组合；未整平未扣 DCB；给 mosgim2 供数） | [tec-suite.md](./tec-suite.md) |
 | ROTI / AATR / ΔTEC | [ionomoni.md](./ionomoni.md) · [oasis-roti.md](./oasis-roti.md) |
 | 读 IONEX GIM（Python；新短硬） | [ionex.md](./ionex.md) |
 | 读 IONEX GIM（旧文件名） | [ionex-gim.md](./ionex-gim.md) |
@@ -298,6 +301,7 @@
 | 轻量 PyQt 点选 WHU/NASA 日文件（2020） | [gnss-downloader.md](./gnss-downloader.md) |
 | GAMP/PPP YAML 批下载观测+产品（GOOD） | [gampii-good.md](./gampii-good.md) |
 | 球谐 GIM 边界说明 | [sh-gim.md](./sh-gim.md) |
+| 开源自建全球 GIM（仅相位差、球谐系数 HDF5；接 tec-suite） | [mosgim2.md](./mosgim2.md) |
 | NTRIP 脚本拉流 / 小 caster | [pygnssutils.md](./pygnssutils.md) |
 | asyncio NTRIP 握手 / 轻量 RTCM 帧 | [ntripstreams.md](./ntripstreams.md) |
 | Rust/tokio NTRIP 拉流 / 近邻挂载（example CLI） | [ntrip-client.md](./ntrip-client.md) |
@@ -426,7 +430,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ### E · 理解 GIM（非端到端自建）
 
-[ionex](./ionex.md)/[ionex-gim](./ionex-gim.md) 读产品（Rust → [ionex-rs](./ionex-rs.md)）；[diffionmap](./diffionmap.md) 两图并排；[sh-gim](./sh-gim.md) 只看公开/专有边界；开源求解看列表里其它 GIM 工具 → 教程 [03](../tutorials/03-gim-ionex.md)/[10](../tutorials/10-build-gim-workflow.md)/[18](../tutorials/18-lab-compare-gims.md)
+[ionex](./ionex.md)/[ionex-gim](./ionex-gim.md) 读产品（Rust → [ionex-rs](./ionex-rs.md)）；[diffionmap](./diffionmap.md) 两图并排；[sh-gim](./sh-gim.md) 只看公开/专有边界；开源求解：[tec-suite](./tec-suite.md) → [mosgim2](./mosgim2.md)（本机 58 站一日实跑），其余看列表里其它 GIM 工具 → 教程 [03](../tutorials/03-gim-ionex.md)/[10](../tutorials/10-build-gim-workflow.md)/[18](../tutorials/18-lab-compare-gims.md)
 
 ---
 
@@ -442,6 +446,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
+最近新增（用法讲解）：**tec-suite**+**mosgim2**（[tec-suite.md](./tec-suite.md) / [mosgim2.md](./mosgim2.md)；2026-09-26 02:15–02:50 EDT；tec-suite `18465f9`/GPL-3.0 + mosgim2 `fc42e31`/MIT 串成 RINEX→STEC→GIM：BKG 2024-08-22 58 站 → 3073 个 `.dat` → 两层球谐 25 幅；对 CODE 终版 GIM corr 0.951、偏差 −5.58、RMS 9.67 TECU（如实：偏低、赤道双峰抹平）；单站整平+扣 DCB 后 WTZA/MAS1 与 CODE 差 +0.30/−0.21 TECU；ionex-gim/sh-gim 各加一行 mosgim2 链接）。
 最近新增（用法讲解）：**ubx-mga-rinex-ephemeris**（[ubx-mga-rinex-ephemeris.md](./ubx-mga-rinex-ephemeris.md)；2026-09-26 02:35–02:46 EDT；main **`eb0c6e8`**/MIT/★6/Python ≥3.10；venv georinex 1.16.2 + pyubx2 1.3.7；pytest 337 passed；BKG BRDC 268（RINEX 3.05，免账号）→ 95 帧 6856 B，2.15 s；pyubx2 `msgmode=SET` 逐帧计数与工具自报一致；G01/E05 22 字段从原始整数换算与 RINEX 误差绝对值 ≤3.4×10⁻⁴ LSB（无损），pyubx2 属性四舍五入使 E05 af1 偏 14%；另跑 BKG 269 滚动/S 文件、ESBC 2020（含 IONO/UTC 但 GAL 0 帧）、RINEX 2/2.12、RINEX 4（CNAV 误编）；错误用例：空/只头/二进制/zip/无后缀 gz/缺文件/`--systems BDS`/超 `--max-age` 均 exit 1，截断 gz、`.crx`、`-o` 目录缺失为 traceback exit 1，截断/坏字段/超量程/过期星历 exit 0 静默；写入接收机/TTFF 未测）
 最近新增（用法讲解）：**go-gnss-rtcm**（[go-gnss-rtcm.md](./go-gnss-rtcm.md)；2026-09-26 02:29–02:34 EDT；tag **v0.0.9**=`6948afc`/Apache-2.0/★26/go 1.22；go1.24.4 `go test` 9 PASS；centipede `VALDM` 真流 382 帧：计数、1005 ECEF、1077 DF397/398/405/406/407/408 与 pyrtcm 1.2.0 全等，195 帧 MSM NSat diff 为空，1107 空 MSM 正常解（rtcm-rs 0.11.0 为 Corrupt）；重编码 382/382 逐字节同；错误用例：坏 CRC/翻位 `invalid CRC` 被 Scanner 静默跳过、截断 `data is smaller than frame length`、MSM 截断 err=nil 全 0、流尾假 `d3 03 ff` 吞 3 帧、零卫星 MSM 正常、1 字节分块与整文件同，无 panic）
 最近新增（用法讲解）：**pyubxutils**（[pyubxutils.md](./pyubxutils.md)；2026-09-26 02:14–02:28 EDT；PyPI **1.0.6**/`b758ec0`/BSD-3-Clause/★5/pyubx2 1.3.7；6 CLI 全跑：socat pty + 合成桥 + gpsd `c05330a` F9T 背景流；VALSET/CFG-MSG/TMODE 字节用 pyubx2 核对；`--portype` 被忽略、失败 rc=0、0 应答也 successfully；真机写入未测）。
@@ -596,11 +601,13 @@ data-access
    ├─ cycle-slip-correction (R3 周跳试验；不写回 OBS)
    ├─ drcycleslip (三频注入–探测教学；不写回 OBS)
    ├─ gnss-tec / pytecgg (路径 A；粗相对→校准)
+   ├─ tec-suite (RINEX→逐星原始 STEC 文本；mosgim2 上游)
    ├─ oasis-roti / ionomoni (路径 B)
    ├─ ionex (Python IONEX 读入；对照)
    ├─ ionex-gim (旧文件名；同包)
    ├─ ionex-rs (Rust IONEX 读写)
    ├─ diffionmap (两幅 IONEX 并排 VS)
+   ├─ mosgim2 (相位差球谐 GIM 自建；tec-suite→HDF5；对照 CODE)
    ├─ cddis-highrate-downloader (CDDIS high-rate 15 min)
    ├─ geospacelab (OMNI/指数/Madrigal TEC 产品图)
    ├─ lstid-processing (NRL LSTID：CINDI 带通+identify_tid / SAMI3 极值拟合；非 GNSS TEC)
@@ -665,8 +672,8 @@ saga-utils：高速 I/Q 闪烁算法旁路（源码参考；S4 为幅度版≈�
 
 | 教程 | 优先手册 |
 | --- | --- |
-| 02 / 16 | georinex · rinex · gnsspy · gnsstools · gnsstk · teqc · rinexmod · hatanaka · crx2rnx · rinex-cli · gnss-tec · pytecgg |
-| 03 / 10 / 18 | ionex · ionex-gim · ionex-rs · diffionmap · sh-gim(边界) · pyglow |
+| 02 / 16 | georinex · rinex · gnsspy · gnsstools · gnsstk · teqc · rinexmod · hatanaka · crx2rnx · rinex-cli · gnss-tec · pytecgg · tec-suite |
+| 03 / 10 / 18 | ionex · ionex-gim · ionex-rs · diffionmap · sh-gim(边界) · pyglow · mosgim2 |
 | 04 | iri-fortran · iri-2026-package · iri-common-files · iri2016 · pyglow · pyiri · pyirtam · apexpy · aacgmv2 · msise00 · nequickg · galileo-nequick-g · nequick2-ictp · kamodo |
 | 05 / 13 / 21 | oasis-roti · ionomoni · iono-scintillation · saga-utils · geospacelab |
 | 22 | gnss-tec · pytecgg · oasis-roti · lstid-processing · hamsci-lstid-detection |

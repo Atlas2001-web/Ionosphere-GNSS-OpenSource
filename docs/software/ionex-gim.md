@@ -194,7 +194,7 @@ done
 | 读 IGS 等 IONEX | **ionex（本页）** |
 | 单站校准 TEC | pytecgg（viventriglia） |
 | 理解球谐仓边界 | sh-gim |
-| 开源端到端建图 | lists 中 mosgim / m_gim 等 |
+| 开源端到端建图 | lists 中 mosgim（[mosgim2 手册](./mosgim2.md)）/ m_gim 等 |
 
 ## 8. 相关
 
