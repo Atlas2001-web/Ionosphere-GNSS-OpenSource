@@ -24,21 +24,6 @@
 
 ---
 
-## 现象一眼看懂
-
-| 现象 | 图 | 课文 |
-|---|---|---|
-| 日夜 TEC + EIA | ![](./docs/tutorials/images/fig-tec-day-night.png) | [21 赤道异常](./docs/tutorials/21-equatorial-anomaly-bubbles.md) |
-| 等离子体气泡 / 闪烁 | ![](./docs/tutorials/images/fig-scintillation-bubbles.png) | [05 闪烁](./docs/tutorials/05-scintillation-roti.md) |
-| TID 行波 | ![](./docs/tutorials/images/fig-tid-wavefront.png) | [22 TID](./docs/tutorials/22-tid-traveling-disturbances.md) |
-| 磁暴残差 | ![](./docs/tutorials/images/fig-storm-quiet-residual.png) | [20 磁暴](./docs/tutorials/20-storm-tec-analysis.md) |
-| 耀斑突增 | ![](./docs/tutorials/images/fig-flare-sudden-ionize.png) | [23 耀斑日食](./docs/tutorials/23-flare-eclipse-special.md) |
-| Ne 高度剖面 | ![](./docs/tutorials/images/fig-ne-profile-layers.png) | [01 基础](./docs/tutorials/01-ionosphere-tec-basics.md) |
-| 双频 → TEC | ![](./docs/tutorials/images/fig-dualfreq-tec.png) | [02 双频](./docs/tutorials/02-gnss-dualfreq-tec.md) |
-| ROTI 示意 | ![](./docs/tutorials/images/fig-roti-map-schematic.png) | [05 闪烁](./docs/tutorials/05-scintillation-roti.md) |
-
----
-
 ## 软件 / 数据分类
 
 | 分类 | 列表 | 数 |
@@ -62,3 +47,18 @@
 ## 许可
 
 目录文本与元数据 [CC0](https://creativecommons.org/publicdomain/zero/1.0/)。上游软件与数据仍按各自条款。
+
+---
+
+## 现象一眼看懂
+
+| 现象 | 图 | 课文 |
+|---|---|---|
+| 日夜 TEC + EIA | ![](./docs/tutorials/images/fig-tec-day-night.png) | [21 赤道异常](./docs/tutorials/21-equatorial-anomaly-bubbles.md) |
+| 等离子体气泡 / 闪烁 | ![](./docs/tutorials/images/fig-scintillation-bubbles.png) | [05 闪烁](./docs/tutorials/05-scintillation-roti.md) |
+| TID 行波 | ![](./docs/tutorials/images/fig-tid-wavefront.png) | [22 TID](./docs/tutorials/22-tid-traveling-disturbances.md) |
+| 磁暴残差 | ![](./docs/tutorials/images/fig-storm-quiet-residual.png) | [20 磁暴](./docs/tutorials/20-storm-tec-analysis.md) |
+| 耀斑突增 | ![](./docs/tutorials/images/fig-flare-sudden-ionize.png) | [23 耀斑日食](./docs/tutorials/23-flare-eclipse-special.md) |
+| Ne 高度剖面 | ![](./docs/tutorials/images/fig-ne-profile-layers.png) | [01 基础](./docs/tutorials/01-ionosphere-tec-basics.md) |
+| 双频 → TEC | ![](./docs/tutorials/images/fig-dualfreq-tec.png) | [02 双频](./docs/tutorials/02-gnss-dualfreq-tec.md) |
+| ROTI 示意 | ![](./docs/tutorials/images/fig-roti-map-schematic.png) | [05 闪烁](./docs/tutorials/05-scintillation-roti.md) |
