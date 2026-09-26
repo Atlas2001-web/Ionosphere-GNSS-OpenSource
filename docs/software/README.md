@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **242 篇**操作手册（合计 **55516 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **244 篇**操作手册（合计 **55981 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -267,6 +267,8 @@
 | 240 | [cors-networks.md](./cors-networks.md) | 区域 CORS 网匿名日观测：NOAA NGS S3、EUREF EPN（+ BKG EUREF 镜像）、GeoNet、IBGE RBMC、SONEL 的目录、命名、采样、站数、上架延迟，一站一天真下载完整性；EarthScope GAGE / CDDIS 登录门槛 | 291 | **已短硬** · 2026-09-26 05:45–05:58 EDT；2024/132 NOAA 1740 站目录 / SONEL 692 / EPN 395 / GeoNet 186 / RBMC 84；5 站全部完整；延迟 GeoNet 0.2 h → EPN 中央局 ≈ 52 h |
 | 241 | [um982-driver.md](./um982-driver.md) | sunshineharry/UM982Driver：和芯星通 UM982/UM980 串口驱动（Python 线程）：只解 ASCII `#PVTSLNA`→fix（MSL 高/纬/经/σ）、`#BESTNAVA`→ENU 速度、`$GNHPR`→航向/俯仰/横滚，pyproj 出 UTM；不解 KSXT/二进制、不发配置命令 | 219 | **已短硬** 用法讲解新入库 · 2026-09-26 05:56–06:05 EDT；master `451364c`/PyPI 0.2.1/GPL-3.0/★39；公开真实 UM98x 日志 socat 回放 + 自写解析 PVTSLN 634×6/BESTNAV 745×6 字段 0 差、CRC 判定 49387/49387 一致；PVTSLN `psrvel_ground` 实为 −垂直速度；缺 pyserial、首 10 行无 PVTSLN 崩、UTM 1–9 区错、异常杀线程静默冻结；真接收机未测 |
 | 242 | [solar-flare-data.md](./solar-flare-data.md) | 耀斑驱动数据匿名获取：SWPC 事件表、NCEI GOES-R XRS L2 science vs 运行版、SWPC 实时 JSON（primary/secondary）、0.7 缩放因子来历、LISIRD FISM2 与 SDO EVE；2024-05-11 X5.8 个例 | 349 | **已短硬** · 2026-09-26 05:59–06:06 EDT；X5.8：G16 1 s 峰 5.865e-4 W/m² @ 01:22:50、G18 X5.7、dn 高 1.2%；FISM2 30.4 nm ×1.54、ESP ×16.1；FISM2 到 09-18 |
+| 243 | [pysatspaceweather.md](./pysatspaceweather.md) | pysat/pysatSpaceWeather：Kp/ap/F10.7/Dst/AE… 各一个 pysat Instrument（GFZ、SWPC、NOAA、LASP），下载缓存后离线 load；Kp→ap、日 Ap、81 天 f107a、combine_kp/combine_f107 | 261 | **已短硬** 用法讲解新入库 · 2026-09-26 05:54–06:07 EDT；PyPI 0.2.2/`e36d39d`/BSD-3，pysat 3.2.2；须 numpy<2.3、pandas<3；2024-05-10/11 Kp 峰 9.0（ap 400，daily_Ap 105/271），F10.7 obs 213.7–233.2 SFU；NOAA Dst 止于 2008（2003-10-30 22 UT −383 nT 经 HTTPS+mock 加载），LISIRD 历史 F10.7 止于 2018，45day 预报 404；GFZ 月文件须 freq='MS' 下载否则错位 |
+| 244 | [ocbpy.md](./ocbpy.md) | aburrell/ocbpy：极盖边界（OCB）自适应磁坐标：IMAGE/AMPERE 边界圆 → AACGM lat/MLT 转 OCB lat/MLT（边界固定 74°）、revert_coord、VectorData 矢量按极盖半径缩放；包内自带 IMAGE 2000–2002、AMPERE 2010–2024-10 边界 | 204 | **已短硬** 用法讲解新入库 · 2026-09-26 06:07–06:10 EDT；PyPI 0.7.0/`3ced0de`/BSD-3，aacgmv2 2.7.1；AMPERE 2024-05-10 午夜边界 06 UT 69.1° → 22 UT 58.1°，AACGM 70° 点 OCB lat 74.824→79.957；500 m/s 流速 ×1.994；坑：默认文件表 AMPERE 写死到 2022（须传 filename）、未选 rec_ind 全 NaN、建对象约 40 s |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -491,6 +493,7 @@
 | 测高仪 foF2/hmF2 匿名拉取（GIRO fastchar）、站表、CS 过滤、SAO 获取门槛、磁暴耗减 | [giro-ionosonde.md](./giro-ionosonde.md) |
 | 测高仪参数按时刻直接拿 xarray（Python 客户端，需运行时补丁） | [digisondeindices.md](./digisondeindices.md) |
 | 模型驱动指数按时刻自动取（geomagindices；日值源已死，只剩月均 → 改用 GFZ API） | [geomagindices.md](./geomagindices.md) |
+| 磁暴 Kp/ap/F10.7/Dst 批量下载进 pandas、Kp→ap、81 天 F10.7 平均、实测+预报 Kp 合并（pysatSpaceWeather；须 numpy<2.3、pandas<3；2024 Dst 不可得） | [pysatspaceweather.md](./pysatspaceweather.md) |
 | Swarm LP Ne/Te、顶部 TEC、IPIR/IBI/EEF 免注册下载与 flag 过滤（swarm-diss HTTPS、VirES HAPI） | [swarm-data.md](./swarm-data.md) |
 | 高纬 GNSS 闪烁 S4/σφ 实测（CHAIN ISMR，免注册）与 ISMR 62 列定义 | [chain-scintillation.md](./chain-scintillation.md) |
 | 各中心 GIM/IONEX 去哪匿名下载、新旧文件名、出来要等多久、各家差多少 | [gim-product-portals.md](./gim-product-portals.md) |
@@ -508,6 +511,7 @@
 | SuperDARN HF 雷达 RTI / 扇形图 / 极区对流图（FITACF/MAP；TID 斜纹、对流速度） | [pydarn.md](./pydarn.md) |
 | SuperDARN 地面散射 MSTID：MUSIC 求波长/方向/相速度（单事件免 MongoDB；须钉 pydarn 4.1.2） | [darntids.md](./darntids.md) |
 | 极区局地电势/对流/电流/FAC 反演：SuperDARN+AMPERE+SuperMAG 联合（Lompe；自带 2012-04-05 样例，免账号） | [lompe.md](./lompe.md) |
+| 高纬观测按极盖边界归一：AACGM lat/MLT → OCB 坐标、对流速度按极盖大小缩放（ocbpy；自带 AMPERE 2010–2024 边界，须显式传文件名） | [ocbpy.md](./ocbpy.md) |
 | GPS dsTEC/dt 滑窗成图 + CNN 判海啸/地震 TID（自训模型；无预训练权重） | [tidd.md](./tidd.md) |
 | Swarm 卫星原位 RODI / 顶部 TEC ROTI（LP+POD；CC BY-NC-SA） | [titipy.md](./titipy.md) |
 | 时间实验室日处理：RINEX→RTKLIB PPP→接收机钟（ns）→ 两站钟差（ppp-tools；先修 ATX 路径与 NAV，站延迟需自扣） | [ppp-tools.md](./ppp-tools.md) |
@@ -554,6 +558,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
+最近新增（用法讲解）：**pysatspaceweather**+**ocbpy**（[pysatspaceweather.md](./pysatspaceweather.md) / [ocbpy.md](./ocbpy.md)；2026-09-26 05:54–06:10 EDT；pysatSpaceWeather 0.2.2/`e36d39d`/BSD-3：2024-05-10/11 GFZ Kp 峰 9.0、ap 400、F10.7 obs 223.4/213.7 SFU、f107a ≈176–177；Dst noaa 只到 2008（2003 万圣节 −383 nT 实载），45day 预报 404、LISIRD 止于 2018、GFZ 月文件按天下载会错位；ocbpy 0.7.0/`3ced0de`/BSD-3：包内测试边界 + AMPERE 2024-05-10 平静/暴时对比，OCB lat、revert_coord、VectorData ×1.994 全实跑；DualBoundary/EAB/DMSP 未实跑）
 最近新增（用法讲解）：**um982-driver**（[um982-driver.md](./um982-driver.md)；2026-09-26 05:56–06:05 EDT；master `451364c`/无 tag/PyPI 0.2.1/GPL-3.0/★39；Unicore N4 手册 R1.15 作规范；JHua07 公开 UM98x `all.log` 622 历元 socat 921600 回放 + 自写 CRC32/字段解析 0 差（PVTSLN 634、BESTNAV 745、GNHPR 3），PVTSLN 对 GGA 高差 0；手册不符：`psrvel_ground` 实为 −vert_spd；坑：缺 pyserial、构造只读 10 行、UTM 区号 1–9 拼错 EPSG、`$GNHPR2` 覆盖、异常杀线程；下一优先 um980-rtklib-pipeline，go-gnss-spartn 留候选（2020 起未维护））。
 最近新增（用法讲解）：**ublox8-qzss-almanac-converter**（[ublox8-qzss-almanac-converter.md](./ublox8-qzss-almanac-converter.md)；2026-09-26 05:46–05:55 EDT；main `1170ab7`/无 tag/MIT/★12，仓名实为 ublox8-gps-qzss-yuma-almanac-converter；QZSS 官网 qg2026268 21168 B → 1540 B/35 帧（GEO 199/200 丢），NAVCEN → 1408 B/32 帧；pyubx2 SET + 自写校验 67/67，字段对 YUMA ≤0.136 LSB、位置 toa 处 ≤0.024 m；坑：未知 PRN KeyError、QZSS 不健康照写、异常时 `Converted` 已打印但无文件、`print_ubx.py` 须 SET；下一优先 um982-driver，go-gnss-spartn 留候选（2020 起未维护））。
 最近新增（用法讲解）：**iricore**+**ntcmg**（[iricore.md](./iricore.md) / [ntcmg.md](./ntcmg.md)；2026-09-26 05:40–05:52 EDT；iricore PyPI 1.9.0/`92c6d8c`/MIT：Py3.13 源码编译（含 numpy 1.26.4），武汉 2024-03-20 06 UT IRI-2016=IRI-2020（默认 jf 下逐位相同）vTEC 65.774 → update 后 63.194（Rz12 136.7→99.3），IRI-2016 更新后全 NaN（`aig(806)` 装不下到 2028-11 的 ig_rz）；与 iri2020 页同场景 NmF2 1.494191e12 逐位一致；ntcmg `a458b3f`/MIT：test() 0.000303，2024/080 DLR BRDM GAL ai → 武汉 90°/30°/10° sTEC 89.3515/165.6327/256.7137 TECU；度当弧度 36.5396、经纬列序 33.6218 等坑实测）。
@@ -708,6 +713,7 @@ data-access
    ├─ cosmic-crunch (GENESIS 大气 RO L2→netCDF；电离层 RO→data-access/CDAAC)
    ├─ awsgnssroutils (AWS RO 三型查/下；电离层用 calibratedPhase；Ne→CDAAC)
    ├─ pysatcdaac (CDAAC ionPrf/ionPhs→pysat；Ne 用 ionprf；ionphs 建议 netCDF4)
+   ├─ pysatspaceweather (Kp/ap/F10.7/Dst→pysat；numpy<2.3+pandas<3；Dst noaa 止于 2008)
    ├─ teqc (EOL 翻译/编辑/QC；后继 gfzrnx/anubis/rnxcmp)
    ├─ gnsstk (C++ 库 + RinSum/RinDump；原 GPSTk)
    ├─ pinot (旧 TEQC 批壳 / 缺站日目录)
@@ -770,6 +776,7 @@ data-access
    ├─ ntcmg (Galileo NTCM-G C++；ai0–ai2→sTEC/延迟；弧度/米；无仰角检查)
    ├─ apexpy (Apex/QD/MLT 磁坐标)
    ├─ aacgmv2 (AACGM-v2 / MLT；交叉 apexpy)
+   ├─ ocbpy (极盖边界 OCB 坐标 + 矢量缩放；AMPERE 边界须传 filename)
    ├─ kamodo (CCMC 模式场函数化；SWMF_IE)
    ├─ msise00 (NRLMSISE-00 中性大气)
    ├─ pymsis (NRLMSIS 2.1/2.0/00；CelesTrak 指数；O/N₂ 暴时负相)
@@ -824,10 +831,10 @@ saga-utils：高速 I/Q 闪烁算法旁路（源码参考；S4 为幅度版≈�
 | --- | --- |
 | 02 / 16 | georinex · rinex · gnsspy · gnsstools · gnsstk · teqc · rinexmod · hatanaka · crx2rnx · rinex-cli · gnss-tec · pytecgg · tec-suite · ionotec |
 | 03 / 10 / 18 | ionex · ionex-gim · ionex-rs · diffionmap · sh-gim(边界) · pyglow · mosgim2 · spinifex |
-| 04 | iri-fortran · iri-2026-package · iri-common-files · iri2016 · iri2020 · pyglow · pyiri · pyirtam · apexpy · aacgmv2 · msise00 · pymsis · nequickg · galileo-nequick-g · nequick2-ictp · kamodo · iricore · ntcmg |
-| 05 / 13 / 21 | oasis-roti · ionomoni · iono-scintillation · saga-utils · geospacelab · sami2py · lompe |
+| 04 | iri-fortran · iri-2026-package · iri-common-files · iri2016 · iri2020 · pyglow · pyiri · pyirtam · apexpy · aacgmv2 · msise00 · pymsis · nequickg · galileo-nequick-g · nequick2-ictp · kamodo · iricore · ntcmg · pysatspaceweather |
+| 05 / 13 / 21 | oasis-roti · ionomoni · iono-scintillation · saga-utils · geospacelab · sami2py · lompe · ocbpy |
 | 22 | gnss-tec · pytecgg · oasis-roti · lstid-processing · hamsci-lstid-detection · pyrayhf · darntids · tidd |
-| 06 / 20 | cssrlib · haslib · madocalib · qzsl6tool · laika · gnss_lib_py · pyrtklib · pyrtklib-demo5 · pyrtklib-rinex · ppp-rtklib · learning-rtklib · mrtklib · rtklib-explorer · rtklib-b2b · android_rinex · gps-measurement-tools · pygpsclient · pynmeagps · pyubx2 · ubx2rinex · pyrtcm · pyspartn · pysbf2 · septentrio-gnss-driver · ublox-dgnss · ublox-driver · ntripstreams · ntrip-client · ntripclient · ntripserver · cors-relay · ntripcaster-libev · ntrip-cpp · ntrip-go · caster · glab-upc · rtklib · great-pvt · groops · rapppid · ppp-wizard · gogps-matlab · gsilib · rtppp-b2b · pride-pppar · ionomoni · gnss-sdr · pocketsdr · gps-sdr-sim · fgi-gsrx · gnssrefl · mpsim · pymsis · iri2020 · ntcmg |
+| 06 / 20 | cssrlib · haslib · madocalib · qzsl6tool · laika · gnss_lib_py · pyrtklib · pyrtklib-demo5 · pyrtklib-rinex · ppp-rtklib · learning-rtklib · mrtklib · rtklib-explorer · rtklib-b2b · android_rinex · gps-measurement-tools · pygpsclient · pynmeagps · pyubx2 · ubx2rinex · pyrtcm · pyspartn · pysbf2 · septentrio-gnss-driver · ublox-dgnss · ublox-driver · ntripstreams · ntrip-client · ntripclient · ntripserver · cors-relay · ntripcaster-libev · ntrip-cpp · ntrip-go · caster · glab-upc · rtklib · great-pvt · groops · rapppid · ppp-wizard · gogps-matlab · gsilib · rtppp-b2b · pride-pppar · ionomoni · gnss-sdr · pocketsdr · gps-sdr-sim · fgi-gsrx · gnssrefl · mpsim · pymsis · iri2020 · ntcmg · pysatspaceweather |
 | 09 | pytecgg |
 | 12 / 15 | gitm · kamodo · sami2py · lompe |
 
