@@ -1,6 +1,6 @@
 # POLAN · 电离图虚高 h′(f) → 真高剖面（Titheridge Fortran）操作手册
 
-目录：[`PROJECTS.json` → `POLAN`](../../PROJECTS.json) · 上游 <https://github.com/space-physics/POLAN>（SciVision 现代化维护；算法 J. E. Titheridge，UAG-93 报告；main `23c0056`，2026-06-22 15:58 EDT）· Python 包版本 **1.1.0**（`meson.build`/`__init__.py`，无 PyPI 发布，需从源码装）· 许可 **MIT**（`LICENSE`，Copyright 2017, 2026 SciVision）· 本机验证 **2026-09-26 06:14–06:35 EDT**：Debian gfortran 14.2.0、CMake 3.31.6、CPython 3.13.5 venv（numpy 2.5.3、meson-python 构建）。
+目录：[`PROJECTS.json` → `POLAN`](../../PROJECTS.json) · 上游 <https://github.com/space-physics/POLAN>（SciVision 现代化维护；算法 J. E. Titheridge，UAG-93 报告；main `23c0056`，2026-06-22 15:58 EDT）· Python 包版本 **1.1.0**（`meson.build`/`__init__.py`，无 PyPI 发布，需从源码装）· 许可 **MIT**（`LICENSE`，Copyright 2017, 2026 SciVision）· 本机验证 **2026-09-26 06:14–06:20 EDT**：Debian gfortran 14.2.0、CMake 3.31.6、CPython 3.13.5 venv（numpy 2.5.3、meson-python 构建）。
 
 > 岗位：输入测高仪描迹得到的**虚高** h′(f)（频率–虚高对），输出**真高** h(f) 剖面，以及每层峰值 foE/hmE、foF2/hmF2、标高、误差。只能反演到 F2 峰，峰上三点是 Chapman 外推。冲突时：`src/polrun.f` / `src/polan.f` 源码 > 仓内 `Readme_polan.md` > 本文。
 

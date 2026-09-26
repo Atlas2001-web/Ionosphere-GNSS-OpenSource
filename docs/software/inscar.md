@@ -1,6 +1,6 @@
 # inscar · 非相干散射雷达（ISR）理论谱计算 操作手册
 
-目录：[`PROJECTS.json` → `inscar`](../../PROJECTS.json) · 上游 <https://github.com/engeir/inscar>（Eirik Enger，UiT；main `eedbe1e`，2024-06-21 07:00 EDT）· PyPI **`inscar` 3.3.2** · 许可 **MIT**（`LICENSE.rst`）· 本机验证 **2026-09-26 06:14–06:30 EDT**：CPython 3.13.5 venv，inscar 3.3.2 / numba 0.67.0 / numpy 2.5.3 / scipy 1.18.1 / matplotlib 3.11.2。
+目录：[`PROJECTS.json` → `inscar`](../../PROJECTS.json) · 上游 <https://github.com/engeir/inscar>（Eirik Enger，UiT；main `eedbe1e`，2024-06-21 07:00 EDT）· PyPI **`inscar` 3.3.2** · 许可 **MIT**（`LICENSE.rst`）· 本机验证 **2026-09-26 06:14–06:20 EDT**：CPython 3.13.5 venv，inscar 3.3.2 / numba 0.67.0 / numpy 2.5.3 / scipy 1.18.1 / matplotlib 3.11.2。
 
 > 岗位：给定电子/离子温度、密度、离子质量、雷达频率、磁场与视线夹角，算出**理论** ISR 功率谱（离子线为主）。它**不读**雷达实测数据、**不做**拟合反演。冲突时：本机 `site-packages/inscar/config.py` 源码 > 上游 README > 本文。
 
