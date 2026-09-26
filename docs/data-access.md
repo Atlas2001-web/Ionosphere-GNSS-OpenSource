@@ -18,11 +18,12 @@
 | 区域 CORS（欧/亚太/加） | [EPN `/pub/obs/`](https://epncb.oma.be/pub/obs/) · [GA](https://data.gnss.ga.gov.au/) · [CACS](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/data-donnees/cacs-scca.php) · [MIRAI](https://go.gnss.go.jp/mirai/miraiarchive/) · [韩国](https://www.gnssdata.or.kr/) · [BEV Geoportal](https://data.bev.gv.at/) | 开放 / 网页注册 |
 | 欧洲站元数据 / 程序化 | [EPOS GNSS](https://gnss-epos.eu/) · [GLASS API](https://gnssdata-epos.oca.eu/GlassFramework/) · [M3G](https://gnss-metadata.eu/landing/m3g) | 视节点 |
 | 实时 RTCM / SSR | `products.igs-ip.net:2101` · [igs-ip.net](https://www.igs-ip.net/)（NTRIP；后者偶发超时） · [注册](https://register.rtcm-ntrip.org/cgi-bin/registration.cgi) | 挂载点账号 |
-| 掩星 RO | [CDAAC](https://cdaac-www.cosmic.ucar.edu/) · [data.cosmic](https://data.cosmic.ucar.edu/gnss-ro/) · [ROM SAF](https://rom-saf.eumetsat.int/) · [awsgnssroutils](https://github.com/gnss-ro/aws-opendata) | 开放 / 视源 |
-| 地磁 / 空间天气 | [Kyoto WDC](https://wdc.kugi.kyoto-u.ac.jp/) · [INTERMAGNET](https://intermagnet.org/) · [SuperMAG](https://supermag.jhuapl.edu/) · [GFZ Kp](https://kp.gfz.de/en/) · [SWPC](https://www.spaceweather.gov/) | 开放 / 注册 |
+| 掩星 RO | [CDAAC](https://cdaac-www.cosmic.ucar.edu/) · [data.cosmic](https://data.cosmic.ucar.edu/gnss-ro/) · [ROM SAF](https://rom-saf.eumetsat.int/)（[决策表](#电离层与地磁门户决策表)）· [awsgnssroutils](https://github.com/gnss-ro/aws-opendata) | 开放 / ROM SAF 产品库须注册（AWS 镜像开放） |
+| 地磁 / 空间天气 | [Kyoto WDC](https://wdc.kugi.kyoto-u.ac.jp/) · [INTERMAGNET](https://intermagnet.org/) · [SuperMAG](https://supermag.jhuapl.edu/) · [GFZ Kp](https://kp.gfz.de/en/) · [SWPC](https://www.spaceweather.gov/) · 台站分钟 / 秒值：USGS · BGS · NRCan · THEMIS GMAG · MACCS · TGO → [决策表](#电离层与地磁门户决策表) | 开放 / 注册 |
 | 区域 TEC 现报 | [eSWua TEC](http://www.eswua.ingv.it/ewphp/landing.php?doi=tec) · [IONORING](http://ionos.ingv.it/ionoring/ionoring.htm) | 开放（CC BY） |
 | 闪烁 ISMR | [`ismr_downloader`](https://github.com/GEGE-UNESP/ismr_downloader)（主）· [Query Tool](https://ismrquerytool.fct.unesp.br/)（辅，常超时） | 网页注册 |
-| 测高仪 | [GIRO / DIDBase](https://giro.uml.edu/didbase/) | 网页注册 |
+| 测高仪 | [GIRO / DIDBase](https://giro.uml.edu/didbase/) · [RAL / UKSSDC](https://www.ukssdc.ac.uk/ionosondes/) | 网页注册 |
+| ISR / SuperDARN / 区域台链 | [CEDAR Madrigal](https://cedar.openmadrigal.org/) · [EISCAT](https://portal.eiscat.se/) · [SRI AMISR](https://data.amisr.com/database/) · [FRDR SuperDARN](https://www.frdr-dfdr.ca/repo/collection/superdarn) · [子午工程](https://www.meridianproject.ac.cn/) · [PITHIA 编目](https://esc.pithia.eu/) → [决策表](#电离层与地磁门户决策表) | Madrigal / FRDR 开放；EISCAT 门户、子午工程须登录 |
 | 对流层格网 | [VMF](https://vmf.geo.tuwien.ac.at/) → `trop_products/` | 多开放 |
 
 逐站细节与注册字段 → [`10-gnss-datasets.md`](../lists/10-gnss-datasets.md)。
@@ -273,7 +274,7 @@ occs.download("ucar_calibratedPhase", data_root="./ro_out", keep_aws_structure=F
 PY
 ```
 
-**账号/配额坑**：`data.cosmic` 匿名开放（ionPhs/ionPrf 等）；旧「必须 CDAAC 网页账号」已过时；ROM SAF 多数仍要注册；AWS 工具**没有** `ionPhs` 文件名——电离层 excess phase 用 CDAAC 直链，AWS 侧重 `calibratedPhase` 等三型；勿把 registry 深链写进脚本；处理包 ROPP 与产品页分开找。
+**账号/配额坑**：`data.cosmic` 匿名开放（ionPhs/ionPrf 等）；旧「必须 CDAAC 网页账号」已过时；ROM SAF 产品库须注册登录（未登录 `login.php` 回 401），其中性大气产品在 AWS `gnss-ro-data/contributed/v1.1/romsaf/` 可匿名拉，见[决策表 E5](#dp-e5)；AWS 工具**没有** `ionPhs` 文件名——电离层 excess phase 用 CDAAC 直链，AWS 侧重 `calibratedPhase` 等三型；勿把 registry 深链写进脚本；处理包 ROPP 与产品页分开找。
 
 ### 地磁 / 空间天气（Kp / SWPC）
 
@@ -415,6 +416,171 @@ curl -L -C - -O \
 ```
 
 **账号/配额坑**：多开放；文件名是**日历日**不是年积日；先分清 VMF1 vs VMF3、OP vs FC/EI；站文件在 `GNSS/` 子树，勿与 GRID 混用。
+
+---
+
+## 电离层与地磁门户决策表
+
+第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
+
+| 门户 | 账号 / 门槛 | 格式 | 时间分辨率 · 时延 | 实测 |
+|---|---|---|---|:---:|
+| [EISCAT Portal](https://portal.eiscat.se/) | 门户 L2 下载须 **EGI Check-in + 加入 EISCAT VO**（首页提示 "You are not identified through EGI Check-in"）；计划 / 实时图公开。**绕行**：[EISCAT Madrigal](https://madrigal.eiscat.se/madrigal/) 匿名（只填姓名 / 邮箱 / 单位字段） | HDF5（Madrigal；GUISDAP params / pp 两类文件） | 按实验战役，非连续；样例积分 60 s（文件名 `_60`） | ✅ Madrigal（[E1](#dp-e1)） |
+| [SRI AMISR](https://data.amisr.com/database/) | 开放；数据走 SRI Madrigal `data.amisr.com/madrigal`（同样填三字段） | HDF5 | PFISR/RISR 同一实验给 1 / 3 / 5 min 积分多个版本；PFISR 常开长时低占空比模式（2024-05 共 94 个实验） | ✅（[E2](#dp-e2)） |
+| [CEDAR Madrigal](https://cedar.openmadrigal.org/) | 开放；下载须填姓名 / 邮箱 / 单位（不校验，但请写真实信息） | HDF5（`fileType=-2`；也可出 ASCII） | 全球 TEC 1°×1°×5 min 日文件；另有 LOS TEC、ROTI；先出 `Preliminary`，后补 `final` | ✅（[E3](#dp-e3)） |
+| [子午工程数据中心](https://www.meridianproject.ac.cn/) | **注册登录**：[注册](https://soc.meridianproject.ac.cn/sso/register?lang=zh_CN) → [数据检索](https://dcstatus.meridianproject.ac.cn/#/sjfw/sjjs?checkLogin=true&lang=cn)（SPA，`checkLogin=true`）；批量 = 在线提交「离线服务申请」 | 按设备（DOI 清单含 GNSS RINEX 观测 / 星历、垂直 TEC、闪烁指数、ISR 拟合参量等） | 视设备 | ✗ 数据（无账号）；DOI 清单 ✅（[E4](#dp-e4)） |
+| [ROM SAF](https://rom-saf.eumetsat.int/) | 产品库**须注册登录**（`/login.php` → **401**；[注册页](https://rom-saf.eumetsat.int/registration.php) 200）；CC BY 4.0。**绕行**：AWS `gnss-ro-data` 桶 `contributed/v1.1/romsaf/` 匿名 | netCDF4（AWS 镜像） | 每次掩星一个文件；NRT / 离线 / CDR（2001-09～2016-12）/ ICDR（2017 起）；**只有中性大气，无电子密度 / TEC** | ✅ AWS（[E5](#dp-e5)） |
+| [FRDR SuperDARN](https://www.frdr-dfdr.ca/repo/collection/superdarn) | 单文件 HTTPS **匿名**；整包 Globus Transfer 须 Globus 账号；用前读顶层 README（致谢 / 联系 PI / 1 年禁用期） | `rawacf.bz2`（dmap）；早年 `dat` | 按年分数据集（每年一个 DOI）；文件按雷达 × 时段切块；**时延约 1～2 年**（2023 RAWACF 于 2025-09-18 发布） | ✅（[E6](#dp-e6)） |
+| [PITHIA e-Science](https://esc.pithia.eu/) | 浏览 / 检索公开；登记资源（提供方）须 EGI Check-in（`/authorised/dashboard/` → 302 到 `aai.egi.eu`） | 元数据 XML（PITHIA 本体 2.2）；**不存数据**，跳转提供方 | 不适用 | ✅ 元数据（[E7](#dp-e7)） |
+| [USGS Geomagnetism](https://www.usgs.gov/programs/geomagnetism/data) | Web 服务无需账号。门户页 `www.usgs.gov` 对无 UA 的 curl 回 **403**（加浏览器 UA 为 200）；`geomag.usgs.gov/ws` 无 UA 也 200 | IAGA-2002 / JSON | 1 s、1 min 等；实时：07:12 UTC 查到的最新值为 07:09（约 3 min） | ✅（[E8](#dp-e8)） |
+| [NRCan 地磁](https://geomag.nrcan.gc.ca/data-donnee/sd-en.php) | 无需账号（FDSN，网络码 `C2`）；非商业，发表须致谢 NRCan | miniSEED（dataselect）；台站表为 text | 通道 `UF?` = 1 min，`LF?` = 1 s；位置码 `R0` 实时（最近 2 h 查询返回 61440 B） | ✅（[E9](#dp-e9)） |
+| [BGS Geomag](https://geomag.bgs.ac.uk/data_service/data/home.html) | 本站写明 1 s / 1 min「on application」，仅学术非商业。**实际可用**：BGS 运营的 [GIN Web 服务](https://imag-data.bgs.ac.uk/GIN_V1/GINServices)（INTERMAGNET 节点）匿名拿 ESK/LER/HAD | IAGA-2002 | `samplesPerDay=minute` 或 `second`；`best-avail`。实测最近 2 天全是 99999，没看到准实时值 | ✅（[E10](#dp-e10)） |
+| [MACCS](http://space.augsburg.edu/maccs/) | 开放（仅 HTTP，JSP 表单给直链）；更高分辨率须发邮件 `maccs@augsburg.edu`；发表前联系 PI | IAGA-2002（地磁本地坐标 XYZ，F 填 88888） | 0.5 s 平均（0.125 s 采样），日文件约 12 MB；时延 ≤1 天（09-26 已有 09-25 的文件） | ✅（[E11](#dp-e11)） |
+| [THEMIS GMAG](https://themis.ssl.berkeley.edu/gmag/) | 开放 HTTPS；SPDF 同路径镜像 | CDF（L2） | FYKN 样例一天 86400 点 = 1 s；L2 时延约 9 天（09-26 时最新为 09-17） | ✅（[E12](#dp-e12)） |
+| [TGO 特罗姆瑟](https://flux.phys.uit.no/geomag.html) | 图和 K 指数公开；**ASCII 数字数据要密码**：挪威站向 TGO 要、丹麦 / 格陵兰站向 DTU Space 要（见 [Data access](https://flux.phys.uit.no/div/DataAccess.html)）；GFZ 站为 CC BY-NC 4.0 | ASCII / IAGA-2002 | 1 min、10 s；K 指数 3 h | K 指数 ✅；ASCII ✗（[E13](#dp-e13)） |
+| [RAL 测高仪 (UKSSDC)](https://www.ukssdc.ac.uk/ionosondes/) | **须注册**（免费、自动）：[userreg.pl](https://www.ukssdc.ac.uk/cgi-bin/wdcc1/userreg.pl)；之后用户名为注册邮箱。未登录时 `/dpsdata/` 与 `cost_database.pl` 均为 **401** | 原始 DPS 电离图文件（SAO-Explorer 读）+ URSI 标定参数 | 常规 1 h 一张电离图（可申请加密探测）；Chilton 序列承接 1931 年起的 Slough | ✗（[E14](#dp-e14)） |
+
+要登录才能拿数据的：EISCAT 门户（Madrigal 可绕行）、子午工程、ROM SAF 产品库（AWS 可绕行）、TGO ASCII、UKSSDC/RAL。要「申请」的：BGS 本站高分辨率（GIN 可绕行）。
+
+### 逐门户实测命令
+
+<a id="dp-e1"></a>**E1 EISCAT（Madrigal 镜像）**
+
+```bash
+curl -L -o eiscat.h5 "https://madrigal.eiscat.se/madrigal/getMadfile.cgi?fileName=/opt/madrigal/experiments/2024/tro/16may24/MAD6400_2024-05-16_manda_60@uhf.hdf5&fileType=-2&user_fullname=Your+Name&user_email=you@example.org&user_affiliation=Your+Org"
+# 实测：HTTP 200，7342985 B，文件头 \x89HDF
+```
+
+门户 L2 要走 EGI Check-in：先注册 [EGI Check-in](https://aai.egi.eu/)，再按门户首页 "THIS GUIDE" 申请加入 EISCAT VO（人工批准），批准后才能在 Schedule and L2 Data 下载。
+
+<a id="dp-e2"></a>**E2 SRI AMISR（SRI Madrigal）**
+
+```bash
+curl -L -o pfisr.h5 "https://data.amisr.com/madrigal/getMadfile.cgi?fileName=/opt/madrigal/madrigal3/experiments0/2024/pfa/04may24c/pfa20240504.003_ac_nenotr_05min.001.h5&fileType=-2&user_fullname=Your+Name&user_email=you@example.org&user_affiliation=Your+Org"
+# 实测：HTTP 200，2817905 B，application/x-hdf5
+```
+
+`getVersionService.py` 报 SRI 为 2.6，CEDAR / EISCAT 为 3.2；madrigalWeb 3.3.8 对三者都能 `getExperiments` / `getExperimentFiles`。
+
+<a id="dp-e3"></a>**E3 CEDAR Madrigal（madrigalWeb 或 curl）**
+
+```bash
+pip install madrigalWeb
+python - <<'PY'
+import madrigalWeb.madrigalWeb as mw
+m = mw.MadrigalData("https://cedar.openmadrigal.org")
+exps = m.getExperiments(8000, 2024,5,10,0,0,0, 2024,5,10,23,59,59)   # 8000 = World-wide GNSS Receiver Network
+f = [x for x in m.getExperimentFiles(exps[-1].id) if "site_" in x.name][-1]
+m.downloadFile(f.name, "site_20240510.h5", "Your Name", "you@example.org", "Your Org", format="hdf5")
+PY
+# 实测：2 个实验（09may24、10may24），site_20240510.002.h5 = 134718 B，HDF5
+# 等价 curl：https://cedar.openmadrigal.org/getMadfile.cgi?fileName=<上面的 f.name>&fileType=-2&user_fullname=…&user_email=…&user_affiliation=…
+```
+
+同一天的 TEC 格网 `gps240510g.00N.hdf5` 较大，先用 `getExperimentFilesService.py?id=<实验号>` 看清单再选文件。
+
+<a id="dp-e4"></a>**E4 子午工程**
+
+```bash
+curl -sL "https://www.meridianproject.ac.cn/sjj/" | grep -oE '10\.12176/[0-9.]+-V[0-9]+' | sort -u | wc -l
+# 实测：1161（DOI 前缀 10.12176，CSTR 前缀 14804.11）
+```
+
+拿数据文件的步骤：① 在 [soc 注册页](https://soc.meridianproject.ac.cn/sso/register?lang=zh_CN) 开账号 → ② 登录后进 dcstatus「数据检索」按设备 / 台站 / 时段筛选下载 → ③ 大批量走「批量下载」（离线服务申请）→ ④ 发表时按[数据政策](https://www.meridianproject.ac.cn/sjzc/)写 DOI + CSTR `31122.02.MSP`，并向子午工程中心报送成果。本轮没有账号，**没有**验证文件格式和下载接口。
+
+<a id="dp-e5"></a>**E5 ROM SAF（AWS 开放镜像）**
+
+```bash
+curl -O "https://gnss-ro-data.s3.amazonaws.com/contributed/v1.1/romsaf/metop/atmosphericRetrieval/2006/10/27/atmosphericRetrieval_metop_romsaf_2305.0010_metopa-G01-200610271102.nc"
+# 实测：HTTP 200，17477 B，文件头 \x89HDF（netCDF4）
+# 列目录：https://gnss-ro-data.s3.amazonaws.com/?list-type=2&delimiter=/&prefix=contributed/v1.1/romsaf/
+```
+
+门户产品库：[registration.php](https://rom-saf.eumetsat.int/registration.php) 注册 → 登录后在 Product Archive 选产品。未登录时 `login.php` 回 401。
+
+<a id="dp-e6"></a>**E6 FRDR SuperDARN（HTTPS 单文件）**
+
+```bash
+curl -L -O "https://www.frdr-dfdr.ca/repo/files/7/published/publication_443/submitted_data/2014/01/20140115.1201.00.cve.rawacf.bz2"
+# 实测：302 → g-0758ab.cd4fe.0ec8.data.globus.org，HTTP 200，1029 B（BZh）；解压 76654 B，dmap 头含 radar.revision.major
+# 同集 README：…/submitted_data/2014RAWACF.readme.txt（200，20102 B）
+```
+
+列目录：`/repo/files/...` 目录本身不能浏览。文件清单在 `https://www.frdr-dfdr.ca/cache/7/publication_<item>/file_sizes/file_sizes.json`（根目录），子目录用 `file_sizes-<sha256(相对路径，例如 "2014/01")>.json`。2014 RAWACF 的 item 为 443，全集约 4.8 TB；常规文件（如 `20140101.0000.01.ade.a.rawacf.bz2`）约 26 MB，先挑小时段试。
+
+<a id="dp-e7"></a>**E7 PITHIA e-Science**
+
+```bash
+curl -s "https://esc.pithia.eu/data-collections/DataCollection_DIAS_Network/xml/" | grep -c '&lt;DataCollection'
+# 实测：HTTP 200，29264 B，页内嵌转义后的 <DataCollection xmlns=…> 元数据
+```
+
+只拿到元数据；数据要按集合页的 API / 链接去提供方（如 DIAS、DIDBase）。
+
+<a id="dp-e8"></a>**E8 USGS Geomag Web 服务**
+
+```bash
+curl -s "https://geomag.usgs.gov/ws/data/?id=BOU&starttime=2024-05-10T00:00:00Z&endtime=2024-05-10T00:09:00Z&elements=H,D,Z,F&sampling_period=60&type=variation&format=iaga2002"
+# 实测：HTTP 200，2201 B；首行 " Format                 IAGA-2002 …"；末行 2024-05-10 00:09:00.000 131  20786.50 -20.52 46381.01 51335.22
+# format=json 同样 200；sampling_period=1 给 1 s；不带时间参数时返回当天 UTC（未来时刻为 null）
+```
+
+<a id="dp-e9"></a>**E9 NRCan（Earthquakes Canada FDSN）**
+
+```bash
+curl -o ott.mseed "https://www.earthquakescanada.nrcan.gc.ca/fdsnws/dataselect/1/query?net=C2&sta=OTT&loc=R0&cha=UFX&starttime=2024-05-10T00:00:00&endtime=2024-05-10T01:00:00"
+# 实测：HTTP 200，512 B，application/vnd.fdsn.mseed，记录头 "000001D OTT  R0UFXC2"
+# 台站表：…/fdsnws/station/1/query?net=C2&level=station&format=text （200；ALE、BLC、FCC、MEA、OTT…）
+```
+
+miniSEED 可用 ObsPy `read()` 读（本轮没装 ObsPy，只核了记录头）。
+
+<a id="dp-e10"></a>**E10 BGS（GIN Web 服务）**
+
+```bash
+curl -o esk.txt "https://imag-data.bgs.ac.uk/GIN_V1/GINServices?Request=GetData&format=IAGA2002&testObsys=0&observatoryIagaCode=ESK&samplesPerDay=minute&dataStartDate=2024-05-10&dataDuration=1&publicationState=best-avail&orientation=native"
+# 实测：HTTP 200，104157 B，1467 行，Station Name "Eskdalemuir, United Kingdom"
+# samplesPerDay=second（LER）：200，6136388 B
+```
+
+<a id="dp-e11"></a>**E11 MACCS**
+
+```bash
+# 表单 retrieveiaga2002.jsp 返回直链；直链模式 IAGA2002/<IAGA>/<YYYY>/<iaga>YYYYMMDDv_l1_half_sec.sec
+curl -O "http://space.augsburg.edu/maccs/IAGA2002/IGL/2024/igl20240510v_l1_half_sec.sec"
+# 实测：HTTP 200，Content-Length 12270078；头 "Station Name  Igloolik, Nunavut, Canada"，"Data Interval Type  Averaged 0.5-Second"
+```
+
+站码对照：表单值 CD / CY / CH / GH / IG / NA / PG / PB / RB（IG → IGL）。
+
+<a id="dp-e12"></a>**E12 THEMIS GMAG**
+
+```bash
+curl -O "https://themis.ssl.berkeley.edu/data/themis/thg/l2/mag/fykn/2024/thg_l2_mag_fykn_20240510_v01.cdf"
+# 实测：HTTP 200，1770138 B，魔数 cdf30001；cdflib 读出 thg_mag_fykn_time 86400 点，间隔约 1.0 s
+# 镜像：https://spdf.gsfc.nasa.gov/pub/data/themis/thg/l2/mag/<站>/<YYYY>/
+```
+
+<a id="dp-e13"></a>**E13 TGO**
+
+```bash
+curl -s "https://flux.phys.uit.no/Kindice/k_tro2a.txt"
+# 实测：HTTP 200，183 B；首行 "K-Indices for Tromso"，列最近一周（如 "20 sep. 2026 4221 0003"）
+# ASCII 数据（无密码）：
+curl -s "https://flux.phys.uit.no/cgi-bin/mkascii.cgi?site=tro2a&year=2024&month=5&day=10&res=1min&pwd=&format=iagaUnix&comps=DHZ&getdata=+Get+Data+"
+# 实测：HTTP 200 但正文只有 "User error  - please contact magnar.g.johnsen@uit.no"（53 B）
+```
+
+拿密码：挪威站数据向 TGO 申请，丹麦 / 格陵兰站向 DTU Space 申请（[Data access](https://flux.phys.uit.no/div/DataAccess.html)）；然后把密码填进 `pwd=`。不想申请的话，北欧多数台站在 IMAGE 数据库也有，通常延迟几个月。
+
+<a id="dp-e14"></a>**E14 RAL 测高仪（UKSSDC）**
+
+```bash
+curl -s -o /dev/null -w "%{http_code}\n" "https://www.ukssdc.ac.uk/dpsdata/"
+# 实测：401（返回 Data Access Registration 页）；/cgi-bin/digisondes/cost_database.pl 同为 401
+```
+
+步骤：① 填 [userreg.pl](https://www.ukssdc.ac.uk/cgi-bin/wdcc1/userreg.pl)（姓名、邮箱、UK / 非 UK、用户类型，加一道人机验证；自动开通）→ ② 用注册邮箱作用户名登录 `/dpsdata/`（原始数字数据）或 [Prompt Ionospheric Database](https://www.ukssdc.ac.uk/prompt_database.html)（自动标定参数表 / 绘图 / POLAN / 下载 SAO-Explorer 原始文件）。本轮没有注册，没有验证文件。
 
 ---
 
