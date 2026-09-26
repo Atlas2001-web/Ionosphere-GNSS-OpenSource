@@ -65,7 +65,7 @@ HackUPC 2024 ESA 挑战获奖的开源 Android GNSS Tracker，展示手机所见
 
 语言：— · 许可：— · 星标约：22 · 宿主：github
 
-PRIDE 团队面向智能手机的多频 GNSS 与 IMU 采集工具，便于把手机原始测量送入后续 PPP 或科学研究流程。适合手机大地测量、城市峡谷与行人导航试验。手机天线相位中心与占空比限制明显；采集前应规划时间同步、姿态记录与导出格式，以便对接 PRIDE-PPPAR 或自研脚本。
+PRIDE 团队面向智能手机的多频 GNSS 与 IMU 采集工具，便于把手机原始测量送入后续 PPP 或科学研究流程。适合手机大地测量、城市峡谷与行人导航试验。手机天线相位中心与占空比限制明显；采集前应规划时间同步、姿态记录与导出格式，以便对接 PRIDE-PPPAR 或自研脚本。仓库只放 APK 安装包（zip 内也是 v2 APK），没有源码。
 
 #### [BDS-RawScope](https://github.com/sinyl-labs/BDS-RawScope)  
 *🏷️ 个人社区*
@@ -104,7 +104,7 @@ inmcm 的 MicroPython NMEA 解析库，面向 PyBoard 等嵌入式板，支持�
 
 语言：C · 许可：Apache-2.0 · 星标约：358 · 宿主：github
 
-u-blox 厂商开源的可移植 C 库，面向 MCU/RTOS 场景提供 GNSS 与蜂窝等产品统一 API，作为各平台 SDK 的附加层。Apache-2.0。适合嵌入式原始测量/配置联调；不是精密定位引擎，PC 端解析更常见 pyubx2 等工具。
+u-blox 厂商开源的可移植 C 库，面向 MCU/RTOS 场景提供 GNSS 与蜂窝等产品统一 API，作为各平台 SDK 的附加层。Apache-2.0。适合嵌入式原始测量/配置联调；不是精密定位引擎，PC 端解析更常见 pyubx2 等工具。仓库已于 2024-11 归档（只读），u-blox 已停止维护与支持。
 
 #### [GNSSTimeServer](https://github.com/Montecri/GNSSTimeServer)  
 *🏷️ 个人社区*

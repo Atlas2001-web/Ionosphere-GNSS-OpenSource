@@ -8,7 +8,7 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [UrbanNavDataset](https://github.com/IPNL-POLYU/UrbanNavDataset) | 香港/东京等城市峡谷 GNSS/INS/视觉基准集 | Python | 606 | 🏷️ 高校实验室 |
-| [awesome-gins-datasets](https://github.com/i2Nav-WHU/awesome-gins-datasets) | awesome-gins-datasets：车载 GNSS/INS 数据集列表 | — | 280 | 🏷️ 高校实验室 核心 |
+| [awesome-gins-datasets](https://github.com/i2Nav-WHU/awesome-gins-datasets) | awesome-gins-datasets：i2Nav 车载 GNSS/INS 评测数据集 | — | 280 | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
 
@@ -24,7 +24,7 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 
 语言：— · 许可：— · 星标约：280 · 宿主：github
 
-汇总适合车载 GNSS/INS 组合导航评测的公开数据集与说明入口，减少四处搜数据的时间成本。适合写论文基线、算法对比与课程大作业选题。本身不是解算软件；引用各数据集时要核对许可协议、传感器时间同步与标定文件是否齐全，缺失标定会严重扭曲融合精度结论。
+名字像清单，其实是 i2Nav 组自己采集的一份车载 GNSS/INS 数据集：开阔工业区约 1617 秒，含 ICM20602、ADIS16460、ADIS16465、HGuide-i300 四款 MEMS IMU 原始数据、GNSS RTK 结果和各 IMU 真值，并给出调好的噪声参数。适合比较不同等级 IMU 下的组合导航算法。只有开阔天空一段，不代表城市遮挡；引用时按 README 致谢 i2Nav 并引用相关论文。
 
 ## 资源列表
 
@@ -94,7 +94,7 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 
 语言：Python · 许可：GPL-3.0 · 星标约：4 · 宿主：github
 
-为低成本 GNSS 接收机提供简易图形界面，降低配置、查看星空与状态的门槛。适合教学演示、业余爱好者台站与快速连通性检查。精密解算与质检能力有限；深入分析请导出 RINEX 后接入 RTKLIB、Anubis 或 georinex 流水线。
+树莓派上的低成本 GNSS 图形界面，调用 RTKLIB 做各类解算，基于 RTKBase 与 TouchRTKStation；README 给出 u-blox M8T、4 寸屏、3D 打印外壳等组装清单。README 里的链接指向 NChebbah/EasyGNSS（现已 404），本仓可能是转存；账号资料里的 IGG,CAS 与项目本身无关。适合教学与业余台站，精密处理请导出 RINEX 后用 RTKLIB 等。
 
 #### [GPS-Velocity-Viewer](https://www.unavco.org/software/visualization/GPS-Velocity-Viewer/GPS-Velocity-Viewer.html)  
 *🏷️ 官方*
@@ -285,7 +285,7 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning) | Navigation-Learning：导航开源项目中文笔记 | — | 2417 | 🏷️ 个人社区 ★ 核心 |
-| [learning_rtklib](https://github.com/libing64/learning_rtklib) | learning_rtklib：RTKLIB 学习笔记 | — | 163 | 🏷️ 个人社区 |
+| [learning_rtklib](https://github.com/libing64/learning_rtklib) | learning_rtklib：RTKLIB 学习笔记 | C++ | 163 | 🏷️ 个人社区 |
 | [RTKLIB-Manual-CN](https://github.com/salmoshu/RTKLIB-Manual-CN) | RTKLIB-Manual-CN：中文手册与源码导读 | — | 54 | 🏷️ 个人社区 |
 | [gnss_tutorials](https://github.com/rokubun/gnss_tutorials) | gnss_tutorials：Rokubun Python/Jupyter GNSS 教程 | Jupyter Notebook | 13 | 🏷️ 个人社区 |
 | [DD-cycle-slip-lab](https://github.com/VimsRocz/Double_difference_relative_positioning) | DD-cycle-slip-lab：双差定位与周跳教学实验 | MATLAB | 7 | 🏷️ 个人社区 |
@@ -297,14 +297,14 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 
 语言：— · 许可：— · 星标约：2417 · 宿主：github
 
-系统整理 RTKLIB/GAMP/GREAT/Ginan/GINav/GICI 等源码阅读笔记与开源清单，中文学习路径非常完整。适合入门导航软件。笔记非上游文档，实现细节以各项目为准。
+系统整理 RTKLIB/GAMP/GREAT/Ginan/GINav/GICI 等源码阅读笔记与开源清单，中文学习路径非常完整。适合入门导航软件。笔记非上游文档，实现细节以各项目为准。GitHub 简介已写明不再更新。
 
 #### [learning_rtklib](https://github.com/libing64/learning_rtklib)  
 *🏷️ 个人社区*
 
-语言：— · 许可：— · 星标约：163 · 宿主：github
+语言：C++ · 许可：— · 星标约：163 · 宿主：github
 
-围绕 RTKLIB 的学习材料/笔记向仓库，降低读 C 代码的门槛。与 Navigation-Learning 互补。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
+中文笔记讲 RINEX 格式、用广播星历算卫星位置、单点/差分/RTK/PPP 定位，并附调用 RTKLIB 的 C++ 示例（spp_example、rtk_example、ppp_example 等）和样例数据。适合初读 RTKLIB 时对照。2020 年后未再更新，未声明许可证；与 Navigation-Learning 互补。
 
 #### [RTKLIB-Manual-CN](https://github.com/salmoshu/RTKLIB-Manual-CN)  
 *🏷️ 个人社区*

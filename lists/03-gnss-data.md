@@ -1262,7 +1262,7 @@ nav-solutions 生态下的 DORIS RINEX 解析 crate（MPL-2.0），把多普勒�
 
 语言：Python · 许可：MIT · 星标约：14 · 宿主：github
 
-面向 NASA CDDIS 高采样（high-rate）GNSS 归档的 Python 批量下载器，减轻按站/按日手工翻目录的负担。适合闪烁、地震同震、高动态轨迹等需要 1 Hz 以上观测的研究。使用前需 Earthdata 账号与授权；请限速、遵守 NASA 条款，并核对长文件名与校验。
+面向 NASA CDDIS 高采样（high-rate）GNSS 归档的 Python 批量下载器，减轻按站/按日手工翻目录的负担。适合闪烁、地震同震、高动态轨迹等需要 1 Hz 以上观测的研究。README 称走 CDDIS 匿名 FTP、无需账号，可自动解压并调用 CRX2RNX；请限速、遵守 NASA 条款，并核对长文件名与校验。
 
 ## 接收机协议
 

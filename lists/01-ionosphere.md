@@ -64,7 +64,7 @@ yujieqing 仓库：为电离层层析准备几何/射线矩阵相关代码，可
 
 语言：C++ · 许可：— · 星标约：0 · 宿主：github
 
-专注层析反演里体素穿越段（segment）几何矩阵的 C++ 实现，是三维电子密度反演的前置数值模块。原作者仓现已 archived；yxw027 同名仓为相同文件树副本，目录已去重只留本仓。不是完整层析软件，需自备观测方程与正则化。
+专注层析反演里体素穿越段（segment）几何矩阵的 C++ 实现，是三维电子密度反演的前置数值模块。仓库已于 2021-09 归档（只读）；yxw027 同名仓为相同文件树副本，目录已去重只留本仓。不是完整层析软件，需自备观测方程与正则化。
 
 ## 电离层与PPP
 
@@ -377,11 +377,11 @@ Space Weather Modeling Framework 组件之一，描述高纬电离层电动力�
 | [TEC-calculation-MATLAB](https://github.com/cssrg-kmitl/TEC-calculation-MATLAB) | TEC-calculation-MATLAB：双频 RINEX 2.11 TEC | MATLAB | 33 | 🏷️ 高校实验室 |
 | [PyTECGg](https://github.com/viventriglia/PyTECGg) | PyTECGg：多星座 TEC 重建与校准 | Python | 29 | 🏷️ 个人社区 🔀 ★ 核心 |
 | [ALBUS_ionosphere](https://github.com/twillis449/ALBUS_ionosphere) | ALBUS_ionosphere：GPS 估计 TEC 与法拉第旋转量 RM | Python | 26 | 🏷️ 个人社区 |
-| [tec-suite](https://github.com/gnss-lab/tec-suite) | tec-suite：SIMuRG 团队 TEC 重建软件套件 | Python | 23 | 🏷️ 高校实验室 |
+| [tec-suite](https://github.com/gnss-lab/tec-suite) | tec-suite：SIMuRG 团队斜向 TEC 重建软件 | Python | 23 | 🏷️ 高校实验室 |
 | [pygnss-tec](https://github.com/eureka-0/pygnss-tec) | pygnss-tec：RINEX 读数与 TEC 计算（Rust 加速） | Python | 16 | 🏷️ 个人社区 |
 | [VARION](https://github.com/giorgiosavastano/VARION) | VARION：变分法实时电离层监测（Savastano 个人仓） | Python | 15 | 🏷️ 个人社区 |
 | [gsit](https://github.com/aldebaran1/gsit) | GSIT：TEC/ROTI/IPP 与光学磁力计 Python 工具 | Python | 10 | 🏷️ 个人社区 |
-| [tidd](https://github.com/vc1492a/tidd) | tidd：在轨 GPS sTEC 变化率异常检测海啸信号 | Jupyter Notebook | 10 | 🏷️ 高校实验室 |
+| [tidd](https://github.com/vc1492a/tidd) | tidd：用 GPS sTEC 变化率异常检测 TID（海啸/地震等） | Jupyter Notebook | 10 | 🏷️ 高校实验室 |
 | [TEC_calculation_RINEX3](https://github.com/cssrg-kmitl/TEC_calculation_RINEX3) | TEC_calculation_RINEX3：RINEX 3.04 双频 TEC/ROTI（MATLAB） | MATLAB | 6 | 🏷️ 高校实验室 |
 | [TEC_gradient_computation](https://github.com/cssrg-kmitl/TEC_gradient_computation) | TEC_gradient_computation：单/双频电离层延迟梯度估计 | MATLAB | 6 | 🏷️ 高校实验室 |
 | [TEC-MoLLM](https://github.com/PANXIONG-CN/TEC-MoLLM) | TEC-MoLLM：GNN+时序 CNN+LLM（LoRA）全球 TEC 预报 | Python | 4 | 🏷️ 个人社区 |
@@ -398,7 +398,7 @@ Space Weather Modeling Framework 组件之一，描述高纬电离层电动力�
 | [quakeion](https://github.com/Gm015555/quakeion) | quakeion：震例目录 + CODE GIM TEC/ROT/ROTI 分析 | Python | 0 | 🏷️ 个人社区 |
 | [Seemala-GPS-TEC](https://seemala.blogspot.com/2026/08/gps-tec-analysis-program-version-37.html) | Seemala GPS-TEC：RINEX 估计 GPS TEC（Windows） | Windows/Exe | — | 🏷️ 个人社区 |
 | [TEC-forecast-F107](https://github.com/hekaixuan-atm/TEC-forecast) | 空间非均匀 F10.7 强迫的全球 TEC 预报代码 | Python | 0 | 🏷️ 个人社区 |
-| [vtec](https://github.com/mfkiwl/vtec) | vtec：STEC→VTEC 换算与相关小工具（MIT） | C++ | — | 🏷️ 个人社区 ★ |
+| [vtec](https://github.com/mfkiwl/vtec) | vtec：多 GNSS 球谐全球电离层图与 DCB 估计（C++） | C++ | — | 🏷️ 个人社区 ★ |
 
 ### 详细说明
 
@@ -414,7 +414,7 @@ SIMuRG/gnss-lab 系经典 STEC 重建库，输入 RINEX 相位与伪距，输出
 
 语言：Python · 许可：AGPL-3.0 · 星标约：47 · 宿主：github
 
-把读 RINEX、存 HDF5、算 TEC、卫星位置与接收机/卫星偏差串在一起，偏研究原型。适合快速探索。AGPL 较严；长期维护与测试覆盖不如专门 TEC 库，关键步骤建议交叉验证。
+把读 RINEX、存 HDF5、算 TEC、卫星位置与接收机/卫星偏差串在一起，偏研究原型。适合快速探索。AGPL 较严；长期维护与测试覆盖不如专门 TEC 库，关键步骤建议交叉验证。README 注明 2020-08 起不再维护，功能并入 gsit，读 RINEX 建议改用 georinex。
 
 #### [TEC-calculation-MATLAB](https://github.com/cssrg-kmitl/TEC-calculation-MATLAB)  
 *🏷️ 高校实验室*
@@ -442,7 +442,7 @@ SIMuRG/gnss-lab 系经典 STEC 重建库，输入 RINEX 相位与伪距，输出
 
 语言：Python · 许可：GPL-3.0 · 星标约：23 · 宿主：github
 
-比单库 gnss-tec 更偏「套件」形态，把重建流程串起来便于站点网作业。适合已在用 SIMuRG 工具链的人。GPL 约束与文档深度因版本而异；轻量嵌入可优先 gnss-tec。
+SIMuRG 团队的 tec-suite 读 RINEX 2/3 观测（含 Hatanaka 与 .Z/.gz 压缩）和导航文件，按站按卫星输出斜向 TEC 序列，支持 GPS/GLONASS/Galileo/BeiDou/GEO/IRNSS，提供 Windows/Linux/macOS 预编译包。本身不做 VTEC 格网或 GIM 建模，成图要接后续工具；GPL 约束与文档深度因版本而异，轻量嵌入可优先 gnss-tec。
 
 #### [pygnss-tec](https://github.com/eureka-0/pygnss-tec)  
 *🏷️ 个人社区*
@@ -470,7 +470,7 @@ Giorgio Savastano 个人仓发布的变分法电离层观测工具（方法源�
 
 语言：Jupyter Notebook · 许可：Apache-2.0 · 星标约：10 · 宿主：github
 
-演示从低轨 GPS 的 sTEC 时间变化中做异常检测以指示海啸扰动的方法与笔记本。输入为在轨 GPS TEC 时序；输出为异常检测结果。局限：研究案例向；虚警/漏检与空间天气干扰需注意。
+JPL、罗马一大与 UCLA 合作的工具包：对地面接收机观测 GPS 卫星得到的 sTEC 变化率（d/dt）做异常检测，识别海啸、地震、爆炸等引起的行进式电离层扰动（TID），附方法笔记本。输入为 sTEC 时序；输出为异常检测结果。局限：研究案例向；虚警/漏检与空间天气干扰需注意。
 
 #### [TEC_calculation_RINEX3](https://github.com/cssrg-kmitl/TEC_calculation_RINEX3)  
 *🏷️ 高校实验室*
@@ -589,7 +589,7 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 
 语言：C++ · 许可：MIT · 星标约：— · 宿主：github
 
-围绕 VTEC 换算与相关计算的小工具，适合把 STEC 投影到垂直方向做图或预报输入。功能边界较窄，完整双频重建与偏差估计需配合专业 TEC 库。
+C++ 写的全球电离层 VTEC 估计系统（中文 README）：读 RINEX 2/3 观测与广播/SP3 星历，做周跳探测和相位平滑伪距得到 STEC，经 SLM/MSLM 等映射转 VTEC，再用球谐函数建全球电离层图并联合估计卫星与接收机 DCB，输出 IONEX；支持 GPS/GLONASS/Galileo/BeiDou/QZSS。README 未署作者，星标少、缺外部验证，结果应先与 CODE/IGS GIM 对比。MIT。
 
 ## 工具
 
@@ -869,14 +869,14 @@ space-physics 组织（Michael Hirsch 等）发布的 Python 工具集，Apache-
 
 语言：Jupyter Notebook · 许可：— · 星标约：4 · 宿主：github
 
-配套射电/干涉测量电离层缓解研究，从 GPS 数据生成电离层与波束相关图（见 arXiv:2411.06144）。输入为 GPS 接收机数据；输出为电离层/波束产品。局限：面向特定科学场景；后续基带互相关仍在规划。
+配套射电/干涉测量电离层缓解研究，从 GPS 数据生成电离层与波束相关图（见 arXiv:2411.06144）。输入为 Septentrio 接收机的 SBF（及 NMEA）文件；输出为电离层/波束产品。局限：面向特定科学场景；后续基带互相关仍在规划。
 
 #### [MyIonosphere_Library](https://github.com/mguerra96/MyIonosphere_Library)  
 *🏷️ 个人社区*
 
 语言：MATLAB · 许可：— · 星标约：4 · 宿主：github
 
-计算相位几何自由组合（GFLC）与电离层穿刺点，适合教学推导 STEC 观测方程。输入为相位观测与站星几何；输出为 GFLC/IPP。局限：不是完整 TEC 定标与 DCB 解算套件。
+计算相位几何自由组合（GFLC）与电离层穿刺点，适合教学推导 STEC 观测方程。输入为起止时间与 RINEX 观测文件目录（GPS/Galileo/GLONASS/BeiDou/SBAS）；输出为 GFLC/IPP。局限：不是完整 TEC 定标与 DCB 解算套件。
 
 #### [psws-drf-tid-tools](https://github.com/N6RFM/psws-drf-tid-tools)  
 *🏷️ 个人社区*
@@ -1610,7 +1610,7 @@ BME（匈牙利）学生论文配套个人代码：含 RINEX 解析、格网电�
 
 语言：Jupyter Notebook · 许可：MIT · 星标约：31 · 宿主：github
 
-用 Keras/TF 等多类深度学习模型在全球电离层图上做 TEC 预报实验。适合学 ML+空间天气交叉的人对照复现。不是业务预报系统；数据切分、基线与物理约束要自己补齐，可与 ED-AttConvLSTM 等对比。
+用 Keras/TF2 在全球电离层图上做 TEC 预报实验，含 de Paulo 等 2023（GPS Solut）次日 GIM 预报的编码-解码 ConvLSTM，部分模型参考 Boulch 2018。适合学 ML+空间天气交叉的人对照复现。不是业务预报系统；数据切分、基线与物理约束要自己补齐，可与 ED-AttConvLSTM 等对比。
 
 #### [DeepPredTEC](https://github.com/vtsuperdarn/DeepPredTEC)  
 *🏷️ 高校实验室*

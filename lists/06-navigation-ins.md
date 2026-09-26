@@ -87,7 +87,7 @@ HKUST Aerial Robotics 发布的优化式多传感器状态估计器，在 VINS-M
 
 语言：C++ · 许可：GPL-3.0-or-later · 星标约：12 · 宿主：github
 
-在 PPP-RTK/INS 基础上再融合视觉观测，面向复杂遮挡环境的连续定位。与 HKUST-Aerial-Robotics/GVINS（现名 GVINS-HKUST）是不同项目，论文、数据集与作者均不相同；引用与复现前核对仓库说明。
+仓库描述只有「PPP-RTK/INS/Visual」，没有 README。目录含 ic_gvins（结构同 i2Nav IC-GVINS）、gnss_comm-main（HKUST gnss_comm）与 data_to_rosbag，看名称是在其上加入 PPP-RTK。与 HKUST-Aerial-Robotics/GVINS（本目录 GVINS-HKUST）是不同项目、不同作者；使用和引用前先读源码。
 
 ## 车载定位
 
@@ -177,7 +177,7 @@ HKUST Aerial Robotics 发布的优化式多传感器状态估计器，在 VINS-M
 
 语言：C · 许可：— · 星标约：472 · 宿主：github
 
-代码轻量、易读，适合固件向开发者移植。功能广度不及现代因子图方案；上线前务必核对状态模型与坐标系约定。
+README 列出松组合、SPP/PPP/DGPS/RTK 紧组合、里程计/磁力计/双天线辅助和 NHC/ZUPT 约束，目前只支持 Linux 编译。功能广度不及现代因子图方案；上线前务必核对状态模型与坐标系约定。
 
 #### [fusioncore](https://github.com/manankharwar/fusioncore)  
 *🏷️ 个人社区*
@@ -247,7 +247,7 @@ rtklibexplorer 社区风格的松组合 GNSS/IMU Python 实现，便于配合 de
 
 语言：C · 许可：— · 星标约：21 · 宿主：github
 
-将 PPP-RTK 改正与惯导结合的 GINS 实现，追求遮挡环境下仍较连续的高精度导航解。适合阅读 PPP-RTK/INS 相关论文时对照工程结构。公开文档与示例数据完整度一般；与 HKUST GVINS、i2Nav KF-GINS 名称接近但路线不同，选用前核对作者与传感器组合。
+仓库描述只有「PPP-RTK/INS」，没有 README。src 下是 RTKLIB 派生的 C 文件（pntpos/ppppos/pppar/rtkpos 等）加 PSINS 惯导代码和 GNSS/IMU 配置类，另有 Example 目录。具体场景、传感器与数据格式需读源码确认。与 HKUST GVINS、i2Nav KF-GINS 名称接近但不是同一项目。
 
 #### [ImuGpsGuiding](https://github.com/JackJu-HIT/ImuGpsGuiding)  
 *🏷️ 个人社区*
@@ -331,7 +331,7 @@ GREAT 组多传感器融合系统，支持 PPP/RTK 与 INS 等组合。适合已
 
 语言：MATLAB · 许可：— · 星标约：89 · 宿主：github
 
-把 GPS、里程计与罗盘送进 EKF，流程直观。适合车载松组合入门。高精度车道级与视觉惯性请另选现代框架。
+用 iPhone 的 GPS 取经纬度、电子罗盘取航向、加速度计积分代替里程计，再用 EKF 融合，流程直观。适合车载松组合入门。高精度车道级与视觉惯性请另选现代框架。
 
 ## 仿真
 

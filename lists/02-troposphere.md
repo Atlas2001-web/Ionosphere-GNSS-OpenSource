@@ -160,7 +160,7 @@ Kristine Larson 团队工具，为地基 GNSS-IR/反射测量绘制菲涅耳区�
 
 语言：Python · 许可：GPL-3.0 · 星标约：6 · 宿主：github
 
-从 GPS RINEX 提取 SNR，并结合导航电文算高度角/方位角，还带下载辅助。常作为 GNSS-IR 前处理积木，与 gnssrefl 生态 complementary。
+从 GPS RINEX 2.11 提取 SNR，并结合导航电文算高度角/方位角，还带下载辅助。常作为 GNSS-IR 前处理积木，与 gnssrefl 生态 互补。
 
 #### [NearRealTimeGNSSIR](https://github.com/cemalialtuntas/NearRealTimeGNSSIR)  
 *🏷️ 高校实验室*
@@ -218,7 +218,7 @@ Larson 团队 Fortran 工具，翻译/读取 GPS RINEX 并提取 SNR，服务反
 
 语言：Cuda · 许可：GPL-3.0 · 星标约：17 · 宿主：github
 
-面向 GNSS 反射测量的 GPU/CUDA 处理实验代码，适合做吞吐或算法加速试验。硬件与驱动依赖重；业务流水线需自行封装 I/O 与质控。
+为 UPC 被动遥感实验室（MIR 仪器）开发的 GNSS-R GPU/CUDA 处理代码，可在常规或干涉模式下按任意相干/非相干时长算 DDM，适合做吞吐或算法加速试验。硬件与驱动依赖重；业务流水线需自行封装 I/O 与质控。
 
 ## GNSS-IR/RR
 
@@ -259,28 +259,28 @@ Surrey Satellite Technology 提供的 TechDemoSat-1（MERRByS）星载 GNSS-R �
 
 语言：MATLAB · 许可：MIT · 星标约：30 · 宿主：github
 
-Kristine Larson 团队发布的 GNSS 干涉反射（GNSS-IR）MATLAB 新版，用信噪比（SNR）随高度角振荡反演反射面高度，常用于水位、雪深与土壤湿度。面向已有 MATLAB 流程的地球物理与大地测量用户。边界是反射测高/环境遥感，不做对流层 ZTD；Python 产线请优先对照同作者持续维护的 gnssrefl，本仓库更偏 MATLAB 用户留存版本。
+Kristine Larson 团队发布的 GNSS 干涉反射（GNSS-IR）MATLAB 新版，用信噪比（SNR）随高度角振荡反演反射面高度，常用于水位与雪深（README 注明不算土壤湿度）。面向已有 MATLAB 流程的地球物理与大地测量用户。边界是反射测高/环境遥感，不做对流层 ZTD；Python 产线请优先对照同作者持续维护的 gnssrefl，本仓库更偏 MATLAB 用户留存版本。
 
 #### [gnssIR-python](https://github.com/kristinemlarson/gnssIR_python)  
 *🏷️ 高校实验室*
 
 语言：Python · 许可：MIT · 星标约：26 · 宿主：github
 
-Larson 实验室较早的 GNSS-IR Python 脚本集，从 GNSS 观测提取 SNR 干涉条纹并估计反射器高度，服务水位与地表环境监测。适合想在纯脚本环境快速试验 GNSS-IR 的研究者。工程化、命令行与多星座流程弱于现维护的 gnssrefl；新项目建议直接用 gnssrefl，本库可作算法对照或旧文复现。
+Larson 实验室较早的 GNSS-IR Python 脚本集，从 GNSS 观测提取 SNR 干涉条纹并估计反射器高度，服务水位与地表环境监测。适合想在纯脚本环境快速试验 GNSS-IR 的研究者。工程化、命令行与多星座流程弱于现维护的 gnssrefl；新项目建议直接用 gnssrefl，本库可作算法对照或旧文复现。仓库已于 2020-11 归档（只读）。
 
 #### [gnssrlowcost](https://github.com/purnelldj/gnssr_lowcost)  
 *🏷️ 个人社区*
 
 语言：MATLAB · 许可：MIT · 星标约：14 · 宿主：github
 
-面向低成本 GNSS 硬件的反射测量分析，同时给出 MATLAB 与 Python 路径，降低 GNSS-R/IR 入门与课程实验门槛。适合教学站与原型站网。测高精度与稳定性通常不及大地型天线+gnssrefl；使用前需核对天线相位中心、多路径几何与采样率是否满足干涉条纹分辨需求。场地开阔度与多路径环境会显著影响可用弧段长度。
+面向低成本 GNSS 硬件的反射测量分析，同时给出 MATLAB 与 Python 路径，降低 GNSS-R/IR 入门与课程实验门槛。适合教学站与原型站网。测高精度与稳定性通常不及大地型天线+gnssrefl；使用前需核对天线相位中心、多路径几何与采样率是否满足干涉条纹分辨需求。场地开阔度与多路径环境会显著影响可用弧段长度。仓库已于 2025-03 归档（只读）。
 
 #### [gnssr-synth](https://github.com/purnelldj/gnssr_synth)  
 *🏷️ 个人社区*
 
 语言：MATLAB · 许可：MIT · 星标约：11 · 宿主：github
 
-MATLAB 工具：获取并分析 GNSS-R 水位观测，同时可生成合成 SNR，便于方法试验、误差传播与教学演示。面向反射测高与水文监测研究者。侧重水位场景与合成数据，不是覆盖雪深/土壤湿度的完整 GNSS-IR 套件；低成本接收机路线可并读同作者 gnssr_lowcost，产线级处理仍常回 gnssrefl。
+MATLAB 工具：获取并分析 GNSS-R 水位观测，同时可生成合成 SNR，便于方法试验、误差传播与教学演示。面向反射测高与水文监测研究者。侧重水位场景与合成数据，不是覆盖雪深/土壤湿度的完整 GNSS-IR 套件；低成本接收机路线可并读同作者 gnssr_lowcost，产线级处理仍常回 gnssrefl。仓库已于 2025-03 归档（只读）。
 
 ## 反射测量/PWV相关
 
