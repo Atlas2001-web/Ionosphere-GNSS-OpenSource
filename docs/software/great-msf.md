@@ -1,6 +1,6 @@
 # GREAT-MSF · 武大 GREAT 多源融合（PPP/RTK + INS）操作手册
 
-目录：[`PROJECTS.json` → `GREAT-MSF`](../../PROJECTS.json) · 上游 <https://github.com/GREAT-WHU/GREAT-MSF> · 许可 **GPL-3.0** · ★**151** · tip **`4366a53`**（2025-11-01 09:20 EDT；无 tag；README 自称 **1.0**）· 本机：Debian g++ **14.2.0** / CMake **3.31.6** 源码编译（**无预编译 Linux 二进制**）· `-h` → **`GREAT-MSF [1.0.0]`** · 样例 `MSF_20201029` 城市车载 25 min：LCRTK/TCRTK/TCPPP 三模式 **exit 0** · 2026-09-26 00:31–00:39 EDT
+目录：[`PROJECTS.json` → `GREAT-MSF`](../../PROJECTS.json) · 上游 <https://github.com/GREAT-WHU/GREAT-MSF> · 许可 **GPL-3.0** · ★**151** · tip **`4366a53`**（2025-11-01 09:20 EDT；无 tag；README 自称 **1.0**）· 本机：Debian g++ **14.2.0** / CMake **3.31.6** 源码编译（**无预编译 Linux 二进制**）· `-h` → **`GREAT-MSF [1.0.0]`** · 样例 `MSF_20201029` 城市车载 25 min：LCRTK/TCRTK/TCPPP 三模式 **exit 0** · 2026-09-26 00:31–00:39 EDT · **质检复跑**（2026-09-26 00:40–01:02 EDT，另起目录重 clone+编译）：tip/尺寸（`GREAT_MSF` **579456** B、`libLibGREAT.so` **4417416** B、`libLibGnut.so` **6788024** B）、原样链接 GL/GLFW undefined reference、§2 补丁后链接通过、三模式 exit 0、`.flt`/`.ins`/`.kml` 行数、`.ins` MeasType×AmbStatus 交叉计数、LCRTK `.flt` 首行与 Fixed 1495/Float 5、TCRTK Fixed 1490/Float 10、3D RMS **0.063/0.074/1.203** m（1498 秒匹配）全部逐字复现；Spent 43.1/45.7/13.3 s（本机负载 ≈37，墙时不可比）；TCPPP p95 用 numpy 默认线性插值得 1.628（原稿 1.632 属分位数算法差异，1.627–1.632）。新增坑 14：`-X` 写 stderr
 
 > 岗位：**GNSS（PPP/RTK）+ IMU** 松/紧耦合滤波，XML 驱动；扩展自 [great-pvt](./great-pvt.md)。冲突时：**本机 `GREAT_MSF -h` / `-X` / `doc/*.pdf` > 本文**。
 
@@ -83,7 +83,7 @@ Usage:
     -l file     .. spdlog output file   -X      .. output default configuration in XML
 ```
 
-`-X` → exit 0，**115 行 / 3895 B** 默认 XML 骨架；`-x /nonexist.xml` → exit **1**，`xconfig: not file read /nonexist.xml File was not found`。
+`-X` → exit 0，**115 行 / 3895 B** 默认 XML 骨架——**写到 stderr**：`GREAT_MSF -X > def.xml` 得 0 B 空文件，要 `GREAT_MSF -X 2> def.xml`；`-x /nonexist.xml` → exit **1**，`xconfig: not file read /nonexist.xml File was not found`。
 
 ## 3. 端到端：MSF_20201029 城市车载 25 min（本机真跑）
 
@@ -176,6 +176,7 @@ LCRTK `.flt` 首行（sow 367140）：`NSat=23 PDOP=1.20 Fixed Ratio=4.12 BL=151
 | 11 | 杆臂写反 | 坐标系是 RFU（右前上） | 按 RFU 填 `AntennaLever` |
 | 12 | cwd 堆出 8 MB `MSF.spd_log` | 日志写当前目录 | 用 `-l file` 或 `<outputs verb>` 调 |
 | 13 | clone 慢 | `sample_data/` 4 个 zip ≈190 MB | `--depth 1`；只解压需要的包 |
+| 14 | `-X > def.xml` 得 **0 B** 空文件 | 默认 XML 输出到 **stderr** | `GREAT_MSF -X 2> def.xml`（115 行 / 3895 B） |
 
 ## 8. 选型
 
