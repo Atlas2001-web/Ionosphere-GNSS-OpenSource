@@ -620,12 +620,12 @@ SystemVerilog 描述的单通道 GPS L1 C/A FPGA 相关器，经 AXI4-Lite 控�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [max2771_fx2lp](https://github.com/jmfriedt/max2771_fx2lp) | max2771_fx2lp：MAX2771 多通道射频前端 + FX2LP USB 采集 | C | 65 | 🏷️ 高校实验室 |
+| [max2771_fx2lp](https://github.com/jmfriedt/max2771_fx2lp) | max2771_fx2lp：MAX2771 多通道射频前端 + FX2LP USB 采集 | C | 65 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [max2771_fx2lp](https://github.com/jmfriedt/max2771_fx2lp)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C · 许可：GPL-3.0 · 星标约：65 · 宿主：github
 

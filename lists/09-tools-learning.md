@@ -69,8 +69,8 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [ge-gnss-visibility](https://github.com/taroz/ge-gnss-visibility) | ge-gnss-visibility：Google Earth 可见性分析 | MATLAB | 137 | 🏷️ 个人社区 |
-| [gnss_timeseries_viewers](https://github.com/kmaterna/gnss_timeseries_viewers) | gnss_timeseries_viewers：PBO/UNR 坐标时序分析绘图 | Python | 36 | 🏷️ 高校实验室 |
-| [EasyGNSS](https://github.com/whigg/EasyGNSS) | EasyGNSS：低成本 GNSS 图形界面辅助工具 | Python | 4 | 🏷️ 高校实验室 |
+| [gnss_timeseries_viewers](https://github.com/kmaterna/gnss_timeseries_viewers) | gnss_timeseries_viewers：PBO/UNR 坐标时序分析绘图 | Python | 36 | 🏷️ 个人社区 |
+| [EasyGNSS](https://github.com/whigg/EasyGNSS) | EasyGNSS：低成本 GNSS 图形界面辅助工具 | Python | 4 | 🏷️ 个人社区 |
 | [GPS-Velocity-Viewer](https://www.unavco.org/software/visualization/GPS-Velocity-Viewer/GPS-Velocity-Viewer.html) | GPS-Velocity-Viewer：UNAVCO GNSS 速度场在线可视化 | web | — | 🏷️ 官方 |
 
 ### 详细说明
@@ -83,14 +83,14 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 在任意位置生成虚拟鱼眼天顶图并判断 GNSS 可见性，城市遮挡研究直观。需要 Google Earth 相关环境。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
 
 #### [gnss_timeseries_viewers](https://github.com/kmaterna/gnss_timeseries_viewers)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：MIT · 星标约：36 · 宿主：github
 
-伯克利相关维护者发布的 Python 包，专注 GNSS 坐标时间序列：读 PBO/UNR 等产品、估计斜率/季节项/阶跃，并做堆叠图。依赖 Poetry/conda 环境与 EarthScope 相关 CLI。用于形变时序分析，不处理原始 RINEX 观测。
+个人维护者 kmaterna 发布的 Python 包，专注 GNSS 坐标时间序列：读 PBO/UNR 等产品、估计斜率/季节项/阶跃，并做堆叠图。依赖 Poetry/conda 环境与 EarthScope 相关 CLI。用于形变时序分析，不处理原始 RINEX 观测。
 
 #### [EasyGNSS](https://github.com/whigg/EasyGNSS)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：GPL-3.0 · 星标约：4 · 宿主：github
 
@@ -284,16 +284,16 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning) | Navigation-Learning：导航开源项目中文笔记 | — | 2417 | 🏷️ 高校实验室 ★ 核心 |
+| [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning) | Navigation-Learning：导航开源项目中文笔记 | — | 2417 | 🏷️ 个人社区 ★ 核心 |
 | [learning_rtklib](https://github.com/libing64/learning_rtklib) | learning_rtklib：RTKLIB 学习笔记 | — | 163 | 🏷️ 个人社区 |
-| [RTKLIB-Manual-CN](https://github.com/salmoshu/RTKLIB-Manual-CN) | RTKLIB-Manual-CN：中文手册与源码导读 | — | 54 | 🏷️ 高校实验室 |
+| [RTKLIB-Manual-CN](https://github.com/salmoshu/RTKLIB-Manual-CN) | RTKLIB-Manual-CN：中文手册与源码导读 | — | 54 | 🏷️ 个人社区 |
 | [gnss_tutorials](https://github.com/rokubun/gnss_tutorials) | gnss_tutorials：Rokubun Python/Jupyter GNSS 教程 | Jupyter Notebook | 13 | 🏷️ 个人社区 |
-| [DD-cycle-slip-lab](https://github.com/VimsRocz/Double_difference_relative_positioning) | DD-cycle-slip-lab：双差定位与周跳教学实验 | MATLAB | 7 | 🏷️ 高校实验室 |
+| [DD-cycle-slip-lab](https://github.com/VimsRocz/Double_difference_relative_positioning) | DD-cycle-slip-lab：双差定位与周跳教学实验 | MATLAB | 7 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [Navigation-Learning](https://github.com/LiZhengXiao99/Navigation-Learning)  
-*🏷️ 高校实验室 ★ 核心*
+*🏷️ 个人社区 ★ 核心*
 
 语言：— · 许可：— · 星标约：2417 · 宿主：github
 
@@ -307,7 +307,7 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 围绕 RTKLIB 的学习材料/笔记向仓库，降低读 C 代码的门槛。与 Navigation-Learning 互补。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
 
 #### [RTKLIB-Manual-CN](https://github.com/salmoshu/RTKLIB-Manual-CN)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：— · 许可：— · 星标约：54 · 宿主：github
 
@@ -321,7 +321,7 @@ gAGE 组学习材料下的软件工具汇总，指向 gLAB Tool Suite 与 gAGEbu
 Rokubun 编写的 GNSS 数据处理 Jupyter 教程，覆盖从观测到基础解算的示范流程。MIT 许可；与 android_rinex 同机构，适合入门与课堂教学演示。内容随课程版本变化，生产流水线请改用仍在维护的库，并补齐自有质控步骤。
 
 #### [DD-cycle-slip-lab](https://github.com/VimsRocz/Double_difference_relative_positioning)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：MATLAB · 许可：MIT · 星标约：7 · 宿主：github
 

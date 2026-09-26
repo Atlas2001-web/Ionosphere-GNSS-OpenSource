@@ -180,7 +180,7 @@ Glenn MacGougan 等维护的 Essential GNSS Project，提供 RINEX 2.x 解码、
 | [raPPPid](https://github.com/TUW-VieVS/raPPPid) | raPPPid：维也纳 VieVS 的 PPP 模块 | MATLAB | 149 | 🏷️ 高校实验室 核心 |
 | [GAMP_PPPH](https://github.com/zhufengGNSS/GAMP_PPPH) | GAMP_PPPH：多星座 PPP 学习源码 | C | 78 | 🏷️ 高校实验室 ★ |
 | [GPSPACE](https://github.com/CGS-GIS/GPSPACE) | GPSPACE：加拿大 NRCan 开源 PPP Fortran 程序 | Fortran | 58 | 🏷️ 官方 |
-| [PPPLib](https://github.com/yxw027/PPPLib) | PPPLib：开源精密单点定位库 | C++ | 49 | 🏷️ 高校实验室 |
+| [PPPLib](https://github.com/yxw027/PPPLib) | PPPLib：开源精密单点定位库 | C++ | 49 | 🏷️ 个人社区 |
 | [PPP](https://github.com/XiaoGongWei/PPP) | PPP：静态精密单点定位 C++ 练习实现 | C++ | 23 | 🏷️ 高校实验室 |
 | [PPPH-UAV](https://github.com/BerkayBahadur/PPPH-UAV) | PPPH-UAV：无人机摄影测量向 GNSS PPP（MATLAB） | MATLAB | 14 | 🏷️ 高校实验室 |
 | [RTPPP_B2b](https://github.com/floating0516/RTPPP_B2b) | RTPPP_B2b：B2b 改正实时 PPP 接口 | C | 10 | 🏷️ 个人社区 核心 |
@@ -211,7 +211,7 @@ VieVS（TU Wien）精密单点定位模块，MATLAB 实现，便于与 VLBI/大�
 加拿大测地调查局（CGS）1990 年代至 2018 年 8 月业务使用的 Fortran PPP 程序，2003 年起在 CSRS-PPP 在线服务后台运行；2018 年被新软件取代后停止支持，以 MIT 许可作为归档（只读）仓库发布，CGS 声明不再更新代码或文档。适合研究与教学对照国家机构处理流程。现代多星座实时服务请结合 CSRS-PPP 网页与其他开源引擎。
 
 #### [PPPLib](https://github.com/yxw027/PPPLib)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C++ · 许可：— · 星标约：49 · 宿主：github
 
@@ -295,7 +295,7 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [groops](https://github.com/groops-devs/groops) | GROOPS：重力场与 GNSS 处理（TU Graz） | C++ | 244 | 🏷️ 高校实验室 ★ 核心 |
-| [gnss2tws-green](https://github.com/jzshhh/gnss2tws_green) | gnss2tws-green：GNSS 垂直位移反演陆地水储量 | MATLAB | 33 | 🏷️ 高校实验室 |
+| [gnss2tws-green](https://github.com/jzshhh/gnss2tws_green) | gnss2tws-green：GNSS 垂直位移反演陆地水储量 | MATLAB | 33 | 🏷️ 个人社区 |
 | [GARPOS](https://github.com/s-watanabe-jhod/garpos) | GARPOS：日本海保 GNSS-声学海底定位开源解算器 | Python | 25 | 🏷️ 官方 |
 | [gnatss](https://github.com/seafloor-geodesy/gnatss) | gnatss：海底 GNSS-A 换能器测量社区软件 | Python | 17 | 🏷️ 个人社区 |
 | [GAMIT/GLOBK](https://geoweb.mit.edu/gg/) | MIT EAPS 维护的 GAMIT/GLOBK 高精度 GNSS 大地测量解算套件主页 | Fortran/C | — | 🏷️ 高校实验室 |
@@ -310,7 +310,7 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 格拉茨工业大学 ITSG 背景的 GROOPS，覆盖重力场恢复、GNSS 处理与轨道确定，含 GUI 与 MPI 并行。适合大地测量联合反演与科研计算。学习曲线陡；纯导航 RTK/PPP-AR 工程请优先专用套件。
 
 #### [gnss2tws-green](https://github.com/jzshhh/gnss2tws_green)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：MATLAB · 许可：GPL-3.0 · 星标约：33 · 宿主：github
 
@@ -589,7 +589,7 @@ goGPS 的 Java 实现，便于嵌进 JVM 应用。功能气质同 MATLAB 版但�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [deep_gnss](https://github.com/Stanford-NavLab/deep_gnss) | deep_gnss：NavLab 深度学习 GNSS 定位实验代码 | Python | 127 | 🏷️ 高校实验室 |
-| [snapshot-gnss-algorithms](https://github.com/JonasBchrt/snapshot-gnss-algorithms) | snapshot-gnss-algorithms：短快照 GNSS 定位算法集 | Python | 36 | 🏷️ 高校实验室 |
+| [snapshot-gnss-algorithms](https://github.com/JonasBchrt/snapshot-gnss-algorithms) | snapshot-gnss-algorithms：短快照 GNSS 定位算法集 | Python | 36 | 🏷️ 个人社区 |
 | [PrNet](https://github.com/AILocAR/PrNet) | PrNet：神经网络伪距改正（手机 GNSS） | Python | 30 | 🏷️ 高校实验室 |
 | [E2EPrNet](https://github.com/AILocAR/E2EPrNet) | E2EPrNet：端到端神经伪距改正实现 | Python | 6 | 🏷️ 高校实验室 |
 | [gps_pvt](https://github.com/fenrir-naru/gps_pvt) | gps_pvt：Ruby 可控 PVT + RINEX/SP3/UBX 解析 | C++ | 6 | 🏷️ 个人社区 |
@@ -605,7 +605,7 @@ goGPS 的 Java 实现，便于嵌进 JVM 应用。功能气质同 MATLAB 版但�
 Stanford NavLab 公开的基于深度神经网络的 GNSS 位置估计仓库，用于学习型定位与传统模型对照实验。MIT 许可，偏论文复现与教学演示。数据划分与训练配置见仓库 README；非工程级 PPP/RTK 替代品，生产部署需配合物理模型、完备质控与完好性设计。
 
 #### [snapshot-gnss-algorithms](https://github.com/JonasBchrt/snapshot-gnss-algorithms)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：ISC · 星标约：36 · 宿主：github
 
@@ -1053,7 +1053,7 @@ taroz 维护的单频 RTK-GNSS 流动/基准站方案，底层依托 RTKLIB，�
 
 语言：C/C++ · 许可：MIT · 星标约：33 · 宿主：github
 
-Point One Navigation 官方提供的 C 与 C++ 客户端库，连接其 Polaris RTK 网络取得 RTCM 10403 改正，喂给 Septentrio、NovAtel、u-blox 等兼容接收机，附串口转发与 NTRIP server 示例。需要在 app.pointonenav.com 申请 API key，云端服务本身非开源；适合想把商业 RTK 改正嵌入自有设备的开发者。
+Point One Navigation 厂商提供的 C 与 C++ 客户端库，连接其 Polaris RTK 网络取得 RTCM 10403 改正，喂给 Septentrio、NovAtel、u-blox 等兼容接收机，附串口转发与 NTRIP server 示例。需要在 app.pointonenav.com 申请 API key，云端服务本身非开源；适合想把商业 RTK 改正嵌入自有设备的开发者。
 
 #### [rtk_client](https://github.com/tobiasnix/rtk_client)  
 *🏷️ 个人社区*

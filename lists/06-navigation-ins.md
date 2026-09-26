@@ -26,10 +26,10 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 | [VINS-Fusion](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion) | VINS-Fusion：港科大多传感器视觉惯性估计器 | C++ | 4728 | 🏷️ 高校实验室 |
 | [gici-open](https://github.com/chichengcn/gici-open) | GICI：GNSS/INS/相机紧组合开源库 | C++ | 667 | 🏷️ 高校实验室 核心 |
 | [VINS-GPS-Wheel](https://github.com/Wallong/VINS-GPS-Wheel) | VINS-GPS-Wheel：VINS-Mono+轮速+GNSS | C++ | 280 | 🏷️ 个人社区 |
-| [RTK-Visual-Inertial-Navigation](https://github.com/xiaohong-huang/RTK-Visual-Inertial-Navigation) | RTK-VIN：滑窗滤波 RTK 视觉惯性导航 | C++ | 136 | 🏷️ 高校实验室 |
+| [RTK-Visual-Inertial-Navigation](https://github.com/xiaohong-huang/RTK-Visual-Inertial-Navigation) | RTK-VIN：滑窗滤波 RTK 视觉惯性导航 | C++ | 136 | 🏷️ 个人社区 |
 | [carvig](https://github.com/Erensu/carvig) | carvig：车载 INS/GNSS/视觉组合导航 | C | 120 | 🏷️ 个人社区 |
-| [salsa](https://github.com/yxw027/salsa) | salsa：GNSS+视觉+惯性状态估计原型 | C++ | 14 | 🏷️ 高校实验室 |
-| [GVINS-WHU](https://github.com/zhangwhu/GVINS) | GVINS-WHU：武大方向 PPP-RTK/INS/视觉组合导航 | C++ | 12 | 🏷️ 高校实验室 |
+| [salsa](https://github.com/yxw027/salsa) | salsa：GNSS+视觉+惯性状态估计原型 | C++ | 14 | 🏷️ 个人社区 |
+| [GVINS-WHU](https://github.com/zhangwhu/GVINS) | GVINS-WHU：PPP-RTK/INS/视觉组合导航（个人仓） | C++ | 12 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -62,7 +62,7 @@ HKUST Aerial Robotics 发布的优化式多传感器状态估计器，在 VINS-M
 在 VINS-Mono 上紧耦合轮速计、松耦合 GPS，并在 KAIST 等数据集验证，面向自动驾驶室外定位。适合已有视觉惯性栈、想加轮速与 GNSS 全局约束的团队。依赖 ROS/VINS 生态；GNSS 中断或城市峡谷时仍主要靠视觉惯性与轮速。轮速标度因数误差会在长直道上缓慢积累。数据集标定文件缺失时融合容易发散。
 
 #### [RTK-Visual-Inertial-Navigation](https://github.com/xiaohong-huang/RTK-Visual-Inertial-Navigation)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：136 · 宿主：github
 
@@ -76,14 +76,14 @@ HKUST Aerial Robotics 发布的优化式多传感器状态估计器，在 VINS-M
 面向车辆定位的 INS/GNSS/视觉一体化导航实现（C），把惯导、卫星与视觉观测纳入同一解算框架，服务自动驾驶或车载定位验证。适合做多传感器室外定位的工程与研究生。纯 GNSS 的 RTK/PPP 引擎深度不如 RTKLIB/PRIDE；本库价值在融合架构，文档与外场标定成本需自行评估。传感器外参与时间同步质量会直接限制融合精度。
 
 #### [salsa](https://github.com/yxw027/salsa)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C++ · 许可：— · 星标约：14 · 宿主：github
 
 融合 GNSS、视觉与惯性的状态估计原型，用于机器人室外全局定位并抑制纯视觉惯性漂移。适合多传感器融合架构与外参标定实验。传感器时间同步与标定成本较高；纯测地精密定位不如专用 PPP/RTK 引擎，本仓库价值在融合框架设计而非载波相位解算深度。
 
 #### [GVINS-WHU](https://github.com/zhangwhu/GVINS)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C++ · 许可：GPL-3.0-or-later · 星标约：12 · 宿主：github
 
@@ -108,12 +108,12 @@ HKUST Aerial Robotics 发布的优化式多传感器状态估计器，在 VINS-M
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [FE-GUT](https://github.com/zhaoqj23/FE-GUT) | FE-GUT：因子图+EKF 的 GNSS/UWB 紧组合 | C++ | 79 | 🏷️ 高校实验室 |
+| [FE-GUT](https://github.com/zhaoqj23/FE-GUT) | FE-GUT：因子图+EKF 的 GNSS/UWB 紧组合 | C++ | 79 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [FE-GUT](https://github.com/zhaoqj23/FE-GUT)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C++ · 许可：BSD-3-Clause · 星标约：79 · 宿主：github
 
@@ -125,21 +125,21 @@ HKUST Aerial Robotics 发布的优化式多传感器状态估计器，在 VINS-M
 |---|---|---|---:|---|
 | [KF-GINS](https://github.com/i2Nav-WHU/KF-GINS) | KF-GINS：基于 EKF 的 GNSS/INS 组合导航 | C++ | 1194 | 🏷️ 高校实验室 核心 |
 | [imu_x_fusion](https://github.com/cggos/imu_x_fusion) | imu_x_fusion：ESKF/IEKF/UKF 族 IMU+GNSS 松组合 | C++ | 1126 | 🏷️ 个人社区 核心 |
-| [imugpslocalization](https://github.com/ydsf16/imu_gps_localization) | imu_gps_localization：ESKF 融合 IMU 与 GPS（C++） | C++ | 734 | 🏷️ 高校实验室 |
+| [imugpslocalization](https://github.com/ydsf16/imu_gps_localization) | imu_gps_localization：ESKF 融合 IMU 与 GPS（C++） | C++ | 734 | 🏷️ 个人社区 |
 | [OB_GINS](https://github.com/i2Nav-WHU/OB_GINS) | OB_GINS：基于优化的 GNSS/INS 组合导航 | C++ | 647 | 🏷️ 高校实验室 ★ 核心 |
 | [ignav](https://github.com/Erensu/ignav) | ignav：轻量 INS/GNSS 组合导航（C） | C | 472 | 🏷️ 个人社区 ★ |
 | [fusioncore](https://github.com/manankharwar/fusioncore) | fusioncore：户外机器人 IMU/轮速/GPS 的 UKF 融合 | C++ | 366 | 🏷️ 个人社区 |
 | [GINav](https://github.com/kaichen686/GINav) | MATLAB GNSS/INS 松紧组合常用算法实现 | MATLAB | 309 | 🏷️ 个人社区 ★ 核心 |
 | [EKF_IMU_GPS](https://github.com/balamuruganky/EKF_IMU_GPS) | EKF_IMU_GPS：IMU 预测 GNSS 的 EKF 融合示例 | C++ | 212 | 🏷️ 个人社区 |
-| [Loose-GNSS-IMU](https://github.com/aaronboda24/Loose-GNSS-IMU) | Loose-GNSS-IMU：经典 GNSS/IMU 松组合卡尔曼 | C++ | 187 | 🏷️ 高校实验室 |
+| [Loose-GNSS-IMU](https://github.com/aaronboda24/Loose-GNSS-IMU) | Loose-GNSS-IMU：经典 GNSS/IMU 松组合卡尔曼 | C++ | 187 | 🏷️ 个人社区 |
 | [KF-GINS-Matlab](https://github.com/i2Nav-WHU/KF-GINS-Matlab) | KF-GINS-Matlab：EKF 松/紧组合 MATLAB 版 | MATLAB | 137 | 🏷️ 高校实验室 核心 |
 | [ublox_dgnss](https://github.com/aussierobots/ublox_dgnss) | ublox_dgnss：ROS2 u-blox UBX 驱动 | C++ | 86 | 🏷️ 个人社区 |
 | [GIOW-release](https://github.com/i2Nav-WHU/GIOW-release) | GIOW：GNSS/INS/ODO 轮速辅助组合导航 | C++ | 75 | 🏷️ 高校实验室 核心 |
 | [Wheel-GINS](https://github.com/i2Nav-WHU/Wheel-GINS) | Wheel-GINS：轮式 IMU+GNSS 组合导航 | C++ | 47 | 🏷️ 高校实验室 |
 | [GNSS_IMU](https://github.com/rtklibexplorer/GNSS_IMU) | GNSS_IMU：松组合 GNSS/IMU 的 Python 实现 | Python | 35 | 🏷️ 个人社区 |
-| [GINS](https://github.com/zhangwhu/GINS) | GINS：PPP-RTK 与惯导组合导航实现 | C | 21 | 🏷️ 高校实验室 |
-| [ImuGpsGuiding](https://github.com/JackJu-HIT/ImuGpsGuiding) | ImuGpsGuiding：ROS 下 IMU+GPS 点到点导引示例 | C++ | 20 | 🏷️ 高校实验室 |
-| [KF-GINS-Py](https://github.com/salmoshu/KF-GINS-Py) | KF-GINS-Py：KF-GINS 思路的 Python EKF 移植 | Python | 13 | 🏷️ 高校实验室 |
+| [GINS](https://github.com/zhangwhu/GINS) | GINS：PPP-RTK 与惯导组合导航实现 | C | 21 | 🏷️ 个人社区 |
+| [ImuGpsGuiding](https://github.com/JackJu-HIT/ImuGpsGuiding) | ImuGpsGuiding：ROS 下 IMU+GPS 点到点导引示例 | C++ | 20 | 🏷️ 个人社区 |
+| [KF-GINS-Py](https://github.com/salmoshu/KF-GINS-Py) | KF-GINS-Py：KF-GINS 思路的 Python EKF 移植 | Python | 13 | 🏷️ 个人社区 |
 | [Smart-UAV-Return-GNSS-Station](https://github.com/citec-spbu/Smart-UAV-Return-GNSS-Station) | Smart-UAV-Return-GNSS-Station：失联/失锁时 UAV 智能返航 | C | 3 | 🏷️ 高校实验室 |
 
 ### 详细说明
@@ -159,7 +159,7 @@ HKUST Aerial Robotics 发布的优化式多传感器状态估计器，在 VINS-M
 同一框架里切换 ESKF、IEKF、UKF 等，公式与代码对应清晰，利于学习滤波器差异。适合课程与算法对照。工业级标定、时间同步与完整性监测需另补；纯测地 PPP 请另选专用引擎。
 
 #### [imugpslocalization](https://github.com/ydsf16/imu_gps_localization)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C++ · 许可：— · 星标约：734 · 宿主：github
 
@@ -201,7 +201,7 @@ HKUST Aerial Robotics 发布的优化式多传感器状态估计器，在 VINS-M
 balamuruganky 的 C++ EKF 示例：以 IMU 传播预测 GNSS 量测，演示松组合思路。MIT 许可；与目录中 IndirectEKFIMUGPS 为不同实现。适合教学与原型验证，非工业级 INS；过程噪声、量测噪声与坐标系约定需按自有传感器重新标定。
 
 #### [Loose-GNSS-IMU](https://github.com/aaronboda24/Loose-GNSS-IMU)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C++ · 许可：MIT · 星标约：187 · 宿主：github
 
@@ -243,21 +243,21 @@ balamuruganky 的 C++ EKF 示例：以 IMU 传播预测 GNSS 量测，演示松�
 rtklibexplorer 社区风格的松组合 GNSS/IMU Python 实现，便于配合 demo5 博客理解传感器融合步骤。适合入门松组合与噪声调参。不是高阶紧组合，也不含视觉/激光；外场应用前按设备重做 Allan 方差与杆臂标定，复杂场景请改用 KF-GINS 或 OB_GINS。
 
 #### [GINS](https://github.com/zhangwhu/GINS)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C · 许可：— · 星标约：21 · 宿主：github
 
 将 PPP-RTK 改正与惯导结合的 GINS 实现，追求遮挡环境下仍较连续的高精度导航解。适合阅读 PPP-RTK/INS 相关论文时对照工程结构。公开文档与示例数据完整度一般；与 HKUST GVINS、i2Nav KF-GINS 名称接近但路线不同，选用前核对作者与传感器组合。
 
 #### [ImuGpsGuiding](https://github.com/JackJu-HIT/ImuGpsGuiding)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C++ · 许可：— · 星标约：20 · 宿主：github
 
 基于 ROS，融合 IMU 与 GPS，实现从指定起点到终点的导引示例，偏机器人室外导航入门。适合实验室演示与课程项目。状态估计与工程完整度有限；高精度车载/航空组合导航请对照 NaveGo、KF-GINS、OB_GINS 等更完整工具箱。ROS 发行版与消息类型需与仓库分支匹配。室外实测前先在仿真或录包数据上验证。
 
 #### [KF-GINS-Py](https://github.com/salmoshu/KF-GINS-Py)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：GPL-3.0 · 星标约：13 · 宿主：github
 
@@ -280,7 +280,7 @@ rtklibexplorer 社区风格的松组合 GNSS/IMU Python 实现，便于配合 de
 | [libRSF](https://github.com/TUC-ProAut/libRSF) | libRSF：鲁棒传感器融合与在线定位库 | C++ | 337 | 🏷️ 高校实验室 |
 | [syncgpslidarimucam](https://github.com/nkliuhui/sync_gps_lidar_imu_cam) | syncgpslidarimucam：多传感器硬件授时同步 | C++ | 252 | 🏷️ 个人社区 |
 | [GREAT-MSF](https://github.com/GREAT-WHU/GREAT-MSF) | GREAT-MSF：PPP/RTK+INS 多传感器融合 | C++ | 150 | 🏷️ 高校实验室 |
-| [GPSMilemeterIMUEKFLocation](https://github.com/gilbertz/GPS_Milemeter_IMU_EKFLocation) | GPS_Milemeter_IMU_EKF：GPS+里程计+罗盘 EKF（MATLAB） | MATLAB | 89 | 🏷️ 高校实验室 |
+| [GPSMilemeterIMUEKFLocation](https://github.com/gilbertz/GPS_Milemeter_IMU_EKFLocation) | GPS_Milemeter_IMU_EKF：GPS+里程计+罗盘 EKF（MATLAB） | MATLAB | 89 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -327,7 +327,7 @@ rtklibexplorer 社区风格的松组合 GNSS/IMU Python 实现，便于配合 de
 GREAT 组多传感器融合系统，支持 PPP/RTK 与 INS 等组合。适合已跟 GREAT-PVT 的用户向上集成。文档跟随版本变化。
 
 #### [GPSMilemeterIMUEKFLocation](https://github.com/gilbertz/GPS_Milemeter_IMU_EKFLocation)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：MATLAB · 许可：— · 星标约：89 · 宿主：github
 
@@ -338,7 +338,7 @@ GREAT 组多传感器融合系统，支持 PPP/RTK 与 INS 等组合。适合已
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [gnss-ins-sim](https://github.com/Aceinna/gnss-ins-sim) | gnss-ins-sim：GNSS+INS 轨迹与传感器仿真 | Python | 1487 | 🏷️ 个人社区 核心 |
-| [IndirectEKFIMUGPS](https://github.com/hgpvision/Indirect_EKF_IMU_GPS) | Indirect_EKF_IMU_GPS：间接法 EKF 的 IMU/GPS 融合仿真 | MATLAB | 96 | 🏷️ 高校实验室 |
+| [IndirectEKFIMUGPS](https://github.com/hgpvision/Indirect_EKF_IMU_GPS) | Indirect_EKF_IMU_GPS：间接法 EKF 的 IMU/GPS 融合仿真 | MATLAB | 96 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -350,7 +350,7 @@ GREAT 组多传感器融合系统，支持 PPP/RTK 与 INS 等组合。适合已
 生成运动轨迹、传感器噪声与简单融合仿真，星标很高。适合算法回归测试。真实 GNSS 信号层仿真请看 gps-sdr-sim/SignalSim。
 
 #### [IndirectEKFIMUGPS](https://github.com/hgpvision/Indirect_EKF_IMU_GPS)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：MATLAB · 许可：MIT · 星标约：96 · 宿主：github
 
@@ -576,12 +576,12 @@ JuliaGNSS 生态中的滤波库，实现经典 KF、UKF、AUKF 及其方根形�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [raw-gnss-fusion](https://github.com/JonasBchrt/raw-gnss-fusion) | raw-gnss-fusion：原始 GNSS 多传感器融合代码与数据 | Python | 160 | 🏷️ 高校实验室 |
+| [raw-gnss-fusion](https://github.com/JonasBchrt/raw-gnss-fusion) | raw-gnss-fusion：原始 GNSS 多传感器融合代码与数据 | Python | 160 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [raw-gnss-fusion](https://github.com/JonasBchrt/raw-gnss-fusion)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：LGPL-3.0 · 星标约：160 · 宿主：github
 
@@ -661,9 +661,9 @@ ROS 包用于连接 NTRIP caster、接收 RTCM，并服务于 u-blox ZED-F9P 一
 |---|---|---|---:|---|
 | [ublox-ros](https://github.com/KumarRobotics/ublox) | ublox-ros：KumarRobotics ROS1 经典 u-blox GPS 驱动 | C++ | 537 | 🏷️ 高校实验室 |
 | [novatel_gps_driver](https://github.com/swri-robotics/novatel_gps_driver) | novatel_gps_driver：SWRI 社区 NovAtel GNSS ROS 驱动（BSD-3） | C++ | 175 | 🏷️ 个人社区 |
-| [novatel_oem7_driver](https://github.com/novatel/novatel_oem7_driver) | novatel_oem7_driver：NovAtel OEM7/SPAN 官方 ROS 驱动（MIT） | C++ | 123 | 🏷️ 官方 |
+| [novatel_oem7_driver](https://github.com/novatel/novatel_oem7_driver) | novatel_oem7_driver：NovAtel OEM7/SPAN 厂商 ROS 驱动（MIT） | C++ | 123 | 🏷️ 个人社区 |
 | [UnicoreDriver](https://github.com/zltan-whu/UnicoreDriver) | 基于官方协议实现的和芯星通 UM982/UM980 ROS 驱动（C++） | C++ | 11 | 🏷️ 个人社区 |
-| [trimble_driver_ros](https://github.com/trimble-oss/trimble_driver_ros) | Trimble 官方开源 ROS/ROS 2 驱动：解析 GSOF 输出并发布标准与自定义话题 | C++ | 10 | 🏷️ 官方 |
+| [trimble_driver_ros](https://github.com/trimble-oss/trimble_driver_ros) | Trimble 厂商开源 ROS/ROS 2 驱动：解析 GSOF 输出并发布标准与自定义话题 | C++ | 10 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -679,14 +679,14 @@ KumarRobotics 维护的 ROS 驱动，解析 u-blox 接收机消息并发布导�
 
 语言：C++ · 许可：BSD-3-Clause · 星标约：175 · 宿主：github
 
-Southwest Research Institute 维护的 NovAtel GPS/GNSS ROS 驱动，BSD-3-Clause，在移动机器人与自动驾驶栈中使用较广。偏消息解析与话题发布，不替代 OEM7 官方新驱动的全部能力。串口/以太网连接与最佳实践见仓库文档。适合 ROS1 时代工程对照；新项目可并行评估官方 OEM7 驱动。
+Southwest Research Institute 维护的 NovAtel GPS/GNSS ROS 驱动，BSD-3-Clause，在移动机器人与自动驾驶栈中使用较广。偏消息解析与话题发布，不替代 NovAtel 厂商新版 OEM7 驱动的全部能力。串口/以太网连接与最佳实践见仓库文档。适合 ROS1 时代工程对照；新项目可并行评估 NovAtel 厂商 OEM7 驱动。
 
 #### [novatel_oem7_driver](https://github.com/novatel/novatel_oem7_driver)  
-*🏷️ 官方*
+*🏷️ 个人社区*
 
 语言：C++ · 许可：MIT · 星标约：123 · 宿主：github
 
-Hexagon/NovAtel 维护的 OEM7 系列 GNSS/SPAN 官方 ROS 驱动，MIT 许可，支持定位、原始观测与惯导相关话题发布。面向车载/机器人集成，而非测地后处理套件。消息定义与固件版本需匹配；多天线/SPAN 配置依赖硬件与校准。与社区旧版 novatel_gps_driver 并存时注意选型。收录前已核验仓库可访问。
+Hexagon/NovAtel 维护的 OEM7 系列 GNSS/SPAN 厂商 ROS 驱动，MIT 许可，支持定位、原始观测与惯导相关话题发布。面向车载/机器人集成，而非测地后处理套件。消息定义与固件版本需匹配；多天线/SPAN 配置依赖硬件与校准。与社区旧版 novatel_gps_driver 并存时注意选型。收录前已核验仓库可访问。
 
 #### [UnicoreDriver](https://github.com/zltan-whu/UnicoreDriver)  
 *🏷️ 个人社区*
@@ -696,17 +696,17 @@ Hexagon/NovAtel 维护的 OEM7 系列 GNSS/SPAN 官方 ROS 驱动，MIT 许可�
 开发者谭志良（账号带 WHU 标识）发布的 ROS Noetic 驱动，GPL-3.0 许可，C++ 实现，依赖 Eigen 与 Boost。依据和芯星通 UM982 官方协议开发，在 UM982 与 UM980 上测试；需用 UPrecise 配置接收机输出 BESTNAVXYZB，驱动经串口读取并发布 nav_msgs/Odometry 话题，launch 文件支持多台接收机分命名空间接入，并可配置 NTRIP 获取 RTK 固定解。适合在组合导航或多传感器平台中接入国产 RTK 板卡。仓库 2025 年一次性发布，后续更新较少。
 
 #### [trimble_driver_ros](https://github.com/trimble-oss/trimble_driver_ros)  
-*🏷️ 官方*
+*🏷️ 个人社区*
 
 语言：C++ · 许可：BSD-2-Clause · 星标约：10 · 宿主：github
 
-Trimble 官方 trimble-oss 组织发布的 ROS 2 软件包，BSD-2-Clause 许可，C++ 实现。解析 Trimble General Serial Output Format（GSOF）的一个子集，可选发布 sensor_msgs/NavSatFix 与 nav_msgs/Odometry 等标准消息（以 GSOF49 首个位置或 set_origin 服务设定的原点构建局部切平面），同时提供专用 GSOF 话题；主要在 Applanix 组合导航产品上测试。适合在自动驾驶、移动测绘平台中接入 Trimble/Applanix 定位定姿系统。README 详列节点参数、话题与服务。
+Trimble 公司 trimble-oss 组织发布的 ROS 2 软件包，BSD-2-Clause 许可，C++ 实现。解析 Trimble General Serial Output Format（GSOF）的一个子集，可选发布 sensor_msgs/NavSatFix 与 nav_msgs/Odometry 等标准消息（以 GSOF49 首个位置或 set_origin 服务设定的原点构建局部切平面），同时提供专用 GSOF 话题；主要在 Applanix 组合导航产品上测试。适合在自动驾驶、移动测绘平台中接入 Trimble/Applanix 定位定姿系统。README 详列节点参数、话题与服务。
 
 ## ROS2驱动
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [swiftnav-ros2](https://github.com/swift-nav/swiftnav-ros2) | swiftnav-ros2：Swift Navigation 官方 ROS 2 SBP 驱动（MIT） | C++ | 15 | 🏷️ 个人社区 |
+| [swiftnav-ros2](https://github.com/swift-nav/swiftnav-ros2) | swiftnav-ros2：Swift Navigation 厂商 ROS 2 SBP 驱动（MIT） | C++ | 15 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -715,7 +715,7 @@ Trimble 官方 trimble-oss 组织发布的 ROS 2 软件包，BSD-2-Clause 许可
 
 语言：C++ · 许可：MIT · 星标约：15 · 宿主：github
 
-Swift Navigation 官方 ROS 2 驱动，通过 Swift Binary Protocol（SBP）接入其 GNSS/INS 接收机，MIT 许可。与 libsbp、piksi_tools 等同栈，面向机器人实时定位话题。固件与 SBP 版本需匹配；不覆盖非 Swift 品牌接收机。适合 ROS 2 车载/机器人集成评估。
+Swift Navigation 厂商 ROS 2 驱动，通过 Swift Binary Protocol（SBP）接入其 GNSS/INS 接收机，MIT 许可。与 libsbp、piksi_tools 等同栈，面向机器人实时定位话题。固件与 SBP 版本需匹配；不覆盖非 Swift 品牌接收机。适合 ROS 2 车载/机器人集成评估。
 
 ## 视觉RTK
 
@@ -730,7 +730,7 @@ Swift Navigation 官方 ROS 2 驱动，通过 Swift Binary Protocol（SBP）接�
 
 语言：C++ · 许可：MIT · 星标约：66 · 宿主：github
 
-Fixposition 官方 Linux ROS 驱动，对接 Vision-RTK 2、PBx-A1 等视觉惯性 GNSS 定位传感器，MIT 许可。面向机器人/自动驾驶紧组合定位话题，而非测地后处理。依赖厂商硬件与时间同步配置；与纯 GNSS RTK 方案选型不同。适合评估视觉辅助 RTK 的 ROS 集成。
+Fixposition 厂商 Linux ROS 驱动，对接 Vision-RTK 2、PBx-A1 等视觉惯性 GNSS 定位传感器，MIT 许可。面向机器人/自动驾驶紧组合定位话题，而非测地后处理。依赖厂商硬件与时间同步配置；与纯 GNSS RTK 方案选型不同。适合评估视觉辅助 RTK 的 ROS 集成。
 
 ## IMU驱动
 

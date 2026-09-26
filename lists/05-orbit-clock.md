@@ -37,12 +37,12 @@ Yuanxin Pan 开源的钟差/相位偏差合成工具，源于学位论文并应�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Gkit-Bias](https://github.com/LiZhengXiao99/Gkit-Bias) | Gkit-Bias：全频点卫星端偏差估计 | C++ | 8 | 🏷️ 高校实验室 核心 |
+| [Gkit-Bias](https://github.com/LiZhengXiao99/Gkit-Bias) | Gkit-Bias：全频点卫星端偏差估计 | C++ | 8 | 🏷️ 个人社区 核心 |
 
 ### 详细说明
 
 #### [Gkit-Bias](https://github.com/LiZhengXiao99/Gkit-Bias)  
-*🏷️ 高校实验室 核心*
+*🏷️ 个人社区 核心*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：8 · 宿主：github
 
@@ -52,17 +52,17 @@ C++ 实现三套偏差模式：DCB（码偏差与 VTEC 球谐联立）、UPD 与
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Cube](https://github.com/liush18/Cube) | Cube：精密测量院 GPS 钟差/PPP-AR（RTKLIB 二次开发） | C | 30 | 🏷️ 高校实验室 |
+| [Cube](https://github.com/liush18/Cube) | Cube：GPS 钟差/解耦钟与 PPP-AR（RTKLIB 二次开发） | C | 30 | 🏷️ 个人社区 |
 | [GREAT-UPD](https://github.com/GREAT-WHU/GREAT-UPD) | GREAT-UPD：多星座 UPD 估计 | C++ | 19 | 🏷️ 高校实验室 核心 |
 | [GREAT_PODFLT](https://github.com/GREAT-WHU/GREAT_PODFLT) | GREAT_PODFLT：实时滤波精密定轨 | C++ | 17 | 🏷️ 高校实验室 核心 |
 | [GREAT-IFCB](https://github.com/GREAT-WHU/GREAT-IFCB) | GREAT-IFCB：多 GNSS 频间钟差（IFCB）估计 | C++ | 15 | 🏷️ 高校实验室 |
-| [rt-clk-service](https://github.com/DoubleString/rt-clk-service) | rt-clk-service：实时钟差/轨道/UPD/IFPB 服务代码 | C++ | 12 | 🏷️ 高校实验室 |
+| [rt-clk-service](https://github.com/DoubleString/rt-clk-service) | rt-clk-service：实时钟差/轨道/UPD/IFPB 服务代码 | C++ | 12 | 🏷️ 个人社区 |
 | [GREAT-PCE](https://github.com/GREAT-WHU/GREAT-PCE) | GREAT-PCE：精密卫星钟差估计 | C++ | 9 | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
 
 #### [Cube](https://github.com/liush18/Cube)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C · 许可：BSD-2-Clause · 星标约：30 · 宿主：github
 
@@ -90,7 +90,7 @@ C++ 实现三套偏差模式：DCB（码偏差与 VTEC 球谐联立）、UPD 与
 武大 GREAT 组开源的多星座频间钟差（IFCB）估计工具，服务于精密钟差与偏差产品链路，与 GREAT-PVT 等同一研究线。做三频 PPP、相位偏差与钟差产品的人应关注。它是独立小工具，不替代完整 POD 套件；轨道与 UPD/OSB 能力仍多见诸 Ginan、PRIDE、GROOPS 等大型系统。
 
 #### [rt-clk-service](https://github.com/DoubleString/rt-clk-service)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C++ · 许可：— · 星标约：12 · 宿主：github
 

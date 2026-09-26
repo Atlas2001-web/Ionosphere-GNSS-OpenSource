@@ -343,8 +343,8 @@ BKG/RTCM 维护的 NTRIP 开源软件 Trac 门户，集中入口含 BNC、Profes
 |---|---|---|---:|---|
 | [pinot](https://github.com/purpleskyfall/pinot) | pinot：开源 GNSS 质检预处理工具 | Python | 25 | 🏷️ 个人社区 核心 |
 | [RNXQCE](https://github.com/cuizilu/RNXQCE) | RNXQCE：RINEX 2/3 质检 Fortran 工具（TEQC 替代取向） | Fortran | 6 | 🏷️ 个人社区 |
-| [geoveil-cn0](https://github.com/miluta7/geoveil-cn0) | geoveil-cn0：RINEX CN0 质量评分与干扰/欺骗检测 | Rust | 3 | 🏷️ 高校实验室 |
-| [grinq](https://github.com/PJarrin/grinq) | RINEX 镜像与 Anubis QC 的 Python 工具箱 | Python | 1 | 🏷️ 高校实验室 |
+| [geoveil-cn0](https://github.com/miluta7/geoveil-cn0) | geoveil-cn0：RINEX CN0 质量评分与干扰/欺骗检测 | Rust | 3 | 🏷️ 个人社区 |
+| [grinq](https://github.com/PJarrin/grinq) | RINEX 镜像与 Anubis QC 的 Python 工具箱 | Python | 1 | 🏷️ 个人社区 |
 | [Anubis](https://gnutsoftware.com/software/anubis/) | G-Nut/Anubis：多 GNSS RINEX/RTCM 质量检查（Free 开源） | C++ | — | 🏷️ 个人社区 核心 |
 | [Anubis-Free-Download](https://gnutsoftware.com/software/anubis/download) | Anubis-Free-Download：G-Nut Anubis Free 的 GPL 源码与 Linux 包 | C++ | — | 🏷️ 个人社区 |
 | [plot-Anubis](https://www.pecny.cz/sw/plots/anubis/) | plot-Anubis：Anubis XTR 质检结果静态绘图脚本 | Perl | — | 🏷️ 高校实验室 |
@@ -368,14 +368,14 @@ BKG/RTCM 维护的 NTRIP 开源软件 Trac 门户，集中入口含 BNC、Profes
 Fortran 编写的 GNSS 观测预处理与质量检查工具，宣称支持 RINEX 2/3，定位为 TEQC 停更后的替代取向之一。适合测站运维与数据入库前检查。社区体量小于 Anubis；质控指标与历史 TEQC 输出未必逐项相同，切换时要重训阈值阈值。
 
 #### [geoveil-cn0](https://github.com/miluta7/geoveil-cn0)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Rust · 许可：MIT · 星标约：3 · 宿主：github
 
 GNSS 信号质量分析库，输出 0–100 综合评分、星空图与时序，并检测 jamming/spoofing/interference；支持 RINEX 2/3/4 与 Hatanaka。MIT，PyPI。适合 CORS 台站健康度与干扰监测；欺骗检测依赖导航文件可见性对比，算法阈值非认证级威胁情报。
 
 #### [grinq](https://github.com/PJarrin/grinq)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：MIT · 星标约：1 · 宿主：github
 
@@ -614,7 +614,7 @@ nav-solutions / rtk-rs 生态的 RINEX→BINEX CLI（MPL-2.0，Rust）。便于�
 |---|---|---|---:|---|
 | [georinex](https://github.com/geospace-code/georinex) | georinex：高速 Python RINEX 读写 | Python | 269 | 🏷️ 高校实验室 🔀 ★ 核心 |
 | [rinex](https://github.com/nav-solutions/rinex) | rinex：Rust RINEX 解析与 RINEX-Cli | Rust | 126 | 🏷️ 个人社区 核心 |
-| [RinexReader](https://github.com/aaronboda24/RinexReader) | RinexReader：C++ RINEX 2/3 读取库 | C++ | 38 | 🏷️ 高校实验室 |
+| [RinexReader](https://github.com/aaronboda24/RinexReader) | RinexReader：C++ RINEX 2/3 读取库 | C++ | 38 | 🏷️ 个人社区 |
 | [READ_GNSS](https://github.com/dzd9798/READ_GNSS) | READ_GNSS：MATLAB 读 RINEX/IONEX 等 GNSS 文件 | MATLAB | 10 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -634,7 +634,7 @@ Python 里最常用的 RINEX 读写库之一，覆盖观测/导航/SP3，可批�
 GeoRust/nav-solutions 系 RINEX 库，附 RINEX-Cli，可做质检、SPP/PPP、CGGTTS 等，社区常把它比作 teqc/Anubis/gLAB 的开源组合拳。适合要强类型与高性能 IO 的人。学习曲线比 Python 陡；生态仍在演进。
 
 #### [RinexReader](https://github.com/aaronboda24/RinexReader)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C++ · 许可：MIT · 星标约：38 · 宿主：github
 
@@ -771,7 +771,7 @@ Leibniz Universität Hannover 地球测量研究所开源工具，量化 GNSS �
 | [MAPS](https://github.com/GCCLib/MAPS) | MAPS：MATLAB GNSS 多路径分析与处理 | MATLAB | 35 | 🏷️ 高校实验室 |
 | [gnss-multipath-detector](https://github.com/EvgeniiMunin/gnss-multipath-detector) | gnss-multipath-detector：L1 C/A 多路径 ML 探测 notebook | Jupyter Notebook | 28 | 🏷️ 个人社区 |
 | [PyRINEX](https://github.com/geumjin99/PyRINEX) | PyRINEX：多用途 Python RINEX 读写与质量分析 | Python | 16 | 🏷️ 高校实验室 |
-| [geoveil-mp](https://github.com/miluta7/geoveil-mp) | geoveil-mp：Rust/Python 的 RINEX 多路径 MP 与周跳质控库 | Rust | 0 | 🏷️ 高校实验室 |
+| [geoveil-mp](https://github.com/miluta7/geoveil-mp) | geoveil-mp：Rust/Python 的 RINEX 多路径 MP 与周跳质控库 | Rust | 0 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -804,7 +804,7 @@ MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实�
 面向 RINEX 2/3 的 Python 包，支持批处理、多路径与周跳等质量相关分析，可作为 TEQC/Anubis 之外的脚本化 QC 选项。适合自动化质控流水线。指标定义与报告格式因版本而异，正式归档前请与 Anubis/GFZRNX 交叉核对。
 
 #### [geoveil-mp](https://github.com/miluta7/geoveil-mp)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Rust · 许可：MIT · 星标约：0 · 宿主：github
 
@@ -1001,16 +1001,16 @@ SGL-UT 从 GPSTk 拆出的应用程序仓，基于 gnsstk 提供命令行工具�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gps-measurement-tools](https://github.com/google/gps-measurement-tools) | gps-measurement-tools：Google GNSS Logger 套件 | Java | 841 | 🏷️ 官方 核心 |
+| [gps-measurement-tools](https://github.com/google/gps-measurement-tools) | gps-measurement-tools：Google GNSS Logger 套件 | Java | 841 | 🏷️ 个人社区 核心 |
 
 ### 详细说明
 
 #### [gps-measurement-tools](https://github.com/google/gps-measurement-tools)  
-*🏷️ 官方 核心*
+*🏷️ 个人社区 核心*
 
 语言：Java · 许可：Apache-2.0 · 星标约：841 · 宿主：github
 
-Android 原始 GNSS 测量日志与桌面可视化分析工具，智能手机高精度研究几乎必用。Logger 官方维护状态有变化，常与 GPSTest 日志互通。不是全星座科研 PPP 引擎。
+Android 原始 GNSS 测量日志与桌面可视化分析工具，智能手机高精度研究几乎必用。GnssLogger 由 Google 维护、状态有变化（按目录政策属公司开源档），常与 GPSTest 日志互通。不是全星座科研 PPP 引擎。
 
 ## 接收机接口
 
@@ -1169,15 +1169,15 @@ Leibniz Universität Hannover 地球测量研究所工具，批量修正 RINEX �
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [septentrio_gnss_driver](https://github.com/septentrio-gnss/septentrio_gnss_driver) | septentrio_gnss_driver：Septentrio ROS 驱动 | C++ | 133 | 🏷️ 官方 |
+| [septentrio_gnss_driver](https://github.com/septentrio-gnss/septentrio_gnss_driver) | septentrio_gnss_driver：Septentrio ROS 驱动 | C++ | 133 | 🏷️ 个人社区 |
 | [um982-driver](https://github.com/sunshineharry/UM982Driver) | 和芯星通 UM982/UM980 扩展语句（PVTSLN/BESTNAV/GNHPR）Python 驱动 | Python | 39 | 🏷️ 个人社区 |
-| [novatel_edie](https://github.com/novatel/novatel_edie) | NovAtel 官方 EDIE 编解码 SDK：OEM7 接收机日志/命令的 C++ 与 Python 解析与格式转换 | C++ | 32 | 🏷️ 官方 |
+| [novatel_edie](https://github.com/novatel/novatel_edie) | NovAtel 厂商发布的 EDIE 编解码 SDK：OEM7 接收机日志/命令的 C++ 与 Python 解析与格式转换 | C++ | 32 | 🏷️ 个人社区 |
 | [trimble-gsof-wireshark](https://github.com/Ryanf55/trimble-gsof-wireshark) | Wireshark 的 Trimble GSOF 协议解析插件（Lua） | Lua | 2 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [septentrio_gnss_driver](https://github.com/septentrio-gnss/septentrio_gnss_driver)  
-*🏷️ 官方*
+*🏷️ 个人社区*
 
 语言：C++ · 许可：BSD-3-Clause · 星标约：133 · 宿主：github
 
@@ -1191,11 +1191,11 @@ Leibniz Universität Hannover 地球测量研究所工具，批量修正 RINEX �
 个人开发者发布的 Python 驱动，GPL-3.0 许可，可通过 pip 安装 um982-driver。解析 UM982/UM980 输出的标准 NMEA 以及 PVTSLN、KSXT、GNHPR、BESTNAV 等 Unicore 扩展 ASCII 语句，获取双天线航向、速度、RTK 状态与标准差等比 NMEA 更丰富的信息，README 给出串口输出配置命令与示例程序，附录另有未充分测试的 C 版本。适合机器人与无人车快速接入国产双天线 RTK。目前仅支持 ASCII 指令集，中文文档较完整。
 
 #### [novatel_edie](https://github.com/novatel/novatel_edie)  
-*🏷️ 官方*
+*🏷️ 个人社区*
 
 语言：C++ · 许可：MIT · 星标约：32 · 宿主：github
 
-NovAtel（Hexagon）官方发布的 Encode Decode Interface Engine SDK，MIT 许可，C++ 实现并提供 Python 包。可对 OEM7 接收机的 ASCII、二进制与简化 ASCII 日志进行帧识别、解码与互相转换，基于官方消息定义数据库，适合编写离线解析、日志过滤、格式转换与数据回放工具。构建使用 CMake 预设并支持 Conan 管理依赖。与已收录的 novatel_oem7_driver（ROS 驱动）互补：后者面向机器人实时接入，EDIE 更适合底层解码与数据处理。近期仍活跃更新。
+NovAtel（Hexagon）厂商发布的 Encode Decode Interface Engine SDK，MIT 许可，C++ 实现并提供 Python 包。可对 OEM7 接收机的 ASCII、二进制与简化 ASCII 日志进行帧识别、解码与互相转换，基于厂商消息定义数据库，适合编写离线解析、日志过滤、格式转换与数据回放工具。构建使用 CMake 预设并支持 Conan 管理依赖。与已收录的 novatel_oem7_driver（ROS 驱动）互补：后者面向机器人实时接入，EDIE 更适合底层解码与数据处理。近期仍活跃更新。
 
 #### [trimble-gsof-wireshark](https://github.com/Ryanf55/trimble-gsof-wireshark)  
 *🏷️ 个人社区*
@@ -1278,7 +1278,7 @@ nav-solutions 生态下的 DORIS RINEX 解析 crate（MPL-2.0），把多普勒�
 
 语言：C++ · 许可：MIT · 星标约：76 · 宿主：github
 
-Swift Navigation 官方 Swift Binary Protocol（SBP）客户端库集合，覆盖 C/C++ 等绑定，用于与 Piksi/相关硬件交换观测、导航与配置消息。做低成本 RTK 硬件联调或自研记录器时常用。它是协议栈而非完整 PPP/RTK 引擎；解算仍需 RTKLIB/厂商固件或其他库。
+Swift Navigation 厂商 Swift Binary Protocol（SBP）客户端库集合，覆盖 C/C++ 等绑定，用于与 Piksi/相关硬件交换观测、导航与配置消息。做低成本 RTK 硬件联调或自研记录器时常用。它是协议栈而非完整 PPP/RTK 引擎；解算仍需 RTKLIB/厂商固件或其他库。
 
 #### [ubx-mga-rinex-ephemeris](https://github.com/jkivilin/ubx-mga-gnss-rinex-ephemeris-converter)  
 *🏷️ 个人社区*

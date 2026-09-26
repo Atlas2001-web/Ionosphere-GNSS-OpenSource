@@ -761,8 +761,8 @@
     {
       "name": "gps-measurement-tools",
       "url": "https://github.com/google/gps-measurement-tools",
-      "desc_zh": "Google 官方：Android 原始 GNSS 测量日志与桌面分析",
-      "analysis_zh": "Android 原始 GNSS 测量日志与桌面可视化分析工具，智能手机高精度研究几乎必用。Logger 官方维护状态有变化，常与 GPSTest 日志互通。不是全星座科研 PPP 引擎。",
+      "desc_zh": "Google 发布：Android 原始 GNSS 测量日志与桌面分析",
+      "analysis_zh": "Android 原始 GNSS 测量日志与桌面可视化分析工具，智能手机高精度研究几乎必用。GnssLogger 由 Google 维护、状态有变化（按目录政策属公司开源档），常与 GPSTest 日志互通。不是全星座科研 PPP 引擎。",
       "language": "Java",
       "license": "Apache-2.0",
       "category": "gnss-data",
@@ -775,7 +775,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "official",
+      "provenance": "personal_community",
       "one_liner_zh": "gps-measurement-tools：Google GNSS Logger 套件"
     },
     {
@@ -1374,7 +1374,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "RinexReader：C++ RINEX 2/3 读取库"
     },
     {
@@ -1530,7 +1530,7 @@
     {
       "name": "septentrio_gnss_driver",
       "url": "https://github.com/septentrio-gnss/septentrio_gnss_driver",
-      "desc_zh": "厂商官方：ROS1/ROS2 接入 Septentrio GNSS/INS 接收机",
+      "desc_zh": "Septentrio 厂商发布：ROS1/ROS2 接入 Septentrio GNSS/INS 接收机",
       "one_liner_zh": "septentrio_gnss_driver：Septentrio ROS 驱动",
       "analysis_zh": "把 Septentrio 接收机接入机器人操作系统，发布导航与观测话题，便于车载/无人机平台联调。输入为网口/串口 SBF；输出为 ROS 话题。局限：面向机器人集成而非电离层专题处理；闪烁/ISMR 需另接解析模块。",
       "language": "C++",
@@ -1545,7 +1545,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "official"
+      "provenance": "personal_community"
     },
     {
       "name": "sp3",
@@ -2055,7 +2055,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "cssrlib-data：CSSRlib 配套样例脚本与数据"
     },
     {
@@ -3955,7 +3955,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "PPPLib：开源精密单点定位库"
     },
     {
@@ -5413,7 +5413,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "AETHER：PPP-RTK 区域 STEC/VTEC 与 ZWD/ZTD 建模"
     },
     {
@@ -5492,7 +5492,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "AURORA",
@@ -6094,7 +6094,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "Galileo-NeQuick-G",
@@ -6617,7 +6617,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "IBP-Model",
@@ -6739,7 +6739,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "IonCast-Heliolab2025",
@@ -7136,7 +7136,7 @@
     {
       "name": "Ionospheric-Scintillation-Maps-and-PDOP",
       "url": "https://github.com/AlexandraKoulouri/Ionospheric-Scintillation-Maps-and-PDOP",
-      "desc_zh": "Tampere 研究代码；把闪烁图联系地面 PDOP，非实时监测门户",
+      "desc_zh": "Tampere 研究者个人仓代码；把闪烁图联系地面 PDOP，非实时监测门户",
       "analysis_zh": "研究电离层闪烁空间成像及其对定位几何（PDOP）影响的代码，把空间天气扰动与导航可用性联系起来。适合闪烁—PNT 耦合与完好性相关课题。不是业务级闪烁监测网软件；输入场与网格假设应按论文复现，并可与 OASIS、ROTI 类工具对照物理指标定义。",
       "language": "MATLAB",
       "license": "MIT",
@@ -7148,7 +7148,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "Ionospheric-Scintillation-Maps-and-PDOP：闪烁成像与 PDOP 影响"
     },
     {
@@ -7854,7 +7854,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "LongwaveModePropagator.jl",
@@ -7874,7 +7874,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "m_gim-PANXIONG",
@@ -7893,7 +7893,7 @@
       "featured": false,
       "user_relation": "starred",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "m_gim-PANXIONG：小体量 MATLAB GIM 脚本草稿"
     },
     {
@@ -8012,7 +8012,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "mosgim",
@@ -8375,7 +8375,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "OASIS：RINEX 扰动指标计算"
     },
     {
@@ -8592,7 +8592,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "PyIRI：纯 Python 国际参考电离层"
     },
     {
@@ -8630,7 +8630,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "IRTAM 系数下载与全球网格电子密度重建（纯 Python，对接 PyIRI）"
     },
     {
@@ -8656,7 +8656,7 @@
     {
       "name": "pynasonde",
       "url": "https://github.com/shibaji7/pynasonde",
-      "desc_zh": "ERAU 相关；相对 Digisonde 生态仍小，格式适配看文档",
+      "desc_zh": "个人研究者仓（作者任职 ERAU）；相对 Digisonde 生态仍小，格式适配看文档",
       "one_liner_zh": "pynasonde：精密电离层测高/探测 Python 应用",
       "analysis_zh": "面向精密电离层无线电探测（sounding）的 Python 应用，服务实验测高/探测数据处理。局限：相对传统 Digisonde 软件生态仍小；硬件/数据格式适配需对照文档。",
       "language": "Python",
@@ -8671,7 +8671,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "pypride",
@@ -8711,7 +8711,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "pysat",
@@ -8776,7 +8776,7 @@
     {
       "name": "PyTECGg",
       "url": "https://github.com/viventriglia/PyTECGg",
-      "desc_zh": "INGV 相关：Python+Rust 高速 GNSS TEC 流水线",
+      "desc_zh": "INGV 研究者个人仓：Python+Rust 高速 GNSS TEC 流水线",
       "analysis_zh": "从 RINEX 做多星座 TEC 重建与接收机/卫星偏差相关校准，Rust 核心加快批处理。适合需要可编程 TEC 流水线、又想兼顾性能的研究组。Atlas2001-web 已 fork。GPL 许可需注意与闭源流程衔接；与 gnss-tec、tec-suite 比，更偏「可嵌入 Python 生态」。",
       "language": "Python",
       "license": "GPL-3.0",
@@ -8793,7 +8793,7 @@
       "user_relation": "forked",
       "user_fork_url": "https://github.com/Atlas2001-web/PyTECGg",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "PyTECGg：多星座 TEC 重建与校准"
     },
     {
@@ -8894,7 +8894,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "RIM",
@@ -9076,7 +9076,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "SAMI3-3.22-Zenodo",
@@ -9136,7 +9136,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "sami3_gitm",
@@ -9194,14 +9194,14 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "official"
+      "provenance": "personal_community"
     },
     {
       "name": "SbfParser",
       "url": "https://github.com/septentrio-gnss/SbfParser",
       "desc_zh": "Python/Cython 转 JSON；社区扩展 ISMR 等闪烁块，便于抽 S4/σφ",
-      "one_liner_zh": "SbfParser：Septentrio SBF 流/文件官方解析器",
-      "analysis_zh": "官方生态 Python/Cython 解析器，把 SBF 流转成 JSON 结构，社区已扩展 ISMR（4086）等闪烁监测块，便于从 PolaRx 系列提取 S4、σφ 等。输入为 SBF 文件或流；输出为结构化观测/状态块。局限：侧重解码而非完整闪烁科学产品流水线；大文件需注意内存策略。",
+      "one_liner_zh": "SbfParser：Septentrio SBF 流/文件厂商解析器",
+      "analysis_zh": "Septentrio 厂商发布的 Python/Cython 解析器，把 SBF 流转成 JSON 结构，社区已扩展 ISMR（4086）等闪烁监测块，便于从 PolaRx 系列提取 S4、σφ 等。输入为 SBF 文件或流；输出为结构化观测/状态块。局限：侧重解码而非完整闪烁科学产品流水线；大文件需注意内存策略。",
       "language": "Cython",
       "license": "BSD-3-Clause",
       "category": "ionosphere",
@@ -9214,7 +9214,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "official"
+      "provenance": "personal_community"
     },
     {
       "name": "scintill-ai",
@@ -9231,7 +9231,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "scintill-ai：机器学习电离层闪烁分析研究项目"
     },
     {
@@ -9331,7 +9331,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "official"
+      "provenance": "personal_community"
     },
     {
       "name": "SH-GIM",
@@ -9391,7 +9391,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "SuperSID",
@@ -9489,7 +9489,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "TEC-calculation-MATLAB",
@@ -9545,12 +9545,12 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "TEC-MoLLM",
       "url": "https://github.com/PANXIONG-CN/TEC-MoLLM",
-      "desc_zh": "清华相关实验代码；算力与数据准备门槛高，复现看仓库说明",
+      "desc_zh": "作者个人仓（清华）实验代码；算力与数据准备门槛高，复现看仓库说明",
       "one_liner_zh": "TEC-MoLLM：GNN+时序 CNN+LLM（LoRA）全球 TEC 预报",
       "analysis_zh": "多模态深度学习 TEC 预报原型，组合图网络、时序卷积与大模型 LoRA 微调。输入为历史 TEC/空间天气特征；输出预报场。局限：算力与复现成本高；与经典物理/经验模式比可解释性弱；许可未标明。",
       "language": "Python",
@@ -9565,7 +9565,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "tec-suite",
@@ -10128,7 +10128,7 @@
     {
       "name": "FE-GUT",
       "url": "https://github.com/zhaoqj23/FE-GUT",
-      "desc_zh": "清华相关：GNSS/UWB 紧组合与在线时间标定（含仿真数据）",
+      "desc_zh": "清华博士生个人仓：GNSS/UWB 紧组合与在线时间标定（含仿真数据）",
       "analysis_zh": "混合因子图与 EKF，并开源仿真数据，便于复现时间标定实验。适合室内外衔接与 UWB 辅助研究。实网性能取决于 UWB/GNSS 标定质量。",
       "language": "C++",
       "license": "BSD-3-Clause",
@@ -10142,7 +10142,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "FE-GUT：因子图+EKF 的 GNSS/UWB 紧组合"
     },
     {
@@ -10189,7 +10189,7 @@
     {
       "name": "GINS",
       "url": "https://github.com/zhangwhu/GINS",
-      "desc_zh": "武大相关：遮挡环境下追求更连续的高精度导航解",
+      "desc_zh": "个人仓（无 README）：遮挡环境下追求更连续的高精度导航解",
       "analysis_zh": "将 PPP-RTK 改正与惯导结合的 GINS 实现，追求遮挡环境下仍较连续的高精度导航解。适合阅读 PPP-RTK/INS 相关论文时对照工程结构。公开文档与示例数据完整度一般；与 HKUST GVINS、i2Nav KF-GINS 名称接近但路线不同，选用前核对作者与传感器组合。",
       "language": "C",
       "license": null,
@@ -10201,7 +10201,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "GINS：PPP-RTK 与惯导组合导航实现"
     },
     {
@@ -10341,7 +10341,7 @@
     {
       "name": "GPSMilemeterIMUEKFLocation",
       "url": "https://github.com/gilbertz/GPS_Milemeter_IMU_EKFLocation",
-      "desc_zh": "上海交大相关：多源松组合定位 MATLAB 示例",
+      "desc_zh": "个人示例（作者上海交大）：多源松组合定位 MATLAB 示例",
       "analysis_zh": "把 GPS、里程计与罗盘送进 EKF，流程直观。适合车载松组合入门。高精度车道级与视觉惯性请另选现代框架。",
       "language": "MATLAB",
       "license": null,
@@ -10353,7 +10353,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "GPS_Milemeter_IMU_EKF：GPS+里程计+罗盘 EKF（MATLAB）"
     },
     {
@@ -10465,8 +10465,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
-      "one_liner_zh": "GVINS-WHU：武大方向 PPP-RTK/INS/视觉组合导航"
+      "provenance": "personal_community",
+      "one_liner_zh": "GVINS-WHU：PPP-RTK/INS/视觉组合导航（个人仓）"
     },
     {
       "name": "GVINS-Dataset",
@@ -10547,7 +10547,7 @@
     {
       "name": "ImuGpsGuiding",
       "url": "https://github.com/JackJu-HIT/ImuGpsGuiding",
-      "desc_zh": "哈工大方向：组合导航导引的教学/演示工程",
+      "desc_zh": "个人开发者（哈工大硕士）：组合导航导引的教学/演示工程",
       "analysis_zh": "基于 ROS，融合 IMU 与 GPS，实现从指定起点到终点的导引示例，偏机器人室外导航入门。适合实验室演示与课程项目。状态估计与工程完整度有限；高精度车载/航空组合导航请对照 NaveGo、KF-GINS、OB_GINS 等更完整工具箱。ROS 发行版与消息类型需与仓库分支匹配。室外实测前先在仿真或录包数据上验证。",
       "language": "C++",
       "license": null,
@@ -10559,13 +10559,13 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "ImuGpsGuiding：ROS 下 IMU+GPS 点到点导引示例"
     },
     {
       "name": "imugpslocalization",
       "url": "https://github.com/ydsf16/imu_gps_localization",
-      "desc_zh": "北航相关开源：误差状态卡尔曼滤波的 IMU/GPS 松组合",
+      "desc_zh": "个人开源（作者北航）：误差状态卡尔曼滤波的 IMU/GPS 松组合",
       "analysis_zh": "示例清晰的 ESKF 松组合实现，星标较高，适合第一次跑通误差状态建模。课程与原型友好。缺少完整测地产品链；高动态/遮挡需加强观测模型。",
       "language": "C++",
       "license": null,
@@ -10577,13 +10577,13 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "imu_gps_localization：ESKF 融合 IMU 与 GPS（C++）"
     },
     {
       "name": "IndirectEKFIMUGPS",
       "url": "https://github.com/hgpvision/Indirect_EKF_IMU_GPS",
-      "desc_zh": "哈工大相关 MATLAB：间接法卡尔曼 IMU/GPS 融合示例",
+      "desc_zh": "个人 MATLAB（作者哈工大）：间接法卡尔曼 IMU/GPS 融合示例",
       "analysis_zh": "经典间接法误差状态演示，适合对照直接法教材。教学友好。非生产导航栈；实车标定与传感器时延需自补。",
       "language": "MATLAB",
       "license": "MIT",
@@ -10595,7 +10595,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "Indirect_EKF_IMU_GPS：间接法 EKF 的 IMU/GPS 融合仿真"
     },
     {
@@ -10689,7 +10689,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "KF-GINS-Py：KF-GINS 思路的 Python EKF 移植"
     },
     {
@@ -10713,7 +10713,7 @@
     {
       "name": "Loose-GNSS-IMU",
       "url": "https://github.com/aaronboda24/Loose-GNSS-IMU",
-      "desc_zh": "约克大学相关示例：GNSS 位置速度更新 IMU 捷联推算",
+      "desc_zh": "个人示例（作者 York University）：GNSS 位置速度更新 IMU 捷联推算",
       "analysis_zh": "结构直白，便于第一次跑通松组合闭环与噪声调参。适合课程实验。紧组合、模糊度固定与完整性监测需另寻方案。",
       "language": "C++",
       "license": "MIT",
@@ -10725,7 +10725,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "Loose-GNSS-IMU：经典 GNSS/IMU 松组合卡尔曼"
     },
     {
@@ -10844,7 +10844,7 @@
     {
       "name": "raw-gnss-fusion",
       "url": "https://github.com/JonasBchrt/raw-gnss-fusion",
-      "desc_zh": "UKCEH/Cardiff 相关：公开原始 GNSS 与融合实验代码数据",
+      "desc_zh": "Jonas Beuchert 个人仓：公开原始 GNSS 与融合实验代码数据",
       "analysis_zh": "便于复现论文设定的原始测量与融合流水线。适合研究起步。不是开箱商用导航软件；依赖与数据许可以仓库为准。",
       "language": "Python",
       "license": "LGPL-3.0",
@@ -10856,13 +10856,13 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "raw-gnss-fusion：原始 GNSS 多传感器融合代码与数据"
     },
     {
       "name": "RTK-Visual-Inertial-Navigation",
       "url": "https://github.com/xiaohong-huang/RTK-Visual-Inertial-Navigation",
-      "desc_zh": "华工相关：滑窗框架下融合 RTK 与视觉惯性的导航系统",
+      "desc_zh": "个人仓（作者华南理工博士生）：滑窗框架下融合 RTK 与视觉惯性的导航系统",
       "analysis_zh": "在滑窗滤波框架里融合 RTK/DGNSS 与视觉惯性，面向高精度户外机器人与自动驾驶实验。适合已有 VIO 基础、想引入载波相位差分约束的团队。测地网 RTK 服务运维与模糊度完好性监测非其主场；可与 GVINS、gici-open、Multi_Sensor_Fusion 比较紧耦合策略。外参标定质量往往比滤波形式更能决定最终精度。",
       "language": "C++",
       "license": "GPL-3.0",
@@ -10874,7 +10874,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "RTK-VIN：滑窗滤波 RTK 视觉惯性导航"
     },
     {
@@ -10912,7 +10912,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "salsa：GNSS+视觉+惯性状态估计原型"
     },
     {
@@ -11140,7 +11140,7 @@
     {
       "name": "Gkit-Bias",
       "url": "https://github.com/LiZhengXiao99/Gkit-Bias",
-      "desc_zh": "长安大学相关：DCB/UPD/IFCB 与 OSB 转换开源实现",
+      "desc_zh": "长安大学硕士生个人仓：DCB/UPD/IFCB 与 OSB 转换开源实现",
       "analysis_zh": "C++ 实现三套偏差模式：DCB（码偏差与 VTEC 球谐联立）、UPD 与 IFCB（频间钟差），并支持向 OSB 转换，服务全频点 PPP-AR。输入侧重 RINEX 观测与星历。文档以中文为主，适合偏差链路研究；与 GREAT-UPD/IFCB、CAS DCB 产品对照使用，生产稳定性需自测。",
       "language": "C++",
       "license": "GPL-3.0",
@@ -11155,7 +11155,7 @@
       "featured": true,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "Gkit-Bias：全频点卫星端偏差估计"
     },
     {
@@ -11271,7 +11271,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "rt-clk-service：实时钟差/轨道/UPD/IFPB 服务代码"
     },
     {
@@ -11373,7 +11373,7 @@
     {
       "name": "EasyGNSS",
       "url": "https://github.com/whigg/EasyGNSS",
-      "desc_zh": "WHIGG 向入门 GUI；非精密定位引擎，功能以仓库说明为准",
+      "desc_zh": "个人仓入门 GUI（资料标注 IGG,CAS）；非精密定位引擎，功能以仓库说明为准",
       "analysis_zh": "为低成本 GNSS 接收机提供简易图形界面，降低配置、查看星空与状态的门槛。适合教学演示、业余爱好者台站与快速连通性检查。精密解算与质检能力有限；深入分析请导出 RINEX 后接入 RTKLIB、Anubis 或 georinex 流水线。",
       "language": "Python",
       "license": "GPL-3.0",
@@ -11385,7 +11385,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "EasyGNSS：低成本 GNSS 图形界面辅助工具"
     },
     {
@@ -11463,7 +11463,7 @@
     {
       "name": "gnss2tws-green",
       "url": "https://github.com/jzshhh/gnss2tws_green",
-      "desc_zh": "中山大学方向：GNSS2TWS Green 函数反演工具",
+      "desc_zh": "个人仓（作者中山大学）：GNSS2TWS Green 函数反演工具",
       "analysis_zh": "开源 MATLAB 工具 GNSS2TWS：利用 GNSS 测站日尺度垂直位移，经格林函数等方法推断陆地水储量（TWS）变化，服务水文大地测量。适合已有精密坐标时间序列、做气候水文交叉的研究者。不是导航定位解算器；空间平滑、负载模型与参考框架假设必须按配套论文核对。输入坐标序列质量决定反演可信度。站点分布稀疏时，反演空间分辨率会明显下降。",
       "language": "MATLAB",
       "license": "GPL-3.0",
@@ -11475,7 +11475,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "gnss2tws-green：GNSS 垂直位移反演陆地水储量"
     },
     {
@@ -11611,7 +11611,7 @@
     {
       "name": "Navigation-Learning",
       "url": "https://github.com/LiZhengXiao99/Navigation-Learning",
-      "desc_zh": "长安大学相关：RTKLIB/GAMP/GREAT 等源码解读清单",
+      "desc_zh": "长安大学硕士生个人笔记：RTKLIB/GAMP/GREAT 等源码解读清单",
       "analysis_zh": "系统整理 RTKLIB/GAMP/GREAT/Ginan/GINav/GICI 等源码阅读笔记与开源清单，中文学习路径非常完整。适合入门导航软件。笔记非上游文档，实现细节以各项目为准。",
       "language": "",
       "license": null,
@@ -11626,7 +11626,7 @@
       "featured": false,
       "user_relation": "starred",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "Navigation-Learning：导航开源项目中文笔记"
     },
     {
@@ -11723,7 +11723,7 @@
       "name": "polaris",
       "url": "https://github.com/PointOneNav/polaris",
       "desc_zh": "对接 Point One 云差分接口的开发者 SDK/工具",
-      "analysis_zh": "Point One Navigation 官方提供的 C 与 C++ 客户端库，连接其 Polaris RTK 网络取得 RTCM 10403 改正，喂给 Septentrio、NovAtel、u-blox 等兼容接收机，附串口转发与 NTRIP server 示例。需要在 app.pointonenav.com 申请 API key，云端服务本身非开源；适合想把商业 RTK 改正嵌入自有设备的开发者。",
+      "analysis_zh": "Point One Navigation 厂商提供的 C 与 C++ 客户端库，连接其 Polaris RTK 网络取得 RTCM 10403 改正，喂给 Septentrio、NovAtel、u-blox 等兼容接收机，附串口转发与 NTRIP server 示例。需要在 app.pointonenav.com 申请 API key，云端服务本身非开源；适合想把商业 RTK 改正嵌入自有设备的开发者。",
       "language": "C/C++",
       "license": "MIT",
       "category": "gnss-positioning",
@@ -11752,7 +11752,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "RTKLIB-Manual-CN：中文手册与源码导读"
     },
     {
@@ -11837,7 +11837,7 @@
       "language": "Python",
       "license": "Apache-2.0",
       "stars": 10,
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "host": "github",
       "one_liner_zh": "DDM-Former：GNSS-R DDM 海面风速 Transformer",
       "analysis_zh": "用 Transformer 从 GNSS-R DDM 估全球海面风速的研究代码（DDM-Former）。适合遥感/机器学习交叉读者。不是地基 GNSS-IR 工具，输入输出与传统 SNR 干涉测高不同。",
@@ -11953,7 +11953,7 @@
       "language": "Python",
       "license": "CC0-1.0",
       "stars": 7,
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "host": "github",
       "one_liner_zh": "GNSS_RR：雪面反射/折射连续估计（冰冻圈）",
       "analysis_zh": "联合 GNSS 反射与折射连续估计雪/粒雪累积、表面质量与密度，面向冰冻圈监测。场景专一；通用水位 GNSS-IR 不是其主场。",
@@ -12046,7 +12046,7 @@
       "language": "Python",
       "license": null,
       "stars": 8,
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "host": "github",
       "one_liner_zh": "gnssr4river：面向河流水文的 GNSS-R Python 工具箱",
       "analysis_zh": "开源 Python GNSS-R/IR 工具箱，偏向河流/水位等水文应用场景。适合把反射测高接到水文监测脚本。功能覆盖面小于 gnssrefl 全家桶，复杂站点仍建议用主流工具交叉检验。",
@@ -12166,7 +12166,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "ICAMS：InSAR 对流层改正（全球大气模式）"
     },
     {
@@ -12408,7 +12408,7 @@
       "name": "VARION",
       "url": "https://github.com/giorgiosavastano/VARION",
       "desc_zh": "由 RINEX 估计 sTEC 变化，用于海啸等站级扰动近实时监测",
-      "analysis_zh": "罗马一大（Sapienza）开源的变分法电离层观测工具，读取 RINEX 观测/广播星历估计 slant TEC 变化，用于站级近实时扰动监测（如海啸电离层扰动）。Python+NumPy/Pandas，GPL-3。适合单站高频 TEC 扰动教学与案例复现；依赖较旧的 Python 2.7+ 生态，需自行准备导航文件与站坐标。",
+      "analysis_zh": "Giorgio Savastano 个人仓发布的变分法电离层观测工具（方法源自罗马一大 Sapienza 相关论文），读取 RINEX 观测/广播星历估计 slant TEC 变化，用于站级近实时扰动监测（如海啸电离层扰动）。Python+NumPy/Pandas，GPL-3。适合单站高频 TEC 扰动教学与案例复现；依赖较旧的 Python 2.7+ 生态，需自行准备导航文件与站坐标。",
       "language": "Python",
       "license": "GPL-3.0",
       "category": "ionosphere",
@@ -12421,8 +12421,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
-      "one_liner_zh": "VARION：Sapienza 变分法实时电离层监测"
+      "provenance": "personal_community",
+      "one_liner_zh": "VARION：变分法实时电离层监测（Savastano 个人仓）"
     },
     {
       "name": "Cube",
@@ -12441,8 +12441,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
-      "one_liner_zh": "Cube：精密测量院 GPS 钟差/PPP-AR（RTKLIB 二次开发）"
+      "provenance": "personal_community",
+      "one_liner_zh": "Cube：GPS 钟差/解耦钟与 PPP-AR（RTKLIB 二次开发）"
     },
     {
       "name": "ATom-TUWien",
@@ -12501,7 +12501,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "geoveil-mp：Rust/Python 的 RINEX 多路径 MP 与周跳质控库"
     },
     {
@@ -12521,7 +12521,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "geoveil-cn0：RINEX CN0 质量评分与干扰/欺骗检测"
     },
     {
@@ -12732,7 +12732,7 @@
       "name": "libsbp",
       "url": "https://github.com/swift-nav/libsbp",
       "desc_zh": "Swift Navigation SBP 二进制协议多语言客户端库",
-      "analysis_zh": "Swift Navigation 官方 Swift Binary Protocol（SBP）客户端库集合，覆盖 C/C++ 等绑定，用于与 Piksi/相关硬件交换观测、导航与配置消息。做低成本 RTK 硬件联调或自研记录器时常用。它是协议栈而非完整 PPP/RTK 引擎；解算仍需 RTKLIB/厂商固件或其他库。",
+      "analysis_zh": "Swift Navigation 厂商 Swift Binary Protocol（SBP）客户端库集合，覆盖 C/C++ 等绑定，用于与 Piksi/相关硬件交换观测、导航与配置消息。做低成本 RTK 硬件联调或自研记录器时常用。它是协议栈而非完整 PPP/RTK 引擎；解算仍需 RTKLIB/厂商固件或其他库。",
       "language": "C++",
       "license": "MIT",
       "category": "gnss-data",
@@ -13009,8 +13009,8 @@
     {
       "name": "ubxlib",
       "url": "https://github.com/u-blox/ubxlib",
-      "desc_zh": "u-blox 官方便携 C 库：模块/GNSS/蜂窝等嵌入式 API",
-      "analysis_zh": "u-blox 官方开源的可移植 C 库，面向 MCU/RTOS 场景提供 GNSS 与蜂窝等产品统一 API，作为各平台 SDK 的附加层。Apache-2.0。适合嵌入式原始测量/配置联调；不是精密定位引擎，PC 端解析更常见 pyubx2 等工具。",
+      "desc_zh": "u-blox 厂商发布的便携 C 库：模块/GNSS/蜂窝等嵌入式 API",
+      "analysis_zh": "u-blox 厂商开源的可移植 C 库，面向 MCU/RTOS 场景提供 GNSS 与蜂窝等产品统一 API，作为各平台 SDK 的附加层。Apache-2.0。适合嵌入式原始测量/配置联调；不是精密定位引擎，PC 端解析更常见 pyubx2 等工具。",
       "language": "C",
       "license": "Apache-2.0",
       "category": "mobile-apps",
@@ -13023,8 +13023,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "official",
-      "one_liner_zh": "u-blox 官方嵌入式 C 库（GNSS/蜂窝 API）"
+      "provenance": "personal_community",
+      "one_liner_zh": "u-blox 厂商发布的嵌入式 C 库（GNSS/蜂窝 API）"
     },
     {
       "name": "ahrs",
@@ -13441,7 +13441,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "RINEX 镜像与 Anubis QC 的 Python 工具箱"
     },
     {
@@ -13994,7 +13994,7 @@
       "name": "gnss_timeseries_viewers",
       "url": "https://github.com/kmaterna/gnss_timeseries_viewers",
       "desc_zh": "读取 PBO/UNR 等坐标时序、拟合趋势季节项并堆叠绘图",
-      "analysis_zh": "伯克利相关维护者发布的 Python 包，专注 GNSS 坐标时间序列：读 PBO/UNR 等产品、估计斜率/季节项/阶跃，并做堆叠图。依赖 Poetry/conda 环境与 EarthScope 相关 CLI。用于形变时序分析，不处理原始 RINEX 观测。",
+      "analysis_zh": "个人维护者 kmaterna 发布的 Python 包，专注 GNSS 坐标时间序列：读 PBO/UNR 等产品、估计斜率/季节项/阶跃，并做堆叠图。依赖 Poetry/conda 环境与 EarthScope 相关 CLI。用于形变时序分析，不处理原始 RINEX 观测。",
       "language": "Python",
       "license": "MIT",
       "category": "tools-learning",
@@ -14007,7 +14007,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "gnss_timeseries_viewers：PBO/UNR 坐标时序分析绘图"
     },
     {
@@ -14367,7 +14367,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "ocbpy：极盖边界自适应磁坐标转换库"
     },
     {
@@ -15147,7 +15147,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "snapshot-gnss-algorithms：短快照 GNSS 定位算法集"
     },
     {
@@ -16007,7 +16007,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "aacgmv2：AACGM-v2 地磁坐标 Python 库"
     },
     {
@@ -16047,7 +16047,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "DD-cycle-slip-lab：双差定位与周跳教学实验"
     },
     {
@@ -16940,7 +16940,7 @@
       "name": "novatel_oem7_driver",
       "url": "https://github.com/novatel/novatel_oem7_driver",
       "desc_zh": "车载/机器人话题发布向；固件与消息要对齐，不替代测地后处理",
-      "analysis_zh": "Hexagon/NovAtel 维护的 OEM7 系列 GNSS/SPAN 官方 ROS 驱动，MIT 许可，支持定位、原始观测与惯导相关话题发布。面向车载/机器人集成，而非测地后处理套件。消息定义与固件版本需匹配；多天线/SPAN 配置依赖硬件与校准。与社区旧版 novatel_gps_driver 并存时注意选型。收录前已核验仓库可访问。",
+      "analysis_zh": "Hexagon/NovAtel 维护的 OEM7 系列 GNSS/SPAN 厂商 ROS 驱动，MIT 许可，支持定位、原始观测与惯导相关话题发布。面向车载/机器人集成，而非测地后处理套件。消息定义与固件版本需匹配；多天线/SPAN 配置依赖硬件与校准。与社区旧版 novatel_gps_driver 并存时注意选型。收录前已核验仓库可访问。",
       "language": "C++",
       "license": "MIT",
       "category": "navigation-ins",
@@ -16953,14 +16953,14 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "official",
-      "one_liner_zh": "novatel_oem7_driver：NovAtel OEM7/SPAN 官方 ROS 驱动（MIT）"
+      "provenance": "personal_community",
+      "one_liner_zh": "novatel_oem7_driver：NovAtel OEM7/SPAN 厂商 ROS 驱动（MIT）"
     },
     {
       "name": "novatel_gps_driver",
       "url": "https://github.com/swri-robotics/novatel_gps_driver",
       "desc_zh": "ROS1 时代工程常用；新项目宜对照官方 OEM7 驱动能力边界",
-      "analysis_zh": "Southwest Research Institute 维护的 NovAtel GPS/GNSS ROS 驱动，BSD-3-Clause，在移动机器人与自动驾驶栈中使用较广。偏消息解析与话题发布，不替代 OEM7 官方新驱动的全部能力。串口/以太网连接与最佳实践见仓库文档。适合 ROS1 时代工程对照；新项目可并行评估官方 OEM7 驱动。",
+      "analysis_zh": "Southwest Research Institute 维护的 NovAtel GPS/GNSS ROS 驱动，BSD-3-Clause，在移动机器人与自动驾驶栈中使用较广。偏消息解析与话题发布，不替代 NovAtel 厂商新版 OEM7 驱动的全部能力。串口/以太网连接与最佳实践见仓库文档。适合 ROS1 时代工程对照；新项目可并行评估 NovAtel 厂商 OEM7 驱动。",
       "language": "C++",
       "license": "BSD-3-Clause",
       "category": "navigation-ins",
@@ -16993,7 +16993,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "max2771_fx2lp：MAX2771 多通道射频前端 + FX2LP USB 采集"
     },
     {
@@ -17040,7 +17040,7 @@
       "name": "swiftnav-ros2",
       "url": "https://github.com/swift-nav/swiftnav-ros2",
       "desc_zh": "与 libsbp/piksi_tools 同栈；只服务 Swift 机型，固件/SBP 须匹配",
-      "analysis_zh": "Swift Navigation 官方 ROS 2 驱动，通过 Swift Binary Protocol（SBP）接入其 GNSS/INS 接收机，MIT 许可。与 libsbp、piksi_tools 等同栈，面向机器人实时定位话题。固件与 SBP 版本需匹配；不覆盖非 Swift 品牌接收机。适合 ROS 2 车载/机器人集成评估。",
+      "analysis_zh": "Swift Navigation 厂商 ROS 2 驱动，通过 Swift Binary Protocol（SBP）接入其 GNSS/INS 接收机，MIT 许可。与 libsbp、piksi_tools 等同栈，面向机器人实时定位话题。固件与 SBP 版本需匹配；不覆盖非 Swift 品牌接收机。适合 ROS 2 车载/机器人集成评估。",
       "language": "C++",
       "license": "MIT",
       "category": "navigation-ins",
@@ -17054,7 +17054,7 @@
       "user_relation": "none",
       "host": "github",
       "provenance": "personal_community",
-      "one_liner_zh": "swiftnav-ros2：Swift Navigation 官方 ROS 2 SBP 驱动（MIT）"
+      "one_liner_zh": "swiftnav-ros2：Swift Navigation 厂商 ROS 2 SBP 驱动（MIT）"
     },
     {
       "name": "gnssvod",
@@ -17294,7 +17294,7 @@
       "name": "fixposition_driver",
       "url": "https://github.com/Fixposition/fixposition_driver",
       "desc_zh": "厂商 Linux ROS 话题集成；依赖硬件与时间同步，非测地后处理",
-      "analysis_zh": "Fixposition 官方 Linux ROS 驱动，对接 Vision-RTK 2、PBx-A1 等视觉惯性 GNSS 定位传感器，MIT 许可。面向机器人/自动驾驶紧组合定位话题，而非测地后处理。依赖厂商硬件与时间同步配置；与纯 GNSS RTK 方案选型不同。适合评估视觉辅助 RTK 的 ROS 集成。",
+      "analysis_zh": "Fixposition 厂商 Linux ROS 驱动，对接 Vision-RTK 2、PBx-A1 等视觉惯性 GNSS 定位传感器，MIT 许可。面向机器人/自动驾驶紧组合定位话题，而非测地后处理。依赖厂商硬件与时间同步配置；与纯 GNSS RTK 方案选型不同。适合评估视觉辅助 RTK 的 ROS 集成。",
       "language": "C++",
       "license": "MIT",
       "category": "navigation-ins",
@@ -19501,7 +19501,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "基于 1979–2017 再分析资料的全球对流层延迟与加权平均温度经验模型 GTrop（MATLAB）"
     },
     {
@@ -19521,7 +19521,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "对流层映射函数高程改正模型参数与 MATLAB 脚本（J Geod 2024 配套）"
     },
     {
@@ -19541,7 +19541,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "物理约束 U-Net 深度学习对流层延迟格网降尺度框架 TropDS"
     },
     {
@@ -20218,7 +20218,7 @@
       "name": "novatel_edie",
       "url": "https://github.com/novatel/novatel_edie",
       "desc_zh": "离线解码、过滤、互转 OEM7 ASCII/二进制日志时用，另有 Python 包",
-      "analysis_zh": "NovAtel（Hexagon）官方发布的 Encode Decode Interface Engine SDK，MIT 许可，C++ 实现并提供 Python 包。可对 OEM7 接收机的 ASCII、二进制与简化 ASCII 日志进行帧识别、解码与互相转换，基于官方消息定义数据库，适合编写离线解析、日志过滤、格式转换与数据回放工具。构建使用 CMake 预设并支持 Conan 管理依赖。与已收录的 novatel_oem7_driver（ROS 驱动）互补：后者面向机器人实时接入，EDIE 更适合底层解码与数据处理。近期仍活跃更新。",
+      "analysis_zh": "NovAtel（Hexagon）厂商发布的 Encode Decode Interface Engine SDK，MIT 许可，C++ 实现并提供 Python 包。可对 OEM7 接收机的 ASCII、二进制与简化 ASCII 日志进行帧识别、解码与互相转换，基于厂商消息定义数据库，适合编写离线解析、日志过滤、格式转换与数据回放工具。构建使用 CMake 预设并支持 Conan 管理依赖。与已收录的 novatel_oem7_driver（ROS 驱动）互补：后者面向机器人实时接入，EDIE 更适合底层解码与数据处理。近期仍活跃更新。",
       "language": "C++",
       "license": "MIT",
       "category": "gnss-data",
@@ -20231,14 +20231,14 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "official",
-      "one_liner_zh": "NovAtel 官方 EDIE 编解码 SDK：OEM7 接收机日志/命令的 C++ 与 Python 解析与格式转换"
+      "provenance": "personal_community",
+      "one_liner_zh": "NovAtel 厂商发布的 EDIE 编解码 SDK：OEM7 接收机日志/命令的 C++ 与 Python 解析与格式转换"
     },
     {
       "name": "trimble_driver_ros",
       "url": "https://github.com/trimble-oss/trimble_driver_ros",
       "desc_zh": "把 Trimble/Applanix 组合导航接入 ROS 2，输出 NavSatFix 与里程计",
-      "analysis_zh": "Trimble 官方 trimble-oss 组织发布的 ROS 2 软件包，BSD-2-Clause 许可，C++ 实现。解析 Trimble General Serial Output Format（GSOF）的一个子集，可选发布 sensor_msgs/NavSatFix 与 nav_msgs/Odometry 等标准消息（以 GSOF49 首个位置或 set_origin 服务设定的原点构建局部切平面），同时提供专用 GSOF 话题；主要在 Applanix 组合导航产品上测试。适合在自动驾驶、移动测绘平台中接入 Trimble/Applanix 定位定姿系统。README 详列节点参数、话题与服务。",
+      "analysis_zh": "Trimble 公司 trimble-oss 组织发布的 ROS 2 软件包，BSD-2-Clause 许可，C++ 实现。解析 Trimble General Serial Output Format（GSOF）的一个子集，可选发布 sensor_msgs/NavSatFix 与 nav_msgs/Odometry 等标准消息（以 GSOF49 首个位置或 set_origin 服务设定的原点构建局部切平面），同时提供专用 GSOF 话题；主要在 Applanix 组合导航产品上测试。适合在自动驾驶、移动测绘平台中接入 Trimble/Applanix 定位定姿系统。README 详列节点参数、话题与服务。",
       "language": "C++",
       "license": "BSD-2-Clause",
       "category": "navigation-ins",
@@ -20251,8 +20251,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "official",
-      "one_liner_zh": "Trimble 官方开源 ROS/ROS 2 驱动：解析 GSOF 输出并发布标准与自定义话题"
+      "provenance": "personal_community",
+      "one_liner_zh": "Trimble 厂商开源 ROS/ROS 2 驱动：解析 GSOF 输出并发布标准与自定义话题"
     },
     {
       "name": "trimble-gsof-wireshark",
@@ -20396,9 +20396,9 @@
     }
   ],
   "provenance_counts": {
-    "official": 342,
-    "academic_lab": 347,
-    "personal_community": 340
+    "official": 333,
+    "academic_lab": 284,
+    "personal_community": 412
   },
   "updated": "2026-09-26"
 }

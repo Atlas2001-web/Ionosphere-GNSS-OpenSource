@@ -31,7 +31,7 @@ EUMETSAT ROM SAF 维护的掩星处理软件包（当前 ROPP-12.0），官方�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [GNSSR_MERRByS_Python](https://github.com/pjalesSSTL/GNSSR_MERRByS_Python) | GNSSR_MERRByS_Python：TechDemoSat-1 星载 GNSS-R 示例 | Jupyter Notebook | 19 | 🏷️ 个人社区 |
-| [DDM-Former](https://github.com/daixinzhao/DDM-Former) | DDM-Former：GNSS-R DDM 海面风速 Transformer | Python | 10 | 🏷️ 高校实验室 |
+| [DDM-Former](https://github.com/daixinzhao/DDM-Former) | DDM-Former：GNSS-R DDM 海面风速 Transformer | Python | 10 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -43,7 +43,7 @@ EUMETSAT ROM SAF 维护的掩星处理软件包（当前 ROPP-12.0），官方�
 Surrey TechDemoSat-1（MERRByS）星载 GNSS-R 的 Python/Jupyter 示例，演示空间反射数据读取与初步处理。适合星载 GNSS-R 入门。地基 GNSS-IR 请用 gnssrefl；两者几何与校正链不同。
 
 #### [DDM-Former](https://github.com/daixinzhao/DDM-Former)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：Apache-2.0 · 星标约：10 · 宿主：github
 
@@ -118,7 +118,7 @@ BME 大地测量组发布的开源 Python 层析工具箱，由 ZWD/梯度、SP3
 | [gnssSNR](https://github.com/kristinemlarson/gnssSNR) | gnssSNR：RINEX→SNR/几何角，GNSS-IR 前置工具 | Fortran | 15 | 🏷️ 高校实验室 |
 | [GIRAS-GPS-Solutions](https://github.com/cemalialtuntas/GIRAS-GPS-Solutions) | GIRAS：MATLAB 开源 GNSS-IR 分析（GPS Solutions 配套） | MATLAB | 13 | 🏷️ 高校实验室 |
 | [FresnelMaps](https://github.com/kristinemlarson/FresnelMaps) | FresnelMaps：GNSS-IR 菲涅耳区地图生成工具 | MATLAB | 9 | 🏷️ 高校实验室 |
-| [gnssr4river](https://github.com/lroineau/gnssr4river) | gnssr4river：面向河流水文的 GNSS-R Python 工具箱 | Python | 8 | 🏷️ 高校实验室 |
+| [gnssr4river](https://github.com/lroineau/gnssr4river) | gnssr4river：面向河流水文的 GNSS-R Python 工具箱 | Python | 8 | 🏷️ 个人社区 |
 | [gpssnrpy](https://github.com/kristinemlarson/gpssnrpy) | gpssnrpy：RINEX SNR 提取与高度角/方位角 | Python | 6 | 🏷️ 高校实验室 |
 | [NearRealTimeGNSSIR](https://github.com/cemalialtuntas/NearRealTimeGNSSIR) | NearRealTimeGNSSIR：近实时 GNSS-IR 软件原型 | HTML | 5 | 🏷️ 高校实验室 |
 | [FindSnowOutliers](https://github.com/kristinemlarson/FindSnowOutliers) | FindSnowOutliers：SNR 检测天线积雪异常 | MATLAB | 4 | 🏷️ 高校实验室 |
@@ -149,7 +149,7 @@ Altuntas 与 Tunalioglu 发布的 MATLAB GNSS-IR 工具，可读 RINEX 2/3 与�
 Kristine Larson 团队工具，为地基 GNSS-IR/反射测量绘制菲涅耳区地图，辅助选址与几何解释。MIT 许可；与 gnssSNR、gnssrefl 同谱系前置工具。输入站坐标与天线高需准确，输出服务实验设计，本身不做水位或雪深反演。
 
 #### [gnssr4river](https://github.com/lroineau/gnssr4river)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：— · 星标约：8 · 宿主：github
 
@@ -224,12 +224,12 @@ Larson 团队 Fortran 工具，翻译/读取 GPS RINEX 并提取 SNR，服务反
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [GNSS_RR](https://github.com/lasteine/GNSS_RR) | GNSS_RR：雪面反射/折射连续估计（冰冻圈） | Python | 7 | 🏷️ 高校实验室 |
+| [GNSS_RR](https://github.com/lasteine/GNSS_RR) | GNSS_RR：雪面反射/折射连续估计（冰冻圈） | Python | 7 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [GNSS_RR](https://github.com/lasteine/GNSS_RR)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：CC0-1.0 · 星标约：7 · 宿主：github
 
@@ -303,8 +303,8 @@ GNSS 干涉反射测量（GNSS-IR）主流开源工具，用反射信号估水�
 |---|---|---|---:|---|
 | [ITU-Rpy](https://github.com/inigodelportillo/ITU-Rpy) | ITU-Rpy：ITU-R 大气衰减建议的 Python 库 | Python | 172 | 🏷️ 个人社区 |
 | [PyAPS](https://github.com/insarlab/PyAPS) | PyAPS：全球模式大气相位屏（APS） | Python | 86 | 🏷️ 高校实验室 |
-| [ICAMS](https://github.com/ymcmrs/ICAMS) | ICAMS：InSAR 对流层改正（全球大气模式） | Python | 44 | 🏷️ 高校实验室 |
-| [TropDS](https://github.com/Sardingfish/TropDS) | 物理约束 U-Net 深度学习对流层延迟格网降尺度框架 TropDS | Python | 1 | 🏷️ 高校实验室 |
+| [ICAMS](https://github.com/ymcmrs/ICAMS) | ICAMS：InSAR 对流层改正（全球大气模式） | Python | 44 | 🏷️ 个人社区 |
+| [TropDS](https://github.com/Sardingfish/TropDS) | 物理约束 U-Net 深度学习对流层延迟格网降尺度框架 TropDS | Python | 1 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -323,14 +323,14 @@ GNSS 干涉反射测量（GNSS-IR）主流开源工具，用反射信号估水�
 用全球大气模式生成大气相位屏，服务 InSAR 对流层改正，思路与 GNSS 气象同源（湿延迟结构）。适合 InSAR+GNSS 联合的人理解三维湿延迟。不直接输出测站 ZTD 产品。
 
 #### [ICAMS](https://github.com/ymcmrs/ICAMS)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：— · 星标约：44 · 宿主：github
 
 用全球大气模式做 InSAR 对流层改正，并考虑空间随机特性。适合高级 InSAR 大气研究。与 GNSS 单站 ZTD 流程接口需自行桥接。
 
 #### [TropDS](https://github.com/Sardingfish/TropDS)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：BSD-3-Clause · 星标约：1 · 宿主：github
 
@@ -400,14 +400,14 @@ Python 包生成斜路径干/湿延迟（STD/SWD）以及基于 GPT/VMF 的模�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [Mapping-Function-Height-Correction-Models](https://github.com/Sardingfish/Mapping-Function-Height-Correction-Models) | 对流层映射函数高程改正模型参数与 MATLAB 脚本（J Geod 2024 配套） | MATLAB | 2 | 🏷️ 高校实验室 |
+| [Mapping-Function-Height-Correction-Models](https://github.com/Sardingfish/Mapping-Function-Height-Correction-Models) | 对流层映射函数高程改正模型参数与 MATLAB 脚本（J Geod 2024 配套） | MATLAB | 2 | 🏷️ 个人社区 |
 | [TU-Wien-VMF-GPT-codes](https://vmf.geo.tuwien.ac.at/codes) | TU Wien 官方 VMF1/VMF3/GPT/GMF 源码与格网目录 | Fortran/MATLAB/C++ | — | 🏷️ 官方 核心 |
 | [VMF-TUWien-Home](https://vmf.geo.tuwien.ac.at/) | VMF-TUWien-Home：TU Wien VMF/GPT 对流层产品与代码门户 | Fortran/MATLAB | — | 🏷️ 官方 |
 
 ### 详细说明
 
 #### [Mapping-Function-Height-Correction-Models](https://github.com/Sardingfish/Mapping-Function-Height-Correction-Models)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：MATLAB · 许可：MIT · 星标约：2 · 宿主：github
 
@@ -449,7 +449,7 @@ UNB 系列中性大气经验模型，无实测气象时给天顶延迟粗值。�
 | [lowtran](https://github.com/space-physics/lowtran) | lowtran：LOWTRAN7 大气消光模型的 Python 封装 | Python | 118 | 🏷️ 高校实验室 |
 | [msise00](https://github.com/space-physics/msise00) | NRLMSISE-00 的 Python/Matlab 封装 | Python | 63 | 🏷️ 高校实验室 |
 | [hwm14](https://github.com/gemini3d/hwm14) | hwm14：NRL 水平风场模型开源 CMake 构建 | Fortran | 7 | 🏷️ 高校实验室 |
-| [GTrop](https://github.com/sun1753814280/GTrop) | 基于 1979–2017 再分析资料的全球对流层延迟与加权平均温度经验模型 GTrop（MATLAB） | MATLAB | 5 | 🏷️ 高校实验室 |
+| [GTrop](https://github.com/sun1753814280/GTrop) | 基于 1979–2017 再分析资料的全球对流层延迟与加权平均温度经验模型 GTrop（MATLAB） | MATLAB | 5 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -475,7 +475,7 @@ space-physics 维护的 LOWTRAN7 现代封装，用 f2py/CMake 在 Python 中直
 gemini3d 维护的 NRL Horizontal Wind Model 2014 可构建库，用 CMake 生成 libhwm14，供上层大气/电离层耦合与轨迹仿真调用。Apache-2.0。是中性风经验模型而非 GNSS 处理软件；旧 HWM93 包装仓已归档，新集成优先此仓。
 
 #### [GTrop](https://github.com/sun1753814280/GTrop)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：MATLAB · 许可：— · 星标约：5 · 宿主：github
 
