@@ -2,6 +2,8 @@
 
 目录：[`PROJECTS.json` → `Lompe`](../../PROJECTS.json) · 上游 <https://github.com/klaundal/lompe> · **不在 PyPI**（`pip index versions lompe` → `No matching distribution found`），从 GitHub 装 · main `c73d0ed`（2026-09-07 10:04 EDT；`git describe` = `v1.1.1-75-gc73d0ed`，pip 显示 `1.1.2.dev75+gc73d0edb0`）· 许可 **MIT** · 本机实跑 2026-09-26 05:30–05:37 EDT（CPython 3.13.5，venv，无 conda）
 
+> **质检复跑通过（2026-09-26 05:50 EDT）**：重新克隆 `c73d0ed`（`v1.1.1-75-gc73d0ed`，工作树 324 MB、`.git` 362 MB），纯 uv/pip 装 `[deps-from-github]` + tables，版本与 §2 全部相同，`6 passed`。`lompe_one.py` 限 2 线程原样复跑，stdout 除耗时（22.6 s）外**逐行一致**：53×37 格、815/1280/1438 行、m 2052、电势差 103.9 kV、\|v\| 最大 1217 m/s、FAC −1.45…2.26 μA/m²、SH 0–16.14 S。首次导入时会先多出 2 条 `SyntaxWarning: invalid escape sequence`（`visualization.py` 第 193 / 735 行，编译 pyc 时出现一次）。坑 1（PyPI 404）、坑 2（裸装缺 `secsy`）、坑 3（缺 PyTables）、坑 4（不屏蔽时 670 行 findfont）、坑 5（SH≤0.01 S 占 18.4%，starlight=0.5 后最小值 0.50）、坑 6、坑 7（savepath 写死、`times[1:]` 共 479 个时刻）、坑 8（Kp=4 未用、写死 5）、坑 11（hypot 0.99999983–1.00000016）均复现。正文无需修改。
+>
 > 岗位：在一块**局地**立方球网格上，把 SuperDARN 视线速度、Iridium/AMPERE 卫星磁扰、SuperMAG 地面磁扰等**异构观测一起反演**，得到一致的电势、电场、对流速度、水平电流和场向电流（FAC）。冲突时：**`help(lompe.Data)` / 上游 examples > 本文**。
 
 ## 1. 它解决什么 / 不做什么

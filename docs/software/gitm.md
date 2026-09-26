@@ -2,6 +2,8 @@
 
 目录：[`PROJECTS.json` → `GITM`](../../PROJECTS.json) · 上游 <https://github.com/GITMCode/GITM>（`aaronjridley/GITM` 为并行维护的镜像，本文只测 GITMCode）· 文档 <https://gitm.readthedocs.io> · main `c4fc315`（2026-09-04 16:50 EDT；`run_information.txt` 报 `main_c4fc315-20260904.0`，外置 Electrodynamics `main_756d8cb`）· 许可 **Apache-2.0** · 本机实跑 2026-09-26 05:26–05:34 EDT（Debian 13，GNU Fortran 14.2.0，Open MPI 5.0.7，8 核）
 
+> **质检复跑通过（2026-09-26 05:50 EDT）**：本机原先没有 MPI，`apt-get install gfortran libopenmpi-dev openmpi-bin` 后为 GNU Fortran 14.2.0 / Open MPI 5.0.7。重新克隆 `c4fc315`，`make -j2` 用 65 s，`GITM.exe` 10074248 B。默认 3-D 例子必须 4 进程（块数 = 进程数），只跑了约 11 s：stdout 结构、iStep 82、块文件 2993328 B、`run_information.txt`（`main_c4fc315-20260904.0` / Electrodynamics `main_756d8cb`）、log 末行（F107 177.9、CPCPn/s 109.3/100.5、SubsolarVTEC 55.050）均一致。`post_process.py` 得 `.bin` 8365844 B，`-nc`（PyITM `087664a`，0.0.1）得 `.nc` 8557451 B；§3.3 读取脚本输出**逐行一致**（302.4 km [e-] 1.015e11–2.448e12，NmF2 1.690e12 @ 338 km），NetCDF 交叉核对一致。1-D 重编 27 s，30 min 用时 1.093 s，文件名时间戳 `001002`/`001503`…；§3.4 原始读法逐行一致（54×51，NmF2 4.537e11 @ 338 km）；`post_process.py` 报 `unpack requires a buffer of 320 bytes`，header `40 nvars`。坑 6（run3d 的符号链接变成指向 1-D 程序）、坑 7、坑 8 均复现。已修正：坑 3 的实际报错、`post_process.py` 需要 scipy、无 ssh 时的报错文本。未复跑（与原文一致）：auto_test、dynamo、restart。
+>
 > 岗位：自己**跑**一个全球 3-D 热层-电离层物理模式（中性风/温度/成分 + 离子/电子密度/温度，由太阳 EUV、IMF、极区电势/极光驱动），拿到 Ne(lon,lat,alt,t) 去和 GNSS TEC、IRI、MSIS 对比。冲突时：**上游 readthedocs / `srcDoc/set_inputs.md` > 本文**。
 
 ## 1. 它解决什么 / 不做什么
@@ -96,7 +98,7 @@ real	0m9.997s
 ### 3.2 合并块文件 → `.bin`（或 NetCDF）
 
 ```bash
-python3 -u post_process.py          # run3d/ 下；默认合并后删掉 .b000x
+python3 -u post_process.py          # run3d/ 下；默认合并后删掉 .b000x；需要 numpy + scipy（srcPython/pGITM.py 导入 scipy.io.FortranFile，缺了报 ModuleNotFoundError: No module named 'scipy'）
 ```
 
 ```text
@@ -229,8 +231,8 @@ NmF2[m-3]=4.537e+11 hmF2[km]=338.0
 | # | 现象 | 原因 | 修复 |
 | ---: | --- | --- | --- |
 | 1 | `mpif90: command not found`（本机装 MPI 前） | GITM 链接用 `mpif90`，只有 gfortran 不够 | `sudo apt-get install -y libopenmpi-dev openmpi-bin` |
-| 2 | `Config.pl` 打印 `Host key verification failed.` | 先用 SSH 拉 Electrodynamics；无 SSH key 时失败后会自动改 HTTPS（本机成功）；若 HTTPS 也不通则 `ext/` 为空 | `git clone https://github.com/GITMCode/Electrodynamics.git ext/Electrodynamics` 后重跑 `./Config.pl -install -earth -compiler=gfortran10` |
-| 3 | `mpirun -np 2` 跑默认 2×2 块：`Stopping execution! iProc= 0 with msg=Error allocating Fang arrays in aurora`，exit 215 | 进程数与块数（nBlocksLon×nBlocksLat=4）不符 | `mpirun -np 4 ./GITM.exe` |
+| 2 | `Config.pl` 打印 `Host key verification failed.` | 先用 SSH 拉 Electrodynamics；无 SSH key 时失败后会自动改 HTTPS（本机成功；机器上连 ssh 都没装时报的是 `error: cannot run ssh: No such file or directory`，同样会自动改走 HTTPS）；若 HTTPS 也不通则 `ext/` 为空 | `git clone https://github.com/GITMCode/Electrodynamics.git ext/Electrodynamics` 后重跑 `./Config.pl -install -earth -compiler=gfortran10` |
+| 3 | `mpirun -np 2` 跑默认 2×2 块：先打印 `--> Therefore need nProcs = 4` / `--> nProcs = 2`，再 `Stopping execution! iProc= 0 with msg=Error in trying to create grid.` 并 `MPI_ABORT`（质检复跑实测；初稿记的 `Error allocating Fang arrays in aurora`、exit 215 未复现，两次 mpirun 退出码分别为 191 和 0，不能靠退出码判断） | 进程数与块数（nBlocksLon×nBlocksLat=4）不符 | `mpirun -np 4 ./GITM.exe` |
 | 4 | 1DALL 跑 `post_process.py`：`struct.error: unpack requires a buffer of 320 bytes` | 1-D 块文件每条记录写 51 个值，header 只列 40 个；后处理按 header 读 | 用 3.4 节的原始读法（前 40 列有效）；或输出改 `3DALL` 后再合并 |
 | 5 | 脚本写死 `1DALL_t021221_001000` 找不到文件 | 输出时刻落在超过 DtPlot 的第一个时间步，文件名是 `001002`、`001503` | `ls UA/data/1DALL_t021221_0010*` / Python 用 `sorted(glob.glob(...))` |
 | 6 | 改 `ModSize.f90` 重编后，老运行目录也变成 1-D | `run*/GITM.exe` 是指向 `src/GITM.exe` 的符号链接 | 重编前先固化：`cp --remove-destination src/GITM.exe run3d/GITM.exe` |
