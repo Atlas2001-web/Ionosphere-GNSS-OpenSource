@@ -716,7 +716,7 @@ pyDataLink 用于可视化与连接接收机数据流，便于实验教学中快
 
 语言：Python · 许可：MIT · 星标约：7 · 宿主：github
 
-HamSCI（NASA SWO2R 团队，Frissell 等）开源的 LSTID 自动检测代码，MIT 许可并有 Zenodo DOI。输入为 CEDAR Madrigal 中 RBN、PSKReporter、WSPRNet 业余无线电 spot 的每日 HDF5，通过统计与频谱方法识别大尺度 TID 的出现与周期，附 Madrigal 下载脚本与依赖版本清单。提供了不同于 GNSS TEC 的 TID 独立观测途径，可与 Madrigal GNSS TEC、DARNtids 结果互证。运行环境要求 Python 3.11 与 Linux。
+HamSCI（NASA SWO2R 团队，Frissell 等）开源的 LSTID 自动检测代码，MIT 许可并有 Zenodo DOI。输入为 CEDAR Madrigal 中 RBN、PSKReporter、WSPRNet 业余无线电 spot 的每日 HDF5，将 spot 按距离-时间分箱成热图，经预处理与边缘检测后做正弦拟合，给出大尺度 TID 的出现与周期（1–4.5 小时），附 Madrigal 下载脚本与依赖版本清单。提供了不同于 GNSS TEC 的 TID 独立观测途径，可与 Madrigal GNSS TEC、DARNtids 结果互证。运行环境要求 Python 3.11 与 Linux。
 
 #### [radionopy](https://github.com/UPennEoR/radionopy)  
 *🏷️ 高校实验室*

@@ -311,7 +311,7 @@ GNSS 干涉反射测量（GNSS-IR）主流开源工具，用反射信号估水�
 
 语言：Python · 许可：BSD-3-Clause · 星标约：1 · 宿主：github
 
-与 Mapping-Function-Height-Correction-Models 同一作者团队的深度学习项目，BSD-3-Clause 许可，Python/PyTorch 实现。针对空间大地测量中粗分辨率 ZHD/ZWD 格网，采用带物理约束的 U-Net 将低分辨率延迟图恢复为高分辨率，以提升 GNSS、InSAR 对流层改正精度，并提供项目网页与示例动画。据仓库新闻 2026 年已被期刊接收。适合研究 AI 对流层建模或需要高分辨率延迟格网的用户；训练需 GPU 与再分析数据，模型泛化性应在本地区自行评估。
+与 Mapping-Function-Height-Correction-Models 同一作者团队的深度学习项目，BSD-3-Clause 许可，Python/PyTorch 实现。针对空间大地测量中粗分辨率 ZHD/ZWD 格网，采用带物理约束的 U-Net 将低分辨率延迟图恢复为高分辨率，以提升 GNSS、InSAR 对流层改正精度，并提供项目网页与示例动画。据仓库新闻已于 2026 年 6 月被 Journal of Geodesy 接收。适合研究 AI 对流层建模或需要高分辨率延迟格网的用户；训练需 GPU 与再分析数据，模型泛化性应在本地区自行评估。
 
 ## GNSS-IR硬件
 
@@ -454,7 +454,7 @@ gemini3d 维护的 NRL Horizontal Wind Model 2014 可构建库，用 CMake 生�
 #### [GTrop](https://github.com/sun1753814280/GTrop)  
 *🏷️ 高校实验室*
 
-语言：MATLAB · 许可：unspecified · 星标约：5 · 宿主：github
+语言：MATLAB · 许可：— · 星标约：5 · 宿主：github
 
 论文“A global model for estimating tropospheric delay and weighted mean temperature developed with atmospheric reanalysis data from 1979 to 2017”配套代码仓库，MATLAB 实现，由学术作者公开。模型以长期再分析资料拟合天顶对流层延迟与加权平均温度 Tm 的时空变化，可在无实测气象参数时为 GNSS 定位和 PWV 反演提供先验值，定位上类似 GPT3 等经验模型的替代或对照。仓库说明较少且未声明许可，复用前应联系作者并引用原文。同作者另有区域版 CTrop。
 

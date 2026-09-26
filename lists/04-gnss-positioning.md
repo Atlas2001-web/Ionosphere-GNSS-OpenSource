@@ -297,7 +297,7 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 | [groops](https://github.com/groops-devs/groops) | GROOPS：重力场与 GNSS 处理（TU Graz） | C++ | 244 | 🏷️ 高校实验室 ★ 核心 |
 | [GARPOS](https://github.com/s-watanabe-jhod/garpos) | GARPOS：日本海保 GNSS-声学海底定位开源解算器 | Python | 25 | 🏷️ 官方 |
 | [gnatss](https://github.com/seafloor-geodesy/gnatss) | gnatss：海底 GNSS-A 换能器测量社区软件 | Python | 17 | 🏷️ 个人社区 |
-| [GAMIT/GLOBK](http://geoweb.mit.edu/gg/) | MIT EAPS 维护的 GAMIT/GLOBK 高精度 GNSS 大地测量解算套件主页 | Fortran/C | — | 🏷️ 高校实验室 |
+| [GAMIT/GLOBK](https://geoweb.mit.edu/gg/) | MIT EAPS 维护的 GAMIT/GLOBK 高精度 GNSS 大地测量解算套件主页 | Fortran/C | — | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -322,7 +322,7 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 
 海床大地测量社区维护的 GNSS-Acoustic（GNSS-A）软件：海面 GNSS 与水声测距联合约束海底换能器/点位，用于海底形变与板块边界监测。面向海洋大地测量课题组。不是陆地 RTK/PPP；依赖船舶、声学与时间同步链路，作业与数据成本远高于陆基站网。社区仓库，版本接口以上游发布说明为准。
 
-#### [GAMIT/GLOBK](http://geoweb.mit.edu/gg/)  
+#### [GAMIT/GLOBK](https://geoweb.mit.edu/gg/)  
 *🏷️ 高校实验室*
 
 语言：Fortran/C · 许可：scientific distribution (request) · 星标约：— · 宿主：official_site
@@ -529,7 +529,7 @@ Hans van der Marel（TU Delft）发布的 PPP 后处理工具箱，读取 CSRS-P
 
 语言：Python · 许可：MIT · 星标约：10 · 宿主：github
 
-个人开发者发布的 Python GNSS/大地测量工具箱，MIT 许可并有 Zenodo DOI。首个版本聚焦基于 RINEX 观测、导航文件与 SP3 的双差基线最小二乘解算，提供命令行与图形界面，另含 Melbourne-Wübbena 周跳探测等独立小工具，并配有观测模型、差分策略与平差理论文档。代码透明、带测试 CI，适合课程作业或理解 RTK 原理，而非替代 RTKLIB 等成熟引擎。项目较新、星标不多，功能以文档声明为准。
+个人开发者发布的 Python GNSS/大地测量工具箱，MIT 许可并有 Zenodo DOI。首个版本聚焦基于 RINEX 观测、导航文件与 SP3 的双差基线最小二乘解算，提供命令行与 Web 图形界面（NestJS 前端 + FastAPI 服务），另含 SPP（Klobuchar/NeQuick-G 电离层改正）、LAMBDA 模糊度固定与 Melbourne-Wübbena 周跳探测等模块，并配有观测模型、差分策略与平差理论文档。代码透明、带测试 CI，适合课程作业或理解 RTK 原理，而非替代 RTKLIB 等成熟引擎。项目较新、星标不多，功能以文档声明为准。
 
 #### [GNSSRTK](https://github.com/SupakunZ/GNSS_RTK)  
 *🏷️ 个人社区*
