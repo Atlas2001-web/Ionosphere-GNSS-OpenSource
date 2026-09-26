@@ -1,6 +1,6 @@
 # ionex · 读 IONEX GIM 操作手册
 
-目录：[`PROJECTS.json` → `ionex`](../../PROJECTS.json) · 上游 <https://github.com/gnss-lab/ionex> · MIT · 本文件 [`ionex-gim.md`](./ionex-gim.md) · **新短硬同包** → [ionex.md](./ionex.md) · 本机验证 **ionex 0.2**（包内 `tests/test_data/ionex_file.00i`）
+目录：[`PROJECTS.json` → `ionex`](../../PROJECTS.json) · 上游 <https://github.com/gnss-lab/ionex> · MIT · 本文件 [`ionex-gim.md`](./ionex-gim.md) · **新短硬同包** → [ionex.md](./ionex.md) · 本机验证 **ionex 0.2**（包内 `tests/test_data/ionex_file.00i`）· **质检复跑**（2026-09-26 01:05 EDT，新 venv Python 3.13.5，`git+` 装得 ionex **0.2**，上游 tip `8783a71` 2020-07-24 23:18 EDT 无更新）：§3.2 八行输出逐字一致（12 图、71×73=5183、tec0 9.8 / mid 31.8、nearest dt −3600 s）；`next(reader)` TypeError、`_rms None`、`m.rms` NotImplementedError 复现；修 §3.1 grep（原式 `LON1` 命中数据块头 + `head` 截断，给不出所示 END OF FILE 行）。真产品冒烟：AIUB `http://ftp.aiub.unibe.ch/CODE/2023/` 约 97 s 无响应（curl `000 0`），未测
 
 > 岗位：用 Python 包 **`ionex`** 读分析中心 IONEX（IGS/CODE/UPC/ESA…）VTEC 图。**只读**，不生成 GIM。球谐求解边界见 [sh-gim](./sh-gim.md)。绝对 TEC 校准见 [pytecgg](./pytecgg.md)（**viventriglia**）。API 以已安装包为准。
 
@@ -43,10 +43,11 @@ mkdir -p data logs
 # 冒烟：用包内测试文件（本机已跑）
 cp ionex-src/tests/test_data/ionex_file.00i data/
 head -n 5 data/ionex_file.00i
-grep -E "IONEX VERSION|INTERVAL|HGT1|LAT1|LON1|EXPONENT|END OF FILE" data/ionex_file.00i | head
+grep -E "IONEX VERSION|INTERVAL|HGT1 /|LAT1 /|LON1 /|EXPONENT|END OF FILE" data/ionex_file.00i
+# 注：若写成 `LON1` 不带 ` /` 再接 `| head`，会命中每行 `LAT/LON1/LON2/DLON/H` 数据块头，head 截掉 END OF FILE
 ```
 
-**本机真实首行 / 头字段（截断）：**
+**本机真实首行 / 头字段（上面 grep 原样输出 7 行）：**
 
 ```text
      1.0            IONOSPHERE MAPS     GPS                 IONEX VERSION / TYPE

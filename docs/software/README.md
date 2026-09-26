@@ -31,7 +31,7 @@
 | 4 | [pytecgg.md](./pytecgg.md) | 校准 sTEC/vTEC（作者 viventriglia） | 593 | **已短硬** R1+R8二遍 [`ff674b4`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/ff674b4) · 本机 1.3.0（ABMF 全日 `calculate_tec`/`veq` 实跑） |
 | 5 | [ionomoni.md](./ionomoni.md) | STEC / ROTI / AATR（C++） | 219 | **已短硬** R3 [`f5845f7`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/f5845f7) · **登记受限**（官方主推 Win；Linux 无开箱二进制） |
 | 6 | [oasis-roti.md](./oasis-roti.md) | ROTI / ΔTEC / SIDX（Python） | 264 | **已短硬** R3 [`f5845f7`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/f5845f7) · **质检复跑通过**（2026-09-26 00:31–00:45 EDT；**PyPI 1.0.3 ≠ tip `e5994f6`**；PyPI+pandas **3.0.6** 须显式 `RNXScreening`→53×RNX1/2/3、G_ROTI **2668** 行/32 星/median **0.07439**、SIDX 出；漏调→leveling **IndexError**；tip+pandas3 RNXclean **invalid error value**；tip+pandas **2.3.3** ROTI 首行≡原稿、SIDX `'Y'` 崩；原稿 ΔTEC 首行未复现已换真值；tip `TECcalc` 写 `.DCB`/`.TEC`） |
-| 7 | [ionex-gim.md](./ionex-gim.md) | 读 IONEX GIM | 200 | **已短硬** R3 [`f5845f7`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/f5845f7) · 本机 ionex 0.2 |
+| 7 | [ionex-gim.md](./ionex-gim.md) | 读 IONEX GIM | 201 | **已短硬** R3 [`f5845f7`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/f5845f7) · 本机 ionex 0.2 · **质检复跑通过**（2026-09-26 01:05 EDT；ionex 0.2；12 图 71×73 tec0 9.8 逐字复现；修 §3.1 grep 截断） |
 | 8 | [sh-gim.md](./sh-gim.md) | 维护者球谐仓**边界**（求解器未开源） | 124 | **边界** · 保持短；禁止扩写成端到端求解教程 |
 | 9 | [pygnssutils.md](./pygnssutils.md) | NTRIP CLI / 小 caster | 361 | **已短硬** R5 [`37ac39b`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/37ac39b) · 本机 1.2.7 |
 | 10 | [bnc.md](./bnc.md) | BKG 多流客户端 | 274 | **已短硬** R2+R7二遍 · 本机 BNC 2.13.7（REQC 实跑 / NTRIP 标操作步骤） |
@@ -44,7 +44,7 @@
 | 17 | [autorino.md](./autorino.md) | 厂商 RAW 拉取 → RINEX3/4 | 246 | **已短硬** R9二遍 · 本机 2.4.2 cfgfile_check 复跑；check_rnx `figure_saver` 实错已记；convert 环境受限 |
 | 18 | [iono-scintillation.md](./iono-scintillation.md) | MATLAB 闪烁仿真 | 197 | **已短硬** R2 [`246103d`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/246103d) · **环境受限**（质检机无 MATLAB；不臆造控制台） |
 | 19 | [rnxcmp.md](./rnxcmp.md) | GSI 官方 Hatanaka CRX 压缩/恢复 | 200 | **已短硬** R10质检 · 本机 RNXCMP **4.2.0** 复跑（body 相等；gzip≈1830；`-h` exit 1）；Python 见 [hatanaka](./hatanaka.md) |
-| 20 | [hatanaka.md](./hatanaka.md) | Python Hatanaka CRX↔RNX（pip） | 251 | **已短硬** · 本机 hatanaka **2.8.1** / 捆 RNXCMP 4.1.0；`rinex-decompress`/`compress`+georinex 实跑；官方二进制 → [rnxcmp](./rnxcmp.md) |
+| 20 | [hatanaka.md](./hatanaka.md) | Python Hatanaka CRX↔RNX（pip） | 251 | **已短硬** · 本机 hatanaka **2.8.1** / 捆 RNXCMP 4.1.0；`rinex-decompress`/`compress`+georinex 实跑；官方二进制 → [rnxcmp](./rnxcmp.md) · **质检复跑通过**（2026-09-26 01:04 EDT；2.8.1/4.1.0 仍最新；CLI/API/georinex 逐字复现；修坑 6 NAV 行为） |
 | 21 | [nequickg.md](./nequickg.md) | Galileo NeQuick-G（Python 社区） | 203 | **已短硬** R10质检 · Py3 移植后 vTEC+Medium 行0/全表36 复跑；`Validation.py` map/plt 坑已补；官方 C 登记受限 |
 | 22 | [haslib.md](./haslib.md) | Galileo HAS 解码（SBF/BINEX→SSR） | 170 | **已短硬** R11质检 · 本机 `galileo_has_decoder` **1.0.2**；`-x 3000 -v 1` → 11 HAS；RTCM 9780 / IGS 9800；`-m`/`-h` 坑已补 |
 | 23 | [laika.md](./laika.md) | comma.ai 轻量 Python GNSS | 194 | **已短硬** R11质检 · 本机 0.0.1；`slac1700.18o` 2880 历元+PDOP 3.298… 复跑；pytest 17；Earthdata 未跑 |

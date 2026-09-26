@@ -1,6 +1,6 @@
 # hatanaka · Python Hatanaka CRX↔RNX 操作手册
 
-目录：[`PROJECTS.json` → `hatanaka`](../../PROJECTS.json) · 上游 <https://github.com/valgur/hatanaka> · PyPI `hatanaka` · 捆绑 GSI RNXCMP（本机 **4.1.0**）· MIT（捆绑二进制另循 GSI 条款，须引用 Hatanaka 2008）· 本机验证 **hatanaka 2.8.1**（2026-09-24 ET）：`rinex-decompress` / `rinex-compress` + API 对上游 `sample.crx` 实跑；与 [georinex](./georinex.md) 1.16.2 联读
+目录：[`PROJECTS.json` → `hatanaka`](../../PROJECTS.json) · 上游 <https://github.com/valgur/hatanaka> · PyPI `hatanaka` · 捆绑 GSI RNXCMP（本机 **4.1.0**）· MIT（捆绑二进制另循 GSI 条款，须引用 Hatanaka 2008）· 本机验证 **hatanaka 2.8.1**（2026-09-24 ET）：`rinex-decompress` / `rinex-compress` + API 对上游 `sample.crx` 实跑；与 [georinex](./georinex.md) 1.16.2 联读 · **质检复跑**（2026-09-26 01:04 EDT，新 venv Python 3.13.5，PyPI 最新仍 **2.8.1**/捆 **4.1.0**，georinex 1.16.2 + xarray 2026.7.0）：§3.1–3.5 全部逐字复现（`BYTE_MATCH_GOLDEN_RNX=yes`、1346/1228 B、`.crx.gz` 与 golden 一致、`plain.crx.gz` **534** B 魔数 `1f 8b`、`plain2.crx` 头 `ver.4.1.0`+当前 **UTC** 时刻且观测体与 golden 逐行一致、`demo.10d`、API 四行、georinex `L1C G07 133174968.818`）；坑 7/8/10 与伪 CRX `ValueError`（exit **1**）复现；修坑 6：NAV 仅 `-c none` 报 already compressed，默认直接出 `.gz`
 
 > 岗位：在 **Python / pip 环境**把 Compact RINEX（`.crx` / `.##d`）与明文 RINEX（`.rnx` / `.##o`）互转，并可叠 gzip/bz2/Z。冲突时：**本机 `rinex-decompress -h` / 上游 README > 本文**。  
 > **官方 GSI 二进制（RNXCMP 4.2.0、RINEX 4.02 / CRINEX 3.1）→ [rnxcmp.md](./rnxcmp.md)**，本文不重复官方安装与 `RNX2CRX`/`CRX2RNX` 旗标细则。
@@ -18,7 +18,7 @@
 
 - **不是** GSI 官方发行渠道 → [rnxcmp](./rnxcmp.md)（本机捆 4.1.0，**落后**官网 4.2.0）
 - **不是** 读进 xarray / 算 TEC / QC / 拼接 → [georinex](./georinex.md) / [pytecgg](./pytecgg.md)（viventriglia）/ [anubis](./anubis.md) / [gfzrnx](./gfzrnx.md)
-- **不是** 通用归档器：只服务 **观测** CompactRINEX；NAV 头无 `OBSERVATION DATA` 时 `rinex-compress` 会报 *already compressed* 并跳过
+- **不是** 通用归档器：只服务 **观测** CompactRINEX；NAV 头无 `OBSERVATION DATA` 时跳过 Hatanaka——`-c none` 报 *already compressed*，默认只做 gzip
 - **sh-gim** 边界短说明见 [sh-gim](./sh-gim.md)，本文不扩写
 
 一句话：hatanaka = **Python 便利封装 + 捆绑 RNXCMP**；钉版本 / RINEX 4.02 用 [rnxcmp](./rnxcmp.md)。
@@ -229,7 +229,7 @@ sample.crx: 2010-03-05T00:00:30 2010-03-05T00:00:30 1
 | 3 | 重压后 `cmp` ≠ 原 `.crx` | `CRINEX PROG / DATE` 版本与时间戳变了 | 比观测体或只验 `crx2rnx` 往返 |
 | 4 | `ValueError: file is too short to be a valid RINEX file` | 伪 `.crx` / HTML | `head` 查 `COMPACT RINEX`；重下 |
 | 5 | `... is already decompressed` | 输入已是明文 | 正常 skip；勿当失败 |
-| 6 | NAV 上 `rinex-compress` 显示 already compressed | 头无 `OBSERVATION DATA`，跳过 CRX | 只对 OBS 做 Hatanaka；NAV 用 gzip 即可 |
+| 6 | NAV 上 `rinex-compress -c none` 显示 `... is already compressed`、不产出新文件 | 头无 `OBSERVATION DATA`，跳过 CRX | 正常；默认 `-c gz` 时 NAV 只 gzip：`Created nav.rnx.gz` / `brdc0010.20n.gz`（本机） |
 | 7 | `-v` 报 `unrecognized arguments` | 本 CLI **无** `-v` | 用 `--version` / `--rnxcmp-version` |
 | 8 | `-d` 后源 `.crx` 消失 | 设计如此 | 流水线先备份；或去掉 `-d` |
 | 9 | `which crx2rnx` 指向 venv 捆版，却以为是 GSI 4.2.0 | 同名入口 | `crx2rnx -h` 看 version；官方流程用 [rnxcmp](./rnxcmp.md) 绝对路径 |
