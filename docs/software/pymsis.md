@@ -1,7 +1,9 @@
 # pymsis · NRLMSIS 2.1 / 2.0 / 00 中性大气（SWxTREC）操作手册
 
-目录：[`PROJECTS.json` → `pymsis`](../../PROJECTS.json) · 上游 <https://github.com/SWxTREC/pymsis> · 文档 <https://swxtrec.github.io/pymsis/> · PyPI **`pymsis` 0.13.0**（tag `v0.13.0`=`0846792`；main `d8170cb`，2026-09-08 19:08 EDT）· 许可：包装 **MIT**；MSIS2 Fortran 另受 **NRL 许可**（`MSIS2_LICENSE`，**商用须联系 NRL**）· 本机实跑 2026-09-26 05:18–05:22 EDT（Python 3.13.5，manylinux 轮子，无需 gfortran）
+目录：[`PROJECTS.json` → `pymsis`](../../PROJECTS.json) · 上游 <https://github.com/SWxTREC/pymsis> · 文档 <https://swxtrec.github.io/pymsis/> · PyPI **`pymsis` 0.13.0**（annotated tag `v0.13.0` 的 tag 对象是 `0846792`，它指向的提交就是 main 的 `d8170cb`，2026-09-08 19:08 EDT）· 许可：包装 **MIT**；MSIS2 Fortran 另受 **NRL 许可**（`MSIS2_LICENSE`，**商用须联系 NRL**）· 本机实跑 2026-09-26 05:18–05:22 EDT（Python 3.13.5，manylinux 轮子，无需 gfortran）
 
+> **质检复跑通过（2026-09-26 05:45 EDT）**：新建 uv venv 装 `pymsis==0.13.0`（numpy 2.5.3），§3.1 / §3.2 / §3.3 三段脚本原样复跑，输出与文中**逐行一致**：2024-05-11 自动拉到 Ap 271、F10.7 223.4、f107a 177.1；300 km O/N₂ 3.460→1.364（MSIS2.1）、2.919→1.249（MSIS00）；ρ ×1.64；`SW-All.csv` 2888771 B，权限 `-rw-------`。坑 1（超出 1957-10-01…2026-11-09T21:00 报 ValueError）、坑 4（shape `(1,11)` 与 `(2,1,1,1,11)`）、坑 8（2.0/00 的 NO 为 nan）、经度 −80 与 280 同为 1577.07 K、`PYMSIS_SPACE_WEATHER_FILE` 环境变量均已复核。已修正：tag 对象与提交的关系、坑 2 的实际行为（每次调用都重下，但告警只打印一次）、坑 3 注明 00 UT。
+>
 > 岗位：给定 **时间/经纬/高度** 算 NRLMSIS **中性密度、成分、温度**，自动从 CelesTrak 拉 F10.7/ap。电离层里最常用它看 **O/N₂**（暴时负相的化学原因）。冲突时：**上游文档 / `help(msis.calculate)` > 本文**。
 
 ## 1. 它解决什么 / 不做什么
@@ -215,8 +217,8 @@ storm date, manual f107=203.6 f107a=175.2 ap=5 -> T_K=1274.7 O/N2=3.334
 | # | 现象 | 原因 | 修复 |
 | ---: | --- | --- | --- |
 | 1 | `ValueError: The geomagnetic data is not available for these dates. Dates should be between 1957-10-01T00:00 and 2026-11-09T21:00.`（本机查 2030-01-01 与 1955-01-01） | CelesTrak 文件只覆盖观测+约 45 天预报 | 手给指数：`msis.calculate(d, lon, lat, alt, f107s=[150], f107as=[150], aps=[[10]*7])` |
-| 2 | 超范围日期每次调用都打印 `Downloading ap and F10.7 data …` | 请求越过文件末尾会**触发重下载**再报错 | 先 `python -c "from pymsis import utils; utils.download_f107_ap()"` 一次，脚本里过滤掉超范围日期 |
-| 3 | `UserWarning: There is data that was either interpolated or predicted (not observed)`（本机 2026-10-20 得 T=823.8 K） | 近期/未来日期用的是 CelesTrak 预报或插值 | 论文里避开或覆盖：`utils.use_space_weather_file("my_SW.csv")` |
+| 2 | 超范围日期每次调用都会**重新下载** `SW-All.csv`（复跑时连续两次调用，文件都被重写）；默认告警过滤下，同一进程里 `Downloading ap and F10.7 data …` 只打印第一次，所以看起来像只下载了一次 | 请求越过文件末尾会**触发重下载**再报错 | 先 `python -c "from pymsis import utils; utils.download_f107_ap()"` 一次，脚本里过滤掉超范围日期 |
+| 3 | `UserWarning: There is data that was either interpolated or predicted (not observed)`（本机 0°E 45°N 300 km、`np.datetime64("2026-10-20")` 即 00 UT 得 T=823.8 K；同日 12 UT 为 918.2 K。预报值会随 CelesTrak 文件更新而变） | 近期/未来日期用的是 CelesTrak 预报或插值 | 论文里避开或覆盖：`utils.use_space_weather_file("my_SW.csv")` |
 | 4 | 同样是单点，有时 shape 是 `(1, 11)`，有时 `(2, 1, 1, 1, 11)` | 全标量输入会压维，多日期/数组不会 | 一律按最后一维取：`r[..., Variable.O] / r[..., Variable.N2]` |
 | 5 | 密度差 10⁶ 或 10³ 倍 | 数密度 m⁻³、质量密度 kg m⁻³ | cm⁻³：`r[..., Variable.O]/1e6`；g cm⁻³：`r[..., 0]*1e-3` |
 | 6 | 纬度、经度对调后结果“差一点” | 签名是 `(dates, lons, lats, alts)` | 用关键字：`msis.calculate(d, lons=0.0, lats=45.0, alts=300)` |
