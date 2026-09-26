@@ -1,6 +1,6 @@
 # gnss-tec · RINEX → 斜路径 TEC 操作手册
 
-目录：[`PROJECTS.json` → `gnss-tec`](../../PROJECTS.json) · 上游 <https://github.com/gnss-lab/gnss-tec> · PyPI **`gnss-tec`** · MIT · SIMuRG / gnss-lab · 本机验证 **1.1.1** + georinex 样例 `14601736.18o` 实跑
+目录：[`PROJECTS.json` → `gnss-tec`](../../PROJECTS.json) · 上游 <https://github.com/gnss-lab/gnss-tec> · PyPI **`gnss-tec`** · MIT · SIMuRG / gnss-lab · 本机验证 **1.1.1** + georinex 样例 `14601736.18o` 实跑 · **质检复跑**（2026-09-26 01:30 EDT，新 venv Python 3.13.5；PyPI 最新仍 **1.1.1**，`requires_dist` 仅 test extra；上游 tip `3a12cf2` 2019-05-18）：§3.2 脚本从本页原样抽出跑，12 行 stdout + `total_tec_objects=23 with_phase=15 with_prange=12` **逐字一致**，stderr 为 slot 7–11 的 `UserWarning`；坑 1（`Unknown RINEX version: 4.02`）、4（type N）、7（E07 `phase[2]=0.0`）、8、12 复现。改 2 处：坑 5 的 `TecError` 只在**直接构造** `Tec(..., 'R07')` 不给频点号时抛，走 `rnx()` 时 `glo={}` 只告警并跳过 R 星（即坑 3）；坑 8 喂 HTML 报的是 `rnx: Unknown file type`（NAV 才是 `Not an observation file`）
 
 > 岗位：从 RINEX **载波 + 伪距**重建**斜路径 TEC**（phase / pseudorange）。库 API，无独立 CLI。冲突时：**本机 `import gnss_tec` / 上游 README > 本文**。
 
@@ -173,10 +173,10 @@ total_tec_objects=23 with_phase=15 with_prange=12
 | 2 | `phase_tec is None` | 第二频相位为 0 / 未读到 | `print(tec.phase, tec.phase_code)`；换双频站或改 `BAND_PRIORITY` |
 | 3 | GLO `Can't find slot N` | 未传频点号 | `glo=collect_freq_nums('site.yyg'); rnx(f, glo_freq_nums=glo)` |
 | 4 | `NavMessageFileError: type N is unsupported` | 把 GPS `.yyN` 喂给 `collect_freq_nums` | 换 `.yyG` / 混合 NAV（含 R 星历） |
-| 5 | `TecError: GLO frequency number must be provided` | 有 R 星但 `glo_freq_nums` 空 | 同上补 GLO/混合 NAV |
+| 5 | `TecError: GLO frequency number must be provided to compute TEC values.` | 绕过 `rnx()` **直接构造** `Tec(ts, 'GPS', 'R07')` 且不给 `glo_freq_num`（经 `rnx()` 时只告警跳过，见坑 3） | 给第 4 个参数频点号，或走 `rnx(f, glo_freq_nums=collect_freq_nums(...))` |
 | 6 | 把 `phase_tec` 当绝对 TEC | 无 DCB/leveling | 转 [pytecgg](./pytecgg.md) `calculate_tec` |
 | 7 | Galileo `None` 而 GPS 有值 | 选中的 Lx 列空（本样 E07 `phase[2]==0`） | 查 OBS 该星双频是否非空；或调频对优先级 |
-| 8 | `rnx: Not an observation file` | 喂了 NAV/HTML | `head` 确认 `OBSERVATION DATA` |
+| 8 | `rnx: Not an observation file` / `rnx: Unknown file type` | 前者喂了 NAV，后者喂了 HTML 等非 RINEX | `head` 确认 `OBSERVATION DATA` |
 | 9 | 伪距 TEC 跳几十 TECU | 多路径/DCB，属预期 | 相位做相对；绝对走校准链 |
 | 10 | EOF 时 `RuntimeError: generator raised StopIteration` | 旧迭代器 + 新 Python 边界 | 用 `for tec in rnx(f):`；升级到 ≥1.1.1（已修 PEP-479） |
 | 11 | 与 PyTECGg 数值差巨大 | 定义不同（相对 GF vs 校准） | **只比形态**；笔记写清产品 |

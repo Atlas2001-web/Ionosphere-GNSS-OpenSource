@@ -1,6 +1,6 @@
 # pymap3d · 纯 Python 三维坐标转换操作手册
 
-目录：[`PROJECTS.json` → `pymap3d`](../../PROJECTS.json) · 上游 <https://github.com/geospace-code/pymap3d> · PyPI **`pymap3d` 3.2.0** · tip **`033895e`** · 许可 **BSD-2-Clause** · 本机验证（2026-09-24 06:04 EDT）：pytest **397 passed** / **11 skipped**；北京 geodetic→ECEF **(−2177813.332, 4388956.908, 4069858.556)** m 往返 OK；+0.001°N → ENU n≈**111.034** m；赤道 ECEF x=**6378137.0**；默认 ECI 为 Numpy 实现（无 Astropy → 精度警告）
+目录：[`PROJECTS.json` → `pymap3d`](../../PROJECTS.json) · 上游 <https://github.com/geospace-code/pymap3d> · PyPI **`pymap3d` 3.2.0** · tip **`033895e`** · 许可 **BSD-2-Clause** · 本机验证（2026-09-24 06:04 EDT）：pytest **397 passed** / **11 skipped**；北京 geodetic→ECEF **(−2177813.332, 4388956.908, 4069858.556)** m 往返 OK；+0.001°N → ENU n≈**111.034** m；赤道 ECEF x=**6378137.0**；默认 ECI 为 Numpy 实现（无 Astropy → 精度警告） · **质检复跑**（2026-09-26 01:35 EDT，新 venv Python 3.13.5；PyPI 最新仍 **3.2.0**，tip `033895e` 2026-06-21）：§3.1–3.5 五段脚本从本页原样抽出跑，ECEF/往返/赤道/a,b、ENU n=111.03356942795756、AER、NED、az 86.788/el 25.506/1018065 m、40N80W ECEF **全部逐字一致**。改 2 处：① `pip install pymap3d` **不带 numpy**（`Requires:` 为空），干净 venv 跑 §3.4 报 `ImportError: ecef2eci requires either Numpy or Astropy`，装 numpy 后才出 −30400.903/−4899478.486/4069858.556；② 单测数依赖可选包——干净 venv 仅 pytest **303 passed / 105 skipped**，+numpy **395/13**，+numpy+pyproj 才是 **397/11**（剩余 skip：astropy 6、Matlab Engine 5）
 
 > 岗位：**大地坐标 / ECEF / ENU·NED / AER / ECI** 等互转（对齐常见 MATLAB 习惯）。冲突时：**上游 README / docs / 本机 `help(pymap3d.geodetic2ecef)` > 本文**。磁坐标 → [apexpy](./apexpy.md)/[aacgmv2](./aacgmv2.md)；RINEX 站坐标读写 → [georinex](./georinex.md)；同组织还有 georinex。
 
@@ -11,7 +11,7 @@
 - `geodetic2ecef` / `ecef2geodetic`（WGS84 等 `Ellipsoid`）
 - `geodetic2enu` / `enu2geodetic`、`geodetic2ned`、`enu2aer` / `aer2enu`
 - `geodetic2eci` / `eci2geodetic`（需时间；可选 Astropy 提精）
-- 矢量 `numpy` 输入；无强制系统依赖（纯 Python + numpy）
+- 矢量 `numpy` 输入；零强制依赖（pip 元数据 `Requires:` 为空），**numpy 须自装**：ECI 与数组输入都要它
 
 **不做：**
 
@@ -34,16 +34,16 @@
 
 ```bash
 python3 -m venv ~/venv-gnss && source ~/venv-gnss/bin/activate
-pip install 'pymap3d==3.2.0'
+pip install 'pymap3d==3.2.0' numpy   # numpy 不会被自动装；缺它 §3.4 ECI 直接 ImportError
 python -c "import pymap3d as pm; print(pm.__version__)"
 # 期望：3.2.0
 
 # 可选 tip + 单测
 git clone --depth 1 https://github.com/geospace-code/pymap3d.git ~/iono_ops/pymap3d
 cd ~/iono_ops/pymap3d && git rev-parse --short HEAD   # 033895e
-pip install pytest
+pip install pytest numpy pyproj
 PYTHONPATH=src python -m pytest -q
-# 397 passed, 11 skipped
+# 397 passed, 11 skipped（只装 pytest：303/105；+numpy：395/13）
 ```
 
 可选：`pip install astropy` 后 ECI 走高精度路径（本机**未**装 Astropy）。
@@ -156,7 +156,8 @@ PY
 | 2 | 与 ITRF2020 差厘米级+ | 未做框/历元变换 | 另接 pyproj/官方框工具 |
 | 3 | alt 当地水准高 | API 是**椭球高** | 勿混 geoid 高；差分先统一 |
 | 4 | 角度当弧度传入 | 默认度 | 查 docstring；勿擅自 `/180*π` 两遍 |
-| 5 | `skipped` 单测 | 可选依赖（pyproj 等） | 397 passed 即可；不必强装全 |
+| 5 | `skipped` 单测多达 105 | 可选依赖：numpy（92 个）、pyproj（2）、astropy（6）、Matlab Engine（5） | 装 numpy+pyproj → 397 passed / 11 skipped；不必强装全 |
+| 11 | `ImportError: ecef2eci requires either Numpy or Astropy` | `pip install pymap3d` 不拉 numpy | `pip install numpy`（或 astropy） |
 | 6 | 与 MATLAB 差符号 | NED/ENU 轴约定 | 用库内 `ned*`/`enu*` 成对函数 |
 | 7 | 把 pymap3d 当磁坐标 | 产品边界 | → [apexpy](./apexpy.md) |
 | 8 | 大数组慢 | 纯 Python 循环习惯 | 传 `ndarray` 走向量化 |

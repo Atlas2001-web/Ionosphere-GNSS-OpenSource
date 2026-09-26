@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **163 篇**操作手册（合计 **35837 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **163 篇**操作手册（合计 **35838 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -39,7 +39,7 @@
 | 12 | [rtklib.md](./rtklib.md) | RTK / PPP CLI | 287 | **已短硬** R1+R7二遍 · apt 2.4.3 b34 / EX 2.5.1（PATH 陷阱已写清） |
 | 13 | [pride-pppar.md](./pride-pppar.md) | PPP-AR | 289 | **已短硬** R6 [`8fe8b6d`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/8fe8b6d) · 本机 3.2.11（`-V`/`-H`/会话头实跑；WUM FTPS 未出解） |
 | 14 | [cssrlib.md](./cssrlib.md) | Python PPP / PPP-RTK（CLAS/HAS/BDS） | 243 | **已短硬** R9二遍 · 本机 1.2.1（`nav.t` 坑已补；SPP 60 历元复跑；CLAS/HAS 未跑完） |
-| 15 | [gnss-tec.md](./gnss-tec.md) | RINEX → 相对斜 TEC | 198 | **已短硬** R9二遍 · 本机 1.1.1（stdout 对齐脚本；type N NAV 坑） |
+| 15 | [gnss-tec.md](./gnss-tec.md) | RINEX → 相对斜 TEC | 198 | **已短硬** R9二遍 · 本机 1.1.1（stdout 对齐脚本；type N NAV 坑） · **质检复跑通过**（2026-09-26 01:30 EDT；1.1.1；23/15/12 与 12 行 stdout 逐字复现；修坑 5 TecError 触发条件、坑 8 HTML 报错文本） |
 | 16 | [pinot.md](./pinot.md) | “not only TEQC” QC/预处理批壳 | 287 | **已短硬** R9二遍 · orderfile/sitecheck/metacheck/subnet/low2upper 复跑；qualitycheck 无 Linux teqc |
 | 17 | [autorino.md](./autorino.md) | 厂商 RAW 拉取 → RINEX3/4 | 246 | **已短硬** R9二遍 · 本机 2.4.2 cfgfile_check 复跑；check_rnx `figure_saver` 实错已记；convert 环境受限 |
 | 18 | [iono-scintillation.md](./iono-scintillation.md) | MATLAB 闪烁仿真 | 197 | **已短硬** R2 [`246103d`](https://github.com/Atlas2001-web/Ionosphere-GNSS-OpenSource/commit/246103d) · **环境受限**（质检机无 MATLAB；不臆造控制台） |
@@ -119,7 +119,7 @@
 | 89 | [minmea.md](./minmea.md) | 轻量纯 C NMEA 0183 解析（嵌入式） | 143 | **已短硬** · tip **`c43c9e7`**/WTFPL；check **38/38**；GGA lat=**51.11568069**；北京 RMC **39.90418625**/116.39073944；交叉 [pynmeagps](./pynmeagps.md)/[gpsd](./gpsd.md) |
 | 90 | [ntripbrowser.md](./ntripbrowser.md) | NTRIP 源表浏览 CLI/API（Emlid） | 148 | **已短硬** · PyPI **4.0.0**/tip **`3730867`**；rtk2go STR **764**/igs **384**/centipede **1269**；巴黎50km **14**/IPGP≈**0.71** km；**未订流**；交叉 [ntripstreams](./ntripstreams.md)/[ntrip-client](./ntrip-client.md)/[pygnssutils](./pygnssutils.md) |
 | 91 | [pynmea2.md](./pynmea2.md) | 高星标 Python NMEA 0183 解析 | 177 | **已短硬** · PyPI **1.19.0**/tip **`fcd90dc`**/pytest **105**；北京 GGA **39.90418716666667**/116.39074266666667；流 **36**；交叉 [pynmeagps](./pynmeagps.md)/[minmea](./minmea.md)/[gpsd](./gpsd.md) |
-| 92 | [pymap3d.md](./pymap3d.md) | 纯 Python 大地/ECEF/ENU/AER/ECI 转换 | 176 | **已短硬** · PyPI **3.2.0**/tip **`033895e`**/pytest **397**/skip **11**；北京 ECEF **−2177813.332/4388956.908/4069858.556**；ENU n≈**111.034** m；交叉 [apexpy](./apexpy.md)/[aacgmv2](./aacgmv2.md)/[georinex](./georinex.md) |
+| 92 | [pymap3d.md](./pymap3d.md) | 纯 Python 大地/ECEF/ENU/AER/ECI 转换 | 177 | **已短硬** · PyPI **3.2.0**/tip **`033895e`**/pytest **397**/skip **11**；北京 ECEF **−2177813.332/4388956.908/4069858.556**；ENU n≈**111.034** m；交叉 [apexpy](./apexpy.md)/[aacgmv2](./aacgmv2.md)/[georinex](./georinex.md) · **质检复跑通过**（2026-09-26 01:35 EDT；3.2.0；§3 五段数值逐字复现；修 numpy 非依赖致 ECI ImportError、单测 397/11 需 numpy+pyproj） |
 | 93 | [gsilib.md](./gsilib.md) | GSI 多 GNSS 基线/PPP（IFB/ISB；Win） | 189 | **已短硬** · ver **1.0.3**；IFB tr02 **1921**/G01 C1C=**24070092.563**；**无 Wine32 未跑基线解**；交叉 [rtklib](./rtklib.md)/[pride-pppar](./pride-pppar.md)/[ginan](./ginan.md) · **质检复跑通过** |
 | 94 | [rtppp-b2b.md](./rtppp-b2b.md) | 北斗 PPP-B2b 实时改正接口（BNC/SBF） | 191 | **已短硬** · tip **`9864c66`**；CRC **0**/`0x6131`；MT **1–7**；MISSING+`clock_orbit`；**缺 BNC 未链接**；交叉 [b2blib](./b2blib.md)/[navdecoder](./navdecoder.md)/[haslib](./haslib.md)/[cssrlib](./cssrlib.md)/[madocalib](./madocalib.md) · **质检复跑通过** |
 | 95 | [cors-relay.md](./cors-relay.md) | CORS/NTRIP 差分帐号池中继（libev） | 226 | **已短硬** · tip **`1238947`**/`123894`；二进制 **188496** B；8001–8003 + 管理 8000；STR×**3**/CL=**390**；`ICY 200`=**12** B/`401`/未知挂载→源表；**无真源未臆造 RTCM**；交叉 [ntripcaster-libev](./ntripcaster-libev.md)/[pygnssutils](./pygnssutils.md)/[bnc](./bnc.md)/[bkg-ntripcaster](./bkg-ntripcaster.md)/[ntripbrowser](./ntripbrowser.md)/[data-access](../data-access.md) · **质检复跑通过** |
