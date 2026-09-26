@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **215 篇**操作手册（合计 **49059 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **216 篇**操作手册（合计 **49481 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -240,6 +240,7 @@
 | 213 | [earthscope-gnsstools.md](./earthscope-gnsstools.md) | EarthScope Go 库 + CLI：`gnss-convert`（RINEX 2/3/4、CRX、BINEX、SBF、NovAtel、UBX、JPS → RINEX 2.11/3.05/4.02 / Parquet / CRX）与 `gnss-inspect`（RTCM3/BINEX/SBF/SP3… → JSON）；≠ Python [gnsstools](./gnsstools.md) | 212 | **已短硬** 用法讲解新入库 · tag **v0.111.0**/`30b776a`/main `b3efce5`/Apache-2.0/★6/Go ≥1.26；WTZR 3.04→3.05 `--doppler` 1791283 值 Δ=0；GMSD7 1143 帧 = pyrtcm；默认丢 D/丢头/PHASE SHIFT 清零；NovAtel 负多普勒 +2²⁰ Hz |
 | 214 | [swarm-data.md](./swarm-data.md) | ESA Swarm 电离层产品：swarm-diss HTTPS `?do=` 匿名列/下（FTP 530）、LP `EFIx_LP_1B`/`EFIxLPI_1B`、TEC、IPIR（含 PCP_flag）、IBI、EEF 的文件名/基线/时延与 flag；VirES HAPI 匿名、OWS 要 token | 716 | **已短硬** · 2026-09-26 04:47 EDT；Swarm B 2024-05-11 vs 05-08：白天北半球 N_ion ×0.30、夜间赤道 ×0.30–0.42、南纬 −30..−20 夜间 ×5.9；OPER 上架 3–9 天、FAST ~40 min；TEC 仰角 ≥50° |
 | 215 | [gnss-rtcm-ts.md](./gnss-rtcm-ts.md) | Node-NTRIP/rtcm：TypeScript RTCM3（至 3.3 Amd.1）编解码库 npm `@gnss/rtcm`（拆帧/CRC-24Q/消息对象/Transform 流）；≠ [rtcm-rs](./rtcm-rs.md)/[go-gnss-rtcm](./go-gnss-rtcm.md)/[pyrtcm](./pyrtcm.md) | 218 | **已短硬** 用法讲解新入库 · npm **0.1.5**/master `96108e4`/无 tag/GPL-3.0-or-later/★48；GMSD7 1143 帧、testglo 429 帧 = pyrtcm 1.2.0，1005/1019/1020/1004/1012 0 差；**MSM 卫星/信号字段解错**（按卫星逐颗读）、往返一致是同构假象；流解码尾部丢消息 |
+| 216 | [chain-scintillation.md](./chain-scintillation.md) | CHAIN 加拿大高纬 GISTM 闪烁：匿名 HTTPS/FTP 拉按小时 ISMR（Septentrio sbf2ismr 62 列，官方列定义 × 真实行）、S4 去噪、Phi01–Phi60、锁定/仰角过滤、TEC/dTEC 列 | 422 | **已短硬** · 2026-09-26 04:48–05:00 EDT；Churchill 2024-05-10/11 Phi60 >0.25 rad 13.8%（平静夜 0%），17 UT 起、最大 3.136 rad @ 23:25 UTC；S4 >0.2 仅 1.2%；锁定 <240 s 时 Phi=nan 而 S4 仍在 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -456,6 +457,7 @@
 | NASA ICON / GOLD：SPDF 路径、CDAWeb 数据集与 CDAS REST 子集、HAPI 覆盖、质量标志与 GOLD 扫描网格 | [icon-gold-data.md](./icon-gold-data.md) |
 | 测高仪 foF2/hmF2 匿名拉取（GIRO fastchar）、站表、CS 过滤、SAO 获取门槛、磁暴耗减 | [giro-ionosonde.md](./giro-ionosonde.md) |
 | Swarm LP Ne/Te、顶部 TEC、IPIR/IBI/EEF 免注册下载与 flag 过滤（swarm-diss HTTPS、VirES HAPI） | [swarm-data.md](./swarm-data.md) |
+| 高纬 GNSS 闪烁 S4/σφ 实测（CHAIN ISMR，免注册）与 ISMR 62 列定义 | [chain-scintillation.md](./chain-scintillation.md) |
 | SuperDARN 原始数据下载（FRDR RAWACF、Globus/BAS/VT 镜像门槛、sha1+bz2 校验、使用规则） | [superdarn-data.md](./superdarn-data.md) |
 | 子午工程数据（DOI/CSTR 查询、不登录可见的元数据与文件清单、登录门槛、致谢与报送规则） | [meridian-data.md](./meridian-data.md) |
 | 单站 1 Hz/30 s RINEX 看 sTEC 变化率 / 海啸型 TID（VARION，Python 2.7） | [varion.md](./varion.md) |

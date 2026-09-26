@@ -21,7 +21,7 @@
 | 掩星 RO | [CDAAC](https://cdaac-www.cosmic.ucar.edu/) · [data.cosmic](https://data.cosmic.ucar.edu/gnss-ro/) · [ROM SAF](https://rom-saf.eumetsat.int/)（[决策表](#电离层与地磁门户决策表)）· [awsgnssroutils](https://github.com/gnss-ro/aws-opendata) · COSMIC-2 电离层 [cosmic2-ro](./software/cosmic2-ro.md) | 开放 / ROM SAF 产品库须注册（AWS 镜像开放） |
 | 地磁 / 空间天气 | [Kyoto WDC](https://wdc.kugi.kyoto-u.ac.jp/) · [INTERMAGNET](https://intermagnet.org/) · [SuperMAG](https://supermag.jhuapl.edu/) · [GFZ Kp](https://kp.gfz.de/en/) · [SWPC](https://www.spaceweather.gov/) · [OMNI/CDAWeb HAPI](https://cdaweb.gsfc.nasa.gov/hapi) · 台站分钟 / 秒值：USGS · BGS · NRCan · THEMIS GMAG · MACCS · TGO → [决策表](#电离层与地磁门户决策表) | 开放 / 注册 |
 | 区域 TEC 现报 | [eSWua TEC](http://www.eswua.ingv.it/ewphp/landing.php?doi=tec) · [IONORING](http://ionos.ingv.it/ionoring/ionoring.htm) | 开放（CC BY） |
-| 闪烁 ISMR | [`ismr_downloader`](https://github.com/GEGE-UNESP/ismr_downloader)（主）· [Query Tool](https://ismrquerytool.fct.unesp.br/)（辅，常超时） | 网页注册 |
+| 闪烁 ISMR | [`ismr_downloader`](https://github.com/GEGE-UNESP/ismr_downloader)（主）· [Query Tool](https://ismrquerytool.fct.unesp.br/)（辅，常超时）· 高纬 [CHAIN](https://www.chain-project.net/data/gps/ismr/)（[E26](#dp-e26)） | UNESP 网页注册；CHAIN 匿名 |
 | 测高仪 | [GIRO / DIDBase](https://giro.uml.edu/didbase/) · [RAL / UKSSDC](https://www.ukssdc.ac.uk/ionosondes/) | GIRO 特征参数匿名（[E23](#dp-e23)），SAO 数值库要邮件申请账号；RAL 网页注册 |
 | ISR / SuperDARN / 区域台链 | [CEDAR Madrigal](https://cedar.openmadrigal.org/) · [EISCAT](https://portal.eiscat.se/) · [SRI AMISR](https://data.amisr.com/database/) · [FRDR SuperDARN](https://www.frdr-dfdr.ca/repo/collection/superdarn) · [子午工程](https://www.meridianproject.ac.cn/) · [PITHIA 编目](https://esc.pithia.eu/) → [决策表](#电离层与地磁门户决策表) | Madrigal / FRDR 开放；EISCAT 门户、子午工程须登录 |
 | 电离层–热层卫星（ICON / GOLD） | [SPDF ICON](https://spdf.gsfc.nasa.gov/pub/data/icon/) · [SPDF GOLD](https://spdf.gsfc.nasa.gov/pub/data/gold/) · [CDAWeb](https://cdaweb.gsfc.nasa.gov/) CDAS REST · [GOLD SOC](https://gold.cs.ucf.edu/data/search/)（[决策表 E21–E22](#dp-e21) · [icon-gold-data](./software/icon-gold-data.md)） | 开放（CDAWeb HAPI 不含这两个任务） |
@@ -431,7 +431,7 @@ curl -L -C - -O \
 
 ## 电离层与地磁门户决策表
 
-第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD），以及地基与 LEO 电离层观测（E23 GIRO / DIDBase 测高仪、E24 Swarm swarm-diss HTTPS、E25 VirES HAPI）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
+第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD），以及地基与 LEO 电离层观测（E23 GIRO / DIDBase 测高仪、E24 Swarm swarm-diss HTTPS、E25 VirES HAPI、E26 CHAIN 闪烁 ISMR）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
 
 | 门户 | 账号 / 门槛 | 格式 | 时间分辨率 · 时延 | 实测 |
 |---|---|---|---|:---:|
@@ -460,6 +460,7 @@ curl -L -C - -O \
 | [GIRO / DIDBase 测高仪](https://giro.uml.edu/didbase/scaled.php) | 特征参数**匿名**：`lgdc.uml.edu/fastchar/getbest`（旧 `common/DIDBGetValues` **404**）；站表 `ionoweb/locations` 匿名；数值 SAO 只能用 SAO Explorer（Java）+ DIDBase 只读账号（邮件向 Bodo Reinisch 申请）；CC BY-NC-SA 4.0，须致谢站点 | 纯文本表（每行 UTC 时间 + CS + 值/QD 字母）；IonoWeb JSON 列表 + PNG 电离图；SAO 4.2/4.3/5.0 | 131 站；多数 5–15 min 一张；CS 0–100 = ARTIST 自动判读置信度，999 = 人工，-1 = 未知；站表里有 ≠ 当天有数据 | ✅（[E23](#dp-e23)，[手册](./software/giro-ionosonde.md)） |
 | [Swarm 分发服务器 swarm-diss](https://swarm-diss.eo.esa.int/) | HTTPS 网页接口**匿名**：`?do=list&file=`（JSON）/ `?do=download&file=`（路径 `%2F` 编码）；`/swarm/` 直链 403；**FTP 拒绝匿名（530）**，要 ESA 账号 | ZIP 内 CDF + HDR（+ DQC 报告 `.EEF`）；每个产品目录旁有 `<产品>.txt` 全清单 | LP `EFIx_LP_1B`（2 Hz）/`EFIxLPI_1B`（1 Hz）基线 0701→0702（2025-12-13）；TEC/IBI/EEF 0502；IPIR 0302（目录里 0301 仍并存）；OPER 上架 3–9 天，`Fast/` LP/TEC ~40 min | ✅（[E24](#dp-e24)，[手册](./software/swarm-data.md)） |
 | [VirES for Swarm](https://vires.services/) | **HAPI 匿名**（`/hapi/catalog`、`/hapi/info`、`/hapi/data`，174 数据集 / 147 个 `SW_`）；OWS/WPS（viresclient）无 token → **403**，token 要在 vires.services 注册 | HAPI：CSV / JSON / binary 切片 | 单次上限 LP 2.5 天、TEC 5 天；值与 CDF 逐位一致；无模型残差 | ✅（[E25](#dp-e25)；token 路径见 [viresclient](./software/viresclient.md)） |
+| [CHAIN 加拿大高纬电离层网](https://www.chain-project.net/) | **匿名**：HTTPS 目录 `https://www.chain-project.net/data/`（`http://www.chain-project.net` 301 到 `chain-new`）；匿名 FTP `ftp.chain-project.net`（用户 `ftp`、密码邮箱，实测时好时坏）；老 `chain.physics.unb.ca/data/gps/ismr/2024/` → 404；发表须引用 Jayachandran et al. 2009 | ISMR（Septentrio `sbf2ismr` 62 列 CSV，gzip，按小时）；RINEX 观测；接收机原始二进制（50 Hz） | 2024 年小时目录 15 个 PolaRxS 站；GSV4004B 老 ISMR 在 `nvismr/`（到 2019）；无表头，GPS 时；锁定 <240 s 时 Phi 已为 nan、S4 仍有值 | ✅（[E26](#dp-e26)，[手册](./software/chain-scintillation.md)） |
 
 要登录才能拿数据的：EISCAT 门户（Madrigal 可绕行）、子午工程、ROM SAF 产品库（AWS 可绕行）、TGO ASCII、UKSSDC/RAL。要「申请」的：BGS 本站高分辨率（GIN 可绕行）。
 
@@ -717,6 +718,18 @@ curl -s "https://vires.services/hapi/info?dataset=SW_OPER_EFIB_LP_1B"           
 curl -s "https://vires.services/hapi/data?dataset=SW_OPER_EFIB_LP_1B&parameters=Latitude,Longitude,N_ion,Flags_N_ion&start=2024-05-11T16:00:00Z&stop=2024-05-11T16:00:02Z&format=csv"
 # 实测：200，4 行；首行 2024-05-11T16:00:00.197Z,8.5277053,-76.8632017,483458.0389614415,20（与 CDF 逐位相同）
 curl -s -o /dev/null -w '%{http_code}\n' "https://vires.services/ows?service=WPS&request=GetCapabilities"   # 实测：403（viresclient 路径要 token）
+```
+
+<a id="dp-e26"></a>**E26 CHAIN 闪烁 ISMR（匿名 HTTPS）**
+
+```bash
+B=https://www.chain-project.net/data/gps/ismr
+curl -s "$B/2024/132/04/" | grep -o '[a-z]\{4\}c24132e.ismr.gz' | sort -u   # 实测：15 个站（arcc … sacc）；小时字母 e = 04 UT
+curl -s -O "$B/2024/131/23/chuc24131x.ismr.gz"                                # 实测：200；每行 62 列，无表头，GPS 时
+# 实测（Churchill，仅 GPS，仰角≥30°、锁定≥240 s，阈值为本手册所选）：
+#   2024-05-10 16 UT–05-11 08 UT：Phi60 >0.25 rad 占 13.8%，最大 3.136 rad @ 05-10 23:25 UTC；平静夜 05-08/09 同时段 0%
+#   S4（去噪）>0.2 仅 1.2%：高纬以相位闪烁为主
+curl -s -o /dev/null -w '%{http_code}\n' http://chain.physics.unb.ca/data/gps/ismr/2024/   # 实测：404（老路径已空）
 ```
 
 ---
