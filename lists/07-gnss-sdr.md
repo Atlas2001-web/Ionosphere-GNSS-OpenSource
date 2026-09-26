@@ -13,7 +13,7 @@
 | [PocketSDR](https://github.com/tomojitakasu/PocketSDR) | PocketSDR：Takasu 开源多星座多频 GNSS SDR | C | 515 | 🏷️ 个人社区 核心 |
 | [FGI-GSRx](https://github.com/nlsfi/FGI-GSRx) | FGI-GSRx：多星座 MATLAB 软件接收机 | MATLAB | 192 | 🏷️ 官方 核心 |
 | [Full_Stack_GPS_Receiver](https://github.com/hamsternz/Full_Stack_GPS_Receiver) | 1-bit ADC 到 PVT 的开源 GPS 软件接收机示例 | C | 168 | 🏷️ 个人社区 |
-| [Analog-GPS-data-receiver](https://github.com/leaningktower/Analog-GPS-data-receiver) | Analog-GPS-data-receiver：分立射频+FPGA GPS 教学接收 | C | 164 | 🏷️ 高校实验室 |
+| [Analog-GPS-data-receiver](https://github.com/leaningktower/Analog-GPS-data-receiver) | Analog-GPS-data-receiver：分立射频+FPGA GPS 教学接收 | C | 164 | 🏷️ 个人社区 |
 | [GNSS-GPS-SDR](https://github.com/JiaoXianjun/GNSS-GPS-SDR) | GNSS-GPS-SDR：GPS 录回放实验代码 | Python | 157 | 🏷️ 个人社区 |
 | [GNSS-DSP-tools](https://github.com/pmonta/GNSS-DSP-tools) | GNSS-DSP-tools：码生成/捕获/跟踪 DSP 积木 | Python | 141 | 🏷️ 个人社区 |
 | [gps-sdr](https://github.com/gps-sdr/gps-sdr) | gps-sdr：早期 USRP/GN3S GPS 接收机 | C++ | 107 | 🏷️ 个人社区 |
@@ -31,7 +31,7 @@
 | [pylgrim](https://github.com/kirienko/pylgrim) | pylgrim：Python 实现的 GNSS 软件接收机 | Python | 21 | 🏷️ 个人社区 |
 | [docker-gnsssdr](https://github.com/carlesfernandez/docker-gnsssdr) | 预装 GNSS-SDR 的 Docker 镜像 | Dockerfile | 19 | 🏷️ 高校实验室 |
 | [GNSSSDRHACKRF](https://github.com/jdesbonnet/GNSS_SDR_HACKRF) | GNSSSDRHACKRF：HackRF One 跑 GNSS-SDR 的实验记录 | — | 19 | 🏷️ 个人社区 |
-| [gnsssdrgui](https://github.com/UHaider/gnss_sdr_gui) | gnsssdrgui：GNSS-SDR 图形配置与监视界面 | C++ | 16 | 🏷️ 高校实验室 |
+| [gnsssdrgui](https://github.com/UHaider/gnss_sdr_gui) | gnsssdrgui：GNSS-SDR 图形配置与监视界面 | C++ | 16 | 🏷️ 个人社区 |
 | [meta-gnss-sdr](https://github.com/carlesfernandez/meta-gnss-sdr) | meta-gnss-sdr：GNSS-SDR 的 OpenEmbedded/Yocto 层 | C | 16 | 🏷️ 高校实验室 |
 | [gps-sdr-simulink](https://github.com/dmiralles2009/gps-sdr-simulink) | gps-sdr-simulink：Simulink GPS 捕获阶段模型 | MATLAB | 15 | 🏷️ 个人社区 |
 | [gnss-rcv](https://github.com/mx4/gnss-rcv) | gnss-rcv：Rust GPS L1 C/A 软件接收机 | Rust | 14 | 🏷️ 个人社区 |
@@ -87,7 +87,7 @@ FGI 开源多星座 MATLAB 接收机，方便改基带算法与抗干扰试验�
 贯通原始 1-bit ADC 采样、捕获跟踪到位置解算的完整链路，教学上极利于理解接收机分层。适合自学与课程演示。工程完备性、多星座与抗干扰能力有限，不宜当作生产接收机。
 
 #### [Analog-GPS-data-receiver](https://github.com/leaningktower/Analog-GPS-data-receiver)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C · 许可：MIT · 星标约：164 · 宿主：github
 
@@ -213,7 +213,7 @@ OSCIMP 维护的 gnss-sdr 补丁集（按 v0.0.18/v0.0.20 分版本）：接双�
 整理如何把 GNSS-SDR 接到 HackRF One 做卫星信号接收实验，含配置片段与常见踩坑。面向手头已有 HackRF、想试软件 GNSS 接收的人。仓库偏实验笔记而非产品级接收机；HackRF 带宽与噪声系数相对专用前端有限，弱信号捕获需要耐心调增益与天线。天线与低噪放选择往往比软件参数更关键。
 
 #### [gnsssdrgui](https://github.com/UHaider/gnss_sdr_gui)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：16 · 宿主：github
 
@@ -294,7 +294,7 @@ OSCIMP 维护的 gnss-sdr 补丁集（按 v0.0.18/v0.0.20 分版本）：接双�
 | [pluto-gps-sim](https://github.com/Mictronics/pluto-gps-sim) | pluto-gps-sim：PlutoSDR GPS IQ 仿真发射工具 | C | 119 | 🏷️ 个人社区 |
 | [gps-sdr-sim-assistant](https://github.com/frank-pian/gps-sdr-sim-assistant) | gps-sdr-sim-assistant：仿真参数图形助手 | JavaScript | 63 | 🏷️ 个人社区 |
 | [galileo-sdr-sim](https://github.com/harshadms/galileo-sdr-sim) | galileo-sdr-sim：Galileo E1B/C 信号生成器 | C++ | 62 | 🏷️ 个人社区 |
-| [BeiDou_B1C](https://github.com/lnexenl/BeiDou_B1C) | BeiDou_B1C：北斗 B1C 信号生成与捕获（MATLAB） | MATLAB | 38 | 🏷️ 高校实验室 |
+| [BeiDou_B1C](https://github.com/lnexenl/BeiDou_B1C) | BeiDou_B1C：北斗 B1C 信号生成与捕获（MATLAB） | MATLAB | 38 | 🏷️ 个人社区 |
 | [gui_sdr_gps_sim](https://github.com/okiedocus/gui_sdr_gps_sim) | gui_sdr_gps_sim：HackRF 多星座 GNSS 信号仿真 GUI | Rust | 37 | 🏷️ 个人社区 |
 | [gnss-RX](https://github.com/HeryMwenegoha/gnss-RX) | gnss-RX：MATLAB GNSS 观测量仿真器 | MATLAB | 32 | 🏷️ 个人社区 |
 | [gnss-signal-simulator-rs](https://github.com/danusha2345/gnss-signal-simulator-rs) | gnss-signal-simulator-rs：Rust 多星座 GNSS 信号仿真 | Rust | 30 | 🏷️ 个人社区 |
@@ -364,7 +364,7 @@ Mictronics 维护的 PlutoSDR GPS 基带 IQ 生成与发射工具，把模拟中
 专门生成 Galileo E1B/C，补齐 gps-sdr-sim 偏 GPS 的空白。适合 Galileo 基带试验。仓库公开可查，细节以当前上游文档为准，避免把过时脚本当生产基线。
 
 #### [BeiDou_B1C](https://github.com/lnexenl/BeiDou_B1C)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：MATLAB · 许可：MIT · 星标约：38 · 宿主：github
 

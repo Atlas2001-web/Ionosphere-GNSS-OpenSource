@@ -321,7 +321,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "crz2rnx：Hatanaka RNX2CRX/CRX2RNX 程序整理"
     },
     {
@@ -357,7 +357,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "DRCycleSlip：GNSS 周跳探测与修复 Python 实现"
     },
     {
@@ -847,7 +847,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "gstream：面向 GNSS 的开源数据流客户端库"
     },
     {
@@ -1224,7 +1224,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "PyRINEX：多用途 Python RINEX 读写与质量分析"
     },
     {
@@ -1679,7 +1679,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "BDS-3-PPP-B2b-DATA",
@@ -1689,7 +1689,7 @@
       "language": null,
       "license": null,
       "stars": 10,
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "host": "github",
       "one_liner_zh": "BDS-3-PPP-B2b-DATA：公开一周 BDS-3 PPP-B2b 试验数据",
       "analysis_zh": "公开约一周的 BDS-3 PPP-B2b 相关数据，方便复现解码与定位试验。适合写论文或调试 B2bLIB/RTKLIB-B2b 时当标准输入。不是通用数据中心；长期业务请接 IGS/CDDIS 或自建接收。",
@@ -2927,8 +2927,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
-      "one_liner_zh": "APAS-TR：土耳其高校 MATLAB 多星座 PPP"
+      "provenance": "personal_community",
+      "one_liner_zh": "APAS-TR：土耳其研究者的 MATLAB 多星座 PPP"
     },
     {
       "name": "B2bLIB",
@@ -2986,7 +2986,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "CSSR-tool：多源协同 CSSR-PPP 改正数预处理"
     },
     {
@@ -3086,7 +3086,7 @@
       "featured": false,
       "user_relation": "starred",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "GAMP_PPPH：多星座 PPP 学习源码"
     },
     {
@@ -3186,7 +3186,7 @@
     {
       "name": "GNSS-Explorer",
       "url": "https://github.com/brucezhcw/GNSS-Explorer",
-      "desc_zh": "HKUST 方向：单点定位算法改动与对比试验仓",
+      "desc_zh": "个人仓（作者属 HKUST）：单点定位算法改动与对比试验",
       "analysis_zh": "在 RTKLIB 框架上探索 SPP 算法改进，例如加权模型、粗差探测或选星策略的小改动试验场。适合对照默认配置做消融实验与课程报告。不是独立大型定位套件；若计划回馈社区分支，需注意许可证、代码风格与完整回归测试，避免只报告单一场景上的收益。",
       "language": "C",
       "license": null,
@@ -3198,7 +3198,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "GNSS-Explorer：基于 RTKLIB 的 SPP 算法优化探索"
     },
     {
@@ -3676,7 +3676,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "MG-APP：多 GNSS 精密定位应用"
     },
     {
@@ -3714,7 +3714,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "MRTKLIB：现代 PPP/PPP-RTK 定位库"
     },
     {
@@ -3732,7 +3732,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "mrtklib-docker-ui：MRTKLIB 的 Docker/Web 演示界面"
     },
     {
@@ -3770,7 +3770,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "Net_Diff：下载+定位+分析综合套件"
     },
     {
@@ -3812,7 +3812,7 @@
     {
       "name": "PPP",
       "url": "https://github.com/XiaoGongWei/PPP",
-      "desc_zh": "MG-APP 作者相关：对照阅读观测方程与参数估计骨架",
+      "desc_zh": "MG-APP 作者的个人练习仓：对照阅读观测方程与参数估计骨架",
       "analysis_zh": "偏静态精密单点定位流程的 C++ 练习/研究代码，作者与 MG-APP 系列相关，便于对照阅读观测方程与参数估计骨架。适合理解 PPP 基本流程。工程完整度、多星座产品与模糊度固定支持有限；生产级 PPP-AR 请优先使用 PRIDE-PPPAR、Ginan 或 MRTKLIB 等更完整套件。",
       "language": "C++",
       "license": "GPL-3.0",
@@ -3824,7 +3824,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "PPP：静态精密单点定位 C++ 练习实现"
     },
     {
@@ -3889,7 +3889,7 @@
     {
       "name": "PPP_AR",
       "url": "https://github.com/heiwa0519/PPP_AR",
-      "desc_zh": "中国矿业大学方向：宽巷/窄巷与产品依赖练手",
+      "desc_zh": "TGINS 作者（安徽理工大学测绘学院）的宽巷/窄巷与产品依赖练手",
       "analysis_zh": "围绕多星座 PPP 模糊度固定（PPP-AR）组织的实现，便于对照教材中的宽巷/窄巷与产品依赖关系。适合学习 PPP-AR 流程。工程化程度、实时性与 OSB/UPD 产品格式支持参差不齐；严肃精度评估请交叉验证 PRIDE-PPPAR、Ginan 或 MRTKLIB。",
       "language": "C",
       "license": null,
@@ -4126,7 +4126,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "RTK：GPS/BDS 双系统浮点/固定 RTK 教学实现"
     },
     {
@@ -4318,8 +4318,8 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
-      "one_liner_zh": "SPP_SPV：武大相关 GPS/BDS 单点定位与测速教学"
+      "provenance": "personal_community",
+      "one_liner_zh": "SPP_SPV：个人课程实验：GPS/BDS 单点定位与测速"
     },
     {
       "name": "Urban-RTKLIB",
@@ -4336,13 +4336,13 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "Urban-RTKLIB：面向城市峡谷的 RTKLIB 改版"
     },
     {
       "name": "Analog-GPS-data-receiver",
       "url": "https://github.com/leaningktower/Analog-GPS-data-receiver",
-      "desc_zh": "UIUC 相关业余项目：模拟射频前端与 TinyFPGA 的 GPS 接收实验",
+      "desc_zh": "个人业余项目（作者属 UIUC）：模拟射频前端与 TinyFPGA 的 GPS 接收实验",
       "analysis_zh": "用分立射频元件与 TinyFPGA 搭建偏「模拟前端」风格的 GPS 接收链路，帮助理解从射频到数据的路径。适合电子与射频教学、极客实验。调试门槛高、不是量产导航产品；算法研究更常见路径仍是 ADC 采样后接软件接收机。元器件公差与布局对前端噪声系数影响很大。焊接与屏蔽不良会直接抬高本底噪声。选用前建议先跑通作者提供的最小示例。",
       "language": "C",
       "license": "MIT",
@@ -4354,7 +4354,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "Analog-GPS-data-receiver：分立射频+FPGA GPS 教学接收"
     },
     {
@@ -4432,7 +4432,7 @@
     {
       "name": "BeiDou_B1C",
       "url": "https://github.com/lnexenl/BeiDou_B1C",
-      "desc_zh": "HKUST 方向：B1C 调制波形与捕获算法试验台",
+      "desc_zh": "个人试验仓（作者属 HKUST）：B1C 调制波形与捕获算法试验台",
       "analysis_zh": "用 MATLAB 生成并捕获北斗 B1C 相关信号，服务新信号体制与捕获跟踪算法验证。适合 GNSS-SDR/信号课程实验。不是完整多星座软件接收机；与 SoftGNSS、gnss-sdr、gps-sdr-sim 组合时，要统一采样率、中频与前端滤波模型再比捕获灵敏度。",
       "language": "MATLAB",
       "license": "MIT",
@@ -4444,7 +4444,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "BeiDou_B1C：北斗 B1C 信号生成与捕获（MATLAB）"
     },
     {
@@ -4898,7 +4898,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "gnsssdrgui：GNSS-SDR 图形配置与监视界面"
     },
     {
@@ -5512,7 +5512,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "Autoscala-INGV",
@@ -5703,7 +5703,7 @@
       "url": "https://github.com/csonde/gnss",
       "desc_zh": "学位论文配套 C 程序集；区域建模教学向，构建约定需读论文/源码",
       "one_liner_zh": "csonde-gnss-ionosphere：RINEX 解析与格网/球谐电离层建模",
-      "analysis_zh": "匈牙利相关学位论文配套代码：含 RINEX 解析、格网电离层模型、球谐模型求解与 PCA 等，适合作为区域建模教学示例。局限：偏研究原型；构建与输入约定需读论文/源码；GPL。",
+      "analysis_zh": "BME（匈牙利）学生论文配套个人代码：含 RINEX 解析、格网电离层模型、球谐模型求解与 PCA 等，适合作为区域建模教学示例。局限：偏研究原型；构建与输入约定需读论文/源码；GPL。",
       "language": "C",
       "license": "GPL-3.0",
       "category": "ionosphere",
@@ -5716,7 +5716,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "DeepPredTEC",
@@ -5756,7 +5756,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "DLR-IMPC",
@@ -5839,7 +5839,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "ED-AttConvLSTM：注意力 ConvLSTM 的 TEC 图预报"
     },
     {
@@ -5865,7 +5865,7 @@
     {
       "name": "EGNOSTools",
       "url": "https://github.com/DfAC/EGNOSTools",
-      "desc_zh": "JRC 相关个人仓；EMS/EGNOS 辅助转换，非完整 SBAS 运营系统",
+      "desc_zh": "作者任职 JRC 的个人仓；EMS/EGNOS 辅助转换，非完整 SBAS 运营系统",
       "one_liner_zh": "EGNOSTools：EGNOS 处理支持工具（含 EMS 转换）",
       "analysis_zh": "辅助 EGNOS/SBAS 消息与 EMS 等格式处理的小工具集，便于课堂演示 MT18/MT26 电离层格网改正链路。输入为 EGNOS/EMS/RINEX 相关文件；输出为转换/解析结果。局限：仓库很小，需与规范文档对照使用。",
       "language": "Python",
@@ -5880,7 +5880,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "ESA-IONMON",
@@ -6074,7 +6074,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "FIRI.jl",
@@ -6212,7 +6212,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "Get_IPP",
@@ -6274,7 +6274,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "GIRO-GAMBIT",
@@ -6455,7 +6455,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "GNSS.IonosphereMaps",
@@ -6495,7 +6495,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "gnssutils",
@@ -6698,7 +6698,7 @@
       "featured": false,
       "user_relation": "starred",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "INPE-TEC-Maps-IONEX：INPE TEC 图与 IONEX 生成"
     },
     {
@@ -6910,7 +6910,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "IonMap：由 IONEX 绘制电离层 TEC 地图"
     },
     {
@@ -6931,7 +6931,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "IonoBench",
@@ -6951,13 +6951,13 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "IonOccAnalysis",
       "url": "https://github.com/wonder2019WHU/IonOccAnalysis",
       "desc_zh": "C++ LEO—GNSS 反演向；与地基双频 TEC 流程不同",
-      "one_liner_zh": "IonOccAnalysis：GNSS 电离层掩星数据分析（武大相关）",
+      "one_liner_zh": "IonOccAnalysis：GNSS 电离层掩星数据分析（个人仓）",
       "analysis_zh": "C++ 工具面向 GNSS 电离层掩星数据处理与分析，适合理解 LEO—GNSS 链路反演电子密度。输入为掩星观测/相关产品；输出为分析与可视化结果。局限：文档与维护节奏需自行评估；与地基双频 TEC 流程不同。",
       "language": "C++",
       "license": "MIT",
@@ -6971,7 +6971,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "IONOLAB-TEC-Software",
@@ -7079,7 +7079,7 @@
       "name": "ionosonde_volgatech",
       "url": "https://github.com/Vladimi-lan/ionosonde_volgatech",
       "desc_zh": "非 GIRO 数据源参考实现；英文文档与许可需使用者自行确认",
-      "one_liner_zh": "ionosonde_volgatech：伏尔加技术大学测高仪处理代码",
+      "one_liner_zh": "ionosonde_volgatech：伏尔加技术大学测高仪数据处理代码（个人仓）",
       "analysis_zh": "与具体测高仪系统相关的 Python 处理代码，体量不小，可作为非 GIRO 数据源处理参考。局限：缺少清晰英文 README；通用性与许可需使用者自行确认（仓库未声明许可）。",
       "language": "Python",
       "license": null,
@@ -7093,7 +7093,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "ionosphere-plotting",
@@ -7189,7 +7189,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "Ionospheric-TEC-Kriging-Turkiye",
@@ -7229,7 +7229,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "Ionospheric-VTEC-Forecasting",
@@ -7269,7 +7269,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "IonoTomo",
@@ -7286,7 +7286,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab",
+      "provenance": "personal_community",
       "one_liner_zh": "IonoTomo：射电天文射线追踪与电离层层析仿真"
     },
     {
@@ -7739,7 +7739,7 @@
     {
       "name": "jvierine-ionosonde",
       "url": "https://github.com/jvierine/ionosonde",
-      "desc_zh": "社区活跃的电离图处理与测高仪相关脚本集合",
+      "desc_zh": "基于 USRP 的 Python 软件定义跳频测高仪，可垂直/斜向探测并出电离图",
       "one_liner_zh": "ionosonde（jvierine）：开源测高仪/电离图 Python 软件",
       "analysis_zh": "面向测高仪数据处理与实验的 Python 项目，可用于电离图获取/分析相关工作流。与 GNSS TEC 互补，提供底部电离层约束。局限：README 信息偏少，需读代码确认具体仪器格式；不替代 GIRO/SAO 官方工具链。",
       "language": "Python",
@@ -7754,7 +7754,7 @@
       "featured": false,
       "user_relation": "none",
       "host": "github",
-      "provenance": "academic_lab"
+      "provenance": "personal_community"
     },
     {
       "name": "Kamodo",
@@ -20397,8 +20397,8 @@
   ],
   "provenance_counts": {
     "official": 333,
-    "academic_lab": 284,
-    "personal_community": 412
+    "academic_lab": 242,
+    "personal_community": 454
   },
   "updated": "2026-09-26"
 }

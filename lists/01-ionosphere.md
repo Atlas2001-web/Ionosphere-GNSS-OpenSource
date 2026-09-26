@@ -7,25 +7,25 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [IonoTomo](https://github.com/Joshuaalbert/IonoTomo) | IonoTomo：射电天文射线追踪与电离层层析仿真 | Jupyter Notebook | 11 | 🏷️ 高校实验室 |
-| [iono-tomography](https://github.com/brianbreitsch/iono-tomography) | iono-tomography：电离层层析 Python 实验原型 | Python | 4 | 🏷️ 高校实验室 |
+| [IonoTomo](https://github.com/Joshuaalbert/IonoTomo) | IonoTomo：射电天文射线追踪与电离层层析仿真 | Jupyter Notebook | 11 | 🏷️ 个人社区 |
+| [iono-tomography](https://github.com/brianbreitsch/iono-tomography) | iono-tomography：电离层层析 Python 实验原型 | Python | 4 | 🏷️ 个人社区 |
 | [synthetic_ionospheric_tomography_isl](https://github.com/suixin11suoyu/synthetic_ionospheric_tomography_isl) | synthetic_ionospheric_tomography_isl：多 GNSS 星间链路层析仿真 | Jupyter Notebook | 2 | 🏷️ 个人社区 |
 | [317Lab-tomography](https://github.com/317Lab/tomography) | 317Lab-tomography：Lynch 火箭实验室电离层层析代码 | Jupyter Notebook | 1 | 🏷️ 高校实验室 |
-| [GNSS_TOM](https://github.com/sailvssea/GNSS_TOM) | GNSS_TOM：GNSS 对流层与电离层层析 C++（仿 GPSTk 风） | C++ | 1 | 🏷️ 高校实验室 |
+| [GNSS_TOM](https://github.com/sailvssea/GNSS_TOM) | GNSS_TOM：GNSS 对流层与电离层层析 C++（仿 GPSTk 风） | C++ | 1 | 🏷️ 个人社区 |
 | [Geometric-Matrix-For-Ionospheric-Tomogrphy](https://github.com/yujieqing/Geometric-Matrix-For-Ionospheric-Tomogrphy) | 层析几何矩阵构建（C++，yujieqing） | C++ | — | 🏷️ 个人社区 ★ |
 | [SegmentsComputation](https://github.com/yujieqing/SegmentsComputation) | SegmentsComputation：体素层析射线段矩阵（已归档） | C++ | 0 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [IonoTomo](https://github.com/Joshuaalbert/IonoTomo)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Jupyter Notebook · 许可：Apache-2.0 · 星标约：11 · 宿主：github
 
 结合射线追踪与射电观测仿真做电离层层析，面向射电天文与空间天气交叉课题，Notebook 形式便于改参数。适合需要正演电离层对射电信号影响的人。不是 GNSS 双频 TEC 业务软件；地基 GNSS 体素层析可并行参考 SegmentsComputation 与 synthetic 层析仓库。仿真假设与真实射电阵几何差异需要单独评估。仓库已于 2020-11 归档（只读）。
 
 #### [iono-tomography](https://github.com/brianbreitsch/iono-tomography)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：— · 星标约：4 · 宿主：github
 
@@ -46,7 +46,7 @@
 火箭/地基联合场景下的电离层层析教学与研究代码。输入为层析观测几何与 TEC；输出为二维/三维重建。局限：星数少、场景专用；需对照实验室文档。
 
 #### [GNSS_TOM](https://github.com/sailvssea/GNSS_TOM)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C++ · 许可：LGPL-3.0 · 星标约：1 · 宿主：github
 
@@ -121,9 +121,9 @@ yujieqing 仓库：为电离层层析准备几何/射线矩阵相关代码，可
 | [SAMI2](https://github.com/NRL-Plasma-Physics-Division/SAMI2) | SAMI2：NRL 二维电离层模式官方 Fortran 源码 | Fortran | 6 | 🏷️ 官方 |
 | [IPE](https://github.com/NOAA-SWPC/IPE) | IPE：NOAA SWPC 电离层-等离子体层-电动力学模式 | Fortran | 5 | 🏷️ 官方 |
 | [MIPS](https://github.com/MITHaystack/MIPS) | MIT Haystack 非相干散射雷达系统性能仿真器 | Python | 5 | 🏷️ 高校实验室 |
-| [AURORA](https://github.com/egavazzi/AURORA) | AURORA：电离层电子输运时变模型（UiT） | MATLAB | 3 | 🏷️ 高校实验室 |
+| [AURORA](https://github.com/egavazzi/AURORA) | AURORA：电离层电子输运时变模型（UiT） | MATLAB | 3 | 🏷️ 个人社区 |
 | [ntcmg](https://github.com/lguldur/ntcmg) | ntcmg：Galileo NTCM-G 电离层改正 C++ 实现 | C++ | 3 | 🏷️ 个人社区 |
-| [FIRI-2018](https://github.com/AlexT1983/FIRI-2018) | FIRI-2018：低电离层经验模型 FIRI-2018 的 MATLAB 实现 | MATLAB | 2 | 🏷️ 高校实验室 |
+| [FIRI-2018](https://github.com/AlexT1983/FIRI-2018) | FIRI-2018：低电离层经验模型 FIRI-2018 的 MATLAB 实现 | MATLAB | 2 | 🏷️ 个人社区 |
 | [Klobuchar.jl](https://github.com/bukvoj/Klobuchar.jl) | Klobuchar.jl：广播电离层延迟模型的 Julia 实现 | Julia | 2 | 🏷️ 个人社区 |
 | [IRI_TID](https://github.com/w2naf/IRI_TID) | IRI_TID：PyIRI 密度场叠加正弦 TID 扰动 | Python | 1 | 🏷️ 高校实验室 |
 | [SAMI3-4.00](https://github.com/jdhuba/sami3-4.00) | SAMI3-4.00：作者侧公开的现代化 Fortran 源码 | Fortran | 1 | 🏷️ 官方 |
@@ -278,7 +278,7 @@ IPE（Ionosphere Plasmasphere Electrodynamics）由 NOAA 空间天气预测中�
 MIT 海斯塔克天文台发布的 Incoherent Scatter Performance Simulator，BSD-2-Clause 许可。基于物理的雷达性能模型，考虑一阶与二阶效应及测量统计，可评估不同波形带宽、中心频率、占空比、阵列布局、单站/双站配置与功率孔径组合下的信噪比、测量速度和参数估计误差，用于下一代地球空间雷达的设计权衡。适合 ISR 系统设计与观测模式规划，不处理实测数据。README 附引用信息；文档较精简，需要一定雷达理论基础。
 
 #### [AURORA](https://github.com/egavazzi/AURORA)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：MATLAB · 许可：GPL-3.0 · 星标约：3 · 宿主：github
 
@@ -292,7 +292,7 @@ MIT 海斯塔克天文台发布的 Incoherent Scatter Performance Simulator，BS
 按 Galileo OS《NTCM-G Ionospheric Model Description》实现的 NTCM-G 经验改正，与 NeQuick-G 同属单频用户电离层延迟估算路线，但是不同算法族。输入为广播/模型所需系数与链路几何；输出为电离层延迟估计。局限：仓库体量小、星数低；需对照官方 PDF 验证实现完整度；不替代双频无消电离层或 GIM。
 
 #### [FIRI-2018](https://github.com/AlexT1983/FIRI-2018)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：MATLAB · 许可：BSD-3-Clause · 星标约：2 · 宿主：github
 
@@ -389,7 +389,7 @@ Space Weather Modeling Framework 组件之一，描述高纬电离层电动力�
 | [CDAAC_COSMIC-TEC_Data-Research](https://github.com/haoINvinCbou/CDAAC_COSMIC-TEC_Data-Research) | CDAAC_COSMIC-TEC：Jupyter 处理 COSMIC 掩星 NetCDF 做 TEC | Jupyter Notebook | 2 | 🏷️ 个人社区 |
 | [gps-tec-cnn-lstm-attention](https://github.com/hyy-why/gps-tec-cnn-lstm-attention) | 论文配套：注意力机制 TEC 时序预测示例 | Python | 1 | 🏷️ 个人社区 |
 | [ESA-UGI](https://essr.esa.int/project/unified-gnss-ionosphere) | ESA-UGI：多系统 GNSS 估 vTEC/IFB/模糊度（ESSR） | unknown | — | 🏷️ 官方 |
-| [GNSS-Workshop-TEC](https://github.com/breid-phys/GNSS-Workshop) | GNSS-Workshop-TEC：研讨班 GNSS 探索到 TEC 测量材料 | Python | 0 | 🏷️ 高校实验室 |
+| [GNSS-Workshop-TEC](https://github.com/breid-phys/GNSS-Workshop) | GNSS-Workshop-TEC：研讨班 GNSS 探索到 TEC 测量材料 | Python | 0 | 🏷️ 个人社区 |
 | [Ion-Phys-Toolkit](https://github.com/PANXIONG-CN/Ion-Phys-Toolkit) | Ion-Phys-Toolkit：TEC 预报物理信息学习最小复现包 | Python | 0 | 🏷️ 个人社区 |
 | [IONOLAB-TEC-Software](https://www.ionolab.org/index.php?language=en&page=ionolabtec) | IONOLAB-TEC：土耳其实验室 GNSS TEC/STEC 估计软件 | unknown | — | 🏷️ 高校实验室 |
 | [KOH2-ionosphere](https://github.com/asparuhkamburov/KOH2-ionosphere) | KOH2-ionosphere：南极 KOH2 站 TEC 与太阳周 25 分析 | Python | 0 | 🏷️ 个人社区 |
@@ -522,7 +522,7 @@ Jupyter 流程读取 CDAAC/COSMIC 掩星 NetCDF，面向 TEC 与掩星电离层�
 欧洲航天局在 ESSR 发布的 Unified GNSS Ionosphere（UGI）程序包，面向 GPS/Galileo/BDS 双频观测估计垂直 TEC、频间偏差与载波模糊度，支持体素/多层/球谐等 2D–3D 电离层表征。适合作为 GNSS 电离层估计研究的可复现起点。源码托管在 ESSR 的 git，下载需注册 ESA Community 账号并接受 ESA Community License v2.4 Weak Copyleft；输入需预先标记/改正周跳。页面 HTTP 200 可访问。
 
 #### [GNSS-Workshop-TEC](https://github.com/breid-phys/GNSS-Workshop)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：GPL-3.0 · 星标约：0 · 宿主：github
 
@@ -599,15 +599,15 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 | [pysat](https://github.com/pysat/pysat) | pysat：日地空间科学数据分析框架 | Python | 173 | 🏷️ 高校实验室 |
 | [MagPy](https://github.com/geomagpy/magpy) | 地磁观测台数据处理 Python 包 MagPy（GeomagPy），支持 IAGA-2002/ImagCDF 等格式 | Python | 67 | 🏷️ 高校实验室 |
 | [Kamodo](https://github.com/nasa/Kamodo) | Kamodo：NASA CCMC 日地模式输出函数化套件 | Python | 58 | 🏷️ 官方 |
-| [geospacelab](https://github.com/JouleCai/geospacelab) | geospacelab：日地空间数据管理与可视化 | Python | 48 | 🏷️ 高校实验室 |
+| [geospacelab](https://github.com/JouleCai/geospacelab) | geospacelab：日地空间数据管理与可视化 | Python | 48 | 🏷️ 个人社区 |
 | [apexpy](https://github.com/aburrell/apexpy) | apexpy：Apex/准偶极地磁坐标 Python 封装 | Python | 40 | 🏷️ 个人社区 |
 | [pyDARN](https://github.com/SuperDARN/pydarn) | SuperDARN 官方社区维护的 Python 数据可视化库 | Python | 38 | 🏷️ 高校实验室 |
 | [SuperDARN RST](https://github.com/SuperDARN/rst) | SuperDARN 雷达软件工具包 RST：原始数据处理、拟合与对流图生成 | C | 28 | 🏷️ 高校实验室 |
-| [jvierine-ionosonde](https://github.com/jvierine/ionosonde) | ionosonde（jvierine）：开源测高仪/电离图 Python 软件 | Python | 23 | 🏷️ 高校实验室 |
+| [jvierine-ionosonde](https://github.com/jvierine/ionosonde) | ionosonde（jvierine）：开源测高仪/电离图 Python 软件 | Python | 23 | 🏷️ 个人社区 |
 | [Lompe](https://github.com/klaundal/lompe) | 极区电离层电动力学局地反演工具 Lompe（多源数据融合） | Python | 23 | 🏷️ 高校实验室 |
 | [Ionort-raytrace](https://github.com/blair3sat/ionosphere-rt) | Ionort-raytrace：INGV IONORT 三维 HF 射线追踪（MATLAB 界面 + 预编译 Fortran 求解器） | MATLAB | 17 | 🏷️ 高校实验室 |
 | [pysatSpaceWeather](https://github.com/pysat/pysatSpaceWeather) | pysatSpaceWeather：pysat 空间天气指数支持库 | Python | 14 | 🏷️ 高校实验室 |
-| [ionosonde_volgatech](https://github.com/Vladimi-lan/ionosonde_volgatech) | ionosonde_volgatech：伏尔加技术大学测高仪处理代码 | Python | 13 | 🏷️ 高校实验室 |
+| [ionosonde_volgatech](https://github.com/Vladimi-lan/ionosonde_volgatech) | ionosonde_volgatech：伏尔加技术大学测高仪数据处理代码（个人仓） | Python | 13 | 🏷️ 个人社区 |
 | [Alouette_ISIS_extract](https://github.com/asc-csa/Alouette_ISIS_extract) | Alouette_ISIS_extract：CSA 历史扫描电离图提取 | Python | 11 | 🏷️ 官方 |
 | [ionosphereAI](https://github.com/space-physics/ionosphereAI) | ionosphereAI：多源噪声数据中的电离层特征检测 | Python | 11 | 🏷️ 高校实验室 |
 | [ocbpy](https://github.com/aburrell/ocbpy) | ocbpy：极盖边界自适应磁坐标转换库 | Python | 11 | 🏷️ 个人社区 |
@@ -632,7 +632,7 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 | [psws-drf-tid-tools](https://github.com/N6RFM/psws-drf-tid-tools) | 基于 HamSCI Grape 数字 RF 记录估计 TID 传播速度与方向的 Python 流程 | Python | 4 | 🏷️ 个人社区 |
 | [SubionosphericVLFInversionAlgorithms.jl](https://github.com/fgasdia/SubionosphericVLFInversionAlgorithms.jl) | SubionosphericVLFInversionAlgorithms.jl：VLF 反演低电离层 Julia 算法 | Julia | 4 | 🏷️ 个人社区 |
 | [pytiegcm](https://github.com/asher-pembroke/pytiegcm) | pytiegcm：TIE-GCM 输出的轻量 Python 读取器 | Python | 3 | 🏷️ 个人社区 |
-| [IonOccAnalysis](https://github.com/wonder2019WHU/IonOccAnalysis) | IonOccAnalysis：GNSS 电离层掩星数据分析（武大相关） | C++ | 2 | 🏷️ 高校实验室 |
+| [IonOccAnalysis](https://github.com/wonder2019WHU/IonOccAnalysis) | IonOccAnalysis：GNSS 电离层掩星数据分析（个人仓） | C++ | 2 | 🏷️ 个人社区 |
 | [Ionosonde-Data-Downloader](https://github.com/bzossi/Ionosonde-Data-Downloader) | 自动拉取公共测高仪库数据的轻量脚本 | Python | 2 | 🏷️ 个人社区 |
 | [SbfMixer](https://github.com/septentrio-gnss/SbfMixer) | SbfMixer：Septentrio 接收机的 Node-RED 节点 | JavaScript | 2 | 🏷️ 个人社区 |
 | [HamSCI-ionosonde](https://github.com/HamSCI/hamsci_ionosonde) | HamSCI-ionosonde：低成本啁啾测高仪处理与验证 | Python | 1 | 🏷️ 高校实验室 |
@@ -669,7 +669,7 @@ pysat 提供跨平台一致的数据分析工作流，生态含空间天气指�
 Kamodo（CCMC 读者套件）把多种日地空间模式输出“函数化”，统一插值、单位换算、可视化与卫星飞越（flythrough）。对电离层目录特别有价值：支持 GITM、TIEGCM、IRI、WACCM-X、CTIPe、SWMF-IE 等，便于把物理模式电子密度接到观测对比。输入是各模式输出目录；输出是可调用的 Kamodo 对象与图。局限：依赖与内存要求不低；不同模式 reader 成熟度不一；不是从 GNSS 观测解算 TEC 的软件。
 
 #### [geospacelab](https://github.com/JouleCai/geospacelab)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：BSD-3-Clause · 星标约：48 · 宿主：github
 
@@ -697,7 +697,7 @@ SuperDARN 数据分析工作组维护的 Python 可视化库，LGPL-3.0 许可�
 SuperDARN 数据分析工作组（DAWG）维护的 Radar Software Toolkit，GPL-3.0 许可，C 语言命令行工具集并有 Zenodo DOI。负责从 rawacf 做 ACF 拟合生成 fitacf，再经网格化、球谐拟合生成全球对流图，是 SuperDARN 标准数据产品的官方处理链。文档分为 ReadTheDocs 安装教程与 API 说明两站，支持 Linux 与 macOS，Windows 暂不支持。适合需要自行重处理 SuperDARN 数据的研究者，与 pyDARN 可视化配合使用。
 
 #### [jvierine-ionosonde](https://github.com/jvierine/ionosonde)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：GPL-3.0 · 星标约：23 · 宿主：github
 
@@ -725,7 +725,7 @@ SuperDARN 数据分析工作组（DAWG）维护的 Radar Software Toolkit，GPL-
 为 pysat 生态提供空间天气指数与相关数据接口，便于把 F10.7、地磁指数等驱动接到电离层分析。输入为数据源配置；输出为统一的 pysat Instrument 对象。局限：本身不算 TEC 解算器；需与 pysat 主库配合。
 
 #### [ionosonde_volgatech](https://github.com/Vladimi-lan/ionosonde_volgatech)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：— · 星标约：13 · 宿主：github
 
@@ -900,7 +900,7 @@ space-physics 组织（Michael Hirsch 等）发布的 Python 工具集，Apache-
 小型 Python reader，方便把 TIE-GCM netCDF 读进分析脚本。适合不想上完整 Kamodo/gcmprocpy 时做快速检查。局限：功能远少于 Kamodo；维护不活跃（约 2022）；变量覆盖需自测。
 
 #### [IonOccAnalysis](https://github.com/wonder2019WHU/IonOccAnalysis)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C++ · 许可：MIT · 星标约：2 · 宿主：github
 
@@ -954,10 +954,10 @@ C++ 工具面向 GNSS 电离层掩星数据处理与分析，适合理解 LEO—
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [INX_Editor](https://github.com/1acheng/INX_Editor) | INX_Editor：跨平台 IONEX 文件编辑工具 | — | 16 | 🏷️ 个人社区 ★ |
-| [INPE-TEC-Maps-IONEX](https://github.com/Hollweg/INPE-TEC-Maps-IONEX) | INPE-TEC-Maps-IONEX：INPE TEC 图与 IONEX 生成 | Python | 15 | 🏷️ 高校实验室 ★ |
+| [INPE-TEC-Maps-IONEX](https://github.com/Hollweg/INPE-TEC-Maps-IONEX) | INPE-TEC-Maps-IONEX：INPE TEC 图与 IONEX 生成 | Python | 15 | 🏷️ 个人社区 ★ |
 | [ionex](https://github.com/gnss-lab/ionex) | ionex：Python IONEX 读入 | Python | 12 | 🏷️ 高校实验室 核心 |
 | [ionex-rs](https://github.com/nav-solutions/ionex) | ionex-rs：Rust IONEX 解析库 | Rust | 7 | 🏷️ 个人社区 核心 |
-| [IonMap](https://github.com/Jin-Whu/IonMap) | IonMap：由 IONEX 绘制电离层 TEC 地图 | Python | 4 | 🏷️ 高校实验室 |
+| [IonMap](https://github.com/Jin-Whu/IonMap) | IonMap：由 IONEX 绘制电离层 TEC 地图 | Python | 4 | 🏷️ 个人社区 |
 | [rtcm2ionex](https://github.com/d-roma/rtcm2ionex) | rtcm2ionex：RTCM VTEC 消息转 IONEX | Python | 3 | 🏷️ 个人社区 |
 | [ionex_formatter](https://github.com/gnss-lab/ionex_formatter) | gnss-lab IONEX 写出/格式化模块（与 ionex 读取库配套） | Python | 2 | 🏷️ 高校实验室 |
 | [Ionex_Parser](https://github.com/ajayraghASL/Ionex_Parser) | Ionex_Parser：读取 IONEX 返回网格 TEC 的脚本 | Jupyter Notebook | 2 | 🏷️ 个人社区 |
@@ -984,7 +984,7 @@ C++ 工具面向 GNSS 电离层掩星数据处理与分析，适合理解 LEO—
 面向 IONEX 的桌面编辑与检查，改网格、头信息或局部 TEC 值时比手改文本省事。适合产品质检与教学演示。不是 TEC 估计算法库；重建 TEC 仍需 PyTECGg/gnss-tec 等。
 
 #### [INPE-TEC-Maps-IONEX](https://github.com/Hollweg/INPE-TEC-Maps-IONEX)  
-*🏷️ 高校实验室 ★*
+*🏷️ 个人社区 ★*
 
 语言：Python · 许可：no formal licence (README: free reproduction, keep author credit) · 星标约：15 · 宿主：github
 
@@ -1005,7 +1005,7 @@ gnss-lab 出品的轻量 IONEX 读入模块，把网格 TEC 图载入 Python 便
 GeoRust/nav-solutions 生态下的 IONEX 库，强调类型安全与可嵌入 rinex-cli 一类工具链，适合已在 Rust GNSS 栈中处理格网电离层改正的人。Python 科研脚本更常直接用 gnss-lab/ionex；两者互补而非替代完整 GIM 建模，写图与球谐仍看 MosGIM2 等 GIM 工具。
 
 #### [IonMap](https://github.com/Jin-Whu/IonMap)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：— · 星标约：4 · 宿主：github
 
@@ -1124,7 +1124,7 @@ University of Warmia and Mazury（Olsztyn）承担 IGS 电离层图组合与验�
 | [SbfParser](https://github.com/septentrio-gnss/SbfParser) | SbfParser：Septentrio SBF 流/文件厂商解析器 | Cython | 12 | 🏷️ 个人社区 |
 | [saga-utils](https://github.com/perrysou/saga-utils) | 阿拉斯加闪烁极光 GPS 阵列（SAGA）数据处理与估计工具（MATLAB） | MATLAB | 10 | 🏷️ 个人社区 |
 | [gnss-scintillation-simulator_2-param](https://github.com/cu-sense-lab/gnss-scintillation-simulator_2-param) | gnss-scintillation-simulator_2-param：CU 两参数闪烁仿真 | MATLAB | 6 | 🏷️ 高校实验室 |
-| [Ionospheric-TEC-ROTI-Interactives](https://github.com/Tesfay-Tesfu/Ionospheric-TEC-ROTI-Interactives) | Ionospheric-TEC-ROTI-Interactives：交互式 TEC/ROTI 计算 | Python | 3 | 🏷️ 高校实验室 |
+| [Ionospheric-TEC-ROTI-Interactives](https://github.com/Tesfay-Tesfu/Ionospheric-TEC-ROTI-Interactives) | Ionospheric-TEC-ROTI-Interactives：交互式 TEC/ROTI 计算 | Python | 3 | 🏷️ 个人社区 |
 | [roti-gnss-ml](https://github.com/NeelayS/roti-gnss) | roti-gnss-ml：深度学习 GNSS ROTI 时序预报实验 | Python | 3 | 🏷️ 个人社区 |
 | [BiScEF](https://github.com/kartverket/BiScEF) | BiScEF：Kartverket 闪烁数据二进制交换格式实现 | Python | 2 | 🏷️ 官方 |
 | [igs-roti](https://github.com/jonathanblade/igs-roti) | igs-roti：IGS ROTI Maps 产品的 Web 可视化 | Python | 2 | 🏷️ 个人社区 |
@@ -1168,7 +1168,7 @@ Septentrio 厂商发布的 Python/Cython 解析器，把 SBF 流转成 JSON 结�
 科罗拉多大学 Sense Lab 的两参数版 GNSS 闪烁仿真，相对完整版简化相位/幅度扰动建模，便于接收机与信号处理压力测试。适合教学与算法试验。真实赤道/极区场景请结合实测 ISMR 与原版多参数仿真器对照评估。
 
 #### [Ionospheric-TEC-ROTI-Interactives](https://github.com/Tesfay-Tesfu/Ionospheric-TEC-ROTI-Interactives)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：— · 星标约：3 · 宿主：github
 
@@ -1557,29 +1557,29 @@ Oleg Zolotov 等实现的 FIRI-2018（Friedrich 等更新的低电离层经验�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [csonde-gnss-ionosphere](https://github.com/csonde/gnss) | csonde-gnss-ionosphere：RINEX 解析与格网/球谐电离层建模 | C | 10 | 🏷️ 高校实验室 |
-| [GIM_fusion_VLBI](https://github.com/arrueegg/GIM_fusion_VLBI) | GIM_fusion_VLBI：把 VLBI 信息融入全球电离层图 | Python | 1 | 🏷️ 高校实验室 |
-| [DiffIonMap](https://github.com/Jin-Whu/DiffIonMap) | IONEX 差分成图：对比分析中心或风暴扰动 | Python | 0 | 🏷️ 高校实验室 |
+| [csonde-gnss-ionosphere](https://github.com/csonde/gnss) | csonde-gnss-ionosphere：RINEX 解析与格网/球谐电离层建模 | C | 10 | 🏷️ 个人社区 |
+| [GIM_fusion_VLBI](https://github.com/arrueegg/GIM_fusion_VLBI) | GIM_fusion_VLBI：把 VLBI 信息融入全球电离层图 | Python | 1 | 🏷️ 个人社区 |
+| [DiffIonMap](https://github.com/Jin-Whu/DiffIonMap) | IONEX 差分成图：对比分析中心或风暴扰动 | Python | 0 | 🏷️ 个人社区 |
 | [Ionospheric-TEC-Kriging-Turkiye](https://github.com/skaratay/Ionospheric-TEC-Kriging-Turkiye) | Ionospheric-TEC-Kriging-Turkiye：土耳其区域 TEC 克里金/GPR | MATLAB | 0 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
 #### [csonde-gnss-ionosphere](https://github.com/csonde/gnss)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C · 许可：GPL-3.0 · 星标约：10 · 宿主：github
 
-匈牙利相关学位论文配套代码：含 RINEX 解析、格网电离层模型、球谐模型求解与 PCA 等，适合作为区域建模教学示例。局限：偏研究原型；构建与输入约定需读论文/源码；GPL。
+BME（匈牙利）学生论文配套个人代码：含 RINEX 解析、格网电离层模型、球谐模型求解与 PCA 等，适合作为区域建模教学示例。局限：偏研究原型；构建与输入约定需读论文/源码；GPL。
 
 #### [GIM_fusion_VLBI](https://github.com/arrueegg/GIM_fusion_VLBI)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：— · 星标约：1 · 宿主：github
 
 探索将 VLBI 相关信息融入 GIM 的数据同化/融合流程，拓展传统纯 GNSS GIM。局限：研究仓、星数低；输入数据与实验配置需读论文/脚本；非业务 GIM 软件。
 
 #### [DiffIonMap](https://github.com/Jin-Whu/DiffIonMap)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：— · 星标约：0 · 宿主：github
 
@@ -1598,7 +1598,7 @@ Oleg Zolotov 等实现的 FIRI-2018（Friedrich 等更新的低电离层经验�
 |---|---|---|---:|---|
 | [tec_forecast](https://github.com/mauriciodev/tec_forecast) | tec_forecast：深度学习全球 TEC 图预报示例 | Jupyter Notebook | 31 | 🏷️ 个人社区 ★ |
 | [DeepPredTEC](https://github.com/vtsuperdarn/DeepPredTEC) | DeepPredTEC：深度学习 GPS TEC 图预报 | Python | 13 | 🏷️ 高校实验室 |
-| [ED-AttConvLSTM](https://github.com/leeliangchao/ED-AttConvLSTM) | ED-AttConvLSTM：注意力 ConvLSTM 的 TEC 图预报 | Jupyter Notebook | 10 | 🏷️ 高校实验室 |
+| [ED-AttConvLSTM](https://github.com/leeliangchao/ED-AttConvLSTM) | ED-AttConvLSTM：注意力 ConvLSTM 的 TEC 图预报 | Jupyter Notebook | 10 | 🏷️ 个人社区 |
 | [Ionospheric-VTEC-Forecasting](https://github.com/ICCT-ML-in-geodesy/Ionospheric-VTEC-Forecasting) | IAG 研究组 ML 预报 VTEC 的教学示例 | Jupyter Notebook | 9 | 🏷️ 高校实验室 ★ |
 | [t-fors](https://github.com/viventriglia/t-fors) | t-fors：TID 行进式电离层扰动预报组件 | HTML | 7 | 🏷️ 个人社区 |
 | [ESA-TIO-Forecast-TEC](https://swe.ssa.esa.int/tio_tcf) | ESA TIO TEC 预报图服务（约 1 小时量级电离层预报） | data-portal | — | 🏷️ 官方 |
@@ -1620,7 +1620,7 @@ Oleg Zolotov 等实现的 FIRI-2018（Friedrich 等更新的低电离层经验�
 面向 GPS TEC 图时空预报的深度学习开源实现（SuperDARN 相关团队），可复现论文结构并作空间天气基线。适合电离层 ML 实验。工程同化与多源融合需自建；输入网格、缺失填充与评分指标要与业务 GIM 对齐后再谈业务化。
 
 #### [ED-AttConvLSTM](https://github.com/leeliangchao/ED-AttConvLSTM)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Jupyter Notebook · 许可：no licence granted (README: contact authors before reuse) · 星标约：10 · 宿主：github
 
@@ -1739,7 +1739,7 @@ SWPC 官方 HTTP 产品树，提供 geojson_2d_urt 与 netcdf_2d_urt 等目录�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [EGNOS_SDK_Core](https://github.com/EpsilonRTD/EGNOS_SDK_Core) | EGNOS_SDK_Core：EGNOS Android SDK 核心（兼容 Android 5） | Java | 5 | 🏷️ 个人社区 |
-| [EGNOSTools](https://github.com/DfAC/EGNOSTools) | EGNOSTools：EGNOS 处理支持工具（含 EMS 转换） | Python | 1 | 🏷️ 高校实验室 |
+| [EGNOSTools](https://github.com/DfAC/EGNOSTools) | EGNOSTools：EGNOS 处理支持工具（含 EMS 转换） | Python | 1 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -1751,7 +1751,7 @@ SWPC 官方 HTTP 产品树，提供 geojson_2d_urt 与 netcdf_2d_urt 等目录�
 在移动端集成 EGNOS/SBAS 改正能力的 SDK 核心，便于理解终端如何消费 SBAS 电离层格网。输入为 SDK API 与 SBAS 数据通道；输出为改正后的定位相关量。局限：偏移动集成；不是开源 EMS 全链路解析教程。
 
 #### [EGNOSTools](https://github.com/DfAC/EGNOSTools)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：GPL-3.0 · 星标约：1 · 宿主：github
 
@@ -1897,8 +1897,8 @@ UML 维护的 GIRO 门户，通向测高仪数据与 IRTAM 等实时同化产品
 | [Global-TEC-forecasting-DL](https://github.com/Laboratorio-Computacion-Cientifica/Global-TEC-forecasting-for-space-weather-application-based-on-deep-learning-techniques) | Global-TEC-forecasting-DL：全球 TEC 24h LSTM/GRU/CNN 流水线 | Python | 6 | 🏷️ 高校实验室 |
 | [IonCast-Heliolab2025](https://github.com/FrontierDevelopmentLab/2025-HL-Ionosphere) | IonCast-Heliolab2025：NASA FDL ConvLSTM/GNN/SFNO 电离层预报 | Python | 5 | 🏷️ 高校实验室 |
 | [ionopy](https://github.com/spaceml-org/ionopy) | ionopy：SpaceML Time-Fusion Transformer 电离层预报 | Python | 4 | 🏷️ 高校实验室 |
-| [IonoBench](https://github.com/Mert-chan/IonoBench) | IonoBench：全球电离层时空预报模型基准框架 | Jupyter Notebook | 2 | 🏷️ 高校实验室 |
-| [ionospheric-tec-forecasting-IISC](https://github.com/codewithavra/ionospheric-tec-forecasting) | ionospheric-tec-forecasting-IISC：单站 TEC 日前预报 | Jupyter Notebook | 0 | 🏷️ 高校实验室 |
+| [IonoBench](https://github.com/Mert-chan/IonoBench) | IonoBench：全球电离层时空预报模型基准框架 | Jupyter Notebook | 2 | 🏷️ 个人社区 |
+| [ionospheric-tec-forecasting-IISC](https://github.com/codewithavra/ionospheric-tec-forecasting) | ionospheric-tec-forecasting-IISC：单站 TEC 日前预报 | Jupyter Notebook | 0 | 🏷️ 个人社区 |
 | [SpatioTECformer](https://github.com/research1011/SpatioTECformer) | SpatioTECformer：多尺度 CNN+Transformer 的 TEC 网格预报（PyTorch） | Python | 0 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -1932,14 +1932,14 @@ Frontier Development Lab 电离层-热层孪生项目仓库，含 IonCast ConvLS
 SpaceML 维护的电离层预报代码与笔记本，强调时间融合 Transformer，被 IonCast/Heliolab 仓库引用为较新实现。适合跟深度学习 TEC/电离层序列模型。仓库与 README 均未声明许可证，使用或再分发前应先联系作者；数据与训练配置需自备。
 
 #### [IonoBench](https://github.com/Mert-chan/IonoBench)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Jupyter Notebook · 许可：MIT · 星标约：2 · 宿主：github
 
 提供对比多种时空深度学习/统计模型预报全球电离层的基准流程，便于复现论文实验。输入为历史 TEC/GIM 类数据与模型配置；输出为预报评分与对比。局限：侧重 ML 基准而非物理模式；数据准备与算力要求不低。
 
 #### [ionospheric-tec-forecasting-IISC](https://github.com/codewithavra/ionospheric-tec-forecasting)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Jupyter Notebook · 许可：MIT · 星标约：0 · 宿主：github
 
@@ -2135,12 +2135,12 @@ Victoriya Forsythe 等发布的 HF 射线工具，从电子密度剖面计算虚
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [ionotec](https://github.com/sylvathle/ionotec) | ionotec：从 RINEX 计算 TEC 的轻量 Python 库 | Python | 6 | 🏷️ 高校实验室 |
+| [ionotec](https://github.com/sylvathle/ionotec) | ionotec：从 RINEX 计算 TEC 的轻量 Python 库 | Python | 6 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [ionotec](https://github.com/sylvathle/ionotec)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：MIT · 星标约：6 · 宿主：github
 

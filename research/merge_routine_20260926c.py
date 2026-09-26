@@ -294,6 +294,11 @@ def main():
             # Never clobber non-empty enrichment with empty/missing incoming.
             incoming = finalize_new(raw)
             existing = by_url[nu]
+            # QC owns provenance/category of existing entries (batch 46):
+            # the shared rank rule would "upgrade" personal_community back to
+            # academic_lab/official and silently revert QC decisions.
+            for qc_owned in ("provenance", "category", "subcategory"):
+                incoming.pop(qc_owned, None)
             for k, v in list(incoming.items()):
                 if existing.get(k) and not v:
                     incoming[k] = existing[k]  # if old.get(k) and not new.get(k): keep old

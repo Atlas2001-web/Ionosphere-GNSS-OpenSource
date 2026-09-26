@@ -27,7 +27,7 @@ RINEX/SP3/CLK/ANTEX、RTCM/NTRIP、Hatanaka 压缩、质量检查与 IGS 产品�
 | [rtcm-rs](https://github.com/martinhakansson/rtcm-rs) | rtcm-rs：RTCM v3 编解码 Rust crate | Rust | 32 | 🏷️ 个人社区 |
 | [asv-gnss](https://github.com/asv-soft/asv-gnss) | asv-gnss：.NET 下 RTCM/NMEA 与接收机控制库 | C# | 29 | 🏷️ 个人社区 |
 | [go-gnss-rtcm](https://github.com/go-gnss/rtcm) | go-gnss/rtcm：Go 语言 RTCM 差分电文解析库 | Go | 26 | 🏷️ 个人社区 |
-| [gstream](https://github.com/Jin-Whu/gstream) | gstream：面向 GNSS 的开源数据流客户端库 | C++ | 20 | 🏷️ 高校实验室 |
+| [gstream](https://github.com/Jin-Whu/gstream) | gstream：面向 GNSS 的开源数据流客户端库 | C++ | 20 | 🏷️ 个人社区 |
 | [NTRIPcaster-python](https://github.com/Rampump/NTRIPcaster) | 轻量 Python NTRIP Caster | Python | 20 | 🏷️ 个人社区 |
 | [Caster_Project](https://github.com/KOROyo123/Caster_Project) | Libevent+Redis 跨平台 NTRIP Caster | C++ | 19 | 🏷️ 个人社区 |
 | [ntripstreams](https://github.com/stenseng/ntripstreams) | ntripstreams：Python NTRIP 客户端/读写接口 | Python | 16 | 🏷️ 个人社区 |
@@ -189,7 +189,7 @@ asv-soft 的 .NET 库，解析 RTCMv2/v3 与 NMEA，并支持经 SBF/ComNav/UBX 
 go-gnss 组织的 RTCM 解析库，便于在 Go 服务中解码差分电文。Apache-2.0；与同组织 ntrip（已收录）配套，适合云原生差分网关。消息类型覆盖以仓库测试为准，生产需补齐版本协商与错误处理。 细节以仓库或官方页面说明为准。
 
 #### [gstream](https://github.com/Jin-Whu/gstream)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C++ · 许可：MIT · 星标约：20 · 宿主：github
 
@@ -451,7 +451,7 @@ Anubis 免费档下载入口，提供 Linux 预编译与 GPL-3 源码，覆盖�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [hatanaka](https://github.com/valgur/hatanaka) | hatanaka：Python 调用的 RINEX Hatanaka 压缩 | C | 26 | 🏷️ 个人社区 |
-| [crz2rnx](https://github.com/zhufengGNSS/crz2rnx) | crz2rnx：Hatanaka RNX2CRX/CRX2RNX 程序整理 | C | 9 | 🏷️ 高校实验室 |
+| [crz2rnx](https://github.com/zhufengGNSS/crz2rnx) | crz2rnx：Hatanaka RNX2CRX/CRX2RNX 程序整理 | C | 9 | 🏷️ 个人社区 |
 | [crx2rnx](https://github.com/nav-solutions/crx2rnx) | crx2rnx：Rust 实现的 CRX→RNX 命令行工具 | Rust | 8 | 🏷️ 个人社区 |
 | [RNXCMP](https://terras.gsi.go.jp/ja/crx2rnx.html) | 日本地理院官方 Hatanaka/CompactRINEX 压缩与恢复工具 | C | — | 🏷️ 官方 核心 |
 | [RNXCMP-LICENSE](https://terras.gsi.go.jp/ja/crx2rnx/LICENSE.txt) | RNXCMP-LICENSE：GSI RNXCMP 许可证原文（须引 Hatanaka 2008） | text | — | 🏷️ 官方 |
@@ -466,7 +466,7 @@ Anubis 免费档下载入口，提供 Linux 预编译与 GPL-3 源码，覆盖�
 把 Hatanaka（RNXCMP）压缩解压接到 Python，方便批量解 CRX。适合 IGS 数据湖前处理。算法权威来源仍是 GSI RNXCMP；本仓库是便利封装。
 
 #### [crz2rnx](https://github.com/zhufengGNSS/crz2rnx)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：C · 许可：GSI RNXCMP licence (no source modification without GSI consent; AS-IS free redistribution) · 星标约：9 · 宿主：github
 
@@ -498,7 +498,7 @@ GSI 公布的 RNXCMP 许可文本，基于地理院网站条款并要求修改�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [cycle-slip-correction](https://github.com/embrace-inpe/cycle-slip-correction) | cycle-slip-correction：周跳探测改正命令行工具 | Python | 14 | 🏷️ 官方 |
-| [DRCycleSlip](https://github.com/Jin-Whu/DRCycleSlip) | DRCycleSlip：GNSS 周跳探测与修复 Python 实现 | Python | 4 | 🏷️ 高校实验室 |
+| [DRCycleSlip](https://github.com/Jin-Whu/DRCycleSlip) | DRCycleSlip：GNSS 周跳探测与修复 Python 实现 | Python | 4 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -510,7 +510,7 @@ GSI 公布的 RNXCMP 许可文本，基于地理院网站条款并要求修改�
 命令行分析并尝试改正周跳，常用于低纬电离层活跃区前处理。适合接入自建流水线前试验。与定位引擎内置周跳策略可能不一致，标志含义需统一。
 
 #### [DRCycleSlip](https://github.com/Jin-Whu/DRCycleSlip)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：— · 星标约：4 · 宿主：github
 
@@ -770,7 +770,7 @@ Leibniz Universität Hannover 地球测量研究所开源工具，量化 GNSS �
 | [GNSS_Multipath_Analysis_Software](https://github.com/paarnes/GNSS_Multipath_Analysis_Software) | GNSS-MP：观测多路径分析软件 | Python | 141 | 🏷️ 个人社区 核心 |
 | [MAPS](https://github.com/GCCLib/MAPS) | MAPS：MATLAB GNSS 多路径分析与处理 | MATLAB | 35 | 🏷️ 高校实验室 |
 | [gnss-multipath-detector](https://github.com/EvgeniiMunin/gnss-multipath-detector) | gnss-multipath-detector：L1 C/A 多路径 ML 探测 notebook | Jupyter Notebook | 28 | 🏷️ 个人社区 |
-| [PyRINEX](https://github.com/geumjin99/PyRINEX) | PyRINEX：多用途 Python RINEX 读写与质量分析 | Python | 16 | 🏷️ 高校实验室 |
+| [PyRINEX](https://github.com/geumjin99/PyRINEX) | PyRINEX：多用途 Python RINEX 读写与质量分析 | Python | 16 | 🏷️ 个人社区 |
 | [geoveil-mp](https://github.com/miluta7/geoveil-mp) | geoveil-mp：Rust/Python 的 RINEX 多路径 MP 与周跳质控库 | Rust | 0 | 🏷️ 个人社区 |
 
 ### 详细说明
@@ -797,7 +797,7 @@ MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实�
 用机器学习探测 GPS L1 C/A 多路径异常，以研究 notebook 为主。适合探索 ML+GNSS 质控思路。生产嵌入与实时门控需重做工程化。
 
 #### [PyRINEX](https://github.com/geumjin99/PyRINEX)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：Apache-2.0 · 星标约：16 · 宿主：github
 

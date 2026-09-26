@@ -2,7 +2,7 @@
   {
     "name": "AeroRust nmea",
     "url": "https://github.com/AeroRust/nmea",
-    "desc_zh": "AeroRust 社区维护的 Rust NMEA 0183 语句解析 crate（no_std 友好，按特性裁剪）",
+    "desc_zh": "cargo 引入即可解析 GGA/RMC/GSV 等语句，嵌入式 no_std 也能用",
     "category": "gnss-data",
     "subcategory": "基础库",
     "provenance": "personal_community",
@@ -22,11 +22,11 @@
   {
     "name": "novatel_edie",
     "url": "https://github.com/novatel/novatel_edie",
-    "desc_zh": "NovAtel 官方 EDIE 编解码 SDK：OEM7 接收机日志/命令的 C++ 与 Python 解析与格式转换",
+    "desc_zh": "离线解码、过滤、互转 OEM7 ASCII/二进制日志时用，另有 Python 包",
     "category": "gnss-data",
     "subcategory": "接收机驱动",
-    "provenance": "official",
-    "analysis_zh": "NovAtel（Hexagon）官方发布的 Encode Decode Interface Engine SDK，MIT 许可，C++ 实现并提供 Python 包。可对 OEM7 接收机的 ASCII、二进制与简化 ASCII 日志进行帧识别、解码与互相转换，基于官方消息定义数据库，适合编写离线解析、日志过滤、格式转换与数据回放工具。构建使用 CMake 预设并支持 Conan 管理依赖。与已收录的 novatel_oem7_driver（ROS 驱动）互补：后者面向机器人实时接入，EDIE 更适合底层解码与数据处理。近期仍活跃更新。",
+    "provenance": "personal_community",
+    "analysis_zh": "NovAtel（Hexagon）厂商发布的 Encode Decode Interface Engine SDK，MIT 许可，C++ 实现并提供 Python 包。可对 OEM7 接收机的 ASCII、二进制与简化 ASCII 日志进行帧识别、解码与互相转换，基于厂商消息定义数据库，适合编写离线解析、日志过滤、格式转换与数据回放工具。构建使用 CMake 预设并支持 Conan 管理依赖。与已收录的 novatel_oem7_driver（ROS 驱动）互补：后者面向机器人实时接入，EDIE 更适合底层解码与数据处理。近期仍活跃更新。",
     "language": "C++",
     "license": "MIT",
     "markers": [
@@ -37,16 +37,16 @@
     "featured": false,
     "user_relation": "none",
     "host": "github",
-    "one_liner_zh": "NovAtel 官方 EDIE 编解码 SDK：OEM7 接收机日志/命令的 C++ 与 Python 解析与格式转换"
+    "one_liner_zh": "NovAtel 厂商发布的 EDIE 编解码 SDK：OEM7 接收机日志/命令的 C++ 与 Python 解析与格式转换"
   },
   {
     "name": "trimble_driver_ros",
     "url": "https://github.com/trimble-oss/trimble_driver_ros",
-    "desc_zh": "Trimble 官方开源 ROS/ROS 2 驱动：解析 GSOF 输出并发布标准与自定义话题",
+    "desc_zh": "把 Trimble/Applanix 组合导航接入 ROS 2，输出 NavSatFix 与里程计",
     "category": "navigation-ins",
     "subcategory": "ROS驱动",
-    "provenance": "official",
-    "analysis_zh": "Trimble 官方 trimble-oss 组织发布的 ROS 2 软件包，BSD-2-Clause 许可，C++ 实现。解析 Trimble General Serial Output Format（GSOF）的一个子集，可选发布 sensor_msgs/NavSatFix 与 nav_msgs/Odometry 等标准消息（以 GSOF49 首个位置或 set_origin 服务设定的原点构建局部切平面），同时提供专用 GSOF 话题；主要在 Applanix 组合导航产品上测试。适合在自动驾驶、移动测绘平台中接入 Trimble/Applanix 定位定姿系统。README 详列节点参数、话题与服务。",
+    "provenance": "personal_community",
+    "analysis_zh": "Trimble 公司 trimble-oss 组织发布的 ROS 2 软件包，BSD-2-Clause 许可，C++ 实现。解析 Trimble General Serial Output Format（GSOF）的一个子集，可选发布 sensor_msgs/NavSatFix 与 nav_msgs/Odometry 等标准消息（以 GSOF49 首个位置或 set_origin 服务设定的原点构建局部切平面），同时提供专用 GSOF 话题；主要在 Applanix 组合导航产品上测试。适合在自动驾驶、移动测绘平台中接入 Trimble/Applanix 定位定姿系统。README 详列节点参数、话题与服务。",
     "language": "C++",
     "license": "BSD-2-Clause",
     "markers": [
@@ -57,12 +57,12 @@
     "featured": false,
     "user_relation": "none",
     "host": "github",
-    "one_liner_zh": "Trimble 官方开源 ROS/ROS 2 驱动：解析 GSOF 输出并发布标准与自定义话题"
+    "one_liner_zh": "Trimble 厂商开源 ROS/ROS 2 驱动：解析 GSOF 输出并发布标准与自定义话题"
   },
   {
     "name": "trimble-gsof-wireshark",
-    "url": "https://github.com/ryanf55/trimble-gsof-wireshark",
-    "desc_zh": "Wireshark 的 Trimble GSOF 协议解析插件（Lua）",
+    "url": "https://github.com/Ryanf55/trimble-gsof-wireshark",
+    "desc_zh": "单个 Lua 文件，在 Wireshark 里逐字段查看 GSOF UDP 报文",
     "category": "gnss-data",
     "subcategory": "接收机驱动",
     "provenance": "personal_community",
@@ -82,7 +82,7 @@
   {
     "name": "SparkFun Unicore GNSS Arduino Library",
     "url": "https://github.com/sparkfun/SparkFun_Unicore_GNSS_Arduino_Library",
-    "desc_zh": "SparkFun 面向和芯星通 UM980 等三频 RTK 模块的 Arduino 驱动库",
+    "desc_zh": "Arduino 上配置 UM980 输出、读定位结果，搭 RTK 基准站/流动站",
     "category": "mobile-apps",
     "subcategory": "嵌入式",
     "provenance": "personal_community",
@@ -101,11 +101,11 @@
   },
   {
     "name": "smartphone-gnss-booster",
-    "url": "https://github.com/taroz/smartphone-gnss-booster",
-    "desc_zh": "Taro Suzuki 的开源硬件+App 方案：让普通安卓手机实现实时厘米级 RTK",
+    "url": "https://github.com/taroz/Smartphone-GNSS-Booster",
+    "desc_zh": "外接天线再辐射板 + RTCM 推流 App，手机原始观测上云做 RTK",
     "category": "mobile-apps",
     "subcategory": "原始测量",
-    "provenance": "academic_lab",
+    "provenance": "personal_community",
     "analysis_zh": "千叶工业大学 Taro Suzuki（gtsam_gnss、GSDC2023 等项目作者）开源的软硬件方案，MIT 许可。gnss-booster 是贴在手机背面的再辐射板（KiCad 工程含原理图、Gerber 与 BOM），把外接有源天线信号经 L1/L5 贴片天线耦合进手机内置天线，由无线充电线圈供电，显著提升 C/N0；android-rtcm-streamer 是 Kotlin+RTKLIB JNI 的 App，把原始观测转成 RTCM3 MSM7 推送到云端 rtkrcv 并回显 FIX 解，也可记录 RINEX。2026 年 9 月新建，更新频繁。",
     "language": "C",
     "license": "MIT",
@@ -121,8 +121,8 @@
   },
   {
     "name": "um982-driver",
-    "url": "https://github.com/sunshineharry/um982driver",
-    "desc_zh": "和芯星通 UM982/UM980 扩展语句（PVTSLN/BESTNAV/GNHPR）Python 驱动",
+    "url": "https://github.com/sunshineharry/UM982Driver",
+    "desc_zh": "pip 安装，读取 UM982 双天线航向、速度与 RTK 状态",
     "category": "gnss-data",
     "subcategory": "接收机驱动",
     "provenance": "personal_community",
@@ -141,8 +141,8 @@
   },
   {
     "name": "UnicoreDriver",
-    "url": "https://github.com/zltan-whu/unicoredriver",
-    "desc_zh": "基于官方协议实现的和芯星通 UM982/UM980 ROS 驱动（C++）",
+    "url": "https://github.com/zltan-whu/UnicoreDriver",
+    "desc_zh": "ROS Noetic 下读 BESTNAVXYZB 发布 Odometry，支持多台接收机",
     "category": "navigation-ins",
     "subcategory": "ROS驱动",
     "provenance": "personal_community",
@@ -162,7 +162,7 @@
   {
     "name": "um980-rtklib-pipeline",
     "url": "https://github.com/holubp/um980-rtklib-pipeline",
-    "desc_zh": "UM980 混合串口日志拆分与 RTKLIB 后处理（PPK）Python 流水线",
+    "desc_zh": "把 UM980 混杂日志拆成 NMEA/RINEX，再调 rnx2rtkp 做 PPK",
     "category": "gnss-data",
     "subcategory": "RINEX转换",
     "provenance": "personal_community",
@@ -181,8 +181,8 @@
   },
   {
     "name": "BDS-RawScope",
-    "url": "https://github.com/sinyl-labs/bds-rawscope",
-    "desc_zh": "零依赖安卓 GNSS 原始观测分析 App：天空图、RINEX 导出与 WLS/RAIM/卡尔曼定位",
+    "url": "https://github.com/sinyl-labs/BDS-RawScope",
+    "desc_zh": "安卓手机上看原始观测与天空图，导出 RINEX 交给 RTKLIB",
     "category": "mobile-apps",
     "subcategory": "Android",
     "provenance": "personal_community",

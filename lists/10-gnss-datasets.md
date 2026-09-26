@@ -7,12 +7,12 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [awsgnssroutils](https://github.com/gnss-ro/aws-opendata) | awsgnssroutils：AWS 开放数据 GNSS 掩星查询下载 | Python | 21 | 🏷️ 高校实验室 |
+| [awsgnssroutils](https://github.com/gnss-ro/aws-opendata) | awsgnssroutils：AWS 开放数据 GNSS 掩星查询下载 | Python | 21 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [awsgnssroutils](https://github.com/gnss-ro/aws-opendata)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：Python · 许可：BSD-3-Clause · 星标约：21 · 宿主：github
 
@@ -22,12 +22,12 @@
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [BDS-3-PPP-B2b-DATA](https://github.com/zp-9696/BDS-3-PPP-B2b-DATA) | BDS-3-PPP-B2b-DATA：公开一周 BDS-3 PPP-B2b 试验数据 | — | 10 | 🏷️ 高校实验室 |
+| [BDS-3-PPP-B2b-DATA](https://github.com/zp-9696/BDS-3-PPP-B2b-DATA) | BDS-3-PPP-B2b-DATA：公开一周 BDS-3 PPP-B2b 试验数据 | — | 10 | 🏷️ 个人社区 |
 
 ### 详细说明
 
 #### [BDS-3-PPP-B2b-DATA](https://github.com/zp-9696/BDS-3-PPP-B2b-DATA)  
-*🏷️ 高校实验室*
+*🏷️ 个人社区*
 
 语言：— · 许可：— · 星标约：10 · 宿主：github
 
