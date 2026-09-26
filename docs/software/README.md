@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **204 篇**操作手册（合计 **45210 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **206 篇**操作手册（合计 **45617 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -229,6 +229,8 @@
 | 202 | [spinifex.md](./spinifex.md) | ASTRON/CSIRO（RMextract 后继）：IONEX GIM 插值（日固旋转、跨午夜去跳）+ IGRF-14（ppigrf）视线投影 → 射电视线 STEC 与电离层法拉第 RM；可选 PyIRI 剖面（`ionex_iri`）/ UPC tomion；CLI 只管 MS→H5Parm 与 FITS | 249 | **已短硬** · 2026-09-26 03:38–03:45 EDT；PyPI **2.0**=`v2.0` `3788d3d`/main `e2ca48c`/Apache-2.0；LOFAR 核心→Cas A 2024-08-22 CODE：RM 0.83–1.79 rad/m²，UQRG 差 ≤0.17；关旋转时 VTEC 与自写插值 max 差 0.000，开旋转 ≤0.55 TECU；`ionex_iri` 低仰角 RM −18%；代码默认 chapman/uqr（文档写 cddis/cod），单层 `height` 参数无效 · **质检复跑通过**（03:43–03:47 EDT；CODE/UQRG 8 行表、check_vtec（rot=0 实测最大差 2.9e−10）、ionex_iri 表、坑 1/4/5/6/8/9 逐位复现；只把 §8 耗时改为 2–5 s） |
 | 203 | [rt-navi.md](./rt-navi.md) | nav-solutions Rust 实时导航 PoC：u-blox 串口读 RXM-RAWX 伪距 + RXM-SFRBX GPS 星历 → gnss-rtk（rev `5eb681c`）逐历元 PVT，只打日志；≠ 文件回放工具 / RINEX 转换 / RTK | 212 | **已短硬** · 2026-09-26 03:32–03:50 EDT；crates **0.0.1** 存根/main `ca95fb8`（0.0.2 未发版）/MPL-2.0/★12；socat 伪串口回放 rtkexplorer F9P `rover.ubx`：上游 0 解（默认 CPP + 全标 L1）；补丁 SPP+仅 L1 后 173/400 解、3D 中位 14.246 m；pyubx2 伪距逐值 max|Δ|=0（但 4916/7655 实为 L2/E5b/B2）；CFG-RATE 10 s、CFG-VALSET 未发、8E1；写端断开日志洪水；**未在真接收机测试** |
 | 204 | [meridian-data.md](./meridian-data.md) | 子午工程数据中心访问侧（无账号实测）：/sjj/ DOI 总表解析（1161 DOI、97 站、54 类设备、CSTR=14804.11.+DOI 后缀）、DOI→NSSDC vsso 落地页 + getDetail 元数据、dcstatus SPA 公开接口（检索/详情/文件名清单/格式说明 PDF）与 401 接口、SSO/注册/离线申请流程（仅公开页面）、2026-06-22 致谢与成果报送政策原文；≠ 登录后下载（未测）/ CMONOC | 233 | **已短硬** · 2026-09-26 03:42–04:00 EDT；未注册、未提交任何表单；DOI 302→vsso.nssdc.ac.cn（RA ISTIC）；抽样 47 个元数据全为 CC BY-NC-ND 4.0，9 个占位；SPA 1147 数据集，文件清单公开（测高仪 id 21226 共 615,918 个文件，5 min 产品延迟约 15 min），下载接口 body code 401；官方格式说明：RINEX 3.03 .ORN / S4 定宽 TXT / ISR HDF5 |
+| 205 | [pyrayhf.md](./pyrayhf.md) | NRL 纯 Python HF 射线追踪（无需 PHaRLAP）：PyIRI+IGRF 一维/二维剖面 → Appleton–Hartree O/X 模，平地/球面 × 分层 Snell/梯度四种追踪器 → 落地距离、路径长度、群时延；`vertical_forward_operator` 算垂测虚高 h′(f)；lmfit 反演剖面；≠ 3-D/吸收/多跳 | 199 | **已短硬** · 2026-09-26 03:44–03:50 EDT；PyPI **0.1.0**（Alpha）/main `8fef3ac`/MIT（classifier 误写 BSD）/PyIRI 0.1.7；上游 pytest 35 passed；PyIRI 2020-04-01 12UT 20N/10E F10.7=100：foF2 12.510 MHz/hmF2 365 km（与 pyiri.md 一致）；O h′ 10 MHz=389.0 km；14 MHz O 30° 落地 978.2 km、c·τ 1176.0 km；跳距 14 MHz≈656 km、21 MHz≈1550 km；`group_path_km` 实为几何长度、穿透时缺 `z_apex_km` 键、≥86° 近垂直 NaN |
+| 206 | [sami2py.md](./sami2py.md) | SAMI2 低纬电离层物理模式 Python 驱动：gfortran 编 `sami2py.x`，F10.7/ap + EUVAC + NRLMSISE-00 + HWM-14 + Fejer–Scherliess E×B（或傅里叶漂移）→ 磁子午面 101×98 场向网格 7 离子 Ne/Ti/Te/vsi → xarray；≠ SAMI3（3-D）/ 泡 / TID | 208 | **已短硬** · 2026-09-26 03:47–04:00 EDT；tag **v0.3.0**=`c6d3c5b`/不在 PyPI/BSD-3；上游 pytest 47 passed；2014 DOY080 lon −75 F10.7=150，48 h（24 h 预热）单核 598.6 s、95 MB；磁赤道地理 −11.92°；SLT 14 vTEC(100–2000 km) 赤道 71.4 / 北峰 83.6 / 南峰 81.1 TECU、SLT 20 赤道 41.3；1500 km H⁺ 57%；非 git 安装归档时 `git rev-parse` 必崩、`Ions Used` 漏 N⁺、`deni` 单位 N/cc |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -294,6 +296,8 @@
 | IRI-2012/2016 气候态（Python 包装） | [pyglow.md](./pyglow.md) |
 | IRI-2016 官方驱动 → xarray | [iri2016.md](./iri2016.md) |
 | 纯 Python IRI（无 Fortran） | [pyiri.md](./pyiri.md) |
+| HF 短波射线追踪：落地距离 / 跳距 / 群时延 / 垂测虚高（纯 Python，O/X 模） | [pyrayhf.md](./pyrayhf.md) |
+| 低纬物理模式：自己跑出赤道喷泉 / EIA 双峰（SAMI2，gfortran） | [sami2py.md](./sami2py.md) |
 | 官方 IRI Fortran 金标准（IRI-2026 本机） | [iri-fortran.md](./iri-fortran.md) |
 | 官方 IRI-2026 zip 清单 / checksum | [iri-2026-package.md](./iri-2026-package.md) |
 | IRI 公共 CCIR/URSI 系数（≤2016 外置） | [iri-common-files.md](./iri-common-files.md) |
@@ -478,6 +482,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
+最近新增（用法讲解）：**pyrayhf**+**sami2py**（[pyrayhf.md](./pyrayhf.md) / [sami2py.md](./sami2py.md)；2026-09-26 03:44–04:00 EDT；PyRayHF PyPI **0.1.0**/`8fef3ac`/MIT：PyIRI 剖面 foF2 12.510 MHz/hmF2 365 km，O h′(10 MHz)=389.0 km，14 MHz 跳距≈656 km、21 MHz≈1550 km，射线图 `img/pyrayhf-rays-14mhz-20200401.png`；sami2py **v0.3.0**/`c6d3c5b`/BSD-3 源码+gfortran 14.2：2014 DOY080 lon −75 48 h 598.6 s，SLT 14 EIA 双峰 83.6/81.1 TECU vs 磁赤道 71.4，图 `img/sami2py-eia-2014doy080-lon-75.png`；坑：`group_path_km` 是几何长度、sami2py 非 git 安装归档崩）。
 最近新增（用法讲解）：**rt-navi**（[rt-navi.md](./rt-navi.md)；2026-09-26 03:32–03:50 EDT；crates **0.0.1**（存根）/main `ca95fb8`/MPL-2.0/★12；socat 伪串口回放 rtkexplorer F9P 2020-12-24 `rover.ubx`：上游原样 200/200 `pre-fit` 失败 0 解；本地补丁 SPP 173/400 解 3D 中位 16.102 m，+只留 sigId 0 后 14.246 m（F9P GGA 1.281 m）；pyubx2 候选数 200/200、伪距 max|Δ|=0 但 4916 个为非 L1 信号（max 73.046 m）、LNAV 子帧 52/59/60 + 49 个 L2C 伪子帧；不存在/非 tty/二次打开 panic，垃圾静默，写端断开日志洪水；下一优先 gps_pvt（新候选），go-gnss-spartn（2020 起未维护）保留）。
 最近新增（用法讲解）：**ionotec**+**spinifex**（[ionotec.md](./ionotec.md) / [spinifex.md](./spinifex.md)；2026-09-26 03:31–03:45 EDT；ionotec PyPI 0.0.15/MIT：BKG WTZA 2024-235 → 13221 行 VTEC，对 CODE GIM −1.69±2.79 TECU，查出码 STEC 用 P2−C1 只扣 C1W−C2W（相关 −0.92），改 P2−P1 后离散 1.38；spinifex 2.0/Apache-2.0：LOFAR 核心→Cas A CODE/UQRG 两套 RM，自写 IONEX 插值核对 0.000 TECU，`ionex_iri` 低仰角 −18%；CDDIS 不可达时预放 AIUB 文件跳过下载）。
 最近新增（质检）：**doris-rinex+madrigal 质检复跑通过**（2026-09-26 03:28–03:35 EDT；doris 529/11980/F_zero=1198/D99=528；madrigal TEC 13257658/tec=32.0/isprint 45.06/PFISR popl 11.937；未改 pydarn/titipy/sidereon）。
@@ -663,6 +668,8 @@ data-access
    ├─ iri-fortran (官方 IRI-2026 Fortran；fort.7)
    ├─ iri-2026-package / iri-common-files (发行物清单 / 公共系数)
    ├─ pyiri / pyirtam (纯 Python IRI / IRTAM)
+   ├─ pyrayhf (剖面→HF 射线：落地距离/群时延/虚高；O/X；2-D 单跳)
+   ├─ sami2py (SAMI2 物理模式→低纬 Ne/EIA；gfortran；≠ SAMI3)
    ├─ nequick2-ictp (ICTP NeQuick 2 申请页；≠ nequickg)
    ├─ galileo-nequick-g (GSC 官方 NeQuick-G C；登记墙；≠ nequickg)
    ├─ apexpy (Apex/QD/MLT 磁坐标)
@@ -721,8 +728,8 @@ saga-utils：高速 I/Q 闪烁算法旁路（源码参考；S4 为幅度版≈�
 | 02 / 16 | georinex · rinex · gnsspy · gnsstools · gnsstk · teqc · rinexmod · hatanaka · crx2rnx · rinex-cli · gnss-tec · pytecgg · tec-suite · ionotec |
 | 03 / 10 / 18 | ionex · ionex-gim · ionex-rs · diffionmap · sh-gim(边界) · pyglow · mosgim2 · spinifex |
 | 04 | iri-fortran · iri-2026-package · iri-common-files · iri2016 · pyglow · pyiri · pyirtam · apexpy · aacgmv2 · msise00 · nequickg · galileo-nequick-g · nequick2-ictp · kamodo |
-| 05 / 13 / 21 | oasis-roti · ionomoni · iono-scintillation · saga-utils · geospacelab |
-| 22 | gnss-tec · pytecgg · oasis-roti · lstid-processing · hamsci-lstid-detection |
+| 05 / 13 / 21 | oasis-roti · ionomoni · iono-scintillation · saga-utils · geospacelab · sami2py |
+| 22 | gnss-tec · pytecgg · oasis-roti · lstid-processing · hamsci-lstid-detection · pyrayhf |
 | 06 / 20 | cssrlib · haslib · madocalib · qzsl6tool · laika · gnss_lib_py · pyrtklib · pyrtklib-demo5 · pyrtklib-rinex · ppp-rtklib · learning-rtklib · mrtklib · rtklib-explorer · rtklib-b2b · android_rinex · gps-measurement-tools · pygpsclient · pynmeagps · pyubx2 · ubx2rinex · pyrtcm · pyspartn · pysbf2 · septentrio-gnss-driver · ublox-dgnss · ublox-driver · ntripstreams · ntrip-client · ntripclient · ntripserver · cors-relay · ntripcaster-libev · ntrip-cpp · ntrip-go · caster · glab-upc · rtklib · great-pvt · groops · rapppid · ppp-wizard · gogps-matlab · gsilib · rtppp-b2b · pride-pppar · ionomoni · gnss-sdr · pocketsdr · gps-sdr-sim · fgi-gsrx · gnssrefl · mpsim |
 | 09 | pytecgg |
 
