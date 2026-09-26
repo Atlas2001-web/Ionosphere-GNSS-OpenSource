@@ -22,7 +22,7 @@
 | 地磁 / 空间天气 | [Kyoto WDC](https://wdc.kugi.kyoto-u.ac.jp/) · [INTERMAGNET](https://intermagnet.org/) · [SuperMAG](https://supermag.jhuapl.edu/) · [GFZ Kp](https://kp.gfz.de/en/) · [SWPC](https://www.spaceweather.gov/) · [OMNI/CDAWeb HAPI](https://cdaweb.gsfc.nasa.gov/hapi) · 台站分钟 / 秒值：USGS · BGS · NRCan · THEMIS GMAG · MACCS · TGO → [决策表](#电离层与地磁门户决策表) | 开放 / 注册 |
 | 区域 TEC 现报 | [eSWua TEC](http://www.eswua.ingv.it/ewphp/landing.php?doi=tec) · [IONORING](http://ionos.ingv.it/ionoring/ionoring.htm) | 开放（CC BY） |
 | 闪烁 ISMR | [`ismr_downloader`](https://github.com/GEGE-UNESP/ismr_downloader)（主）· [Query Tool](https://ismrquerytool.fct.unesp.br/)（辅，常超时） | 网页注册 |
-| 测高仪 | [GIRO / DIDBase](https://giro.uml.edu/didbase/) · [RAL / UKSSDC](https://www.ukssdc.ac.uk/ionosondes/) | 网页注册 |
+| 测高仪 | [GIRO / DIDBase](https://giro.uml.edu/didbase/) · [RAL / UKSSDC](https://www.ukssdc.ac.uk/ionosondes/) | GIRO 特征参数匿名（[E23](#dp-e23)），SAO 数值库要邮件申请账号；RAL 网页注册 |
 | ISR / SuperDARN / 区域台链 | [CEDAR Madrigal](https://cedar.openmadrigal.org/) · [EISCAT](https://portal.eiscat.se/) · [SRI AMISR](https://data.amisr.com/database/) · [FRDR SuperDARN](https://www.frdr-dfdr.ca/repo/collection/superdarn) · [子午工程](https://www.meridianproject.ac.cn/) · [PITHIA 编目](https://esc.pithia.eu/) → [决策表](#电离层与地磁门户决策表) | Madrigal / FRDR 开放；EISCAT 门户、子午工程须登录 |
 | 电离层–热层卫星（ICON / GOLD） | [SPDF ICON](https://spdf.gsfc.nasa.gov/pub/data/icon/) · [SPDF GOLD](https://spdf.gsfc.nasa.gov/pub/data/gold/) · [CDAWeb](https://cdaweb.gsfc.nasa.gov/) CDAS REST · [GOLD SOC](https://gold.cs.ucf.edu/data/search/)（[决策表 E21–E22](#dp-e21) · [icon-gold-data](./software/icon-gold-data.md)） | 开放（CDAWeb HAPI 不含这两个任务） |
 | 对流层格网 | [VMF](https://vmf.geo.tuwien.ac.at/) → `trop_products/` | 多开放 |
@@ -430,7 +430,7 @@ curl -L -C - -O \
 
 ## 电离层与地磁门户决策表
 
-第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
+第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD），以及地基与 LEO 电离层观测（E23 GIRO / DIDBase 测高仪）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
 
 | 门户 | 账号 / 门槛 | 格式 | 时间分辨率 · 时延 | 实测 |
 |---|---|---|---|:---:|
@@ -456,6 +456,7 @@ curl -L -C - -O \
 | [AWS gnss-ro-data](https://gnss-ro-data.s3.amazonaws.com/index.html) | 开放，S3 ListObjectsV2 匿名 | 每次掩星一个 netCDF（v1.1 `.nc` / v2.0 `.nc4`） | COSMIC-2 只有 calibratedPhase / refractivityRetrieval / atmosphericRetrieval（v2.0 名为 `gnssro_cosmic2_ucar_{l1b,l2a,l2b}`，按 年/月/日）；**没有 ionPrf / podTc2** | 中性大气 ✅；电离层 ✗（[E20](#dp-e20)） |
 | [ICON（SPDF / CDAWeb）](https://spdf.gsfc.nasa.gov/pub/data/icon/) | 开放；SPDF HTTPS 匿名，CDAS REST 匿名；**CDAWeb HAPI 没有 ICON**（`info?id=ICON_L2-7_IVM-A` → 1406 / HTTP 400） | netCDF-4 日文件（SPDF，文件名已改小写 + `yyyymmdd`）；CDAS REST 子集为 CDF | 2019-11～2022-11-25（失联，任务已结束）；L2 仍在重处理（IVM v08r002、MIGHTI v06、FUV v07，SPDF 时间戳 2025–2026）；日文件 0.8 MB（FUV day）～95 MB（FUV night），IVM 约 50 MB | ✅（[E21](#dp-e21) · [icon-gold-data](./software/icon-gold-data.md)） |
 | [GOLD（SPDF / SOC / CDAWeb）](https://spdf.gsfc.nasa.gov/pub/data/gold/) | 开放；SOC 下载页是网页表单出 tar（单次上限 L1C DAY 15 天、L2 366 天）；CDAWeb 只有 L2 ON2 / NMAX / O2DEN / TDISK，**HAPI 没有 GOLD** | netCDF-4；L2 按日（0.16–4.7 MB），L1C 按扫描（2024/132：95 个文件约 2.85 GB） | 2018-10-05 起；SPDF / SOC / CDAWeb 最新都是 2026-07-05（09-26 查询，约 83 天时延）；NMAX v05、ON2 v04 r02、TDISK v05 r03；质量看 `<var>_dqi == 0`（NMAX 有限值里 60 % 带 LBH 污染位） | ✅（[E22](#dp-e22)） |
+| [GIRO / DIDBase 测高仪](https://giro.uml.edu/didbase/scaled.php) | 特征参数**匿名**：`lgdc.uml.edu/fastchar/getbest`（旧 `common/DIDBGetValues` **404**）；站表 `ionoweb/locations` 匿名；数值 SAO 只能用 SAO Explorer（Java）+ DIDBase 只读账号（邮件向 Bodo Reinisch 申请）；CC BY-NC-SA 4.0，须致谢站点 | 纯文本表（每行 UTC 时间 + CS + 值/QD 字母）；IonoWeb JSON 列表 + PNG 电离图；SAO 4.2/4.3/5.0 | 131 站；多数 5–15 min 一张；CS 0–100 = ARTIST 自动判读置信度，999 = 人工，-1 = 未知；站表里有 ≠ 当天有数据 | ✅（[E23](#dp-e23)，[手册](./software/giro-ionosonde.md)） |
 
 要登录才能拿数据的：EISCAT 门户（Madrigal 可绕行）、子午工程、ROM SAF 产品库（AWS 可绕行）、TGO ASCII、UKSSDC/RAL。要「申请」的：BGS 本站高分辨率（GIN 可绕行）。
 
@@ -678,6 +679,20 @@ curl -s "https://spdf.gsfc.nasa.gov/pub/data/gold/level2/on2/2026/" | grep -o 'g
 curl -s "https://cdaweb.gsfc.nasa.gov/hapi/info?id=GOLD_L2_NMAX"      # 1406 / HTTP 400
 ```
 
+<a id="dp-e23"></a>**E23 GIRO / DIDBase 测高仪（fastchar + IonoWeb）**
+
+```bash
+curl -s "https://lgdc.uml.edu/fastchar/getbest?ursiCode=WP937&charName=foF2,hmF2,MUF(D)&DMUF=3000&fromDate=2024%2F05%2F01+00%3A00%3A00&toDate=2024%2F05%2F14+00%3A00%3A00" -o wp.txt
+# 实测：200，201,145 B，~1 s，text/plain ISO-8859-1；3391 行；CS 100/70/0/50/75 = 2715/419/150/88/19
+# 行格式：2024-05-01T00:00:09.000Z 100 10.500 //  288.7 // 33.095 //   （CS 列自动加；缺值 ---）
+curl -s -o /dev/null -w '%{http_code}\n' "https://lgdc.uml.edu/common/DIDBGetValues?ursiCode=WP937&charName=foF2&fromDate=2024.05.11&toDate=2024.05.12"
+# 实测：404（旧接口已下线）；charName=MUFD → "# STATUS: WARNING (Unknown characteristic name: MUFD)"，要写 MUF(D)
+curl -s "https://lgdc.uml.edu/ionoweb/locations"          # 实测：200，9,872 B JSON，131 站（U/N/Lat/Lon，东经 0–360）
+curl -s "https://lgdc.uml.edu/ionoweb/ionolist?ursiCode=WP937&from=2024.05.11&to=2024.05.12"
+# 实测：200，16,712 B，288 张电离图（fastchar 当天只有 205 行 foF2）；ionoimage 的 time 去掉 Z 才出 PNG（79,322 B），带 Z 为 0 B
+# 个例：WP937 foF2 CS≥50 且≠55，05-11 相对 05-01..09 中位参考 日均 −43 %，最低 −77 %（05:40 UT）
+```
+
 ---
 
 ## 其他门户快查（未展开菜谱）
@@ -698,7 +713,7 @@ curl -s "https://cdaweb.gsfc.nasa.gov/hapi/info?id=GOLD_L2_NMAX"      # 1406 / H
 | **HK SatRef** | [RINEX 说明](https://www.geodetic.gov.hk/en/rinex/rinex.htm) | 网页选站下载（无稳定匿名文件树） | 多开放 | 说明页 200；无脚本直链可核，勿猜旧 downv/geodex |
 | **EPOS / GLASS / M3G** | [EPOS GNSS](https://gnss-epos.eu/) · [GLASS](https://gnssdata-epos.oca.eu/GlassFramework/) · [M3G](https://gnss-metadata.eu/landing/m3g) | GLASS JSON；M3G REST | 视节点 | 欧洲程序化优先 GLASS |
 | **VMF** | [vmf.geo.tuwien.ac.at](https://vmf.geo.tuwien.ac.at/) | 见上节「对流层格网（VMF）」 | 多开放 | 日历日文件名；分清 OP/FC |
-| **GIRO / DIDBase** | [giro.uml.edu/didbase](https://giro.uml.edu/didbase/) | 查询站/时段 → 图 | 网页注册 | 旧 quick-request URL 已 404 |
+| **GIRO / DIDBase** | [giro.uml.edu/didbase](https://giro.uml.edu/didbase/) | 特征参数 fastchar 匿名；电离图 IonoWeb | 参数匿名；SAO 需账号 | 已展开为 [E23](#dp-e23)；旧 quick-request / DIDBGetValues 均 404 |
 | **INTERMAGNET** | [intermagnet.org](https://intermagnet.org/) | Data → 准实时/存档 | 视产品 | 先读条件再脚本 |
 | **SuperMAG** | [supermag.jhuapl.edu](https://supermag.jhuapl.edu/) | 界面 / API | 网页注册 | 引用含原始台站 |
 | **eSWua / IONORING** | [eSWua TEC](http://www.eswua.ingv.it/ewphp/landing.php?doi=tec) · [IONORING](http://ionos.ingv.it/ionoring/ionoring.htm) | Download Tool / REST；近实时地图 | 开放（CC BY；DOI `10.13127/eswua/tec`） | 区域 TEC，非 GNSS 原始归档 |

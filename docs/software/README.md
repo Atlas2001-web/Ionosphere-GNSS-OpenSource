@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **211 篇**操作手册（合计 **47395 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **212 篇**操作手册（合计 **47905 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -236,6 +236,7 @@
 | 209 | [cosmic2-ro.md](./cosmic2-ro.md) | UCAR CDAAC COSMIC-2 电离层掩星直连：ionPrf（Ne 剖面，el/cm³，MSL_alt）只在 provisional/spaceWeather/level2（prov1），podTc2（链路 TEC/S4/仰角/ECEF）在 nrt 或 rapid level1b；只有日包、全匿名（旧门户 401 不需要）、AWS gnss-ro-data 无电离层；流式 tar 取单文件；edmax vs 自算 NmF2/hmF2、无质量标志时的自定义筛选；≠ pysat 加载 COSMIC-1（→pysatcdaac）/ AWS 中性大气（→awsgnssroutils） | 529 | **已短硬** · 2026-09-26 04:08–04:35 EDT；2024-132 ionPrf 日包 27.9 MB / 3608 条（6 星 552–661，GPS 1690 / GLONASS 1918），峰值点纬度 ±40.5°、地方时 8 格 381–508 条；3571/3608 条 edmax/edmaxalt 与 max(ELEC_dens) 完全一致，37 条差在 <120 km 底部噪声；critfreq 与 edmax 换算差 ≤0.0051 MHz；自定义筛选保留 2661（73.8 %），hmF2 中位 362.8 km、NmF2 中位 9.33e5 el/cm³；podTc2 流式读 163,840 B 取 3 文件，仰角由 ECEF 重算差 0.000°；时延 nrt ≈5 h、rapid ≈1.7 天；cosmic2/repro 404 |
 | 210 | [icon-gold-data.md](./icon-gold-data.md) | NASA ICON（2019-11～2022-11-25 失联；IVM / MIGHTI / FUV / EUV）与 GOLD（静止轨道 FUV；ON2 / TDISK / NMAX / O2DEN / QEUV / TLIMB / L1C）数据获取：SPDF HTTPS 路径与文件大小、CDAWeb 数据集 ID、CDAS REST 变量子集、HAPI 覆盖实测（两者都没有）、GOLD SOC 版本表；读 MIGHTI 矢量风 / IVM 漂移 / GOLD NMAX 与 ON2 的质量标志、填充值和扫描网格；≠ PySPEDAS 统一加载（→pyspedas）/ COSMIC-2 剖面（→cosmic2-ro） | 476 | **已短硬** · 2026-09-26 04:15–04:50 EDT；HAPI 目录 3632 个 ID 中 ICON / GOLD 为 0（info → 1406 / HTTP 400），CDAWeb 有 ICON 14 个 + GOLD 4 个 L2；GOLD 最新 2026-07-05（约 83 天时延），ICON L2 仍在重处理（IVM v08r002、MIGHTI v06）；MIGHTI 红线 2021-11-04：2219×16，Wind_Quality 1/0.5/0 = 15569/3840/16095，203 km 纬向风中位 −34.6 m/s；IVM 子集 4.3 MB，DM_Flag==0 可用漂移 49.0 %，中位 −2.5 m/s；GOLD NMAX 2024-132：36 次扫描，有限 76062 格中 dqi=0 仅 17755（45867 格 LBH 污染），中位 8.38e5 el/cm³；ON2 dqi=0 中位 0.896 |
 | 211 | [prx.md](./prx.md) | jtec/prx Python 预处理器：RINEX 3.0x OBS（rnx/crx/gz）+ 广播星历 → 每历元×每星×每码信号一行 CSV（原始 C/L/D/S + 卫星位置/速度、钟差、相对论项、TGD、Sagnac、Saastamoinen/UNB3m 对流层、GPS Klobuchar 电离层、仰角/方位角）；level 1/2/3；不出位置（仓内 `user.spp_pt_lsq` 示例）；≠ 定位软件 | 207 | **已短硬** · 2026-09-26 04:08–04:24 EDT；main `20a2382`/无 tag/MIT/★23/uv Python 3.13.15；**PyPI 同名包无关**；`prx` 入口坏；BRDC00IGS/WRD 2026-258 georinex NavIC 报错，只 BRDM00DLR_S 可用；WTZR 全天 434766 行/25.5 s；GPS 1C LSQ 3D 中位 1.608 m、G+E+C 1.467 m（R 被 NaN bias 静默丢）；独立开普勒核对位置 1.45 mm、伪距 Δ=0；首历元丢、错天星历/截断静默 exit 0；只写 CSV；level 3 未测 |
+| 212 | [giro-ionosonde.md](./giro-ionosonde.md) | GIRO / DIDBase 测高仪（Lowell）：匿名 fastchar/getbest 特征参数（旧 DIDBGetValues 404）、131 站 URSI 站表、IonoWeb 电离图、SAO 格式与 SAO Explorer 账号门槛、ARTIST CS 置信度 | 510 | **已短硬** · 2026-09-26 04:40 EDT；WP937 2024-05-11 foF2 日均 −43 %、最低 −77 %（05:40 UT，CS≥50 且≠55）；COSMIC-2 ionPrf 500 km/±15 min 匹配 N=7，中位比 0.95，r=0.94 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -448,6 +449,7 @@
 | Kp/ap/Hp30、Dst/AE/SYM-H、实时太阳风与 F10.7 的直连下载 + 数据状态（def/pre、final/provisional/realtime）+ 跨源对比 | [space-weather-indices.md](./space-weather-indices.md) |
 | COSMIC-2 电离层掩星：ionPrf 电子密度剖面 / podTc2 链路 TEC 的直连下载、目录与时延、NmF2/hmF2 与筛选 | [cosmic2-ro.md](./cosmic2-ro.md) |
 | NASA ICON / GOLD：SPDF 路径、CDAWeb 数据集与 CDAS REST 子集、HAPI 覆盖、质量标志与 GOLD 扫描网格 | [icon-gold-data.md](./icon-gold-data.md) |
+| 测高仪 foF2/hmF2 匿名拉取（GIRO fastchar）、站表、CS 过滤、SAO 获取门槛、磁暴耗减 | [giro-ionosonde.md](./giro-ionosonde.md) |
 | SuperDARN 原始数据下载（FRDR RAWACF、Globus/BAS/VT 镜像门槛、sha1+bz2 校验、使用规则） | [superdarn-data.md](./superdarn-data.md) |
 | 子午工程数据（DOI/CSTR 查询、不登录可见的元数据与文件清单、登录门槛、致谢与报送规则） | [meridian-data.md](./meridian-data.md) |
 | 单站 1 Hz/30 s RINEX 看 sTEC 变化率 / 海啸型 TID（VARION，Python 2.7） | [varion.md](./varion.md) |
