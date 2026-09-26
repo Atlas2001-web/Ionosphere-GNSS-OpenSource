@@ -25,6 +25,7 @@
 | 测高仪 | [GIRO / DIDBase](https://giro.uml.edu/didbase/) · [RAL / UKSSDC](https://www.ukssdc.ac.uk/ionosondes/) | GIRO 特征参数匿名（[E23](#dp-e23)），SAO 数值库要邮件申请账号；RAL 网页注册 |
 | ISR / SuperDARN / 区域台链 | [CEDAR Madrigal](https://cedar.openmadrigal.org/) · [EISCAT](https://portal.eiscat.se/) · [SRI AMISR](https://data.amisr.com/database/) · [FRDR SuperDARN](https://www.frdr-dfdr.ca/repo/collection/superdarn) · [子午工程](https://www.meridianproject.ac.cn/) · [PITHIA 编目](https://esc.pithia.eu/) → [决策表](#电离层与地磁门户决策表) | Madrigal / FRDR 开放；EISCAT 门户、子午工程须登录 |
 | 电离层–热层卫星（ICON / GOLD） | [SPDF ICON](https://spdf.gsfc.nasa.gov/pub/data/icon/) · [SPDF GOLD](https://spdf.gsfc.nasa.gov/pub/data/gold/) · [CDAWeb](https://cdaweb.gsfc.nasa.gov/) CDAS REST · [GOLD SOC](https://gold.cs.ucf.edu/data/search/)（[决策表 E21–E22](#dp-e21) · [icon-gold-data](./software/icon-gold-data.md)） | 开放（CDAWeb HAPI 不含这两个任务） |
+| LEO 原位 / 顶部 TEC（Swarm） | [swarm-diss HTTPS](https://swarm-diss.eo.esa.int/) · [VirES HAPI](https://vires.services/hapi/)（[E24](#dp-e24) / [E25](#dp-e25)） | 开放（HTTPS `?do=` 与 HAPI 匿名；FTP 与 VirES token 要注册） |
 | 对流层格网 | [VMF](https://vmf.geo.tuwien.ac.at/) → `trop_products/` | 多开放 |
 
 逐站细节与注册字段 → [`10-gnss-datasets.md`](../lists/10-gnss-datasets.md)。
@@ -430,7 +431,7 @@ curl -L -C - -O \
 
 ## 电离层与地磁门户决策表
 
-第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD），以及地基与 LEO 电离层观测（E23 GIRO / DIDBase 测高仪）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
+第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD），以及地基与 LEO 电离层观测（E23 GIRO / DIDBase 测高仪、E24 Swarm swarm-diss HTTPS、E25 VirES HAPI）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
 
 | 门户 | 账号 / 门槛 | 格式 | 时间分辨率 · 时延 | 实测 |
 |---|---|---|---|:---:|
@@ -457,6 +458,8 @@ curl -L -C - -O \
 | [ICON（SPDF / CDAWeb）](https://spdf.gsfc.nasa.gov/pub/data/icon/) | 开放；SPDF HTTPS 匿名，CDAS REST 匿名；**CDAWeb HAPI 没有 ICON**（`info?id=ICON_L2-7_IVM-A` → 1406 / HTTP 400） | netCDF-4 日文件（SPDF，文件名已改小写 + `yyyymmdd`）；CDAS REST 子集为 CDF | 2019-11～2022-11-25（失联，任务已结束）；L2 仍在重处理（IVM v08r002、MIGHTI v06、FUV v07，SPDF 时间戳 2025–2026）；日文件 0.8 MB（FUV day）～95 MB（FUV night），IVM 约 50 MB | ✅（[E21](#dp-e21) · [icon-gold-data](./software/icon-gold-data.md)） |
 | [GOLD（SPDF / SOC / CDAWeb）](https://spdf.gsfc.nasa.gov/pub/data/gold/) | 开放；SOC 下载页是网页表单出 tar（单次上限 L1C DAY 15 天、L2 366 天）；CDAWeb 只有 L2 ON2 / NMAX / O2DEN / TDISK，**HAPI 没有 GOLD** | netCDF-4；L2 按日（0.16–4.7 MB），L1C 按扫描（2024/132：95 个文件约 2.85 GB） | 2018-10-05 起；SPDF / SOC / CDAWeb 最新都是 2026-07-05（09-26 查询，约 83 天时延）；NMAX v05、ON2 v04 r02、TDISK v05 r03；质量看 `<var>_dqi == 0`（NMAX 有限值里 60 % 带 LBH 污染位） | ✅（[E22](#dp-e22)） |
 | [GIRO / DIDBase 测高仪](https://giro.uml.edu/didbase/scaled.php) | 特征参数**匿名**：`lgdc.uml.edu/fastchar/getbest`（旧 `common/DIDBGetValues` **404**）；站表 `ionoweb/locations` 匿名；数值 SAO 只能用 SAO Explorer（Java）+ DIDBase 只读账号（邮件向 Bodo Reinisch 申请）；CC BY-NC-SA 4.0，须致谢站点 | 纯文本表（每行 UTC 时间 + CS + 值/QD 字母）；IonoWeb JSON 列表 + PNG 电离图；SAO 4.2/4.3/5.0 | 131 站；多数 5–15 min 一张；CS 0–100 = ARTIST 自动判读置信度，999 = 人工，-1 = 未知；站表里有 ≠ 当天有数据 | ✅（[E23](#dp-e23)，[手册](./software/giro-ionosonde.md)） |
+| [Swarm 分发服务器 swarm-diss](https://swarm-diss.eo.esa.int/) | HTTPS 网页接口**匿名**：`?do=list&file=`（JSON）/ `?do=download&file=`（路径 `%2F` 编码）；`/swarm/` 直链 403；**FTP 拒绝匿名（530）**，要 ESA 账号 | ZIP 内 CDF + HDR（+ DQC 报告 `.EEF`）；每个产品目录旁有 `<产品>.txt` 全清单 | LP `EFIx_LP_1B`（2 Hz）/`EFIxLPI_1B`（1 Hz）基线 0701→0702（2025-12-13）；TEC/IBI/EEF 0502；IPIR 0302（目录里 0301 仍并存）；OPER 上架 3–9 天，`Fast/` LP/TEC ~40 min | ✅（[E24](#dp-e24)，[手册](./software/swarm-data.md)） |
+| [VirES for Swarm](https://vires.services/) | **HAPI 匿名**（`/hapi/catalog`、`/hapi/info`、`/hapi/data`，174 数据集 / 147 个 `SW_`）；OWS/WPS（viresclient）无 token → **403**，token 要在 vires.services 注册 | HAPI：CSV / JSON / binary 切片 | 单次上限 LP 2.5 天、TEC 5 天；值与 CDF 逐位一致；无模型残差 | ✅（[E25](#dp-e25)；token 路径见 [viresclient](./software/viresclient.md)） |
 
 要登录才能拿数据的：EISCAT 门户（Madrigal 可绕行）、子午工程、ROM SAF 产品库（AWS 可绕行）、TGO ASCII、UKSSDC/RAL。要「申请」的：BGS 本站高分辨率（GIN 可绕行）。
 
@@ -691,6 +694,29 @@ curl -s "https://lgdc.uml.edu/ionoweb/locations"          # 实测：200，9,872
 curl -s "https://lgdc.uml.edu/ionoweb/ionolist?ursiCode=WP937&from=2024.05.11&to=2024.05.12"
 # 实测：200，16,712 B，288 张电离图（fastchar 当天只有 205 行 foF2）；ionoimage 的 time 去掉 Z 才出 PNG（79,322 B），带 Z 为 0 B
 # 个例：WP937 foF2 CS≥50 且≠55，05-11 相对 05-01..09 中位参考 日均 −43 %，最低 −77 %（05:40 UT）
+```
+
+<a id="dp-e24"></a>**E24 Swarm swarm-diss（HTTPS `?do=` 接口）**
+
+```bash
+D='https://swarm-diss.eo.esa.int/?do=download&file='
+curl -s "https://swarm-diss.eo.esa.int/?do=list&maxfiles=10000&pos=0&file=swarm"      # 实测：200 JSON，Advanced/Fast/Level1b/Level2daily/Level2longterm/Multimission
+curl -s -O "${D}swarm%2FLevel2daily%2FLatest_baselines%2FTEC.txt"                      # 实测：200，1,038,220 B，14,030 行全路径清单
+curl -s -o lp.zip "${D}swarm%2FLevel1b%2FLatest_baselines%2FEFIx_LP%2FSat_B%2FSW_OPER_EFIB_LP_1B_20240511T000000_20240511T235959_0701.CDF.ZIP"
+# 实测：200，12,429,396 B，~4 s；CDF 172,776 行 2 Hz；Flags_N_ion 20/21/22/23 = 86740/84487/483/1066
+curl -s -o tec.zip "${D}swarm%2FLevel2daily%2FLatest_baselines%2FTEC%2FTMS%2FSat_B%2FSW_OPER_TECBTMS_2F_20240511T000000_20240511T235959_0502.ZIP"
+# 实测：200，43,119,937 B；465,715 行；仰角最低 19.9°；Radius 属性写 km 实为 m
+curl -s -v ftp://swarm-diss.eo.esa.int/ 2>&1 | grep 530                                # 实测：530 Login authentication failed（No anonymous login）
+# 个例：Swarm B 05-11 vs 05-08 白天北半球 +20° 以北 N_ion ×0.30；美洲扇区 +50°N 230k → 44k cm^-3
+```
+
+<a id="dp-e25"></a>**E25 VirES for Swarm（HAPI 匿名；OWS 要 token）**
+
+```bash
+curl -s "https://vires.services/hapi/info?dataset=SW_OPER_EFIB_LP_1B"                 # 实测：200；x_maxTimeSelection P2DT12H，cadence PT0.5S
+curl -s "https://vires.services/hapi/data?dataset=SW_OPER_EFIB_LP_1B&parameters=Latitude,Longitude,N_ion,Flags_N_ion&start=2024-05-11T16:00:00Z&stop=2024-05-11T16:00:02Z&format=csv"
+# 实测：200，4 行；首行 2024-05-11T16:00:00.197Z,8.5277053,-76.8632017,483458.0389614415,20（与 CDF 逐位相同）
+curl -s -o /dev/null -w '%{http_code}\n' "https://vires.services/ows?service=WPS&request=GetCapabilities"   # 实测：403（viresclient 路径要 token）
 ```
 
 ---

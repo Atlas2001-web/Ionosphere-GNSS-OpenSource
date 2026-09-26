@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **213 篇**操作手册（合计 **48127 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **214 篇**操作手册（合计 **48841 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -238,6 +238,7 @@
 | 211 | [prx.md](./prx.md) | jtec/prx Python 预处理器：RINEX 3.0x OBS（rnx/crx/gz）+ 广播星历 → 每历元×每星×每码信号一行 CSV（原始 C/L/D/S + 卫星位置/速度、钟差、相对论项、TGD、Sagnac、Saastamoinen/UNB3m 对流层、GPS Klobuchar 电离层、仰角/方位角）；level 1/2/3；不出位置（仓内 `user.spp_pt_lsq` 示例）；≠ 定位软件 | 209 | **已短硬** · 2026-09-26 04:08–04:24 EDT；main `20a2382`/无 tag/MIT/★23/uv Python 3.13.15；**PyPI 同名包无关**；`prx` 入口坏；BRDC00IGS/WRD 2026-258 georinex NavIC 报错，只 BRDM00DLR_S 可用；WTZR 全天 434766 行；GPS 1C LSQ 3D 中位 1.608 m、G+E+C 1.467 m（R 被 NaN bias 静默丢）；独立开普勒核对位置 1.45 mm、伪距 Δ=0；首历元丢、错天星历/截断静默 exit 0；只写 CSV；level 3 未测 · **质检复跑通过**（04:32–04:44 EDT；`20a2382`/3.13.15：2 h 冷 80 s→36346 行，全天 17 s→434766/**138045011** B，`.crx.gz` 12 s；LSQ 1.608/3.028 与 1.467/2.663 复现；修 `ephemeris_hash`/仰角下限 0.012°/CSV 字节/墙钟；错误用例与 TZ 正文逐字节同；开普勒 200 行未重跑）
 | 212 | [giro-ionosonde.md](./giro-ionosonde.md) | GIRO / DIDBase 测高仪（Lowell）：匿名 fastchar/getbest 特征参数（旧 DIDBGetValues 404）、131 站 URSI 站表、IonoWeb 电离图、SAO 格式与 SAO Explorer 账号门槛、ARTIST CS 置信度 | 510 | **已短硬** · 2026-09-26 04:40 EDT；WP937 2024-05-11 foF2 日均 −43 %、最低 −77 %（05:40 UT，CS≥50 且≠55）；COSMIC-2 ionPrf 500 km/±15 min 匹配 N=7，中位比 0.95，r=0.94 |
 | 213 | [earthscope-gnsstools.md](./earthscope-gnsstools.md) | EarthScope Go 库 + CLI：`gnss-convert`（RINEX 2/3/4、CRX、BINEX、SBF、NovAtel、UBX、JPS → RINEX 2.11/3.05/4.02 / Parquet / CRX）与 `gnss-inspect`（RTCM3/BINEX/SBF/SP3… → JSON）；≠ Python [gnsstools](./gnsstools.md) | 212 | **已短硬** 用法讲解新入库 · tag **v0.111.0**/`30b776a`/main `b3efce5`/Apache-2.0/★6/Go ≥1.26；WTZR 3.04→3.05 `--doppler` 1791283 值 Δ=0；GMSD7 1143 帧 = pyrtcm；默认丢 D/丢头/PHASE SHIFT 清零；NovAtel 负多普勒 +2²⁰ Hz |
+| 214 | [swarm-data.md](./swarm-data.md) | ESA Swarm 电离层产品：swarm-diss HTTPS `?do=` 匿名列/下（FTP 530）、LP `EFIx_LP_1B`/`EFIxLPI_1B`、TEC、IPIR（含 PCP_flag）、IBI、EEF 的文件名/基线/时延与 flag；VirES HAPI 匿名、OWS 要 token | 716 | **已短硬** · 2026-09-26 04:47 EDT；Swarm B 2024-05-11 vs 05-08：白天北半球 N_ion ×0.30、夜间赤道 ×0.30–0.42、南纬 −30..−20 夜间 ×5.9；OPER 上架 3–9 天、FAST ~40 min；TEC 仰角 ≥50° |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -452,6 +453,7 @@
 | COSMIC-2 电离层掩星：ionPrf 电子密度剖面 / podTc2 链路 TEC 的直连下载、目录与时延、NmF2/hmF2 与筛选 | [cosmic2-ro.md](./cosmic2-ro.md) |
 | NASA ICON / GOLD：SPDF 路径、CDAWeb 数据集与 CDAS REST 子集、HAPI 覆盖、质量标志与 GOLD 扫描网格 | [icon-gold-data.md](./icon-gold-data.md) |
 | 测高仪 foF2/hmF2 匿名拉取（GIRO fastchar）、站表、CS 过滤、SAO 获取门槛、磁暴耗减 | [giro-ionosonde.md](./giro-ionosonde.md) |
+| Swarm LP Ne/Te、顶部 TEC、IPIR/IBI/EEF 免注册下载与 flag 过滤（swarm-diss HTTPS、VirES HAPI） | [swarm-data.md](./swarm-data.md) |
 | SuperDARN 原始数据下载（FRDR RAWACF、Globus/BAS/VT 镜像门槛、sha1+bz2 校验、使用规则） | [superdarn-data.md](./superdarn-data.md) |
 | 子午工程数据（DOI/CSTR 查询、不登录可见的元数据与文件清单、登录门槛、致谢与报送规则） | [meridian-data.md](./meridian-data.md) |
 | 单站 1 Hz/30 s RINEX 看 sTEC 变化率 / 海啸型 TID（VARION，Python 2.7） | [varion.md](./varion.md) |
