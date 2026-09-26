@@ -1447,7 +1447,7 @@ Toitū Te Whenua LINZ 大地测量业务入口，汇总新西兰大地基准、�
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-NOAA Open Data Dissemination（NODD）把 NCN/CORS RINEX 放到公开 S3 桶 noaa-cors-pds，可用 HTTPS/AWS 工具按年积日/站名批量拉取，常比官网树更适合云端脚本。与 geodesy.noaa.gov/corsdata 同源产品、不同分发通道。大流量请注意带宽与对象键命名约定。
+NOAA NODD 的公开 S3 桶 noaa-cors-pds，可以匿名 HTTPS 直接取文件，也能用 ListObjectsV2 列目录。路径是 rinex/YYYY/DDD/ssss/，日文件有 .d.gz（Hatanaka）、.o.gz 和 .S（teqc 质检摘要），小时文件 a–x 在整点后约 15 分钟上桶；日目录下放 brdc 和 IGS SP3。实测文件与 geodesy.noaa.gov/corsdata 同名同 md5，但下载明显更快。桶里还有 coord/（ITRF2020 与 NAD83 坐标）和 station_log/。单页最多列 1000 个键，一天有 1600–1800 个站目录，要翻页。
 
 #### [NOAA-CORS-Data-Tree](https://geodesy.noaa.gov/corsdata/)  
 *🏷️ 官方*
@@ -1461,7 +1461,7 @@ CORS 观测文件目录树入口，便于按测站、年份与年积日批量抓
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-美国国家大地测量局提供的 NOAA CORS Network（NCN）Web API，可按站名取属性、或按 ECEF 坐标查最近参考站，服务 Data Explorer 等应用。返回元数据而非 RINEX 本体；下载观测请配合 corsdata/AWS NODD/UFCORS。须遵守 NGS 服务条款与合理访问频率。
+NGS 给 Data Explorer 用的两个匿名 JSON 接口：cors?id= 按站名（不分大小写）返回属性，ncors?x=&y=&z= 按 ECEF 坐标返回最近 9 站及距离（米）。坐标是 NAD 83(2011) 历元 2010.0，不是 ITRF，与 coord/ 文件里的 ITRF2020 坐标差约 1.6 m。站名不存在时仍返回 200 和 []，参数不合法时返回 HTML 500。它只给元数据，RINEX 要从 corsdata、NODD S3 或 UFCORS 下载。
 
 #### [NOAA-NCN-Data-Products](https://geodesy.noaa.gov/CORS/data.shtml)  
 *🏷️ 官方*
@@ -1482,7 +1482,7 @@ CORS 观测文件目录树入口，便于按测站、年份与年积日批量抓
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-美国 NGS 提供的 User Friendly CORS 网页服务，可按站与时段请求部分日、跨日拼接或降采样的 RINEX，免手工拼 CORS 目录。与 CORS 数据树/AWS 桶互补，偏交互取数。大批量科研抓取仍建议用 NODD/S3 或 corsdata 目录并限速。
+美国 NGS 的 User Friendly CORS 网页服务：填站名、年积日、起始整点和时长（1–24 小时），可降采样到 1/5/15/30 秒，返回 zip，里面有未压缩的 RINEX 2.11 观测、广播星历、站点日志和 README。表单可以用 curl POST 调用，不需要登录。默认只输出 GPS，要多系统须勾选 GLO+GAL+BEI。站名或日期无数据时仍返回 HTTP 200，但内容是 HTML 错误页，要检查 Content-Type。批量抓取请改用 NODD S3 或 corsdata。
 
 #### [NRCan-CACS](https://webapp.csrs.nrcan.gc.ca/geod/data-donnees/cacs-scca.php)  
 *🏷️ 官方*

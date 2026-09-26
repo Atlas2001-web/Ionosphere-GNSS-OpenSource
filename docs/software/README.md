@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **228 篇**操作手册（合计 **52395 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **229 篇**操作手册（合计 **52613 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -253,6 +253,7 @@
 | 226 | [lisird.md](./lisird.md) | LASP LISIRD 太阳输入直连（免账号）：LaTiS 281 集（选列/时间与数值过滤/`format_time`/`last()`；csv/json/jsond/txt、`.das`/`.dds`）——Penticton F10.7 一日三测与近正午（=GFZ Fobs）、复合 Lyman-α、FISM2 EUV 波段/0.1 nm 光谱、GOES XRS 1 min；HAPI 2.0 仅 29 集且只有 CSV；`noaa_radio_flux` 2018 停更、2500 万样本上限 | 190 | **已短硬** 用法讲解新入库 · 2026-09-26 05:10–05:30 EDT；2024-05-10 F10.7obs 223.4（81 天均值 176.2）、GOES-18 XRS 峰 3.88e-4 W/m²（X3.9，06:54 UT）、FISM 121.55 nm 0.0585 W/m²/nm；PROJECTS LISIRD analysis/registration 已按实测改写 |
 | 227 | [pymsis.md](./pymsis.md) | SWxTREC NRLMSIS 2.1/2.0/00 中性大气（轮子自带 .so，免编译）：自动拉 CelesTrak F10.7/ap → 密度/温度/O/N₂ 剖面；暴时 O/N₂ 与负相；三代模型同输入对比 | 239 | **已短硬** 用法讲解 · 2026-09-26 05:18–05:22 EDT；PyPI 0.13.0/`0846792`/MIT（MSIS2 另有 NRL 许可，商用须联系）；Gannon 暴 2024-05-11 自动取 Ap **271**/F10.7 223.4（对照 geomagindices 给 24）；45°N 300 km O/N₂ **3.460→1.364**、T 1273→1565 K、ρ ×1.64；MSIS00 N₂ 高 23–27%；越界日期 ValueError 并触发重下载；`SW-All.csv` 权限 600 |
 | 228 | [iri2020.md](./iri2020.md) | space-physics IRI-2020 Fortran → xarray（不在 PyPI，git clone + CMake/gfortran 首跑自编）：Ne/离子/温度剖面 + NmF2/hmF2/foF2/TEC；与 pyiri 同场景对照；指数文件更新与段错误修补 | 220 | **已短硬** 用法讲解 · 2026-09-26 05:18–05:30 EDT；main `8b6ab9e`/MIT；2020-04-01 12UT 20N10E：NmF2 **1.494e12** m⁻³/hmF2 335.0/foF2 10.977（文件 F10.7=69.2）；改驱动 F10.7=100+Rz12 → hmF2 364.0（pyiri 364.6）/foF2 12.76（12.51）；捆带指数止于 2023 → 2024-05-11 静默 f107=63.75/ap=−11；新 `ig_rz.dat` SIGSEGV（806 月数组，issue #5）→ 改 1200 后得 ap 271；TEC 积分上限=请求最高高度；`FFLAGS=-O2` 改 TEC 38.11→34.78 |
+| 229 | [noaa-ncn-data.md](./noaa-ncn-data.md) | NOAA CORS 网（NCN）数据直连（免账号）：NODD S3 `noaa-cors-pds`（ListObjectsV2 翻页；日/小时 `.d.gz`/`.o.gz`/`.S`、brdc/SP3、coord_20 ITRF2020、station_log）与 corsdata 同名同 md5；NCN API `cors?id=`/`ncors?x,y,z`（坐标为 NAD 83(2011)，与 ITRF2020 差 1.6 m）；UFCORS curl POST 取 1–24 h zip（默认只出 GPS、出错也回 200）；时延：NGS 自营小时文件约 15 min、日文件约 5 h，EarthScope 转入站日文件约 1.5 天 | 218 | **已短硬** · 2026-09-26 05:21–05:40 EDT；P041 2024-001 `.24d.gz` 1769574 B md5 两源一致、2880 历元/SUM 94%；1LSU 2026-268 UFCORS 1 h 121 历元；2026 年 S3 XML 多出 ChecksumAlgorithm 字段，紧邻式正则静默返回 0 个文件 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -478,6 +479,7 @@
 | 高纬 GNSS 闪烁 S4/σφ 实测（CHAIN ISMR，免注册）与 ISMR 62 列定义 | [chain-scintillation.md](./chain-scintillation.md) |
 | 各中心 GIM/IONEX 去哪匿名下载、新旧文件名、出来要等多久、各家差多少 | [gim-product-portals.md](./gim-product-portals.md) |
 | 不登录下载 IGS 日观测：哪个镜像齐、到得快、是不是同一份（CDDIS 需 Earthdata） | [gnss-obs-mirrors.md](./gnss-obs-mirrors.md) |
+| 美国 CORS（NCN）RINEX 批量下载、小时文件时延、站坐标（ITRF2020 vs NAD 83）、UFCORS 任意时段 | [noaa-ncn-data.md](./noaa-ncn-data.md) |
 | 读/交换多机构闪烁 HDF5 文件（Kartverket/FMI/DTU/UNB 的 BiScEF `.nc`，S4/σφ/ROTI；先核时间基准与缺测值） | [biscef.md](./biscef.md) |
 | SuperDARN 原始数据下载（FRDR RAWACF、Globus/BAS/VT 镜像门槛、sha1+bz2 校验、使用规则） | [superdarn-data.md](./superdarn-data.md) |
 | 子午工程数据（DOI/CSTR 查询、不登录可见的元数据与文件清单、登录门槛、致谢与报送规则） | [meridian-data.md](./meridian-data.md) |
@@ -526,6 +528,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
+最近新增（用法讲解）：**noaa-ncn-data**（[noaa-ncn-data.md](./noaa-ncn-data.md)；2026-09-26 05:21–05:40 EDT；免账号；NODD S3 与 corsdata md5 一致（S3 0.14 s 对 1.0 s）；NCN API 53 字段/NAD 83(2011)；UFCORS POST 200 zip，默认只出 GPS；目录条目 NOAA-NCN-API / NOAA-CORS-AWS / NOAA-UFCORS 的 analysis/registration 按实测改写）。
 最近新增（用法讲解）：**pymsis**+**iri2020**（[pymsis.md](./pymsis.md) / [iri2020.md](./iri2020.md)；2026-09-26 05:18–05:30 EDT；pymsis PyPI 0.13.0/MIT+NRL MSIS2 许可：CelesTrak 自动指数 2024-05-11 Ap 271，45°N 300 km O/N₂ 3.460→1.364（MSIS2.1）/2.919→1.249（MSIS00）；iri2020 `8b6ab9e`/MIT/不在 PyPI：pyiri 同场景 NmF2 1.494e12 m⁻³（F10.7 69.2），改驱动 F10.7=100+Rz12 后 hmF2 364.0 vs pyiri 364.6；捆带指数 2023 止、过期静默 ap=−11，新 ig_rz.dat 段错误需 806→1200 补丁；交叉 msise00/iri2016/pyiri/iri-fortran）。
 最近新增（用法讲解）：**ppp-tools**（[ppp-tools.md](./ppp-tools.md)；2026-09-26 05:05–05:18 EDT；master `e77e351`/无 tag/GPL-2.0/★121；RTKLIB 2.4.2 p13；WTZR 2026-216 IGS20 最终：原样缺 ATX/NAV 必挂，修补后 2880 历元 3.70 s，SINEX 3D 8.5 mm、钟对 IGS AR 均值 −0.014 ns/σ 0.310 ns；MI05−WTZR 双差 107.971 ns/σ 4.394 ns（未扣站延迟）；截断 RINEX 静默 rc=0；下一优先 ntrip-core，go-gnss-spartn 留候选）。
 最近新增（用法讲解）：**darntids**+**tidd**（[darntids.md](./darntids.md) / [tidd.md](./tidd.md)；2026-09-26 04:05–05:15 EDT；DARNtids PyPI 0.2.0/`6effcd0`/GPL-3.0：PROJECTS 旧址 w2naf/DARNtids 已弃用；pyDARNmusic 0.2.0 须 pydarn 4.1.2+pydarnio 1.3；Zenodo 7005203 SAS 2012-11-01 单事件 MUSIC 42 峰（首峰 λ 245 km/39°），短窗频率量化为 3 点，Mongo 批处理未跑；tidd `cd15176`/Apache-2.0：S3 19.2 GB 只 Range 流前 2.8 GB，resnet18 自训 2 epoch，上游样本外 tp=0 为时间戳 bug、训练 precision/recall 互换、代码实为 GASF，行位置重算 F1 0.217）。
