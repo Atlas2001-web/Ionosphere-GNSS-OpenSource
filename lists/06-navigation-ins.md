@@ -686,14 +686,14 @@ Southwest Research Institute 维护的 NovAtel GPS/GNSS ROS 驱动，BSD-3-Claus
 
 语言：C++ · 许可：MIT · 星标约：123 · 宿主：github
 
-Hexagon/NovAtel 维护的 OEM7 系列 GNSS/SPAN 厂商 ROS 驱动，MIT 许可，支持定位、原始观测与惯导相关话题发布。面向车载/机器人集成，而非测地后处理套件。消息定义与固件版本需匹配；多天线/SPAN 配置依赖硬件与校准。与社区旧版 novatel_gps_driver 并存时注意选型。收录前已核验仓库可访问。
+Hexagon/NovAtel 维护的 OEM7 系列 GNSS/SPAN 厂商 ROS 驱动，MIT 许可，支持定位、原始观测与惯导相关话题发布。面向车载/机器人集成，而非测地后处理套件。消息定义与固件版本需匹配；多天线/SPAN 配置依赖硬件与校准。与社区旧版 novatel_gps_driver 并存时注意选型。
 
 #### [UnicoreDriver](https://github.com/zltan-whu/UnicoreDriver)  
 *🏷️ 个人社区*
 
 语言：C++ · 许可：GPL-3.0 · 星标约：11 · 宿主：github
 
-开发者谭志良（账号带 WHU 标识）发布的 ROS Noetic 驱动，GPL-3.0 许可，C++ 实现，依赖 Eigen 与 Boost。依据和芯星通 UM982 官方协议开发，在 UM982 与 UM980 上测试；需用 UPrecise 配置接收机输出 BESTNAVXYZB，驱动经串口读取并发布 nav_msgs/Odometry 话题，launch 文件支持多台接收机分命名空间接入，并可配置 NTRIP 获取 RTK 固定解。适合在组合导航或多传感器平台中接入国产 RTK 板卡。仓库 2025 年一次性发布，后续更新较少。
+开发者 Zhiliang Tan（账号名带 whu）发布的 ROS Noetic 驱动，GPL-3.0 许可，C++ 实现，依赖 Eigen 与 Boost。依据和芯星通 UM982 官方协议开发，在 UM982 与 UM980 上测试；需用 UPrecise 配置接收机输出 BESTNAVXYZB，驱动经串口读取并发布 nav_msgs/Odometry 话题，launch 文件支持多台接收机分命名空间接入，并可配置 NTRIP 获取 RTK 固定解。适合在组合导航或多传感器平台中接入国产 RTK 板卡。仓库 2025 年一次性发布，后续更新较少。
 
 #### [trimble_driver_ros](https://github.com/trimble-oss/trimble_driver_ros)  
 *🏷️ 个人社区*
@@ -745,7 +745,7 @@ Fixposition 厂商 Linux ROS 驱动，对接 Vision-RTK 2、PBx-A1 等视觉惯�
 
 语言：Python · 许可：Apache-2.0 · 星标约：53 · 宿主：github
 
-Aceinna OpenIMU 的 Python 驱动，支持数据记录与 WebSocket 服务，Apache-2.0。常与 GNSS/INS 组合导航仿真（如 gnss-ins-sim）配合做惯性侧采集。偏 IMU 接口而非 GNSS 解算；坐标系与标定需使用者处理。适合低成本 INS 实验与传感器融合原型。
+Aceinna 设备的 Python 通信工具，支持 OpenIMU、OpenRTK 与 INS401（后者走 100BASE-T1 以太网，需装 pcap 库），提供数据记录与 WebSocket 服务。Apache-2.0；README 以 Python 3.7 为测试环境，2023 年后少有更新。偏设备接口与日志，本身不做 GNSS 解算；可与同厂商的 gnss-ins-sim 配合做组合导航实验。
 
 ## ROS-NMEA
 

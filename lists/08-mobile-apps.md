@@ -11,7 +11,7 @@
 | [GPSLogger](https://github.com/BasicAirData/GPSLogger) | GPSLogger：安卓开源轨迹与传感器记录器 | Java | 504 | 🏷️ 个人社区 |
 | [bluetooth_gnss](https://github.com/ykasidit/bluetooth_gnss) | bluetooth_gnss：蓝牙外接 GNSS/RTK Android 应用 | Java | 123 | 🏷️ 个人社区 |
 | [GNSS_Compare](https://github.com/TheGalfins/GNSS_Compare) | 手机原始测量定位框架（GPS/Galileo 等） | Java | 73 | 🏷️ 个人社区 |
-| [positional](https://github.com/mtrewartha/positional) | positional：Android 位置与卫星信息简易 App | Kotlin | 61 | 🏷️ 个人社区 |
+| [positional](https://github.com/mtrewartha/positional) | positional：Android 位置/指南针/太阳时间简易 App | Kotlin | 61 | 🏷️ 个人社区 |
 | [GalileoHack](https://github.com/griush/GalileoHack) | GalileoHack：多星座 GNSS 可见性 Android 演示 App | Java | 34 | 🏷️ 个人社区 |
 | [PRIDE-GeoDataLogger](https://github.com/PrideLab/PRIDE-GeoDataLogger) | PRIDE-GeoDataLogger：手机多频 GNSS+IMU 采集工具 | — | 22 | 🏷️ 高校实验室 |
 | [BDS-RawScope](https://github.com/sinyl-labs/BDS-RawScope) | 零依赖安卓 GNSS 原始观测分析 App：天空图、RINEX 导出与 WLS/RAIM/卡尔曼定位 | Java | 0 | 🏷️ 个人社区 |
@@ -51,7 +51,7 @@
 
 语言：Kotlin · 许可：GPL-3.0 · 星标约：61 · 宿主：github
 
-轻量 Android 应用，展示当前位置、坐标与相关卫星/定位信息，适合教学演示与野外快速查看。GPL-3.0；与 GPSTest、GNSS_Compare 相比功能更简洁。非原始测量记录器，科研级 RINEX/原始观测量请另用 GnssLogger 类工具。
+极简、注重隐私的 Android 应用，显示当前位置坐标（可导出到地图）、数字指南针与日出日落等太阳时刻。GPL-3.0，有 Play 商店包。README 没有卫星列表或原始测量功能，与 GPSTest、GNSS_Compare 这类卫星状态工具不同；科研级原始观测请用 GnssLogger 类工具。
 
 #### [GalileoHack](https://github.com/griush/GalileoHack)  
 *🏷️ 个人社区*
@@ -188,7 +188,7 @@ Cryologger Glacier Velocity Tracker 以 Arduino/MicroMod 与 SparkFun ZED-F9P �
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [gsdc2023](https://github.com/taroz/gsdc2023) | gsdc2023：手机十米级挑战 2023 解算代码 | MATLAB | 114 | 🏷️ 个人社区 |
+| [gsdc2023](https://github.com/taroz/gsdc2023) | gsdc2023：手机分米级挑战 2023 获奖方案（因子图 GNSS+IMU） | MATLAB | 114 | 🏷️ 个人社区 |
 | [smartphone-gnss-booster](https://github.com/taroz/Smartphone-GNSS-Booster) | Taro Suzuki 的开源硬件+App 方案：让普通安卓手机实现实时厘米级 RTK | C | 40 | 🏷️ 个人社区 |
 | [GNSS_MobileCalculator](https://github.com/RogerioDoCarmo/GNSS_MobileCalculator) | Android 原始伪距 SPS 示例 | Java | 15 | 🏷️ 个人社区 |
 | [androidGnss](https://github.com/AILocAR/androidGnss) | Android 原始 GNSS 伪距定位 MATLAB 代码 | MATLAB | 14 | 🏷️ 高校实验室 |
@@ -201,7 +201,7 @@ Cryologger Glacier Velocity Tracker 以 Arduino/MicroMod 与 SparkFun ZED-F9P �
 
 语言：MATLAB · 许可：MIT · 星标约：114 · 宿主：github
 
-taroz 针对 Google Smartphone Decimeter Challenge 2023 的公开代码与思路，处理手机原始 GNSS 测量与轨迹评估。MIT 许可；衔接 Android 原始观测与低成本定位研究。竞赛规则与数据版本绑定，复现需自备挑战数据集与官方评价指标脚本。
+Taro Suzuki 公开的 Google Smartphone Decimeter Challenge 2023 复现代码：用 GTSAM 因子图融合手机 GNSS 与 IMU，公榜第 1、私榜第 2（0.928 m）。MATLAB 实现，依赖其另行发布的 gtsam_gnss，方法见 ION GNSS+ 2024 论文。MIT 许可；复现需自备 Kaggle 竞赛数据，结果与竞赛数据版本绑定。
 
 #### [smartphone-gnss-booster](https://github.com/taroz/Smartphone-GNSS-Booster)  
 *🏷️ 个人社区*
@@ -244,7 +244,7 @@ MIT 许可的 Java 库，高效解析 Android GNSS Logger 导出的原始测量�
 
 语言：C++ · 许可：BSD-3-Clause · 星标约：21 · 宿主：github
 
-面向嵌入式的 QZSS DC Report 报文 Arduino 库，BSD-3-Clause。可在带 GNSS 模块的 MCU 上解析灾情类广播，与桌面端 azarashi 形成软硬互补。依赖具体接收机是否输出原始 DCR/相关 NMEA；天线与区域覆盖会影响可用性。适合创客与应急原型，非航空认证实现。
+面向嵌入式的 QZSS DC Report 报文 Arduino 库，BSD-3-Clause。README 以能收 L1S 信号的 Sony SPRESENSE 板为开发环境，解析みちびき灾害・危机管理通报，与桌面端 azarashi 形成软硬互补。依赖具体接收机是否输出原始 DCR/相关 NMEA；天线与区域覆盖会影响可用性。适合创客与应急原型，非航空认证实现。
 
 ## 树莓派GNSS
 
@@ -320,7 +320,7 @@ Bolder Flight 维护的 uBlox GNSS 通信库，同时支持 Arduino 与 CMake �
 
 语言：C++ · 许可：LGPL-2.1 · 星标约：111 · 宿主：github
 
-面向资源受限 MCU 的紧凑 NMEA 解析库，LGPL-2.1，强调小体积与可移植。适合嵌入式日志与简易定位，功能少于 NeoGPS 的 UBX 深度支持。需自行处理串口与语句过滤。补齐 SPDX 明确的 Arduino NMEA 选项。
+面向资源受限 MCU 的紧凑 NMEA 解析库，LGPL-2.1。只解析 GGA 与 RMC（含 GN/GL/GA 等前缀），输出日期时间、经纬高、卫星数、HDOP、航向航速；其他语句可交给回调处理，也能生成带校验和的语句。适合嵌入式日志与简易定位；需要 UBX 或更多语句时可选 NeoGPS。
 
 #### [107-Arduino-NMEA-Parser](https://github.com/107-systems/107-Arduino-NMEA-Parser)  
 *🏷️ 个人社区*

@@ -163,7 +163,7 @@ CS-SI 维护的底层太空动力学库，覆盖轨道传播、力模型、姿�
 
 语言：C++ · 许可：Apache-2.0 · 星标约：112 · 宿主：github
 
-NASA 戈达德主导的 General Mission Analysis Tool 的官方 GitHub 仓库，Apache-2.0 许可，C++ 实现并带脚本语言与 GUI。可做高精度轨道传播（多体引力、大气阻力、光压）、机动优化以及批处理/扩展卡尔曼滤波轨道确定，估计模块支持 GPS 伪距、DSN 测距测速等观测。对 GNSS 用户而言可用于低轨卫星星载 GNSS 定轨实验、可见性与覆盖分析。仓库根 README 较简，安装与构建说明在 application 目录；发行包另见 SourceForge。已用 gh api 核验在线。
+NASA 戈达德主导的 General Mission Analysis Tool 的官方 GitHub 仓库，Apache-2.0 许可，C++ 实现并带脚本语言与 GUI。可做高精度轨道传播（多体引力、大气阻力、光压）、机动优化以及批处理/扩展卡尔曼滤波轨道确定，估计模块支持 GPS 伪距、DSN 测距测速等观测。对 GNSS 用户而言可用于低轨卫星星载 GNSS 定轨实验、可见性与覆盖分析。仓库根 README 较简，安装与构建说明在 application 目录；发行包另见 SourceForge。
 
 #### [tudatpy](https://github.com/tudat-team/tudatpy)  
 *🏷️ 高校实验室*
@@ -290,7 +290,7 @@ CelesTrak 提供的现行 GP（原 TLE）轨道根数获取页，含查询与专
 
 语言：Python · 许可：GPL-3.0 · 星标约：97 · 宿主：github
 
-欧洲航天局相关开源的可微分 SGP4（dSGP4），GPL-3.0，支持自动微分与机器学习集成，便于把轨道传播嵌入优化/学习管线。偏研究原型，需理解可微约束与数值稳定。学术实验室属性强，补齐可微轨道传播缺口。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证与引用要求。
+ESA GitHub 组织发布的可微分 SGP4（PyTorch），对应 Acciarini、Baydin、Izzo 发表在 Acta Astronautica（2025）的论文。GPL-3.0，pip/conda 可装：可对时间和 TLE 参数求梯度，支持批量传播、TLE/OMM 读写，并含学习 SGP4 修正的混合模型 mldsgp4。用于状态转移矩阵、协方差传播与基于梯度的定轨；精度仍属 SGP4 族，不是精密轨道。
 
 ## SGP4-Rust
 
@@ -381,7 +381,7 @@ International VLBI Service 协调中心门户，介绍观测计划、台站网�
 
 语言：Rust · 许可：AGPL-3.0 · 星标约：490 · 宿主：github
 
-nyx-space 维护的 Rust 宇航动力学工具包，AGPL-3.0，星标近五百。覆盖轨道传播、定轨与任务分析等，可与 GNSS 精密轨道/钟差产品对照或做仿真前端。偏航天动力学而非 GNSS 观测解算；许可证对闭源集成有约束。收录前已 gh api 核验。
+nyx-space 维护的 Rust 宇航动力学工具包，AGPL-3.0，星标近五百。覆盖轨道传播、定轨与任务分析等，可与 GNSS 精密轨道/钟差产品对照或做仿真前端。偏航天动力学而非 GNSS 观测解算；许可证对闭源集成有约束。
 
 ## SLR
 

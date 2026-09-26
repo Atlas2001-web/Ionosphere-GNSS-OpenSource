@@ -132,7 +132,7 @@ BME 大地测量组发布的开源 Python 层析工具箱，由 ZWD/梯度、SP3
 
 语言：Fortran · 许可：MIT · 星标约：15 · 宿主：github
 
-Kristine Larson 团队工具，从 RINEX 剥离 SNR 及卫星方位角、高度角，常作为 gnssrefl / GNSS-IR 反射测量流水线前置。MIT 许可，Fortran 实现。适合反射测高与多路径研究；RINEX 版本支持以说明为准，完整反射反演与站点元数据请接 gnssrefl 等下游工具。
+Kristine Larson 团队工具，从 RINEX 剥离 SNR 及卫星方位角、高度角，常作为 gnssrefl / GNSS-IR 反射测量流水线前置。MIT 许可，Fortran 实现。适合反射测高与多路径研究；只读 RINEX 2.11（最多 25 种观测类型，多了需先用 teqc/gfzrnx 精简），完整反射反演与站点元数据请接 gnssrefl 等下游工具。
 
 #### [GIRAS-GPS-Solutions](https://github.com/cemalialtuntas/GIRAS-GPS-Solutions)  
 *🏷️ 高校实验室*
@@ -509,7 +509,7 @@ gemini3d 维护的 NRL Horizontal Wind Model 2014 可构建库，用 CMake 生�
 
 语言：Python · 许可：MIT · 星标约：7 · 宿主：github
 
-读取 GNSS 接收机输出并分析植被光学厚度（VOD）的 Python 工具，MIT 许可。属 GNSS 反射/衰减遥感旁支，与测地定位互补。星数不高但许可证清晰、主题明确。结果依赖天线环境与预处理；不替代专用 GNSS-IR 套件如 gnssrefl。适合生态/水文遥感试验。
+Vincent Humphrey（MeteoSwiss）开发的 Python 工具包，用成对 GNSS 接收机（林冠上、下各一台）的信号衰减估算植被光学厚度（VOD），流程覆盖 RINEX 处理、数据合并、半球图与 VOD 计算，部分函数基于 GNSSpy。MIT 许可，PyPI 可装，有 ReadTheDocs 文档。属 GNSS 衰减遥感，与 gnssrefl 的反射测量不同；结果受天线环境与预处理影响。
 
 ## EPN对流层
 

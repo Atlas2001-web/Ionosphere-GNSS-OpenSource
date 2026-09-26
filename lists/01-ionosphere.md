@@ -212,7 +212,7 @@ TIE-GCM 是 NCAR HAO 发展的三维耦合热层-电离层-电动力学 GCM，Gi
 
 语言：Python · 许可：MIT · 星标约：23 · 宿主：github
 
-space-physics 对经典 NASA Horizontal Wind Model 93 的 Python/Matlab 封装，常与电离层/热层研究及 GNSS 相关大气分析联用。MIT 许可；目录已有 hwm14，本条补齐仍被文献引用的 HWM93 基线接口。模型年代较早，现代工作请对照 HWM14 或其他再分析风场产品验证。
+space-physics 对经典 NASA Horizontal Wind Model 93 的 Python/Matlab 封装，常与电离层/热层研究及 GNSS 相关大气分析联用。MIT 许可；目录已有 hwm14，本条补齐仍被文献引用的 HWM93 基线接口。模型年代较早，现代工作请对照 HWM14 或其他再分析风场产品验证。需 Fortran 编译器（f2py 构建）。仓库已于 2022-08 归档（只读）。
 
 #### [sami2py](https://github.com/sami2py/sami2py)  
 *🏷️ 高校实验室*
@@ -708,7 +708,7 @@ SuperDARN 数据分析工作组（DAWG）维护的 Radar Software Toolkit，GPL-
 
 语言：Python · 许可：MIT · 星标约：23 · 宿主：github
 
-卑尔根大学课题组开发的 LOcal Mapping of Polar ionospheric Electrodynamics，MIT 许可，Python 实现并提供 Binder 可运行示例。在局地立方球网格上，融合 SuperDARN 对流、卫星磁场/离子漂移与地面磁力计扰动等观测，反演区域电场、电流与电势分布，Hall/Pedersen 电导需用户以函数形式给出。适合研究极光区电动力学与 GNSS 闪烁、TEC 斑块的驱动过程。学习曲线较陡，建议先跑仓库自带示例笔记本。近期仍有更新。
+Karl M. Laundal 等开发、Trond Mohn 基金会与挪威研究理事会资助的 LOcal Mapping of Polar ionospheric Electrodynamics，MIT 许可，Python 实现并提供 Binder 可运行示例。在局地立方球网格上，融合 SuperDARN 对流、卫星磁场/离子漂移与地面磁力计扰动等观测，反演区域电场、电流与电势分布，Hall/Pedersen 电导需用户以函数形式给出。适合研究极光区电动力学与 GNSS 闪烁、TEC 斑块的驱动过程。学习曲线较陡，建议先跑仓库自带示例笔记本。近期仍有更新。
 
 #### [Ionort-raytrace](https://github.com/blair3sat/ionosphere-rt)  
 *🏷️ 高校实验室*
@@ -2259,7 +2259,7 @@ irimodel.org 上 IRI-2020 的文件目录，可直接获取 00_iri.zip/tar、许
 
 语言：Python · 许可：MIT · 星标约：17 · 宿主：github
 
-space-physics 维护的地磁指数读写工具，常为电离层/空间天气研究提供 Kp 等辅助输入。MIT 许可；与 igrf、iri2016 等模型接口互补。数据源与更新频率见仓库说明，使用时注意指数时效性与规范引用。 细节以官方页面或仓库 README 为准。
+space-physics 维护的指数下载与解析工具，按时间返回 Ap、Kp 与 F10.7（含平滑值）的 pandas 表，缺测为 NaN，常作电离层/空间天气研究的辅助输入。MIT 许可，有 Zenodo DOI；与 igrf、iri2016 等模型接口互补。README 自述 2018 年后的新数据源读取器尚待补充，使用前请核对所需时段是否覆盖。
 
 #### [madrigalWeb](https://github.com/MITHaystack/madrigalWeb)  
 *🏷️ 高校实验室*
@@ -2588,7 +2588,7 @@ GFZ 官方 Kp 指数数据入口，支持用户定制下载、HTTPS/FTP 与 Web 
 
 语言：Python · 许可：MIT · 星标约：12 · 宿主：github
 
-用 UNAVCO 可获取的 CORS 观测生成尼泊尔区域 TEC 图的 MIT 许可脚本，面向区域电离层制图示例。依赖上游 CORS 可用性与预处理质量；方法偏教学/区域试验，非全球 GIM 产品。补齐区域 TEC 开源示例薄点。收录前已用 HTTP 核验页面或仓库可访问；使用请遵守上游许可证与引用要求。
+加德满都大学本科毕业设计：按日期与测站自动从 UNAVCO 下载 CORS 观测、从 CODE 下载月 DCB，生成尼泊尔区域 TEC 图并输出 IONEX，带 Tkinter 图形界面和理论报告。MIT 许可，依赖 georinex、pymap3d 等。方法偏教学/区域试验，非全球 GIM 产品；UNAVCO 已并入 EarthScope，脚本里的下载地址可能需要更新。
 
 ## 气辉模型
 

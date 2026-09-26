@@ -593,7 +593,7 @@ goGPS 的 Java 实现，便于嵌进 JVM 应用。功能气质同 MATLAB 版但�
 | [PrNet](https://github.com/AILocAR/PrNet) | PrNet：神经网络伪距改正（手机 GNSS） | Python | 30 | 🏷️ 高校实验室 |
 | [E2EPrNet](https://github.com/AILocAR/E2EPrNet) | E2EPrNet：端到端神经伪距改正实现 | Python | 6 | 🏷️ 高校实验室 |
 | [gps_pvt](https://github.com/fenrir-naru/gps_pvt) | gps_pvt：Ruby 可控 PVT + RINEX/SP3/UBX 解析 | C++ | 6 | 🏷️ 个人社区 |
-| [NeRC](https://github.com/AILocAR/NeRC) | NeRC：可微地平线定位中的神经测距改正 | Python | 6 | 🏷️ 高校实验室 |
+| [NeRC](https://github.com/AILocAR/NeRC) | NeRC：可微滑动时域定位的神经测距改正（代码未发布） | Python | 6 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -609,7 +609,7 @@ Stanford NavLab 公开的基于深度神经网络的 GNSS 位置估计仓库，�
 
 语言：Python · 许可：ISC · 星标约：36 · 宿主：github
 
-面向短时 GNSS snapshot 观测的定位估计算法实现，适用于功耗受限或间歇采样场景。ISC 许可，Python 为主。与连续跟踪接收机流水线不同；算法假设与样例数据见仓库，可与 SoftGNSS、PocketSDR 等 SDR 前端组合做快照定位试验，注意历元与辅助数据对齐。
+Jonas Beuchert 与 Alex Rogers 的 SnapperGPS 论文（SenSys 2021）复现代码：从 12 ms 长的低质量 GNSS 信号快照估计位置并与真值比较，另附大量可复用的 GNSS 工具函数。ISC 许可，Python。面向低功耗、间歇采样的快照定位，与连续跟踪接收机流程不同；实验数据需按 README 另行下载。
 
 #### [PrNet](https://github.com/AILocAR/PrNet)  
 *🏷️ 高校实验室*
@@ -637,7 +637,7 @@ AILocAR 在 PrNet 之后的端到端神经伪距改正实现，把改正与定�
 
 语言：Python · 许可：Apache-2.0 · 星标约：6 · 宿主：github
 
-AILocAR 的 Neural Ranging Correction，结合可微移动地平线定位做测距改正，面向学习型 GNSS 定位链条。Apache-2.0；与 PrNet/E2EPrNet 同组，便于读论文复现。星级低、偏研究原型，工程部署需自备数据管线与评估指标。
+AILocAR（Weng、Ling 等）SenSys 2026 论文 NeRC 的仓库：把滑动时域（moving horizon）定位做成可微模块，端到端训练测距改正。README 标题写明 Coming Soon，目前仓库只有 README 与 conda 环境文件，代码尚未公开。Apache-2.0；与 PrNet/E2EPrNet 同组。推荐环境为 16 GB 以上显存的 NVIDIA GPU 加 Theseus。
 
 ## 因子图RTK
 
@@ -678,7 +678,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 | [ICE-Incremental-Covariance](https://github.com/wvu-navLab/ICE) | ICE：增量协方差估计稳健定位研究代码 | Shell | 60 | 🏷️ 高校实验室 |
 | [GraphGNSSLib_LEO](https://github.com/PolyU-TASLAB/GraphGNSSLib_LEO) | GraphGNSSLib_LEO：GNSS+LEO 因子图定位开源包 | C++ | 18 | 🏷️ 高校实验室 |
 | [GraphGNSSLib_LEO_V1.2](https://github.com/Gao-tech1/GraphGNSSLib_LEO_V1.2) | GraphGNSSLib_LEO_V1.2：LEO+GNSS 因子图定位 | C | 18 | 🏷️ 高校实验室 |
-| [Robust-GNSS-FG-GMM-TD](https://github.com/TMBOC/Robust-GNSS-Estimation-using-FG-GMM-TD) | FG-GMM-TD：因子图与混合模型稳健 GNSS 估计 | MATLAB | 10 | 🏷️ 高校实验室 |
+| [Robust-GNSS-FG-GMM-TD](https://github.com/TMBOC/Robust-GNSS-Estimation-using-FG-GMM-TD) | FG-GMM-TD：因子图与混合模型稳健 GNSS 估计 | C++ | 10 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -687,7 +687,7 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 语言：C++ · 许可：MIT · 星标约：149 · 宿主：github
 
-西弗吉尼亚大学导航实验室公开的稳健 GNSS 处理实现，基于因子图框架抑制粗差与非高斯噪声。MIT 许可；与同实验室 PPP-BayesTree、ICE 形成系列。偏论文复现与方法对照，非开箱测地生产链；依赖与示例数据见仓库，部署前需核对编译环境。
+西弗吉尼亚大学导航实验室公开的稳健 GNSS 处理实现，基于因子图框架抑制粗差与非高斯噪声。MIT 许可；与同实验室 PPP-BayesTree、ICE 形成系列。README 提示更新后的稳健估计实现已并入同组 ICE 仓库。偏论文复现与方法对照，非开箱测地生产链；依赖与示例数据见仓库，部署前需核对编译环境。
 
 #### [gtsam_gnss](https://github.com/taroz/gtsam_gnss)  
 *🏷️ 个人社区*
@@ -715,14 +715,14 @@ GREAT-PVT 覆盖精密 PVT 相关能力，与 GREAT-MSF 等组合导航仓库同
 
 语言：C · 许可：MIT · 星标约：18 · 宿主：github
 
-在 GraphGNSSLib 思路上面向 LEO 增强的因子图定位实现（FGO），MIT 许可。与 PolyU GraphGNSSLib_LEO 同主题、不同仓库版本线，便于对照 LEO-PNT/增强试验。偏研究原型，数据接口与依赖以仓库为准，非测地生产套件。
+PolyU TAS Lab 的 Yixin Gao 与 Weisong Wen 发布的 GNSS+LEO 因子图定位包，基于 GraphGNSSLib，用 RTKLIB 读 RINEX：GNSS 伪距/多普勒为实测，LEO 观测为仿真，并对比 SPP 与 FGO。MIT 许可。与 PolyU-TASLAB/GraphGNSSLib_LEO 是同一软件：本仓 2025-01 先建，实验室组织版 2025-11 发布，两者文件树一致、约九成文件内容相同。偏研究原型，非测地生产套件。
 
 #### [Robust-GNSS-FG-GMM-TD](https://github.com/TMBOC/Robust-GNSS-Estimation-using-FG-GMM-TD)  
 *🏷️ 高校实验室*
 
-语言：MATLAB · 许可：MIT · 星标约：10 · 宿主：github
+语言：C++ · 许可：MIT · 星标约：10 · 宿主：github
 
-配套 ION ITM 2020 论文的开源实现：因子图、改进高斯混合模型与变换域方法做稳健 GNSS 估计。MIT 许可；适合粗差/非高斯场景方法对照。偏学术复现，工程集成需自行整理接口与数据格式，星级不高但主题与 RobustGNSS 互补。
+配套 ION ITM 2020 论文的开源实现：因子图、改进高斯混合模型与变换域方法做稳健 GNSS 估计。核心是改写的 GTSAM/GPSTk C++ 代码（沿用 WVU navLab 的稳健估计工作），MATLAB 只用于画图。MIT 许可。README 说明实验数据属 JRC（Borio、Gioia），不随仓库分发，需向其申请。偏学术复现，与 RobustGNSS 互补。
 
 ## PPP-RTK/HAS
 
@@ -1135,7 +1135,7 @@ nav-solutions 框架下的实时 PoC：以 U-Blox 原始/手动模式作测量�
 
 语言：Python · 许可：MIT · 星标约：6 · 宿主：github
 
-博士课题开源：将机器学习用于 GNSS 观测可靠性与多路径抑制，并含仿真与加权实验代码，MIT 许可。星数不多但补齐多路径/AI 交叉这一薄点。结果依赖训练数据与场景，不能直接当作通用测地产品。适合算法对照与复现实验；部署需自备观测与标签管线。
+NavAI 用机器学习优化 PPP：MLNav 用无监督聚类检测和抑制多路径，RLNav 用 PPO 强化学习自适应调整观测加权。MIT 许可，Poetry/DVC/Docker 工程化。README 说明 RLNav 通过 ctypes 调用 GMV 的专有 Position Engine，MLNav 也只读该引擎预先算好的离线结果，没有该引擎无法完整复现。结果依赖训练数据与场景，不能直接当通用定位产品。
 
 ## PPK教程
 

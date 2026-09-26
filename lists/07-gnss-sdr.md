@@ -333,21 +333,21 @@ OSCIMP 维护的 gnss-sdr 补丁集（按 v0.0.18/v0.0.20 分版本）：接双�
 
 语言：C · 许可：MIT · 星标约：157 · 宿主：github
 
-osqzss 家族中针对 bladeRF 的实时 GPS 射频模拟前端。MIT，仓库已 archived；与 LimeGPS、pluto-gps-sim 形成不同硬件后端。仅限实验室或授权环境使用，务必遵守无线电法规，切勿对空非法发射。 细节以官方页面或仓库 README 为准。
+osqzss 家族中针对 bladeRF 的实时 GPS 射频模拟前端。MIT，仓库已于 2025-01 归档（只读）；与 LimeGPS、pluto-gps-sim 形成不同硬件后端。仅限实验室或授权环境使用，务必遵守无线电法规，切勿对空非法发射。
 
 #### [LimeGPS](https://github.com/osqzss/LimeGPS)  
 *🏷️ 个人社区*
 
 语言：C · 许可：MIT · 星标约：134 · 宿主：github
 
-osqzss 家族中针对 LimeSDR 的实时 GPS 射频模拟前端，由 gps-sdr-sim 思路扩展。MIT 许可，仓库已 archived，但仍是 Lime 硬件联调常用参考。与 pluto-gps-sim、multi-sdr-gps-sim 互补；仅供实验室或授权环境使用，务必遵守当地无线电法规。
+osqzss 家族中针对 LimeSDR 的实时 GPS 射频模拟前端，由 gps-sdr-sim 思路扩展。MIT 许可，仓库已于 2025-01 归档（只读），但仍是 Lime 硬件联调常用参考。与 pluto-gps-sim、multi-sdr-gps-sim 互补；仅供实验室或授权环境使用，务必遵守当地无线电法规。
 
 #### [pluto-gps-sim](https://github.com/Mictronics/pluto-gps-sim)  
 *🏷️ 个人社区*
 
 语言：C · 许可：MIT · 星标约：119 · 宿主：github
 
-Mictronics 维护的 PlutoSDR GPS 基带 IQ 生成与发射工具，把模拟中频流送至 ADALM-Pluto。MIT，仓库已 archived，但仍是低成本 SDR 仿真常用入口。与 multi-sdr-gps-sim、gps-sdr-sim 同族；仅限屏蔽室或授权试验，遵守频谱管理规定，勿对空非法发射。
+Mictronics 维护的 PlutoSDR GPS 基带 IQ 生成与发射工具，把模拟中频流送至 ADALM-Pluto。MIT，仓库已于 2021-03 归档（只读），但仍是低成本 SDR 仿真常用入口。与 multi-sdr-gps-sim、gps-sdr-sim 同族；仅限屏蔽室或授权试验，遵守频谱管理规定，勿对空非法发射。
 
 #### [gps-sdr-sim-assistant](https://github.com/frank-pian/gps-sdr-sim-assistant)  
 *🏷️ 个人社区*
@@ -437,7 +437,7 @@ GPS 与 Galileo 卫星信号模拟相关实现，说明中提及与 RTKLIB 能�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [SoftGNSS-octave](https://github.com/kristianpaul/SoftGNSS) | SoftGNSS-octave：Borre/Akos SoftGNSS 的 Octave 教学移植 | Objective-C | 74 | 🏷️ 个人社区 |
+| [SoftGNSS-octave](https://github.com/kristianpaul/SoftGNSS) | SoftGNSS-octave：Borre/Akos SoftGNSS 的 Octave 教学移植 | MATLAB | 74 | 🏷️ 个人社区 |
 | [CCAR-GNSS-SDR-Book](https://ccar.colorado.edu/gnss/) | CCAR-GNSS-SDR-Book：SoftGPS 教材已知问题与配套说明站 | MATLAB | — | 🏷️ 高校实验室 |
 | [SoftGPS-CU-Boulder](https://www.colorado.edu/lab/rf-satnav/resources/original-open-source-gpsgnss-sdr) | SoftGPS-CU-Boulder：CU 软 GNSS 教材配套与 GN3S 前端资源页 | MATLAB | — | 🏷️ 高校实验室 |
 
@@ -446,9 +446,9 @@ GPS 与 Galileo 卫星信号模拟相关实现，说明中提及与 RTKLIB 能�
 #### [SoftGNSS-octave](https://github.com/kristianpaul/SoftGNSS)  
 *🏷️ 个人社区*
 
-语言：Objective-C · 许可：GPL-2.0 · 星标约：74 · 宿主：github
+语言：MATLAB · 许可：GPL-2.0 · 星标约：74 · 宿主：github
 
-将经典 SoftGNSS（Borre/Akos）教学接收机代码移植到 Octave 的 GPL-2.0 版本，便于无 MATLAB 许可环境下学习 GPS 软件接收机流程。与已收录的 SoftGNSS/ SoftGNSS-python 同源不同实现，目录名加 octave 后缀区分。偏教学演示，实时性与多星座能力有限；采样数据与前端需自备。
+将经典 SoftGNSS（Borre/Akos）教学接收机代码移植到 Octave 的 GPL-2.0 版本，便于无 MATLAB 许可环境下学习 GPS 软件接收机流程。与已收录的 SoftGNSS/ SoftGNSS-python 同源不同实现，目录名加 octave 后缀区分。README 自称“hackish port”，只确认到捕获 PRN 为止，定位结果未经测试；偏教学演示，实时性与多星座能力有限；采样数据与前端需自备。
 
 #### [CCAR-GNSS-SDR-Book](https://ccar.colorado.edu/gnss/)  
 *🏷️ 高校实验室*
@@ -704,7 +704,7 @@ pothosware 为 SoapySDR 提供的 Ettus/UHD（USRP）后端插件，GPL-3.0。�
 
 语言：C++ · 许可：MIT · 星标约：154 · 宿主：github
 
-SoapySDR 的 RTL-SDR 支持模块，MIT 许可、星标较多。便于用廉价 USB 棒做 GNSS L1 教学演示与频谱摸底。动态范围与前端滤波有限，不宜当作精密观测前端。需配合宿主 SoapySDR 与基带链（如 GNSS-SDR）。收录前已核验仓库可访问。
+SoapySDR 的 RTL-SDR 支持模块，MIT 许可、星标较多。便于用廉价 USB 棒做 GNSS L1 教学演示与频谱摸底。动态范围与前端滤波有限，不宜当作精密观测前端。需配合宿主 SoapySDR 与基带链（如 GNSS-SDR）。
 
 ## 远程Soapy
 
@@ -734,7 +734,7 @@ SoapyRemote 允许在一台机器上挂 SDR，另一台经网络以 Soapy 客户
 
 语言：C++ · 许可：MIT · 星标约：28 · 宿主：github
 
-SoapySDR 的 Airspy 插件，MIT。Airspy 系列带宽与采样率高于普通 RTL-SDR，常用于 GNSS 频谱与多星座演示。仍属接收前端适配，不提供伪距/载波解算。依赖宿主 SoapySDR 与厂商驱动。收录前已用 gh api 核验许可与活跃状态。
+SoapySDR 的 Airspy 插件，MIT。Airspy 系列带宽与采样率高于普通 RTL-SDR，常用于 GNSS 频谱与多星座演示。仍属接收前端适配，不提供伪距/载波解算。依赖宿主 SoapySDR 与厂商驱动。
 
 ## SDRplay插件
 

@@ -94,7 +94,7 @@ Sean Barbeau 维护的 awesome 列表，覆盖 App、桌面工具、库与文献
 
 语言：Python · 许可：GPL-3.0 · 星标约：4 · 宿主：github
 
-树莓派上的低成本 GNSS 图形界面，调用 RTKLIB 做各类解算，基于 RTKBase 与 TouchRTKStation；README 给出 u-blox M8T、4 寸屏、3D 打印外壳等组装清单。README 里的链接指向 NChebbah/EasyGNSS（现已 404），本仓可能是转存；账号资料里的 IGG,CAS 与项目本身无关。适合教学与业余台站，精密处理请导出 RINEX 后用 RTKLIB 等。
+树莓派上的低成本 GNSS 图形界面，调用 RTKLIB 做各类解算，基于 RTKBase 与 TouchRTKStation；README 给出 u-blox M8T、4 寸屏、3D 打印外壳等组装清单。本仓不是 GitHub fork，但提交历史含 Nassim Chebbah（ensg.eu 邮箱）的提交和来自 NChebbah/final 的 PR 合并，仓库创建于最后一次提交（2019-05-15）之后，应是原仓 NChebbah/EasyGNSS（现已 404）的转存；whigg 账号公开仓库逾 7000 个。账号资料里的 IGG,CAS 与项目本身无关。适合教学与业余台站，精密处理请导出 RINEX 后用 RTKLIB 等。
 
 #### [GPS-Velocity-Viewer](https://www.unavco.org/software/visualization/GPS-Velocity-Viewer/GPS-Velocity-Viewer.html)  
 *🏷️ 官方*
@@ -325,7 +325,7 @@ Rokubun 编写的 GNSS 数据处理 Jupyter 教程，覆盖从观测到基础解
 
 语言：MATLAB · 许可：MIT · 星标约：7 · 宿主：github
 
-面向双差（DD）相对定位与周跳探测的 Matlab 练习，附带城市环境静态多站 GPS 样例。MIT 许可；适合课程实验理解周跳与相对定位基础。非生产 RTK 引擎，数据与习题步骤绑定仓库说明文档。 细节以官方页面或仓库 README 为准。
+MATLAB 课程练习：用五站 GPS 静态网数据（AdvConc2019.mat）构造双差（OMC）、建立随机模型、探测并修复周跳、计算双差模糊度，按时间和高度角绘图，也涉及三差。MIT 许可；适合课程实验理解周跳与相对定位基础。非生产 RTK 引擎，数据与习题步骤绑定仓库说明。
 
 ## HF传播态势
 
@@ -389,7 +389,7 @@ Rokubun 编写的 GNSS 数据处理 Jupyter 教程，覆盖从观测到基础解
 | [Geodesy.jl](https://github.com/JuliaGeo/Geodesy.jl) | Geodesy.jl：Julia 坐标与大地测量变换库 | Julia | 114 | 🏷️ 个人社区 |
 | [ncat-lib](https://github.com/noaa-ngs/ncat-lib) | NGS NCAT Java 库：离线坐标/基准转换 | Java | 21 | 🏷️ 官方 |
 | [NGS-NCAT](https://geodesy.noaa.gov/NCAT/) | NGS-NCAT：NOAA/NGS 大地坐标与参考框架在线转换 | web/service | — | 🏷️ 官方 |
-| [NRCan-TRX](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/trx.php) | NRCan-TRX：加拿大 CSRS 在线大地坐标/高程转换 | data-portal | — | 🏷️ 官方 |
+| [NRCan-TRX](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/trx.php) | NRCan-TRX：加拿大 NAD83(CSRS)/ITRF 在线坐标与历元转换 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -412,7 +412,7 @@ geospace-code 维护的纯 Python（可选 Numpy）三维坐标转换库，覆�
 
 语言：Julia · 许可：MIT · 星标约：114 · 宿主：github
 
-JuliaGeo 的坐标系统与点位变换库，支持常见大地测量坐标转换。MIT 许可；填补目录 Julia 生态缺口。偏通用大地测量而非 GNSS 观测处理，完整解算请另接 Julia 或其他语言的 GNSS 专用库。 细节以官方页面或仓库 README 为准。
+JuliaGeo 的坐标系统与点位变换库，支持常见大地测量坐标转换。MIT 许可；填补目录 Julia 生态缺口。偏通用大地测量而非 GNSS 观测处理，完整解算请另接 Julia 或其他语言的 GNSS 专用库。
 
 #### [ncat-lib](https://github.com/noaa-ngs/ncat-lib)  
 *🏷️ 官方*
@@ -433,7 +433,7 @@ NGS 公开的 NCAT（NGS Coordinate Conversion and Transformation Tool）底层 
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-自然资源部 CSRS 在线工具，支持加拿大常用大地基准与高程系统之间的坐标转换，常与 CSRS-PPP 成果后处理衔接。面向工程与科研用户的浏览器表单，无需自建 PROJ 管线即可完成官方参数转换。参数与历元选择会影响结果，跨海或旧历元需核对说明。收录前已 HTTP 200 核验；请遵守 NRCan 服务条款。
+加拿大自然资源部（NRCan）CSRS 在线工具 TRX：在 NAD83(CSRS) 与各代 ITRF（至 ITRF2020）之间转换，支持地理、笛卡尔与 UTM/MTM 等投影坐标互换，可用加拿大速度格网（NAD83v80VG）或自填速度做历元推算；有单点与 CSV 批处理，另有测试 NATRF2022 的 beta 版。不做高程基准转换。常与 CSRS-PPP 成果衔接；数据按加拿大开放政府许可使用。
 
 ## 认证/完好性
 
@@ -441,7 +441,7 @@ NGS 公开的 NCAT（NGS Coordinate Conversion and Transformation Tool）底层 
 |---|---|---|---:|---|
 | [galileo-osnma](https://github.com/daniestevez/galileo-osnma) | galileo-osnma：嵌入式友好的 Galileo OSNMA Rust 库 | Rust | 88 | 🏷️ 个人社区 |
 | [OSNMA](https://github.com/Algafix/OSNMA) | OSNMA：Galileo 开放业务认证 Python 实现 | Python | 52 | 🏷️ 高校实验室 |
-| [gal-osnma-sim](https://github.com/galileoz/gal-osnma-sim) | gal-osnma-sim：Galileo OSNMA 开源仿真器 | C | 31 | 🏷️ 个人社区 |
+| [gal-osnma-sim](https://github.com/galileoz/gal-osnma-sim) | gal-osnma-sim：Galileo E1 OSNMA 基带信号仿真器 | C | 31 | 🏷️ 个人社区 |
 | [GSC-OSNMA-Service](https://www.gsc-europa.eu/galileo/services/galileo-open-service-navigation-message-authentication-osnma) | GSC OSNMA：Galileo 导航电文认证官方服务页 | data-portal | — | 🏷️ 官方 |
 | [GSC-Programme-Reference-Documents](https://www.gsc-europa.eu/electronic-library/programme-reference-documents) | GSC 参考文件：Galileo/EGNOS ICD 与计划文档 | data-portal | — | 🏷️ 官方 |
 
@@ -466,7 +466,7 @@ daniestevez 维护的 Galileo OSNMA 协议 Rust 库，校验导航电文密码�
 
 语言：C · 许可：MIT · 星标约：31 · 宿主：github
 
-galileoz 的 Galileo OSNMA 仿真工具，用于生成/演练开放服务导航电文认证场景，便于测试认证链路。MIT 许可；与 Algafix/OSNMA、daniestevez/galileo-osnma 形成仿真—实现互补。偏研究与联调，非飞行级密钥管理；密钥材料与配置步骤以仓库文档为准，勿与生产公钥混用。
+受 gps-sdr-sim 启发的 Galileo 信号仿真器，生成 E1B/E1C 基带数据流，可经 HackRF 等 SDR 转成射频，用来测试接收机的 OSNMA 认证。README 说明用 GSC 官方 OSNMA 测试向量验证，向量需先用脚本重排格式；默认链接 libhackrf，Makefile 支持 Windows/Linux/macOS。MIT 许可，2023 年后少有更新。仅限屏蔽室或有线注入，勿对空发射。
 
 #### [GSC-OSNMA-Service](https://www.gsc-europa.eu/galileo/services/galileo-open-service-navigation-message-authentication-osnma)  
 *🏷️ 官方*

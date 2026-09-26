@@ -186,7 +186,7 @@ asv-soft 的 .NET 库，解析 RTCMv2/v3 与 NMEA，并支持经 SBF/ComNav/UBX 
 
 语言：Go · 许可：Apache-2.0 · 星标约：26 · 宿主：github
 
-go-gnss 组织的 RTCM 解析库，便于在 Go 服务中解码差分电文。Apache-2.0；与同组织 ntrip（已收录）配套，适合云原生差分网关。消息类型覆盖以仓库测试为准，生产需补齐版本协商与错误处理。 细节以仓库或官方页面说明为准。
+go-gnss 组织的 RTCM 解析库，便于在 Go 服务中解码差分电文。Apache-2.0；与同组织 ntrip（已收录）配套，适合云原生差分网关。README 自述只适合解析、构造电文很不方便，并附 ntriplatency 测延迟示例。消息类型覆盖以仓库测试为准。
 
 #### [gstream](https://github.com/Jin-Whu/gstream)  
 *🏷️ 个人社区*
@@ -664,7 +664,7 @@ GeoRust/nav-solutions 系 RINEX 库，附 RINEX-Cli，可做质检、SPP/PPP、C
 
 语言：Python · 许可：LGPL-3.0 · 星标约：21 · 宿主：github
 
-Swift Navigation 的 pyNEX，提供 Python RINEX 实用库与命令行工具，仓库已 archived 但仍可作历史参考与脚本改造起点。LGPL-3.0；与 georinex、nav-solutions/rinex 等活跃库对照。新项目优先选仍维护的解析器，本条保留归档溯源价值。
+Swift Navigation 的 pyNEX，提供 Python RINEX 实用库与命令行工具，仓库已于 2021-07 归档（只读），但仍可作历史参考与脚本改造起点。LGPL-3.0；与 georinex、nav-solutions/rinex 等活跃库对照。新项目优先选仍维护的解析器，本条保留归档溯源价值。
 
 #### [uNavTools](https://github.com/IvAn190/uNavTools)  
 *🏷️ 个人社区*
@@ -700,7 +700,7 @@ GFZ 官方用户指南，详述 RINEX 2/3/4 检查、拼接、抽样、元数据
 |---|---|---|---:|---|
 | [HASlib](https://github.com/nlsfi/HASlib) | HASlib：Galileo HAS 改正解码库 | Python | 65 | 🏷️ 官方 核心 |
 | [GHASP-HAS-decoding](https://github.com/borioda/HAS-decoding) | GHASP：Galileo HAS E6B 二进制流转 CSV 改正 | Python | 20 | 🏷️ 个人社区 |
-| [go-gnss-spartn](https://github.com/go-gnss/spartn) | go-gnss/spartn：Go 语言 SPARTN 改正流解析库 | Go | 5 | 🏷️ 个人社区 |
+| [go-gnss-spartn](https://github.com/go-gnss/spartn) | go-gnss/spartn：Go 语言 SPARTN 帧层解析（早期、未完成） | Go | 5 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -723,7 +723,7 @@ NLS/FGI（nlsfi）维护的 Galileo High Accuracy Service 解码库，支持从 
 
 语言：Go · 许可：Apache-2.0 · 星标约：5 · 宿主：github
 
-go-gnss 的 SPARTN 解析库，面向 PPP-RTK/高精度改正流格式。Apache-2.0；与 Python pyspartn 互补，便于 Go 侧对接 SPARTN 服务。协议演进快，请核对支持的消息子集与密钥/授权要求（若接商用流）。
+go-gnss 的 SPARTN 解析库，Apache-2.0。README 自述目前只实现帧层，消息定义与反序列化仍是 TODO，CRC 也没用真实数据验证过；2020-05 后没有推送。可作 Go 侧起点或格式参考，实际解码 SPARTN 请用 pyspartn 等成熟库。
 
 ## 处理/教学
 
@@ -850,7 +850,7 @@ kosma 维护的嵌入式友好 NMEA 0183 解析库，无动态分配、接口精
 
 语言：C · 许可：MIT · 星标约：326 · 宿主：github
 
-jacketizer 的纯 C NMEA 0183 解析库，接口精简，适合嵌入式与资源受限环境。MIT 许可；与 minmea、nmea-parser 等形成多语言对照。句子覆盖以头文件为准，复杂专有扩展需自行扩展解析表。 细节以仓库或官方页面说明为准。
+jacketizer 的纯 C NMEA 0183 解析库，接口精简，适合嵌入式与资源受限环境。MIT 许可；与 minmea、nmea-parser 等形成多语言对照。句子覆盖以头文件为准，复杂专有扩展需自行扩展解析表。
 
 #### [GPS.js](https://github.com/rawify/GPS.js)  
 *🏷️ 个人社区*
@@ -906,21 +906,21 @@ Stanford GPS Lab 的 navsu MATLAB 工具箱，聚合 RINEX/产品解析、时间
 
 语言：Python · 许可：GPL-3.0 · 星标约：16 · 宿主：github
 
-较早的 Septentrio SBF 文件解析 Python 模块，GPL-3.0。与较新的 pysbf2（BSD）可对照；若无许可传染顾虑可优先 pysbf2。适合离线日志分析，维护活跃度以提交历史为准。 细节以仓库或官方页面说明为准。 细节以仓库或官方页面说明为准。
+较早的 Septentrio SBF 文件解析模块，核心用 C 写成（可选 Cython），README 以 Python 2.7 为安装示例，声明支持 SBF 文档 v1.13.0 的全部数据块，2017 年后未更新。GPL-3.0。新项目宜优先用仍在维护、许可更宽松的 pysbf2（BSD）；本库可作离线日志解析的历史参考。
 
 #### [pysbf2](https://github.com/semuconsulting/pysbf2)  
 *🏷️ 个人社区*
 
 语言：Python · 许可：BSD-3-Clause · 星标约：8 · 宿主：github
 
-semuconsulting 维护的 Septentrio Binary Format（SBF）Python 库，可解析与生成接收机二进制消息。BSD-3-Clause；与 pyubx2、pyrtcm、pyspartn 同生态，填补 SBF 侧缺口。适合日志解码与测试注入；完整驱动亦可对照官方 ROS septentrio_gnss_driver。
+semuconsulting 维护的 Septentrio Binary Format（SBF）Python 库，可解析与生成接收机二进制消息。BSD-3-Clause；与 pyubx2、pyrtcm、pyspartn 同生态，填补 SBF 侧缺口。适合日志解码与测试注入；完整驱动可对照 Septentrio 厂商的 ROS septentrio_gnss_driver。
 
 #### [pyubxutils](https://github.com/semuconsulting/pyubxutils)  
 *🏷️ 个人社区*
 
 语言：Python · 许可：BSD-3-Clause · 星标约：5 · 宿主：github
 
-semuconsulting 提供的 UBX 设备命令行工具，基于 pyubx2 生态做配置、查询与调试。BSD-3-Clause；适合实验室批量改配置与回归测试。星级不高，功能随 pyubx2 版本演进，复杂自动化可直接调用库 API。 细节以仓库或官方页面说明为准。
+semuconsulting 基于 pyubx2 的 u-blox 工具集，BSD-3-Clause。包括 ubxsave/ubxload（导出、回灌 Gen9 及以上接收机的完整配置）、ubxsetrate（设消息输出速率）、ubxbase（把 ZED-F9P 等设为 RTK 基准站，固定坐标或 Survey-In）、ubxcompare（比较配置）和 ubxsimulator（按 JSON 参数生成合成 UBX/NMEA 串流），另有图形客户端。适合实验室批量改配置与回归测试。
 
 #### [gnss-protos](https://github.com/nav-solutions/gnss-protos)  
 *🏷️ 个人社区*
@@ -1375,7 +1375,7 @@ MIT 许可的 Python 脚本，按站号与日期/小时段批量抓取爱尔兰 
 
 语言：Python · 许可：MIT · 星标约：44 · 宿主：github
 
-解析准天顶卫星系统（QZSS）灾害与危机管理（DCR）电文的 Python 工具，MIT 许可。面向日本及周边区域的灾情预警链路验证，与普通 NMEA/UBX 定位库互补。电文格式随 QZSS 规范演进，解码前需核对官方 ICD 与样本。适合灾情接收演示与消息字段研究，不替代测地级定位引擎。
+解析准天顶卫星系统（QZSS）灾害与危机管理（DCR）电文的 Python 工具，MIT 许可。面向日本及周边区域的灾情预警链路验证，与普通 NMEA/UBX 定位库互补。README 列出支持 IS-QZSS-DCR-017 与 DCX-004，输入为 u-blox 或 Sony Spresense 的消息格式，需 Python 3.11 以上。电文格式随 QZSS 规范演进，解码前需核对官方 ICD 与样本。适合灾情接收演示与消息字段研究，不替代测地级定位引擎。
 
 ## 历书转换
 

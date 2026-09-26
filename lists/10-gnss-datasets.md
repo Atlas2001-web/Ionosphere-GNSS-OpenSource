@@ -1418,12 +1418,12 @@ GNSS.be 为 ROB 的 GNSS 开放数据与产品门户，提供活动介绍、开�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [UNR-GPSNetMap](https://geodesy.unr.edu/NGLStationPages/gpsnetmap/GPSNetMap.html) | 内华达大地测量实验室：全球 GPS 网交互地图 | data-portal | — | 🏷️ 官方 |
+| [UNR-GPSNetMap](https://geodesy.unr.edu/NGLStationPages/gpsnetmap/GPSNetMap.html) | 内华达大地测量实验室：全球 GPS 网交互地图 | data-portal | — | 🏷️ 高校实验室 |
 
 ### 详细说明
 
 #### [UNR-GPSNetMap](https://geodesy.unr.edu/NGLStationPages/gpsnetmap/GPSNetMap.html)  
-*🏷️ 官方*
+*🏷️ 高校实验室*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
