@@ -3,6 +3,8 @@
 > jtec/prx：Python 预处理器。输入 RINEX 3.0x 观测（+ 广播星历），输出**每历元 × 每卫星 × 每码信号一行**的 CSV：原始观测值加卫星位置/速度、钟差、相对论项、TGD、Sagnac、对流层、Klobuchar 电离层、仰角/方位角。它**不解算**位置，但给了最小二乘示例函数（`prx.user.spp_pt_lsq`）。
 > 本篇实测：2026-09-26 04:08–04:24 EDT，Debian box（系统时区实为 `Etc/UTC`），uv 托管 Python 3.13.15。未测 `--prx_level 3`（PPP 精密产品）。
 
+> **质检复跑通过**（2026-09-26 04:32–04:44 EDT）：`/tmp/prx-man` 重装，`uv sync --no-dev` → 托管 CPython **3.13.15**，tip `20a2382`（182 提交，★23/fork 9/issue 19/MIT）。`python src/prx/main.py --help` 旗标与两条 `SyntaxWarning` 复现；`.venv/bin/prx` → `TypeError: 'module' object is not callable` exit **1**。BKG WTZR 2026-258 + BRDM00DLR_S：2 h 冷启动墙钟 **80 s**（头 `processing_time` 77.3 s）、**36346** 行/239 历元/11.5 MB，星座行数 C12361/E9218/G9061/R5706 逐字同，OBS/NAV murmur3 `a4aea001…`/`f2a9eb03…` 同；首历元 G07 `1C` 伪距/位置/钟差/改正项逐字段同，**仅 `ephemeris_hash` 改为** `10573026065340636401`（正文按星座排序，文件首数据行实为 C02 `2I`）。全天 `.rnx` NAV 已缓存 **17 s**→2879 历元/**434766** 行/**138045011** B；`.crx.gz` 直喂 **12 s**、行数同、旁路留下 `.crx`+`.rnx`。`--prx_level 1` **4 s**/36346 行/23 列。`user.spp_pt_lsq` 全天：GPS 1C **1.608**/3.028 m、水平 0.881 m、ENU (+0.160,+0.528,−1.095)；G+E+C **1.467**/2.663 m；加 R 原样完全相同；R bias 补 0 → 1.571/3.866 m。TZ=UTC 与 `America/New_York` 正文逐字节相同（头 `processing_start_time` 08:43 对 04:43）。georinex 抽 50 行 G `1C` 伪距 max|Δ|=0。错误：空/RINEX2/RINEX4 → `TypeError ... NoneType` exit 1；截断 **1300000** B → exit 0、120 历元/17152 行；前一天星历 → exit 0、1 历元/149 行；BRDC00IGS → `System I NAV data ...` exit 1；无星历 → ESA FTP `URLError`/`Connection refused` exit 1；APPROX 全 0（列宽正确）→ `KeyError: "['sat_pos_x_m', ...] not in index"`；删 APPROX → `KeyError: 'APPROX POSITION XYZ'`；字母伪距 → `could not convert ... 'ABCDEFGHIJ.K'`；短名 `wtzr2580.26o` → 36346 行；GLO `TIME OF FIRST OBS` → AssertionError；缺路径 exit 1。修：示例行 `ephemeris_hash`、仰角下限 **0.012°**（原 1.06°）、全天 CSV 字节、墙钟、LSQ 水平/ENU 毫米级、截断尺寸说明、diskcache≈84 MB。未复跑：独立开普勒 200 行全表、level 3/unb3m、RINEX 4 NAV、派生删 I 记录、合成伪距其余用例。
+
 ## 1. 用途边界
 
 | 能 | 不能 / 未测 |
@@ -60,26 +62,26 @@ P.S. GNSS rules!
 cd /tmp/prx-man/runA        # 目录里只放：观测 + BRDM00DLR_S_20262580000_01D_MN.rnx.gz
 /tmp/prx-man/src/.venv/bin/python /tmp/prx-man/src/src/prx/main.py \
   --observation_file_path WTZR00DEU_R_20262580000_02H_30S_MO.rnx   # 00–02 时裁剪版，240 历元
-# 日志要点（UTC）：
-# 08:12:48 Uncompressed BRDM00DLR_S_20262580000_01D_MN.rnx.gz to BRDM00DLR_S_20262580000_01D_MN.rnx
-# 08:12:48 gfzrnx binary not found (try adding it to PATH), skipping repair...
-# 08:13:57 Computing times of emission in satellite time      ← 冷启动解析 NAV 约 69 s
-# 08:14:01 Generated CSV prx file: <_io.TextIOWrapper name='WTZR00DEU_R_20262580000_02H_30S_MO.csv' ...>
+# 日志要点（UTC，质检冷启动）：
+# 08:34:42 Uncompressed BRDM00DLR_S_20262580000_01D_MN.rnx.gz to BRDM00DLR_S_20262580000_01D_MN.rnx
+# 08:34:42 gfzrnx binary not found (try adding it to PATH), skipping repair...
+# 08:35:56 Computing times of emission in satellite time      ← 冷启动解析 NAV 约 73 s
+# 08:35:59 Generated CSV prx file: <_io.TextIOWrapper name='WTZR00DEU_R_20262580000_02H_30S_MO.csv' ...>
 ```
 
 | 运行 | 耗时（墙钟） | 输出 |
 | --- | --- | --- |
-| 2 h，冷缓存 | 76.0 s | 239 历元、**36346 行**、11.5 MB |
-| 全天 `.rnx`，NAV 已缓存 | 25.5 s（其中读观测 8.3 s） | 2879 历元、**434766 行**、138029388 B |
-| 全天 `.crx.gz` 直喂 | 14 s（缓存全热） | 行数同上 |
-| 2 h，`--prx_level 1` | 4.7 s | 36346 行、23 列（无 bias/sagnac/tropo/iono） |
+| 2 h，冷缓存 | 80 s（头记 77.3 s） | 239 历元、**36346 行**、11.5 MB |
+| 全天 `.rnx`，NAV 已缓存 | 17 s | 2879 历元、**434766 行**、138045011 B |
+| 全天 `.crx.gz` 直喂 | 12 s（缓存全热） | 行数同上 |
+| 2 h，`--prx_level 1` | 4 s | 36346 行、23 列（无 bias/sagnac/tropo/iono） |
 
-输出第 1 行是 JSON 注释头，第 2 行列名（level 2，27 列）：
+输出第 1 行是 JSON 注释头，第 2 行列名（level 2，27 列）。正文按星座排序，文件首数据行是 C02 `2I`；下示首历元 G07 `1C`（物理量与本机复现一致）：
 
 ```text
-# {"approximate_receiver_ecef_position_m": [4075580.8863, 931853.5784, 4801567.9707], "input_files": [{"name": "WTZR00DEU_R_20262580000_02H_30S_MO.rnx", "murmur3_hash": "a4aea00160c25a166e4a8bb8f16fc71b"}, {"name": "BRDM00DLR_S_20262580000_01D_MN.rnx", "murmur3_hash": "f2a9eb033de9a18509ab84ef76563b50"}], "prx_git_commit_id": "unknown", "prx_level": 2, "processing_start_time": "2026-09-26 08:12:48.216", "processing_time": "0 days 00:01:12.972751"}
+# {"approximate_receiver_ecef_position_m": [4075580.8863, 931853.5784, 4801567.9707], "input_files": [{"name": "WTZR00DEU_R_20262580000_02H_30S_MO.rnx", "murmur3_hash": "a4aea00160c25a166e4a8bb8f16fc71b"}, {"name": "BRDM00DLR_S_20262580000_01D_MN.rnx", "murmur3_hash": "f2a9eb033de9a18509ab84ef76563b50"}], "prx_git_commit_id": "unknown", "prx_level": 2, "processing_start_time": "2026-09-26 08:34:42.389", "processing_time": "0 days 00:01:17.257379"}
 time_of_reception_in_receiver_time,sat_code_bias_m,sat_clock_offset_m,sat_clock_drift_mps,sat_pos_x_m,sat_pos_y_m,sat_pos_z_m,sat_vel_x_mps,sat_vel_y_mps,sat_vel_z_mps,ephemeris_hash,health_flag,relativistic_clock_effect_m,sagnac_effect_m,tropo_delay_m,carrier_frequency_hz,iono_delay_m,sat_elevation_deg,sat_azimuth_deg,rnx_obs_identifier,C_obs_m,D_obs_hz,L_obs_cycles,LLI,S_obs_dBHz,constellation,prn
-2026-09-15 00:00:30.000000,-3.210840,-67330.925886,-0.000954,-10285108.390254,-12223307.156838,21889820.176272,2321.468487,-1236.849417,375.093517,2467840257573081771,0.000000,3.651199,9.786192,31.139027,1575420000.000000,4.605919,4.092146,-21.862021,1C,25976744.361000,2161.543000,136508709.774000,0.000000,37.150000,G,07
+2026-09-15 00:00:30.000000,-3.210840,-67330.925886,-0.000954,-10285108.390254,-12223307.156838,21889820.176272,2321.468487,-1236.849417,375.093517,10573026065340636401,0.000000,3.651199,9.786192,31.139027,1575420000.000000,4.605919,4.092146,-21.862021,1C,25976744.361000,2161.543000,136508709.774000,0.000000,37.150000,G,07
 ```
 
 2 h 行数按系统：C 12361 行/16 星、E 9218/13、G 9061/14、R 5706/13；I、S 零行。第一个历元 00:00:00 不在输出里（坑 5）。
@@ -101,16 +103,16 @@ for t, g in sub.groupby("time_of_reception_in_receiver_time"):
 
 | 信号选择 | 解 | 3D 中位 / 95% | 水平中位 | ENU 平均（m） |
 | --- | --- | --- | --- | --- |
-| GPS `1C` | 2879 历元，9.0 星 | **1.608 / 3.028 m** | 0.883 m | (+0.160, +0.531, −1.093) |
-| G `1C` + E `1C` + C `2I` | 2879，26.1 行 | **1.467 / 2.663 m** | 0.855 m | (+0.186, +0.599, −1.130) |
+| GPS `1C` | 2879 历元，9.0 星 | **1.608 / 3.028 m** | 0.881 m | (+0.160, +0.528, −1.095) |
+| G `1C` + E `1C` + C `2I` | 2879，26.1 行 | **1.467 / 2.663 m** | 0.852 m | (+0.186, +0.595, −1.132) |
 | 再加 R `1C`（原样） | 2879，候选 32.5 行 | 1.467 / 2.663 m（与上行**完全相同**） | — | — |
-| 加 R `1C`，R 的 `sat_code_bias_m` 补 0 | 2879 | 1.571 / 3.866 m | 0.943 m | (+0.064, +0.606, −1.092) |
+| 加 R `1C`，R 的 `sat_code_bias_m` 补 0 | 2879 | 1.571 / 3.866 m | 0.943 m | (+0.064, +0.603, −1.094) |
 
-同站同日、同为 GPS 广播星历（但用 BRDC00IGS）：[gps-pvt](./gps-pvt.md) 记 1.357/3.269 m，RTKLIB 2.4.3 记 1.489/3.089 m（引用，未在本篇重跑）。脚本 3 组共 41 s。
+同站同日、同为 GPS 广播星历（但用 BRDC00IGS）：[gps-pvt](./gps-pvt.md) 记 1.357/3.269 m，RTKLIB 2.4.3 记 1.489/3.089 m（引用，未在本篇重跑）。脚本 3 组共 48 s。
 
 ### 4.2 时区
 
-默认（UTC）与 `TZ=America/New_York` 各跑一次 2 h：CSV 正文**逐字节相同**；只有头里的 `processing_start_time` 跟着本地墙钟走（08:12 对 04:15，且不带时区）。
+默认（UTC）与 `TZ=America/New_York` 各跑一次 2 h：CSV 正文**逐字节相同**；只有头里的 `processing_start_time` 跟着本地墙钟走（质检例：08:43 对 04:43，且不带时区）。
 
 ## 5. 交叉检查（独立实现）
 
@@ -125,14 +127,14 @@ for t, g in sub.groupby("time_of_reception_in_receiver_time"):
 | `sat_elevation_deg` | 2.5×10⁻⁷ ° | 5.0×10⁻⁷ ° |
 | `sat_code_bias_m` vs c·TGD（E1 用 BGD E5b/E1） | 2.6×10⁻⁷ m | 4.9×10⁻⁷ m |
 
-钟差、仰角、TGD 的差就是 CSV 固定 6 位小数的舍入。符号：钟差、相对论项与伪距**同向相加**，TGD 相减。GLONASS 轨道、对流层、电离层未做独立核对（未测）。
+钟差、仰角、TGD 的差就是 CSV 固定 6 位小数的舍入。符号：钟差、相对论项与伪距**同向相加**，TGD 相减。GLONASS 轨道、对流层、电离层未做独立核对（未测）。质检抽 50 行 G `1C`：`C_obs_m` vs georinex max|Δ|=0；开普勒 200 行全表未在本遍重跑。
 
 ## 6. 错误用例（2 h 文件 + BRDM 星历；「合成」= 人工改过的文件）
 
 | 输入 | 退出码 | 表现 |
 | --- | --- | --- |
 | 空文件（合成） | 1 | `TypeError: expected str, bytes or os.PathLike object, not NoneType` |
-| 截到 1.3 MB（合成，停在记录中间） | **0** | 静默：120 历元 / 17152 行，半截的末历元照样输出 |
+| 截到 1300000 B≈1.3 MB（合成，停在记录中间） | **0** | 静默：120 历元 / 17152 行，半截的末历元照样输出 |
 | RINEX 2.11（仓内真文件 `tlse001b.23o`） | 1 | 同上 `TypeError`（`rinex_2_to_rinex_3` 直接返回 None） |
 | RINEX 4.00 OBS（合成：只改版本行） | 1 | 同上 `TypeError` |
 | RINEX 4.02 NAV（真 `BRD400DLR_S`） | 1 | 日志 `still not RINEX 3, giving up.`，被跳过，转去自动下载，下到 BRDC00IGS 后报 `ValueError: System I NAV data ...` |
@@ -179,11 +181,11 @@ for t, g in sub.groupby("time_of_reception_in_receiver_time"):
 3. **自动下载基本不可用**：先走 ESA `gssc.esa.int` 匿名 FTP，FTP 抛错**不捕获**，写好的 BKG HTTPS 兜底根本走不到；本机 FTP 时通时断。下到的 BRDC00IGS（2026-258）又因 NavIC 记录让 georinex 崩。而且下载文件放在**包目录** `prx/rinex_nav/nav_files/YYYY/DDD/`，会一直留着被下次复用。不需账号，但可靠做法是自己把 `BRDM00DLR_S_…_MN.rnx(.gz)` 放进观测目录。
 4. **用户星历发现规则**：在观测文件父目录**递归** `rglob("*")`，凡是像 `XXXXXXXXX_X_YYYYDDDHHMM_01D_?N.rnx*` 的都算；有一个坏的就整次失败。日期从**文件名**第 13–19 位取，不看内容。
 5. **丢首历元**：发射时刻 ≈ 接收 − 70 ms，00:00:00 历元落到前一天，前一天没星历就整历元静默丢掉（2880→2879）。只放前一天星历则反过来只剩这 1 个历元，exit 0。
-6. **不设高度角掩膜、不过滤健康**：输出低到 1.06°；全天 2641 行 `health_flag ≠ 0`（R08/15/16/20、E14/E18）。自己筛。
+6. **不设高度角掩膜、不过滤健康**：输出低到 **0.012°**；全天 2641 行 `health_flag ≠ 0`（R08/15/16/20、E14/E18）。自己筛。
 7. **GLONASS 在示例 LSQ 里被静默丢掉**：R 的 `sat_code_bias_m` 全空，改正后伪距成 NaN 被丢，加不加 R 结果一样（§4.1）。补 0 才用上。
 8. **没有合适星历的行直接删**：同一观测，BRDM 比（删掉 I 记录的）BRDC00IGS 少 1588 行，无提示。
 9. **只写 CSV**：尽管依赖 pyarrow/polars，本版无 Parquet；全天 30 s 采样 138 MB。输出与输入同名 `.csv`，已存在则直接覆盖。
-10. **到处写文件**：`.gz`、`.crx` 在输入旁解压；joblib 磁盘缓存在包目录 `prx/diskcache`（本例 71 MB）。只读目录或共享 site-packages 下要当心。
+10. **到处写文件**：`.gz`、`.crx` 在输入旁解压；joblib 磁盘缓存在包目录 `prx/diskcache`（本例约 84 MB）。只读目录或共享 site-packages 下要当心。
 11. **前提断言**：`TIME OF FIRST OBS` 必须 GPS，`RCV CLOCK OFFS APPL` 必须 0；RINEX 2/4 OBS 只报 NoneType `TypeError`，不说原因。
 12. **首次解析慢**：georinex 读 8 MB 混合 NAV 约 69 s，之后按文件内容哈希命中缓存。
 13. **`prx_git_commit_id` 写 `unknown`**：从 clone 直接跑也这样，头里不能用来追溯版本。
