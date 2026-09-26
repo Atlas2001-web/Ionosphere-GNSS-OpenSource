@@ -2,6 +2,7 @@
 
 > **状态**：本篇**没有**在本机编译或运行 GAMIT/GLOBK——源码只发给已登记的机构（发用户名/口令后从 MIT 服务器下载），公开网上没有官方源码或二进制。下面的安装步骤、命令、控制文件与输出名全部来自 MIT 公开文档（2026-09-26 02:05 EDT 下载核对），**没有任何本机 stdout**。数值判据（nrms≈0.2 等）是文档/讲义里的经验值，不是本机结果。
 >
+> **质检复核通过（未实跑，只核对文档）**（2026-09-26 02:15–02:35 EDT）：这是文档登记页，“未实跑、无本机 stdout”的边界写得清楚，全文也没有编造的输出。四份 PDF 的页数和日期均与文中一致：Quick Start 5 页，v.2026-07-21，写明 10.71；Intro 54 页，2018-06-02；GAMIT_Ref 168 页，2018-06-07；GLOBK_Ref 95 页，2015-06-16。逐条找到了原文：GAMIT_Ref 第 8 章（p.140–142）有“二、三阶项可达 15 mm”“只按 CODE 映射函数，IGS IONEX 不应使用”、`[project]/ionex` 加 `-ion`、`Ion model = GMAP` / `Mag field = IGRF11`，同章又推荐 IGRF12。Intro 有 `sh_gamit`/`sh_glred` 选项表、`sh_upd_stnfo -ref station.info -l sd`、nrms 0.2–0.3、LC_AUTCLN 下 WL >90%、`GAMIT.fatal`、`autcln.prefit.sum`。讲义 `13-sh_gamit` 有 3–10 mm、RMS=0、nrms ~0.2、70–85% / >90%。讲义 `01-GGnix` 第 47 页有 `LC_NUMERIC`（原文写的是会破坏数值计算脚本和 GMT），并有 X11LIBPATH/X11INCPATH。Quick Start 有 `libx11-dev` 与 `.netrc`。坑 1–9 都有公开出处，无需修改。补充一处出处：Intro 还说 NL 固定率低于约 80% 时可能有可改进的问题。
 > 依据：`GG_Quick_Start_Guide.pdf`（5 页，页脚 v.2026-07-21，写明当前版本 **10.71**）、`Intro_GG.pdf`（54 页，Release 10.7，2018-06-02）、`GAMIT_Ref.pdf`（168 页，2018-06-07）、`GLOBK_Ref.pdf`（95 页，2015-06），均在 <https://geoweb.mit.edu/gg/docs.php>；以及 EarthScope 2024 课程讲义 <https://geoweb.mit.edu/gg/courses/202407_EarthScope/>（`01-GGnix`、`12-workflow_basics`、`13-sh_gamit`、`22-glred_ts`）。手册主体停在 2015–2018，与 10.71 有出入时**以安装包里 `~/gg/help/` 和脚本不带参数时的自带帮助为准**。
 
 ## 1. 它做什么（术语先讲清）

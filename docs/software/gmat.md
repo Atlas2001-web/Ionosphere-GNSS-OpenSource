@@ -1,6 +1,7 @@
 # GMAT：NASA 通用任务分析工具（轨道传播 → 星历/报告 → 给电离层用的卫星几何）
 
 > 实测环境：Debian 13 x86_64，官方 Linux 包 **R2026a**（SourceForge `gmat-ubuntu-x64-R2026a.tar.gz`，sha256 前 12 位 `fe124b4a606b`，解压 663 MB，Build Date: Mar 30 2026），无 root、无 GUI，只用 `GmatConsole`。2026-09-26 02:00–02:10 EDT 实跑。
+> **质检复跑通过**（2026-09-26 02:14–02:30 EDT，独立解压同一 R2026a 包到新目录复跑）：下载 401664992 B，sha256 前 12 位 `fe124b4a606b`，解压 663 MB，`ldd` 无缺库，Build Date Mar 30 2026，与文中一致。官方样例首行完全一致。实跑 A：用作者当时的 `tle_all.txt`（99 行），从本文代码块原样抽出 `gen_script.py` 与 `ro_body.script`，EXIT 0，用时 6.122 s。`c2e1_report.txt`（605220 B / 2882 行）与 `gps_ecef.txt`（7271286 B / 97 列）**逐字节相同**；`c2e1.oem` 为 242586 B，首行与文中一致；G01–WUH 窗口 11:53:46.694–16:51:11.522 完全一致。实跑 B：初值与 SP3 01:00 位置、13 点 8 次多项式速度逐位一致；有/无光压两次均 EXIT 0（0.372 s / 0.397 s）；自写比对脚本得 1 h/6 h/12 h/22.92 h 误差 0.94/44.64/155.06/339.42 m（无光压）和 0.57/18.87/58.16/125.88 m（有光压），与文中一致。坑 1/2/3/4/5/6/8 逐条复现，报错原文和怪起点 `25 Sep 2026 18:49:39.402` 均一致。修正：stdout 原样块漏了控制台模式一定会出现的 `libOVtoOFI did not open` 两行；坑 7 原说注释两行插件后就“不再打印”，实测仍报 `libOVtoOFI`，现改为注释三行；补充 276 个对齐历元的口径说明。未复跑：§3.1 `analyze.py`（文中只给了核心片段）、python-sgp4 互证、SPK `.bsp`。
 > 许可：**Apache-2.0**（GitHub `nasa/GMAT`，★112；main `9363e12`，2026-09-25 18:22 EDT）。GitHub 只放源码，**二进制只在 SourceForge**。
 
 ## 1. 它解决什么问题（先把词讲清）
@@ -134,6 +135,9 @@ libpython3.12.so.1.0: cannot open shared object file: No such file or directory
 *** Library "../plugins/libPythonInterface_py312" did not open.
 libmex.so: cannot open shared object file: No such file or directory
 *** Library "../plugins/libMatlabInterface" did not open.
+Skipping "../plugins/libOpenFramesInterface": GUI plugins are skipped in console mode
+libOpenFramesInterface.so.R2026a: cannot open shared object file: No such file or directory
+*** Library "../plugins/libOVtoOFI" did not open.
 Successfully interpreted the script
 Finding events for ContactLocator CL01 ...
 Mission run completed.
@@ -279,6 +283,8 @@ gps_prop_nosrp.txt     对齐历元 276  3D差(m): 1h      0.94  6h     44.64  1
 gps_prop.txt           对齐历元 276  3D差(m): 1h      0.57  6h     18.87  12h     58.16  末(22.92h)   125.88
 ```
 
+（对齐只用 2023-02-19 当天的 SP3 历元：01:00 起点到 23:55 共 276 个；SP3 文件末尾还有 2023-02-20 00:00 一个历元，算上它则 23.00 h 处为 338.68 m / 125.63 m。）
+
 读法：光压一项就让 23 h 误差从 339 m 降到 126 m；剩余主要是光压模型太粗（盒翼/ECOM 类经验模型 GMAT 默认没有）和初速度来自多项式求导。结论：GMAT 数值传播适合**几何规划/可见性**，做不到 IGS 终轨的 cm 级；要精密轨道直接用 SP3（[sp3](./sp3.md)、[gnssanalysis](./gnssanalysis.md)）。
 
 ## 5. 常用字段速查
@@ -304,7 +310,7 @@ gps_prop.txt           对齐历元 276  3D差(m): 1h      0.57  6h     18.87  1
 4. **现象**：`The field name "Step" on object "CL01" is not permitted`。**原因**：ContactLocator 的步长字段叫 `StepSize`。**修复**：`sed -i 's/\.Step = /.StepSize = /' my.script`。
 5. **现象**：报告第 1、3 行都是表头，`np.loadtxt` 报错。**原因**：`ReportFile` 初始化写一次表头，`Report` 命令第一次调用又写一次。**修复**：读时跳过以对象名开头的行：`grep -v '^G01\.' gps_prop.txt > clean.txt`。
 6. **现象**：OEM 里 `OBJECT_ID = SatId`、地固系输出 `REF_FRAME = TDR`、时间比 SP3 早 18 s。**原因**：没设 `Sat.Id` 用默认值；GMAT 地固轴名叫 TDR；OEM 默认写 UTC（GPST−18 s）。**修复**：加 `G01.Id = 'G01';`（实测 OEM 变成 `OBJECT_ID = G01`），下游按 UTC 读、需要 GPST 再 +18 s。
-7. **现象**：每次启动都打印 `libpython3.12.so.1.0 ... did not open`、`libmex.so ... did not open`。**原因**：Python/MATLAB 插件缺运行库，与普通脚本无关。**修复**：不用可忽略；想清掉就注释这两行插件（实测之后不再打印，脚本照常跑）：`sed -i 's|^PLUGIN *= ../plugins/libPythonInterface_py312|# &|; s|^PLUGIN *= ../plugins/libMatlabInterface|# &|' bin/gmat_startup_file.txt`。
+7. **现象**：每次启动都打印 `libpython3.12.so.1.0 ... did not open`、`libmex.so ... did not open`、`libOpenFramesInterface.so.R2026a ... libOVtoOFI did not open`。**原因**：Python/MATLAB 插件缺运行库；`libOVtoOFI` 依赖控制台模式下被跳过的 GUI 插件 OpenFrames。三者都与普通脚本无关。**修复**：不用可忽略；想清掉就注释这三行插件（质检实测：只注释前两行时 `libOVtoOFI` 仍会报，三行都注释后只剩一行 `Skipping ... GUI plugins` 提示，脚本照常跑）：`sed -i 's|^PLUGIN *= ../plugins/libPythonInterface_py312|# &|; s|^PLUGIN *= ../plugins/libMatlabInterface|# &|; s|^PLUGIN *= ../plugins/libOVtoOFI|# &|' bin/gmat_startup_file.txt`。
 8. **现象**：`"22337.747965;  G01.Y = 14594.580398" is not a valid RHS of assignment`。**原因**：一行只能写一条赋值，`;` 后面的内容被当成同一个右值。**修复**：拆成一行一条：`sed -i 's/;  */;\n/g' my.script`。
 9. **现象**：`Filename = 'a.txt'` 找不到输出。**原因**：相对路径落在 `GMAT/R2026a/output/`，不在当前目录。**修复**：`ls ../output/` 查看，或脚本里一律写绝对路径。
 
