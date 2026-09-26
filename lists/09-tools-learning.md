@@ -1,5 +1,5 @@
 # 学习资源与工具 / Tools & Learning
-> **58** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **57** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
@@ -7,7 +7,7 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [ENRI-Japan](https://www.enri.go.jp/eng/index.html) | ENRI：日本电子航法研究所（航空 CNS）门户 | data-portal | — | 🏷️ 官方 |
+| [ENRI-Japan](https://www.enri.go.jp/en/index.html) | ENRI：日本电子航法研究所（航空 CNS）门户 | data-portal | — | 🏷️ 官方 |
 | [ESA-Satellite-Navigation](https://www.esa.int/Applications/Satellite_navigation) | ESA 卫星导航应用总入口：Galileo/EGNOS/NAVISP 等 | data-portal | — | 🏷️ 官方 |
 | [GA-Positioning-Services](https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/services-and-tools) | Geoscience Australia 定位服务与工具门户（SouthPAN/AUSPOS/数据中心） | various | — | 🏷️ 官方 |
 | [gAGE-Software-Tools](https://gage.upc.edu/en/learning-materials/software-tools) | gAGE-Software-Tools：UPC gAGE 教学工具页（gLAB / gAGEbuntu） | various | — | 🏷️ 高校实验室 |
@@ -15,12 +15,12 @@ awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认�
 | [ISRO-IRNSS-NavIC](https://www.isro.gov.in/IRNSS_Programme.html) | ISRO NavIC：印度区域导航系统官方计划页 | data-portal | — | 🏷️ 官方 |
 | [NGS-PC-PROD](https://geodesy.noaa.gov/PC_PROD/) | NGS-PC-PROD：NOAA/NGS 大地测量 PC 软件门户（含 HTDP 等） | various | — | 🏷️ 官方 |
 | [UNAVCO-Preprocessing](https://www.unavco.org/software/data-processing/preprocessing/preprocessing.html) | UNAVCO-Preprocessing：GNSS 预处理工具索引（Hatanaka/GNSSTK 等） | various | — | 🏷️ 官方 |
-| [UNAVCO-Software-Portal](https://www.unavco.org/software/) | UNAVCO-Software-Portal：EarthScope/GAGE 软件总入口（TEQC 等） | various | — | 🏷️ 官方 |
+| [UNAVCO-Software-Portal](https://www.unavco.org/software/software.html) | UNAVCO-Software-Portal：EarthScope/GAGE 软件总入口（TEQC 等） | various | — | 🏷️ 官方 |
 | [USCG-NAVCEN](https://www.navcen.uscg.gov/) | NAVCEN：美国海岸警卫队导航与 GNSS 门户 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
-#### [ENRI-Japan](https://www.enri.go.jp/eng/index.html)  
+#### [ENRI-Japan](https://www.enri.go.jp/en/index.html)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
@@ -76,7 +76,7 @@ NOAA/NGS 大地测量 PC 软件汇总页，链向 HTDP 等可下载程序与文�
 
 机构整理的 GNSS 预处理工具列表，链到 Hatanaka/RNXCMP、GNSSTK、厂商翻译器与部分历史 QC 工具。本身不是单一软件包，而是权威导航页。下载各工具仍须遵守原作者许可；其中 teqc 已宣布 EOL，仅保留终版二进制。
 
-#### [UNAVCO-Software-Portal](https://www.unavco.org/software/)  
+#### [UNAVCO-Software-Portal](https://www.unavco.org/software/software.html)  
 *🏷️ 官方*
 
 语言：various · 许可：varies · 星标约：— · 宿主：official_site
@@ -229,9 +229,8 @@ NOAA 垂直基准转换软件与服务，连接椭球高、大地水准面与潮
 |---|---|---|---:|---|
 | [EGNOS-GSC-User-Support](https://egnos.gsc-europa.eu/) | EGNOS GSC：欧洲静地导航重叠系统用户支持 | data-portal | — | 🏷️ 官方 |
 | [EGNOS-Toolkit](https://sourceforge.net/projects/libegnos/) | SourceForge EGNOS Toolkit：SBAS/EGNOS 消息与接收算法工具 | C | — | 🏷️ 个人社区 |
-| [ESSP-EGNOS-User-Support](https://egnos-user-support.essp-sas.eu/) | ESSP EGNOS 用户支持站：状态、历史与帮助台入口 | data-portal | — | 🏷️ 官方 |
 | [FAA-WAAS](https://www.faa.gov/about/office_org/headquarters_offices/ato/service_units/techops/navservices/gnss/waas) | FAA WAAS：美国广域增强系统官方介绍 | data-portal | — | 🏷️ 官方 |
-| [ICAO-PBN](https://www.icao.int/safety/pbn/Pages/Overview.aspx) | ICAO PBN：基于性能导航官方概述入口 | data-portal | — | 🏷️ 官方 |
+| [ICAO-PBN](https://www.icao.int/safety/pbn/pbn-overview) | ICAO PBN：基于性能导航官方概述入口 | data-portal | — | 🏷️ 官方 |
 | [NSTB-WAAS-Test-Team](https://www.nstb.tc.faa.gov/) | NSTB：FAA WAAS 测试团队数据与工具门户 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
@@ -250,13 +249,6 @@ NOAA 垂直基准转换软件与服务，连接椭球高、大地水准面与潮
 
 基于 EGNOS SDK 的 Linux/UNIX 移植，处理 SISNET、EMS 文件并实现用户端 SBAS 算法，许可 EUPL v1.1（源码头注明仅限该版本）。托管于 SourceForge，更新偏旧。现代多星座 SBAS/HAS 研究需结合新文档与其他开源栈。
 
-#### [ESSP-EGNOS-User-Support](https://egnos-user-support.essp-sas.eu/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-欧洲卫星服务商（ESSP）运营的 EGNOS 用户支持门户，提供系统介绍、实时/历史状态、订阅与 7×24 帮助台。与 EGNOS GSC 门户互补：GSC 偏官方产品与文档，本站偏运行支持与用户服务。登录后可管理订阅；公开页亦可浏览状态摘要。
-
 #### [FAA-WAAS](https://www.faa.gov/about/office_org/headquarters_offices/ato/service_units/techops/navservices/gnss/waas)  
 *🏷️ 官方*
 
@@ -264,7 +256,7 @@ NOAA 垂直基准转换软件与服务，连接椭球高、大地水准面与潮
 
 联邦航空局关于 WAAS 的官方导航页，说明广域增强架构、服务与相关 GNSS 导航服务入口。与 NSTB 测试数据页互补。偏航空完好性与服务说明，不是 RINEX 下载站；技术细节与运行状态请再循 FAA/NAVCEN 相关链接核实。
 
-#### [ICAO-PBN](https://www.icao.int/safety/pbn/Pages/Overview.aspx)  
+#### [ICAO-PBN](https://www.icao.int/safety/pbn/pbn-overview)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
@@ -536,27 +528,27 @@ LINZ 关于新西兰大地测量系统的指导页，解释基准、框架与使
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [NGDC-Geomagnetism](https://www.ngdc.noaa.gov/geomag/geomag.shtml) | NOAA NCEI 地磁学门户：模型、数据与服务入口 | data-portal | — | 🏷️ 官方 |
-| [NOAA-EMM](https://www.ngdc.noaa.gov/geomag/EMM/) | NOAA NCEI：增强磁模型 EMM 门户 | data-portal | — | 🏷️ 官方 |
-| [NOAA-WMM-Portal](https://www.ngdc.noaa.gov/geomag/WMM/) | NOAA/NCEI 世界磁场模型（WMM）官方门户 | data-portal | — | 🏷️ 官方 |
+| [NGDC-Geomagnetism](https://www.ncei.noaa.gov/products/geomagnetic-data) | NOAA NCEI 地磁学门户：模型、数据与服务入口 | data-portal | — | 🏷️ 官方 |
+| [NOAA-EMM](https://www.ncei.noaa.gov/products/enhanced-magnetic-model) | NOAA NCEI：增强磁模型 EMM 门户 | data-portal | — | 🏷️ 官方 |
+| [NOAA-WMM-Portal](https://www.ncei.noaa.gov/products/world-magnetic-model) | NOAA/NCEI 世界磁场模型（WMM）官方门户 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
-#### [NGDC-Geomagnetism](https://www.ngdc.noaa.gov/geomag/geomag.shtml)  
+#### [NGDC-Geomagnetism](https://www.ncei.noaa.gov/products/geomagnetic-data)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 NCEI Geomagnetism 主页，汇总地磁模型、数据、制图与监测服务入口；可由此进入 WMM 门户及更多地磁产品。对磁航向与部分电离层/空间天气应用有关。
 
-#### [NOAA-EMM](https://www.ngdc.noaa.gov/geomag/EMM/)  
+#### [NOAA-EMM](https://www.ncei.noaa.gov/products/enhanced-magnetic-model)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 NCEI Enhanced Magnetic Model（EMM）产品页，提供比 WMM 更精细的地壳/岩石圈磁场模型入口。与 WMM 门户互补，服务航向/磁偏与空间天气地磁背景。模型系数与计算器见页内链接。
 
-#### [NOAA-WMM-Portal](https://www.ngdc.noaa.gov/geomag/WMM/)  
+#### [NOAA-WMM-Portal](https://www.ncei.noaa.gov/products/world-magnetic-model)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site

@@ -79,7 +79,7 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 awesome 列表、中文源码笔记、数据集、可见性可视化、SBAS/认证相关学习工具。
 
 - 列表文件：[`lists/09-tools-learning.md`](../lists/09-tools-learning.md)
-- 当前条目数：**58**
+- 当前条目数：**57**
 
 ## `gnss-datasets` — GNSS 数据源
 

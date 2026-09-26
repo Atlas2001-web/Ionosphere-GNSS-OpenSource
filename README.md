@@ -2,7 +2,7 @@
 
 **电离层 · GNSS · 导航开源索引**（链接精选，不是代码大合集）
 
-[![Projects](https://img.shields.io/badge/verified%20projects-1029-blue.svg)](./PROJECTS.json)
+[![Projects](https://img.shields.io/badge/verified%20projects-1028-blue.svg)](./PROJECTS.json)
 [![CC0](https://img.shields.io/badge/catalog-CC0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 [![Datasets](https://img.shields.io/badge/data%20portals-220-teal.svg)](./lists/10-gnss-datasets.md)
 
@@ -36,11 +36,11 @@
 | 导航 | [06](./lists/06-navigation-ins.md) | 72 |
 | 软件接收机 | [07](./lists/07-gnss-sdr.md) | 76 |
 | 移动应用 | [08](./lists/08-mobile-apps.md) | 32 |
-| 学习工具 | [09](./lists/09-tools-learning.md) | 58 |
+| 学习工具 | [09](./lists/09-tools-learning.md) | 57 |
 | **数据源门户** | [10](./lists/10-gnss-datasets.md) | 220 |
-| **合计** | [PROJECTS.json](./PROJECTS.json) | **1029** |
+| **合计** | [PROJECTS.json](./PROJECTS.json) | **1028** |
 
-标记：🏷️ 官方 / 高校实验室 / 个人社区 · 官方 331 · 高校 214 · 社区 484 · 细则 [categories.md](./docs/categories.md)
+标记：🏷️ 官方 / 高校实验室 / 个人社区 · 官方 330 · 高校 214 · 社区 484 · 细则 [categories.md](./docs/categories.md)
 
 ---
 

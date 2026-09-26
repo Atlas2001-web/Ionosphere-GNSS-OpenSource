@@ -5,7 +5,7 @@
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
   "generated": "2026-09-26",
-  "project_count": 1029,
+  "project_count": 1028,
   "counts_by_category": {
     "ionosphere": 247,
     "troposphere": 48,
@@ -15,7 +15,7 @@
     "navigation-ins": 72,
     "gnss-sdr": 76,
     "mobile-apps": 32,
-    "tools-learning": 58,
+    "tools-learning": 57,
     "gnss-datasets": 220
   },
   "projects": [
@@ -1892,7 +1892,7 @@
     },
     {
       "name": "CNES-PPP-WIZARD-Realtime-Products",
-      "url": "http://www.ppp-wizard.net/products/REAL_TIME",
+      "url": "http://www.ppp-wizard.net/products/REAL_TIME/",
       "desc_zh": "CNES PPP-WIZARD 实时产品目录（含实时轨道钟差/偏差及电离层相关输出）",
       "one_liner_zh": "CNES PPP-WIZARD 实时产品目录（含实时轨道钟差/偏差及电离层相关输出）",
       "analysis_zh": "CNES PPP-WIZARD 示范系统的 REAL_TIME 产品树，可检索实时流配套文件；CNES 亦通过 IGS-RTS 播发实时 SSR。相比门户首页，这里直接列出可枚举的实时产品路径，便于脚本对接。",
@@ -1936,7 +1936,7 @@
     },
     {
       "name": "CODE-AIUB-Product-Download",
-      "url": "https://www.aiub.unibe.ch/download/",
+      "url": "https://download.aiub.unibe.ch/",
       "desc_zh": "AIUB/CODE 产品 HTTPS 下载浏览器（含 CODE/ionex/ionosphere 等目录）",
       "one_liner_zh": "AIUB/CODE 产品 HTTPS 下载浏览器（含 CODE/ionex/ionosphere 等目录）",
       "analysis_zh": "伯尔尼大学天文研究所 CODE 分析中心的官方产品文件浏览器。可进入 CODE、CODE_MGEX、ionex、ionosphere 等目录获取最终/快速/超快速轨道钟差与 IONEX 等。FTP 已弃用，请改用本 HTTPS 入口；与 CODE AC 介绍页互补，本页聚焦可下载产品树。",
@@ -2147,7 +2147,7 @@
     },
     {
       "name": "EUREF-EPN-CB",
-      "url": "https://www.epncb.oma.be/",
+      "url": "https://epncb.oma.be/",
       "desc_zh": "EUREF EPN 中央局：欧洲参考站网数据与产品",
       "analysis_zh": "欧洲 EPN 中央局官方门户，提供测站信息、观测文件与产品相关入口，是欧洲大地参考框架网的核心数据枢纽。适合区域 PPP、形变与电离层研究。实时流与事后文件渠道分离；使用高采样数据时注意存储容量并遵循 EPN 引用要求。",
       "language": "data-portal",
@@ -2169,7 +2169,7 @@
     },
     {
       "name": "EUREF-EPN-Obs-FTP",
-      "url": "https://epncb.oma.be/ftp/obs/",
+      "url": "https://epncb.oma.be/pub/obs/",
       "desc_zh": "EPN 观测数据 FTP/Web 目录",
       "analysis_zh": "EPN 测站观测文件目录，便于按站名直接下载 RINEX，是欧洲区域研究的高频访问路径。目录组织相对稳定，但测站列表会增减。批量下载前应对照中央局站点状态页，剔除长期停测或仅测试用途的测站。",
       "language": "data-portal",
@@ -2231,7 +2231,7 @@
     },
     {
       "name": "GFZ-ISDC",
-      "url": "https://isdc.gfz-potsdam.de/",
+      "url": "https://isdc.gfz.de/",
       "desc_zh": "GFZ ISDC：波茨坦地球科学研究数据中心门户",
       "analysis_zh": "亥姆霍兹德国地学研究中心综合科学数据中心，提供 GNSS 及多种地球物理产品的统一检索入口。欧洲大地测量与重力/GNSS 组合研究常用。完成注册后仍需按具体集合申请授权，并非所有子库都对个人用户立即完全开放。",
       "language": "data-portal",
@@ -2251,7 +2251,7 @@
     },
     {
       "name": "GFZ-ISDC-GNSS-Products",
-      "url": "https://isdc.gfz-potsdam.de/gnss-products/",
+      "url": "https://isdc.gfz.de/gnss-products/",
       "desc_zh": "GFZ ISDC GNSS 产品专页",
       "analysis_zh": "聚焦 GFZ 发布的 GNSS 相关产品说明与获取入口，可与 gnss.gfz.de 服务页交叉对照。适合寻找 GFZ 轨道钟差及衍生产品。产品列表会随项目扩展，下载前应阅读各集合的许可文本、引用格式与embargo 说明。",
       "language": "data-portal",
@@ -2271,7 +2271,7 @@
     },
     {
       "name": "GFZ-Kp-Index",
-      "url": "https://kp.gfz-potsdam.de/en/",
+      "url": "https://kp.gfz.de/en/",
       "desc_zh": "GFZ Kp 地磁指数官方发布",
       "analysis_zh": "GFZ 官方发布的行星 Kp 等地磁活动指数，是空间天气研究以及 GNSS 闪烁、ROTI 扰动分析中常用的外部驱动参数，通常开放获取。使用时注意时间分辨率以及确定值与预报值的区别，论文中应明确写出来源机构与产品版本。",
       "language": "data-portal",
@@ -2648,7 +2648,7 @@
     },
     {
       "name": "NOAA-SWPC",
-      "url": "https://www.swpc.noaa.gov/",
+      "url": "https://www.spaceweather.gov/",
       "desc_zh": "NOAA 空间天气预测中心（SWPC）",
       "analysis_zh": "美国 NOAA 空间天气预测中心门户，提供耀斑、质子事件、地磁活动等业务产品，常用来解释 GNSS 定位异常与电离层扰动时段。实时导向强。科研归档时应保存所用产品副本，并注意业务产品可能事后修订。",
       "language": "data-portal",
@@ -2668,7 +2668,7 @@
     },
     {
       "name": "NOAA-SWPC-Planetary-K",
-      "url": "https://www.swpc.noaa.gov/products/planetary-k-index",
+      "url": "https://www.spaceweather.gov/products/planetary-k-index",
       "desc_zh": "NOAA SWPC 行星 K 指数产品",
       "analysis_zh": "SWPC 发布的行星 K 指数产品页，便于把地磁活动快速叠加到 GNSS ROTI 或闪烁时间轴上做事件分析。与 GFZ Kp 密切相关但发布节奏与文件格式可能不同，对比研究时必须分别注明来源，避免混用造成时间轴错位。",
       "language": "data-portal",
@@ -5483,7 +5483,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "ionosphere",
-      "subcategory": "工具",
+      "subcategory": "磁坐标",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -5668,7 +5668,7 @@
       "language": "Jupyter Notebook",
       "license": null,
       "category": "ionosphere",
-      "subcategory": "TEC估计",
+      "subcategory": "掩星",
       "markers": [],
       "stars_approx": 2,
       "source": "gh-search+verified (missing_meta / extra searches)",
@@ -5687,7 +5687,7 @@
       "language": "MATLAB",
       "license": null,
       "category": "ionosphere",
-      "subcategory": "工具",
+      "subcategory": "掩星",
       "markers": [
         "gapfill-2026-09-17"
       ],
@@ -6579,7 +6579,7 @@
     },
     {
       "name": "HAO-TGCM-portal",
-      "url": "https://www.hao.ucar.edu/modeling/tgcm",
+      "url": "https://www.hao.ucar.edu/modeling/tgcm/",
       "desc_zh": "NCAR HAO TGCM/TIE-GCM 文档与发布说明门户",
       "one_liner_zh": "NCAR HAO TGCM/TIE-GCM 文档与发布说明门户",
       "analysis_zh": "HAO 上的 TIE-GCM/TIME-GCM 家族说明、用户指南与发布历史入口，补充 GitHub 源码仓的文档侧。局限：部分老版本下载流程可能仍要邮件注册；以 GitHub NCAR/tiegcm 为当前源码主渠道更合适。",
@@ -6962,7 +6962,7 @@
       "language": "C++",
       "license": "MIT",
       "category": "ionosphere",
-      "subcategory": "工具",
+      "subcategory": "掩星",
       "markers": [
         "gapfill-2026-09-17"
       ],
@@ -8940,7 +8940,7 @@
     },
     {
       "name": "ROB-IONEX-Products",
-      "url": "https://gnss.be/SpaceWeather/Products/IONEX",
+      "url": "https://gnss.be/SpaceWeather/Products/IONEX/",
       "desc_zh": "ROB 欧洲 VTEC 产品 IONEX 公开下载目录",
       "one_liner_zh": "ROB 欧洲 VTEC 产品 IONEX 公开下载目录",
       "analysis_zh": "与 gnss.be/SpaceWeather 可视化配套的 IONEX 文件归档，便于脚本批量拉取欧洲近实时 TEC 图。格式与 IGS IONEX 兼容，适合接入自有 TEC 可视化或 PPP 区域改正试验。使用前请阅读站点免责声明与引用要求。",
@@ -11777,7 +11777,7 @@
     },
     {
       "name": "UNAVCO-Software-Portal",
-      "url": "https://www.unavco.org/software/",
+      "url": "https://www.unavco.org/software/software.html",
       "desc_zh": "预处理/可视化导航页；GAMIT 等为学术许可，下载前读条款",
       "analysis_zh": "GAGE/EarthScope 软件总入口，分数据处理、数据管理、可视化与大地测量工具。可找到 TEQC、Hatanaka/GNSSTK 预处理说明、GAMIT 链接及 GPS Velocity Viewer 等。多数条目指向外部维护方；GAMIT 等为学术许可而非宽松 OSS，下载前请仔细阅读许可条款。",
       "language": "various",
@@ -12327,7 +12327,7 @@
     },
     {
       "name": "TU-Wien-VMF-GPT-codes",
-      "url": "https://vmf.geo.tuwien.ac.at/codes",
+      "url": "https://vmf.geo.tuwien.ac.at/codes/",
       "desc_zh": "TU Wien 官方 VMF1/VMF3/GPT 开源代码与格网",
       "analysis_zh": "维也纳工大公开的 VMF1/VMF3、GPT/GPT2w/GPT3、GMF、Saastamoinen 等 Fortran/MATLAB/C++ 实现与格网文件，是对流层映射与气象先验的权威入口。目录持续更新（含 vmf3_grid 等）。预报产品获取常需遵循站点注册要求；可与 STD_SWD_Calc 等脚本联用。",
       "language": "Fortran/MATLAB/C++",
@@ -12844,7 +12844,7 @@
     },
     {
       "name": "INTERMAGNET",
-      "url": "https://www.intermagnet.org/",
+      "url": "https://intermagnet.org/",
       "desc_zh": "INTERMAGNET：全球地磁台网准实时与存档数据门户",
       "analysis_zh": "国际实时地磁台网门户，提供参与台站的准实时与存档地磁数据入口，常与 GNSS TEC/ROTI 做空间天气对照。数据政策与台站列表以官网为准；部分产品需按说明注册或经成员机构渠道。",
       "language": "data-portal",
@@ -13176,7 +13176,7 @@
     },
     {
       "name": "AMBER-Magnetometers",
-      "url": "https://magnetometers.bc.edu/",
+      "url": "https://sites.bc.edu/magnetometers/",
       "desc_zh": "波士顿学院 AMBER：非洲等地区地磁台链数据",
       "analysis_zh": "Boston College 维护的 AMBER 等磁强计网络数据中心，提供 ASCII 日文件与日绘图，服务低纬/非洲扇区空间天气与电流体系研究，可与 GNSS ROTI/闪烁对照。门户含 Downloads 浏览；这里是地磁辅助数据，不是 GNSS 观测归档。",
       "language": "data-portal",
@@ -13264,7 +13264,7 @@
     },
     {
       "name": "OpenMadrigal",
-      "url": "https://openmadrigal.org/",
+      "url": "https://cedar.openmadrigal.org/openmadrigal",
       "desc_zh": "OpenMadrigal：全球 Madrigal/CEDAR 空间天气与电离层数据库联盟",
       "analysis_zh": "OpenMadrigal 项目主页，介绍分布式 Madrigal 数据库（CEDAR、ISR TEC 等）及开源服务器/客户端。科研上常作非相干散射雷达与 GNSS TEC 产品的交叉验证入口。具体实验数据在各成员站（如 cedar.openmadrigal.org）；Python 访问见 madrigalWeb。",
       "language": "data-portal",
@@ -13898,7 +13898,7 @@
       "language": "Python",
       "license": "Apache-2.0",
       "category": "ionosphere",
-      "subcategory": "工具",
+      "subcategory": "法拉第旋转",
       "markers": [
         "routine-2026-09-23b"
       ],
@@ -14172,7 +14172,7 @@
     },
     {
       "name": "AUSPOS",
-      "url": "https://www.ga.gov.au/scientific-topics/positioning-navigation/geodesy/auspos",
+      "url": "https://www.ga.gov.au/scientific-topics/positioning-navigation/positioning-australia/geodesy/auspos",
       "desc_zh": "澳大利亚地球科学局在线静态 GPS/GNSS 精密处理服务",
       "analysis_zh": "Geoscience Australia 的 AUSPOS 免费在线上传双频静态 RINEX，返回 GDA2020/GDA94 与 ITRF 坐标报告。面向测量与科研用户做单站事后精密定位，无需自建 PPP 引擎。依赖站网与 IGS 产品时效；动态/RTK 场景请改用 NTRIP 或本地解算软件。",
       "language": "data-portal",
@@ -14338,7 +14338,7 @@
       "language": "C",
       "license": "GPL-3.0",
       "category": "ionosphere",
-      "subcategory": "工具",
+      "subcategory": "法拉第旋转",
       "markers": [
         "routine-2026-09-24"
       ],
@@ -14358,7 +14358,7 @@
       "language": "Python",
       "license": "BSD-3-Clause",
       "category": "ionosphere",
-      "subcategory": "工具",
+      "subcategory": "磁坐标",
       "markers": [
         "routine-2026-09-24"
       ],
@@ -15998,7 +15998,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "ionosphere",
-      "subcategory": "模型",
+      "subcategory": "磁坐标",
       "markers": [
         "routine-2026-09-24g"
       ],
@@ -16232,7 +16232,7 @@
     },
     {
       "name": "ENRI-Japan",
-      "url": "https://www.enri.go.jp/eng/index.html",
+      "url": "https://www.enri.go.jp/en/index.html",
       "desc_zh": "日本电子航法研究所（ENRI）：航空 CNS/ATM 研究机构门户",
       "analysis_zh": "ENRI 是日本在航空交通管理与通信导航监视（ATM/CNS）领域的国家级研究机构英文门户，涵盖电子航法与相关 GNSS/增强研究入口。适合查日方航空导航与完好性研究方向。具体报告与数据分发条款以各子页为准，非 CORS 下载站。",
       "language": "data-portal",
@@ -16252,7 +16252,7 @@
     },
     {
       "name": "ICAO-PBN",
-      "url": "https://www.icao.int/safety/pbn/Pages/Overview.aspx",
+      "url": "https://www.icao.int/safety/pbn/pbn-overview",
       "desc_zh": "ICAO PBN：基于性能导航概述与文件入口",
       "analysis_zh": "国际民航组织关于 Performance-Based Navigation（PBN）的概述页，链向航空导航性能与相关文件框架，常与 GNSS/SBAS 完好性运行要求对照。偏规章与运行概念，不是接收机开源代码。具体 SARPs/手册下载遵循 ICAO 分发规则。",
       "language": "data-portal",
@@ -16374,7 +16374,7 @@
     },
     {
       "name": "IGS-Bias-Calibration-WG",
-      "url": "https://igs.org/wg/bias/",
+      "url": "https://igs.org/wg/bias-and-calibration/",
       "desc_zh": "IGS 偏差与校准工作组：DCB/OSB 等偏差产品入口",
       "analysis_zh": "汇总 IGS Bias and Calibration 工作组活动，面向差分码偏差、可观测量特定偏差（OSB）及校准议题。对 PPP-AR、多系统组合与钟差产品一致性很关键。页面为活动与文档入口，具体偏差文件仍从 IGS 产品树获取。引用请注明产品来源与版本。",
       "language": "data-portal",
@@ -16732,7 +16732,7 @@
       "language": "Python",
       "license": "GPL-3.0",
       "category": "ionosphere",
-      "subcategory": "工具",
+      "subcategory": "法拉第旋转",
       "markers": [
         "routine-2026-09-24j"
       ],
@@ -16803,28 +16803,6 @@
       "host": "github",
       "provenance": "personal_community",
       "one_liner_zh": "ublox8-qzss-almanac-converter：YUMA 历书→u-blox UBX-MGA"
-    },
-    {
-      "name": "ESSP-EGNOS-User-Support",
-      "url": "https://egnos-user-support.essp-sas.eu/",
-      "desc_zh": "ESSP EGNOS 用户支持站：状态、历史与帮助台入口",
-      "analysis_zh": "欧洲卫星服务商（ESSP）运营的 EGNOS 用户支持门户，提供系统介绍、实时/历史状态、订阅与 7×24 帮助台。与 EGNOS GSC 门户互补：GSC 偏官方产品与文档，本站偏运行支持与用户服务。登录后可管理订阅；公开页亦可浏览状态摘要。",
-      "language": "data-portal",
-      "license": "portal-terms",
-      "category": "tools-learning",
-      "subcategory": "SBAS",
-      "markers": [
-        "routine-2026-09-24j"
-      ],
-      "stars_approx": null,
-      "source": "routine-finds-20260924j",
-      "featured": false,
-      "user_relation": "none",
-      "host": "official_site",
-      "provenance": "official",
-      "one_liner_zh": "ESSP EGNOS 用户支持站：状态、历史与帮助台入口",
-      "registration": "open",
-      "registration_zh": "公开浏览为主；部分订阅/工单功能需注册登录。"
     },
     {
       "name": "LINZ-Geodetic",
@@ -16916,7 +16894,7 @@
     },
     {
       "name": "NOAA-WMM-Portal",
-      "url": "https://www.ngdc.noaa.gov/geomag/WMM/",
+      "url": "https://www.ncei.noaa.gov/products/world-magnetic-model",
       "desc_zh": "NOAA/NCEI 世界磁场模型（WMM）官方门户",
       "analysis_zh": "美国 NCEI 发布的 World Magnetic Model 官方页，提供模型说明、系数与计算入口，支撑磁航向、磁偏角及部分电离层/地磁应用。与 wmm2020 软件包装互补：本页为权威发布与文档源头。模型有年限与更新周期，工程中勿混用过期系数。",
       "language": "data-portal",
@@ -17292,7 +17270,7 @@
     },
     {
       "name": "fixposition_driver",
-      "url": "https://github.com/Fixposition/fixposition_driver",
+      "url": "https://github.com/fixposition/fixposition_driver",
       "desc_zh": "Fixposition 官方 ROS 驱动，接入 Vision-RTK 2 等视觉惯性 GNSS 传感器；依赖厂商硬件与时间同步",
       "analysis_zh": "Fixposition 厂商 Linux ROS 驱动，对接 Vision-RTK 2、PBx-A1 等视觉惯性 GNSS 定位传感器，MIT 许可。面向机器人/自动驾驶紧组合定位话题，而非测地后处理。依赖厂商硬件与时间同步配置；与纯 GNSS RTK 方案选型不同。适合评估视觉辅助 RTK 的 ROS 集成。",
       "language": "C++",
@@ -17418,7 +17396,7 @@
     },
     {
       "name": "SWPC-D-RAP",
-      "url": "https://www.swpc.noaa.gov/products/d-region-absorption-predictions-d-rap",
+      "url": "https://www.spaceweather.gov/products/d-region-absorption-predictions-d-rap",
       "desc_zh": "NOAA SWPC D-RAP：D 区吸收预报（HF/GPS 影响相关）",
       "analysis_zh": "Space Weather Prediction Center 的 D Region Absorption Predictions（D-RAP）产品页，给出太阳爆发后 D 区吸收对高频通信等的影响预估，并在影响说明中关联 GPS/通信系统。对评估强扰动期 GNSS 可用性有辅助意义。非 TEC 图本身。",
       "language": "data-portal",
@@ -17440,7 +17418,7 @@
     },
     {
       "name": "SWPC-WSA-Enlil",
-      "url": "https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction",
+      "url": "https://www.spaceweather.gov/products/wsa-enlil-solar-wind-prediction",
       "desc_zh": "NOAA SWPC WSA-Enlil：太阳风到达与 CME 传播预报",
       "analysis_zh": "WSA-Enlil 太阳风与日冕物质抛射（CME）传播预报产品入口，提供扰动到达地球的时效估计，常作为 GNSS 电离层/磁暴扰动的上游空间天气背景。模型输出存在不确定性，需与实测地磁指数及 TEC/闪烁产品对照使用。",
       "language": "data-portal",
@@ -17736,7 +17714,7 @@
     },
     {
       "name": "SWPC-GOES-Xray",
-      "url": "https://www.swpc.noaa.gov/products/goes-x-ray-flux",
+      "url": "https://www.spaceweather.gov/products/goes-x-ray-flux",
       "desc_zh": "NOAA SWPC：GOES X 射线通量（耀斑监测）",
       "analysis_zh": "SWPC GOES X-ray Flux 产品页，监测太阳软 X 射线耀斑等级；耀斑常与 D 区吸收、短波中断以及 GPS/通信影响窗口相关，页面亦链到空间天气影响说明。非 TEC 图，但常作扰动时段标注。",
       "language": "data-portal",
@@ -17758,7 +17736,7 @@
     },
     {
       "name": "SWPC-Solar-Cycle",
-      "url": "https://www.swpc.noaa.gov/products/solar-cycle-progression",
+      "url": "https://www.spaceweather.gov/products/solar-cycle-progression",
       "desc_zh": "NOAA SWPC：太阳周进程与黑子数进展图",
       "analysis_zh": "Solar Cycle Progression 产品展示当前太阳周进展与预测对照曲线，便于把握长期空间天气背景与太阳活动位相。非实时 TEC/闪烁产品，但常与电离层气候态及太阳周研究一并引用。引用请注明 SWPC 产品名与访问日期。",
       "language": "data-portal",
@@ -17802,7 +17780,7 @@
     },
     {
       "name": "GFZ-Kp-Data",
-      "url": "https://kp.gfz-potsdam.de/en/data",
+      "url": "https://kp.gfz.de/en/data",
       "desc_zh": "GFZ Kp 指数数据页：下载、HTTPS/FTP 与 Web API",
       "analysis_zh": "GFZ 官方 Kp 指数数据入口，支持用户定制下载、HTTPS/FTP 与 Web Service API，并提供图件与文档链接。现势 Kp/地磁活动分析应优先使用此服务，而非仅依赖历史镜像站。脚本抓取请遵循 GFZ 使用与引用政策。",
       "language": "data-portal",
@@ -18070,7 +18048,7 @@
     },
     {
       "name": "NGDC-Geomagnetism",
-      "url": "https://www.ngdc.noaa.gov/geomag/geomag.shtml",
+      "url": "https://www.ncei.noaa.gov/products/geomagnetic-data",
       "desc_zh": "NOAA NCEI 地磁学门户：模型、数据与服务入口",
       "analysis_zh": "NCEI Geomagnetism 主页，汇总地磁模型、数据、制图与监测服务入口；可由此进入 WMM 门户及更多地磁产品。对磁航向与部分电离层/空间天气应用有关。",
       "language": "data-portal",
@@ -18324,7 +18302,7 @@
     },
     {
       "name": "SWPC-ACE-RTSW",
-      "url": "https://www.swpc.noaa.gov/products/ace-real-time-solar-wind",
+      "url": "https://www.spaceweather.gov/products/ace-real-time-solar-wind",
       "desc_zh": "NOAA SWPC：ACE 实时太阳风产品",
       "analysis_zh": "SWPC ACE Real-Time Solar Wind 产品页，提供 ACE 卫星太阳风实时监测，是磁暴/电离层扰动的上游空间天气输入之一，并在影响说明中关联 GPS 等系统。与 OMNI 历史序列互补，偏实时监测。",
       "language": "data-portal",
@@ -18390,7 +18368,7 @@
     },
     {
       "name": "NGDC-GOES-Satellite",
-      "url": "https://www.ngdc.noaa.gov/stp/satellite/goes/",
+      "url": "https://www.ncei.noaa.gov/products/goes-1-15/space-weather-instruments",
       "desc_zh": "NOAA NCEI：GOES 卫星空间天气数据入口",
       "analysis_zh": "NCEI 的 GOES 卫星空间天气数据门户，汇总 GOES 相关存档与产品入口。可与 SWPC GOES X 射线实时产品对照使用。偏数据目录而非单一文件下载。",
       "language": "data-portal",
@@ -18644,7 +18622,7 @@
     },
     {
       "name": "SWPC-Real-Time-Solar-Wind",
-      "url": "https://www.swpc.noaa.gov/products/real-time-solar-wind",
+      "url": "https://www.spaceweather.gov/products/solar-wind",
       "desc_zh": "NOAA SWPC：综合实时太阳风产品（非仅 ACE）",
       "analysis_zh": "SWPC Real-Time Solar Wind 产品页，汇聚多源实时太阳风监测，说明中关联 GPS 等系统影响。与 ACE Real-Time Solar Wind 页互补：本页为综合实时入口，ACE 页偏单星。历史分析请改用 OMNI 等。页面现多跳转到 spaceweather.gov。",
       "language": "data-portal",
@@ -18666,7 +18644,7 @@
     },
     {
       "name": "SWPC-GOES-Proton-Flux",
-      "url": "https://www.swpc.noaa.gov/products/goes-proton-flux",
+      "url": "https://www.spaceweather.gov/products/goes-proton-flux",
       "desc_zh": "NOAA SWPC：GOES 质子通量产品",
       "analysis_zh": "SWPC GOES Proton Flux 产品页，监测太阳高能质子事件（SPE）。质子暴可影响极区 HF/GNSS 与卫星单粒子效应，是电离层/空间天气分析中与 X 射线耀斑、太阳风并列的上游输入。与 GOES X-ray、NGDC GOES 归档互补，偏实时通量产品。",
       "language": "data-portal",
@@ -18798,7 +18776,7 @@
     },
     {
       "name": "EUREF-EPN-Troposphere",
-      "url": "https://www.epncb.oma.be/_productsservices/troposphere/",
+      "url": "https://epncb.oma.be/_productsservices/troposphere/",
       "desc_zh": "EUREF EPN：对流层产品与服务专页",
       "analysis_zh": "EPN 中央局对流层产品服务页，汇总欧洲永久 GNSS 网的对流层延迟相关产品入口。与 EPN 主页、观测 FTP 互补，本页专指对流层派生产品。GNSS 气象与 ZTD 对比常用。",
       "language": "data-portal",
@@ -18820,7 +18798,7 @@
     },
     {
       "name": "EUREF-EPN-Data-Access",
-      "url": "https://www.epncb.oma.be/_networkdata/data_access/",
+      "url": "https://epncb.oma.be/_networkdata/data_access/",
       "desc_zh": "EUREF EPN：观测数据访问说明与入口",
       "analysis_zh": "EPN 网络数据访问专页，说明如何获取欧洲永久 GNSS 站观测与相关资源。与 EPN 主页、Obs FTP 互补，偏数据获取指引而非产品目录。欧洲区域 CORS/RINEX 研究常用导航页。",
       "language": "data-portal",
@@ -18886,7 +18864,7 @@
     },
     {
       "name": "NOAA-EMM",
-      "url": "https://www.ngdc.noaa.gov/geomag/EMM/",
+      "url": "https://www.ncei.noaa.gov/products/enhanced-magnetic-model",
       "desc_zh": "NOAA NCEI：增强磁模型 EMM 门户",
       "analysis_zh": "NCEI Enhanced Magnetic Model（EMM）产品页，提供比 WMM 更精细的地壳/岩石圈磁场模型入口。与 WMM 门户互补，服务航向/磁偏与空间天气地磁背景。模型系数与计算器见页内链接。",
       "language": "data-portal",
@@ -18908,7 +18886,7 @@
     },
     {
       "name": "PSMSL",
-      "url": "https://www.psmsl.org/",
+      "url": "https://psmsl.org/",
       "desc_zh": "PSMSL：全球平均海平面数据服务（验潮站）",
       "analysis_zh": "Permanent Service for Mean Sea Level 官方站，汇集全球验潮站月/年均值，并与 GLOSS 等协作。GNSS 潮位计/GNSS-IR 海面研究常与 PSMSL 序列对照。与 SONEL 互补：SONEL 偏 GNSS@tide gauge，本站偏经典验潮。",
       "language": "data-portal",
@@ -18930,7 +18908,7 @@
     },
     {
       "name": "SWPC-Solar-Synoptic-Map",
-      "url": "https://www.swpc.noaa.gov/products/solar-synoptic-map",
+      "url": "https://www.spaceweather.gov/products/solar-synoptic-map",
       "desc_zh": "NOAA SWPC：太阳综合图（Solar Synoptic Map）产品",
       "analysis_zh": "SWPC 太阳综合图产品页，概括日面活动区与预报相关结构，服务于空间天气值班与 GNSS/HF 影响背景。与 SDO/SOHO 成像、GOES 通量产品互补，偏综合研判图。页面现多跳转到 spaceweather.gov。",
       "language": "data-portal",
@@ -18952,7 +18930,7 @@
     },
     {
       "name": "SWPC-Solar-Geophysical-Event-Reports",
-      "url": "https://www.swpc.noaa.gov/products/solar-and-geophysical-event-reports",
+      "url": "https://www.spaceweather.gov/products/solar-and-geophysical-event-reports",
       "desc_zh": "NOAA SWPC：太阳与地球物理事件报告",
       "analysis_zh": "SWPC Solar and Geophysical Event Reports 产品页，归档耀斑、粒子与地磁等事件报告文本。便于把 GNSS 扰动时段对齐到官方事件纪要，与 DONKI、GOES 通量互补。文本产品多为公开。",
       "language": "data-portal",
@@ -19082,7 +19060,7 @@
     },
     {
       "name": "EUREF-EPN-StationList",
-      "url": "https://www.epncb.oma.be/_networkdata/stationlist.php",
+      "url": "https://epncb.oma.be/_networkdata/stationlist.php",
       "desc_zh": "EUREF EPN：永久站站表专页",
       "analysis_zh": "EPN中央局站表专页，列出欧洲永久GNSS网站点清单，并链到网络状态与相关导航。与EPN主页、数据访问与对流层产品页互补，本页直达站表，便于选站与元数据核对。欧洲CORS研究常用入口。站信息更新以EPN中央局为准。",
       "language": "data-portal",
@@ -19104,7 +19082,7 @@
     },
     {
       "name": "EUREF-EPN-Coordinates",
-      "url": "https://www.epncb.oma.be/_productsservices/coordinates/",
+      "url": "https://epncb.oma.be/_productsservices/coordinates/",
       "desc_zh": "EUREF EPN：坐标产品与服务专页",
       "analysis_zh": "EPN中央局坐标产品服务专页，汇总欧洲永久GNSS网坐标类产品与服务入口，并链到相关产品说明。与对流层产品页、站表页并列，面向参考框架与站坐标用户。产品版本、格式与引用请遵循EUREF与EPN规定及官方发布说明文档。",
       "language": "data-portal",
@@ -19852,7 +19830,7 @@
     },
     {
       "name": "LPI",
-      "url": "https://github.com/ilkkavir/lpi",
+      "url": "https://github.com/ilkkavir/LPI",
       "desc_zh": "在 HPC 上用 MPI 对 ISR 电压数据做滞后剖面反卷积；数据读写需另配 LPI.gdf 等包",
       "analysis_zh": "奥卢大学 Ilkka Virtanen 开发的 Lag Profile Inversion R 包，BSD-2-Clause 许可并有 Zenodo DOI。从电压级非相干散射雷达采样出发，反卷积得到各距离门的滞后剖面（自相关函数），是后续拟合电子密度、温度等参数的前一步；当前主分支为适配 HPC 的 MPI 版，数据 I/O 由 LPI.gdf、LPI.KAIRA 等配套包提供。适合 EISCAT/EISCAT_3D 等雷达的原始数据研究者。使用说明见仓库内 PDF 手册与教程，README 本身较简。",
       "language": "R",
@@ -20396,7 +20374,7 @@
     }
   ],
   "provenance_counts": {
-    "official": 331,
+    "official": 330,
     "academic_lab": 214,
     "personal_community": 484
   },

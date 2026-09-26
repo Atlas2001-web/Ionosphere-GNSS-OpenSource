@@ -13,7 +13,7 @@ GNSS 与 IMU（及视觉等）松/紧组合，车载与机器人户外定位。
 | [ublox_driver](https://github.com/HKUST-Aerial-Robotics/ublox_driver) | ublox_driver：ZED-F9P 向 ROS u-blox 驱动 | C++ | 159 | 🏷️ 高校实验室 |
 | [novatel_oem7_driver](https://github.com/novatel/novatel_oem7_driver) | novatel_oem7_driver：NovAtel OEM7/SPAN 厂商 ROS 驱动（MIT） | C++ | 123 | 🏷️ 个人社区 |
 | [rtklib_ros_bridge](https://github.com/MapIV/rtklib_ros_bridge) | rtklib_ros_bridge：RTKLIB 结果桥接 ROS | C++ | 121 | 🏷️ 个人社区 |
-| [fixposition_driver](https://github.com/Fixposition/fixposition_driver) | fixposition_driver：Vision-RTK/PBx 视觉惯性 GNSS 的 ROS 驱动 | C++ | 66 | 🏷️ 个人社区 |
+| [fixposition_driver](https://github.com/fixposition/fixposition_driver) | fixposition_driver：Vision-RTK/PBx 视觉惯性 GNSS 的 ROS 驱动 | C++ | 66 | 🏷️ 个人社区 |
 | [nmea-msgs](https://github.com/ros-drivers/nmea_msgs) | nmea_msgs：ROS 用 NMEA 消息接口（ros-drivers） | CMake | 38 | 🏷️ 个人社区 |
 | [gnss_ros_standardization](https://github.com/DaikiNiimi/gnss_ros_standardization) | gnss_ros_standardization：ROS 2 标准化 GNSS 话题 | C++ | 21 | 🏷️ 个人社区 |
 | [swiftnav-ros2](https://github.com/swift-nav/swiftnav-ros2) | swiftnav-ros2：Swift Navigation 厂商 ROS 2 SBP 驱动（MIT） | C++ | 15 | 🏷️ 个人社区 |
@@ -64,7 +64,7 @@ Hexagon/NovAtel 维护的 OEM7 系列 GNSS/SPAN 厂商 ROS 驱动，MIT 许可�
 
 把经典 RTKLIB 定位输出接入 ROS，便于自动驾驶与机器人栈消费 RTK/PPP 结果。绑定 RTKLIB 2.4.3 b34 一代接口。适合已有 RTKLIB 流水线的 ROS 集成；若需要更新算法内核应另选维护中的 RTKLIB 分支或 MRTKLIB，并注意许可与版本差异。
 
-#### [fixposition_driver](https://github.com/Fixposition/fixposition_driver)  
+#### [fixposition_driver](https://github.com/fixposition/fixposition_driver)  
 *🏷️ 个人社区*
 
 语言：C++ · 许可：MIT · 星标约：66 · 宿主：github

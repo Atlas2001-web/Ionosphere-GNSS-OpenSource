@@ -172,7 +172,7 @@ Tudatpy 是 TU Delft Tudat 的 Python 接口，面向轨道传播、天体动力
 |---|---|---|---:|---|
 | [CDDIS-Orbit-Clock-Products](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/orbit_and_clock_products.html) | NASA CDDIS：GNSS 轨道与钟差产品说明页 | data-portal | — | 🏷️ 官方 |
 | [ESA-Navigation-Support-Office](https://navigation-office.esa.int/) | ESA OPS-GN：导航支持办公室门户 | data-portal | — | 🏷️ 官方 |
-| [IGS-Bias-Calibration-WG](https://igs.org/wg/bias/) | IGS 偏差与校准工作组：DCB/OSB 等偏差产品入口 | data-portal | — | 🏷️ 官方 |
+| [IGS-Bias-Calibration-WG](https://igs.org/wg/bias-and-calibration/) | IGS 偏差与校准工作组：DCB/OSB 等偏差产品入口 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -190,7 +190,7 @@ CDDIS 对 IGS 等精密轨道（SP3）与钟差（CLK）产品的说明入口；
 
 ESA Navigation Support Office（OPS-GN）公开门户，介绍导航支持活动、产品与出版物入口。面向 GNSS 精密产品与任务支持用户，与 GSSC/Navipedia 等 ESA 导航资源互补。页面偏 JS 应用。
 
-#### [IGS-Bias-Calibration-WG](https://igs.org/wg/bias/)  
+#### [IGS-Bias-Calibration-WG](https://igs.org/wg/bias-and-calibration/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site

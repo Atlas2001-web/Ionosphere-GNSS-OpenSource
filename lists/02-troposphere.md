@@ -382,7 +382,7 @@ Python 包生成斜路径干/湿延迟（STD/SWD）以及基于 GPT/VMF 的模�
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [Mapping-Function-Height-Correction-Models](https://github.com/Sardingfish/Mapping-Function-Height-Correction-Models) | 对流层映射函数高程改正模型参数与 MATLAB 脚本（J Geod 2024 配套） | MATLAB | 2 | 🏷️ 个人社区 |
-| [TU-Wien-VMF-GPT-codes](https://vmf.geo.tuwien.ac.at/codes) | TU Wien 官方 VMF1/VMF3/GPT/GMF 源码与格网目录 | Fortran/MATLAB/C++ | — | 🏷️ 官方 核心 |
+| [TU-Wien-VMF-GPT-codes](https://vmf.geo.tuwien.ac.at/codes/) | TU Wien 官方 VMF1/VMF3/GPT/GMF 源码与格网目录 | Fortran/MATLAB/C++ | — | 🏷️ 官方 核心 |
 | [VMF-TUWien-Home](https://vmf.geo.tuwien.ac.at/) | VMF-TUWien-Home：TU Wien VMF/GPT 对流层产品与代码门户 | Fortran/MATLAB | — | 🏷️ 官方 |
 
 ### 详细说明
@@ -394,7 +394,7 @@ Python 包生成斜路径干/湿延迟（STD/SWD）以及基于 GPT/VMF 的模�
 
 Ding 等 2024 年发表于 Journal of Geodesy 的映射函数垂直建模方法配套仓库，MIT 许可。VMF1/VMF3 等映射函数产品只在地表给出，飞机、无人机或高山测站需要高程改正；仓库提供最小模型参数集与 MATLAB 脚本，按用户高度恢复系数 a 并输出改正后的映射函数。适合 GNSS/VLBI 高精度处理中研究对流层映射误差的读者，与 TU Wien VMF 代码配合使用。平台标注为 Windows，数据量精简，便于复现论文结论。
 
-#### [TU-Wien-VMF-GPT-codes](https://vmf.geo.tuwien.ac.at/codes)  
+#### [TU-Wien-VMF-GPT-codes](https://vmf.geo.tuwien.ac.at/codes/)  
 *🏷️ 官方 核心*
 
 语言：Fortran/MATLAB/C++ · 许可：TU Wien site terms · 星标约：— · 宿主：official_site
@@ -451,12 +451,12 @@ UNB 系列中性大气经验模型，无实测气象时给天顶延迟粗值。�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [EUREF-EPN-Troposphere](https://www.epncb.oma.be/_productsservices/troposphere/) | EUREF EPN：对流层产品与服务专页 | data-portal | — | 🏷️ 官方 |
+| [EUREF-EPN-Troposphere](https://epncb.oma.be/_productsservices/troposphere/) | EUREF EPN：对流层产品与服务专页 | data-portal | — | 🏷️ 官方 |
 | [IGS-Troposphere-WG](https://igs.org/wg/troposphere/) | IGS 对流层工作组：ZTD/梯度产品与活动入口 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
-#### [EUREF-EPN-Troposphere](https://www.epncb.oma.be/_productsservices/troposphere/)  
+#### [EUREF-EPN-Troposphere](https://epncb.oma.be/_productsservices/troposphere/)  
 *🏷️ 官方*
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
