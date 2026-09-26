@@ -2,6 +2,12 @@
 
 目录：`PROJECTS.json` **`satellite-js`**（orbit-clock / SGP4-JS）· 上游 <https://github.com/shashwatak/satellite-js>（默认分支 `develop`，HEAD **`95e43b7`** 2026-09-25 16:59 EDT）· npm **`satellite.js` 7.1.0**（2026-07-23 发布；tag `7.1.0`=`582a72e`）· **MIT** · ★**1091** · 纯 ESM（`"type":"module"`，自带 `.d.ts`）· 本机 Node **v20.19.2** / npm 9.2.0 · 真跑 2026-09-26 02:09–02:30 EDT
 
+> **质检复跑通过（有小修正）**（2026-09-26 03:59–04:04 EDT）。
+> - 环境：npm `satellite.js@7.1.0`（2026-07-23 发布，MIT，`"type":"module"`），Node v20.19.2；develop HEAD `95e43b7`、tag `7.1.0`=`582a72e`、★1091 均核对无误。CelesTrak 重抓的 ISS/PRN02 TLE 与原文历元相同。
+> - 逐字复现（脚本按原文描述重写）：§3.2 四行输出与 |dr|/|dv| 逐位一致（max 1.712e-2 m / 5.731e-6 m/s）；`jdsatepoch` 2461308.56454359、`jdsatepochF` undefined、tsince 1347.0572304725647；`sgp4(s,1347.0572304)` x=18021.574979685072；§3.3 克隆 `95e43b7` 后 `vitest --project js` 7 个文件 / 410 个测试通过，`tle.txt` 51949 行；对 tcppver 为 33 TLE / 666 态 / 1 null，max|dr| 1.171e-4 m（20413@1844335），max|dv| 8.529e-7 m/s；§3.4 纯 JS 四行逐位一致（0.549/0.881、53.480/57.941、26974.176/52133.889、31 星中位 1.675、max 469.596）；`eciToEcf` 与 astropy ITRS 差 53.16 m；`no` 0.0087510997、lat −0.16288 rad / −9.3325°；截断 TLE error 0 + NaN；+5 年 null / error 6，+3 年仍给坐标；OMM−TLE 1.91 m。
+> - 修正：坑 11 耗时本次 259–279 ms（原 301 ms），改为区间；Python `SatrecArray` 同步改为 python-sgp4 质检实测的 160–185 ms。
+> - 未复跑：`catalog` 测试（原文已记 OOM，为免拖垮共享机未重试）、WASM `BulkPropagator`。
+
 > 岗位：在浏览器/Node 里把 TLE/OMM 传播成 **TEME（库里叫 ECI）** 位置/速度，再用自带 `eciToEcf`/`eciToGeodetic`/`ecfToLookAngles` 做**可视化级**几何。精度 **km 级**（GPS 实测中位 ~1.7 km，§3.4）。冲突时：**上游 README / `dist/*.d.ts` > 本文**。
 > 姊妹篇：[python-sgp4](./python-sgp4.md)（同算法 Python 版；本文所有交叉数值与其对拍）。精密轨道：[data-access · SP3](../data-access.md#sp3--clk--bias) → [gnssanalysis](./gnssanalysis.md)。
 
@@ -122,7 +128,7 @@ CelesTrak GP（JSON/TLE）→ 本库 → `eciToEcf`/`ecfToLookAngles` → 地图
 8. **OMM vs TLE**：PRN02 OMM 多一位偏心率（0.01725844）→ 同时刻 **1.91 m**（Python 1.39 m；JS `EPOCH` 走 `Date` 只保留到 ms 可能贡献部分差，未单独拆）。
 9. **纯 ESM**：`require('satellite.js')` 不可用；Node 需 `.mjs`/`"type":"module"` 或动态 `import()`。
 10. **catalog 测试吃内存**：51949 行全目录测试在 15 GB 机 OOM；CI 只跑 `--project js`。
-11. **速度**：32 星×10080 分钟逐次 `propagate(Date)` = 322560 状态 **301 ms**（Python `SatrecArray` 181 ms）。
+11. **速度**：32 星×10080 分钟逐次 `propagate(Date)` = 322560 状态 **259–301 ms**（两次实测；Python `SatrecArray` 160–185 ms）。
 
 ## 8. 选型
 

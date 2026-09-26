@@ -2,6 +2,12 @@
 
 目录：`PROJECTS.json` **`sgp4-rs`**（orbit-clock / SGP4-Rust）· 上游 <https://github.com/neuromorphicsystems/sgp4>（Western Sydney 大学 ICNS）· crates.io **`sgp4` 2.4.0**（2026-02-23 发布 = tag `2.4.0` = master **`66b6318`**）· **MIT** · ★**120** · 本机 rustc/cargo **1.98.1**，依赖锁定 chrono 0.4.45 / serde 1.0.229 / serde_json 1.0.151 · 真跑 2026-09-26 02:57–03:00 EDT
 
+> **质检复跑通过**（2026-09-26 03:59–04:04 EDT）。
+> - 环境：`cargo add sgp4@2.4.0 serde_json chrono`，锁 chrono 0.4.45 / serde 1.0.229 / serde_json 1.0.151；依赖已在缓存，release 编译 5.3 s（原文冷编译 9.2 s），target 52 MB。crates 2.4.0 发布于 2026-02-23 10:59 UTC，MIT；tag `2.4.0`=master `66b6318`、★120 均核对无误。原文 `sgp4cmp` 没有公开，按 §2 写法自写了等价 CLI。
+> - 逐字复现：§3.1 三行和 WGS84 的 PRN02 r 逐位一致；§3.2 同为 192 历元 × 32 星 = 6144 点，WGS72 max 8.4e−6 m、AFSPC 8.2e−6 m、default 中位 26.9 m / max 34.1 m / |dv| 3.4e−3 m/s、OMM max 1.39e−3 m（G20）；亚 µm 末位随 CSV 输出精度变化（本次保留到 1e−12 km）。§3.3 wgs72 / default / OMM 三行（0.534、0.517、0.533 km，31 星中位 1.658 km，G13 469.612 km）；§3.4 各项（23333 为 4.22e−3 m，8195 为 3.61e−5 m，25954 为 7.52e−6 m，4 组解析拒绝的错误原文，20413 第二组 70 点 5.0e−4 m，22312@494.2 / 28350@1560 偏心率报错，AFSPC 23599 964 m，x=4083.185512 与 python-sgp4 `sgp4init(…,'a',…)` 逐位相同）；§3.5 TLE 错误 5 类、OMM 1.2 / 带 Z / 字符串字段三类；衰减 +1461/+1826/+3000/+5000/+8000 d；坑 8 逐星 48 h 最大差中位 1.86 m、最大 4.78 m（G13）；bench 85–96 ms（265–298 ns）。
+> - 补充观察：AFSPC 模式对 tcppver 的深空星反而更贴（23333 为 7.1e−6 m，20413 ≤ 2.05e−4 m），只有 23599（Lyddane）差 964 m；原文「tcppver 是 improved 模式」的判断仍成立，深空毫米级差来自历元 / 恒星时处理。
+> - 无修正。未复跑：`propagate_from_state` 测速、no_std、Python / JS 测速两行（本轮 JS 另测 259–279 ms）；OMM 带 Z 的报错列号依 JSON 序列化而变（本次为 column 105）。
+
 > 岗位：纯 Rust（可 `no_std`）的 SGP4/SDP4，把 **TLE / OMM(JSON)** 传播成 **TEME** 位置（km）/速度（km/s）。精度仍是 **km 级**（GPS 对 IGS SP3 中位 ~1.7 km），**不是**精密轨道。冲突时：**docs.rs / 上游 README > 本文**。
 > 姊妹篇：[python-sgp4](./python-sgp4.md)（本文 §3.2 与之差 **≤ 9 µm**）、[satellite-js](./satellite-js.md)（JS 版）；严格 IERS 帧/SP3 插值：[orekit](./orekit.md)；Rust 数值积分：[nyx](./nyx.md)（nyx 无 SGP4）；精密轨道下载：[data-access · SP3](../data-access.md#sp3--clk--bias)。
 
