@@ -352,7 +352,6 @@ BKG/RTCM 维护的 NTRIP 开源软件 Trac 门户，集中入口含 BNC、Profes
 | [pinot](https://github.com/purpleskyfall/pinot) | pinot：开源 GNSS 质检预处理工具 | Python | 25 | 🏷️ 个人社区 核心 |
 | [RNXQCE](https://github.com/cuizilu/RNXQCE) | RNXQCE：RINEX 2/3 质检 Fortran 工具（TEQC 替代取向） | Fortran | 6 | 🏷️ 个人社区 |
 | [geoveil-cn0](https://github.com/miluta7/geoveil-cn0) | geoveil-cn0：RINEX CN0 质量评分与干扰/欺骗检测 | Rust | 3 | 🏷️ 个人社区 |
-| [grinq](https://github.com/PJarrin/grinq) | RINEX 镜像与 Anubis QC 的 Python 工具箱 | Python | 1 | 🏷️ 个人社区 |
 | [Anubis](https://gnutsoftware.com/software/anubis/) | G-Nut/Anubis：多 GNSS RINEX/RTCM 质量检查（Free 开源） | C++ | — | 🏷️ 个人社区 核心 |
 | [Anubis-Free-Download](https://gnutsoftware.com/software/anubis/download) | Anubis-Free-Download：G-Nut Anubis Free 的 GPL 源码与 Linux 包 | C++ | — | 🏷️ 个人社区 |
 | [plot-Anubis](https://www.pecny.cz/sw/plots/anubis/) | plot-Anubis：Anubis XTR 质检结果静态绘图脚本 | Perl | — | 🏷️ 高校实验室 |
@@ -381,13 +380,6 @@ Fortran 编写的 GNSS 观测预处理与质量检查工具，宣称支持 RINEX
 语言：Rust · 许可：MIT · 星标约：3 · 宿主：github
 
 GNSS 信号质量分析库，输出 0–100 综合评分、星空图与时序，并检测 jamming/spoofing/interference；支持 RINEX 2/3/4 与 Hatanaka。MIT，PyPI。适合 CORS 台站健康度与干扰监测；欺骗检测依赖导航文件可见性对比，算法阈值非认证级威胁情报。
-
-#### [grinq](https://github.com/PJarrin/grinq)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：MIT · 星标约：1 · 宿主：github
-
-GRINQ（MIT，DOI 10.5281/zenodo.22228489）面向 GNSS 数据中心作业：多归档 RINEX 检索与镜像、台站管理，并封装 Anubis 生成质检统计。适合区域网运维脚本。QC 依赖需另行注册获取 Anubis 二进制；EarthScope 拉取需安装兼容版 earthscope-sdk。仓库较新，接口可能随版本调整。
 
 #### [Anubis](https://gnutsoftware.com/software/anubis/)  
 *🏷️ 个人社区 核心*
@@ -621,6 +613,7 @@ nav-solutions / rtk-rs 生态的 RINEX→BINEX CLI（MPL-2.0，Rust）。便于�
 | [GDDS](https://github.com/LECUT/GDDS) | GDDS：多模块 GNSS 数据下载器 | Python | 13 | 🏷️ 个人社区 |
 | [earthscope-sdk](https://gitlab.com/earthscope/public/earthscope-sdk) | EarthScope 官方 Python SDK（GAGE GNSS API） | Python | 4 | 🏷️ 官方 |
 | [GNSS_OSI_download](https://github.com/jdesbonnet/GNSS_OSI_download) | 爱尔兰 OSI GNSS RINEX 下载脚本（旧域已失效，数据迁至 Tailte） | Python | 1 | 🏷️ 个人社区 |
+| [grinq](https://github.com/PJarrin/grinq) | 多数据中心 RINEX 日文件批量下载脚本（附镜像/QC） | Python | 1 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -672,6 +665,13 @@ EarthScope 发布的 Python 客户端（Apache-2.0，PyPI: earthscope-sdk），�
 语言：Python · 许可：MIT · 星标约：1 · 宿主：github
 
 MIT 许可的 Python 脚本，按站号与日期/小时段批量抓取爱尔兰 Active GNSS 站 RINEX（ZIP）。现状（2026-09-26 复核）：脚本硬编码的旧域 gnss.osi.ie 在公共 DNS 返回 NXDOMAIN，列站与下载均报 NameResolutionError，原样无法使用。OSI 已并入 Tailte Éireann，数据改从新官方页 gnss.tailte.ie/download-rinex.php 获取；该页公告 9 月 28 日起迁移至 RINEX 3，期间网站暂停服务。新页表单是否兼容脚本未验证，改 BASE_URL 前先人工核对。
+
+#### [grinq](https://github.com/PJarrin/grinq)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：1 · 宿主：github
+
+法国 Geoazur 的 Paul Jarrin 写的 RINEX 批量下载脚本集（MIT，Zenodo DOI 10.5281/zenodo.22228489，setup.py 版本 0.0.1）。主力 grinq_get_rinex.py 按中心名、站名和年积日拼出 RINEX 2 短名或 RINEX 3 长名日文件的地址，逐日下载到“年/年积日”目录；包内表格收了二十来个国家和区域网，2026-09-26 实测 SOPAC、NGS、GFZ、荷兰 Kadaster、新西兰 GeoNet、EUREF(BKG)、希腊 NOA、RENAG 可匿名下到。另带 lftp 镜像脚本和调用 Anubis 的 QC 脚本（Anubis 需注册获取）。实测问题不少：setup.py 漏了 requests，要手动安装；澳洲 ARGN 地址写错，会把 S3 网页存成 .crx.gz 且不报错；-login、-hrate 配 9 位站名、镜像脚本的并行参数都有代码错误；下载失败退出码仍为 0；EarthScope 下载要 earthscope-sdk 0.2.1，新版接口已变。适合参考各数据中心的路径格式或打补丁后做区域网备数，原样用于生产不够稳。
 
 ## 自动化处理
 
