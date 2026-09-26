@@ -1,5 +1,5 @@
 # 对流层 / Troposphere
-> **48** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **47** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
@@ -181,7 +181,6 @@ Python 包生成斜路径干/湿延迟（STD/SWD）以及基于 GPT/VMF 的模�
 | [gnssrefl](https://github.com/kristinemlarson/gnssrefl) | gnssrefl：GNSS-IR 反射测量工具 | Python | 217 | 🏷️ 高校实验室 核心 |
 | [mpsim](https://github.com/ufrgs-gnss-lab/mpsim) | mpsim：GNSS 多路径前向仿真器 | MATLAB | 48 | 🏷️ 高校实验室 核心 |
 | [gnssIR-matlab-v3](https://github.com/kristinemlarson/gnssIR_matlab_v3) | gnssIR-matlab-v3：Larson 实验室 GNSS-IR MATLAB | MATLAB | 30 | 🏷️ 高校实验室 |
-| [gnssIR-python](https://github.com/kristinemlarson/gnssIR_python) | gnssIR_python：Larson 实验室 GNSS-IR Python 脚本 | Python | 26 | 🏷️ 高校实验室 |
 | [mphw](https://github.com/ufrgs-gnss-lab/mphw) | mphw：低成本 GNSS-IR/反射测量开源硬件 | MATLAB | 25 | 🏷️ 高校实验室 |
 | [gnssSNR](https://github.com/kristinemlarson/gnssSNR) | gnssSNR：RINEX→SNR/几何角，GNSS-IR 前置工具 | Fortran | 15 | 🏷️ 高校实验室 |
 | [gnssrlowcost](https://github.com/purnelldj/gnssr_lowcost) | gnssrlowcost：低成本 GNSS 反射测量分析 | MATLAB | 14 | 🏷️ 个人社区 |
@@ -219,13 +218,6 @@ Nievinski 与 Larson 发表于 GPS Solutions 的开源多路径仿真器，用�
 语言：MATLAB · 许可：MIT · 星标约：30 · 宿主：github
 
 Kristine Larson 团队发布的 GNSS 干涉反射（GNSS-IR）MATLAB 新版，用信噪比（SNR）随高度角振荡反演反射面高度，常用于水位与雪深（README 注明不算土壤湿度）。面向已有 MATLAB 流程的地球物理与大地测量用户。边界是反射测高/环境遥感，不做对流层 ZTD；Python 产线请优先对照同作者持续维护的 gnssrefl，本仓库更偏 MATLAB 用户留存版本。
-
-#### [gnssIR-python](https://github.com/kristinemlarson/gnssIR_python)  
-*🏷️ 高校实验室*
-
-语言：Python · 许可：MIT · 星标约：26 · 宿主：github
-
-Larson 实验室较早的 GNSS-IR Python 脚本集，从 GNSS 观测提取 SNR 干涉条纹并估计反射器高度，服务水位与地表环境监测。适合想在纯脚本环境快速试验 GNSS-IR 的研究者。工程化、命令行与多星座流程弱于现维护的 gnssrefl；新项目建议直接用 gnssrefl，本库可作算法对照或旧文复现。仓库已于 2020-11 归档（只读）。
 
 #### [mphw](https://github.com/ufrgs-gnss-lab/mphw)  
 *🏷️ 高校实验室*

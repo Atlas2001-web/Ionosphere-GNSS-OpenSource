@@ -1,5 +1,5 @@
 # GNSS 数据与格式 / GNSS Data I/O
-> **137** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **136** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 RINEX/SP3/CLK/ANTEX 读写与转换、RTCM/NTRIP、Hatanaka 压缩、质量检查/多路径分析、接收机驱动与协议、数据下载脚本——所有解算的上游。
 
@@ -889,7 +889,6 @@ MATLAB 下的多路径分析开源实现，方便已有 MATLAB 流水线的实�
 |---|---|---|---:|---|
 | [minmea](https://github.com/kosma/minmea) | minmea：嵌入式友好的纯 C NMEA 0183 解析库 | C | 966 | 🏷️ 个人社区 |
 | [pynmea2](https://github.com/Knio/pynmea2) | pynmea2：高星标 Python NMEA 0183 解析库 | Python | 681 | 🏷️ 个人社区 |
-| [GPSTk](https://github.com/SGL-UT/GPSTk) | GPSTk：已归档，请迁移到 gnsstk / gnsstk-apps | C++ | 360 | 🏷️ 高校实验室 |
 | [libnmea](https://github.com/jacketizer/libnmea) | libnmea：轻量纯 C 的 NMEA 0183 解析库 | C | 326 | 🏷️ 个人社区 |
 | [GPS.js](https://github.com/rawify/GPS.js) | GPS.js：浏览器/Node 可用的 NMEA 0183 解析库 | JavaScript | 270 | 🏷️ 个人社区 |
 | [pyubx2](https://github.com/semuconsulting/pyubx2) | pyubx2：u-blox UBX 协议 Python 编解码库 | Python | 254 | 🏷️ 个人社区 |
@@ -921,13 +920,6 @@ kosma 维护的嵌入式友好 NMEA 0183 解析库，无动态分配、接口精
 语言：Python · 许可：MIT · 星标约：681 · 宿主：github
 
 轻量 Python 库，解析 GPS/GNSS 设备输出的 NMEA 0183 语句（GGA/RMC 等），星标高、API 简单，适合日志回放与嵌入式串口数据管道。只处理文本协议，不含 RTCM/RINEX，也不做定位解算；与 pynmeagps 互补（生态不同）。
-
-#### [GPSTk](https://github.com/SGL-UT/GPSTk)  
-*🏷️ 高校实验室*
-
-语言：C++ · 许可：LGPL-3.0 · 星标约：360 · 宿主：github
-
-历史 GPSTk 仓库，已声明归档并迁移到 gnsstk / gnsstk-apps。仅作文献与旧脚本对照；新项目请用 GNSSTK。
 
 #### [libnmea](https://github.com/jacketizer/libnmea)  
 *🏷️ 个人社区*

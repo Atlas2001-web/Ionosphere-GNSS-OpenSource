@@ -5,11 +5,11 @@
   "maintainer_hint": "Atlas2001-web / Brightstar_Lee",
   "note": "SH-GIM-proprietary is private and intentionally omitted from public lists.",
   "generated": "2026-09-26",
-  "project_count": 1028,
+  "project_count": 1026,
   "counts_by_category": {
     "ionosphere": 247,
-    "troposphere": 48,
-    "gnss-data": 137,
+    "troposphere": 47,
+    "gnss-data": 136,
     "gnss-positioning": 108,
     "orbit-clock": 31,
     "navigation-ins": 72,
@@ -813,24 +813,6 @@
       "one_liner_zh": "gpsd-website：gpsd 官网（文档、兼容机列表与发行说明）",
       "provenance": "personal_community",
       "host": "other"
-    },
-    {
-      "name": "GPSTk",
-      "url": "https://github.com/SGL-UT/GPSTk",
-      "desc_zh": "历史 GPSTk 归档仓（新项目请改用 GNSSTK）",
-      "analysis_zh": "历史 GPSTk 仓库，已声明归档并迁移到 gnsstk / gnsstk-apps。仅作文献与旧脚本对照；新项目请用 GNSSTK。",
-      "language": "C++",
-      "license": "LGPL-3.0",
-      "category": "gnss-data",
-      "subcategory": "基础库",
-      "markers": [],
-      "stars_approx": 360,
-      "source": "curated+verified (awesome-gnss / stars / API / official site)",
-      "featured": false,
-      "user_relation": "none",
-      "host": "github",
-      "provenance": "academic_lab",
-      "one_liner_zh": "GPSTk：已归档，请迁移到 gnsstk / gnsstk-apps"
     },
     {
       "name": "gstream",
@@ -11983,24 +11965,6 @@
       "one_liner_zh": "gnssIR-matlab-v3：Larson 实验室 GNSS-IR MATLAB"
     },
     {
-      "name": "gnssIR-python",
-      "url": "https://github.com/kristinemlarson/gnssIR_python",
-      "desc_zh": "与 MATLAB 版同源思路的反射测量处理流水线",
-      "analysis_zh": "Larson 实验室较早的 GNSS-IR Python 脚本集，从 GNSS 观测提取 SNR 干涉条纹并估计反射器高度，服务水位与地表环境监测。适合想在纯脚本环境快速试验 GNSS-IR 的研究者。工程化、命令行与多星座流程弱于现维护的 gnssrefl；新项目建议直接用 gnssrefl，本库可作算法对照或旧文复现。仓库已于 2020-11 归档（只读）。",
-      "language": "Python",
-      "license": "MIT",
-      "category": "troposphere",
-      "subcategory": "GNSS-IR",
-      "markers": [],
-      "stars_approx": 26,
-      "source": "seed:navigation-learning; URL listed in curated seed_urls.json",
-      "featured": false,
-      "user_relation": "none",
-      "host": "github",
-      "provenance": "academic_lab",
-      "one_liner_zh": "gnssIR_python：Larson 实验室 GNSS-IR Python 脚本"
-    },
-    {
       "name": "gnssr-raspberry",
       "url": "https://github.com/ITC-Water-Resources/gnssr-raspberry",
       "desc_zh": "低成本水文原型；产品宜对照 gnssrefl",
@@ -13068,9 +13032,9 @@
     },
     {
       "name": "DARNtids",
-      "url": "https://github.com/w2naf/DARNtids",
+      "url": "https://github.com/w2naf-academia/DARNtids",
       "desc_zh": "基于 SuperDARN 的行进式电离层扰动（TID）检测开源工具",
-      "analysis_zh": "面向 SuperDARN 雷达数据的 TID（Traveling Ionospheric Disturbance）检测与分析代码，GPL-3.0。适合将高频雷达观测与 GNSS TEC/TID 研究对照。依赖 SuperDARN 数据环境与雷达物理背景；不是 GNSS RINEX 处理链。",
+      "analysis_zh": "Frissell 等开发的 SuperDARN 中尺度行进式电离层扰动（MSTID）检测与表征工具包，GPL-3.0，已发布 PyPI 包 darntids。原 w2naf/DARNtids 仓已弃用（README 首行写明迁移），现行开发在 w2naf-academia/DARNtids，已由 pickle 改用 HDF5 存储。适合把高频雷达 TID 观测与 GNSS TEC/TID 结果对照；依赖 SuperDARN 数据与 pyDARN 环境，不是 GNSS RINEX 处理链。",
       "language": "Python",
       "license": "GPL-3.0",
       "category": "ionosphere",
@@ -13078,7 +13042,7 @@
       "markers": [
         "routine-2026-09-20"
       ],
-      "stars_approx": 4,
+      "stars_approx": 2,
       "source": "routine-web-search-2026-09-20",
       "featured": false,
       "user_relation": "none",
@@ -20381,7 +20345,7 @@
   ],
   "provenance_counts": {
     "official": 330,
-    "academic_lab": 214,
+    "academic_lab": 212,
     "personal_community": 484
   },
   "updated": "2026-09-26"

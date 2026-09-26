@@ -1,6 +1,6 @@
 # DARNtids · SuperDARN 地面散射 → MUSIC 求 MSTID 波长/方向/速度 操作手册
 
-目录：PROJECTS 登记的 <https://github.com/w2naf/DARNtids> 已**弃用**（README 首行写明迁移，tip `ce39085`，2026-01-11 08:18 EST，★4）。现行仓库是 <https://github.com/w2naf-academia/DARNtids>，tip **`6effcd0`**（2026-09-01 13:34 EDT）· tag `v0.2.0` / `20250930-research` · PyPI **`darntids` 0.2.0**（2026-08-02 13:40 EDT 发布）· ★2 · 作者 N. A. Frissell（Scranton / HamSCI），F. H. Tholley（Py3 + pyDARN 迁移），N. J. Guerra（pickle → HDF5）。
+目录：PROJECTS 已于 batch 64 改登记现行仓库；原址 <https://github.com/w2naf/DARNtids> 已**弃用**（README 首行写明迁移，tip `ce39085`，2026-01-11 08:18 EST，★4）。现行仓库是 <https://github.com/w2naf-academia/DARNtids>，tip **`6effcd0`**（2026-09-01 13:34 EDT）· tag `v0.2.0` / `20250930-research` · PyPI **`darntids` 0.2.0**（2026-08-02 13:40 EDT 发布）· ★2 · 作者 N. A. Frissell（Scranton / HamSCI），F. H. Tholley（Py3 + pyDARN 迁移），N. J. Guerra（pickle → HDF5）。
 
 > 本文实测：2026-09-26 04:05–04:20 EDT，Debian，`uv` 建 **Python 3.11.16** venv。数据是 Zenodo [10.5281/zenodo.7005203](https://doi.org/10.5281/zenodo.7005203)（pyDARN 论文配套，CC-BY-4.0）里的**真实** SAS / PGR FITACF。
 > 冲突时：**本机源码 > 上游 README > 本文**。
@@ -168,7 +168,7 @@ sas active shape (57, 16, 15) time 2012-11-01 20:34:00 -> 2012-11-01 21:30:00 | 
 6. **旧配置报 `TypeError: run_music() no longer accepts 'boxcar_filter'`**（实测） → 0.2.0 删除了 Python 版去斑点，改由上游 `fitexfilter` 生成去斑点后的 FITACF 目录。修复：`sed -i "/boxcar_filter/d" my_run_config.py`，并让 `fitacf_dir` 指向 fitexfilter 的输出
 7. **所有信号的 f 都是 0.893 mHz，T 都是 19 min**（实测，两个事件完全相同） → 数据只有 2 h，滤波吃掉边缘后只剩 57 点，通带内只有 3 个频率格点（§5 第 3 点）。修复：把前后相邻的 FITACF 放进同一目录，让滤波边缘由真实数据填充，例如 `ls sd-data/2012/fitacf/sas/20121101.{18,20,22}*`（至少覆盖 sTime−1 h 到 eTime+1 h）
 8. **重跑同一事件后，之前改名保存的图不见了** → `run_music` 调用 `prepare_output_dirs(..., clear_output_dirs=True)`，会先清空事件目录。修复：每组参数用独立的 `data_path`，例如 `data_path="music_data/thr040"`
-9. **按 PROJECTS 链接克隆到的是旧代码** → `w2naf/DARNtids` 已弃用，还是 `mstid` 包名、pickle 存储。修复：`git clone https://github.com/w2naf-academia/DARNtids`
+9. **按旧链接克隆到的是旧代码**（PROJECTS batch 64 前登记的是旧址）→ `w2naf/DARNtids` 已弃用，还是 `mstid` 包名、pickle 存储。修复：`git clone https://github.com/w2naf-academia/DARNtids`
 
 ## 8. 诚实边界
 

@@ -1919,8 +1919,8 @@ Bhuvnesh 发布的 ionex_reader 工具箱，可读取 IONEX、绘制 TEC/RMS 图
 | [tidd](https://github.com/vc1492a/tidd) | tidd：用 GPS sTEC 变化率异常检测 TID（海啸/地震等） | Jupyter Notebook | 10 | 🏷️ 高校实验室 |
 | [hamsci_LSTID_detection](https://github.com/HamSCI/hamsci_LSTID_detection) | HamSCI 从业余无线电 spot 数据自动检测大尺度行进电离层扰动的代码 | Python | 7 | 🏷️ 高校实验室 |
 | [t-fors](https://github.com/viventriglia/t-fors) | t-fors：TID 行进式电离层扰动预报组件 | HTML | 7 | 🏷️ 个人社区 |
-| [DARNtids](https://github.com/w2naf/DARNtids) | SuperDARN TID 行进扰动检测工具 | Python | 4 | 🏷️ 高校实验室 |
 | [psws-drf-tid-tools](https://github.com/N6RFM/psws-drf-tid-tools) | 基于 HamSCI Grape 数字 RF 记录估计 TID 传播速度与方向的 Python 流程 | Python | 4 | 🏷️ 个人社区 |
+| [DARNtids](https://github.com/w2naf-academia/DARNtids) | SuperDARN TID 行进扰动检测工具 | Python | 2 | 🏷️ 高校实验室 |
 | [IonKit-NH](https://github.com/tanggdut/IonKit-NH) | IonKit-NH：MATLAB 多系统 GNSS TEC 自然灾害电离层扰动检测工具包（原作者仓） | MATLAB | — | 🏷️ 个人社区 ★ |
 | [lstid_processing](https://github.com/USNavalResearchLaboratory/lstid_processing) | 美国海军研究实验室 C/NOFS IVM 与 SAMI3 大尺度 TID 分析工具包 | Python | 0 | 🏷️ 官方 |
 
@@ -1947,19 +1947,19 @@ HamSCI（NASA SWO2R 团队，Frissell 等）开源的 LSTID 自动检测代码�
 
 欧盟 Horizon 资助的 TID 预报相关开源组件/门户代码，面向扰动预警演示。输入为电离层扰动相关观测与模型配置；输出为 TID 预报产品。局限：业务可用性依赖数据源；与实时 GIM 生产不同。
 
-#### [DARNtids](https://github.com/w2naf/DARNtids)  
-*🏷️ 高校实验室*
-
-语言：Python · 许可：GPL-3.0 · 星标约：4 · 宿主：github
-
-面向 SuperDARN 雷达数据的 TID（Traveling Ionospheric Disturbance）检测与分析代码，GPL-3.0。适合将高频雷达观测与 GNSS TEC/TID 研究对照。依赖 SuperDARN 数据环境与雷达物理背景；不是 GNSS RINEX 处理链。
-
 #### [psws-drf-tid-tools](https://github.com/N6RFM/psws-drf-tid-tools)  
 *🏷️ 个人社区*
 
 语言：Python · 许可：MIT · 星标约：4 · 宿主：github
 
 业余无线电爱好者开源的 Python 管线，MIT 许可，面向 HamSCI Grape 系列个人空间天气站的 Digital RF I/Q 记录：从多站多普勒变化估计行进电离层扰动的传播速度和方向，并附获取 Madrigal GNSS TEC 以作对比的脚本。README 明确说明平面波、单跳 F 层、中点垂直反射等简化假设，建议结合 Kp、AE 指数与 hamsci_LSTID_detection 结果判读。适合公民科学与 TID 教学，数值结论宜谨慎。近期仍在更新。
+
+#### [DARNtids](https://github.com/w2naf-academia/DARNtids)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：GPL-3.0 · 星标约：2 · 宿主：github
+
+Frissell 等开发的 SuperDARN 中尺度行进式电离层扰动（MSTID）检测与表征工具包，GPL-3.0，已发布 PyPI 包 darntids。原 w2naf/DARNtids 仓已弃用（README 首行写明迁移），现行开发在 w2naf-academia/DARNtids，已由 pickle 改用 HDF5 存储。适合把高频雷达 TID 观测与 GNSS TEC/TID 结果对照；依赖 SuperDARN 数据与 pyDARN 环境，不是 GNSS RINEX 处理链。
 
 #### [IonKit-NH](https://github.com/tanggdut/IonKit-NH)  
 *🏷️ 个人社区 ★*

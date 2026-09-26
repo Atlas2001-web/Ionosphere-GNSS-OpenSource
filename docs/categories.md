@@ -30,14 +30,14 @@
 中性大气延迟与 GNSS 气象：ZTD/ZHD/ZWD、VMF/GPT 映射、可降水量 PWV，以及与湿延迟相关的反射测量（GNSS-IR）。
 
 - 列表文件：[`lists/02-troposphere.md`](../lists/02-troposphere.md)
-- 当前条目数：**48**
+- 当前条目数：**47**
 
 ## `gnss-data` — GNSS 数据与格式
 
 RINEX/SP3/CLK/ANTEX 读写与转换、RTCM/NTRIP、Hatanaka 压缩、质量检查/多路径分析、接收机驱动与协议、数据下载脚本——所有解算的上游。
 
 - 列表文件：[`lists/03-gnss-data.md`](../lists/03-gnss-data.md)
-- 当前条目数：**137**
+- 当前条目数：**136**
 
 ## `gnss-positioning` — 精密定位
 

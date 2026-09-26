@@ -134,6 +134,9 @@ RETIRED_URLS: dict[str, str] = {
     "https://www.epncb.oma.be/_networkdata/stationlist.php": "URL rewritten by QC (batch 54: permanent redirect, EUREF-EPN-StationList)",
     "https://www.epncb.oma.be/_productsservices/coordinates": "URL rewritten by QC (batch 54: permanent redirect, EUREF-EPN-Coordinates)",
     "https://egnos-user-support.essp-sas.eu": "removed: pure duplicate of EGNOS-GSC-User-Support (301 -> egnos.gsc-europa.eu, batch 54)",
+    "https://github.com/w2naf/darntids": "URL rewritten by QC (batch 64: repo deprecated, README points to successor w2naf-academia/DARNtids)",
+    "https://github.com/sgl-ut/gpstk": "removed: pure duplicate of gnsstk (archived; README says renamed to GNSSTK and split into gnsstk + gnsstk-apps, batch 64)",
+    "https://github.com/kristinemlarson/gnssir_python": "removed: pure duplicate of gnssrefl (archived; README says deprecated, use gnssrefl instead, batch 64)",
 }
 
 
