@@ -1,6 +1,6 @@
 # nmea-parser · Rust NMEA 0183 + AIS 解析库操作手册
 
-目录：上游 <https://github.com/zaari/nmea-parser>（作者 Timo Saarinen / zaari）· crates.io **`nmea-parser` 0.11.0**（2024-06-13 发布；总下载 **513802**，近 90 天 **93741**）· tag **`v0.11.0`=`865e7e5`**；master tip **`bc0a89f`**（领先 2 commit，只改 CHANGELOG/Cargo 版本号/README，**源码与 0.11.0 相同**）· **Apache-2.0** · ★**51** · 纯库（crate 包 62837 B）· **无 features**（`[features]` 为空）· **未声明 MSRV**（0.10.0 曾写 `rust-version = 1.56`，0.11.0 删了）/ edition 2018 · 本机 **rustc 1.98.1**（2026-09-26 01:17–01:30 EDT）：gpsd 真实日志 ZED-F9P **1015** 句、AIS+NMEA **1496** 句逐类计数与 pynmeagps **1.1.7** / pyais **3.2.3** 一致；GGA **29/29**、**164/164** 行 UTC/经纬度/卫星数/高度逐行相同；AIS 动态报 **144** 条与 pyais 多重集合完全一致；**UBX 混流原样喂入 → panic（exit 101）**；NMEA 4.10 GSV 信号 ID 被当成 PRN，F9P 日志多出 **145** 颗假卫星
+目录：上游 <https://github.com/zaari/nmea-parser>（作者 Timo Saarinen / zaari）· crates.io **`nmea-parser` 0.11.0**（2024-06-13 发布；总下载 **513802**，近 90 天 **93741**）· tag **`v0.11.0`=`865e7e5`**；master tip **`bc0a89f`**（领先 2 commit，只改 CHANGELOG/Cargo 版本号/README，**源码与 0.11.0 相同**）· **Apache-2.0** · ★**51** · 纯库（crate 包 62837 B）· **无 features**（`[features]` 为空）· **未声明 MSRV**（0.10.0 曾写 `rust-version = 1.56`，0.11.0 删了）/ edition 2018 · 本机 **rustc 1.98.1**（2026-09-26 01:17–01:30 EDT）：gpsd 真实日志 ZED-F9P **1015** 句、AIS+NMEA **1496** 句逐类计数与 pynmeagps **1.1.7** / pyais **3.2.3** 一致；GGA **29/29**、**164/164** 行 UTC/经纬度/卫星数/高度逐行相同；AIS 动态报 **144** 条与 pyais 多重集合完全一致；**UBX 混流原样喂入 → panic（exit 101）**；NMEA 4.10 GSV 信号 ID 被当成 PRN，F9P 日志多出 **145** 颗假卫星 · **质检复跑**（2026-09-26 01:30–01:40 EDT，另起目录，rustc 1.98.1）：3 个 gpsd 日志大小/sha256₁₂ 一致；§3.2 程序原样编译，三份输出**逐字一致**；依赖 22 个 crate、crates.io 0.11.0/513802/93741/62837 B/Apache-2.0/★51、tag `v0.11.0^{}`=`865e7e5`、master `bc0a89f` 一致；pynmeagps 1.1.7 逐类计数与 GSV 2378、pyais 3.2.3 类型分布 1:116/3:21/18:7/5:12/24:9/8:6 复现；§3.4 除下述一行外全部复现（`$PUBX` 须不带校验和才得 `UnsupportedSentenceType`）。改 1 处：UBX 混流 panic 的真实行号是按 `\n` 切分的第 **79/115/151/333** 行（340 行中 4 行，报 `end byte index 121`），第 100 行 lossy 喂入**不** panic；合成 `$GPGGA,1*\u{FFFD}` 报的是 `end byte index 11`（同一处 lib.rs:297:33）
 
 > 岗位：**一行 NMEA 文本 → Rust 结构体**（校验和、talker 识别、GSV/AIS 多句拼接、AIS 6-bit 载荷解码）。冲突时：**docs.rs / 本机源码 > 上游 README > 本文**。  
 > **解析库 ≠ 定位解算器 ≠ 串口/NTRIP 客户端。** 它只看你给的字符串，不开串口、不连 caster、不算位置。C 同类 → [minmea](./minmea.md) / [libnmea](./libnmea.md)；Python 同类 → [pynmea2](./pynmea2.md) / [pynmeagps](./pynmeagps.md)；守护进程 → [gpsd](./gpsd.md)。
@@ -166,8 +166,8 @@ GGA combination lat=44.0688540° lon=-121.3141350° sats=Some(12) alt=Some(1139.
 | 真实 AIS 类型 8 | `Err(UnsupportedSentenceType("Unsupported !VDM message type: 8"))` |
 | 真实 24A 单独到来 | `Incomplete`；等到同 MMSI 24B 才出 |
 | 真实 F9T 行：UBX NAV-PVT 帧后紧跟 `$GNRMC…*01`，`from_utf8_lossy` 喂入 | `Err(CorruptedSentence("… \"98\" != \"01\""))`——从二进制里的第一个 `$` 起算校验和，好句被连坐 |
-| 真实 F9T 第 100 行（纯 UBX，含 `$`/`!`/`*` 字节），lossy 喂入 | **panic**：`end byte index 121 is not a char boundary; it is inside '�'`（lib.rs:297），整个程序 exit 101 |
-| 合成：`$GPGGA,1*\u{FFFD}` | 同一 panic，可 `catch_unwind` 兜住 |
+| 真实 F9T 第 79 行（按 `\n` 切分；同样的还有第 115/151/333 行，纯 UBX，含 `$`/`!`/`*` 字节），lossy 喂入 | **panic**：`end byte index 121 is not a char boundary; it is inside '�'`（lib.rs:297），整个程序 exit 101 |
+| 合成：`$GPGGA,1*\u{FFFD}` | 同一处 panic（`end byte index 11 …`），可 `catch_unwind` 兜住 |
 
 UBX 混流结论：**不能**把 `String::from_utf8_lossy(整行)` 直接喂；§3.2 的「取最后一个非 ASCII 字节之后的尾巴」可避开 panic 且找回全部 9 句 RMC；更稳的做法是先用 [ublox](./ublox.md) 的 `consume_ubx_rtcm_nmea` 或 pyubx2 切帧，只把 NMEA 帧交给本库。
 

@@ -1,6 +1,6 @@
 # pynmea2 · 高星标 Python NMEA 0183 解析库操作手册
 
-目录：[`PROJECTS.json` → `pynmea2`](../../PROJECTS.json) · 上游 <https://github.com/Knio/pynmea2> · PyPI **`pynmea2` 1.19.0** · tip **`fcd90dc`** · 许可 **MIT** · Python 2.7 / 3.4+ · 本机验证（2026-09-24 06:04 EDT）：pytest **105 passed**；北京 `demo_beijing.nmea` 流 **36** 句；GGA lat=**39.90418716666667**/lon=**116.39074266666667**/qual=**1**/sats=**12**/alt=**44.0**；经典 RMC **48.1173**/11.516666666666667；坏校验和 → `ChecksumError`
+目录：[`PROJECTS.json` → `pynmea2`](../../PROJECTS.json) · 上游 <https://github.com/Knio/pynmea2> · PyPI **`pynmea2` 1.19.0** · tip **`fcd90dc`** · 许可 **MIT** · Python 2.7 / 3.4+ · 本机验证（2026-09-24 06:04 EDT）：pytest **105 passed**；北京 `demo_beijing.nmea` 流 **36** 句；GGA lat=**39.90418716666667**/lon=**116.39074266666667**/qual=**1**/sats=**12**/alt=**44.0**；经典 RMC **48.1173**/11.516666666666667；坏校验和 → `ChecksumError` · **质检复跑**（2026-09-26 01:40 EDT，新 venv Python 3.13.5；PyPI 最新仍 1.19.0，tip `fcd90dc` 2026-04-21）：pytest **105 passed**（4 warnings）；§3.1–3.4 四段脚本从本页原样抽出跑，输出**逐字一致**（RMC 48.1173/11.516666666666667、构造句 `*47`、`ChecksumError … 00 != 47`、n=36=RMC/GGA/GSA 各 12）；`NMEAStreamReader` 逐行喂同得 36。改 1 处：坑 2 类型说法——`gps_qual` 在 GGA 类里声明为 `int`，**不带类型转换的是 `num_sats`、`horizontal_dil`、`geo_sep`**（字符串 `'06'`/`'3.86'`/`'-8.0'`）。注：§3.2/3.3 的 `demo_beijing.nmea` 是 [gpsd](./gpsd.md) 手册自写的 36 行文件（本机 `~/iono_ops/gpsd-demo/`，2424 B），换机器需按 gpsd §3 重建
 
 > 岗位：纯 Python **NMEA 0183 句子解析/构造**（`parse` / `NMEAStreamReader` / 类型类如 `GGA`）。冲突时：**上游 README / `pynmea2` 源码 > 本文**。现代编解码+生成+流 CLI 生态 → [pynmeagps](./pynmeagps.md)；嵌入式 C → [minmea](./minmea.md)；系统守护 → [gpsd](./gpsd.md)。
 
@@ -28,7 +28,7 @@
 | `talker` | `$GP`/`$GN`/… 两字母 |
 | `sentence_type` | `GGA`/`RMC`/… |
 | `latitude`/`longitude` | 十进制度 `float`（南/西为负） |
-| `gps_qual` / `num_sats` | GGA 质量与卫星数（字段类型随版本可能为 `str`/`int`） |
+| `gps_qual` / `num_sats` | GGA 质量（`int`）与卫星数（**`str`**，如 `'06'`） |
 
 ## 2. 安装
 
@@ -154,7 +154,7 @@ PY
 | # | 现象 | 原因 | 修复 |
 | ---: | --- | --- | --- |
 | 1 | 与 pynmeagps API 混用 | 两套对象模型 | 选定一条栈；本目录新流优先 [pynmeagps](./pynmeagps.md) |
-| 2 | `gps_qual` 有时是 `str` | 字段未一律数值化 | `int(msg.gps_qual)` 或看具体类型类 |
+| 2 | `num_sats` / `horizontal_dil` / `geo_sep` 是 `str`（`'06'`、`'3.86'`、`'-8.0'`） | GGA 类只给 `gps_qual`(int)、`altitude`(float) 声明了类型 | `int(msg.num_sats)`、`float(msg.horizontal_dil)`；看 `pynmea2/types/talker.py` 的 `fields` |
 | 3 | `ChecksumError` | `*CS` 错 | 修源数据；或 `parse(..., check=False)`（慎） |
 | 4 | `NMEAStreamReader` EOF 难写 | `next()` 空列表≠一定结束 | 优先逐行 `parse`；流式自测 EOF |
 | 5 | 无 CLI | 库项目 | 自己写 5 行脚本 |
