@@ -21,23 +21,21 @@
 | [CU-SDR-Collection](https://github.com/gnsscusdr/CU-SDR-Collection) | CU-SDR-Collection：科罗拉多大学 GNSS SDR 集 | MATLAB | 80 | 🏷️ 个人社区 |
 | [BDS-3-B1C-B2a-SDR-receiver](https://github.com/lyf8118/BDS-3-B1C-B2a-SDR-receiver) | BDS-3 B1C/B2a：开源 MATLAB 软件接收机 | MATLAB | 73 | 🏷️ 高校实验室 |
 | [gps](https://github.com/psas/gps) | gps：PSAS 软件 GPS 相关器（Python） | Python | 71 | 🏷️ 高校实验室 |
-| [GNSSFirehose](https://github.com/pmonta/GNSS_Firehose) | GNSSFirehose：多星座宽带前端数字化 | Verilog | 68 | 🏷️ 个人社区 |
 | [ESP32-SDR-GPS](https://github.com/iliasam/ESP32_SDR_GPS) | ESP32-SDR-GPS：MCU 级软件 GPS 接收实验 | C | 55 | 🏷️ 个人社区 |
 | [SoftGNSS-python](https://github.com/perrysou/SoftGNSS-python) | SoftGNSS-python：经典 SoftGNSS 的 Python 移植 | Python | 44 | 🏷️ 个人社区 |
-| [gnss-baseband](https://github.com/j-core/gnss-baseband) | gnss-baseband：GPS 类 DSSS 基带 VHDL IP | VHDL | 43 | 🏷️ 个人社区 |
 | [gnss-sdr-1pps](https://github.com/oscimp/gnss-sdr-1pps) | gnss-sdr-1pps：gnss-sdr 双天线抗欺骗/抗干扰与 1-PPS 补丁 | C++ | 40 | 🏷️ 个人社区 |
 | [FlyDog-SDR-GPS](https://github.com/flydog-sdr/FlyDog_SDR_GPS) | FlyDog-SDR-GPS：改进 ADC 的 KiwiSDR 衍生固件 | C++ | 30 | 🏷️ 个人社区 |
 | [Fast_GNSS_ReceiverMATLAB](https://github.com/JohnBagshaw/Fast_GNSS_ReceiverMATLAB) | 高灵敏度快速捕获 MATLAB GNSS 接收机实验 | MATLAB | 26 | 🏷️ 个人社区 |
 | [pylgrim](https://github.com/kirienko/pylgrim) | pylgrim：Python 实现的 GNSS 软件接收机 | Python | 21 | 🏷️ 个人社区 |
 | [docker-gnsssdr](https://github.com/carlesfernandez/docker-gnsssdr) | 预装 GNSS-SDR 的 Docker 镜像 | Dockerfile | 19 | 🏷️ 高校实验室 |
 | [GNSSSDRHACKRF](https://github.com/jdesbonnet/GNSS_SDR_HACKRF) | GNSSSDRHACKRF：HackRF One 跑 GNSS-SDR 的实验记录 | — | 19 | 🏷️ 个人社区 |
+| [PocketSDR-AFS](https://github.com/osqzss/PocketSDR-AFS) | PocketSDR-AFS：基于 PocketSDR 的 LunaNet LANS AFS 接收 | C | 18 | 🏷️ 个人社区 |
 | [gnsssdrgui](https://github.com/UHaider/gnss_sdr_gui) | gnsssdrgui：GNSS-SDR 图形配置与监视界面 | C++ | 16 | 🏷️ 个人社区 |
 | [meta-gnss-sdr](https://github.com/carlesfernandez/meta-gnss-sdr) | meta-gnss-sdr：GNSS-SDR 的 OpenEmbedded/Yocto 层 | C | 16 | 🏷️ 高校实验室 |
 | [gps-sdr-simulink](https://github.com/dmiralles2009/gps-sdr-simulink) | gps-sdr-simulink：Simulink GPS 捕获阶段模型 | MATLAB | 15 | 🏷️ 个人社区 |
 | [gnss-rcv](https://github.com/mx4/gnss-rcv) | gnss-rcv：Rust GPS L1 C/A 软件接收机 | Rust | 14 | 🏷️ 个人社区 |
 | [multi-channel-gnss](https://github.com/dasdboot/multi-channel-gnss) | multi-channel-gnss：LimeSDR 多通道 GNSS 实验仓 | — | 12 | 🏷️ 个人社区 |
 | [gnss-sdr-rs](https://github.com/kewei/gnss-sdr-rs) | gnss-sdr-rs：Rust 语言 GNSS 软件接收机实验 | Rust | 9 | 🏷️ 个人社区 |
-| [GPSMAXIM2769b-](https://github.com/vaidhyamookiah/GPSMAXIM2769b-) | GPSMAXIM2769b-：Maxim 2769b GNSS 前端 PCB（Papilio） | Eagle | 4 | 🏷️ 个人社区 |
 | [GRID](https://github.com/mmurrian/GRID) | GRID：UT Austin 商业授权 GNSS 软件接收机介绍页（仅说明，无代码） | — | 4 | 🏷️ 个人社区 |
 | [BDSSDR](https://github.com/nkyang/BDS_SDR) | BDSSDR：北斗/GNSS 软件接收 MATLAB 实验码 | MATLAB | 2 | 🏷️ 个人社区 |
 | [FlyCat-SDR-GPS](https://github.com/flydog-sdr/FlyCat_SDR_GPS) | FlyCat-SDR-GPS：Orange Pi 用 16-bit 宽带 SDR+GPS 扩展 | C++ | 2 | 🏷️ 个人社区 |
@@ -142,13 +140,6 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 
 波特兰州立大学火箭队（PSAS）相关的软件 GPS 相关器实现，用 Python 展示相关与接收结构，便于业余与教学阅读。适合想看清相关器数据流的人。不是完整多星座商用接收机；可与 SoftGNSS、GNSS-DSP-tools 对照学习。火箭遥测场景与地面静态测试的参数需求不同。火箭遥测带宽有限时需裁剪日志与速率。
 
-#### [GNSSFirehose](https://github.com/pmonta/GNSS_Firehose)  
-*🏷️ 个人社区*
-
-语言：Verilog · 许可：TAPR-OHL-1.0 (hardware) + GPL-2.0 (HDL/firmware) + CC-BY-SA-3.0 (docs) · 星标约：68 · 宿主：github
-
-宽带前端数字化设计，目标同时覆盖 GPS、GLONASS、Galileo、BeiDou 的射频采样与数字输出（含 Verilog 等）。适合自研多星座采集卡与前端的人。偏硬件/FPGA，相关器与 PVT 需另接 GNSS-DSP-tools、gnss-sdr 等软件。采样率与数据率极高，存储与 PCIe/以太网带宽是瓶颈。
-
 #### [ESP32-SDR-GPS](https://github.com/iliasam/ESP32_SDR_GPS)  
 *🏷️ 个人社区*
 
@@ -162,13 +153,6 @@ CU Boulder 开源 GNSS 软件接收机代码集合，并提供公开采样数据
 语言：Python · 许可：GPL-2.0-or-later (main.py header only, retained from SoftGNSS; no repo-wide licence) · 星标约：44 · 宿主：github
 
 把教学经典 SoftGNSS 思路迁到 Python，降低 MATLAB 门槛，便于改捕获、跟踪与位同步实验。适合课堂与自学 GNSS-SDR。功能深度与实时性不如 gnss-sdr；仓库无整体许可文件，仅 main.py 保留 SoftGNSS 的 GPLv2-or-later 头注释，商用或再分发前需自行确认代码来源与授权条款。建议与原版 SoftGNSS 文档对照理解各处理阶段。
-
-#### [gnss-baseband](https://github.com/j-core/gnss-baseband)  
-*🏷️ 个人社区*
-
-语言：VHDL · 许可：BSD-2-Clause · 星标约：43 · 宿主：github
-
-面向 GPS 类似 DSSS 信号的基带接收 IP（VHDL），可嵌入 FPGA 完成相关、捕获与跟踪前端。适合导航芯片预研与 FPGA 教学。提供的是基带 IP，不是完整 PVT 应用；电文解码、定位滤波与多星座扩展需在上层自行实现。仿真测试台与片上资源占用需按目标器件重估。综合时注意 DSP 乘法器与 BRAM 资源上限。
 
 #### [gnss-sdr-1pps](https://github.com/oscimp/gnss-sdr-1pps)  
 *🏷️ 个人社区*
@@ -212,6 +196,13 @@ OSCIMP 维护的 gnss-sdr 补丁集（按 v0.0.18/v0.0.20 分版本）：接双�
 
 整理如何把 GNSS-SDR 接到 HackRF One 做卫星信号接收实验，含配置片段与常见踩坑。面向手头已有 HackRF、想试软件 GNSS 接收的人。仓库偏实验笔记而非产品级接收机；HackRF 带宽与噪声系数相对专用前端有限，弱信号捕获需要耐心调增益与天线。天线与低噪放选择往往比软件参数更关键。
 
+#### [PocketSDR-AFS](https://github.com/osqzss/PocketSDR-AFS)  
+*🏷️ 个人社区*
+
+语言：C · 许可：BSD-2-Clause · 星标约：18 · 宿主：github
+
+在 PocketSDR 基础上扩展的 LANS AFS 软件定义接收机，用于处理月球增强导航前向信号。仓库 LICENSE 声明沿用 PocketSDR 的 BSD 2-clause，并注明额外版权。适合与 LANS-AFS-SIM 联调；地球 GNSS 通道能力仍以原版 PocketSDR 为准。前端硬件与采样率配置需自行匹配。GitHub license API 可能显示 NOASSERTION，以仓库 LICENSE.txt 为准。
+
 #### [gnsssdrgui](https://github.com/UHaider/gnss_sdr_gui)  
 *🏷️ 个人社区*
 
@@ -254,13 +245,6 @@ OSCIMP 维护的 gnss-sdr 补丁集（按 v0.0.18/v0.0.20 分版本）：接双�
 
 尝试用 Rust 实现 GNSS SDR 的实验项目，探索类型安全与并发模型在接收机中的用法。适合关注 Rust 导航软件生态的开发者。成熟度与星标较低，完整度通常不及 C++ 的 gnss-sdr；选用前先编译并跑通其自带示例。若仅作学习，也可先读更成熟的 gnss-rcv 对照。可与更成熟的 gnss-rcv 对照阅读 Rust 实现差异。
 
-#### [GPSMAXIM2769b-](https://github.com/vaidhyamookiah/GPSMAXIM2769b-)  
-*🏷️ 个人社区*
-
-语言：Eagle · 许可：— · 星标约：4 · 宿主：github
-
-为开源 FPGA 板 Papilio One 设计的 Maxim 2769b GNSS 射频前端 PCB（Eagle 工程），方便 FPGA+前端联调。适合硬件 DIY 与课程板级设计。仓库主要是硬件设计，基带相关与 PVT 软件需另选 SoftGNSS 或自研 IP。PCB 打样前核对 Papilio 供电与 SMA 布局约束。
-
 #### [GRID](https://github.com/mmurrian/GRID)  
 *🏷️ 个人社区*
 
@@ -301,6 +285,7 @@ OSCIMP 维护的 gnss-sdr 补丁集（按 v0.0.18/v0.0.20 分版本）：接双�
 | [GPSGALSSS](https://github.com/domonforyou/GPS_GAL_SSS) | GPSGALSSS：GPS/Galileo 卫星信号模拟器 | C++ | 29 | 🏷️ 个人社区 |
 | [beidou-sdr-sim](https://github.com/yangfan852219770/beidou-sdr-sim) | beidou-sdr-sim：北斗 GEO（PRN1–5）信号仿真 | C | 27 | 🏷️ 个人社区 |
 | [anywhere-sdr](https://github.com/lll9p/anywhere-sdr) | Rust 编写的 GPS L1 C/A 基带信号仿真器，兼容 gps-sdr-sim 用法 | Rust | 13 | 🏷️ 个人社区 |
+| [LANS-AFS-SIM](https://github.com/osqzss/LANS-AFS-SIM) | LANS-AFS-SIM：LunaNet LANS AFS 基带信号发生器 | C | 9 | 🏷️ 个人社区 |
 | [esp2822NMEAsim](https://github.com/michalpelka/esp2822_NMEA_sim) | esp2822NMEAsim：廉价 MCU 模拟 PPS 与 NMEA | C++ | 7 | 🏷️ 个人社区 |
 | [Microsat-gps-sim](https://github.com/niklasknoell/Microsat-gps-sim) | Microsat-gps-sim：微纳卫星工程向 GNSS 仿真（Python） | Python | 4 | 🏷️ 个人社区 |
 | [gps-qzss-sdr-sim](https://github.com/iGNSS/gps-qzss-sdr-sim) | gps-qzss-sdr-sim：软件定义 GPS/QZSS 信号仿真器 | C | 1 | 🏷️ 个人社区 |
@@ -412,6 +397,13 @@ GPS 与 Galileo 卫星信号模拟相关实现，说明中提及与 RTKLIB 能�
 
 受 gps-sdr-sim 启发、用 Rust 重写的软件定义 GPS 信号发生器，MIT 许可。读取 RINEX 导航星历与用户轨迹，生成 GPS L1 C/A 的 IQ 采样文件，可交由 HackRF 等 SDR 播放，用于接收机测试与教学；在保持命令行兼容的同时强调模块化与内存安全，带 CI 与发布版本。README 醒目提示法律风险：未经授权发射 GNSS 信号在多数地区违法，应在屏蔽环境或有线注入下使用。可与 gps-sdr-sim、multi-sdr-gps-sim 对比。
 
+#### [LANS-AFS-SIM](https://github.com/osqzss/LANS-AFS-SIM)  
+*🏷️ 个人社区*
+
+语言：C · 许可：BSD-2-Clause · 星标约：9 · 宿主：github
+
+按 LunaNet 互操作规范生成月球增强导航服务（LANS）AFS 基带，可直接喂给软件接收机或经 bladeRF/LimeSDR 上变频。与 PocketSDR-AFS 等接收端配套，用于算法验证与导航性能评估。属月面/深空导航前端，而非地球 GNSS 星座仿真；信号参数需对照 NASA LunaNet 规范。BSD-2-Clause；近年仍有提交。
+
 #### [esp2822NMEAsim](https://github.com/michalpelka/esp2822_NMEA_sim)  
 *🏷️ 个人社区*
 
@@ -464,6 +456,37 @@ GPS 与 Galileo 卫星信号模拟相关实现，说明中提及与 RTKLIB 能�
 
 CU Boulder RF & SatNav 实验室维护的 SoftGNSS/教材配套页面，介绍 Borre/Akos 软件接收机 MATLAB 流程与 SiGe GN3S 采样前端（驱动等多基于 GPL）。硬件已停产，代码仍具教学价值。完整 MATLAB 工程亦见于社区 SoftGNSS 仓库；本页为学术溯源入口。
 
+## FPGA相关器
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [gnss-baseband](https://github.com/j-core/gnss-baseband) | gnss-baseband：GPS 类 DSSS 基带 VHDL IP | VHDL | 43 | 🏷️ 个人社区 |
+| [namuru-gps](https://github.com/osqzss/namuru-gps) | namuru-gps：Verilog GPS C/A 跟踪通道（Namuru 风格） | Verilog | 6 | 🏷️ 个人社区 |
+| [gps-fpga](https://github.com/osqzss/gps-fpga) | gps-fpga：GPS L1 C/A 单通道 FPGA 相关器（AXI4-Lite） | SystemVerilog | 4 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [gnss-baseband](https://github.com/j-core/gnss-baseband)  
+*🏷️ 个人社区*
+
+语言：VHDL · 许可：BSD-2-Clause · 星标约：43 · 宿主：github
+
+面向 GPS 类似 DSSS 信号的基带接收 IP（VHDL），可嵌入 FPGA 完成相关、捕获与跟踪前端。适合导航芯片预研与 FPGA 教学。提供的是基带 IP，不是完整 PVT 应用；电文解码、定位滤波与多星座扩展需在上层自行实现。仿真测试台与片上资源占用需按目标器件重估。综合时注意 DSP 乘法器与 BRAM 资源上限。
+
+#### [namuru-gps](https://github.com/osqzss/namuru-gps)  
+*🏷️ 个人社区*
+
+语言：Verilog · 许可：LGPL-2.1 · 星标约：6 · 宿主：github
+
+用 Verilog 描述 GPS L1 C/A 码跟踪通道，面向 FPGA/ASIC 教学与相关器前端实验，许可证为 LGPL-2.1。体量小、星数有限，但补齐了开源 GNSS 硬件相关器描述这一薄点。需自备射频前端与位宽/时钟约束；不提供完整 PVT 解算链。近年仍有维护痕迹，适合与 gps-sdr-sim 等基带源联调。
+
+#### [gps-fpga](https://github.com/osqzss/gps-fpga)  
+*🏷️ 个人社区*
+
+语言：SystemVerilog · 许可：MIT · 星标约：4 · 宿主：github
+
+SystemVerilog 描述的单通道 GPS L1 C/A FPGA 相关器，经 AXI4-Lite 控制，MIT 许可。与 namuru-gps 等同属硬件相关器薄点补齐；星数低但许可证清晰、接口明确。需自备射频前端与 FPGA 工程约束，不提供完整 PVT。适合教学与相关器前端联调，而非现成接收机产品。
+
 ## 信号生成
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
@@ -502,12 +525,44 @@ VHDL 代码用于生成 GPS L1 C/A 以及 Galileo E1OS、E5 的 PRN 与无数据
 
 给 gnss-sdr 用的实时 GUI 监视器，看通道与 PVT 状态更直观。依赖 GNSS-SDR 主程序。
 
+## 射频前端
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [GNSSFirehose](https://github.com/pmonta/GNSS_Firehose) | GNSSFirehose：多星座宽带前端数字化 | Verilog | 68 | 🏷️ 个人社区 |
+| [max2771_fx2lp](https://github.com/jmfriedt/max2771_fx2lp) | max2771_fx2lp：MAX2771 多通道射频前端 + FX2LP USB 采集 | C | 65 | 🏷️ 个人社区 |
+| [GPSMAXIM2769b-](https://github.com/vaidhyamookiah/GPSMAXIM2769b-) | GPSMAXIM2769b-：Maxim 2769b GNSS 前端 PCB（Papilio） | Eagle | 4 | 🏷️ 个人社区 |
+
+### 详细说明
+
+#### [GNSSFirehose](https://github.com/pmonta/GNSS_Firehose)  
+*🏷️ 个人社区*
+
+语言：Verilog · 许可：TAPR-OHL-1.0 (hardware) + GPL-2.0 (HDL/firmware) + CC-BY-SA-3.0 (docs) · 星标约：68 · 宿主：github
+
+宽带前端数字化设计，目标同时覆盖 GPS、GLONASS、Galileo、BeiDou 的射频采样与数字输出（含 Verilog 等）。适合自研多星座采集卡与前端的人。偏硬件/FPGA，相关器与 PVT 需另接 GNSS-DSP-tools、gnss-sdr 等软件。采样率与数据率极高，存储与 PCIe/以太网带宽是瓶颈。
+
+#### [max2771_fx2lp](https://github.com/jmfriedt/max2771_fx2lp)  
+*🏷️ 个人社区*
+
+语言：C · 许可：GPL-3.0 · 星标约：65 · 宿主：github
+
+基于 Maxim MAX2771 的多星座 GNSS 射频前端与 Cypress FX2LP USB 采集方案，GPL-3.0。面向软件接收机实验，可输出基带采样供 GNSS-SDR 等处理。焊接与时钟质量影响噪声底。适合 SDR 教学与前端联调，不提供完整 PVT 产品链。
+
+#### [GPSMAXIM2769b-](https://github.com/vaidhyamookiah/GPSMAXIM2769b-)  
+*🏷️ 个人社区*
+
+语言：Eagle · 许可：— · 星标约：4 · 宿主：github
+
+为开源 FPGA 板 Papilio One 设计的 Maxim 2769b GNSS 射频前端 PCB（Eagle 工程），方便 FPGA+前端联调。适合硬件 DIY 与课程板级设计。仓库主要是硬件设计，基带相关与 PVT 软件需另选 SoftGNSS 或自研 IP。PCB 打样前核对 Papilio 供电与 SMA 布局约束。
+
 ## 直接位置估计
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [NavLab-DPE-SDR](https://github.com/Stanford-NavLab/NavLab-DPE-SDR) | NavLab-DPE-SDR：斯坦福 DPE GPS 接收软件 | Cuda | 46 | 🏷️ 高校实验室 |
 | [GPSL1-DPEmodule](https://github.com/Sergio-Vicenzo/GPSL1-DPEmodule) | GPSL1-DPEmodule：GPS L1 直接位置估计 MATLAB 插件 | MATLAB | 33 | 🏷️ 高校实验室 |
+| [GPSL1-MMT-DPEmodule](https://github.com/Sergio-Vicenzo/GPSL1-MMT-DPEmodule) | GPSL1-MMT-DPEmodule：GPS L1 多路径抑制与 DPE 模块 | MATLAB | 9 | 🏷️ 高校实验室 |
 
 ### 详细说明
 
@@ -524,14 +579,6 @@ VHDL 代码用于生成 GPS L1 C/A 以及 Galileo E1OS、E5 的 PRN 与无数据
 语言：MATLAB · 许可：GPL-2.0 · 星标约：33 · 宿主：github
 
 把 Direct Position Estimation 接到 MATLAB 接收机流程，适合先进基带定位研究。传统两步法接收机用户可作拓展阅读。
-
-## 多路径抑制/直接定位
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [GPSL1-MMT-DPEmodule](https://github.com/Sergio-Vicenzo/GPSL1-MMT-DPEmodule) | GPSL1-MMT-DPEmodule：GPS L1 多路径抑制与 DPE 模块 | MATLAB | 9 | 🏷️ 高校实验室 |
-
-### 详细说明
 
 #### [GPSL1-MMT-DPEmodule](https://github.com/Sergio-Vicenzo/GPSL1-MMT-DPEmodule)  
 *🏷️ 高校实验室*
@@ -563,79 +610,18 @@ OreSat 开源卫星项目的 SDR GPS 接收及相关硬件设计文件，服务�
 
 OreSat 项目 GPS 接收机软件部分，与 oresat-gps-hardware 配套，覆盖星上接收相关流程与接口。适合立方星载荷软件与开源航天参考。面向特定硬件与任务约束，不是通用多星座精密定位或 RTK 引擎。星上算力与存储配额会限制可开日志级别。星上存储配额会限制可长期开启的日志等级。选用前建议先跑通作者提供的最小示例。
 
-## 月面导航仿真
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [LANS-AFS-SIM](https://github.com/osqzss/LANS-AFS-SIM) | LANS-AFS-SIM：LunaNet LANS AFS 基带信号发生器 | C | 9 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [LANS-AFS-SIM](https://github.com/osqzss/LANS-AFS-SIM)  
-*🏷️ 个人社区*
-
-语言：C · 许可：BSD-2-Clause · 星标约：9 · 宿主：github
-
-按 LunaNet 互操作规范生成月球增强导航服务（LANS）AFS 基带，可直接喂给软件接收机或经 bladeRF/LimeSDR 上变频。与 PocketSDR-AFS 等接收端配套，用于算法验证与导航性能评估。属月面/深空导航前端，而非地球 GNSS 星座仿真；信号参数需对照 NASA LunaNet 规范。BSD-2-Clause；近年仍有提交。
-
-## 月面软件接收机
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [PocketSDR-AFS](https://github.com/osqzss/PocketSDR-AFS) | PocketSDR-AFS：基于 PocketSDR 的 LunaNet LANS AFS 接收 | C | 18 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [PocketSDR-AFS](https://github.com/osqzss/PocketSDR-AFS)  
-*🏷️ 个人社区*
-
-语言：C · 许可：BSD-2-Clause · 星标约：18 · 宿主：github
-
-在 PocketSDR 基础上扩展的 LANS AFS 软件定义接收机，用于处理月球增强导航前向信号。仓库 LICENSE 声明沿用 PocketSDR 的 BSD 2-clause，并注明额外版权。适合与 LANS-AFS-SIM 联调；地球 GNSS 通道能力仍以原版 PocketSDR 为准。前端硬件与采样率配置需自行匹配。GitHub license API 可能显示 NOASSERTION，以仓库 LICENSE.txt 为准。
-
-## FPGA相关器
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [namuru-gps](https://github.com/osqzss/namuru-gps) | namuru-gps：Verilog GPS C/A 跟踪通道（Namuru 风格） | Verilog | 6 | 🏷️ 个人社区 |
-| [gps-fpga](https://github.com/osqzss/gps-fpga) | gps-fpga：GPS L1 C/A 单通道 FPGA 相关器（AXI4-Lite） | SystemVerilog | 4 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [namuru-gps](https://github.com/osqzss/namuru-gps)  
-*🏷️ 个人社区*
-
-语言：Verilog · 许可：LGPL-2.1 · 星标约：6 · 宿主：github
-
-用 Verilog 描述 GPS L1 C/A 码跟踪通道，面向 FPGA/ASIC 教学与相关器前端实验，许可证为 LGPL-2.1。体量小、星数有限，但补齐了开源 GNSS 硬件相关器描述这一薄点。需自备射频前端与位宽/时钟约束；不提供完整 PVT 解算链。近年仍有维护痕迹，适合与 gps-sdr-sim 等基带源联调。
-
-#### [gps-fpga](https://github.com/osqzss/gps-fpga)  
-*🏷️ 个人社区*
-
-语言：SystemVerilog · 许可：MIT · 星标约：4 · 宿主：github
-
-SystemVerilog 描述的单通道 GPS L1 C/A FPGA 相关器，经 AXI4-Lite 控制，MIT 许可。与 namuru-gps 等同属硬件相关器薄点补齐；星数低但许可证清晰、接口明确。需自备射频前端与 FPGA 工程约束，不提供完整 PVT。适合教学与相关器前端联调，而非现成接收机产品。
-
-## 射频前端
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [max2771_fx2lp](https://github.com/jmfriedt/max2771_fx2lp) | max2771_fx2lp：MAX2771 多通道射频前端 + FX2LP USB 采集 | C | 65 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [max2771_fx2lp](https://github.com/jmfriedt/max2771_fx2lp)  
-*🏷️ 个人社区*
-
-语言：C · 许可：GPL-3.0 · 星标约：65 · 宿主：github
-
-基于 Maxim MAX2771 的多星座 GNSS 射频前端与 Cypress FX2LP USB 采集方案，GPL-3.0。面向软件接收机实验，可输出基带采样供 GNSS-SDR 等处理。焊接与时钟质量影响噪声底。适合 SDR 教学与前端联调，不提供完整 PVT 产品链。
-
 ## SDR抽象
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [SoapySDR](https://github.com/pothosware/SoapySDR) | SoapySDR：厂商无关的 SDR 硬件抽象库 | C++ | 1513 | 🏷️ 个人社区 |
+| [SoapyHackRF](https://github.com/pothosware/SoapyHackRF) | SoapyHackRF：SoapySDR 的 HackRF One 支持模块 | C++ | 171 | 🏷️ 个人社区 |
+| [SoapyRTLSDR](https://github.com/pothosware/SoapyRTLSDR) | SoapyRTLSDR：SoapySDR 的 RTL-SDR 支持模块 | C++ | 154 | 🏷️ 个人社区 |
+| [SoapyRemote](https://github.com/pothosware/SoapyRemote) | SoapyRemote：经网络远程使用 Soapy SDR 设备 | C++ | 151 | 🏷️ 个人社区 |
+| [SoapySDRPlay3](https://github.com/pothosware/SoapySDRPlay3) | SoapySDRPlay3：SoapySDR 的 SDRplay APIv3 支持模块 | C++ | 122 | 🏷️ 个人社区 |
+| [SoapyPlutoSDR](https://github.com/pothosware/SoapyPlutoSDR) | SoapyPlutoSDR：SoapySDR 的 ADALM-Pluto 插件 | C++ | 90 | 🏷️ 个人社区 |
+| [SoapyUHD](https://github.com/pothosware/SoapyUHD) | SoapyUHD：SoapySDR 的 Ettus UHD/USRP 支持模块 | C++ | 82 | 🏷️ 个人社区 |
+| [SoapyAirspy](https://github.com/pothosware/SoapyAirspy) | SoapyAirspy：SoapySDR 的 Airspy 支持模块 | C++ | 28 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -646,58 +632,12 @@ SystemVerilog 描述的单通道 GPS L1 C/A FPGA 相关器，经 AXI4-Lite 控�
 
 Pothos/Soapy 生态的核心：厂商与平台中立的软件无线电抽象层，Boost Software License，星数高。GNSS-SDR 等软件接收机常通过 Soapy 对接多种前端。本身不做 GNSS 解算，只提供设备 I/O 与流接口。驱动插件需另行安装。
 
-## HackRF插件
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SoapyHackRF](https://github.com/pothosware/SoapyHackRF) | SoapyHackRF：SoapySDR 的 HackRF One 支持模块 | C++ | 171 | 🏷️ 个人社区 |
-
-### 详细说明
-
 #### [SoapyHackRF](https://github.com/pothosware/SoapyHackRF)  
 *🏷️ 个人社区*
 
 语言：C++ · 许可：MIT · 星标约：171 · 宿主：github
 
 为 SoapySDR 提供 Great Scott Gadgets HackRF 后端的插件，MIT 许可。便于在统一 Soapy API 下用 HackRF 采集 GNSS 射频样本。带宽/前端噪声需按应用选型；不替代基带 GNSS 处理链。与 gps-sdr-sim/GNSS-SDR 联调常见。
-
-## Pluto插件
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SoapyPlutoSDR](https://github.com/pothosware/SoapyPlutoSDR) | SoapyPlutoSDR：SoapySDR 的 ADALM-Pluto 插件 | C++ | 90 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [SoapyPlutoSDR](https://github.com/pothosware/SoapyPlutoSDR)  
-*🏷️ 个人社区*
-
-语言：C++ · 许可：LGPL-2.1 · 星标约：90 · 宿主：github
-
-Soapy SDR 插件，对接 Analog Devices ADALM-Pluto，LGPL-2.1。适合低成本 Pluto 前端接入 GNSS 软件接收机实验。驱动与固件版本需匹配；动态范围有限。与 pluto-gps-sim 等仿真工具可互补。
-
-## UHD插件
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SoapyUHD](https://github.com/pothosware/SoapyUHD) | SoapyUHD：SoapySDR 的 Ettus UHD/USRP 支持模块 | C++ | 82 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [SoapyUHD](https://github.com/pothosware/SoapyUHD)  
-*🏷️ 个人社区*
-
-语言：C++ · 许可：GPL-3.0 · 星标约：82 · 宿主：github
-
-pothosware 为 SoapySDR 提供的 Ettus/UHD（USRP）后端插件，GPL-3.0。统一 Soapy API 下驱动 USRP 采 GNSS 频段 IQ，常与 GNSS-SDR 联用。需本机安装 UHD；带宽与前端噪声按型号选型。不替代基带解算，只做射频前端适配。
-
-## RTL-SDR插件
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SoapyRTLSDR](https://github.com/pothosware/SoapyRTLSDR) | SoapyRTLSDR：SoapySDR 的 RTL-SDR 支持模块 | C++ | 154 | 🏷️ 个人社区 |
-
-### 详细说明
 
 #### [SoapyRTLSDR](https://github.com/pothosware/SoapyRTLSDR)  
 *🏷️ 个人社区*
@@ -706,14 +646,6 @@ pothosware 为 SoapySDR 提供的 Ettus/UHD（USRP）后端插件，GPL-3.0。�
 
 SoapySDR 的 RTL-SDR 支持模块，MIT 许可、星标较多。便于用廉价 USB 棒做 GNSS L1 教学演示与频谱摸底。动态范围与前端滤波有限，不宜当作精密观测前端。需配合宿主 SoapySDR 与基带链（如 GNSS-SDR）。
 
-## 远程Soapy
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SoapyRemote](https://github.com/pothosware/SoapyRemote) | SoapyRemote：经网络远程使用 Soapy SDR 设备 | C++ | 151 | 🏷️ 个人社区 |
-
-### 详细说明
-
 #### [SoapyRemote](https://github.com/pothosware/SoapyRemote)  
 *🏷️ 个人社区*
 
@@ -721,13 +653,26 @@ SoapySDR 的 RTL-SDR 支持模块，MIT 许可、星标较多。便于用廉价 
 
 SoapyRemote 允许在一台机器上挂 SDR，另一台经网络以 Soapy 客户端访问，BSL-1.0。适合实验室集中射频机、远程 GNSS-SDR 联调。延迟与带宽受网络制约；安全上需自管访问控制。与 SoapySDR 生态互补，不替代具体硬件插件。
 
-## Airspy插件
+#### [SoapySDRPlay3](https://github.com/pothosware/SoapySDRPlay3)  
+*🏷️ 个人社区*
 
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SoapyAirspy](https://github.com/pothosware/SoapyAirspy) | SoapyAirspy：SoapySDR 的 Airspy 支持模块 | C++ | 28 | 🏷️ 个人社区 |
+语言：C++ · 许可：MIT · 星标约：122 · 宿主：github
 
-### 详细说明
+面向 SDRplay API v3 的 Soapy 插件，MIT、星标过百。RSP 系列动态范围较好，可用于 GNSS 频段监测与教学采数。需遵守 SDRplay 专有驱动许可；本仓仅为 Soapy 桥接。与 GNSS-SDR/自定义基带联用时注意采样率与天线前端匹配。
+
+#### [SoapyPlutoSDR](https://github.com/pothosware/SoapyPlutoSDR)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：LGPL-2.1 · 星标约：90 · 宿主：github
+
+Soapy SDR 插件，对接 Analog Devices ADALM-Pluto，LGPL-2.1。适合低成本 Pluto 前端接入 GNSS 软件接收机实验。驱动与固件版本需匹配；动态范围有限。与 pluto-gps-sim 等仿真工具可互补。
+
+#### [SoapyUHD](https://github.com/pothosware/SoapyUHD)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：GPL-3.0 · 星标约：82 · 宿主：github
+
+pothosware 为 SoapySDR 提供的 Ettus/UHD（USRP）后端插件，GPL-3.0。统一 Soapy API 下驱动 USRP 采 GNSS 频段 IQ，常与 GNSS-SDR 联用。需本机安装 UHD；带宽与前端噪声按型号选型。不替代基带解算，只做射频前端适配。
 
 #### [SoapyAirspy](https://github.com/pothosware/SoapyAirspy)  
 *🏷️ 个人社区*
@@ -735,18 +680,3 @@ SoapyRemote 允许在一台机器上挂 SDR，另一台经网络以 Soapy 客户
 语言：C++ · 许可：MIT · 星标约：28 · 宿主：github
 
 SoapySDR 的 Airspy 插件，MIT。Airspy 系列带宽与采样率高于普通 RTL-SDR，常用于 GNSS 频谱与多星座演示。仍属接收前端适配，不提供伪距/载波解算。依赖宿主 SoapySDR 与厂商驱动。
-
-## SDRplay插件
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SoapySDRPlay3](https://github.com/pothosware/SoapySDRPlay3) | SoapySDRPlay3：SoapySDR 的 SDRplay APIv3 支持模块 | C++ | 122 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [SoapySDRPlay3](https://github.com/pothosware/SoapySDRPlay3)  
-*🏷️ 个人社区*
-
-语言：C++ · 许可：MIT · 星标约：122 · 宿主：github
-
-面向 SDRplay API v3 的 Soapy 插件，MIT、星标过百。RSP 系列动态范围较好，可用于 GNSS 频段监测与教学采数。需遵守 SDRplay 专有驱动许可；本仓仅为 Soapy 桥接。与 GNSS-SDR/自定义基带联用时注意采样率与天线前端匹配。

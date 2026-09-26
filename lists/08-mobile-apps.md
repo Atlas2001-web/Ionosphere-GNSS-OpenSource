@@ -81,12 +81,17 @@ PRIDE 团队面向智能手机的多频 GNSS 与 IMU 采集工具，便于把手
 | [micropyGPS](https://github.com/inmcm/micropyGPS) | micropyGPS：MicroPython 板载 NMEA 0183 解析 | Python | 391 | 🏷️ 个人社区 |
 | [ubxlib](https://github.com/u-blox/ubxlib) | u-blox 厂商发布的嵌入式 C 库（GNSS/蜂窝 API） | C | 358 | 🏷️ 个人社区 |
 | [GNSSTimeServer](https://github.com/Montecri/GNSSTimeServer) | GNSSTimeServer：ESP 系 GNSS 授时服务器 | C | 232 | 🏷️ 个人社区 |
+| [UbxGps](https://github.com/loginov-rocks/UbxGps) | UbxGps：Arduino 轻量 u-blox UBX 通信库（MIT） | C++ | 152 | 🏷️ 个人社区 |
 | [esp32-xbee](https://github.com/nebkat/esp32-xbee) | ESP32 NTRIP/UART 桥接固件（Ardusimple） | C | 119 | 🏷️ 个人社区 |
+| [bolderflight-ublox](https://github.com/bolderflight/ublox) | bolderflight-ublox：Bolder Flight uBlox Arduino/CMake 驱动 | C++ | 115 | 🏷️ 个人社区 |
+| [SparkFun_u-blox_GNSS_v3](https://github.com/sparkfun/SparkFun_u-blox_GNSS_v3) | SparkFun u-blox GNSS v3：Arduino 配置库 | C++ | 104 | 🏷️ 个人社区 |
 | [STM32-GNSS](https://github.com/SimpleMethod/STM32-GNSS) | STM32-GNSS：STM32 上的 UBX 库 | C | 89 | 🏷️ 个人社区 |
 | [satpulse](https://github.com/jclark/satpulse) | satpulse：跨平台 GNSS 授时与接收机 GUI | Go | 63 | 🏷️ 个人社区 |
 | [STM32Primer2-GNSS-Tracker](https://github.com/nemuisan/STM32Primer2_GNSS_Tracker) | STM32Primer2-GNSS-Tracker：Primer2 平台 GNSS 轨迹记录 | C | 31 | 🏷️ 个人社区 |
 | [SparkFun Unicore GNSS Arduino Library](https://github.com/sparkfun/SparkFun_Unicore_GNSS_Arduino_Library) | SparkFun 面向和芯星通 UM980 等三频 RTK 模块的 Arduino 驱动库 | C++ | 24 | 🏷️ 个人社区 |
 | [esp32-gps](https://github.com/mrichar1/esp32-gps) | ESP32 上整合 GPS、蓝牙与 NTRIP/RTK 转发 | Python | 23 | 🏷️ 个人社区 |
+| [gnsshat](https://github.com/jimmypaputto/gnsshat) | gnsshat：树莓派 GNSS HAT 的 UBX 驱动与 Flask 面板 | C++ | 22 | 🏷️ 个人社区 |
+| [QZQSM](https://github.com/baggio63446333/QZQSM) | QZQSM：Arduino 上解析 QZSS DC Report 的嵌入式库 | C++ | 21 | 🏷️ 个人社区 |
 | [Cryologger-GVT](https://github.com/cryologger/glacier-velocity-tracker) | Cryologger GVT：面向 PPP 的开源冰川 GNSS 测速仪 | C++ | 19 | 🏷️ 个人社区 |
 | [GNSSClock](https://github.com/stevemarple/GNSS_Clock) | GNSSClock：Arduino 上读 NMEA/PPS 的 GNSS 时钟 | C++ | 2 | 🏷️ 个人社区 |
 
@@ -113,12 +118,33 @@ u-blox 厂商开源的可移植 C 库，面向 MCU/RTOS 场景提供 GNSS 与蜂
 
 以太网/WiFi GNSS 授时服务器：以 GPS/北斗/GLONASS/Galileo 为时间源，对外提供 NTP、RDATE、PTP，硬件基于 ESP8266/ESP32 与 Arduino 生态。适合实验室、业余台站本地时间同步。精度受模块、天线与网络抖动限制，达不到电信机房原子钟等级；天线与固件选项对照上游说明。
 
+#### [UbxGps](https://github.com/loginov-rocks/UbxGps)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：MIT · 星标约：152 · 宿主：github
+
+以简单、快速为目标的 Arduino u-blox UBX 通信库，MIT 许可。适合读取原始 UBX 导航/观测类消息做嵌入式实验。协议字段随模块固件变化，接入前需核对消息类与波特率。不覆盖 NTRIP/RTK 全栈，可与更高层解算或日志工具组合使用。
+
 #### [esp32-xbee](https://github.com/nebkat/esp32-xbee)  
 *🏷️ 个人社区*
 
 语言：C · 许可：GPL-3.0 · 星标约：119 · 宿主：github
 
 Ardusimple WiFi NTRIP Master 的官方 ESP-IDF 固件（GPL-3.0），把 ESP32 UART 桥接到 WiFi，提供 NTRIP Client/Server/Caster 与 TCP/UDP、Web 配置界面。适合低成本基站/流动站差分链路。硬件引脚默认面向其板卡；通用 ESP32 需改 GPIO。不是精密定位解算器。
+
+#### [bolderflight-ublox](https://github.com/bolderflight/ublox)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：MIT · 星标约：115 · 宿主：github
+
+Bolder Flight 维护的 uBlox GNSS 通信库，同时支持 Arduino 与 CMake 构建，MIT 许可。面向无人机/航空电子常用接收机接口，偏驱动与报文读写。命名加前缀以免与泛名 ublox 冲突。固件与消息集需匹配具体型号；非 PPP/RTK 引擎。
+
+#### [SparkFun_u-blox_GNSS_v3](https://github.com/sparkfun/SparkFun_u-blox_GNSS_v3)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：MIT · 星标约：104 · 宿主：github
+
+面向嵌入式/创客的 Arduino 库，用 u-blox Configuration Interface 配置与读取模块，便于采集原始测量或 NMEA。适合低成本接收机原型与教学；不是精密定位引擎，高级 RTK/PPP 仍需配合基站与解算软件。
 
 #### [STM32-GNSS](https://github.com/SimpleMethod/STM32-GNSS)  
 *🏷️ 个人社区*
@@ -155,6 +181,20 @@ SparkFun 发布的 Arduino 库，代码部分为 MIT 许可（硬件设计另为
 
 在 ESP32 上把 GNSS 模块、串口/蓝牙与 NTRIP 客户端/Caster/转发串起来，方便做物联网终端或农机差分原型。适合嵌入式联调与野外低成本试验。吞吐、天线与长期稳定性弱于工业板卡；公网播发需自行处理账号与安全。
 
+#### [gnsshat](https://github.com/jimmypaputto/gnsshat)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：MIT · 星标约：22 · 宿主：github
+
+面向 Jimmy Paputto GNSS HAT 的驱动库，覆盖 u-blox UBX，并提供 C++/C/Python API 与 Flask 实时仪表盘（天空图、RF、RTK 相对图等），MIT 许可。虽绑定厂商板卡，但对通用 UBX 串口/SPI 仍有参考价值。RTK 固定与厘米级显示依赖改正流与天线环境。适合树莓派现场演示与低成本监测。
+
+#### [QZQSM](https://github.com/baggio63446333/QZQSM)  
+*🏷️ 个人社区*
+
+语言：C++ · 许可：BSD-3-Clause · 星标约：21 · 宿主：github
+
+面向嵌入式的 QZSS DC Report 报文 Arduino 库，BSD-3-Clause。README 以能收 L1S 信号的 Sony SPRESENSE 板为开发环境，解析みちびき灾害・危机管理通报，与桌面端 azarashi 形成软硬互补。依赖具体接收机是否输出原始 DCR/相关 NMEA；天线与区域覆盖会影响可用性。适合创客与应急原型，非航空认证实现。
+
 #### [Cryologger-GVT](https://github.com/cryologger/glacier-velocity-tracker)  
 *🏷️ 个人社区*
 
@@ -168,21 +208,6 @@ Cryologger Glacier Velocity Tracker 以 Arduino/MicroMod 与 SparkFun ZED-F9P �
 语言：C++ · 许可：LGPL-2.1 · 星标约：2 · 宿主：github
 
 在 Arduino 上用 GNSS（GPS/GLONASS/Galileo）NMEA 语句与 PPS 秒脉冲实现时钟与守时，方便嵌入式授时和业余无线电时间基准。适合单片机爱好者与简易时频同步。功能止于时钟/授时，不含 RTK 或精密 PVT；可用星座取决于所接 GNSS 模块固件。PPS 布线与晶振稳定度影响短期守时表现。
-
-## 嵌入式/Arduino
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SparkFun_u-blox_GNSS_v3](https://github.com/sparkfun/SparkFun_u-blox_GNSS_v3) | SparkFun u-blox GNSS v3：Arduino 配置库 | C++ | 104 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [SparkFun_u-blox_GNSS_v3](https://github.com/sparkfun/SparkFun_u-blox_GNSS_v3)  
-*🏷️ 个人社区*
-
-语言：C++ · 许可：MIT · 星标约：104 · 宿主：github
-
-面向嵌入式/创客的 Arduino 库，用 u-blox Configuration Interface 配置与读取模块，便于采集原始测量或 NMEA。适合低成本接收机原型与教学；不是精密定位引擎，高级 RTK/PPP 仍需配合基站与解算软件。
 
 ## 原始测量
 
@@ -231,41 +256,13 @@ Taro Suzuki 公开的 Google Smartphone Decimeter Challenge 2023 复现代码：
 
 MIT 许可的 Java 库，高效解析 Android GNSS Logger 导出的原始测量与传感器事件文本格式，可配置只读所需字段。适合手机原始观测后处理管线。仓库偏库而非 App；上游 Logger 格式若变更需跟进。与 GPSTest 等采集工具互补。
 
-## QZSS嵌入式
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [QZQSM](https://github.com/baggio63446333/QZQSM) | QZQSM：Arduino 上解析 QZSS DC Report 的嵌入式库 | C++ | 21 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [QZQSM](https://github.com/baggio63446333/QZQSM)  
-*🏷️ 个人社区*
-
-语言：C++ · 许可：BSD-3-Clause · 星标约：21 · 宿主：github
-
-面向嵌入式的 QZSS DC Report 报文 Arduino 库，BSD-3-Clause。README 以能收 L1S 信号的 Sony SPRESENSE 板为开发环境，解析みちびき灾害・危机管理通报，与桌面端 azarashi 形成软硬互补。依赖具体接收机是否输出原始 DCR/相关 NMEA；天线与区域覆盖会影响可用性。适合创客与应急原型，非航空认证实现。
-
-## 树莓派GNSS
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [gnsshat](https://github.com/jimmypaputto/gnsshat) | gnsshat：树莓派 GNSS HAT 的 UBX 驱动与 Flask 面板 | C++ | 22 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [gnsshat](https://github.com/jimmypaputto/gnsshat)  
-*🏷️ 个人社区*
-
-语言：C++ · 许可：MIT · 星标约：22 · 宿主：github
-
-面向 Jimmy Paputto GNSS HAT 的驱动库，覆盖 u-blox UBX，并提供 C++/C/Python API 与 Flask 实时仪表盘（天空图、RF、RTK 相对图等），MIT 许可。虽绑定厂商板卡，但对通用 UBX 串口/SPI 仍有参考价值。RTK 固定与厘米级显示依赖改正流与天线环境。适合树莓派现场演示与低成本监测。
-
-## Arduino解析
+## Arduino-NMEA
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [NeoGPS](https://github.com/SlashDevin/NeoGPS) | NeoGPS：Arduino 低内存 NMEA/u-blox GPS 解析库 | C++ | 750 | 🏷️ 个人社区 |
+| [MicroNMEA](https://github.com/stevemarple/MicroNMEA) | MicroNMEA：紧凑 Arduino NMEA 解析库（LGPL-2.1） | C++ | 111 | 🏷️ 个人社区 |
+| [107-Arduino-NMEA-Parser](https://github.com/107-systems/107-Arduino-NMEA-Parser) | 107-Arduino-NMEA-Parser：多星座 Arduino NMEA 库（MIT） | C++ | 24 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -275,45 +272,6 @@ MIT 许可的 Java 库，高效解析 Android GNSS Logger 导出的原始测量�
 语言：C++ · 许可：GPL-3.0 · 星标约：750 · 宿主：github
 
 面向 Arduino 的可配置 NMEA 与 u-blox 报文解析库，强调极低 RAM（可低至约 10 字节量级配置），GPL-3.0。适合资源受限嵌入式定位日志与简易导航，而非测地级解算。需按目标板裁剪消息集；与 TinyGPS 类库相比更偏可配置与 UBX。星数高、许可证明确，补齐移动/嵌入式解析薄点。
-
-## UBX通信
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [UbxGps](https://github.com/loginov-rocks/UbxGps) | UbxGps：Arduino 轻量 u-blox UBX 通信库（MIT） | C++ | 152 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [UbxGps](https://github.com/loginov-rocks/UbxGps)  
-*🏷️ 个人社区*
-
-语言：C++ · 许可：MIT · 星标约：152 · 宿主：github
-
-以简单、快速为目标的 Arduino u-blox UBX 通信库，MIT 许可。适合读取原始 UBX 导航/观测类消息做嵌入式实验。协议字段随模块固件变化，接入前需核对消息类与波特率。不覆盖 NTRIP/RTK 全栈，可与更高层解算或日志工具组合使用。
-
-## uBlox驱动
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [bolderflight-ublox](https://github.com/bolderflight/ublox) | bolderflight-ublox：Bolder Flight uBlox Arduino/CMake 驱动 | C++ | 115 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [bolderflight-ublox](https://github.com/bolderflight/ublox)  
-*🏷️ 个人社区*
-
-语言：C++ · 许可：MIT · 星标约：115 · 宿主：github
-
-Bolder Flight 维护的 uBlox GNSS 通信库，同时支持 Arduino 与 CMake 构建，MIT 许可。面向无人机/航空电子常用接收机接口，偏驱动与报文读写。命名加前缀以免与泛名 ublox 冲突。固件与消息集需匹配具体型号；非 PPP/RTK 引擎。
-
-## Arduino-NMEA
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [MicroNMEA](https://github.com/stevemarple/MicroNMEA) | MicroNMEA：紧凑 Arduino NMEA 解析库（LGPL-2.1） | C++ | 111 | 🏷️ 个人社区 |
-| [107-Arduino-NMEA-Parser](https://github.com/107-systems/107-Arduino-NMEA-Parser) | 107-Arduino-NMEA-Parser：多星座 Arduino NMEA 库（MIT） | C++ | 24 | 🏷️ 个人社区 |
-
-### 详细说明
 
 #### [MicroNMEA](https://github.com/stevemarple/MicroNMEA)  
 *🏷️ 个人社区*

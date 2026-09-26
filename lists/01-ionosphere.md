@@ -1,7 +1,62 @@
 # 电离层 / Ionosphere
-> **298** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
+> **273** 项 · 链接索引（无源码）· 🏷️ 官方 / 高校实验室 / 个人社区
 
 研究地球电离层电子含量与扰动：从 GNSS 双频观测估计 STEC/VTEC，构建 GIM，或与 IRI/NeQuick 等模型对比；也包括 ROTI/闪烁与层析。
+
+## 数据接口
+
+| 项目 | 一句话 | 语言 | ★ | 标记 |
+|---|---|---|---:|---|
+| [viresclient](https://github.com/ESA-VirES/VirES-Python-Client) | viresclient：ESA VirES Python 客户端（Swarm） | Python | 23 | 🏷️ 官方 |
+| [geomagindices](https://github.com/space-physics/geomagindices) | geomagindices：地磁指数 Python 读写工具 | Python | 17 | 🏷️ 个人社区 |
+| [madrigalWeb](https://github.com/MITHaystack/madrigalWeb) | OpenMadrigal/CEDAR Python 数据客户端 | Python | 4 | 🏷️ 高校实验室 |
+| [swds-api-downloader](https://github.com/embrace-inpe/swds-api-downloader) | swds-api-downloader：Embrace SWDS API 自动下载示例 | Python | 4 | 🏷️ 官方 |
+| [digisondeindices](https://github.com/sunipkm/digisondeindices) | 从 GIRO DIDBase 下载并解析 Digisonde 标定参数为 xarray 的 Python 工具 | Python | 2 | 🏷️ 个人社区 |
+| [ismr_downloader](https://github.com/GEGE-UNESP/ismr_downloader) | ismr_downloader：ISMR 闪烁监测数据命令行下载器 | Python | 1 | 🏷️ 高校实验室 |
+
+### 详细说明
+
+#### [viresclient](https://github.com/ESA-VirES/VirES-Python-Client)  
+*🏷️ 官方*
+
+语言：Python · 许可：MIT · 星标约：23 · 宿主：github
+
+官方推荐的 Swarm（及 Aeolus）数据访问库，可按需拉取 EFI Langmuir 探针、TECxTMS_2F 绝对/相对 TEC、以及 CHAMP/GRACE 等扩展 TEC/Ne 产品并载入 pandas/xarray。做 LEO POD 衍生 TEC 与就地电子密度对照时几乎是默认入口。需 VirES 账号；本身不做反演，只负责服务端点与本地装载。
+
+#### [geomagindices](https://github.com/space-physics/geomagindices)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：17 · 宿主：github
+
+space-physics 维护的指数下载与解析工具，按时间返回 Ap、Kp 与 F10.7（含平滑值）的 pandas 表，缺测为 NaN，常作电离层/空间天气研究的辅助输入。MIT 许可，有 Zenodo DOI；与 igrf、iri2016 等模型接口互补。README 自述 2018 年后的新数据源读取器尚待补充，使用前请核对所需时段是否覆盖。
+
+#### [madrigalWeb](https://github.com/MITHaystack/madrigalWeb)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：MIT · 星标约：4 · 宿主：github
+
+访问全球 Madrigal 站点（含 CEDAR）的官方 Python 客户端，可检索/下载非相干散射雷达、GNSS TEC 等空间天气与电离层归档。MIT。适合批量脚本拉取；需遵守各站点数据政策，部分实验需注册。配套门户见 OpenMadrigal。
+
+#### [swds-api-downloader](https://github.com/embrace-inpe/swds-api-downloader)  
+*🏷️ 官方*
+
+语言：Python · 许可：MIT · 星标约：4 · 宿主：github
+
+演示如何调用 Embrace 空间天气数据服务（SWDS）API 自动下载产品，方便把取数写进科研脚本。适合 GNSS—空间天气交叉研究的数据入口。接口字段、鉴权与限流可能随官方升级变化；时间范围与产品类型以站点文档为准，勿长期硬编码过期端点。
+
+#### [digisondeindices](https://github.com/sunipkm/digisondeindices)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：2 · 宿主：github
+
+个人开发者发布的 Python 小工具，MIT 许可。按时间与台站代码从 Lowell GIRO 的 DIDBase 获取 Digisonde 自动/人工标定参数，包括 foF2、foF1、foE、hmF2、MUFD、半厚度、B0 与测高仪推算 TEC 以及自动标定置信度，统一输出为 xarray Dataset，缺测时返回空数据集。适合把测高仪参数批量接入 IRI 对比、TEC 校验或机器学习流程。功能单一、星标少，依赖 DIDBase 在线服务，使用时请遵守 GIRO 数据政策。
+
+#### [ismr_downloader](https://github.com/GEGE-UNESP/ismr_downloader)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：MIT · 星标约：1 · 宿主：github
+
+从 ISMR Query Tool API 拉取 GNSS/ISMR 闪烁监测数据的命令行下载器。适合批量建闪烁样本库。依赖上游 API 可用性与账号策略；本地下载后需自行做质控。
 
 ## 层析
 
@@ -111,8 +166,8 @@ yujieqing 仓库：为电离层层析准备几何/射线矩阵相关代码，可
 | [Aether-IT-model](https://github.com/AetherModel/Aether) | Aether：热层-电离层耦合物理模式（非 PPP-RTK AETHER） | C++ | 27 | 🏷️ 高校实验室 |
 | [TIE-GCM](https://github.com/NCAR/tiegcm) | TIE-GCM：NCAR 热层-电离层-电动力学环流模式 | Fortran | 27 | 🏷️ 官方 |
 | [LongwaveModePropagator.jl](https://github.com/fgasdia/LongwaveModePropagator.jl) | LongwaveModePropagator.jl：VLF 长波模传播 Julia 模型 | Julia | 26 | 🏷️ 个人社区 |
-| [hwm93](https://github.com/space-physics/hwm93) | hwm93：HWM93 水平风模型 Python/Matlab 接口 | Python | 23 | 🏷️ 个人社区 |
 | [sami2py](https://github.com/sami2py/sami2py) | sami2py：NRL SAMI2 二维电离层模式的 Python 封装 | Python/Fortran | 21 | 🏷️ 高校实验室 |
+| [NCAR-GLOW](https://github.com/space-physics/NCAR-GLOW) | NCAR-GLOW：气辉模型 CMake/Python/Matlab 构建扩展 | Python | 11 | 🏷️ 个人社区 |
 | [dvoacap-python](https://github.com/skyelaird/dvoacap-python) | VOACAP/DVOACAP 短波电离层传播预测引擎的 Python 移植版 | Python | 8 | 🏷️ 个人社区 |
 | [inscar](https://github.com/engeir/inscar) | 计算斜向磁场条件下非相干散射谱的 Python 库（支持非麦克斯韦分布） | Python | 7 | 🏷️ 高校实验室 |
 | [sami3_gitm](https://github.com/jdhuba/sami3_gitm) | sami3_gitm：Huba 公开 SAMI3/GITM 基础耦合代码 | Fortran | 7 | 🏷️ 官方 |
@@ -127,13 +182,16 @@ yujieqing 仓库：为电离层层析准备几何/射线矩阵相关代码，可
 | [Klobuchar.jl](https://github.com/bukvoj/Klobuchar.jl) | Klobuchar.jl：广播电离层延迟模型的 Julia 实现 | Julia | 2 | 🏷️ 个人社区 |
 | [IRI_TID](https://github.com/w2naf/IRI_TID) | IRI_TID：PyIRI 密度场叠加正弦 TID 扰动 | Python | 1 | 🏷️ 高校实验室 |
 | [SAMI3-4.00](https://github.com/jdhuba/sami3-4.00) | SAMI3-4.00：作者侧公开的现代化 Fortran 源码 | Fortran | 1 | 🏷️ 官方 |
+| [CCMC-Home](https://ccmc.gsfc.nasa.gov/) | NASA CCMC 主页：空间天气模型目录与运行服务入口 | data-portal | — | 🏷️ 官方 |
 | [CCMC-SAMI3](https://ccmc.gsfc.nasa.gov/models/SAMI3~3.22) | CCMC 上的 SAMI3 模型入口（文档/运行请求/发布信息） | data-portal | — | 🏷️ 官方 |
 | [gri-iono](https://gitlab.com/geosol-foss/python/gri-iono) | gri-iono：跨电离层延迟与角度改正 Python 包 | Python | 0 | 🏷️ 个人社区 |
 | [HAO-TGCM-portal](https://www.hao.ucar.edu/modeling/tgcm) | NCAR HAO TGCM/TIE-GCM 文档与发布说明门户 | data-portal | — | 🏷️ 官方 |
+| [ITU-R-iono-tropo-software](https://www.itu.int/en/ITU-R/study-groups/rsg3/rwp3m/Pages/digprod.aspx) | ITU-R-iono-tropo-software：ITU-R 电离层/对流层传播软件与验证数据 | various | — | 🏷️ 官方 |
 | [Klobuchar-study-code](https://github.com/KaijingZheng/Klobuchar-ionosphere-model-in-global-navigation-satellite-systems) | Klobuchar-study-code：广播八参数模型评估 MATLAB | MATLAB | 0 | 🏷️ 个人社区 |
 | [NeQuick2-MLF2](https://github.com/SkydelSolutions/nequick2-mlf2) | NeQuick2-MLF2：NeQuick-G 思路改写（Gustave Eiffel/Safran） | C | 0 | 🏷️ 个人社区 |
 | [RIM](https://github.com/SWMFsoftware/RIM) | RIM：SWMF 体系中的 Ridley 高纬电离层模式 | Fortran | 0 | 🏷️ 官方 |
 | [SAMI3-3.22-CCMC-mirror](https://github.com/sylee918/SAMI3) | SAMI3-3.22-CCMC-mirror：SAMI3-3.22 Fortran 个人 git 镜像 | Fortran | 0 | 🏷️ 个人社区 |
+| [SAMI3-3.22-Zenodo](https://doi.org/10.5281/zenodo.7895858) | SAMI3-3.22-Zenodo：SAMI3 三维电离层/等离子体层模型源码存档 | Fortran | — | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -207,19 +265,19 @@ TIE-GCM 是 NCAR HAO 发展的三维耦合热层-电离层-电动力学 GCM，Gi
 
 用 Julia 模拟 VLF 在地球-电离层波导中的模态传播，服务低电离层与远距 VLF 研究，和 GNSS L 波段 TEC 工具链互补。局限：领域偏 VLF；对 GNSS 测地用户直接用途有限。
 
-#### [hwm93](https://github.com/space-physics/hwm93)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：MIT · 星标约：23 · 宿主：github
-
-space-physics 对经典 NASA Horizontal Wind Model 93 的 Python/Matlab 封装，常与电离层/热层研究及 GNSS 相关大气分析联用。MIT 许可；提供仍被文献引用的 HWM93 基线接口（新版见 hwm14）。模型年代较早，现代工作请对照 HWM14 或其他再分析风场产品验证。需 Fortran 编译器（f2py 构建）。仓库已于 2022-08 归档（只读）。
-
 #### [sami2py](https://github.com/sami2py/sami2py)  
 *🏷️ 高校实验室*
 
 语言：Python/Fortran · 许可：BSD-3-Clause · 星标约：21 · 宿主：github
 
 sami2py 把海军实验室 SAMI2 二维电离层模式包成 Python：可设置经度、年积日等驱动并运行 Fortran 内核，再把输出归档、加载与绘图。相对完整 IRI/NeQuick 气候模型，它更强调沿磁力线的等离子体动力学。输入含经度、日期、可选中性大气缩放与自定义 ExB 漂移等；输出为模式场。局限：依赖 Fortran 编译器；二维近似不覆盖全球三维结构；仓库近年更新偏少。
+
+#### [NCAR-GLOW](https://github.com/space-physics/NCAR-GLOW)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：Apache-2.0 · 星标约：11 · 宿主：github
+
+为 NCAR GLOW（气辉/电离层相关）基线代码补充 CMake、Meson、Matlab、Python 构建与封装，Apache-2.0。与 pyglow 互补：本仓偏构建与上游对接。运行仍依赖 GLOW 科学代码与输入大气/太阳条件。适合上层大气/气辉与 GNSS 闪烁背景对照实验。
 
 #### [dvoacap-python](https://github.com/skyelaird/dvoacap-python)  
 *🏷️ 个人社区*
@@ -319,6 +377,13 @@ FIRI（Faraday-International Reference Ionosphere）侧重低电离层电子密�
 
 Joe Huba 等在 GitHub 公开的 SAMI3-4.00，基于 3.22 做了现代化整理，属于少有的 SAMI3 可直接 clone 的源码树。用于三维电离层/等离子体层物理仿真。局限：用户手册仍在完善；输入驱动与编译环境需自行摸索；与 CCMC/Zenodo 上的 3.22 发行版并存，科研引用需写清版本。
 
+#### [CCMC-Home](https://ccmc.gsfc.nasa.gov/)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Community Coordinated Modeling Center 主门户，汇总模型目录、即时/申请运行与可视化等服务。IRI/SAMI3 等 CCMC 模型页可由此导航发现。偏模型与仿真编排，不直接提供 GNSS 观测下载。运行申请与输出使用请遵守 CCMC 政策。
+
 #### [CCMC-SAMI3](https://ccmc.gsfc.nasa.gov/models/SAMI3~3.22)  
 *🏷️ 官方*
 
@@ -339,6 +404,13 @@ gri-iono（PyPI 可装）面向信号穿电离层传播，提供 Bent、IRI、Ne
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 HAO 上的 TIE-GCM/TIME-GCM 家族说明、用户指南与发布历史入口，补充 GitHub 源码仓的文档侧。局限：部分老版本下载流程可能仍要邮件注册；以 GitHub NCAR/tiegcm 为当前源码主渠道更合适。
+
+#### [ITU-R-iono-tropo-software](https://www.itu.int/en/ITU-R/study-groups/rsg3/rwp3m/Pages/digprod.aspx)  
+*🏷️ 官方*
+
+语言：various · 许可：ITU terms · 星标约：— · 宿主：official_site
+
+国际电联无线电通信部门汇总的电离层与对流层传播预测软件、数据与验证示例入口，涵盖推荐方法相关数字产品。许可与获取按 ITU 条款办理。适合传播与链路预算研究；GNSS 精密定位仍多用 IRI、NeQuick、VMF 等专用实现。
 
 #### [Klobuchar-study-code](https://github.com/KaijingZheng/Klobuchar-ionosphere-model-in-global-navigation-satellite-systems)  
 *🏷️ 个人社区*
@@ -368,6 +440,13 @@ Space Weather Modeling Framework 组件之一，描述高纬电离层电动力�
 
 从 CCMC/Zenodo 体系搬运的 SAMI3-3.22 Fortran 源码镜像，方便 git clone。正式引用仍建议指向 CCMC 模型页或 Zenodo DOI。局限：非官方持续维护仓；体积大；配置与运行说明需回到 CCMC 文档。
 
+#### [SAMI3-3.22-Zenodo](https://doi.org/10.5281/zenodo.7895858)  
+*🏷️ 个人社区*
+
+语言：Fortran · 许可：CC-BY-4.0 · 星标约：— · 宿主：other
+
+作者 Joe Huba（Zenodo 署名单位为 Syntek Technologies 公司）在 Zenodo 以 software 类型存档的 SAMI3-3.22 源码包（concept DOI 10.5281/zenodo.7895858），附 sami3-3.22.tgz（约 39 MB）与用户手册。用于全球电离层–等离子体层物理仿真，常与 GNSS TEC/掩星对比。许可 CC-BY-4.0。另有 GitHub 镜像与 CCMC 门户；这里是可直接下载的 Zenodo 软件存档。
+
 ## TEC估计
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
@@ -382,22 +461,19 @@ Space Weather Modeling Framework 组件之一，描述高纬电离层电动力�
 | [VARION](https://github.com/giorgiosavastano/VARION) | VARION：变分法实时电离层监测（Savastano 个人仓） | Python | 15 | 🏷️ 个人社区 |
 | [gsit](https://github.com/aldebaran1/gsit) | GSIT：TEC/ROTI/IPP 与光学磁力计 Python 工具 | Python | 10 | 🏷️ 个人社区 |
 | [tidd](https://github.com/vc1492a/tidd) | tidd：用 GPS sTEC 变化率异常检测 TID（海啸/地震等） | Jupyter Notebook | 10 | 🏷️ 高校实验室 |
+| [ionotec](https://github.com/sylvathle/ionotec) | ionotec：从 RINEX 计算 TEC 的轻量 Python 库 | Python | 6 | 🏷️ 个人社区 |
 | [TEC_calculation_RINEX3](https://github.com/cssrg-kmitl/TEC_calculation_RINEX3) | TEC_calculation_RINEX3：RINEX 3.04 双频 TEC/ROTI（MATLAB） | MATLAB | 6 | 🏷️ 高校实验室 |
 | [TEC_gradient_computation](https://github.com/cssrg-kmitl/TEC_gradient_computation) | TEC_gradient_computation：单/双频电离层延迟梯度估计 | MATLAB | 6 | 🏷️ 高校实验室 |
-| [TEC-MoLLM](https://github.com/PANXIONG-CN/TEC-MoLLM) | TEC-MoLLM：GNN+时序 CNN+LLM（LoRA）全球 TEC 预报 | Python | 4 | 🏷️ 个人社区 |
 | [tec-example](https://github.com/embrace-inpe/tec-example) | tec-example：INPE Embrace TEC 处理示例 | Python | 3 | 🏷️ 官方 |
 | [CDAAC_COSMIC-TEC_Data-Research](https://github.com/haoINvinCbou/CDAAC_COSMIC-TEC_Data-Research) | CDAAC_COSMIC-TEC：Jupyter 处理 COSMIC 掩星 NetCDF 做 TEC | Jupyter Notebook | 2 | 🏷️ 个人社区 |
-| [gps-tec-cnn-lstm-attention](https://github.com/hyy-why/gps-tec-cnn-lstm-attention) | 论文配套：注意力机制 TEC 时序预测示例 | Python | 1 | 🏷️ 个人社区 |
 | [ESA-UGI](https://essr.esa.int/project/unified-gnss-ionosphere) | ESA-UGI：多系统 GNSS 估 vTEC/IFB/模糊度（ESSR） | unknown | — | 🏷️ 官方 |
 | [GNSS-Workshop-TEC](https://github.com/breid-phys/GNSS-Workshop) | GNSS-Workshop-TEC：研讨班 GNSS 探索到 TEC 测量材料 | Python | 0 | 🏷️ 个人社区 |
-| [Ion-Phys-Toolkit](https://github.com/PANXIONG-CN/Ion-Phys-Toolkit) | Ion-Phys-Toolkit：TEC 预报物理信息学习最小复现包 | Python | 0 | 🏷️ 个人社区 |
+| [Heki-GNSS-TEC-Software](https://www.ep.sci.hokudai.ac.jp/~heki/software.htm) | Heki 公开 Fortran：L4/STEC 与电离层层析 | Fortran | — | 🏷️ 高校实验室 |
 | [IONOLAB-TEC-Software](https://www.ionolab.org/index.php?language=en&page=ionolabtec) | IONOLAB-TEC：土耳其实验室 GNSS TEC/STEC 估计软件 | unknown | — | 🏷️ 高校实验室 |
 | [KOH2-ionosphere](https://github.com/asparuhkamburov/KOH2-ionosphere) | KOH2-ionosphere：南极 KOH2 站 TEC 与太阳周 25 分析 | Python | 0 | 🏷️ 个人社区 |
 | [Okoh-MATLAB-TEC-from-RINEX](https://doi.org/10.5281/zenodo.7711905) | Okoh-MATLAB-TEC-from-RINEX：RINEX 提 TEC 的 MATLAB 集 | MATLAB | — | 🏷️ 高校实验室 |
-| [PMGC-SimVP](https://github.com/OnlyYouNotInCity/PMGC-SimVP) | PMGC-SimVP：多尺度门控卷积+SimVP 全球 TEC 预报 | Python | 0 | 🏷️ 高校实验室 |
 | [quakeion](https://github.com/Gm015555/quakeion) | quakeion：震例目录 + CODE GIM TEC/ROT/ROTI 分析 | Python | 0 | 🏷️ 个人社区 |
 | [Seemala-GPS-TEC](https://seemala.blogspot.com/2026/08/gps-tec-analysis-program-version-37.html) | Seemala GPS-TEC：RINEX 估计 GPS TEC（Windows） | Windows/Exe | — | 🏷️ 个人社区 |
-| [TEC-forecast-F107](https://github.com/hekaixuan-atm/TEC-forecast) | 空间非均匀 F10.7 强迫的全球 TEC 预报代码 | Python | 0 | 🏷️ 个人社区 |
 | [vtec](https://github.com/mfkiwl/vtec) | vtec：多 GNSS 球谐全球电离层图与 DCB 估计（C++） | C++ | — | 🏷️ 个人社区 ★ |
 
 ### 详细说明
@@ -472,6 +548,13 @@ Giorgio Savastano 个人仓发布的变分法电离层观测工具（方法源�
 
 JPL、罗马一大与 UCLA 合作的工具包：对地面接收机观测 GPS 卫星得到的 sTEC 变化率（d/dt）做异常检测，识别海啸、地震、爆炸等引起的行进式电离层扰动（TID），附方法笔记本。输入为 sTEC 时序；输出为异常检测结果。局限：研究案例向；虚警/漏检与空间天气干扰需注意。
 
+#### [ionotec](https://github.com/sylvathle/ionotec)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：6 · 宿主：github
+
+面向 RINEX 观测的 TEC 计算库（原 pytec 更名/迁移至 ionotec），补齐“读观测→几何无关组合→TEC”的轻量路径。适合快速脚本化实验。功能面小于 PyTECGg/tec-suite 一类完整标定流水线；多星座 DCB/硬件延迟处理需自行核对。
+
 #### [TEC_calculation_RINEX3](https://github.com/cssrg-kmitl/TEC_calculation_RINEX3)  
 *🏷️ 高校实验室*
 
@@ -485,13 +568,6 @@ JPL、罗马一大与 UCLA 合作的工具包：对地面接收机观测 GPS 卫
 语言：MATLAB · 许可：— · 星标约：6 · 宿主：github
 
 从 RINEX 估计电离层延迟梯度，服务于 GBAS/局域增强等对空间梯度敏感的应用。适合机场周遭或短基线梯度研究。全球 GIM 不是目标；与 ROTI/闪烁监测可互补。
-
-#### [TEC-MoLLM](https://github.com/PANXIONG-CN/TEC-MoLLM)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：— · 星标约：4 · 宿主：github
-
-多模态深度学习 TEC 预报原型，组合图网络、时序卷积与大模型 LoRA 微调。输入为历史 TEC/空间天气特征；输出预报场。局限：算力与复现成本高；与经典物理/经验模式比可解释性弱；许可未标明。
 
 #### [tec-example](https://github.com/embrace-inpe/tec-example)  
 *🏷️ 官方*
@@ -507,13 +583,6 @@ INPE Embrace 相关的 TEC 处理示例脚本，降低接触其数据产品与�
 
 Jupyter 流程读取 CDAAC/COSMIC 掩星 NetCDF，面向 TEC 与掩星电离层剖面研究，便于复现空基电子含量分析。做 GNSS-RO 与空间天气的人可作起点。不是地基双频 TEC 或 GIM 软件；产品字段、版本与质量控制需对照 CDAAC 官方文档，结果宜与地基网交叉验证。不同任务期产品版本不要混用后直接拼时间序列。
 
-#### [gps-tec-cnn-lstm-attention](https://github.com/hyy-why/gps-tec-cnn-lstm-attention)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：— · 星标约：1 · 宿主：github
-
-论文配套的 CNN-BiLSTM 注意力 TEC 预测代码，目标是复现实验而非业务运行。星标与文档有限，数据准备脚本完整度需自查。业务空间天气预报请用业务模式或同化产品。
-
 #### [ESA-UGI](https://essr.esa.int/project/unified-gnss-ionosphere)  
 *🏷️ 官方*
 
@@ -528,12 +597,12 @@ Jupyter 流程读取 CDAAC/COSMIC 掩星 NetCDF，面向 TEC 与掩星电离层�
 
 教学/研讨班 Jupyter 材料，演示 GNSS 数据探索与 TEC 测量流程，适合入门。局限：非生产库；依赖研讨班数据布局。
 
-#### [Ion-Phys-Toolkit](https://github.com/PANXIONG-CN/Ion-Phys-Toolkit)  
-*🏷️ 个人社区*
+#### [Heki-GNSS-TEC-Software](https://www.ep.sci.hokudai.ac.jp/~heki/software.htm)  
+*🏷️ 高校实验室*
 
-语言：Python · 许可：MIT · 星标约：0 · 宿主：github
+语言：Fortran · 许可：academic research (as-is) · 星标约：— · 宿主：official_site
 
-物理信息（PINN/类 PINN）TEC 预报的精简发布，便于复现论文设定。局限：标注为 minimal release；功能面窄；需自备训练数据。
+日置幸一郎课题组公开的 Fortran 工具页：rdrnx/rdrnx3 从 RINEX 生成几何无关 L4、rdeph 算卫星位置、tomo 做三维电子密度层析，并含 CID 仿真与 GEONET 荷载示例。学术研究常用。许可为研究用公开源码（非 SPDX）；社区镜像见 yu-0124/GNSS-TEC_tools。编译与坐标系约定需对照说明书。
 
 #### [IONOLAB-TEC-Software](https://www.ionolab.org/index.php?language=en&page=ionolabtec)  
 *🏷️ 高校实验室*
@@ -556,13 +625,6 @@ Hacettepe/IONOLAB 团队提供的 IONOLAB-TEC/STEC 本地下载软件入口，�
 
 NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept DOI 10.5281/zenodo.7711905），面向 RINEX 观测做周跳检测/改正、相位平滑与 TEC 提取，示例来自 U-Blox 接收机。许可 CC-BY-4.0，文件为可直接下载的 .m 脚本，无 GitHub 依赖。适合教学与单站 TEC 试验；生产级多系统流水线可对照 Seemala/IONOLAB 等工具。
 
-#### [PMGC-SimVP](https://github.com/OnlyYouNotInCity/PMGC-SimVP)  
-*🏷️ 高校实验室*
-
-语言：Python · 许可：Apache-2.0 · 星标约：0 · 宿主：github
-
-深度学习全球 TEC 预报实现（PMGC-SimVP），Apache-2.0。局限：研究代码；训练数据与超参需自行对齐论文；推理前要有历史 TEC 栅格。
-
 #### [quakeion](https://github.com/Gm015555/quakeion)  
 *🏷️ 个人社区*
 
@@ -576,13 +638,6 @@ NASRDA 研究人员 Daniel Okoh 在 Zenodo 发布的 MATLAB 代码包（concept 
 语言：Windows/Exe · 许可：freeware for research (cite Seemala 2023) · 星标约：— · 宿主：other
 
 空间物理学者 Gopi Seemala 在个人博客发布维护的经典 GPS TEC 分析程序（博客当前为 v3.7）。读取 GPS RINEX 2/3 观测与导航文件并自动拉取 DCB，输出 CMN 文本与日变化图；Windows 便携 ZIP，无需安装。低纬电离层教学与区域 TEC 研究引用极广；目前文档称暂仅 GPS。请按 Seemala 2023 章节引用，注意 VC++ 运行库依赖。非开源源码发布。
-
-#### [TEC-forecast-F107](https://github.com/hekaixuan-atm/TEC-forecast)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：no formal licence (README: academic and research use) · 星标约：0 · 宿主：github
-
-论文配套实验：在深度学习 TEC 预报中引入空间非均匀 F10.7 强迫，探索太阳辐射空间差异的影响。适合复现与对比基线。仓库体量小、数据划分依赖作者设定，非业务级物理/同化模式。
 
 #### [vtec](https://github.com/mfkiwl/vtec)  
 *🏷️ 个人社区 ★*
@@ -603,11 +658,14 @@ C++ 写的全球电离层 VTEC 估计系统（中文 README）：读 RINEX 2/3 �
 | [apexpy](https://github.com/aburrell/apexpy) | apexpy：Apex/准偶极地磁坐标 Python 封装 | Python | 40 | 🏷️ 个人社区 |
 | [pyDARN](https://github.com/SuperDARN/pydarn) | SuperDARN 官方社区维护的 Python 数据可视化库 | Python | 38 | 🏷️ 高校实验室 |
 | [SuperDARN RST](https://github.com/SuperDARN/rst) | SuperDARN 雷达软件工具包 RST：原始数据处理、拟合与对流图生成 | C | 28 | 🏷️ 高校实验室 |
+| [pysatNASA](https://github.com/pysat/pysatNASA) | pysatNASA：pysat 的 NASA 空间科学仪器数据扩展（BSD-3） | Python | 25 | 🏷️ 个人社区 |
 | [jvierine-ionosonde](https://github.com/jvierine/ionosonde) | ionosonde（jvierine）：开源测高仪/电离图 Python 软件 | Python | 23 | 🏷️ 个人社区 |
 | [Lompe](https://github.com/klaundal/lompe) | 极区电离层电动力学局地反演工具 Lompe（多源数据融合） | Python | 23 | 🏷️ 高校实验室 |
 | [Ionort-raytrace](https://github.com/blair3sat/ionosphere-rt) | Ionort-raytrace：INGV IONORT 三维 HF 射线追踪（MATLAB 界面 + 预编译 Fortran 求解器） | MATLAB | 17 | 🏷️ 高校实验室 |
+| [pysatMissions](https://github.com/pysat/pysatMissions) | pysatMissions：pysat 任务规划与仪器工具扩展 | Python | 14 | 🏷️ 个人社区 |
 | [pysatSpaceWeather](https://github.com/pysat/pysatSpaceWeather) | pysatSpaceWeather：pysat 空间天气指数支持库 | Python | 14 | 🏷️ 个人社区 |
 | [ionosonde_volgatech](https://github.com/Vladimi-lan/ionosonde_volgatech) | ionosonde_volgatech：伏尔加技术大学测高仪数据处理代码（个人仓） | Python | 13 | 🏷️ 个人社区 |
+| [pysatCDF](https://github.com/pysat/pysatCDF) | pysatCDF：NASA CDF 格式 Python 读取器（pysat） | Python | 13 | 🏷️ 个人社区 |
 | [Alouette_ISIS_extract](https://github.com/asc-csa/Alouette_ISIS_extract) | Alouette_ISIS_extract：CSA 历史扫描电离图提取 | Python | 11 | 🏷️ 官方 |
 | [ionosphereAI](https://github.com/space-physics/ionosphereAI) | ionosphereAI：多源噪声数据中的电离层特征检测 | Python | 11 | 🏷️ 个人社区 |
 | [ocbpy](https://github.com/aburrell/ocbpy) | ocbpy：极盖边界自适应磁坐标转换库 | Python | 11 | 🏷️ 个人社区 |
@@ -615,7 +673,6 @@ C++ 写的全球电离层 VTEC 估计系统（中文 README）：读 RINEX 2/3 �
 | [COSMIC-IONPRF-Ne-TEC](https://github.com/HassanNooreldeen/COSMIC-IONPRF-NC-CDAAC-UCAR-Ne-TEC) | COSMIC-IONPRF-Ne-TEC：COSMIC CDAAC 掩星 Ne/TEC MATLAB 下载分析 | MATLAB | 9 | 🏷️ 个人社区 |
 | [pysatModels](https://github.com/pysat/pysatModels) | pysatModels：pysat 模式分析与模式-数据对比 | Python | 9 | 🏷️ 个人社区 |
 | [AlouetteApp](https://github.com/asc-csa/AlouetteApp) | 加拿大航天局 Alouette-I 顶部探测电离图筛选、下载与可视化 Dash 应用 | Python | 8 | 🏷️ 官方 |
-| [Septentrio-PyDataLink](https://github.com/septentrio-gnss/Septentrio-PyDataLink) | Septentrio-PyDataLink：接收机数据流可视化与互联 | Python | 8 | 🏷️ 个人社区 |
 | [hamsci_LSTID_detection](https://github.com/HamSCI/hamsci_LSTID_detection) | HamSCI 从业余无线电 spot 数据自动检测大尺度行进电离层扰动的代码 | Python | 7 | 🏷️ 高校实验室 |
 | [radionopy](https://github.com/UPennEoR/radionopy) | radionopy：大尺度电离层行为 Python/C 计算工具 | C | 7 | 🏷️ 高校实验室 |
 | [Raytrace-Model](https://github.com/kyruzic/Raytrace-Model) | 电离层中电波三维传播的 MATLAB 射线追踪 | MATLAB | 7 | 🏷️ 个人社区 |
@@ -626,6 +683,7 @@ C++ 写的全球电离层 VTEC 估计系统（中文 README）：读 RINEX 2/3 �
 | [pynasonde](https://github.com/shibaji7/pynasonde) | pynasonde：精密电离层测高/探测 Python 应用 | Python | 5 | 🏷️ 个人社区 |
 | [resolvedvelocities](https://github.com/amisr/resolvedvelocities) | AMISR 视线速度反演三维离子漂移与电场矢量的 Python 实现 | Python | 5 | 🏷️ 官方 |
 | [BAFIM](https://github.com/ilkkavir/BAFIM) | GUISDAP 非相干散射分析的贝叶斯时间滤波先验模块 | MATLAB | 4 | 🏷️ 高校实验室 |
+| [DARNtids](https://github.com/w2naf/DARNtids) | SuperDARN TID 行进扰动检测工具 | Python | 4 | 🏷️ 高校实验室 |
 | [isr-raw](https://github.com/space-physics/isr-raw) | 处理 PFISR 等非相干散射雷达原始 I/Q 电压数据的 Python 工具 | Python | 4 | 🏷️ 个人社区 |
 | [mitiono](https://github.com/sabrinastronomy/mitiono) | mitiono：由 GPS 接收机数据提取电离层与波束图 | Jupyter Notebook | 4 | 🏷️ 个人社区 |
 | [MyIonosphere_Library](https://github.com/mguerra96/MyIonosphere_Library) | MyIonosphere_Library：相位 GFLC 与 IPP 的 MATLAB 函数库 | MATLAB | 4 | 🏷️ 个人社区 |
@@ -634,8 +692,8 @@ C++ 写的全球电离层 VTEC 估计系统（中文 README）：读 RINEX 2/3 �
 | [pytiegcm](https://github.com/asher-pembroke/pytiegcm) | pytiegcm：TIE-GCM 输出的轻量 Python 读取器 | Python | 3 | 🏷️ 个人社区 |
 | [IonOccAnalysis](https://github.com/wonder2019WHU/IonOccAnalysis) | IonOccAnalysis：GNSS 电离层掩星数据分析（个人仓） | C++ | 2 | 🏷️ 个人社区 |
 | [Ionosonde-Data-Downloader](https://github.com/bzossi/Ionosonde-Data-Downloader) | 自动拉取公共测高仪库数据的轻量脚本 | Python | 2 | 🏷️ 个人社区 |
-| [SbfMixer](https://github.com/septentrio-gnss/SbfMixer) | SbfMixer：Septentrio 接收机的 Node-RED 节点 | JavaScript | 2 | 🏷️ 个人社区 |
 | [HamSCI-ionosonde](https://github.com/HamSCI/hamsci_ionosonde) | HamSCI-ionosonde：低成本啁啾测高仪处理与验证 | Python | 1 | 🏷️ 高校实验室 |
+| [Get_IPP](https://github.com/Chenjiajun01/Get_IPP) | Get_IPP：电离层穿刺点（IPP）C++ 计算 | C++ | — | 🏷️ 个人社区 ★ |
 | [lstid_processing](https://github.com/USNavalResearchLaboratory/lstid_processing) | 美国海军研究实验室 C/NOFS IVM 与 SAMI3 大尺度 TID 分析工具包 | Python | 0 | 🏷️ 官方 |
 
 ### 详细说明
@@ -696,6 +754,13 @@ SuperDARN 数据分析工作组维护的 Python 可视化库，LGPL-3.0 许可�
 
 SuperDARN 数据分析工作组（DAWG）维护的 Radar Software Toolkit，GPL-3.0 许可，C 语言命令行工具集并有 Zenodo DOI。负责从 rawacf 做 ACF 拟合生成 fitacf，再经网格化、球谐拟合生成全球对流图，是 SuperDARN 标准数据产品的官方处理链。文档分为 ReadTheDocs 安装教程与 API 说明两站，支持 Linux 与 macOS，Windows 暂不支持。适合需要自行重处理 SuperDARN 数据的研究者，与 pyDARN 可视化配合使用。
 
+#### [pysatNASA](https://github.com/pysat/pysatNASA)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：BSD-3-Clause · 星标约：25 · 宿主：github
+
+为 pysat 框架提供 NASA 相关仪器/任务数据支持的扩展包，BSD-3-Clause。便于把空间天气与高层大气观测拉进统一分析工作流，可与 GNSS 电离层研究对照。依赖 pysat 核心与上游数据政策；并非 GNSS 解算库。适合需要多源空间数据对齐的科研脚本。
+
 #### [jvierine-ionosonde](https://github.com/jvierine/ionosonde)  
 *🏷️ 个人社区*
 
@@ -717,6 +782,13 @@ Karl M. Laundal 等开发、Trond Mohn 基金会与挪威研究理事会资助�
 
 INGV 开发的 IONORT（IONOsphere Ray-Tracing）三维 HF 射线追踪程序：MATLAB 界面（ionort.m / ionort_gui.m）负责参数输入与绘图，并调用预编译的 Windows Fortran 求解器（Chapman 或离散网格电子密度，分有/无地磁场共四个版本）。维护者主要把注释从意大利语译成英文；README 说明旧式定长格式的 Fortran 源码大概率已无法直接编译，Julia 重写只有几行起步代码。适合 HF/GNSS 传播与层析正演的教学参考；INGV 的 MATLAB 部分按 CC BY-NC-ND 3.0 发布，不可商用、不可改作再分发。
 
+#### [pysatMissions](https://github.com/pysat/pysatMissions)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：BSD-3-Clause · 星标约：14 · 宿主：github
+
+pysat 生态的任务/仪器规划工具包，BSD-3-Clause，便于把卫星任务几何与空间天气数据流接到统一分析框架。非 GNSS 解算库，但对星载 GNSS 接收或电离层探测任务规划有辅助价值。依赖 pysat 核心版本。适合科研脚本化任务仿真。
+
 #### [pysatSpaceWeather](https://github.com/pysat/pysatSpaceWeather)  
 *🏷️ 个人社区*
 
@@ -730,6 +802,13 @@ INGV 开发的 IONORT（IONOsphere Ray-Tracing）三维 HF 射线追踪程序：
 语言：Python · 许可：— · 星标约：13 · 宿主：github
 
 与具体测高仪系统相关的 Python 处理代码，体量不小，可作为非 GIRO 数据源处理参考。局限：缺少清晰英文 README；通用性与许可需使用者自行确认（仓库未声明许可）。
+
+#### [pysatCDF](https://github.com/pysat/pysatCDF)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：BSD-3-Clause · 星标约：13 · 宿主：github
+
+为 pysat 提供 NASA Common Data Format（CDF）读取支持，BSD-3-Clause。空间物理与部分 GNSS/电离层衍生产品常以 CDF 分发，可与 CDAWeb/SPDF 下载流程衔接。适合把官方 CDF 拉进 Python 分析管线。
 
 #### [Alouette_ISIS_extract](https://github.com/asc-csa/Alouette_ISIS_extract)  
 *🏷️ 官方*
@@ -779,13 +858,6 @@ CSA 开源项目，从 Alouette 与 ISIS 卫星历史扫描电离图图像中提
 语言：Python · 许可：MIT · 星标约：8 · 宿主：github
 
 加拿大航天局（CSA）官方开源的 Plotly Dash 应用，MIT 许可，面向 1962 年发射的 Alouette-I 顶部探测仪历史电离图数字化成果：可按时间、地面站、坐标、频率等条件筛选电离图，导出提取特征 CSV 或原始图像，并在地图与折线图中概览所选数据。是少见的官方历史顶部电离层数据开放入口，适合做长期电离层气候或 IRI 顶部剖面对比。与 alouette_isis_extract 为同源项目（后者负责特征提取）。法英双语文档。
-
-#### [Septentrio-PyDataLink](https://github.com/septentrio-gnss/Septentrio-PyDataLink)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：BSD-3-Clause · 星标约：8 · 宿主：github
-
-pyDataLink 用于可视化与连接接收机数据流，便于实验教学中快速查看观测与配置链路。输入为接收机/记录数据流；输出为可视化与转发接口。局限：偏工程联调，不直接给出 TEC/闪烁科学指标。
 
 #### [hamsci_LSTID_detection](https://github.com/HamSCI/hamsci_LSTID_detection)  
 *🏷️ 高校实验室*
@@ -857,6 +929,13 @@ AMISR 官方 GitHub 组织发布的 Python 包，GPL-3.0 许可，实现 Heinsel
 
 奥卢大学 Ilkka Virtanen 开发的 GUISDAP 扩展模块，BSD-2-Clause 许可，MATLAB 实现。以时间上的贝叶斯滤波替代 GUISDAP 默认基于 IRI 的先验，并在距离方向使用相关先验保持剖面平滑，可用于沿磁力线与斜向波束以及远程站数据，从而提高 EISCAT 等雷达参数拟合的时间分辨率与稳定性。新版 GUISDAP 已内置该模块，仅需另装 flipchem 离子化学模块。与 LPI 同一作者，适合 ISR 数据分析人员。
 
+#### [DARNtids](https://github.com/w2naf/DARNtids)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：GPL-3.0 · 星标约：4 · 宿主：github
+
+面向 SuperDARN 雷达数据的 TID（Traveling Ionospheric Disturbance）检测与分析代码，GPL-3.0。适合将高频雷达观测与 GNSS TEC/TID 研究对照。依赖 SuperDARN 数据环境与雷达物理背景；不是 GNSS RINEX 处理链。
+
 #### [isr-raw](https://github.com/space-physics/isr-raw)  
 *🏷️ 个人社区*
 
@@ -913,19 +992,19 @@ C++ 工具面向 GNSS 电离层掩星数据处理与分析，适合理解 LEO—
 
 按站点/时间从公共测高仪仓库批量下载，减少手工翻目录。适合底部电离层档案收集。上游目录或接口变更会导致脚本失效；不做描迹反演或质量控制，需另接 Autoscala/SAO 等工具。
 
-#### [SbfMixer](https://github.com/septentrio-gnss/SbfMixer)  
-*🏷️ 个人社区*
-
-语言：JavaScript · 许可：BSD-3-Clause · 星标约：2 · 宿主：github
-
-通过 Node-RED 流程编排访问 Septentrio，适合演示数据采集与简单自动化。输入为接收机连接与流程节点配置；输出为可拖拽的数据管道。局限：教学/原型友好，科研级批处理与质控能力有限。
-
 #### [HamSCI-ionosonde](https://github.com/HamSCI/hamsci_ionosonde)  
 *🏷️ 高校实验室*
 
 语言：Python · 许可：GPL-3.0 · 星标约：1 · 宿主：github
 
 配套 HamSCI 低成本 chirp 测高仪：SDR 发收、互相关测时延、估算虚高，并在日食等事件中与业务测高仪对比。输入为 SDR/GNU Radio 采集；输出时延与虚高序列。局限：依赖实验执照与硬件；频段 2–10 MHz，与 GNSS 频段不同。
+
+#### [Get_IPP](https://github.com/Chenjiajun01/Get_IPP)  
+*🏷️ 个人社区 ★*
+
+语言：C++ · 许可：— · 星标约：— · 宿主：github
+
+根据测站与卫星几何求电离层穿刺点，GIM/层析前处理常用。适合教学与自写映射函数前的几何模块。单薄脚本型项目，坐标框架与壳层高度约定要与主流程一致。
 
 #### [lstid_processing](https://github.com/USNavalResearchLaboratory/lstid_processing)  
 *🏷️ 官方*
@@ -934,13 +1013,80 @@ C++ 工具面向 GNSS 电离层掩星数据处理与分析，适合理解 LEO—
 
 美国海军研究实验室（NRL）官方开源的 Python 包，MIT 许可，已发布 PyPI 并有 ReadTheDocs 文档与 Zenodo DOI。用于在 C/NOFS 卫星 CINDI 离子速度计数据中识别中、大尺度行进电离层扰动（TID），并提供处理 SAMI3 电离层模式输出及下载案例模式数据的例程，服务于 Burrell 等 2026 年 JGR 论文的可复现性。作者说明不会频繁更新，更适合作为 TID 研究参考实现，可与 GNSS TEC 类 TID 检测工具对照。
 
-## 测高仪自动缩放
+## 电离层工具
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [RMextract](https://github.com/lofar-astron/RMextract) | RMextract：ASTRON 射电天文 TEC/RM 经典工具（已继任） | C | 36 | 🏷️ 官方 |
+| [ionFR](https://github.com/csobey/ionFR) | ionFR：用 IGRF+IONEX 估计电离层法拉第旋转 | Python | 12 | 🏷️ 个人社区 |
+| [ionosphere-plotting](https://github.com/arwildo/ionosphere-plotting) | ionosphere-plotting：TEC/foF2/DST 等指数绑图脚本 | Python | 7 | 🏷️ 个人社区 |
+| [GRITI](https://github.com/dinsmoro/GRITI) | GRITI：多源电离层瞬变分析与可视化工具箱 | Python | 5 | 🏷️ 高校实验室 |
+| [spinifex](https://git.astron.nl/RD/spinifex) | ASTRON Spinifex：射电天文 TEC/RM 电离层工具 | Python | 4 | 🏷️ 官方 |
+| [nleht-fdtd-ionosphere](https://gitlab.com/nleht/fdtd) | nleht-fdtd：电离层 VLF 波 MPI 并行 FDTD（GitLab） | C++ | 1 | 🏷️ 高校实验室 |
+| [pypride](https://gitlab.com/gofrito/pypride) | pypride：行星雷达/VLBI 库（含 IONEX 与闪烁表 TEC） | Python | 1 | 🏷️ 个人社区 |
 | [Autoscala-INGV](http://iononet.ingv.it/index.php/download/software) | Autoscala-INGV：INGV Autoscala 测高仪自动缩放软件入口 | various | — | 🏷️ 官方 |
+| [Boston-College-ISR-Ionospheric-Studies](https://www.bc.edu/bc-web/research/sites/institute-for-scientific-research/research/ionospheric-studies.html) | Boston College ISR 电离层研究组主页（闪烁、层析与 GNSS TEC 方向） | data-portal | — | 🏷️ 高校实验室 |
+| [CARP-Average-Profile](https://ulcar.uml.edu/SoftwareUtilities/CARP/) | CARP-Average-Profile：测高仪平均代表剖面计算 | Fortran | — | 🏷️ 高校实验室 |
+| [Drift-X](https://ulcar.uml.edu/Drift-X.html) | Drift-X：Digisonde 漂移数据可视化与分析（Java） | Java | — | 🏷️ 高校实验室 |
+| [IMSP-MGS](https://essr.esa.int/project/ionosphere-modular-software-package-imsp-mgs) | IMSP-MGS：GNSS-R/SAR/雷达测深电离层效应仿真（ESA） | unknown | — | 🏷️ 官方 |
+| [IonKit-NH](https://github.com/tanggdut/IonKit-NH) | IonKit-NH：MATLAB 多系统 GNSS TEC 自然灾害电离层扰动检测工具包（原作者仓） | MATLAB | — | 🏷️ 个人社区 ★ |
+| [IonTools](https://github.com/rumkex/IonTools) | IonTools：电离层分析辅助小工具（C++） | C++ | — | 🏷️ 个人社区 ★ |
+| [NHPC-TrueHeight](https://ulcar.uml.edu/SoftwareUtilities/NHPC/) | NHPC：测高仪迹线真高剖面反演（Digisonde/ARTIST） | Fortran/C | — | 🏷️ 高校实验室 |
+| [NICT-Ionosonde-Data](https://wdc.nict.go.jp/Ionosphere/index.html) | NICT 日本测高仪（ionosonde）观测数据入口 | data-portal | — | 🏷️ 官方 |
+| [SAO-Explorer](https://ulcar.uml.edu/SAO-X/) | GIRO/Digisonde 测高仪缩放与 DIDBase 访问工具（免费二进制） | Java | — | 🏷️ 官方 |
+| [swarm-vip-dynamic-models](https://gitlab.com/KNMI-OSS/spaceweather/libs/swarm-vip-dynamic-models) | swarm-vip-dynamic-models：Swarm 原位 Ne/RODI 的 GLM 经验模型包 | Python | 0 | 🏷️ 官方 |
+| [UMLCAR-Downloads](https://ulcar.uml.edu/downloads.html) | UMLCAR-Downloads：UML Digisonde 工具下载总目录（SAO-X 等） | data-portal | — | 🏷️ 高校实验室 |
 
 ### 详细说明
+
+#### [RMextract](https://github.com/lofar-astron/RMextract)  
+*🏷️ 官方*
+
+语言：C · 许可：GPL-3.0 · 星标约：36 · 宿主：github
+
+荷兰 ASTRON 长期使用的 RMextract，面向射电干涉测量从 GPS TEC 与地磁模型估计旋转量度等。仓库注明已被 Spinifex 继任且不再积极开发，但仍广泛出现在文献与旧流程中。适合对照复现；新项目优先 Spinifex。许可 GPL-3.0。
+
+#### [ionFR](https://github.com/csobey/ionFR)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：GPL-3.0 · 星标约：12 · 宿主：github
+
+给定视线、地理位置与历元，结合 IGRF 地磁场与 IONEX TEC 图估计电离层法拉第旋转（FR），GPL-3.0。服务射电天文与极化校正，也与 GNSS 电离层产品消费相关。依赖外部 IONEX/IGRF 文件质量；输出是 FR 估计而非 STEC 重建。适合电离层传播旁路分析，而非 PPP 改正生成。
+
+#### [ionosphere-plotting](https://github.com/arwildo/ionosphere-plotting)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：— · 星标约：7 · 宿主：github
+
+面向 TEC、foF2、DST 等指数与时间序列的 Python 绑图工具，适合快速出教学图或报告插图。研究级 GIM/STEC 重建请用 gnss-tec、MosGIM2 等；本仓库偏可视化与展示，数据获取与许可需自备，不宜单独支撑反演论文。输入数据格式需按脚本说明自行对齐时间与单位。选用前请用自有数据做交叉验证。
+
+#### [GRITI](https://github.com/dinsmoro/GRITI)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：AGPL-3.0 · 星标约：5 · 宿主：github
+
+宾州州立相关开源仓 GRITI，面向电离层瞬变事件的 Python 分析流水线：可自动拉取 Madrigal δvTEC、AMPERE、Kp 与 OMNI，并做 keogram、滑动相关、FFT/Lomb-Scargle 等。需要本地配置路径与部分账号；部分 ISR/磁强计数据需自行下载。适合空间天气个例研究，不是从 RINEX 重建 TEC 的解算器。
+
+#### [spinifex](https://git.astron.nl/RD/spinifex)  
+*🏷️ 官方*
+
+语言：Python · 许可：Apache-2.0 · 星标约：4 · 宿主：gitlab
+
+荷兰 ASTRON 维护的 Spinifex，用纯 Python 从 IONEX/TOMION 等模型估计视线 TEC 与旋转量度（RM），面向 LOFAR 等干涉测量改正。可 pip 安装 GitLab 主仓；GitHub 仅为镜像。依赖外部 IONEX 下载与地磁模型，不是 GNSS 双频 STEC 估计算法本身。
+
+#### [nleht-fdtd-ionosphere](https://gitlab.com/nleht/fdtd)  
+*🏷️ 高校实验室*
+
+语言：C++ · 许可：no licence (README: copyright reserved, reference use only) · 星标约：1 · 宿主：gitlab
+
+面向电离层中甚低频（VLF）波传播的三维时域有限差分 C++ 代码，支持 MPI 多节点。适合低电离层/波导传播与 D 区扰动数值实验，与 GNSS L 波段闪烁工具互补。公开 GitLab 项目，但 README 声明代码受版权保护、仅供参考，未授予开源许可，且已停止活跃开发。
+
+#### [pypride](https://gitlab.com/gofrito/pypride)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT (pyproject license field; classifier says GPLv3+; no LICENSE file) · 星标约：1 · 宿主：gitlab
+
+GitLab 上的 pypride（PRIDE 相关派生）Python/Fortran 混合包，面向深空/VLBI 几何与延迟处理；内含从 CDDIS 拉取 IONEX 及 computeTEC 等由闪烁观测表估计上下行电离层贡献的脚本。pyproject.toml 许可字段写 MIT，classifier 却写 GPLv3+，仓内无 LICENSE 文件，再分发前需向作者确认。对 GNSS 电离层用户价值在于 IONEX 自动获取与行星际闪烁相关 TEC 估算；主业并非地面 GNSS TEC 流水线。公开仓可克隆。
 
 #### [Autoscala-INGV](http://iononet.ingv.it/index.php/download/software)  
 *🏷️ 官方*
@@ -948,6 +1094,83 @@ C++ 工具面向 GNSS 电离层掩星数据处理与分析，适合理解 LEO—
 语言：various · 许可：scientific distribution (INGV portal) · 星标约：— · 宿主：official_site
 
 意大利国家地球物理与火山学研究所（INGV）测高仪团队的软件下载页，介绍 Autoscala 自动缩放（foF2、MUF 等）以及数据分析、电离层模型配套工具。适合欧洲/INGV 站网 ionogram 自动处理路线。页面偏门户说明，具体包获取方式以站点 Restricted area / 联系渠道为准，并非 GitHub 式即开即用源码仓。
+
+#### [Boston-College-ISR-Ionospheric-Studies](https://www.bc.edu/bc-web/research/sites/institute-for-scientific-research/research/ionospheric-studies.html)  
+*🏷️ 高校实验室*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+波士顿学院科学研究所电离层研究方向介绍，涵盖全球扰动、层析与闪烁对 GNSS 影响等。可作为 Seemala GPS-TEC 等工具的机构背景页；部分站点可能对非浏览器客户端返回 406，建议用常规浏览器打开。
+
+#### [CARP-Average-Profile](https://ulcar.uml.edu/SoftwareUtilities/CARP/)  
+*🏷️ 高校实验室*
+
+语言：Fortran · 许可：UML academic (AS IS) · 星标约：— · 宿主：official_site
+
+UMLCAR 提供的平均代表剖面工具，用于从多幅测高图剖面提取统计代表结构。服务气候态与模型验证场景；与 NHPC/SAO-X 同属测高仪处理链。
+
+#### [Drift-X](https://ulcar.uml.edu/Drift-X.html)  
+*🏷️ 高校实验室*
+
+语言：Java · 许可：UML academic (AS IS) · 星标约：— · 宿主：official_site
+
+UMLCAR 发布的 Digisonde 漂移（DDA）数据查看器，当前发行约 1.2.14-FB3，ZIP 解压即用。面向测高仪漂移观测质控与教学；与 SAO-X 测高图定标流程互补，不直接输出 GNSS TEC。
+
+#### [IMSP-MGS](https://essr.esa.int/project/ionosphere-modular-software-package-imsp-mgs)  
+*🏷️ 官方*
+
+语言：unknown · 许可：ESA Community License v2.4 Strong Copyleft (Type 1) · 星标约：— · 宿主：official_site
+
+ONERA/RDA/IEEC 在 ESA TDE 框架下开发、经 ESSR 发布的 Ionosphere Modular Software Package，用于仿真 GNSS-R、SAR 与雷达测深等任务几何及 30 MHz–3 GHz 主要电离层效应。适合任务设计与电离层误差敏感性分析，而非地面 GNSS TEC 产品流水线。源码经 ESSR git 提供，许可为 ESA Community License v2.4 Strong Copyleft；下载需 ESSR 账号。
+
+#### [IonKit-NH](https://github.com/tanggdut/IonKit-NH)  
+*🏷️ 个人社区 ★*
+
+语言：MATLAB · 许可：GPL-3.0 · 星标约：— · 宿主：github
+
+IonKit-NH 的原作者仓（Tang L.），MATLAB 工具包，用 GPS/GLONASS/Galileo/BDS 双频组合求 TEC，生成时间-距离图和二维 TEC 扰动图，检测地震、海啸、火山喷发激发的行进式电离层扰动。代码以 IonKit-NH.zip 分发（18 个 .m 文件加示例 RINEX 与 TEC 数据），用法见用户手册；使用请引用 Tang 2024（Earthquake Research Advances）。ohm1122/IonKit-NH 是它的 fork（维护者星标来源），自 2024-05 复制后没有任何新提交。
+
+#### [IonTools](https://github.com/rumkex/IonTools)  
+*🏷️ 个人社区 ★*
+
+语言：C++ · 许可：BSD-3-Clause · 星标约：— · 宿主：github
+
+GitHub rumkex/IonTools，偏辅助脚本/小工具集合，用来补主流程里零散步骤。关键 TEC/GIM 结论建议用主流库复核，勿把过时脚本当生产基线。
+
+#### [NHPC-TrueHeight](https://ulcar.uml.edu/SoftwareUtilities/NHPC/)  
+*🏷️ 高校实验室*
+
+语言：Fortran/C · 许可：UML academic (AS IS) · 星标约：— · 宿主：official_site
+
+将 ARTIST 等自动/人工定标的测高仪迹线反演为等离子体频率–真高剖面的经典工具，常嵌入 SAO Explorer 工作流。适合底层电离层剖面研究与 IRI/IRTAM 对照；输入依赖合格 SAO/定标结果，非 GNSS TEC 估计器。
+
+#### [NICT-Ionosonde-Data](https://wdc.nict.go.jp/Ionosphere/index.html)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Wakkanai、Kokubunji、Yamagawa、Okinawa 等日本测高仪数字化资料入口，可与 GIRO/DIDBase 全球测高仪生态对照。适合 foF2/hmF2 气候统计或与 GNSS TEC 联合分析；不是 GNSS IONEX 替代品。
+
+#### [SAO-Explorer](https://ulcar.uml.edu/SAO-X/)  
+*🏷️ 官方*
+
+语言：Java · 许可：proprietary-freeware · 星标约：— · 宿主：official_site
+
+处理 SAO/SAOXML、内置 ARTIST-5 与剖面反演，并可连 Lowell DIDBase。irimodel 相关的 IRTAM/GIRO 生态常用桌面工具。官方提供跨平台 zip，属免费科学软件而非公开 OSS 源码（license 标 proprietary-freeware）。不做 GNSS TEC 建图；源码级二次开发请另寻开源栈。
+
+#### [swarm-vip-dynamic-models](https://gitlab.com/KNMI-OSS/spaceweather/libs/swarm-vip-dynamic-models)  
+*🏷️ 官方*
+
+语言：Python · 许可：BSD-3-Clause · 星标约：0 · 宿主：gitlab
+
+荷兰皇家气象研究所（KNMI）在 GitLab 发布的 Python 包，评估 Swarm VIP Dynamic 项目拟合的广义线性模型，按地理位置、磁纬/地方时、季节、F10.7、Kp/Hp30 与太阳风等输入预测 Ne、RODI 等电离层参数，覆盖赤道至极区。依赖 pandas/numpy，可自动拉取 OMNI/F10.7/Kp。BSD-3-Clause。适合 Swarm 原位气候态对照与不规则性气候研究；非 GNSS TEC 估计器。仓库可公开克隆。
+
+#### [UMLCAR-Downloads](https://ulcar.uml.edu/downloads.html)  
+*🏷️ 高校实验室*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+洛厄尔麻省大学大气研究中心官方下载索引：SAO Explorer（含 ARTIST-5）、Drift-X、BinBrowser、DCART、NHPC、CARP 等 Digisonde/测高仪工具集中入口。SAO-X 另有独立主页；本页作为软件总目录，便于发现其余开源/可下载工具。
 
 ## IONEX/TEC图
 
@@ -1251,149 +1474,6 @@ NJIT/Boston University 的三维 FDTD 开源码（GitLab，GPL-3.0-or-later）�
 
 KNMI 在 Swarm-VIP-Dynamic（UiO/Birmingham/INGV/DLR/KNMI）合作中的代码仓：含有效 F10.7 代理、Septentrio PolaRX5S ISMR 闪烁监测文件处理与可视化、项目模型及 IBP 等外部模型评估、Swarm 轨道派生磁纬/地方时等。与 swarm-vip-dynamic-models 库配套，偏研究流水线与闪烁数据可视化。公开 GitLab 仓，无 LICENSE 文件，pyproject.toml 标 Apache License v2.0。
 
-## 电离层工具
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [RMextract](https://github.com/lofar-astron/RMextract) | RMextract：ASTRON 射电天文 TEC/RM 经典工具（已继任） | C | 36 | 🏷️ 官方 |
-| [ionosphere-plotting](https://github.com/arwildo/ionosphere-plotting) | ionosphere-plotting：TEC/foF2/DST 等指数绑图脚本 | Python | 7 | 🏷️ 个人社区 |
-| [GRITI](https://github.com/dinsmoro/GRITI) | GRITI：多源电离层瞬变分析与可视化工具箱 | Python | 5 | 🏷️ 高校实验室 |
-| [spinifex](https://git.astron.nl/RD/spinifex) | ASTRON Spinifex：射电天文 TEC/RM 电离层工具 | Python | 4 | 🏷️ 官方 |
-| [nleht-fdtd-ionosphere](https://gitlab.com/nleht/fdtd) | nleht-fdtd：电离层 VLF 波 MPI 并行 FDTD（GitLab） | C++ | 1 | 🏷️ 高校实验室 |
-| [pypride](https://gitlab.com/gofrito/pypride) | pypride：行星雷达/VLBI 库（含 IONEX 与闪烁表 TEC） | Python | 1 | 🏷️ 个人社区 |
-| [Boston-College-ISR-Ionospheric-Studies](https://www.bc.edu/bc-web/research/sites/institute-for-scientific-research/research/ionospheric-studies.html) | Boston College ISR 电离层研究组主页（闪烁、层析与 GNSS TEC 方向） | data-portal | — | 🏷️ 高校实验室 |
-| [CARP-Average-Profile](https://ulcar.uml.edu/SoftwareUtilities/CARP/) | CARP-Average-Profile：测高仪平均代表剖面计算 | Fortran | — | 🏷️ 高校实验室 |
-| [Drift-X](https://ulcar.uml.edu/Drift-X.html) | Drift-X：Digisonde 漂移数据可视化与分析（Java） | Java | — | 🏷️ 高校实验室 |
-| [IMSP-MGS](https://essr.esa.int/project/ionosphere-modular-software-package-imsp-mgs) | IMSP-MGS：GNSS-R/SAR/雷达测深电离层效应仿真（ESA） | unknown | — | 🏷️ 官方 |
-| [IonKit-NH](https://github.com/tanggdut/IonKit-NH) | IonKit-NH：MATLAB 多系统 GNSS TEC 自然灾害电离层扰动检测工具包（原作者仓） | MATLAB | — | 🏷️ 个人社区 ★ |
-| [IonTools](https://github.com/rumkex/IonTools) | IonTools：电离层分析辅助小工具（C++） | C++ | — | 🏷️ 个人社区 ★ |
-| [NHPC-TrueHeight](https://ulcar.uml.edu/SoftwareUtilities/NHPC/) | NHPC：测高仪迹线真高剖面反演（Digisonde/ARTIST） | Fortran/C | — | 🏷️ 高校实验室 |
-| [NICT-Ionosonde-Data](https://wdc.nict.go.jp/Ionosphere/index.html) | NICT 日本测高仪（ionosonde）观测数据入口 | data-portal | — | 🏷️ 官方 |
-| [SAO-Explorer](https://ulcar.uml.edu/SAO-X/) | GIRO/Digisonde 测高仪缩放与 DIDBase 访问工具（免费二进制） | Java | — | 🏷️ 官方 |
-| [swarm-vip-dynamic-models](https://gitlab.com/KNMI-OSS/spaceweather/libs/swarm-vip-dynamic-models) | swarm-vip-dynamic-models：Swarm 原位 Ne/RODI 的 GLM 经验模型包 | Python | 0 | 🏷️ 官方 |
-| [UMLCAR-Downloads](https://ulcar.uml.edu/downloads.html) | UMLCAR-Downloads：UML Digisonde 工具下载总目录（SAO-X 等） | data-portal | — | 🏷️ 高校实验室 |
-
-### 详细说明
-
-#### [RMextract](https://github.com/lofar-astron/RMextract)  
-*🏷️ 官方*
-
-语言：C · 许可：GPL-3.0 · 星标约：36 · 宿主：github
-
-荷兰 ASTRON 长期使用的 RMextract，面向射电干涉测量从 GPS TEC 与地磁模型估计旋转量度等。仓库注明已被 Spinifex 继任且不再积极开发，但仍广泛出现在文献与旧流程中。适合对照复现；新项目优先 Spinifex。许可 GPL-3.0。
-
-#### [ionosphere-plotting](https://github.com/arwildo/ionosphere-plotting)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：— · 星标约：7 · 宿主：github
-
-面向 TEC、foF2、DST 等指数与时间序列的 Python 绑图工具，适合快速出教学图或报告插图。研究级 GIM/STEC 重建请用 gnss-tec、MosGIM2 等；本仓库偏可视化与展示，数据获取与许可需自备，不宜单独支撑反演论文。输入数据格式需按脚本说明自行对齐时间与单位。选用前请用自有数据做交叉验证。
-
-#### [GRITI](https://github.com/dinsmoro/GRITI)  
-*🏷️ 高校实验室*
-
-语言：Python · 许可：AGPL-3.0 · 星标约：5 · 宿主：github
-
-宾州州立相关开源仓 GRITI，面向电离层瞬变事件的 Python 分析流水线：可自动拉取 Madrigal δvTEC、AMPERE、Kp 与 OMNI，并做 keogram、滑动相关、FFT/Lomb-Scargle 等。需要本地配置路径与部分账号；部分 ISR/磁强计数据需自行下载。适合空间天气个例研究，不是从 RINEX 重建 TEC 的解算器。
-
-#### [spinifex](https://git.astron.nl/RD/spinifex)  
-*🏷️ 官方*
-
-语言：Python · 许可：Apache-2.0 · 星标约：4 · 宿主：gitlab
-
-荷兰 ASTRON 维护的 Spinifex，用纯 Python 从 IONEX/TOMION 等模型估计视线 TEC 与旋转量度（RM），面向 LOFAR 等干涉测量改正。可 pip 安装 GitLab 主仓；GitHub 仅为镜像。依赖外部 IONEX 下载与地磁模型，不是 GNSS 双频 STEC 估计算法本身。
-
-#### [nleht-fdtd-ionosphere](https://gitlab.com/nleht/fdtd)  
-*🏷️ 高校实验室*
-
-语言：C++ · 许可：no licence (README: copyright reserved, reference use only) · 星标约：1 · 宿主：gitlab
-
-面向电离层中甚低频（VLF）波传播的三维时域有限差分 C++ 代码，支持 MPI 多节点。适合低电离层/波导传播与 D 区扰动数值实验，与 GNSS L 波段闪烁工具互补。公开 GitLab 项目，但 README 声明代码受版权保护、仅供参考，未授予开源许可，且已停止活跃开发。
-
-#### [pypride](https://gitlab.com/gofrito/pypride)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：MIT (pyproject license field; classifier says GPLv3+; no LICENSE file) · 星标约：1 · 宿主：gitlab
-
-GitLab 上的 pypride（PRIDE 相关派生）Python/Fortran 混合包，面向深空/VLBI 几何与延迟处理；内含从 CDDIS 拉取 IONEX 及 computeTEC 等由闪烁观测表估计上下行电离层贡献的脚本。pyproject.toml 许可字段写 MIT，classifier 却写 GPLv3+，仓内无 LICENSE 文件，再分发前需向作者确认。对 GNSS 电离层用户价值在于 IONEX 自动获取与行星际闪烁相关 TEC 估算；主业并非地面 GNSS TEC 流水线。公开仓可克隆。
-
-#### [Boston-College-ISR-Ionospheric-Studies](https://www.bc.edu/bc-web/research/sites/institute-for-scientific-research/research/ionospheric-studies.html)  
-*🏷️ 高校实验室*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-波士顿学院科学研究所电离层研究方向介绍，涵盖全球扰动、层析与闪烁对 GNSS 影响等。可作为 Seemala GPS-TEC 等工具的机构背景页；部分站点可能对非浏览器客户端返回 406，建议用常规浏览器打开。
-
-#### [CARP-Average-Profile](https://ulcar.uml.edu/SoftwareUtilities/CARP/)  
-*🏷️ 高校实验室*
-
-语言：Fortran · 许可：UML academic (AS IS) · 星标约：— · 宿主：official_site
-
-UMLCAR 提供的平均代表剖面工具，用于从多幅测高图剖面提取统计代表结构。服务气候态与模型验证场景；与 NHPC/SAO-X 同属测高仪处理链。
-
-#### [Drift-X](https://ulcar.uml.edu/Drift-X.html)  
-*🏷️ 高校实验室*
-
-语言：Java · 许可：UML academic (AS IS) · 星标约：— · 宿主：official_site
-
-UMLCAR 发布的 Digisonde 漂移（DDA）数据查看器，当前发行约 1.2.14-FB3，ZIP 解压即用。面向测高仪漂移观测质控与教学；与 SAO-X 测高图定标流程互补，不直接输出 GNSS TEC。
-
-#### [IMSP-MGS](https://essr.esa.int/project/ionosphere-modular-software-package-imsp-mgs)  
-*🏷️ 官方*
-
-语言：unknown · 许可：ESA Community License v2.4 Strong Copyleft (Type 1) · 星标约：— · 宿主：official_site
-
-ONERA/RDA/IEEC 在 ESA TDE 框架下开发、经 ESSR 发布的 Ionosphere Modular Software Package，用于仿真 GNSS-R、SAR 与雷达测深等任务几何及 30 MHz–3 GHz 主要电离层效应。适合任务设计与电离层误差敏感性分析，而非地面 GNSS TEC 产品流水线。源码经 ESSR git 提供，许可为 ESA Community License v2.4 Strong Copyleft；下载需 ESSR 账号。
-
-#### [IonKit-NH](https://github.com/tanggdut/IonKit-NH)  
-*🏷️ 个人社区 ★*
-
-语言：MATLAB · 许可：GPL-3.0 · 星标约：— · 宿主：github
-
-IonKit-NH 的原作者仓（Tang L.），MATLAB 工具包，用 GPS/GLONASS/Galileo/BDS 双频组合求 TEC，生成时间-距离图和二维 TEC 扰动图，检测地震、海啸、火山喷发激发的行进式电离层扰动。代码以 IonKit-NH.zip 分发（18 个 .m 文件加示例 RINEX 与 TEC 数据），用法见用户手册；使用请引用 Tang 2024（Earthquake Research Advances）。ohm1122/IonKit-NH 是它的 fork（维护者星标来源），自 2024-05 复制后没有任何新提交。
-
-#### [IonTools](https://github.com/rumkex/IonTools)  
-*🏷️ 个人社区 ★*
-
-语言：C++ · 许可：BSD-3-Clause · 星标约：— · 宿主：github
-
-GitHub rumkex/IonTools，偏辅助脚本/小工具集合，用来补主流程里零散步骤。关键 TEC/GIM 结论建议用主流库复核，勿把过时脚本当生产基线。
-
-#### [NHPC-TrueHeight](https://ulcar.uml.edu/SoftwareUtilities/NHPC/)  
-*🏷️ 高校实验室*
-
-语言：Fortran/C · 许可：UML academic (AS IS) · 星标约：— · 宿主：official_site
-
-将 ARTIST 等自动/人工定标的测高仪迹线反演为等离子体频率–真高剖面的经典工具，常嵌入 SAO Explorer 工作流。适合底层电离层剖面研究与 IRI/IRTAM 对照；输入依赖合格 SAO/定标结果，非 GNSS TEC 估计器。
-
-#### [NICT-Ionosonde-Data](https://wdc.nict.go.jp/Ionosphere/index.html)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-Wakkanai、Kokubunji、Yamagawa、Okinawa 等日本测高仪数字化资料入口，可与 GIRO/DIDBase 全球测高仪生态对照。适合 foF2/hmF2 气候统计或与 GNSS TEC 联合分析；不是 GNSS IONEX 替代品。
-
-#### [SAO-Explorer](https://ulcar.uml.edu/SAO-X/)  
-*🏷️ 官方*
-
-语言：Java · 许可：proprietary-freeware · 星标约：— · 宿主：official_site
-
-处理 SAO/SAOXML、内置 ARTIST-5 与剖面反演，并可连 Lowell DIDBase。irimodel 相关的 IRTAM/GIRO 生态常用桌面工具。官方提供跨平台 zip，属免费科学软件而非公开 OSS 源码（license 标 proprietary-freeware）。不做 GNSS TEC 建图；源码级二次开发请另寻开源栈。
-
-#### [swarm-vip-dynamic-models](https://gitlab.com/KNMI-OSS/spaceweather/libs/swarm-vip-dynamic-models)  
-*🏷️ 官方*
-
-语言：Python · 许可：BSD-3-Clause · 星标约：0 · 宿主：gitlab
-
-荷兰皇家气象研究所（KNMI）在 GitLab 发布的 Python 包，评估 Swarm VIP Dynamic 项目拟合的广义线性模型，按地理位置、磁纬/地方时、季节、F10.7、Kp/Hp30 与太阳风等输入预测 Ne、RODI 等电离层参数，覆盖赤道至极区。依赖 pandas/numpy，可自动拉取 OMNI/F10.7/Kp。BSD-3-Clause。适合 Swarm 原位气候态对照与不规则性气候研究；非 GNSS TEC 估计器。仓库可公开克隆。
-
-#### [UMLCAR-Downloads](https://ulcar.uml.edu/downloads.html)  
-*🏷️ 高校实验室*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-洛厄尔麻省大学大气研究中心官方下载索引：SAO Explorer（含 ARTIST-5）、Drift-X、BinBrowser、DCART、NHPC、CARP 等 Digisonde/测高仪工具集中入口。SAO-X 另有独立主页；本页作为软件总目录，便于发现其余开源/可下载工具。
-
 ## IRI模型
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
@@ -1410,8 +1490,10 @@ Wakkanai、Kokubunji、Yamagawa、Okinawa 等日本测高仪数字化资料入�
 | [IRI-2007-package](https://irimodel.org/IRI-2007/) | IRI-2007-package：官方 Fortran 历史版源码目录 | Fortran | — | 🏷️ 官方 |
 | [IRI-2012-package](https://irimodel.org/IRI-2012/) | IRI-2012-package：官方 Fortran 包（含轨道剖面示例） | Fortran | — | 🏷️ 官方 |
 | [IRI-2016-package](https://irimodel.org/IRI-2016/) | IRI-2016-package：官方 Fortran 源码与系数目录 | Fortran | — | 🏷️ 官方 |
+| [IRI-2020-package](https://irimodel.org/IRI-2020/) | IRI-2020-package：官方 Fortran/系数/许可证与压缩包 | Fortran | — | 🏷️ 官方 |
 | [IRI-2026-package](https://irimodel.org/IRI-2026/) | IRI-2026-package：官方最新 Fortran 源码包 | Fortran | — | 🏷️ 官方 核心 |
 | [IRI-COMMON-FILES](https://irimodel.org/COMMON_FILES/) | IRI-COMMON-FILES：各版 IRI 共用系数目录 | — | — | 🏷️ 官方 核心 |
+| [IRI-Fortran](https://irimodel.org/) | IRI：国际参考电离层官方 Fortran | Fortran | — | 🏷️ 官方 核心 |
 | [IRI-indices](https://irimodel.org/indices/) | IRI-indices：IRI 官方太阳/地磁指数文件发布页 | — | — | 🏷️ 官方 |
 | [IRI-MATLAB-FileExchange](https://www.mathworks.com/matlabcentral/fileexchange/34863-international-reference-ionosphere-iri-model) | IRI-MATLAB：官方指向的 File Exchange 封装 | MATLAB | — | 🏷️ 官方 核心 |
 | [IRI-Plas-SPIM-IZMIRAN](https://www.izmiran.ru/ionosphere/weather/grif/SPIM/) | IRI-Plas/SPIM：IZMIRAN 等离子体层扩展 IRI Fortran | Fortran | — | 🏷️ 官方 |
@@ -1504,6 +1586,13 @@ Global Ionospheric Radio Observatory 的 IRI Real-Time Assimilative Mapping 服�
 
 COSPAR/URSI IRI 工作组在 irimodel.org 发布的 IRI-2016 源码目录，含 Fortran 子程序、系数与说明。很多文献与 MATLAB/pyglow 包装仍对齐这一代。新研究若无追踪官方最新物理选项，应同时看 IRI-2020/2026；指数文件需按官网说明单独更新。
 
+#### [IRI-2020-package](https://irimodel.org/IRI-2020/)  
+*🏷️ 官方*
+
+语言：Fortran · 许可：IRI permissive (AS IS + attribution) · 星标约：— · 宿主：official_site
+
+irimodel.org 上 IRI-2020 的文件目录，可直接获取 00_iri.zip/tar、许可证与各 .for 系数文件。便于固定版本复现实验与回归测试。新版本（如 IRI-2026）请回主站查看；Python 封装见社区 iri2020/PyIRI，官方数值仍以此目录为准。
+
 #### [IRI-2026-package](https://irimodel.org/IRI-2026/)  
 *🏷️ 官方 核心*
 
@@ -1517,6 +1606,13 @@ irimodel.org 上标注日期最新的 IRI Fortran 发行目录，工作组持续
 语言：— · 许可：IRI permissive (AS IS + attribution) · 星标约：— · 宿主：official_site
 
 irimodel 写明：除版本包外通常还要 COMMON FILES（若 zip 未打进包内）。缺公共系数时编译或运行常失败。搭本地 IRI 时与具体版本目录、最新 INDICES 一起下载；不要只克隆 GitHub 包装而漏官方公共文件。
+
+#### [IRI-Fortran](https://irimodel.org/)  
+*🏷️ 官方 核心*
+
+语言：Fortran · 许可：IRI permissive (AS IS + attribution) · 星标约：— · 宿主：official_site
+
+国际参考电离层 IRI 的官方 Fortran 发行入口，由 COSPAR/URSI 工作组维护，提供电子密度、温度、离子成分与 vTEC 等气候态输出。可直接下载 IRI-2020/2026 压缩包与指数文件。适合作为标准对照模型写入论文复现实验；实时闪烁或扰动过程需另接观测或同化产品，不宜单独当作业务电离层改正引擎。
 
 #### [IRI-indices](https://irimodel.org/indices/)  
 *🏷️ 官方*
@@ -1557,12 +1653,20 @@ Oleg Zolotov 等实现的 FIRI-2018（Friedrich 等更新的低电离层经验�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [TEC-Maps-of-Nepal](https://github.com/Binabh/TEC-Maps-of-Nepal) | TEC-Maps-of-Nepal：UNAVCO CORS 生成尼泊尔区域 TEC 图 | Python | 12 | 🏷️ 个人社区 |
 | [csonde-gnss-ionosphere](https://github.com/csonde/gnss) | csonde-gnss-ionosphere：RINEX 解析与格网/球谐电离层建模 | C | 10 | 🏷️ 个人社区 |
 | [GIM_fusion_VLBI](https://github.com/arrueegg/GIM_fusion_VLBI) | GIM_fusion_VLBI：把 VLBI 信息融入全球电离层图 | Python | 1 | 🏷️ 个人社区 |
 | [DiffIonMap](https://github.com/Jin-Whu/DiffIonMap) | IONEX 差分成图：对比分析中心或风暴扰动 | Python | 0 | 🏷️ 个人社区 |
 | [Ionospheric-TEC-Kriging-Turkiye](https://github.com/skaratay/Ionospheric-TEC-Kriging-Turkiye) | Ionospheric-TEC-Kriging-Turkiye：土耳其区域 TEC 克里金/GPR | MATLAB | 0 | 🏷️ 高校实验室 |
 
 ### 详细说明
+
+#### [TEC-Maps-of-Nepal](https://github.com/Binabh/TEC-Maps-of-Nepal)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：12 · 宿主：github
+
+加德满都大学本科毕业设计：按日期与测站自动从 UNAVCO 下载 CORS 观测、从 CODE 下载月 DCB，生成尼泊尔区域 TEC 图并输出 IONEX，带 Tkinter 图形界面和理论报告。MIT 许可，依赖 georinex、pymap3d 等。方法偏教学/区域试验，非全球 GIM 产品；UNAVCO 已并入 EarthScope，脚本里的下载地址可能需要更新。
 
 #### [csonde-gnss-ionosphere](https://github.com/csonde/gnss)  
 *🏷️ 个人社区*
@@ -1657,10 +1761,14 @@ IAG ICCT「大地测量中的机器学习」联合研究组示例，用公开流
 | [ESA-SWE-Registration](https://swe.ssa.esa.int/registration) | ESA SWE/SSA 门户免费账号注册页（开通电离层 TIO 等服务的前置步骤） | data-portal | — | 🏷️ 官方 |
 | [ESA-SWE-SSA](https://swe.ssa.esa.int/) | ESA 空间天气服务网络（SWE/SSA）门户：含穿越电离层电波链路等业务服务 | data-portal | — | 🏷️ 官方 |
 | [ESA-TIO-Services](https://swe.ssa.esa.int/tio_services) | ESA 穿越电离层电波链路（TIO）服务总览：TEC、闪烁与扰动监测索引 | data-portal | — | 🏷️ 官方 |
+| [GIRO-portal](https://giro.uml.edu/) | GIRO 全球电离层测高仪观测网门户（IRTAM 等数据入口） | — | — | 🏷️ 官方 |
 | [NICT-WDC-Ionosphere-SpaceWeather](https://wdc.nict.go.jp/wdc-top/index.html) | 日本 NICT 世界数据中心（WDC-ISW）：电离层与空间天气长期数据门户 | data-portal | — | 🏷️ 官方 |
 | [NOAA-NCEI-TEC-Archive](https://www.ncei.noaa.gov/products/space-weather/ionospheric-program/total-electron-content) | NOAA/NCEI US-TEC 与 GloTEC 国家归档说明与下载入口 | data-portal | — | 🏷️ 官方 |
 | [NOAA-SWPC-GloTEC](https://www.spaceweather.gov/products/glotec) | NOAA/SWPC GloTEC：近实时全球 TEC 同化图（GNSS+COSMIC-2）业务产品页 | data-portal | — | 🏷️ 官方 |
 | [NOAA-SWPC-GloTEC-Data](https://services.swpc.noaa.gov/products/glotec/) | NOAA/SWPC GloTEC 机器可读数据目录（GeoJSON / NetCDF） | data-portal | — | 🏷️ 官方 |
+| [SWPC-D-RAP](https://www.swpc.noaa.gov/products/d-region-absorption-predictions-d-rap) | NOAA SWPC D-RAP：D 区吸收预报（HF/GPS 影响相关） | data-portal | — | 🏷️ 官方 |
+| [SWS-BOM-Satellite](https://www.sws.bom.gov.au/Satellite) | 澳大利亚 SWS 卫星页：闪烁、TEC 与空间天气卫星产品 | data-portal | — | 🏷️ 官方 |
+| [SWS-HF-Systems](https://www.sws.bom.gov.au/HF_Systems) | 澳大利亚 SWS 高频系统：电离层图、电离图与 HF 条件 | data-portal | — | 🏷️ 官方 |
 
 ### 详细说明
 
@@ -1706,6 +1814,13 @@ IMPC 产品导航页，按 TEC、ROTI、梯度指数等分类链接到欧洲/全
 
 TIO 服务族目录页，汇总近实时/预报 TEC、闪烁图、扰动监测与电离层改正质量评估等入口。属欧洲官方电离层业务导航页，便于从单一书签进入各子产品。
 
+#### [GIRO-portal](https://giro.uml.edu/)  
+*🏷️ 官方*
+
+语言：— · 许可：— · 星标约：— · 宿主：official_site
+
+UML 维护的 GIRO 门户，通向测高仪数据与 IRTAM 等实时同化产品相关入口。适合把测高仪峰值参数与 GNSS TEC/IRI 对比。主要是数据与服务门户，不是 GNSS 解算库；下载具体软件前在站内核对许可与程序页。
+
 #### [NICT-WDC-Ionosphere-SpaceWeather](https://wdc.nict.go.jp/wdc-top/index.html)  
 *🏷️ 官方*
 
@@ -1733,6 +1848,27 @@ TIO 服务族目录页，汇总近实时/预报 TEC、闪烁图、扰动监测�
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
 SWPC 官方 HTTP 产品树，提供 geojson_2d_urt 与 netcdf_2d_urt 等目录，便于自动化拉取近实时全球 TEC 网格。适合做业务监控看板或与自有 GNSS TEC 估计交叉验证；长期归档请改走 NCEI 空间天气门户。
+
+#### [SWPC-D-RAP](https://www.swpc.noaa.gov/products/d-region-absorption-predictions-d-rap)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+Space Weather Prediction Center 的 D Region Absorption Predictions（D-RAP）产品页，给出太阳爆发后 D 区吸收对高频通信等的影响预估，并在影响说明中关联 GPS/通信系统。对评估强扰动期 GNSS 可用性有辅助意义。非 TEC 图本身。
+
+#### [SWS-BOM-Satellite](https://www.sws.bom.gov.au/Satellite)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+澳大利亚气象局太空天气服务（SWS）卫星专题页，提供电离层闪烁实况/事件、TEC 图以及相关卫星空间天气产品入口。对 GNSS 可用性与赤道/中纬闪烁监测有直接参考价值。页面为产品导航而非原始 ISMR 全量归档。
+
+#### [SWS-HF-Systems](https://www.sws.bom.gov.au/HF_Systems)  
+*🏷️ 官方*
+
+语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
+
+BOM 太空天气服务 HF Systems 专题，提供澳大利亚及周边电离层图、电离图查看、T 指数与 HF 传播相关产品。对理解电离层状态及 GNSS/HF 可用性有参考价值。偏区域监测产品导航，而非全球 IONEX 归档。
 
 ## SBAS电离层
 
@@ -1836,11 +1972,12 @@ SWPC 官方 HTTP 产品树，提供 geojson_2d_urt 与 netcdf_2d_urt 等目录�
 
 整理 IRI2020 运行所需参数/资源，减少自己找系数文件的时间。宜与 iri2020 主仓库搭配，而非独立模型。
 
-## NeQuick-G官方
+## NeQuick官方
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [Galileo-NeQuick-G](https://www.gsc-europa.eu/support-to-developers/ionospheric-correction-algorithms/galileo-nequick-g-source-code) | NeQuick G：Galileo 单频电离层改正 | C | — | 🏷️ 官方 核心 |
+| [NeQuick2-ICTP](https://t-ict4d.ictp.it/nequick2/source-code) | NeQuick2-ICTP：ICTP 官方 NeQuick 2 源码申请页 | Fortran | — | 🏷️ 官方 核心 |
 | [NeQuickG-ESSR](https://essr.esa.int/project/nequickg-galileo-ionospheric-correction-model) | NeQuickG-ESSR：ESA 登记的 Galileo 电离层改正实现 | C | — | 🏷️ 官方 |
 
 ### 详细说明
@@ -1852,42 +1989,19 @@ SWPC 官方 HTTP 产品树，提供 geojson_2d_urt 与 netcdf_2d_urt 等目录�
 
 欧洲 GNSS 服务中心提供的 NeQuick G 官方 C11 实现（含 JRC 库与测试驱动），面向 Galileo 单频用户电离层延迟改正。需注册并接受 EUPL 后下载加密包。与社区 GitHub 镜像相比应以本页为权威来源；气候态 NeQuick2 仍见 ICTP，二者算法与输入不同，集成前请对照 Galileo OS 电离层文档。
 
+#### [NeQuick2-ICTP](https://t-ict4d.ictp.it/nequick2/source-code)  
+*🏷️ 官方 核心*
+
+语言：Fortran · 许可：scientific distribution (request) · 星标约：— · 宿主：official_site
+
+阿卜杜斯·萨拉姆国际理论物理中心 T/ICT4D 发布的 NeQuick 2 气候态电子密度模型，含 ITU 系数与太阳活动/modip 文件。面向穿电离层传播与 TEC 积分研究。源码需向维护者邮件申请；若做 Galileo 单频接收机改正，请改用 GSC 的 NeQuick G 官方实现以免版本混淆。
+
 #### [NeQuickG-ESSR](https://essr.esa.int/project/nequickg-galileo-ionospheric-correction-model)  
 *🏷️ 官方*
 
 语言：C · 许可：ESA Community License v2.4 · 星标约：— · 宿主：official_site
 
 ESA 软件资源库中的 NeQuick G 条目，说明该实现按 Galileo 单频电离层改正算法文档适配，区别于 ITU 气候态 NeQuick Fortran。注册后获取，许可为 ESA Community License。日常下载更常走欧盟 GSC 页面；本页适合核对 ESA 侧登记信息与许可类型。
-
-## 穿刺点IPP
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [Get_IPP](https://github.com/Chenjiajun01/Get_IPP) | Get_IPP：电离层穿刺点（IPP）C++ 计算 | C++ | — | 🏷️ 个人社区 ★ |
-
-### 详细说明
-
-#### [Get_IPP](https://github.com/Chenjiajun01/Get_IPP)  
-*🏷️ 个人社区 ★*
-
-语言：C++ · 许可：— · 星标约：— · 宿主：github
-
-根据测站与卫星几何求电离层穿刺点，GIM/层析前处理常用。适合教学与自写映射函数前的几何模块。单薄脚本型项目，坐标框架与壳层高度约定要与主流程一致。
-
-## 测高仪/同化
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [GIRO-portal](https://giro.uml.edu/) | GIRO 全球电离层测高仪观测网门户（IRTAM 等数据入口） | — | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [GIRO-portal](https://giro.uml.edu/)  
-*🏷️ 官方*
-
-语言：— · 许可：— · 星标约：— · 宿主：official_site
-
-UML 维护的 GIRO 门户，通向测高仪数据与 IRTAM 等实时同化产品相关入口。适合把测高仪峰值参数与 GNSS TEC/IRI 对比。主要是数据与服务门户，不是 GNSS 解算库；下载具体软件前在站内核对许可与程序页。
 
 ## TEC预报/ML
 
@@ -1897,9 +2011,14 @@ UML 维护的 GIRO 门户，通向测高仪数据与 IRTAM 等实时同化产品
 | [Global-TEC-forecasting-DL](https://github.com/Laboratorio-Computacion-Cientifica/Global-TEC-forecasting-for-space-weather-application-based-on-deep-learning-techniques) | Global-TEC-forecasting-DL：全球 TEC 24h LSTM/GRU/CNN 流水线 | Python | 6 | 🏷️ 高校实验室 |
 | [IonCast-Heliolab2025](https://github.com/FrontierDevelopmentLab/2025-HL-Ionosphere) | IonCast-Heliolab2025：NASA FDL ConvLSTM/GNN/SFNO 电离层预报 | Python | 5 | 🏷️ 高校实验室 |
 | [ionopy](https://github.com/spaceml-org/ionopy) | ionopy：SpaceML Time-Fusion Transformer 电离层预报 | Python | 4 | 🏷️ 高校实验室 |
+| [TEC-MoLLM](https://github.com/PANXIONG-CN/TEC-MoLLM) | TEC-MoLLM：GNN+时序 CNN+LLM（LoRA）全球 TEC 预报 | Python | 4 | 🏷️ 个人社区 |
 | [IonoBench](https://github.com/Mert-chan/IonoBench) | IonoBench：全球电离层时空预报模型基准框架 | Jupyter Notebook | 2 | 🏷️ 个人社区 |
+| [gps-tec-cnn-lstm-attention](https://github.com/hyy-why/gps-tec-cnn-lstm-attention) | 论文配套：注意力机制 TEC 时序预测示例 | Python | 1 | 🏷️ 个人社区 |
+| [Ion-Phys-Toolkit](https://github.com/PANXIONG-CN/Ion-Phys-Toolkit) | Ion-Phys-Toolkit：TEC 预报物理信息学习最小复现包 | Python | 0 | 🏷️ 个人社区 |
 | [ionospheric-tec-forecasting-IISC](https://github.com/codewithavra/ionospheric-tec-forecasting) | ionospheric-tec-forecasting-IISC：单站 TEC 日前预报 | Jupyter Notebook | 0 | 🏷️ 个人社区 |
+| [PMGC-SimVP](https://github.com/OnlyYouNotInCity/PMGC-SimVP) | PMGC-SimVP：多尺度门控卷积+SimVP 全球 TEC 预报 | Python | 0 | 🏷️ 高校实验室 |
 | [SpatioTECformer](https://github.com/research1011/SpatioTECformer) | SpatioTECformer：多尺度 CNN+Transformer 的 TEC 网格预报（PyTorch） | Python | 0 | 🏷️ 个人社区 |
+| [TEC-forecast-F107](https://github.com/hekaixuan-atm/TEC-forecast) | 空间非均匀 F10.7 强迫的全球 TEC 预报代码 | Python | 0 | 🏷️ 个人社区 |
 
 ### 详细说明
 
@@ -1931,12 +2050,33 @@ Frontier Development Lab 电离层-热层孪生项目仓库，含 IonCast ConvLS
 
 SpaceML 维护的电离层预报代码与笔记本，强调时间融合 Transformer，被 IonCast/Heliolab 仓库引用为较新实现。适合跟深度学习 TEC/电离层序列模型。仓库与 README 均未声明许可证，使用或再分发前应先联系作者；数据与训练配置需自备。
 
+#### [TEC-MoLLM](https://github.com/PANXIONG-CN/TEC-MoLLM)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：— · 星标约：4 · 宿主：github
+
+多模态深度学习 TEC 预报原型，组合图网络、时序卷积与大模型 LoRA 微调。输入为历史 TEC/空间天气特征；输出预报场。局限：算力与复现成本高；与经典物理/经验模式比可解释性弱；许可未标明。
+
 #### [IonoBench](https://github.com/Mert-chan/IonoBench)  
 *🏷️ 个人社区*
 
 语言：Jupyter Notebook · 许可：MIT · 星标约：2 · 宿主：github
 
 提供对比多种时空深度学习/统计模型预报全球电离层的基准流程，便于复现论文实验。输入为历史 TEC/GIM 类数据与模型配置；输出为预报评分与对比。局限：侧重 ML 基准而非物理模式；数据准备与算力要求不低。
+
+#### [gps-tec-cnn-lstm-attention](https://github.com/hyy-why/gps-tec-cnn-lstm-attention)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：— · 星标约：1 · 宿主：github
+
+论文配套的 CNN-BiLSTM 注意力 TEC 预测代码，目标是复现实验而非业务运行。星标与文档有限，数据准备脚本完整度需自查。业务空间天气预报请用业务模式或同化产品。
+
+#### [Ion-Phys-Toolkit](https://github.com/PANXIONG-CN/Ion-Phys-Toolkit)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：0 · 宿主：github
+
+物理信息（PINN/类 PINN）TEC 预报的精简发布，便于复现论文设定。局限：标注为 minimal release；功能面窄；需自备训练数据。
 
 #### [ionospheric-tec-forecasting-IISC](https://github.com/codewithavra/ionospheric-tec-forecasting)  
 *🏷️ 个人社区*
@@ -1945,12 +2085,26 @@ SpaceML 维护的电离层预报代码与笔记本，强调时间融合 Transfor
 
 针对 IISC 站分钟级 TEC，对比序列到序列 LSTM 与 CNN+窗口 Transformer，并把预报 TEC 换成 L1/L2/L5 电离层延迟。教学与单站实验很直观，还带 RoTI 相关分析笔记本。站点/时段特定，不是全球 GIM 预报器；体量含数据集，克隆较大。
 
+#### [PMGC-SimVP](https://github.com/OnlyYouNotInCity/PMGC-SimVP)  
+*🏷️ 高校实验室*
+
+语言：Python · 许可：Apache-2.0 · 星标约：0 · 宿主：github
+
+深度学习全球 TEC 预报实现（PMGC-SimVP），Apache-2.0。局限：研究代码；训练数据与超参需自行对齐论文；推理前要有历史 TEC 栅格。
+
 #### [SpatioTECformer](https://github.com/research1011/SpatioTECformer)  
 *🏷️ 个人社区*
 
 语言：Python · 许可：no licence granted (README: research use, contact author) · 星标约：0 · 宿主：github
 
 把多尺度卷积、自适应融合与 Transformer 编码器拼成 71×73 网格 TEC 预报流水线，模块拆成 model/enhanced_cnn 等文件，代码量小但完整可跑。适合读论文式复现。未标 SPDX 许可证；训练依赖作者 HDF5 特征文件，需自备或按 README 路径改。
+
+#### [TEC-forecast-F107](https://github.com/hekaixuan-atm/TEC-forecast)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：no formal licence (README: academic and research use) · 星标约：0 · 宿主：github
+
+论文配套实验：在深度学习 TEC 预报中引入空间非均匀 F10.7 强迫，探索太阳辐射空间差异的影响。适合复现与对比基线。仓库体量小、数据划分依赖作者设定，非业务级物理/同化模式。
 
 ## 闪烁/ROTI
 
@@ -2131,502 +2285,24 @@ Victoriya Forsythe 等发布的 HF 射线工具，从电子密度剖面计算虚
 
 提供 2D/全磁离子 3D 数值射线追踪与解析追踪，可挂 IRI/IGRF 或用户网格。HF 传播与回波几何研究里事实上的常用引擎，Fortran 核心经 mex 进 Matlab。许可为 DSTG 科学发放：个人申请、禁止再分发。若缺 Matlab，可看 HamSCI PyLap 开源接口，但仍需另行申请 PHaRLAP 本体。
 
-## TEC计算
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [ionotec](https://github.com/sylvathle/ionotec) | ionotec：从 RINEX 计算 TEC 的轻量 Python 库 | Python | 6 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [ionotec](https://github.com/sylvathle/ionotec)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：MIT · 星标约：6 · 宿主：github
-
-面向 RINEX 观测的 TEC 计算库（原 pytec 更名/迁移至 ionotec），补齐“读观测→几何无关组合→TEC”的轻量路径。适合快速脚本化实验。功能面小于 PyTECGg/tec-suite 一类完整标定流水线；多星座 DCB/硬件延迟处理需自行核对。
-
-## IRI官方模型
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [IRI-2020-package](https://irimodel.org/IRI-2020/) | IRI-2020-package：官方 Fortran/系数/许可证与压缩包 | Fortran | — | 🏷️ 官方 |
-| [IRI-Fortran](https://irimodel.org/) | IRI：国际参考电离层官方 Fortran | Fortran | — | 🏷️ 官方 核心 |
-
-### 详细说明
-
-#### [IRI-2020-package](https://irimodel.org/IRI-2020/)  
-*🏷️ 官方*
-
-语言：Fortran · 许可：IRI permissive (AS IS + attribution) · 星标约：— · 宿主：official_site
-
-irimodel.org 上 IRI-2020 的文件目录，可直接获取 00_iri.zip/tar、许可证与各 .for 系数文件。便于固定版本复现实验与回归测试。新版本（如 IRI-2026）请回主站查看；Python 封装见社区 iri2020/PyIRI，官方数值仍以此目录为准。
-
-#### [IRI-Fortran](https://irimodel.org/)  
-*🏷️ 官方 核心*
-
-语言：Fortran · 许可：IRI permissive (AS IS + attribution) · 星标约：— · 宿主：official_site
-
-国际参考电离层 IRI 的官方 Fortran 发行入口，由 COSPAR/URSI 工作组维护，提供电子密度、温度、离子成分与 vTEC 等气候态输出。可直接下载 IRI-2020/2026 压缩包与指数文件。适合作为标准对照模型写入论文复现实验；实时闪烁或扰动过程需另接观测或同化产品，不宜单独当作业务电离层改正引擎。
-
-## 闪烁数据
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [ismr_downloader](https://github.com/GEGE-UNESP/ismr_downloader) | ismr_downloader：ISMR 闪烁监测数据命令行下载器 | Python | 1 | 🏷️ 高校实验室 |
-
-### 详细说明
-
-#### [ismr_downloader](https://github.com/GEGE-UNESP/ismr_downloader)  
-*🏷️ 高校实验室*
-
-语言：Python · 许可：MIT · 星标约：1 · 宿主：github
-
-从 ISMR Query Tool API 拉取 GNSS/ISMR 闪烁监测数据的命令行下载器。适合批量建闪烁样本库。依赖上游 API 可用性与账号策略；本地下载后需自行做质控。
-
-## 传播模型
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [ITU-R-iono-tropo-software](https://www.itu.int/en/ITU-R/study-groups/rsg3/rwp3m/Pages/digprod.aspx) | ITU-R-iono-tropo-software：ITU-R 电离层/对流层传播软件与验证数据 | various | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [ITU-R-iono-tropo-software](https://www.itu.int/en/ITU-R/study-groups/rsg3/rwp3m/Pages/digprod.aspx)  
-*🏷️ 官方*
-
-语言：various · 许可：ITU terms · 星标约：— · 宿主：official_site
-
-国际电联无线电通信部门汇总的电离层与对流层传播预测软件、数据与验证示例入口，涵盖推荐方法相关数字产品。许可与获取按 ITU 条款办理。适合传播与链路预算研究；GNSS 精密定位仍多用 IRI、NeQuick、VMF 等专用实现。
-
-## NeQuick官方
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [NeQuick2-ICTP](https://t-ict4d.ictp.it/nequick2/source-code) | NeQuick2-ICTP：ICTP 官方 NeQuick 2 源码申请页 | Fortran | — | 🏷️ 官方 核心 |
-
-### 详细说明
-
-#### [NeQuick2-ICTP](https://t-ict4d.ictp.it/nequick2/source-code)  
-*🏷️ 官方 核心*
-
-语言：Fortran · 许可：scientific distribution (request) · 星标约：— · 宿主：official_site
-
-阿卜杜斯·萨拉姆国际理论物理中心 T/ICT4D 发布的 NeQuick 2 气候态电子密度模型，含 ITU 系数与太阳活动/modip 文件。面向穿电离层传播与 TEC 积分研究。源码需向维护者邮件申请；若做 Galileo 单频接收机改正，请改用 GSC 的 NeQuick G 官方实现以免版本混淆。
-
-## 物理模式
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SAMI3-3.22-Zenodo](https://doi.org/10.5281/zenodo.7895858) | SAMI3-3.22-Zenodo：SAMI3 三维电离层/等离子体层模型源码存档 | Fortran | — | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [SAMI3-3.22-Zenodo](https://doi.org/10.5281/zenodo.7895858)  
-*🏷️ 个人社区*
-
-语言：Fortran · 许可：CC-BY-4.0 · 星标约：— · 宿主：other
-
-作者 Joe Huba（Zenodo 署名单位为 Syntek Technologies 公司）在 Zenodo 以 software 类型存档的 SAMI3-3.22 源码包（concept DOI 10.5281/zenodo.7895858），附 sami3-3.22.tgz（约 39 MB）与用户手册。用于全球电离层–等离子体层物理仿真，常与 GNSS TEC/掩星对比。许可 CC-BY-4.0。另有 GitHub 镜像与 CCMC 门户；这里是可直接下载的 Zenodo 软件存档。
-
-## SWARM/LEO TEC
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [viresclient](https://github.com/ESA-VirES/VirES-Python-Client) | viresclient：ESA VirES Python 客户端（Swarm） | Python | 23 | 🏷️ 官方 |
-
-### 详细说明
-
-#### [viresclient](https://github.com/ESA-VirES/VirES-Python-Client)  
-*🏷️ 官方*
-
-语言：Python · 许可：MIT · 星标约：23 · 宿主：github
-
-官方推荐的 Swarm（及 Aeolus）数据访问库，可按需拉取 EFI Langmuir 探针、TECxTMS_2F 绝对/相对 TEC、以及 CHAMP/GRACE 等扩展 TEC/Ne 产品并载入 pandas/xarray。做 LEO POD 衍生 TEC 与就地电子密度对照时几乎是默认入口。需 VirES 账号；本身不做反演，只负责服务端点与本地装载。
-
-## 数据接口
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [geomagindices](https://github.com/space-physics/geomagindices) | geomagindices：地磁指数 Python 读写工具 | Python | 17 | 🏷️ 个人社区 |
-| [madrigalWeb](https://github.com/MITHaystack/madrigalWeb) | OpenMadrigal/CEDAR Python 数据客户端 | Python | 4 | 🏷️ 高校实验室 |
-| [digisondeindices](https://github.com/sunipkm/digisondeindices) | 从 GIRO DIDBase 下载并解析 Digisonde 标定参数为 xarray 的 Python 工具 | Python | 2 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [geomagindices](https://github.com/space-physics/geomagindices)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：MIT · 星标约：17 · 宿主：github
-
-space-physics 维护的指数下载与解析工具，按时间返回 Ap、Kp 与 F10.7（含平滑值）的 pandas 表，缺测为 NaN，常作电离层/空间天气研究的辅助输入。MIT 许可，有 Zenodo DOI；与 igrf、iri2016 等模型接口互补。README 自述 2018 年后的新数据源读取器尚待补充，使用前请核对所需时段是否覆盖。
-
-#### [madrigalWeb](https://github.com/MITHaystack/madrigalWeb)  
-*🏷️ 高校实验室*
-
-语言：Python · 许可：MIT · 星标约：4 · 宿主：github
-
-访问全球 Madrigal 站点（含 CEDAR）的官方 Python 客户端，可检索/下载非相干散射雷达、GNSS TEC 等空间天气与电离层归档。MIT。适合批量脚本拉取；需遵守各站点数据政策，部分实验需注册。配套门户见 OpenMadrigal。
-
-#### [digisondeindices](https://github.com/sunipkm/digisondeindices)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：MIT · 星标约：2 · 宿主：github
-
-个人开发者发布的 Python 小工具，MIT 许可。按时间与台站代码从 Lowell GIRO 的 DIDBase 获取 Digisonde 自动/人工标定参数，包括 foF2、foF1、foE、hmF2、MUFD、半厚度、B0 与测高仪推算 TEC 以及自动标定置信度，统一输出为 xarray Dataset，缺测时返回空数据集。适合把测高仪参数批量接入 IRI 对比、TEC 校验或机器学习流程。功能单一、星标少，依赖 DIDBase 在线服务，使用时请遵守 GIRO 数据政策。
-
-## TID/扰动
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [DARNtids](https://github.com/w2naf/DARNtids) | SuperDARN TID 行进扰动检测工具 | Python | 4 | 🏷️ 高校实验室 |
-
-### 详细说明
-
-#### [DARNtids](https://github.com/w2naf/DARNtids)  
-*🏷️ 高校实验室*
-
-语言：Python · 许可：GPL-3.0 · 星标约：4 · 宿主：github
-
-面向 SuperDARN 雷达数据的 TID（Traveling Ionospheric Disturbance）检测与分析代码，GPL-3.0。适合将高频雷达观测与 GNSS TEC/TID 研究对照。依赖 SuperDARN 数据环境与雷达物理背景；不是 GNSS RINEX 处理链。
-
-## TEC/层析
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [Heki-GNSS-TEC-Software](https://www.ep.sci.hokudai.ac.jp/~heki/software.htm) | Heki 公开 Fortran：L4/STEC 与电离层层析 | Fortran | — | 🏷️ 高校实验室 |
-
-### 详细说明
-
-#### [Heki-GNSS-TEC-Software](https://www.ep.sci.hokudai.ac.jp/~heki/software.htm)  
-*🏷️ 高校实验室*
-
-语言：Fortran · 许可：academic research (as-is) · 星标约：— · 宿主：official_site
-
-日置幸一郎课题组公开的 Fortran 工具页：rdrnx/rdrnx3 从 RINEX 生成几何无关 L4、rdeph 算卫星位置、tomo 做三维电子密度层析，并含 CID 仿真与 GEONET 荷载示例。学术研究常用。许可为研究用公开源码（非 SPDX）；社区镜像见 yu-0124/GNSS-TEC_tools。编译与坐标系约定需对照说明书。
-
-## 法拉第旋转
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [ionFR](https://github.com/csobey/ionFR) | ionFR：用 IGRF+IONEX 估计电离层法拉第旋转 | Python | 12 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [ionFR](https://github.com/csobey/ionFR)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：GPL-3.0 · 星标约：12 · 宿主：github
-
-给定视线、地理位置与历元，结合 IGRF 地磁场与 IONEX TEC 图估计电离层法拉第旋转（FR），GPL-3.0。服务射电天文与极化校正，也与 GNSS 电离层产品消费相关。依赖外部 IONEX/IGRF 文件质量；输出是 FR 估计而非 STEC 重建。适合电离层传播旁路分析，而非 PPP 改正生成。
-
-## 空间数据接口
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [pysatNASA](https://github.com/pysat/pysatNASA) | pysatNASA：pysat 的 NASA 空间科学仪器数据扩展（BSD-3） | Python | 25 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [pysatNASA](https://github.com/pysat/pysatNASA)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：BSD-3-Clause · 星标约：25 · 宿主：github
-
-为 pysat 框架提供 NASA 相关仪器/任务数据支持的扩展包，BSD-3-Clause。便于把空间天气与高层大气观测拉进统一分析工作流，可与 GNSS 电离层研究对照。依赖 pysat 核心与上游数据政策；并非 GNSS 解算库。适合需要多源空间数据对齐的科研脚本。
-
-## 闪烁与TEC
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SWS-BOM-Satellite](https://www.sws.bom.gov.au/Satellite) | 澳大利亚 SWS 卫星页：闪烁、TEC 与空间天气卫星产品 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [SWS-BOM-Satellite](https://www.sws.bom.gov.au/Satellite)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-澳大利亚气象局太空天气服务（SWS）卫星专题页，提供电离层闪烁实况/事件、TEC 图以及相关卫星空间天气产品入口。对 GNSS 可用性与赤道/中纬闪烁监测有直接参考价值。页面为产品导航而非原始 ISMR 全量归档。
-
-## 地磁指数
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [ISGI](https://isgi.unistra.fr/) | 国际地磁指数服务（ISGI）：Kp/Dst/aa 等权威入口 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [ISGI](https://isgi.unistra.fr/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-International Service of Geomagnetic Indices（ISGI）门户，汇集 IAGA 认可的地磁指数与事件（如 Kp、Dst、aa、am 等）。GNSS 电离层扰动与空间天气研究常用其指数作背景。页面提供指数说明与获取路径，具体文件格式见各产品页。
-
-## 空间天气模型
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [CCMC-Home](https://ccmc.gsfc.nasa.gov/) | NASA CCMC 主页：空间天气模型目录与运行服务入口 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [CCMC-Home](https://ccmc.gsfc.nasa.gov/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-Community Coordinated Modeling Center 主门户，汇总模型目录、即时/申请运行与可视化等服务。IRI/SAMI3 等 CCMC 模型页可由此导航发现。偏模型与仿真编排，不直接提供 GNSS 观测下载。运行申请与输出使用请遵守 CCMC 政策。
-
-## 电离层HF
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SWS-HF-Systems](https://www.sws.bom.gov.au/HF_Systems) | 澳大利亚 SWS 高频系统：电离层图、电离图与 HF 条件 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [SWS-HF-Systems](https://www.sws.bom.gov.au/HF_Systems)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-BOM 太空天气服务 HF Systems 专题，提供澳大利亚及周边电离层图、电离图查看、T 指数与 HF 传播相关产品。对理解电离层状态及 GNSS/HF 可用性有参考价值。偏区域监测产品导航，而非全球 IONEX 归档。
-
-## 地磁地球物理
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SWS-Geophysical](https://www.sws.bom.gov.au/Geophysical) | SWS 地球物理：地磁图、指数与宇宙线警报 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [SWS-Geophysical](https://www.sws.bom.gov.au/Geophysical)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-SWS Geophysical 专题汇总地磁图、指数、宇宙线及警报预警信息，为 GNSS 扰动分析提供地磁背景。与 Satellite/HF 专题互补，覆盖不同空间天气侧面。页面为产品导航。使用请注明 SWS 产品名与时间。
-
-## D区吸收
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SWPC-D-RAP](https://www.swpc.noaa.gov/products/d-region-absorption-predictions-d-rap) | NOAA SWPC D-RAP：D 区吸收预报（HF/GPS 影响相关） | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [SWPC-D-RAP](https://www.swpc.noaa.gov/products/d-region-absorption-predictions-d-rap)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-Space Weather Prediction Center 的 D Region Absorption Predictions（D-RAP）产品页，给出太阳爆发后 D 区吸收对高频通信等的影响预估，并在影响说明中关联 GPS/通信系统。对评估强扰动期 GNSS 可用性有辅助意义。非 TEC 图本身。
-
-## 太阳风预报
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SWPC-WSA-Enlil](https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction) | NOAA SWPC WSA-Enlil：太阳风到达与 CME 传播预报 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [SWPC-WSA-Enlil](https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-WSA-Enlil 太阳风与日冕物质抛射（CME）传播预报产品入口，提供扰动到达地球的时效估计，常作为 GNSS 电离层/磁暴扰动的上游空间天气背景。模型输出存在不确定性，需与实测地磁指数及 TEC/闪烁产品对照使用。
-
-## 国家空间天气
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SpaceWeather-Canada](https://www.spaceweather.gc.ca/index-en.php) | 加拿大太空天气主站：预报与产品总入口 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [SpaceWeather-Canada](https://www.spaceweather.gc.ca/index-en.php)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-加拿大 Space Weather Canada 英文主页，汇总太阳、地磁与电离层相关预报入口；太阳射电流量页可由此导航。对北美 GNSS 用户了解区域空间天气有帮助。部分产品有英法文版本。
-
-## 太阳空间天气
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SIDC](https://www.sidc.be/) | 比利时 SIDC：太阳影响数据中心与空间天气观测入口 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [SIDC](https://www.sidc.be/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-Solar Influences Data Analysis Center（SIDC，比利时皇家天文台）门户，汇集空间/地基太阳成像、射电、日总辐照及预报公报等。为 GNSS 扰动研究提供太阳活动上游。具体产品下载走各服务子页。
-
-## 太阳黑子指数
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SILSO](https://www.sidc.be/SILSO/home) | SILSO：世界数据中心太阳黑子指数与太阳活动长期序列 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [SILSO](https://www.sidc.be/SILSO/home)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-SIDC 下 SILSO（Sunspot Index and Long-term Solar Observations）主页，提供国际太阳黑子指数等长期序列，广泛用于太阳周与空间天气背景。与瞬时闪烁/TEC 产品互补。数据用于科研时请按 SILSO 引用说明。
-
-## Dst指数
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [Kyoto-Dst-Realtime](https://wdc.kugi.kyoto-u.ac.jp/dst_realtime/index.html) | 京都大学 WDC：实时/Quicklook Dst 指数 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [Kyoto-Dst-Realtime](https://wdc.kugi.kyoto-u.ac.jp/dst_realtime/index.html)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-京都 WDC Geomagnetism 提供的实时（Quicklook）Dst 指数页，用于监测磁暴强度；注明 raw 未校核、仅非商业监测用途。GNSS 电离层暴分析常用 Dst 作背景。最终定标序列请改用正式产品。
-
-## Kp历史
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [Kyoto-Kp-Index](https://wdc.kugi.kyoto-u.ac.jp/kp/index.html) | 京都 WDC：历史 Kp/ap/Ap 指数说明与列表入口 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [Kyoto-Kp-Index](https://wdc.kugi.kyoto-u.ac.jp/kp/index.html)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-京都 WDC 的 Kp（及 ap、Ap）指数页面，含历史序列与 Bartels 图说明；1997 年后指数衍生与分发转至德国 GFZ。本页可作历史查询与文献追溯入口，现势业务下载应优先 GFZ Kp 数据服务。引用请注明来源台站、版本与非商业条款。
-
-## GOES-X射线
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SWPC-GOES-Xray](https://www.swpc.noaa.gov/products/goes-x-ray-flux) | NOAA SWPC：GOES X 射线通量（耀斑监测） | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [SWPC-GOES-Xray](https://www.swpc.noaa.gov/products/goes-x-ray-flux)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-SWPC GOES X-ray Flux 产品页，监测太阳软 X 射线耀斑等级；耀斑常与 D 区吸收、短波中断以及 GPS/通信影响窗口相关，页面亦链到空间天气影响说明。非 TEC 图，但常作扰动时段标注。
-
-## 太阳周
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SWPC-Solar-Cycle](https://www.swpc.noaa.gov/products/solar-cycle-progression) | NOAA SWPC：太阳周进程与黑子数进展图 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [SWPC-Solar-Cycle](https://www.swpc.noaa.gov/products/solar-cycle-progression)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-Solar Cycle Progression 产品展示当前太阳周进展与预测对照曲线，便于把握长期空间天气背景与太阳活动位相。非实时 TEC/闪烁产品，但常与电离层气候态及太阳周研究一并引用。引用请注明 SWPC 产品名与访问日期。
-
-## 太阳活动
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SWS-Solar](https://www.sws.bom.gov.au/Solar) | 澳大利亚 SWS 太阳专题：太阳活动与太阳风条件 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [SWS-Solar](https://www.sws.bom.gov.au/Solar)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-BOM SWS Solar 专题页，提供太阳条件、活动区、太阳风等区域监测产品导航，与 Satellite/HF/Geophysical 专题互补，覆盖南半球业务视角。页面为导航入口而非全球 IONEX 归档。
-
-## Kp数据API
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [GFZ-Kp-Data](https://kp.gfz-potsdam.de/en/data) | GFZ Kp 指数数据页：下载、HTTPS/FTP 与 Web API | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [GFZ-Kp-Data](https://kp.gfz-potsdam.de/en/data)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-GFZ 官方 Kp 指数数据入口，支持用户定制下载、HTTPS/FTP 与 Web Service API，并提供图件与文档链接。现势 Kp/地磁活动分析应优先使用此服务，而非仅依赖历史镜像站。脚本抓取请遵循 GFZ 使用与引用政策。
-
-## 区域TEC
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [TEC-Maps-of-Nepal](https://github.com/Binabh/TEC-Maps-of-Nepal) | TEC-Maps-of-Nepal：UNAVCO CORS 生成尼泊尔区域 TEC 图 | Python | 12 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [TEC-Maps-of-Nepal](https://github.com/Binabh/TEC-Maps-of-Nepal)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：MIT · 星标约：12 · 宿主：github
-
-加德满都大学本科毕业设计：按日期与测站自动从 UNAVCO 下载 CORS 观测、从 CODE 下载月 DCB，生成尼泊尔区域 TEC 图并输出 IONEX，带 Tkinter 图形界面和理论报告。MIT 许可，依赖 georinex、pymap3d 等。方法偏教学/区域试验，非全球 GIM 产品；UNAVCO 已并入 EarthScope，脚本里的下载地址可能需要更新。
-
-## 气辉模型
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [NCAR-GLOW](https://github.com/space-physics/NCAR-GLOW) | NCAR-GLOW：气辉模型 CMake/Python/Matlab 构建扩展 | Python | 11 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [NCAR-GLOW](https://github.com/space-physics/NCAR-GLOW)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：Apache-2.0 · 星标约：11 · 宿主：github
-
-为 NCAR GLOW（气辉/电离层相关）基线代码补充 CMake、Meson、Matlab、Python 构建与封装，Apache-2.0。与 pyglow 互补：本仓偏构建与上游对接。运行仍依赖 GLOW 科学代码与输入大气/太阳条件。适合上层大气/气辉与 GNSS 闪烁背景对照实验。
-
-## 任务规划
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [pysatMissions](https://github.com/pysat/pysatMissions) | pysatMissions：pysat 任务规划与仪器工具扩展 | Python | 14 | 🏷️ 个人社区 |
-
-### 详细说明
-
-#### [pysatMissions](https://github.com/pysat/pysatMissions)  
-*🏷️ 个人社区*
-
-语言：Python · 许可：BSD-3-Clause · 星标约：14 · 宿主：github
-
-pysat 生态的任务/仪器规划工具包，BSD-3-Clause，便于把卫星任务几何与空间天气数据流接到统一分析框架。非 GNSS 解算库，但对星载 GNSS 接收或电离层探测任务规划有辅助价值。依赖 pysat 核心版本。适合科研脚本化任务仿真。
-
 ## 中性大气
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
+| [msise00](https://github.com/space-physics/msise00) | NRLMSISE-00 的 Python/Matlab 封装 | Python | 63 | 🏷️ 个人社区 |
 | [pymsis](https://github.com/SWxTREC/pymsis) | pymsis：NRLMSIS 中性大气的现代 Python 接口 | Python | 39 | 🏷️ 高校实验室 |
+| [hwm93](https://github.com/space-physics/hwm93) | hwm93：HWM93 水平风模型 Python/Matlab 接口 | Python | 23 | 🏷️ 个人社区 |
+| [Python-NRLMSISE-00](https://github.com/DeepHorizons/Python-NRLMSISE-00) | Python-NRLMSISE-00：NRLMSISE-00 经验大气的纯 Python 移植 | Python | 14 | 🏷️ 个人社区 |
+| [hwm14](https://github.com/gemini3d/hwm14) | hwm14：NRL 水平风场模型开源 CMake 构建 | Fortran | 7 | 🏷️ 高校实验室 |
 
 ### 详细说明
+
+#### [msise00](https://github.com/space-physics/msise00)  
+*🏷️ 个人社区*
+
+语言：Python · 许可：MIT · 星标约：63 · 宿主：github
+
+把经典 NRLMSISE-00 中性大气模式包成 Python/Matlab 接口，便于算密度、温度等高度剖面。GNSS 气象与火箭/掩星背景大气、以及部分电离层驱动耦合研究常作辅料。注意它是中性大气模式，不是 TEC/IRI；引用与系数版本请按 NRL 原文献与仓库说明。
 
 #### [pymsis](https://github.com/SWxTREC/pymsis)  
 *🏷️ 高校实验室*
@@ -2635,13 +2311,12 @@ pysat 生态的任务/仪器规划工具包，BSD-3-Clause，便于把卫星任�
 
 SWxTREC 维护的 NRLMSIS Python 接口，用于计算卫星高度中性大气密度与成分，MIT 许可。服务低轨大气阻力与空间天气背景，与 GNSS/LEO 精密定轨相关。依赖上游 MSIS 系数与输入太阳/地磁指数。适合科研脚本，而非 GNSS 观测解算。
 
-## NRLMSISE
+#### [hwm93](https://github.com/space-physics/hwm93)  
+*🏷️ 个人社区*
 
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [Python-NRLMSISE-00](https://github.com/DeepHorizons/Python-NRLMSISE-00) | Python-NRLMSISE-00：NRLMSISE-00 经验大气的纯 Python 移植 | Python | 14 | 🏷️ 个人社区 |
+语言：Python · 许可：MIT · 星标约：23 · 宿主：github
 
-### 详细说明
+space-physics 对经典 NASA Horizontal Wind Model 93 的 Python/Matlab 封装，常与电离层/热层研究及 GNSS 相关大气分析联用。MIT 许可；提供仍被文献引用的 HWM93 基线接口（新版见 hwm14）。模型年代较早，现代工作请对照 HWM14 或其他再分析风场产品验证。需 Fortran 编译器（f2py 构建）。仓库已于 2022-08 归档（只读）。
 
 #### [Python-NRLMSISE-00](https://github.com/DeepHorizons/Python-NRLMSISE-00)  
 *🏷️ 个人社区*
@@ -2650,199 +2325,9 @@ SWxTREC 维护的 NRLMSIS Python 接口，用于计算卫星高度中性大气�
 
 NRLMSISE-00（2001）经验中性大气模型的 Python 移植，MIT 许可。与 msise00/pymsis 形成不同实现对照，便于无 Fortran 包装环境下估算密度。输出依赖历元与地磁/太阳输入；模型有适用高度范围。适合轨道与空间环境教学试验。
 
-## 太阳风实时
+#### [hwm14](https://github.com/gemini3d/hwm14)  
+*🏷️ 高校实验室*
 
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SWPC-ACE-RTSW](https://www.swpc.noaa.gov/products/ace-real-time-solar-wind) | NOAA SWPC：ACE 实时太阳风产品 | data-portal | — | 🏷️ 官方 |
-| [SWPC-Real-Time-Solar-Wind](https://www.swpc.noaa.gov/products/real-time-solar-wind) | NOAA SWPC：综合实时太阳风产品（非仅 ACE） | data-portal | — | 🏷️ 官方 |
+语言：Fortran · 许可：Apache-2.0 · 星标约：7 · 宿主：github
 
-### 详细说明
-
-#### [SWPC-ACE-RTSW](https://www.swpc.noaa.gov/products/ace-real-time-solar-wind)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-SWPC ACE Real-Time Solar Wind 产品页，提供 ACE 卫星太阳风实时监测，是磁暴/电离层扰动的上游空间天气输入之一，并在影响说明中关联 GPS 等系统。与 OMNI 历史序列互补，偏实时监测。
-
-#### [SWPC-Real-Time-Solar-Wind](https://www.swpc.noaa.gov/products/real-time-solar-wind)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-SWPC Real-Time Solar Wind 产品页，汇聚多源实时太阳风监测，说明中关联 GPS 等系统影响。与 ACE Real-Time Solar Wind 页互补：本页为综合实时入口，ACE 页偏单星。历史分析请改用 OMNI 等。页面现多跳转到 spaceweather.gov。
-
-## 太阳辐照
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [LISIRD](https://lasp.colorado.edu/lisird/) | LASP LISIRD：交互式太阳辐照数据中心 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [LISIRD](https://lasp.colorado.edu/lisird/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-科罗拉多大学 LASP 的 Interactive Solar Irradiance Datacenter，汇集太阳光谱/辐照等数据浏览与获取。为电离层/中性大气模型提供太阳输入参考。非 GNSS 观测站。
-
-## 地磁数据
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [BGS-INTERMAGNET-Data](https://imag-data.bgs.ac.uk/) | BGS INTERMAGNET 数据服务：可视化与下载 Web 服务 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [BGS-INTERMAGNET-Data](https://imag-data.bgs.ac.uk/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-英国地质调查局提供的 INTERMAGNET 数据服务站，含可视化、统计与数据/产品下载 Web 服务说明。与 INTERMAGNET 主站互补，偏数据获取实现。应用代码有开源声明（页面说明）。地磁指数研究常用。
-
-## GOES存档
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [NGDC-GOES-Satellite](https://www.ngdc.noaa.gov/stp/satellite/goes/) | NOAA NCEI：GOES 卫星空间天气数据入口 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [NGDC-GOES-Satellite](https://www.ngdc.noaa.gov/stp/satellite/goes/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-NCEI 的 GOES 卫星空间天气数据门户，汇总 GOES 相关存档与产品入口。可与 SWPC GOES X 射线实时产品对照使用。偏数据目录而非单一文件下载。
-
-## 太阳观测
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SDO-GSFC](https://sdo.gsfc.nasa.gov/) | NASA SDO：太阳动力学观测台主站（EUV 等日面驱动） | data-portal | — | 🏷️ 官方 |
-| [SOHO-NASA](https://sohowww.nascom.nasa.gov/) | NASA/ESA SOHO：日冕与太阳风成像/档案门户 | data-portal | — | 🏷️ 官方 |
-| [SWPC-Solar-Synoptic-Map](https://www.swpc.noaa.gov/products/solar-synoptic-map) | NOAA SWPC：太阳综合图（Solar Synoptic Map）产品 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [SDO-GSFC](https://sdo.gsfc.nasa.gov/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-Solar Dynamics Observatory 官方门户，提供大气成像仪等日面 EUV/磁图产品入口，是电离层/热层日侧驱动的上游太阳观测源。站点曾提示存储故障时改走 Data Access；科研请优先用 JSOC 等正式归档。与 SOHO、SWPC 产品互补，偏成像而非粒子/太阳风时序。
-
-#### [SOHO-NASA](https://sohowww.nascom.nasa.gov/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-Solar and Heliospheric Observatory 主站，含 gallery、data/archive 与任务状态。LASCO 等日冕观测常用于 CME 预警，与 GNSS 电离层暴分析的上游空间天气相关。长期任务档案成熟；具体数据级产品请跟 archive 指引。与 SDO 成像互补。
-
-#### [SWPC-Solar-Synoptic-Map](https://www.swpc.noaa.gov/products/solar-synoptic-map)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-SWPC 太阳综合图产品页，概括日面活动区与预报相关结构，服务于空间天气值班与 GNSS/HF 影响背景。与 SDO/SOHO 成像、GOES 通量产品互补，偏综合研判图。页面现多跳转到 spaceweather.gov。
-
-## 空间天气事件
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [CCMC-DONKI](https://kauai.ccmc.gsfc.nasa.gov/DONKI/) | CCMC DONKI：空间天气事件通知与知识库 | data-portal | — | 🏷️ 官方 |
-| [SWPC-Solar-Geophysical-Event-Reports](https://www.swpc.noaa.gov/products/solar-and-geophysical-event-reports) | NOAA SWPC：太阳与地球物理事件报告 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [CCMC-DONKI](https://kauai.ccmc.gsfc.nasa.gov/DONKI/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-Community Coordinated Modeling Center 的 DONKI（Database Of Notifications, Knowledge, Information），检索 CME、耀斑、高能粒子等事件与通知归档。便于把 GNSS 电离层扰动时段对齐到上游太阳/行星际事件。公开检索为主；模型运行另见 CCMC。
-
-#### [SWPC-Solar-Geophysical-Event-Reports](https://www.swpc.noaa.gov/products/solar-and-geophysical-event-reports)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-SWPC Solar and Geophysical Event Reports 产品页，归档耀斑、粒子与地磁等事件报告文本。便于把 GNSS 扰动时段对齐到官方事件纪要，与 DONKI、GOES 通量互补。文本产品多为公开。
-
-## 太阳可视化
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [Helioviewer](https://helioviewer.org/) | Helioviewer：太阳/日球层多源影像可视化与截图/电影 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [Helioviewer](https://helioviewer.org/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-开源取向的太阳影像浏览器，聚合 SDO/SOHO 等多源层，支持截图、电影与外链科学数据下载请求。适合快速目视对齐耀斑/日冕结构到 GNSS 扰动窗口，而非替代正式科学归档。与 DONKI 事件库、SWPC 产品互补。
-
-## AE指数
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [Kyoto-AE-Realtime](https://wdc.kugi.kyoto-u.ac.jp/ae_realtime/index.html) | 京都大学 WDC：实时/Quicklook AE 指数 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [Kyoto-AE-Realtime](https://wdc.kugi.kyoto-u.ac.jp/ae_realtime/index.html)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-京都 WDC 实时（Quicklook）AE 指数页，监测极光区地磁活动；注明非商业用途，2024 年底起数字值亦入仓可供科研。与 Dst/Kp 页互补，偏亚暴时间尺度，常作 GNSS 高纬电离层扰动背景。最终定标请用正式产品。
-
-## GOES质子
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [SWPC-GOES-Proton-Flux](https://www.swpc.noaa.gov/products/goes-proton-flux) | NOAA SWPC：GOES 质子通量产品 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [SWPC-GOES-Proton-Flux](https://www.swpc.noaa.gov/products/goes-proton-flux)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-SWPC GOES Proton Flux 产品页，监测太阳高能质子事件（SPE）。质子暴可影响极区 HF/GNSS 与卫星单粒子效应，是电离层/空间天气分析中与 X 射线耀斑、太阳风并列的上游输入。与 GOES X-ray、NGDC GOES 归档互补，偏实时通量产品。
-
-## 地磁模型
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [NOAA-EMM](https://www.ngdc.noaa.gov/geomag/EMM/) | NOAA NCEI：增强磁模型 EMM 门户 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [NOAA-EMM](https://www.ngdc.noaa.gov/geomag/EMM/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-NCEI Enhanced Magnetic Model（EMM）产品页，提供比 WMM 更精细的地壳/岩石圈磁场模型入口。与 WMM 门户互补，服务航向/磁偏与空间天气地磁背景。模型系数与计算器见页内链接。
-
-## 空间天气分析
-
-| 项目 | 一句话 | 语言 | ★ | 标记 |
-|---|---|---|---:|---|
-| [CCMC-ISWA](https://ccmc.gsfc.nasa.gov/tools/ISWA/) | CCMC ISWA：集成空间天气分析系统 | data-portal | — | 🏷️ 官方 |
-
-### 详细说明
-
-#### [CCMC-ISWA](https://ccmc.gsfc.nasa.gov/tools/ISWA/)  
-*🏷️ 官方*
-
-语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
-
-Community Coordinated Modeling Center 的 Integrated Space Weather Analysis（ISWA）工具入口，聚合模型与观测可视化，服务空间天气态势感知。与 DONKI、OMNI、SWPC 产品互补，偏综合分析台。iswa.ccmc 旧地址会跳转到本 URL。
+gemini3d 维护的 NRL Horizontal Wind Model 2014 可构建库，用 CMake 生成 libhwm14，供上层大气/电离层耦合与轨迹仿真调用。Apache-2.0。是中性风经验模型而非 GNSS 处理软件；旧 HWM93 包装仓已归档，新集成优先此仓。

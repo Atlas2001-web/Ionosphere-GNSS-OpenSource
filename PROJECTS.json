@@ -7,23 +7,23 @@
   "generated": "2026-09-26",
   "project_count": 1029,
   "counts_by_category": {
-    "ionosphere": 298,
-    "troposphere": 49,
-    "gnss-data": 138,
-    "gnss-positioning": 106,
+    "ionosphere": 273,
+    "troposphere": 48,
+    "gnss-data": 137,
+    "gnss-positioning": 108,
     "orbit-clock": 31,
-    "navigation-ins": 73,
+    "navigation-ins": 72,
     "gnss-sdr": 76,
     "mobile-apps": 32,
     "tools-learning": 57,
-    "gnss-datasets": 169
+    "gnss-datasets": 195
   },
   "projects": [
     {
       "name": "AgOpenNtripCaster",
       "url": "https://github.com/AgOpenGPS-Official/AgOpenNtripCaster",
       "desc_zh": "AgOpenGPS 官方组织维护的农场向 NTRIP Caster（C#）",
-      "analysis_zh": "AgOpenGPS-Official 组织下的 NTRIP 播发端（C#），面向农业自动驾驶与 DIY CORS。适合农机联调。按 catalog 政策记为个人社区（社区 DIY）；公网部署需自行处理账号、带宽与安全加固。",
+      "analysis_zh": "AgOpenGPS-Official 组织下的 NTRIP 播发端（C#），面向农业自动驾驶与 DIY CORS。适合农机联调。公网部署需自行处理账号、带宽与安全加固。",
       "language": "C#",
       "license": "README: MIT (badge says GPL-3.0; no LICENSE file)",
       "category": "gnss-data",
@@ -120,7 +120,7 @@
       "name": "baidu-ntripcaster",
       "url": "https://github.com/baidu/ntripcaster",
       "desc_zh": "百度开源组织发布的 NTRIP Caster 实现",
-      "analysis_zh": "百度 Open Source 组织公开的 NTRIP Caster，可作自建播发与协议学习的对照样本。适合对比 BKG 与社区实现。按 catalog 政策记为个人社区（公司开源档）；上线前须完成压力、安全与兼容性测试。仓库已于 2019-05 归档（只读），不再更新。",
+      "analysis_zh": "百度 Open Source 组织公开的 NTRIP Caster，可作自建播发与协议学习的对照样本。适合对比 BKG 与社区实现。上线前须完成压力、安全与兼容性测试。仓库已于 2019-05 归档（只读），不再更新。",
       "language": "C",
       "license": "GPL-2.0-or-later",
       "category": "gnss-data",
@@ -557,8 +557,8 @@
       "analysis_zh": "社区维护的 gLAB git 镜像，便于版本跟踪；官方二进制/源码与许可以 UPC gAGE 页面为准。核心 Apache、GUI LGPL。不要把镜像当作唯一权威来源。",
       "language": "C",
       "license": "Apache-2.0 + LGPL-3.0 (GUI)",
-      "category": "gnss-data",
-      "subcategory": "处理/教学",
+      "category": "gnss-positioning",
+      "subcategory": "教学/PPP套件",
       "markers": [
         "starred"
       ],
@@ -670,7 +670,7 @@
       "language": "Python",
       "license": "Apache-2.0",
       "category": "gnss-data",
-      "subcategory": "IGS产品下载",
+      "subcategory": "下载",
       "markers": [
         "routine-2026-09-14"
       ],
@@ -690,7 +690,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "gnss-data",
-      "subcategory": "RINEX/工具包",
+      "subcategory": "RINEX读写",
       "markers": [
         "starred"
       ],
@@ -748,7 +748,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "gnss-data",
-      "subcategory": "RINEX/SP3",
+      "subcategory": "RINEX读写",
       "markers": [],
       "stars_approx": 39,
       "source": "curated+verified (awesome-gnss / stars / API / official site)",
@@ -762,7 +762,7 @@
       "name": "gps-measurement-tools",
       "url": "https://github.com/google/gps-measurement-tools",
       "desc_zh": "Google 发布：Android 原始 GNSS 测量日志与桌面分析",
-      "analysis_zh": "Android 原始 GNSS 测量日志与桌面可视化分析工具，智能手机高精度研究几乎必用。GnssLogger 由 Google 维护、状态有变化（按目录政策属公司开源档），常与 GPSTest 日志互通。不是全星座科研 PPP 引擎。",
+      "analysis_zh": "Android 原始 GNSS 测量日志与桌面可视化分析工具，智能手机高精度研究几乎必用。GnssLogger 由 Google 维护、状态有变化，常与 GPSTest 日志互通。不是全星座科研 PPP 引擎。",
       "language": "Java",
       "license": "Apache-2.0",
       "category": "gnss-data",
@@ -822,7 +822,7 @@
       "language": "C++",
       "license": "LGPL-3.0",
       "category": "gnss-data",
-      "subcategory": "基础库(归档)",
+      "subcategory": "基础库",
       "markers": [],
       "stars_approx": 360,
       "source": "curated+verified (awesome-gnss / stars / API / official site)",
@@ -914,8 +914,8 @@
       "analysis_zh": "ros-drivers 组织维护的 nmea_msgs，定义与 NMEA 相关的 ROS 消息，方便驱动、导航与录包节点交换 GNSS 语句。适合机器人接入 GNSS 接收机。只提供消息契约，不含语句解析与 PVT；解析需另接驱动或 nmea_navsat_driver 一类包。",
       "language": "CMake",
       "license": "BSD (package.xml; clause variant unspecified)",
-      "category": "gnss-data",
-      "subcategory": "RTCM/NTRIP",
+      "category": "navigation-ins",
+      "subcategory": "ROS驱动",
       "markers": [],
       "stars_approx": 38,
       "source": "seed:navigation-learning; URL listed in curated seed_urls.json",
@@ -1254,7 +1254,7 @@
       "language": "Python",
       "license": "BSD-3-Clause",
       "category": "gnss-data",
-      "subcategory": "掩星/CDAAC解析",
+      "subcategory": "掩星格式转换",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -1515,7 +1515,7 @@
       "language": "C",
       "license": "GPL-3.0",
       "category": "gnss-data",
-      "subcategory": "NTRIP/实时流转发",
+      "subcategory": "RTCM/NTRIP",
       "markers": [
         "routine-2026-09-16"
       ],
@@ -1555,7 +1555,7 @@
       "language": "Rust",
       "license": "MPL-2.0",
       "category": "gnss-data",
-      "subcategory": "SP3/轨道钟差格式",
+      "subcategory": "产品读写",
       "markers": [
         "routine-2026-09-16"
       ],
@@ -1574,8 +1574,8 @@
       "analysis_zh": "演示如何调用 Embrace 空间天气数据服务（SWDS）API 自动下载产品，方便把取数写进科研脚本。适合 GNSS—空间天气交叉研究的数据入口。接口字段、鉴权与限流可能随官方升级变化；时间范围与产品类型以站点文档为准，勿长期硬编码过期端点。",
       "language": "Python",
       "license": "MIT",
-      "category": "gnss-data",
-      "subcategory": "下载",
+      "category": "ionosphere",
+      "subcategory": "数据接口",
       "markers": [],
       "stars_approx": 4,
       "source": "gh-search+verified (more_finds / exhaustive 2026-09-14)",
@@ -1630,8 +1630,8 @@
       "analysis_zh": "机构整理的 GNSS 预处理工具列表，链到 Hatanaka/RNXCMP、GNSSTK、厂商翻译器与部分历史 QC 工具。本身不是单一软件包，而是权威导航页。下载各工具仍须遵守原作者许可；其中 teqc 已宣布 EOL，仅保留终版二进制。",
       "language": "various",
       "license": "varies",
-      "category": "gnss-data",
-      "subcategory": "预处理索引",
+      "category": "tools-learning",
+      "subcategory": "机构软件门户",
       "markers": [],
       "stars_approx": null,
       "source": "web/official verified 2026-09-14",
@@ -1670,7 +1670,7 @@
       "language": "Python",
       "license": "BSD-3-Clause",
       "category": "gnss-datasets",
-      "subcategory": "GNSS掩星/RO",
+      "subcategory": "掩星",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -2297,7 +2297,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "地磁空间天气",
+      "subcategory": "电离层产品",
       "markers": [
         "core"
       ],
@@ -2873,8 +2873,8 @@
       "analysis_zh": "维也纳工大 VMF 服务的对流层产品目录树，提供 VMF1/VMF3 等格网，供 PPP 与 VLBI 映射函数使用。这里是数据产品，源码实现见同站 /codes。选用时注意格网版本与气象模型匹配；业务系统还需确认更新节奏与文献引用要求。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "gnss-datasets",
-      "subcategory": "对流层",
+      "category": "troposphere",
+      "subcategory": "VMF产品",
       "markers": [
         "core"
       ],
@@ -2918,7 +2918,7 @@
       "language": "MATLAB",
       "license": "GPL-3.0",
       "category": "gnss-positioning",
-      "subcategory": "多星座PPP",
+      "subcategory": "PPP",
       "markers": [
         "routine-2026-09-14"
       ],
@@ -2958,7 +2958,7 @@
       "language": "C",
       "license": "BSD-2-Clause (v0.6.0 and earlier per README; later versions unstated)",
       "category": "gnss-positioning",
-      "subcategory": "QZSS CLAS PPP-RTK",
+      "subcategory": "PPP/PPP-RTK",
       "markers": [
         "core",
         "routine-2026-09-14"
@@ -3117,7 +3117,7 @@
       "language": "C++",
       "license": "Apache-2.0 (see GitHub)",
       "category": "gnss-positioning",
-      "subcategory": "PPP套件",
+      "subcategory": "PPP/改正数",
       "markers": [],
       "stars_approx": null,
       "source": "web/official verified 2026-09-14",
@@ -3209,7 +3209,7 @@
       "language": "MATLAB",
       "license": "Apache-2.0",
       "category": "gnss-positioning",
-      "subcategory": "PPP后处理工具",
+      "subcategory": "PPP",
       "markers": [
         "routine-2026-09-14"
       ],
@@ -3361,7 +3361,7 @@
       "language": "MATLAB",
       "license": "GPL-3.0",
       "category": "gnss-positioning",
-      "subcategory": "相对定位/PPP",
+      "subcategory": "相对定位",
       "markers": [
         "core",
         "starred"
@@ -3418,7 +3418,7 @@
       "language": "C",
       "license": "GPL-3.0",
       "category": "gnss-positioning",
-      "subcategory": "因子图RTK",
+      "subcategory": "因子图",
       "markers": [
         "core"
       ],
@@ -3438,7 +3438,7 @@
       "language": "C++",
       "license": "GPL-3.0",
       "category": "gnss-positioning",
-      "subcategory": "PVT/精密定位",
+      "subcategory": "SPP/RTK/PPP",
       "markers": [
         "core",
         "starred"
@@ -3536,7 +3536,7 @@
       "language": "C++",
       "license": "GPL-3.0",
       "category": "gnss-positioning",
-      "subcategory": "PPP/HAS",
+      "subcategory": "PPP-RTK/HAS",
       "markers": [],
       "stars_approx": 44,
       "source": "curated+verified (awesome-gnss / stars / API / official site)",
@@ -3855,7 +3855,7 @@
       "language": "Python",
       "license": "GPL-2.0",
       "category": "gnss-positioning",
-      "subcategory": "PPP脚本",
+      "subcategory": "PPP",
       "markers": [],
       "stars_approx": 121,
       "source": "curated+verified (awesome-gnss / stars / API / official site)",
@@ -4637,7 +4637,7 @@
       "language": "VHDL",
       "license": "BSD-2-Clause",
       "category": "gnss-sdr",
-      "subcategory": "软件接收机",
+      "subcategory": "FPGA相关器",
       "markers": [],
       "stars_approx": 43,
       "source": "seed:navigation-learning; URL listed in curated seed_urls.json",
@@ -4873,7 +4873,7 @@
       "language": "Verilog",
       "license": "TAPR-OHL-1.0 (hardware) + GPL-2.0 (HDL/firmware) + CC-BY-SA-3.0 (docs)",
       "category": "gnss-sdr",
-      "subcategory": "软件接收机",
+      "subcategory": "射频前端",
       "markers": [],
       "stars_approx": 68,
       "source": "seed:navigation-learning; URL listed in curated seed_urls.json",
@@ -5073,7 +5073,7 @@
       "language": "MATLAB",
       "license": "GPL-2.0",
       "category": "gnss-sdr",
-      "subcategory": "多路径抑制/直接定位",
+      "subcategory": "直接位置估计",
       "markers": [
         "routine-2026-09-16"
       ],
@@ -5093,7 +5093,7 @@
       "language": "Eagle",
       "license": null,
       "category": "gnss-sdr",
-      "subcategory": "软件接收机",
+      "subcategory": "射频前端",
       "markers": [],
       "stars_approx": 4,
       "source": "seed:navigation-learning; URL listed in curated seed_urls.json",
@@ -5523,7 +5523,7 @@
       "language": "various",
       "license": "scientific distribution (INGV portal)",
       "category": "ionosphere",
-      "subcategory": "测高仪自动缩放",
+      "subcategory": "电离层工具",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -6104,7 +6104,7 @@
       "language": "C",
       "license": "EUPL-1.2",
       "category": "ionosphere",
-      "subcategory": "NeQuick-G官方",
+      "subcategory": "NeQuick官方",
       "markers": [
         "core"
       ],
@@ -6222,7 +6222,7 @@
       "language": "C++",
       "license": null,
       "category": "ionosphere",
-      "subcategory": "穿刺点IPP",
+      "subcategory": "工具",
       "markers": [
         "starred"
       ],
@@ -6324,7 +6324,7 @@
       "name": "GIRO-portal",
       "url": "https://giro.uml.edu/",
       "category": "ionosphere",
-      "subcategory": "测高仪/同化",
+      "subcategory": "电离层产品",
       "language": null,
       "provenance": "official",
       "host": "official_site",
@@ -6526,7 +6526,7 @@
       "language": "Python",
       "license": null,
       "category": "ionosphere",
-      "subcategory": "TEC估计",
+      "subcategory": "TEC预报/ML",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -6730,7 +6730,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "ionosphere",
-      "subcategory": "TEC估计",
+      "subcategory": "TEC预报/ML",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -7260,7 +7260,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "ionosphere",
-      "subcategory": "TEC计算",
+      "subcategory": "TEC估计",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -7413,7 +7413,7 @@
       "language": "Fortran",
       "license": "IRI permissive (AS IS + attribution)",
       "category": "ionosphere",
-      "subcategory": "IRI官方模型",
+      "subcategory": "IRI模型",
       "markers": [],
       "stars_approx": null,
       "source": "web/official verified 2026-09-14",
@@ -7473,7 +7473,7 @@
       "language": "Fortran",
       "license": "IRI permissive (AS IS + attribution)",
       "category": "ionosphere",
-      "subcategory": "IRI官方模型",
+      "subcategory": "IRI模型",
       "markers": [
         "core"
       ],
@@ -7703,7 +7703,7 @@
       "name": "ismr_downloader",
       "url": "https://github.com/GEGE-UNESP/ismr_downloader",
       "category": "ionosphere",
-      "subcategory": "闪烁数据",
+      "subcategory": "数据接口",
       "language": "Python",
       "license": "MIT",
       "stars": 1,
@@ -7726,7 +7726,7 @@
       "language": "various",
       "license": "ITU terms",
       "category": "ionosphere",
-      "subcategory": "传播模型",
+      "subcategory": "模型",
       "markers": [],
       "stars_approx": null,
       "source": "web/official verified 2026-09-14",
@@ -8158,7 +8158,7 @@
       "language": "C",
       "license": "ESA Community License v2.4",
       "category": "ionosphere",
-      "subcategory": "NeQuick-G官方",
+      "subcategory": "NeQuick官方",
       "markers": [],
       "stars_approx": null,
       "source": "web/official verified 2026-09-14",
@@ -8447,7 +8447,7 @@
       "language": "Python",
       "license": "Apache-2.0",
       "category": "ionosphere",
-      "subcategory": "TEC估计",
+      "subcategory": "TEC预报/ML",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -9087,7 +9087,7 @@
       "language": "Fortran",
       "license": "CC-BY-4.0",
       "category": "ionosphere",
-      "subcategory": "物理模式",
+      "subcategory": "模型",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -9184,8 +9184,8 @@
       "analysis_zh": "通过 Node-RED 流程编排访问 Septentrio，适合演示数据采集与简单自动化。输入为接收机连接与流程节点配置；输出为可拖拽的数据管道。局限：教学/原型友好，科研级批处理与质控能力有限。",
       "language": "JavaScript",
       "license": "BSD-3-Clause",
-      "category": "ionosphere",
-      "subcategory": "工具",
+      "category": "gnss-data",
+      "subcategory": "接收机驱动",
       "markers": [
         "gapfill-2026-09-17"
       ],
@@ -9321,8 +9321,8 @@
       "analysis_zh": "pyDataLink 用于可视化与连接接收机数据流，便于实验教学中快速查看观测与配置链路。输入为接收机/记录数据流；输出为可视化与转发接口。局限：偏工程联调，不直接给出 TEC/闪烁科学指标。",
       "language": "Python",
       "license": "BSD-3-Clause",
-      "category": "ionosphere",
-      "subcategory": "工具",
+      "category": "gnss-data",
+      "subcategory": "接收机驱动",
       "markers": [
         "gapfill-2026-09-17"
       ],
@@ -9536,7 +9536,7 @@
       "language": "Python",
       "license": "no formal licence (README: academic and research use)",
       "category": "ionosphere",
-      "subcategory": "TEC估计",
+      "subcategory": "TEC预报/ML",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -9556,7 +9556,7 @@
       "language": "Python",
       "license": null,
       "category": "ionosphere",
-      "subcategory": "TEC估计",
+      "subcategory": "TEC预报/ML",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -9798,7 +9798,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "ionosphere",
-      "subcategory": "SWARM/LEO TEC",
+      "subcategory": "数据接口",
       "markers": [
         "batch-2026-09-17"
       ],
@@ -10074,7 +10074,7 @@
       "name": "BDS-3-PPP-B2b_IMU_LiDAR",
       "url": "https://github.com/xdinav/BDS-3-PPP-B2b_IMU_LiDAR",
       "category": "navigation-ins",
-      "subcategory": "B2b组合导航",
+      "subcategory": "多传感器融合",
       "language": null,
       "license": null,
       "stars": 6,
@@ -10115,7 +10115,7 @@
       "language": "C++",
       "license": "BSD-3-Clause",
       "category": "navigation-ins",
-      "subcategory": "车载定位",
+      "subcategory": "GNSS/INS",
       "markers": [],
       "stars_approx": 775,
       "source": "curated+verified (awesome-gnss / stars / API / official site)",
@@ -10133,7 +10133,7 @@
       "language": "C++",
       "license": "BSD-3-Clause",
       "category": "navigation-ins",
-      "subcategory": "FGO/GNSS-UWB",
+      "subcategory": "多传感器融合",
       "markers": [
         "routine-2026-09-16"
       ],
@@ -10270,7 +10270,7 @@
       "language": "C++",
       "license": "GPL-3.0",
       "category": "navigation-ins",
-      "subcategory": "GNSS/视觉/INS",
+      "subcategory": "GNSS/INS/视觉",
       "markers": [],
       "stars_approx": 164,
       "source": "gh-search+verified (missing_meta / extra searches)",
@@ -10306,7 +10306,7 @@
       "language": "MATLAB",
       "license": null,
       "category": "navigation-ins",
-      "subcategory": "GNSS/INS对比",
+      "subcategory": "GNSS/INS",
       "markers": [
         "routine-2026-09-16"
       ],
@@ -10326,7 +10326,7 @@
       "language": "C++",
       "license": "MIT",
       "category": "navigation-ins",
-      "subcategory": "ROS2原始观测",
+      "subcategory": "ROS驱动",
       "markers": [
         "routine-2026-09-16"
       ],
@@ -10440,7 +10440,7 @@
       "language": "C++",
       "license": "GPL-3.0",
       "category": "navigation-ins",
-      "subcategory": "GNSS/视觉/INS",
+      "subcategory": "GNSS/INS/视觉",
       "markers": [],
       "stars_approx": 1160,
       "source": "curated+verified (awesome-gnss / stars / API / official site)",
@@ -10475,7 +10475,7 @@
       "analysis_zh": "与 GVINS 配套的同步视觉、IMU 与 GNSS 原始测量数据，方便复现紧耦合实验与对比算法，是 GNSS-VIO 常用测试集之一。本身不含完整解算器；处理请配合 GVINS、gnss_comm、ublox_driver。许可为 CC BY-NC-SA 4.0（非商业），论文复现与再分发前务必阅读仓库说明与引用要求。",
       "language": "C++",
       "license": "CC-BY-NC-SA-4.0",
-      "category": "navigation-ins",
+      "category": "tools-learning",
       "subcategory": "数据集",
       "markers": [],
       "stars_approx": 262,
@@ -10494,7 +10494,7 @@
       "language": "C++",
       "license": "GPL-3.0",
       "category": "navigation-ins",
-      "subcategory": "GNSS/视觉/INS",
+      "subcategory": "GNSS/INS/视觉",
       "markers": [],
       "stars_approx": 690,
       "source": "curated+verified (awesome-gnss / stars / API / official site)",
@@ -10736,7 +10736,7 @@
       "language": "C++",
       "license": "academic non-commercial (Penn MSCKF_VIO terms, no redistribution)",
       "category": "navigation-ins",
-      "subcategory": "GNSS/视觉/INS",
+      "subcategory": "GNSS/INS/视觉",
       "markers": [],
       "stars_approx": 31,
       "source": "seed:navigation-learning; URL listed in curated seed_urls.json",
@@ -10831,7 +10831,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "navigation-ins",
-      "subcategory": "INS建模",
+      "subcategory": "INS工具包",
       "markers": [],
       "stars_approx": 107,
       "source": "curated+verified (awesome-gnss / stars / API / official site)",
@@ -10885,7 +10885,7 @@
       "language": "C++",
       "license": "BSD-3-Clause",
       "category": "navigation-ins",
-      "subcategory": "ROS/RTKLIB",
+      "subcategory": "ROS驱动",
       "markers": [
         "routine-2026-09-16"
       ],
@@ -11033,7 +11033,7 @@
       "language": "C++",
       "license": "GPL-3.0",
       "category": "navigation-ins",
-      "subcategory": "GNSS/视觉/INS",
+      "subcategory": "ROS驱动",
       "markers": [],
       "stars_approx": 159,
       "source": "gh-search+verified (missing_meta / extra searches)",
@@ -11125,7 +11125,7 @@
       "language": "C++",
       "license": "BSD-3-Clause",
       "category": "orbit-clock",
-      "subcategory": "钟差/相位偏差合成",
+      "subcategory": "轨道钟差综合",
       "markers": [
         "routine-2026-09-16"
       ],
@@ -11145,7 +11145,7 @@
       "language": "C++",
       "license": "GPL-3.0",
       "category": "orbit-clock",
-      "subcategory": "DCB/UPD/IFCB/OSB",
+      "subcategory": "OSB/偏差估计",
       "markers": [
         "core",
         "routine-2026-09-16"
@@ -11377,8 +11377,8 @@
       "analysis_zh": "树莓派上的低成本 GNSS 图形界面，调用 RTKLIB 做各类解算，基于 RTKBase 与 TouchRTKStation；README 给出 u-blox M8T、4 寸屏、3D 打印外壳等组装清单。本仓不是 GitHub fork，但提交历史含 Nassim Chebbah（ensg.eu 邮箱）的提交和来自 NChebbah/final 的 PR 合并，仓库创建于最后一次提交（2019-05-15）之后，应是原仓 NChebbah/EasyGNSS（现已 404）的转存；whigg 账号公开仓库逾 7000 个。账号资料里的 IGG,CAS 与项目本身无关。适合教学与业余台站，精密处理请导出 RINEX 后用 RTKLIB 等。",
       "language": "Python",
       "license": "GPL-3.0",
-      "category": "tools-learning",
-      "subcategory": "可视化",
+      "category": "gnss-positioning",
+      "subcategory": "RTK客户端",
       "markers": [],
       "stars_approx": 4,
       "source": "gh-search+verified (more_finds / exhaustive 2026-09-14)",
@@ -11432,7 +11432,7 @@
       "language": "various",
       "license": "varies",
       "category": "tools-learning",
-      "subcategory": "高校工具门户",
+      "subcategory": "机构软件门户",
       "markers": [],
       "stars_approx": null,
       "source": "web/official verified 2026-09-14",
@@ -11522,7 +11522,7 @@
       "language": "Fortran",
       "license": "USGov (17 USC 105; royalty-free licence outside US)",
       "category": "tools-learning",
-      "subcategory": "坐标框架/地壳运动",
+      "subcategory": "坐标转换",
       "markers": [],
       "stars_approx": 33,
       "source": "web/official verified 2026-09-14",
@@ -11819,7 +11819,7 @@
       "language": "Java/app",
       "license": "USGov public resource",
       "category": "tools-learning",
-      "subcategory": "垂直基准",
+      "subcategory": "坐标转换",
       "markers": [],
       "stars_approx": null,
       "source": "web/official verified 2026-09-14",
@@ -11914,7 +11914,7 @@
       "language": "MATLAB",
       "license": null,
       "category": "troposphere",
-      "subcategory": "GNSS-IR水位",
+      "subcategory": "GNSS-IR",
       "markers": [
         "routine-2026-09-16"
       ],
@@ -11949,7 +11949,7 @@
       "name": "GNSS_RR",
       "url": "https://github.com/lasteine/GNSS_RR",
       "category": "troposphere",
-      "subcategory": "GNSS-IR/RR",
+      "subcategory": "GNSS-IR",
       "language": "Python",
       "license": "CC0-1.0",
       "stars": 7,
@@ -11972,7 +11972,7 @@
       "language": "MATLAB",
       "license": "MIT",
       "category": "troposphere",
-      "subcategory": "反射测量",
+      "subcategory": "GNSS-IR",
       "markers": [],
       "stars_approx": 30,
       "source": "seed:navigation-learning; URL listed in curated seed_urls.json",
@@ -11990,7 +11990,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "troposphere",
-      "subcategory": "反射测量",
+      "subcategory": "GNSS-IR",
       "markers": [],
       "stars_approx": 26,
       "source": "seed:navigation-learning; URL listed in curated seed_urls.json",
@@ -12028,7 +12028,7 @@
       "language": "MATLAB",
       "license": "MIT",
       "category": "troposphere",
-      "subcategory": "反射测量",
+      "subcategory": "GNSS-IR",
       "markers": [],
       "stars_approx": 11,
       "source": "seed:navigation-learning; URL listed in curated seed_urls.json",
@@ -12084,7 +12084,7 @@
       "language": "Python",
       "license": "GPL-3.0",
       "category": "troposphere",
-      "subcategory": "反射测量/PWV相关",
+      "subcategory": "GNSS-IR",
       "markers": [
         "core"
       ],
@@ -12104,7 +12104,7 @@
       "language": "MATLAB",
       "license": "MIT",
       "category": "troposphere",
-      "subcategory": "反射测量",
+      "subcategory": "GNSS-IR",
       "markers": [],
       "stars_approx": 14,
       "source": "seed:navigation-learning; URL listed in curated seed_urls.json",
@@ -12122,7 +12122,7 @@
       "language": "MATLAB",
       "license": "MIT",
       "category": "troposphere",
-      "subcategory": "反射测量",
+      "subcategory": "星载GNSS-R",
       "markers": [],
       "stars_approx": 34,
       "source": "seed:navigation-learning; URL listed in curated seed_urls.json",
@@ -12173,7 +12173,7 @@
       "name": "mphw",
       "url": "https://github.com/ufrgs-gnss-lab/mphw",
       "category": "troposphere",
-      "subcategory": "GNSS-IR硬件",
+      "subcategory": "GNSS-IR",
       "language": "MATLAB",
       "license": "BSD-2-Clause (MATLAB) + GPL-2.0 (Arduino) + CC-BY-SA-3.0 (docs)",
       "stars": 25,
@@ -12196,7 +12196,7 @@
       "language": "MATLAB",
       "license": "BSD-2-Clause",
       "category": "troposphere",
-      "subcategory": "GNSS-IR/多路径仿真",
+      "subcategory": "GNSS-IR",
       "markers": [
         "core",
         "routine-2026-09-16"
@@ -12353,7 +12353,7 @@
       "language": "",
       "license": null,
       "category": "troposphere",
-      "subcategory": "经验模型",
+      "subcategory": "大气模型",
       "markers": [
         "starred"
       ],
@@ -12552,7 +12552,7 @@
       "language": "C++",
       "license": "MIT",
       "category": "mobile-apps",
-      "subcategory": "嵌入式/Arduino",
+      "subcategory": "嵌入式",
       "markers": [
         "routine-2026-09-18"
       ],
@@ -12680,7 +12680,7 @@
       "language": "Rust",
       "license": "MPL-2.0",
       "category": "gnss-data",
-      "subcategory": "RINEX/SP3/格式",
+      "subcategory": "RINEX读写",
       "markers": [],
       "stars_approx": 3,
       "source": "web-search-2026-09-20",
@@ -12698,7 +12698,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "gnss-data",
-      "subcategory": "下载与质检",
+      "subcategory": "下载",
       "markers": [
         "core"
       ],
@@ -12755,8 +12755,8 @@
       "analysis_zh": "把经典 NRLMSISE-00 中性大气模式包成 Python/Matlab 接口，便于算密度、温度等高度剖面。GNSS 气象与火箭/掩星背景大气、以及部分电离层驱动耦合研究常作辅料。注意它是中性大气模式，不是 TEC/IRI；引用与系数版本请按 NRL 原文献与仓库说明。",
       "language": "Python",
       "license": "MIT",
-      "category": "troposphere",
-      "subcategory": "大气模型",
+      "category": "ionosphere",
+      "subcategory": "中性大气",
       "markers": [],
       "stars_approx": 63,
       "source": "web-search-2026-09-20",
@@ -12809,8 +12809,8 @@
       "analysis_zh": "ROS 包用于连接 NTRIP caster、接收 RTCM，并服务于 u-blox ZED-F9P 一类 RTK 接收机，方便机器人/自动驾驶实验车接入差分。适合 ROS1/相关车载栈快速打通链路。依赖具体 ROS 发行版与串口/USB 配置；不是通用精密大地测量软件。",
       "language": "Python",
       "license": "GPL-3.0",
-      "category": "navigation-ins",
-      "subcategory": "车载与机器人",
+      "category": "gnss-data",
+      "subcategory": "ROS NTRIP客户端",
       "markers": [],
       "stars_approx": 54,
       "source": "web-search-2026-09-20",
@@ -12828,7 +12828,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "空间天气辅助",
+      "subcategory": "地磁空间天气",
       "markers": [
         "core"
       ],
@@ -12850,7 +12850,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "空间天气辅助",
+      "subcategory": "地磁空间天气",
       "markers": [],
       "stars_approx": null,
       "source": "portal-verify-2026-09-20",
@@ -12870,7 +12870,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "空间天气辅助",
+      "subcategory": "地磁空间天气",
       "markers": [],
       "stars_approx": null,
       "source": "portal-verify-2026-09-20",
@@ -12890,7 +12890,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "区域CORS",
+      "subcategory": "CORS区域网",
       "markers": [],
       "stars_approx": null,
       "source": "portal-verify-2026-09-20",
@@ -12910,7 +12910,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "区域CORS",
+      "subcategory": "CORS区域网",
       "markers": [],
       "stars_approx": null,
       "source": "portal-verify-2026-09-20",
@@ -12952,7 +12952,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "闪烁/ISMR",
+      "subcategory": "电离层产品",
       "markers": [
         "core"
       ],
@@ -13074,7 +13074,7 @@
       "language": "Python",
       "license": "GPL-3.0",
       "category": "ionosphere",
-      "subcategory": "TID/扰动",
+      "subcategory": "工具",
       "markers": [
         "routine-2026-09-20"
       ],
@@ -13094,7 +13094,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "区域CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-20"
       ],
@@ -13116,7 +13116,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "区域CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-20"
       ],
@@ -13138,7 +13138,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "区域CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-20"
       ],
@@ -13160,7 +13160,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "区域CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-20"
       ],
@@ -13182,7 +13182,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "空间天气辅助",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-20"
       ],
@@ -13204,7 +13204,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "空间天气辅助",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-20"
       ],
@@ -13226,7 +13226,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "空间天气辅助",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-20"
       ],
@@ -13292,7 +13292,7 @@
       "language": "Python",
       "license": "Apache-2.0",
       "category": "gnss-data",
-      "subcategory": "数据接口",
+      "subcategory": "下载",
       "markers": [
         "routine-2026-09-21"
       ],
@@ -13392,7 +13392,7 @@
       "language": "Fortran",
       "license": "academic research (as-is)",
       "category": "ionosphere",
-      "subcategory": "TEC/层析",
+      "subcategory": "TEC估计",
       "markers": [
         "routine-2026-09-21"
       ],
@@ -13452,7 +13452,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "gnss-data",
-      "subcategory": "数据下载",
+      "subcategory": "下载",
       "markers": [
         "routine-2026-09-21"
       ],
@@ -13472,7 +13472,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "gnss-positioning",
-      "subcategory": "定位引擎绑定",
+      "subcategory": "多功能引擎",
       "markers": [
         "routine-2026-09-21"
       ],
@@ -13508,11 +13508,11 @@
       "name": "NOAA-UFCORS",
       "url": "https://geodesy.noaa.gov/UFCORS/",
       "desc_zh": "NOAA NGS User Friendly CORS：交互裁剪/合并 CORS RINEX",
-      "analysis_zh": "美国 NGS 提供的 User Friendly CORS 网页服务，可按站与时段请求部分日、跨日拼接或降采样的 RINEX，免手工拼 CORS 目录。与 CORS 数据树/AWS 桶互补，偏交互取数。属门户服务（portal-terms）；大批量科研抓取仍建议用 NODD/S3 或 corsdata 目录并限速。",
+      "analysis_zh": "美国 NGS 提供的 User Friendly CORS 网页服务，可按站与时段请求部分日、跨日拼接或降采样的 RINEX，免手工拼 CORS 目录。与 CORS 数据树/AWS 桶互补，偏交互取数。大批量科研抓取仍建议用 NODD/S3 或 corsdata 目录并限速。",
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "区域CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-21"
       ],
@@ -13556,7 +13556,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "区域CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-21"
       ],
@@ -13738,7 +13738,7 @@
       "language": "data-portal",
       "license": "CC-BY-4.0 (APOS-PP)",
       "category": "gnss-datasets",
-      "subcategory": "区域CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-23"
       ],
@@ -13758,7 +13758,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "IGS数据中心",
+      "subcategory": "IGS综合",
       "markers": [
         "routine-2026-09-23"
       ],
@@ -13778,7 +13778,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "区域CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-23"
       ],
@@ -13838,7 +13838,7 @@
       "language": "MATLAB",
       "license": "Apache-2.0",
       "category": "gnss-positioning",
-      "subcategory": "形变/多源联合",
+      "subcategory": "大地测量/GNSS",
       "markers": [
         "routine-2026-09-23"
       ],
@@ -13918,7 +13918,7 @@
       "language": "C++",
       "license": "GPL-3.0",
       "category": "navigation-ins",
-      "subcategory": "GNSS/视觉/INS",
+      "subcategory": "GNSS/INS/视觉",
       "markers": [
         "routine-2026-09-23b"
       ],
@@ -14118,7 +14118,7 @@
       "language": "data-portal",
       "license": "CC0-1.0",
       "category": "gnss-datasets",
-      "subcategory": "区域CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-23b"
       ],
@@ -14138,7 +14138,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "区域CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-23b"
       ],
@@ -14377,8 +14377,8 @@
       "analysis_zh": "gemini3d 维护的 NRL Horizontal Wind Model 2014 可构建库，用 CMake 生成 libhwm14，供上层大气/电离层耦合与轨迹仿真调用。Apache-2.0。是中性风经验模型而非 GNSS 处理软件；旧 HWM93 包装仓已归档，新集成优先此仓。",
       "language": "Fortran",
       "license": "Apache-2.0",
-      "category": "troposphere",
-      "subcategory": "大气模型",
+      "category": "ionosphere",
+      "subcategory": "中性大气",
       "markers": [
         "routine-2026-09-24"
       ],
@@ -14498,7 +14498,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "区域CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-24b"
       ],
@@ -14518,7 +14518,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "区域CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-24b"
       ],
@@ -14538,7 +14538,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "区域CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-24b"
       ],
@@ -14578,7 +14578,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "区域CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-24b"
       ],
@@ -14678,7 +14678,7 @@
       "language": "C++",
       "license": "BSD-3-Clause",
       "category": "navigation-ins",
-      "subcategory": "GNSS/视觉/INS",
+      "subcategory": "GNSS/INS/视觉",
       "markers": [
         "routine-2026-09-24b"
       ],
@@ -14838,7 +14838,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "IGS产品下载",
+      "subcategory": "坐标产品",
       "markers": [
         "routine-2026-09-24c"
       ],
@@ -14858,7 +14858,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "IGS产品下载",
+      "subcategory": "坐标产品",
       "markers": [
         "routine-2026-09-24c"
       ],
@@ -15158,7 +15158,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "ionosphere",
-      "subcategory": "模型",
+      "subcategory": "中性大气",
       "markers": [
         "routine-2026-09-24d"
       ],
@@ -15238,7 +15238,7 @@
       "language": "Python",
       "license": "GPL-3.0",
       "category": "gnss-data",
-      "subcategory": "元数据/SDR",
+      "subcategory": "天线模型",
       "markers": [
         "routine-2026-09-24d"
       ],
@@ -15258,7 +15258,7 @@
       "language": "Python",
       "license": "GPL-3.0",
       "category": "gnss-data",
-      "subcategory": "RINEX/工具包",
+      "subcategory": "天线模型",
       "markers": [
         "routine-2026-09-24d"
       ],
@@ -15358,7 +15358,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "troposphere",
-      "subcategory": "大气延迟/InSAR",
+      "subcategory": "大气模型",
       "markers": [
         "routine-2026-09-24e"
       ],
@@ -15474,7 +15474,7 @@
       "name": "FAA-WAAS",
       "url": "https://www.faa.gov/about/office_org/headquarters_offices/ato/service_units/techops/navservices/gnss/waas",
       "desc_zh": "美国 FAA：广域增强系统 WAAS 官方介绍页",
-      "analysis_zh": "联邦航空局关于 WAAS 的官方导航页，说明广域增强架构、服务与相关 GNSS 导航服务入口。portal-terms；与 NSTB 测试数据页互补。偏航空完好性与服务说明，不是 RINEX 下载站；技术细节与运行状态请再循 FAA/NAVCEN 相关链接核实。",
+      "analysis_zh": "联邦航空局关于 WAAS 的官方导航页，说明广域增强架构、服务与相关 GNSS 导航服务入口。与 NSTB 测试数据页互补。偏航空完好性与服务说明，不是 RINEX 下载站；技术细节与运行状态请再循 FAA/NAVCEN 相关链接核实。",
       "language": "data-portal",
       "license": "portal-terms",
       "category": "tools-learning",
@@ -15494,7 +15494,7 @@
       "name": "EGNOS-GSC-User-Support",
       "url": "https://egnos.gsc-europa.eu/",
       "desc_zh": "欧洲 GSC：EGNOS 用户支持与服务信息门户",
-      "analysis_zh": "欧洲 GNSS 服务中心（GSC）EGNOS 用户支持站点，汇总服务状态、文档与用户资源（原 ESSP 入口现多导向此域）。官方 portal；与 EGNOS SDK/Toolkit 代码条目互补。适合 SBAS 服务调研，EDAS 等实时数据接口往往需要注册。",
+      "analysis_zh": "欧洲 GNSS 服务中心（GSC）EGNOS 用户支持站点，汇总服务状态、文档与用户资源（原 ESSP 入口现多导向此域）。与 EGNOS SDK/Toolkit 代码条目互补。适合 SBAS 服务调研，EDAS 等实时数据接口往往需要注册。",
       "language": "data-portal",
       "license": "portal-terms",
       "category": "tools-learning",
@@ -15514,7 +15514,7 @@
       "name": "NSTB-WAAS-Test-Team",
       "url": "https://www.nstb.tc.faa.gov/",
       "desc_zh": "FAA NSTB：WAAS 测试团队数据与工具门户",
-      "analysis_zh": "William J. Hughes 技术中心 WAAS Test Team 站点，提供测试数据与工具入口；旧 FTP 已弃用，数据改由站内新链分发。官方 portal；实验室工具偶有维护窗口导致暂时不可用。适合 WAAS 性能评估与研究对照，下载前先看页面公告与镜像说明。",
+      "analysis_zh": "William J. Hughes 技术中心 WAAS Test Team 站点，提供测试数据与工具入口；旧 FTP 已弃用，数据改由站内新链分发。实验室工具偶有维护窗口导致暂时不可用。适合 WAAS 性能评估与研究对照，下载前先看页面公告与镜像说明。",
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
@@ -15534,7 +15534,7 @@
       "name": "GLONASS-IAC",
       "url": "https://glonass-iac.ru/en/",
       "desc_zh": "俄罗斯 GLONASS 信息分析中心（IAC）英文门户",
-      "analysis_zh": "GLONASS IAC 英文站，提供星座状态、产品与系统介绍入口，是获取 GLONASS 官方信息服务的常用起点。portal-terms；具体星历/钟差产品路径与是否需注册以站内栏目为准。适合多星座产品对照，跨境访问时注意镜像可用性与页面语言切换。",
+      "analysis_zh": "GLONASS IAC 英文站，提供星座状态、产品与系统介绍入口，是获取 GLONASS 官方信息服务的常用起点。具体星历/钟差产品路径与是否需注册以站内栏目为准。适合多星座产品对照，跨境访问时注意镜像可用性与页面语言切换。",
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
@@ -15754,7 +15754,7 @@
       "name": "GSC-Programme-Reference-Documents",
       "url": "https://www.gsc-europa.eu/electronic-library/programme-reference-documents",
       "desc_zh": "欧洲 GSC：Galileo/EGNOS 计划参考文件与 ICD 入口",
-      "analysis_zh": "欧洲 GNSS 服务中心电子图书馆中的 Programme Reference Documents，集中链向 Galileo/EGNOS 接口控制文件与计划级参考文档。官方 portal；做接收机/OSNMA/HAS 开发前的权威文档入口。需遵守欧盟文件分发条件。",
+      "analysis_zh": "欧洲 GNSS 服务中心电子图书馆中的 Programme Reference Documents，集中链向 Galileo/EGNOS 接口控制文件与计划级参考文档。做接收机/OSNMA/HAS 开发前的权威文档入口。需遵守欧盟文件分发条件。",
       "language": "data-portal",
       "license": "portal-terms",
       "category": "tools-learning",
@@ -15794,7 +15794,7 @@
       "name": "Earthdata-MGEX",
       "url": "https://www.earthdata.nasa.gov/data/space-geodesy-techniques/gnss/mgex-data-product",
       "desc_zh": "NASA Earthdata：IGS MGEX 多 GNSS 试验数据产品页",
-      "analysis_zh": "CDDIS/Earthdata 上的 MGEX 数据产品说明与获取入口，对应 IGS Multi-GNSS Experiment 观测与产品。官方 portal；与 igs.org/mgex 介绍页互补，侧重 NASA 侧下载路径与 Earthdata 账号体系。批量下载常需 Earthdata Login。",
+      "analysis_zh": "CDDIS/Earthdata 上的 MGEX 数据产品说明与获取入口，对应 IGS Multi-GNSS Experiment 观测与产品。与 igs.org/mgex 介绍页互补，侧重 NASA 侧下载路径与 Earthdata 账号体系。批量下载常需 Earthdata Login。",
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
@@ -15874,7 +15874,7 @@
       "name": "Navipedia",
       "url": "https://gssc.esa.int/navipedia/index.php/Main_Page",
       "desc_zh": "ESA GSSC Navipedia：GNSS 百科与参考 Wiki",
-      "analysis_zh": "欧洲 GNSS 服务中心维护的 Navipedia，按主题整理卫星导航概念、系统与算法条目，是公开可编辑风格的 GNSS 参考 Wiki。官方 portal；适合教学查阅与概念对照，条目深度不一，工程实施与接口开发仍应回到 ICD 与正式标准原文核对。",
+      "analysis_zh": "欧洲 GNSS 服务中心维护的 Navipedia，按主题整理卫星导航概念、系统与算法条目，是公开可编辑风格的 GNSS 参考 Wiki。适合教学查阅与概念对照，条目深度不一，工程实施与接口开发仍应回到 ICD 与正式标准原文核对。",
       "language": "data-portal",
       "license": "portal-terms",
       "category": "tools-learning",
@@ -15894,7 +15894,7 @@
       "name": "USCG-NAVCEN",
       "url": "https://www.navcen.uscg.gov/",
       "desc_zh": "美国海岸警卫队 Navigation Center：航海导航与 GNSS 信息门户",
-      "analysis_zh": "USCG Navigation Center 官网，发布航海航标、差分 GPS/导航服务公告与相关 GNSS 用户信息入口。官方 portal；偏海事与公共导航服务，不是 CORS RINEX 下载站。运行状态、用户通告与服务变更以站内最新公告为准。",
+      "analysis_zh": "USCG Navigation Center 官网，发布航海航标、差分 GPS/导航服务公告与相关 GNSS 用户信息入口。偏海事与公共导航服务，不是 CORS RINEX 下载站。运行状态、用户通告与服务变更以站内最新公告为准。",
       "language": "data-portal",
       "license": "portal-terms",
       "category": "tools-learning",
@@ -15914,7 +15914,7 @@
       "name": "GPS.gov",
       "url": "https://www.gps.gov/",
       "desc_zh": "美国 GPS.gov：全球定位系统官方公众信息站",
-      "analysis_zh": "GPS.gov 是美国面向公众的 GPS 系统官方站点，汇总政策、现代化进展与用户资源入口。官方 portal；与 FAA WAAS、NAVCEN 等互补。技术 ICD 细节多链向其他 .gov 文档，下载、引用与再分发请遵循各目标页条款。",
+      "analysis_zh": "GPS.gov 是美国面向公众的 GPS 系统官方站点，汇总政策、现代化进展与用户资源入口。与 FAA WAAS、NAVCEN 等互补。技术 ICD 细节多链向其他 .gov 文档，下载、引用与再分发请遵循各目标页条款。",
       "language": "data-portal",
       "license": "portal-terms",
       "category": "tools-learning",
@@ -16234,7 +16234,7 @@
       "name": "ENRI-Japan",
       "url": "https://www.enri.go.jp/eng/index.html",
       "desc_zh": "日本电子航法研究所（ENRI）：航空 CNS/ATM 研究机构门户",
-      "analysis_zh": "ENRI 是日本在航空交通管理与通信导航监视（ATM/CNS）领域的国家级研究机构英文门户，涵盖电子航法与相关 GNSS/增强研究入口。官方 portal；适合查日方航空导航与完好性研究方向。具体报告与数据分发条款以各子页为准，非 CORS 下载站。",
+      "analysis_zh": "ENRI 是日本在航空交通管理与通信导航监视（ATM/CNS）领域的国家级研究机构英文门户，涵盖电子航法与相关 GNSS/增强研究入口。适合查日方航空导航与完好性研究方向。具体报告与数据分发条款以各子页为准，非 CORS 下载站。",
       "language": "data-portal",
       "license": "portal-terms",
       "category": "tools-learning",
@@ -16254,7 +16254,7 @@
       "name": "ICAO-PBN",
       "url": "https://www.icao.int/safety/pbn/Pages/Overview.aspx",
       "desc_zh": "ICAO PBN：基于性能导航概述与文件入口",
-      "analysis_zh": "国际民航组织关于 Performance-Based Navigation（PBN）的概述页，链向航空导航性能与相关文件框架，常与 GNSS/SBAS 完好性运行要求对照。官方 portal；偏规章与运行概念，不是接收机开源代码。具体 SARPs/手册下载遵循 ICAO 分发规则。",
+      "analysis_zh": "国际民航组织关于 Performance-Based Navigation（PBN）的概述页，链向航空导航性能与相关文件框架，常与 GNSS/SBAS 完好性运行要求对照。偏规章与运行概念，不是接收机开源代码。具体 SARPs/手册下载遵循 ICAO 分发规则。",
       "language": "data-portal",
       "license": "portal-terms",
       "category": "tools-learning",
@@ -16298,7 +16298,7 @@
       "language": "Go",
       "license": "Apache-2.0",
       "category": "gnss-data",
-      "subcategory": "Galileo HAS",
+      "subcategory": "RTCM/NTRIP",
       "markers": [
         "routine-2026-09-24h"
       ],
@@ -16512,7 +16512,7 @@
       "language": "C",
       "license": "BSD-2-Clause",
       "category": "gnss-sdr",
-      "subcategory": "月面导航仿真",
+      "subcategory": "信号仿真",
       "markers": [
         "routine-2026-09-24i"
       ],
@@ -16532,7 +16532,7 @@
       "language": "C",
       "license": "BSD-2-Clause",
       "category": "gnss-sdr",
-      "subcategory": "月面软件接收机",
+      "subcategory": "软件接收机",
       "markers": [
         "routine-2026-09-24i"
       ],
@@ -16572,7 +16572,7 @@
       "language": "Rust",
       "license": "MPL-2.0",
       "category": "gnss-positioning",
-      "subcategory": "实时PVT",
+      "subcategory": "PVT",
       "markers": [
         "routine-2026-09-24i"
       ],
@@ -16592,7 +16592,7 @@
       "language": "Rust",
       "license": "MPL-2.0",
       "category": "gnss-data",
-      "subcategory": "Rust定义",
+      "subcategory": "基础库",
       "markers": [
         "routine-2026-09-24i"
       ],
@@ -16611,8 +16611,8 @@
       "analysis_zh": "面向 Swift Navigation Piksi 系列的 Python 工具，覆盖配置、日志与常见现场操作，许可证 LGPL-3.0。与 libsbp 消息生态配合，适合已有 Piksi/SBP 设备的工程调试。非通用多品牌 RTK 套件；协议与固件版本需匹配。仓库仍可访问且许可证明确，补齐厂商工具链条目。",
       "language": "Python",
       "license": "LGPL-3.0",
-      "category": "tools-learning",
-      "subcategory": "接收机工具",
+      "category": "gnss-data",
+      "subcategory": "接收机驱动",
       "markers": [
         "routine-2026-09-24i"
       ],
@@ -16672,7 +16672,7 @@
       "language": "C++",
       "license": "BSD-3-Clause",
       "category": "mobile-apps",
-      "subcategory": "QZSS嵌入式",
+      "subcategory": "嵌入式",
       "markers": [
         "routine-2026-09-24j"
       ],
@@ -16732,7 +16732,7 @@
       "language": "Python",
       "license": "GPL-3.0",
       "category": "ionosphere",
-      "subcategory": "法拉第旋转",
+      "subcategory": "电离层工具",
       "markers": [
         "routine-2026-09-24j"
       ],
@@ -16772,7 +16772,7 @@
       "language": "C++",
       "license": "MIT",
       "category": "mobile-apps",
-      "subcategory": "树莓派GNSS",
+      "subcategory": "嵌入式",
       "markers": [
         "routine-2026-09-24j"
       ],
@@ -16792,7 +16792,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "gnss-data",
-      "subcategory": "历书转换",
+      "subcategory": "接收机协议",
       "markers": [
         "routine-2026-09-24j"
       ],
@@ -16812,7 +16812,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "tools-learning",
-      "subcategory": "SBAS用户支持",
+      "subcategory": "SBAS",
       "markers": [
         "routine-2026-09-24j"
       ],
@@ -16834,7 +16834,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "国家大地测量",
+      "subcategory": "国家CORS",
       "markers": [
         "routine-2026-09-24j"
       ],
@@ -16900,7 +16900,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "orbit-clock",
-      "subcategory": "EOP产品",
+      "subcategory": "EOP与参考系",
       "markers": [
         "routine-2026-09-24j"
       ],
@@ -17024,7 +17024,7 @@
       "language": "Python",
       "license": "BSD-3-Clause",
       "category": "ionosphere",
-      "subcategory": "空间数据接口",
+      "subcategory": "工具",
       "markers": [
         "routine-2026-09-24k"
       ],
@@ -17044,7 +17044,7 @@
       "language": "C++",
       "license": "MIT",
       "category": "navigation-ins",
-      "subcategory": "ROS2驱动",
+      "subcategory": "ROS驱动",
       "markers": [
         "routine-2026-09-24k"
       ],
@@ -17084,7 +17084,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "ionosphere",
-      "subcategory": "闪烁与TEC",
+      "subcategory": "电离层产品",
       "markers": [
         "routine-2026-09-24k"
       ],
@@ -17105,8 +17105,8 @@
       "analysis_zh": "International Service of Geomagnetic Indices（ISGI）门户，汇集 IAGA 认可的地磁指数与事件（如 Kp、Dst、aa、am 等）。GNSS 电离层扰动与空间天气研究常用其指数作背景。页面提供指数说明与获取路径，具体文件格式见各产品页。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "地磁指数",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24k"
       ],
@@ -17128,7 +17128,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "空间物理数据",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24k"
       ],
@@ -17172,7 +17172,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "日地物理归档",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24k"
       ],
@@ -17193,8 +17193,8 @@
       "analysis_zh": "SWPC 对外提供的服务根目录，索引 experimental、json、netcdf、products 等机器可读空间天气产品路径。便于脚本拉取指数、通量与相关产品，与 GloTEC 等具体产品页互补。目录本身无文档正文，具体端点以子路径为准。高频抓取请遵守 NOAA 使用政策。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "tools-learning",
-      "subcategory": "空间天气API",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24k"
       ],
@@ -17216,7 +17216,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "ionosphere",
-      "subcategory": "空间天气模型",
+      "subcategory": "模型",
       "markers": [
         "routine-2026-09-24k"
       ],
@@ -17238,7 +17238,7 @@
       "language": "C++",
       "license": "GPL-3.0",
       "category": "mobile-apps",
-      "subcategory": "Arduino解析",
+      "subcategory": "Arduino-NMEA",
       "markers": [
         "routine-2026-09-24l"
       ],
@@ -17258,7 +17258,7 @@
       "language": "C++",
       "license": "MIT",
       "category": "mobile-apps",
-      "subcategory": "UBX通信",
+      "subcategory": "嵌入式",
       "markers": [
         "routine-2026-09-24l"
       ],
@@ -17278,7 +17278,7 @@
       "language": "C++",
       "license": "MIT",
       "category": "mobile-apps",
-      "subcategory": "uBlox驱动",
+      "subcategory": "嵌入式",
       "markers": [
         "routine-2026-09-24l"
       ],
@@ -17298,7 +17298,7 @@
       "language": "C++",
       "license": "MIT",
       "category": "navigation-ins",
-      "subcategory": "视觉RTK",
+      "subcategory": "ROS驱动",
       "markers": [
         "routine-2026-09-24l"
       ],
@@ -17358,7 +17358,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "ionosphere",
-      "subcategory": "电离层HF",
+      "subcategory": "电离层产品",
       "markers": [
         "routine-2026-09-24l"
       ],
@@ -17380,7 +17380,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "WDC数据",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24l"
       ],
@@ -17401,8 +17401,8 @@
       "analysis_zh": "SWS Geophysical 专题汇总地磁图、指数、宇宙线及警报预警信息，为 GNSS 扰动分析提供地磁背景。与 Satellite/HF 专题互补，覆盖不同空间天气侧面。页面为产品导航。使用请注明 SWS 产品名与时间。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "地磁地球物理",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24l"
       ],
@@ -17424,7 +17424,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "ionosphere",
-      "subcategory": "D区吸收",
+      "subcategory": "电离层产品",
       "markers": [
         "routine-2026-09-24l"
       ],
@@ -17445,8 +17445,8 @@
       "analysis_zh": "WSA-Enlil 太阳风与日冕物质抛射（CME）传播预报产品入口，提供扰动到达地球的时效估计，常作为 GNSS 电离层/磁暴扰动的上游空间天气背景。模型输出存在不确定性，需与实测地磁指数及 TEC/闪烁产品对照使用。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "太阳风预报",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24l"
       ],
@@ -17511,8 +17511,8 @@
       "analysis_zh": "加拿大 Space Weather Canada 英文主页，汇总太阳、地磁与电离层相关预报入口；太阳射电流量页可由此导航。对北美 GNSS 用户了解区域空间天气有帮助。部分产品有英法文版本。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "国家空间天气",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24l"
       ],
@@ -17554,7 +17554,7 @@
       "language": "Python",
       "license": "BSD-3-Clause",
       "category": "navigation-ins",
-      "subcategory": "ROS-NMEA",
+      "subcategory": "ROS驱动",
       "markers": [
         "routine-2026-09-24m"
       ],
@@ -17634,7 +17634,7 @@
       "language": "Rust",
       "license": "MIT",
       "category": "gnss-data",
-      "subcategory": "UBX-Rust",
+      "subcategory": "基础库",
       "markers": [
         "routine-2026-09-24m"
       ],
@@ -17653,8 +17653,8 @@
       "analysis_zh": "Solar Influences Data Analysis Center（SIDC，比利时皇家天文台）门户，汇集空间/地基太阳成像、射电、日总辐照及预报公报等。为 GNSS 扰动研究提供太阳活动上游。具体产品下载走各服务子页。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "太阳空间天气",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24m"
       ],
@@ -17675,8 +17675,8 @@
       "analysis_zh": "SIDC 下 SILSO（Sunspot Index and Long-term Solar Observations）主页，提供国际太阳黑子指数等长期序列，广泛用于太阳周与空间天气背景。与瞬时闪烁/TEC 产品互补。数据用于科研时请按 SILSO 引用说明。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "太阳黑子指数",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24m"
       ],
@@ -17697,8 +17697,8 @@
       "analysis_zh": "京都 WDC Geomagnetism 提供的实时（Quicklook）Dst 指数页，用于监测磁暴强度；注明 raw 未校核、仅非商业监测用途。GNSS 电离层暴分析常用 Dst 作背景。最终定标序列请改用正式产品。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "Dst指数",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24m"
       ],
@@ -17719,8 +17719,8 @@
       "analysis_zh": "京都 WDC 的 Kp（及 ap、Ap）指数页面，含历史序列与 Bartels 图说明；1997 年后指数衍生与分发转至德国 GFZ。本页可作历史查询与文献追溯入口，现势业务下载应优先 GFZ Kp 数据服务。引用请注明来源台站、版本与非商业条款。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "Kp历史",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24m"
       ],
@@ -17741,8 +17741,8 @@
       "analysis_zh": "SWPC GOES X-ray Flux 产品页，监测太阳软 X 射线耀斑等级；耀斑常与 D 区吸收、短波中断以及 GPS/通信影响窗口相关，页面亦链到空间天气影响说明。非 TEC 图，但常作扰动时段标注。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "GOES-X射线",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24m"
       ],
@@ -17763,8 +17763,8 @@
       "analysis_zh": "Solar Cycle Progression 产品展示当前太阳周进展与预测对照曲线，便于把握长期空间天气背景与太阳活动位相。非实时 TEC/闪烁产品，但常与电离层气候态及太阳周研究一并引用。引用请注明 SWPC 产品名与访问日期。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "太阳周",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24m"
       ],
@@ -17785,8 +17785,8 @@
       "analysis_zh": "BOM SWS Solar 专题页，提供太阳条件、活动区、太阳风等区域监测产品导航，与 Satellite/HF/Geophysical 专题互补，覆盖南半球业务视角。页面为导航入口而非全球 IONEX 归档。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "太阳活动",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24m"
       ],
@@ -17807,8 +17807,8 @@
       "analysis_zh": "GFZ 官方 Kp 指数数据入口，支持用户定制下载、HTTPS/FTP 与 Web Service API，并提供图件与文档链接。现势 Kp/地磁活动分析应优先使用此服务，而非仅依赖历史镜像站。脚本抓取请遵循 GFZ 使用与引用政策。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "Kp数据API",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24m"
       ],
@@ -17850,7 +17850,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "ionosphere",
-      "subcategory": "区域TEC",
+      "subcategory": "GIM",
       "markers": [
         "routine-2026-09-24n"
       ],
@@ -17870,7 +17870,7 @@
       "language": "Python",
       "license": "Apache-2.0",
       "category": "ionosphere",
-      "subcategory": "气辉模型",
+      "subcategory": "模型",
       "markers": [
         "routine-2026-09-24n"
       ],
@@ -17890,7 +17890,7 @@
       "language": "Python",
       "license": "BSD-3-Clause",
       "category": "ionosphere",
-      "subcategory": "任务规划",
+      "subcategory": "工具",
       "markers": [
         "routine-2026-09-24n"
       ],
@@ -17909,8 +17909,8 @@
       "analysis_zh": "为 pysat 提供 NASA Common Data Format（CDF）读取支持，BSD-3-Clause。空间物理与部分 GNSS/电离层衍生产品常以 CDF 分发，可与 CDAWeb/SPDF 下载流程衔接。适合把官方 CDF 拉进 Python 分析管线。",
       "language": "Python",
       "license": "BSD-3-Clause",
-      "category": "gnss-data",
-      "subcategory": "CDF读取",
+      "category": "ionosphere",
+      "subcategory": "工具",
       "markers": [
         "routine-2026-09-24n"
       ],
@@ -17950,7 +17950,7 @@
       "language": "TypeScript",
       "license": "MIT",
       "category": "orbit-clock",
-      "subcategory": "SGP4-JS",
+      "subcategory": "SGP4传播",
       "markers": [
         "routine-2026-09-24n"
       ],
@@ -17970,7 +17970,7 @@
       "language": "Python",
       "license": "GPL-3.0",
       "category": "orbit-clock",
-      "subcategory": "可微SGP4",
+      "subcategory": "SGP4传播",
       "markers": [
         "routine-2026-09-24n"
       ],
@@ -17990,7 +17990,7 @@
       "language": "Rust",
       "license": "MIT",
       "category": "orbit-clock",
-      "subcategory": "SGP4-Rust",
+      "subcategory": "SGP4传播",
       "markers": [
         "routine-2026-09-24n"
       ],
@@ -18010,7 +18010,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "国家GNSS门户",
+      "subcategory": "国家CORS",
       "markers": [
         "routine-2026-09-24n"
       ],
@@ -18032,7 +18032,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "orbit-clock",
-      "subcategory": "时标FTP",
+      "subcategory": "时标产品",
       "markers": [
         "routine-2026-09-24n"
       ],
@@ -18076,7 +18076,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "tools-learning",
-      "subcategory": "地磁门户",
+      "subcategory": "地磁模型",
       "markers": [
         "routine-2026-09-24n"
       ],
@@ -18098,7 +18098,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "OMNI查询",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24n"
       ],
@@ -18140,7 +18140,7 @@
       "language": "Python",
       "license": "MIT",
       "category": "ionosphere",
-      "subcategory": "NRLMSISE",
+      "subcategory": "中性大气",
       "markers": [
         "routine-2026-09-24o"
       ],
@@ -18180,7 +18180,7 @@
       "language": "C++",
       "license": "MIT",
       "category": "gnss-sdr",
-      "subcategory": "HackRF插件",
+      "subcategory": "SDR抽象",
       "markers": [
         "routine-2026-09-24o"
       ],
@@ -18200,7 +18200,7 @@
       "language": "C++",
       "license": "LGPL-2.1",
       "category": "gnss-sdr",
-      "subcategory": "Pluto插件",
+      "subcategory": "SDR抽象",
       "markers": [
         "routine-2026-09-24o"
       ],
@@ -18242,7 +18242,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "NRTK服务",
+      "subcategory": "国家CORS",
       "markers": [
         "routine-2026-09-24o"
       ],
@@ -18329,8 +18329,8 @@
       "analysis_zh": "SWPC ACE Real-Time Solar Wind 产品页，提供 ACE 卫星太阳风实时监测，是磁暴/电离层扰动的上游空间天气输入之一，并在影响说明中关联 GPS 等系统。与 OMNI 历史序列互补，偏实时监测。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "太阳风实时",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24o"
       ],
@@ -18351,8 +18351,8 @@
       "analysis_zh": "科罗拉多大学 LASP 的 Interactive Solar Irradiance Datacenter，汇集太阳光谱/辐照等数据浏览与获取。为电离层/中性大气模型提供太阳输入参考。非 GNSS 观测站。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "太阳辐照",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24o"
       ],
@@ -18373,8 +18373,8 @@
       "analysis_zh": "英国地质调查局提供的 INTERMAGNET 数据服务站，含可视化、统计与数据/产品下载 Web 服务说明。与 INTERMAGNET 主站互补，偏数据获取实现。应用代码有开源声明（页面说明）。地磁指数研究常用。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "地磁数据",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24o"
       ],
@@ -18395,8 +18395,8 @@
       "analysis_zh": "NCEI 的 GOES 卫星空间天气数据门户，汇总 GOES 相关存档与产品入口。可与 SWPC GOES X 射线实时产品对照使用。偏数据目录而非单一文件下载。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "GOES存档",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24o"
       ],
@@ -18418,7 +18418,7 @@
       "language": "C++",
       "license": "GPL-3.0",
       "category": "gnss-sdr",
-      "subcategory": "UHD插件",
+      "subcategory": "SDR抽象",
       "markers": [
         "routine-2026-09-24p"
       ],
@@ -18438,7 +18438,7 @@
       "language": "C++",
       "license": "MIT",
       "category": "gnss-sdr",
-      "subcategory": "RTL-SDR插件",
+      "subcategory": "SDR抽象",
       "markers": [
         "routine-2026-09-24p"
       ],
@@ -18458,7 +18458,7 @@
       "language": "C++",
       "license": "BSL-1.0",
       "category": "gnss-sdr",
-      "subcategory": "远程Soapy",
+      "subcategory": "SDR抽象",
       "markers": [
         "routine-2026-09-24p"
       ],
@@ -18478,7 +18478,7 @@
       "language": "C++",
       "license": "MIT",
       "category": "gnss-sdr",
-      "subcategory": "Airspy插件",
+      "subcategory": "SDR抽象",
       "markers": [
         "routine-2026-09-24p"
       ],
@@ -18498,7 +18498,7 @@
       "language": "C++",
       "license": "MIT",
       "category": "gnss-sdr",
-      "subcategory": "SDRplay插件",
+      "subcategory": "SDR抽象",
       "markers": [
         "routine-2026-09-24p"
       ],
@@ -18539,8 +18539,8 @@
       "analysis_zh": "Solar Dynamics Observatory 官方门户，提供大气成像仪等日面 EUV/磁图产品入口，是电离层/热层日侧驱动的上游太阳观测源。站点曾提示存储故障时改走 Data Access；科研请优先用 JSOC 等正式归档。与 SOHO、SWPC 产品互补，偏成像而非粒子/太阳风时序。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "太阳观测",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24p"
       ],
@@ -18561,8 +18561,8 @@
       "analysis_zh": "Solar and Heliospheric Observatory 主站，含 gallery、data/archive 与任务状态。LASCO 等日冕观测常用于 CME 预警，与 GNSS 电离层暴分析的上游空间天气相关。长期任务档案成熟；具体数据级产品请跟 archive 指引。与 SDO 成像互补。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "太阳观测",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24p"
       ],
@@ -18583,8 +18583,8 @@
       "analysis_zh": "Community Coordinated Modeling Center 的 DONKI（Database Of Notifications, Knowledge, Information），检索 CME、耀斑、高能粒子等事件与通知归档。便于把 GNSS 电离层扰动时段对齐到上游太阳/行星际事件。公开检索为主；模型运行另见 CCMC。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "空间天气事件",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24p"
       ],
@@ -18605,8 +18605,8 @@
       "analysis_zh": "开源取向的太阳影像浏览器，聚合 SDO/SOHO 等多源层，支持截图、电影与外链科学数据下载请求。适合快速目视对齐耀斑/日冕结构到 GNSS 扰动窗口，而非替代正式科学归档。与 DONKI 事件库、SWPC 产品互补。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "太阳可视化",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24p"
       ],
@@ -18627,8 +18627,8 @@
       "analysis_zh": "京都 WDC 实时（Quicklook）AE 指数页，监测极光区地磁活动；注明非商业用途，2024 年底起数字值亦入仓可供科研。与 Dst/Kp 页互补，偏亚暴时间尺度，常作 GNSS 高纬电离层扰动背景。最终定标请用正式产品。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "AE指数",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24p"
       ],
@@ -18649,8 +18649,8 @@
       "analysis_zh": "SWPC Real-Time Solar Wind 产品页，汇聚多源实时太阳风监测，说明中关联 GPS 等系统影响。与 ACE Real-Time Solar Wind 页互补：本页为综合实时入口，ACE 页偏单星。历史分析请改用 OMNI 等。页面现多跳转到 spaceweather.gov。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "太阳风实时",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24p"
       ],
@@ -18671,8 +18671,8 @@
       "analysis_zh": "SWPC GOES Proton Flux 产品页，监测太阳高能质子事件（SPE）。质子暴可影响极区 HF/GNSS 与卫星单粒子效应，是电离层/空间天气分析中与 X 射线耀斑、太阳风并列的上游输入。与 GOES X-ray、NGDC GOES 归档互补，偏实时通量产品。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "GOES质子",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24p"
       ],
@@ -18760,7 +18760,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "区域CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-24q"
       ],
@@ -18782,7 +18782,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "区域CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-24q"
       ],
@@ -18804,7 +18804,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "troposphere",
-      "subcategory": "EPN对流层",
+      "subcategory": "对流层产品",
       "markers": [
         "routine-2026-09-24q"
       ],
@@ -18826,7 +18826,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "区域CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-24q"
       ],
@@ -18891,7 +18891,7 @@
       "analysis_zh": "NCEI Enhanced Magnetic Model（EMM）产品页，提供比 WMM 更精细的地壳/岩石圈磁场模型入口。与 WMM 门户互补，服务航向/磁偏与空间天气地磁背景。模型系数与计算器见页内链接。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
+      "category": "tools-learning",
       "subcategory": "地磁模型",
       "markers": [
         "routine-2026-09-24q"
@@ -18935,8 +18935,8 @@
       "analysis_zh": "SWPC 太阳综合图产品页，概括日面活动区与预报相关结构，服务于空间天气值班与 GNSS/HF 影响背景。与 SDO/SOHO 成像、GOES 通量产品互补，偏综合研判图。页面现多跳转到 spaceweather.gov。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "太阳观测",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24q"
       ],
@@ -18957,8 +18957,8 @@
       "analysis_zh": "SWPC Solar and Geophysical Event Reports 产品页，归档耀斑、粒子与地磁等事件报告文本。便于把 GNSS 扰动时段对齐到官方事件纪要，与 DONKI、GOES 通量互补。文本产品多为公开。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "空间天气事件",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24q"
       ],
@@ -19002,7 +19002,7 @@
       "language": "Rust",
       "license": "AGPL-3.0",
       "category": "orbit-clock",
-      "subcategory": "轨道动力学",
+      "subcategory": "轨道确定/基础库",
       "markers": [
         "routine-2026-09-24q"
       ],
@@ -19044,7 +19044,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "IGS数据中心",
+      "subcategory": "IGS综合",
       "markers": [
         "routine-2026-09-24r"
       ],
@@ -19088,7 +19088,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "区域CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-24r"
       ],
@@ -19132,7 +19132,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "区域CORS",
+      "subcategory": "CORS区域网",
       "markers": [
         "routine-2026-09-24r"
       ],
@@ -19154,7 +19154,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "数据中心",
+      "subcategory": "IGS综合",
       "markers": [
         "routine-2026-09-24r"
       ],
@@ -19176,7 +19176,7 @@
       "language": "data-portal",
       "license": "portal-terms",
       "category": "gnss-datasets",
-      "subcategory": "数据中心",
+      "subcategory": "IGS综合",
       "markers": [
         "routine-2026-09-24r"
       ],
@@ -19285,8 +19285,8 @@
       "analysis_zh": "Community Coordinated Modeling Center 的 Integrated Space Weather Analysis（ISWA）工具入口，聚合模型与观测可视化，服务空间天气态势感知。与 DONKI、OMNI、SWPC 产品互补，偏综合分析台。iswa.ccmc 旧地址会跳转到本 URL。",
       "language": "data-portal",
       "license": "portal-terms",
-      "category": "ionosphere",
-      "subcategory": "空间天气分析",
+      "category": "gnss-datasets",
+      "subcategory": "地磁空间天气",
       "markers": [
         "routine-2026-09-24r"
       ],
