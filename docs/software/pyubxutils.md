@@ -1,6 +1,6 @@
 # pyubxutils · u-blox UBX 接收机配置命令行工具集操作手册
 
-目录：[`PROJECTS.json` → `pyubxutils`](../../PROJECTS.json) · 上游 <https://github.com/semuconsulting/pyubxutils> · PyPI **`pyubxutils` 1.0.6**（2026-02-11 18:13 UTC 上传）· tag **`v1.0.6`=`b758ec0`**；main tip **`31527a9`**（2026-09-23，领先 tag 6 commit，只改 README/版权串，下文坑仍在）· BSD-3-Clause · ★**5** · Python ≥3.10 · 依赖 `pyserial>=3.5`、`pyubx2>=1.2.58`（本机解析到 **pyubx2 1.3.7** / pynmeagps 1.1.7 / pyrtcm 1.2.0 / pyserial 3.5）· 本机 CPython 3.13.5 · 2026-09-26 02:14–02:45 EDT
+目录：[`PROJECTS.json` → `pyubxutils`](../../PROJECTS.json) · 上游 <https://github.com/semuconsulting/pyubxutils> · PyPI **`pyubxutils` 1.0.6**（2026-02-11 18:13 UTC 上传）· tag **`v1.0.6`=`b758ec0`**；main tip **`31527a9`**（2026-09-23，领先 tag 6 commit，只改 README/版权串，下文坑仍在）· BSD-3-Clause · ★**5** · Python ≥3.10 · 依赖 `pyserial>=3.5`、`pyubx2>=1.2.58`（本机解析到 **pyubx2 1.3.7** / pynmeagps 1.1.7 / pyrtcm 1.2.0 / pyserial 3.5）· 本机 CPython 3.13.5 · 2026-09-26 02:14–02:28 EDT
 
 > 岗位：**对串口上的 u-blox 板卡做「批量存/载/比对配置、开关消息、设基站」**。6 个 CLI：`ubxsave` `ubxload` `ubxcompare` `ubxsetrate` `ubxbase` `ubxsimulator`。冲突时：**本机 `-h` / 源码 > 上游 README > 本文**。编解码底层 → [pyubx2](./pyubx2.md)；拉流/NTRIP → [pygnssutils](./pygnssutils.md)（其 1.1.9 起把 ubx* 工具拆到本包）。
 > **本机无接收机**：串口一律是 socat 伪终端 + 自写「假接收机」桥（下称**合成桥**）：UBX 命令交给上游 `UBXSimulator` 回 ACK-ACK，另由桥对 12 个键回 CFG-VALGET 合成值、可选注入合成 RTCM 1006、可选整帧回放 gpsd 真实 F9T 日志作背景流。**写入接收机的效果全部「未在真接收机测试」。**
