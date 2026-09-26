@@ -147,6 +147,7 @@ CelesTrak/Space-Track 根数 →（本库）TEME → astropy/skyfield 转 ITRS �
 | Python 批量 TLE 传播、可见性 | **本库** + astropy/skyfield |
 | 要现成仰角/过境/星下点 | skyfield（内部即本库） |
 | 浏览器 / Node 可视化 | [satellite-js](./satellite-js.md) |
+| Rust 服务 / no_std | [sgp4-rs](./sgp4-rs.md)（WGS72 配置下与本库差 ≤ 9 µm） |
 | m/cm 级 GNSS 轨道 | SP3 → [gnssanalysis](./gnssanalysis.md) / [sp3](./sp3.md) |
 | 带摄动力模型的定轨/外推 | [gmat](./gmat.md)（或 Orekit） |
 | 可微分/ML 管线 | dSGP4（`PROJECTS.json` 有登记，本库无梯度） |

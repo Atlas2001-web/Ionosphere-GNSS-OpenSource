@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **190 篇**操作手册（合计 **41830 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **191 篇**操作手册（合计 **42034 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -215,6 +215,7 @@
 | 188 | [mosgim2.md](./mosgim2.md) | PadArt 开源 GIM：仅用相位差（弧内对最小值做差，消模糊度+DCB）→ 两层薄壳（300/750 km）日固地磁系球谐 + LCP 正值约束 → HDF5 系数（**不写 IONEX**）；吃 tec-suite 输出 | 218 | **已短硬** · 2026-09-26 02:25–02:50 EDT；tip **`fc42e31`**（2023-08-09）/MIT/无 PyPI；Py3.11 + scipy 1.14.1/numpy 2.1.3（requirements 钉 2017 版装不上）+5 处兼容补丁（lemkelcp、`sph_harm`、`np.int`、`decode`、站名表漏逗号 `zambab12`）；58 站 98657 差分观测，单进程 6 m 49 s（6 进程 OOM）；25 幅对 CODE 终版：corr **0.951**/偏差 **−5.58**/RMS **9.67** TECU，赤道带 −8.14/11.55，峰值低 7–26 TECU；[img/](./img/mosgim2-vs-codg-20240822-12ut.png)；作者 2017-002 测试包服务器超时未复现 |
 | 189 | [nyx.md](./nyx.md) | nyx-space Rust 航天动力学库（PyPI `nyx_space` wheel / crate `nyx-space`；ANISE 帧/星历/EOP）：数值积分（球谐+日月+SRP）、位置观测 EKF 定轨估 Cr、导出 OEM/BSP/Parquet；≠ SP3 解析器 / SGP4 / GNSS POD（无 GR、Python 无 BLS、AGPL） | 228 | **已短硬** · 2026-09-26 02:46–02:53 EDT；PyPI **2.6.0**（tag `7452963` 2026-09-12）/crate 2.6.0+anise 0.10.6/AGPL-3.0/★490/Py 3.13.5；wheel 12 s（venv 529 MB）；Rust 最小例 163 s/target 843 MB，@24h 与 Python 同为 67.03 m；PRN 02 同 Orekit 初值 12×12+日月+SRP **38.0 / 67.0 m**（Orekit 41.4 / 75.5，含 GR），无 SRP 57.5 / 107.4 m；EKF 估 Cr 12 h **1.911** / 24 h 1.918（orbdetpy EKF 1.912 / 1.923），回推 t0 再飞外推段 1.73 m；RTS 平滑器输出不可信；坑 14 条 |
 | 190 | [novatel-edie.md](./novatel-edie.md) | NovAtel 官方 EDIE：OEM4/6/7 日志解帧/解码/互转（ASCII↔二进制↔JSON）、RANGECMP 解压、命令编码（C++17 库 + PyPI `novatel-edie`；JSON 消息库 606 条）；≠ 定位解算器 / RINEX 转换 / 串口驱动 | 208 | **已短硬** · 2026-09-26 02:47–02:59 EDT；PyPI **2.10.11**（内核 3.11.11）/GitHub tag `CPP-v3.11.14`=`6db1f00`（Release 页停在 3.9.47）/MIT/★32/wheel cp39–cp312abi3，Linux+Win，无 macOS/sdist；RTKLIB `oemv_200911218.gps` 真数据：BESTPOS 49/RANGECMP 46/RAWEPHEM 25/GLOEPHEMERIS 8/TRACKSTAT 50/SATVIS 49/未知 id287 90；OEMV 类型字节 0x02→RANGECMP **静默不解压**（手动 UNSUPPORTED），改头重算 CRC 后 1380 条观测与 convbin 2.4.3 RINEX **1380/1380** 对上（差 ≤0.0005）；二进制往返 227/227 逐字节相同，ASCII 有舍入；C++ 3.11.14 与 Python ASCII 输出 404183 B 逐字节相同；合成错误用例全部无崩溃（坏 CRC/截断/垃圾/未知 ID/NMEA/空库）；坑：CLI 缺 typing_extensions、缺文件静默为空、Decoder 不验 CRC、Commander 须写全参数；真接收机未测 |
+| 191 | [sgp4-rs.md](./sgp4-rs.md) | Rust `sgp4` crate（neuromorphicsystems；纯 Rust/可 no_std）：TLE/OMM(JSON) → TEME 位置速度（`Constants::propagate`→`Result`；不做帧转换/不拉数据/无衰减码；km 级，非精密轨道） | 202 | **已短硬** · 2026-09-26 02:57–03:00 EDT；crates **2.4.0** = tag/master **`66b6318`**（2026-02-23）/MIT/★120；rustc 1.98.1，冷编译 9.2 s/target 52 MB；**默认 WGS84**（与 CelesTrak/python-sgp4 差 27–34 m），改 WGS72+IAU 后对 python-sgp4 2.27 32 星×192 历元 max **8.8 µm**，OMM ≤1.4 mm；PRN02 对 IGS ULT SP3 mean **0.534 km**（同 python），31 星中位 1.658 km；tcppver 深空 24 星 ≤4.2 mm、近地 ≤7.7 µm（AFSPC 模式 23599 差 964 m 属预期）；322560 状态 **85–88 ms**（python SatrecArray 160–181、satellite.js 268）；坑：checksum/尾空格/CRLF 严格拒、OMM `EPOCH` 带 Z 崩、ISS 外推到地下仍 Ok（无 e=6） |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -389,6 +390,7 @@
 | GNSS/LEO 轨道外推、星历文件、掩星切点 / 站星 IPP 几何（TLE 或 SP3 初值） | [gmat.md](./gmat.md) |
 | TLE/OMM → SGP4 位置速度（Python 批量；TEME→ITRS 配 astropy） | [python-sgp4.md](./python-sgp4.md) |
 | TLE/OMM → SGP4 前端可视化 / 过境（JS/TS，浏览器/Node） | [satellite-js.md](./satellite-js.md) |
+| TLE/OMM → SGP4 嵌入 Rust 服务 / no_std（记得切 WGS72） | [sgp4-rs.md](./sgp4-rs.md) |
 | 严格 IERS 帧 + SP3 插值 + 数值积分/拟合（Java 库，Python 走 orekit_jpype） | [orekit.md](./orekit.md) |
 | Python/conda 原生数值积分 + 变分方程 + 估参（不用 JVM；TLE 别用其 sgp4） | [tudatpy.md](./tudatpy.md) |
 | 现成 EKF/UKF 滤波定轨 + 测站测角/多目标（SSA 原型；Orekit 11 停更，BLS 不估 Cr） | [orbdetpy.md](./orbdetpy.md) |

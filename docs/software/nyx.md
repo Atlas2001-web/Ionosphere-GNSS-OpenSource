@@ -220,6 +220,7 @@ SP3（[data-access](../data-access.md#sp3--clk--bias) → [sp3](./sp3.md)）→ 
 | 需求 | 用 |
 | --- | --- |
 | TLE → km 级位置 / 过境 | [python-sgp4](./python-sgp4.md)（nyx 无 SGP4） |
+| Rust 里做 TLE/OMM → TEME | [sgp4-rs](./sgp4-rs.md) |
 | 严格 IERS 2010 帧 + SP3 解析插值 + 积分 / 最小二乘拟合，含 GR | [orekit](./orekit.md) |
 | Python/conda 原生积分 + 变分方程 + 最小二乘估参 | [tudatpy](./tudatpy.md) |
 | 现成 EKF/UKF + 测站测角、SSA 原型（停更，Orekit 11） | [orbdetpy](./orbdetpy.md) |
