@@ -431,7 +431,7 @@ curl -L -C - -O \
 
 ## 电离层与地磁门户决策表
 
-第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD），以及地基与 LEO 电离层观测（E23 GIRO / DIDBase 测高仪、E24 Swarm swarm-diss HTTPS、E25 VirES HAPI、E26 CHAIN 闪烁 ISMR、E27 GIM/IONEX 各中心门户、E28 IGS 观测匿名镜像、E29 近实时 TEC 产品、E30 区域 CORS 网）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
+第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD），以及地基与 LEO 电离层观测（E23 GIRO / DIDBase 测高仪、E24 Swarm swarm-diss HTTPS、E25 VirES HAPI、E26 CHAIN 闪烁 ISMR、E27 GIM/IONEX 各中心门户、E28 IGS 观测匿名镜像、E29 近实时 TEC 产品、E30 区域 CORS 网、E31 耀斑驱动数据）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
 
 | 门户 | 账号 / 门槛 | 格式 | 时间分辨率 · 时延 | 实测 |
 |---|---|---|---|:---:|
@@ -465,6 +465,7 @@ curl -L -C - -O \
 | [IGS 日观测匿名镜像](./software/gnss-obs-mirrors.md) | **匿名**：BKG `igs.bkg.bund.de/root_ftp/IGS/obs/YYYY/DDD/`；CAS `data.bdsmart.cn/pub/data/igs/YYYY/DDD/`；SOPAC `http://garner.ucsd.edu/pub/rinex/YYYY/DDD/`（只 http）；GA S3 `ga-gnss-data-rinex-v1/public/daily/`；**CDDIS 需 Earthdata**；IGN / WHU / KASI 本次不通；GFZ ISDC 只有自家网 | RINEX 3 `…_01D_30S_MO.crx.gz`（Hatanaka + gzip）；SOPAC 另有旧短名 `.d.Z` | 24 个 IGS 站：2024-05-11 BKG/CAS/SOPAC 24/24、GA 22/24；前一天数据上架中位 SOPAC/GA 0.3 h、CAS 0.4 h、BKG 9.0 h；同名文件各镜像 gz 字节数不同但观测段一致，抽检全 2880 历元 | ✅（[E28](#dp-e28)，[手册](./software/gnss-obs-mirrors.md)） |
 | [近实时 TEC 产品](./software/realtime-iono-products.md) | **匿名**：NOAA GloTEC `services.swpc.noaa.gov/products/glotec/`（GeoJSON 31 天 + 日 netCDF 2025-05 起）；NCEI 归档 `archive.data.noaa.gov/satellite-spaceweather/SWPC/Models/`（GloTEC 2025-02 起、US-TEC 2004-10 至 2023-11）；DLR IMPC **仅 `latest/` 匿名，历史需 SSO 账号**；UPC 实时 usrg；CODE P0D/P1D/P4D；CAS RTS；BoM 只有 PNG，数值 API 需 key | GeoJSON / netCDF / JSON / HDF5 / IONEX / PNG | 实测时延：DLR 2.6 min、UPC 4–6 min、GloTEC 21–24 min、CAS RTS 按天；09:15 UTC 同历元 GloTEC − CODE 预报 面积加权 RMS 4.19、DLR − GloTEC 均差 −3.49 TECU | ✅（[E29](#dp-e29)，[手册](./software/realtime-iono-products.md)） |
 | [区域 CORS 网](./software/cors-networks.md) | **匿名**：NOAA NGS S3 `noaa-cors-pds`、EPN `/pub/RINEX/`（+ BKG EUREF 镜像）、GeoNet（S3）、IBGE RBMC geoftp、SONEL FTP；**EarthScope GAGE 302 到登录**、CDDIS 需 Earthdata | RINEX 2 短名 o.gz / d.gz；RINEX 3 crx.gz；GeoNet 为 rnx.gz | 2024/132：NOAA 1740 站目录、SONEL 692、EPN 395、GeoNet 186、RBMC 84（15 s）；5 网各 1 站全部完整；上架中位 GeoNet 0.2 h、NOAA 2.8 h、RBMC ≈ 23 h、EPN 中央局 ≈ 52 h | ✅（[E30](#dp-e30)，[手册](./software/cors-networks.md)） |
+| [耀斑驱动数据](./software/solar-flare-data.md) | **匿名**：SWPC 事件表（NCEI 归档）、NCEI GOES-R XRS L2 `_science`（`sci_`）与运行版（`dn_`）、SWPC JSON（仅 7 天）、LISIRD LaTiS 的 FISM2 与 SDO EVE | netCDF4（XRS）/ 文本 / JSON / CSV | 2024-05-11 X5.8：G16 science 1 s 峰 5.865e-4 @ 01:22:50、G18 定为 X5.7、运行版高 1.2%；FISM2 30.4 nm ×1.54 峰 01:20，ESP 0.1–7 nm ×16.1；FISM2 延迟约 7 天 | ✅（[E31](#dp-e31)，[手册](./software/solar-flare-data.md)） |
 
 要登录才能拿数据的：EISCAT 门户（Madrigal 可绕行）、子午工程、ROM SAF 产品库（AWS 可绕行）、TGO ASCII、UKSSDC/RAL。要「申请」的：BGS 本站高分辨率（GIN 可绕行）。
 
@@ -787,6 +788,20 @@ curl -s -O https://geonet-open-data.s3-ap-southeast-2.amazonaws.com/gnss/rinex/2
 curl -s -O https://geoftp.ibge.gov.br/informacoes_sobre_posicionamento_geodesico/rbmc/dados_RINEX3/2024/132/ALMC00BRA_R_20241320000_01D_15S_MO.crx.gz   # 实测：200，3,611,388 B，15 s，5760 历元；该日 84 站；最新目录 267（≈ 23 h）
 curl -s -O ftp://ftp.sonel.org/gps/data/2024/132/019400JPN_R_20241320000_01D_30S_MO.crx.gz   # 实测：226，2,628,008 B，RINEX 3.02，2880 历元；该日 692 个长名 + 347 个 .24d.Z
 curl -s -o /dev/null -w '%{http_code} %{redirect_url}\n' https://gage-data.earthscope.org/archive/gnss/rinex/obs/2024/132/   # 实测：302 → /login（EarthScope GAGE 需账号）
+```
+
+<a id="dp-e31"></a>**E31 耀斑驱动：GOES XRS（NCEI science / 运行 / SWPC JSON）+ FISM2 / SDO EVE（LISIRD）**
+
+```bash
+curl -s https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2024/05/20240511events.txt | grep XRA | grep ' X'   # 实测：X5.8（0110/0123/0139 UT，G16，AR 3664）与 X1.5；整个 2024-05 共 21 行 X 级 XRA
+B=https://data.ngdc.noaa.gov/platforms/solar-space-observing-satellites/goes
+curl -s -O $B/goes16/l2/data/xrsf-l2-flx1s_science/2024/05/sci_xrsf-l2-flx1s_g16_d20240511_v2-2-1.nc   # 实测：200，3,420,163 B，netCDF4；XRS-B 1 s 峰 5.865e-4 W/m² @ 01:22:50（B2 为 primary 传感器）
+curl -s -O $B/goes16/l2/data/xrsf-l2-flsum_science/2024/05/sci_xrsf-l2-flsum_g16_d20240511_v2-2-1.nc   # 实测：200，43,623 B；EVENT_PEAK 01:23 X5.8；GOES-18 同文件给 X5.7
+curl -s -O $B/goes16/l2/data/xrsf-l2-flx1s/2024/05/dn_xrsf-l2-flx1s_g16_d20240511_v2-2-1.nc   # 实测：运行版峰 5.938e-4（比 science 高 1.2%）；研究用 sci_
+curl -s https://services.swpc.noaa.gov/json/goes/primary/xrays-7-day.json | head -c 300   # 实测：只有 7 天，1 min；当前 primary = GOES-18，secondary = GOES-19
+curl -s 'https://lasp.colorado.edu/lisird/latis/dap/fism_flare_hr.csv?time,wavelength,irradiance&time>=2024-05-11T00:30&time<2024-05-11T02:30&wavelength>30.3&wavelength<30.5'   # 实测：60 s；30.45 nm ×1.54，峰 01:20:03；FISM2 flare 版只到 2026-09-18 23:59 UTC
+curl -s 'https://lasp.colorado.edu/lisird/latis/dap/sdo_eve_diodes_l2b.csv?time,diodeQuad,diode304&time>=2024-05-11T00:30&time<2024-05-11T02:30'   # 实测：60 s，TAI 秒；ESP 0.1–7 nm ×16.1 @ 01:23:30；EVE λ<37 nm 谱线 29 条中 26 条全程 −1（MEGS-A 缺）
+# 口径：GOES-R XRS 为真实 W/m²；GOES 8–15 运行数据曾乘 0.7（B）/0.85（A）——与旧耀斑比，GOES-R ×0.7（X5.8 → X4.0，本文换算）
 ```
 
 ---

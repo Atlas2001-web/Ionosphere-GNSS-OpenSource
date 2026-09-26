@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **241 篇**操作手册（合计 **55163 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **242 篇**操作手册（合计 **55512 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -266,6 +266,7 @@
 | 239 | [ublox8-qzss-almanac-converter.md](./ublox8-qzss-almanac-converter.md) | jkivilin/ublox8-gps-qzss-yuma-almanac-converter：YUMA 历书（QZSS 官网 `qg/q/g*.alm`、NAVCEN）→ u-blox 8/M8 UBX-MGA-GPS-ALM + MGA-QZSS-ALM（QZO 1–5）二进制；标准库单脚本；不出星历/INI/HEALTH，GEO 丢弃，不发串口 | 207 | **已短硬** 用法讲解新入库 · 2026-09-26 05:46–05:55 EDT；`1170ab7`/MIT/★12；pytest 106 过；qg2026268 → 1540 B/35 帧、NAVCEN → 1408 B/32 帧；pyubx2+自写校验 67 帧通过，字段 ≤0.136 LSB；未知 PRN 崩、GEO/不健康 GPS 静默丢、`print_ubx.py` 空输出；真接收机未测 |
 | 240 | [cors-networks.md](./cors-networks.md) | 区域 CORS 网匿名日观测：NOAA NGS S3、EUREF EPN（+ BKG EUREF 镜像）、GeoNet、IBGE RBMC、SONEL 的目录、命名、采样、站数、上架延迟，一站一天真下载完整性；EarthScope GAGE / CDDIS 登录门槛 | 291 | **已短硬** · 2026-09-26 05:45–05:58 EDT；2024/132 NOAA 1740 站目录 / SONEL 692 / EPN 395 / GeoNet 186 / RBMC 84；5 站全部完整；延迟 GeoNet 0.2 h → EPN 中央局 ≈ 52 h |
 | 241 | [um982-driver.md](./um982-driver.md) | sunshineharry/UM982Driver：和芯星通 UM982/UM980 串口驱动（Python 线程）：只解 ASCII `#PVTSLNA`→fix（MSL 高/纬/经/σ）、`#BESTNAVA`→ENU 速度、`$GNHPR`→航向/俯仰/横滚，pyproj 出 UTM；不解 KSXT/二进制、不发配置命令 | 219 | **已短硬** 用法讲解新入库 · 2026-09-26 05:56–06:05 EDT；master `451364c`/PyPI 0.2.1/GPL-3.0/★39；公开真实 UM98x 日志 socat 回放 + 自写解析 PVTSLN 634×6/BESTNAV 745×6 字段 0 差、CRC 判定 49387/49387 一致；PVTSLN `psrvel_ground` 实为 −垂直速度；缺 pyserial、首 10 行无 PVTSLN 崩、UTM 1–9 区错、异常杀线程静默冻结；真接收机未测 |
+| 242 | [solar-flare-data.md](./solar-flare-data.md) | 耀斑驱动数据匿名获取：SWPC 事件表、NCEI GOES-R XRS L2 science vs 运行版、SWPC 实时 JSON（primary/secondary）、0.7 缩放因子来历、LISIRD FISM2 与 SDO EVE；2024-05-11 X5.8 个例 | 349 | **已短硬** · 2026-09-26 05:59–06:06 EDT；X5.8：G16 1 s 峰 5.865e-4 W/m² @ 01:22:50、G18 X5.7、dn 高 1.2%；FISM2 30.4 nm ×1.54、ESP ×16.1；FISM2 到 09-18 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -497,6 +498,7 @@
 | 一条命令按站按日从多个国家/区域 GNSS 网拉 RINEX 日文件（SOPAC/NGS/GFZ/Kadaster/GeoNet/EUREF/NOA/RENAG；先补装 requests，ARGN 会假成功） | [grinq.md](./grinq.md) |
 | 现在的全球/区域 TEC 去哪不登录拿（GloTEC、DLR、UPC 实时、CODE 预报、CAS RTS）、多久更新、历史多深 | [realtime-iono-products.md](./realtime-iono-products.md) |
 | 美国 / 欧洲 / 新西兰 / 巴西 / 验潮站 CORS 日观测不登录去哪拿、多少站、多久上架（NOAA、EPN、GeoNet、RBMC、SONEL） | [cors-networks.md](./cors-networks.md) |
+| 耀斑 TEC 突增要的 GOES X 射线 / EUV 数据去哪不登录拿、GOES-16 与 GOES-18、science 与运行版差在哪 | [solar-flare-data.md](./solar-flare-data.md) |
 | 美国 CORS（NCN）RINEX 批量下载、小时文件时延、站坐标（ITRF2020 vs NAD 83）、UFCORS 任意时段 | [noaa-ncn-data.md](./noaa-ncn-data.md) |
 | 欧洲 EPN/RENAG/RGP 台站检索、按站按日拿 RINEX 下载 URL 和 md5、IGS 站点日志 | [epos-glass-api.md](./epos-glass-api.md) |
 | 读/交换多机构闪烁 HDF5 文件（Kartverket/FMI/DTU/UNB 的 BiScEF `.nc`，S4/σφ/ROTI；先核时间基准与缺测值） | [biscef.md](./biscef.md) |
