@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **194 篇**操作手册（合计 **42714 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **195 篇**操作手册（合计 **42991 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -219,6 +219,7 @@
 | 192 | [pyspedas.md](./pyspedas.md) | NASA/UCLA PySPEDAS：OMNI 太阳风（Bz/速度/动压/SYM-H/AE）+ Kyoto Dst + GFZ Kp → tplot 变量，出图、`avg_data` 重采样，对齐 TEC/ROTI 时间轴（不读 RINEX、不算 TEC） | 225 | **已短硬** · 2026-09-26 02:53–03:05 EDT；PyPI **2.2.0**/HEAD **`723c6a2`**/MIT/★204；venv 670 MB；Gannon 暴 2024-05-10/11 实跑：OMNI HRO 1 min 月文件 8.37 MB，Bz min **−47.8** nT、SYM-H min **−518** nT、Dst（provisional，final 404）min **−406**、Kp 最高 **9.0**、SSC SYM-H **+88** @17:15；PNG；Swarm/THEMIS/GOES 未跑 · **质检复跑通过**（03:17–03:20 EDT；2.2.0；storm.py 输出、Kp 17 点、SSC +88、PNG 106796 B、5 分钟 CSV 577 行 / 19292 B 全部逐字一致；无需修正） |
 | 193 | [varion.md](./varion.md) | Sapienza/JPL VARION：单站 GPS L1/L2 几何无关相位历元差 → sTEC 变化率 → 10 阶多项式去趋势积分 dsTEC + 300 km IPP（海啸/TID 实时探测思路；**仅 Python 2.7**；PyPI `varion` 是无关随机数包） | 208 | **已短硬** · 2026-09-26 02:53–03:05 EDT；tip **`905f456`**（2020-05-14）/GPL-3.0/★15；micromamba Py 2.7.15；仓内 2011-03-11 台湾 GS19 1 Hz（Tohoku）9 星 7201 行满弧、NGS 2012-10-28 MKEA 30 s（Haida Gwaii）12 星；不给 `-time` 即 NameError 实测；**不宣称**检出海啸 TID（单站、未做走时拟合） · **质检复跑通过**（03:19–03:22 EDT；Py2.7.15；GS19 9 颗星与 MKEA 12 颗星的 dsTEC 统计逐字一致，坑 1–4 复现；修：G05/G26 行数少的原因还包括卫星在窗内落山） |
 | 194 | [doris-rinex.md](./doris-rinex.md) | nav-solutions Rust crate `doris-rs`：DORIS 专用 RINEX 3 观测文件（`O`+`D`，一星多信标站）读写（头/信标 DOMES/历元/星钟/L·C·W·F·P·T·H；gzip）；≠ 定轨/多普勒处理 / 普通 GNSS RINEX | 229 | **已短硬** · 2026-09-26 03:03–03:07 EDT；crates **0.1.0**=tag `924ae02`/main `336dd19`/MPL-2.0/★3/MSRV 1.82（metadata，未测）；rustc 1.98.1；上游 `cs2rx18164.gz`（CryoSat-2 45 min）53 信标/见 15/529 历元/11980 值，独立 Python 逐值 max\|Δ\|=0；上游 17+14 测试 pass；坑：头首观测时间小数错位 −0.768 s、SCALE FACTOR 不解析、F 写回 0.000、SNR 全 None、写回丢 COSPAR/接收机/LLI；坏值/未知信标/截断 gzip 静默，坏日期/缺观测类型 panic；georinex 不认 DORIS；IDS 全天文件未测 |
+| 195 | [madrigal.md](./madrigal.md) | Madrigal 门户下载侧（CEDAR / EISCAT / SRI AMISR）：madrigalWeb 找实验→列文件→下载，纯 curl `getMadfile.cgi` / `isprintService.py` 服务端过滤，`globalDownload.py` 批量；HDF5 表/数组布局 h5py 读（kinst 8000 全球 TEC 格网、PFISR popl）；≠ 自算 TEC / ISR 反演 / EISCAT 门户 L2 | 277 | **已短硬** · 2026-09-26 03:15–03:25 EDT；madrigalWeb **3.3.8**/h5py 3.16.0；TEC 2000-01-01 日文件 13257658 B，42°N 72°W 18:00 UT tec=32.0 dtec=1.1；isprint 2024-05-10 同格 45.06 TECU；PFISR 5 min 2817905 B，popl 峰 11.937 @310.6 km |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -418,6 +419,7 @@
 | 高速 I/Q 闪烁（S4/σφ 去趋势算法、阵列漂移；SAGA/CASES，需自备原始数据） | [saga-utils.md](./saga-utils.md) |
 | LSTID：卫星原位（C/NOFS）/ SAMI3 模式扰动极值（NRL 论文复现） | [lstid-processing.md](./lstid-processing.md) |
 | LSTID：业余无线电 HF spot 跳距边缘正弦拟合（Madrigal 免账号） | [hamsci-lstid-detection.md](./hamsci-lstid-detection.md) |
+| Madrigal（CEDAR/EISCAT/AMISR）找实验 + 下载 TEC 格网 / ISR 文件；服务端 isprint 只取一点 | [madrigal.md](./madrigal.md) |
 | 单站 1 Hz/30 s RINEX 看 sTEC 变化率 / 海啸型 TID（VARION，Python 2.7） | [varion.md](./varion.md) |
 
 ---
