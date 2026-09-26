@@ -4,6 +4,8 @@
 
 > **边界手册，不是端到端求解教程。** 公开仓提供流程骨架；法方程组装与求解等关键组件为**专有、未包含在公开仓**。以上游 README 的 public-release note 为准。
 
+> **质检复跑通过**（2026-09-26 04:27–04:30 EDT）：上游 `main` `c92e3d0`（2026-08-15，"Initial public source release (solver withheld)"），MIT（Copyright 2024-2026 Atlas2001-web），GitHub 语言 MATLAB。README 首段的 public-release note、§3 列的文件（`main_unpackdata.m`、`Step1–3.m`、`GET_NE.m`、`functions/`、`sub_functions/`、`tests/`）、`main_unpackdata.m` 第 50–52 行的 `packFilePath`/`stations_txt`/`unpack_outdir` 示例路径（`D:\`/`E:\`，坑 3）、`parfor`（坑 7）、README 提到的 GFZRNX / M_Map 都核对属实。补充：求解器位置是占位函数 `Get_SHBackground.m`，一调用就抛 `Get_SHBackground:ProprietaryComponent`；本机无 MATLAB，用 GNU Octave 9.4.0 跑 `tests/` 6 个检查脚本，只有 `check_build_time_continuous_constraints`、`check_get_ipp_kent_geo2mag_consistency` 通过，其余 4 个因 MATLAB 专有函数（`java`、`matlab_executable_statements` 等）在 Octave 下失败。无修正；`main_unpackdata` 流程未跑（需 MATLAB 和自备数据，环境受限）。
+
 ## 1. 用途与边界
 
 **公开仓能帮你：** 理解「站观测 → 球谐 VTEC 产品」的工程拆分；阅读预处理脚本结构；在自备数据时练习解包/轨道插值/组合等**公开**步骤。

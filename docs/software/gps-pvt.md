@@ -3,6 +3,8 @@
 > fenrir-naru/gps_pvt：Ruby gem，C++ 核心取自 [ninja-scan-light](https://github.com/fenrir-naru/ninja-scan-light)，经 SWIG 包装。**逐历元最小二乘单点定位**（SPP，非差分、非 RTK/PPP），读 RINEX 2/3 NAV/OBS/CLK、SP3、ANTEX、UBX（RXM-RAWX/SFRBX）、RTCM3、SUPL。
 > 本篇实测：2026-09-26 03:52–04:06 EDT，Debian trixie box，Ruby 3.3.8。未在真接收机测试。
 
+> **质检复跑通过**（2026-09-26 04:22–04:30 EDT）：独立 `GEM_HOME`，`gem install gps_pvt -v 0.10.5` 用 64 s（含 C++ 编译），GEM_HOME 53 MB，ffi 1.17.4 / rubyserial 0.6.0。逐位复现：§4 stderr 三行、stdout 前 2 行、376 列 / 6292733 B；§4 表前 7 行（IGS 10° 1.357/3.269，0° 1.347/2.971；WRD 10° 3.989/6.415、U +3.616，0° 4.263/6.634；WRD+GLONASS 4.441/8.421；IGS+GLONASS 与 GPS 行相同；SP3+CLK 2851/2880、11.290/23.989）；§7 RTKLIB 2880/2880、(+0.178,+0.257,−1.106)、1.489/3.089，逐历元差中位 0.454 / p95 1.179 / max 2.393 m；坑 1 在 `TZ=America/New_York` 下 SP3 解 3D 中位 3115 km；§6 API 两行（2.87 s）；§5 下载同名 zip（sha256 fd9e58a1…ddf6f8，rover.ubx ba2e782f…95156a），`found packets` 一致、首解行逐位相同，全程 4496/4521、3.045/5.140/9.481、U +2.983，前 400 历元 375/400、3.441/5.692/6.057，水平中位 0.461（原文 0.460，取整差）；§8 的空 OBS 134、`.crx.gz` 134、`.rnx` 猜不出 1、`--rinex_obs=` 不存在的文件 1、`--foo` 1、`--weight=elevation` 139、`.rnx.gz` 与明文输出 md5 相同，均复现。用文中 3 位有效数字的 α/β 补头后：RINEX 路径 1.012/2.326 m、UBX+nav 2.946/4.949 m，与原文 1.010/2.325、2.951/4.950 同量级（前 400 历元 2.044/2.837 m 对原文 2.056/2.852，差异来自系数取整）。无修正。未复跑：ANTEX 行、RTKLIB 对 UBX 行、pyubx2 与字段逐值比对、§8 其余合成用例、串口/Ntrip/SUPL。
+
 ## 1. 用途边界
 
 | 能 | 不能 / 未测 |
