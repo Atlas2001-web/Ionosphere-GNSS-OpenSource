@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **220 篇**操作手册（合计 **50613 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **221 篇**操作手册（合计 **50801 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -245,6 +245,7 @@
 | 218 | [biscef.md](./biscef.md) | Kartverket BiScEF：多机构 GNSS 闪烁数据交换格式（实为 NetCDF4/HDF5 约定，v1.1）；S4/σφ/谱斜率/ROTI/TEC 字段表 + ismr2BiScEF（ISMR→BiScEF）+ 画图脚本；≠ 闪烁计算器/解码库 | 202 | **已短硬** 用法讲解新入库 · 2026-09-26 04:52–05:03 EDT；main `90e6a2b`/MIT/★2/无 PyPI；三读取器 0 差；ISMR 往返 59/65 全等；时间基准 NOR=GPS、FMI/UNB 旧脚本 +27 s；缺测 −1/NaN/0 混用 |
 | 219 | [digisondeindices.md](./digisondeindices.md) | sunipkm/digisondeindices：GIRO DIDBase 测高仪参数（foF2/MUF(D)/hmF2/B0/TEC/CS）按月下载→NetCDF 缓存→xarray；**PyPI 2.1.0 原样失效**（DIDBGetValues 404），附运行时补丁 `didb_fix.py` 改写到 fastchar/getbest | 259 | **已短硬** 用法讲解新入库 · 2026-09-26 05:01–05:07 EDT；2.1.0/master `2a37ab3`/MIT/★2；需补 pytz+dask+pandas<3、Python≥3.12；MHJ45 2022-01-25 05:00 foF2 **2.0**/MUF(D) 6.116/hmF2 308.9/TEC 0.6 TECU 与 curl 原始行一致；2022-01 **8633** 行；当月刷新/forcedownload `NoneType.stem` 崩溃（先 purge）、UTC 以西时区最近 4 h 误判“预测”、跨月重复时刻、nearest 无容差 |
 | 220 | [gim-product-portals.md](./gim-product-portals.md) | GIM/IONEX 各分析中心匿名门户（CAS 汇总镜像、CODE/AIUB S3、UPC、ESA、JPL sideshow；CDDIS 需 Earthdata）、新旧文件名对照、最终/快速/预报/实时实测时延、2024-05-11 各中心对 CODE 逐格点均差/RMS | 399 | **已短硬** · 2026-09-26 05:00–05:10 EDT；对 CODE 面积加权 RMS：IGS 3.30 / WHU 4.40 / JPL 4.99 / CAS 6.71 / UPC 7.54 / ESA 8.88 / EMR 15.77 TECU；ESA 源站同名文件为重处理版；IGN/BKG/WHU/KASI/GSSC 本次不通 |
+| 221 | [geomagindices.md](./geomagindices.md) | space-physics/geomagindices：按时刻取 Ap/F10.7/Kp 的 pandas 小库（msise00 自动取指数靠它）；**1.5.1 原样静默给错值**：NGDC FTP 日值源 550 → 退回月均、无 Kp；45 天预报 URL 404（运行时改名补丁）；20 年预报表 Ap/F10.7 互换；月均合并顺序随 PYTHONHASHSEED 变；附 GFZ Kp API 直连替代 | 188 | **已短硬** 用法讲解新入库 · 2026-09-26 05:09–05:13 EDT；1.5.1/main `1c76774`/MIT/★17；2024-05-11 返回 Ap 24/F10.7 188.37（GFZ 定值 Ap 271、Fobs 213.7）；Kp 峰 9.000 @05-11 00Z；45 天 27Sep26 Ap 10/F10.7 95 与原文件一致 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -462,6 +463,7 @@
 | NASA ICON / GOLD：SPDF 路径、CDAWeb 数据集与 CDAS REST 子集、HAPI 覆盖、质量标志与 GOLD 扫描网格 | [icon-gold-data.md](./icon-gold-data.md) |
 | 测高仪 foF2/hmF2 匿名拉取（GIRO fastchar）、站表、CS 过滤、SAO 获取门槛、磁暴耗减 | [giro-ionosonde.md](./giro-ionosonde.md) |
 | 测高仪参数按时刻直接拿 xarray（Python 客户端，需运行时补丁） | [digisondeindices.md](./digisondeindices.md) |
+| 模型驱动指数按时刻自动取（geomagindices；日值源已死，只剩月均 → 改用 GFZ API） | [geomagindices.md](./geomagindices.md) |
 | Swarm LP Ne/Te、顶部 TEC、IPIR/IBI/EEF 免注册下载与 flag 过滤（swarm-diss HTTPS、VirES HAPI） | [swarm-data.md](./swarm-data.md) |
 | 高纬 GNSS 闪烁 S4/σφ 实测（CHAIN ISMR，免注册）与 ISMR 62 列定义 | [chain-scintillation.md](./chain-scintillation.md) |
 | 各中心 GIM/IONEX 去哪匿名下载、新旧文件名、出来要等多久、各家差多少 | [gim-product-portals.md](./gim-product-portals.md) |

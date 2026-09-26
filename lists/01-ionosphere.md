@@ -8,7 +8,7 @@
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [viresclient](https://github.com/ESA-VirES/VirES-Python-Client) | viresclient：ESA VirES Python 客户端（Swarm） | Python | 23 | 🏷️ 官方 |
-| [geomagindices](https://github.com/space-physics/geomagindices) | geomagindices：地磁指数 Python 读写工具 | Python | 17 | 🏷️ 个人社区 |
+| [geomagindices](https://github.com/space-physics/geomagindices) | geomagindices：Ap/F10.7/Kp 指数下载解析工具（日值源已失效） | Python | 17 | 🏷️ 个人社区 |
 | [madrigalWeb](https://github.com/MITHaystack/madrigalWeb) | OpenMadrigal/CEDAR Python 数据客户端 | Python | 4 | 🏷️ 高校实验室 |
 | [swds-api-downloader](https://github.com/embrace-inpe/swds-api-downloader) | swds-api-downloader：Embrace SWDS API 自动下载示例 | Python | 4 | 🏷️ 官方 |
 | [digisondeindices](https://github.com/sunipkm/digisondeindices) | 从 GIRO DIDBase 下载并解析 Digisonde 标定参数为 xarray 的 Python 工具 | Python | 2 | 🏷️ 个人社区 |
@@ -30,7 +30,7 @@
 
 语言：Python · 许可：MIT · 星标约：17 · 宿主：github
 
-space-physics 维护的指数下载与解析工具，按时间返回 Ap、Kp 与 F10.7（含平滑值）的 pandas 表，缺测为 NaN，常作电离层/空间天气研究的辅助输入。MIT 许可，有 Zenodo DOI；与 igrf、iri2016 等模型接口互补。README 自述 2018 年后的新数据源读取器尚待补充，使用前请核对所需时段是否覆盖。
+space-physics 维护的指数下载解析库（MIT，Zenodo DOI），get_indices(时刻) 返回 pandas 表，msise00 等模型用它自动取驱动。2026-09 实测 1.5.1：3 h Kp/Ap 日值所依赖的 NGDC FTP 目录已下线，库静默退回 GFZ/SWPC 月均，按最近月份取值且不再给 Kp（2024-05-11 返回 Ap 24，实为 271）；45 天预报 URL 已 404；20 年预报表 Ap 与 F10.7 列互换；月均两源合并顺序随进程随机，近期日期可能得 NaN。需要真实日值/3 h 值请直连 GFZ Kp API，详见手册。
 
 #### [madrigalWeb](https://github.com/MITHaystack/madrigalWeb)  
 *🏷️ 高校实验室*
