@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **212 篇**操作手册（合计 **47905 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **212 篇**操作手册（合计 **47911 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -86,7 +86,7 @@
 | 59 | [claslib.md](./claslib.md) | QZSS CLAS Compact SSR→OSR/VRS/PPP-RTK | 182 | **已短硬** · tip **`1e3a75d`**/084/0.8.4；dump header **3601**；test1 **3580** GGA ≈36.1036°N 140.0863°E · **质检复跑通过** |
 | 60 | [b2blib.md](./b2blib.md) | 北斗 PPP-B2b C/C++ 解码（嵌 RTKLIB） | 188 | **已短硬** · tip **`fe7c4c0`**；WUH2 5 min **9**×Q=6；首/末 ECEF 对齐 · **质检复跑通过** |
 | 61 | [ismr-downloader.md](./ismr-downloader.md) | ISMR Query Tool API 闪烁监测数据 CLI 下载 | 226 | **已短硬** · 本机 **0.2.0**/`cca68e4`；`--help`；假账号 token 400；SSL 需 `--insecure`；**登记门禁未落盘**（交叉 [data-access](../data-access.md)） · **质检复跑通过**（2026-09-24 05:03 EDT） |
-| 62 | [drcycleslip.md](./drcycleslip.md) | 三频周跳探测/修复教学（DRCycleSlip） | 197 | **已短硬** · tip **`f57d74d`**；无 PyPI；`search`/`find` + BAKO G24 注入历元 **700→(23,18,17)**；对照 [cycle-slip-correction](./cycle-slip-correction.md)/[georinex](./georinex.md)/[anubis](./anubis.md) |
+| 62 | [drcycleslip.md](./drcycleslip.md) | 三频周跳探测/修复教学（DRCycleSlip） | 203 | **已短硬** · tip **`f57d74d`**；无 PyPI；`search`/`find` + BAKO G24 注入历元 **700→(23,18,17)**；对照 [cycle-slip-correction](./cycle-slip-correction.md)/[georinex](./georinex.md)/[anubis](./anubis.md) · **质检复跑通过 2026-09-26 EDT**（BAKO G24 历元 700→(23,18,17) 逐字一致；修 Linux 下 savefig 反斜杠怪名文件、Group 3 行、增坑 13 全局表 NameError） |
 | 63 | [gnss-downloader.md](./gnss-downloader.md) | PyQt5 NASA/WHU FTP 日采样 GNSS 下载 | 233 | **已短硬** · tip **`e6d0d84`**/V3.0；无下载 CLI；WHU SIZE brdc **57792**；NLST 425；NASA 明文失效→[data-access](../data-access.md) |
 | 64 | [navdecoder.md](./navdecoder.md) | PPP-B2b + Galileo HAS 电文解码（Sept/Unicore） | 184 | **已短硬** · tip **`7947333`**；HAS **801**×data collected + log **48288**/1.1 MB；B2b log **7346** / `.ssr` **532** / `.sp3` **277** · **质检复跑通过**（2026-09-24 05:10 EDT） |
 | 65 | [gnss-multipath-analysis.md](./gnss-multipath-analysis.md) | 观测多路径/周跳/SNR 分析（gnssmultipath） | 161 | **已短硬** · PyPI **2.2.0**/tip **`806c3d9`**；NMBUS C1C RMS≈**1.273**/wRMS≈**1.093**；周跳 **47**/nEpochs **293** · **质检复跑通过**（2026-09-24 05:09 EDT） |

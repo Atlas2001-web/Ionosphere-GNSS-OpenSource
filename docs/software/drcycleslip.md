@@ -2,6 +2,8 @@
 
 目录：[`PROJECTS.json` → `DRCycleSlip`](../../PROJECTS.json) · 上游 <https://github.com/Jin-Whu/DRCycleSlip> · **无 PyPI / 无 setup.py / 无 LICENSE** · tip **`f57d74d`**（tag 文案 `v1.0`，2017-02-23）· 本机 Python **3.13** + numpy/scipy/matplotlib 实跑（2026-09-24 EDT）
 
+> **质检复跑通过（2026-09-26 04:29–04:35 EDT，tip `f57d74d` 无 tag/无 LICENSE，Python 3.13 + numpy 2.5.3 / scipy 1.18.1 / matplotlib 3.11.2）**：`find_cycleslip.py` 前 20 行、`search.py g 1.0` 组合行、无参 `Args:`、BKG 下载 BAKO 2021-220 R3.03 + `process(...,'G24',1,800,'static')` stdout `700 23.00000000000024 18.000000000000192 17.00000000000018 -1.23 1.13 -1.10` 逐字一致；空注入表 n_detected=0；缺 `G05cycleslip.txt` → `FileNotFoundError`；`python process.py` → `Not find C:\Users\jin\Downloads\jfng0760.13o`；G24 首现历元 602。**已修**：Linux 上 Windows `savefig` 路径不报错而是写成反斜杠怪名文件（§2 表、§3.2、坑 3）；`search.py` Group 实为 3 行（§3.1）；新增坑 13（全局表未置 → `NameError`）。未复跑：BDS C03/C09/C12、`move` 档。
+
 > 岗位：武汉大学相关教学脚本——对 **RINEX 3** 单颗 **GPS/BDS 三频** 弧段做几何无关组合二阶差分周跳探测，并用仓内 `{PRN}cycleslip.txt` **注入已知周跳**后验证能否解出 `(ΔN1,ΔN2,ΔN3)`。冲突时：**仓内源码 / 本机 stdout > 本文**。**不是** [cycle-slip-correction](./cycle-slip-correction.md)（EMBRACE rTEC 四阶差分 CLI）；生产 QC 优先 [anubis](./anubis.md)。
 
 ## 1. 用途与边界
@@ -55,7 +57,7 @@ PY
 | --- | --- | --- |
 | `ModuleNotFoundError: scipy` | 未装 | `pip install scipy numpy matplotlib` |
 | `Not find C:\Users\jin\...` | `__main__` 硬编码 Windows OBS | 改路径或按下节 `process(...)` 调用 |
-| `FileNotFoundError` 写 eps | `savefig` 硬编码 `C:\Users\jin\OneDrive\...` | 改 `plotcycleslip`/`plotiond` 落盘目录；`MPLBACKEND=Agg` |
+| 当前目录多出 `C:\Users\jin\OneDrive\...\G24.eps` 怪名文件 | `savefig` 硬编码 Windows 路径；Linux 上反斜杠是普通字符，**不报错**，整串当文件名写进 cwd | 改 `plotcycleslip`/`plotiond` 落盘目录；`MPLBACKEND=Agg` |
 | `pip install DRCycleSlip` 404 | **未发布** | 只 clone |
 
 ## 3. 端到端：组合搜索 → BAKO G24 注入探测（本机真跑）
@@ -77,8 +79,8 @@ python find_cycleslip.py | head -20
 # 4 3 3
 # 23 18 17
 
-python search.py g 1.0 | head -8
-# 期望含：-6 1 7 29.305 … 与 Group: … -6 1 7 3 0 -4 4 -8 3 …
+python search.py g 1.0          # 共 23 行：18 行组合 + 空行 + Group: + 3 行分组
+# 期望含：-6 1 7 29.305 … 与 Group: 末行 -6 1 7 3 0 -4 4 -8 3 …
 python search.py   # 无参
 # 期望：
 # Args:
@@ -105,6 +107,8 @@ GPS
 4 -8 3 29.305 -11.770 0.189 0.190 0.223
 
 Group:
+-6 1 7 -1 8 -7 3 0 -4 98.06% 98.00% 94.86%
+-6 1 7 -1 8 -7 4 -8 3 98.06% 98.00% 95.95%
 -6 1 7 3 0 -4 4 -8 3 99.18% 99.14% 94.86%
 ```
 
@@ -117,7 +121,8 @@ export MPLBACKEND=Agg
 source ~/iono_ops/drcs_demo/.venv/bin/activate
 cd ~/iono_ops/DRCycleSlip
 
-# 先把 process.py 内两处 savefig 的 Windows 路径改成本机目录（否则写盘失败）
+# 建议先把 process.py 内两处 savefig 的 Windows 路径改成本机目录（不改也不报错，但图会以
+# 「C:\Users\jin\OneDrive\…\G24.eps」这种带反斜杠的怪名落在当前目录）
 # 再调用（CLI 被注释，推荐直接调 process）：
 python - <<'PY'
 import process as P
@@ -172,7 +177,7 @@ PY
 
 1. **无 PyPI / 无 setup / 无许可证文件** — 只能 clone；商用前自行评估版权。
 2. **`__main__` CLI 整段注释** — 默认跑死 Windows 路径 `C:\Users\jin\Downloads\jfng0760.13o`；须改源码或 `import process`。
-3. **`savefig` 硬编码 OneDrive** — Linux 必改；否则探测成功也因写图失败。
+3. **`savefig` 硬编码 OneDrive** — Linux 上**不报错**：`C:\Users\jin\OneDrive\graduationproject\program\picture\G24.eps` 整串成为 cwd 里的文件名（仓里 `git status` 多两个 `??`）；要图落到正常目录就改源码。
 4. **必须三频** — GPS 要 L1+L2+L5；BDS 要 B1/B2/B3 映射列；双频站全程 `continue` 静默空结果。
 5. **`{PRN}cycleslip.txt` 是注入不是输出** — 缺文件即崩；空表=不注入；勿当成「探测结果日志」。
 6. **OBS TYPES 续行不读** — 类型落在第二行（如部分 R3.05/R4）则 C5/L5 未映射，浮点切片错乱。
@@ -182,6 +187,7 @@ PY
 10. **shebang 拼写** — `find_cycleslip.py` 首行 `#!usr/bin/env pyhton`；用 `python find_cycleslip.py`。
 11. **上游样例 OBS 缺失** — `jfng0760.13o` 不在仓；CDDIS 匿名拉易得 HTML（本机 10 KB 伪 gz）；改用公开三频 R3。
 12. **与 CSC / Anubis 标志不可混用** — 三频组合整数解 ≠ rTEC 四阶峰 ≠ LLI/MW；流水线须统一定义。
+13. **`import process` 后必须先置四个全局表** — `iond/cycleslip/deltaN_lst/precycleslip` 只在 `__main__` 里建；漏掉 `P.precycleslip=[]` 等直接 `NameError: name 'precycleslip' is not defined`（§3.2 首行就是为此）。
 
 ## 8. 选型
 
