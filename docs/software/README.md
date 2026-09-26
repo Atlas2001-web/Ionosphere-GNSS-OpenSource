@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **171 篇**操作手册（合计 **37744 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **173 篇**操作手册（合计 **38141 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -196,6 +196,8 @@
 | 169 | [micropygps.md](./micropygps.md) | inmcm 纯 Python / MicroPython 逐字符 NMEA 0183 解析器（单文件；GP/GL + GN 定位句 17 个句头；≠ 定位解算器/串口驱动；不编码） | 235 | **已短硬** · 2026-09-26 01:34–01:40 EDT；master **`f6c2b76`**（2022-01-06）/MIT/★**391**/无 PyPI；CPython 3.13.5 + MicroPython 1.25.0 unix 一致；gpsd F9P/AIS/F9T 逐字节喂入，GGA 29/29·164/164·9/9 = pynmeagps 1.1.7，GSV 组全同无假星，`$GA`/`$GB`/GST/GBS/ZDA 不解析；UBX 混流 0 异常；短字段句抛 `IndexError`；卫星表/`hdop` 只留最后一句 |
 | 170 | [qzsl6tool.md](./qzsl6tool.md) | QZSS L6（CLAS / MADOCA-PPP）+ HAS/B2b/L1S/RTCM 电文**逐帧解码查看**、转 RTCM 4073/4050（stdin→stdout 管道；不定位） | 257 | **已短硬** · 2026-09-26 01:37–01:46 EDT；PyPI **0.1.11**/tip **`60a5b93`**/BSD-2-Clause/★35；`test/do_test.sh` **47 Passed/0 Failed**（`lv` 分页器改 `head`）；官方归档 2026-09-17 CLAS 前 300 帧（HTTP Range 75000 B）→ 300 行 PRN195 Kobe、`-s` n_sat **18**/n_sig **54**、ST12 STEC 网格（NID=12 G05 c00=**23.150** TECU）；MADOCA-PPP 电离层 1 h **3600** 帧 → MT1 Region1/3/4、Region3（菲律宾）Area2 19 星 c00 时序图；Allystar→L6→RTCM 4073 **62** 条；坑：`.alst` 直喂乱 PRN、E6B 喂 L6 静默 0 行、归档 403 HTML 需 `curl -f`、MADOCA 默认级仅 `(null)`、MT2 小时回绕 · **质检复跑通过**（01:50–01:53 EDT；47/0、CLAS/MADOCA/样例/RTCM 全部同 I/O；修：坑 7 实为 3000/3600 行 null、坑 8 两站 403/404） |
 | 171 | [saga-utils.md](./saga-utils.md) | SAGA 阵列 / CASES 高速 I/Q 闪烁处理（去趋势、滑窗 S4/σφ、阵列漂移；MATLAB 研究组流水线源码参考） | 193 | **已短硬** · **环境受限**（原始数据门户超时、仓内无样例/解包脚本；无 MATLAB 用 Octave 9.4.0）· 2026-09-26 01:40–01:50 EDT；tip **`94c7cdd`**（2018，1 commit）/GPL-3.0/★10；`main(2015,76,1)` 经 `init`/`ver_chk` 垫片跑到 `/data1/public/...` 无数据退出；**合成**（已标注）验证上游滤波：σφ **0.5027** vs 真值 0.5003，`slidingS4SigmaPHI` “S4” **0.1487** = std(A)/mean(A) ≈ 强度 S4 **0.2932** 的一半；Zenodo 6621888 真实 SAGA 30 s 相位 σφ **0.964/1.006/1.999** rad；样例驱动参数错位 `Unknown signal.` · **质检复跑通过**（01:52–01:56 EDT；合成 σφ 0.5027/“S4” 0.1487 vs 0.2932、Zenodo 三段逐位同 I/O；修：实有 **44** commit 非 1、补变量名与整段分支条件） |
+| 172 | [tropds.md](./tropds.md) | 对流层延迟**格网** AI 降尺度（物理约束 U-Net；180×360 blur→clear；不算 ZTD/PWV、不读 ERA5；PyTorch） | 210 | **已短硬** · 2026-09-26 01:49–01:58 EDT；tip **`6bb9ef0`**/BSD-3-Clause/★1；仓内无数据；Drive 权重为加密 RAR5（7z 25.01 `Unsupported Method`，unrar 7.12 + issue #1 密码解出 150007202 B，epoch 38）；torch 2.14 CPU 原样 `inference.py` 3.6 s；输入 TU Wien VMF3 1° 真实 ZWD（cm）+5° 块平均 blur：RMSE **2.017→2.208** cm（未改善）、ZHD-dm 58→265 mm；坑：`requirements.txt` apex 装不上、默认 0–50 clip、`2024_clear.npy` 静默改归一化、weight 全冻结、181×360 不报错、年份写死 2024 |
+| 173 | [gtrop.md](./gtrop.md) | 全球 1° 对流层 ZHD/ZWD + 加权平均温度 Tm 经验模型（年/半年项+长期趋势+高程归算；MATLAB/Octave） | 187 | **已短硬** · 2026-09-26 01:49–01:58 EDT；tip **`2b31ae7`**（2019）/**无 LICENSE**/★5；Octave 9.4.0 原样 `example.m`（ZHD **2015.7722** mm）；GRAZ 2024 DOY1 ZHD **2186.2**/ZWD **64.1**/Tm **266.51** K/PWV 9.7 mm，对照 GPT3 ZTD 2.2427、VMF3 站点 **2.2733** m；高度/季节扫描；全球 ZWD 图 [img/](./img/)；坑：h 传米出复数、0–360 经度越界、弧度静默错、向量报错、mm vs m、无日内项 |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -226,6 +228,8 @@
 | 对流层 NWM 射线追踪（斜/天顶延迟） | [radiate.md](./radiate.md) |
 | ZTD→斜路径湿延迟 SWD（层析输入；Python） | [std-swd-calc.md](./std-swd-calc.md) |
 | GPT3/VMF3 映射函数官方源码 + VMF 格网 | [tu-wien-vmf-gpt-codes.md](./tu-wien-vmf-gpt-codes.md) |
+| 无气象数据要某点 ZHD/ZWD/Tm 先验（MATLAB/Octave，mm 输出） | [gtrop.md](./gtrop.md) |
+| 粗/模糊全球 ZHD/ZWD 格网 AI 降尺度（U-Net，需自备训练对） | [tropds.md](./tropds.md) |
 | 改/拼/抽稀 RINEX | [gfzrnx.md](./gfzrnx.md) |
 | 观测 QC 报告 | [anubis.md](./anubis.md) |
 | 周跳探测改正试验（RINEX 3.01–3.03） | [cycle-slip-correction.md](./cycle-slip-correction.md) |
@@ -412,6 +416,7 @@ QC（[anubis](./anubis.md)/[gfzrnx](./gfzrnx.md)）→ [rtklib](./rtklib.md) 冒
 
 ---
 
+最近新增（用法讲解）：**tropds**+**gtrop**（[tropds.md](./tropds.md) / [gtrop.md](./gtrop.md)；2026-09-26 01:49–01:58 EDT；TropDS `6bb9ef0`/BSD-3：加密权重按 issue #1 解出，CPU 推理 VMF3 1° ZWD 真实格网，5° 块平均 blur 上 RMSE 2.017→2.208 cm 未改善、如实记录；GTrop `2b31ae7`/无 LICENSE：Octave 原样跑通，GRAZ 2024 DOY1 ZTD 2.2503 m vs GPT3 2.2427 / VMF3 2.2733 m，Tm→PWV 9.7 mm，全球 ZWD 图 [img/](./img/)）。
 最近新增（用法讲解）：**qzsl6tool**（[qzsl6tool.md](./qzsl6tool.md)；2026-09-26 01:37–01:46 EDT；PyPI 0.1.11/`60a5b93`/BSD-2；上游回归 47/47；官方归档 CLAS 300 帧 + MADOCA-PPP 电离层 1 h 真解码，Region3 Area2 c00 图 [img/](./img/)；链 claslib/madocalib/cssrlib/haslib）+ **saga-utils**（[saga-utils.md](./saga-utils.md)；`94c7cdd`/GPL-3.0；Octave 垫片跑 `main` 至无数据；合成验证 σφ 正确、`slidingS4SigmaPHI` S4≈强度 S4/2；Zenodo 真实 SAGA 相位 σφ 0.96–2.0 rad；原始数据门户超时，未跑原始 CASES 日）。
 最近新增（用法讲解）：**micropyGPS**（[micropygps.md](./micropygps.md)；2026-09-26 01:34–01:40 EDT；master **`f6c2b76`**/MIT/★**391**/无 PyPI；CPython 3.13.5 + MicroPython 1.25.0 unix；与 nmea-parser/nmea-rs 同批 gpsd 日志：F9P clean 1015/parsed 580，GGA 与 pynmeagps 全同、无假星，但 `$GA`/`$GB` GSV 不认；UBX 混流 0 异常；三库对照表；短字段句 `IndexError`、`local_offset` 不进位日期、dms 秒取整约 8.6 m）。
 最近新增（用法讲解）：**lstid-processing**+**hamsci-lstid-detection**（2026-09-26 01:18–01:32 EDT；NRL `80b576d`/PyPI 0.0.2/MIT：SAMI3 74 GB 文件 HTTP Range 抽 DMSP 磁力线 3.3 MB，复算 rel_dene_d 差 6.9e-14，Fig.13 Δu∥ 拟合 ≈600–830 m/s 向赤道；CINDI 2014-03-26 identify_tid 9 事件；坑 numpy≥2.3/pandas3/pysat data_dirs；HamSCI `8c43cd2`/MIT：pytest 52 passed，合成 LSTID 日 T=2.55 h/A=271 km，真实 Madrigal 2019-12-01 19187799 行跑通但窗口 1.7 h 不宣称检测；图 [img/](./img/)）。
@@ -588,6 +593,8 @@ data-access
    ├─ radiate (对流层射线追踪；Fortran/NWM)
    ├─ std-swd-calc (ZTD→SWD/STD；GPT3/VMF1+GMF；Python)
    ├─ tu-wien-vmf-gpt-codes (GPT3/VMF1/VMF3 官方源码；Octave/gfortran/Python)
+   ├─ gtrop (1° ZHD/ZWD/Tm 经验模型；Octave/MATLAB)
+   ├─ tropds (ZHD/ZWD 格网 U-Net 降尺度；PyTorch)
    ├─ minmea (嵌入式 C NMEA 解析核)
    ├─ libnmea (动态句型模块 NMEA；对照 minmea)
    ├─ pynmea2 (经典高星标 NMEA 解析；对照 pynmeagps)
