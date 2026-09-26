@@ -5,6 +5,8 @@
 > 这个工具只负责 **PPP 辅助产品的“找 + 下 + 解压 + 记账”**：给它一个日期和产品名（ORBIT / CLOCK / ERP / BIA / IONEX / VMF …），它会按 YAML 里登记的 16 个中心配置去列目录、按 IGS 长文件名做匹配、下载并解压到 `base-dir/YYYY/DDD/products/`，每个文件旁边再写一份 `*_lock.json`（URL + sha256 + 大小）。它**不处理 RINEX 观测**（`RINEX_OBS` 虽然在产品表里，但按站点下载未实现，见上游 issue 分支 `17-daily-station-specific-rinex…`），**不做定位**；PPP 解算由另一个包 `pride-ppp` 调 PRIDE-PPPAR 的 `pdp3`（本篇未测，见 [pride-pppar](./pride-pppar.md)）。
 > 邻居：单中心/固定 URL 的脚本类下载器见 [gampii-good](./gampii-good.md)、[gdds](./gdds.md)、[gnss-downloader](./gnss-downloader.md)；各中心真实路径与账号规则见 [data-access](../data-access.md)。
 
+> **质检复跑通过（2026-09-26 05:20 EDT）**：从 GitHub v0.0.1 源码包（15737480 B）重装（需 `SETUPTOOLS_SCM_PRETEND_VERSION`），复跑 search / download / probe / 报错用例：16 服务器 11 CONNECTED、5 UNREACHABLE（62.8 s）、SP3 1293754 B / 289 历元 / G31+E29、sha256 `3b29fda0…` 与 lock 一致、ERP `60677.50` 行、JPL probe（IONEX NOT FOUND）、三条报错原文均一致。已修正：`GNSS_CONFIG` 实际不生效（改列真正生效的 `GNSS_BASE_DIR` 等）；`--where AAA=` 实测有效；lock.json 418 B 且含 `description` 字段；补充 `--dry-run` 退出码恒为 0。
+
 ## 1. 版本事实
 
 | 项 | 值（2026-09-26 核实） |
@@ -41,7 +43,7 @@ gnssommelier config set base-dir /data/gnss-products
 gnssommelier config show
 ```
 
-- 配置文件是 `~/.config/gnssommelier/config.toml`，可以用环境变量 `GNSS_CONFIG` 指向别的文件。可设置的键有 `base_dir`、`centers`、`max_connections`（默认 4）、`log_level`（默认 WARNING）。
+- 配置文件固定是 `~/.config/gnssommelier/config.toml`。`GNSS_CONFIG` 只出现在 `config show` 的输出里，源码（`gpm_cli/config.py`）定义了这个变量名但从不读取，**设了也不会换配置文件**，`config set` 照样写 `~/.config/…`（质检复跑实测）。真正生效的环境变量是 `GNSS_BASE_DIR`、`GNSS_CENTERS`、`GNSS_MAX_CONNECTIONS`、`GNSS_LOG_LEVEL`，例如 `GNSS_BASE_DIR=/tmp/x gnssommelier download …` 可以临时换目录。可设置的键有 `base_dir`、`centers`、`max_connections`（默认 4）、`log_level`（默认 WARNING）。
 - **`base-dir` 目录不存在时，`search` / `download` 直接抛 `AssertionError: Base directory not found: …`**，`config set` 不会替你建目录（实测）。
 - `config show` 在 set 之后 Source 列仍显示 `default`，但值已经写进 toml，属于显示 bug。
 - CDDIS 需要 Earthdata 账号：在 `~/.netrc` 加一行 `machine cddis.nasa.gov login <user> password <pass>`，注册地址是 <https://urs.earthdata.nasa.gov/>。本机**没有账号，CDDIS 认证下载未测**。
@@ -80,7 +82,7 @@ gnssommelier search ORBIT --date 2025-01-02 --where TTT=FIN \
 ```
 
 - 这里的 `Center` 是**产品的 AAA（出品机构）**，`--sources` 限定的是**托管服务器所在的中心**，两者不是一回事。上例中 IGS 那一行其实是从 BKG 的 `root_ftp/IGS/products/2347/` 找到的；只写 `--sources IGS` 时要走 `igs.ign.fr`，本机列目录失败，结果为空。
-- `--where` 的键就是 IGS 长文件名里的字段：`TTT`（FIN/RAP/ULT）、`SMP`（15M/05M/30S）、`LEN`、`PPP`。写 `--where AAA=IGS` 在本机**一条结果都没有**（AAA 过滤没生效），要按机构筛选的话请在 JSON 里自己过滤。
+- `--where` 的键就是 IGS 长文件名里的字段：`TTT`（FIN/RAP/ULT）、`SMP`（15M/05M/30S）、`LEN`、`PPP`。`AAA`（出品机构）也能过滤：质检复跑时 `search ORBIT --date 2025-01-02 --where AAA=IGS --sources BKG --sources JPL` 返回 IGS FIN + IGS RAP（✓ 2/2，1.3 s），`--where AAA=JPL --where TTT=FIN --sources IGS --sources BKG --sources JPL` 只返回 JPL FIN（✓ 1/1）。初稿记录的“AAA 过滤无效”没有复现。
 - `--json` 里 `uri` 字段显示成 `https://https://…`、`ftps://ftp://…`（前缀重复），这是显示/序列化 bug，不影响下载。
 - `search IONEX --date 2025-01-02`（不限中心）用了 60.5 s，找到 9 条，**全部来自 CDDIS FTPS**：COD FIN/RAP（01H）、ESA FIN（02H）/RAP（01H、02H）、IGS FIN/RAP、JPL FIN/RAP。**5 分钟后在同一台机器上重跑，CDDIS 列目录失败**（`Retry failed listing gnss/products/ionex/2025/002/`），`curl --ssl-reqd` 匿名 NLST 也拿到空列表。所以匿名访问 CDDIS 时好时坏，正式使用要配好 `.netrc`。
 
@@ -96,16 +98,16 @@ gnssommelier download ERP   --date 2025-01-02 --where TTT=FIN --sources JPL
 
 ```
 /data/gnss-products/2025/002/products/JPL0OPSFIN_20250020000_01D_05M_ORB.SP3            1293754 B（已自动解 .gz）
-/data/gnss-products/2025/002/products/JPL0OPSFIN_20250020000_01D_05M_ORB.SP3_lock.json   415 B
+/data/gnss-products/2025/002/products/JPL0OPSFIN_20250020000_01D_05M_ORB.SP3_lock.json   418 B（大小随 sink 路径长短略变）
 /data/gnss-products/2025/002/products/JPL0OPSFIN_20250020000_01D_01D_ERP.ERP             422 B
 ```
 
 - SP3 自查：头部写 `#cP2025  1  2 … 289 u+U IGS20 FIT JPL`，共 **289 个历元**（00:00 到次日 00:00，5 min 间隔）、**60 颗卫星（G 31 + E 29）**。ERP 是 `version 2` 格式，数据行为 `60677.50  142559  304926  463679 …`。
-- lock.json 的字段：`name`、`timestamp`（UTC）、`url`、`hash`（`sha256:3b29fda0…`，和本地 `sha256sum` 一致）、`size`、`sink`、`alternatives`。
+- lock.json 的字段：`name`、`description`（空串）、`timestamp`（UTC）、`url`（同样带重复前缀 `https://https://…`）、`hash`（`sha256:3b29fda0…`，和本地 `sha256sum` 一致）、`size`、`sink`、`alternatives`。
 - **每个产品只下排名第一的那一条**（代码里是 `found[0]`）；想要特定机构，就用 `--sources` 限定服务器，再配合 `SMP` 等过滤。
 - 已经下过的文件会显示 `cached`，不会重复下载。坑：`download ORBIT --sources IGS`（不带 TTT）时，把本地已有的 **JPL** 文件当成命中，报 `cached`，Center/Quality 两列还显示成 `{3}` 和 `[A-Z]{3}` 这种正则原文。也就是说本地缓存匹配**不看 `--sources`**。
 - 多产品 dry-run：`download ERP IONEX CLOCK BIA --where TTT=FIN --sources JPL --sources BKG` → ERP 来自 JPL，CLOCK 为 `IGS0OPSFIN_…_01D_30S_…`（BKG），**IONEX 和 BIA 都是 not found**（BKG 配置里的 `root_ftp/IGS/products/ionex/2025/002/` 实际返回 HTTP 404）。CLOCK 30S 文件较大，本机没有真下。
-- 退出码：全部找到并下完为 0，有 not found 为 1，适合在脚本里判断。
+- 退出码：全部找到并下完为 0，有 not found 为 1，适合在脚本里判断。注意 `--dry-run` 即使有 not found 也返回 0（复跑实测：`download IONEX --sources JPL` 真下 rc 1，加 `--dry-run` rc 0）。
 
 ### 4.4 按产品探测（probe 的检索模式）
 
@@ -148,7 +150,7 @@ for r in c.query().for_product("ORBIT").on(d).where(TTT="FIN").sources("JPL", "B
 1. **`search … --to`（日期范围）千万别在共享机器上跑。** 本机跑 `search ORBIT --date 2025-01-01 --to 2025-01-03 --sources JPL`，刷出上千行 `Search failed for date …: can't start new thread`，3 分多钟都没结束，只能 kill。原因是日期线程池（≤8）里再嵌套列目录线程池（≤25），失败后还会重试。需要多天就在 shell 里循环 `--date`。
 2. 不在 PyPI，要从源码装，而且必须设 `SETUPTOOLS_SCM_PRETEND_VERSION`（或者 git clone）。
 3. 产品名是 `IONEX`，不是 README 里的 `GIM`；中心有 16 个，不是 18 个。
-4. `--sources` 指的是托管服务器所在的中心，不是出品机构；`--where AAA=` 过滤无效。
+4. `--sources` 指的是托管服务器所在的中心，不是出品机构；按出品机构筛选用 `--where AAA=…`（复跑实测有效）。
 5. 只要候选里有 COD（`ftp.aiub.unibe.ch`）或 NRCan/GRGS，每次都要多等约 60 s；FTP 在很多云主机上被墙或者列不出目录。
 6. 匿名 CDDIS 时好时坏，正式用要配 Earthdata `.netrc`；GFZ 走 SFTP，本机不通。
 7. 本地缓存命中不看 `--sources`，而且会把正则原文当 center 显示。

@@ -2,6 +2,8 @@
 
 入口：[CHAIN 首页](http://chain.physics.unb.ca/chain/) · [Data Download 说明](http://chain.physics.unb.ca/chain/pages/data_download) · [数据树（新）](https://www.chain-project.net/data/gps/ismr/) · [站表](http://chain.physics.unb.ca/chain/pages/stations/) · [数据政策](http://chain.physics.unb.ca/chain/pages/rules) · [Septentrio PolaRx5S User Manual（含 sbf2ismr 列定义）](https://ftp.space.dtu.dk/pub/bm/Septentrio/polarx5s_User_Manual_1%200%202%20(1).pdf) · 本机验证 **2026-09-26 04:48–05:00 EDT**
 
+> **质检复跑通过（2026-09-26 05:20 EDT）**：`access.sh`（FTP 本次可列目录，HTTPS 200/301/404 与文中一致）、`fetch.sh`（32 文件 1965828 B、17791 行 × 62 列）、`cols.sh`（手册 PDF 10799085 B、62 列）、`scint.py` 全部复跑，输出与文中逐字节一致，无需修改。附注：本机 `which python3` 现已是 `/usr/bin/python3`，坑 13 描述的环境差异在本机已不存在，但脚本写法不受影响。
+>
 > 岗位：不注册，从 CHAIN 的公开数据树按小时拉 **ISMR**（Septentrio PolaRxS 的 `sbf2ismr` 输出，每星每分钟一行、62 列），按官方列定义读出 S4、σφ（Phi01/03/10/30/60）、锁定时间、C/N0、TEC，做仰角 + 锁定时间过滤，并用 Churchill（chuc）在 2024-05-10/11 磁暴与 05-08/09 平静夜对比，量化高纬相位闪烁。低纬 ISMR（UNESP，需账号）见 [ismr-downloader](./ismr-downloader.md)；闪烁仿真见 [iono-scintillation](./iono-scintillation.md)；接收机 RINEX 算 ROTI 见 [oasis-roti](./oasis-roti.md)；同一磁暴的卫星/测高仪视角见 [swarm-data](./swarm-data.md)、[giro-ionosonde](./giro-ionosonde.md)；Kp 见 [space-weather-indices](./space-weather-indices.md)。本文不重复这几篇。
 >
 > 门槛总表：[电离层与地磁门户决策表](../data-access.md#电离层与地磁门户决策表) · 本文命令块 [E26](../data-access.md#dp-e26)
