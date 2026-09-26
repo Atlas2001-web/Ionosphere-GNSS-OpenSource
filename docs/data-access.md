@@ -14,17 +14,17 @@
 | SP3 / CLK / 偏差 | CDDIS `gnss/products/` · [IGS files](https://files.igs.org/pub/) · GFZ ISDC · [CODE HTTPS](https://download.aiub.unibe.ch/) · [CAS `pub/`](https://data.bdsmart.cn/pub/) | 同左 / 多开放 |
 | GIM / IONEX | CDDIS `gnss/products/ionex/` · CODE · [CAS ionex](https://data.bdsmart.cn/pub/product/iono/ionex/) · [UPC rapid](https://chapman.upc.es/tomion/rapid/) · JPL（[sideshow](https://sideshow.jpl.nasa.gov/pub/iono_daily/)）；门户/新旧名/时延见 [E27](#dp-e27) | CDDIS 需 Earthdata；其余实测匿名 |
 | 高采样率（闪烁 / 同震） | [CDDIS high-rate](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/high-rate_data.html) · GFZ `/gnss/data/highrate/` · `cddis-highrate-downloader` | Earthdata / 开放 |
-| 区域 CORS（美/新西兰/巴西） | [NOAA CORS](https://geodesy.noaa.gov/CORS/) · [CORS AWS](https://noaa-cors-pds.s3.amazonaws.com/index.html) · [GeoNet API](https://data.geonet.org.nz/) · [IBGE RBMC](https://geoftp.ibge.gov.br/informacoes_sobre_posicionamento_geodesico/rbmc/) · [EarthScope GAGE](https://gage-data.earthscope.org/archive/gnss) | 视网络 |
-| 区域 CORS（欧/亚太/加） | [EPN `/pub/obs/`](https://epncb.oma.be/pub/obs/) · [GA](https://data.gnss.ga.gov.au/) · [CACS](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/data-donnees/cacs-scca.php) · [MIRAI](https://go.gnss.go.jp/mirai/miraiarchive/) · [韩国](https://www.gnssdata.or.kr/) · [BEV Geoportal](https://data.bev.gv.at/) | 开放 / 网页注册 |
+| 区域 CORS（美/新西兰/巴西） | [NOAA CORS](https://geodesy.noaa.gov/CORS/) · [CORS AWS](https://noaa-cors-pds.s3.amazonaws.com/index.html) · [GeoNet API](https://data.geonet.org.nz/) · [IBGE RBMC](https://geoftp.ibge.gov.br/informacoes_sobre_posicionamento_geodesico/rbmc/) · [EarthScope GAGE](https://gage-data.earthscope.org/archive/gnss)；匿名多网实测见 [E30](#dp-e30) · [cors-networks](./software/cors-networks.md) | 视网络（GAGE 需 EarthScope 账号） |
+| 区域 CORS（欧/亚太/加） | [EPN `/pub/obs/`](https://epncb.oma.be/pub/obs/) · [GA](https://data.gnss.ga.gov.au/) · [CACS](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/data-donnees/cacs-scca.php) · [MIRAI](https://go.gnss.go.jp/mirai/miraiarchive/) · [韩国](https://www.gnssdata.or.kr/) · [BEV Geoportal](https://data.bev.gv.at/)；EPN（+ BKG EUREF 镜像）/ SONEL 实测见 [E30](#dp-e30) · [cors-networks](./software/cors-networks.md) | 开放 / 网页注册 |
 | 欧洲站元数据 / 程序化 | [EPOS GNSS](https://gnss-epos.eu/) · [GLASS API](https://gnssdata-epos.oca.eu/GlassFramework/) · [M3G](https://gnss-metadata.eu/landing/m3g) | 视节点 |
 | 实时 RTCM / SSR | `products.igs-ip.net:2101` · [igs-ip.net](https://www.igs-ip.net/)（NTRIP；后者偶发超时） · [注册](https://register.rtcm-ntrip.org/cgi-bin/registration.cgi) | 挂载点账号 |
 | 掩星 RO | [CDAAC](https://cdaac-www.cosmic.ucar.edu/) · [data.cosmic](https://data.cosmic.ucar.edu/gnss-ro/) · [ROM SAF](https://rom-saf.eumetsat.int/)（[决策表](#电离层与地磁门户决策表)）· [awsgnssroutils](https://github.com/gnss-ro/aws-opendata) · COSMIC-2 电离层 [cosmic2-ro](./software/cosmic2-ro.md) | 开放 / ROM SAF 产品库须注册（AWS 镜像开放） |
-| 地磁 / 空间天气 | [Kyoto WDC](https://wdc.kugi.kyoto-u.ac.jp/) · [INTERMAGNET](https://intermagnet.org/) · [SuperMAG](https://supermag.jhuapl.edu/) · [GFZ Kp](https://kp.gfz.de/en/) · [SWPC](https://www.spaceweather.gov/) · [OMNI/CDAWeb HAPI](https://cdaweb.gsfc.nasa.gov/hapi) · 台站分钟 / 秒值：USGS · BGS · NRCan · THEMIS GMAG · MACCS · TGO → [决策表](#电离层与地磁门户决策表) | 开放 / 注册 |
-| 区域 TEC 现报 | [eSWua TEC](http://www.eswua.ingv.it/ewphp/landing.php?doi=tec) · [IONORING](http://ionos.ingv.it/ionoring/ionoring.htm) | 开放（CC BY） |
+| 地磁 / 空间天气 | [Kyoto WDC](https://wdc.kugi.kyoto-u.ac.jp/) · [INTERMAGNET](https://intermagnet.org/) · [SuperMAG](https://supermag.jhuapl.edu/) · [GFZ Kp](https://kp.gfz.de/en/) · [SWPC](https://www.spaceweather.gov/) · [OMNI/CDAWeb HAPI](https://cdaweb.gsfc.nasa.gov/hapi) · 台站分钟 / 秒值：USGS · BGS · NRCan · THEMIS GMAG · MACCS · TGO → [决策表](#电离层与地磁门户决策表)；耀斑 X 射线 / EUV（GOES XRS、FISM2、EVE）见 [E31](#dp-e31) | 开放 / 注册 |
+| 区域 TEC 现报 | [eSWua TEC](http://www.eswua.ingv.it/ewphp/landing.php?doi=tec) · [IONORING](http://ionos.ingv.it/ionoring/ionoring.htm)；全球近实时 TEC（GloTEC / DLR / UPC / CODE 预报）见 [E29](#dp-e29) | 开放（CC BY） |
 | 闪烁 ISMR | [`ismr_downloader`](https://github.com/GEGE-UNESP/ismr_downloader)（主）· [Query Tool](https://ismrquerytool.fct.unesp.br/)（辅，常超时）· 高纬 [CHAIN](https://www.chain-project.net/data/gps/ismr/)（[E26](#dp-e26)） | UNESP 网页注册；CHAIN 匿名 |
 | 测高仪 | [GIRO / DIDBase](https://giro.uml.edu/didbase/) · [RAL / UKSSDC](https://www.ukssdc.ac.uk/ionosondes/) | GIRO 特征参数匿名（[E23](#dp-e23)），SAO 数值库要邮件申请账号；RAL 网页注册 |
 | ISR / SuperDARN / 区域台链 | [CEDAR Madrigal](https://cedar.openmadrigal.org/) · [EISCAT](https://portal.eiscat.se/) · [SRI AMISR](https://data.amisr.com/database/) · [FRDR SuperDARN](https://www.frdr-dfdr.ca/repo/collection/superdarn) · [子午工程](https://www.meridianproject.ac.cn/) · [PITHIA 编目](https://esc.pithia.eu/) → [决策表](#电离层与地磁门户决策表) | Madrigal / FRDR 开放；EISCAT 门户、子午工程须登录 |
-| 电离层–热层卫星（ICON / GOLD） | [SPDF ICON](https://spdf.gsfc.nasa.gov/pub/data/icon/) · [SPDF GOLD](https://spdf.gsfc.nasa.gov/pub/data/gold/) · [CDAWeb](https://cdaweb.gsfc.nasa.gov/) CDAS REST · [GOLD SOC](https://gold.cs.ucf.edu/data/search/)（[决策表 E21–E22](#dp-e21) · [icon-gold-data](./software/icon-gold-data.md)） | 开放（CDAWeb HAPI 不含这两个任务） |
+| 电离层–热层卫星（ICON / GOLD） | [SPDF ICON](https://spdf.gsfc.nasa.gov/pub/data/icon/) · [SPDF GOLD](https://spdf.gsfc.nasa.gov/pub/data/gold/) · [CDAWeb](https://cdaweb.gsfc.nasa.gov/) CDAS REST · [GOLD SOC](https://gold.cs.ucf.edu/data/search/)（[决策表 E21–E22](#dp-e21) · [icon-gold-data](./software/icon-gold-data.md)）；DMSP SSIES/SSUSI、TIMED GUVI 见 [E32](#dp-e32) | 开放（CDAWeb HAPI 不含这两个任务） |
 | LEO 原位 / 顶部 TEC（Swarm） | [swarm-diss HTTPS](https://swarm-diss.eo.esa.int/) · [VirES HAPI](https://vires.services/hapi/)（[E24](#dp-e24) / [E25](#dp-e25)） | 开放（HTTPS `?do=` 与 HAPI 匿名；FTP 与 VirES token 要注册） |
 | 对流层格网 | [VMF](https://vmf.geo.tuwien.ac.at/) → `trop_products/` | 多开放 |
 
@@ -72,7 +72,7 @@ chmod 600 ~/.netrc
 
 **我要什么**：全球 IGS/MGEX 日文件观测（OBS）与广播星历（NAV），约 30 s。
 
-**去哪**：[CDDIS archive/gnss](https://cddis.nasa.gov/archive/gnss/) · 持有说明见 [GNSS holdings](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/GNSS_data_holdings.html)。镜像： [BKG root_ftp](https://igs.bkg.bund.de/root_ftp/) · [GFZ ISDC `/gnss/data/daily/`](https://isdc-data.gfz.de/gnss/data/daily/)。
+**去哪**：[CDDIS archive/gnss](https://cddis.nasa.gov/archive/gnss/) · 持有说明见 [GNSS holdings](https://cddis.nasa.gov/Data_and_Derived_Products/GNSS/GNSS_data_holdings.html)。镜像： [BKG root_ftp](https://igs.bkg.bund.de/root_ftp/) · [GFZ ISDC `/gnss/data/daily/`](https://isdc-data.gfz.de/gnss/data/daily/)（GFZ 自家网，非 IGS 全镜像）；匿名 IGS 镜像到达率实测见 [E28](#dp-e28)。
 
 **怎么下**：
 
@@ -164,13 +164,21 @@ curl -L -n -C - -o hr.crx.gz \
 
 ```bash
 # 对象键：rinex/YYYY/DDD/ssss/ssssDDD0.YYo.gz（站四字码小写）
-curl -L -C - -o 1lsu0490.23o.gz \
-  "https://noaa-cors-pds.s3.amazonaws.com/rinex/2023/049/1lsu/1lsu0490.23o.gz"
-# 列前缀（可选）
-aws s3 ls s3://noaa-cors-pds/rinex/2023/049/1lsu/ --no-sign-request
+curl -L -C - -o 1lsu1320.24o.gz \
+  "https://noaa-cors-pds.s3.amazonaws.com/rinex/2024/132/1lsu/1lsu1320.24o.gz"
+# 实测（2026-09-26）：200，2,702,921 B；旧例 2023/049 的 1lsu0490.23o.gz 仍 200（2,822,317 B）
+# 匿名列前缀：S3 ListObjectsV2（不用 aws CLI）
+curl -s "https://noaa-cors-pds.s3.amazonaws.com/?list-type=2&prefix=rinex/2024/132/1lsu/" | grep -o '<Key>[^<]*'
+# 实测：3 个键 1lsu1320.24S（41,823 B）、1lsu1320.24d.gz（1,166,877 B，LastModified 2024-05-12 02:15 UTC）、1lsu1320.24o.gz（2,702,921 B，LastModified 2024-06-13 03:53 UTC）
+curl -s "https://noaa-cors-pds.s3.amazonaws.com/?list-type=2&prefix=rinex/2024/132/&delimiter=/" | grep -o '<KeyCount>[0-9]*\|<IsTruncated>[a-z]*'
+# 实测：KeyCount 1000、IsTruncated true → 带 continuation-token 翻页（两页合计 1740 个站目录）
+curl -s -o /dev/null -w '%{http_code}\n' https://noaa-cors-pds.s3.amazonaws.com/rinex/2024/132/1lsu/
+# 实测：404（目录式 URL 不是对象；要列目录用上面的 ?list-type=2&prefix=）
+curl -s https://geodesy.noaa.gov/corsdata/rinex/2024/132/1lsu/ | grep -o 'href="1lsu[^"]*"'
+# 实测：只有 1lsu1320.24S、1lsu1320.24d.gz——NGS 网页目录没有 .o.gz，只有 S3 有（本例 2024-06-13 才补上）
 ```
 
-**账号/配额坑**：S3 公开、无需 NOAA 账号；目录 URL 本身常 404，必须落到具体对象键；网页 CORS/UFCORS 适合少站，批量勿爬门户 HTML。
+**账号/配额坑**：S3 公开、无需 NOAA 账号；目录式 URL（`…/1lsu/`）直接 GET 是 404，列目录请用 ListObjectsV2 前缀查询（1000 条/页须翻页）；NGS 网页 `corsdata/rinex/` 只给 `.d.gz`（CRINEX 1.0，Rust crx2rnx 2.7.0 会 panic）与 `.S`，要 `.o.gz` 走 S3；网页 CORS/UFCORS 适合少站，批量勿爬门户 HTML。多网对比与上架延迟见 [E30](#dp-e30) · [cors-networks](./software/cors-networks.md)。
 
 ### 区域 CORS：GeoNet（新西兰）
 
@@ -304,7 +312,7 @@ curl -s "https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json"
 
 ### 开放产品镜像快径（CODE / GFZ / CAS）
 
-**我要什么**：少账号摩擦的 SP3/CLK/IONEX/日文件备份（免 Earthdata）。
+**我要什么**：少账号摩擦的 SP3/CLK/IONEX/日文件备份（免 Earthdata）。GIM 各中心门户 / 时延对比见 [E27](#dp-e27)。
 
 **去哪**：
 
