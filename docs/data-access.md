@@ -431,7 +431,7 @@ curl -L -C - -O \
 
 ## 电离层与地磁门户决策表
 
-第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD），以及地基与 LEO 电离层观测（E23 GIRO / DIDBase 测高仪、E24 Swarm swarm-diss HTTPS、E25 VirES HAPI、E26 CHAIN 闪烁 ISMR、E27 GIM/IONEX 各中心门户、E28 IGS 观测匿名镜像、E29 近实时 TEC 产品、E30 区域 CORS 网、E31 耀斑驱动数据）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
+第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD），以及地基与 LEO 电离层观测（E23 GIRO / DIDBase 测高仪、E24 Swarm swarm-diss HTTPS、E25 VirES HAPI、E26 CHAIN 闪烁 ISMR、E27 GIM/IONEX 各中心门户、E28 IGS 观测匿名镜像、E29 近实时 TEC 产品、E30 区域 CORS 网、E31 耀斑驱动数据、E32 DMSP / TIMED GUVI）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
 
 | 门户 | 账号 / 门槛 | 格式 | 时间分辨率 · 时延 | 实测 |
 |---|---|---|---|:---:|
@@ -466,6 +466,7 @@ curl -L -C - -O \
 | [近实时 TEC 产品](./software/realtime-iono-products.md) | **匿名**：NOAA GloTEC `services.swpc.noaa.gov/products/glotec/`（GeoJSON 31 天 + 日 netCDF 2025-05 起）；NCEI 归档 `archive.data.noaa.gov/satellite-spaceweather/SWPC/Models/`（GloTEC 2025-02 起、US-TEC 2004-10 至 2023-11）；DLR IMPC **仅 `latest/` 匿名，历史需 SSO 账号**；UPC 实时 usrg；CODE P0D/P1D/P4D；CAS RTS；BoM 只有 PNG，数值 API 需 key | GeoJSON / netCDF / JSON / HDF5 / IONEX / PNG | 实测时延：DLR 2.6 min、UPC 4–6 min、GloTEC 21–24 min、CAS RTS 按天；09:15 UTC 同历元 GloTEC − CODE 预报 面积加权 RMS 4.19、DLR − GloTEC 均差 −3.49 TECU | ✅（[E29](#dp-e29)，[手册](./software/realtime-iono-products.md)） |
 | [区域 CORS 网](./software/cors-networks.md) | **匿名**：NOAA NGS S3 `noaa-cors-pds`、EPN `/pub/RINEX/`（+ BKG EUREF 镜像）、GeoNet（S3）、IBGE RBMC geoftp、SONEL FTP；**EarthScope GAGE 302 到登录**、CDDIS 需 Earthdata | RINEX 2 短名 o.gz / d.gz；RINEX 3 crx.gz；GeoNet 为 rnx.gz | 2024/132：NOAA 1740 站目录、SONEL 692、EPN 395、GeoNet 186、RBMC 84（15 s）；5 网各 1 站全部完整；上架中位 GeoNet 0.2 h、NOAA 2.8 h、RBMC ≈ 23 h、EPN 中央局 ≈ 52 h | ✅（[E30](#dp-e30)，[手册](./software/cors-networks.md)） |
 | [耀斑驱动数据](./software/solar-flare-data.md) | **匿名**：SWPC 事件表（NCEI 归档）、NCEI GOES-R XRS L2 `_science`（`sci_`）与运行版（`dn_`）、SWPC JSON（仅 7 天）、LISIRD LaTiS 的 FISM2 与 SDO EVE | netCDF4（XRS）/ 文本 / JSON / CSV | 2024-05-11 X5.8：G16 science 1 s 峰 5.865e-4 @ 01:22:50、G18 定为 X5.7、运行版高 1.2%；FISM2 30.4 nm ×1.54 峰 01:20，ESP 0.1–7 nm ×16.1；FISM2 延迟约 7 天 | ✅（[E31](#dp-e31)，[手册](./software/solar-flare-data.md)） |
+| [DMSP / TIMED GUVI](./software/dmsp-timed-data.md) | **匿名**：SPDF `dmsp/`（SSIES-3 CDF、SSUSI EDR/SDR）与 `timed/guvi/`；CDAWeb HAPI（SSIES 取整、无质量标志）；Madrigal kinst 8100（下载需填三个信息字段，见 [madrigal](./software/madrigal.md)）；JHU/APL 官网为 JS 页面，门槛未验证 | NASA CDF / HDF5 / netCDF3 classic | F18 2024-05-11：SSIES 6100 条 1 s、dens good 86.1%；SSUSI 南半球功率 1185.6 GW、观测边界 50.2°（模型 61.8°）；SSIES 2015–2021 缺；GUVI 成像只到 2007 | ✅（[E32](#dp-e32)，[手册](./software/dmsp-timed-data.md)） |
 
 要登录才能拿数据的：EISCAT 门户（Madrigal 可绕行）、子午工程、ROM SAF 产品库（AWS 可绕行）、TGO ASCII、UKSSDC/RAL。要「申请」的：BGS 本站高分辨率（GIN 可绕行）。
 
@@ -802,6 +803,18 @@ curl -s https://services.swpc.noaa.gov/json/goes/primary/xrays-7-day.json | head
 curl -s 'https://lasp.colorado.edu/lisird/latis/dap/fism_flare_hr.csv?time,wavelength,irradiance&time>=2024-05-11T00:30&time<2024-05-11T02:30&wavelength>30.3&wavelength<30.5'   # 实测：60 s；30.45 nm ×1.54，峰 01:20:03；FISM2 flare 版只到 2026-09-18 23:59 UTC
 curl -s 'https://lasp.colorado.edu/lisird/latis/dap/sdo_eve_diodes_l2b.csv?time,diodeQuad,diode304&time>=2024-05-11T00:30&time<2024-05-11T02:30'   # 实测：60 s，TAI 秒；ESP 0.1–7 nm ×16.1 @ 01:23:30；EVE λ<37 nm 谱线 29 条中 26 条全程 −1（MEGS-A 缺）
 # 口径：GOES-R XRS 为真实 W/m²；GOES 8–15 运行数据曾乘 0.7（B）/0.85（A）——与旧耀斑比，GOES-R ×0.7（X5.8 → X4.0，本文换算）
+```
+
+<a id="dp-e32"></a>**E32 DMSP SSIES / SSUSI 与 TIMED GUVI（SPDF / CDAWeb HAPI / Madrigal / JHU/APL）**
+
+```bash
+S=https://spdf.gsfc.nasa.gov/pub/data
+curl -s -O $S/dmsp/dmspf18/ssies/ssies-3rl/thermal-plasma-cdf/2024/dmsp-f18_ssies-3_thermal-plasma_202405110107_v01.cdf   # 实测：200，665,748 B，NASA CDF；6100 条 1 s（01:07:27–02:49:20 UTC），dens good 86.1%；SPDF 上 SSIES 2015–2021 整段缺
+curl -s -O $S/dmsp/dmspf18/ssusi/data/edr-aurora/2024/132/dmspf18_ssusi_edr-aurora_2024132T012000-2024132T030151-REV075111_vA8.2.0r000.nc   # 实测：200，3,375,676 B，HDF5；南半球功率 1185.6 GW，北半球观测边界最低 |磁纬| 50.2°（模型 61.8°）
+curl -s -O $S/dmsp/dmspf18/ssusi/data/edr-iono/2024/132/dmspf18_ssusi_edr-iono_2024132T012000-2024132T030151-REV075111_vA8.2.0r000.nc   # 实测：200，889,276 B，netCDF3 classic（h5py 打不开，用 scipy.io）；NmF2 中位 1.75e6 cm⁻³，hmF2 中位 423 km
+curl -s -O $S/timed/guvi/levels_v13/level1c/spectrograph/2024/132/TIMED_GUVI_L1C-2-disk-SPECT_2024132002517-2024132020153_REV121644_Av13-01r001.nc   # 实测：200，524,755 B，HDF5；DISK_INTENSITY_DAY 408×6；GUVI 成像模式只到 2007，光谱仪到 2026/075
+curl -s 'https://cdaweb.gsfc.nasa.gov/hapi/data?id=DMSP-F18_SSIES-3_THERMAL-PLASMA&time.min=2024-05-11T01:20:00Z&time.max=2024-05-11T01:20:03Z&parameters=temp,dens'   # 实测：3 行，数值取整（2562,142273），无质量标志 / 经纬度；参数顺序颠倒报 1411
+curl -s 'https://cedar.openmadrigal.org/getExperimentFilesService.py?id=100240270'   # 实测：Madrigal kinst 8100，F16/F17/F18 dms_ut_20240511_NN.002.hdf5（带质量标志）；下载方法见 madrigal 手册
 ```
 
 ---
