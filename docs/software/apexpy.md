@@ -1,6 +1,6 @@
 # apexpy · Apex / 准偶极磁坐标操作手册
 
-目录：[`PROJECTS.json` → `apexpy`](../../PROJECTS.json) · 上游 <https://github.com/aburrell/apexpy> · 许可 **MIT** · PyPI **`apexpy` 2.1.1** · 本机 tip **`eed96cf`** · Python **3.11** 轮子；`(40°N,80°W)` 2015-03-23 15:30 UT / 250 km 实跑（2026-09-24 EDT）
+目录：[`PROJECTS.json` → `apexpy`](../../PROJECTS.json) · 上游 <https://github.com/aburrell/apexpy> · 许可 **MIT** · PyPI **`apexpy` 2.1.1** · 本机 tip **`eed96cf`** · PyPI 2.1.1 **Linux 无 wheel**（只有 sdist + 一个 macOS cp310 wheel），pip 用本机 gfortran 现编；`(40°N,80°W)` 2015-03-23 15:30 UT / 250 km 实跑（2026-09-24 EDT） · **质检复跑**（2026-09-26 01:45 EDT，新 venv Python 3.13.5，`--no-cache-dir` 现编 8 s 得 `cp313-linux_x86_64`；PyPI 最新仍 2.1.1，MIT，★40）：§3 / §3.1 CLI / §3.2 三段输出在 **`TZ=UTC`** 下与本文**逐字一致**；但在 `TZ=America/New_York` 下 `year` 变成 2015.2235730593607（差 1 h），各坐标末位随之变（如 geo2apex 50.69573211669922），见坑 11。坑 1/2 报错原文复现（实为 `glat must be in [-90, 90]`）。改 2 处：wheel 说法、补坑 11
 
 > 岗位：地理坐标 ↔ **Modified Apex / Quasi-Dipole (QD)**，算 **MLT**、沿磁力线映射、\|B\|。冲突时：**上游 README / `apexpy -h` > 本文**。常与 IRI 气候态、GIM/TEC 按磁纬分箱联用。
 
@@ -46,7 +46,7 @@ apexpy -h | head
 | --- | --- | --- |
 | `pip` 源码编译失败 | 无 gfortran / 缺 wheel | `apt install gfortran`；或换有 wheel 的平台 |
 | CLI `full date/time … YYYYMMDDHHMMSS required for MLT` | 日期串不够 14 位 | 用 `20150323153000` |
-| `ValueError: lat must be in [-90, 90]` | 纬经颠倒或越界 | stdin/`convert` 均为 **lat lon（度）** |
+| `ValueError: glat must be in [-90, 90]` | 纬经颠倒或越界 | stdin/`convert` 均为 **lat lon（度）** |
 
 ## 3. 端到端：地理 → Apex/QD/MLT（本机真跑）
 
@@ -151,15 +151,16 @@ h400_refh300 [50.100948333740234, -4.188036918640137]
 | # | 现象 | 原因 | 修复 |
 | ---: | --- | --- | --- |
 | 1 | CLI `YYYYMMDDHHMMSS required for MLT` | 日期只有 8/12 位 | 写满 14 位 |
-| 2 | `lat must be in [-90, 90]` | 纬经顺序反了 | **lat lon（度）** |
+| 2 | `glat must be in [-90, 90]` | 纬经顺序反了 | **lat lon（度）** |
 | 3 | `get_babs`≈4.6e-5 当 nT 用 | 返回值是 **T** | ×1e9 → nT |
 | 4 | `geo mlt` 第二列当磁经 | CLI 第二列是 **MLT** | 要磁经用 `geo apex`/`qd` |
 | 5 | 换 `refh` 后 Apex 纬跳变 | 定义面高度变了 | 全文固定同一 `refh` |
 | 6 | 与旧论文差 1°+ | IGRF 年代 / `date` 不同 | 锁同一 `datetime` |
-| 7 | 源码安装失败 | 无 Fortran 编译器 | 优先 PyPI wheel |
+| 7 | 源码安装失败 | 无 Fortran 编译器；Linux 上 PyPI 2.1.1 **只有 sdist**，必走现编 | `sudo apt install gfortran` 后再 `pip install apexpy==2.1.1` |
 | 8 | 当电子密度模型 | 只做坐标 | 接 [iri2016](./iri2016.md) / [pyiri](./pyiri.md) |
 | 9 | `map_to_height` 残差大 | 近磁赤道/共轭分支 | 查 `conjugate`；换足迹高度 |
 | 10 | 数组与标量 shape 炸 | 未广播 | 纬经高同标量或同长数组 |
+| 11 | 同一脚本在两台机器上坐标末位不同 | `helpers.py` 用 `time.mktime(date.timetuple())` 按**本地时区**算年小数；本地 1 月 1 日与所算日期的夏令时状态不同就差 1 h（实测 America/New_York 下 2015-03-23 `year` 2015.2235730593607 vs UTC 2015.2236872146118） | 固定 `TZ=UTC python …`；或直接传 `Apex(date=2015.2236872146118)` 年小数 |
 
 ## 6. 选型与链接
 

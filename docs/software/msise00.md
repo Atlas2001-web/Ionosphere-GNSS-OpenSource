@@ -1,6 +1,6 @@
 # msise00 · NRLMSISE-00 中性大气操作手册
 
-目录：[`PROJECTS.json` → `msise00`](../../PROJECTS.json) · 上游 <https://github.com/space-physics/msise00> · 许可 **MIT** · PyPI **`msise00` 1.11.1** · 本机 tip **`e4ab457`** · 首次调用 **CMake+gfortran** 编 `msise00_driver`；`(40°N,80°W)` 2015-03-23 15:30 / 100–500 km 剖面实跑（2026-09-24 EDT）
+目录：[`PROJECTS.json` → `msise00`](../../PROJECTS.json) · 上游 <https://github.com/space-physics/msise00> · 许可 **MIT** · PyPI **`msise00` 1.11.1** · 本机 tip **`e4ab457`** · 首次调用 **CMake+gfortran** 编 `msise00_driver`；`(40°N,80°W)` 2015-03-23 15:30 / 100–500 km 剖面实跑（2026-09-24 EDT） · **质检复跑**（2026-09-26 01:45 EDT，新 venv Python 3.13.5，PyPI 最新仍 1.11.1，tip `e4ab457`，MIT）：首跑 gfortran 14.2.0 现编 `msise00_driver`，§3 十行 stdout 与 §3.1 CLI 五行**逐字一致**（Tn_250 1009.87、f107 129.05/Ap 11.0、override 883.88）；坑 3（无 netCDF4 时 exit 1，`cannot write NetCDF files because none of the suitable backend libraries (netCDF4, h5netcdf, scipy) are installed`，且此前已打印 `saving …` 但不落文件）、坑 7（`only 0-dimensional arrays…`，`Tn` 形状 (1,1,1,1)）复现。补注：首跑的 CMake 编译日志与 `geomagindies: downloading …` 行写在 **stdout**（本机 16 行），脚本解析 stdout 前先跑一次或过滤
 
 > 岗位：对给定 **时间/纬经/高度** 算 NRLMSISE-00 **中性密度与温度**（`xarray.Dataset`）。冲突时：**上游 README / `python -m msise00 -h` > 本文**。电离层电子密度见 [iri2016](./iri2016.md) / [pyglow](./pyglow.md) / [pyiri](./pyiri.md)；**不是 TEC 模型**。
 

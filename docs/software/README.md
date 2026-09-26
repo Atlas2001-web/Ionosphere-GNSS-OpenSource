@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **164 篇**操作手册（合计 **36081 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **164 篇**操作手册（合计 **36080 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -57,8 +57,8 @@
 | 30 | [awsgnssroutils.md](./awsgnssroutils.md) | AWS Open Data GNSS-RO 查询/下载（calibratedPhase 等） | 245 | **已短硬** · 本机 1.2.7；cosmic1 Phase 2636→3 文件；cosmic2 仅 atm 对照；开放 S3 / rotcol 门禁 |
 | 31 | [pyirtam.md](./pyirtam.md) | 纯 Python IRTAM 系数→网格 Ne（对接 PyIRI） | 177 | **已短硬** · 本机 PyIRTAM **0.0.7**；LGDC 2024-06-01 02:15 四系数 + run_PyIRTAM 实跑 |
 | 32 | [fast.md](./fast.md) | GNSS 下载 / QC / 广播星历 SPP / 选站 | 215 | **已短硬** · 本机 tip **3.01.01**；ABPO satNum + 1h SPP Δ≈0.69 m；FTP 下载本机失败已记 |
-| 33 | [apexpy.md](./apexpy.md) | Apex / 准偶极磁坐标（Apex/QD/MLT） | 174 | **已短硬** · 本机 2.1.1/`eed96cf`；geo2apex(40N,80W,250km)→alat≈50.70；CLI 14 位时间坑 |
-| 34 | [msise00.md](./msise00.md) | NRLMSISE-00 中性大气 → xarray | 166 | **已短硬** · 本机 **1.11.1**/`e4ab457`；Tn@250km=1009.87 K；CLI `-w` 需 netCDF4 |
+| 33 | [apexpy.md](./apexpy.md) | Apex / 准偶极磁坐标（Apex/QD/MLT） | 175 | **已短硬** · 本机 2.1.1/`eed96cf`；geo2apex(40N,80W,250km)→alat≈50.70；CLI 14 位时间坑 · **质检复跑通过**（2026-09-26 01:45 EDT；2.1.1；TZ=UTC 下 §3 三段逐字复现；修“3.11 轮子”→Linux 仅 sdist 现编；补坑 11 本地时区夏令时致 year 差 1 h） |
+| 34 | [msise00.md](./msise00.md) | NRLMSISE-00 中性大气 → xarray | 166 | **已短硬** · 本机 **1.11.1**/`e4ab457`；Tn@250km=1009.87 K；CLI `-w` 需 netCDF4 · **质检复跑通过**（2026-09-26 01:45 EDT；1.11.1；剖面十行+CLI 逐字复现 Tn_250 1009.87；坑 3/7 复现；补注首跑日志在 stdout） |
 | 35 | [pysatcdaac.md](./pysatcdaac.md) | pysat 生态 CDAAC/COSMIC（ionPrf/ionPhs） | 293 | **已短硬** · 本机 0.0.5；ionprf 2019-01-01 59→53；ionphs 下 144、load 维冲突改 netCDF4 |
 | 36 | [diffionmap.md](./diffionmap.md) | 两幅 IONEX 并排对照（VS 图） | 179 | **已短硬** · tip `57ceb1d`；Py3 读 CODG/WHUC 12 图 mean≈24.84；IGRG mean≈13.367；Basemap 出图环境受限 · **质检复跑通过** |
 | 37 | [cddis-highrate-downloader.md](./cddis-highrate-downloader.md) | CDDIS 高采样 15 min 块批量下载 | 179 | **已短硬** · 本机 1.0.2；FTPS 登录+CWD+SIZE 706256；LIST/RETR 425 受限；Linux 无 CRX2RNX · **质检复跑通过** |
