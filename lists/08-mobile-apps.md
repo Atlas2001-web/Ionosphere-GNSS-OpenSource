@@ -130,7 +130,7 @@ u-blox 厂商开源的可移植 C 库，面向 MCU/RTOS 场景提供 GNSS 与蜂
 
 语言：C · 许可：GPL-3.0 · 星标约：119 · 宿主：github
 
-Ardusimple WiFi NTRIP Master 的官方 ESP-IDF 固件（GPL-3.0），把 ESP32 UART 桥接到 WiFi，提供 NTRIP Client/Server/Caster 与 TCP/UDP、Web 配置界面。适合低成本基站/流动站差分链路。硬件引脚默认面向其板卡；通用 ESP32 需改 GPIO。不是精密定位解算器。
+个人开发者 nebkat 维护的 Ardusimple WiFi NTRIP Master 配套 ESP-IDF 固件（GPL-3.0），把 ESP32 UART 桥接到 WiFi，提供 NTRIP Client/Server/Caster 与 TCP/UDP、Web 配置界面。适合低成本基站/流动站差分链路。硬件引脚默认面向其板卡；通用 ESP32 需改 GPIO。不是精密定位解算器。
 
 #### [bolderflight-ublox](https://github.com/bolderflight/ublox)  
 *🏷️ 个人社区*

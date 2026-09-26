@@ -384,7 +384,7 @@ Larson 团队 Fortran 工具，翻译/读取 GPS RINEX 并提取 SNR，服务反
 
 语言：Fortran · 许可：GPL-3.0 · 星标约：23 · 宿主：github
 
-TU Wien VieVS 组发布的 Fortran 射线追踪程序，可对微波与光学频段观测重建对流层延迟及相关参数，输入依赖数值天气预报场。适合与 VMF/GPT 产品对照、做高精度延迟研究或 VLBI/GNSS 联合试验。NWM 数据获取与预处理需自备；官方亦有校内 Git 镜像，公开仓以 GitHub 为准。
+TU Wien VieVS 组发布的 Fortran 射线追踪程序，可对微波与光学频段观测重建对流层延迟及相关参数，输入依赖数值天气预报场。适合与 VMF/GPT 产品对照、做高精度延迟研究或 VLBI/GNSS 联合试验。NWM 数据获取与预处理需自备；课题组亦有校内 Git 镜像，公开仓以 GitHub 为准。
 
 ## VMF/GPT官方代码
 

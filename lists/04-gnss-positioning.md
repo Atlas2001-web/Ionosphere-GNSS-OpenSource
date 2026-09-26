@@ -8,7 +8,7 @@ SPP、DGPS、RTK/PPK、PPP/PPP-AR/PPP-RTK（含 PPP-B2b、Galileo HAS、MADOCA �
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
 | [gLAB](https://github.com/valgur/gLAB) | gLAB 非官方镜像；官方发行见 UPC gAGE 下载页 | C | 22 | 🏷️ 个人社区 ★ |
-| [gLAB-Download](https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite-links/glab-download) | gLAB-Download：UPC gLAB 官方源码与 Win/Cygwin 安装包页 | C/Python | — | 🏷️ 高校实验室 |
+| [gLAB-Download](https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite-links/glab-download) | gLAB-Download：UPC gAGE 课题组发布的 gLAB 源码与 Win/Cygwin 安装包页 | C/Python | — | 🏷️ 高校实验室 |
 | [gLAB-UPC](https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite) | gLAB：GNSS 处理与教学套件 | C/Python | — | 🏷️ 高校实验室 核心 |
 
 ### 详细说明
@@ -32,7 +32,7 @@ UPC gAGE 的 gLAB 发行下载页，列出各版本安装包、校验和与许�
 
 语言：C/Python · 许可：Apache-2.0 + LGPL-3.0 (GUI) · 星标约：— · 宿主：official_site
 
-加泰罗尼亚理工 gAGE 组发布的 GNSS-Lab Tool，覆盖观测建模、SPP/PPP、电离层与绘图。核心与绘图工具 Apache 2.0，Qt GUI 为 LGPL-3。官方下载含 Linux 源码包与 Windows 安装包；GitHub 上多为非官方镜像。适合教学与算法对照，非业务级实时引擎。
+加泰罗尼亚理工 gAGE 组发布的 GNSS-Lab Tool，覆盖观测建模、SPP/PPP、电离层与绘图。核心与绘图工具 Apache 2.0，Qt GUI 为 LGPL-3。课题组发布的下载包含 Linux 源码包与 Windows 安装包；GitHub 上多为非官方镜像。适合教学与算法对照，非业务级实时引擎。
 
 ## PPP
 

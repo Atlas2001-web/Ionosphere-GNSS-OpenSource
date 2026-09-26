@@ -1057,7 +1057,7 @@ Android 原始 GNSS 测量日志与桌面可视化分析工具，智能手机高
 | [gpsd](https://gitlab.com/gpsd/gpsd) | gpsd：跨平台 GNSS/AIS 守护进程 | C | 104 | 🏷️ 个人社区 |
 | [um982-driver](https://github.com/sunshineharry/UM982Driver) | 和芯星通 UM982/UM980 扩展语句（PVTSLN/BESTNAV/GNHPR）Python 驱动 | Python | 39 | 🏷️ 个人社区 |
 | [piksi_tools](https://github.com/swift-nav/piksi_tools) | piksi_tools：Swift Navigation Piksi 接收机 Python 工具 | Python | 36 | 🏷️ 个人社区 |
-| [novatel_edie](https://github.com/novatel/novatel_edie) | novatel_edie：NovAtel 官方 OEM7 日志编解码 SDK（C++/Python） | C++ | 32 | 🏷️ 个人社区 |
+| [novatel_edie](https://github.com/novatel/novatel_edie) | novatel_edie：NovAtel 厂商发布的 OEM7 日志编解码 SDK（C++/Python） | C++ | 32 | 🏷️ 个人社区 |
 | [Septentrio-PyDataLink](https://github.com/septentrio-gnss/Septentrio-PyDataLink) | Septentrio-PyDataLink：接收机数据流可视化与互联 | Python | 8 | 🏷️ 个人社区 |
 | [SbfMixer](https://github.com/septentrio-gnss/SbfMixer) | SbfMixer：Septentrio 接收机的 Node-RED 节点 | JavaScript | 2 | 🏷️ 个人社区 |
 | [trimble-gsof-wireshark](https://github.com/Ryanf55/trimble-gsof-wireshark) | Wireshark 的 Trimble GSOF 协议解析插件（Lua） | Lua | 2 | 🏷️ 个人社区 |

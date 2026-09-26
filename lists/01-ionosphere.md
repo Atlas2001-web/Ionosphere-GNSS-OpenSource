@@ -37,7 +37,7 @@ space-physics 维护的指数下载与解析工具，按时间返回 Ap、Kp 与
 
 语言：Python · 许可：MIT · 星标约：4 · 宿主：github
 
-访问全球 Madrigal 站点（含 CEDAR）的官方 Python 客户端，可检索/下载非相干散射雷达、GNSS TEC 等空间天气与电离层归档。MIT。适合批量脚本拉取；需遵守各站点数据政策，部分实验需注册。配套门户见 OpenMadrigal。
+MIT Haystack 课题组发布的 Python 客户端，用于访问全球 Madrigal 站点（含 CEDAR），可检索/下载非相干散射雷达、GNSS TEC 等空间天气与电离层归档。MIT。适合批量脚本拉取；需遵守各站点数据政策，部分实验需注册。配套门户见 OpenMadrigal。
 
 #### [swds-api-downloader](https://github.com/embrace-inpe/swds-api-downloader)  
 *🏷️ 官方*
@@ -755,7 +755,7 @@ UMLCAR 发布的 Digisonde 漂移（DDA）数据查看器，当前发行约 1.2.
 
 语言：data-portal · 许可：portal-terms · 星标约：— · 宿主：official_site
 
-洛厄尔麻省大学大气研究中心官方下载索引：SAO Explorer（含 ARTIST-5）、Drift-X、BinBrowser、DCART、NHPC、CARP 等 Digisonde/测高仪工具集中入口。SAO-X 另有独立主页；本页作为软件总目录，便于发现其余开源/可下载工具。
+洛厄尔麻省大学大气研究中心（UMLCAR）课题组发布的下载索引：SAO Explorer（含 ARTIST-5）、Drift-X、BinBrowser、DCART、NHPC、CARP 等 Digisonde/测高仪工具集中入口。SAO-X 另有独立主页；本页作为软件总目录，便于发现其余开源/可下载工具。
 
 ## 磁坐标
 
@@ -970,7 +970,7 @@ NJIT/Boston University 的三维 FDTD 开源码（GitLab，GPL-3.0-or-later）�
 
 语言：binary (PyInstaller) · 许可：CC-BY-4.0 · 星标约：— · 宿主：other
 
-德州大学达拉斯分校发布的 ScintPi 1.0 官方采集/可视化软件 ZIP（concept DOI 10.5281/zenodo.4905193），经 USB 连接硬件，面向教育与低成本闪烁监测。CC-BY-4.0，“as is”无质保；ZIP 内只有 PyInstaller 打包的可执行文件（Windows 绘图 exe 与树莓派采集程序），不含源码。与 GitHub 上第三方 scintkit 小工具不同，这里是仪器配套官方软件存档。适合教学网部署；论文级多站 S4/σφ 分析仍需专用 GISTM 或商用接收机链路。
+德州大学达拉斯分校课题组发布的 ScintPi 1.0 采集/可视化软件 ZIP（concept DOI 10.5281/zenodo.4905193），经 USB 连接硬件，面向教育与低成本闪烁监测。CC-BY-4.0，“as is”无质保；ZIP 内只有 PyInstaller 打包的可执行文件（Windows 绘图 exe 与树莓派采集程序），不含源码。与 GitHub 上第三方 scintkit 小工具不同，这里是课题组发布的仪器配套软件存档。适合教学网部署；论文级多站 S4/σφ 分析仍需专用 GISTM 或商用接收机链路。
 
 #### [Swarm-VIP-Dynamic](https://gitlab.com/KNMI-OSS/spaceweather/swarm-vip-dynamic)  
 *🏷️ 官方*
@@ -2057,7 +2057,7 @@ gemini3d 维护的 NRL Horizontal Wind Model 2014 可构建库，用 CMake 生�
 
 | 项目 | 一句话 | 语言 | ★ | 标记 |
 |---|---|---|---:|---|
-| [pyDARN](https://github.com/SuperDARN/pydarn) | SuperDARN 官方社区维护的 Python 数据可视化库 | Python | 38 | 🏷️ 高校实验室 |
+| [pyDARN](https://github.com/SuperDARN/pydarn) | SuperDARN 数据分析工作组发布的 Python 数据可视化库 | Python | 38 | 🏷️ 高校实验室 |
 | [SuperDARN RST](https://github.com/SuperDARN/rst) | SuperDARN 雷达软件工具包 RST：原始数据处理、拟合与对流图生成 | C | 28 | 🏷️ 高校实验室 |
 | [inscar](https://github.com/engeir/inscar) | 计算斜向磁场条件下非相干散射谱的 Python 库（支持非麦克斯韦分布） | Python | 7 | 🏷️ 高校实验室 |
 | [LPI](https://github.com/ilkkavir/LPI) | 奥卢大学非相干散射雷达电压级数据滞后剖面反演 R 包（MPI 版） | R | 5 | 🏷️ 高校实验室 |
@@ -2080,7 +2080,7 @@ SuperDARN 数据分析工作组维护的 Python 可视化库，LGPL-3.0 许可�
 
 语言：C · 许可：GPL-3.0 · 星标约：28 · 宿主：github
 
-SuperDARN 数据分析工作组（DAWG）维护的 Radar Software Toolkit，GPL-3.0 许可，C 语言命令行工具集并有 Zenodo DOI。负责从 rawacf 做 ACF 拟合生成 fitacf，再经网格化、球谐拟合生成全球对流图，是 SuperDARN 标准数据产品的官方处理链。文档分为 ReadTheDocs 安装教程与 API 说明两站，支持 Linux 与 macOS，Windows 暂不支持。适合需要自行重处理 SuperDARN 数据的研究者，与 pyDARN 可视化配合使用。
+SuperDARN 数据分析工作组（DAWG）维护的 Radar Software Toolkit，GPL-3.0 许可，C 语言命令行工具集并有 Zenodo DOI。负责从 rawacf 做 ACF 拟合生成 fitacf，再经网格化、球谐拟合生成全球对流图，是 SuperDARN 课题组生成标准数据产品所用的处理链。文档分为 ReadTheDocs 安装教程与 API 说明两站，支持 Linux 与 macOS，Windows 暂不支持。适合需要自行重处理 SuperDARN 数据的研究者，与 pyDARN 可视化配合使用。
 
 #### [inscar](https://github.com/engeir/inscar)  
 *🏷️ 高校实验室*
