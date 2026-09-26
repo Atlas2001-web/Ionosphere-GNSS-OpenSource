@@ -18,7 +18,7 @@
 | 区域 CORS（欧/亚太/加） | [EPN `/pub/obs/`](https://epncb.oma.be/pub/obs/) · [GA](https://data.gnss.ga.gov.au/) · [CACS](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/data-donnees/cacs-scca.php) · [MIRAI](https://go.gnss.go.jp/mirai/miraiarchive/) · [韩国](https://www.gnssdata.or.kr/) · [BEV Geoportal](https://data.bev.gv.at/)；EPN（+ BKG EUREF 镜像）/ SONEL 实测见 [E30](#dp-e30) · [cors-networks](./software/cors-networks.md) | 开放 / 网页注册 |
 | 欧洲站元数据 / 程序化 | [EPOS GNSS](https://gnss-epos.eu/) · [GLASS API](https://gnssdata-epos.oca.eu/GlassFramework/) · [M3G](https://gnss-metadata.eu/landing/m3g) | 视节点 |
 | 实时 RTCM / SSR | `products.igs-ip.net:2101` · [igs-ip.net](https://www.igs-ip.net/)（NTRIP；后者偶发超时） · [注册](https://register.rtcm-ntrip.org/cgi-bin/registration.cgi) | 挂载点账号 |
-| 掩星 RO | [CDAAC](https://cdaac-www.cosmic.ucar.edu/) · [data.cosmic](https://data.cosmic.ucar.edu/gnss-ro/) · [ROM SAF](https://rom-saf.eumetsat.int/)（[决策表](#电离层与地磁门户决策表)）· [awsgnssroutils](https://github.com/gnss-ro/aws-opendata) · COSMIC-2 电离层 [cosmic2-ro](./software/cosmic2-ro.md) | 开放 / ROM SAF 产品库须注册（AWS 镜像开放） |
+| 掩星 RO | [CDAAC](https://cdaac-www.cosmic.ucar.edu/) · [data.cosmic](https://data.cosmic.ucar.edu/gnss-ro/) · [ROM SAF](https://rom-saf.eumetsat.int/)（[决策表](#电离层与地磁门户决策表)）· [awsgnssroutils](https://github.com/gnss-ro/aws-opendata) · COSMIC-2 电离层 [cosmic2-ro](./software/cosmic2-ro.md) · 其他任务（MetOp/Spire/CHAMP/GRACE）[ro-missions-data](./software/ro-missions-data.md)（[E35](#dp-e35)） | 开放 / ROM SAF 产品库须注册（AWS 镜像开放） |
 | 地磁 / 空间天气 | [Kyoto WDC](https://wdc.kugi.kyoto-u.ac.jp/) · [INTERMAGNET](https://intermagnet.org/) · [SuperMAG](https://supermag.jhuapl.edu/) · [GFZ Kp](https://kp.gfz.de/en/) · [SWPC](https://www.spaceweather.gov/) · [OMNI/CDAWeb HAPI](https://cdaweb.gsfc.nasa.gov/hapi) · 台站分钟 / 秒值：USGS · BGS · NRCan · THEMIS GMAG · MACCS · TGO → [决策表](#电离层与地磁门户决策表)；耀斑 X 射线 / EUV（GOES XRS、FISM2、EVE）见 [E31](#dp-e31) | 开放 / 注册 |
 | 区域 TEC 现报 | [eSWua TEC](http://www.eswua.ingv.it/ewphp/landing.php?doi=tec) · [IONORING](http://ionos.ingv.it/ionoring/ionoring.htm)；全球近实时 TEC（GloTEC / DLR / UPC / CODE 预报）见 [E29](#dp-e29) | 开放（CC BY） |
 | 闪烁 ISMR | [`ismr_downloader`](https://github.com/GEGE-UNESP/ismr_downloader)（主）· [Query Tool](https://ismrquerytool.fct.unesp.br/)（辅，常超时）· 高纬 [CHAIN](https://www.chain-project.net/data/gps/ismr/)（[E26](#dp-e26)）· 多区域 [eSWua 闪烁 web service](http://ws-eswua.rm.ingv.it/swit/scintillation/records/wsstation)（[E34](#dp-e34)） | UNESP 网页注册；CHAIN、eSWua 匿名 |
@@ -439,7 +439,7 @@ curl -L -C - -O \
 
 ## 电离层与地磁门户决策表
 
-第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD），以及地基与 LEO 电离层观测（E23 GIRO / DIDBase 测高仪、E24 Swarm swarm-diss HTTPS、E25 VirES HAPI、E26 CHAIN 闪烁 ISMR、E27 GIM/IONEX 各中心门户、E28 IGS 观测匿名镜像、E29 近实时 TEC 产品、E30 区域 CORS 网、E31 耀斑驱动数据、E32 DMSP / TIMED GUVI、E33 全天空成像仪、E34 CHAIN 以外闪烁网）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
+第 21–22 轮收录的 14 个门户（ISR / SuperDARN / 测高仪 / 地磁 / 掩星 / 编目），以及后来补充的 4 个空间天气指数源（E15–E18：GFZ Kp、SWPC、Kyoto WDC、OMNI/HAPI）和 2 行 COSMIC-2 电离层掩星（E19 CDAAC 公开树、E20 AWS `gnss-ro-data` 镜像），以及 2 行 NASA 电离层–热层卫星（E21 ICON、E22 GOLD），以及地基与 LEO 电离层观测（E23 GIRO / DIDBase 测高仪、E24 Swarm swarm-diss HTTPS、E25 VirES HAPI、E26 CHAIN 闪烁 ISMR、E27 GIM/IONEX 各中心门户、E28 IGS 观测匿名镜像、E29 近实时 TEC 产品、E30 区域 CORS 网、E31 耀斑驱动数据、E32 DMSP / TIMED GUVI、E33 全天空成像仪、E34 CHAIN 以外闪烁网、E35 COSMIC-2 以外掩星）。「实测」列里的命令都在 2026-09-26 跑过，结果是当时的真实返回；✗ 表示拿不到数据文件，并写出卡在哪一道门。
 
 | 门户 | 账号 / 门槛 | 格式 | 时间分辨率 · 时延 | 实测 |
 |---|---|---|---|:---:|
@@ -477,6 +477,7 @@ curl -L -C - -O \
 | [DMSP / TIMED GUVI](./software/dmsp-timed-data.md) | **匿名**：SPDF `dmsp/`（SSIES-3 CDF、SSUSI EDR/SDR）与 `timed/guvi/`；CDAWeb HAPI（SSIES 取整、无质量标志）；Madrigal kinst 8100（下载需填三个信息字段，见 [madrigal](./software/madrigal.md)）；JHU/APL 官网为 JS 页面，门槛未验证 | NASA CDF / HDF5 / netCDF3 classic | F18 2024-05-11：SSIES 6100 条 1 s、dens good 86.1%；SSUSI 南半球功率 1185.6 GW、观测边界 50.2°（模型 61.8°）；SSIES 2015–2021 缺；GUVI 成像只到 2007 | ✅（[E32](#dp-e32)，[手册](./software/dmsp-timed-data.md)） |
 | [全天空成像仪](./software/allsky-imager-data.md) | **匿名**：UCalgary 开放数据（THEMIS ASI、REGO stream0 + skymap）、Berkeley THEMIS L1 CDF（asf/ast）、MANGO 数据服务器（level1 / raw / quicklook） | 多帧 PGM / CDF / HDF5 / IDL `.sav` | 2024-05-11 gill：THEMIS 每分钟 20 帧 × 3 s（256²，饱和 65535）、REGO 20 帧（512²）；ast 4797 张；MANGO cfs 红线 96 帧 × 4 min；skymap 要选 gill_20230922 | ✅（[E33](#dp-e33)，[手册](./software/allsky-imager-data.md)） |
 | [闪烁监测网（CHAIN 以外）](./software/scintillation-networks.md) | **匿名**：INGV eSWua web service（站表 + 逐站 1 min 记录）；Madrigal kinst 8010 列表/参数匿名，下载要填用户信息；UNESP ISMR 要账号 | JSON / HDF5 / ISMR CSV | eSWua 42 站；2024-05-10 22–24 UT nya1p 5181 条 × 75 字段；最新数据约 11 min 前（15 min 一批）；UNESP 证书链不全 + Turnstile；LISN 不可达 | ✅（[E34](#dp-e34)，[手册](./software/scintillation-networks.md)） |
+| [COSMIC-2 以外的掩星](./software/ro-missions-data.md) | **匿名**：CDAAC 全树（MetOp/Spire/PlanetiQ 只有中性大气 level2 + level1b podTec；CHAMP/GRACE/GeoOptics 有 ionPrf）；GRACE-FO 不在 CDAAC；ROM SAF 产品库须登录 | netCDF3 日包 `.tar.gz` | CHAMP 2003/302：117 条 ionPrf（可用 66）；GRACE 2014/060：72 条；MetOp-C podTec 2024/132：36 MB / 398 弧，仰角全正；`gracefo/` 404 | ✅（[E35](#dp-e35)，[手册](./software/ro-missions-data.md)） |
 
 要登录才能拿数据的：EISCAT 门户（Madrigal 可绕行）、子午工程、ROM SAF 产品库（AWS 可绕行）、TGO ASCII、UKSSDC/RAL。要「申请」的：BGS 本站高分辨率（GIN 可绕行）。
 
@@ -848,6 +849,18 @@ curl -s "$W/wsnya1p?filter=dt,bt,2024-05-10%2022:00:00,2024-05-10%2023:59:00&siz
 curl -s "$W/wslyb0p?filter=dt,ge,2026-09-26%2010:00:00&size=20000"   # 实测：10:26 UTC 时最新 dt 为 10:15（1 min 分辨率，15 min 一批入库）；size 是硬上限，超出静默截断
 curl -s "https://cedar.openmadrigal.org/getExperimentsService.py?code=8010&startyear=2024&startmonth=5&startday=10&starthour=0&startmin=0&startsec=0&endyear=2024&endmonth=5&endday=12&endhour=0&endmin=0&endsec=0&local=1"   # 实测：3 个每日实验，文件 scin_YYYYMMDD.001.hdf5（S4_SCIN / SIGMA_PHI）；下载需填姓名/邮箱/单位，本文不做
 # 实测：不带 filter 的 order=dt,desc 等 61 s 后 502；UNESP Query Tool 证书链不全（curl exit 60），首页是 SPA + Cloudflare Turnstile，要账号；LISN http 超时、https 403
+```
+
+<a id="dp-e35"></a>**E35 COSMIC-2 以外的掩星（CDAAC：MetOp / Spire / GRACE / CHAMP / GeoOptics；ROM SAF 门槛）**
+
+```bash
+B=https://data.cosmic.ucar.edu/gnss-ro
+curl -s $B/metopc/postProc/level2/2024/132/   # 实测：只有 atmPrf/bfrPrf/echPrf/er5Prf/gfsPrf/wetPf2/wetPrf，MetOp、Spire、PlanetiQ 都没有 ionPrf
+curl -s -O $B/metopc/postProc/level1b/2024/132/podTec_postProc_2024_132.tar.gz   # 实测：200，37,274,050 B；398 条弧，586,366 个 1 Hz 点，仰角 10–90°，occheight 全 -999（LEO 以上顶部 TEC，不是掩星）
+curl -s -O $B/champ/repro2016/level2/2003/302/ionPrf_repro2016_2003_302.tar.gz   # 实测：200，703,381 B；117 条 Ne 剖面，本文口径可用 66 条；NmF2 最大 3,371,960 el/cm³，critfreq = 8.98e-3*sqrt(edmax)
+curl -s -O $B/grace/postProc/level2/2014/060/ionPrf_postProc_2014_060.tar.gz   # 实测：200，362,978 B；72 条（GRACE 2007–2017 有 ionPrf）
+curl -s -o /dev/null -w '%{http_code}\n' $B/gracefo/   # 实测：404（CDAAC 公开树没有 GRACE-FO）
+# 实测：Spire podTec_nrt_2024_132 433 MB；ROM SAF product_archive.php 显示 "Please login or register first"；AWS contributed/v1.1/romsaf/ 只有 champ/cosmic1/grace/metop 的中性大气产品
 ```
 
 ---
