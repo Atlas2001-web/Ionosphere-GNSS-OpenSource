@@ -183,3 +183,4 @@ TLE/SP3 → **Orekit（帧/插值/积分）** → 卫星 ITRF 坐标 → 高度�
 | 精密 SP3 批量比较 / 合并 | [gnssanalysis](./gnssanalysis.md) · [sp3](./sp3.md) |
 | GUI 任务设计 / 报告 | [gmat](./gmat.md) |
 | Python 原生数值积分 / 估计（不用 JVM） | [tudatpy](./tudatpy.md) |
+| 现成 EKF/UKF 定轨 + SSA 测角（Orekit 11 + gRPC，停更；同算例对照） | [orbdetpy](./orbdetpy.md) |

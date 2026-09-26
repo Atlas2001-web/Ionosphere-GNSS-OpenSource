@@ -1,6 +1,6 @@
 # 软件操作手册索引
 
-本目录共有 **184 篇**操作手册（合计 **40500 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
+本目录共有 **185 篇**操作手册（合计 **40722 行**，`wc -l`，不含本索引）：命令、输入输出、坑、选型。不是教材正文。
 
 概念课见 [`docs/tutorials/`](../tutorials/)。条目以 [`PROJECTS.json`](../../PROJECTS.json) 与 `lists/` 为准。
 
@@ -209,6 +209,7 @@
 | 182 | [pyubxutils.md](./pyubxutils.md) | u-blox UBX 接收机配置 CLI 集（Python；`ubxsave`/`ubxload` 存载 CFG-VALSET、`ubxcompare` 比对 .ubx/u-center txt、`ubxsetrate` CFG-MSG 开关消息、`ubxbase` Survey-in/Fixed 基站、`ubxsimulator` 合成流；≠ 编解码库/录流） | 209 | **已短硬** · 2026-09-26 02:14–02:28 EDT；PyPI **1.0.6**（tag `b758ec0`，main `31527a9`）/BSD-3-Clause/★5/Python ≥3.10/pyubx2 1.3.7；无接收机：socat pty + 合成桥（上游 UBXSimulator 回 ACK + 合成 VALGET/RTCM 1006）+ gpsd `c05330a` F9T 日志背景流；ubxsave 1295 键逐键轮询 29.6 s→77 B VALSET 字节核对；ubxcompare 4 差异；ubxload 原帧 `cmp` 一致；ubxsetrate CFG-MSG `b5620601…2104`；ubxbase Fixed LLH HP 拆分核对；坑：`--portype` 被忽略恒 USB、失败一律 rc=0、0 应答/坏文件也报 successfully；写入真机**未在真接收机测试** |
 | 183 | [go-gnss-rtcm.md](./go-gnss-rtcm.md) | Go RTCM3 解析库（go-gnss/rtcm；`Scanner` 切帧+CRC24Q，91 个消息号→struct，可 `Serialize` 回字节；≠ NTRIP 客户端/RINEX 转换/RTK） | 252 | **已短硬** · 2026-09-26 02:29–02:34 EDT；tag **v0.0.9**=`6948afc`（2026-09-16）/Apache-2.0/★26/go 1.22；go1.24.4 `go test` **9 PASS**；centipede `VALDM` 40 s **57344 B/382 帧**，16 种类型计数与 pyrtcm 1.2.0 全等，1005 ECEF (4151313.6403, 380499.3117, 4811408.2782) m，1077 首历元 10 星/2 信号/18 格，G01 1C 伪距 21981938.087 m 双库一致；382 帧重编码逐字节相同；合成 1005 25 B `crc=497461` pyrtcm 验过；坑：坏 CRC 静默跳过、MSM 截断/超 64 格 err=nil 给 0、流尾假 0xD3 丢末帧、`Time()` 用当前周、闰秒写死 18 s；ntriplatency 连 GA caster **未测** |
 | 184 | [tudatpy.md](./tudatpy.md) | TU Delft Tudat Python 接口（conda `tudat-team` 频道）：IERS 2010 GCRS↔ITRS、数值积分（球谐+日月+SRP+GR）、`create_best_fit_to_ephemeris` 估 Cr；≠ SP3 解析器 / SDP4 | 260 | **已短硬** · 2026-09-26 02:23–02:35 EDT；tudatpy **1.0.0**（develop `5c61b03`）/tudat-resources 2.4（`~/.tudat` 2.2 GB）/Py 3.12.14；PyPI 与 conda-forge 均 404，全依赖 334 包盘满失败→瘦装 97+44 包 env 1.2 GB；PRN02 同 Orekit 算例：同初速 12×12+日月+SRP+GR 46.1 m（Orekit 41.4）、12×12 1453 m（1448），自身 11 点惯性初速 14.1 m；12 h 估 Cr **1.851±0.054** RMS 0.370 m（Orekit 1.879/0.443）；自带 EOP 止于 2024-09-03 静默置零→227 m，续 finals2000A 后与 Orekit 初值差 5 mm；`ephemeris.sgp4` 实为 `ev2lin`，GPS 对 SP3 17.9 km；坑 13 条 |
+| 185 | [orbdetpy.md](./orbdetpy.md) | UT ASTRIA 轨道确定（Python 前端 + Orekit 11.0.2 jar，gRPC）：EKF/UKF/BLS、SP3 导入、TLE 传播；≠ GNSS POD（无 GR、BLS 不估 Cr、停更） | 223 | **已短硬** · 2026-09-26 02:37–02:44 EDT；PyPI **2.1.0**（2022-03，develop `1140678` 2023-04）/GPL-3.0/★129/Py 3.13.5/OpenJDK 21；PRN 02 24 h 全模型 **32.9 m** 均值（Orekit 初值 42.8 m vs Orekit 41.4 m），EKF 12 h 估 **Cr 1.912**，TLE vs SP3 **534 m**；自带 EOP 止于 2023-05，`update_data()` 前 176 m |
 
 **状态图例：** `已短硬` = Round 已按 short-hard 改过且可作二遍质检；`登记受限` / `环境受限` = 无本机官方二进制或运行时，命令以官方/仓内为准、**禁止伪造 stdout**；`边界` = sh-gim 专有求解器未开源；`仍薄` = 尚无短硬或明显缺真实 I/O（当前 **0 篇**——新缺篇由「软件用法讲解」认领后改此表）。
 
@@ -381,6 +382,7 @@
 | TLE/OMM → SGP4 前端可视化 / 过境（JS/TS，浏览器/Node） | [satellite-js.md](./satellite-js.md) |
 | 严格 IERS 帧 + SP3 插值 + 数值积分/拟合（Java 库，Python 走 orekit_jpype） | [orekit.md](./orekit.md) |
 | Python/conda 原生数值积分 + 变分方程 + 估参（不用 JVM；TLE 别用其 sgp4） | [tudatpy.md](./tudatpy.md) |
+| 现成 EKF/UKF 滤波定轨 + 测站测角/多目标（SSA 原型；Orekit 11 停更，BLS 不估 Cr） | [orbdetpy.md](./orbdetpy.md) |
 | 闪烁 ISMR（UNESP API 批量） | [ismr-downloader.md](./ismr-downloader.md) |
 | Swarm/Aeolus 按需切片（须 token） | [viresclient.md](./viresclient.md) |
 | 测高仪 foF2/hmF2 年度（澳/日/GIRO） | [ionosonde-data-downloader.md](./ionosonde-data-downloader.md) |
