@@ -1,6 +1,6 @@
 # earthscope-sdk · EarthScope GAGE/SAGE API Python SDK 操作手册
 
-目录：[`PROJECTS.json` → `earthscope-sdk`](../../PROJECTS.json) · 上游 <https://gitlab.com/earthscope/public/earthscope-sdk> · 文档 <https://docs.earthscope.org/sdk> · 许可 **Apache-2.0** · PyPI **1.9.2** · tip **`4ba8870`** · GitLab ★**4** · 捆 CLI **earthscope-cli 1.2.0** · 本机验证（2026-09-24 07:29 EDT）：`pip install` → `earthscope_sdk` **1.9.2**；`EarthScopeClient()` 可建；`get_profile`/`plan()`/`fetch()` → **`NoRefreshTokenError`**；`es user get-profile` → *No tokens found…*；`client.data` 无 `[arrow]` → **`ModuleNotFoundError: pyarrow`**；装 `[arrow]` 后可见 `gnss_observations` / `gnss_ephemeris_positions` / `gnss_instantaneous_positions`；**无账号未落盘 Arrow 表**
+目录：[`PROJECTS.json` → `earthscope-sdk`](../../PROJECTS.json) · 上游 <https://gitlab.com/earthscope/public/earthscope-sdk> · 文档 <https://docs.earthscope.org/sdk> · 许可 **Apache-2.0** · PyPI **1.9.2** · tip **`4ba8870`** · GitLab ★**4** · 捆 CLI **earthscope-cli 1.2.0** · 本机验证（2026-09-24 07:29 EDT）：`pip install` → `earthscope_sdk` **1.9.2**；`EarthScopeClient()` 可建；`get_profile`/`plan()`/`fetch()` → **`NoRefreshTokenError`**；`es user get-profile` → *No tokens found…*；`client.data` 无 `[arrow]` → **`ModuleNotFoundError: pyarrow`**；装 `[arrow]` 后可见 `gnss_observations` / `gnss_ephemeris_positions` / `gnss_instantaneous_positions`；**无账号未落盘 Arrow 表** · **质检复跑**（2026-09-25 23:36 EDT）：Py **3.13.5**/SDK **1.9.2**/CLI **1.2.0**/pyarrow **25.0.1**/GitLab HEAD **`4ba8870`** 未变；stdout 逐行对齐；补：基础包**不带** `es`、假 token → **`InvalidRefreshTokenError`**
 
 > 岗位：以官方 SDK/CLI 访问 EarthScope（原 UNAVCO/IRIS → **GAGE/SAGE**）用户档案、GNSS 观测切片与 dropoff。冲突时：**上游 docs.earthscope.org / README > 本文**。免费账号注册：<https://www.earthscope.org/user>。
 
@@ -43,7 +43,7 @@ python -m pip install -U pip
 python -m pip install 'earthscope-sdk==1.9.2'
 # GNSS 观测切片需要 Arrow 额外依赖
 python -m pip install 'earthscope-sdk[arrow]'
-# CLI（若未随依赖装上）
+# CLI：**不随** SDK 安装（质检：纯 SDK venv 无 bin/es）→ 必须单装
 python -m pip install 'earthscope-cli==1.2.0'
 es --version
 # 期望：earthscope-cli/1.2.0 earthscope-sdk/1.9.2
@@ -62,8 +62,10 @@ python -m pip install -e '.[arrow]'
 
 | 现象 | 原因 | 修复 |
 | --- | --- | --- |
-| `No module named 'pyarrow'` 访问 `client.data` | 未装 `[arrow]` | `pip install 'earthscope-sdk[arrow]'` |
+| `ModuleNotFoundError: Optional dependency 'pyarrow' is required for this feature. Install it with: pip install earthscope-sdk[arrow]`（访问 `client.data`，质检原文） | 未装 `[arrow]` | `pip install 'earthscope-sdk[arrow]'` |
 | `NoRefreshTokenError` / *No tokens found* | 未 `es login` | 浏览器 Device Code 登录；或设 `ES_OAUTH2__REFRESH_TOKEN` |
+| `es: command not found` | 只装了 SDK | `pip install 'earthscope-cli==1.2.0'` |
+| `InvalidRefreshTokenError: refresh token exchange failed`（stderr 先打 `invalid_grant` / `Unknown or invalid refresh token.`） | `ES_OAUTH2__REFRESH_TOKEN` 失效/抄错 | 重新 `es login` → `es user get-refresh-token` |
 | `NoAccessTokenError` | 有配置无 access | `es user refresh-access-token` 或重新 `es login` |
 | Python &lt; 3.10 | `requires-python >=3.10` | 换 3.10+ venv |
 
@@ -91,6 +93,16 @@ es login
 # 成功后：Successful login! Access token expires at …
 es user get-profile
 ```
+
+`es user get-profile` **exit 1**；未登录时 `~/.earthscope` **不存在**（CLI 不预建）。
+
+子命令（`es --help` / `es user --help` / `es dropoff --help` 实列）：
+
+| 组 | 子命令 |
+| --- | --- |
+| 顶层 | `login` `logout` `dropoff` `user`；`-v/--version` |
+| `es user` | `get-access-token` `get-access-token-body` `get-aws-credentials` `get-profile` `get-refresh-token` `refresh-access-token` `revoke-refresh-token` `login` `logout` |
+| `es dropoff` | `get-object-history` `get-summary` `list-objects` `upload` |
 
 ### 3.2 SDK：建客户端 + 鉴权失败
 
@@ -167,6 +179,23 @@ table = client.data.gnss_observations(
 ```text
 TypeError: ... missing 2 required keyword-only arguments: 'start_datetime' and 'end_datetime'
 ```
+
+假 token 边界（质检真跑；**勿**把真 token 贴进命令历史）：
+
+```bash
+ES_OAUTH2__REFRESH_TOKEN=bogus python -c "
+from earthscope_sdk import EarthScopeClient
+with EarthScopeClient() as c:
+    try: c.user.get_profile()
+    except Exception as e: print(type(e).__name__+':', e)"
+```
+
+```text
+error during token refresh (1 attempts): b'{"error":"invalid_grant","error_description":"Unknown or invalid refresh token."}'
+InvalidRefreshTokenError: refresh token exchange failed
+```
+
+→ 证明 SDK 真打 `login.earthscope.org` 换票；失败即止，**不**回退匿名。
 
 ### 3.4 discover（同样要 token）
 

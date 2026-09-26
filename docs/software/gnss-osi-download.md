@@ -1,6 +1,6 @@
 # gnss-osi-download · 爱尔兰 Tailte/OSI Active GNSS RINEX 下载操作手册
 
-目录：[`PROJECTS.json` → `GNSS_OSI_download`](../../PROJECTS.json) · 上游 <https://github.com/jdesbonnet/GNSS_OSI_download> · 数据门户 <https://gnss.osi.ie> · 许可 **MIT** · tip **`0aeb83a`**（2024-11-25）· ★**1** · **无 PyPI** · 单文件 `osi_gnss_download.py` · 本机验证（2026-09-24 07:29 EDT）：`-h` 全旗标 OK；`--list-stations` / 下载 → **`requests.exceptions.ConnectionError`**（`NameResolutionError: Failed to resolve 'gnss.osi.ie'`）；**未落盘** `RINEX_*.zip`（DNS 墙）
+目录：[`PROJECTS.json` → `GNSS_OSI_download`](../../PROJECTS.json) · 上游 <https://github.com/jdesbonnet/GNSS_OSI_download> · 数据门户 <https://gnss.osi.ie> · 许可 **MIT** · tip **`0aeb83a`**（2024-11-25）· ★**1** · **无 PyPI** · 单文件 `osi_gnss_download.py` · 本机验证（2026-09-24 07:29 EDT）：`-h` 全旗标 OK；`--list-stations` / 下载 → **`requests.exceptions.ConnectionError`**（`NameResolutionError: Failed to resolve 'gnss.osi.ie'`）；**未落盘** `RINEX_*.zip` · **质检复跑**（2026-09-25 23:36 EDT）：tip **`0aeb83a`** 未变；requests **2.34.2**/bs4 **4.15.0**；Google DoH `gnss.osi.ie` → **Status 3 = NXDOMAIN（全球域名已撤，不是本机 DNS 墙）**；`tailte.ie` **200**；候选 `gnss.tailte.ie` 解析 **137.191.226.156** 但 HTTPS **TLS EOF**/HTTP 超时 → 脚本**事实失效**
 
 > 岗位：从 **Tailte Éireann**（原 Ordnance Survey Ireland / OSI）Active GNSS 网网页表单拉 **近 30 日** RINEX ZIP。冲突时：**门户 T&C / 上游 README > 本文**。下载前须在 <https://gnss.osi.ie> 同意条款。上游自述 **2024-11-20** 可用。
 
@@ -21,7 +21,9 @@
 - **不** 提供账号密码流——门户靠浏览器会话 + 表单 token；脚本模拟公开表单
 - **仅近 ~30 日**；更早数据门户不可用（脚本明文提示）
 
-一句话：**爱尔兰国家 CORS 近实时 RINEX 的个人向爬虫式 CLI**；DNS/门户不可达时只验证帮助与失败栈。
+一句话：**爱尔兰国家 CORS 近实时 RINEX 的个人向爬虫式 CLI**；硬编码的 `gnss.osi.ie` **已 NXDOMAIN**，现状只能验证帮助与失败栈。
+
+> **质检结论（硬）**：上游 2024-11 后无提交，`BASE_URL` 仍指旧域名。机构改名 Tailte Éireann 后旧子域撤销；新门户地址/表单是否仍含 `as_sfid`/`station0` **本机不可达、未验证**——改 `BASE_URL` 前先浏览器确认，**勿**假设表单兼容。
 
 | 术语 | 含义 |
 | --- | --- |
@@ -47,8 +49,8 @@ python3 osi_gnss_download.py -h
 
 | 现象 | 原因 | 修复 |
 | --- | --- | --- |
-| `No module named 'bs4'` | 未装 BeautifulSoup | `pip install beautifulsoup4` |
-| `NameResolutionError` / `ConnectionError` | 本机解析不了 `gnss.osi.ie` | 换网络/DNS；或门户维护——见 §3.2 |
+| `ModuleNotFoundError: No module named 'bs4'` | 未装 BeautifulSoup；**连 `-h` 都崩**（顶层 import） | `pip install beautifulsoup4` |
+| `NameResolutionError` / `ConnectionError` | `gnss.osi.ie` **全球 NXDOMAIN**（DoH Status 3） | 换 DNS **无用**；需确认新门户后改 `BASE_URL`——见 §3.2 |
 | 无 console 脚本入口 | 设计为单文件 | 始终 `python3 osi_gnss_download.py …` |
 | argparse 不强制 `--station-id`/`--date` | 源码未 `required=True` | 缺参也会去 GET 首页→同样网络错误 |
 
@@ -91,7 +93,7 @@ options:
 Project website: https://github.com/jdesbonnet/GNSS_OSI_download
 ```
 
-### 3.2 列站 / 下载（本机 DNS 失败）
+### 3.2 列站 / 下载（旧域名 NXDOMAIN）
 
 ```bash
 python3 osi_gnss_download.py --list-stations
@@ -105,7 +107,18 @@ python3 osi_gnss_download.py --station-id=glw1 --date=YYYY-MM-DD --start-hour=00
 requests.exceptions.ConnectionError: HTTPSConnectionPool(host='gnss.osi.ie', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='gnss.osi.ie', port=443): Failed to resolve 'gnss.osi.ie' ([Errno -2] Name or service not known)"))
 ```
 
-同机 `curl -sI -L --max-time 15 https://gnss.osi.ie/` → `http_code=000`。**禁止**在 DNS 墙下臆造站表或 ZIP 大小。
+同机 `curl -sI -L --max-time 15 https://gnss.osi.ie/` → `http_code=000`。质检（2026-09-25 23:36 EDT）`--list-stations` 与 `--station-id=glw1 --date=2026-09-20 --start-hour=0 --end-hour=6` **同一栈、exit 1**、cwd 无 `*.zip`。
+
+判因三步（真跑）：
+
+```bash
+getent hosts gnss.osi.ie; echo $?                       # 2（无记录）
+curl -s 'https://dns.google/resolve?name=gnss.osi.ie&type=A'   # "Status":3 → NXDOMAIN（全球）
+curl -sv --max-time 20 -o /dev/null https://gnss.tailte.ie/ 2>&1 | grep -i tls
+# TLS alert, decode error / unexpected eof while reading（本机；候选新域未证实可用）
+```
+
+**禁止**臆造站表或 ZIP 大小。
 
 ### 3.3 门户可达时的期望流程（源码路径；非本机 stdout）
 
@@ -151,7 +164,7 @@ requests.exceptions.ConnectionError: HTTPSConnectionPool(host='gnss.osi.ie', por
 
 1. **先打开门户点同意 T&C**——脚本不代替法律同意
 2. **只要最近约 30 天**——更早日期会走「No data…」分支（门户可达时）
-3. **本机/CI DNS**：`gnss.osi.ie` 解析失败很常见；先 `getent hosts gnss.osi.ie` / `curl -I`
+3. **旧域已撤**：`gnss.osi.ie` 全球 NXDOMAIN（非本机问题）；先 DoH 判全局 vs 本地，再谈换 DNS
 4. **缺 `--station-id`/`--date`**：不会 argparse 报错，直接带着 `None` 去请求
 5. **小时窗**：`end-hour` 默认 `24`；与 README 示例 `00`–`06` 对照
 6. **相对路径落盘**：ZIP 写在 **cwd**，不在仓内固定 `out/`

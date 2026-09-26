@@ -2,9 +2,11 @@
 
 > crates.io **0.8.0** · tip tag **`v0.8.0`=`02dd852`** · main **`407f527`** · AGPL-3.0 · ★**79** · MSRV **1.82** · edition **2021**（tag；main 已改 **2024**）  
 > 上游：<https://github.com/nav-solutions/gnss-rtk> · docs.rs：`gnss-rtk`  
-> 本机：`rustc 1.98.1`（2026-09-24 07:23–07:30 EDT）· **无 [[bin]]** · feature 默认 **`[]`** / 可选 **`serde`**
+> 本机：`rustc 1.98.1`（2026-09-24 07:23–07:30 EDT；**质检复跑** 2026-09-25 23:37–23:41 EDT，tag/main/★**79** 未变）· **无 [[bin]]** · feature 默认 **`[]`** / 可选 **`serde`**
 
 一句话：`gnss-rtk` = **Rust PPP/RTK 位置（+绝对模式下钟态）解算纯库**；[rnx2cggtts](./rnx2cggtts.md) 依赖链核（其锁 **0.4.1** ≠ 本文 **0.8.0**）。**不是** GUI、**不是** RINEX/SP3 读写、**不是** 电离层 TEC 产品。
+
+## 1. 用途与边界
 
 | 易混 | 是什么 | 识别 |
 | --- | --- | --- |
@@ -51,7 +53,7 @@ cargo add gnss-rtk@0.8
 ## 3. 端到端（本机 0.8.0 / tip `02dd852` 真跑）
 
 输入：**仓内测试夹具**（Galileo E1+E5b 伪距；与 [rnx2cggtts](./rnx2cggtts.md)/[sp3](./sp3.md) ESBC 同源参考坐标）。  
-参考 ECEF（WGS84）：**(3582105.2910, 532589.7313, 5232754.8054) m**。  
+参考 ECEF（WGS84）：**(3582105.2910, 532589.7313, 5232754.8054) m**。  
 历元：`2020-06-25T00:00/15/30/45:00 GPST`（**4** 历元）。  
 星：Galileo **E5b**（首历元约 **8** 可见；低仰角 **E13** postfit 拒 → 有效约 **7**）。  
 基准站（仅 RTK）：日志 `using remote MOJN/DNK reference`。
@@ -68,11 +70,11 @@ fn main() {
     println!("profile ok: {:?}", UserProfile::from_str("Static").unwrap());
     println!("profile bad: {}", UserProfile::from_str("FlyingCar").unwrap_err());
     let cfg = Config::default().with_navigation_method(Method::SPP);
-    println!("cfg method={:?} max_gdop={}", cfg.method, cfg.max_gdop);
+    println!("cfg method={:?} max_gdop={}", cfg.method, cfg.solver.max_gdop);
 }
 ```
 
-本机 stdout：
+本机 stdout（质检 2026-09-25 23:40 EDT：crates **0.8.0** checksum `81f2190e…`；原稿 `cfg.max_gdop` → **E0609 编不过**，已改 `cfg.solver.max_gdop`）：
 
 ```text
 Method ok: SPP
@@ -87,19 +89,21 @@ cfg method=SPP max_gdop=5
 ```bash
 cd /path/to/gnss-rtk   # checkout v0.8.0
 RUST_LOG=info cargo test --lib spp:: -- --nocapture
-# → test result: ok. 2 passed; … finished in 1.38s
+# → test result: ok. 4 passed; 0 failed; 0 ignored; 47 filtered out; finished in 1.33s
+#   （过滤串 spp:: 同时命中 spp::{initialized,survey} + rtk_spp::{initialized,survey}；只要绝对 SPP 用 spp::survey::static_spp）
 ```
 
 首历元 **2020-06-25T00:00:00 GPST**（survey；`pvt.pos_m` / `clock_offset_s`）：
 
 | 量 | 值 |
 | --- | --- |
-| ECEF xyz | **(3582062.8076439444, 532619.5462266047, 5232818.854390953) m** |
-| 钟差 | **481026.148 ns**（`clock_offset_s=0.000481026148…`） |
-| \|Δxyz\| vs 参考 | **42.483 / 29.815 / 64.049 m** |
+| ECEF xyz | **(3582062.8076439444, 532619.5462266047, 5232818.854390953) m** |
+| 钟差 | **481026.148 ns**（`clock_offset_s=0.000481026148…`） |
+| \|Δxyz\| vs 参考 | **42.483 / 29.815 / 64.049 m** |
 | GDOP / TDOP | **2.697** / **1.297** |
 | `solution_type` | `PPP`（枚举名；物理仍为 SPP） |
-| 墙时 / 历元 | **1.38 s**（`spp::` 两测例）/ **4** 历元 |
+| 墙时 / 历元 | **1.33 s**（`spp::` 四测例；质检）/ **4** 历元 |
+| `initialized`（预置位）首历元 | xyz **(3582062.794571543, 532619.544602773, 5232818.840965921) m**；钟 **481026.071 ns**；残差 **42.496/29.813/64.036 m**；lat/lon/h **55.49416738722345°/8.457386821884224°/91.3272916929441 m** |
 
 后续历元残差（survey，m）：00:15 同 00:00；00:30 **56.231/31.074/26.630**；00:45 **65.437/39.284/30.270**。
 
@@ -110,7 +114,7 @@ RUST_LOG=info cargo test --lib cpp::survey::static_cpp -- --nocapture
 # → ok. 1 passed; finished in 1.37s
 ```
 
-首历元残差：**39.142 / 30.103 / 32.390 m**（GDOP≈**2.697**）。
+首历元残差：**39.142 / 30.103 / 32.390 m**（GDOP≈**2.697**）；00:30 **48.137/30.224/0.281**；00:45 **50.589/37.202/43.519 m**（质检 1.28 s）。
 
 ### 3.4 RTK-SPP（`Solver::rtk` + `Method::SPP`）
 
@@ -119,14 +123,17 @@ RUST_LOG=info cargo test --lib rtk_spp::survey::static_rtk_spp -- --nocapture
 # → ok. 1 passed; finished in 1.34s
 ```
 
-首历元残差：**24.439 / 11.346 / 96.944 m**（日志 `x=24.43858…`）；`clock_offset_s=0`（RTK **不解钟**）；基准 `MOJN/DNK`。
+首历元残差：**24.439 / 11.346 / 96.944 m**（日志 `x=24.43858…`）；`clock_offset_s=0`（RTK **不解钟**）；基准 `MOJN/DNK`。
 
 ### 3.5 绝对 `Method::PPP`（边界）
 
 ```bash
 cargo test --lib ppp::survey::static_ppp -- --nocapture
 # → ignored（#[ignore]）；上游表：PPP×绝对 = NOK
+# 质检：同过滤命中 rtk_ppp::survey::static_rtk_ppp ... ok（1 passed; 1 ignored; 1.27s）
 ```
+
+全库：`cargo test --lib` → **49 passed; 2 ignored; 6.61 s**（v0.8.0；质检）。
 
 **未臆造** 绝对 PPP ECEF。缺星历/缺观测 → `Err`；接 RINEX/SP3 须自实现 `OrbitSource` / `EphemerisSource` / `Candidate`——API 偏重，本文以官方测例真实数字为准。
 
